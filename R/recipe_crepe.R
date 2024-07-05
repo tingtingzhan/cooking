@@ -1,0 +1,134 @@
+
+
+#' @title \linkS4class{crepe} Recipes
+#' 
+#' @description
+#' ..
+#' 
+#' @examples
+#' 
+#' crepe() / 2
+#' 
+#' diagnose_(
+#'  jennyc819_crepe,
+#'  Carina_crepe,
+#'  Aya_crepe,
+#'  Daat_crepe,
+#'  crepe,
+#'  Natasha_crepe,
+#'  cyberchef_crepeFrench
+#' )
+#' 
+#' 
+#' @name crepe
+#' @aliases crepe-class
+#' @export
+setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
+  alias_class = 'Cre\u0302pe',
+  breadFlour = 100, # using bread flour is still not strong enough
+  egg_pc = 2,
+  drymilk = c(Carnation_drymilk = 11.5),
+  
+  heavyCream = 90, water = 130*2, 
+  # water 3.90, fat 39.3%, try!!
+  
+  #heavyCream = 85, water = 126*2, 
+  # water 3.80, fat 37.6%
+  # far too dry
+  
+  #heavyCream = 85, water = (126+11)*2, 
+  # water 4.02, fat 37.6%
+  # a little too wet (does not pool to a round shape)
+  # fat too less (sticks to pan)
+  
+  waterLost = 200
+))
+
+
+#' @rdname crepe
+#' @export
+crepe <- function() new(Class = 'crepe', review = 'try')
+
+
+#' @rdname crepe
+#' @export
+jennyc819_crepe <- function() new(
+  Class = 'recipe', author = 'jennyc819', alias_flavor = 'Crepe',
+  allrecipes = '16383/basic-crepes/',
+  flour = 120, # 1 cup all-purpose flour
+  egg_pc = 2,
+  milk = 125, # ½ cup milk
+  water = 118.3, # ½ cup water
+  salt_tsp = 1/4,
+  butter = 227/16*2 # 2 tablespoons butter, melted
+)
+
+
+#' @rdname crepe
+#' @export
+cyberchef_crepeFrench <- function() new(
+  Class = 'recipe', author = 'cyberchef', alias_flavor = 'French Crepe',
+  allrecipes = '20931/french-crepes/',
+  flour = 120, # 1 cup all-purpose flour
+  egg_pc = 3, # yes
+  milk = 500, # 2 cups milk
+  sugar_tsp = 1,
+  salt_tsp = 1/4,
+  butter = 227/16*2 # 2 tablespoons butter, melted
+)
+
+
+#' @rdname crepe
+#' @export
+Carina_crepe <- function() new(
+  Class = 'recipe', author = 'Carina', alias_flavor = 'Crepe',
+  youtube = 'bX6ghyT6Ig0',
+  flour = 120, # 1 cup
+  egg_pc = 2,
+  salt_tsp = 1/2,
+  milk = 1.25*250, # 1¼ Cups | 310ml Milk
+  butter = 227/16*2 #2 tbsp Melted Butter + extra for cooking
+)
+
+
+#' @rdname crepe
+#' @export
+Aya_crepe <- function() new(
+  Class = 'recipe', author = 'Aya', alias_flavor = 'Crepe',
+  youtube = 'FfGjDceNRVo',
+  flour = 150, 
+  sugar = 50, 
+  salt_tsp = 1/2,
+  egg_pc = 4,
+  butter = 50,
+  milk = 500
+  # Dark rum: 1 Tbsp (or 2 Tbsp if you love it!)
+)
+
+#' @rdname crepe
+#' @export
+Natasha_crepe <- function() new(
+  Class = 'recipe', author = 'Natasha', alias_flavor = 'Crepe',
+  youtube = 'uA4KRfE_MNM',
+  water = 118.3,  # ½ cup lukewarm water
+  milk = 250, # 1 cup milk, warm
+  egg_pc = 4,
+  butter = 227/16*4, # 4 Tbsp unsalted butter, melted. Plus more to sauté.
+  flour = 120, # 1 cup all-purpose flour
+  sugar_Tbsp = 2,
+  salt_tsp = 1/2
+)
+
+
+#' @rdname crepe
+#' @export
+Daat_crepe <- function() new(
+  Class = 'daatgo', alias_flavor = 'crepe',
+  flour = 230,
+  egg_pc = 3,
+  milk = 300,
+  water = 500,
+  butter = 15,
+  salt = 5,
+  sugar = 10,
+  youtube = '0jxG7FEdyRA')

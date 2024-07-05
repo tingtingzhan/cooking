@@ -1,0 +1,751 @@
+
+
+#' @title \linkS4class{extra}
+#' 
+#' @description
+#' Extra water, etc. required to hydrate flavoring powder in a dough
+#' 
+#' @slot water \link[base]{numeric} scalar
+#' 
+#' @name extra
+#' @aliases extra-class
+#' @export
+setClass(Class = 'extra', slots = c(
+  water = 'numeric'
+), prototype = prototype(
+  water = 0
+))
+
+
+
+#' @title \linkS4class{nutrition} Information
+#' 
+#' @description 
+#' Nutrition information.
+#' 
+#' @slot brand \link[base]{character} scalar, manufacture brand
+#' @slot name \link[base]{character} scalar, product name
+#' 
+#' @slot extra \linkS4class{extra} object
+#' 
+#' @slot url \link[base]{character} scalar, link to manufacturer webpage
+#' @slot fdc \link[base]{integer} scalar, USDA FoodData Central (FDC) ID
+#' @slot pubchem \link[base]{character} scalar
+#' 
+#' @slot acme \link[base]{integer} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)
+#' @slot amazon \link[base]{character} scalar, amazon ID
+#' @slot bjs \link[base]{character} scalar, BJ's ID
+#' @slot costco,costcoBiz \link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}
+#' @slot giantfood \link[base]{integer} scalar
+#' @slot sams \link[base]{character} scalar, Sam's Club ID
+#' @slot target \link[base]{character} scalar, Target ID
+#' @slot totalwine \link[base]{character} scalar
+#' @slot traderjoes \link[base]{character} scalar, Trader Joe's ID
+#' @slot walmart \link[base]{character} scalar, Walmart ID
+#' @slot wawa \link[base]{character} scalar
+#' @slot webstaurant \link[base]{character} scalar
+#' @slot wegmans,wegmansorganic \link[base]{integer} scalar, Wegmans Food Markets ID
+#' @slot wholefoods \link[base]{character} scalar, Wholel Foods ID
+#' 
+#' @slot baileys \link[base]{character} scalar
+#' @slot bassetts \link[base]{character} scalar
+#' @slot belgioioso \link[base]{character} scalar
+#' @slot bobsredmill \link[base]{character} scalar
+#' @slot bouchard \link[base]{character} scalar
+#' @slot daisybrand \link[base]{character} scalar
+#' @slot domino \link[base]{character} scalar
+#' @slot epicprovisions \link[base]{character} scalar
+#' @slot fleischmannsyeast \link[base]{integer} scalar
+#' @slot frontiercoop \link[base]{character} scalar
+#' @slot haagendazs \link[base]{character} scalar
+#' @slot harney \link[base]{character} scalar
+#' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
+#' @slot itoen \link[base]{character} scalar
+#' @slot kahlua \link[base]{character} scalar
+#' @slot kerrygold \link[base]{character} scalar
+#' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
+#' @slot koyamaen \link[base]{character} scalar
+#' @slot leekumkee \link[base]{character} scalar
+#' @slot mccormickculinary,oldbay,grillmates \link[base]{character} scalar
+#' @slot meyenberg \link[base]{character} scalar
+#' @slot mizkanjpn,mizkanusa \link[base]{character} scalars
+#' @slot nancysyogurt \link[base]{character} scalar
+#' @slot navitas \link[base]{character} scalar
+#' @slot nescafe,nescafeGoldEspressoCA,nescafeGoldEspressoUS,nescafeUS,nestle,nido \link[base]{character} scalars
+#' @slot oreo \link[base]{character} scalar
+#' @slot raos \link[base]{character} scalar
+#' @slot runamok \link[base]{character} scalar
+#' @slot simplyorganic \link[base]{character} scalar
+#' @slot starbucks \link[base]{character} scalar
+#' @slot starbucks_hot,starbucks_iced \link[base]{integer} scalars
+#' @slot stonewall \link[base]{integer} scalar
+#' @slot swiftmeats \link[base]{character} scalar
+#' @slot swissmiss \link[base]{character} scalar
+#' @slot twinings \link[base]{character} scalar
+#' 
+#' 
+# @slot machine \link[base]{character} scalar or \link[base]{vector}, machine(s) used
+#' @slot machine \link[base]{function}
+#' 
+#' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
+#' @slot warning \link[base]{character} scalar or \link[base]{vector}
+#' @slot contain \link[base]{character} scalar or vector, names of additives
+#' 
+#' @slot servingGram \link[base]{numeric} scalar, serving size in grams
+#' @slot servingCup \link[base]{numeric} scalar, serving size in cups
+#' @slot servingTbsp \link[base]{numeric} scalar, serving size in tablespoons
+#' @slot servingTsp \link[base]{numeric} scalar, serving size in teaspoons
+#' @slot serving_floz \link[base]{numeric} scalar, serving size in fluid ounce
+#' @slot serving_ml \link[base]{numeric} scalar, serving size in milli litre
+#' 
+#' @slot pieceWeight \link[base]{numeric} scalar, weight in grams per piece
+#' 
+#' @slot usd \link[base]{numeric} scalar, price (in USD) \strong{per serving}
+#' @slot jpy \link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}
+#' @slot cost_ \link[base]{character} scalar, price (in USD) \strong{per serving}, converted from all currencies
+#' @slot calorie \link[base]{numeric} scalar, calories per serving
+#' @slot water \link[base]{numeric} scalar, water (in grams) per serving
+#' @slot carbohydrate \link[base]{numeric} scalar, total carbohydrate (in grams) per serving
+#' @slot sugar \link[base]{numeric} scalar, sugar (in grams) per serving
+#' @slot addedSugar \link[base]{numeric} scalar, added sugar (in grams) per serving
+#' @slot fat \link[base]{numeric} scalar, fat (in grams) per serving
+#' @slot cholesterol \link[base]{numeric} scalar, cholesterol (in grams) per serving
+#' @slot sodium \link[base]{numeric} scalar, sodium (in grams) per serving
+#' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
+#' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
+#' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
+#' 
+#' @export
+setClass(Class = 'nutrition', slots = c(
+  brand = 'character',
+  name = 'character',
+  
+  extra = 'extra',
+  
+  url = 'character',
+  fdc = 'integer',
+  pubchem = 'character',
+  
+  acme = 'integer',
+  amazon = 'character',
+  bjs = 'character',
+  costco = 'character', costcoBiz = 'character',
+  giantfood = 'integer',
+  sams = 'character',
+  target = 'character',
+  totalwine = 'character',
+  traderjoes = 'character',
+  webstaurant = 'character',
+  wholefoods = 'character',
+  wegmans = 'integer', wegmansorganic = 'integer',
+  walmart = 'character',
+  wawa = 'character',
+  
+  baileys = 'character',
+  bassetts = 'character',
+  belgioioso = 'character',
+  bobsredmill = 'character',
+  bouchard = 'character',
+  daisybrand = 'character',
+  domino = 'character',
+  epicprovisions = 'character',
+  fleischmannsyeast = 'integer',
+  frontiercoop = 'character',
+  haagendazs = 'character',
+  harney = 'character',
+  ippodoglobal = 'character', ippodojpn = 'character', ippodousa = 'character',
+  itoen = 'character',
+  kahlua = 'character',
+  kerrygold = 'character',
+  kingarthur = 'integer', kingarthurpro = 'integer',
+  koyamaen = 'character',
+  leekumkee = 'character',
+  mccormickculinary = 'character', oldbay = 'character', grillmates = 'character',
+  meyenberg = 'character',
+  mizkanjpn = 'character', mizkanusa = 'character',
+  nancysyogurt = 'character',
+  navitas = 'character',
+  nescafe = 'character', nescafeGoldEspressoCA = 'character', nescafeGoldEspressoUS = 'character', nescafeUS = 'character', nestle = 'character', nido = 'character',
+  oreo = 'character',
+  raos = 'character',
+  runamok = 'character',
+  simplyorganic = 'character', # has SKU number, do not know how to use
+  starbucks = 'character',
+  starbucks_hot = 'integer',
+  starbucks_iced = 'integer',
+  stonewall = 'integer',
+  swiftmeats = 'character',
+  swissmiss = 'character',
+  twinings = 'character',
+  
+  machine = 'function',
+  review = 'character',
+  warning = 'character',
+  contain = 'character',
+  
+  servingGram = 'numeric',
+  servingCup = 'numeric',
+  servingTbsp = 'numeric',
+  servingTsp = 'numeric',
+  serving_floz = 'numeric',
+  serving_ml = 'numeric',
+  pieceWeight = 'numeric',
+  
+  usd = 'numeric',
+  jpy = 'numeric',
+  cost_ = 'character',
+  calorie = 'numeric',
+  water = 'numeric',
+  carbohydrate = 'numeric',
+  sugar = 'numeric', addedSugar = 'numeric',
+  fat = 'numeric',
+  cholesterol = 'numeric',
+  sodium = 'numeric',
+  protein = 'numeric',
+  alcohol = 'numeric', AbV = 'numeric'
+), prototype = prototype(
+  machine = function(x) NULL
+), validity = function(object) {
+  #if (!length(object@usd)) stop('no pricing info for ', object@brand, ' ' object@name)
+  if (!length(object@servingGram)) stop('must have `servingGram` for nutrition object')
+  if (length(review <- object@review) > 1L) {
+    if (!length(names(review))) stop('slot \'@review\' must be fully named')
+  }
+})
+
+
+
+
+
+#' @title Get Nutrition
+#' 
+#' @description ..
+#' 
+#' @param x ..
+#' 
+#' @export
+nutrition <- function(x) UseMethod('nutrition')
+
+
+#' @export
+nutrition.character <- function(x) {
+  if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
+    print(x)
+    stop('illegal nutrition names')
+  }
+  x0 <- parse(text = x)[[1L]]
+  xval <- if (is.symbol(x0)) eval(call(name = x)) else eval(x0)
+  if (inherits(xval, what = c('recipe'))) {
+    ret <- nutrition.recipe(xval)
+    old_nm <- ret@name
+    ret@name <- sprintf(fmt = '%s \U0001f3bc\ufe0f%s()', old_nm, x)
+    #ret@name <- sprintf(fmt = '%s \U0001f3bc\ufe0f{.run [%s](cooking::%s())}', old_nm, x, x)
+    #?cli::cli_text # does not have a returned value
+    return(ret)
+  }
+  return(nutrition(xval))
+}
+
+#' @export
+nutrition.function <- function(x) nutrition(do.call(x, args = list()))
+
+nutrition_name_brand <- function(x) {
+  if (length(x@AbV)) x@name <- sprintf(fmt = '%s %.3g%%\U0001f943', x@name, 1e2*x@AbV)
+  if (length(x@brand)) {
+    #trimws(sprintf(fmt = '%s \033[31m%s\033[0m', x@name, x@brand)) # red
+    trimws(sprintf(fmt = '%s \033[38;5;166m%s\033[0m', x@name, x@brand))
+    # https://stackoverflow.com/questions/32573654/is-there-a-way-to-create-an-orange-color-from-ansi-escape-characters
+  } else x@name
+}
+
+#' @export
+nutrition.nutrition <- function(x) {
+  
+  if (!length(x@brand)) { # manufacturer
+    x@brand <- if (length(x@baileys)) {
+      styleURL(url_ = sprintf(fmt = 'www.baileys.com/en/products/%s', x@baileys), text_ = 'Baileys\U0001f1ee\U0001f1ea')
+    } else if (length(x@bassetts)) {
+      styleURL(url_ = sprintf(fmt = 'www.bassettsicecream.com/_files/ugd/%s.pdf', x@bassetts), text_ = 'Bassetts\U0001f368\U0001f1fa\U0001f1f8')
+    } else if (length(x@belgioioso)) {
+      styleURL(url_ = sprintf(fmt = 'www.belgioioso.com/products/%s', x@belgioioso), text_ = 'BelGioioso\U0001f1fa\U0001f1f8')
+    } else if (length(x@bobsredmill)) {
+      styleURL(url_ = sprintf(fmt = 'www.bobsredmill.com/%s.html', x@bobsredmill), text_ = 'Bob\'s Red Mill\U0001f1fa\U0001f1f8')
+    } else if (length(x@bouchard)) {
+      styleURL(url_ = sprintf(fmt = 'bouchardchocolate.com/products/%s', x@bouchard), text_ = 'Bouchard\U0001f1e7\U0001f1ea')
+    } else if (length(x@daisybrand)) {
+      styleURL(url_ = sprintf(fmt = 'www.daisybrand.com/%s', x@daisybrand), text_ = 'Daisy\U0001f1fa\U0001f1f8')
+    } else if (length(x@domino)) {
+      styleURL(url_ = sprintf(fmt = 'www.dominosugar.com/products/%s', x@domino), text_ = 'Domino\U0001f1fa\U0001f1f8')
+    } else if (length(x@epicprovisions)) {
+      styleURL(url_ = sprintf(fmt = 'epicprovisions.com/products/%s', x@epicprovisions), text_ = 'Epic\U0001f1fa\U0001f1f8')
+    } else if (length(x@fleischmannsyeast)) {
+      styleURL(url_ = sprintf(fmt = 'www.fleischmannsyeast.com/product-page/#%d', x@fleischmannsyeast), text_ = 'Fleischmann\'s\U0001f1fa\U0001f1f8')
+    } else if (length(x@frontiercoop)) {
+      styleURL(url_ = sprintf(fmt = 'www.frontiercoop.com/products/frontier-co-op-%s', x@frontiercoop), text_ = 'Frontier Co-op\U0001f1fa\U0001f1f8')
+    } else if (length(x@haagendazs)) {
+      styleURL(url_ = sprintf(fmt = 'www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text_ = 'Ha\u0308agen-Dazs\U0001f1fa\U0001f1f8')
+    } else if (length(x@harney)) {
+      styleURL(url_ = sprintf(fmt = 'www.harney.com/products/%s', x@harney), text_ = 'Harney & Sons\U0001f1fa\U0001f1f8')
+    } else if (length(x@ippodoglobal)) {
+      # I will sure have length(x@ippodojpn) & length(x@ippodousa)
+      styleURL(url_ = sprintf(fmt = 'global.ippodo-tea.co.jp/products/%s', x@ippodoglobal), text_ = 'Ippodo\U0001f375\u4e00\u4fdd\u5802\u8336\u8216\U0001f1ef\U0001f1f5')
+    } else if (length(x@itoen)) {
+      styleURL(url_ = sprintf(fmt = 'itoen.com/products/%s', x@itoen), text_ = 'Ito-En\u4f0a\u85e4\u5712\U0001f1ef\U0001f1f5')
+    } else if (length(x@kahlua)) {
+      styleURL(url_ = sprintf(fmt = 'www.kahlua.com/en-us/products/%s', x@kahlua), text_ = 'Kahlu\u0301a\U0001f1f2\U0001f1fd')
+    } else if (length(x@kerrygold)) {
+      styleURL(url_ = sprintf(fmt = 'kerrygold.com/products/%s', x@kerrygold), text_ = 'Kerrygold\U0001f1ee\U0001f1ea') # works again!
+    } else if (length(x@kingarthur)) {
+      styleURL(url_ = sprintf(
+        fmt = 'www.kingarthurbaking.com/search?query=%d', 
+        # fmt = 'shop.kingarthurbaking.com/items/%d', # fails again!
+        x@kingarthur), text_ = 'King Arthur\U0001f1fa\U0001f1f8') # works again!
+    } else if (length(x@kingarthurpro)) {
+      styleURL(url_ = 'www.kingarthurbaking.com/pro/products', text_ = 'King Arthur\U0001f1fa\U0001f1f8')
+    } else if (length(x@koyamaen)) {
+      x@url <- c(x@url, 'www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf')
+      styleURL(url_ = sprintf(fmt = 'www.marukyu-koyamaen.co.jp/english/shop/products/%s', x@koyamaen), text_ = 'Marukyu Koyamaen\U0001f375\u4e38\u4e45\u5c0f\u5c71\u5712\U0001f1ef\U0001f1f5')
+    } else if (length(x@leekumkee)) {
+      styleURL(url_ = sprintf(fmt = 'usa.lkk.com/zh-hk/products/%s', x@leekumkee), text_ = 'LeeKumKee\u674e\u9326\u8a18\U0001f1ed\U0001f1f0')
+    } else if (length(x@mccormickculinary)) {
+      styleURL(url_ = sprintf(fmt = 'www.mccormickforchefs.com/en-us/products/mccormick-culinary/%s', x@mccormickculinary), text_ = 'McCormick Culinary\U0001f1fa\U0001f1f8')
+    } else if (length(x@oldbay)) {
+      styleURL(url_ = sprintf(fmt = 'www.mccormickforchefs.com/en-us/products/old-bay/%s', x@oldbay), text_ = 'McCormick Culinary\U0001f1fa\U0001f1f8')
+    } else if (length(x@grillmates)) {
+      styleURL(url_ = sprintf(fmt = 'www.mccormickforchefs.com/en-us/products/grill-mates/%s', x@grillmates), text_ = 'McCormick Culinary\U0001f1fa\U0001f1f8')
+    } else if (length(x@meyenberg)) {
+      styleURL(url_ = sprintf(fmt = 'www.meyenberg.com/products/%s', x@meyenberg), text_ = 'Meyenberg\U0001f1fa\U0001f1f8')
+    } else if (length(x@mizkanjpn)) {
+      styleURL(url_ = sprintf(fmt = 'www.mizkan.co.jp/product/group/?gid=%s', x@mizkanjpn), text_ = 'mizkan\u30df\u30c4\u30ab\u30f3\U0001f1ef\U0001f1f5')
+    } else if (length(x@nancysyogurt)) {
+      styleURL(url_ = sprintf(fmt = 'nancysyogurt.com/products/%s', x@nancysyogurt), text_ = 'Nancy\'s\U0001f1fa\U0001f1f8')
+    } else if (length(x@navitas)) {
+      styleURL(url_ = sprintf(fmt = 'navitasorganics.com/products/%s', x@navitas), text_ = 'Navitas\U0001f1fa\U0001f1f8')
+    } else if (length(x@nescafe)) {
+      styleURL(url_ = sprintf(fmt = 'www.nescafe.com/our-coffees/%s', x@nescafe), text_ = 'Nescaf\u00e9\U0001f1e8\U0001f1ed')
+    } else if (length(x@nescafeGoldEspressoCA)) {
+      styleURL(url_ = sprintf(fmt = 'www.madewithnestle.ca/nescafe/nescafe-%s', x@nescafeGoldEspressoCA), text_ = 'Nescaf\u00e9 Gold Espresso\U0001f1e8\U0001f1ed')
+    } else if (length(x@nescafeGoldEspressoUS)) {
+      styleURL(url_ = sprintf(fmt = 'www.nescafe.com/us/products/gold-espresso-%s', x@nescafeGoldEspressoUS), text_ = 'Nescaf\u00e9 Gold Espresso\U0001f1e8\U0001f1ed')
+    } else if (length(x@nescafeUS)) {
+      styleURL(url_ = sprintf(fmt = 'www.nescafe.com/us/products/%s', x@nescafeUS), text_ = 'Nescaf\u00e9\U0001f1e8\U0001f1ed')
+    } else if (length(x@nestle)) {
+      styleURL(url_ = sprintf(fmt = 'www.nestleprofessional.us/search?search=%s', x@nestle), text_ = 'Nestl\u00e9\U0001f1e8\U0001f1ed')
+    } else if (length(x@nido)) {
+      styleURL(url_ = sprintf(fmt = 'www.goodnes.com/nido/products/nido-%s', x@nido), text_ = 'Nestl\u00e9 Nido\U0001f1e8\U0001f1ed')
+    } else if (length(x@oreo)) {
+      styleURL(url_ = sprintf(fmt = 'www.oreo.com/products/%s', x@oreo), text_ = 'Nabisco\U0001f1fa\U0001f1f8')
+    } else if (length(x@raos)) {
+      styleURL(url_ = sprintf(fmt = 'www.raos.com/products/%s', x@raos), text_ = 'Rao\'s\U0001f96b\U0001f1fa\U0001f1f8')
+    } else if (length(x@runamok)) {
+      styleURL(url_ = sprintf(fmt = 'runamokmaple.com/shop/product/%s', x@runamok), text_ = 'Runamok\U0001f1fa\U0001f1f8')
+    } else if (length(x@simplyorganic)) {
+      styleURL(url_ = sprintf(fmt = 'www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text_ = 'Simply Organic\U0001f1fa\U0001f1f8')
+    } else if (length(x@starbucks)) {
+      styleURL(url_ = sprintf(fmt = 'athome.starbucks.com/products/%s', x@starbucks), text_ = 'Starbucks\U0001f1fa\U0001f1f8')
+    } else if (length(x@starbucks_hot)) {
+      styleURL(url_ = sprintf(fmt = 'www.starbucks.com/menu/product/%s/hot/nutrition', x@starbucks_hot), text_ = 'Starbucks\U0001f1fa\U0001f1f8')
+    } else if (length(x@starbucks_iced)) {
+      styleURL(url_ = sprintf(fmt = 'www.starbucks.com/menu/product/%s/iced/nutrition', x@starbucks_iced), text_ = 'Starbucks\U0001f1fa\U0001f1f8')
+    } else if (length(x@stonewall)) {
+      styleURL(url_ = sprintf(fmt = 'www.stonewallkitchen.com/%d.html', x@stonewall), text_ = 'Stonewall Kitchen\U0001f1fa\U0001f1f8')
+    } else if (length(x@swiftmeats)) {
+      styleURL(url_ = sprintf(fmt = 'swiftmeats.com/products/%s', x@swiftmeats), text_ = 'Swift\U0001f1fa\U0001f1f8')
+    } else if (length(x@swissmiss)) {
+      styleURL(url_ = sprintf(fmt = 'www.swissmiss.com/%s', x@swissmiss), text_ = 'Swiss Miss\U0001f1fa\U0001f1f8')
+    } else if (length(x@twinings)) {
+      styleURL(url_ = sprintf(fmt = 'twiningsusa.com/products/%s', x@twinings), text_ ='Twinings\U0001f1ec\U0001f1e7')
+    } else character()
+  } # manufacturer
+    
+  if (!length(x@brand)) { # seller
+    if (length(x@acme)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'www.acmemarkets.com/shop/product-details.%s.html', x@acme), text_ = 'Albertsons\U0001f1fa\U0001f1f8')
+      x@acme <- integer()
+    } else if (length(x@costco)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco), text_ = 'Kirkland\U0001f1fa\U0001f1f8')
+      x@costco <- character()
+    } else if (length(x@costcoBiz)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'www.costcobusinessdelivery.com/.product.%s.html', x@costcoBiz), text_ = 'Kirkland\U0001f1fa\U0001f1f8')
+      x@costcoBiz <- character()
+    } else if (length(x@giantfood)) {
+      x@brand <- 'Giant Food\U0001f1fa\U0001f1f8'
+    } else if (length(x@sams)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'www.samsclub.com/p/%s', x@sams), text_ = 'Member\'s Mark\U0001f1fa\U0001f1f8')
+      x@sams <- character()
+    } else if (length(x@traderjoes)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'www.traderjoes.com/home/products/pdp/%s', x@traderjoes), text_ = 'Trader Joe\'s\U0001f1fa\U0001f1f8')
+      x@traderjoes <- character()
+    } else if (length(x@walmart)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'www.walmart.com/ip/%s', x@walmart), text_ = 'Great Value\U0001f1fa\U0001f1f8')
+      x@walmart <- character()
+    } else if (length(x@wawa)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'order.wawa.com/web/product/%s', x@wawa), text_ = 'Wawa\U0001f1fa\U0001f1f8')
+      x@wawa <- character()
+    } else if (length(x@wegmans)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', x@wegmans), text_ = 'Wegmans\U0001f1fa\U0001f1f8')
+      x@wegmans <- integer()
+    } else if (length(x@wegmansorganic)) {
+      x@brand <- styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', x@wegmansorganic), text_ = 'Wegmans Organic\U0001f1fa\U0001f1f8')
+      x@wegmansorganic <- integer()
+    } else if (length(x@wholefoods)) {
+      x@brand <- '365 by Whole Foods\U0001f1fa\U0001f1f8' 
+    } # else do nothing
+  } # seller
+  
+  if (length(x@brand) && !grepl(pattern = '\033]8;;', x = x@brand)) { # link
+    if (length(x@costco)) {
+      add_url <- sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco)
+      x@costco <- character()
+    } else if (length(x@totalwine)) {
+      add_url <- sprintf(fmt = 'www.totalwine.com/p/%s', x@totalwine)
+      x@totalwine <- character()
+    } else if (length(x@webstaurant)) {
+      add_url <- sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', x@webstaurant)
+      x@webstaurant <- character()
+    }
+    if (exists('add_url')) x@brand <- styleURL(url_ = add_url, text_ = x@brand)
+  }
+  
+  
+  vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
+  if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp` and `@servingTsp`')
+  if (vol[1L]) {
+    x@servingTsp <- 48 * x@servingCup
+    x@servingCup <- numeric()
+  } else if (vol[2L]) {
+    x@servingTsp <- 3 * x@servingTbsp
+    x@servingTbsp <- numeric()
+  } else if (vol[4L]) {
+    x@servingTsp <- 6 * x@serving_floz
+    x@serving_floz <- numeric()
+  } else if (vol[5L]) {
+    x@servingTsp <- x@serving_ml / 4.929
+    x@serving_ml <- numeric()
+  }
+  
+  for (i in names(which(getSlots('nutrition') == 'numeric'))) {
+    iv <- slot(x, name = i)
+    if (length(iv) && all(iv == 0)) slot(x, name = i) <- numeric() # else do nothing
+  }
+  
+  if (!length(x@sugar) && length(x@addedSugar)) {
+    x@sugar <- x@addedSugar
+  }
+  
+  if (!length(x@alcohol) && length(x@AbV)) {
+    x@alcohol <- x@servingGram * x@AbV * .78927
+    # google abv to alcohol by weight
+  }
+  
+  cost_ <- c(
+    'US$' = if (length(x@usd)) x@usd else NA_real_,
+    'JP\U0001f4b4' = if (length(x@jpy)) x@jpy / 150.48 else NA_real_ # quantmod::getQuote('USDJPY=X')
+  )
+  cost_ <- cost_[!is.na(cost_)]
+  if (length(cost_) == 1L) {
+    x@cost_ <- if (names(cost_) == 'US$') {
+      sprintf(fmt = 'US\U0001f4b5 %.2f', cost_)
+    } else sprintf(fmt = 'US\U0001f4b5 %.2f(%s)', cost_, names(cost_))
+  } else {
+    cost_source <- sprintf(fmt = '(%s)', names(cost_))
+    cost_source[cost_source == '(US$)'] <- ''
+    cost_min <- which.min(cost_)
+    cost_txt0 <- sprintf(fmt = 'US\U0001f4b5 %.2f%s', cost_, cost_source)
+    cost_txt0[cost_min] <- paste0('\033[0;103m', cost_txt0[cost_min], '\033[0m')
+    x@cost_ <- paste(cost_txt0, collapse = '\n')
+    x@usd <- unname(cost_[cost_min]) # to calculate price in 'recipe'
+    #x@jpy <- numeric() # other currency no use
+  }
+  
+  return(x)
+  
+}
+
+
+
+#' @export
+nutrition.default <- function(x) stop('exception handling')
+
+
+gram_per_tsp <- function(x) {
+  if (!length(x)) return(double())
+  
+  x1 <- if (is.character(x)) {
+    if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
+    names(x) <- x
+    lapply(x, FUN = function(i) nutrition(eval(call(i))))
+  } else x
+  
+  if (!is.recursive(x1) || !all(vapply(x1, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) 
+    stop('input cannot be converted to `nutrition`')
+  
+  vapply(x1, FUN = function(i) {
+    if (!length(i@servingTsp)) return(NA_real_) #stop(ix@name, ' does not have volume info')
+    i@servingGram / i@servingTsp
+  }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+}
+
+
+getPc <- function(object, name) {
+  ret <- slot(object, name = name) / eval(call(name))@servingGram
+  paste0('\033[94m', sprintf(fmt = '%.3gpcs', ret), '\033[0m')
+}
+
+
+
+getGelatinLeaf <- function(x) {
+  paste0('\033[94m', x/2, ' leaves \033[0m')
+}
+
+
+autoVolume <- function(x, nm = names(x)) {
+  if (!length(x)) return(character())
+  
+  y <- x / gram_per_tsp(nm)
+
+  cup <- y %/% 48
+  cup_txt <- ifelse(cup > 0, yes = sprintf(fmt = '%dCup', cup), no = '')
+  
+  y_less_cup <- y %% 48
+  
+  cup2 <- y_less_cup %/% (48/2) # 0 or 1
+  y_less_cup2 <- y_less_cup %% (48/2)
+  cup2_txt <- ifelse(cup2 > 0, yes = '\u00bdCup', no = '')
+  
+  cup3 <- y_less_cup2 %/% (48/3) # 0 or 1
+  y_less_cup3 <- y_less_cup2 %% (48/3)
+  cup3_txt <- ifelse(cup3 > 0, yes = '\u2153Cup', no = '')
+  
+  cup4 <- y_less_cup3 %/% (48/4) # 0 or 1
+  y_less_cup4 <- y_less_cup3 %% (48/4)
+  cup4_txt <- ifelse(cup4 > 0, yes = '\u00bcCup', no = '')
+  
+  Tbsp <- y_less_cup4 %/% 3
+  tsp <- y_less_cup4 %% 3
+  Tbsp_txt <- ifelse(Tbsp > 0, yes = sprintf(fmt = '%dTbsp', Tbsp), no = '')
+  
+  tsp_mat <- NULL
+  while (any(tsp >= 1/8, na.rm = TRUE)) {
+    tsp_mat <- rbind(tsp_mat, ifelse(
+      test = (tsp >= 1.5), 
+      yes = '1\u00bdtsp', 
+      no = ifelse(
+        test = (tsp >= 1),
+        yes = '1tsp',
+        no = ifelse(
+          test = (tsp >= 1/2),
+          yes = '\u00bdtsp',
+          no = ifelse(
+            test = (tsp >= 1/4),
+            yes = '\u00bctsp',
+            no = ifelse(
+              test = (tsp >= 1/8),
+              yes = '\u215btsp',
+              no = ''
+            )
+          )
+        )
+      )
+    ))
+    tsp <- ifelse(
+      test = (tsp >= 1.5), 
+      yes = tsp - 1.5, 
+      no = ifelse(
+        test = (tsp >= 1), 
+        yes = tsp - 1, 
+        no = ifelse(
+          test = (tsp >= 1/2), 
+          yes = tsp - 1/2, 
+          no = ifelse(
+            test = (tsp >= 1/4), 
+            yes = tsp - 1/4, 
+            no = ifelse(
+              test = (tsp >= 1/8), 
+              yes = tsp - 1/8, 
+              no = tsp
+            )
+          )
+        )
+      )
+    )
+  } 
+  
+  vol <- c(list(
+    cup_txt, cup2_txt, cup3_txt, cup4_txt, Tbsp_txt
+  ), if (length(tsp_mat)) apply(tsp_mat, MARGIN = 1L, FUN = identity, simplify = FALSE))
+    
+  .mapply(FUN = function(...) {
+    z0 <- c(...)
+    z1 <- z0[nzchar(z0)]
+    z <- z1[seq_len(min(3L, length(z1)))]
+    if (all(is.na(z1))) return('') # `z1` either all-NA, or none-NA
+    ret <- paste(z, collapse = ' ')
+    paste0('\033[94m', ret, '\033[0m')
+  }, dots = vol, MoreArgs = NULL)
+  
+}
+
+
+
+
+
+#' @title Show \linkS4class{nutrition} Object
+#' 
+#' @description ..
+#' 
+#' @param object \linkS4class{nutrition} object
+#' 
+#' @return nothing is returned
+#' 
+#' @export
+setMethod(f = show, signature = signature(object = 'nutrition'), definition = function(object) {
+  
+  obj <- nutrition.nutrition(object)
+  
+  cat(nutrition_name_brand(obj), '\n\n')
+  
+  #cat('Nutrition Facts\n\n')
+
+  cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, autoVolume(x = obj@servingGram, nm = list(obj))))
+  cat(sprintf(fmt = '%s\n', obj@cost_))
+  cat(sprintf(fmt = 'Calories\U0001f525 %.0f\n', obj@calorie))
+  cat('\n')
+  
+  cat(sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, format_ingredient_perc(obj, 'water')))
+  cat(sprintf(fmt = 'Fat: %.4g grams %s\n', obj@fat, format_ingredient_perc(obj, 'fat')))
+  
+  if (length(obj@cholesterol)) {
+    if (obj@cholesterol > 1) {
+      cat(sprintf(fmt = 'Cholesterol: %.3g grams %s\n', obj@cholesterol, format_ingredient_perc(obj, 'cholesterol')))
+    } else cat(sprintf(fmt = 'Cholesterol: %.3g milligrams %s\n', 1e3 * obj@cholesterol, format_ingredient_perc(obj, 'cholesterol')))
+  }
+  
+  if (length(obj@sodium)) {
+    if (obj@sodium > 1) {
+      cat(sprintf(fmt = 'Sodium: %.3g grams %s\n', obj@sodium, format_ingredient_perc(obj, 'sodium')))
+    } else cat(sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * obj@sodium, format_ingredient_perc(obj, 'sodium')))
+  }
+  cat(sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', obj@carbohydrate, format_ingredient_perc(obj, 'carbohydrate')))
+  cat(sprintf(fmt = 'Sugar: %.4g grams %s\n', obj@sugar, format_ingredient_perc(obj, 'sugar')))
+  cat(sprintf(fmt = 'Added Sugar: %.4g grams %s\n', obj@addedSugar, format_ingredient_perc(obj, 'addedSugar')))
+  cat(sprintf(fmt = 'Alcohol: %.4g grams %s\n', obj@alcohol, format_ingredient_perc(obj, 'alcohol')))
+  cat(sprintf(fmt = 'Protein: %.3g grams %s\n', obj@protein, format_ingredient_perc(obj, 'protein')))
+  
+  # cat(c(rep('\u058e', times = 25), '\n\n'), sep = '')
+  cat('\n')
+  
+  #if (length(obj@machine)) {
+  #  cat('\nMachine:\n')
+  #  cat(sprintf(fmt = '%s: %s\n', names(obj@machine), obj@machine), sep = '')
+  #}
+  
+  if (nrv <- length(obj@review)) {
+    nm_rv <- names(obj@review)
+    if ((nrv == 1L) && !length(nm_rv)) {
+      cat(sprintf(fmt = 'Review: %s\n\n', obj@review))
+    } else {
+      cat('Review:\n')
+      cat(sprintf(fmt = '%s: %s\n', sQuote(nm_rv), obj@review))
+      cat('\n')
+    }
+  }
+  
+  if (nwarn <- length(obj@warning)) {
+      cat('Warning:\n')
+      cat(obj@warning, sep = '\n')
+      cat('\n')
+  }
+  
+  if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))
+
+  if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
+  if (length(obj@fdc)) cat(styleURL(url_ = sprintf(fmt = 'fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc)), sep = '\n')
+  if (length(obj@pubchem)) cat(styleURL(url_ = sprintf(fmt = 'pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem)), sep = '\n')
+  
+  # only for `seller`, not `manufacturer`
+  if (length(obj@acme)) cat(styleURL(url_ = sprintf(fmt = 'www.acmemarkets.com/shop/product-details.%s.html', obj@acme)), sep = '\n')
+  if (length(obj@amazon)) cat(styleURL(url_ = sprintf(fmt = 'www.amazon.com/gp/product/%s', obj@amazon)), sep = '\n')
+  if (length(obj@bjs)) cat(styleURL(url_ = sprintf(fmt = 'www.bjs.com/product/%s', obj@bjs)), sep = '\n')
+  if (length(obj@costco)) cat(styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', obj@costco)), sep = '\n')
+  if (length(obj@costcoBiz)) cat(styleURL(url_ = sprintf(fmt = 'www.costcobusinessdelivery.com/.product.%s.html', obj@costcoBiz)), sep = '\n')
+  if (length(obj@giantfood)) cat(styleURL(url_ = sprintf(fmt = 'giantfood.com/product/%d', obj@giantfood)), sep = '\n')
+  if (length(obj@sams)) cat(styleURL(url_ = sprintf(fmt = 'www.samsclub.com/p/%s', obj@sams)), sep = '\n')
+  if (length(obj@target)) cat(styleURL(url_ = sprintf(fmt = 'www.target.com/p/%s', obj@target)), sep = '\n')
+  if (length(obj@totalwine)) cat(styleURL(url_ = sprintf(fmt = 'www.totalwine.com/p/%s', obj@totalwine)), sep = '\n')
+  if (length(obj@traderjoes)) cat(styleURL(url_ = sprintf(fmt = 'www.traderjoes.com/home/products/pdp/%s', obj@traderjoes)), sep = '\n')
+  if (length(obj@webstaurant)) cat(styleURL(url_ = sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', obj@webstaurant)), sep = '\n')
+  if (length(obj@wholefoods)) cat(styleURL(url_ = sprintf(fmt = 'www.wholefoodsmarket.com/product/%s', obj@wholefoods)), sep = '\n')
+  if (length(obj@wegmans) || length(obj@wegmansorganic)) cat(styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', c(obj@wegmans, obj@wegmansorganic))), sep = '\n')
+  if (length(obj@walmart)) cat(styleURL(url_ = sprintf(fmt = 'www.walmart.com/ip/%s', obj@walmart)), sep = '\n')
+  
+  # alternative sites
+  if (length(obj@ippodousa)) cat(styleURL(url_ = sprintf(fmt = 'ippodotea.com/products/%s', obj@ippodousa)), sep = '\n')
+  if (length(obj@ippodojpn)) cat(styleURL(url_ = sprintf(fmt = 'www.ippodo-tea.co.jp/products/%s', obj@ippodojpn)), sep = '\n')
+  
+})
+
+
+
+format_ingredient_perc <- function(x, name) {
+  # `x` is the return of [nutrition.nutrition]
+  x_ <- slot(x, name = name)
+  if (!length(x_) || (x_ == 0)) return(character())
+  pct <- x_ / x@servingGram
+  paste0('\033[32m', sprintf_bincode(pct)(pct), '\033[0m')
+}
+
+
+
+
+
+
+
+
+#' @title Multiplication and Ratio of \linkS4class{nutrition} Object
+#' 
+#' @description ..
+#' 
+#' @param e1 \linkS4class{nutrition} object
+#' 
+#' @param e2 \link[base]{numeric} scalar
+#' 
+#' @name S4generic_nutrition
+#' @aliases *,nutrition,numeric-method
+#' @export
+setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = function(e1, e2) {
+  if (length(e2) != 1L || anyNA(e2) || (e2 <= 0)) stop('illegal `e2`')
+  for (i in setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))) {
+    slot(e1, name = i) <- slot(e1, name = i) * e2
+  }
+  return(e1)
+})
+
+
+#' @rdname S4generic_nutrition
+#' @aliases /,nutrition,numeric-method
+#' @export
+setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = function(e1, e2) e1 * (1/e2))
+
+
+
+# @title Summation of \linkS4class{nutrition} Objects
+# 
+# @description ..
+# 
+# @param e1,e2 \linkS4class{nutrition} object
+# 
+# @export
+#setMethod(f = '+', signature = signature(e1 = 'nutrition', e2 = 'nutrition'), definition = function(e1, e2) {
+#  .Defunct(msg = 'never used')
+#  numeric_slots <- setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))
+#  ret <- e1
+#  for (i in numeric_slots) {
+#    slot(ret, name = i) <- sum(slot(e1, name = i), slot(e2, name = i))
+#  }
+#  return(ret)
+#})
+
+
+
+
