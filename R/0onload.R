@@ -113,13 +113,13 @@
   addedSugar <- function(x) switch(
     class(x),
     teaLatte = .0035,
-    mocaccinoFrappe = .01,
+    mocaccinoHot =, mocaccinoFrappe = .015,
     cocoaMix = .063,
     NA_real_)
   
   addedSugar2cocoaDutch <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .25,
+    mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .35,
     NULL) 
   
   drymilk <- function(x) switch(

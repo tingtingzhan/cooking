@@ -303,7 +303,8 @@ cocoaBurgundy <- function() new(
 #' @export
 setClass(Class = 'mocaccinoMix', contains = 'drinkMix', prototype = prototype(
   drymilk = c(Carnation_drymilk = 25), 
-  sugar_tsp = 1,
+  #sugar_tsp = 1, # good & old
+  sugar_tsp = 1.5, # not too sweet
   cocoaDutch_tsp = c(KingArthur_Bensdorp = 4)
 ), validity = function(object) {
   if (length(object@cocoa)) stop('Must use @cocoaDutch in mocaccino')
@@ -317,17 +318,11 @@ mocaccino_intense <- function() new(Class = 'mocaccinoMix', coffee_tsp = c(Nesca
 #' @export
 mocaccino <- function() new(Class = 'mocaccinoMix', coffee_tsp = c(NescafeGold_espresso_blonde = 2.5), pros = 'I am addicted!!!')
 
-mocaccino2 <- function() new(
-  Class = 'mocaccinoMix', mocaccino(),
-  milk = c(Wawa_2perc = 235/2),
-  drymilk = c(Carnation_drymilk = 25/2),
-  cons = 'need to add a little more drymilk', pros = character(),
-  date = as.Date('2024-06-15'))
 
 mocaccino_whole <- function() new(
   Class = 'mocaccinoMix', mocaccino(),
   #sugar_tsp = 3, # a little too sweet
-  sugar_tsp = 1.5, # try next time
+  sugar_tsp = 2, # try next time
   drymilk = c(Nido_drymilk = 20), 
   review = 'try')
 
