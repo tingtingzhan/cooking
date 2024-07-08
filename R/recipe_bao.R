@@ -15,8 +15,7 @@ mantou_portion <- function() c(
 )
 
 savoryBao_portion <- function() c(
-  # 'Pastalinda-3, 52g \u751f\u8089\u9985 raw meat\U0001f389' = 50, # too big
-  'Pastalinda-3, 40g \u751f\u8089\u9985 raw meat\U0001f9ea' = 40, # too big
+  'Pastalinda-3, 40g \u751f\u8089\u9985 raw meat\U0001f389' = 40, # big bao, very good!
   'Pastalinda-4, 20g \u719f\u81ca\u5b50\u9985 fried meat chop\U0001f389' = 40 # difficult to wrap, best I can do for now
 )
 

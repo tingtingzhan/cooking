@@ -56,7 +56,7 @@ setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = pro
 
 #' @rdname shrimpfill
 #' @export
-shrimpfillCantonese <- function() new(Class = 'shrimpfillCantonese', review = 'try again')
+shrimpfillCantonese <- function() new(Class = 'shrimpfillCantonese', pros = 'I love!')
   
 #' @rdname shrimpfill
 #' @export

@@ -184,10 +184,10 @@ setMethod(f = show, signature(object = 'drinkMix'), definition = function(object
 #' ..
 #' 
 #' @examples
-#' caffeLatte_blonde()
+#' caffeLatte()
 #' 
 #' nutrition_(
-#'  hotdrink(caffeLatte_blonde),
+#'  hotdrink(caffeLatte),
 #'  Starbucks_caffeLatte
 #' ) # compare hot drink
 #' @name caffeLatte
@@ -195,7 +195,9 @@ setMethod(f = show, signature(object = 'drinkMix'), definition = function(object
 #' @export
 setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
   #alias_flavor = 'Caff\u00e8 Latte',
-  drymilk = c(Carnation_drymilk = 25)
+  drymilk = c(Carnation_drymilk = 25),
+  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5)#,
+  #cocoaDutch_tsp = .5
 ))
 
 #' @rdname caffeLatte
@@ -209,14 +211,14 @@ setClass(Class = 'caffeGoatLatteMix', contains = 'drinkMix', prototype = prototy
 
 #' @rdname caffeLatte
 #' @export
-caffeLatte_blonde <- function() new(Class = 'caffeLatteMix', coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5), pros = 'I love!!')
+caffeLatte <- function() new(Class = 'caffeLatteMix', pros = 'I love!!')
 
 #' @rdname caffeLatte
 #' @export
 caffeGoatLatte_blonde <- function() new(Class = 'caffeGoatLatteMix', coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5), pros = 'I love!!')
 
 
-caffeLatte_intense <- function() new(Class = 'caffeLatteMix', coffee_Tbsp = c(NescafeGold_espresso_intense = 1.5), cons = 'I prefer caffeLatte_blonde()')
+caffeLatte_intense <- function() new(Class = 'caffeLatteMix', coffee_Tbsp = c(NescafeGold_espresso_intense = 1.5), cons = 'I prefer caffeLatte()')
 
 caffeLatte_decaf <- function() new(
   Class = 'caffeLatteMix',

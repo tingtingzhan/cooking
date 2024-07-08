@@ -14,7 +14,7 @@ Libbys_pumpkin <- function() new(
   # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall
   servingGram = 122, servingCup = 1/2,
   calorie = 45,
-  fat = .5, sodium = .005, sugar = 5, protein = 1, 
+  fat = .5, sodium = .005, carbohydrate = 10, sugar = 5, protein = 1, 
   #water = 122 * 225/310) # noodle, experiment, actually a little too wet
   #water = 122 * 225/300) # noodle, theory
   water = 122 * 240/300) # bao, I trust best

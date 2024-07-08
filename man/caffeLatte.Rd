@@ -5,12 +5,11 @@
 \alias{caffeLatte}
 \alias{caffeLatteMix-class}
 \alias{caffeGoatLatteMix-class}
-\alias{caffeLatte_blonde}
 \alias{caffeGoatLatte_blonde}
 \alias{Starbucks_caffeLatte}
 \title{Caffe Latte, Hot or Frappe}
 \usage{
-caffeLatte_blonde()
+caffeLatte()
 
 caffeGoatLatte_blonde()
 
@@ -20,10 +19,10 @@ Starbucks_caffeLatte()
 ..
 }
 \examples{
-caffeLatte_blonde()
+caffeLatte()
 
 nutrition_(
- hotdrink(caffeLatte_blonde),
+ hotdrink(caffeLatte),
  Starbucks_caffeLatte
 ) # compare hot drink
 }

@@ -231,9 +231,9 @@
     #tortillaOlive =, tortillaLard = .001,
     thinCrust = .0015, 
     matchaGoatLatteMix = .0017,
-    shrimpfillCantonese = .002,
     shrimpfill_garlicHerb = .002,
     meatmash =, meatball = .0025, # some salt cooks into soup
+    shrimpfillCantonese = .003,
     cocoaMix = .002,
     drinkMix = if (length(x@coffee) && length(x@syrup)) {
       .0028
@@ -366,7 +366,7 @@
   ginger <- function(x) switch(
     class(x), 
     meatmash =, meatball = .0004, 
-    shrimpfillCantonese = .0004,
+    shrimpfillCantonese = .0007,
     snowSkin = .001, # to try
     beeffillLeeKumKee = .0015, # tested!
     porkfill = .002,
@@ -382,7 +382,7 @@
     class(x),
     shrimpfill_garlicHerb = .00055,
     beeffillLeeKumKee = .0009, # tested!
-    meatmash =, meatball =, shrimpfillCantonese = .0011,
+    meatmash =, meatball =, shrimpfillCantonese = .0016,
     porkfill = .002,
     NULL)
   
@@ -685,7 +685,7 @@
   
   sesameOil <- function(x) switch(
     class(x), 
-    meatmash =, shrimpfillCantonese =, beeffillLeeKumKee =, porkfill =, meatball = .01,
+    meatmash =, shrimpfillCantonese =, beeffillLeeKumKee =, porkfill =, meatball = .013,
     NULL)
   
   greenPeppercornOil <- function(x) switch(
