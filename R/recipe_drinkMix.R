@@ -222,14 +222,8 @@ caffeLatte_intense <- function() new(Class = 'caffeLatteMix', coffee_Tbsp = c(Ne
 
 caffeLatte_decaf <- function() new(
   Class = 'caffeLatteMix',
-  # jar recommends 1-2tsp for a cup
-  coffee_Tbsp = c(NescafeGold_espresso_decaf = 1), 
-  cons = 'I prefer mocaccino()')
-caffeLatte_decaf1 <- function() new(
-  Class = 'caffeLatteMix',
   coffee_Tbsp = c(NescafeGold_espresso_decaf = 2),
-  sugar_tsp = 2,
-  cons = 'not that great either')
+  cons = 'has an undesirable flavor, not sure how to describe')
 
 
 
