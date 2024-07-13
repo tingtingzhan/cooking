@@ -40,11 +40,11 @@
     stickyRice =, riceCake =, riceMousse = .05, 
     cornbread = .05, # well tested!
     #tortillaLard = .06,
-    caffeLatteHot =, caffeLatteFrappe = .05,
     cocoaHot = .055,
     hotdrink =, frappe = if (length(x@coffee) && length(x@liqueur)) {
       .055
     }, 
+    caffeLatteHot =, caffeLatteFrappe = .06,
     mocaccinoHot =, mocaccinoFrappe = .06,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # perfect!! whole goat milk 
     matchaLatteHot =, matchaLatteFrappe = .07, #.06 too bitter
@@ -102,7 +102,7 @@
     tomyumStew = .18,
     cocoaMix = .35,
     mocaccinoMix = .37,
-    caffeLatteMix = .44,
+    caffeLatteMix = .45,
     matchaGoatLatteMix = .515,
     matchaLatteMix = .49,
     drinkMix = if (length(x@syrup)) {
@@ -154,7 +154,7 @@
     mocaccinoMix = .58,
     matchaLatteMix = .63,
     #tiramisuMix = .7,
-    caffeLatteMix = .83, 
+    caffeLatteMix = .7, 
     NULL)
   
   drymilk2cocoaDutch <- function(x) switch(
@@ -325,6 +325,7 @@
     class(x), 
     hotdrink =, frappe = if (length(x@liqueur)) .004,
     snowSkin = .009, 
+    caffeLatteHot =, caffeLatteFrappe = .011,
     mocaccinoHot =, mocaccinoFrappe = .043, 
     goatKefir = if (length(x@coffee)) .043, 
     cheesecake = if (length(x@cocoaDutch)) .043,
@@ -335,6 +336,7 @@
     whippedCream =, frosting =, ganache = .05,
     gateau = .05, # I think this is not enough..
     cocoaHot = .063,
+    caffeLatteMix = .085,
     mocaccinoMix = .28,
     cocoaMix = .39,
     NULL)
@@ -354,7 +356,7 @@
     gateau = if (length(x@cocoa)) .002,
     hotdrink =, frappe = if (length(x@liqueur)) .009,
     mocaccinoMix = .06,
-    caffeLatteMix = .17,
+    caffeLatteMix = .13,
     NULL)
   
   coffee2cocoaDutch <- function(x) switch(

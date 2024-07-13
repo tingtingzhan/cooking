@@ -201,7 +201,8 @@ setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
   drymilk = c(Carnation_drymilk = 25),
   coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), # perfect
   #coffee_tsp = c(NescafeGold_espresso_blonde = 5), # slightly too strong
-  cocoaDutch_tsp = 1 # try next time!!
+  cocoaDutch_tsp = 1,
+  sugar_tsp = 1
 ))
 
 
@@ -209,6 +210,7 @@ setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
 #' @export
 caffeLatte <- function() new(
   Class = 'caffeLatteMix', 
+  date = as.Date('2024-07-13'),
   review = 'still experimenting!')
 
 
