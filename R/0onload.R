@@ -154,7 +154,7 @@
     mocaccinoMix = .58,
     matchaLatteMix = .63,
     #tiramisuMix = .7,
-    caffeLatteMix = .85, 
+    caffeLatteMix = .83, 
     NULL)
   
   drymilk2cocoaDutch <- function(x) switch(
@@ -354,7 +354,7 @@
     gateau = if (length(x@cocoa)) .002,
     hotdrink =, frappe = if (length(x@liqueur)) .009,
     mocaccinoMix = .06,
-    caffeLatteMix = .15,
+    caffeLatteMix = .17,
     NULL)
   
   coffee2cocoaDutch <- function(x) switch(

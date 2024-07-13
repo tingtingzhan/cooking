@@ -123,8 +123,20 @@ bao_butter <- function() new(
 #' @export
 pumpkin_bao <- function() new(
   Class = 'bao', 
+  breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(),
+  # pumpkin = 300, # really wet, almost like \linkS4class{bread}
+  pumpkin = 275, # try
+  sugar_Tbsp = 2,
+  review = c(
+    'retry'
+  ))
+
+
+pumpkin_bao_OLD <- function() new(
+  Class = 'bao', 
   pumpkin = 300, sugar_Tbsp = 2,
-  pros = 'Perfect wetness', 
+  pros = 'Perfect wetness',
+  cons = 'not enough support',
   date = as.Date('2024-06-15'))
 
 

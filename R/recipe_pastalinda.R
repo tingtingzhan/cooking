@@ -157,9 +157,8 @@ noodlelinda_KingArthur <- function() new(
 #' @export
 pumpkin_noodlelinda_KingArthur <- function() new(
   Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500),
-  #pumpkin = 300, # I thought too dry, but probably not
-  #pumpkin = 310, # a little too wet
-  pumpkin = 280, # according to pumpkin_bao() experiment
+  #pumpkin = 300, # very wet according to pumpkin_bao()!!
+  pumpkin = 280, # try
   review = 'retry'#,
   #date = as.Date('2024-06-09'), pros = 'perfect wetness'
   )

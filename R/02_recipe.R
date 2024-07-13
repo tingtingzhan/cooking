@@ -753,19 +753,16 @@ recipe <- function(x) {
   
   if (!length(x@alias_flavor)) {
     x@alias_flavor <- if (length(x@coffee)) {
-      
-      if (length(x@cocoaDutch)) {
-        if (grepl('blackcocoa', x = tolower(names(x@cocoaDutch)))) {
-          stop('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
-        }
-        if (length(x@liqueur)) 'Tiramisu\u0300' else 'Caff\u00e8 Mocha'
-      } else if (length(x@liqueur)) {
+      if (length(x@liqueur)) {
         'Tiramisu\u0300'
-      } else if (length(x@syrup) && any(grepl('ryeWhisky', x = names(x@syrup)))) {
-        'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
-      } else if (length(x@drymilk)) {
-        'Caff\u00e8 Latte'
-      } else '\u5496\u5561' # \u2615
+      } else if (length(x@cocoaDutch)) {
+        if (grepl('blackcocoa', x = tolower(names(x@cocoaDutch)))) stop('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
+        if (x@cocoaDutch / x@coffee < 1) 'Caff\u00e8' else 'Caff\u00e8 Mocha'
+      } else if (length(x@syrup)) {
+        if (any(grepl('ryeWhisky', x = names(x@syrup)))){
+          'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
+        } else stop('more syrup?')
+      } else 'Caff\u00e8' # \u2615
       
     } else switch(
       class(x), 

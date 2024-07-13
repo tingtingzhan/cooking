@@ -100,7 +100,9 @@ hotdrink.function <- function(x, water80 = new(Class = 'hotdrink')@water80) hotd
 #' @export
 hotdrink.recipe <- function(x, water80 = new(Class = 'hotdrink')@water80) {
   x@water80 <- water80
-  new_(Class = if (inherits(x, what = 'drinkMix')) {
+  new_(Class = if (identical(class(x), structure('drinkMix', package = 'cooking'))) {
+    'hotdrink'
+  } else if (inherits(x, what = 'drinkMix')) {
     gsub('Mix$', replacement = 'Hot', x = class(x))
   } else 'hotdrink', x)
 }
@@ -137,7 +139,9 @@ frappe.function <- function(x) frappe(x = x())
 #' @export
 frappe.recipe <- function(x) {
   x1 <- x*2
-  ret <- new_(Class = if (inherits(x, what = 'drinkMix')) {
+  ret <- new_(Class = if (identical(class(x), structure('drinkMix', package = 'cooking'))) {
+    'frappe'
+  } else if (inherits(x, what = 'drinkMix')) {
     gsub('Mix$', replacement = 'Frappe', x = class(x))
   } else 'frappe', x1)
   if (length(x1@milk)) ret@iceWater <- numeric()
@@ -194,35 +198,37 @@ setMethod(f = show, signature(object = 'drinkMix'), definition = function(object
 #' @aliases caffeLatteMix-class
 #' @export
 setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
-  #alias_flavor = 'Caff\u00e8 Latte',
   drymilk = c(Carnation_drymilk = 25),
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5)#,
-  #cocoaDutch_tsp = .5
+  coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), # perfect
+  #coffee_tsp = c(NescafeGold_espresso_blonde = 5), # slightly too strong
+  cocoaDutch_tsp = 1 # try next time!!
 ))
 
+
 #' @rdname caffeLatte
-#' @aliases caffeGoatLatteMix-class
 #' @export
-setClass(Class = 'caffeGoatLatteMix', contains = 'drinkMix', prototype = prototype(
+caffeLatte <- function() new(
+  Class = 'caffeLatteMix', 
+  review = 'still experimenting!')
+
+
+caffeGoatLatte_blonde <- function() new(
+  Class = 'drinkMix', 
   alias_flavor = 'Caff\u00e8 Goat Latte',
-  drymilk = c(Meyenberg_goatWhole_drymilk = 25)
-))
+  drymilk = c(Meyenberg_goatWhole_drymilk = 25),
+  coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), 
+  pros = 'I love')
 
-
-#' @rdname caffeLatte
-#' @export
-caffeLatte <- function() new(Class = 'caffeLatteMix', pros = 'I love!!')
-
-#' @rdname caffeLatte
-#' @export
-caffeGoatLatte_blonde <- function() new(Class = 'caffeGoatLatteMix', coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5), pros = 'I love!!')
-
-
-caffeLatte_intense <- function() new(Class = 'caffeLatteMix', coffee_Tbsp = c(NescafeGold_espresso_intense = 1.5), cons = 'I prefer caffeLatte()')
+caffeLatte_intense <- function() new(
+  Class = 'drinkMix', 
+  drymilk = c(Carnation_drymilk = 25),
+  coffee_tsp = c(NescafeGold_espresso_intense = 4.5),
+  cons = 'I prefer caffeLatte()')
 
 caffeLatte_decaf <- function() new(
-  Class = 'caffeLatteMix',
-  coffee_Tbsp = c(NescafeGold_espresso_decaf = 2),
+  Class = 'drinkMix',
+  drymilk = c(Carnation_drymilk = 25),
+  coffee_tsp = c(NescafeGold_espresso_decaf = 6),
   cons = 'has an undesirable flavor, not sure how to describe')
 
 
