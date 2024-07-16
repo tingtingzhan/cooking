@@ -44,7 +44,7 @@
     hotdrink =, frappe = if (length(x@coffee) && length(x@liqueur)) {
       .055
     }, 
-    caffeLatteHot =, caffeLatteFrappe = .06,
+    caffeLatteHot =, caffeLatteFrappe = .055,
     mocaccinoHot =, mocaccinoFrappe = .06,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # perfect!! whole goat milk 
     matchaLatteHot =, matchaLatteFrappe = .07, #.06 too bitter
@@ -102,12 +102,12 @@
     tomyumStew = .18,
     cocoaMix = .35,
     mocaccinoMix = .37,
-    caffeLatteMix = .45,
     matchaGoatLatteMix = .515,
     matchaLatteMix = .49,
     drinkMix = if (length(x@syrup)) {
       .515
     } else NA_real_,
+    caffeLatteMix = NA_real_,
     NULL)
   
   addedSugar <- function(x) switch(
@@ -120,6 +120,7 @@
   addedSugar2cocoaDutch <- function(x) switch(
     class(x),
     mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .35,
+    caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = NA_real_,
     NULL) 
   
   drymilk <- function(x) switch(
@@ -143,8 +144,8 @@
     cocoaHot =, 
     matchaLatteHot =, matchaLatteFrappe =, 
     mocaccinoHot =, mocaccinoFrappe =, 
+    caffeLatteHot =, caffeLatteFrappe =,
     hotdrink =, frappe = .09, # match Carnation_drymilk() can label
-    caffeLatteHot =, caffeLatteFrappe = .094,
     teaLatte = .122, # tested on Earl Grey, Ceylon
     cookie = if (length(x@blackSesame)) {
       .08
@@ -154,12 +155,13 @@
     mocaccinoMix = .58,
     matchaLatteMix = .63,
     #tiramisuMix = .7,
-    caffeLatteMix = .7, 
+    caffeLatteMix = NA_real_, 
     NULL)
   
   drymilk2cocoaDutch <- function(x) switch(
     class(x),
     mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = 2,
+    caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = NA_real_,
     NULL)
   
   creamcheese <- function(x) switch(
@@ -336,7 +338,7 @@
     whippedCream =, frosting =, ganache = .05,
     gateau = .05, # I think this is not enough..
     cocoaHot = .063,
-    caffeLatteMix = .085,
+    caffeLatteMix = .09,
     mocaccinoMix = .28,
     cocoaMix = .39,
     NULL)
@@ -362,6 +364,7 @@
   coffee2cocoaDutch <- function(x) switch(
     class(x),
     cheesecake =, mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .20,
+    caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = 1.5,
     tiramisuMix = 2.2,
     NULL)
   

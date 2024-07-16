@@ -202,7 +202,7 @@ setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
   coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), # perfect
   #coffee_tsp = c(NescafeGold_espresso_blonde = 5), # slightly too strong
   cocoaDutch_tsp = 1,
-  sugar_tsp = 1
+  sugar_tsp = 1/2
 ))
 
 
@@ -210,8 +210,8 @@ setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
 #' @export
 caffeLatte <- function() new(
   Class = 'caffeLatteMix', 
-  date = as.Date('2024-07-13'),
-  review = 'still experimenting!')
+  date = as.Date('2024-07-16'),
+  pros = 'so far so good; I may improve it in future')
 
 
 caffeGoatLatte_blonde <- function() new(
