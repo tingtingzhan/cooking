@@ -352,19 +352,19 @@
     } else if (length(x@cocoaDutch)) .009,
     sundae = .015, # love!
     bao =, bread = .015, # tested on bread() and love!
+    caffeLatteHot =, caffeLatteFrappe = .015, # tested and love!!
     cheesecake = .016, # to try
     snowSkin = .016, # try
-    caffeLatteHot =, caffeLatteFrappe = .017,
     gateau = if (length(x@cocoa)) .002,
     hotdrink =, frappe = if (length(x@liqueur)) .009,
     mocaccinoMix = .06,
-    caffeLatteMix = .13,
+    caffeLatteMix = .12,
     NULL)
   
   coffee2cocoaDutch <- function(x) switch(
     class(x),
     cheesecake =, mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .20,
-    caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = 1.5,
+    caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = 1.3,
     tiramisuMix = 2.2,
     NULL)
   

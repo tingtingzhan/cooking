@@ -444,9 +444,12 @@ nutrition.nutrition <- function(x) {
   )
   cost_ <- cost_[!is.na(cost_)]
   if (length(cost_) == 1L) {
-    x@cost_ <- if (names(cost_) == 'US$') {
-      sprintf(fmt = 'US\U0001f4b5 %.2f', cost_)
-    } else sprintf(fmt = 'US\U0001f4b5 %.2f(%s)', cost_, names(cost_))
+    if (names(cost_) == 'US$') {
+      x@cost_ <- sprintf(fmt = 'US\U0001f4b5 %.2f', cost_)
+    } else {
+      x@cost_ <- sprintf(fmt = 'US\U0001f4b5 %.2f(%s)', cost_, names(cost_))
+      x@usd <- unname(cost_)
+    }
   } else {
     cost_source <- sprintf(fmt = '(%s)', names(cost_))
     cost_source[cost_source == '(US$)'] <- ''

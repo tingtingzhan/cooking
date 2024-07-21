@@ -483,7 +483,8 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
     add_suffix <- function(x0, which) {
       if (!length(names(x0))) return(x0)
       idx <- if (which == 'matchaSado') {
-        !startsWith(names(x0), prefix = 'Ippodo') & !endsWith(names(x0), suffix = '_matchaSado')
+        # !startsWith(names(x0), prefix = 'Ippodo') & !endsWith(names(x0), suffix = '_matchaSado')
+        !grepl(pattern = '^Ippodo|^Koyama', x = names(x0)) & !endsWith(names(x0), suffix = '_matchaSado')
       } else !endsWith(names(x0), suffix = paste0('_', which))
       names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
       return(x0)
@@ -869,9 +870,7 @@ recipe <- function(x) {
     x@key <- character()
   }
   
-  #ret@class_ <- class(x)
   return(x)
-  #return(new(Class = gsub('_user$', replacement = '', class(x)), ret))
 }
 
 

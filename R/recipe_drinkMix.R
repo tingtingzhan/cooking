@@ -199,8 +199,8 @@ setMethod(f = show, signature(object = 'drinkMix'), definition = function(object
 #' @export
 setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
   drymilk = c(Carnation_drymilk = 25),
-  coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), # perfect
-  #coffee_tsp = c(NescafeGold_espresso_blonde = 5), # slightly too strong
+  coffee_tsp = c(NescafeGold_espresso_blonde = 4), # perfect
+  #coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), # slightly too strong
   cocoaDutch_tsp = 1,
   sugar_tsp = 1/2
 ))
@@ -210,7 +210,7 @@ setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
 #' @export
 caffeLatte <- function() new(
   Class = 'caffeLatteMix', 
-  date = as.Date('2024-07-16'),
+  date = as.Date('2024-07-20'),
   pros = 'so far so good; I may improve it in future')
 
 
@@ -402,6 +402,16 @@ ikuyoLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo
 #' @rdname matchaLatte
 #' @export
 seiunLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_seiun = 2.25), pros = 'very nice!')
+
+#' @rdname matchaLatte
+#' @export
+kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Koyama_kiwamiChoan = 2.25), pros = 'Great, but not sure if I can appreciate the price..', date = as.Date('2024-07-21'))
+
+
+
+
+
+
 
 
 #' @title Matcha Latte with Goat Milk, Hot and Frappe

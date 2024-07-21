@@ -7,6 +7,7 @@
 \alias{sayakaLatte}
 \alias{ikuyoLatte}
 \alias{seiunLatte}
+\alias{kiwamiChoanLatte}
 \alias{Ippodo_sayakaLatte}
 \alias{Ippodo_uji_shimizu}
 \alias{ItoEn_sweet_matcha}
@@ -23,6 +24,8 @@ sayakaLatte()
 ikuyoLatte()
 
 seiunLatte()
+
+kiwamiChoanLatte()
 
 Ippodo_sayakaLatte()
 
