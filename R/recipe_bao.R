@@ -274,8 +274,6 @@ tomato_bao <- function() new(
 #' 
 #' @examples 
 #' wheatBao()
-#' 
-#' 
 #' @name wheatBao
 #' @aliases wheatBao-class
 #' @export

@@ -12,7 +12,7 @@ setClass(Class = 'tomyumStew', contains = 'recipe', prototype = prototype(
   sauce = c(
     Siam_tomyum = 16,
     LeeKumKee_coconutCurry = 4,
-    LeeKumKee_5spiceMarinade = 20
+    LeeKumKee_5spiceMarinade = 15
   )
 ))
 
@@ -22,25 +22,18 @@ setClass(Class = 'tomyumStew', contains = 'recipe', prototype = prototype(
 tomyumStew <- function() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_Marsala = 25),
-  water = 15,
-  date = as.Date('2024-05-25'),
+  water = 20,
+  date = as.Date('2024-08-13'),
   pros = 'I love!!')
+
+
+
 
 
 tomyumStew_Sherry <- function() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_Sherry = 20),
-  sugar_tsp = 1/2+1/4,
-  water = 20,
-  review = 'try again')
-  #date = as.Date('2024-05-26'),
-  #pros = 'also nice')
-
-
-tomyumStew_Sherry_try1 <- function() new(
-  Class = 'tomyumStew',
-  liqueur = c(Wegmans_Sherry = 25),
-  water = 15,
+  water = 25,
   date = as.Date('2024-05-26'),
   pros = 'also nice')
 
@@ -52,14 +45,15 @@ tomyumStew_Sherry_try1 <- function() new(
 tomyumStew_redWegmans <- function() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_redCookingWine = 30),
-  sugar_tsp = 1,
-  water = 10,
+  sugar_tsp = 1.5,
+  water = 20,
   review = 'try')
   #date = as.Date('2024-05-26'),
   #pros = 'also nice')
 
 tomyumStew_whiteWegmans <- function() new(
   Class = 'tomyumStew',
-  liqueur = c(Wegmans_whiteCookingWine = 40),
+  liqueur = c(Wegmans_whiteCookingWine = 25),
+  water = 20,
   sugar_tsp = 1,
   review = 'try')

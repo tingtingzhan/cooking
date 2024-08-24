@@ -46,8 +46,8 @@
     }, 
     caffeLatteHot =, caffeLatteFrappe = .055,
     mocaccinoHot =, mocaccinoFrappe = .06,
+    matchaLatteHot =, matchaLatteFrappe = .06, # perfect! 2024 late summer
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # perfect!! whole goat milk 
-    matchaLatteHot =, matchaLatteFrappe = .07, #.06 too bitter
     teaLatte = .067,
     sundae = if (length(x@matcha)) {
       .095
@@ -99,7 +99,7 @@
     } else if (length(x@matcha) || length(x@ginger)) {
       .22 
     } else .2,
-    tomyumStew = .18,
+    tomyumStew = .16,
     cocoaMix = .35,
     mocaccinoMix = .37,
     matchaGoatLatteMix = .515,
@@ -178,11 +178,11 @@
     class(x), 
     noodlelinda =, wrapperlinda =, flavoredButter =, cocoaMix =, soymilk = NA_real_,
     hotdrink = NA_real_,
+    matchaLatteHot =, matchaLatteFrappe = .005, 
     chickpeaTea = .008,
     stickyTortilla =, TangYuan = .01, 
     mocaccinoHot =, mocaccinoFrappe = .01,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .01,
-    matchaLatteHot =, matchaLatteFrappe = .0125, 
     snowSkin = .015, 
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
@@ -191,12 +191,12 @@
     #tortilla = .04,
     riceMousse = .05, 
     beanPaste = .05,
+    matchaLatteMix = .05, 
     crepeCake = .07,
     mocaccinoMix = .07,
     matchaGoatLatteMix = .075,
     millecrepe = if (length(x@liqueur)) .075 else .1, 
     custardFilling = .09,
-    matchaLatteMix = .09, 
     cornbread = .11, 
     sundae = .11,
     beeffillLeeKumKee = .11,
@@ -250,6 +250,7 @@
     beefchop = .0035,
     #caffeLatteMix = .0033,
     marinade = .011,
+    tomyumStew = .02,
     rub =, chiliRub = .1,
     flavoredButter = .015,
     NA_real_)

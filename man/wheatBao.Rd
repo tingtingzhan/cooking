@@ -26,8 +26,6 @@ For better coloring, prefer white wheat flour over wheat flour.
 }
 \examples{
 wheatBao()
-
-
 }
 \references{
 \url{https://www.thekitchn.com/whats-the-difference-between-whole-wheat-and-white-whole-wheat-flour-236647}

@@ -15,7 +15,7 @@
 #' 
 #' @name subtract
 #' @export
-subtract <- function(object, ...) UseMethod('subtract')
+subtract <- function(object, ...) UseMethod(generic = 'subtract')
 
 #' @rdname subtract
 #' @export

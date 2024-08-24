@@ -157,10 +157,8 @@ noodlelinda_KingArthur <- function() new(
 #' @export
 pumpkin_noodlelinda_KingArthur <- function() new(
   Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500),
-  #pumpkin = 300, # very wet according to pumpkin_bao()!!
-  pumpkin = 280, # try
-  review = 'retry'#,
-  #date = as.Date('2024-06-09'), pros = 'perfect wetness'
+  pumpkin = 270, # try with fresh can
+  date = as.Date('2024-06-25'), pros = '280g for opened can'
   )
 
 

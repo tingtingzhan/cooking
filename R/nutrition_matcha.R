@@ -68,7 +68,7 @@ Ippodo_seiun <- function() new(
   servingTbsp = 2/7, # using ikuyo/sayaka data
   usd = 45/40*2,
   jpy = 3000/40*2, # global site, shipping excluded
-  review = 'great, but expensive')
+  review = 'not bad')
 
 
 
@@ -89,7 +89,8 @@ Koyama_kiwamiChoan <- function() new(
   name = '\u6975\u9577\u5b89 Kiwami Choan',
   servingGram = 2, 
   servingTbsp = 2/7, # using ikuyo/sayaka data
-  jpy = 4680/20*2
+  jpy = 4680/20*2,
+  review = 'very very nice!'
 )
 
 Koyama_choan <- function() new(

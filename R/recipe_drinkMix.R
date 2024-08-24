@@ -43,6 +43,7 @@ setClass(Class = 'hotdrink', contains = 'recipe', prototype = prototype(
   instruction = c(
     'Whisk together all powders (syrup also okay)', 
     'Add half of water, whisk until smooth',
+    'Sweep cup bottom with a square spatula',
     'Add rest of water, whisk until froth',
     'Add liqueur last, which curdles dry milk'
   )
@@ -92,7 +93,7 @@ setClass(Class = 'matchaGoatLatteFrappe', contains = 'frappe', prototype = proto
 #' Function [frappe] returns a \linkS4class{frappe} object.
 #' 
 #' @export
-hotdrink <- function(x, water80) UseMethod('hotdrink') 
+hotdrink <- function(x, water80) UseMethod(generic = 'hotdrink') 
 
 #' @export
 hotdrink.function <- function(x, water80 = new(Class = 'hotdrink')@water80) hotdrink(x = x(), water80 = water80)
@@ -131,7 +132,7 @@ hotdrink.nutrition <- function(x, water80 = new(Class = 'hotdrink')@water80) {
 #' also too dry for drinking.
 #' 
 #' @export
-frappe <- function(x) UseMethod('frappe')
+frappe <- function(x) UseMethod(generic = 'frappe')
 
 #' @export
 frappe.function <- function(x) frappe(x = x())
@@ -387,8 +388,8 @@ mocaccinoBurgundy <- function() new(
 #' @export
 setClass(Class = 'matchaLatteMix', contains = 'drinkMix', prototype = prototype(
   alias_class = 'Latte\u901f\u6eb6\u7c89',
-  drymilk = c(Carnation_drymilk = 12.5, Horizon_whole_drymilk = 12.5),
-  sugar_tsp = 3
+  drymilk = c(Carnation_drymilk = 20, Horizon_whole_drymilk = 5),
+  sugar_tsp = 1.5
 ))
 
 #' @rdname matchaLatte
@@ -405,7 +406,7 @@ seiunLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo
 
 #' @rdname matchaLatte
 #' @export
-kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Koyama_kiwamiChoan = 2.25), pros = 'Great, but not sure if I can appreciate the price..', date = as.Date('2024-07-21'))
+kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Koyama_kiwamiChoan = 3), pros = 'Great, but not sure if I can appreciate the price..', date = as.Date('2024-08-24'))
 
 
 
@@ -747,7 +748,7 @@ Starbucks_matchaLatteMix <- function() new(
   usd = 10.99/4,
   servingGram = 24, 
   calorie = 103,
-  protein = 3.4, fat = 2.8, sugar = 16, sodium = .13)
+  protein = 3.4, fat = 2.8, carbohydrate = 16, sugar = 16, sodium = .13)
 
 
 #' @rdname mocaccino

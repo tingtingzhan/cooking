@@ -224,7 +224,7 @@ setClass(Class = 'nutrition', slots = c(
 #' @param x ..
 #' 
 #' @export
-nutrition <- function(x) UseMethod('nutrition')
+nutrition <- function(x) UseMethod(generic = 'nutrition')
 
 
 #' @export

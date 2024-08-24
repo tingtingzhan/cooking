@@ -79,13 +79,14 @@ sprintf_bincode <- function(x) {
   if ((length(x) != 1L) || !is.numeric(x) || is.na(x)) stop('illegal input')
   switch(.bincode(
     x, 
-    breaks = c(0, .002, .02, 1, Inf),
+    #breaks = c(0, .002, .02, 1, Inf),
+    breaks = c(0, .001, .01, 1, Inf),
     right = FALSE # important!!
   ), '1' = { # (0, .001)
-    fmt <- '%.1f\u2031' # nchar('\u2031') is 1
+    fmt <- '%.1f\u2031' # nchar('\u2031') == 1L # Per Ten Thousand
     m <- 1e4
   }, '2' = { # [.001, .01)
-    fmt <- '%.1f\u2030' # nchar('\u2030') is 1
+    fmt <- '%.1f\u2030' # nchar('\u2030') == 1L # Per Mille
     m <- 1e3
   }, '3' = { # [.01, 1)
     fmt <- '%.1f%%'
