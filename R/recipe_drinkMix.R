@@ -353,8 +353,7 @@ mocaccinoBurgundy <- function() new(
 
 #' @title Matcha Latte, Hot and Frappe
 #' 
-#' @description
-#' 6g of matchaSado
+#' @description ..
 #' 
 #' @examples
 #' matchaLatte()

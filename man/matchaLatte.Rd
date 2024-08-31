@@ -30,7 +30,7 @@ Starbucks_matchaFrappuccino()
 Starbucks_matchaLatteMix()
 }
 \description{
-6g of matchaSado
+..
 }
 \examples{
 matchaLatte()
