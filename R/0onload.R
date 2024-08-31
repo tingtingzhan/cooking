@@ -103,7 +103,7 @@
     cocoaMix = .35,
     mocaccinoMix = .37,
     matchaGoatLatteMix = .515,
-    matchaLatteMix = .49,
+    matchaLatteMix = .45,
     drinkMix = if (length(x@syrup)) {
       .515
     } else NA_real_,
@@ -153,7 +153,7 @@
     matchaGoatLatteMix = .53,
     cocoaMix = .54,
     mocaccinoMix = .58,
-    matchaLatteMix = .63,
+    matchaLatteMix = .68,
     #tiramisuMix = .7,
     caffeLatteMix = NA_real_, 
     NULL)
@@ -189,9 +189,9 @@
     wheatBao = .028,
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
+    matchaLatteMix = .04, 
     riceMousse = .05, 
     beanPaste = .05,
-    matchaLatteMix = .05, 
     crepeCake = .07,
     mocaccinoMix = .07,
     matchaGoatLatteMix = .075,
@@ -242,10 +242,10 @@
     } else NA_real_,
     cheesecake = .0025, # 3:1 mixed cheese
     mocaccinoMix = .0025,
-    matchaLatteMix = .0025,
     # fishBall = .003, # obviously too salt
     beeffillLeeKumKee = .0025, # confirmed!
     geng = .0025, # .003 too salty
+    matchaLatteMix = .0028,
     porkfill = .003, # yes!
     beefchop = .0035,
     #caffeLatteMix = .0033,
@@ -258,9 +258,9 @@
   matcha <- function(x) switch(
     class(x),
     snowSkin =, stickyTortilla =, wrapperlinda =, noodlelinda = .022, 
-    matchaLatteHot =, matchaLatteFrappe =, 
-    matchaGoatLatteHot =, matchaGoatLatteFrappe =, # .025 too bitter, both hot and cold
     chickpeaTea = .02,
+    matchaLatteHot =, matchaLatteFrappe = .025, 
+    matchaGoatLatteHot =, matchaGoatLatteFrappe = .025, # retry with tenju
     millecrepe = .025, 
     cheesecake = .025,
     bao = .025, # .027 a little too bitter
@@ -268,8 +268,8 @@
     bread = .035, # tested!
     cookie = .037,
     sundae = .04, # cold temperature needs stronger flavor
-    matchaLatteMix = .145, 
     matchaGoatLatteMix = .155,
+    matchaLatteMix = .19, 
     NULL)
   
   matcha2flour <- tmpfun

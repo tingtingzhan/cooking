@@ -4,16 +4,12 @@
 \name{chickpeaTea}
 \alias{chickpeaTea}
 \alias{chickpeaTea-class}
-\alias{ikuyo_chickpeaTea}
 \title{\linkS4class{chickpeaTea} Recipes}
-\usage{
-ikuyo_chickpeaTea()
-}
 \description{
 ..
 }
 \examples{
-ikuyo_chickpeaTea()
+# ikuyo_chickpeaTea() # retry with tenju
 
 
 }

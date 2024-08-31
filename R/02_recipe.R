@@ -635,7 +635,7 @@ recipe <- function(x) {
   x <- combineVol(x, which = 'bakingPowder', name1 = 'TraderJoes_bakingPowder')
   x <- combineVol(x, which = 'yeast', name1 = 'Fleischmanns_instant')
   x <- combineVol(x, which = 'matcha', name1 = 'Sencha_matcha')
-  x <- combineVol(x, which = 'matchaSado', name1 = 'Ippodo_ikuyo')
+  x <- combineVol(x, which = 'matchaSado', name1 = 'Koyama_tenju')
   x <- combineVol(x, which = 'cocoa', name1 = 'Navitas_cacao')
   x <- combineVol(x, which = 'cocoaDutch', name1 = 'KingArthur_Bensdorp')
   x <- combineVol(x, which = 'coffee', name1 = 'NescafeTastersChoice_decaf')
@@ -1498,8 +1498,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   #}
   
   if (length(object@review)) {
-    cat('Review:\n')
-    cat(sprintf(fmt = '\u2605 %s', object@review), sep = '\n')
+    cat(sprintf(fmt = '\U0001f4dd %s', object@review), sep = '\n')
     cat('\n')
   }
   

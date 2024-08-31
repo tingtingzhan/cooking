@@ -357,14 +357,10 @@ mocaccinoBurgundy <- function() new(
 #' 6g of matchaSado
 #' 
 #' @examples
-#' matchaLatte_maeda()
-#' matchaLatte_ito()
-#' ikuyoLatte()
-#' sayakaLatte()
+#' matchaLatte()
 #' 
 #' nutrition_(
-#'  matchaLatte_maeda,
-#'  ikuyoLatte,
+#'  matchaLatte,
 #'  Ippodo_uji_shimizu,
 #'  Starbucks_matchaLatteMix,
 #'  TraderJoes_matchaLatte
@@ -372,7 +368,7 @@ mocaccinoBurgundy <- function() new(
 #' 
 #' nutrition_(
 #'  Ippodo_sayakaLatte,
-#'  hotdrink(ikuyoLatte),
+#'  hotdrink(matchaLatte),
 #'  Starbucks_matchaLatte,
 #'  hotdrink(Starbucks_matchaLatteMix, water80 = 180),
 #'  hotdrink(Ippodo_uji_shimizu, water80 = 150),
@@ -380,7 +376,7 @@ mocaccinoBurgundy <- function() new(
 #' ) # compare hot drink
 #' 
 #' nutrition_(
-#'  frappe(ikuyoLatte),
+#'  frappe(matchaLatte),
 #'  Starbucks_matchaFrappuccino
 #' ) # compare frappe
 #' @name matchaLatte
@@ -394,19 +390,21 @@ setClass(Class = 'matchaLatteMix', contains = 'drinkMix', prototype = prototype(
 
 #' @rdname matchaLatte
 #' @export
-sayakaLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_sayaka = 2.5), pros = 'I love!')
+matchaLatte <- function() new(
+  Class = 'matchaLatteMix',
+  matchaSado_tsp = c(Koyama_tenju = 3),
+  date = as.Date('2024-08-27'),
+  review = c('must use the most expensive sado-grade matcha!',
+           'for cheaper sado-grade matcha, slightly increase sugar up to x1.5',
+           'never use culinary-grade matcha!'))
 
-#' @rdname matchaLatte
-#' @export
-ikuyoLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_ikuyo = 2.5), pros = 'I love!')
+sayakaLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_sayaka = 2.5), pros = 'okay')
 
-#' @rdname matchaLatte
-#' @export
-seiunLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_seiun = 2.25), pros = 'very nice!')
+ikuyoLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_ikuyo = 2.5), pros = 'okay')
 
-#' @rdname matchaLatte
-#' @export
-kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Koyama_kiwamiChoan = 3), pros = 'Great, but not sure if I can appreciate the price..', date = as.Date('2024-08-24'))
+seiunLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_seiun = 2.25), pros = 'okay')
+
+kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Koyama_kiwamiChoan = 3), pros = 'great', date = as.Date('2024-08-24'))
 
 
 
@@ -421,33 +419,36 @@ kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(
 #' 6g of matchaSado
 #' 
 #' @examples
-#' ikuyoGoatLatte()
-#' sayakaGoatLatte()
+#' matchaGoatLatte()
 #' 
 #' nutrition_(
-#'  ikuyoLatte,
-#'  ikuyoGoatLatte
+#'  matchaLatte,
+#'  matchaGoatLatte
 #' ) # compare dry powder
 #' 
 #' nutrition_(
-#'  hotdrink(ikuyoLatte),
-#'  hotdrink(ikuyoGoatLatte)
+#'  hotdrink(matchaLatte),
+#'  hotdrink(matchaGoatLatte)
 #' ) # compare hot drink
 #' @name matchaGoatLatte
 #' @aliases matchaGoatLatteMix-class
 #' @export
 setClass(Class = 'matchaGoatLatteMix', contains = 'drinkMix', prototype = prototype(
   alias_class = '\u7f8a\u5976Latte\u901f\u6eb6\u7c89',
-  drymilk = c(Meyenberg_goat = 10, Meyenberg_goatWhole = 10), sugar_tsp = 4
+  drymilk = c(Meyenberg_goat = 10, Meyenberg_goatWhole = 10)
 ))
 
 #' @rdname matchaGoatLatte
 #' @export
-ikuyoGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matchaSado_tsp = c(Ippodo_ikuyo = 2.5), pros = 'super nice!')
+matchaGoatLatte <- function() new(
+  Class = 'matchaGoatLatteMix', 
+  matchaSado_tsp = c(Koyama_tenju = 3), 
+  sugar_tsp = 1.5,
+  review = 'to confirm in Summer 2025 with new crop of tenju!')
 
-#' @rdname matchaGoatLatte
-#' @export
-sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matchaSado_tsp = c(Ippodo_sayaka = 2.5), pros = 'also great!')
+ikuyoGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matchaSado_tsp = c(Ippodo_ikuyo = 2.5), sugar_tsp = 4, pros = 'okay')
+
+sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matchaSado_tsp = c(Ippodo_sayaka = 2.5), sugar_tsp = 4, pros = 'okay')
 
 
 
@@ -463,8 +464,7 @@ Ippodo_sayakaLatte <- function() new(
   alias_flavor = 'Sayaka Latte', 
   url = 'ippodotea.com/products/sayaka-100g',
   matchaSado = c(Ippodo_sayaka = 3), # matcha 1.5%
-  water80 = 100,
-  milk = 96)
+  water80 = 100, milk = 96)
 
 
 
@@ -491,23 +491,9 @@ ItoEn_sweet_matcha <- function() new(
   servingGram = 12, sugar = 11)
 
 
-#' @rdname matchaLatte
-#' @export
-matchaLatte_maeda <- function() new(
-  Class = 'matchaLatteMix', 
-  drymilk = c(Carnation_drymilk = 25),
-  matchaSado_Tbsp = c(maeda = 1), 
-  sugar_tsp = 1.5, # original experiment
-  pros = 'my earlier experiment, no complaint')
+matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matchaSado_Tbsp = c(maeda = 1), sugar_tsp = 1.5, pros = 'okay')
 
-#' @rdname matchaLatte
-#' @export
-matchaLatte_ito <- function() new(
-  Class = 'matchaLatteMix', 
-  drymilk = c(Carnation_drymilk = 25),
-  matchaSado_Tbsp = c(ItoEn = 1), 
-  sugar_tsp = 1.5, # original experiment
-  pros = 'my earlier experiment, no complaint')
+matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matchaSado_Tbsp = c(ItoEn = 1), sugar_tsp = 1.5, pros = 'okay')
 
 
 
@@ -716,7 +702,7 @@ Starbucks_mochaFrappuccino <- function() new(
 #' @export
 TraderJoes_matchaLatte <- function() new(
   Class = 'nutrition', traderjoes = '052512',
-  brand = 'Trader Joe\'s', name = 'Matcha\U0001f375 Latte Mix',
+  brand = 'Trader Joe\'s\U0001f1fa\U0001f1f8', name = 'Matcha\U0001f375 Latte Mix',
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
 #' @rdname matchaLatte

@@ -4,38 +4,22 @@
 \name{matchaLatte}
 \alias{matchaLatte}
 \alias{matchaLatteMix-class}
-\alias{sayakaLatte}
-\alias{ikuyoLatte}
-\alias{seiunLatte}
-\alias{kiwamiChoanLatte}
 \alias{Ippodo_sayakaLatte}
 \alias{Ippodo_uji_shimizu}
 \alias{ItoEn_sweet_matcha}
-\alias{matchaLatte_maeda}
-\alias{matchaLatte_ito}
 \alias{TraderJoes_matchaLatte}
 \alias{Starbucks_matchaLatte}
 \alias{Starbucks_matchaFrappuccino}
 \alias{Starbucks_matchaLatteMix}
 \title{Matcha Latte, Hot and Frappe}
 \usage{
-sayakaLatte()
-
-ikuyoLatte()
-
-seiunLatte()
-
-kiwamiChoanLatte()
+matchaLatte()
 
 Ippodo_sayakaLatte()
 
 Ippodo_uji_shimizu()
 
 ItoEn_sweet_matcha()
-
-matchaLatte_maeda()
-
-matchaLatte_ito()
 
 TraderJoes_matchaLatte()
 
@@ -49,14 +33,10 @@ Starbucks_matchaLatteMix()
 6g of matchaSado
 }
 \examples{
-matchaLatte_maeda()
-matchaLatte_ito()
-ikuyoLatte()
-sayakaLatte()
+matchaLatte()
 
 nutrition_(
- matchaLatte_maeda,
- ikuyoLatte,
+ matchaLatte,
  Ippodo_uji_shimizu,
  Starbucks_matchaLatteMix,
  TraderJoes_matchaLatte
@@ -64,7 +44,7 @@ nutrition_(
 
 nutrition_(
  Ippodo_sayakaLatte,
- hotdrink(ikuyoLatte),
+ hotdrink(matchaLatte),
  Starbucks_matchaLatte,
  hotdrink(Starbucks_matchaLatteMix, water80 = 180),
  hotdrink(Ippodo_uji_shimizu, water80 = 150),
@@ -72,7 +52,7 @@ nutrition_(
 ) # compare hot drink
 
 nutrition_(
- frappe(ikuyoLatte),
+ frappe(matchaLatte),
  Starbucks_matchaFrappuccino
 ) # compare frappe
 }

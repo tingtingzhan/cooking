@@ -99,7 +99,7 @@ Ceylon_soytea <- function() new(Class = 'soytea', alias_flavor = 'Ceylon', teaba
 #' ..
 #' 
 #' @examples
-#' ikuyo_chickpeaTea()
+#' # ikuyo_chickpeaTea() # retry with tenju
 #' 
 #' 
 #' @name chickpeaTea
@@ -111,12 +111,9 @@ setClass(Class = 'chickpeaTea', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname chickpeaTea
-#' @export
 ikuyo_chickpeaTea <- function() new(
   Class = 'chickpeaTea',
   sugar_tsp = 6,
   matchaSado_tsp = c(Ippodo_ikuyo = 2.5),
-  pros = 'I love!'
-)
+  pros = 'I like!')
 

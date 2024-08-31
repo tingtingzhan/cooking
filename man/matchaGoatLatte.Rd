@@ -4,28 +4,23 @@
 \name{matchaGoatLatte}
 \alias{matchaGoatLatte}
 \alias{matchaGoatLatteMix-class}
-\alias{ikuyoGoatLatte}
-\alias{sayakaGoatLatte}
 \title{Matcha Latte with Goat Milk, Hot and Frappe}
 \usage{
-ikuyoGoatLatte()
-
-sayakaGoatLatte()
+matchaGoatLatte()
 }
 \description{
 6g of matchaSado
 }
 \examples{
-ikuyoGoatLatte()
-sayakaGoatLatte()
+matchaGoatLatte()
 
 nutrition_(
- ikuyoLatte,
- ikuyoGoatLatte
+ matchaLatte,
+ matchaGoatLatte
 ) # compare dry powder
 
 nutrition_(
- hotdrink(ikuyoLatte),
- hotdrink(ikuyoGoatLatte)
+ hotdrink(matchaLatte),
+ hotdrink(matchaGoatLatte)
 ) # compare hot drink
 }

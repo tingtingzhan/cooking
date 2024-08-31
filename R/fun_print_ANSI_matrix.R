@@ -17,6 +17,8 @@
 #' @export
 print_ANSI_matrix <- function(x) {
   
+  # does not work well with 'nutrition_'
+  
   if (!is.matrix(x) || !is.character(x)) stop('only dealing with \'character\' \'matrix\', for now')
   
   # names(dimnames(x)) # not considered yet..
@@ -28,24 +30,27 @@ print_ANSI_matrix <- function(x) {
   x_ <- array(x, dim = d, dimnames = NULL)
   x0 <- array(ansi_strip(x), dim = d, dimnames = NULL)
   
-  if (!length(dnm)) { # no rowname, no colname
+  if (!length(dnm)) { # no row-name, no col-name
     rnm <- NULL
-    x1 <- x0 # body, no ANSI
-  } else if (!length(dnm[[1L]])) { # no rowname
+    x1 <- x0 # ANSI-stripped body
+  } else if (!length(dnm[[1L]])) { # no row-name
     rnm <- NULL
-    x1 <- rbind(dnm0[[2L]], x0) # col names AND body, no ANSI
-  } else if (!length(dnm[[2L]])) { # no colname
-    rnm <- dnm0[[1L]] # row names, no ANSI
-    rnm_ANSI <- dnm[[1L]]
-    x1 <- x0 # body, no ANSI
+    x1 <- rbind(dnm0[[2L]], x0) # ANSI-stripped col-names AND body
+  } else if (!length(dnm[[2L]])) { # no col-name
+    rnm <- dnm0[[1L]] # ANSI-stripped row-names
+    rnm_ANSI <- dnm[[1L]] # original row-names
+    x1 <- x0 # ANSI-stripped body
   } else {
-    rnm <- c('', dnm0[[1L]]) # row names, no ANSI
-    rnm_ANSI <- c('', dnm[[1L]]) # row names, ANSI
-    x1 <- rbind(dnm0[[2L]], x0) # col names AND body, no ANSI
+    rnm <- c('', dnm0[[1L]]) # ANSI-stripped row-names
+    rnm_ANSI <- c('', dnm[[1L]]) # original row-names
+    x1 <- rbind(dnm0[[2L]], x0) # ANSI-stripped col-names AND body
     x1_ANSI <- rbind(dnm[[2L]], x_)
   }
   
   rnm_prt <- if (length(rnm)) {
+    if (FALSE) {
+      paste0(rnm, ws_justify(rnm))
+    } # to check if [ws_justify] is correct
     paste0(rnm_ANSI, ws_justify(rnm))
   } # else NULL
   
@@ -53,8 +58,8 @@ print_ANSI_matrix <- function(x) {
     paste0(ws_justify(x1[,i]), x1_ANSI[,i])
   })
   
-  prt <- .mapply(FUN = c, dots = c(list(rnm_prt), x_prt, list('\n')), MoreArgs = NULL)
-  lapply(prt, FUN = cat, sep = ' ')
+  prt <- .mapply(FUN = paste, dots = c(list(rnm_prt), x_prt), MoreArgs = list(collapse = ' '))
+  lapply(prt, FUN = cat, sep = '\n')
   return(invisible())
   
 }
@@ -78,19 +83,35 @@ print_ANSI_matrix <- function(x) {
 #' ws_justify(c('a', 'abc', 'ab'))
 #' ws_justify(matrix(c('a', 'abc', 'ab', 'abcd'), nrow = 2L))
 #' 
+#' if (FALSE) {
+#'  '\u5b87'; nchar('\u5b87') # 1
+#'  '\U0001f375'; nchar('\U0001f375') # 1
+#'  '\U0001f1fa\U0001f1f8'; nchar('\U0001f1fa\U0001f1f8') # 2
+#' }
+#'
+#' if (FALSE) {
+#'  nchar(format.default(c('a', 'abc', 'ab'), justify = 'right')) # all same :)
+#'  (x0 = c('tea\U0001f375', 'apple', 'USA\U0001f1fa\U0001f1f8',
+#'    '\U0001f1fa\U0001f1f8 and \U0001f1e8\U0001f1e6'))
+#'  nchar(x0)
+#'  (x1 = format.default(x0, justify = 'right'))
+#'  nchar(x1) # not all same!!
+#' } # cannot trust ?base::format.default with unicode!!
+#' 
+#' @importFrom stringi stri_dup
 #' @export
 ws_justify <- function(x) {
-  x0 <- format.default(x, justify = 'right') # 'left' also okay, but not 'centre' or 'none'!
   
-  #vapply(nchar(x0) - nchar(x), FUN = function(i) paste(rep(' ', times = i), collapse = ''), FUN.VALUE = '')
+  if (FALSE) {
+    # x0 <- format.default(x, justify = 'right') # 'left' also okay, but not 'centre' or 'none'!
+    # return(gsub(pattern = '\\S', replacement = '', x = x0, perl = TRUE))
+    ## '\\S': regex for non-whitespace character
+    ## keeps attributes like 'matrix'; much slower than ?stringi::stri_dup, but I don't have to import \pkg{stringi}
+  } ## cannot trust ?base::format.default with unicode!!!
   
-  # @importFrom stringi stri_dup  
-  #stri_dup(str = ' ', times = nchar(x0) - nchar(x))
+  n_ <- nchar(x)
+  stri_dup(str = ' ', times = max(n_) - n_)
   
-  gsub(pattern = '\\S', # non-whitespace character
-       replacement = '', x = x0, perl = TRUE)
-  # keeps attributes like 'matrix'
-  # much slower than ?stringi::stri_dup, but I don't have to import \pkg{stringi}
 }
 
 

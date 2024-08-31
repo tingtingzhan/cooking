@@ -63,7 +63,7 @@ print.nutrition_ <- function(x, ...) {
 
   print_ANSI_matrix(ret)
   cat('\n')
-  return(invisible())
+  return(invisible(ret))
   
 }
 

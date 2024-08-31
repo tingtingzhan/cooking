@@ -23,4 +23,19 @@ by \link[base]{mode} of \code{x}.
 ws_justify(c('a', 'abc', 'ab'))
 ws_justify(matrix(c('a', 'abc', 'ab', 'abcd'), nrow = 2L))
 
+if (FALSE) {
+ '\u5b87'; nchar('\u5b87') # 1
+ '\U0001f375'; nchar('\U0001f375') # 1
+ '\U0001f1fa\U0001f1f8'; nchar('\U0001f1fa\U0001f1f8') # 2
+}
+
+if (FALSE) {
+ nchar(format.default(c('a', 'abc', 'ab'), justify = 'right')) # all same :)
+ (x0 = c('tea\U0001f375', 'apple', 'USA\U0001f1fa\U0001f1f8',
+   '\U0001f1fa\U0001f1f8 and \U0001f1e8\U0001f1e6'))
+ nchar(x0)
+ (x1 = format.default(x0, justify = 'right'))
+ nchar(x1) # not all same!!
+} # cannot trust ?base::format.default with unicode!!
+
 }
