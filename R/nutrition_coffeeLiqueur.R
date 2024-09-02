@@ -29,7 +29,7 @@ Kahlua_especial <- function() new(
 CafeGranita_coffee <- function() new(
   Class = 'nutrition', 
   #url = 
-  brand = 'Cafe Granita\U0001f1fa\U0001f1f8', 
+  brand = 'Cafe Granita\U1f1fa\U1f1f8', 
   # bottled by the Cafe Granita Brand Company, Princeton, MN
   name = '\u5496\u5561\u9152 Coffee Liqueur',
   totalwine = '100834750', usd = 14.99/750*44, # 750ml
@@ -39,7 +39,7 @@ CafeGranita_coffee <- function() new(
 
 FratelliVincenzi_espresso <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Fratelli Vincenzi\U0001f1ee\U0001f1f9',
+  brand = styleURL(text_ = 'Fratelli Vincenzi\U1f1ee\U1f1f9',
                    url_ = 'www.distillerievincenzi.com/liquori/'),
   name = '\u5496\u5561\u9152 Espresso Liqueur',
   totalwine = '348072750', usd = 21.99/750*44,
@@ -49,7 +49,7 @@ FratelliVincenzi_espresso <- function() new(
 
 Kikisi_coffee <- function() new(
   Class = 'nutrition',
-  brand = 'Kikisi\U0001f1f2\U0001f1fd',
+  brand = 'Kikisi\U1f1f2\U1f1fd',
   name = '\u5496\u5561\u9152 Coffee Liqueur',
   totalwine = '243193750', usd = 18.99/750*44,
   servingGram = 44, servingTsp = 9, # `servingTsp` my guess
@@ -58,7 +58,7 @@ Kikisi_coffee <- function() new(
 
 CaffeBorghetti <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Caff\u00e8 Borghetti\U0001f1ee\U0001f1f9',
+  brand = styleURL(text_ = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9',
                    url_ = 'www.brancausa.com/brands/caffe-borghetti'),
   name = '\u5496\u5561\u9152 di Vero Caff\u00e8 Espresso Liqueur',
   totalwine = '130512750', usd = 33.99/750*44,
@@ -68,7 +68,7 @@ CaffeBorghetti <- function() new(
 
 Grind_espresso <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Grind\U0001f1fa\U0001f1f8',
+  brand = styleURL(text_ = 'Grind\U1f1fa\U1f1f8',
                    url_ = 'grindespressoshot.com/home.html'),
   name = '\u5496\u5561\u9152 Espresso Shot',
   totalwine = '159626750', usd = 18.49/750*44,
@@ -92,7 +92,7 @@ Baileys_espresso <- function() new(
 
 Sabroso_coffee <- function() new(
   Class = 'nutrition',
-  brand = 'Sabroso\U0001f1f2\U0001f1fd',
+  brand = 'Sabroso\U1f1f2\U1f1fd',
   name = '\u5496\u5561\u9152 Licor de Caf\u00e9',
   totalwine = '704750', usd = 9.99/750*44,
   servingGram = 44, servingTsp = 9,
@@ -102,7 +102,7 @@ Sabroso_coffee <- function() new(
 
 Patron_XO <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Patr\u00f3n\U0001f1f2\U0001f1fd',
+  brand = styleURL(text_ = 'Patr\u00f3n\U1f1f2\U1f1fd',
                    url_ = 'www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html'),
   name = '\u5496\u5561\u9152 XO Cafe',
   totalwine = '96430750', usd = 43.99/750*44,
@@ -112,7 +112,7 @@ Patron_XO <- function() new(
 
 elPadrino_coffee <- function() new(
   Class = 'nutrition',
-  brand = 'El Padrino\U0001f1f2\U0001f1fd',
+  brand = 'El Padrino\U1f1f2\U1f1fd',
   name = '\u5496\u5561\u9152 Caf\u00e9',
   totalwine = '243336750', usd = 27.99/750*44,
   servingGram = 44, servingTsp = 9,
@@ -120,7 +120,7 @@ elPadrino_coffee <- function() new(
 
 Amigos3_mocha <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = '3 Amigos\U0001f1f2\U0001f1fd',
+  brand = styleURL(text_ = '3 Amigos\U1f1f2\U1f1fd',
                    url_ = '3amigostequila.com/cafe-mocha/'),
   name = '\u5496\u5561\u9152 Cafe Mocha',
   totalwine = '244117750', usd = 28.99/750*44,

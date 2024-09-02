@@ -78,15 +78,19 @@ Nutrition information.
 
 \item{\code{itoen}}{\link[base]{character} scalar}
 
+\item{\code{jfc}}{\link[base]{character} scalar}
+
 \item{\code{kahlua}}{\link[base]{character} scalar}
 
 \item{\code{kerrygold}}{\link[base]{character} scalar}
 
 \item{\code{kingarthur,kingarthurpro}}{\link[base]{integer} scalars}
 
-\item{\code{koyamaen}}{\link[base]{character} scalar}
-
 \item{\code{leekumkee}}{\link[base]{character} scalar}
+
+\item{\code{maeda}}{\link[base]{character} scalar}
+
+\item{\code{marukyu}}{\link[base]{character} scalar}
 
 \item{\code{mccormickculinary,oldbay,grillmates}}{\link[base]{character} scalar}
 

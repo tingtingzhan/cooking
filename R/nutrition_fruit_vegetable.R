@@ -22,13 +22,13 @@ Kirkland_plum_dried <- function() new(
 
 Kirkland_mixedVeggies <- function() new(
   Class = 'nutrition',
-  name = '\u51b7\u51bb\u6742\u852c Mixed Vegetables\U0001f955\U0001fadb\U0001f33d',
+  name = '\u51b7\u51bb\u6742\u852c Mixed Vegetables\U1f955\U1fadb\U1f33d',
   costcoBiz = '100351236',
   servingGram = 90, fat = .5, sodium = .02, sugar = 4, protein = 2)
 
 Kirkland_blueberry <- function() new(
   Class = 'nutrition', costBiz = 'kirkland-signature-organic-blueberries%2C-3-lbs.product.100206942',
-  name = 'Frozen Blueberry\U0001fad0',
+  name = 'Frozen Blueberry\U1fad0',
   servingGram = 140, sugar = 12, protein = 1,
   water = 140*.866
   # https://fdc.nal.usda.gov/fdc-app.html#/food-details/173950/nutrients
@@ -40,12 +40,12 @@ Kirkland_strawberry <- function() new(
     'kirkland-signature-organic-strawberries%2c-4-lbs.product.100273803',
     'kirkland-signature-frozen-strawberries%2c-6-lbs.product.11273181' # which one's correct??
   ),
-  name = '\u8349\u8393 Strawberry\U0001f353',
+  name = '\u8349\u8393 Strawberry\U1f353',
   servingGram = 140, servingCup = 1, calorie = 50, sugar = 6, protein = 1)
 
 Kirkland_yellowCorn <- function() new(
   Class = 'nutrition', url = 'costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
-  brand = 'Kirkland\U0001f1fa\U0001f1f8', name = '\u51b7\u51bb\u751c\u7389\u7c73 Frozen Yellow Corn\U0001f33d',
+  brand = 'Kirkland\U1f1fa\U1f1f8', name = '\u51b7\u51bb\u751c\u7389\u7c73 Frozen Yellow Corn\U1f33d',
   servingGram = 90, 
   #servingCup = 2/3, # packaging
   servingCup = 90/128,# actual experiment 1cup = 128g
@@ -71,7 +71,7 @@ mango <- function() new(
     'ultra-organics.com/en/products/products-catalog/' # Too dry; too sour.  Do not buy!
   ),
   fdc = 169910L, # water 83.5%
-  brand = 'Pickd', name = '\u8292\u679c(\u6ce5) Mango\U0001f96d',
+  brand = 'Pickd', name = '\u8292\u679c(\u6ce5) Mango\U1f96d',
   servingGram = 140, 
   servingCup = 1, # puree density; confirm with experiment!!
   sugar = 19, protein = 1,
@@ -84,14 +84,14 @@ mango <- function() new(
 
 HappyVillage_strawberry <- function() new( # frozen; sold at Costco
   Class = 'nutrition', 
-  brand = 'Happy Village', name = '\u8349\u8393 Strawberry\U0001f353',
+  brand = 'Happy Village', name = '\u8349\u8393 Strawberry\U1f353',
   url = 'www.instacart.com/products/25833270-happy-village-frozen-organic-strawberries-4-lb',
   servingGram = 140, servingCup = 1, 
   calorie = 50, sugar = 6, protein = 1)
 
 HappyVillage_darkCherry <- function() new(
   Class = 'nutrition', costcoBiz = '100313436',
-  brand = 'Happy Village', name = '\u751c\u6a31\u6843 Dark Cherry\U0001f352',
+  brand = 'Happy Village', name = '\u751c\u6a31\u6843 Dark Cherry\U1f352',
   servingGram = 140, servingCup = 1,
   calorie = 90,
   water = 140*240/310, # tested with bao()
@@ -116,14 +116,14 @@ LuckyTaro_durian <- function() new(
 
 Wegmans_pineapple <- function() new(
   Class = 'nutrition', wegmans = 10230L,
-  name = '\u83e0\u841d\u7f50\u5934 Crushed Pineapple\U0001f34d',
+  name = '\u83e0\u841d\u7f50\u5934 Crushed Pineapple\U1f34d',
   servingGram = 122, servingCup = 1/2, 
   sugar = 13, review = 'Only when Dole\'s not available.')
 
 Libbys_pineapple <- function() new(
   Class = 'nutrition', 
   wegmans = 20294L,
-  brand = 'Libby\'s\U0001f1fa\U0001f1f8', name = '\u83e0\u841d\u7f50\u5934 Crushed Pineapple\U0001f34d',
+  brand = 'Libby\'s\U1f1fa\U1f1f8', name = '\u83e0\u841d\u7f50\u5934 Crushed Pineapple\U1f34d',
   servingGram = 122, servingCup = 1/2, 
   sugar = 13, review = 'Don\'t buy. Chopped, not crushed. More expensive than Wegmans.')
 
@@ -131,9 +131,9 @@ Dole_pineapple <- function() new(
   Class = 'nutrition', 
   brand = styleURL(
     url_ = 'dolesunshine.com/us/en/products/pantry/canned-fruit/',
-    text_ = 'Dole\U0001f33a'
+    text_ = 'Dole\U1f33a'
   ),
-  name = '\u83e0\u841d\u7f50\u5934 Pineapple\U0001f34d in 100% Juice',
+  name = '\u83e0\u841d\u7f50\u5934 Pineapple\U1f34d in 100% Juice',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
   servingGram = 122, servingCup = 1/2,
@@ -145,7 +145,7 @@ Dole_pineapple <- function() new(
 
 DelMonte_pear <- function() new(
   Class = 'nutrition', url = 'www.delmonte.com/products/fruits/pears/sliced-pears-no-sugar-added',
-  brand = 'Del Monte\U0001f1fa\U0001f1f8', name = '\u68a8\u7f50\u5934 Sliced Pears\U0001f350 No Sugar',
+  brand = 'Del Monte\U1f1fa\U1f1f8', name = '\u68a8\u7f50\u5934 Sliced Pears\U1f350 No Sugar',
   servingGram = 121, servingCup = 1/2,
   water = 121 * 240/255, # tested with bao()
   calorie = 40, sodium = .005, sugar = 7) 
@@ -153,7 +153,7 @@ DelMonte_pear <- function() new(
 
 DelMonte_mandarine <- function() new(
   Class = 'nutrition', url = 'www.delmonte.com/products/fruits/mandarin-oranges/mandarin-oranges-no-sugar-added',
-  brand = 'Del Monte\U0001f1fa\U0001f1f8', name = '\u6a58\u5b50\u7f50\u5934 Mandarin Oranges\U0001f34a No Sugar',
+  brand = 'Del Monte\U1f1fa\U1f1f8', name = '\u6a58\u5b50\u7f50\u5934 Mandarin Oranges\U1f34a No Sugar',
   servingGram = 123, servingCup = 1/2,
   water = 123 * 240/245, # tested with bao()
   calorie = 60, 
@@ -164,7 +164,7 @@ DelMonte_mandarine <- function() new(
 
 DelMonte_peach <- function() new(
   Class = 'nutrition', url = 'www.delmonte.com/products/fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added',
-  brand = 'Del Monte\U0001f1fa\U0001f1f8', name = '\u9ec4\u6843 Yellow Cling Peaches\U0001f351 No Sugar',
+  brand = 'Del Monte\U1f1fa\U1f1f8', name = '\u9ec4\u6843 Yellow Cling Peaches\U1f351 No Sugar',
   servingGram = 121, servingCup = 1/2,
   calorie = 35,
   water = 121* 240/255, # tested with bao()
@@ -218,7 +218,7 @@ Navitas_acai <- function() new(
 # fresh vegetables
 bambooShoot <- function() new(
   Class = 'nutrition', fdc = 169210L,
-  name = '\u7af9\u7b0b Bamboo Shoots', # \U0001f38d
+  name = '\u7af9\u7b0b Bamboo Shoots', # \U1f38d
   servingGram = 100, water = 91, protein = 2.6, fat = .3, sugar = 3, sodium = .004)
 
 
@@ -248,33 +248,33 @@ kabochaSquash <- function() new(
 
 avocado <- function() new(
   Class = 'nutrition', fdc = 171705L,
-  name = '\u725b\u6cb9\u679c Avocado\U0001f951',
+  name = '\u725b\u6cb9\u679c Avocado\U1f951',
   servingGram = 100, pieceWeight = 140,
   calorie = 160,
   water = 73.2, protein = 2, fat = 14.7, sugar = .66, sodium = .007)
 
 lemon <- function() new(
   Class = 'nutrition', fdc = 1102594L,
-  name = '\u67e0\u6aac Lemon\U0001f34b',
+  name = '\u67e0\u6aac Lemon\U1f34b',
   servingGram = 100, water = 88.98, protein = 1.1, fat = .3, sugar = 2.5, sodium = .002)
 
 lemonJuice <- function() new(
   Class = 'nutrition', fdc = 167747L,
-  name = '\u67e0\u6aac\u6c41 Lemon\U0001f34b Juice',
+  name = '\u67e0\u6aac\u6c41 Lemon\U1f34b Juice',
   servingGram = 100, pieceWeight = 48,
   water = 92.3, protein = 0.35, fat = 0.24, sugar = 2.52, sodium = .001)
 
 
 lime <- function() new(
   Class = 'nutrition', fdc = 168155L,
-  name = '\u9752\u67e0 Lime\U0001f34b\u200d\U0001f7e9',
+  name = '\u9752\u67e0 Lime\U1f34b\u200d\U1f7e9',
   servingGram = 100, 
   calorie = 30,
   water = 88.3, protein = .7, fat = .2, sugar = 1.69, sodium = .002)
 
 limeJuice <- function() new(
   Class = 'nutrition', fdc = 2344679L,
-  name = '\u9752\u67e0\u6c41 Lime\U0001f34b\u200d\U0001f7e9 Juice',
+  name = '\u9752\u67e0\u6c41 Lime\U1f34b\u200d\U1f7e9 Juice',
   servingGram = 100, pieceWeight = 44,
   calorie = 25,
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
@@ -282,20 +282,20 @@ limeJuice <- function() new(
 
 lemonZest <- function() new(
   Class = 'nutrition', fdc = 167749L,
-  name = 'Lemon\U0001f34b Peel',
+  name = 'Lemon\U1f34b Peel',
   servingGram = 100, water = 81.6, protein = 1.5, fat = .3, sugar = 4.17, sodium = .006)
 
 
 watermelon <- function() new(
   Class = 'nutrition', fdc = 167765L,
-  name = 'Watermelon\U0001f349',
+  name = 'Watermelon\U1f349',
   servingGram = 100, water = 91.4, protein = .61, fat = .15, sugar = 6.2, sodium = .001)
 
 
 
 Laura_soybean <- function() new(
   Class = 'nutrition', fdc = 174270L,
-  name = '\u9ec4\u8c46 Soy Bean', brand = 'Laura\U0001f1fa\U0001f1f8',
+  name = '\u9ec4\u8c46 Soy Bean', brand = 'Laura\U1f1fa\U1f1f8',
   url = 'laurasoybeans.com/product/5-lbs-nongmo-laura-soybeans-2022-crop-best-for-soymilk-tofu-tempeh-boiling/',
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
@@ -305,7 +305,7 @@ Laura_soybean <- function() new(
 
 Palouse_chickpea <- function() new(
   Class = 'nutrition', fdc = 173756L,
-  name = '\u9e70\u5634\u8c46 Chickpea', brand = 'Palouse\U0001f1fa\U0001f1f8',
+  name = '\u9e70\u5634\u8c46 Chickpea', brand = 'Palouse\U1f1fa\U1f1f8',
   url = 'www.palousebrand.com/products/garbanzo-beans-5-lb?variant=40131929407541',
   amazon = 'B001PEWJWC', usd = 18.95/(5*453.6)*(100-7.68),
   servingGram = 100 - 7.68, 
@@ -313,7 +313,7 @@ Palouse_chickpea <- function() new(
 
 HaiTai_mung <- function() new(
   Class = 'nutrition', fdc = 174256L,
-  name = '(\u5e26\u76ae)\u7eff\u8c46 Mung Bean', brand = 'HaiTai\U0001f1f0\U0001f1f7',
+  name = '(\u5e26\u76ae)\u7eff\u8c46 Mung Bean', brand = 'HaiTai\U1f1f0\U1f1f7',
   usd = 5.99/910*38, url = 'www.yamibuy.com/zh/p/mung-bean-2lb/1149010281',
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
   #servingGram = 100 - 9.05, protein = 23.9, fat = 1.15, sugar = 6.6, sodium = .015, # fdc
@@ -322,7 +322,7 @@ HaiTai_mung <- function() new(
 
 HaiTai_adzuki <- function() new(
   Class = 'nutrition', fdc = 543753L,
-  name = '\u7ea2\u8c46 Adzuki Bean', brand = 'HaiTai\U0001f1f0\U0001f1f7',
+  name = '\u7ea2\u8c46 Adzuki Bean', brand = 'HaiTai\U1f1f0\U1f1f7',
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
   usd = 8.99/907*45, 
   # url = 'www.yamibuy.com/zh/p/red-bean-2lb/1149010271'
@@ -332,7 +332,7 @@ HaiTai_adzuki <- function() new(
 
 redKidneyBean <- function() new(
   Class = 'nutrition', fdc = 173744L,
-  name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U0001fad8', brand = 'Iberia\U0001f1fa\U0001f1f8',
+  name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U1fad8', brand = 'Iberia\U1f1fa\U1f1f8',
   url = 'iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/',
   amazon = 'B079S8D2YP', usd = 8.86/(4*454)*42,
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc

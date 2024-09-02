@@ -66,7 +66,7 @@ Wegmans_LangaLaTur <- function() new(
 
 Wegmans_mildGoatBrie <- function() new(
   Class = 'nutrition', wegmans = 222234L,
-  name = 'Mild Goat\U0001f410 Brie Cheese',
+  name = 'Mild Goat\U1f410 Brie Cheese',
   servingGram = 30, fat = 7, sodium = .13, protein = 6,
   review = 'Stinks!! Dont buy!!!!')
 
@@ -107,7 +107,7 @@ Wegmans_Castelbelo <- function() new(
 
 Wegmans_cranberryGoat <- function() new(
   Class = 'nutrition', wegmans = 261050L,
-  name = 'Goat\U0001f410 Cheese with Cranberries',
+  name = 'Goat\U1f410 Cheese with Cranberries',
   servingGram = 28, fat = 5, 
   sodium = .16, # website says `sodium = .86`, must be wrong
   protein = 4, 

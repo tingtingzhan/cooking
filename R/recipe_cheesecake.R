@@ -150,7 +150,7 @@ cheesecake_Nancy <- function() new(
 #' @rdname cheesecake
 #' @export
 blueberry_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = '\u84dd\u8393\U0001fad0\u7cd6\u6d46',
+  Class = 'cheesecake', alias_flavor = '\u84dd\u8393\U1fad0\u7cd6\u6d46',
   syrup = c(Stonewall_blueberrySyrup = 250), review = 'Taste good, but color not pretty') # tested 100% Nancy's
 
 #' @rdname cheesecake

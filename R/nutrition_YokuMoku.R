@@ -2,7 +2,7 @@
 
 YokuMoku_cigare <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Yoku Moku\U0001f1ef\U0001f1f5',
+  brand = styleURL(text_ = 'Yoku Moku\U1f1ef\U1f1f5',
                    url_ = 'yokumoku.com/product/'),
   name = 'Cigare',
   servingGram = 31,

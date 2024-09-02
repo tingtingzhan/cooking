@@ -6,7 +6,7 @@
 
 Wegmans_pastry <- function() new(
   Class = 'nutrition', wegmans = 24706L, 
-  name = '\u4f4e\u7b4b\u9762\u7c89 Pastry\U0001f370 Flour', # name = 'Pastry Flour, Enriched Unbleached',
+  name = '\u4f4e\u7b4b\u9762\u7c89 Pastry\U1f370 Flour', # name = 'Pastry Flour, Enriched Unbleached',
   usd = 3.69/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging
@@ -15,7 +15,7 @@ Wegmans_pastry <- function() new(
 
 Wegmans_bread <- function() new(
   Class = 'nutrition', wegmans = 24587L, 
-  name = '\u9ad8\u7b4b\u9762\u7c89 Bread\U0001f35e Flour', # Enriched Unbleached
+  name = '\u9ad8\u7b4b\u9762\u7c89 Bread\U1f35e Flour', # Enriched Unbleached
   usd = 3.69/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging
@@ -72,7 +72,7 @@ KingArthur_whiteWheat_organic <- function() new(
 
 KingArthur_bread_organic <- function() new(
   Class = 'nutrition', kingarthur = 308104L, 
-  name = 'Bread\U0001f35e Flour, Organic',
+  name = 'Bread\U1f35e Flour, Organic',
   usd = 10.95/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging
@@ -81,7 +81,7 @@ KingArthur_bread_organic <- function() new(
 
 KingArthur_bread <- function() new(
   Class = 'nutrition', kingarthur = 304105L, 
-  name = '12.7%\u9ad8\u7b4b\u9762\u7c89 Bread\U0001f35e Flour',
+  name = '12.7%\u9ad8\u7b4b\u9762\u7c89 Bread\U1f35e Flour',
   usd = 6.95/2270*30,
   servingGram = 30, 
   # servingCup = 1/4, # packaging
@@ -100,7 +100,7 @@ KingArthur_highGluten <- function() new(
 KingArthur_Lancelot <- function() new(
   Class = 'nutrition', webstaurant = '104NFL5100S',
   kingarthurpro = 13050L,
-  brand = 'King Arthur\U0001f1fa\U0001f1f8',
+  brand = 'King Arthur\U1f1fa\U1f1f8',
   name = '14%\u9ad8\u7b4b\u9762\u7c89 Sir Lancelot',
   usd = 28.49/(50*454)*100,
   servingGram = 100, 
@@ -139,7 +139,7 @@ KingArthur_allPurpose_organic <- function() new(
 
 KingArthur_cake <- function() new(
   Class = 'nutrition', kingarthur = 300004L, 
-  name = '10%\u4f4e\u7b4b\u9762\u7c89 Cake\U0001f370 Flour',
+  name = '10%\u4f4e\u7b4b\u9762\u7c89 Cake\U1f370 Flour',
   servingGram = 32, servingCup = 1/4, 
   carbohydrate = 25, protein = 32*.1) # 10% protein content
 # kingarthurpro = 19050L, # professional 'unbleached cake flour' is 7% !!!
@@ -147,7 +147,7 @@ KingArthur_cake <- function() new(
 
 KingArthur_pastry <- function() new(
   Class = 'nutrition', kingarthur = 100184L, 
-  name = '8%\u4f4e\u7b4b\u9762\u7c89 Pastry\U0001f370 Flour',
+  name = '8%\u4f4e\u7b4b\u9762\u7c89 Pastry\U1f370 Flour',
   usd = 12.95/1360*26,
   servingGram = 26, servingCup = 1/4, 
   calorie = 100,

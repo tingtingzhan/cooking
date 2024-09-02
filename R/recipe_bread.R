@@ -47,7 +47,7 @@
 #' @export
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   alias_class = '\u9762\u5305',
-  key = '\U0001f35e63%;7.5%',
+  key = '\U1f35e 63%;7.5%',
   breadFlour = c(KingArthur_bread = 500), 
   # this recipe was experimented in early 2023. 
   # should be King Arthur bread flour,
@@ -156,7 +156,7 @@ cocoa_bread <- function() new(
 #' @rdname bread
 #' @export
 blackCocoa_bread <- function() new(
-  Class = 'bread', alias_flavor = '\u9ed1\u5de7\u514b\u529b\U0001f36b',
+  Class = 'bread', alias_flavor = '\u9ed1\u5de7\u514b\u529b\U1f36b',
   bread(),   
   cocoa_tsp = c(KingArthur_blackCocoa = 16), 
   drymilk = 32, sugar = 40, 

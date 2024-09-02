@@ -43,7 +43,7 @@ cuminMontreal_rub <- function() new(
     Kirkland_noSaltSeasoning = 2
   ),
   pros = c(
-    'Lamb\U0001f411 loin chop'
+    'Lamb\U1f411 loin chop'
   )
 )
 

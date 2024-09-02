@@ -2,7 +2,7 @@
 
 
 setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
-  alias_class = '\u867e\U0001f990\u8089\u9985',
+  alias_class = '\u867e\U1f990\u8089\u9985',
   shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
   KSM8990 = KSM8990(
     treatment = 'Meat chopper, not grinder',
@@ -215,7 +215,7 @@ Wegmans_garlicShrimp <- function() new(
 #' @rdname shrimpfill
 #' @export
 Daat_shrimpfill <- function() new(
-  Class = 'daatgo', alias_flavor = '\u867e\U0001f990\u997a\u9985', youtube = 'SYLIYqVV2N4',
+  Class = 'daatgo', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'SYLIYqVV2N4',
   shrimp = 600, lard = 30, pork = c(fat = 120),
   vegetable = c(bambooShoot = 90),
   starch = c(Wegmans_corn = 13),
@@ -225,7 +225,7 @@ Daat_shrimpfill <- function() new(
 #' @rdname shrimpfill
 #' @export
 whiteSwan_shrimpfill <- function() new(
-  Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u867e\U0001f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
+  Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
   shrimp = 250, pork = c(fat = 50), lard = 35,
   salt = 3, msg = 2,
   sugar = 3, sesameOil = 3.5, whitePepper_tsp = 1/8)

@@ -83,34 +83,37 @@ print_ANSI_matrix <- function(x) {
 #' ws_justify(c('a', 'abc', 'ab'))
 #' ws_justify(matrix(c('a', 'abc', 'ab', 'abcd'), nrow = 2L))
 #' 
-#' if (FALSE) {
-#'  '\u5b87'; nchar('\u5b87') # 1
-#'  '\U0001f375'; nchar('\U0001f375') # 1
-#'  '\U0001f1fa\U0001f1f8'; nchar('\U0001f1fa\U0001f1f8') # 2
-#' }
-#'
-#' if (FALSE) {
-#'  nchar(format.default(c('a', 'abc', 'ab'), justify = 'right')) # all same :)
-#'  (x0 = c('tea\U0001f375', 'apple', 'USA\U0001f1fa\U0001f1f8',
-#'    '\U0001f1fa\U0001f1f8 and \U0001f1e8\U0001f1e6'))
-#'  nchar(x0)
-#'  (x1 = format.default(x0, justify = 'right'))
-#'  nchar(x1) # not all same!!
-#' } # cannot trust ?base::format.default with unicode!!
+#' \dontrun{
+#' # cannot trust ?base::format.default with unicode!!
+#' nchar(format.default(c('a', 'abc', 'ab'), justify = 'right')) # all same :)
+#' (x1 = c('tea\U1f375', 'apple', 'USA\U1f1fa\U1f1f8',
+#'    '\U1f1fa\U1f1f8 and \U1f1e8\U1f1e6'))
+#' nchar(x1)
+#' (x1a = format.default(x1, justify = 'right'))
+#' nchar(x1a) # not all same!!
+#' } 
 #' 
 #' @importFrom stringi stri_dup
 #' @export
 ws_justify <- function(x) {
   
   if (FALSE) {
-    # x0 <- format.default(x, justify = 'right') # 'left' also okay, but not 'centre' or 'none'!
-    # return(gsub(pattern = '\\S', replacement = '', x = x0, perl = TRUE))
+    x0 <- format.default(x, justify = 'right') # 'left' also okay, but not 'centre' or 'none'!
+    return(gsub(pattern = '\\S', replacement = '', x = x0, perl = TRUE))
     ## '\\S': regex for non-whitespace character
     ## keeps attributes like 'matrix'; much slower than ?stringi::stri_dup, but I don't have to import \pkg{stringi}
   } ## cannot trust ?base::format.default with unicode!!!
   
-  n_ <- nchar(x)
-  stri_dup(str = ' ', times = max(n_) - n_)
+  if (TRUE) {
+    n_ <- nchar(x)
+    return(stri_dup(str = ' ', times = max(n_) - n_))
+  }
+  
+  if (FALSE) {
+    strw <- vapply(x, FUN = strwidth_, FUN.VALUE = NA_real_)
+    strw_a <- strwidth('a', units = 'inches') # do not use `' '` 
+    stri_dup(str = ' ', times = round((max(strw) - strw) / strw_a))
+  } # unicode error when ?devtools::check # conversion failure in 'mbcsToSbcs'
   
 }
 

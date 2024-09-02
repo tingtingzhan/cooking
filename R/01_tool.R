@@ -71,9 +71,9 @@ setMethod(f = show, signature = signature(object = 'tool'), definition = functio
   
   cat(sprintf(fmt = '\u0020\u2726 %s\n', object@program))
   
-  cat(sprintf(fmt = '\u0020\u0020\U0001f6e0\ufe0f %s\n', object@attachment))
+  cat(sprintf(fmt = '\u0020\u0020\U1f6e0\ufe0f %s\n', object@attachment))
   
-  cat(sprintf(fmt = '\u0020\u0020\U0001f321\ufe0f %d\u00b0F or %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
+  cat(sprintf(fmt = '\u0020\u0020\U1f321\ufe0f %d\u00b0F or %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
   
   if (length(object@minute)) {
     if (is.null(names(object@minute))) {
@@ -133,7 +133,7 @@ JoyoungDJ13U_soymilk <- function(
 
 
 JoyoungDJ13U_cornjuice <- function(
-  program = '\u7389\u7c73\u6c41\u7a0b\u5e8f Corn\U0001f33d Juice program',
+  program = '\u7389\u7c73\u6c41\u7a0b\u5e8f Corn\U1f33d Juice program',
   operation = c(
     '900ml water line',
     'Do not use 1300ml water line, cannot push down blades',

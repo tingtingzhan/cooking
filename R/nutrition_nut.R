@@ -17,7 +17,7 @@ SavannaOrchards_cashewAlmondPecanPistachio <- function() new(
 
 Greenmax_blackSesame <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Greenmax\u99ac\u7389\u5c71\U0001f1f9\U0001f1fc', 
+  brand = styleURL(text_ = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', 
                    url_ = 'www.greenmax.com.tw/product_view.php?id=62772'),
   name = '\u9ed1\u829d\u9ebb\u7c89 Black Sesame Powder',
   usd = 5.99/400*40,
@@ -35,7 +35,7 @@ Jbasket_whiteSesame <- function() new(
 
 peanut <- function() new(
   Class = 'nutrition', fdc = 172430L,
-  name = '\u82b1\u751f Peanut\U0001f95c',
+  name = '\u82b1\u751f Peanut\U1f95c',
   calorie = 567,
   servingGram = 100, water = 6, protein = 25.8, fat = 49.2, sugar = 4.72, sodium = .018)
 

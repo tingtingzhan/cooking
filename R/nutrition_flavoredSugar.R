@@ -3,7 +3,7 @@
 CountryTime_Lemonade <- function() new(
   Class = 'nutrition', url = 'www.kraftheinz.com/country-time/products/00043000951170', 
   costco = '100381589',
-  brand = 'Country Time\U0001f1fa\U0001f1f8', name = '\u67e0\u6aac\u996e\u6599\u901f\u6eb6\u7c89 Lemonade Mix',
+  brand = 'Country Time\U1f1fa\U1f1f8', name = '\u67e0\u6aac\u996e\u6599\u901f\u6eb6\u7c89 Lemonade Mix',
   servingGram = 26, 
   # 3/4 scoop # packaging
   servingTbsp = 26/11, # actual experiment 1tbsp = 11g
@@ -13,7 +13,7 @@ CountryTime_Lemonade <- function() new(
 
 CountryTime_blackCherryLemonade <- function() new(
   Class = 'nutrition', url = 'www.kraftheinz.com/country-time/products/00043000062500',
-  brand = 'Country Time\U0001f1fa\U0001f1f8', name = 'Black Cherry Lemonade',
+  brand = 'Country Time\U1f1fa\U1f1f8', name = 'Black Cherry Lemonade',
   servingGram = 33, servingTbsp = 2, sugar = 30)
 
 

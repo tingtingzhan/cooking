@@ -49,8 +49,8 @@ nonfatMilk_GreatValue <- function() new(Class = 'powder2milk', alias_flavor = 'G
 
 #' @rdname powder2milk
 #' @export
-goatMilk_Meyenberg <- function() new(Class = 'powder2milk', alias_flavor = 'Meyenberg Nonfat Goat\U0001f410 Milk', drymilk = c(Meyenberg_goat = 28))
+goatMilk_Meyenberg <- function() new(Class = 'powder2milk', alias_flavor = 'Meyenberg Nonfat Goat\U1f410 Milk', drymilk = c(Meyenberg_goat = 28))
 
 #' @rdname powder2milk
 #' @export
-wholeGoatMilk_Meyenberg <- function() new(Class = 'powder2milk', alias_flavor = 'Meyenberg Whole Goat\U0001f410 Milk', drymilk = c(Meyenberg_goatWhole = 28))
+wholeGoatMilk_Meyenberg <- function() new(Class = 'powder2milk', alias_flavor = 'Meyenberg Whole Goat\U1f410 Milk', drymilk = c(Meyenberg_goatWhole = 28))

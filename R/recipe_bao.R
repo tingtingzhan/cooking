@@ -3,8 +3,8 @@
 
 # lotusBun sticks.  may need to change recipe
 #portion = c(
-# 'lotus bun, Pastalinda Thick-4 \u8377\u53f6\u997c\U0001f9ea' = 50 # last two are 60g
-# 'lotus bun (brush oil on steamer cloth), Pastalinda Thick-3 \u8377\u53f6\u997c\U0001f9ea' = 50 # last two are 60g
+# 'lotus bun, Pastalinda Thick-4 \u8377\u53f6\u997c\U1f9ea' = 50 # last two are 60g
+# 'lotus bun (brush oil on steamer cloth), Pastalinda Thick-3 \u8377\u53f6\u997c\U1f9ea' = 50 # last two are 60g
 #)
 
 
@@ -15,15 +15,15 @@ mantou_portion <- function() c(
 )
 
 savoryBao_portion <- function() c(
-  'Pastalinda-3, 40g \u751f\u8089\u9985 raw meat\U0001f389' = 40, # big bao, very good!
-  'Pastalinda-4, 20g \u719f\u81ca\u5b50\u9985 fried meat chop\U0001f389' = 40 # difficult to wrap, best I can do for now
+  'Pastalinda-3, 40g \u751f\u8089\u9985 raw meat\U1f389' = 40, # big bao, very good!
+  'Pastalinda-4, 20g \u719f\u81ca\u5b50\u9985 fried meat chop\U1f389' = 40 # difficult to wrap, best I can do for now
 )
 
 sweetBao_portion <- function() c(
   # 'Pastalinda-3.5, 25g \u9ed1\u829d\u9ebb\u6d41\u6c99\u9985 sweet lava (trying)' = 40, # too much filling!!
   'Pastalinda-2.5, 15g \u9ed1\u829d\u9ebb\u6d41\u6c99\u9985 sweet lava (try next)' = 40, # try next
-  'Pastalinda-4, 40g \u8c46\u6c99\u9985 sweet bean paste\U0001f44d' = 40,
-  'Pastalinda-4.5, 25g \u8c46\u6c99\u9985 sweet bean paste\U0001f389' = 28
+  'Pastalinda-4, 40g \u8c46\u6c99\u9985 sweet bean paste\U1f44d' = 40,
+  'Pastalinda-4.5, 25g \u8c46\u6c99\u9985 sweet bean paste\U1f389' = 28
 )
 
 
@@ -69,7 +69,7 @@ sweetBao_portion <- function() c(
 #' @export
 setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   alias_class = '\u5305\u5b50\u9992\u5934', 
-  #key = '\U0001f37048%;3%',
+  #key = '\U1f370 48%;3%',
   pastryFlour = c(Wegmans_pastry = 500), 
   yeast_tsp = 1.5,
   bakingPowder_tsp = 1,

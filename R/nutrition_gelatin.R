@@ -6,7 +6,7 @@ Champion_gold_gelatin <- function() new(
   name = '\u5409\u5229\u4e01\u7247 Gold Leaf Gelatin',
   brand = styleURL(
     url_ = 'www.championproteins.com/store/p5/GelatinSheetsGoldLeaf.html',
-    text_ = 'Champion Proteins\U0001f1fa\U0001f1f8'
+    text_ = 'Champion Proteins\U1f1fa\U1f1f8'
   ), 
   amazon = 'B00A3WZTJM',
   usd = 58.99/1000*100,

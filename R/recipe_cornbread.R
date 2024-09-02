@@ -25,7 +25,7 @@
 #' @aliases cornbread-class
 #' @export
 setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
-  alias_class = 'Cornbread\U0001f33d',
+  alias_class = 'Cornbread\U1f33d',
   breadFlour = c(KingArthur_bread = 160), # King Arthur confirmed!!
   cornmeal = 320, # perfect!! (flour:cornmeal = 1:3 too crumbly)
   sugar = 50,

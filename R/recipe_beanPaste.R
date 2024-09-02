@@ -22,7 +22,7 @@ setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
     # 'mochi 10g wrapper \u9ebb\u85af10g\u76ae' = 5, 
     # 'mooncake 15g wrapper in 30g mold \u6708\u997c30g\u6a21\u5177' = 15,
     '\u5305\u5b50 bao 25g wrapper' = 25, # try
-    '\u5305\u5b50 bao 40g wrapper\U0001f389' = 40 # dont go any bigger!!
+    '\u5305\u5b50 bao 40g wrapper\U1f389' = 40 # dont go any bigger!!
     
   )
 ))

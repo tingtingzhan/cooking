@@ -82,7 +82,7 @@ matcha_froyo <- function() new(
 #' @rdname froyo
 #' @export
 emma_froyo <- function() new(
-  Class = 'recipe', author = 'Emma\'s Goodies', alias_flavor = 'Froyo\U0001f368',
+  Class = 'recipe', author = 'Emma\'s Goodies', alias_flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',
   heavyCream = 400,
   yogurtGreek = 170, 

@@ -68,7 +68,7 @@ UpstateFarms_buttermilk <- function() new(
 
 Carnation_evaporatedMilk <- function() new(
   Class = 'nutrition', nestle = '11002753',
-  brand = 'Nestl\u00e9 Carnation\U0001f1fa\U0001f1f8', name = '\u6de1\u5976 Evaporated Milk',
+  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = '\u6de1\u5976 Evaporated Milk',
   walmart = '10291864', usd = 1.08/354*30,
   # 354ml, full can 422g, empty can 46g,
   servingGram = (422 - 46)/354*30, servingTbsp = 2,
@@ -79,7 +79,7 @@ Carnation_evaporatedMilk <- function() new(
 CarnationFatFree_evaporatedMilk <- function() new(
   Class = 'nutrition', 
   walmart = '1363902922', usd = 6.88/354*30, # 2023-11-11
-  brand = 'Nestl\u00e9 Carnation\U0001f1fa\U0001f1f8', name = '\u8131\u8102\u6de1\u5976 Fat Free Evaporated Milk',
+  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = '\u8131\u8102\u6de1\u5976 Fat Free Evaporated Milk',
   # fullweight = 431, emptyweight = 46,
   servingGram = (431-46)/354*30, servingTbsp = 2,
   sodium = .035, sugar = 3, protein = 2)
@@ -89,7 +89,7 @@ CarnationFatFree_evaporatedMilk <- function() new(
 
 Carnation_condensedMilk <- function() new(
   Class = 'nutrition', url = 'www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
-  brand = 'Nestl\u00e9 Carnation\U0001f1fa\U0001f1f8', name = 'Sweetened Condensed Milk',
+  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
   usd = 2.99/10,
   fdc = 365332L,
@@ -106,7 +106,7 @@ Carnation_condensedMilk <- function() new(
 
 Philadelphia_creamCheese <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Philadelphia\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', 
                    url_ = 'www.kraftheinzawayfromhome.com/products/10021000616005/'),
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
@@ -118,7 +118,7 @@ Philadelphia_creamCheese <- function() new(
 
 PhiladelphiaNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Philadelphia\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', 
                    url_ = 'www.kraftheinzawayfromhome.com/products/10021000616401/'),
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cream Cheese',
   walmart = '36647454', usd = 4.98/2/227*28, # 2023-11-11

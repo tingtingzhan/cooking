@@ -4,14 +4,14 @@
 
 Stonewall_Bourbon <- function() new(
   Class = 'nutrition', stonewall = 553167L,
-  name = 'Bourbon Barrel-Aged Maple\U0001f341 Syrup',
+  name = 'Bourbon Barrel-Aged Maple\U1f341 Syrup',
   usd = 19.95/250*30, # 2023-11-11
   servingGram = 40, servingTbsp = 2, #serving_ml = 30,
   sodium = .005, addedSugar = 24)
 
 Stonewall_maple <- function() new(
   Class = 'nutrition', stonewall = 170801L,
-  name = 'Maine Maple\U0001f341 Syrup',
+  name = 'Maine Maple\U1f341 Syrup',
   # servingGram = 60, servingCup = 1/4, sodium = .005, addedSugar = 36) # webpage
   # empty bottle 253g
   usd = 17.95/250*30, # 2023-11-11
@@ -20,7 +20,7 @@ Stonewall_maple <- function() new(
 
 Stonewall_blueberrySyrup <- function() new(
   Class = 'nutrition', stonewall = 170802L,
-  name = '\u84dd\u8393\u7cd6\u6d46 Wild Maine Blueberry\U0001fad0 Syrup',
+  name = '\u84dd\u8393\u7cd6\u6d46 Wild Maine Blueberry\U1fad0 Syrup',
   usd = 8.95/250*60, # 2023-11-11
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
   addedSugar = 34)
@@ -64,7 +64,7 @@ Stonewall_apricot <- function() new(
 
 Stonewall_wildBlueberryJam <- function() new(
   Class = 'nutrition', stonewall = 101305L,
-  name = 'Wild Maine Blueberry\U0001fad0 Jam',
+  name = 'Wild Maine Blueberry\U1fad0 Jam',
   servingGram = 15, sugar = 7, review = 'Nice!')
 
 

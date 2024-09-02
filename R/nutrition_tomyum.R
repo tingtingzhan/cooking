@@ -3,7 +3,7 @@
 Siam_tomyum <- function() new(
   Class = 'nutrition', 
   usd = 4.99/454*15, 
-  brand = styleURL(text_ = 'Siam Select\U0001f1f9\U0001f1ed', 
+  brand = styleURL(text_ = 'Siam Select\U1f1f9\U1f1ed', 
                    url_ = 'www.sayweee.com/zh/product/Siam-Select-Instant-Tom-Yum-Soup-Paste/61645'),
   name = '\u0e15\u0e49\u0e21\u0e22\u0e33 Tom-Yum Paste',
   servingGram = 15, servingTbsp = 1, # no volumn info on label

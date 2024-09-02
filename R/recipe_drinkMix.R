@@ -169,11 +169,11 @@ setMethod(f = show, signature(object = 'drinkMix'), definition = function(object
   icy_nutri <- nutrition(icy)
   
   hotFlavor <- attr(hot_nutri, which = 'cookedFlavor', exact = TRUE)
-  hotFlavor@per <- sprintf(fmt = '%s + %.0fg Hot Water, US\U0001f4b5 %.2f', hotFlavor@per, hot@water80, hot_nutri@usd)
+  hotFlavor@per <- sprintf(fmt = '%s + %.0fg Hot Water, US\U1f4b5 %.2f', hotFlavor@per, hot@water80, hot_nutri@usd)
   print(hotFlavor)
 
   icyFlavor <- attr(icy_nutri, which = 'cookedFlavor', exact = TRUE)
-  icyFlavor@per <- sprintf(fmt = '%s 2x + %.0fg Shaved Ice, US\U0001f4b5 %.2f', icyFlavor@per, sum(icy@iceWater, icy@ice), icy_nutri@usd)
+  icyFlavor@per <- sprintf(fmt = '%s 2x + %.0fg Shaved Ice, US\U1f4b5 %.2f', icyFlavor@per, sum(icy@iceWater, icy@ice), icy_nutri@usd)
   print(icyFlavor)
   
   cat('\n')
@@ -391,19 +391,19 @@ setClass(Class = 'matchaLatteMix', contains = 'drinkMix', prototype = prototype(
 #' @export
 matchaLatte <- function() new(
   Class = 'matchaLatteMix',
-  matchaSado_tsp = c(Koyama_tenju = 3),
+  matchaSado_tsp = c(Marukyu_tenju = 3),
   date = as.Date('2024-08-27'),
   review = c('must use the most expensive sado-grade matcha!',
            'for cheaper sado-grade matcha, slightly increase sugar up to x1.5',
            'never use culinary-grade matcha!'))
 
-sayakaLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_sayaka = 2.5), pros = 'okay')
+sayakaLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_sayaka = 2.5), sugar_tsp = 3, pros = 'okay')
 
-ikuyoLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_ikuyo = 2.5), pros = 'okay')
+ikuyoLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_ikuyo = 2.5), sugar_tsp = 1.5*1.5, pros = 'okay')
 
-seiunLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_seiun = 2.25), pros = 'okay')
+seiunLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Ippodo_seiun = 2.25), sugar_tsp = 1.5*1.5, pros = 'okay')
 
-kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Koyama_kiwamiChoan = 3), pros = 'great', date = as.Date('2024-08-24'))
+kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matchaSado_tsp = c(Marukyu_kiwamiChoan = 3), sugar_tsp = 1.5, pros = 'great', date = as.Date('2024-08-24'))
 
 
 
@@ -441,7 +441,7 @@ setClass(Class = 'matchaGoatLatteMix', contains = 'drinkMix', prototype = protot
 #' @export
 matchaGoatLatte <- function() new(
   Class = 'matchaGoatLatteMix', 
-  matchaSado_tsp = c(Koyama_tenju = 3), 
+  matchaSado_tsp = c(Marukyu_tenju = 3), 
   sugar_tsp = 1.5,
   review = 'to confirm in Summer 2025 with new crop of tenju!')
 
@@ -475,7 +475,7 @@ Ippodo_sayakaLatte <- function() new(
 Ippodo_uji_shimizu <- function() new(
   Class = 'nutrition',
   ippodousa = 'uji-shimizu-sticks', ippodoglobal = 'matcha642402',
-  name = '\u5b87\u6cbb\u6e05\u6c34 Uji Shimizu\U0001f375',
+  name = '\u5b87\u6cbb\u6e05\u6c34 Uji Shimizu\U1f375',
   usd = 18/12, jpy = 700/400*15,
   servingGram = 15, servingTbsp = 1.5,
   calorie = 60,
@@ -485,7 +485,7 @@ Ippodo_uji_shimizu <- function() new(
 #' @export
 ItoEn_sweet_matcha <- function() new(
   Class = 'nutrition',
-  itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks',
+  itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
   name = 'Sweet Matcha',
   servingGram = 12, sugar = 11)
 
@@ -538,7 +538,7 @@ Starbucks_cocoa <- function() new(
   Class = 'nutrition', 
   sams = 'P03020738', usd = 8.48/567*28,
   costco = '100071096',
-  brand = 'Starbucks\U0001f1fa\U0001f1f8', name = 'Hot Cocoa (Tin)',
+  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa (Tin)',
   servingGram = 28, servingTbsp = 2.5, 
   calorie = 100,
   fat = 2.5, carbohydrate = 22, sugar = 17, addedSugar = 16, protein = 2)
@@ -569,7 +569,7 @@ SwissMiss_simplyCocoaMilk <- function() new(
 #' @export
 Nestle_richChocolate <- function() new(
   Class = 'nutrition', url = 'www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
-  brand = 'Nestl\u00e9\U0001f1e8\U0001f1ed', name = 'Rich Chocolate',
+  brand = 'Nestl\u00e9\U1f1e8\U1f1ed', name = 'Rich Chocolate',
   servingGram = 20, fat = 2, sodium = .19, carbohydrate = 15, sugar = 12, addedSugar = 10)
 
 #' @rdname drink
@@ -603,7 +603,7 @@ Nestle_cocoSupreme <- function() new(
 #' @export
 WilliamsSonoma_mocha <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Williams Sonoma\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Williams Sonoma\U1f1fa\U1f1f8', 
                    url_ = 'www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/'),
   name = 'Mocha Hot Chocolate',
   servingGram = 41, servingTbsp = 5, 
@@ -615,7 +615,7 @@ WilliamsSonoma_mocha <- function() new(
 #' @export
 Starbucks_mochaMix <- function() new(
   Class = 'nutrition', amazon = 'B004WYLFG8', # discontinued
-  brand = 'Starbucks\U0001f1fa\U0001f1f8', name = 'Mocha Powder',
+  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Mocha Powder',
   # bottle 396g
   servingGram = 10, servingTbsp = 1,
   calorie = 40,
@@ -628,7 +628,7 @@ Ghirardelli_mochaFrappe <- function() new(
   Class = 'nutrition', 
   amazon = 'B00D6Q9E3E',
   webstaurant = '40866211',
-  brand = 'Ghirardelli\U0001f1fa\U0001f1f8', name = 'Mocha Frapp\u00e9',
+  brand = 'Ghirardelli\U1f1fa\U1f1f8', name = 'Mocha Frapp\u00e9',
   usd = 21.49/1420*45,
   servingGram = 100, servingCup = (100/45)*(1/4), 
   calorie = 391.91,
@@ -646,7 +646,7 @@ Ghirardelli_mochaFrappe <- function() new(
 #' @export
 Maxwell_mochaSuisse <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Maxwell House\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Maxwell House\U1f1fa\U1f1f8', 
                    url_ = 'www.kraftheinz.com/maxwell-house/products/00043000004432-suisse-mocha-cafe-style-sugar-free-instant-coffee-beverage-mix'),
   name = 'Suisse Mocha',
   target = 'A-12959531', usd = 3.59/117*11,
@@ -701,14 +701,14 @@ Starbucks_mochaFrappuccino <- function() new(
 #' @export
 TraderJoes_matchaLatte <- function() new(
   Class = 'nutrition', traderjoes = '052512',
-  brand = 'Trader Joe\'s\U0001f1fa\U0001f1f8', name = 'Matcha\U0001f375 Latte Mix',
+  brand = 'Trader Joe\'s\U1f1fa\U1f1f8', name = 'Matcha\U1f375 Latte Mix',
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
 #' @rdname matchaLatte
 #' @export
 Starbucks_matchaLatte <- function() new(
   Class = 'nutrition', starbucks_hot = 468L,
-  name = 'Matcha\U0001f375 Latte',
+  name = 'Matcha\U1f375 Latte',
   servingGram = 450, serving_floz = 16, # 473.176 ml. not sure about weight..
   usd = 4.95, # Spring 2024
   calorie = 240,
@@ -718,7 +718,7 @@ Starbucks_matchaLatte <- function() new(
 #' @export
 Starbucks_matchaFrappuccino <- function() new(
   Class = 'nutrition', starbucks_iced = 439L,
-  name = 'Matcha\U0001f375 Frappuccino',
+  name = 'Matcha\U1f375 Frappuccino',
   servingGram = 450, 
   serving_floz = 16, # 473.176 ml. not sure about weight..
   usd = 5.45, # Spring 2024
@@ -729,7 +729,7 @@ Starbucks_matchaFrappuccino <- function() new(
 #' @export
 Starbucks_matchaLatteMix <- function() new(
   Class = 'nutrition', url = 'www.yamibuy.com/en/p/premium-mixes-matcha-latte-instant-coffee-powder-96g/3156004631',
-  brand = 'Starbucks\U0001f1fa\U0001f1f8', name = 'Matcha\U0001f375 Latte Mix',
+  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Matcha\U1f375 Latte Mix',
   usd = 10.99/4,
   servingGram = 24, 
   calorie = 103,

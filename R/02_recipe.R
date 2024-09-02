@@ -484,7 +484,7 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
       if (!length(names(x0))) return(x0)
       idx <- if (which == 'matchaSado') {
         # !startsWith(names(x0), prefix = 'Ippodo') & !endsWith(names(x0), suffix = '_matchaSado')
-        !grepl(pattern = '^Ippodo|^Koyama', x = names(x0)) & !endsWith(names(x0), suffix = '_matchaSado')
+        !grepl(pattern = '^Ippodo|^Marukyu', x = names(x0)) & !endsWith(names(x0), suffix = '_matchaSado')
       } else !endsWith(names(x0), suffix = paste0('_', which))
       names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
       return(x0)
@@ -635,7 +635,7 @@ recipe <- function(x) {
   x <- combineVol(x, which = 'bakingPowder', name1 = 'TraderJoes_bakingPowder')
   x <- combineVol(x, which = 'yeast', name1 = 'Fleischmanns_instant')
   x <- combineVol(x, which = 'matcha', name1 = 'Sencha_matcha')
-  x <- combineVol(x, which = 'matchaSado', name1 = 'Koyama_tenju')
+  x <- combineVol(x, which = 'matchaSado', name1 = 'Marukyu_tenju')
   x <- combineVol(x, which = 'cocoa', name1 = 'Navitas_cacao')
   x <- combineVol(x, which = 'cocoaDutch', name1 = 'KingArthur_Bensdorp')
   x <- combineVol(x, which = 'coffee', name1 = 'NescafeTastersChoice_decaf')
@@ -749,7 +749,7 @@ recipe <- function(x) {
         x@kingarthur <- x@kingarthur[-1L]
       } #else do nothing
     }
-    x@alias_class <- paste0('\U0001f3bc\ufe0f', paste0('\033[0;32m', x@author, '\033[0m'))
+    x@alias_class <- paste0('\U1f3b6\ufe0f', paste0('\033[0;32m', x@author, '\033[0m'))
   }
   
   if (!length(x@alias_flavor)) {
@@ -770,11 +770,11 @@ recipe <- function(x) {
       matchaLatteHot =, matchaLatteFrappe =, matchaGoatLatteHot =, matchaGoatLatteFrappe = {
         if (length(x@matcha)) stop('Must use @matchaSado in `matchaLatteMix`')
         switch(class(x), matchaLatteHot = {
-          '\u62b9\u8336\U0001f375Latte'
+          '\u62b9\u8336\U1f375Latte'
         }, matchaGoatLatteHot = {
-          '\u62b9\u8336\U0001f375\u7f8a\u5976Latte'
+          '\u62b9\u8336\U1f375\u7f8a\u5976Latte'
         }, matchaLatteFrappe =, matchaGoatLatteFrappe = {
-          '\u62b9\u8336\U0001f375'
+          '\u62b9\u8336\U1f375'
         })
       },
       shortDough =, waterDough = {
@@ -786,29 +786,29 @@ recipe <- function(x) {
       } else if (length(x@brownRice)) {
         '\u7cd9\u7c73'
       } else if (length(x@matcha) || length(x@matchaSado)) {
-        '\u62b9\u8336\U0001f375'
+        '\u62b9\u8336\U1f375'
       } else if (length(x@beet)) {
         '\u751c\u83dc'
       } else if (length(x@acai)) {
         '\u5df4\u897f\u8393'
       } else if (length(x@pumpkin)) {
-        '\u5357\u74dc\U0001f383'
+        '\u5357\u74dc\U1f383'
       } else if (length(x@strawberry)) {
-        '\u8349\u8393\U0001f353'
+        '\u8349\u8393\U1f353'
       } else if (length(x@pineapple)) {
-        '\u83e0\u841d\U0001f34d'
+        '\u83e0\u841d\U1f34d'
       } else if (length(x@pear)) {
-        '\u68a8\U0001f350'
+        '\u68a8\U1f350'
       } else if (length(x@mandarine)) {
-        '\u6a58\u5b50\U0001f34a'
+        '\u6a58\u5b50\U1f34a'
       } else if (length(x@mango)) {
-        '\u8292\u679c\U0001f96d'
+        '\u8292\u679c\U1f96d'
       } else if (length(x@tomato)) {
-        '\u897f\u7ea2\u67ff\U0001f345'
+        '\u897f\u7ea2\u67ff\U1f345'
       } else if (length(x@darkCherry)) {
-        '\u751c\u6a31\u6843\U0001f352'
+        '\u751c\u6a31\u6843\U1f352'
       } else if (length(x@applesauce)) {
-        '\u82f9\u679c\U0001f34e'
+        '\u82f9\u679c\U1f34e'
       } else if (length(x@chickpea)) {
         '\u9e70\u5634\u8c46'
       } else if (length(x@cashew)) {
@@ -820,7 +820,7 @@ recipe <- function(x) {
       } else if (length(x@redKidneyBean)) {
         '\u7ea2\u82b8\u8c46'
       } else if (length(x@shrimp)) {
-        '\u867e\U0001f990'
+        '\u867e\U1f990'
       } else if (length(x@beef)) {
         '\u725b\u8089'
       } else if (length(x@pork)) {
@@ -828,13 +828,13 @@ recipe <- function(x) {
       } else if (length(x@beef)) {
         '\u725b\u8089'
       } else if (length(x@ginger)) {
-        '\u59dc\u9999\U0001fada'
+        '\u59dc\u9999\U1fada'
       } else if (length(x@cocoa) || length(x@cocoaDutch)) { # `cocoa` has higher priority than `coffee`
-        '\u5de7\u514b\u529b\U0001f36b' # '\u53ef\u53ef\U0001f36b'
+        '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
       } else if (length(x@blackSesame)) {
         '\u9ed1\u829d\u9ebb'
       } else if (length(x@coconut)) {
-        '\u6930\u84c9\U0001f965'
+        '\u6930\u84c9\U1f965'
       #} else if (length(liqueur_nm <- names(x@liqueur))) {
       #  if (any(endsWith(liqueur_nm, suffix = '_coffee'))) {
       #    'Tiramisu\u0300'
@@ -852,7 +852,7 @@ recipe <- function(x) {
         } else if (grepl('raspberry', x = names(x@syrup))) {
           '\u8986\u76c6\u5b50'
         } else if (grepl('blueberry', x = names(x@syrup))) {
-          '\u84dd\u8393\U0001fad0'
+          '\u84dd\u8393\U1fad0'
         } else character()
       } else character())
   }
@@ -1413,8 +1413,8 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '\u5f00\u6c34 Boiling Water %.0f grams %s\n', object@boilingWater, autoVolume(object@boilingWater)))
   cat(sprintf(fmt = '\u51b0\u6c34 Iced Water %.0f grams %s\n', object@iceWater, autoVolume(object@iceWater)))
   cat(sprintf(fmt = '\u6c14\u6ce1\u6c34 Carbonated Water %.0f grams %s\n', object@carbonatedWater, autoVolume(object@carbonatedWater)))
-  cat(sprintf(fmt = '\u51b0\u6c99 Shaved Ice\U0001f367 %.0f grams %s\n', object@shavedIce, autoVolume(object@shavedIce)))
-  cat(sprintf(fmt = '\u51b0\u5757 Ice\U0001f9ca Cubes %.0f grams\n', object@ice))
+  cat(sprintf(fmt = '\u51b0\u6c99 Shaved Ice\U1f367 %.0f grams %s\n', object@shavedIce, autoVolume(object@shavedIce)))
+  cat(sprintf(fmt = '\u51b0\u5757 Ice\U1f9ca Cubes %.0f grams\n', object@ice))
   
   cat('\n')
   
@@ -1430,8 +1430,8 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   }
   
   if (length(y@calorie)) {
-    cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U0001f4b5 %.2f\nCalories\U0001f525 %.0f\n\n', y@servingGram, y@usd, y@calorie))
-  } else cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U0001f4b5 %.2f\n\n', y@servingGram, y@usd))
+    cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@usd, y@calorie))
+  } else cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@usd))
   
   #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDutchMix')]
   # need to write a [show] method for \linkS4class{mixWheatFlour}
@@ -1498,17 +1498,17 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   #}
   
   if (length(object@review)) {
-    cat(sprintf(fmt = '\U0001f4dd %s', object@review), sep = '\n')
+    cat(sprintf(fmt = '\U1f4dd %s', object@review), sep = '\n')
     cat('\n')
   }
   
   if (length(object@pros)) {
-    cat(sprintf(fmt = '\U0001f389 %s', object@pros), sep = '\n')
+    cat(sprintf(fmt = '\U1f389 %s', object@pros), sep = '\n')
     cat('\n')
   }
   
   if (length(object@cons)) {
-    cat(sprintf(fmt = '\U0001f940 %s', object@cons), sep = '\n')
+    cat(sprintf(fmt = '\U1f940 %s', object@cons), sep = '\n')
     cat('\n')
   }
   
@@ -1707,7 +1707,7 @@ setClass(Class = 'shangshikitchen', contains = 'recipe', prototype = prototype(
 ))
 
 setClass(Class = 'ippodo', contains = 'recipe', prototype = prototype(
-  author = 'Ippodo\U0001f375\u4e00\u4fdd\u5802\u8336\u8216\U0001f1ef\U0001f1f5'
+  author = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'
 ))
 
 

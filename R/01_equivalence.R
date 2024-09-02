@@ -245,7 +245,7 @@ setClass(Class = 'recipeDx', slots = c(
 #' @aliases baker-class
 #' @export
 setClass(Class = 'baker', contains = 'recipeDx', prototype = prototype(
-  per = 'All-Purpose\U0001f370\U0001f35e Flour'
+  per = 'All-Purpose\U1f370\U1f35e Flour'
 ))
 
 
@@ -260,7 +260,7 @@ setClass(Class = 'baker', contains = 'recipeDx', prototype = prototype(
 #' @aliases pastryBaker-class
 #' @export
 setClass(Class = 'pastryBaker', contains = 'recipeDx', prototype = prototype(
-  per = 'Pastry\U0001f370 Flour'
+  per = 'Pastry\U1f370 Flour'
 ))
 
 #' @rdname diagnosis
@@ -274,7 +274,7 @@ setClass(Class = 'mixBaker', contains = 'recipeDx', prototype = prototype(
 #' @aliases breadBaker-class
 #' @export
 setClass(Class = 'breadBaker', contains = 'recipeDx', prototype = prototype(
-  per = 'Bread\U0001f35e Flour'
+  per = 'Bread\U1f35e Flour'
 ))
 
 #' @rdname diagnosis
@@ -288,7 +288,7 @@ setClass(Class = 'glutenFreeBaker', contains = 'recipeDx', prototype = prototype
 #' @aliases riceBaker-class
 #' @export
 setClass(Class = 'riceBaker', contains = 'recipeDx', prototype = prototype(
-  per = 'Glutinous+Rice\U0001f33e Flour'
+  per = 'Glutinous+Rice\U1f33e Flour'
 ))
 
 #' @rdname diagnosis
@@ -365,12 +365,12 @@ show_endpoint <- function(x) {
   x[x == 'carbohydrate'] <- 'carb' 
   x[x == 'NaHCO3'] <- 'NaHCO\u2083' 
   x[x == 'Na2CO3'] <- 'Na\u2082CO\u2083' 
-  x[x == 'cornmeal'] <- '\U0001f33d'
+  x[x == 'cornmeal'] <- '\U1f33d'
   x[x == 'glutinousRice'] <- 'glutRice'
   x[x == 'addedSugar'] <- '+sugar'
   x[x == 'addedStarch'] <- '+starch'
-  x[x == 'eggYolk'] <- '\U0001f95ayolk'
-  x[x == 'eggWhite'] <- '\U0001f95awhite'
+  #x[x == 'eggYolk'] <- '\U0001f95ayolk'
+  #x[x == 'eggWhite'] <- '\U0001f95awhite'
   #x[x == 'sodium'] <- 'Na\u3253'
   x[x == 'bakingPowder'] <- 'bkPwd'
   x[x == 'cholesterol'] <- 'cholr'

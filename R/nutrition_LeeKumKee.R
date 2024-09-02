@@ -16,7 +16,7 @@ LeeKumKee_brownBraising <- function() new(
 
 LeeKumKee_garlic <- function() new(
   Class = 'nutrition', leekumkee = 'minced-garlic',
-  name = '\u849c\u84c9 Minced Garlic\U0001f9c4',
+  name = '\u849c\u84c9 Minced Garlic\U1f9c4',
   usd = 5.69/326*6,
   servingGram = 6, servingTsp = 1,
   calorie = 15,

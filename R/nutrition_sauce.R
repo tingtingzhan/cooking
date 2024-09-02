@@ -2,7 +2,7 @@
 
 Kikkoman_soyLite <- function() new(
   Class = 'nutrition', url = 'kikkomanusa.com/homecooks/products/less-sodium-soy-sauce/',
-  brand = 'Kikkoman\u4e80\u7532\u842c\U0001f1ef\U0001f1f5', 
+  brand = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5', 
   name = '\u6e1b\u5869\u91a4\u6cb9 Soy Sauce, Less Sodium',
   fdc = 174277L,
   walmart = '161737082', usd = 7.28/1200*15,
@@ -12,7 +12,7 @@ Kikkoman_soyLite <- function() new(
 
 Kikkoman_soy <- function() new(
   Class = 'nutrition', url = 'kikkomanusa.com/homecooks/products/soy-sauce-non-gmo/',
-  brand = 'Kikkoman\u4e80\u7532\u842c\U0001f1ef\U0001f1f5', name = '\u9171\u6cb9 Soy Sauce',
+  brand = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5', name = '\u9171\u6cb9 Soy Sauce',
   fdc = 174277L,
   walmart = '10307429', usd = 7.27/1200*15,
   servingGram = 15, servingTbsp = 1, 
@@ -24,7 +24,7 @@ mizkan_brownRiceVinegar <- function() new(
   Class = 'nutrition', 
   #url = 'www.mizkan.co.jp/product/group/?gid=01007',
   mizkanjpn = '01007',
-  #brand = 'mizkan\u30df\u30c4\u30ab\u30f3\U0001f1ef\U0001f1f5', 
+  #brand = 'mizkan\u30df\u30c4\u30ab\u30f3\U1f1ef\U1f1f5', 
   name = '\u7d14\u7384\u7c73\u9ed2\u9162 Brown Rice Vinegar',
   amazon = 'B000FQNWBS', usd = 18.59/500*15,
   servingGram = 15, servingTbsp = 1
@@ -34,7 +34,7 @@ mizkan_brownRiceVinegar <- function() new(
 
 LeaPerrins_Worcestershire <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Lea & Perrins\U0001f1ec\U0001f1e7', 
+  brand = styleURL(text_ = 'Lea & Perrins\U1f1ec\U1f1e7', 
                    url_ = 'www.kraftheinz.com/lea-perrins/products/00051600002505'),
   name = '\u55bc\u6c41 Worcestershire Sauce',
   servingTsp = 1, servingGram = 5, sodium = .065, sugar = 1)
@@ -50,7 +50,7 @@ Bachans_original <- function() new(
 
 GreyPoupon_Dijon <- function() new(
   Class = 'nutrition', costco = '100381596',
-  brand = styleURL(text_ = 'Grey Poupon\U0001f1eb\U0001f1f7', 
+  brand = styleURL(text_ = 'Grey Poupon\U1f1eb\U1f1f7', 
                    url_ = 'greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g'),
   name = 'Dijon Mustard',
   servingTsp = 1, servingGram = 5, sodium = .12)
@@ -58,7 +58,7 @@ GreyPoupon_Dijon <- function() new(
 
 Heinz_whiteVinegar <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Heinz\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Heinz\U1f1fa\U1f1f8', 
                    url_ = 'www.heinz.com/products/00013000008525'),
   name = '\u767d\u918b White Vinegar, 5% Acidity',
   servingTbsp = 1, servingGram = 14.4) 

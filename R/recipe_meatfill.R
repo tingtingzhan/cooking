@@ -9,8 +9,8 @@ meatfill_portion = function() c(
   '\u9984\u9968 wonton' = 15,
   '\u997a\u5b50 gyoza' = 15,
   # '35g bao wrapper \u5305\u5b5035g\u76ae' = 20, # I can do nicely
-  # '\u5927\u5305\u5b50 50g bao wrapper\U0001f389' = 52 # too big
-  '\u5305\u5b50 40g bao wrapper\U0001f389' = 40 # too big
+  # '\u5927\u5305\u5b50 50g bao wrapper\U1f389' = 52 # too big
+  '\u5305\u5b50 40g bao wrapper\U1f389' = 40 # too big
 )
 
 meatfill_note = function() c(

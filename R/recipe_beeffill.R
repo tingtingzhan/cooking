@@ -18,7 +18,7 @@
 #' @aliases beeffill-class
 #' @export
 setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
-  alias_class = '\u725b\U0001f402\u8089\u9985',
+  alias_class = '\u725b\U1f402\u8089\u9985',
   # 1kg beef, with only a little fat
   beef = c(brisket_flat = 350, brisket_flat_lean = 650), # fat tastes enough
   
@@ -42,7 +42,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
     '\u9984\u9968 wonton' = 15,
     '\u997a\u5b50 gyoza' = 15,
     # '35g bao wrapper \u5305\u5b5035g\u76ae' = 20, # I can do nicely
-    '\u5927\u5305\u5b50 50g bao wrapper\U0001f389' = 40 # super successful!!
+    '\u5927\u5305\u5b50 50g bao wrapper\U1f389' = 40 # super successful!!
   ), 
   note = c(
     'Extra can be made into meatmash()',

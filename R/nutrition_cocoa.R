@@ -64,14 +64,14 @@ KingArthur_Burgundy <- function() new(
 
 Ghirardelli_sunrise <- function() new(
   Class = 'nutrition', webstaurant = '40869069',
-  brand = 'Ghirardelli\U0001f1fa\U0001f1f8', name = 'Sunrise Cocoa',
+  brand = 'Ghirardelli\U1f1fa\U1f1f8', name = 'Sunrise Cocoa',
   servingGram = 100, servingTbsp = 100/6, # packaging
   calorie = 234, 
   fat = 15.3, sodium = .03, carbohydrate = 49.7, sugar = .6, protein = 21.3)
 
 Ghirardelli_majestic <- function() new(
   Class = 'nutrition', webstaurant = '40869096',
-  brand = 'Ghirardelli\U0001f1fa\U0001f1f8',
+  brand = 'Ghirardelli\U1f1fa\U1f1f8',
   name = 'Majestic Cocoa',
   servingGram = 100, servingTbsp = 100/6, # packaging
   calorie = 368,
@@ -79,12 +79,12 @@ Ghirardelli_majestic <- function() new(
 
 #Ghirardelli_superior <- function() new(
 #  Class = 'nutrition', webstaurant = '40869072',
-#  brand = 'Ghirardelli\U0001f1fa\U0001f1f8', name = 'Superior Cocoa'
+#  brand = 'Ghirardelli\U1f1fa\U1f1f8', name = 'Superior Cocoa'
   # no nutrition ??
 #)
 
 #Ghirardelli_midnight <- function() new(
 #  Class = 'nutrition', webstaurant = '40841729',
-#  brand = 'Ghirardelli\U0001f1fa\U0001f1f8',
+#  brand = 'Ghirardelli\U1f1fa\U1f1f8',
 #  name = 'Midnight Dutch Cocoa') # no nutrition??
 

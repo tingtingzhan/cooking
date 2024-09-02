@@ -139,11 +139,11 @@ setMethod(f = show, signature(object = 'tiramisuMix'), definition = function(obj
   icy_nutri <- nutrition(icy)
   
   hotFlavor <- attr(hot_nutri, which = 'cookedFlavor', exact = TRUE)
-  hotFlavor@per <- sprintf(fmt = '%s hotdrink(), US\U0001f4b5 %.2f', hotFlavor@per, hot_nutri@usd)
+  hotFlavor@per <- sprintf(fmt = '%s hotdrink(), US\U1f4b5 %.2f', hotFlavor@per, hot_nutri@usd)
   print(hotFlavor)
   
   icyFlavor <- attr(icy_nutri, which = 'cookedFlavor', exact = TRUE)
-  icyFlavor@per <- sprintf(fmt = '%s frappe(), US\U0001f4b5 %.2f', icyFlavor@per, icy_nutri@usd)
+  icyFlavor@per <- sprintf(fmt = '%s frappe(), US\U1f4b5 %.2f', icyFlavor@per, icy_nutri@usd)
   print(icyFlavor)
   
   cat('\n')

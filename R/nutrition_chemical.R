@@ -12,7 +12,7 @@ Ohsawa_nigari <- function() new(
   Class = 'nutrition',
   brand = styleURL(
     url_ = 'www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001',
-    text_ = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U0001f1ef\U0001f1f5' 
+    text_ = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5' 
   ), 
   name = '\u82e6\u6c41/\u6ef7\u6c41 Nigari',
   amazon = 'B0019L8KUG',
@@ -23,9 +23,9 @@ Ohsawa_nigari <- function() new(
 
 Morton_salt <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Morton\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Morton\U1f1fa\U1f1f8', 
                    url_ = 'www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/'),
-  name = '\u76d0 Salt\U0001f9c2',
+  name = '\u76d0 Salt\U1f9c2',
   servingTsp = 1/4, 
   servingGram = 1.5, # packaging!
   # different size of salt rock has different density!!!
@@ -36,7 +36,7 @@ Ajinomoto_msg <- function() new(
   Class = 'nutrition', 
   brand = styleURL(
     url_ = 'www.ajinomoto.com/msg', 
-    text_ = 'Ajinomoto\u5473\u306e\u7d20\U0001f1ef\U0001f1f5'
+    text_ = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5'
   ), 
   name = '\u5473\u7cbe MSG',
   # 'www.yamibuy.com/zh/p/msg-aji-no-motot-in-bag-1lb/1148033131'
@@ -52,7 +52,7 @@ ArmHammer_NaHCO3 <- function() new(
   Class = 'nutrition', 
   brand = styleURL(
     url_ = 'www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz',
-    text_ = 'Arm & Hammer\U0001f1fa\U0001f1f8'
+    text_ = 'Arm & Hammer\U1f1fa\U1f1f8'
   ),
   name = '\u5c0f\u82cf\u6253 Baking Soda, NaHCO\u2083',
   servingGram = .6, 
@@ -81,7 +81,7 @@ Wegmans_bakingPowder <- function() new(
 
 TraderJoes_bakingPowder <- function() new(
   Class = 'nutrition', fdc = 172804L,
-  brand = 'Trader Joe\'s\U0001f1fa\U0001f1f8', name = '\u6ce1\u6253\u7c89 Baking Powder, 2x Acting', 
+  brand = 'Trader Joe\'s\U1f1fa\U1f1f8', name = '\u6ce1\u6253\u7c89 Baking Powder, 2x Acting', 
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   amazon = 'B00AAOVIB6', usd = 12.93/(2*383),
   servingGram = 230/383, # 0.6g 

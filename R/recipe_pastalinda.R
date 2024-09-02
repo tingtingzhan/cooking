@@ -58,16 +58,16 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
 #' @aliases wrapperlinda-class
 #' @export
 setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
-  alias_class = '\u6c64\u9762\U0001f35c \u6c34\u997a\U0001f95f\u6284\u624b\u76ae',
-  key = '\U0001f35e57%',
+  alias_class = '\u6c64\u9762\U1f35c \u6c34\u997a\U1f95f\u6284\u624b\u76ae',
+  key = '\U1f35e 57%',
   portion = c(
     '\u6284\u624b\u76ae wonton; 6x thru Thickness-2' = 5, # tried and nice.  Weigh to confirm
     
-    '\u6c34\u997a\U0001f95f\u76ae gyoza; 2x thru Thickness-8' = 8, # 1x thru Thickness 9 too thick
+    '\u6c34\u997a\U1f95f\u76ae gyoza; 2x thru Thickness-8' = 8, # 1x thru Thickness 9 too thick
     
     'lasagna, Emile Henry Oval Individual, 2x thru Thickness-8' = 16, # 20g, Thickness 9, confirmed.  a little too thick for me
     
-    '\u6e05\u6c64\u8584\u9762\U0001f35c thin noodle; 2x thru Thickness-8' = 100 # 2x thru Thickness 9 too thin
+    '\u6e05\u6c64\u8584\u9762\U1f35c thin noodle; 2x thru Thickness-8' = 100 # 2x thru Thickness 9 too thin
   ), 
   youtube = c(
     'PinNuo makes wonton' = 'XzVsRPwGmuE', 
@@ -122,16 +122,16 @@ pumpkin_wrapperlinda <- function() new(
 #' @aliases noodlelinda-class
 #' @export
 setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
-  alias_class = '\u5e7c\u9762\U0001f35d',
+  alias_class = '\u5e7c\u9762\U1f35d',
   portion = c(
-    '\u9762\u6761\U0001f35d\U0001f35c noodle' = 100
+    '\u9762\u6761\U1f35d\U1f35c noodle' = 100
   ),
   instruction = c(
-    '\u51c9\u9762\U0001f35d Dry noodle: 
+    '\u51c9\u9762\U1f35d Dry noodle: 
     Pastalinda-9, 2.5mm cut.
     Soak cooked noodle in cold water for 30sec. Drain.
     Mix with dressing',
-    '\u6c64\u9762\U0001f35c Noodle soup: 
+    '\u6c64\u9762\U1f35c Noodle soup: 
     2-sheet through Pastalinda-7.5, 2.5mm cut'
   )
 ))

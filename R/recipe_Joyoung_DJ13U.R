@@ -70,7 +70,7 @@ mungMilk_thick <- function() new(
 #' @rdname soymilk
 #' @export
 cornSoymilk <- function() new(
-  Class = 'soymilk', alias = '\u7389\u7c73\U0001f33d\u8c46\u6d46',
+  Class = 'soymilk', alias = '\u7389\u7c73\U1f33d\u8c46\u6d46',
   soybean = 100, # weigh and confirm
   yellowCorn = 100, # weigh and confirm
   water = 1100, # weigh and confirm
@@ -150,6 +150,12 @@ brownRicemilk <- function() new(
   water = 845, review = 'to confirm')
 
 
+brownRice_porridge <- function() new(
+  Class = 'recipe', alias_class = '\u6e7f\u7c73\u996d', # consider `Class = 'wetRice'`
+  brownRice = c(Dynasty_brownRice = 300), # 3 big cups, to weigh!
+  water = 800, # 1100 waterline; to weigh!!
+  JoyoungDJ13U = JoyoungDJ13U(program = '\u852c\u83dc\u7ca5 Porridge', note = '1100ml waterline'),
+  date = as.Date('2024-08-31'))
 
 
 
@@ -169,7 +175,7 @@ brownRicemilk <- function() new(
 #' @aliases cornjuice-class
 #' @export
 setClass(Class = 'cornjuice', contains = 'recipe', prototype = prototype(
-  alias_class = '\u7389\u7c73\U0001f33d\u6c41'
+  alias_class = '\u7389\u7c73\U1f33d\u6c41'
 ))
 
 
@@ -186,7 +192,7 @@ cornjuice <- function() new(
 #' @rdname cornjuice
 #' @export
 cornVeggiePaste <- function() new(
-  Class = 'cornjuice', alias_flavor = '\u852c\u83dc\U0001f955\U0001fadb',
+  Class = 'cornjuice', alias_flavor = '\u852c\u83dc\U1f955\U1fadb',
   yellowCorn = 246,
   puree = c(Kirkland_mixedVeggies = 123), water = 560,
   JoyoungDJ13U = JoyoungDJ13U_cornjuice(

@@ -43,7 +43,7 @@ US_10x <- function() new(
   Class = 'nutrition',
   costco = '100436353',
   costcoBiz = '11830701',
-  brand = 'U.S.\U0001f1fa\U0001f1f8', 
+  brand = 'U.S.\U1f1fa\U1f1f8', 
   name = '10x\u7cd6\u7c89 Sugar, Confectioners',
   usd = 4.99/3180*30,
   servingGram = 30,

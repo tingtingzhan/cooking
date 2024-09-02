@@ -29,7 +29,7 @@ yellowtailSashimi <- function() new(
 
 tilapia <- function() new(
   Class = 'nutrition', fdc = 175176L,
-  name = '\u7f57\u975e\u9c7c Tilapia\U0001f41f',
+  name = '\u7f57\u975e\u9c7c Tilapia\U1f41f',
   servingGram = 100, water = 78.1, fat = 1.7, protein = 20.1, sodium = .052)
 
 Kirkland_shrimp_31_40 <- function() new(
@@ -37,7 +37,7 @@ Kirkland_shrimp_31_40 <- function() new(
   #fdc = 475625L,
   #fdc = 175180L, cooked
   #fdc = 972415, historical data, raw
-  name = '\u867e Shrimp\U0001f990 31-40ct',
+  name = '\u867e Shrimp\U1f990 31-40ct',
   costcoBiz = '100385031',
   # package 2lb, 908g, fully drained 750g
   usd = 11.99/750*112, # Costco, Jan 2024
@@ -58,7 +58,7 @@ Kirkland_shrimp_31_40 <- function() new(
 
 Kirkland_shrimpArgentine <- function() new(
   Class = 'nutrition', fdc = 2401277L,
-  name = '\u7ea2\u867e Argentine\U0001f1e6\U0001f1f7 Red Shrimp\U0001f990 30-50ct',
+  name = '\u7ea2\u867e Argentine\U1f1e6\U1f1f7 Red Shrimp\U1f990 30-50ct',
   costcoBiz = '100439398',
   # package 2lb, 908g, fully drained ???
   usd = 21.49/750*112, # Costco, Jan 2024
@@ -71,7 +71,7 @@ Kirkland_shrimpArgentine <- function() new(
 
 cuttlefish <- function() new(
   Class = 'nutrition', fdc = 174215L,
-  name = '\u58a8\u9c7c Cuttlefish\U0001f991',
+  name = '\u58a8\u9c7c Cuttlefish\U1f991',
   servingGram = 100, 
   water = 80.6, protein = 16.2, fat = 0.7, sodium = .372, cholesterol = .112)
 

@@ -4,9 +4,9 @@
 # is *not* accurate!!
 Libbys_pumpkin <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Libby\'s\U0001f1fa\U0001f1f8', 
+  brand = styleURL(text_ = 'Libby\'s\U1f1fa\U1f1f8', 
                    url_ = 'www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans'),
-  name = '\u5357\u74dc\u6ce5 Pumpkin\U0001f383 Puree',
+  name = '\u5357\u74dc\u6ce5 Pumpkin\U1f383 Puree',
   #usd = 8.98/(3*822)*122, sams = '162878', # 2023 early Fall, regular price
   usd = 3.91/(3*822)*122, sams = '162878', # 2023-12-24, clearance?
   # BJ's no longer have this at Christmas # 2023-12-24
@@ -21,7 +21,7 @@ Libbys_pumpkin <- function() new(
 
 Libbys_pumpkinPieMix <- function() new(
   Class = 'nutrition',
-  brand = 'Libby\'s\U0001f1fa\U0001f1f8', name = 'Pumpkin\U0001f383 Pie Mix',
+  brand = 'Libby\'s\U1f1fa\U1f1f8', name = 'Pumpkin\U1f383 Pie Mix',
   target = 'A-14886100', usd = 4.49/850*87,
   servingGram = 87, servingCup = 1/3, 
   sodium = .11, sugar = 18, addedSugar = 16)
@@ -30,7 +30,7 @@ Libbys_pumpkinPieMix <- function() new(
 
 Wegmans_tomato <- function() new(
   Class = 'nutrition', wegmans = 109068L,
-  name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U0001f345 Puree',
+  name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U1f345 Puree',
   servingGram = 63, servingCup = 1/4,
   sodium = .02, sugar = 3, protein = 1, 
   review = 'don\'t buy; buy Wegmans Organic tomato puree')
@@ -39,7 +39,7 @@ Wegmans_tomato <- function() new(
 WegmansOrganic_tomato <- function() new(
   Class = 'nutrition', 
   wegmansorganic = 19227L, usd = 2.89/822*63, # instore should be cheaper
-  name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U0001f345 Puree',
+  name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U1f345 Puree',
   servingGram = 63, servingCup = 1/4, 
   calorie = 25,
   sodium = .02, sugar = 3, protein = 1, 
@@ -48,7 +48,7 @@ WegmansOrganic_tomato <- function() new(
 
 Motts_applesauce <- function() new(
   Class = 'nutrition', url = 'www.motts.com/products/applesauce/no-sugar-added-apple-applesauce',
-  brand = 'Motts', name = '\u82f9\u679c\u6ce5 Applesauce\U0001f34e No Sugar',
+  brand = 'Motts', name = '\u82f9\u679c\u6ce5 Applesauce\U1f34e No Sugar',
   fdc = 1102646L, # water 88.22% 
   wegmans = 2450L, usd = 3.99/1300*123,
   # nutrition facts on bottle label (sold at Costco, Wegmans, etc), not from merchandise website
@@ -60,6 +60,6 @@ Motts_applesauce <- function() new(
 #ThriveMarket_apple <- function() new(
 #  # ThriveMarket.com now force you to join a paid membership
 #  Class = 'nutrition', url = 'thrivemarket.com/p/thrive-market-organic-apple-sauce',
-#  brand = 'Thrive Market', name = 'Applesauce\U0001f34e',
+#  brand = 'Thrive Market', name = 'Applesauce\U1f34e',
 #  servingGram = 140, sodium = .025, sugar = 15) # to try. Ingredient apple only
 

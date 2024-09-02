@@ -149,7 +149,7 @@ tomato_custardFilling <- function() new(
 #' @rdname custardFilling
 #' @export
 darkCherry_custardFilling <- function() new(
-  Class = 'custardFilling', alias_flavor = '\u751c\u6a31\u6843\U0001f352',
+  Class = 'custardFilling', alias_flavor = '\u751c\u6a31\u6843\U1f352',
   puree = c(HappyVillage_darkCherry = 800), 
   # waterLost = 460, # 15 + 14
   waterLost = 500, # 15 + 15, stir every 6min. to confirm!
@@ -165,7 +165,7 @@ darkCherry_custardFilling <- function() new(
 #' @rdname custardFilling
 #' @export
 blueberry_custardFilling <- function() new(
-  Class = 'custardFilling', alias_flavor = '\u84dd\u8393\U0001fad0',
+  Class = 'custardFilling', alias_flavor = '\u84dd\u8393\U1fad0',
   # puree = c(Kirkland_blueberry = 585), waterLost = 345, butter = 23, # stick and burn
   puree = c(Kirkland_blueberry = 800), waterLost = 500, sugar = 20, butter = 50, # TRY!!
   JoyoungCJA9U = JoyoungCJA9U_filling(operation = c('15min + 15min')),
@@ -214,7 +214,7 @@ mango_custardFilling <- function() new(
 #' @rdname custardFilling
 #' @export
 yellowPeach_custardFilling <- function() new(
-  Class = 'custardFilling', alias_flavor = '\u9ec4\u6843\U0001f351',
+  Class = 'custardFilling', alias_flavor = '\u9ec4\u6843\U1f351',
   puree = c(Kirkland_peach = 525), waterLost = 315, # confirmed!
   butter = 23,
   note = 'One (1) recipe calls for a full jar, after discarding syrup (contains added sugar)',
@@ -250,7 +250,7 @@ fig_custardFilling <- function() new(
 #' @rdname custardFilling
 #' @export
 coconut_custardFilling <- function() new(
-  Class = 'custardFilling', alias_flavor = '\u6930\u84c9\U0001f965',
+  Class = 'custardFilling', alias_flavor = '\u6930\u84c9\U1f965',
   coconut = c(WegmansOrganic_coconutFlour = 40),
   starch = numeric(),
   sugar = 35, 
@@ -260,7 +260,7 @@ coconut_custardFilling <- function() new(
   review = 'try again!')
 
 coconut_custardFilling_OLD <- function() new(
-  Class = 'custardFilling', alias_flavor = '\u6930\u84c9\U0001f965',
+  Class = 'custardFilling', alias_flavor = '\u6930\u84c9\U1f965',
   coconut = c(Edward_shreddedCoconutLite = 40), 
   sugar = 40, drymilk = numeric(), butter = 23, # before 2023-10-30
   water = 120, waterLost = 45,

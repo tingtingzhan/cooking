@@ -14,7 +14,7 @@ if (FALSE) {
 
 Edward_shreddedCoconutLite <- function() new(
   Class = 'nutrition', url = 'store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut',
-  brand = 'Edward & Sons\U0001f1fa\U0001f1f8', name = '\u51cf\u8102\u6930\u84c9 Less Fat Shredded Coconut\U0001f965',
+  brand = 'Edward & Sons\U1f1fa\U1f1f8', name = '\u51cf\u8102\u6930\u84c9 Less Fat Shredded Coconut\U1f965',
   usd = 3.89/250*16,
   servingGram = 16, 
   servingTbsp = 4, # packaging
@@ -29,7 +29,7 @@ Edward_shreddedCoconutLite <- function() new(
 
 Edward_shreddedCoconut <- function() new(
   Class = 'nutrition', url = 'store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut',
-  brand = 'Edward & Sons\U0001f1fa\U0001f1f8', name = '\u6930\u84c9 Shredded Coconut\U0001f965',
+  brand = 'Edward & Sons\U1f1fa\U1f1f8', name = '\u6930\u84c9 Shredded Coconut\U1f965',
   usd = 3.89/227*15,
   servingGram = 15, 
   servingTbsp = 2.5, # packaging
@@ -39,7 +39,7 @@ Edward_shreddedCoconut <- function() new(
 
 Edward_coconutFlour <- function() new(
   Class = 'nutrition', url = 'store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour',
-  brand = 'Edward & Sons\U0001f1fa\U0001f1f8', name = '\u6930\u8089\u7c89 Coconut\U0001f965 Flour',
+  brand = 'Edward & Sons\U1f1fa\U1f1f8', name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   usd = 5.99/454*14,
   servingGram = 14, 
   servingTbsp = 2, # packaging
@@ -48,7 +48,7 @@ Edward_coconutFlour <- function() new(
 
 BobsRedMill_coconutFlour <- function() new(
   Class = 'nutrition', bobsredmill = 'organic-coconut-flour',
-  name = '\u6930\u8089\u7c89 Coconut\U0001f965 Flour',
+  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   servingGram = 14, 
   servingTbsp = 2, # packaging
   calorie = 60,
@@ -58,7 +58,7 @@ AnthonysGoods_coconutFlour <- function() new(
   Class = 'nutrition', 
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
   brand = 'Anthony\'s Goods', 
-  name = '\u6930\u8089\u7c89 Coconut\U0001f965 Flour',
+  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   usd = 18.99/1810*14,
   servingGram = 14,
   servingTbsp = 2, # packaging
@@ -69,7 +69,7 @@ AnthonysGoods_coconutFlour <- function() new(
 WegmansOrganic_coconutFlour <- function() new(
   Class = 'nutrition', 
   wegmansorganic = 253623L, usd = 3.79/454*14,
-  name = '\u6930\u8089\u7c89 Coconut\U0001f965 Flour',
+  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   servingGram = 14, 
   #servingTbsp = 2, # packaging
   servingTbsp = 14/(66*2) * 16, # actual experiment: 66g = 1/2 cup
@@ -78,7 +78,7 @@ WegmansOrganic_coconutFlour <- function() new(
 
 ThaiKitchen_coconutmilkLite <- function() new(
   Class = 'nutrition', url = 'www.mccormick.com/thai-kitchen/products/coconut-milk/organic-lite-coconut-milk',
-  brand = 'Thai Kitchen', name = 'Lite Coconut\U0001f965 Milk',
+  brand = 'Thai Kitchen', name = 'Lite Coconut\U1f965 Milk',
   warning = 'Effie diarrhea!!',
   walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
   # fullweight = 475, emptyweight = 59,
@@ -88,7 +88,7 @@ ThaiKitchen_coconutmilkLite <- function() new(
 
 ThaiKitchen_coconutmilk <- function() new(
   Class = 'nutrition', url = 'www.mccormick.com/thai-kitchen/products/coconut-milk/organic-coconut-milk',
-  brand = 'Thai Kitchen', name = 'Coconut\U0001f965 Milk',
+  brand = 'Thai Kitchen', name = 'Coconut\U1f965 Milk',
   warning = 'Effie diarrhea!!',
   usd = (11.59/6)/403*80, # sold at Costco, price retrieved 2022-09-02
   # fullweight = 475, emptyweight = 59, 
@@ -100,7 +100,7 @@ ThaiKitchen_coconutmilk <- function() new(
 
 Silk_coconutmilk <- function() new(
   Class = 'nutrition', url = 'silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/',
-  brand = 'Silk', name = 'Coconutmilk\U0001f965',
+  brand = 'Silk', name = 'Coconutmilk\U1f965',
   target = 'A-15423909', usd = 4.99/8,
   servingGram = 240, servingCup = 1, # 240ml
   water = 240*.9457,
@@ -108,7 +108,7 @@ Silk_coconutmilk <- function() new(
 
 SoDelicious_coconutmilk <- function() new(
   Class = 'nutrition', 
-  brand = 'So Delicious', name = 'Coconutmilk\U0001f965',
+  brand = 'So Delicious', name = 'Coconutmilk\U1f965',
   url = c(
     'sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
     # 'sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
