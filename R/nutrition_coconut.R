@@ -20,10 +20,8 @@ Edward_shreddedCoconutLite <- function() new(
   servingTbsp = 4, # packaging
   calorie = 90,
   fat = 7, sodium = .005, carbohydrate = 7, sugar = 1, protein = 1,
-  warning = c(
-    'I have diarrhea if eat too much!!',
-    'Use coconut flour instead!!!!',
-    'Need to look for a brand with finer shreds of coconut, the term could be `Desiccated Coconut`'
+  review = c(
+    'I have diarrhea if eat too much! Use coconut flour instead!!'
   ))
 
 
@@ -35,7 +33,9 @@ Edward_shreddedCoconut <- function() new(
   servingTbsp = 2.5, # packaging
   calorie = 100,
   fat = 10, sodium = .005, carbohydrate = 4, sugar = 1, protein = 1,
-  warning = 'I have diarrhea if eat too much')
+  review = c(
+    'I have diarrhea if eat too much! Use coconut flour instead!!'
+  ))
 
 Edward_coconutFlour <- function() new(
   Class = 'nutrition', url = 'store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour',
@@ -79,7 +79,7 @@ WegmansOrganic_coconutFlour <- function() new(
 ThaiKitchen_coconutmilkLite <- function() new(
   Class = 'nutrition', url = 'www.mccormick.com/thai-kitchen/products/coconut-milk/organic-lite-coconut-milk',
   brand = 'Thai Kitchen', name = 'Lite Coconut\U1f965 Milk',
-  warning = 'Effie diarrhea!!',
+  review = 'Effie diarrhea!!',
   walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
   # fullweight = 475, emptyweight = 59,
   servingGram = (475-59)/403*80, servingCup = 1/3,
@@ -89,7 +89,7 @@ ThaiKitchen_coconutmilkLite <- function() new(
 ThaiKitchen_coconutmilk <- function() new(
   Class = 'nutrition', url = 'www.mccormick.com/thai-kitchen/products/coconut-milk/organic-coconut-milk',
   brand = 'Thai Kitchen', name = 'Coconut\U1f965 Milk',
-  warning = 'Effie diarrhea!!',
+  review = 'Effie diarrhea!!',
   usd = (11.59/6)/403*80, # sold at Costco, price retrieved 2022-09-02
   # fullweight = 475, emptyweight = 59, 
   servingGram = (475-59)/403*80, servingCup = 1/3,

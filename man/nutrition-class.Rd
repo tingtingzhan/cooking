@@ -128,8 +128,6 @@ Nutrition information.
 
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
 
-\item{\code{warning}}{\link[base]{character} scalar or \link[base]{vector}}
-
 \item{\code{contain}}{\link[base]{character} scalar or vector, names of additives}
 
 \item{\code{servingGram}}{\link[base]{numeric} scalar, serving size in grams}

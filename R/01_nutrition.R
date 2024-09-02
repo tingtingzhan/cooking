@@ -90,7 +90,6 @@ setClass(Class = 'extra', slots = c(
 #' @slot machine \link[base]{function}
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
-#' @slot warning \link[base]{character} scalar or \link[base]{vector}
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
 #' @slot servingGram \link[base]{numeric} scalar, serving size in grams
@@ -184,7 +183,6 @@ setClass(Class = 'nutrition', slots = c(
   
   machine = 'function',
   review = 'character',
-  warning = 'character',
   contain = 'character',
   
   servingGram = 'numeric',
@@ -686,12 +684,6 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
       cat(sprintf(fmt = '%s\U1f4dd %s', nm_rv, obj@review), sep = '\n')
       cat('\n')
     }
-  }
-  
-  if (nwarn <- length(obj@warning)) {
-      cat('Warning:\n')
-      cat(obj@warning, sep = '\n')
-      cat('\n')
   }
   
   if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))

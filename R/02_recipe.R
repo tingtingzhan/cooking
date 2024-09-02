@@ -907,12 +907,6 @@ nutrition.recipe <- function(x) {
   names(grams_nm) <- grams_nm
   
   nutri <- lapply(grams_nm, FUN = nutrition.character)
-  nutri_warning <- lapply(nutri, FUN = slot, name = 'warning')
-  nutri_warning <- nutri_warning[lengths(nutri_warning) > 0L]
-  if (length(nutri_warning)) {
-    nutri_warning <- unlist(nutri_warning, use.names = TRUE)
-    nutri_warning <- paste0(names(nutri_warning), ': ', nutri_warning)
-  } else nutri_warning <- character()
   
   info <- nutrition_(dots = nutri)
   # print(info) # debug
@@ -968,8 +962,7 @@ nutrition.recipe <- function(x) {
     cholesterol = if (cholesterol) cholesterol else numeric(),
     protein = if (protein) protein else numeric(),
     # water = if (water) water else numeric(),
-    water = if (waterCooked) waterCooked else numeric(),
-    warning = nutri_warning
+    water = if (waterCooked) waterCooked else numeric()
   )
   
   attr(ret, which = 'total_lost') <- total_lost
@@ -1246,7 +1239,6 @@ nutrition.recipe <- function(x) {
   )
   
   attr(ret, which = 'info') <- info
-  attr(ret, which = 'warning') <- nutri_warning
   
   #review <- attr(info, which = 'review')
   #attr(ret, which = 'review') <- review[names(review) == class(x)]

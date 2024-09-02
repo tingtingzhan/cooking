@@ -26,7 +26,8 @@ LeeKumKee_garlic <- function() new(
 LeeKumKee_oyster <- function() new(
   Class = 'nutrition', leekumkee = 'premium-oyster-flavored-sauce',
   name = '\u820a\u5e84\u7279\u7d1a\u8814\u6cb9 Oyster Sauce',
-  servingGram = 19, servingTbsp = 1, sodium = .83, addedSugar = 4, protein = 1)
+  servingGram = 19, servingTbsp = 1, sodium = .83, addedSugar = 4, protein = 1,
+  review = 'MSG flavor too strong, I do not like')
 
 LeeKumKee_KoreanBBQ <- function() new(
   Class = 'nutrition', leekumkee = 'korean-barbecue-sauce',
