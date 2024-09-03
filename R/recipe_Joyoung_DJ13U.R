@@ -152,9 +152,13 @@ brownRicemilk <- function() new(
 
 brownRice_porridge <- function() new(
   Class = 'recipe', alias_class = '\u6e7f\u7c73\u996d', # consider `Class = 'wetRice'`
-  brownRice = c(Dynasty_brownRice = 300), # 3 big cups, to weigh!
-  water = 800, # 1100 waterline; to weigh!!
-  JoyoungDJ13U = JoyoungDJ13U(program = '\u852c\u83dc\u7ca5 Porridge', note = '1100ml waterline'),
+  brownRice = c(Dynasty_brownRice = 270), water = 900, # weight confirmed
+  JoyoungDJ13U = JoyoungDJ13U(
+    program = '\u852c\u83dc\u7ca5 Porridge', 
+    note = '1100ml waterline, 3 cups of rice',
+    cooling = 'unplug from power, let stand for 1hr'
+  ),
+  pros = 'quite okay; good for using up my brown rice',
   date = as.Date('2024-08-31'))
 
 
