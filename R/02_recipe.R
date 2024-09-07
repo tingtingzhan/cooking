@@ -477,14 +477,16 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   x_tsp <- slot(addNameLen1(x, which = ._tsp, name1 = name1), name = ._tsp) # else NULL
   x_Tbsp <- slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
   x_cup <- slot(addNameLen1(x, which = ._cup, name1 = name1), name = ._cup) # else NULL
-  if (which %in% c('starch', 'oil', 'matcha')) {
+  if (which %in% c('starch', 'oil')) {
     add_suffix <- function(x0, which) {
       if (!length(names(x0))) return(x0)
       idx <- !endsWith(names(x0), suffix = paste0('_', which))
-      names(x0)[idx] <- ifelse(
-        test = vapply(names(x0)[idx], FUN = exists, where = 'package:cooking', FUN.VALUE = NA), 
-        yes = names(x0)[idx],
-        no = paste0(names(x0)[idx], '_', which))
+      names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
+      #names(x0)[idx] <- ifelse(
+      #  test = vapply(names(x0)[idx], FUN = exists, where = 'package:cooking', FUN.VALUE = NA), 
+      #  yes = names(x0)[idx],
+      #  no = paste0(names(x0)[idx], '_', which))
+      # dont know how to use \link[base]{exists}
       return(x0)
     }
     x_gram <- add_suffix(x_gram, which = which)

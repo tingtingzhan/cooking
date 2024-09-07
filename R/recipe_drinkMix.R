@@ -490,9 +490,9 @@ ItoEn_sweet_matcha <- function() new(
   servingGram = 12, sugar = 11)
 
 
-matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matcha_Tbsp = c(maeda = 1), sugar_tsp = 1.5, pros = 'okay')
+matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matcha_Tbsp = c(maeda_matcha = 1), sugar_tsp = 1.5, pros = 'okay')
 
-matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matcha_Tbsp = c(ItoEn = 1), sugar_tsp = 1.5, pros = 'okay')
+matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matcha_Tbsp = c(ItoEn_matcha = 1), sugar_tsp = 1.5, pros = 'okay')
 
 
 
