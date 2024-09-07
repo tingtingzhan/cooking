@@ -403,43 +403,30 @@ nutrition.nutrition <- function(x) {
     } # else do nothing
   } # seller
   
-  #if (length(x@brand) && !grepl(pattern = '\033]8;;', x = x@brand)) { # link
-  #  if (length(x@costco)) {
-  #    add_url <- sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco)
-  #    x@costco <- character()
-  #  } else if (length(x@jfc)) {
-  #    add_url <- sprintf(fmt = 'www.jfc.com/product/item/%s', x@jfc)
-  #    x@jfc <- character()
-  #  } else if (length(x@totalwine)) {
-  #    add_url <- sprintf(fmt = 'www.totalwine.com/p/%s', x@totalwine)
-  #    x@totalwine <- character()
-  #  } else if (length(x@webstaurant)) {
-  #    add_url <- sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', x@webstaurant)
-  #    x@webstaurant <- character()
-  #  }
-  #  if (exists('add_url')) x@brand <- styleURL(url_ = add_url, text_ = x@brand)
-  #}
-  
-  
   if (length(x@costco)) {
-    x@url <- c(x@url, sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco))
+    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco), text_ = 'Costco')))
     x@costco <- character()
   }
   if (length(x@jfc)) {
-    x@url <- c(x@url, sprintf(fmt = 'www.jfc.com/product/item/%s', x@jfc))
+    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.jfc.com/product/item/%s', x@jfc), text_ = 'JFC')))
     x@jfc <- character()
   } 
   if (length(x@totalwine)) {
-    x@url <- c(x@url, sprintf(fmt = 'www.totalwine.com/p/%s', x@totalwine))
+    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.totalwine.com/p/%s', x@totalwine), text_ = 'Total Wine')))
     x@totalwine <- character()
   } 
+  if (length(x@walmart)) {
+    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.walmart.com/ip/%s', x@walmart), text_ = 'Walmart')))
+    x@walmart <- character()
+  }
   if (length(x@webstaurant)) {
-    x@url <- c(x@url, sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', x@webstaurant))
+    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', x@webstaurant), text_ = 'Webstaurant')))
     x@webstaurant <- character()
   }
-  if (!grepl(pattern = '\033]8;;', x = x@brand) && # `x@brand` contains no link
-      (length(x@url) == 1L)) x@brand <- styleURL(url_ = x@url, text_ = x@brand)
-  
+  #if (!grepl(pattern = '\033]8;;', x = x@brand) && # `x@brand` contains no link
+  #    (length(x@url) == 1L)) {
+  #  x@brand <- styleURL(url_ = x@url, text_ = x@brand)
+  #}
   
   
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
@@ -646,7 +633,7 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
 
   cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, autoVolume(x = obj@servingGram, nm = list(obj))))
   cat(sprintf(fmt = '%s\n', obj@cost_))
-  cat(sprintf(fmt = 'Calories\U1f525 %.0f\n', obj@calorie))
+  cat(sprintf(fmt = 'Calories\U1f525 %.0f\n\n', obj@calorie))
   
   cat(sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, format_ingredient_perc(obj, 'water')))
   cat(sprintf(fmt = 'Fat: %.4g grams %s\n', obj@fat, format_ingredient_perc(obj, 'fat')))
@@ -696,7 +683,7 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@acme)) cat(styleURL(url_ = sprintf(fmt = 'www.acmemarkets.com/shop/product-details.%s.html', obj@acme)), sep = '\n')
   if (length(obj@amazon)) cat(styleURL(url_ = sprintf(fmt = 'www.amazon.com/gp/product/%s', obj@amazon)), sep = '\n')
   if (length(obj@bjs)) cat(styleURL(url_ = sprintf(fmt = 'www.bjs.com/product/%s', obj@bjs)), sep = '\n')
-  if (length(obj@costco)) cat(styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', obj@costco)), sep = '\n')
+  #if (length(obj@costco)) cat(styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', obj@costco)), sep = '\n')
   if (length(obj@costcoBiz)) cat(styleURL(url_ = sprintf(fmt = 'www.costcobusinessdelivery.com/.product.%s.html', obj@costcoBiz)), sep = '\n')
   if (length(obj@giantfood)) cat(styleURL(url_ = sprintf(fmt = 'giantfood.com/product/%d', obj@giantfood)), sep = '\n')
   if (length(obj@sams)) cat(styleURL(url_ = sprintf(fmt = 'www.samsclub.com/p/%s', obj@sams)), sep = '\n')
@@ -706,7 +693,6 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@webstaurant)) cat(styleURL(url_ = sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', obj@webstaurant)), sep = '\n')
   if (length(obj@wholefoods)) cat(styleURL(url_ = sprintf(fmt = 'www.wholefoodsmarket.com/product/%s', obj@wholefoods)), sep = '\n')
   if (length(obj@wegmans) || length(obj@wegmansorganic)) cat(styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', c(obj@wegmans, obj@wegmansorganic))), sep = '\n')
-  if (length(obj@walmart)) cat(styleURL(url_ = sprintf(fmt = 'www.walmart.com/ip/%s', obj@walmart)), sep = '\n')
   
 })
 

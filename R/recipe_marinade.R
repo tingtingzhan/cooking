@@ -9,12 +9,12 @@ setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
   water = 1200,
   InstantPot = InstantPot(
     treatment = 'Meat parboiled, 1.6kg to 1.8kg',
-    program = 'Sous Vide',
+    program = 'Sous Vide (no bag)',
     fahrenheit = 203, 
     minute = c(
-      'beef round heel muscle\U1f389' = 2.5*60
+      'beef round heel muscle\U1f389' = 2*60
     ),
-    cooling = 'Extended soaking until stock cools down'
+    cooling = 'Soak overnight'
   )
 ))
 

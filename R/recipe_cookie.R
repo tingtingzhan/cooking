@@ -148,12 +148,12 @@ lemon_cookie <- function() new(
 matcha_cookie <- function() new(
   Class = 'cookie', 
   note = 'Water bath to melt butter only',
-  review = 'Lily Wu & Kuangyi Wen like this.',
   matcha = c(Ippodo_ikuyo = 40), # not too much more expensive!!
   #matcha = c(Ippodo_sayaka = 40), # 
   pastryFlour = 344, 
   sugar = 140, drymilk = 160,
-  review = 'retry with ikuyo. (old recipe sencha_matcha, kuang-yi says good)')
+  pros = 'Lily Wu & Kuangyi Wen like the old recipe with Sencha_everyday_matcha',
+  review = 'retry with ikuyo')
 
 
 #' @rdname cookie

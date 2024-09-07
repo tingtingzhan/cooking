@@ -27,7 +27,7 @@
 #' @export
 Guittard_31milk <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = '31% Milk',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = '31% Milk',
   webstaurant = '409G0390C50CS',
   usd = 292.49 / 5 / (10*454) * 100,
   # does not have accurate nutrition info
@@ -39,7 +39,7 @@ Guittard_31milk <- function() new(
 #' @export
 Guittard_Dutch34milk <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Old Dutch 34% Milk',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Old Dutch 34% Milk',
   webstaurant = '409G0311C50CS',
   usd = 306.49 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -50,7 +50,7 @@ Guittard_Dutch34milk <- function() new(
 #' @export
 Guittard_bittersweet63 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = '63% Bittersweet',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = '63% Bittersweet',
   webstaurant = '409G0502C50CS',
   usd = 322.49 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -61,7 +61,7 @@ Guittard_bittersweet63 <- function() new(
 #' @export
 Guittard_heritage39 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Molding Heritage 39%',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Molding Heritage 39%',
   webstaurant = '409G0354C50CS',
   usd = 302.49 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -72,7 +72,7 @@ Guittard_heritage39 <- function() new(
 #' @export
 Guittard_heritage32milk <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Heritage 32% Milk',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Heritage 32% Milk',
   webstaurant = '409G0355C50CS',
   usd = 304.49 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -83,7 +83,7 @@ Guittard_heritage32milk <- function() new(
 #' @export
 Guittard_vanilla54 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'French Vanilla 54% Dark',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'French Vanilla 54% Dark',
   webstaurant = '409G0411C50CS',
   usd = 286.99 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -94,7 +94,7 @@ Guittard_vanilla54 <- function() new(
 #' @export
 Guittard_highSierra28white <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'High Sierra 28% White',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'High Sierra 28% White',
   webstaurant = '409G9201C50CS',
   usd = 364.49 / 5 / (10*454) * 100,
   # does not have accurate nutrition info
@@ -106,7 +106,7 @@ Guittard_highSierra28white <- function() new(
 #' @export
 Guittard_eclipse50 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Eclipse 50% Dark',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Eclipse 50% Dark',
   webstaurant = '409G0431C50CS',
   usd = 296.99 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -117,7 +117,7 @@ Guittard_eclipse50 <- function() new(
 #' @export
 Guittard_lustrous55 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Lustrous 55% Dark',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Lustrous 55% Dark',
   webstaurant = '409G0407C50CS',
   usd = 389.99 / 5 / (10*454) * 100,
   # does not have accurate nutrition info
@@ -129,7 +129,7 @@ Guittard_lustrous55 <- function() new(
 #' @export
 Guittard_solitaire54 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Molding Solitaire 54% Dark',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Molding Solitaire 54% Dark',
   webstaurant = '409G0412C50CS',
   usd = 429.99 / 5 / (10*454) * 100,
   servingGram = 100,
@@ -140,7 +140,7 @@ Guittard_solitaire54 <- function() new(
 #' @export
 Guittard_solitaire52 <- function() new(
   Class = 'nutrition',
-  brand = 'Guittard', name = 'Solitaire 52% Dark',
+  brand = 'Guittard\U1f1fa\U1f1f8', name = 'Solitaire 52% Dark',
   webstaurant = '409G0413C50CS',
   usd = 418.99 / 5 / (10*454) * 100,
   servingGram = 100,

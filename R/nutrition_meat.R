@@ -58,15 +58,15 @@ pork_tenderloin <- function() new(
 beef_heel <- function() new(
   Class = 'nutrition',
   brand = styleURL(text_ ='Swift\U1f1fa\U1f1f8', 
-                   url_ = 'https://www.sayweee.com/en/product/Swift-Boneless-Beef-Round-Heel-Muscle--Frozen-1/11275'),
+                   url_ = 'www.sayweee.com/en/product/Swift-Boneless-Beef-Round-Heel-Muscle--Frozen-1/11275'),
   name = '\u725b\u8171 Beef\U1f402 Round Heel Muscle',
   usd = 10.66/454*100, # weee! 
   # below: source of nutrition
-  url = 'www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll',
+  # url = 'www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll',
+  # this url no longer works
   servingGram = 100, # 3.5 oz
   calorie = 130,
-  fat = 4, cholesterol = .040, sodium = .065, protein = 22
-)
+  fat = 4, cholesterol = .040, sodium = .065, protein = 22)
 
 beef_brisket_flat <- function() new(
   Class = 'nutrition', fdc = c(
