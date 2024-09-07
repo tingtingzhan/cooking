@@ -141,14 +141,6 @@ GreatValueNeufchatel_creamCheese <- function() new(
   servingGram = 28, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
-GiantFood_creamCheese <- function() new(
-  Class = 'nutrition', giantfood = 72371L, usd = 2.49/227*28,
-  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
-  servingGram = 28, 
-  calorie = 70,
-  fat = 6, cholesterol = .02, sodium = .105, carbohydrate = 2, sugar = 2, protein = 2)
-
-
 OrganicValleyNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', url = 'www.organicvalley.coop/products/cream-cheese/neufchatel/neufchatel-8-oz-bar/',
   brand = 'Organic Valley', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
@@ -312,15 +304,17 @@ TraderJoes_heavyCream <- function() new( #
 
 
 NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
-  Class = 'nutrition', url = 'www.naturalbynaturedairy.com/heavy-cream',
-  brand = 'Nature By Nature', name = '\u91cd\u5976\u6cb9 Heavy Cream',
+  Class = 'nutrition', 
+  brand = styleURL(url_ = 'www.naturalbynaturedairy.com/heavy-cream', text_ = 'Nature By Nature'), 
+  name = '\u91cd\u5976\u6cb9 Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   fat = 6, water = 15 * .577)
 
 
 LandOLakes_whippedHeavyCream <- function() new(
-  Class = 'nutrition', url = 'www.landolakes.com/where-to-buy/aerosol-whipped-cream/',
-  brand = 'Land O Lakes', name = '\u6253\u53d1\u91cd\u5976\u6cb9 Whipped Heavy Cream',
+  Class = 'nutrition',
+  brand = styleURL(url_ = 'www.landolakes.com/where-to-buy/aerosol-whipped-cream/', text_ = 'Land O Lakes'), 
+  name = '\u6253\u53d1\u91cd\u5976\u6cb9 Whipped Heavy Cream',
   costcoBiz = '100284038',
   servingGram = 6, servingTbsp = 2,
   fat = 2, cholesterol = .01, sugar = 1)

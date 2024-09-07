@@ -99,8 +99,9 @@ ThaiKitchen_coconutmilk <- function() new(
 # https://fdc.nal.usda.gov/fdc-app.html#/food-details/1097553/nutrients
 
 Silk_coconutmilk <- function() new(
-  Class = 'nutrition', url = 'silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/',
-  brand = 'Silk', name = 'Coconutmilk\U1f965',
+  Class = 'nutrition', 
+  brand = styleURL(url_ = 'silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text_ = 'Silk'), 
+  name = 'Coconutmilk\U1f965',
   target = 'A-15423909', usd = 4.99/8,
   servingGram = 240, servingCup = 1, # 240ml
   water = 240*.9457,

@@ -701,7 +701,7 @@ Starbucks_mochaFrappuccino <- function() new(
 #' @export
 TraderJoes_matchaLatte <- function() new(
   Class = 'nutrition', traderjoes = '052512',
-  brand = 'Trader Joe\'s\U1f1fa\U1f1f8', name = 'Matcha\U1f375 Latte Mix',
+  name = 'Matcha\U1f375 Latte Mix',
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
 #' @rdname matchaLatte
