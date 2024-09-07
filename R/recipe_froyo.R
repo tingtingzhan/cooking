@@ -69,7 +69,7 @@ pumpkin_froyo <- function() new(
 #' @export
 matcha_froyo <- function() new(
   Class = 'froyo',
-  matchaSado = 20, sugar = 30 + 15, # adjust for water-added!
+  matcha = c(Ippodo_ikuyo = 20), sugar = 30 + 15, # adjust for water-added!
   review = 'try again')
 
 

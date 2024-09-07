@@ -114,6 +114,6 @@ setClass(Class = 'chickpeaTea', contains = 'recipe', prototype = prototype(
 ikuyo_chickpeaTea <- function() new(
   Class = 'chickpeaTea',
   sugar_tsp = 6,
-  matchaSado_tsp = c(Ippodo_ikuyo = 2.5),
+  matcha_tsp = c(Ippodo_ikuyo = 2.5),
   pros = 'I like!')
 

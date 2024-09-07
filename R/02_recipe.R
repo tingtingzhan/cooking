@@ -118,7 +118,6 @@
 #' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of cocoa powder
 #' @slot cocoaDutch,cocoaDutch_tsp,cocoaDutch_Tbsp,cocoaDutch_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
 #' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
-#' @slot matchaSado,matchaSado_tsp,matchaSado_Tbsp,matchaSado_cup \link[base]{numeric} scalar, weight (in grams) and volume of Sado (ceremonial) matcha powder 
 #' 
 #' @slot ginger,ginger_tsp,ginger_Tbsp,ginger_cup \link[base]{numeric} scalar, weight (in grams) and volume of Simply Organic ginger powder
 #' @slot garlic,garlic_tsp,garlic_Tbsp,garlic_cup \link[base]{numeric} scalar, weight of garlic powder (in grams)
@@ -373,7 +372,6 @@ setClass(Class = 'recipe', slots = c(
   cocoaDutch = 'numeric', cocoaDutch_tsp = 'numeric', cocoaDutch_Tbsp = 'numeric', cocoaDutch_cup = 'numeric',
   coffee = 'numeric', coffee_tsp = 'numeric', coffee_Tbsp = 'numeric', coffee_cup = 'numeric',
   matcha = 'numeric', matcha_tsp = 'numeric', matcha_Tbsp = 'numeric', matcha_cup = 'numeric', 
-  matchaSado = 'numeric', matchaSado_tsp = 'numeric', matchaSado_Tbsp = 'numeric', matchaSado_cup = 'numeric', 
   beet = 'numeric', beet_tsp = 'numeric', beet_Tbsp = 'numeric', beet_cup = 'numeric',
   acai = 'numeric', acai_tsp = 'numeric', acai_Tbsp = 'numeric', acai_cup = 'numeric',
   creamTartar = 'numeric', creamTartar_tsp = 'numeric', creamTartar_Tbsp = 'numeric', creamTartar_cup = 'numeric',
@@ -479,14 +477,14 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   x_tsp <- slot(addNameLen1(x, which = ._tsp, name1 = name1), name = ._tsp) # else NULL
   x_Tbsp <- slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
   x_cup <- slot(addNameLen1(x, which = ._cup, name1 = name1), name = ._cup) # else NULL
-  if (which %in% c('starch', 'oil', 'matchaSado')) {
+  if (which %in% c('starch', 'oil', 'matcha')) {
     add_suffix <- function(x0, which) {
       if (!length(names(x0))) return(x0)
-      idx <- if (which == 'matchaSado') {
-        # !startsWith(names(x0), prefix = 'Ippodo') & !endsWith(names(x0), suffix = '_matchaSado')
-        !grepl(pattern = '^Ippodo|^Marukyu', x = names(x0)) & !endsWith(names(x0), suffix = '_matchaSado')
-      } else !endsWith(names(x0), suffix = paste0('_', which))
-      names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
+      idx <- !endsWith(names(x0), suffix = paste0('_', which))
+      names(x0)[idx] <- ifelse(
+        test = vapply(names(x0)[idx], FUN = exists, where = 'package:cooking', FUN.VALUE = NA), 
+        yes = names(x0)[idx],
+        no = paste0(names(x0)[idx], '_', which))
       return(x0)
     }
     x_gram <- add_suffix(x_gram, which = which)
@@ -634,8 +632,8 @@ recipe <- function(x) {
   x <- combineVol(x, which = 'Na2CO3', name1 = 'Na2CO3')
   x <- combineVol(x, which = 'bakingPowder', name1 = 'TraderJoes_bakingPowder')
   x <- combineVol(x, which = 'yeast', name1 = 'Fleischmanns_instant')
-  x <- combineVol(x, which = 'matcha', name1 = 'Sencha_matcha')
-  x <- combineVol(x, which = 'matchaSado', name1 = 'Marukyu_tenju')
+  x <- combineVol(x, which = 'matcha', name1 = 'Ippodo_ikuyo')
+  #x <- combineVol(x, which = 'matchaSado', name1 = 'Marukyu_tenju')
   x <- combineVol(x, which = 'cocoa', name1 = 'Navitas_cacao')
   x <- combineVol(x, which = 'cocoaDutch', name1 = 'KingArthur_Bensdorp')
   x <- combineVol(x, which = 'coffee', name1 = 'NescafeTastersChoice_decaf')
@@ -694,7 +692,7 @@ recipe <- function(x) {
   
   if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {
     extraWater <- function(z) sum(z * vapply(names(z), FUN = function(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
-    x@water_extra <- extraWater(x@matcha) + extraWater(x@matchaSado) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@cocoaDutch) + extraWater(x@acai)
+    x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@cocoaDutch) + extraWater(x@acai)
   }
   x <- addNameLen1(x, which = 'water_extra', name1 = 'Wegmans_water')
   
@@ -768,7 +766,6 @@ recipe <- function(x) {
     } else switch(
       class(x), 
       matchaLatteHot =, matchaLatteFrappe =, matchaGoatLatteHot =, matchaGoatLatteFrappe = {
-        if (length(x@matcha)) stop('Must use @matchaSado in `matchaLatteMix`')
         switch(class(x), matchaLatteHot = {
           '\u62b9\u8336\U1f375Latte'
         }, matchaGoatLatteHot = {
@@ -785,7 +782,7 @@ recipe <- function(x) {
         '\u9ed1\u7c73'
       } else if (length(x@brownRice)) {
         '\u7cd9\u7c73'
-      } else if (length(x@matcha) || length(x@matchaSado)) {
+      } else if (length(x@matcha)) {
         '\u62b9\u8336\U1f375'
       } else if (length(x@beet)) {
         '\u751c\u83dc'
@@ -1009,7 +1006,6 @@ nutrition.recipe <- function(x) {
     protein = equiv(actual = protein / total_raw),
     creamCheese = equiv(actual = sum(x@creamCheese) / total_raw),
     matcha = equiv(actual = x@matcha / total_raw),
-    matchaSado = equiv(actual = x@matchaSado / total_raw),
     beet = equiv(actual = x@beet / total_raw),
     ginger = equiv(actual = x@ginger / total_raw),
     cumin = equiv(actual = x@cumin / total_raw),
@@ -1063,7 +1059,6 @@ nutrition.recipe <- function(x) {
     tea = equiv(actual = tea / total), # , ideal = devrecipe$tea(x)
     creamCheese = equiv(actual = sum(x@creamCheese) / total, ideal = devrecipe$creamcheese(x)),
     matcha = equiv(actual = x@matcha / total, ideal = devrecipe$matcha(x)),
-    matchaSado = equiv(actual = x@matchaSado / total, ideal = devrecipe$matcha(x)),
     beet = equiv(actual = x@beet / total, ideal = devrecipe$beet(x)),
     ginger = equiv(actual = x@ginger / total, ideal = devrecipe$ginger(x)),
     cumin = equiv(actual = x@cumin / total),
@@ -1376,7 +1371,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
     object@spiceItalian, object@spice5, object@pumpkinSpice,
     object@chiliMix,
     object@spice, object@curry,
-    object@matcha, object@matchaSado, object@coffee, object@cocoa, object@cocoaDutch, object@beet, object@acai, object@creamTartar, object@vanilla,
+    object@matcha, object@coffee, object@cocoa, object@cocoaDutch, object@beet, object@acai, object@creamTartar, object@vanilla,
     object@salt, object@msg, object@NaHCO3, object@Na2CO3, object@bakingPowder,
     object@yeast,
     object@oil, object@sesameOil, object@greenPeppercornOil,

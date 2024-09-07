@@ -9,7 +9,7 @@
 matchaGoatLatte()
 }
 \description{
-6g of matchaSado
+6g of sado-grade matcha.
 }
 \examples{
 matchaGoatLatte()

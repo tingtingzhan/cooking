@@ -63,8 +63,6 @@ Cooked percentage ..
 
 \item{\code{matcha}}{\linkS4class{equiv}}
 
-\item{\code{matchaSado}}{\linkS4class{equiv}}
-
 \item{\code{beet}}{\linkS4class{equiv}}
 
 \item{\code{ginger}}{\linkS4class{equiv}}

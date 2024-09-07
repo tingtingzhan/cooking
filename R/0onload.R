@@ -23,7 +23,7 @@
       .04 
     } else .03, # any lower, not delicious!
     soytea = .022,
-    chickpeaTea = if (length(x@matchaSado)) .07 else .02,
+    chickpeaTea = if (length(x@matcha)) .07 else .02,
     snowSkin = if (length(x@beet)) .03 else .023,
     porkfill = .023,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 

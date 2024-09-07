@@ -36,12 +36,12 @@ Marukyu_tenju <- function() new(
 
 Ippodo_sayakaThin <- function() new(
   Class = 'ippodo', alias_flavor = '\u660e\u6614 \u8584\u8336\u306e\u70b9\u3066\u65b9',
-  matchaSado = c(Ippodo_sayaka = 2), water80 = 60,
+  matcha = c(Ippodo_sayaka = 2), water80 = 60,
   url = 'www.ippodo-tea.co.jp/products/matcha103644')
 
 Ippodo_sayakaThick <- function() new(
   Class = 'ippodo', alias_flavor = '\u660e\u6614 \u6fc3\u8336\u306e\u7df4\u308a\u65b9',
-  matchaSado = c(Ippodo_sayaka = 4), water80 = 30,
+  matcha = c(Ippodo_sayaka = 4), water80 = 30,
   url = 'www.ippodo-tea.co.jp/products/matcha103644')
 
 
@@ -58,17 +58,17 @@ Sencha_matcha <- function() new(
   servingGram = 1.5, 
   #servingTsp = .5, # on package
   servingTsp = 1.5/7.5*3, # experiment: 1Tbsp = 7.5grams
-  review = 'cheap, but very bitter'
+  review = 'cheap, very bitter, do not use'
 )
 
 
-ItoEn_matchaSado <- function() new(
+ItoEn_matcha <- function() new(
   Class = 'nutrition',
   itoen = 'matcha-love-organic', name = '\u8336\u9053\u7ea7\u62b9\u8336\u7c89 Ceremonial Matcha\U1f375',
   servingGram = 2, servingTsp = 1,#, # packaging
   usd = 17/20*2)
 
-maeda_matchaSado <- function() new(
+maeda_matcha <- function() new(
   Class = 'nutrition',
   name = '\u8336\u9053\u7ea7\u62b9\u8336\u7c89 Ceremonial Matcha\U1f375',
   maeda = 'maeda-en-ceremonial-matcha', jfc = '18422',

@@ -156,7 +156,6 @@ setMethod(f = show, signature = signature(object = 'equiv'), definition = functi
 #' @slot creamCheese \linkS4class{equiv}
 #' @slot tea \linkS4class{equiv}
 #' @slot matcha \linkS4class{equiv}
-#' @slot matchaSado \linkS4class{equiv}
 #' @slot beet \linkS4class{equiv}
 #' @slot ginger \linkS4class{equiv}
 #' @slot cumin \linkS4class{equiv}
@@ -219,7 +218,7 @@ setClass(Class = 'recipeDx', slots = c(
   Na2CO3 = 'equiv',
   NaHCO3 = 'equiv',
   bakingPowder = 'equiv',
-  matcha = 'equiv', matchaSado = 'equiv',
+  matcha = 'equiv',
   ginger = 'equiv',
   beet = 'equiv',
   cocoa = 'equiv',
@@ -380,7 +379,6 @@ show_endpoint <- function(x) {
   x[x == 'sesameOil'] <- 'ssmOil'
   x[x == 'creamCheese'] <- 'creamChs'
   x[x == 'greenPeppercornOil'] <- '\033[42;97mppcOil\033[0m'
-  x[x == 'matchaSado'] <- 'matcha'
   return(x)
 }
 

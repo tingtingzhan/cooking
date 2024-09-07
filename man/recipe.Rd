@@ -191,8 +191,6 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{matcha,matcha_tsp,matcha_Tbsp,matcha_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder}
 
-\item{\code{matchaSado,matchaSado_tsp,matchaSado_Tbsp,matchaSado_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Sado (ceremonial) matcha powder}
-
 \item{\code{ginger,ginger_tsp,ginger_Tbsp,ginger_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Simply Organic ginger powder}
 
 \item{\code{garlic,garlic_tsp,garlic_Tbsp,garlic_cup}}{\link[base]{numeric} scalar, weight of garlic powder (in grams)}
