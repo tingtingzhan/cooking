@@ -67,7 +67,7 @@ Jenny_chickenfill <- function() new(
   #Rice wine 2Tbsp  / Vin de riz 2Tbsp
   sauce_Tbsp = c(
     Kikkoman_soy = 2,
-    LeeKumKee_oyster = 2
+    LeeKumKee_premium_oyster = 2
   ),
   sauce_tsp = c(
     LeeKumKee_chickenBouillon = 1/2

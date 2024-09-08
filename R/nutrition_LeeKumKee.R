@@ -23,11 +23,24 @@ LeeKumKee_garlic <- function() new(
   fat = 1.5, sodium = .085, carbohydrate = 1)
 
 
-LeeKumKee_oyster <- function() new(
+LeeKumKee_premium_oyster <- function() new(
   Class = 'nutrition', leekumkee = 'premium-oyster-flavored-sauce',
   name = '\u820a\u5e84\u7279\u7d1a\u8814\u6cb9 Oyster Sauce',
-  servingGram = 19, servingTbsp = 1, sodium = .83, addedSugar = 4, protein = 1,
+  costcoBiz = '11941145',
+  servingGram = 19, servingTbsp = 1, # weight and volumn on bottle
+  calorie = 30, 
+  sodium = .83, carbohydrate = 6, addedSugar = 4, protein = 1,
   review = 'MSG flavor too strong, I do not like')
+
+LeeKumKee_oyster <- function() new(
+  Class = 'nutrition', leekumkee = 'panda-brand-oyster-flavored-sauce',
+  name = '\u718a\u8c93\u724c\u9bae\u5473\u8814\u6cb9 Panda\u00ae Oyster Sauce',
+  webstaurant = '999LKK0074', # source of nutrition info
+  servingGram = 19, # my guess
+  servingTbsp = 1,
+  calorie = 20,
+  fat = 10, sodium = .87, carbohydrate = 5, addedSugar = 4, protein = 3)
+
 
 LeeKumKee_KoreanBBQ <- function() new(
   Class = 'nutrition', leekumkee = 'korean-barbecue-sauce',
@@ -41,7 +54,7 @@ LeeKumKee_blackPepper <- function() new(
   usd = 4.29/350*18,
   servingGram = 18, 
   servingTbsp = 1, 
-  calorie = 25, sodium = .6, addedSugar = 3)
+  calorie = 25, sodium = .6, carbohydrate = 5, addedSugar = 3)
 
 LeeKumKee_coconutCurry <- function() new(
   Class = 'nutrition', leekumkee = 'coconut-flavored-curry-sauce',

@@ -367,99 +367,35 @@ nutrition.nutrition <- function(x) {
       styleURL(url_ = sprintf(fmt = 'twiningsusa.com/products/%s', x@twinings), text_ ='Twinings\U1f1ec\U1f1e7')
     } else character()
   } # manufacturer
-    
-  if (!length(x@brand)) { # seller
-    if (length(x@acme)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.acmemarkets.com/shop/product-details.%s.html', x@acme), text_ = 'Albertsons\U1f1fa\U1f1f8')
-      x@acme <- integer()
-    } else if (length(x@costco)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco), text_ = 'Kirkland\U1f1fa\U1f1f8')
-      x@costco <- character()
-    } else if (length(x@costcoBiz)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.costcobusinessdelivery.com/.product.%s.html', x@costcoBiz), text_ = 'Kirkland\U1f1fa\U1f1f8')
-      x@costcoBiz <- character()
-    } else if (length(x@giantfood)) {
-      x@brand <- 'Giant Food\U1f1fa\U1f1f8'
-    } else if (length(x@sams)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.samsclub.com/p/%s', x@sams), text_ = 'Member\'s Mark\U1f1fa\U1f1f8')
-      x@sams <- character()
-    } else if (length(x@traderjoes)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.traderjoes.com/home/products/pdp/%s', x@traderjoes), text_ = 'Trader Joe\'s\U1f1fa\U1f1f8')
-      x@traderjoes <- character()
-    } else if (length(x@walmart)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.walmart.com/ip/%s', x@walmart), text_ = 'Great Value\U1f1fa\U1f1f8')
-      x@walmart <- character()
-    } else if (length(x@wawa)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'order.wawa.com/web/product/%s', x@wawa), text_ = 'Wawa\U1f1fa\U1f1f8')
-      x@wawa <- character()
-    } else if (length(x@wegmans)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', x@wegmans), text_ = 'Wegmans\U1f1fa\U1f1f8')
-      x@wegmans <- integer()
-    } else if (length(x@wegmansorganic)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', x@wegmansorganic), text_ = 'Wegmans Organic\U1f1fa\U1f1f8')
-      x@wegmansorganic <- integer()
-    } else if (length(x@wholefoods)) {
-      x@brand <- styleURL(url_ = sprintf(fmt = 'www.wholefoodsmarket.com/product/%s', x@wholefoods), text_ = '365 by Whole Foods\U1f1fa\U1f1f8')
-    } # else do nothing
-  } # seller
   
-  if (length(x@acme)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.acmemarkets.com/shop/product-details.%s.html', x@acme), text_ = 'Acme')))
-    x@acme <- integer()
-  } 
-  if (length(x@amazon)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.amazon.com/gp/product/%s', x@amazon), text_ = 'Amazon')))
-    x@amazon <- character()
-  } 
-  if (length(x@bjs)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.bjs.com/product/%s', x@bjs), text_ = 'BJ\'s')))
-    x@bjs <- character()
-  } 
-  if (length(x@costco)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.costco.com/.product.%s.html', x@costco), text_ = 'Costco')))
-    x@costco <- character()
+  add_store_url_ <- function(x, store, fmt, store_brand, store_name = store_brand) {
+    x_store <- slot(x, name = store)
+    if (!length(x_store)) return(x)
+    if (!length(x@brand)) {
+      if (is.na(store_brand)) stop('must have `store_brand`')
+      x@brand <- styleURL(url_ = sprintf(fmt = fmt, x_store), text_ = store_brand)
+    } else x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = fmt, x_store), text_ = store_name)))
+    slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
+    return(x)
   }
-  if (length(x@costcoBiz)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.costcobusinessdelivery.com/.product.%s.html', x@costcoBiz), text_ = 'Costco Business Delivery')))
-    x@costcoBiz <- character()
-  }
-  if (length(x@giantfood)) {
-    # no example yet
-    #cat(styleURL(url_ = sprintf(fmt = 'giantfood.com/product/%d', obj@giantfood)), sep = '\n')
-  }
-  if (length(x@jfc)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.jfc.com/product/item/%s', x@jfc), text_ = 'JFC')))
-    x@jfc <- character()
-  } 
-  if (length(x@sams)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.samsclub.com/p/%s', x@sams), text_ = 'Sam\'s Club')))
-    x@sams <- character()
-  }
-  if (length(x@target)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.target.com/p/%s', x@target), text_ = 'Target')))
-    x@target <- character()
-  }
-  if (length(x@totalwine)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.totalwine.com/p/%s', x@totalwine), text_ = 'Total Wine')))
-    x@totalwine <- character()
-  } 
-  if (length(x@walmart)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.walmart.com/ip/%s', x@walmart), text_ = 'Walmart')))
-    x@walmart <- character()
-  }
-  if (length(x@webstaurant)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'www.webstaurantstore.com/product/%s.html', x@webstaurant), text_ = 'Webstaurant')))
-    x@webstaurant <- character()
-  }
-  if (length(x@wegmans) || length(x@wegmansorganic)) {
-    x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = 'shop.wegmans.com/product/%s/', c(x@wegmans, x@wegmansorganic)), text_ = 'Wegmans')))
-    x@wegmans <- x@wegmansorganic <- integer()
-  }
-  #if (!grepl(pattern = '\033]8;;', x = x@brand) && # `x@brand` contains no link
-  #    (length(x@url) == 1L)) {
-  #  x@brand <- styleURL(url_ = x@url, text_ = x@brand)
-  #}
   
+  x <- add_store_url_(x, store = 'acme', fmt = 'www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market')
+  x <- add_store_url_(x, store = 'amazon', fmt = 'www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon')
+  x <- add_store_url_(x, store = 'bjs', fmt = 'www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') # Wellsley Farms and Berkley Jensen
+  x <- add_store_url_(x, store = 'costco', fmt = 'www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco')
+  x <- add_store_url_(x, store = 'costcoBiz', fmt = 'www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery')
+  #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
+  x <- add_store_url_(x, store = 'jfc', fmt = 'www.jfc.com/product/item/%s', store_brand = 'JFC', store_name = 'JFC')
+  x <- add_store_url_(x, store = 'sams', fmt = 'www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
+  x <- add_store_url_(x, store = 'target', fmt = 'www.target.com/p/%s', store_brand = NA_character_, store_name = 'Target')
+  x <- add_store_url_(x, store = 'totalwine', fmt = 'www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')
+  x <- add_store_url_(x, store = 'traderjoes', fmt = 'www.traderjoes.com/home/products/pdp/%s', store_brand = 'Trader Joe\'s\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'walmart', fmt = 'www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')
+  x <- add_store_url_(x, store = 'wawa', fmt = 'order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'wegmans', fmt = 'shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'webstaurant', fmt = 'www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
+  x <- add_store_url_(x, store = 'wholefoods', fmt = 'www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
   
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
   if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp` and `@servingTsp`')

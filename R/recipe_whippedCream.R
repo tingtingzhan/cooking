@@ -357,7 +357,8 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
 #' @rdname whippedCream
 #' @export
 Marcellina_mascarponeFrosting <- function() new(
-  Class = 'mascarponeFrosting', alias_flavor = 'Marcellina in Cucina',
+  Class = 'mascarponeFrosting', 
+  alias_flavor = 'Marcellina in Cucina',
   heavyCream = 240, # 1 cup (250 milliliters)whipping cream full fat
   sugar_cup = 1/4, # powdered sugar!
   vanilla_tsp = 2,

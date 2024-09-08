@@ -1,21 +1,26 @@
 # dried fruits
 OceanSpray_cranberry <- function() new(
-  Class = 'nutrition', url = 'www.oceanspray.com/Products/Craisins-Dried-Cranberries/Craisins-Original-Dried-Cranberries/Craisins-Original-Dried-Cranberries',
-  brand = 'Ocean Spray', name = 'Dried Cranberries',
+  Class = 'nutrition', 
+  brand = styleURL(url_ = 'www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text_ = 'Ocean Spray'), 
+  name = 'Dried Cranberries',
+  costco = '100400518',
   servingGram = 40, sugar = 29)
 
 SunnyFruit_fig <- function() new(
-  Class = 'nutrition', url = 'sunnyfruit.com/products/organic-dried-figs',
-  brand = 'Sunny Fruit', name = 'Dried Figs',
+  Class = 'nutrition', 
+  brand = styleURL(url_ = 'sunnyfruit.com/products/organic-dried-figs', text_ = 'Sunny Fruit'), name = 'Dried Figs',
+  costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
 SunnyFruit_date <- function() new(
-  Class = 'nutrition', url = 'sunnyfruit.com/products/organic-pitted-dates',
-  brand = 'Sunny Fruit', name = 'Pitted Dates',
+  Class = 'nutrition', 
+  brand = styleURL(url_ = 'sunnyfruit.com/products/organic-pitted-dates', text_ = 'Sunny Fruit'), 
+  name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 
-Kirkland_plum_dried <- function() new(
-  Class = 'nutrition', costco = '100334316',
+Kirkland_plum <- function() new(
+  Class = 'nutrition', 
+  costco = '100334316',
   name = 'Dried Plums',
   servingGram = 40, sugar = 14)
 
