@@ -16,8 +16,7 @@
 #' @export
 styleURL <- function(url_, text_) {
   
-  n <- length(url_)
-  if (!n) return(invisible())
+  if (!length(url_)) return(invisible())
   
   if (!is.character(url_) || anyNA(url_) || !all(nzchar(url_))) stop('illegal `url_`')
   
@@ -31,7 +30,7 @@ styleURL <- function(url_, text_) {
   if (missing(text_) || !length(text_)) {
     text_ <- gsub('^https://|^http://', replacement = '', x = url__)
   }
-  if (!is.character(text_) || length(text_) != n || anyNA(text_) || !all(nzchar(text_))) stop('illegal reference name')
+  if (!is.character(text_) || length(text_) != length(url__) || anyNA(text_) || !all(nzchar(text_))) stop('illegal reference name')
   
   url_[!url_ok] <- style_hyperlink(text = text_, url = url__)
   #return(unclass(url_))

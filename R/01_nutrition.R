@@ -378,23 +378,22 @@ nutrition.nutrition <- function(x) {
     slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
     return(x)
   }
-  
   x <- add_store_url_(x, store = 'acme', fmt = 'www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market')
   x <- add_store_url_(x, store = 'amazon', fmt = 'www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon')
   x <- add_store_url_(x, store = 'bjs', fmt = 'www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') # Wellsley Farms and Berkley Jensen
   x <- add_store_url_(x, store = 'costco', fmt = 'www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco')
   x <- add_store_url_(x, store = 'costcoBiz', fmt = 'www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery')
   #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
-  x <- add_store_url_(x, store = 'jfc', fmt = 'www.jfc.com/product/item/%s', store_brand = 'JFC', store_name = 'JFC')
+  x <- add_store_url_(x, store = 'jfc', fmt = 'www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.')
   x <- add_store_url_(x, store = 'sams', fmt = 'www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
   x <- add_store_url_(x, store = 'target', fmt = 'www.target.com/p/%s', store_brand = NA_character_, store_name = 'Target')
   x <- add_store_url_(x, store = 'totalwine', fmt = 'www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')
   x <- add_store_url_(x, store = 'traderjoes', fmt = 'www.traderjoes.com/home/products/pdp/%s', store_brand = 'Trader Joe\'s\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'walmart', fmt = 'www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')
   x <- add_store_url_(x, store = 'wawa', fmt = 'order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'webstaurant', fmt = 'www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
   x <- add_store_url_(x, store = 'wegmans', fmt = 'shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
-  x <- add_store_url_(x, store = 'webstaurant', fmt = 'www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
   x <- add_store_url_(x, store = 'wholefoods', fmt = 'www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
   
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))

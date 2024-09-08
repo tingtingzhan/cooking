@@ -142,19 +142,16 @@ Marukyu_kinrin <- function() new(
 
 
 
-
-
-
 ItoEn_culinary_matcha <- function() new(
   Class = 'nutrition',
-  name = '\u70d8\u57f9\u7ea7\u62b9\u8336\u7c89 Culinary Matcha\U1f375', 
+  name = 'Culinary Matcha\U1f375', 
   itoen = 'matcha-love-culinary', jfc = '40360',
   servingGram = 2, servingTsp = 1, # packaging
   usd = 19/100*2)
 
 maeda_culinary_matcha <- function() new(
   Class = 'nutrition',
-  name = '\u70d8\u57f9\u7ea7\u62b9\u8336\u7c89 Culinary Matcha\U1f375',
+  name = 'Culinary Matcha\U1f375',
   maeda = 'culinary-matcha', jfc = '18424',
   servingGram = 2, servingTsp = 1, # packaging?
   usd = 9/28*2)
