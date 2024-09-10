@@ -40,13 +40,13 @@
     stickyRice =, riceCake =, riceMousse = .05, 
     cornbread = .05, # well tested!
     #tortillaLard = .06,
+    matchaLatteHot =, matchaLatteFrappe = .05, # perfect! 2024 late summer
     cocoaHot = .055,
     hotdrink =, frappe = if (length(x@coffee) && length(x@liqueur)) {
       .055
     }, 
     caffeLatteHot =, caffeLatteFrappe = .055,
     mocaccinoHot =, mocaccinoFrappe = .06,
-    matchaLatteHot =, matchaLatteFrappe = .06, # perfect! 2024 late summer
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # perfect!! whole goat milk 
     teaLatte = .067,
     sundae = if (length(x@matcha)) {
@@ -102,8 +102,8 @@
     tomyumStew = .16,
     cocoaMix = .35,
     mocaccinoMix = .37,
+    matchaLatteMix = .42,
     matchaGoatLatteMix = .515,
-    matchaLatteMix = .45,
     drinkMix = if (length(x@syrup)) {
       .515
     } else NA_real_,
@@ -141,10 +141,10 @@
     pudding = .05, # trying
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .075, 
     stickyRice =, riceCake = .1, # need to re-think!!
+    matchaLatteHot =, matchaLatteFrappe = .075, # taste better than .09 !
     cocoaHot =, 
-    matchaLatteHot =, matchaLatteFrappe =, 
-    mocaccinoHot =, mocaccinoFrappe =, 
     caffeLatteHot =, caffeLatteFrappe =,
+    mocaccinoHot =, mocaccinoFrappe =,
     hotdrink =, frappe = .09, # match Carnation_drymilk() can label
     teaLatte = .122, # tested on Earl Grey, Ceylon
     cookie = if (length(x@blackSesame)) {
@@ -153,7 +153,7 @@
     matchaGoatLatteMix = .53,
     cocoaMix = .54,
     mocaccinoMix = .58,
-    matchaLatteMix = .68,
+    matchaLatteMix = NA_character_,
     #tiramisuMix = .7,
     caffeLatteMix = NA_real_, 
     NULL)
@@ -178,7 +178,7 @@
     class(x), 
     noodlelinda =, wrapperlinda =, flavoredButter =, cocoaMix =, soymilk = NA_real_,
     hotdrink = NA_real_,
-    matchaLatteHot =, matchaLatteFrappe = .005, 
+    matchaLatteHot =, matchaLatteFrappe = .004, 
     chickpeaTea = .008,
     stickyTortilla =, TangYuan = .01, 
     mocaccinoHot =, mocaccinoFrappe = .01,
@@ -187,9 +187,9 @@
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
     wheatBao = .028,
+    matchaLatteMix = .035, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
-    matchaLatteMix = .04, 
     riceMousse = .05, 
     beanPaste = .05,
     crepeCake = .07,
@@ -269,7 +269,7 @@
     cookie = .037,
     sundae = .04, # cold temperature needs stronger flavor
     matchaGoatLatteMix = .155,
-    matchaLatteMix = .19, 
+    matchaLatteMix = .23, 
     NULL)
   
   matcha2flour <- tmpfun

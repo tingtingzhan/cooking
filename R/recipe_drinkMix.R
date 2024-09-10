@@ -387,23 +387,38 @@ setClass(Class = 'matchaLatteMix', contains = 'drinkMix', prototype = prototype(
   sugar_tsp = 1.5
 ))
 
+matchaLatte_OLD <- function() new(
+  Class = 'matchaLatteMix',
+  drymilk = c(Carnation_drymilk = 20, Horizon_whole_drymilk = 5),
+  sugar_tsp = 1.5,
+  matcha_tsp = c(Marukyu_tenju = 3),
+  date = as.Date('2024-08-27'))
+
 #' @rdname matchaLatte
 #' @export
 matchaLatte <- function() new(
   Class = 'matchaLatteMix',
+  drymilk = c(Carnation_drymilk = 16, Horizon_whole_drymilk = 4),
   matcha_tsp = c(Marukyu_tenju = 3),
-  date = as.Date('2024-08-27'),
-  review = c('must use the most expensive sado-grade matcha!',
-           'for cheaper sado-grade matcha, slightly increase sugar up to x1.5',
-           'never use culinary-grade matcha!'))
+  sugar_tsp = .5,
+  # date = as.Date('2025-05-31'), # try in 2025
+  pros = 'must use the most expensive sado-grade matcha!',
+  review = c('for cheaper sado-grade matcha, slightly increase sugar up to x2',
+             'never use culinary-grade matcha!'))
 
-sayakaLatte <- function() new(Class = 'matchaLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5), sugar_tsp = 3, pros = 'okay')
+sayakaLatte <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 20, Horizon_whole_drymilk = 5), sugar_tsp = 1.5, matcha_tsp = c(Ippodo_sayaka = 2.5), sugar_tsp = 3, pros = 'okay')
 
-ikuyoLatte <- function() new(Class = 'matchaLatteMix', matcha_tsp = c(Ippodo_ikuyo = 2.5), sugar_tsp = 1.5*1.5, pros = 'okay')
+ikuyoLatte <- function() new(
+  Class = 'matchaLatteMix', 
+  drymilk = c(Carnation_drymilk = 16, Horizon_whole_drymilk = 4),
+  matcha_tsp = c(Ippodo_ikuyo = 3), 
+  sugar_tsp = 1, # 1.5tsp too sweet
+  date = as.Date('2024-09-10'),
+  cons = '1.5tsp sugar still a little too sweet. Try 1tsp')
 
-seiunLatte <- function() new(Class = 'matchaLatteMix', matcha_tsp = c(Ippodo_seiun = 2.25), sugar_tsp = 1.5*1.5, pros = 'okay')
+seiunLatte <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 20, Horizon_whole_drymilk = 5), matcha_tsp = c(Ippodo_seiun = 2.25), sugar_tsp = 1.5*1.5, pros = 'okay')
 
-kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', matcha_tsp = c(Marukyu_kiwamiChoan = 3), sugar_tsp = 1.5, pros = 'great', date = as.Date('2024-08-24'))
+kiwamiChoanLatte <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 20, Horizon_whole_drymilk = 5), matcha_tsp = c(Marukyu_kiwamiChoan = 3), sugar_tsp = 1.5, pros = 'great', date = as.Date('2024-08-24'))
 
 
 
