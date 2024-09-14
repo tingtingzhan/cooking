@@ -260,6 +260,7 @@ nutrition_name_brand <- function(x) {
   } else x@name
 }
 
+#' @importFrom cli.tzh styleURL
 #' @export
 nutrition.nutrition <- function(x) {
   
@@ -589,6 +590,7 @@ autoVolume <- function(x, nm = names(x)) {
 #' 
 #' @return nothing is returned
 #' 
+#' @importFrom cli.tzh styleURL
 #' @export
 setMethod(f = show, signature = signature(object = 'nutrition'), definition = function(object) {
   

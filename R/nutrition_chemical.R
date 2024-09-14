@@ -7,7 +7,7 @@ MgCl2 <- function() new(
   servingGram = 1
 )
   
-
+#' @importFrom cli.tzh styleURL
 Ohsawa_nigari <- function() new(
   Class = 'nutrition',
   brand = styleURL(
@@ -21,6 +21,7 @@ Ohsawa_nigari <- function() new(
   servingTsp = 1, # packaging
   sodium = 1.966)
 
+#' @importFrom cli.tzh styleURL
 Morton_salt <- function() new(
   Class = 'nutrition', 
   brand = styleURL(text_ = 'Morton\U1f1fa\U1f1f8', 
@@ -32,6 +33,7 @@ Morton_salt <- function() new(
   sodium = 23/(23+35.5) * 1.5)
 
 
+#' @importFrom cli.tzh styleURL
 Ajinomoto_msg <- function() new(
   Class = 'nutrition', 
   brand = styleURL(
@@ -48,6 +50,7 @@ Ajinomoto_msg <- function() new(
   sodium = .125)
 
 
+#' @importFrom cli.tzh styleURL
 ArmHammer_NaHCO3 <- function() new(
   Class = 'nutrition', 
   brand = styleURL(

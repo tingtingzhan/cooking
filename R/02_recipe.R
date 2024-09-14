@@ -533,6 +533,7 @@ dairyName <- function(x, dairy = stop(''), name1 = stop()) {
 #' 
 #' @param x a \linkS4class{recipe} object
 #' 
+#' @importFrom cli.tzh styleURL
 #' @export
 recipe <- function(x) {
   
@@ -1263,6 +1264,7 @@ nutrition.recipe <- function(x) {
 #' 
 #' @param object \linkS4class{recipe} object
 #'
+#' @importFrom cli.tzh styleURL
 #' @export
 setMethod(f = show, signature = signature(object = 'recipe'), definition = function(object) {
   
