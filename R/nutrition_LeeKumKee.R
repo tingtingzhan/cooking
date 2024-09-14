@@ -41,7 +41,6 @@ LeeKumKee_oyster <- function() new(
   calorie = 20,
   fat = 10, sodium = .87, carbohydrate = 5, addedSugar = 4, protein = 3)
 
-
 LeeKumKee_KoreanBBQ <- function() new(
   Class = 'nutrition', leekumkee = 'korean-barbecue-sauce',
   name = '\u97d3\u570b\u71d2\u70e4\u91ac Korean BBQ Sauce',
