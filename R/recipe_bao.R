@@ -143,7 +143,7 @@ pumpkin_bao_OLD <- function() new(
 #' @rdname bao
 #' @export
 matcha_bao <- function() new(
-  Class = 'bao', bao(), matcha_Tbsp = 3, sugar_Tbsp = 5,
+  Class = 'bao', bao(), matcha_Tbsp = c(Sencha_everyday_matcha = 3), sugar_Tbsp = 5,
   water_extra = 25, # retry
   portion = c(mantou_portion(), sweetBao_portion()),
   # before fermentation: ???g (with plastic wrap)

@@ -76,7 +76,9 @@ Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twini
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
-  flavor = c(soymilk = 600)
+  flavor = c(soymilk = 600),
+  brownSugar_Tbsp = 1.5,
+  note = 'Stanley 20oz quencher'
 ))
 
 #' @rdname soytea
@@ -84,7 +86,7 @@ setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
 EarlGrey_soytea <- function() new(
   Class = 'soytea', 
   teabag = c(Twinings_strongEarlGrey = 4), 
-  brownSugar_Tbsp = 1,
+  date = as.Date('2024-09-15'),
   pros = 'I love!')
 
 #' @rdname soytea
@@ -92,9 +94,7 @@ EarlGrey_soytea <- function() new(
 Ceylon_soytea <- function() new(
   Class = 'soytea', 
   teabag = c(Stassen_Ceylon = 4), 
-  brownSugar_tsp = 4.5,
   date = as.Date('2024-09-15'),
-  review = 'retry with more brown sugar! bottom sweeter, much better!',
   pros = 'I like')
 
 

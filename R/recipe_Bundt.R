@@ -87,7 +87,7 @@ cocoa_Bundt <- function() new(
 matcha_Bundt <- function() new(
   Class = 'Bundt',
   #matcha = 35, sugar = 35 # a little too bitter
-  matcha_Tbsp = 3, sugar = 35,
+  matcha_Tbsp = c(Sencha_everyday_matcha = 3), sugar = 35,
   review = 'try again'
 )
 

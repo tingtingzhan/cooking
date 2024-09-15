@@ -66,7 +66,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
 #' @export
 matcha_snowSkin <- function() new(
   Class = 'snowSkin', 
-  matcha_Tbsp = 1, 
+  matcha_Tbsp = c(Sencha_everyday_matcha = 1), 
   #matcha_tsp = 5, # high sugar filling
   pros = c(
     'Use matcha_tsp=5 (but no more!) for high-sugar filling, e.g., canned adzuki bean paste',

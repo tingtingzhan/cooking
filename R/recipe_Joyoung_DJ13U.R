@@ -26,10 +26,11 @@ setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
 soymilk <- function() new(
   Class = 'soymilk',
   soybean = 45, # my favorite is 1 Joyoung small cup
-  water = 1300 - 45, # to check
+  water = 1300 - 45, # confirmed!!
   JoyoungDJ13U = JoyoungDJ13U_soymilk(
-    # waterLost = ??
-  ))
+    waterLost = 45 # whole machine, 4175 - 4131, 2024-09-15
+  ),
+  date = as.Date('2024-09-15'))
 
 
 
