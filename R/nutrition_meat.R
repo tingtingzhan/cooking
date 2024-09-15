@@ -61,9 +61,7 @@ beef_heel <- function() new(
                    url_ = 'www.sayweee.com/en/product/Swift-Boneless-Beef-Round-Heel-Muscle--Frozen-1/11275'),
   name = '\u725b\u8171 Beef\U1f402 Round Heel Muscle',
   usd = 10.66/454*100, # weee! 
-  # below: source of nutrition
-  # url = 'www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll',
-  # this url no longer works
+  url = 'www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll-2', # source of nutrition
   servingGram = 100, # 3.5 oz
   calorie = 130,
   fat = 4, cholesterol = .040, sodium = .065, protein = 22)

@@ -37,10 +37,10 @@
       .08
     } else .035, 
     marinade = .04,
+    matchaLatteHot =, matchaLatteFrappe = .04, # perfect! 2024 late summer
     stickyRice =, riceCake =, riceMousse = .05, 
     cornbread = .05, # well tested!
     #tortillaLard = .06,
-    matchaLatteHot =, matchaLatteFrappe = .05, # perfect! 2024 late summer
     cocoaHot = .055,
     hotdrink =, frappe = if (length(x@coffee) && length(x@liqueur)) {
       .055
@@ -102,7 +102,7 @@
     tomyumStew = .16,
     cocoaMix = .35,
     mocaccinoMix = .37,
-    matchaLatteMix = .42,
+    matchaLatteMix = .4,
     matchaGoatLatteMix = .515,
     drinkMix = if (length(x@syrup)) {
       .515
@@ -187,7 +187,7 @@
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
     wheatBao = .028,
-    matchaLatteMix = .035, 
+    matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
     riceMousse = .05, 
@@ -269,7 +269,7 @@
     cookie = .037,
     sundae = .04, # cold temperature needs stronger flavor
     matchaGoatLatteMix = .155,
-    matchaLatteMix = .23, 
+    matchaLatteMix = .25, 
     NULL)
   
   matcha2flour <- tmpfun
