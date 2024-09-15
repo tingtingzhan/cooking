@@ -25,11 +25,13 @@ setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
 #' @export
 soymilk <- function() new(
   Class = 'soymilk',
-  soybean = 45 * 1.5, # 1.5 Joyoung small cup
-  water = 1300 - 45 * 1.5, # to check
+  soybean = 45, # my favorite is 1 Joyoung small cup
+  water = 1300 - 45, # to check
   JoyoungDJ13U = JoyoungDJ13U_soymilk(
     # waterLost = ??
   ))
+
+
 
 #' @rdname soymilk
 #' @export

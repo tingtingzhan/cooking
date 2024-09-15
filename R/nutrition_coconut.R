@@ -96,9 +96,8 @@ ThaiKitchen_coconutmilk <- function() new(
   fat = 12, sugar = 1, sodium = .03)
 
 # coconutmilk fdc water 94.57%
-# https://fdc.nal.usda.gov/fdc-app.html#/food-details/1097553/nutrients
+# fdc = 1097553L
 
-#' @importFrom cli.tzh styleURL
 Silk_coconutmilk <- function() new(
   Class = 'nutrition', 
   brand = styleURL(url_ = 'silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text_ = 'Silk'), 

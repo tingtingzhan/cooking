@@ -12,7 +12,7 @@
     class(x), 
     meatchop =, 
     noodlelinda =, wrapperlinda =, 
-    soymilk =, geng =, cornGeng =,
+    geng =, cornGeng =,
     beeffillLeeKumKee =,
     spam = .006,
     shrimpfill_garlicHerb = .009,

@@ -21,16 +21,6 @@ Darjeeling_latte_Twinings()
 \description{
 Latte from a tea bag.
 }
-\section{Slots}{
-
-\describe{
-\item{\code{boilingWater}}{250 grams of boiling water, for a tea mug}
-
-\item{\code{drymilk}}{35 grams of dry milk}
-
-\item{\code{brownSugar_tsp}}{has better color than \code{sugar}}
-}}
-
 \examples{
 # I love!
 EarlGrey_latte_Twinings()

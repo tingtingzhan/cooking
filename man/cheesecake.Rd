@@ -174,7 +174,4 @@ nutrition_(
 Junior's Cheesecake Cookbook (2007). Alan Rosen and Beth Allen.
 \url{https://www.juniorscheesecake.com/juniors-cheesecake-cookbook}.
 First recipe under section \emph{Junior’s Favorites}.
-
-Heavy cream contains 57.7\% water,
-\url{https://fdc.nal.usda.gov/fdc-app.html#/food-details/170859/nutrients}.
 }

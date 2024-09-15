@@ -5,14 +5,17 @@
 # Stassen; headquarter in Sri Lanka.
 
 Stassen_Ceylon <- function() new(
-  Class = 'nutrition', url = 'www.stassentea.com/product/4',
-  brand = 'Stassen', name = 'Ceylon',
-  servingGram = 200, usd = 12, # 2023-11-09
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'Stassen\U1f1f1\U1f1f0', url_ = 'www.stassentea.com/product/4'),
+  name = 'Ceylon Black Tea',
+  servingGram = 2, # **must** be per-bag!  # servingBag = 1, 
+  usd = 12/100, # 2023-11-09
   review = 'I love')
 
 Stassen_Ceylon_loose <- function() new(
-  Class = 'nutrition', url = 'www.stassentea.com/product/6', 
-  brand = 'Stassen', name = 'Ceylon Black Tea, Loose',
+  Class = 'nutrition',
+  brand = styleURL(text_ = 'Stassen\U1f1f1\U1f1f0', url_ = 'www.stassentea.com/product/6'), 
+  name = 'Ceylon Black Tea, Loose',
   servingGram = 250, usd = 6.42, # 2023-11-09
   review = 'where to buy?')
 

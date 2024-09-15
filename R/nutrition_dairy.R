@@ -248,7 +248,7 @@ TraderJoesLight_sourCream <- function() new( # no filler
 
 
 # whole milk nutrition 
-# https://fdc.nal.usda.gov/fdc-app.html#/food-details/171265/nutrients
+# fdc = 171265L
 # contains 88.1% water
 
 Wegmans_whole_milk <- function() new(
@@ -276,7 +276,8 @@ Wawa_2perc_milk <- function() new(
   fat = 5, cholesterol = .02, sodium = .115, carbohydrate = 12, sugar = 12, protein = 8)
 
 
-# Water content of heavy cream is 57.7%, see \url{https://fdc.nal.usda.gov/fdc-app.html#/food-details/170859/nutrients}
+# Water content of heavy cream is 57.7%, 
+# fdc = 170859L
 
 Wegmans_heavyCream <- function() new(
   Class = 'nutrition', wegmans = 21152L, # ? 220504L
@@ -329,9 +330,12 @@ if (FALSE) {
 
 
 
+# Supervalu, Inc. light cream
+# does not have water content
+# fdc = 2399202L
 
-# does not have water content: \url{https://fdc.nal.usda.gov/fdc-app.html#/food-details/2399202/nutrients}
-# water content of light cream 63.5%, see \url{https://fdc.nal.usda.gov/fdc-app.html#/food-details/170858/nutrients}
+# water content of light cream 63.5%, 
+# fdc = 170858L
 
 Lucerne_lightCream <- function() new(
   Class = 'nutrition', 

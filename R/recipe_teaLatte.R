@@ -5,11 +5,11 @@
 #' @description
 #' Latte from a tea bag.
 #' 
-#' @slot boilingWater 250 grams of boiling water, for a tea mug
+# @slot boilingWater 250 grams of boiling water, for a tea mug
 #' 
-#' @slot drymilk 35 grams of dry milk
+# @slot drymilk 35 grams of dry milk
 #' 
-#' @slot brownSugar_tsp has better color than `sugar`
+# @slot brownSugar_tsp has better color than `sugar`
 #' 
 #' @examples
 #' # I love!
@@ -67,8 +67,6 @@ Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', alias_flavor = '
 #' 
 #' Fresh soymilk not hot enough, so need two bag of tea ?
 #' 
-#' @slot brownSugar_tsp ..
-#' 
 #' @examples
 #' EarlGrey_soytea()
 #' Ceylon_soytea()
@@ -78,17 +76,27 @@ Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', alias_flavor = '
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
-  flavor = c(soymilk = 320),
-  brownSugar_tsp = 1.5
+  flavor = c(soymilk = 600)
 ))
 
 #' @rdname soytea
 #' @export
-EarlGrey_soytea <- function() new(Class = 'soytea', alias_flavor = 'Earl Grey', teabag = c(Twinings_strongEarlGrey = 2), pros = 'I love!')
+EarlGrey_soytea <- function() new(
+  Class = 'soytea', 
+  #alias_flavor = 'Earl Grey', 
+  teabag = c(Twinings_strongEarlGrey = 4), 
+  brownSugar_Tbsp = 1,
+  pros = 'I love!')
 
 #' @rdname soytea
 #' @export
-Ceylon_soytea <- function() new(Class = 'soytea', alias_flavor = 'Ceylon', teabag = c(Stassen_Ceylon = 2), cons = 'Lacks a signature flavor!!')
+Ceylon_soytea <- function() new(
+  Class = 'soytea', 
+  teabag = c(Stassen_Ceylon = 4), 
+  brownSugar_tsp = 4,
+  date = as.Date('2024-09-15'),
+  review = 'retry with more brown sugar! bottom sweeter, much better!',
+  pros = 'I like')
 
 
 

@@ -37,7 +37,6 @@ CafeGranita_coffee <- function() new(
   AbV = .21
 )
 
-#' @importFrom cli.tzh styleURL
 FratelliVincenzi_espresso <- function() new(
   Class = 'nutrition',
   brand = styleURL(text_ = 'Fratelli Vincenzi\U1f1ee\U1f1f9',
@@ -67,7 +66,6 @@ CaffeBorghetti <- function() new(
   AbV = .25
 )
 
-#' @importFrom cli.tzh styleURL
 Grind_espresso <- function() new(
   Class = 'nutrition',
   brand = styleURL(text_ = 'Grind\U1f1fa\U1f1f8',

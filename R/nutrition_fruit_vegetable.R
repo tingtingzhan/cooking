@@ -32,12 +32,12 @@ Kirkland_mixedVeggies <- function() new(
   servingGram = 90, fat = .5, sodium = .02, sugar = 4, protein = 2)
 
 Kirkland_blueberry <- function() new(
-  Class = 'nutrition', costBiz = 'kirkland-signature-organic-blueberries%2C-3-lbs.product.100206942',
+  Class = 'nutrition', costcoBiz = 'kirkland-signature-organic-blueberries%2C-3-lbs.product.100206942',
   name = 'Frozen Blueberry\U1fad0',
-  servingGram = 140, sugar = 12, protein = 1,
-  water = 140*.866
-  # https://fdc.nal.usda.gov/fdc-app.html#/food-details/173950/nutrients
-  )
+  servingGram = 140, 
+  calorie = 70,
+  sugar = 12, protein = 1,
+  water = 140*.866, fdc = 173950L)
 
 Kirkland_strawberry <- function() new(
   Class = 'nutrition', 
@@ -300,11 +300,12 @@ watermelon <- function() new(
 
 Laura_soybean <- function() new(
   Class = 'nutrition', fdc = 174270L,
-  name = '\u9ec4\u8c46 Soy Bean', brand = 'Laura\U1f1fa\U1f1f8',
-  url = 'laurasoybeans.com/product/5-lbs-nongmo-laura-soybeans-2022-crop-best-for-soymilk-tofu-tempeh-boiling/',
+  name = '\u9ec4\u8c46 Soy Bean', 
+  brand = styleURL(text_ = 'Laura\U1f1fa\U1f1f8', url_ = 'https://laurasoybeans.com/product-category/laura-soybeans/'),
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
   servingGram = 100 - 8.54, 
+  servingCup = (100 - 8.54)/45*(1/4), # actual experiment: 45g = 1/4 cup
   calorie = 446,
   protein = 36.5, fat = 19.9, sugar = 7.33, sodium = .002)
 

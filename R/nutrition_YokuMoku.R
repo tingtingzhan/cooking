@@ -1,5 +1,4 @@
 
-#' @importFrom cli.tzh styleURL
 YokuMoku_cigare <- function() new(
   Class = 'nutrition',
   brand = styleURL(text_ = 'Yoku Moku\U1f1ef\U1f1f5',

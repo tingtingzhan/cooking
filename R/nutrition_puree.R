@@ -1,7 +1,5 @@
 
 
-# Pumpkin puree water content here \url{https://fdc.nal.usda.gov/fdc-app.html#/food-details/168450/nutrients}
-# is *not* accurate!!
 Libbys_pumpkin <- function() new(
   Class = 'nutrition', 
   brand = styleURL(text_ = 'Libby\'s\U1f1fa\U1f1f8', 
@@ -15,6 +13,7 @@ Libbys_pumpkin <- function() new(
   servingGram = 122, servingCup = 1/2,
   calorie = 45,
   fat = .5, sodium = .005, carbohydrate = 10, sugar = 5, protein = 1, 
+  fdc = 168450L,
   #water = 122 * 225/310) # noodle, experiment, actually a little too wet
   #water = 122 * 225/300) # noodle, theory
   water = 122 * 240/300) # bao, I trust best

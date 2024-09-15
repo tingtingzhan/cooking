@@ -93,9 +93,8 @@ setClass(Class = 'extra', slots = c(
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
 #' @slot servingGram \link[base]{numeric} scalar, serving size in grams
-#' @slot servingCup \link[base]{numeric} scalar, serving size in cups
-#' @slot servingTbsp \link[base]{numeric} scalar, serving size in tablespoons
-#' @slot servingTsp \link[base]{numeric} scalar, serving size in teaspoons
+#' @slot servingCup,servingTbsp,servingTsp \link[base]{numeric} scalar, serving size in cups, tablespoons, teaspoons
+# @slot servingBag \link[base]{numeric} scalar, serving size in (tea) bags
 #' @slot serving_floz \link[base]{numeric} scalar, serving size in fluid ounce
 #' @slot serving_ml \link[base]{numeric} scalar, serving size in milli litre
 #' 
@@ -116,6 +115,11 @@ setClass(Class = 'extra', slots = c(
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
 #' 
+#' @param x ..
+#' 
+#' @name nutrition
+#' @aliases nutrition-class  
+#' @importFrom cli.tzh styleURL
 #' @export
 setClass(Class = 'nutrition', slots = c(
   brand = 'character',
@@ -186,9 +190,8 @@ setClass(Class = 'nutrition', slots = c(
   contain = 'character',
   
   servingGram = 'numeric',
-  servingCup = 'numeric',
-  servingTbsp = 'numeric',
-  servingTsp = 'numeric',
+  servingCup = 'numeric', servingTbsp = 'numeric', servingTsp = 'numeric',
+  #servingBag = 'numeric',
   serving_floz = 'numeric',
   serving_ml = 'numeric',
   pieceWeight = 'numeric',
@@ -219,16 +222,13 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
-#' @title Get Nutrition
-#' 
-#' @description ..
-#' 
-#' @param x ..
-#' 
+#' @rdname nutrition
 #' @export
 nutrition <- function(x) UseMethod(generic = 'nutrition')
 
 
+#' @rdname nutrition
+#' @export nutrition.character
 #' @export
 nutrition.character <- function(x) {
   if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
@@ -248,8 +248,11 @@ nutrition.character <- function(x) {
   return(nutrition(xval))
 }
 
+#' @rdname nutrition
+#' @export nutrition.function
 #' @export
 nutrition.function <- function(x) nutrition(do.call(x, args = list()))
+
 
 nutrition_name_brand <- function(x) {
   if (length(x@AbV)) x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
@@ -260,7 +263,8 @@ nutrition_name_brand <- function(x) {
   } else x@name
 }
 
-#' @importFrom cli.tzh styleURL
+#' @rdname nutrition
+#' @export nutrition.nutrition
 #' @export
 nutrition.nutrition <- function(x) {
   
@@ -645,8 +649,8 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))
 
   if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
-  if (length(obj@fdc)) cat(styleURL(url_ = sprintf(fmt = 'fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc)), sep = '\n')
-  if (length(obj@pubchem)) cat(styleURL(url_ = sprintf(fmt = 'pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem)), sep = '\n')
+  if (length(obj@fdc)) cat(styleURL(url_ = sprintf(fmt = 'fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text_ = '\U1f4dd FoodData Central'), sep = '\n')
+  if (length(obj@pubchem)) cat(styleURL(url_ = sprintf(fmt = 'pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text_ = '\U1f4dd PubChem'), sep = '\n')
   
 })
 

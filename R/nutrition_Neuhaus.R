@@ -1,5 +1,4 @@
 
-#' @importFrom cli.tzh styleURL
 Neuhaus_Carre10 <- function() new(
   Class = 'nutrition',
   brand = styleURL(text_ = 'Neuhaus\U1f1e7\U1f1ea',

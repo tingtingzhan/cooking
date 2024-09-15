@@ -62,7 +62,8 @@
 #' @slot eggYolk,eggWhite \link[base]{numeric} scalars, weight of egg yolks and whites (in grams)
 #' 
 #' @slot teabag \link[base]{numeric} scalars, number of tea bags
-#' @slot tea \link[base]{numeric} scalars, weight bagged tea
+#' @slot tealoose \link[base]{numeric} scalars, weight of loose tea
+#' @slot tea \link[base]{numeric} scalars, weight bagged and loose tea
 #' 
 #' @slot flour \link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)
 # flours, corn meal, almond flour, coconut flour, etc. (in grams)
@@ -278,8 +279,7 @@ setClass(Class = 'recipe', slots = c(
   eggYolk = 'numeric', eggWhite = 'numeric',   
   egg_pc = 'numeric', eggYolk_pc = 'numeric', eggWhite_pc = 'numeric',
   
-  tea = 'numeric',  
-  teabag = 'numeric',
+  tea = 'numeric', teabag = 'numeric', tealoose = 'numeric',
   
   # puree
   pumpkin = 'numeric',
@@ -552,8 +552,13 @@ recipe <- function(x) {
   x@eggYolk <- c(eggYolk = sum(eggYolk()@servingGram * sum(x@eggYolk_pc, x@egg_pc), x@eggYolk))
   x@eggWhite_pc <- x@eggYolk_pc <- x@egg_pc <- numeric()
   
-  x@tea <- sum_.(x@tea, c(x@teabag * 2)) # standard teabag is 2g
-  x@teabag <- numeric()
+  teabag2tea <- if (length(x@teabag)) {
+    info_teabag <- lapply(names(x@teabag), FUN = function(i) eval(call(i)))
+    mapply(FUN = function(info, pc) {
+      info@servingGram * pc
+    }, pc = x@teabag, info = info_teabag)
+  } # else NULL
+  x@tea <- sum_.(x@tea, teabag2tea, x@tealoose)
   
   x <- addNameLen1(x, which = 'flour', name1 = 'KingArthur_allPurpose')
   x <- addNameLen1(x, which = 'pastryFlour', name1 = 'Wegmans_pastry')
@@ -765,6 +770,9 @@ recipe <- function(x) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
       } else 'Caff\u00e8' # \u2615
+      
+    } else if (length(x@tea)) {
+      paste(vapply(names(x@tea), FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
       
     } else switch(
       class(x), 
@@ -1327,16 +1335,20 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   
   grain_bean_nut <- c(
     object@grain,
-    object@soybean, object@chickpea, object@adzukibean, object@mungbean, object@redKidneyBean,
+    object@chickpea, object@adzukibean, object@mungbean, object@redKidneyBean,
     object@cashew, object@nut
   )
+  grain_bean_nut_vol_ <- c(
+    object@soybean
+  )
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), sep = '') # one or more grain
+  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, autoVolume(grain_bean_nut_vol_)), sep = '') # one or more grain
   
-  fat_vol <- c(
+  fat_vol_ <- c(
     object@fat,
     object@lard, object@tallow
   )
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, autoVolume(fat_vol)), sep = '')
+  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, autoVolume(fat_vol_)), sep = '')
   
   other <- c(
     object@vegetable,
@@ -1355,7 +1367,8 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggYolk)], object@eggYolk, getPc(object, 'eggYolk')))
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')))
   
-  cat(sprintf(fmt = '%s %.1f grams (%.3g bags)\n', nm_[names(object@tea)], object@tea, object@tea / 2))
+  cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
+  cat(sprintf(fmt = '%s \033[95m%.3g bags\033[0m\n', nm_[names(object@teabag)], object@teabag))
   
   allSugar <- c(
     object@sugar, object@brownSugar,

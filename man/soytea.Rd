@@ -19,12 +19,6 @@ Soymilk coagulate in tea.  I don't plan to do this anymore.
 
 Fresh soymilk not hot enough, so need two bag of tea ?
 }
-\section{Slots}{
-
-\describe{
-\item{\code{brownSugar_tsp}}{..}
-}}
-
 \examples{
 EarlGrey_soytea()
 Ceylon_soytea()
