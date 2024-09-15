@@ -50,7 +50,6 @@ cuminMontreal_rub <- function() new(
 
 Montreal_rub_try1 <- function() new(
   Class = 'rub',
-  alias_flavor = 'Montreal',
   spice_tsp = c(
     McCormick_MontrealSteak = 1,
     Kirkland_noSaltSeasoning = 3
@@ -63,7 +62,6 @@ Montreal_rub_try1 <- function() new(
 #' @export
 Montreal_rub <- function() new( # inspired by Guga
   Class = 'rub',
-  alias_flavor = 'Montreal',
   brownSugar_tsp = 1,
   # cinnamon_tsp = 1/8, # leave this to next try
   spice_tsp = c(
@@ -96,7 +94,7 @@ setClass(Class = 'chiliRub', contains = 'rub', prototype = prototype(
 #' @rdname chiliRub
 #' @export
 Southwest_rub <- function() new(
-  Class = 'chiliRub', alias_flavor = 'Southwest',
+  Class = 'chiliRub', 
   salt_tsp = .75,
   
   # chiliMix_tsp = c(SimplyOrganic_Southwest = 3), # a little too hot
@@ -107,7 +105,7 @@ Southwest_rub <- function() new(
 #' @rdname chiliRub
 #' @export
 harissa_rub <- function() new(
-  Class = 'chiliRub', alias_flavor = 'Harissa',
+  Class = 'chiliRub',
   salt_tsp = .75,
   chiliMix_tsp = c(FrontierCoop_harissa = 3),
   pros = 'not bad!')
@@ -128,7 +126,7 @@ setClass(Class = 'curryRub', contains = 'rub', prototype = prototype(
 #' @rdname chiliRub
 #' @export
 vindaloo_rub <- function() new(
-  Class = 'curryRub', alias_flavor = 'Vindaloo',
+  Class = 'curryRub',
   salt_tsp = .75,
   curry_tsp = c(FrontierCoop_vindaloo = 3),
   pros = 'I am addicted!!')

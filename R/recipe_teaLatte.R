@@ -40,19 +40,19 @@ setClass(Class = 'teaLatte', contains = 'recipe', prototype = prototype(
 
 #' @rdname teaLatte
 #' @export
-EarlGrey_latte_Twinings <- function() new(Class = 'teaLatte', alias_flavor = 'Earl Grey', teabag = c(Twinings_strongEarlGrey = 1), pros = 'I like!')
+EarlGrey_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_strongEarlGrey = 1), pros = 'I like!')
 
 #' @rdname teaLatte
 #' @export
-Ceylon_latte_Stassen <- function() new(Class = 'teaLatte', alias_flavor = 'Ceylon', teabag = c(Stassen_Ceylon = 1), pros = 'I like!')
+Ceylon_latte_Stassen <- function() new(Class = 'teaLatte', teabag = c(Stassen_Ceylon = 1), pros = 'I like!')
 
 #' @rdname teaLatte
 #' @export
-chai_latte_Twinings <- function() new(Class = 'teaLatte', alias_flavor = 'Chai', teabag = c(Twinings_ultraChai = 1), pros = 'I like!')
+chai_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_ultraChai = 1), pros = 'I like!')
 
 #' @rdname teaLatte
 #' @export
-Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', alias_flavor = 'Darjeeling', teabag = c(Twinings_Darjeeling = 1), cons = 'Lacks a signature flavor')
+Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_Darjeeling = 1), cons = 'Lacks a signature flavor')
 
 
 
@@ -83,7 +83,6 @@ setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
 #' @export
 EarlGrey_soytea <- function() new(
   Class = 'soytea', 
-  #alias_flavor = 'Earl Grey', 
   teabag = c(Twinings_strongEarlGrey = 4), 
   brownSugar_Tbsp = 1,
   pros = 'I love!')
@@ -93,7 +92,7 @@ EarlGrey_soytea <- function() new(
 Ceylon_soytea <- function() new(
   Class = 'soytea', 
   teabag = c(Stassen_Ceylon = 4), 
-  brownSugar_tsp = 4,
+  brownSugar_tsp = 4.5,
   date = as.Date('2024-09-15'),
   review = 'retry with more brown sugar! bottom sweeter, much better!',
   pros = 'I like')

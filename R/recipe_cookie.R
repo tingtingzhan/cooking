@@ -59,13 +59,13 @@ setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
 #' @rdname cookie
 #' @export
 Assam_cookie <- function() new(
-  Class = 'cookie', alias_flavor = 'Assam',
+  Class = 'cookie',
   review = c(
     'I say no less sugar',
     'Inna says no more sugar',
     'Gloria wants slightly more sugar'
   ),
-  flavor = c(Harney_Assam = 52), 
+  tealoose = c(Harney_Assam = 52), 
   flour = c(Wegmans_bread = 150, Wegmans_pastry = 150),
   sugar = 126, drymilk = 146,
   waterLost = 1007*.05 # yet to experiment and confirm
@@ -178,7 +178,7 @@ blackSesame_cookie2022 <- function() new(
 Harney_UvaHighlands_cookie <- function() new(
   Class = 'cookie', 
   Assam_cookie(), 
-  flavor = c(Harney_UvaHighlands = unname(Assam_cookie()@flavor)),
+  tealoose = c(Harney_UvaHighlands = 52), 
   review = 'Baked cookie lacks a signature flavor')
 
 
@@ -186,7 +186,9 @@ Harney_UvaHighlands_cookie <- function() new(
 #' @rdname cookie
 #' @export
 Harney_PuErh_cookie <- function() new(
-  Class = 'cookie', Assam_cookie(), flavor = c(Harney_PuErh = unname(Assam_cookie()@flavor)),
+  Class = 'cookie', 
+  Assam_cookie(), 
+  tealoose = c(Harney_PuErh = 52),
   review = 'Baked cookie lacks a signature flavor')
 
 
@@ -196,7 +198,7 @@ Harney_PuErh_cookie <- function() new(
 #' @export
 Harney_LapSangSouChong_cookie <- function() new(
   Class = 'cookie', 
-  flavor = c(Harney_LapSangSouChong = 20), 
+  tealoose = c(Harney_LapSangSouChong = 20), 
   # pastryFlour = 380, 
   flour = c(Wegmans_bread = 160, Wegmans_pastry = 200), # try
   sugar = 140, drymilk = 144,
@@ -212,7 +214,7 @@ Ceylon_cookie <- function() new(
   Class = 'cookie', 
   note = 'Blade grinder; Water bath',
   review = 'I like very much',
-  flavor = c(Stassen_Ceylon = 52), 
+  tealoose = c(Stassen_Ceylon = 52), 
   pastryFlour = 340, 
   sugar = 146, drymilk = 146)
 
@@ -232,7 +234,7 @@ ginger_cookie <- function() new(
 #' @rdname cookie
 #' @export
 EarlGrey_cookie2022_Twinings = function() new(
-  Class = 'cookie', alias_flavor = 'Earl Grey',
+  Class = 'cookie',
   note = 'Blade grinder',
   review = 'Mike loves it. Gloria says cannot stop.  Do NOT try to reduce sugar or dry milk!!',
   tea = c(Twinings_EarlGrey = 48), 
@@ -240,7 +242,7 @@ EarlGrey_cookie2022_Twinings = function() new(
   sugar = 136, drymilk = 140)
 
 EarlGrey_cookie_Twinings = function() new(
-  Class = 'cookie', alias_flavor = 'Earl Grey',
+  Class = 'cookie',
   note = 'Blade grinder',
   review = 'new experiment.  I want to reduce drymilk a little',
   eggYolk_pc = 5, water = 35,

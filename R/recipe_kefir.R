@@ -27,7 +27,7 @@ ryeWhisky_kefir <- function() new(Class = 'kefir', syrup = c(Runamok_ryeWhisky =
 
 #' @rdname kefir
 #' @export
-figWalnut_kefir <- function() new(Class = 'kefir', alias_flavor = 'Fig & Walnut', flavor = c(Stonewall_figWalnut = 13), pros = 'super nice!', date = as.Date('2024-05-16'))
+figWalnut_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_figWalnut = 13), pros = 'super nice!', date = as.Date('2024-05-16'))
 
 #' @rdname kefir
 #' @export

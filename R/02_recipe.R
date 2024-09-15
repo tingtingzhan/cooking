@@ -525,6 +525,11 @@ dairyName <- function(x, dairy = stop(''), name1 = stop()) {
 }
 
 
+get_flavor_ <- function(x) {
+  paste(vapply(x, FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
+}
+
+
 
 #' @title Trim \linkS4class{recipe}
 #' 
@@ -770,10 +775,15 @@ recipe <- function(x) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
       } else 'Caff\u00e8' # \u2615
-      
+     
+    } else if (length(x@curry)) {
+      get_flavor_(names(x@curry))
+    } else if (length(x@chiliMix)) {
+      get_flavor_(names(x@chiliMix))
     } else if (length(x@tea)) {
-      paste(vapply(names(x@tea), FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
-      
+      get_flavor_(names(x@tea))
+    } else if (length(x@spice)) {
+      get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
     } else switch(
       class(x), 
       matchaLatteHot =, matchaLatteFrappe =, matchaGoatLatteHot =, matchaGoatLatteFrappe = {
@@ -853,15 +863,8 @@ recipe <- function(x) {
         if (any(grepl('tomyum', x = names(x@sauce)))) {
           '\u51ac\u9634'
         } else character()
-      } else if (length(x@syrup) == 1L) {
-        #nutrition_name_brand(nutrition(do.call(what = names(x@syrup), args = list())))
-        if (grepl('ryeWhisky', x = names(x@syrup))) {
-          'Rye Whiskey\u67ab\u7cd6'
-        } else if (grepl('raspberry', x = names(x@syrup))) {
-          '\u8986\u76c6\u5b50'
-        } else if (grepl('blueberry', x = names(x@syrup))) {
-          '\u84dd\u8393\U1fad0'
-        } else character()
+      } else if (length(x@syrup)) {
+        get_flavor_(names(x@syrup))
       } else character())
   }
   

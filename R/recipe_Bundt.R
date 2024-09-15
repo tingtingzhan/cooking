@@ -96,7 +96,7 @@ matcha_Bundt <- function() new(
 #' @export
 EarlGrey_Bundt <- function() new(
   Class = 'Bundt', 
-  flavor = c(Twinings_EarlGrey = 35), sugar = 50
+  tealoose = c(Twinings_EarlGrey = 35), sugar = 50
 )
 
 
