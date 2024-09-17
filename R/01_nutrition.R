@@ -47,6 +47,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot wegmans,wegmansorganic \link[base]{integer} scalar, Wegmans Food Markets ID
 #' @slot wholefoods \link[base]{character} scalar, Wholel Foods ID
 #' 
+#' @slot bachans \link[base]{character} scalar
 #' @slot baileys \link[base]{character} scalar
 #' @slot bassetts \link[base]{character} scalar
 #' @slot belgioioso \link[base]{character} scalar
@@ -59,12 +60,16 @@ setClass(Class = 'extra', slots = c(
 #' @slot frontiercoop \link[base]{character} scalar
 #' @slot haagendazs \link[base]{character} scalar
 #' @slot harney \link[base]{character} scalar
+#' @slot heinz \link[base]{character} scalar
+#' @slot hellmanns \link[base]{character} scalar
 #' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
 #' @slot itoen \link[base]{character} scalar
 #' @slot jfc \link[base]{character} scalar
 #' @slot kahlua \link[base]{character} scalar
 #' @slot kerrygold \link[base]{character} scalar
+#' @slot kikkomanusa \link[base]{character} scalar
 #' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
+#' @slot leaperrins \link[base]{character} scalar
 #' @slot leekumkee \link[base]{character} scalar
 #' @slot maeda \link[base]{character} scalar
 #' @slot marukyu \link[base]{character} scalar
@@ -83,6 +88,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot stonewall \link[base]{integer} scalar
 #' @slot swiftmeats \link[base]{character} scalar
 #' @slot swissmiss \link[base]{character} scalar
+#' @slot thaikitchen \link[base]{character} scalar
 #' @slot twinings \link[base]{character} scalar
 #' 
 #' 
@@ -146,6 +152,7 @@ setClass(Class = 'nutrition', slots = c(
   walmart = 'character',
   wawa = 'character',
   
+  bachans = 'character',
   baileys = 'character',
   bassetts = 'character',
   belgioioso = 'character',
@@ -158,12 +165,16 @@ setClass(Class = 'nutrition', slots = c(
   frontiercoop = 'character',
   haagendazs = 'character',
   harney = 'character',
+  heinz = 'character',
+  hellmanns = 'character',
   ippodoglobal = 'character', ippodojpn = 'character', ippodousa = 'character',
   itoen = 'character',
   jfc = 'character',
   kahlua = 'character',
   kerrygold = 'character',
+  kikkomanusa = 'character',
   kingarthur = 'integer', kingarthurpro = 'integer',
+  leaperrins = 'character',
   leekumkee = 'character',
   maeda = 'character',
   marukyu = 'character',
@@ -183,6 +194,7 @@ setClass(Class = 'nutrition', slots = c(
   stonewall = 'integer',
   swiftmeats = 'character',
   swissmiss = 'character',
+  thaikitchen = 'character',
   twinings = 'character',
   
   machine = 'function',
@@ -269,7 +281,9 @@ nutrition_name_brand <- function(x) {
 nutrition.nutrition <- function(x) {
   
   if (!length(x@brand)) { # manufacturer
-    x@brand <- if (length(x@baileys)) {
+    x@brand <- if (length(x@bachans)) {
+      styleURL(url_ = sprintf(fmt = 'bachans.com/products/%s', x@bachans), text_ = 'Bachan\'s\U1f1fa\U1f1f8')
+    } else if (length(x@baileys)) {
       styleURL(url_ = sprintf(fmt = 'www.baileys.com/en/products/%s', x@baileys), text_ = 'Baileys\U1f1ee\U1f1ea')
     } else if (length(x@bassetts)) {
       styleURL(url_ = sprintf(fmt = 'www.bassettsicecream.com/_files/ugd/%s.pdf', x@bassetts), text_ = 'Bassetts\U1f368\U1f1fa\U1f1f8')
@@ -293,6 +307,10 @@ nutrition.nutrition <- function(x) {
       styleURL(url_ = sprintf(fmt = 'www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text_ = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8')
     } else if (length(x@harney)) {
       styleURL(url_ = sprintf(fmt = 'www.harney.com/products/%s', x@harney), text_ = 'Harney & Sons\U1f1fa\U1f1f8')
+    } else if (length(x@heinz)) {
+      styleURL(url_ = sprintf(fmt = 'www.heinz.com/products/%s', x@heinz), text_ = 'Heinz\U1f1fa\U1f1f8')
+    } else if (length(x@hellmanns)) {
+      styleURL(url_ = sprintf(fmt = 'www.hellmanns.com/us/en/p/%s', x@hellmanns), text_ = 'Hellmann\'s\U1f1fa\U1f1f8')
     } else if (length(x@ippodoglobal) & length(x@ippodojpn) & length(x@ippodousa)) {
       x@url <- c(x@url, sprintf(fmt = 'ippodotea.com/products/%s', x@ippodousa))
       paste(
@@ -304,7 +322,9 @@ nutrition.nutrition <- function(x) {
     } else if (length(x@kahlua)) {
       styleURL(url_ = sprintf(fmt = 'www.kahlua.com/en-us/products/%s', x@kahlua), text_ = 'Kahlu\u0301a\U1f1f2\U1f1fd')
     } else if (length(x@kerrygold)) {
-      styleURL(url_ = sprintf(fmt = 'kerrygold.com/products/%s', x@kerrygold), text_ = 'Kerrygold\U1f1ee\U1f1ea') # works again!
+      styleURL(url_ = sprintf(fmt = 'kerrygold.com/products/%s', x@kerrygold), text_ = 'Kerrygold\U1f1ee\U1f1ea')
+    } else if (length(x@kikkomanusa)) {
+      styleURL(url_ = sprintf(fmt = 'kikkomanusa.com/foodservice/products/%s', x@kikkomanusa), text_ = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5')
     } else if (length(x@kingarthur)) {
       styleURL(url_ = sprintf(
         fmt = 'www.kingarthurbaking.com/search?query=%d', 
@@ -312,6 +332,8 @@ nutrition.nutrition <- function(x) {
         x@kingarthur), text_ = 'King Arthur\U1f1fa\U1f1f8') # works again!
     } else if (length(x@kingarthurpro)) {
       styleURL(url_ = 'www.kingarthurbaking.com/pro/products', text_ = 'King Arthur\U1f1fa\U1f1f8')
+    } else if (length(x@leaperrins)) {
+      styleURL(url_ = sprintf(fmt = 'www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text_ = 'Lea & Perrins\U1f1ec\U1f1e7')
     } else if (length(x@leekumkee)) {
       styleURL(url_ = sprintf(fmt = 'usa.lkk.com/zh-hk/products/%s', x@leekumkee), text_ = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0')
     } else if (length(x@maeda)) {
@@ -368,8 +390,10 @@ nutrition.nutrition <- function(x) {
       styleURL(url_ = sprintf(fmt = 'swiftmeats.com/products/%s', x@swiftmeats), text_ = 'Swift\U1f1fa\U1f1f8')
     } else if (length(x@swissmiss)) {
       styleURL(url_ = sprintf(fmt = 'www.swissmiss.com/%s', x@swissmiss), text_ = 'Swiss Miss\U1f1fa\U1f1f8')
+    } else if (length(x@thaikitchen)) {
+      styleURL(url_ = sprintf(fmt = 'www.mccormick.com/thai-kitchen/products/%s', x@thaikitchen), text_ = 'Thai Kitchen\U1f1fa\U1f1f8')
     } else if (length(x@twinings)) {
-      styleURL(url_ = sprintf(fmt = 'twiningsusa.com/products/%s', x@twinings), text_ ='Twinings\U1f1ec\U1f1e7')
+      styleURL(url_ = sprintf(fmt = 'twiningsusa.com/products/%s', x@twinings), text_ = 'Twinings\U1f1ec\U1f1e7')
     } else character()
   } # manufacturer
   

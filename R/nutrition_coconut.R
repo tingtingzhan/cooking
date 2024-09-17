@@ -78,8 +78,9 @@ WegmansOrganic_coconutFlour <- function() new(
   fat = 2, sodium = .01, carbohydrate = 8, sugar = 1, protein = 2)
 
 ThaiKitchen_coconutmilkLite <- function() new(
-  Class = 'nutrition', url = 'www.mccormick.com/thai-kitchen/products/coconut-milk/organic-lite-coconut-milk',
-  brand = 'Thai Kitchen', name = 'Lite Coconut\U1f965 Milk',
+  Class = 'nutrition', 
+  thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
+  name = 'Lite Coconut\U1f965 Milk',
   review = 'Effie diarrhea!!',
   walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
   # fullweight = 475, emptyweight = 59,
@@ -88,10 +89,11 @@ ThaiKitchen_coconutmilkLite <- function() new(
 
 
 ThaiKitchen_coconutmilk <- function() new(
-  Class = 'nutrition', url = 'www.mccormick.com/thai-kitchen/products/coconut-milk/organic-coconut-milk',
-  brand = 'Thai Kitchen', name = 'Coconut\U1f965 Milk',
+  Class = 'nutrition', 
+  thaikitchen = 'coconut-milk/organic-coconut-milk',
+  name = 'Coconut\U1f965 Milk',
   review = 'Effie diarrhea!!',
-  usd = (11.59/6)/403*80, # sold at Costco, price retrieved 2022-09-02
+  costco = '100452749', usd = (12.99/6)/403*80, # price retrieved 2024-09-02
   # fullweight = 475, emptyweight = 59, 
   servingGram = (475-59)/403*80, servingCup = 1/3,
   fat = 12, sugar = 1, sodium = .03)
@@ -110,12 +112,13 @@ Silk_coconutmilk <- function() new(
 
 SoDelicious_coconutmilk <- function() new(
   Class = 'nutrition', 
-  brand = 'So Delicious', name = 'Coconutmilk\U1f965',
-  url = c(
+  name = 'Coconutmilk\U1f965',
+  brand = styleURL(text_ = 'So Delicious', url_ = c(
     'sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
     # 'sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
-  ),
+  )),
   walmart = '667624971', usd = 2.68/4,
+  costco = '100449940',
   servingGram = 240, servingCup = 1, # 240ml
   water = 240*.9457,
   fat = 4, sodium = .01)
