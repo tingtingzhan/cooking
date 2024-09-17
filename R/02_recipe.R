@@ -57,14 +57,11 @@
 #' @slot lard,lard_tsp,lard_Tbsp,lard_cup \link[base]{numeric} scalar, weight (in grams) and volume of Epic pork lard
 #' @slot tallow,tallow_tsp,tallow_Tbsp,tallow_cup \link[base]{numeric} scalar, weight (in grams) and volume of Epic beef tallow
 #' 
-#' 
 #' @slot egg_pc,eggYolk_pc,eggWhite_pc \link[base]{numeric} scalars, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' @slot eggYolk,eggWhite \link[base]{numeric} scalars, weight of egg yolks and whites (in grams)
 #' 
 #' @slot teabag \link[base]{numeric} scalars, number of tea bags
-#' @slot teabag2tea \link[base]{numeric} scalars, internal slots
 #' @slot tealoose \link[base]{numeric} scalars, weight of loose tea
-# @slot tea \link[base]{numeric} scalars, weight bagged and loose tea
 #' 
 #' @slot flour \link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)
 # flours, corn meal, almond flour, coconut flour, etc. (in grams)
@@ -280,8 +277,7 @@ setClass(Class = 'recipe', slots = c(
   eggYolk = 'numeric', eggWhite = 'numeric',   
   egg_pc = 'numeric', eggYolk_pc = 'numeric', eggWhite_pc = 'numeric',
   
-  #tea = 'numeric', 
-  teabag = 'numeric', teabag2tea = 'numeric', tealoose = 'numeric',
+  teabag = 'numeric', tealoose = 'numeric',
   
   # puree
   pumpkin = 'numeric',
@@ -559,8 +555,6 @@ recipe <- function(x) {
   x@eggYolk <- c(eggYolk = sum(eggYolk()@servingGram * sum(x@eggYolk_pc, x@egg_pc), x@eggYolk))
   x@eggWhite_pc <- x@eggYolk_pc <- x@egg_pc <- numeric()
   
-  x@teabag2tea <- getTealoose(x@teabag) # len-0 compatible
-  
   x <- addNameLen1(x, which = 'flour', name1 = 'KingArthur_allPurpose')
   x <- addNameLen1(x, which = 'pastryFlour', name1 = 'Wegmans_pastry')
   
@@ -776,7 +770,7 @@ recipe <- function(x) {
       get_flavor_(names(x@curry))
     } else if (length(x@chiliMix)) {
       get_flavor_(names(x@chiliMix))
-    } else if (length(tea <- sum_.(x@teabag2tea, x@tealoose))) {
+    } else if (length(tea <- sum_.(getTealoose(x@teabag), x@tealoose))) {
       get_flavor_(names(tea))
     } else if (length(x@spice)) {
       get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
@@ -897,7 +891,7 @@ nutrition.recipe <- function(x) {
   ingredient <- names(which(lengths(attributes(x)[ingredient0]) > 0L))
   
   atr <- attributes(x)[ingredient]
-  atr$teabag <- numeric()
+  atr$teabag <- getTealoose(x@teabag)
 
   total_raw <- sum(unlist(atr, use.names = FALSE))
   
@@ -950,7 +944,7 @@ nutrition.recipe <- function(x) {
   puree <- sum(x@puree, x@pumpkin, x@pumpkinPieMix, x@strawberry, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@darkCherry, x@yellowCorn, x@durian, x@applesauce)
   starch <- sum(x@starch)
   drymilk <- sum(x@drymilk)
-  tea <- sum_.(x@teabag2tea, x@tealoose)
+  tea <- sum_.(getTealoose(x@teabag), x@tealoose)
   
   devrecipe <- getOption('devrecipe') 
   
@@ -1368,7 +1362,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')))
   
   cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
-  cat(sprintf(fmt = '%s %.1f grams \033[1;95m%.2gbags\033[0m\n', nm_[names(object@teabag)], object@teabag2tea, object@teabag))
+  cat(sprintf(fmt = '%s %.1f grams \033[1;95m%.2gbags\033[0m\n', nm_[names(object@teabag)], getTealoose(object@teabag), object@teabag))
   
   allSugar <- c(
     object@sugar, object@brownSugar,
