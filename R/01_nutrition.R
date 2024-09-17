@@ -485,7 +485,7 @@ gram_per_tsp <- function(x) {
 
 getPc <- function(object, name) {
   ret <- slot(object, name = name) / eval(call(name))@servingGram
-  paste0('\033[1;95m', sprintf(fmt = '%.3gpcs', ret), '\033[0m')
+  sprintf(fmt = '\033[1;95m%.3gpcs\033[0m', ret)
 }
 
 getTealoose <- function(x) {
