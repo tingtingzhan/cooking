@@ -9,7 +9,7 @@ MgCl2 <- function() new(
 
 Ohsawa_nigari <- function() new(
   Class = 'nutrition',
-  brand = styleURL(url_ = 'www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text_ = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5'), 
+  brand = unclass(style_hyperlink(url = 'www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5')), 
   name = '\u82e6\u6c41/\u6ef7\u6c41 Nigari',
   amazon = 'B0019L8KUG',
   usd = 8.79/454*6,
@@ -29,12 +29,13 @@ Morton_salt <- function() new(
 
 Ajinomoto_msg <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'www.ajinomoto.com/msg', text_ = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5'), 
-  name = '\u5473\u7cbe MSG',
+  brand = unclass(style_hyperlink(url = 'www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
+  name = '\u5473\u7cbe Monosodium Glutamate',
   # 'www.yamibuy.com/zh/p/msg-aji-no-motot-in-bag-1lb/1148033131'
   usd = 3.99/454,
   servingGram = 1, 
   servingTsp = 1/4, # packaging
+  pubchem = 'Monosodium-Glutamate',
   # MSG is C5H8NO4Na
   # sodium 23/(12*5+2*8+14+16*4+23) = 12.99%
   sodium = .125)
@@ -42,8 +43,9 @@ Ajinomoto_msg <- function() new(
 
 ArmHammer_NaHCO3 <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text_ = 'Arm & Hammer\U1f1fa\U1f1f8'),
+  brand = unclass(style_hyperlink(url = 'www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8')),
   name = '\u5c0f\u82cf\u6253 Baking Soda, NaHCO\u2083',
+  pubchem = '516892',
   servingGram = .6, 
   servingTsp = 1/8, # packaging
   sodium = 23/(23+1+12+16*3) * .6)
@@ -51,6 +53,7 @@ ArmHammer_NaHCO3 <- function() new(
 Na2CO3 <- function() new(
   Class = 'nutrition', # presume no volumn change when baking
   name = '\u78b1\u9762 Soda Ash Na\u2082CO\u2083',
+  pubchem = '10340',
   # 2 NaHCO3 = Na2CO3 + H2O + CO2
   # weight on left: 2 * (23+1+12+16*3)
   # weight on right: (23*2+12+16*3)
