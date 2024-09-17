@@ -19,7 +19,7 @@ Ohsawa_nigari <- function() new(
 
 Morton_salt <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Morton\U1f1fa\U1f1f8', url_ = 'www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/'),
+  brand = styleURL(text_ = 'Morton\U1f1fa\U1f1f8', url_ = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/'),
   name = '\u76d0 Salt\U1f9c2',
   servingTsp = 1/4, 
   servingGram = 1.5, # packaging!

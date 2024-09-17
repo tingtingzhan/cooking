@@ -49,7 +49,7 @@ Ippodo_sayakaThick <- function() new(
 
 Sencha_matcha <- function() new(
   Class = 'nutrition',
-  brand = styleURL(url_ = 'senchanaturals.com/collections/all-products-1/products/organic-emperors-matcha', text_ = 'Sencha Naturals\U1f1fa\U1f1f8'),
+  brand = styleURL(url_ = 'https://senchanaturals.com/collections/all-products-1/products/organic-emperors-matcha', text_ = 'Sencha Naturals\U1f1fa\U1f1f8'),
   name = '\u8336\u9053\u7ea7\u62b9\u8336\u7c89 Emperor\'s Matcha\U1f375',
   usd = 39.95/73.7*1.5, # 2.6oz package
   servingGram = 1.5, servingTsp = .5, # on package
@@ -57,7 +57,7 @@ Sencha_matcha <- function() new(
 
 Sencha_everyday_matcha <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text_ = 'Sencha Naturals\U1f1fa\U1f1f8'), 
+  brand = styleURL(url_ = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text_ = 'Sencha Naturals\U1f1fa\U1f1f8'), 
   name = '\u62b9\u8336\u7c89 Matcha\U1f375 Powder',
   extra = new(Class = 'extra', water = 4/3), # tested on bao()
   costco = '100705701',

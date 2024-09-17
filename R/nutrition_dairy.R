@@ -106,7 +106,7 @@ Carnation_condensedMilk <- function() new(
 
 Philadelphia_creamCheese <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', url_ = 'www.kraftheinzawayfromhome.com/products/10021000616005/'),
+  brand = unclass(style_hyperlink(text = 'Philadelphia\U1f1fa\U1f1f8', url = 'https://www.kraftheinzawayfromhome.com/products/10021000616005/')),
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
   servingGram = 28, # no volume info!!
@@ -117,7 +117,7 @@ Philadelphia_creamCheese <- function() new(
 
 PhiladelphiaNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', url_ = 'www.kraftheinzawayfromhome.com/products/10021000616401/'),
+  brand = unclass(style_hyperlink(text = 'Philadelphia\U1f1fa\U1f1f8', url = 'https://www.kraftheinzawayfromhome.com/products/10021000616401/')),
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cream Cheese',
   walmart = '36647454', usd = 4.98/2/227*28, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
@@ -304,7 +304,7 @@ TraderJoes_heavyCream <- function() new( #
 
 NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'www.naturalbynaturedairy.com/heavy-cream', text_ = 'Nature By Nature'), 
+  brand = unclass(style_hyperlink(url = 'www.naturalbynaturedairy.com/heavy-cream', text = 'Nature By Nature')), 
   name = '\u91cd\u5976\u6cb9 Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   fat = 6, water = 15 * .577)
@@ -312,7 +312,7 @@ NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
 
 LandOLakes_whippedHeavyCream <- function() new(
   Class = 'nutrition',
-  brand = styleURL(url_ = 'www.landolakes.com/where-to-buy/aerosol-whipped-cream/', text_ = 'Land O Lakes'), 
+  brand = unclass(style_hyperlink(url = 'www.landolakes.com/where-to-buy/aerosol-whipped-cream/', text = 'Land O Lakes')), 
   name = '\u6253\u53d1\u91cd\u5976\u6cb9 Whipped Heavy Cream',
   costcoBiz = '100284038',
   servingGram = 6, servingTbsp = 2,

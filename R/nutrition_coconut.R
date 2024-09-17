@@ -14,7 +14,7 @@ if (FALSE) {
 
 Edward_shreddedCoconutLite <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Edward & Sons\U1f1fa\U1f1f8', url_ = 'store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut'),
+  brand = styleURL(text_ = 'Edward & Sons\U1f1fa\U1f1f8', url_ = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut'),
   name = '\u51cf\u8102\u6930\u84c9 Less Fat Shredded Coconut\U1f965',
   usd = 3.89/250*16,
   servingGram = 16, 
@@ -114,8 +114,8 @@ SoDelicious_coconutmilk <- function() new(
   Class = 'nutrition', 
   name = 'Coconutmilk\U1f965',
   brand = styleURL(text_ = 'So Delicious', url_ = c(
-    'sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
-    # 'sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
+    'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
+    # 'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
   )),
   walmart = '667624971', usd = 2.68/4,
   costco = '100449940',

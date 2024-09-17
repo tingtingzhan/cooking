@@ -1,20 +1,21 @@
 # dried fruits
 OceanSpray_cranberry <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text_ = 'Ocean Spray'), 
+  brand = unclass(style_hyperlink(url = 'www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
   name = 'Dried Cranberries',
   costco = '100400518',
   servingGram = 40, sugar = 29)
 
 SunnyFruit_fig <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'sunnyfruit.com/products/organic-dried-figs', text_ = 'Sunny Fruit'), name = 'Dried Figs',
+  brand = unclass(style_hyperlink(url = 'sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
+                  name = 'Dried Figs',
   costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
 SunnyFruit_date <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'sunnyfruit.com/products/organic-pitted-dates', text_ = 'Sunny Fruit'), 
+  brand = unclass(style_hyperlink(url = 'sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
   name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 
@@ -134,7 +135,7 @@ Libbys_pineapple <- function() new(
 
 Dole_pineapple <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(url_ = 'dolesunshine.com/us/en/products/pantry/canned-fruit/', text_ = 'Dole\U1f33a'),
+  brand = unclass(style_hyperlink(url = 'dolesunshine.com/us/en/products/pantry/canned-fruit/', text = 'Dole\U1f33a')),
   name = '\u83e0\u841d\u7f50\u5934 Pineapple\U1f34d in 100% Juice',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
@@ -298,7 +299,7 @@ watermelon <- function() new(
 Laura_soybean <- function() new(
   Class = 'nutrition', fdc = 174270L,
   name = '\u9ec4\u8c46 Soy Bean', 
-  brand = styleURL(text_ = 'Laura\U1f1fa\U1f1f8', url_ = 'https://laurasoybeans.com/product-category/laura-soybeans/'),
+  brand = unclass(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
   servingGram = 100 - 8.54, 
