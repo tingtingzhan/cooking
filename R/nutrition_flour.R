@@ -100,7 +100,6 @@ KingArthur_highGluten <- function() new(
 KingArthur_Lancelot <- function() new(
   Class = 'nutrition', webstaurant = '104NFL5100S',
   kingarthurpro = 13050L,
-  brand = 'King Arthur\U1f1fa\U1f1f8',
   name = '14%\u9ad8\u7b4b\u9762\u7c89 Sir Lancelot',
   usd = 28.49/(50*454)*100,
   servingGram = 100, 

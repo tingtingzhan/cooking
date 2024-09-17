@@ -66,7 +66,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot itoen \link[base]{character} scalar
 #' @slot jfc \link[base]{character} scalar
 #' @slot kahlua \link[base]{character} scalar
-#' @slot kerrygold \link[base]{character} scalar
+#' @slot kerrygold,kerrygoldusa \link[base]{character} scalar
 #' @slot kikkomanusa \link[base]{character} scalar
 #' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
 #' @slot leaperrins \link[base]{character} scalar
@@ -125,7 +125,6 @@ setClass(Class = 'extra', slots = c(
 #' 
 #' @name nutrition
 #' @aliases nutrition-class  
-#' @importFrom cli.tzh styleURL
 #' @export
 setClass(Class = 'nutrition', slots = c(
   brand = 'character',
@@ -171,7 +170,7 @@ setClass(Class = 'nutrition', slots = c(
   itoen = 'character',
   jfc = 'character',
   kahlua = 'character',
-  kerrygold = 'character',
+  kerrygold = 'character', kerrygoldusa = 'character',
   kikkomanusa = 'character',
   kingarthur = 'integer', kingarthurpro = 'integer',
   leaperrins = 'character',
@@ -276,124 +275,124 @@ nutrition_name_brand <- function(x) {
 }
 
 #' @rdname nutrition
+#' @importFrom cli style_hyperlink
 #' @export nutrition.nutrition
 #' @export
 nutrition.nutrition <- function(x) {
   
   if (!length(x@brand)) { # manufacturer
     x@brand <- if (length(x@bachans)) {
-      styleURL(url_ = sprintf(fmt = 'bachans.com/products/%s', x@bachans), text_ = 'Bachan\'s\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://bachans.com/products/%s', x@bachans), text = 'Bachan\'s\U1f1fa\U1f1f8'))
     } else if (length(x@baileys)) {
-      styleURL(url_ = sprintf(fmt = 'www.baileys.com/en/products/%s', x@baileys), text_ = 'Baileys\U1f1ee\U1f1ea')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.baileys.com/en/products/%s', x@baileys), text = 'Baileys\U1f1ee\U1f1ea'))
     } else if (length(x@bassetts)) {
-      styleURL(url_ = sprintf(fmt = 'www.bassettsicecream.com/_files/ugd/%s.pdf', x@bassetts), text_ = 'Bassetts\U1f368\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.bassettsicecream.com/_files/ugd/%s.pdf', x@bassetts), text = 'Bassetts\U1f368\U1f1fa\U1f1f8'))
     } else if (length(x@belgioioso)) {
-      styleURL(url_ = sprintf(fmt = 'www.belgioioso.com/products/%s', x@belgioioso), text_ = 'BelGioioso\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.belgioioso.com/products/%s', x@belgioioso), text = 'BelGioioso\U1f1fa\U1f1f8'))
     } else if (length(x@bobsredmill)) {
-      styleURL(url_ = sprintf(fmt = 'www.bobsredmill.com/%s.html', x@bobsredmill), text_ = 'Bob\'s Red Mill\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.bobsredmill.com/%s.html', x@bobsredmill), text = 'Bob\'s Red Mill\U1f1fa\U1f1f8'))
     } else if (length(x@bouchard)) {
-      styleURL(url_ = sprintf(fmt = 'bouchardchocolate.com/products/%s', x@bouchard), text_ = 'Bouchard\U1f1e7\U1f1ea')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://bouchardchocolate.com/products/%s', x@bouchard), text = 'Bouchard\U1f1e7\U1f1ea'))
     } else if (length(x@daisybrand)) {
-      styleURL(url_ = sprintf(fmt = 'www.daisybrand.com/%s', x@daisybrand), text_ = 'Daisy\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.daisybrand.com/%s', x@daisybrand), text = 'Daisy\U1f1fa\U1f1f8'))
     } else if (length(x@domino)) {
-      styleURL(url_ = sprintf(fmt = 'www.dominosugar.com/products/%s', x@domino), text_ = 'Domino\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.dominosugar.com/products/%s', x@domino), text = 'Domino\U1f1fa\U1f1f8'))
     } else if (length(x@epicprovisions)) {
-      styleURL(url_ = sprintf(fmt = 'epicprovisions.com/products/%s', x@epicprovisions), text_ = 'Epic\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://epicprovisions.com/products/%s', x@epicprovisions), text = 'Epic\U1f1fa\U1f1f8'))
     } else if (length(x@fleischmannsyeast)) {
-      styleURL(url_ = sprintf(fmt = 'www.fleischmannsyeast.com/product-page/#%d', x@fleischmannsyeast), text_ = 'Fleischmann\'s\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.fleischmannsyeast.com/product-page/#%d', x@fleischmannsyeast), text = 'Fleischmann\'s\U1f1fa\U1f1f8'))
     } else if (length(x@frontiercoop)) {
-      styleURL(url_ = sprintf(fmt = 'www.frontiercoop.com/products/frontier-co-op-%s', x@frontiercoop), text_ = 'Frontier Co-op\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s', x@frontiercoop), text = 'Frontier Co-op\U1f1fa\U1f1f8'))
     } else if (length(x@haagendazs)) {
-      styleURL(url_ = sprintf(fmt = 'www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text_ = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8'))
     } else if (length(x@harney)) {
-      styleURL(url_ = sprintf(fmt = 'www.harney.com/products/%s', x@harney), text_ = 'Harney & Sons\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.harney.com/products/%s', x@harney), text = 'Harney & Sons\U1f1fa\U1f1f8'))
     } else if (length(x@heinz)) {
-      styleURL(url_ = sprintf(fmt = 'www.heinz.com/products/%s', x@heinz), text_ = 'Heinz\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.heinz.com/products/%s', x@heinz), text = 'Heinz\U1f1fa\U1f1f8'))
     } else if (length(x@hellmanns)) {
-      styleURL(url_ = sprintf(fmt = 'www.hellmanns.com/us/en/p/%s', x@hellmanns), text_ = 'Hellmann\'s\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.hellmanns.com/us/en/p/%s', x@hellmanns), text = 'Hellmann\'s\U1f1fa\U1f1f8'))
     } else if (length(x@ippodoglobal) & length(x@ippodojpn) & length(x@ippodousa)) {
-      x@url <- c(x@url, sprintf(fmt = 'ippodotea.com/products/%s', x@ippodousa))
+      x@url <- c(x@url, sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodousa))
       paste(
-        styleURL(url_ = sprintf(fmt = 'global.ippodo-tea.co.jp/products/%s', x@ippodoglobal), text_ = 'Ippodo\U1f375'),
-        styleURL(url_ = sprintf(fmt = 'www.ippodo-tea.co.jp/products/%s', x@ippodojpn), text_ = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s', x@ippodoglobal), text = 'Ippodo\U1f375')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodojpn), text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
       )
     } else if (length(x@itoen)) {
-      styleURL(url_ = sprintf(fmt = 'itoen.com/products/%s', x@itoen), text_ = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://itoen.com/products/%s', x@itoen), text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5'))
     } else if (length(x@kahlua)) {
-      styleURL(url_ = sprintf(fmt = 'www.kahlua.com/en-us/products/%s', x@kahlua), text_ = 'Kahlu\u0301a\U1f1f2\U1f1fd')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kahlua.com/en-us/products/%s', x@kahlua), text = 'Kahlu\u0301a\U1f1f2\U1f1fd'))
     } else if (length(x@kerrygold)) {
-      styleURL(url_ = sprintf(fmt = 'kerrygold.com/products/%s', x@kerrygold), text_ = 'Kerrygold\U1f1ee\U1f1ea')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://kerrygold.com/products/%s', x@kerrygold), text = 'Kerrygold\U1f1ee\U1f1ea'))
+    } else if (length(x@kerrygoldusa)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s', x@kerrygoldusa), text = 'Kerrygold\U1f1ee\U1f1ea'))
     } else if (length(x@kikkomanusa)) {
-      styleURL(url_ = sprintf(fmt = 'kikkomanusa.com/foodservice/products/%s', x@kikkomanusa), text_ = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://kikkomanusa.com/foodservice/products/%s', x@kikkomanusa), text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5'))
     } else if (length(x@kingarthur)) {
-      styleURL(url_ = sprintf(
-        fmt = 'www.kingarthurbaking.com/search?query=%d', 
-        # fmt = 'shop.kingarthurbaking.com/items/%d', # fails again!
-        x@kingarthur), text_ = 'King Arthur\U1f1fa\U1f1f8') # works again!
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.kingarthurbaking.com/items/%d', x@kingarthur), text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@kingarthurpro)) {
-      styleURL(url_ = 'www.kingarthurbaking.com/pro/products', text_ = 'King Arthur\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = 'https://www.kingarthurbaking.com/pro/products', text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
-      styleURL(url_ = sprintf(fmt = 'www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text_ = 'Lea & Perrins\U1f1ec\U1f1e7')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text = 'Lea & Perrins\U1f1ec\U1f1e7'))
     } else if (length(x@leekumkee)) {
-      styleURL(url_ = sprintf(fmt = 'usa.lkk.com/zh-hk/products/%s', x@leekumkee), text_ = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://usa.lkk.com/zh-hk/products/%s', x@leekumkee), text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0'))
     } else if (length(x@maeda)) {
-      styleURL(url_ = sprintf(fmt = 'maeda-en.com/collections/matcha-powder/products/%s', x@maeda), text_ = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://maeda-en.com/collections/matcha-powder/products/%s', x@maeda), text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5'))
     } else if (length(x@marukyu)) {
-      x@url <- c(x@url, 'www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf')
+      x@url <- c(x@url, 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf')
       paste(
-        styleURL(url_ = sprintf(fmt = 'www.marukyu-koyamaen.co.jp/english/shop/products/%s', x@marukyu), text_ = 'Marukyu Koyamaen\U1f375'),
-        styleURL(url_ = sprintf(fmt = 'www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', x@marukyu), text_ = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5')
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', x@marukyu), text = 'Marukyu Koyamaen\U1f375')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', x@marukyu), text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5'))
       )
     } else if (length(x@mccormickculinary)) {
-      styleURL(url_ = sprintf(fmt = 'www.mccormickforchefs.com/en-us/products/mccormick-culinary/%s', x@mccormickculinary), text_ = 'McCormick Culinary\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/%s', x@mccormickculinary), text = 'McCormick Culinary\U1f1fa\U1f1f8'))
     } else if (length(x@oldbay)) {
-      styleURL(url_ = sprintf(fmt = 'www.mccormickforchefs.com/en-us/products/old-bay/%s', x@oldbay), text_ = 'McCormick Culinary\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/old-bay/%s', x@oldbay), text = 'McCormick Culinary\U1f1fa\U1f1f8'))
     } else if (length(x@grillmates)) {
-      styleURL(url_ = sprintf(fmt = 'www.mccormickforchefs.com/en-us/products/grill-mates/%s', x@grillmates), text_ = 'McCormick Culinary\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/grill-mates/%s', x@grillmates), text = 'McCormick Culinary\U1f1fa\U1f1f8'))
     } else if (length(x@meyenberg)) {
-      styleURL(url_ = sprintf(fmt = 'www.meyenberg.com/products/%s', x@meyenberg), text_ = 'Meyenberg\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.meyenberg.com/products/%s', x@meyenberg), text = 'Meyenberg\U1f1fa\U1f1f8'))
     } else if (length(x@mizkanjpn)) {
-      styleURL(url_ = sprintf(fmt = 'www.mizkan.co.jp/product/group/?gid=%s', x@mizkanjpn), text_ = 'mizkan\u30df\u30c4\u30ab\u30f3\U1f1ef\U1f1f5')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mizkan.co.jp/product/group/?gid=%s', x@mizkanjpn), text = 'mizkan\u30df\u30c4\u30ab\u30f3\U1f1ef\U1f1f5'))
     } else if (length(x@nancysyogurt)) {
-      styleURL(url_ = sprintf(fmt = 'nancysyogurt.com/products/%s', x@nancysyogurt), text_ = 'Nancy\'s\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://nancysyogurt.com/products/%s', x@nancysyogurt), text = 'Nancy\'s\U1f1fa\U1f1f8'))
     } else if (length(x@navitas)) {
-      styleURL(url_ = sprintf(fmt = 'navitasorganics.com/products/%s', x@navitas), text_ = 'Navitas\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://navitasorganics.com/products/%s', x@navitas), text = 'Navitas\U1f1fa\U1f1f8'))
     } else if (length(x@nescafe)) {
-      styleURL(url_ = sprintf(fmt = 'www.nescafe.com/our-coffees/%s', x@nescafe), text_ = 'Nescaf\u00e9\U1f1e8\U1f1ed')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/our-coffees/%s', x@nescafe), text = 'Nescaf\u00e9\U1f1e8\U1f1ed'))
     } else if (length(x@nescafeGoldEspressoCA)) {
-      styleURL(url_ = sprintf(fmt = 'www.madewithnestle.ca/nescafe/nescafe-%s', x@nescafeGoldEspressoCA), text_ = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.madewithnestle.ca/nescafe/nescafe-%s', x@nescafeGoldEspressoCA), text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed'))
     } else if (length(x@nescafeGoldEspressoUS)) {
-      styleURL(url_ = sprintf(fmt = 'www.nescafe.com/us/products/gold-espresso-%s', x@nescafeGoldEspressoUS), text_ = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/us/products/gold-espresso-%s', x@nescafeGoldEspressoUS), text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed'))
     } else if (length(x@nescafeUS)) {
-      styleURL(url_ = sprintf(fmt = 'www.nescafe.com/us/products/%s', x@nescafeUS), text_ = 'Nescaf\u00e9\U1f1e8\U1f1ed')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/us/products/%s', x@nescafeUS), text = 'Nescaf\u00e9\U1f1e8\U1f1ed'))
     } else if (length(x@nestle)) {
-      styleURL(url_ = sprintf(fmt = 'www.nestleprofessional.us/search?search=%s', x@nestle), text_ = 'Nestl\u00e9\U1f1e8\U1f1ed')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.nestleprofessional.us/search?search=%s', x@nestle), text = 'Nestl\u00e9\U1f1e8\U1f1ed'))
     } else if (length(x@nido)) {
-      styleURL(url_ = sprintf(fmt = 'www.goodnes.com/nido/products/nido-%s', x@nido), text_ = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.goodnes.com/nido/products/nido-%s', x@nido), text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed'))
     } else if (length(x@oreo)) {
-      styleURL(url_ = sprintf(fmt = 'www.oreo.com/products/%s', x@oreo), text_ = 'Nabisco\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.oreo.com/products/%s', x@oreo), text = 'Nabisco\U1f1fa\U1f1f8'))
     } else if (length(x@raos)) {
-      styleURL(url_ = sprintf(fmt = 'www.raos.com/products/%s', x@raos), text_ = 'Rao\'s\U1f96b\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f96b\U1f1fa\U1f1f8'))
     } else if (length(x@runamok)) {
-      styleURL(url_ = sprintf(fmt = 'runamokmaple.com/shop/product/%s', x@runamok), text_ = 'Runamok\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://runamokmaple.com/shop/product/%s', x@runamok), text = 'Runamok\U1f1fa\U1f1f8'))
     } else if (length(x@simplyorganic)) {
-      styleURL(url_ = sprintf(fmt = 'www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text_ = 'Simply Organic\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text = 'Simply Organic\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks)) {
-      styleURL(url_ = sprintf(fmt = 'athome.starbucks.com/products/%s', x@starbucks), text_ = 'Starbucks\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://athome.starbucks.com/products/%s', x@starbucks), text = 'Starbucks\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks_hot)) {
-      styleURL(url_ = sprintf(fmt = 'www.starbucks.com/menu/product/%s/hot/nutrition', x@starbucks_hot), text_ = 'Starbucks\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/hot/nutrition', x@starbucks_hot), text = 'Starbucks\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks_iced)) {
-      styleURL(url_ = sprintf(fmt = 'www.starbucks.com/menu/product/%s/iced/nutrition', x@starbucks_iced), text_ = 'Starbucks\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/iced/nutrition', x@starbucks_iced), text = 'Starbucks\U1f1fa\U1f1f8'))
     } else if (length(x@stonewall)) {
-      styleURL(url_ = sprintf(fmt = 'www.stonewallkitchen.com/%d.html', x@stonewall), text_ = 'Stonewall Kitchen\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.stonewallkitchen.com/%d.html', x@stonewall), text = 'Stonewall Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@swiftmeats)) {
-      styleURL(url_ = sprintf(fmt = 'swiftmeats.com/products/%s', x@swiftmeats), text_ = 'Swift\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://swiftmeats.com/products/%s', x@swiftmeats), text = 'Swift\U1f1fa\U1f1f8'))
     } else if (length(x@swissmiss)) {
-      styleURL(url_ = sprintf(fmt = 'www.swissmiss.com/%s', x@swissmiss), text_ = 'Swiss Miss\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.swissmiss.com/%s', x@swissmiss), text = 'Swiss Miss\U1f1fa\U1f1f8'))
     } else if (length(x@thaikitchen)) {
-      styleURL(url_ = sprintf(fmt = 'www.mccormick.com/thai-kitchen/products/%s', x@thaikitchen), text_ = 'Thai Kitchen\U1f1fa\U1f1f8')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s', x@thaikitchen), text = 'Thai Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@twinings)) {
-      styleURL(url_ = sprintf(fmt = 'twiningsusa.com/products/%s', x@twinings), text_ = 'Twinings\U1f1ec\U1f1e7')
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://twiningsusa.com/products/%s', x@twinings), text = 'Twinings\U1f1ec\U1f1e7'))
     } else character()
   } # manufacturer
   
@@ -402,28 +401,28 @@ nutrition.nutrition <- function(x) {
     if (!length(x_store)) return(x)
     if (!length(x@brand)) {
       if (is.na(store_brand)) stop('must have `store_brand`')
-      x@brand <- styleURL(url_ = sprintf(fmt = fmt, x_store), text_ = store_brand)
-    } else x@url <- c(x@url, paste('\U1f6d2', styleURL(url_ = sprintf(fmt = fmt, x_store), text_ = store_name)))
+      x@brand <- unclass(style_hyperlink(url = sprintf(fmt = fmt, x_store), text = store_brand))
+    } else x@url <- c(x@url, paste('\U1f6d2', unclass(style_hyperlink(url = sprintf(fmt = fmt, x_store), text = store_name))))
     slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
     return(x)
   }
-  x <- add_store_url_(x, store = 'acme', fmt = 'www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market')
-  x <- add_store_url_(x, store = 'amazon', fmt = 'www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon')
-  x <- add_store_url_(x, store = 'bjs', fmt = 'www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') # Wellsley Farms and Berkley Jensen
-  x <- add_store_url_(x, store = 'costco', fmt = 'www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco')
-  x <- add_store_url_(x, store = 'costcoBiz', fmt = 'www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery')
+  x <- add_store_url_(x, store = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market')
+  x <- add_store_url_(x, store = 'amazon', fmt = 'https://www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon')
+  x <- add_store_url_(x, store = 'bjs', fmt = 'https://www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') # Wellsley Farms and Berkley Jensen
+  x <- add_store_url_(x, store = 'costco', fmt = 'https://www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco')
+  x <- add_store_url_(x, store = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery')
   #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
-  x <- add_store_url_(x, store = 'jfc', fmt = 'www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.')
-  x <- add_store_url_(x, store = 'sams', fmt = 'www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
-  x <- add_store_url_(x, store = 'target', fmt = 'www.target.com/p/%s', store_brand = NA_character_, store_name = 'Target')
-  x <- add_store_url_(x, store = 'totalwine', fmt = 'www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')
-  x <- add_store_url_(x, store = 'traderjoes', fmt = 'www.traderjoes.com/home/products/pdp/%s', store_brand = 'Trader Joe\'s\U1f1fa\U1f1f8')
-  x <- add_store_url_(x, store = 'walmart', fmt = 'www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')
-  x <- add_store_url_(x, store = 'wawa', fmt = 'order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8')
-  x <- add_store_url_(x, store = 'webstaurant', fmt = 'www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
-  x <- add_store_url_(x, store = 'wegmans', fmt = 'shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8')
-  x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
-  x <- add_store_url_(x, store = 'wholefoods', fmt = 'www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.')
+  x <- add_store_url_(x, store = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
+  x <- add_store_url_(x, store = 'target', fmt = 'https://www.target.com/p/%s', store_brand = NA_character_, store_name = 'Target')
+  x <- add_store_url_(x, store = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')
+  x <- add_store_url_(x, store = 'traderjoes', fmt = 'https://www.traderjoes.com/home/products/pdp/%s', store_brand = 'Trader Joe\'s\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')
+  x <- add_store_url_(x, store = 'wawa', fmt = 'https://order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
+  x <- add_store_url_(x, store = 'wegmans', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
   
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
   if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp` and `@servingTsp`')
@@ -682,8 +681,8 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))
 
   if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
-  if (length(obj@fdc)) cat(paste('\U1f4dd', styleURL(url_ = sprintf(fmt = 'fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text_ = 'FoodData Central')), sep = '\n')
-  if (length(obj@pubchem)) cat(paste('\U1f4dd', styleURL(url_ = sprintf(fmt = 'pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text_ = 'PubChem')), sep = '\n')
+  if (length(obj@fdc)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central'))), sep = '\n')
+  if (length(obj@pubchem)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')
   
 })
 

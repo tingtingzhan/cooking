@@ -66,6 +66,8 @@ Nutrition information.
 
 \item{\code{wholefoods}}{\link[base]{character} scalar, Wholel Foods ID}
 
+\item{\code{bachans}}{\link[base]{character} scalar}
+
 \item{\code{baileys}}{\link[base]{character} scalar}
 
 \item{\code{bassetts}}{\link[base]{character} scalar}
@@ -90,6 +92,10 @@ Nutrition information.
 
 \item{\code{harney}}{\link[base]{character} scalar}
 
+\item{\code{heinz}}{\link[base]{character} scalar}
+
+\item{\code{hellmanns}}{\link[base]{character} scalar}
+
 \item{\code{ippodoglobal,ippodojpn,ippodousa}}{\link[base]{character} scalars}
 
 \item{\code{itoen}}{\link[base]{character} scalar}
@@ -98,9 +104,13 @@ Nutrition information.
 
 \item{\code{kahlua}}{\link[base]{character} scalar}
 
-\item{\code{kerrygold}}{\link[base]{character} scalar}
+\item{\code{kerrygold,kerrygoldusa}}{\link[base]{character} scalar}
+
+\item{\code{kikkomanusa}}{\link[base]{character} scalar}
 
 \item{\code{kingarthur,kingarthurpro}}{\link[base]{integer} scalars}
+
+\item{\code{leaperrins}}{\link[base]{character} scalar}
 
 \item{\code{leekumkee}}{\link[base]{character} scalar}
 
@@ -137,6 +147,8 @@ Nutrition information.
 \item{\code{swiftmeats}}{\link[base]{character} scalar}
 
 \item{\code{swissmiss}}{\link[base]{character} scalar}
+
+\item{\code{thaikitchen}}{\link[base]{character} scalar}
 
 \item{\code{twinings}}{\link[base]{character} scalar}
 

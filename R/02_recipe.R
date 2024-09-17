@@ -727,10 +727,10 @@ recipe <- function(x) {
     
     if (length(x@author)) {
       if (length(x@allrecipes)) {
-        x@author <- styleURL(url_ = sprintf(fmt = 'www.allrecipes.com/recipe/%s', x@allrecipes), text_ = x@author)
+        x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author))
         x@allrecipes <- character()
-      } else if (length(x@youtube)) { # last!!
-        x@author <- styleURL(url_ = sprintf(fmt = 'youtu.be/%s', x@youtube[1L]), text_ = x@author)
+      } else if (length(x@youtube)) {
+        x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
         x@youtube <- x@youtube[-1L]
       } else if (length(x@url)) {
         x@author <- styleURL(url_ = x@url[1L], text_ = x@author)
@@ -741,12 +741,12 @@ recipe <- function(x) {
     if (!length(x@author)) {
       if (length(x@preppykitchen)) {
         x@author <- paste(
-          styleURL(url_ = sprintf(fmt = 'youtu.be/%s', names(x@preppykitchen)[1L]), text_ = 'Preppy'),
-          styleURL(url_ = sprintf(fmt = 'preppykitchen.com/%s/', x@preppykitchen[1L]), text_ = 'Kitchen')
+          unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)[1L]), text = 'Preppy')),
+          unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen[1L]), text = 'Kitchen'))
         )
         x@preppykitchen <- x@preppykitchen[-1L]
       } else if (length(x@kingarthur)) {
-        x@author <- styleURL(url_ = sprintf(fmt = 'www.kingarthurbaking.com/recipes/%s', x@kingarthur), text_ = 'King Arthur')
+        x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur'))
         x@kingarthur <- x@kingarthur[-1L]
       } #else do nothing
     }
@@ -1513,9 +1513,9 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   if (length(object@url) || length(object@youtube) || length(object@doi) || length(object@preppykitchen) || length(object@kingarthur)) {
     
     cat('Reference:\n')
-    if (length(object@url)) cat(styleURL(url_ = object@url, text_ = names(object@url)), sep = '\n')
-    if (length(object@youtube)) cat(styleURL(url_ = sprintf(fmt = 'youtu.be/%s', object@youtube), text_ = names(object@youtube)), sep = '\n')
-    if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
+    if (length(object@url)) cat(unclass(style_hyperlink(url = object@url, text = names(object@url))), sep = '\n')
+    if (length(object@youtube)) cat(unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text = names(object@youtube))), sep = '\n')
+    if (length(object@doi)) cat(unclass(style_hyperlink(url = sprintf(fmt = 'https://doi.org/%s', object@doi), text = names(object@doi))), sep = '\n')
     if (length(object@preppykitchen)) {
       mapply(FUN = function(youtube, preppykitchen) {
         cat(styleURL(url_ = c(youtube, preppykitchen)), sep = ' \u2726 ')

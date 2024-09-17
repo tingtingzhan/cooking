@@ -2,10 +2,9 @@
 
 
 Kerrygold_butter <- function() new(
-  Class = 'nutrition', url = c(
-    'www.kerrygoldusa.com/products/unsalted-butter/'
-  ),
+  Class = 'nutrition', 
   kerrygold = 'kerrygold-pure-irish-unsalted-butter',
+  kerrygoldusa = 'unsalted-butter',
   name = '\u9ec4\u6cb9 Irish Butter\U1f9c8',
   servingGram = 227/16, servingTbsp = 1, 
   costcoBiz = '100362700',
