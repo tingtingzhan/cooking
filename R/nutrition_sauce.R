@@ -59,7 +59,7 @@ Bachans_original <- function() new(
 
 GreyPoupon_Dijon <- function() new(
   Class = 'nutrition', costco = '100381596',
-  brand = styleURL(text_ = 'Grey Poupon\U1f1eb\U1f1f7', url_ = 'greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g'),
+  brand = unclass(style_hyperlink(text = 'Grey Poupon\U1f1eb\U1f1f7', url = 'https://greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g')),
   name = 'Dijon Mustard',
   servingTsp = 1, servingGram = 5, sodium = .12)
 

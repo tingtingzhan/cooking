@@ -618,7 +618,7 @@ Nestle_cocoSupreme <- function() new(
 #' @export
 WilliamsSonoma_mocha <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Williams Sonoma\U1f1fa\U1f1f8', url_ = 'www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/'),
+  brand = unclass(style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/')),
   name = 'Mocha Hot Chocolate',
   servingGram = 41, servingTbsp = 5, 
   usd = 24.95/340*41,
@@ -660,7 +660,7 @@ Ghirardelli_mochaFrappe <- function() new(
 #' @export
 Maxwell_mochaSuisse <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Maxwell House\U1f1fa\U1f1f8', url_ = 'www.kraftheinz.com/maxwell-house/products/00043000004432'),
+  brand = unclass(style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432')),
   name = 'Suisse Mocha',
   target = 'A-12959531', usd = 3.59/117*11,
   servingGram = 11, servingTbsp = 2, 

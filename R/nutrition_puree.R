@@ -2,7 +2,7 @@
 
 Libbys_pumpkin <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Libby\'s\U1f1fa\U1f1f8', url_ = 'www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans'),
+  brand = unclass(style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans')),
   name = '\u5357\u74dc\u6ce5 Pumpkin\U1f383 Puree',
   #usd = 8.98/(3*822)*122, sams = '162878', # 2023 early Fall, regular price
   usd = 3.91/(3*822)*122, sams = '162878', # 2023-12-24, clearance?
@@ -46,7 +46,7 @@ WegmansOrganic_tomato <- function() new(
 
 Motts_applesauce <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Motts', url_ = 'www.motts.com/products/applesauce/no-sugar-added-apple-applesauce'),
+  brand = unclass(style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce')),
   name = '\u82f9\u679c\u6ce5 Applesauce\U1f34e No Sugar',
   fdc = 1102646L, # water 88.22% 
   wegmans = 2450L, usd = 3.99/1300*123,

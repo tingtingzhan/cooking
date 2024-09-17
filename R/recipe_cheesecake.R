@@ -318,7 +318,7 @@ Junior_cookbook <- function() new(
 #' @export
 CheesecakeFactory_original <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Cheesecake Factory\U1f1fa\U1f1f8', url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/original-cheesecake'),
+  brand = unclass(style_hyperlink(text = 'Cheesecake Factory\U1f1fa\U1f1f8', url = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/original-cheesecake')),
   # www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/original-dome
   name = 'Original',
   target = 'A-15382641', usd = 18.39/964*120,
@@ -329,7 +329,7 @@ CheesecakeFactory_original <- function() new(
 #' @export
 CheesecakeFactory_pumpkin <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Cheesecake Factory\U1f1fa\U1f1f8', url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/pumpkin-cheesecake'),
+  brand = unclass(style_hyperlink(text = 'Cheesecake Factory\U1f1fa\U1f1f8', url = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/pumpkin-cheesecake')),
   # www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/pumpkin-cheesecake
   name = 'Pumpkin\U1f383',
   bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
