@@ -1513,9 +1513,9 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   if (length(object@url) || length(object@youtube) || length(object@doi) || length(object@preppykitchen) || length(object@kingarthur)) {
     
     cat('Reference:\n')
-    if (length(object@url)) cat(unclass(style_hyperlink(url = object@url, text = names(object@url))), sep = '\n')
-    if (length(object@youtube)) cat(unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text = names(object@youtube))), sep = '\n')
-    if (length(object@doi)) cat(unclass(style_hyperlink(url = sprintf(fmt = 'https://doi.org/%s', object@doi), text = names(object@doi))), sep = '\n')
+    if (length(object@url)) cat(styleURL(url_ = object@url, text_ = names(object@url)), sep = '\n')
+    if (length(object@youtube)) cat(styleURL(url_ = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text_ = names(object@youtube)), sep = '\n')
+    if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
     if (length(object@preppykitchen)) {
       mapply(FUN = function(youtube, preppykitchen) {
         cat(styleURL(url_ = c(youtube, preppykitchen)), sep = ' \u2726 ')
