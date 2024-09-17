@@ -237,7 +237,7 @@ EarlGrey_cookie2022_Twinings = function() new(
   Class = 'cookie',
   note = 'Blade grinder',
   review = 'Mike loves it. Gloria says cannot stop.  Do NOT try to reduce sugar or dry milk!!',
-  tea = c(Twinings_EarlGrey = 48), 
+  tealoose = c(Twinings_EarlGrey = 48), 
   pastryFlour = 360, 
   sugar = 136, drymilk = 140)
 
@@ -246,7 +246,7 @@ EarlGrey_cookie_Twinings = function() new(
   note = 'Blade grinder',
   review = 'new experiment.  I want to reduce drymilk a little',
   eggYolk_pc = 5, water = 35,
-  tea = c(Twinings_EarlGrey = 48), 
+  tealoose = c(Twinings_EarlGrey = 48), 
   pastryFlour = 360, 
   sugar = 100, drymilk = 100)
 

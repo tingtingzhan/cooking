@@ -485,7 +485,16 @@ gram_per_tsp <- function(x) {
 
 getPc <- function(object, name) {
   ret <- slot(object, name = name) / eval(call(name))@servingGram
-  paste0('\033[94m', sprintf(fmt = '%.3gpcs', ret), '\033[0m')
+  paste0('\033[1;95m', sprintf(fmt = '%.3gpcs', ret), '\033[0m')
+}
+
+getTealoose <- function(x) {
+  # `x` is recipe@teabag, number of tea bags
+  if (!length(x)) return(numeric())
+  info_ <- lapply(names(x), FUN = function(i) eval(call(i)))
+  mapply(FUN = function(info, pc) {
+    info@servingGram * pc
+  }, pc = x, info = info_)
 }
 
 
@@ -577,7 +586,7 @@ autoVolume <- function(x, nm = names(x)) {
     z <- z1[seq_len(min(3L, length(z1)))]
     if (all(is.na(z1))) return('') # `z1` either all-NA, or none-NA
     ret <- paste(z, collapse = ' ')
-    paste0('\033[94m', ret, '\033[0m')
+    paste0('\033[1;94m', ret, '\033[0m')
   }, dots = vol, MoreArgs = NULL)
   
 }

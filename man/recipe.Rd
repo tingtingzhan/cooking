@@ -115,9 +115,9 @@ general recipe
 
 \item{\code{teabag}}{\link[base]{numeric} scalars, number of tea bags}
 
-\item{\code{tealoose}}{\link[base]{numeric} scalars, weight of loose tea}
+\item{\code{teabag2tea}}{\link[base]{numeric} scalars, internal slots}
 
-\item{\code{tea}}{\link[base]{numeric} scalars, weight bagged and loose tea}
+\item{\code{tealoose}}{\link[base]{numeric} scalars, weight of loose tea}
 
 \item{\code{flour}}{\link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)}
 

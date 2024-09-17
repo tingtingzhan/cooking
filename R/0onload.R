@@ -19,13 +19,13 @@
     meatmash =, meatball =, shrimpfillCantonese = .008,
     crumbcrust = if (length(x@blackSesame)) .11 else .01, 
     ricepaste = .015,
+    soytea = .02,
     bao =, wheatBao = if (length(x@matcha) || length(x@beet) || length(x@cocoa)) {
       .04 
     } else .03, # any lower, not delicious!
     chickpeaTea = if (length(x@matcha)) .07 else .02,
     snowSkin = if (length(x@beet)) .03 else .023,
     porkfill = .023,
-    soytea = .03,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 
     millecrepe = if (length(x@matcha)) {
       .075
