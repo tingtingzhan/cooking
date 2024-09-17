@@ -750,7 +750,7 @@ recipe <- function(x) {
         x@kingarthur <- x@kingarthur[-1L]
       } #else do nothing
     }
-    x@alias_class <- paste0('\U1f3b6\ufe0f', paste0('\033[0;32m', x@author, '\033[0m'))
+    x@alias_class <- paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m'))
   }
   
   if (!length(x@alias_flavor)) {

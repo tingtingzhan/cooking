@@ -19,11 +19,10 @@
     meatmash =, meatball =, shrimpfillCantonese = .008,
     crumbcrust = if (length(x@blackSesame)) .11 else .01, 
     ricepaste = .015,
-    soytea = .02,
+    soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
     bao =, wheatBao = if (length(x@matcha) || length(x@beet) || length(x@cocoa)) {
       .04 
     } else .03, # any lower, not delicious!
-    chickpeaTea = if (length(x@matcha)) .07 else .02,
     snowSkin = if (length(x@beet)) .03 else .023,
     porkfill = .023,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 
@@ -179,7 +178,6 @@
     noodlelinda =, wrapperlinda =, flavoredButter =, cocoaMix =, soymilk = NA_real_,
     hotdrink = NA_real_,
     matchaLatteHot =, matchaLatteFrappe = .004, 
-    chickpeaTea = .008,
     stickyTortilla =, TangYuan = .01, 
     mocaccinoHot =, mocaccinoFrappe = .01,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .01,
@@ -258,7 +256,6 @@
   matcha <- function(x) switch(
     class(x),
     snowSkin =, stickyTortilla =, wrapperlinda =, noodlelinda = .022, 
-    chickpeaTea = .02,
     matchaLatteHot =, matchaLatteFrappe = .025, 
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .025, # retry with tenju
     millecrepe = .025, 

@@ -71,9 +71,9 @@ setMethod(f = show, signature = signature(object = 'tool'), definition = functio
   
   cat(sprintf(fmt = '\u0020\u2726 %s\n', object@program))
   
-  cat(sprintf(fmt = '\u0020\u0020\U1f6e0\ufe0f %s\n', object@attachment))
+  cat(sprintf(fmt = '\u0020\u0020\U1f6e0 %s\n', object@attachment))
   
-  cat(sprintf(fmt = '\u0020\u0020\U1f321\ufe0f %d\u00b0F or %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
+  cat(sprintf(fmt = '\u0020\u0020\U1f321 %d\u00b0F or %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
   
   if (length(object@minute)) {
     if (is.null(names(object@minute))) {

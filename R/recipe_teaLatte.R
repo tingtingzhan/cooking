@@ -77,52 +77,18 @@ Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twini
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
   flavor = c(soymilk = 600),
-  #brownSugar_Tbsp = 1.5,
-  note = 'Stanley 20oz quencher'
+  brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
+  note = c('Freshly brewed soy milk', 'Soak in Stanley 20oz quencher (covered) for 1hr+')
 ))
 
 #' @rdname soytea
 #' @export
-EarlGrey_soytea <- function() new(
-  Class = 'soytea', 
-  teabag = c(Twinings_strongEarlGrey = 4), 
-  brownSugar_Tbsp = 1, # 1.5 Tbsp too sweet!!!
-  date = as.Date('2024-09-15'),
-  pros = 'I love!')
+EarlGrey_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 4), date = as.Date('2024-09-15'), pros = 'I love!')
 
 #' @rdname soytea
 #' @export
-Ceylon_soytea <- function() new(
-  Class = 'soytea', 
-  teabag = c(Stassen_Ceylon = 4), 
-  brownSugar_Tbsp = 1,
-  date = as.Date('2024-09-15'),
-  pros = 'I like')
+Ceylon_soytea <- function() new(Class = 'soytea', teabag = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'I like')
 
 
 
-
-#' @title \linkS4class{chickpeaTea} Recipes
-#' 
-#' @description
-#' ..
-#' 
-#' @examples
-#' # ikuyo_chickpeaTea() # retry with tenju
-#' 
-#' 
-#' @name chickpeaTea
-#' @aliases chickpeaTea-class
-#' @export
-setClass(Class = 'chickpeaTea', contains = 'recipe', prototype = prototype(
-  alias_class = '\u9e70\u5634\u8c46\u6d46\u8336',
-  flavor = c(chickpeaMilk = 250)
-))
-
-
-ikuyo_chickpeaTea <- function() new(
-  Class = 'chickpeaTea',
-  sugar_tsp = 6,
-  matcha_tsp = c(Ippodo_ikuyo = 2.5),
-  pros = 'I like!')
 

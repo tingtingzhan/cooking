@@ -85,6 +85,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot simplyorganic \link[base]{character} scalar
 #' @slot starbucks \link[base]{character} scalar
 #' @slot starbucks_hot,starbucks_iced \link[base]{integer} scalars
+#' @slot stassentea \link[base]{character} scalar
 #' @slot stonewall \link[base]{integer} scalar
 #' @slot swiftmeats \link[base]{character} scalar
 #' @slot swissmiss \link[base]{character} scalar
@@ -190,6 +191,7 @@ setClass(Class = 'nutrition', slots = c(
   starbucks = 'character',
   starbucks_hot = 'integer',
   starbucks_iced = 'integer',
+  stassentea = 'character',
   stonewall = 'integer',
   swiftmeats = 'character',
   swissmiss = 'character',
@@ -251,8 +253,8 @@ nutrition.character <- function(x) {
   if (inherits(xval, what = c('recipe'))) {
     ret <- nutrition.recipe(xval)
     old_nm <- ret@name
-    ret@name <- sprintf(fmt = '%s \U1f3b6\ufe0f%s()', old_nm, x)
-    #ret@name <- sprintf(fmt = '%s \U1f3b6\ufe0f{.run [%s](cooking::%s())}', old_nm, x, x)
+    ret@name <- sprintf(fmt = '%s \U1f3b6%s', old_nm, sprintf(fmt = '\033[0;32m%s()\033[0m', x))
+    #ret@name <- sprintf(fmt = '%s \U1f3b6{.run [%s](cooking::%s())}', old_nm, x, x)
     #?cli::cli_text # does not have a returned value
     return(ret)
   }
@@ -383,6 +385,8 @@ nutrition.nutrition <- function(x) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/hot/nutrition', x@starbucks_hot), text = 'Starbucks\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks_iced)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/iced/nutrition', x@starbucks_iced), text = 'Starbucks\U1f1fa\U1f1f8'))
+    } else if (length(x@stassentea)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.stassentea.com/product/%s', x@stassentea), text = 'Stassen\U1f1f1\U1f1f0'))
     } else if (length(x@stonewall)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.stonewallkitchen.com/%d.html', x@stonewall), text = 'Stonewall Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@swiftmeats)) {

@@ -142,6 +142,8 @@ Nutrition information.
 
 \item{\code{starbucks_hot,starbucks_iced}}{\link[base]{integer} scalars}
 
+\item{\code{stassentea}}{\link[base]{character} scalar}
+
 \item{\code{stonewall}}{\link[base]{integer} scalar}
 
 \item{\code{swiftmeats}}{\link[base]{character} scalar}
