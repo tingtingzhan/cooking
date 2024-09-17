@@ -15,8 +15,7 @@ TraderJoes_goat_kefir <- function() new(
 
 GreenValley_kefir <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Green Valley\U1f1fa\U1f1f8', 
-                   url_ = 'greenvalleylactosefree.com/product/lactose-free-lowfat-kefir'),
+  brand = styleURL(text_ = 'Green Valley\U1f1fa\U1f1f8', url_ = 'greenvalleylactosefree.com/product/lactose-free-lowfat-kefir'),
   name = '\u4f4e\u8102\u725b\u5976\u9152 Lowfat Kefir',
   wegmans = 227007L, usd = 6.99 / 4,
   # full bottle (with cap): 1086g, 946ml
@@ -29,8 +28,7 @@ GreenValley_kefir <- function() new(
 
 Siggis_filmjolk <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Siggi\'s\U1f1fa\U1f1f8', 
-                   url_ = 'siggis.com/product/plain-drinkable-nonfat-yogurt'),
+  brand = styleURL(text_ = 'Siggi\'s\U1f1fa\U1f1f8', url_ = 'siggis.com/product/plain-drinkable-nonfat-yogurt'),
   name = 'Swedish\U1f1f8\U1f1ea Filmj\u00f6lk',
   # full bottle (with cap): 1009g; 946ml
   # empty bottle (with cap): 44g

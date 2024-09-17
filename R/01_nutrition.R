@@ -649,8 +649,8 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))
 
   if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
-  if (length(obj@fdc)) cat(styleURL(url_ = sprintf(fmt = 'fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text_ = '\U1f4dd FoodData Central'), sep = '\n')
-  if (length(obj@pubchem)) cat(styleURL(url_ = sprintf(fmt = 'pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text_ = '\U1f4dd PubChem'), sep = '\n')
+  if (length(obj@fdc)) cat(paste('\U1f4dd', styleURL(url_ = sprintf(fmt = 'fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text_ = 'FoodData Central')), sep = '\n')
+  if (length(obj@pubchem)) cat(paste('\U1f4dd', styleURL(url_ = sprintf(fmt = 'pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text_ = 'PubChem')), sep = '\n')
   
 })
 

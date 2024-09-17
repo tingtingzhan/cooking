@@ -134,10 +134,7 @@ Libbys_pineapple <- function() new(
 
 Dole_pineapple <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(
-    url_ = 'dolesunshine.com/us/en/products/pantry/canned-fruit/',
-    text_ = 'Dole\U1f33a'
-  ),
+  brand = styleURL(url_ = 'dolesunshine.com/us/en/products/pantry/canned-fruit/', text_ = 'Dole\U1f33a'),
   name = '\u83e0\u841d\u7f50\u5934 Pineapple\U1f34d in 100% Juice',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 

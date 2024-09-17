@@ -106,8 +106,7 @@ Carnation_condensedMilk <- function() new(
 
 Philadelphia_creamCheese <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', 
-                   url_ = 'www.kraftheinzawayfromhome.com/products/10021000616005/'),
+  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', url_ = 'www.kraftheinzawayfromhome.com/products/10021000616005/'),
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
   servingGram = 28, # no volume info!!
@@ -118,8 +117,7 @@ Philadelphia_creamCheese <- function() new(
 
 PhiladelphiaNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', 
-                   url_ = 'www.kraftheinzawayfromhome.com/products/10021000616401/'),
+  brand = styleURL(text_ = 'Philadelphia\U1f1fa\U1f1f8', url_ = 'www.kraftheinzawayfromhome.com/products/10021000616401/'),
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cream Cheese',
   walmart = '36647454', usd = 4.98/2/227*28, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),

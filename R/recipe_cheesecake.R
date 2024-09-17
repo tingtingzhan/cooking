@@ -318,10 +318,9 @@ Junior_cookbook <- function() new(
 #' @export
 CheesecakeFactory_original <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Cheesecake Factory', 
-                   #url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/original-dome'),
-                   url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/original-cheesecake'),
-  name = 'Cheesecake',
+  brand = styleURL(text_ = 'Cheesecake Factory\U1f1fa\U1f1f8', url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/original-cheesecake'),
+  # www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/original-dome
+  name = 'Original',
   target = 'A-15382641', usd = 18.39/964*120,
   servingGram = 120, 
   fat = 24, cholesterol = .105, sodium = .33, sugar = 28, addedSugar = 27, protein = 6)
@@ -330,10 +329,9 @@ CheesecakeFactory_original <- function() new(
 #' @export
 CheesecakeFactory_pumpkin <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Cheesecake Factory', 
-                   #url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/pumpkin-cheesecake'),
-                   url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/pumpkin-cheesecake'),
-  name = 'pumpkin',
+  brand = styleURL(text_ = 'Cheesecake Factory\U1f1fa\U1f1f8', url_ = 'www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/pumpkin-cheesecake'),
+  # www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/pumpkin-cheesecake
+  name = 'Pumpkin\U1f383',
   bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
   usd = 16.99/6, # 6 serving's per container
   servingGram = 123, 

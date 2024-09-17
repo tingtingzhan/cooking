@@ -13,8 +13,9 @@ if (FALSE) {
 
 
 Edward_shreddedCoconutLite <- function() new(
-  Class = 'nutrition', url = 'store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut',
-  brand = 'Edward & Sons\U1f1fa\U1f1f8', name = '\u51cf\u8102\u6930\u84c9 Less Fat Shredded Coconut\U1f965',
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'Edward & Sons\U1f1fa\U1f1f8', url_ = 'store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut'),
+  name = '\u51cf\u8102\u6930\u84c9 Less Fat Shredded Coconut\U1f965',
   usd = 3.89/250*16,
   servingGram = 16, 
   servingTbsp = 4, # packaging

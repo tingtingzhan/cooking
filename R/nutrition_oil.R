@@ -38,8 +38,7 @@ Wegmans_olive_oil <- function() new(
 
 Kadoya_sesameOil <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Kadoya\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', 
-                   url_ = 'www.kadoya.com/english/products/family.html'),
+  brand = styleURL(text_ = 'Kadoya\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url_ = 'www.kadoya.com/english/products/family.html'),
   name = '\u829d\u9ebb\u6cb9 Sesame Oil',
   servingGram = 14, servingTbsp = 1, 
   calorie = 130,
@@ -48,8 +47,7 @@ Kadoya_sesameOil <- function() new(
 
 YouJia_greenPeppercornOil <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ = '\u53cb\u52a0\U1f1e8\U1f1f3', 
-                   url_ = 'www.youjiafood.com/productinfo.aspx?ContentID=102'),
+  brand = styleURL(text_ = '\u53cb\u52a0\U1f1e8\U1f1f3', url_ = 'www.youjiafood.com/productinfo.aspx?ContentID=102'),
   name = '\u85e4\u6912\u6cb9 Green Peppercorn Oil',
   usd = 4.99/250*15,
   servingGram = 14, servingTbsp = 1, fat = 14)

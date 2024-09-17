@@ -7,10 +7,11 @@
 #' @name maeda
 #' @export
 maeda_matcha_icecream <- function() new(
-  Class = 'nutrition', brand = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5', name = '\u62b9\u8336\U1f375\U1f368',
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5', url_ = 'maeda-en.com/blogs/ice-cream/ice-cream-collection'),
+  name = '\u62b9\u8336\U1f375\U1f368',
   servingCup = 2/3, servingGram = 90,
-  fat = 9, cholesterol = .035, sodium = .07, sugar = 16, addedSugar = 10, protein = 3,
-  url = 'maeda-en.com/blogs/ice-cream/ice-cream-collection')
+  fat = 9, cholesterol = .035, sodium = .07, sugar = 16, addedSugar = 10, protein = 3)
 
 #' @rdname maeda
 #' @export

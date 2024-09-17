@@ -1,8 +1,7 @@
 
 Quaker_oat <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Quaker\U1f1fa\U1f1f8', 
-                   url_ = 'www.quakeroats.com/products/hot-cereals/old-fashioned-oats'),
+  brand = styleURL(text_ = 'Quaker\U1f1fa\U1f1f8', url_ = 'www.quakeroats.com/products/hot-cereals/old-fashioned-oats'),
   name = '\u719f\u538b\u71d5\u9ea6 Old Fashioned Oats',
   servingGram = 40, servingCup = 1/2, 
   calorie = 150,

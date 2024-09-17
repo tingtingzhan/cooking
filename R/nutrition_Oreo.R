@@ -46,8 +46,9 @@ Nabisco_graham <- function() new(
   servingGram = 31, fat = 3.5, sodium = .17, addedSugar = 8, protein = 2)
 
 HoneyMaid_graham <- function() new(
-  Class = 'nutrition', url = 'www.snackworks.com/product/00044000004637/',
-  brand = 'Nabisco Honey Maid', name = 'Honey Graham',
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'Nabisco Honey Maid', url_ = 'www.snackworks.com/product/00044000004637/'),
+  name = 'Honey Graham',
   walmart = '10292699', usd = 4.68/408*30,
   servingGram = 30, fat = 3, sodium = .13, addedSugar = 8, protein = 2)
 

@@ -3,10 +3,10 @@
 
 Melegatti_pandoro_tiramisu <- function() new(
   Class = 'nutrition', 
-  brand = 'Melegatti', name = 'Pandoro Tiramisu\u0300',
+  brand = styleURL(text_ = 'Melegatti\U1f1ee\U1f1f9', url_ = 'www.melegattiusa.com/seasonal-cake/pandoro-tiramisu/'),
+  name = 'Pandoro Tiramisu\u0300',
   servingGram = 80,
-  fat = 15, cholesterol = .07, sodium = .162, sugar = 20, addedSugar = 11, protein = 5,
-  url = 'www.melegattiusa.com/seasonal-cake/pandoro-tiramisu/'
+  fat = 15, cholesterol = .07, sodium = .162, sugar = 20, addedSugar = 11, protein = 5
   # sold at Costco around Christmas
   # super super nice!!!
   # each package (750g total) contains a 20g pouch of 'sugared cocoa',

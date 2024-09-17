@@ -125,7 +125,7 @@ pumpkin_bao <- function() new(
   Class = 'bao', 
   breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(),
   # pumpkin = 300, # really wet, almost like \linkS4class{bread}
-  pumpkin = 275, # try
+  pumpkin = 270, # try
   sugar_Tbsp = 2,
   review = c(
     'retry'

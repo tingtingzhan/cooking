@@ -20,10 +20,7 @@ Albertsons_yellowCorn <- function() new(
 
 IndianHead_whiteCorn <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(
-    text_ = 'Indian Head\U1f1fa\U1f1f8', 
-    url_ = 'www.wrmills.com/products/consumer-products/'
-  ),
+  brand = styleURL(text_ = 'Indian Head\U1f1fa\U1f1f8', url_ = 'www.wrmills.com/products/consumer-products/'),
   name = 'White Cornmeal\U1f33d',  
   walmart = '10311206', usd = 1.56/907*30,
   servingGram = 30, servingCup = 1/4,
@@ -32,10 +29,7 @@ IndianHead_whiteCorn <- function() new(
 
 IndianHead_yellowCorn <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(
-    text_ = 'Indian Head\U1f1fa\U1f1f8', 
-    url_ = 'www.wrmills.com/products/consumer-products/'
-  ),
+  brand = styleURL(text_ = 'Indian Head\U1f1fa\U1f1f8', url_ = 'www.wrmills.com/products/consumer-products/'),
   name = 'Yellow Cornmeal\U1f33d',
   walmart = '10311207', usd = 1.56/907*30,
   servingGram = 30, servingCup = 1/4,

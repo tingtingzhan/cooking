@@ -42,23 +42,31 @@ pork_fat <- function() new(
   calorie = 628,
   water = 23, fat = 66, cholesterol = .072, sodium = .047, protein = 9)
 
-
 pork_tenderloin <- function() new(
   Class = 'nutrition', 
   swiftmeats = 'pork-tenderloin', 
   name = '\u732a\u5c0f\u91cc\u810a Pork\U1f416 Tenderloin',
   #wegmans = 760L, usd = 2.69 / 454 * 100,
-  fdc = 168249L,
+  fdc = 168249L, water = 112*.76, # fdc data
   costcoBiz = '100082095', usd = 2 / 454 * 112,
   servingGram = 112, 
   calorie = 130,
-  water = 112*.76, # fdc data
   fat = 4, cholesterol = .075, protein = 23, sodium = .060)
+
+pork_butt <- function() new(
+  Class = 'nutrition',
+  swiftmeats = 'pork-butt',
+  name = '\u6885\u82b1\u8089 Pork\U1f416 Shoulder Butt',
+  servingGram = 112,
+  calorie = 210,
+  fat = 14, cholesterol = .07, sodium = .07, protein = 20,
+  costcoBiz = '11113588', # not swift brand
+  fdc = 167850L, water = 112*.55)
+
 
 beef_heel <- function() new(
   Class = 'nutrition',
-  brand = styleURL(text_ ='Swift\U1f1fa\U1f1f8', 
-                   url_ = 'www.sayweee.com/en/product/Swift-Boneless-Beef-Round-Heel-Muscle--Frozen-1/11275'),
+  brand = styleURL(text_ ='Swift\U1f1fa\U1f1f8', url_ = 'www.sayweee.com/en/product/Swift-Boneless-Beef-Round-Heel-Muscle--Frozen-1/11275'),
   name = '\u725b\u8171 Beef\U1f402 Round Heel Muscle',
   usd = 10.66/454*100, # weee! 
   url = 'www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll-2', # source of nutrition

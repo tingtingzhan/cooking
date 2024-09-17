@@ -34,8 +34,7 @@ mizkan_brownRiceVinegar <- function() new(
 
 LeaPerrins_Worcestershire <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Lea & Perrins\U1f1ec\U1f1e7', 
-                   url_ = 'www.kraftheinz.com/lea-perrins/products/00051600002505'),
+  brand = styleURL(text_ = 'Lea & Perrins\U1f1ec\U1f1e7', url_ = 'www.kraftheinz.com/lea-perrins/products/00051600002505'),
   name = '\u55bc\u6c41 Worcestershire Sauce',
   servingTsp = 1, servingGram = 5, sodium = .065, sugar = 1)
 
@@ -50,34 +49,35 @@ Bachans_original <- function() new(
 
 GreyPoupon_Dijon <- function() new(
   Class = 'nutrition', costco = '100381596',
-  brand = styleURL(text_ = 'Grey Poupon\U1f1eb\U1f1f7', 
-                   url_ = 'greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g'),
+  brand = styleURL(text_ = 'Grey Poupon\U1f1eb\U1f1f7', url_ = 'greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g'),
   name = 'Dijon Mustard',
   servingTsp = 1, servingGram = 5, sodium = .12)
 
 
 Heinz_whiteVinegar <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Heinz\U1f1fa\U1f1f8', 
-                   url_ = 'www.heinz.com/products/00013000008525'),
+  brand = styleURL(text_ = 'Heinz\U1f1fa\U1f1f8', url_ = 'www.heinz.com/products/00013000008525'),
   name = '\u767d\u918b White Vinegar, 5% Acidity',
   servingTbsp = 1, servingGram = 14.4) 
 
 
 
 Hellmanns_mayonnaise <- function() new(
-  Class = 'nutrition', url = 'www.hellmanns.com/us/en/p/real-mayonnaise.html/00048001213487',
-  brand = 'Hellmanns', name = 'Mayonnaise',
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'Hellmanns\U1f1fa\U1f1f8', url_ = 'www.hellmanns.com/us/en/p/real-mayonnaise.html/00048001213487'),
+  name = 'Mayonnaise',
   servingTbsp = 1, servingGram = 13, fat = 10, sodium = .09)
 
 HellmannsOrganic_mayonnaise <- function() new(
-  Class = 'nutrition', url = 'www.hellmanns.com/us/en/p/organic-mayonnaise.html/00048001572713',
-  brand = 'Hellmanns', name = 'Organic Mayonnaise',
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'Hellmanns\U1f1fa\U1f1f8', url_ = 'www.hellmanns.com/us/en/p/organic-mayonnaise.html/00048001572713'),
+  name = 'Organic Mayonnaise',
   servingTbsp = 1, servingGram = 14, fat = 11, sodium = .09)
 
 HellmannsLight_mayonnaise <- function() new(
-  Class = 'nutrition', url = 'www.hellmanns.com/us/en/p/light-mayonnaise.html/00048001213586',
-  brand = 'Hellmanns', name = 'Light Mayonnaise',
+  Class = 'nutrition', 
+  brand = styleURL(text_ = 'Hellmanns\U1f1fa\U1f1f8', url_ = 'www.hellmanns.com/us/en/p/light-mayonnaise.html/00048001213586'),
+  name = 'Light Mayonnaise',
   servingTbsp = 1, servingGram = 15, fat = 3.5, sodium = .11)
 
 
