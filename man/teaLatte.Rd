@@ -24,8 +24,4 @@ EarlGrey_latte_Twinings()
 Ceylon_latte_Stassen()
 chai_latte_Twinings()
 
-# I dont love much..
-Darjeeling_latte_Twinings()
-
-
 }

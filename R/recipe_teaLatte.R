@@ -17,10 +17,6 @@
 #' Ceylon_latte_Stassen()
 #' chai_latte_Twinings()
 #' 
-#' # I dont love much..
-#' Darjeeling_latte_Twinings()
-#' 
-#' 
 #' @name teaLatte
 #' @aliases teaLatte-class
 #' @export

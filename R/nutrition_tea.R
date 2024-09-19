@@ -103,12 +103,12 @@ Twinings_ultraChai <- function() new(
   servingGram = 2, usd = 4.99/20) # 20pcs of 2g-bag, 2023-11-13
 
 
-Twinings_Darjeeling <- function() new( # lacks a signature flavor
+Twinings_Darjeeling <- function() new(
   Class = 'nutrition', twinings = 'darjeeling',
   name = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982 Darjeeling',
   wegmans = 30993L,
   servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
-  review = 'I dont like the after taste!!')
+  review = 'lacks a signature flavor')
   
 
 # Paromi
@@ -120,7 +120,11 @@ Paromi_EarlGrey <- function() new(
   # no longer at Wegmans
   review = 'Too spicy, do not buy')
 
-
+Paromi_cinnamonChai <- function() new(
+  Class = 'nutrition', paromi = 'cinnamon-chai-tea-bags', 
+  name = 'Cinnamon Chai Rooibos',
+  servingGram = 3, usd = 12/15) # website
+  # no longer at Wegmans
 
 
 
