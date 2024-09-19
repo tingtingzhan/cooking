@@ -92,6 +92,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot swissmiss \link[base]{character} scalar
 #' @slot thaikitchen \link[base]{character} scalar
 #' @slot twinings \link[base]{character} scalar
+#' @slot yogi \link[base]{character} scalar
 #' 
 #' 
 # @slot machine \link[base]{character} scalar or \link[base]{vector}, machine(s) used
@@ -199,6 +200,7 @@ setClass(Class = 'nutrition', slots = c(
   swissmiss = 'character',
   thaikitchen = 'character',
   twinings = 'character',
+  yogi = 'character',
   
   machine = 'function',
   review = 'character',
@@ -401,6 +403,8 @@ nutrition.nutrition <- function(x) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s', x@thaikitchen), text = 'Thai Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@twinings)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://twiningsusa.com/products/%s', x@twinings), text = 'Twinings\U1f1ec\U1f1e7'))
+    } else if (length(x@yogi)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.yogi-life.com/en-US/product/%s', x@yogi), text = 'Yogi\U1f1fa\U1f1f8'))
     } else character()
   } # manufacturer
   

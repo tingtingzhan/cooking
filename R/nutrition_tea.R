@@ -128,6 +128,12 @@ Paromi_cinnamonChai <- function() new(
 
 
 
+Yogi_licorice <- function() new(
+  Class = 'nutrition',
+  yogi = 'egyptian-licorice-076950415164',
+  name = 'Egyptian Licorice',
+  wegmans = 31614L,
+  servingGram = 36/16, usd = 6.99/16)
 
 
 

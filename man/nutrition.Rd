@@ -156,6 +156,8 @@ Nutrition information.
 
 \item{\code{twinings}}{\link[base]{character} scalar}
 
+\item{\code{yogi}}{\link[base]{character} scalar}
+
 \item{\code{machine}}{\link[base]{function}}
 
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
