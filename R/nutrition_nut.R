@@ -50,10 +50,19 @@ Kirkland_cashew <- function() new(
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, fat = 14, sugar = 2, protein = 5)
 
-Kirkland_organic_cashew <- function() new(
+Kirkland_cashew_organic <- function() new(
   Class = 'nutrition', costco = '4000064056',
   name = '\u8170\u679c Organic Cashews', # unsalted unroasted
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, 
   calorie = 150,
   fat = 12, sugar = 2, protein = 5)
+
+Kirkland_Brazilnut <- function() new(
+  Class = 'nutrition', costcoBiz = '100392410',
+  name = 'Organic Brazil Nuts',
+  usd = 9.79/680*30,
+  servingGram = 30,
+  calorie = 210,
+  fat = 20, carbohydrate = 4, sugar = 1, protein = 4,
+  review = 'I do not like much..')

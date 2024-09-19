@@ -80,6 +80,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot navitas \link[base]{character} scalar
 #' @slot nescafe,nescafeGoldEspressoCA,nescafeGoldEspressoUS,nescafeUS,nestle,nido \link[base]{character} scalars
 #' @slot oreo \link[base]{character} scalar
+#' @slot paromi \link[base]{character} scalar
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
 #' @slot simplyorganic \link[base]{character} scalar
@@ -185,6 +186,7 @@ setClass(Class = 'nutrition', slots = c(
   navitas = 'character',
   nescafe = 'character', nescafeGoldEspressoCA = 'character', nescafeGoldEspressoUS = 'character', nescafeUS = 'character', nestle = 'character', nido = 'character',
   oreo = 'character',
+  paromi = 'character',
   raos = 'character',
   runamok = 'character',
   simplyorganic = 'character', # has SKU number, do not know how to use
@@ -373,6 +375,8 @@ nutrition.nutrition <- function(x) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.goodnes.com/nido/products/nido-%s', x@nido), text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed'))
     } else if (length(x@oreo)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.oreo.com/products/%s', x@oreo), text = 'Nabisco\U1f1fa\U1f1f8'))
+    } else if (length(x@paromi)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://paromi.com/products/%s', x@paromi), text = 'Paromi\U1f1fa\U1f1f8'))
     } else if (length(x@raos)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f96b\U1f1fa\U1f1f8'))
     } else if (length(x@runamok)) {
@@ -424,7 +428,7 @@ nutrition.nutrition <- function(x) {
   x <- add_store_url_(x, store = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')
   x <- add_store_url_(x, store = 'wawa', fmt = 'https://order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
-  x <- add_store_url_(x, store = 'wegmans', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'wegmans', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8', store_name = 'Wegmans')
   x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
   

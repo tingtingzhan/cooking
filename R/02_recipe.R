@@ -690,7 +690,7 @@ recipe <- function(x) {
   x <- addNameLen1(x, which = 'adzukibean', name1 = 'HaiTai_adzuki')
   x <- addNameLen1(x, which = 'mungbean', name1 = 'HaiTai_mung')
   x <- addNameLen1(x, which = 'redKidneyBean', name1 = 'redKidneyBean')
-  x <- addNameLen1(x, which = 'cashew', name1 = 'Kirkland_organic_cashew')
+  x <- addNameLen1(x, which = 'cashew', name1 = 'Kirkland_cashew_organic')
   x <- addNameLen1(x, which = 'nut')
   
   if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {

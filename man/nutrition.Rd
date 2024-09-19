@@ -132,6 +132,8 @@ Nutrition information.
 
 \item{\code{oreo}}{\link[base]{character} scalar}
 
+\item{\code{paromi}}{\link[base]{character} scalar}
+
 \item{\code{raos}}{\link[base]{character} scalar}
 
 \item{\code{runamok}}{\link[base]{character} scalar}

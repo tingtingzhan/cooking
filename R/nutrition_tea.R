@@ -71,6 +71,7 @@ Harney_LapSangSouChong <- function() new(
 Twinings_EarlGrey <- function() new( # I love!
   Class = 'nutrition', twinings = 'earl-grey', 
   name = 'Earl Gray',
+  wegmans = 24150L,
   servingGram = 2, usd = 15.99/100) # 100pcs 2g-bag, 2023-11-09
 
 Twinings_EarlGrey_loose <- function() new(
@@ -86,30 +87,38 @@ Twinings_strongEarlGrey <- function() new(
 Twinings_decafEarlGrey <- function() new( # no value pack, no loose leaf
   Class = 'nutrition', twinings = 'earl-grey-decaf',
   name = 'Earl Grey Decaf',
+  wegmans = 47200L,
   servingGram = 35/20, usd = 4.99/20) # 20pcs of 1.75g-bag, 2023-11-09
 
 Twinings_LadyGrey <- function() new( # Do not like the lemon-mandarin flavor!!
   Class = 'nutrition', twinings = 'lady-grey',
   name = 'Lady Grey',
+  wegmans = 31226L,
   servingGram = 2, usd = 15.99/100) # 100pcs of 2g-bag, 2023-11-09
   
 Twinings_ultraChai <- function() new(
   Class = 'nutrition', twinings = 'ultra-spice-chai',
   name = 'Ultra Spice Chai',
+  wegmans = 49238L,
   servingGram = 2, usd = 4.99/20) # 20pcs of 2g-bag, 2023-11-13
 
 
 Twinings_Darjeeling <- function() new( # lacks a signature flavor
   Class = 'nutrition', twinings = 'darjeeling',
-  name = 'Darjeeling',
-  servingGram = 2, usd = 8.49/50) # 50pcs of 2g-bag, 2023-11-13
+  name = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982 Darjeeling',
+  wegmans = 30993L,
+  servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
+  review = 'I dont like the after taste!!')
   
 
 # Paromi
 
-#Paromi_EarlGrey <- function() new(
-#  Class = 'nutrition', url = 'paromi.com/products/earl-grey-tea-bags', 
-#  review = 'Too spicy, do not buy')
+Paromi_EarlGrey <- function() new(
+  Class = 'nutrition', paromi = 'earl-grey-tea-bags', 
+  name = 'Earl Grey',
+  servingGram = 3, usd = 31/15, # website
+  # no longer at Wegmans
+  review = 'Too spicy, do not buy')
 
 
 

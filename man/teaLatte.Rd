@@ -7,7 +7,6 @@
 \alias{EarlGrey_latte_Twinings}
 \alias{Ceylon_latte_Stassen}
 \alias{chai_latte_Twinings}
-\alias{Darjeeling_latte_Twinings}
 \title{\linkS4class{teaLatte} Recipes}
 \usage{
 EarlGrey_latte_Twinings()
@@ -15,8 +14,6 @@ EarlGrey_latte_Twinings()
 Ceylon_latte_Stassen()
 
 chai_latte_Twinings()
-
-Darjeeling_latte_Twinings()
 }
 \description{
 Latte from a tea bag.

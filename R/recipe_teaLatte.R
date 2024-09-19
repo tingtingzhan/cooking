@@ -50,9 +50,6 @@ Ceylon_latte_Stassen <- function() new(Class = 'teaLatte', teabag = c(Stassen_Ce
 #' @export
 chai_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_ultraChai = 1), pros = 'I like!')
 
-#' @rdname teaLatte
-#' @export
-Darjeeling_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_Darjeeling = 1), cons = 'Lacks a signature flavor')
 
 
 
