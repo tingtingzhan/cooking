@@ -66,9 +66,9 @@ Harney_LapSangSouChong <- function() new(
   review = 'Quite an acquired taste.')
 
 
-# Twinings; headquarter in London
+# Twinings
 
-Twinings_EarlGrey <- function() new( # I love!
+Twinings_EarlGrey <- function() new(
   Class = 'nutrition', twinings = 'earl-grey', 
   name = 'Earl Gray',
   wegmans = 24150L,
@@ -82,7 +82,10 @@ Twinings_EarlGrey_loose <- function() new(
 Twinings_strongEarlGrey <- function() new(
   Class = 'nutrition', twinings = 'earl-grey-strong',
   name = 'Earl Grey, Extra Strong',
-  servingGram = 2, usd = 4.99/20) # # 20pcs of 2g-bag, 2023-11-16
+  wegmans = 13354L,
+  webstaurant = '110TWNG13541',
+  servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-16
+  review = 'I love!!')
 
 Twinings_decafEarlGrey <- function() new( # no value pack, no loose leaf
   Class = 'nutrition', twinings = 'earl-grey-decaf',
@@ -94,15 +97,17 @@ Twinings_LadyGrey <- function() new( # Do not like the lemon-mandarin flavor!!
   Class = 'nutrition', twinings = 'lady-grey',
   name = 'Lady Grey',
   wegmans = 31226L,
+  walmart = '15556242',
   servingGram = 2, usd = 15.99/100) # 100pcs of 2g-bag, 2023-11-09
   
 Twinings_ultraChai <- function() new(
   Class = 'nutrition', twinings = 'ultra-spice-chai',
   name = 'Ultra Spice Chai',
   wegmans = 49238L,
+  webstaurant = '110TWNG07516',
+  walmart = '29884542',
   servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-13
-  review = 'Great potential for many recipes!!')
-
+  review = 'I love!! Great potential for many recipes!!')
 
 Twinings_Darjeeling <- function() new(
   Class = 'nutrition', twinings = 'darjeeling',
@@ -111,6 +116,12 @@ Twinings_Darjeeling <- function() new(
   servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
   review = 'lacks a signature flavor')
   
+Twinings_Ceylon <- function() new(
+  Class = 'nutrition', twinings = 'ceylon-pure-black',
+  name = 'Ceylon Orange Pekoe',
+  webstaurant = '110TWNG05324',
+  servingGram = 2, usd = 4.99/20)
+
 
 # Paromi
 
@@ -134,6 +145,7 @@ Yogi_licorice <- function() new(
   yogi = 'egyptian-licorice-076950415164',
   name = 'Egyptian Licorice',
   wegmans = 31614L,
+  walmart = '26965528',
   servingGram = 36/16, usd = 6.99/16)
 
 
