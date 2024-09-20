@@ -100,7 +100,8 @@ Twinings_ultraChai <- function() new(
   Class = 'nutrition', twinings = 'ultra-spice-chai',
   name = 'Ultra Spice Chai',
   wegmans = 49238L,
-  servingGram = 2, usd = 4.99/20) # 20pcs of 2g-bag, 2023-11-13
+  servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-13
+  review = 'Great potential for many recipes!!')
 
 
 Twinings_Darjeeling <- function() new(
