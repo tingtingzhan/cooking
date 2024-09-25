@@ -182,8 +182,8 @@ CopperKettleCandy_darkChocolateTruffle <- function() new(
 
 Ghirardelli_whiteChocolate <- function() new(
   Class = 'nutrition',
-  brand = 'Ghirardelli\U1f1fa\U1f1f8', name = 'White Chocolate Bar',
-  url = 'https://www.ghirardelli.com/premium-baking-bar-white-chocolate-12-bars-61829cs',
+  name = 'White Chocolate Bar',
+  ghirardelli = 'premium-baking-bar-white-chocolate-12-bars-61829cs',
   amazon = 'B01IRFB7CO', usd = 34.44/12/113.5*14,
   servingGram = 14, 
   calorie = 80,

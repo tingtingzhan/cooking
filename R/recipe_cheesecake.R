@@ -305,7 +305,8 @@ Junior_original <- function() new(
 #' @rdname cheesecake
 #' @export
 Junior_cookbook <- function() new(
-  Class = 'recipe', author = 'Junior\'s Cookbook', alias_flavor = '\u83dc\u8c31Cheesecake',
+  Class = 'recipe', 
+  author = 'Junior\'s Cookbook', alias_flavor = '\u83dc\u8c31Cheesecake',
   creamCheese = c(Philadelphia = 227 * 4),
   sugar = 333, 
   starch_cup = c(Wegmans_corn = 1/4),

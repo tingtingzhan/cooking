@@ -26,8 +26,7 @@ Wegmans_corn_starch <- function() new(
 
 Argo_corn_starch <- function() new(
   Class = 'nutrition',
-  url = 'https://www.argostarch.com/products.html',
-  brand = 'Argo\U1f1fa\U1f1f8',
+  brand = unclass(style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://www.argostarch.com/products.html')),
   name = '\u7389\u7c73\u6dc0\u7c89 Corn\U1f33d Starch',
   wegmans = 34585L, usd = 2.49/454*8,
   servingGram = 8, 

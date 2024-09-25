@@ -32,12 +32,12 @@ amanda_udon <- function() new(
 #' @rdname udon
 #' @export
 JustOne_udon <- function() new(
-  Class = 'recipe', author = 'Just One', alias_flavor = 'Udon', 
-  youtube = 'luljUScGJm4',
+  Class = 'recipe', alias_flavor = 'Udon', 
+  just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
   flour = 200, # 7 oz
   water = 90, # 6tbsp, 89g
-  salt = 10, # 0.35 oz
-  url = 'https://www.justonecookbook.com/udon-noodles/')
+  salt = 10) # 0.35 oz
+  
 
 
 

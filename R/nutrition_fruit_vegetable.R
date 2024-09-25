@@ -336,8 +336,8 @@ HaiTai_adzuki <- function() new(
 
 redKidneyBean <- function() new(
   Class = 'nutrition', fdc = 173744L,
-  name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U1fad8', brand = 'Iberia\U1f1fa\U1f1f8',
-  url = 'iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/',
+  name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U1fad8', 
+  brand = unclass(style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/')),
   amazon = 'B079S8D2YP', usd = 8.86/(4*454)*42,
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
   servingGram = 42, servingCup = 1/4, sodium = .005, carbohydrate = 26, sugar = 1, protein = 9)

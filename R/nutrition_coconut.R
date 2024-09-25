@@ -27,8 +27,9 @@ Edward_shreddedCoconutLite <- function() new(
 
 
 Edward_shreddedCoconut <- function() new(
-  Class = 'nutrition', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut',
-  brand = 'Edward & Sons\U1f1fa\U1f1f8', name = '\u6930\u84c9 Shredded Coconut\U1f965',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut')),
+  name = '\u6930\u84c9 Shredded Coconut\U1f965',
   usd = 3.89/227*15,
   servingGram = 15, 
   servingTbsp = 2.5, # packaging
@@ -39,8 +40,9 @@ Edward_shreddedCoconut <- function() new(
   ))
 
 Edward_coconutFlour <- function() new(
-  Class = 'nutrition', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour',
-  brand = 'Edward & Sons\U1f1fa\U1f1f8', name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour')),
+  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   usd = 5.99/454*14,
   servingGram = 14, 
   servingTbsp = 2, # packaging

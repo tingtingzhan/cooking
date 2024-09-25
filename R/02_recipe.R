@@ -213,6 +213,7 @@
 #' @slot dad1966 \link[base]{character} scalar
 #' @slot happytears \link[base]{character} scalar
 #' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
+#' @slot just1cookbook \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
 #' @slot laofangu \link[base]{character} scalar
 #' @slot pino \link[base]{character} scalar
@@ -243,6 +244,7 @@ setClass(Class = 'recipe', slots = c(
   dad1966 = 'character',
   happytears = 'character',
   ippodotea = 'character', ippodoteajpn = 'character',
+  just1cookbook = 'character',
   kingarthur = 'character',
   laofangu = 'character',
   pino = 'character',
@@ -545,7 +547,6 @@ get_flavor_ <- function(x) {
 #' 
 #' @param x a \linkS4class{recipe} object
 #' 
-# @importFrom cli.tzh styleURL
 #' @export
 recipe <- function(x) {
   
@@ -742,7 +743,7 @@ recipe <- function(x) {
         x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
         x@youtube <- x@youtube[-1L]
       } else if (length(x@url)) {
-        x@author <- styleURL(url_ = x@url[1L], text_ = x@author)
+        x@author <- unclass(style_hyperlink(url = x@url[1L], text = x@author))
         x@url <- x@url[-1L]
       }
     } # before `if (!length(x@author))` !!!
@@ -777,6 +778,15 @@ recipe <- function(x) {
       x@ippodoteajpn <- character()
     }
     
+    if (length(x@just1cookbook)) {
+      if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')
+      x@author <- paste(
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@just1cookbook)), text = 'Just One')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.justonecookbook.com/%s', x@just1cookbook), text = 'Cookbook'))
+      )
+      x@just1cookbook <- character()
+    }
+
     if (length(x@kingarthur)) {
       if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
       if (!length(x@author)) stop('King Arthur employee name?')
@@ -1338,7 +1348,6 @@ nutrition.recipe <- function(x) {
 #' 
 #' @param object \linkS4class{recipe} object
 #'
-# @importFrom cli.tzh styleURL
 #' @export
 setMethod(f = show, signature = signature(object = 'recipe'), definition = function(object) {
   

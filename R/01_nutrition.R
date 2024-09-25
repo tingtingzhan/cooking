@@ -59,6 +59,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot epicprovisions \link[base]{character} scalar
 #' @slot fleischmannsyeast \link[base]{integer} scalar
 #' @slot frontiercoop \link[base]{character} scalar
+#' @slot ghirardelli \link[base]{character} scalar
 #' @slot haagendazs \link[base]{character} scalar
 #' @slot harney \link[base]{character} scalar
 #' @slot heinz \link[base]{character} scalar
@@ -85,6 +86,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
 #' @slot simplyorganic \link[base]{character} scalar
+#' @slot sodastream \link[base]{character} scalar
 #' @slot starbucks \link[base]{character} scalar
 #' @slot starbucks_hot,starbucks_iced \link[base]{integer} scalars
 #' @slot stassentea \link[base]{character} scalar
@@ -168,6 +170,7 @@ setClass(Class = 'nutrition', slots = c(
   epicprovisions = 'character',
   fleischmannsyeast = 'integer',
   frontiercoop = 'character',
+  ghirardelli = 'character',
   haagendazs = 'character',
   harney = 'character',
   heinz = 'character',
@@ -194,6 +197,7 @@ setClass(Class = 'nutrition', slots = c(
   raos = 'character',
   runamok = 'character',
   simplyorganic = 'character', # has SKU number, do not know how to use
+  sodastream = 'character',
   starbucks = 'character',
   starbucks_hot = 'integer',
   starbucks_iced = 'integer',
@@ -315,6 +319,8 @@ nutrition.nutrition <- function(x) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.fleischmannsyeast.com/product-page/#%d', x@fleischmannsyeast), text = 'Fleischmann\'s\U1f1fa\U1f1f8'))
     } else if (length(x@frontiercoop)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s', x@frontiercoop), text = 'Frontier Co-op\U1f1fa\U1f1f8'))
+    } else if (length(x@ghirardelli)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ghirardelli.com/%s', x@ghirardelli), text = 'Ghirardelli\U1f1fa\U1f1f8'))
     } else if (length(x@haagendazs)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8'))
     } else if (length(x@harney)) {
@@ -395,6 +401,8 @@ nutrition.nutrition <- function(x) {
       } else runamok_
     } else if (length(x@simplyorganic)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text = 'Simply Organic\U1f1fa\U1f1f8'))
+    } else if (length(x@sodastream)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://sodastream.com/products/%s', x@sodastream), text = 'SodaStream\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://athome.starbucks.com/products/%s', x@starbucks), text = 'Starbucks\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks_hot)) {
@@ -648,7 +656,6 @@ autoVolume <- function(x, nm = names(x)) {
 #' 
 #' @return nothing is returned
 #' 
-# @importFrom cli.tzh styleURL
 #' @export
 setMethod(f = show, signature = signature(object = 'nutrition'), definition = function(object) {
   
@@ -702,9 +709,10 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   
   if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))
 
-  if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
   if (length(obj@fdc)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central'))), sep = '\n')
   if (length(obj@pubchem)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')
+  
+  if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
   
 })
 

@@ -741,8 +741,9 @@ Starbucks_matchaFrappuccino <- function() new(
 #' @rdname matchaLatte
 #' @export
 Starbucks_matchaLatteMix <- function() new(
-  Class = 'nutrition', url = 'https://www.yamibuy.com/en/p/premium-mixes-matcha-latte-instant-coffee-powder-96g/3156004631',
-  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Matcha\U1f375 Latte Mix',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Starbucks\U1f1fa\U1f1f8', url = 'https://www.yamibuy.com/en/p/premium-mixes-matcha-latte-instant-coffee-powder-96g/3156004631')),
+  name = 'Matcha\U1f375 Latte Mix',
   usd = 10.99/4,
   servingGram = 24, 
   calorie = 103,

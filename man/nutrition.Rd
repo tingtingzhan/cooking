@@ -90,6 +90,8 @@ Nutrition information.
 
 \item{\code{frontiercoop}}{\link[base]{character} scalar}
 
+\item{\code{ghirardelli}}{\link[base]{character} scalar}
+
 \item{\code{haagendazs}}{\link[base]{character} scalar}
 
 \item{\code{harney}}{\link[base]{character} scalar}
@@ -141,6 +143,8 @@ Nutrition information.
 \item{\code{runamok}}{\link[base]{character} scalar}
 
 \item{\code{simplyorganic}}{\link[base]{character} scalar}
+
+\item{\code{sodastream}}{\link[base]{character} scalar}
 
 \item{\code{starbucks}}{\link[base]{character} scalar}
 

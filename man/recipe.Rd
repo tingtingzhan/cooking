@@ -343,6 +343,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{ippodotea,ippodoteajpn}}{\link[base]{character} scalar}
 
+\item{\code{just1cookbook}}{\link[base]{character} scalar}
+
 \item{\code{kingarthur}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe}
 
 \item{\code{laofangu}}{\link[base]{character} scalar}
