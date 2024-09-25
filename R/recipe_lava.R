@@ -123,8 +123,8 @@ FancyNotes_sesamelava <- function() new(
 #' @rdname lava
 #' @export
 xiaogaojie_sesamelava <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
-  youtube = 't-pop_dGsgc',
+  Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  xiaogaojie = 't-pop_dGsgc',
   blackSesame = 80,
   nut = c(pecan = 30),
   sugar = 80,

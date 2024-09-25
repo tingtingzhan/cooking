@@ -120,13 +120,13 @@ tomato_tortillaLard <- function() new(
 
 
 xiaogaojie_flatbread <- function() new(
-  Class = 'xiaogaojie', alias_flavor = 'Flatbread',
+  Class = 'recipe', alias_flavor = 'Flatbread',
   flour = 300,
   water = 150+15,
   yeast_tsp = 1/4,
   butter = 40,
   salt_tsp = 1/4,
-  youtube = '_edTKRGk38Y')
+  xiaogaojie = '_edTKRGk38Y')
 
 
 

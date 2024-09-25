@@ -42,7 +42,8 @@ steamEgg_OLD <- function() new(
 #' @rdname pudding
 #' @export
 shangshi_pudding <- function() new(
-  Class = 'shangshikitchen', alias_flavor = 'pudding', youtube = 'Nqz-K0TDL5s',
+  Class = 'recipe', alias_flavor = 'pudding', 
+  shangshikitchen = 'Nqz-K0TDL5s',
   # 4 croissants 可颂面包
   milk = 720, # 3 cups 
   sugar = 75, # 1/3 cup

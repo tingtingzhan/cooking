@@ -6,7 +6,7 @@
 
 
 xiaogaojie_pasteisdenata1 <- function() new(
-  Class = 'xiaogaojie', alias_flavor = 'pasteisdenata1',
+  Class = 'recipe', alias_flavor = 'pasteisdenata1',
   water = 185,
   sugar = 200,
   #cinnamon stick 1
@@ -15,16 +15,16 @@ xiaogaojie_pasteisdenata1 <- function() new(
   starch = c(Wegmans_corn = 17),
   milk = 250,
   eggYolk_pc = 5,
-  youtube = '-83188U6O8w')
+  xiaogaojie = '-83188U6O8w')
 
 xiaogaojie_pasteisdenata2 <- function() new(
-  Class = 'xiaogaojie', alias_flavor = 'pasteisdenata2',
+  Class = 'recipe', alias_flavor = 'pasteisdenata2',
   milk = 180,
   heavyCream = 200,
   sugar = 60, 
   eggYolk_pc = 4,
   eggWhite_pc = 1,
-  youtube = '-83188U6O8w')
+  xiaogaojie = '-83188U6O8w')
 
 Leites_pasteisdenata <- function() new(
   Class = 'recipe',

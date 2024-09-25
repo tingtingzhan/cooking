@@ -24,22 +24,22 @@ Daat_soupBao <- function() new(
   lard = 10)
 
 xiaogaojie_soupBao <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u704c\u6c64\u5305',
-  youtube = 'OMeWvORraxk',
+  Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
+  xiaogaojie = 'OMeWvORraxk',
   flour = 400,
   water70 = 250)
 
 PinNuo_soupBao <- function() new(
-  Class = 'pino', alias_flavor = '\u704c\u6c64\u5305',
-  youtube = 'EyG2mTF23Vc',
+  Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
+  pino = 'EyG2mTF23Vc',
   flour = 500,
   boilingWater = 100,
   salt = 3,
   water = 150)
 
 shangshi_soupBao <- function() new(
-  Class = 'shangshikitchen', alias_flavor = '\u704c\u6c64\u5305',
-  youtube = 'SXCS1MFtA6s',
+  Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
+  shangshikitchen = 'SXCS1MFtA6s',
   flour = 300,
   water70 = 160,
   salt_tsp = 1/4,

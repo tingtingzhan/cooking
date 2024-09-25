@@ -101,7 +101,7 @@ redKidneyBeanPaste <- function() new(
 #' @rdname beanPaste
 #' @export
 xiaogaojie_adzukiBeanPaste1 <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u7ea2\u8c46\u6c991',
+  Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c991',
   adzukibean = 500,
   water = 350, # actual water absorbed
   oil = c(Wegmans_corn = 12),
@@ -109,15 +109,15 @@ xiaogaojie_adzukiBeanPaste1 <- function() new(
   invertSugar = 80,
   #糖（调整量）24克  2 大勺
   salt_tsp = 1/4,
-  youtube = 'mg1XeWsfHoQ')
+  xiaogaojie = 'mg1XeWsfHoQ')
 
 
 
 #' @rdname beanPaste
 #' @export
 xiaogaojie_adzukiBeanPaste2 <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u7ea2\u8c46\u6c992',
-  youtube = 'Jsqhb8i4ntU',
+  Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c992',
+  xiaogaojie = 'Jsqhb8i4ntU',
   adzukibean = 200,
   water = 700, 
   waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()

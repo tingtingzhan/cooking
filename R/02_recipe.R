@@ -210,9 +210,15 @@
 #' @slot url \link[base]{character} scalar or \link[base]{vector}, URL of original recipe
 #' @slot allrecipes \link[base]{character} scalar
 #' @slot daatgo \link[base]{character} scalar
+#' @slot dad1966 \link[base]{character} scalar
+#' @slot happytears \link[base]{character} scalar
 #' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
-#' @slot preppykitchen \link[base]{character} scalar or \link[base]{vector}, link from \url{preppykitchen.com} of original recipe
+#' @slot laofangu \link[base]{character} scalar
+#' @slot pino \link[base]{character} scalar
+#' @slot preppykitchen \link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe
+#' @slot shangshikitchen \link[base]{character} scalar
+#' @slot xiaogaojie \link[base]{character} scalar
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 #' @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
@@ -234,9 +240,15 @@ setClass(Class = 'recipe', slots = c(
   url = 'character',
   allrecipes = 'character',
   daatgo = 'character',
+  dad1966 = 'character',
+  happytears = 'character',
   ippodotea = 'character', ippodoteajpn = 'character',
   kingarthur = 'character',
+  laofangu = 'character',
+  pino = 'character',
   preppykitchen = 'character', # must len-1
+  shangshikitchen = 'character',
+  xiaogaojie = 'character',
   youtube = 'character',
   doi = 'character',
   
@@ -451,12 +463,6 @@ check_gelatin <- function(x) {
   return(x)
 }
 
-
-
-
-
-
-
 # add name to len-1 vector
 addNameLen1 <- function(x, which, name1 = stop('no default!')) {
   nx <- length(slot(x, name = which))
@@ -469,7 +475,6 @@ addNameLen1 <- function(x, which, name1 = stop('no default!')) {
   if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('ill name')
   return(x)
 }
-
 
 combineVol <- function(x, which, name1 = stop('no default!')) {
   ._tsp <- paste0(which, '_tsp')
@@ -748,6 +753,18 @@ recipe <- function(x) {
       x@daatgo <- character()
     }
     
+    if (length(x@dad1966)) {
+      if (length(x@dad1966) > 1L) stop('only allow len-1 @dad1966')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@dad1966), text = '\u8001\u7238\u7684\u98df\u5149'))
+      x@dad1966 <- character()
+    }
+    
+    if (length(x@happytears)) {
+      if (length(x@happytears) > 1L) stop('only allow len-1 @happytears')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@happytears), text = '\u5e78\u798f\u7684\u773c\u6cea'))
+      x@happytears <- character()
+    }
+    
     if (length(x@ippodotea)) {
       if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
       x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
@@ -770,6 +787,19 @@ recipe <- function(x) {
       x@kingarthur <- character()
     }
 
+    if (length(x@laofangu)) {
+      if (length(x@laofangu) > 1L) stop('only allow len-1 @laofangu')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@laofangu), text = '\u8001\u996d\u9aa8'))
+      x@laofangu <- character()
+    }
+    
+    if (length(x@pino)) {
+      if (length(x@pino) > 1L) stop('only allow len-1 @pino')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@pino), text = '\u54c1\u8bfa'))
+      # http://www.pinochina.com # temporarily down
+      x@pino <- character()
+    }
+    
     if (length(x@preppykitchen)) {
       if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
       if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
@@ -779,6 +809,18 @@ recipe <- function(x) {
       )
       x@preppykitchen <- character()
     } 
+    
+    if (length(x@shangshikitchen)) {
+      if (length(x@shangshikitchen) > 1L) stop('only allow len-1 @shangshikitchen')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@shangshikitchen), text = '\u5c1a\u98df\u53a8\u623f'))
+      x@shangshikitchen <- character()
+    }
+    
+    if (length(x@xiaogaojie)) {
+      if (length(x@xiaogaojie) > 1L) stop('only allow len-1 @xiaogaojie')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@xiaogaojie), text = '\u5c0f\u9ad8\u59d0'))
+      x@xiaogaojie <- character()
+    }
     
     x@alias_class <- paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m'))
   }
@@ -1693,36 +1735,4 @@ setMethod(f = '-', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
     alias = '\u8865\u5145\u6750\u6599'
   ), ret))
 })
-
-
-setClass(Class = 'pino', contains = 'recipe', prototype = prototype(
-  # http://www.pinochina.com # temporarily down
-  author = '\u54c1\u8bfa'
-))
-
-
-setClass(Class = 'happytears', contains = 'recipe', prototype = prototype(
-  author = '\u5e78\u798f\u7684\u773c\u6cea'
-))
-
-setClass(Class = 'xiaogaojie', contains = 'recipe', prototype = prototype(
-  author = '\u5c0f\u9ad8\u59d0'
-))
-
-setClass(Class = 'laofangu', contains = 'recipe', prototype = prototype(
-  author = '\u8001\u996d\u9aa8'
-))
-
-setClass(Class = 'dad1966', contains = 'recipe', prototype = prototype(
-  author = '\u8001\u7238\u7684\u98df\u5149'
-))
-
-setClass(Class = 'shangshikitchen', contains = 'recipe', prototype = prototype(
-  author = '\u5c1a\u98df\u53a8\u623f'
-))
-
-
-
-
-
 

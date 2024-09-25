@@ -107,13 +107,13 @@ Kahlua_millecrepe_FAIL <- function() new(
 #' @rdname millecrepe
 #' @export
 xiaogaojie_millecrepe <- function() new(
-  Class = 'xiaogaojie', alias_flavor = 'millecrepe',
+  Class = 'recipe', alias_flavor = 'millecrepe',
   milk = 300, 
   pastryFlour = 100,
   sugar = 12, 
   egg_pc = 2,
   butter = 25,
-  youtube = 'uZ626SU5T2I')
+  xiaogaojie = 'uZ626SU5T2I')
 
 #' @rdname millecrepe
 #' @export

@@ -112,7 +112,8 @@ setClass(Class = 'largeYouSu', contains = 'recipe', prototype = prototype(
 #' @rdname flakyPastry
 #' @export
 Dad_flowerPastry_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u9c9c\u82b1\u997c(\u6c34)', youtube = 'DNnpZDUWJYk',
+  Class = 'recipe', alias_flavor = '\u9c9c\u82b1\u997c(\u6c34)', 
+  dad1966 = 'DNnpZDUWJYk',
   flour = 150, oil = c(Wegmans_vegetable = 40), sugar = 10, water = 85,
   portion = c('4x\u9c9c\u82b1\u997c(\u5927\u5305\u9165)' = 71))
 
@@ -120,7 +121,8 @@ Dad_flowerPastry_waterDough <- function() new(
 #' @rdname flakyPastry
 #' @export
 Dad_flowerPastry_shortDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u9c9c\u82b1\u997c water', youtube = 'DNnpZDUWJYk',
+  Class = 'recipe', alias_flavor = '\u9c9c\u82b1\u997c water', 
+  dad1966 = 'DNnpZDUWJYk',
   flour = 150, oil = c(Wegmans_vegetable = 75),
   portion = c('4x\u9c9c\u82b1\u997c(\u5927\u5305\u9165)' = 56))
 
@@ -128,49 +130,51 @@ Dad_flowerPastry_shortDough <- function() new(
 #' @rdname flakyPastry
 #' @export
 Dad_oxTongue1_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u725b\u820c\u997c1(\u6c34)',
+  Class = 'recipe', alias_flavor = '\u725b\u820c\u997c1(\u6c34)',
   flour = 120, oil = c(Wegmans_vegetable = 30), sugar = 10, water = 60,
   portion = c(
     '2x\u725b\u820c\u997c(\u5c0f\u5305\u9165)' = 35
   ),
-  youtube = 'v4fPRmuu5dA')
+  dad1966 = 'v4fPRmuu5dA')
 
 #' @rdname flakyPastry
 #' @export
 Dad_oxTongue1_shortDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u725b\u820c\u997c1',
+  Class = 'recipe', alias_flavor = '\u725b\u820c\u997c1',
   flour = 120,
   oil = c(Wegmans_vegetable = 60),
   portion = c(
     '2x\u725b\u820c\u997c(\u5c0f\u5305\u9165)' = 30
   ),
-  youtube = c(
-    'Dec 2020' = 'v4fPRmuu5dA',
-    'Jan 2024' = 'XLj7W76UFbs'
-  ))
+  dad1966 = 'v4fPRmuu5dA') #c(
+  #  'Dec 2020' = 'v4fPRmuu5dA',
+  #  'Jan 2024' = 'XLj7W76UFbs'
+  #)
 
 #' @rdname flakyPastry
 #' @export
 shangshi_oxTongue_shortDough <- function() new(
-  Class = 'shangshikitchen', alias_flavor = '\u725b\u820c\u997c', youtube = '2maemGhLN8c',
+  Class = 'recipe', alias_flavor = '\u725b\u820c\u997c', 
+  shangshikitchen = '2maemGhLN8c',
   flour = 140, butter = 70,
   portion = c('\u5c0f\u5305\u9165' = 13))
 
 #' @rdname flakyPastry
 #' @export
 shangshi_oxTongue_waterDough <- function() new(
-  Class = 'shangshikitchen', alias_flavor = '\u725b\u820c\u997c(\u6c34)',
+  Class = 'recipe', alias_flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = 200,
   portion = c('\u5c0f\u5305\u9165' = 24),
   butter = 43, sugar = 35, water = 110,
-  youtube = '2maemGhLN8c')
+  shangshikitchen = '2maemGhLN8c')
 
 
 
 #' @rdname flakyPastry
 #' @export
 Dad_blackSesamePastry_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u9ed1\u829d\u9ebb\u9165\u997c(\u6c34)', youtube = 'n_J9ly98Tvw',
+  Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u9165\u997c(\u6c34)', 
+  dad1966 = 'n_J9ly98Tvw',
   flour = 300, sugar = 30, water = 160, lard = 50,
   portion = c('\u5927\u5305\u9165' = 36))
 
@@ -178,7 +182,8 @@ Dad_blackSesamePastry_waterDough <- function() new(
 #' @rdname flakyPastry
 #' @export
 Dad_blackSesamePastry_largeYouSu <- function() new(
-  Class = 'dad1966', alias_flavor = '\u9ed1\u829d\u9ebb\u9165\u997c', youtube = 'n_J9ly98Tvw',
+  Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u9165\u997c', 
+  dad1966 = 'n_J9ly98Tvw',
   flour = 100, oil = c(Mazola_corn = 100),
   portion = c('\u5927\u5305\u9165' = 12.5))
 
@@ -187,18 +192,18 @@ Dad_blackSesamePastry_largeYouSu <- function() new(
 #' @rdname flakyPastry
 #' @export
 Dad_yolkPastry_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u54b8\u86cb\u9ec4\u9165(\u6c34)',
+  Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u9165(\u6c34)',
   flour = 240,
   ghee = 80, sugar = 10, water = 120,
-  youtube = 'j-Y4KeE69DY')
+  dad1966 = 'j-Y4KeE69DY')
 
 #' @rdname flakyPastry
 #' @export
 Dad_yolkPastry_shortDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u54b8\u86cb\u9ec4\u9165',
+  Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u9165',
   flour = 240,
   ghee = 120,
-  youtube = 'j-Y4KeE69DY')
+  dad1966 = 'j-Y4KeE69DY')
 
 # @rdname flakyPastry
 # @export
@@ -214,43 +219,47 @@ matcha_Dad_yolkPastry_largeYouSu <- function() new(
 #' @rdname flakyPastry
 #' @export
 PinNuo_oxTongue_waterDough <- function() new(
-  Class = 'pino', alias_flavor = '\u725b\u820c\u997c(\u6c34)',
+  Class = 'recipe', alias_flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = 500,
   yeast = 4, Na2CO3 = 1, water = 320, 
-  youtube = 'fC2zXSK9PxM') # this video has no largeYouSu recipe!
+  pino = 'fC2zXSK9PxM') # this video has no largeYouSu recipe!
 
 #' @rdname flakyPastry
 #' @export
 PinNuo_largeYouSu <- function() new(
-  Class = 'pino', alias_flavor = 'large you-su',
+  Class = 'recipe', alias_flavor = 'large you-su',
   flour = 100,
   spice5 = 3,
   salt = 10, oil = c(Wegmans_vegetable = 120),
-  youtube = 'SbeWX67yd14')
+  pino = 'SbeWX67yd14')
 
 
 #' @rdname flakyPastry
 #' @export
 laofangu_magnolia_waterDough <- function() new(
-  Class = 'laofangu', alias_flavor = '\u7389\u5170\u82b1(\u6c34)', youtube = 'h39opPVlGKo',
+  Class = 'recipe', alias_flavor = '\u7389\u5170\u82b1(\u6c34)', 
+  laofangu = 'h39opPVlGKo',
   flour = 125, lard = 30, water = 80)
 
 #' @rdname flakyPastry
 #' @export
 laofangu_magnolia_shortDough <- function() new(
-  Class = 'laofangu', alias_flavor = '\u7389\u5170\u82b1', youtube = 'h39opPVlGKo',
+  Class = 'recipe', alias_flavor = '\u7389\u5170\u82b1', 
+  laofangu = 'h39opPVlGKo',
   pastryFlour = 125, lard = 65) # pastryFlour confirmed!!
 
 #' @rdname flakyPastry
 #' @export
 Dad_pepperPastry_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u6912\u76d0\u9165(\u6c34)', youtube = 'D5bRV_pcywY',
+  Class = 'recipe', alias_flavor = '\u6912\u76d0\u9165(\u6c34)', 
+  dad1966 = 'D5bRV_pcywY',
   flour = 400, water = 210, butter = 60)
 
 #' @rdname flakyPastry
 #' @export
 Dad_pepperPastry_shortDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u6912\u76d0\u9165', youtube = 'D5bRV_pcywY',
+  Class = 'recipe', alias_flavor = '\u6912\u76d0\u9165', 
+  dad1966 = 'D5bRV_pcywY',
   starch = c(Wegmans_corn = 150), # will be more flaky!
   butter = 150)
 
@@ -259,7 +268,8 @@ Dad_pepperPastry_shortDough <- function() new(
 #' @rdname flakyPastry
 #' @export
 laofangu_durianSu_waterDough <- function() new(
-  Class = 'laofangu', alias_flavor = '\u69b4\u83b2\u9165(\u6c34)', youtube = 'p7CExuQQWiA',
+  Class = 'recipe', alias_flavor = '\u69b4\u83b2\u9165(\u6c34)', 
+  laofangu = 'p7CExuQQWiA',
   pastryFlour = 250, sugar = 25, lard = 25, # pastryFlour!!
   egg_pc = 1, water = 100)
 
@@ -267,25 +277,28 @@ laofangu_durianSu_waterDough <- function() new(
 #' @rdname flakyPastry
 #' @export
 laofangu_durianSu_shortDough <- function() new(
-  Class = 'laofangu', alias_flavor = '\u69b4\u83b2\u9165', youtube = 'p7CExuQQWiA',
+  Class = 'recipe', alias_flavor = '\u69b4\u83b2\u9165', 
+  laofangu = 'p7CExuQQWiA',
   pastryFlour = 250, butter = 450) # pastryFlour!!
 
 #' @rdname flakyPastry
 #' @export
 Dad_sweetPastry_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u7cd6\u9165\u997c(\u6c34)', youtube = 'CEHbZrNHNG4',
+  Class = 'recipe', alias_flavor = '\u7cd6\u9165\u997c(\u6c34)', 
+  dad1966 = 'CEHbZrNHNG4',
   flour = 500, yeast = 4, water = 320)
 
 #' @rdname flakyPastry
 #' @export
 Dad_sweetPastry_shortDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u7cd6\u9165\u997c', youtube = 'CEHbZrNHNG4',
+  Class = 'recipe', alias_flavor = '\u7cd6\u9165\u997c', 
+  dad1966 = 'CEHbZrNHNG4',
   flour = 300, oil = c(Wegmans_vegetable = 160))
 
 #' @rdname flakyPastry
 #' @export
 Dad_oxTongue2_waterDough <- function() new(
-  Class = 'dad1966', alias_flavor = '\u725b\u820c\u997c2(\u6c34)',
+  Class = 'recipe', alias_flavor = '\u725b\u820c\u997c2(\u6c34)',
   flour = 200, water = 100, lard = 60,
-  youtube = 'XLj7W76UFbs')
+  dad1966 = 'XLj7W76UFbs')
 

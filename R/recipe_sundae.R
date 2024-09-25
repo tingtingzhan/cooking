@@ -192,7 +192,8 @@ if (FALSE) {
 #' @name icecream
 #' @export
 xiaogaojie_icecream <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368', youtube = 'IQ-t8eSSD3Y',
+  Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
+  xiaogaojie = 'IQ-t8eSSD3Y',
   eggYolk_pc = 6,
   heavyCream = 500,
   milk = 250,
@@ -203,19 +204,20 @@ xiaogaojie_icecream <- function() new(
 #' @rdname icecream
 #' @export
 happytears_icecream <- function() new(
-  Class = 'happytears', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
+  Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   eggYolk_pc = 5,
   sugar = 150,
   flavor = c(ThaiKitchen_coconutmilkLite = 500),
   heavyCream = 250,
-  youtube = 'UDVHsBR7s3Y')
+  happytears = 'UDVHsBR7s3Y')
 
 
 
 #' @rdname icecream
 #' @export
 xiaogaojie_cocoa_icecream <- function() new(
-  Class = 'xiaogaojie', alias_flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', youtube = 'YNzGZMLWY_Q',
+  Class = 'recipe', alias_flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
+  xiaogaojie = 'YNzGZMLWY_Q',
   heavyCream = 350,
   eggYolk_pc = 3,
   milk = 250, 

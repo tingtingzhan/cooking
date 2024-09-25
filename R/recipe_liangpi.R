@@ -15,7 +15,8 @@ liangpi <- function() new(
 
 
 PinNuo_liangPi <- function() new(
-  Class = 'pino', alias_flavor = '\u51c9\u76ae', youtube = 'FrpmqMfZ7CM',
+  Class = 'recipe', alias_flavor = '\u51c9\u76ae', 
+  pino = 'FrpmqMfZ7CM',
   flour = 350,
   starch = c(ManSang_wheat = 150),
   water = 800)

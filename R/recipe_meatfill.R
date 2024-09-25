@@ -96,7 +96,8 @@ setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
 #' @rdname lambfill
 #' @export
 xiaogaojie_lambfill <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u867e\u7f8a\u8089\u9985', youtube = 'M6DD504lDac',
+  Class = 'recipe', alias_flavor = '\u867e\u7f8a\u8089\u9985', 
+  xiaogaojie = 'M6DD504lDac',
   portion = c(Baozi = 30),
   lamb = c(leg = 250),
   shrimp = 400,

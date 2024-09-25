@@ -337,11 +337,23 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{daatgo}}{\link[base]{character} scalar}
 
+\item{\code{dad1966}}{\link[base]{character} scalar}
+
+\item{\code{happytears}}{\link[base]{character} scalar}
+
 \item{\code{ippodotea,ippodoteajpn}}{\link[base]{character} scalar}
 
 \item{\code{kingarthur}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe}
 
-\item{\code{preppykitchen}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{preppykitchen.com} of original recipe}
+\item{\code{laofangu}}{\link[base]{character} scalar}
+
+\item{\code{pino}}{\link[base]{character} scalar}
+
+\item{\code{preppykitchen}}{\link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe}
+
+\item{\code{shangshikitchen}}{\link[base]{character} scalar}
+
+\item{\code{xiaogaojie}}{\link[base]{character} scalar}
 
 \item{\code{youtube}}{\link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe}
 

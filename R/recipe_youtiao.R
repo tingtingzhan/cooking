@@ -36,7 +36,8 @@ youtiao <- function() new(
 )
 
 xiaogaojie_youtiao <- function() new(
-  Class = 'xiaogaojie', alias_flavor = '\u6cb9\u6761', youtube = 'uRc3F6uwR3E',
+  Class = 'recipe', alias_flavor = '\u6cb9\u6761', 
+  xiaogaojie = 'uRc3F6uwR3E',
   flour = 350,
   milk = 250,
   bakingPowder = 10,
@@ -60,14 +61,16 @@ mathstar_youtiao <- function() new(
 
 
 PinNuo_youtiao1 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67611', youtube = 'xoFcbox1VDE',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67611', 
+  pino = 'xoFcbox1VDE',
   flour = 500,
   bakingPowder = 6, NaHCO3 = 3, salt = 5, sugar = 5,
   egg_pc = 1, butter = 30, water = 250)
 
 
 PinNuo_youtiao2 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67612', youtube = 'cD2mJYDaXU0',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67612', 
+  pino = 'cD2mJYDaXU0',
   flour = 500,
   # NaHCO3 = 3, #su-cui-ji = 6, # primary component NaHCO3
   NaHCO3 = (3+6),
@@ -78,7 +81,8 @@ PinNuo_youtiao2 <- function() new(
 
 
 PinNuo_youtiao3 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67613', youtube = '8Af9_PiZx2Q',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67613', 
+  pino = '8Af9_PiZx2Q',
   flour = 1000,
   bakingPowder = 10, 
   # youtiao puffing mix = 10
@@ -89,7 +93,8 @@ PinNuo_youtiao3 <- function() new(
   water = 480)
 
 PinNuo_youtiao4 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67614', youtube = 'KAUdFDRD8l0',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67614', 
+  pino = 'KAUdFDRD8l0',
   flour = 1000,
   yeast = 10, NaHCO3 = 5, salt = 10, sugar = 8,
   egg_pc = 2, 
@@ -97,7 +102,8 @@ PinNuo_youtiao4 <- function() new(
 
 
 PinNuo_youtiao5 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67615', youtube = 'bKZy7TGnMbE',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67615', 
+  pino = 'bKZy7TGnMbE',
   flour = 500,
   bakingPowder = 3, salt = 3, sugar = 3,
   # youtiao puffing mix = 5
@@ -106,7 +112,8 @@ PinNuo_youtiao5 <- function() new(
   water = 260)
 
 PinNuo_youtiao6 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67616', youtube = 'YoEO04dWiz0',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67616', 
+  pino = 'YoEO04dWiz0',
   flour = 500,
   bakingPowder = 8, 
   # youtiao su-cui mix = 5
@@ -116,7 +123,8 @@ PinNuo_youtiao6 <- function() new(
   water = 250)
 
 PinNuo_youtiao7 <- function() new(
-  Class = 'pino', alias_flavor = '\u6cb9\u67617', youtube = 'cv3JhX8NbNs',
+  Class = 'recipe', alias_flavor = '\u6cb9\u67617', 
+  pino = 'cv3JhX8NbNs',
   flour = 1000, # white sesame 60g
   bakingPowder = 15, 
   sugar = 10, salt = 10, 

@@ -81,14 +81,15 @@ sacima <- function() new(
 #' @rdname sacima
 #' @export
 shangshi_sacima <- function() new(
-  Class = 'shangshikitchen', alias_flavor = 'sacima', youtube = 'dV6phomugvA',
+  Class = 'recipe', alias_flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
   flour = 240,
   eggYolk_pc = 3, eggWhite_pc = 3)
 
 #' @rdname sacima
 #' @export
 xiaogaojie_sacima <- function() new(
-  Class = 'xiaogaojie', alias_flavor = 'sacima', youtube = 'VkgWeCxZfi4',
+  Class = 'recipe', alias_flavor = 'sacima', 
+  xiaogaojie = 'VkgWeCxZfi4',
   flour = 200,
   NaHCO3_tsp = 1/8,
   water = 15,
@@ -97,7 +98,8 @@ xiaogaojie_sacima <- function() new(
 #' @rdname sacima
 #' @export
 Dad_sacima <- function() new(
-  Class = 'dad1966', alias_flavor = 'sacima', youtube = 'ZK4ZoCewr0E',
+  Class = 'recipe', alias_flavor = 'sacima', 
+  dad1966 = 'ZK4ZoCewr0E',
   flour = 270,
   eggYolk_pc = 3, eggWhite_pc = 3,
   NaHCO3 = 1)
