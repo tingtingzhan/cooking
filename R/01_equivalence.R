@@ -392,7 +392,7 @@ show_endpoint <- function(x) {
 #' 
 #' @param object \linkS4class{recipeDx} object
 #' 
-#' @importFrom cli.tzh print_ANSI_matrix
+# @importFrom cli.tzh print_ANSI_matrix
 #' @export
 setMethod(f = show, signature = signature(object = 'recipeDx'), definition = function(object) {
   ret <- format.recipeDx(object)

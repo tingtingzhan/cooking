@@ -165,7 +165,9 @@ KingArthur_selfRising <- function() new(
 
 
 KingArthur_selfRising_homemade <- function() new(
-  Class = 'recipe', alias_flavor = 'Homemade Self-Rising Flour',
+  Class = 'recipe', 
+  alias_flavor = 'Homemade Self-Rising Flour',
+  author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',
   flour = 120,
   bakingPowder_tsp = 1.5,

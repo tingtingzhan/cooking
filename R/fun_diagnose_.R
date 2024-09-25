@@ -10,7 +10,7 @@
 #' @param dots a \link[base]{list} of objects convertible to \linkS4class{recipe} class
 #' 
 #' @importFrom stats median.default
-#' @importFrom cli.tzh print_ANSI_matrix
+# @importFrom cli.tzh print_ANSI_matrix
 #' @export
 diagnose_ <- function(..., dots = list(...)) {
   

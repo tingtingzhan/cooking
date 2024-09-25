@@ -156,6 +156,8 @@ Nutrition information.
 
 \item{\code{twinings}}{\link[base]{character} scalar}
 
+\item{\code{whistlepigwhiskey}}{\link[base]{character} scalar}
+
 \item{\code{yogi}}{\link[base]{character} scalar}
 
 \item{\code{machine}}{\link[base]{function}}

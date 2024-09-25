@@ -17,7 +17,7 @@ SavannaOrchards_cashewAlmondPecanPistachio <- function() new(
 
 Greenmax_blackSesame <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', url_ = 'https://www.greenmax.com.tw/product_view.php?id=62772'),
+  brand = unclass(style_hyperlink(text = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', url = 'https://www.greenmax.com.tw/product_view.php?id=62772')),
   name = '\u9ed1\u829d\u9ebb\u7c89 Black Sesame Powder',
   usd = 5.99/400*40,
   servingGram = 40, 

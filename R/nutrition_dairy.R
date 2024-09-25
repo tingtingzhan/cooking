@@ -304,7 +304,7 @@ TraderJoes_heavyCream <- function() new( #
 
 NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'www.naturalbynaturedairy.com/heavy-cream', text = 'Nature By Nature')), 
+  brand = unclass(style_hyperlink(url = 'https://www.naturalbynaturedairy.com/heavy-cream', text = 'Nature By Nature')), 
   name = '\u91cd\u5976\u6cb9 Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   fat = 6, water = 15 * .577)
@@ -312,7 +312,7 @@ NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
 
 LandOLakes_whippedHeavyCream <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(url = 'www.landolakes.com/where-to-buy/aerosol-whipped-cream/', text = 'Land O Lakes')), 
+  brand = unclass(style_hyperlink(url = 'https://www.landolakes.com/where-to-buy/aerosol-whipped-cream/', text = 'Land O Lakes')), 
   name = '\u6253\u53d1\u91cd\u5976\u6cb9 Whipped Heavy Cream',
   costcoBiz = '100284038',
   servingGram = 6, servingTbsp = 2,

@@ -23,7 +23,7 @@ Meyenberg_goatWhole_drymilk <- function() new(
 
 Carnation_drymilk <- function() new(
   Class = 'nutrition', #nestle = '12428935',
-  brand = styleURL(text_ = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url_ = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz'),
+  brand = unclass(style_hyperlink(text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz')),
   name = '\u8131\u8102\u5976\u7c89 Nonfat Dry Milk',
   walmart = '978118310', usd = 4.48/272*23, # April 2024; $4.48 in store
   target = 'A-13898456', #usd = 4.89/272*23, # Feb 2024
@@ -96,7 +96,7 @@ BobsRedMill_drymilk <- function() new(
 
 Horizon_whole_drymilk <- function() new(
   Class = 'nutrition', 
-  brand = styleURL(text_ = 'Horizon\U1f1fa\U1f1f8', url_ = 'https://horizon.com/organic-dairy-products/organic-milk/organic-dry-whole-milk/'),
+  brand = unclass(style_hyperlink(text = 'Horizon\U1f1fa\U1f1f8', url = 'https://horizon.com/organic-dairy-products/organic-milk/organic-dry-whole-milk/')),
   name = '\u5168\u8102\u5976\u7c89 Dry Whole Milk',
   sams = 'prod25791985', usd = 23.22/(30.6*28.35)*29,
   walmart = '548381598', # usd = 26.94/(30.6*28.35)*29,

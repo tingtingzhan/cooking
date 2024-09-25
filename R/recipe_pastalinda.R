@@ -68,13 +68,13 @@ setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
     'lasagna, Emile Henry Oval Individual, 2x thru Thickness-8' = 16, # 20g, Thickness 9, confirmed.  a little too thick for me
     
     '\u6e05\u6c64\u8584\u9762\U1f35c thin noodle; 2x thru Thickness-8' = 100 # 2x thru Thickness 9 too thin
-  ), 
-  youtube = c(
-    'PinNuo makes wonton' = 'XzVsRPwGmuE', 
-    'Another wonton' = 'TuDmgV3z-_s'
   )
 ))
 
+#youtube = c(
+#  'PinNuo makes wonton' = 'XzVsRPwGmuE', 
+#  'Another wonton' = 'TuDmgV3z-_s'
+#)
 
 #' @rdname pastalinda
 #' @export

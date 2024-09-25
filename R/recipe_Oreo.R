@@ -26,7 +26,7 @@ KingArthur_fauxReo <- function() new(
   vanilla_tsp = 1,
   flour = 180,
   cocoa = c(KingArthur_blackCocoa = 64),
-  kingarthur = 'faux-reos-recipe')
+  author = 'pj-hamel', kingarthur = 'faux-reos-recipe')
 
 
 if (FALSE) {

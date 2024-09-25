@@ -1,21 +1,21 @@
 # dried fruits
 OceanSpray_cranberry <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
+  brand = unclass(style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
   name = 'Dried Cranberries',
   costco = '100400518',
   servingGram = 40, sugar = 29)
 
 SunnyFruit_fig <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
+  brand = unclass(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
                   name = 'Dried Figs',
   costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
 SunnyFruit_date <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
+  brand = unclass(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
   name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 

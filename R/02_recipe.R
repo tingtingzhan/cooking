@@ -231,7 +231,7 @@ setClass(Class = 'recipe', slots = c(
   
   url = 'character',
   allrecipes = 'character',
-  preppykitchen = 'character',
+  preppykitchen = 'character', # must len-1
   kingarthur = 'character',
   youtube = 'character',
   doi = 'character',
@@ -536,7 +536,7 @@ get_flavor_ <- function(x) {
 #' 
 #' @param x a \linkS4class{recipe} object
 #' 
-#' @importFrom cli.tzh styleURL
+# @importFrom cli.tzh styleURL
 #' @export
 recipe <- function(x) {
   
@@ -738,18 +738,26 @@ recipe <- function(x) {
       }
     } # before `if (!length(x@author))` !!!
     
-    if (!length(x@author)) {
-      if (length(x@preppykitchen)) {
-        x@author <- paste(
-          unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)[1L]), text = 'Preppy')),
-          unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen[1L]), text = 'Kitchen'))
-        )
-        x@preppykitchen <- x@preppykitchen[-1L]
-      } else if (length(x@kingarthur)) {
-        x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur'))
-        x@kingarthur <- x@kingarthur[-1L]
-      } #else do nothing
+    if (length(x@preppykitchen)) {
+      if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
+      if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
+      x@author <- paste(
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
+      )
+      x@preppykitchen <- character()
+    } 
+    
+    if (length(x@kingarthur)) {
+      if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
+      if (!length(x@author)) stop('King Arthur employee name?')
+      x@author <- paste(
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/author/%s', x@author), text = 'Recipe'))
+      )
+      x@kingarthur <- character()
     }
+
     x@alias_class <- paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m'))
   }
   
@@ -1266,7 +1274,7 @@ nutrition.recipe <- function(x) {
 #' 
 #' @param object \linkS4class{recipe} object
 #'
-#' @importFrom cli.tzh styleURL
+# @importFrom cli.tzh styleURL
 #' @export
 setMethod(f = show, signature = signature(object = 'recipe'), definition = function(object) {
   
@@ -1510,20 +1518,12 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
     cat('\n')
   }
   
-  if (length(object@url) || length(object@youtube) || length(object@doi) || length(object@preppykitchen) || length(object@kingarthur)) {
+  if (length(object@url) || length(object@youtube) || length(object@doi)) {
     
     cat('Reference:\n')
     if (length(object@url)) cat(styleURL(url_ = object@url, text_ = names(object@url)), sep = '\n')
     if (length(object@youtube)) cat(styleURL(url_ = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text_ = names(object@youtube)), sep = '\n')
     if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
-    if (length(object@preppykitchen)) {
-      mapply(FUN = function(youtube, preppykitchen) {
-        cat(styleURL(url_ = c(youtube, preppykitchen)), sep = ' \u2726 ')
-      }, 
-      youtube = sprintf(fmt = 'youtu.be/%s', names(object@preppykitchen)),
-      preppykitchen = sprintf(fmt = 'preppykitchen.com/%s/', object@preppykitchen))
-    }
-    if (length(object@kingarthur)) cat(styleURL(url_ = sprintf(fmt = 'www.kingarthurbaking.com/recipes/%s', object@kingarthur)), sep = '\n')
     cat('\n')
     
   }

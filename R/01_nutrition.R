@@ -92,6 +92,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot swissmiss \link[base]{character} scalar
 #' @slot thaikitchen \link[base]{character} scalar
 #' @slot twinings \link[base]{character} scalar
+#' @slot whistlepigwhiskey \link[base]{character} scalar
 #' @slot yogi \link[base]{character} scalar
 #' 
 #' 
@@ -200,6 +201,7 @@ setClass(Class = 'nutrition', slots = c(
   swissmiss = 'character',
   thaikitchen = 'character',
   twinings = 'character',
+  whistlepigwhiskey = 'character',
   yogi = 'character',
   
   machine = 'function',
@@ -382,7 +384,10 @@ nutrition.nutrition <- function(x) {
     } else if (length(x@raos)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f96b\U1f1fa\U1f1f8'))
     } else if (length(x@runamok)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://runamokmaple.com/shop/product/%s', x@runamok), text = 'Runamok\U1f1fa\U1f1f8'))
+      runamok_ <- unclass(style_hyperlink(url = sprintf(fmt = 'https://runamokmaple.com/shop/product/%s', x@runamok), text = 'Runamok\U1f1fa\U1f1f8'))
+      if (length(x@whistlepigwhiskey)) {
+        paste(runamok_, unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.whistlepigwhiskey.com/products/%s', x@whistlepigwhiskey), text = 'Whistlepig\U1f1fa\U1f1f8')), sep = ' + ')
+      } else runamok_
     } else if (length(x@simplyorganic)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text = 'Simply Organic\U1f1fa\U1f1f8'))
     } else if (length(x@starbucks)) {
@@ -638,7 +643,7 @@ autoVolume <- function(x, nm = names(x)) {
 #' 
 #' @return nothing is returned
 #' 
-#' @importFrom cli.tzh styleURL
+# @importFrom cli.tzh styleURL
 #' @export
 setMethod(f = show, signature = signature(object = 'nutrition'), definition = function(object) {
   

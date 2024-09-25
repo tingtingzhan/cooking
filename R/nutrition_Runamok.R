@@ -17,9 +17,10 @@ Runamok_rum <- function() new(
   usd = 18.95/250*60) # 2023-11-09
 
 Runamok_ryeWhisky <- function() new(
-  Class = 'nutrition', runamok = 'whistlepig-rye-whiskey-barrel-aged-maple-syrup',
-  url = 'shop.whistlepigwhiskey.com/products/barrel-aged-maple-syrup',
-  name = '\u9152\u6876\u67ab\u7cd6\u6d46 WhistlePig Rye Whiskey Barrel-Aged Maple\U1f341 Syrup',
+  Class = 'nutrition', 
+  runamok = 'whistlepig-rye-whiskey-barrel-aged-maple-syrup',
+  whistlepigwhiskey = 'barrel-aged-maple-syrup',
+  name = '\u9152\u6876\u67ab\u7cd6\u6d46 Rye Whiskey Barrel-Aged Maple\U1f341 Syrup',
   # full bottle 948g
   servingGram = 40, # my guess, yet
   serving_ml = 30,
