@@ -239,7 +239,7 @@ SweetDumpling_matcha_icecream <- function() new(
 #' @export
 cuisinart_icecream <- function() new(
   Class = 'recipe', author = 'Cuisinart', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
-  url = 'www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
+  url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
   milk = 250, # 1 cup
   sugar = 150, # ¾ cup granulated sugar 
   heavyCream = 500, # 2 cups heavy cream 
@@ -250,7 +250,7 @@ cuisinart_icecream <- function() new(
 #' @export
 cooking23s_icecream <- function() new(
   Class = 'recipe', author = 'cooking23s', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
-  url = 'cooking23s.blogspot.com/2021/05/ice-cream.html',
+  url = 'https://cooking23s.blogspot.com/2021/05/ice-cream.html',
   condensedMilk = 100,
   heavyCream = 200,
   milk = 50)
@@ -260,7 +260,7 @@ cooking23s_icecream <- function() new(
 #' @export
 Yumna_icecream <- function() new(
   Class = 'recipe', author = 'Yumna', alias_flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
-  url = 'feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
+  url = 'https://feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
   cottageCheese = 425, # 15 oz,
   sugar = 80 # 1/4 cup of honey weighs 85 grams
 )

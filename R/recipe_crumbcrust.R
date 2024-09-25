@@ -71,7 +71,7 @@ crumbcrust <- function() new(Class = 'crumbcrust')
 #flavor = c(HoneyMaid_graham = 170), # 2 cups
 #butter = 113, # 8 tablespoons, .5 cup
 # sugar = 50, # original
-#url = 'preppykitchen.com/graham-cracker-crust' # cannot find youtube link
+#url = 'https://preppykitchen.com/graham-cracker-crust' # cannot find youtube link
 
 #' @title Other People's Graham Crust
 #' 
@@ -123,7 +123,7 @@ PreppyKitchen_grahamCrust5 <- function() new(
 Keebler_grahamCrust <- function() new(
   Class = 'nutrition',
   brand = 'Keebler', name = 'Graham Crust',
-  url = 'www.keebler.com/en/sweet-treat/pie-crusts/graham/ready-crust-graham-cracker',
+  url = 'https://www.keebler.com/en/sweet-treat/pie-crusts/graham/ready-crust-graham-cracker',
   wegmans = 260909L, usd = 2.99/170*21,
   servingGram = 21, fat = 5, sodium = .115, sugar = 6, addedSugar = 5, protein = 1)
 
@@ -152,12 +152,12 @@ MiDel_grahamCrust <- function() new(
 
 MiDel_chocolateCrust <- function() new(
   Class = 'nutrition', 
-  url = 'midelcookies.com/products/chocolate-snap-pie-crust/',
+  url = 'https://midelcookies.com/products/chocolate-snap-pie-crust/',
   servingGram = 25, fat = 4.5, sodium = .07, sugar = 9, protein = 1)
 
 
 DiamondNuts_chocolateCrust <- function() new(
-  Class = 'nutrition', url = 'shop.diamondnuts.com/collections/nut-pie-crusts/products/6-oz-ready-to-use-chocolate-nut-pie-crust',
+  Class = 'nutrition', url = 'https://shop.diamondnuts.com/collections/nut-pie-crusts/products/6-oz-ready-to-use-chocolate-nut-pie-crust',
   wegmans = 25249000L,
   servingGram = 21, fat = 7, sodium = .08, sugar = 4, protein = 2)
 # https://shop.diamondnuts.com/collections/nut-pie-crusts

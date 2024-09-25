@@ -31,7 +31,7 @@ if (FALSE) {
       pastryFlour = 10,
       starch = c(Wegmans_corn = 20, sweetPotato = 20),
       youtube = '-fShmay74zA',
-      url = 'zhuanlan.zhihu.com/p/19826307')
+      url = 'https://zhuanlan.zhihu.com/p/19826307')
   
   # https://www.youtube.com/watch?v=9BmtwhErZHM
 }

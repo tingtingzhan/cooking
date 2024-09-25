@@ -37,7 +37,7 @@ JustOne_udon <- function() new(
   flour = 200, # 7 oz
   water = 90, # 6tbsp, 89g
   salt = 10, # 0.35 oz
-  url = 'www.justonecookbook.com/udon-noodles/')
+  url = 'https://www.justonecookbook.com/udon-noodles/')
 
 
 

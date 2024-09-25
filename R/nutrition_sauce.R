@@ -97,11 +97,11 @@ Hellmanns_mayonnaise_lite <- function() new(
 
 Dukes_mayonnaise <- function() new(
   Class = 'nutrition', 
-  url = 'dukesmayo.com/products/real-mayonnaise',
+  url = 'https://dukesmayo.com/products/real-mayonnaise',
   servingTbsp = 1, servingGram = 14, fat = 12, sodium = .07)
 
 DukesLight_mayonnaise <- function() new(
-  Class = 'nutrition', url = 'dukesmayo.com/products/light-mayonnaise',
+  Class = 'nutrition', url = 'https://dukesmayo.com/products/light-mayonnaise',
   servingTbsp = 1, servingGram = 15, fat = 5, sodium = .1)
 
 

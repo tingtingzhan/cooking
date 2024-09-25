@@ -27,7 +27,7 @@ Greenmax_blackSesame <- function() new(
 
 Jbasket_whiteSesame <- function() new(
   Class = 'nutrition', wegmans = 54348L,
-  url = 'www.jfc.com/product/item/40444',
+  jfc = '40444',
   brand = 'J-Basket', name = '\u719f\u767d\u829d\u9ebb Roasted White Sesame Seed',
   servingGram = .7, servingTsp = 1/4 # packaging
 )

@@ -474,9 +474,9 @@ sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(I
 #' @rdname matchaLatte
 #' @export
 Ippodo_sayakaLatte <- function() new(
-  Class = 'ippodo',
+  Class = 'recipe',
   alias_flavor = 'Sayaka Latte', 
-  url = 'ippodotea.com/products/sayaka-100g',
+  ippodotea = 'sayaka-100g',
   matcha = c(Ippodo_sayaka = 3), # matcha 1.5%
   water80 = 100, milk = 96)
 
@@ -583,7 +583,7 @@ SwissMiss_simplyCocoaMilk <- function() new(
 #' @rdname drink
 #' @export
 Nestle_richChocolate <- function() new(
-  Class = 'nutrition', url = 'www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
+  Class = 'nutrition', url = 'https://www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
   brand = 'Nestl\u00e9\U1f1e8\U1f1ed', name = 'Rich Chocolate',
   servingGram = 20, fat = 2, sodium = .19, carbohydrate = 15, sugar = 12, addedSugar = 10)
 
@@ -741,7 +741,7 @@ Starbucks_matchaFrappuccino <- function() new(
 #' @rdname matchaLatte
 #' @export
 Starbucks_matchaLatteMix <- function() new(
-  Class = 'nutrition', url = 'www.yamibuy.com/en/p/premium-mixes-matcha-latte-instant-coffee-powder-96g/3156004631',
+  Class = 'nutrition', url = 'https://www.yamibuy.com/en/p/premium-mixes-matcha-latte-instant-coffee-powder-96g/3156004631',
   brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Matcha\U1f375 Latte Mix',
   usd = 10.99/4,
   servingGram = 24, 
@@ -757,7 +757,7 @@ bargainmums_mocha <- function() new(
   coffee = 30, 
   cocoaDutch = c(KingArthur_Bensdorp = 50), 
   sugar = 100, drymilk = 110, vanilla_tsp = 1,
-  url = 'bargainmums.com.au/homemade-mocha-mix')
+  url = 'https://bargainmums.com.au/homemade-mocha-mix')
 
 
 #' @rdname mocaccino
@@ -775,7 +775,7 @@ Rebecca_mocha <- function() new(
 #' @export
 Pillsbury_mocha <- function() new(
   Class = 'recipe', author = 'Pillsbury', alias_flavor = 'Mocha',
-  url = 'www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
+  url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   spice_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5,
   coffee_cup = c(NescafeGold_espresso_blonde = 3/4),
@@ -797,7 +797,7 @@ EarlaTaylor_cocoa <- function() new(
 #' @export
 Mels_cocoa <- function() new(
   Class = 'recipe', author = 'Mel\'s', alias_flavor = 'Cocoa Mix',
-  url = 'www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
+  url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
   drymilk = 405,
   sugar = 228,
   cocoa = c(KingArthur_Bensdorp = 128),
@@ -809,7 +809,7 @@ Mels_cocoa <- function() new(
 #' @export
 AmandaRettke_cocoa <- function() new(
   Class = 'recipe', author = 'Amanda Rettke', alias_flavor = 'Cocoa Mix',
-  url = 'iambaker.net/hot-cocoa-mix-recipe/',
+  url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
   sugar = 250,
   cocoa = c(KingArthur_Bensdorp = 118),
   drymilk = 170,

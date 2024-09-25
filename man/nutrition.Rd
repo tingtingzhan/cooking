@@ -78,6 +78,8 @@ Nutrition information.
 
 \item{\code{bouchard}}{\link[base]{character} scalar}
 
+\item{\code{countrytime}}{\link[base]{character} scalar}
+
 \item{\code{daisybrand}}{\link[base]{character} scalar}
 
 \item{\code{domino}}{\link[base]{character} scalar}

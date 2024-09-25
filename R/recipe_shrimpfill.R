@@ -215,7 +215,8 @@ Wegmans_garlicShrimp <- function() new(
 #' @rdname shrimpfill
 #' @export
 Daat_shrimpfill <- function() new(
-  Class = 'daatgo', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'SYLIYqVV2N4',
+  Class = 'recipe', alias_flavor = '\u867e\U1f990\u997a\u9985', 
+  daatgo = 'SYLIYqVV2N4',
   shrimp = 600, lard = 30, pork = c(fat = 120),
   vegetable = c(bambooShoot = 90),
   starch = c(Wegmans_corn = 13),

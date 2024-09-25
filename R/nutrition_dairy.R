@@ -1,7 +1,7 @@
 
 
 FageTotal0_yogurtGreek <- function() new(
-  Class = 'nutrition', url = 'usa.fage/products/yogurt/fage-total-0',
+  Class = 'nutrition', url = 'https://usa.fage/products/yogurt/fage-total-0',
   brand = 'Fage Total 0%', name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
   servingGram = 170, 
   servingCup = 3/4, # packaging
@@ -22,7 +22,7 @@ MembersMark_yogurtGreek <- function() new(
 
 
 SimpleTruth_yogurt <- function() new(
-  Class = 'nutrition', url = 'www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
+  Class = 'nutrition', url = 'https://www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
   brand = 'Simple Truth Organic', name = '\u4f4e\u8102\u9178\u5976 Low-Fat Yogurt',
   servingGram = 170, servingCup = 2/3,
   fat = 2.5, sodium = .110, sugar = 12, protein = 8,
@@ -31,7 +31,7 @@ SimpleTruth_yogurt <- function() new(
 
 
 Stonyfield_yogurt <- function() new(
-  Class = 'nutrition', url = 'www.stonyfield.com/products/nonfat-yogurt-plain-32-oz/',
+  Class = 'nutrition', url = 'https://www.stonyfield.com/products/nonfat-yogurt-plain-32-oz/',
   brand = 'Stonyfield Organic', name = '\u9178\u5976 Yogurt',
   wegmans = 33829L, usd = 4.99/907*170,
   servingGram = 170, servingCup = 3/4,
@@ -88,7 +88,7 @@ CarnationFatFree_evaporatedMilk <- function() new(
 
 
 Carnation_condensedMilk <- function() new(
-  Class = 'nutrition', url = 'www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
+  Class = 'nutrition', url = 'https://www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
   usd = 2.99/10,
@@ -140,7 +140,7 @@ GreatValueNeufchatel_creamCheese <- function() new(
 
 
 OrganicValleyNeufchatel_creamCheese <- function() new(
-  Class = 'nutrition', url = 'www.organicvalley.coop/products/cream-cheese/neufchatel/neufchatel-8-oz-bar/',
+  Class = 'nutrition', url = 'https://www.organicvalley.coop/products/cream-cheese/neufchatel/neufchatel-8-oz-bar/',
   brand = 'Organic Valley', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
   servingGram = 28, fat = 6, sodium = .115, sugar = 1, protein = 2)
 

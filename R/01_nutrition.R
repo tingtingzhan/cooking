@@ -53,6 +53,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot belgioioso \link[base]{character} scalar
 #' @slot bobsredmill \link[base]{character} scalar
 #' @slot bouchard \link[base]{character} scalar
+#' @slot countrytime \link[base]{character} scalar
 #' @slot daisybrand \link[base]{character} scalar
 #' @slot domino \link[base]{character} scalar
 #' @slot epicprovisions \link[base]{character} scalar
@@ -161,6 +162,7 @@ setClass(Class = 'nutrition', slots = c(
   belgioioso = 'character',
   bobsredmill = 'character',
   bouchard = 'character',
+  countrytime = 'character',
   daisybrand = 'character',
   domino = 'character',
   epicprovisions = 'character',
@@ -301,6 +303,8 @@ nutrition.nutrition <- function(x) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.bobsredmill.com/%s.html', x@bobsredmill), text = 'Bob\'s Red Mill\U1f1fa\U1f1f8'))
     } else if (length(x@bouchard)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://bouchardchocolate.com/products/%s', x@bouchard), text = 'Bouchard\U1f1e7\U1f1ea'))
+    } else if (length(x@countrytime)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/country-time/products/%s', x@countrytime), text = 'Country Time\U1f1fa\U1f1f8'))
     } else if (length(x@daisybrand)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.daisybrand.com/%s', x@daisybrand), text = 'Daisy\U1f1fa\U1f1f8'))
     } else if (length(x@domino)) {
@@ -330,9 +334,10 @@ nutrition.nutrition <- function(x) {
     } else if (length(x@kahlua)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kahlua.com/en-us/products/%s', x@kahlua), text = 'Kahlu\u0301a\U1f1f2\U1f1fd'))
     } else if (length(x@kerrygold)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://kerrygold.com/products/%s', x@kerrygold), text = 'Kerrygold\U1f1ee\U1f1ea'))
-    } else if (length(x@kerrygoldusa)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s', x@kerrygoldusa), text = 'Kerrygold\U1f1ee\U1f1ea'))
+      kg_ <- unclass(style_hyperlink(url = sprintf(fmt = 'https://kerrygold.com/products/%s', x@kerrygold), text = 'Kerrygold\U1f1ee\U1f1ea'))
+      if (length(x@kerrygoldusa)) {
+        paste(kg_, unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s', x@kerrygoldusa), text = '\U1f1fa\U1f1f8')), sep = ' + ')
+      } else kg_
     } else if (length(x@kikkomanusa)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://kikkomanusa.com/foodservice/products/%s', x@kikkomanusa), text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5'))
     } else if (length(x@kingarthur)) {

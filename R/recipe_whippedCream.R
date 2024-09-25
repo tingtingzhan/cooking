@@ -321,7 +321,7 @@ tiramisu_nytimes <- function() new(
   sugar = 100, 
   heavyCream = c(Wegmans = 180),
   mascarpone = 453/2,
-  url = 'cooking.nytimes.com/recipes/1018684-classic-tiramisu')
+  url = 'https://cooking.nytimes.com/recipes/1018684-classic-tiramisu')
 
 
 
@@ -333,7 +333,7 @@ foodandjourneys_mascarponeFrosting <- function() new(
   sugar_cup = 1/3, # powdered sugar!
   # ▢ 1 vanilla bean, seeded
   lightCream = 240, # ▢ 1 cup light cream, chilled
-  url = 'foodandjourneys.net/how-to-make-mascarpone-cream/')
+  url = 'https://foodandjourneys.net/how-to-make-mascarpone-cream/')
 
 #' @rdname whippedCream
 #' @export
@@ -342,7 +342,7 @@ lifeloveandsugar_mascarponeFrosting <- function() new(
   heavyCream = 300, # 1 1/4 cups
   sugar_cup = 3/4,
   vanilla_tsp = 1,
-  url = 'www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
+  url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
 #' @rdname whippedCream
 #' @export
@@ -352,7 +352,7 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
   sugar_cup = 1/2,
   cocoa_cup = 1/4,
   vanilla_tsp = 1,
-  url = 'www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
+  url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
 #' @rdname whippedCream
 #' @export
@@ -362,7 +362,7 @@ Marcellina_mascarponeFrosting <- function() new(
   heavyCream = 240, # 1 cup (250 milliliters)whipping cream full fat
   sugar_cup = 1/4, # powdered sugar!
   vanilla_tsp = 2,
-  url = 'www.marcellinaincucina.com/mascarpone-cream/')
+  url = 'https://www.marcellinaincucina.com/mascarpone-cream/')
 
 
 

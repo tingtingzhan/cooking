@@ -87,8 +87,8 @@ coconut_lava_OLD <- function() new(
 #' @rdname lava
 #' @export
 Daat_sesamelava <- function() new(
-  Class = 'daatgo', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
-  youtube = 'FvS_W_qnlxc',
+  Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  daatgo = 'FvS_W_qnlxc',
   blackSesame = 160+20,
   # 黑芝麻酱  Black sesame paste 20g ???
   water = 450,
@@ -134,7 +134,7 @@ xiaogaojie_sesamelava <- function() new(
 
 
 daat_yolklava <- function() new(
-  Class = 'daatgo', alias_flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
+  Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
   eggYolk_pc = 12, # salted duck egg yolk 12pc, 144g
   butter = 180,
   sugar = 220,
@@ -142,7 +142,7 @@ daat_yolklava <- function() new(
   starch = c(Wegmans_corn = 35),
   gelatin = 12,
   water = 90,
-  youtube = '1h6YFS2KGA0')
+  daatgo = '1h6YFS2KGA0')
 
 
 # not a good idea

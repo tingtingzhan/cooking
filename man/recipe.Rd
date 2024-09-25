@@ -335,9 +335,13 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{allrecipes}}{\link[base]{character} scalar}
 
-\item{\code{preppykitchen}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{preppykitchen.com} of original recipe}
+\item{\code{daatgo}}{\link[base]{character} scalar}
 
-\item{\code{kingarthur}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{www.kingarthurbaking.com} of original recipe}
+\item{\code{ippodotea,ippodoteajpn}}{\link[base]{character} scalar}
+
+\item{\code{kingarthur}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe}
+
+\item{\code{preppykitchen}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{preppykitchen.com} of original recipe}
 
 \item{\code{youtube}}{\link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe}
 

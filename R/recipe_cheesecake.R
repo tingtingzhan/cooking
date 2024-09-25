@@ -312,7 +312,7 @@ Junior_cookbook <- function() new(
   vanilla_Tbsp = 1,
   egg_pc = 2,
   heavyCream = c(Wegmans = 180), # 3/4 cup heavy cream
-  url = 'www.juniorscheesecake.com/juniors-cheesecake-cookbook')
+  url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')
 
 #' @rdname cheesecake
 #' @export
@@ -361,7 +361,7 @@ pumpkin_cheesecake_NatashasKitchen <- function() new(
   salt_tsp = 1/4,
   vanilla_Tbsp = 1,
   pumpkinSpice_tsp = 2,
-  url = 'natashaskitchen.com/pumpkin-cheesecake-recipe/')
+  url = 'https://natashaskitchen.com/pumpkin-cheesecake-recipe/')
 
 #' @rdname cheesecake
 #' @export
@@ -376,7 +376,7 @@ pumpkin_cheesecake_Junior <- function() new(
   pumpkin = 244, # 1 cup; original
   brownSugar = 130,
   pumpkinSpice_tsp = 1,
-  url = 'www.juniorscheesecake.com/juniors-cheesecake-cookbook'
+  url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook'
 )
 
 #' @rdname cheesecake
@@ -391,7 +391,7 @@ cappuccino_cheesecake_Junior = function() new(
   vanilla_Tbsp = 1,
   egg_pc = 2,
   heavyCream = 180, # .75 cup
-  url = 'www.juniorscheesecake.com/juniors-cheesecake-cookbook')
+  url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')
 
 
 #' @rdname cheesecake

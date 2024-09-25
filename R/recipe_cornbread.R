@@ -128,7 +128,7 @@ JoshuaWeissman_cornbread <- function() new(
   egg_pc = 2,
   buttermilk = 350, # 1.5 cup 
   youtube = 'et5OlhhD2Bo',
-  url = 'www.joshuaweissman.com/post/homemade-cornbread'
+  url = 'https://www.joshuaweissman.com/post/homemade-cornbread'
 )
 
 

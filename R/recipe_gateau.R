@@ -119,7 +119,7 @@ pumpkin_gateau <- function() new(
 #' @export
 AddaPinch_chocolate_cake <- function() new(
   Class = 'recipe', author = 'Add-A-Pinch', alias_flavor = 'Chocolate Cake',
-  url = 'addapinch.com/the-best-chocolate-cake-recipe-ever/',
+  url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   flour = 240, sugar = 396,
   cocoa = 63, coffee = 2.3,
   bakingPowder_tsp = 2, NaHCO3_tsp = 1.5, salt = 2.8,
@@ -154,7 +154,7 @@ DessertFor2_matcha_cake <- function() new(
   flour = 120,
   bakingPowder_tsp = 1,
   buttermilk = 240/3, # ⅓ cup buttermilk
-  url = 'www.dessertfortwo.com/matcha-cake/')
+  url = 'https://www.dessertfortwo.com/matcha-cake/')
 
 
 #' @rdname gateau
@@ -173,7 +173,7 @@ Sallys_pumpkin_cake <- function() new(
   sugar = 100,
   pumpkin = 425, #1 (15 ounce) can pumpkin puree*
   vanilla_tsp = 1.5,
-  url = 'sallysbakingaddiction.com/best-pumpkin-cake/#tasty-recipes-67484')
+  url = 'https://sallysbakingaddiction.com/best-pumpkin-cake/#tasty-recipes-67484')
 
 
 

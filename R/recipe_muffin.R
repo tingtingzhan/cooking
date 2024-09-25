@@ -54,7 +54,8 @@ Brody_muffin <- function() new(
 #' @rdname muffin
 #' @export
 Introvert_muffin = function() new(
-  Class = 'recipe', author = 'Introvert', alias_flavor = 'Muffin', url = 'www.bakedbyanintrovert.com/basic-muffin-recipe/',
+  Class = 'recipe', author = 'Introvert', alias_flavor = 'Muffin', 
+  url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   flour = 260, # author wrote 2 cup
   sugar = 100,
   bakingPowder_tsp = 2,
@@ -67,7 +68,8 @@ Introvert_muffin = function() new(
 #' @rdname muffin
 #' @export
 CulinaryHill_muffin <- function() new(
-  Class = 'recipe', author = 'Culinary Hill', alias_flavor = 'Muffin', url = 'www.culinaryhill.com/blueberry-muffins/',
+  Class = 'recipe', author = 'Culinary Hill', alias_flavor = 'Muffin', 
+  url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = 240,
   sugar = 200,
   bakingPowder_tsp = 2,

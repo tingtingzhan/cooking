@@ -63,7 +63,7 @@ setClass(Class = 'geng', contains = 'recipe', prototype = prototype(
 ))
 
 #youtube = c('\u5218\u7238\u7238' = 'dBXeW0vyiNc')
-#url = 'www.madewithlau.com/recipes/hot-sour-soup'
+#url = 'https://www.madewithlau.com/recipes/hot-sour-soup'
 #youtube = c('\u738b\u521a, \u7528\u80e1\u6912\u4e0d\u8981\u7528\u8fa3\u6912' = 'mQ_2W5zUd44')
 
 # boilingWater = 1183, starch_Tbsp = c(Wegmans_corn = 1), water = 30, egg_pc = 2, # www.madewithlau.com/recipes/hot-sour-soup

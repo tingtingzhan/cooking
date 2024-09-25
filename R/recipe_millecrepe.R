@@ -238,7 +238,7 @@ lisa_mango_millecrepe <- function() new(
 #' @export
 JustOne_matcha_millecrepe <- function() new(
   Class = 'recipe', author = 'Just One', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'vfUu0eedUYI',
-  url = 'www.justonecookbook.com/matcha-mille-crepe-cake/',
+  url = 'https://www.justonecookbook.com/matcha-mille-crepe-cake/',
   milk = 250*1.75, # 1.75 cup
   sugar = 12.5*3, # 3 Tbsp granulated sugar
   egg_pc = 3,

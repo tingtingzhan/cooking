@@ -123,7 +123,7 @@ Natasha_crepe <- function() new(
 #' @rdname crepe
 #' @export
 Daat_crepe <- function() new(
-  Class = 'daatgo', alias_flavor = 'crepe',
+  Class = 'recipe', alias_flavor = 'crepe',
   flour = 230,
   egg_pc = 3,
   milk = 300,
@@ -131,4 +131,4 @@ Daat_crepe <- function() new(
   butter = 15,
   salt = 5,
   sugar = 10,
-  youtube = '0jxG7FEdyRA')
+  daatgo = '0jxG7FEdyRA')

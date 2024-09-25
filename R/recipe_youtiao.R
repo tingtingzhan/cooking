@@ -48,7 +48,7 @@ xiaogaojie_youtiao <- function() new(
 mathstar_youtiao <- function() new(
   Class = 'recipe',
   author = 'MathStar', alias_flavor = '\u6cb9\u6761',
-  url = 'huaren.us/showtopic.html?topicid=3003916&fid=398',
+  url = 'https://huaren.us/showtopic.html?topicid=3003916&fid=398',
   flour = 500,
   bakingPowder = 12, yeast = 6,
   NaHCO3 = 3,

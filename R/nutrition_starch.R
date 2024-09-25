@@ -26,7 +26,7 @@ Wegmans_corn_starch <- function() new(
 
 Argo_corn_starch <- function() new(
   Class = 'nutrition',
-  url = 'www.argostarch.com/products.html',
+  url = 'https://www.argostarch.com/products.html',
   brand = 'Argo\U1f1fa\U1f1f8',
   name = '\u7389\u7c73\u6dc0\u7c89 Corn\U1f33d Starch',
   wegmans = 34585L, usd = 2.49/454*8,

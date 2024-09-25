@@ -59,7 +59,7 @@ JeanPierre_eggnog <- function() new(
   # 2 ounces Bourbon
   # 2 ounces Rum
   youtube = 'N_2vR1bBUdE',
-  url = 'chefjeanpierre.com/recipes/eggnog/')
+  url = 'https://chefjeanpierre.com/recipes/eggnog/')
 
 
 #' @rdname eggnog

@@ -20,9 +20,8 @@ Kerrygold_butter <- function() new(
 
 
 Kerrygold_salted_butter <- function() new(
-  Class = 'nutrition', url = c(
-    'www.kerrygoldusa.com/products/salted-butter/'
-  ),
+  Class = 'nutrition', 
+  kerrygoldusa = 'salted-butter',
   kerrygold = 'kerrygold-pure-irish-salted-butter',
   name = 'Irish Salted Butter\U1f9c8',
   servingGram = 227/16, servingTbsp = 1, 
@@ -37,7 +36,7 @@ Kerrygold_salted_butter <- function() new(
 
 
 Plugra_butter <- function() new(
-  Class = 'nutrition', url = 'plugra.com/product/unsalted_8_oz_solid/',
+  Class = 'nutrition', url = 'https://plugra.com/product/unsalted_8_oz_solid/',
   brand = 'Plugr\u00e0\U1f1fa\U1f1f8', name = 'European Butter\U1f9c8',
   acme = 960051793L, usd = 2.99/16,
   servingGram = 227/16, servingTbsp = 1, 
@@ -49,7 +48,7 @@ Plugra_butter <- function() new(
 
 
 Wuthrich_butter <- function() new(
-  Class = 'nutrition', url = 'www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/',
+  Class = 'nutrition', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/',
   brand = 'Wu\u0308thrich\U1f1fa\U1f1f8', name = 'European Butter\U1f9c8',
   webstaurant = '999RE3120', usd = 7.99/(16*2),
   servingGram = 227/16, servingTbsp = 1, 

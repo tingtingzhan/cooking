@@ -35,7 +35,7 @@ pumpkin_creamCheeseDip <- function() new(
   Class = 'creamCheeseDip', 
   pumpkin = 122,
   sugar = 16,
-  url = 'www.goodlifeeats.com/whipped-pumpkin-cream-cheese-and-8-ways-to-use-leftover-pumpkin/',
+  url = 'https://www.goodlifeeats.com/whipped-pumpkin-cream-cheese-and-8-ways-to-use-leftover-pumpkin/',
   youtube = c(
     ref1 = 'G87HfZjdDwI', 
     ref2 = 'ktyuI7JHQ_Q', 

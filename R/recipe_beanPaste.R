@@ -127,12 +127,12 @@ xiaogaojie_adzukiBeanPaste2 <- function() new(
 
 
 #mungBeanPaste 
-#  url = 'www.douguo.com/cookbook/3142617.html',
+#  url = 'https://www.douguo.com/cookbook/3142617.html',
   
 
 
 #chickpeaPaste 
-#  url = 'www.xiachufang.com/recipe/100548680/')
+#  url = 'https://www.xiachufang.com/recipe/100548680/')
 
 
 #https://www.youtube.com/watch?v=IRZ7Hp74Yc8

@@ -27,5 +27,5 @@ crabCake <- function() new(
   seafood = c(crab_steamed = 454), # 1 pound
   vegetable = c(celeriac = 25, #  .25 cup finely diced celery, from one stalk 
                 parsley = 3.84 * 2), # 2 tablespoons finely chopped fresh parsley
-  url = 'www.onceuponachef.com/recipes/maryland-crab-cakes-with-quick-tartar-sauce.html',
+  url = 'https://www.onceuponachef.com/recipes/maryland-crab-cakes-with-quick-tartar-sauce.html',
   review = 'try')

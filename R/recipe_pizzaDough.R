@@ -13,7 +13,7 @@ setClass(Class = 'pizzaDough', contains = 'recipe', prototype = prototype(
   salt_tsp = .25,
   sugar_tsp = .5,
   youtube = 'WqolY3XZeGU',
-  url = 'www.kitchenaid.co.uk/recipes/perfect-pizza-dough/vip'
+  url = 'https://www.kitchenaid.co.uk/recipes/perfect-pizza-dough/vip'
 ))
 
 

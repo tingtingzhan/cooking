@@ -1,7 +1,7 @@
 
 
 Mazola_corn_oil <- function() new(
-  Class = 'nutrition', url = 'www.mazola.com/products/mazolareg-corn-oil/',
+  Class = 'nutrition', url = 'https://www.mazola.com/products/mazolareg-corn-oil/',
   brand = 'Mazola', name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 

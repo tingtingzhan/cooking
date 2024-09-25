@@ -58,7 +58,7 @@ Motts_applesauce <- function() new(
 
 #ThriveMarket_apple <- function() new(
 #  # ThriveMarket.com now force you to join a paid membership
-#  Class = 'nutrition', url = 'thrivemarket.com/p/thrive-market-organic-apple-sauce',
+#  Class = 'nutrition', url = 'https://thrivemarket.com/p/thrive-market-organic-apple-sauce',
 #  brand = 'Thrive Market', name = 'Applesauce\U1f34e',
 #  servingGram = 140, sodium = .025, sugar = 15) # to try. Ingredient apple only
 

@@ -36,7 +36,7 @@ Leites_pasteisdenata <- function() new(
   water = 236.6 * 2/3, # 2/3 cup water
   vanilla_tsp = 1/2,
   eggYolk_pc = 6,
-  url = 'leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
+  url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
 
 
 TastingTable_pasteisdenata <- function() new(
@@ -48,7 +48,7 @@ TastingTable_pasteisdenata <- function() new(
   milk = 240 * (1 + 6/16), # 1 cup, plus 6 tablespoons, whole milk, divided
   pastryFlour = 120 / 2, # 1/2 cup all-purpose flour
   eggYolk_pc = 6,
-  url = 'www.tastingtable.com/686035/portuguese-egg-tart-recipe-pastry/'
+  url = 'https://www.tastingtable.com/686035/portuguese-egg-tart-recipe-pastry/'
 )
 
 

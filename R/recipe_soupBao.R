@@ -16,8 +16,8 @@ if (FALSE) {
 
 
 Daat_soupBao <- function() new(
-  Class = 'daatgo', alias_flavor = '\u704c\u6c64\u5305',
-  youtube = 'duldrFRGipM',
+  Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
+  daatgo = 'duldrFRGipM',
   flour = 300,
   salt = 3,
   water40 = 175,

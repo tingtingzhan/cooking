@@ -209,8 +209,10 @@
 #' 
 #' @slot url \link[base]{character} scalar or \link[base]{vector}, URL of original recipe
 #' @slot allrecipes \link[base]{character} scalar
+#' @slot daatgo \link[base]{character} scalar
+#' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
+#' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
 #' @slot preppykitchen \link[base]{character} scalar or \link[base]{vector}, link from \url{preppykitchen.com} of original recipe
-#' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{www.kingarthurbaking.com} of original recipe
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 #' @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
@@ -231,8 +233,10 @@ setClass(Class = 'recipe', slots = c(
   
   url = 'character',
   allrecipes = 'character',
-  preppykitchen = 'character', # must len-1
+  daatgo = 'character',
+  ippodotea = 'character', ippodoteajpn = 'character',
   kingarthur = 'character',
+  preppykitchen = 'character', # must len-1
   youtube = 'character',
   doi = 'character',
   
@@ -738,15 +742,23 @@ recipe <- function(x) {
       }
     } # before `if (!length(x@author))` !!!
     
-    if (length(x@preppykitchen)) {
-      if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
-      if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
-      x@author <- paste(
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
-      )
-      x@preppykitchen <- character()
-    } 
+    if (length(x@daatgo)) {
+      if (length(x@daatgo) > 1L) stop('only allow len-1 @daatgo')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@daatgo), text = '\u8fbe\u54e5\u53a8\u623f'))
+      x@daatgo <- character()
+    }
+    
+    if (length(x@ippodotea)) {
+      if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+      x@ippodotea <- character()
+    }
+    
+    if (length(x@ippodoteajpn)) {
+      if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+      x@ippodoteajpn <- character()
+    }
     
     if (length(x@kingarthur)) {
       if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
@@ -758,6 +770,16 @@ recipe <- function(x) {
       x@kingarthur <- character()
     }
 
+    if (length(x@preppykitchen)) {
+      if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
+      if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
+      x@author <- paste(
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
+      )
+      x@preppykitchen <- character()
+    } 
+    
     x@alias_class <- paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m'))
   }
   
@@ -1678,11 +1700,6 @@ setClass(Class = 'pino', contains = 'recipe', prototype = prototype(
   author = '\u54c1\u8bfa'
 ))
 
-setClass(Class = 'daatgo', contains = 'recipe', prototype = prototype(
-  # http://www.pinochina.com # temporarily down
-  author = '\u8fbe\u54e5\u53a8\u623f'
-))
-
 
 setClass(Class = 'happytears', contains = 'recipe', prototype = prototype(
   author = '\u5e78\u798f\u7684\u773c\u6cea'
@@ -1704,9 +1721,6 @@ setClass(Class = 'shangshikitchen', contains = 'recipe', prototype = prototype(
   author = '\u5c1a\u98df\u53a8\u623f'
 ))
 
-setClass(Class = 'ippodo', contains = 'recipe', prototype = prototype(
-  author = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'
-))
 
 
 

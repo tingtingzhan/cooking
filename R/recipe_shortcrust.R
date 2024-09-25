@@ -44,7 +44,7 @@ setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
     'Emile Henry 5in, half-edge' = 70 # ?
     # Half edge: raw dough 84 (=404-320); baked x2 (=x20-320); loose water (x1-x2)/x1 = 5%
   ),
-  url = 'en.wikipedia.org/wiki/Shortcrust_pastry' # 'twice as much flour as fat by weight'
+  url = 'https://en.wikipedia.org/wiki/Shortcrust_pastry' # 'twice as much flour as fat by weight'
   
 ))
 

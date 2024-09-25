@@ -24,7 +24,7 @@ if (FALSE) {
       #milk = 360, # 1 1/2 cups milk
       heavyCream = 100, milk = 490, 
       # 1/4 teaspoon nutmeg # I remove
-      url = 'www.smalltownwoman.com/old-fashioned-silky-creamy-custard-pie/'
+      url = 'https://www.smalltownwoman.com/old-fashioned-silky-creamy-custard-pie/'
   )
   
 }
