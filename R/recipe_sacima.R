@@ -58,7 +58,7 @@ maple_sacima <- function() new(
 sacima <- function() new(
   Class = 'sacima',
   #bakingPowder_tsp = 1/8,
-  #invertSugar = 50,
+  #homemade = c(invertSugar = 50),
   condensedMilk = 80,
   review = 'try'
   #machine = list(

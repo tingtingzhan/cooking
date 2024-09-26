@@ -169,8 +169,6 @@ general recipe
 
 \item{\code{syrup,syrup_tsp,syrup_Tbsp,syrup_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various (maple) syrup}
 
-\item{\code{invertSugar}}{\link[base]{numeric} scalar, weight of homemade invert sugar syrup (in grams)}
-
 \item{\code{NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda}
 
 \item{\code{Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup}}{\link[base]{numeric} scalars,

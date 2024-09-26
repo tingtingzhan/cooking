@@ -106,7 +106,7 @@ xiaogaojie_adzukiBeanPaste1 <- function() new(
   water = 350, # actual water absorbed
   oil = c(Wegmans_corn = 12),
   brownSugar = 75,
-  invertSugar = 80,
+  homemade = c(invertSugar = 80),
   #糖（调整量）24克  2 大勺
   salt_tsp = 1/4,
   xiaogaojie = 'mg1XeWsfHoQ')

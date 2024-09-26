@@ -22,7 +22,8 @@
 #'   sesame_lava,
 #'   subtract(Daat_sesamelava, sugar = 107),
 #'   subtract(xiaogaojie_sesamelava, sugar = 60),
-#'   subtract(FancyNotes_sesamelava, sugar = 40, invertSugar = 7),
+#'   # subtract(FancyNotes_sesamelava, sugar = 40, invertSugar = 7), 
+#'   # don't know how to subtract `@@homemade` yet!!
 #'   subtract(xiaomin_sesamelava, sugar = 20)
 #' )
 #' 
@@ -117,7 +118,7 @@ FancyNotes_sesamelava <- function() new(
   Class = 'recipe', author = '\u4e54\u4e54\u5988', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   blackSesame = 150,
   sugar = 40, 
-  invertSugar = 50, butter = 80,
+  homemade = c(invertSugar = 50), butter = 80,
   youtube = 'PC3YOs77lgE') 
 
 #' @rdname lava

@@ -97,7 +97,6 @@
 #' @slot brownSugar,brownSugar_tsp,brownSugar_Tbsp,brownSugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of dark brown sugar
 #' 
 #' @slot syrup,syrup_tsp,syrup_Tbsp,syrup_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various (maple) syrup
-#' @slot invertSugar \link[base]{numeric} scalar, weight of homemade invert sugar syrup (in grams)
 #' 
 #' @slot NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda
 #' 
@@ -344,8 +343,6 @@ setClass(Class = 'recipe', slots = c(
   
   syrup = 'numeric',
   syrup_tsp = 'numeric', syrup_Tbsp = 'numeric', syrup_cup = 'numeric',
-  
-  invertSugar = 'numeric',
   
   salt = 'numeric', 
   salt_tsp = 'numeric', salt_Tbsp = 'numeric', salt_cup = 'numeric',
@@ -638,7 +635,6 @@ recipe <- function(x) {
   
   # with density info
   x <- combineVol(x, which = 'sugar', name1 = 'US_10x')
-  x <- addNameLen1(x, which = 'invertSugar', name1 = 'invertSugar')
   x <- combineVol(x, which = 'brownSugar', name1 = 'Domino_darkBrown')
   x <- combineVol(x, which = 'drinkmix')
   x <- combineVol(x, which = 'syrup')
@@ -1010,7 +1006,6 @@ nutrition.recipe <- function(x) {
   water <- tmp['water']
   waterCooked <- tmp['water'] - waterLost
   usd <- tmp['usd']
-  #invertSugar <- sum(x@invertSugar)
   
   flour <- sum(x@flour)
   pastryFlour <- sum(x@pastryFlour)
@@ -1073,10 +1068,6 @@ nutrition.recipe <- function(x) {
     #  acid <- sum(acid_weight * acid_rate, na.rm = TRUE)
     #  ideal <- switch(class(x), pancake =, pancakeMix = .0077)
     #  equiv(actual = acid / x@selfRisingFlour, ideal, margin = 1.01)
-    #},
-    # 'Invert Sugar' = if (invertSugar) {
-    #  ideal <- NULL
-    #  equiv(actual = invertSugar / total, ideal)
     #},
     #water = equiv(actual = if (water / total_raw > .8) NA_real_ else water / total_raw),
     water = equiv(actual = water / total_raw),
@@ -1354,12 +1345,6 @@ nutrition.recipe <- function(x) {
 #' @export
 setMethod(f = show, signature = signature(object = 'recipe'), definition = function(object) {
   
-  # I may deal with this in future!
-  #pancakeMix_txt <- if (!inherits(object, 'pancakeMix') && !is.na(rt <- object / pancakeMix())) {
-  #  object <- attr(rt, which = 'e1_other', exact = TRUE)
-  #  sprintf(fmt = 'Pancake Mix: %.0f grams\n', attr(rt, which = 'e2_total', exact = TRUE))
-  #} # else NULL
-  
   object <- recipe(object)
 
   y <- nutrition.recipe(x = object)
@@ -1370,8 +1355,6 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
     cat(format.Date(object@date, format = '%A, %B %e, %Y'), '\n\n')
   }
     
-  #cat(pancakeMix_txt)
-  
   nm_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name', exact = TRUE)
   nm_cli_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name_cli', exact = TRUE)
   
@@ -1487,7 +1470,6 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(riceWhole)], riceWhole))
   
   cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@syrup)], object@syrup, autoVolume(object@syrup)), sep = '') # one or more syrup
-  cat(sprintf(fmt = 'Invert Sugar Syrup %.0f grams\n', object@invertSugar))
   
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
   

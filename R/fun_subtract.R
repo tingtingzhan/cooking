@@ -53,7 +53,6 @@ subtract.recipe <- function(object, ...) {
   }
 
   txt[txt == 'brownSugar'] <- 'sugar'
-  txt[txt == 'invertSugar'] <- 'sugar'
   obj@alias <- sprintf(fmt = '%s \033[0;102m-%s\033[0m', obj@alias, paste0(unique.default(txt), collapse = '/'))
   
   return(obj)
