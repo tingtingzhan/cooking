@@ -69,7 +69,7 @@ chai_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_ul
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
-  flavor = c(soymilk = 600),
+  homemade = c(soymilk = 600), # correct
   brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
   note = c('Freshly brewed soy milk', 'Soak in Stanley 20oz quencher (covered) for 1hr+')
 ))

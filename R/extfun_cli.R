@@ -1,23 +1,15 @@
 
 # illegal use of un-exported functions
-#glue_cmd <- cli:::glue_cmd
-# cli__message <- cli:::cli__message
-#cli__message_create <- cli:::cli__message_create
-#cli__message_emit <- cli:::cli__message_emit
+glue_cmd <- cli:::glue_cmd
+cli__message <- cli:::cli__message
 
 if (FALSE) {
+  #?cli::cli_text # does not have a returned value
   cli::cli_text('Tingting\'s {.run [soymilk](cooking::soymilk())}')
   
   ret0 <- cli:::glue_cmd('Tingting\'s {.run [soymilk](cooking::soymilk())}')
   class(ret0) # cli_glue_delay
-  # inside ?cli:::cli__message
-  ret1 = cli:::cli__message_create(type = 'text', list(text = ret0))
-  class(ret1)
-  getOption("cli.record") # default NULL
-  cli:::cli__message_emit(ret1)
-  cli:::cli__default_handler(ret1)
-  getOption("cli.default_handler") # default NULL
-  cli:::cli_server_default_safe(ret1)
+  cli:::cli__message(type = 'text', args = list(text = ret0))
 }
 
 

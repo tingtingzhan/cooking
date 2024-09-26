@@ -12,6 +12,7 @@
 #' @slot key \link[base]{character} scalar, key diagnosis
 #' @slot date \link[base]{Date} scalar
 #' 
+#' @slot homemade \link[base]{numeric} vector
 #' @slot flavor,flavor_tsp,flavor_Tbsp,flavor_cup \link[base]{numeric} vector, weight of one or more flavoring (in grams)
 #' 
 #' @slot puree \link[base]{numeric} vector, weight of one or more puree (in grams)
@@ -275,6 +276,8 @@ setClass(Class = 'recipe', slots = c(
   lemon_pc = 'numeric',
   lime_pc = 'numeric',
   avocado_pc = 'numeric',
+  
+  homemade = 'numeric',
   
   flavor = 'numeric', flavor_tsp = 'numeric', flavor_Tbsp = 'numeric', flavor_cup = 'numeric',
   puree = 'numeric',
@@ -1359,7 +1362,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   
   object <- recipe(object)
 
-  y <- nutrition.recipe(object)
+  y <- nutrition.recipe(x = object)
   #show(y)
   cat(y@name, '\n\n')
   
@@ -1370,6 +1373,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   #cat(pancakeMix_txt)
   
   nm_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name', exact = TRUE)
+  nm_cli_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name_cli', exact = TRUE)
   
   meat_seafood <- c(
     object@shrimp,
@@ -1407,6 +1411,14 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   ), sep = '') # one or more fruit_pc
   
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), sep = '') # one or more flavor
+  
+  mapply(FUN = function(glue, gram) {
+    # (glue = nm_cli_[names(object@homemade)][[1L]])
+    # (gram = object@homemade[1L])
+    glue$str <- sprintf(fmt = '%s %.0f grams', glue$str, gram) # no need to linebreak with ?cli:::cli__message
+    cli__message(type = 'text', args = list(text = glue))
+    return(invisible())
+  }, glue = nm_cli_[names(object@homemade)], gram = object@homemade)
   
   grain_bean_nut <- c(
     object@grain,

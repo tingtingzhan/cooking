@@ -17,6 +17,8 @@ setClass(Class = 'extra', slots = c(
 ))
 
 
+setOldClass('cli_glue_delay')
+
 
 #' @title \linkS4class{nutrition} Information
 #' 
@@ -25,6 +27,7 @@ setClass(Class = 'extra', slots = c(
 #' 
 #' @slot brand \link[base]{character} scalar, manufacture brand
 #' @slot name \link[base]{character} scalar, product name
+#' @slot name_cli_glue_delay `'cli_glue_delay'` object, returned from function `cli:::glue_cmd`
 #' 
 #' @slot extra \linkS4class{extra} object
 #' 
@@ -136,6 +139,7 @@ setClass(Class = 'extra', slots = c(
 setClass(Class = 'nutrition', slots = c(
   brand = 'character',
   name = 'character',
+  name_cli_glue_delay = 'cli_glue_delay',
   
   extra = 'extra',
   
@@ -234,6 +238,7 @@ setClass(Class = 'nutrition', slots = c(
   protein = 'numeric',
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
+  name_cli_glue_delay = cli:::glue_cmd(character()), # must use `:::`
   machine = function(x) NULL
 ), validity = function(object) {
   #if (!length(object@usd)) stop('no pricing info for ', object@brand, ' ' object@name)
@@ -264,10 +269,8 @@ nutrition.character <- function(x) {
   xval <- if (is.symbol(x0)) eval(call(name = x)) else eval(x0)
   if (inherits(xval, what = c('recipe'))) {
     ret <- nutrition.recipe(xval)
-    old_nm <- ret@name
-    ret@name <- sprintf(fmt = '%s \U1f3b6%s', old_nm, sprintf(fmt = '\033[0;32m%s()\033[0m', x))
-    #ret@name <- sprintf(fmt = '%s \U1f3b6{.run [%s](cooking::%s())}', old_nm, x, x)
-    #?cli::cli_text # does not have a returned value
+    #ret@name <- sprintf(fmt = '%s \U1f3b6%s', ret@name, sprintf(fmt = '\033[0;32m%s()\033[0m', x))
+    ret@name_cli_glue_delay <- glue_cmd(sprintf(fmt = '%s \U1f963{.run [%s](cooking::%s())}', ret@name, x, x))
     return(ret)
   }
   return(nutrition(xval))
@@ -280,12 +283,15 @@ nutrition.function <- function(x) nutrition(do.call(x, args = list()))
 
 
 nutrition_name_brand <- function(x) {
-  if (length(x@AbV)) x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
+  
+  if (length(x@AbV)) {
+    x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
+  }
+  
   if (length(x@brand)) {
-    #trimws(sprintf(fmt = '%s \033[31m%s\033[0m', x@name, x@brand)) # red
     trimws(sprintf(fmt = '%s \033[38;5;166m%s\033[0m', x@name, x@brand))
-    # https://stackoverflow.com/questions/32573654/is-there-a-way-to-create-an-orange-color-from-ansi-escape-characters
   } else x@name
+  
 }
 
 #' @rdname nutrition
@@ -661,7 +667,9 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   
   obj <- nutrition.nutrition(object)
   
-  cat(nutrition_name_brand(obj), '\n\n')
+  if (!identical(obj@name_cli_glue_delay$str, '')) {
+    cli__message(type = 'text', args = list(text = obj@name_cli_glue_delay))
+  } else cat(nutrition_name_brand(obj), '\n\n')
   
   #cat('Nutrition Facts\n\n')
 

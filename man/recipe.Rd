@@ -29,6 +29,8 @@ general recipe
 
 \item{\code{date}}{\link[base]{Date} scalar}
 
+\item{\code{homemade}}{\link[base]{numeric} vector}
+
 \item{\code{flavor,flavor_tsp,flavor_Tbsp,flavor_cup}}{\link[base]{numeric} vector, weight of one or more flavoring (in grams)}
 
 \item{\code{puree}}{\link[base]{numeric} vector, weight of one or more puree (in grams)}

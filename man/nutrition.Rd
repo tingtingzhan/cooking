@@ -30,6 +30,8 @@ Nutrition information.
 
 \item{\code{name}}{\link[base]{character} scalar, product name}
 
+\item{\code{name_cli_glue_delay}}{\code{'cli_glue_delay'} object, returned from function \code{cli:::glue_cmd}}
+
 \item{\code{extra}}{\linkS4class{extra} object}
 
 \item{\code{url}}{\link[base]{character} scalar, link to manufacturer webpage}
