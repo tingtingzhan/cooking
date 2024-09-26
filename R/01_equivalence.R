@@ -57,16 +57,20 @@ equiv <- function(actual, ideal, ...) {
 #' @export
 format.equiv <- function(x, ...) {
   if (!(n <- length(x@actual))) return(invisible()) # exception handling
-  if (n != 1L) stop('S4 class \'equiv\' is not vectorized')
-  if (is.na(x@actual)) stop('Slot `@actual` cannot be missing')
-  if (abs(x@actual) < x@ignore) return(invisible()) # exception handling
+  #if (n != 1L) {
+  #  print(x@actual)
+  #  stop('S4 class \'equiv\' is not vectorized')
+  #} # teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3)
+  actual <- sum(x@actual)
+  if (is.na(actual)) stop('Slot `@actual` cannot be missing')
+  if (abs(actual) < x@ignore) return(invisible()) # exception handling
   
-  if (x@actual < 0) return(invisible())
+  if (actual < 0) return(invisible())
   # I do not have `@water` for all puree, yet
   
-  sprintf_fun <- sprintf_bincode(min(x@actual, x@ideal, na.rm = TRUE))
+  sprintf_fun <- sprintf_bincode(min(actual, x@ideal, na.rm = TRUE))
   
-  actual <- sprintf_fun(x@actual)
+  actual <- sprintf_fun(actual)
   if (!length(x@ideal)) return(c(Actual = actual, Ideal = '?'))
   if (is.na(x@ideal)) return(c(Actual = actual, Ideal = '-'))
   return(c(Actual = actual, Ideal = sprintf_fun(x@ideal)))

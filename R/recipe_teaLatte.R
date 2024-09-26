@@ -56,10 +56,6 @@ chai_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_ul
 #' @description
 #' Soymilk with black tea.
 #' 
-#' Soymilk coagulate in tea.  I don't plan to do this anymore.
-#' 
-#' Fresh soymilk not hot enough, so need two bag of tea ?
-#' 
 #' @examples
 #' EarlGrey_soytea()
 #' Ceylon_soytea()
@@ -69,14 +65,14 @@ chai_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_ul
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
-  homemade = c(soymilk = 600), # correct
+  homemade = c(soymilk = 600),
   brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
   note = c('Freshly brewed soy milk', 'Soak in Stanley 20oz quencher (covered) for 1hr+')
 ))
 
 #' @rdname soytea
 #' @export
-EarlGrey_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 4), date = as.Date('2024-09-15'), pros = 'I love!')
+EarlGrey_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), alias_flavor = 'Earl Grey', date = as.Date('2024-09-15'), pros = 'I love!')
 
 #' @rdname soytea
 #' @export

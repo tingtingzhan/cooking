@@ -14,10 +14,6 @@ Ceylon_soytea()
 }
 \description{
 Soymilk with black tea.
-
-Soymilk coagulate in tea.  I don't plan to do this anymore.
-
-Fresh soymilk not hot enough, so need two bag of tea ?
 }
 \examples{
 EarlGrey_soytea()
