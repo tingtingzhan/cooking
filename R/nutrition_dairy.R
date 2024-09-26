@@ -1,20 +1,19 @@
 
 
 FageTotal0_yogurtGreek <- function() new(
-  Class = 'nutrition', url = 'https://usa.fage/products/yogurt/fage-total-0',
-  brand = 'Fage Total 0%', name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
-  servingGram = 170, 
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0')),
+  name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
+  servingGram = 170, # sold at Costco, 3lb, 1360g
   servingCup = 3/4, # packaging
-  # yogurt = c(FageTotal0_yogurtGreek = 1360) # sold at Costco, 3lb
   sodium = .065, sugar = 5, protein = 18,
   fdc = 170903L, water = 170*.836)
 
 
 MembersMark_yogurtGreek <- function() new(
   Class = 'nutrition', 
-  sams = 'prod23131577', usd = 4.38/1130*170,
+  sams = 'prod23131577', usd = 4.38/1130*170, # sold at Sams, 2.5lb
   name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
-  # yogurt = c(MembersMark_yogurtGreek = 1133.98) # sold at Sams, 2.5lb
   servingGram = 170, 
   servingCup = 3/4,
   cholesterol = .01, sodium = .055, sugar = 6, protein = 18,
@@ -23,7 +22,8 @@ MembersMark_yogurtGreek <- function() new(
 
 SimpleTruth_yogurt <- function() new(
   Class = 'nutrition', url = 'https://www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
-  brand = 'Simple Truth Organic', name = '\u4f4e\u8102\u9178\u5976 Low-Fat Yogurt',
+  brand = 'Simple Truth Organic', 
+  name = '\u4f4e\u8102\u9178\u5976 Low-Fat Yogurt',
   servingGram = 170, servingCup = 2/3,
   fat = 2.5, sodium = .110, sugar = 12, protein = 8,
   fdc = 171284L, water = 170*.879)

@@ -33,7 +33,8 @@ Kirkland_mixedVeggies <- function() new(
   servingGram = 90, fat = .5, sodium = .02, sugar = 4, protein = 2)
 
 Kirkland_blueberry <- function() new(
-  Class = 'nutrition', costcoBiz = 'kirkland-signature-organic-blueberries%2C-3-lbs.product.100206942',
+  Class = 'nutrition', 
+  costcoBiz = '100206942',
   name = 'Frozen Blueberry\U1fad0',
   servingGram = 140, 
   calorie = 70,
@@ -43,8 +44,8 @@ Kirkland_blueberry <- function() new(
 Kirkland_strawberry <- function() new(
   Class = 'nutrition', 
   costcoBiz = c(
-    'kirkland-signature-organic-strawberries%2c-4-lbs.product.100273803',
-    'kirkland-signature-frozen-strawberries%2c-6-lbs.product.11273181' # which one's correct??
+    '100273803' # frequently seen in store
+    # '11273181' # rarely seen in store
   ),
   name = '\u8349\u8393 Strawberry\U1f353',
   servingGram = 140, servingCup = 1, calorie = 50, sugar = 6, protein = 1)

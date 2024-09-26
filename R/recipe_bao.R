@@ -124,20 +124,14 @@ bao_butter <- function() new(
 pumpkin_bao <- function() new(
   Class = 'bao', 
   breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(),
-  # pumpkin = 300, # really wet, almost like \linkS4class{bread}
-  pumpkin = 270, # try
+  pumpkin = 270, # very promising!
   sugar_Tbsp = 2,
-  review = c(
-    'retry'
-  ))
+  note = c(
+    '300g pumpkin puree + 500g Wegmans\'s patry flour, perfect wetness, but not enough support. This is how I determine water content of Libby\'s pumpkin puree',
+    '300g pumpkin puree + 500g King Arthur bread flour, too wet'
+  ),
+  date = as.Date('2024-09-26'))
 
-
-pumpkin_bao_OLD <- function() new(
-  Class = 'bao', 
-  pumpkin = 300, sugar_Tbsp = 2,
-  pros = 'Perfect wetness',
-  cons = 'not enough support',
-  date = as.Date('2024-06-15'))
 
 
 #' @rdname bao

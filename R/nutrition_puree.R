@@ -13,8 +13,6 @@ Libbys_pumpkin <- function() new(
   calorie = 45,
   fat = .5, sodium = .005, carbohydrate = 10, sugar = 5, protein = 1, 
   fdc = 168450L,
-  #water = 122 * 225/310) # noodle, experiment, actually a little too wet
-  #water = 122 * 225/300) # noodle, theory
   water = 122 * 240/300) # bao, I trust best
 
 Libbys_pumpkinPieMix <- function() new(
