@@ -1438,7 +1438,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')))
   
   cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
-  cat(sprintf(fmt = '%s %.1f grams \033[1;95m%.2gbags\033[0m\n', nm_[names(object@teabag)], getTealoose(object@teabag), object@teabag), sep = '')
+  cat(sprintf(fmt = '%s %.1f grams \033[1;95m%.2gbag\033[0m\n', nm_[names(object@teabag)], getTealoose(object@teabag), object@teabag), sep = '')
   
   allSugar <- c(
     object@sugar, object@brownSugar,
