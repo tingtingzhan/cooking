@@ -1396,8 +1396,6 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), sep = '') # one or more flavor
   
   mapply(FUN = function(glue, gram) {
-    # (glue = nm_cli_[names(object@homemade)][[1L]])
-    # (gram = object@homemade[1L])
     glue$str <- sprintf(fmt = '%s %.0f grams', glue$str, gram) # no need to linebreak with ?cli:::cli__message
     cli__message(type = 'text', args = list(text = glue))
     return(invisible())
