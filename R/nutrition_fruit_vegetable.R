@@ -148,16 +148,18 @@ Dole_pineapple <- function() new(
 
 
 DelMonte_pear <- function() new(
-  Class = 'nutrition', url = 'www.delmonte.com/products/fruits/pears/sliced-pears-no-sugar-added',
-  brand = 'Del Monte\U1f1fa\U1f1f8', name = '\u68a8\u7f50\u5934 Sliced Pears\U1f350 No Sugar',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/pears/sliced-pears-no-sugar-added')),
+  name = '\u68a8\u7f50\u5934 Sliced Pears\U1f350',
   servingGram = 121, servingCup = 1/2,
   water = 121 * 240/255, # tested with bao()
   calorie = 40, sodium = .005, sugar = 7) 
 
 
 DelMonte_mandarine <- function() new(
-  Class = 'nutrition', url = 'www.delmonte.com/products/fruits/mandarin-oranges/mandarin-oranges-no-sugar-added',
-  brand = 'Del Monte\U1f1fa\U1f1f8', name = '\u6a58\u5b50\u7f50\u5934 Mandarin Oranges\U1f34a No Sugar',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/mandarin-oranges/mandarin-oranges-no-sugar-added')),
+  name = '\u6a58\u5b50\u7f50\u5934 Mandarin Oranges\U1f34a',
   servingGram = 123, servingCup = 1/2,
   water = 123 * 240/245, # tested with bao()
   calorie = 60, 
@@ -167,8 +169,9 @@ DelMonte_mandarine <- function() new(
 
 
 DelMonte_peach <- function() new(
-  Class = 'nutrition', url = 'www.delmonte.com/products/fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added',
-  brand = 'Del Monte\U1f1fa\U1f1f8', name = '\u9ec4\u6843 Yellow Cling Peaches\U1f351 No Sugar',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added')),
+  name = '\u9ec4\u6843 Yellow Cling Peaches\U1f351',
   servingGram = 121, servingCup = 1/2,
   calorie = 35,
   water = 121* 240/255, # tested with bao()
@@ -176,9 +179,10 @@ DelMonte_peach <- function() new(
   carbohydrate = 121* 15/255,
   sugar = 7)
 
-Bruces_Yam <- function() new(
-  Class = 'nutrition', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/',
-  brand = 'Bruce\'s', name = 'Yam',
+Bruces_yam <- function() new(
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Bruce\'s', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/')),
+  name = 'Yam',
   review = 'may need Vitamix immersion blender - dont know how to use, dont buy for now',
   servingGram = 166, sodium = .07, sugar = 9, protein = 2)
 
