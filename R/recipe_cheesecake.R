@@ -306,14 +306,15 @@ Junior_original <- function() new(
 #' @export
 Junior_cookbook <- function() new(
   Class = 'recipe', 
-  author = 'Junior\'s Cookbook', alias_flavor = '\u83dc\u8c31Cheesecake',
+  author = unclass(style_hyperlink(text = 'Junior\'s Cookbook', url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')),
+  alias_flavor = '\u83dc\u8c31Cheesecake',
   creamCheese = c(Philadelphia = 227 * 4),
   sugar = 333, 
   starch_cup = c(Wegmans_corn = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
-  heavyCream = c(Wegmans = 180), # 3/4 cup heavy cream
-  url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')
+  heavyCream = c(Wegmans = 180) # 3/4 cup heavy cream
+)
 
 #' @rdname cheesecake
 #' @export

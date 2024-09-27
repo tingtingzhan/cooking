@@ -216,6 +216,7 @@
 #' @slot just1cookbook \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
 #' @slot laofangu \link[base]{character} scalar
+#' @slot nytimes \link[base]{character} scalar
 #' @slot pino \link[base]{character} scalar
 #' @slot preppykitchen \link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe
 #' @slot shangshikitchen \link[base]{character} scalar
@@ -247,6 +248,7 @@ setClass(Class = 'recipe', slots = c(
   just1cookbook = 'character',
   kingarthur = 'character',
   laofangu = 'character',
+  nytimes = 'character',
   pino = 'character',
   preppykitchen = 'character', # must len-1
   shangshikitchen = 'character',
@@ -800,6 +802,12 @@ recipe <- function(x) {
       if (length(x@laofangu) > 1L) stop('only allow len-1 @laofangu')
       x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@laofangu), text = '\u8001\u996d\u9aa8'))
       x@laofangu <- character()
+    }
+    
+    if (length(x@nytimes)) {
+      if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
+      x@nytimes <- character()
     }
     
     if (length(x@pino)) {

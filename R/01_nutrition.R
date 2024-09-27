@@ -503,7 +503,10 @@ nutrition.nutrition <- function(x) {
     'JP\U1f4b4' = if (length(x@jpy)) x@jpy / 150.48 else NA_real_ # quantmod::getQuote('USDJPY=X')
   )
   cost_ <- cost_[!is.na(cost_)]
-  if (length(cost_) == 1L) {
+  n_cost_ <- length(cost_)
+  if (!n_cost_) {
+    x@cost_ <- character()
+  } else if (n_cost_ == 1L) {
     if (names(cost_) == 'US$') {
       x@cost_ <- sprintf(fmt = 'US\U1f4b5 %.2f', cost_)
     } else {
@@ -683,7 +686,8 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
 
   cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, autoVolume(x = obj@servingGram, nm = list(obj))))
   cat(sprintf(fmt = '%s\n', obj@cost_))
-  cat(sprintf(fmt = 'Calories\U1f525 %.0f\n\n', obj@calorie))
+  cat(sprintf(fmt = 'Calories\U1f525 %.0f\n', obj@calorie))
+  cat('\n')
   
   cat(sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, format_ingredient_perc(obj, 'water')))
   cat(sprintf(fmt = 'Fat: %.4g grams %s\n', obj@fat, format_ingredient_perc(obj, 'fat')))

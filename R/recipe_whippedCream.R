@@ -316,12 +316,12 @@ pumpkin_ganache <- function() new(
 #' @rdname whippedCream
 #' @export
 tiramisu_nytimes <- function() new(
-  Class = 'recipe', alias_flavor = 'tiramisu', 
+  Class = 'recipe', alias_flavor = 'Tiramisu', 
   eggYolk_pc = 4,
   sugar = 100, 
   heavyCream = c(Wegmans = 180),
   mascarpone = 453/2,
-  url = 'https://cooking.nytimes.com/recipes/1018684-classic-tiramisu')
+  nytimes = '1018684')
 
 
 

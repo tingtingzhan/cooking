@@ -1,8 +1,12 @@
 
 Galil_roastedChestnut <- function() new(
-  Class = 'nutrition', url = 'shopgalil.com/products/galil-organic-roasted-chestnuts-shelled-3-5oz-pack-of-24',
-  brand = 'Galil', name = 'Roasted Chestnut',
-  servingGram = 50, fat = .5, sugar = 5, protein = 2
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Galil', url = 'https://shopgalil.com/products/galil-organic-roasted-chestnuts-shelled-3-5oz-pack-of-24')),
+  name = 'Roasted Chestnut', 
+  usd = 2.99/100*50,
+  servingGram = 50, 
+  calorie = 100,
+  fat = .5, sugar = 5, protein = 2
 )
 
 

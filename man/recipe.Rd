@@ -349,6 +349,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{laofangu}}{\link[base]{character} scalar}
 
+\item{\code{nytimes}}{\link[base]{character} scalar}
+
 \item{\code{pino}}{\link[base]{character} scalar}
 
 \item{\code{preppykitchen}}{\link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe}
