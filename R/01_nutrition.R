@@ -354,7 +354,7 @@ nutrition.nutrition <- function(x) {
     } else if (length(x@kerrygold)) {
       kg_ <- unclass(style_hyperlink(url = sprintf(fmt = 'https://kerrygold.com/products/%s', x@kerrygold), text = 'Kerrygold\U1f1ee\U1f1ea'))
       if (length(x@kerrygoldusa)) {
-        paste(kg_, unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s', x@kerrygoldusa), text = '\U1f1fa\U1f1f8')), sep = ' + ')
+        paste0(kg_, unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s', x@kerrygoldusa), text = '\U1f1fa\U1f1f8')))
       } else kg_
     } else if (length(x@kikkomanusa)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://kikkomanusa.com/foodservice/products/%s', x@kikkomanusa), text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5'))

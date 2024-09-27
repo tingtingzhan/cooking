@@ -1394,7 +1394,8 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   fruit <- c(object@fruit, object@durian)
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), sep = '') # one or more fruit_pc
   cat(sprintf(
-    fmt = '%s %.0f grams (%.1f pcs)\n', 
+    #fmt = '%s %.0f grams (%.1f pcs)\n', 
+    fmt = '%s %.0f grams \033[1;95m%.1fpcs\033[0m\n', 
     nm_[names(object@fruit_pc)], 
     object@fruit_pc,
     object@fruit_pc / vapply(names(object@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)

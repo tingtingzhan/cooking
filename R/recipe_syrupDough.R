@@ -25,10 +25,11 @@ setClass(Class = 'syrupDough', contains = 'recipe')
 #' @export
 CantoneseMooncakeShell <- function() new(
   Class = 'syrupDough',
+  alias_flavor = 'Cantonese Mooncake Shell',
   pastryFlour = 150, 
   homemade = c(invertSugar = 75),
   water = 10, butter = 30,
-  youtube = 'rtL8TVynNyg',
+  xiaogaojie = 'rtL8TVynNyg',
   review = 'do NOT reduce invert sugar syrup!  But really sweet...'
 )
 
