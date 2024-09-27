@@ -85,6 +85,7 @@ setOldClass('cli_glue_delay')
 #' @slot navitas \link[base]{character} scalar
 #' @slot nescafe,nescafeGoldEspressoCA,nescafeGoldEspressoUS,nescafeUS,nestle,nido \link[base]{character} scalars
 #' @slot oreo \link[base]{character} scalar
+#' @slot organicvalley \link[base]{character} scalar
 #' @slot paromi \link[base]{character} scalar
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
@@ -197,6 +198,7 @@ setClass(Class = 'nutrition', slots = c(
   navitas = 'character',
   nescafe = 'character', nescafeGoldEspressoCA = 'character', nescafeGoldEspressoUS = 'character', nescafeUS = 'character', nestle = 'character', nido = 'character',
   oreo = 'character',
+  organicvalley = 'character',
   paromi = 'character',
   raos = 'character',
   runamok = 'character',
@@ -400,6 +402,8 @@ nutrition.nutrition <- function(x) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.goodnes.com/nido/products/nido-%s', x@nido), text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed'))
     } else if (length(x@oreo)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.oreo.com/products/%s', x@oreo), text = 'Nabisco\U1f1fa\U1f1f8'))
+    } else if (length(x@organicvalley)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.organicvalley.coop/products/%s', x@organicvalley), text = 'Organic Valley\U1f1fa\U1f1f8'))
     } else if (length(x@paromi)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://paromi.com/products/%s', x@paromi), text = 'Paromi\U1f1fa\U1f1f8'))
     } else if (length(x@raos)) {
@@ -725,7 +729,7 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@pubchem)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')
   
   if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
-  
+
 })
 
 

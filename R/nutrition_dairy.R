@@ -140,10 +140,24 @@ GreatValueNeufchatel_creamCheese <- function() new(
 
 
 OrganicValleyNeufchatel_creamCheese <- function() new(
-  Class = 'nutrition', url = 'https://www.organicvalley.coop/products/cream-cheese/neufchatel/neufchatel-8-oz-bar/',
-  brand = 'Organic Valley', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
-  servingGram = 28, fat = 6, sodium = .115, sugar = 1, protein = 2)
+  Class = 'nutrition', 
+  organicvalley = 'cream-cheese/neufchatel/neufchatel-8-oz-bar',
+  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
+  wegmans = 182L, usd = 4.59/8,
+  servingGram = 28, servingTbsp = 2,
+  calorie = 70,
+  fat = 6, sodium = .115, sugar = 1, protein = 2)
 
+
+OrganicValley_creamCheese <- function() new(
+  Class = 'nutrition', 
+  organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
+  name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
+  wegmans = 11914L, usd = 4.59/8,
+  servingGram = 28, servingTbsp = 2,
+  calorie = 110,
+  fat = 10, cholesterol = 30, sodium = .1, 
+  carbohydrate = 2, sugar = 1, protein = 2)
 
 
 TraderJoes_creamCheese <- function() new(
@@ -170,7 +184,9 @@ WholeFoods365_creamCheese <- function() new(
   Class = 'nutrition', wholefoods = 'b074h6qz3j',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese', 
   contain = 'locust bean gum',
-  servingGram = 28, fat = 10, sodium = .095)
+  servingGram = 28, servingTbsp = 2, 
+  calorie = 100,
+  fat = 10, cholesterol = .03, sodium = .095, carbohydrate = 2, protein = 2)
 
 
 
