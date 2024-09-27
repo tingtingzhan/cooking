@@ -21,9 +21,11 @@ Wegmans_Cambozola <- function() new(
 
 
 Wegmans_mildBrie <- function() new(
-  Class = 'nutrition', wegmans = 38341L,
+  Class = 'nutrition', wegmans = 38341L, usd = 21.89/16,
   name = 'Cave-Ripened Mild Brie Cheese, Milky',
-  servingGram = 28, fat = 9, sodium = .16, protein = 4,
+  servingGram = 28, 
+  calorie = 100,
+  fat = 9, cholesterol = .030, sodium = .16, protein = 4,
   review = 'my all-time love!!')
 
 
@@ -31,53 +33,62 @@ Wegmans_mildBrie <- function() new(
 
 
 Wegmans_mildTripleCreme <- function() new(
-  Class = 'nutrition', wegmans = 873L,
+  Class = 'nutrition', wegmans = 873L, usd = 27.59/16,
   name = 'Cave-Ripened Mild Triple Cr\u00e8me Cheese',
-  servingGram = 28, fat = 11, sodium = .22, protein = 3,
+  servingGram = 28, 
+  calorie = 110,
+  fat = 11, cholesterol = .040, sodium = .22, protein = 3,
   review = 'too salty!!')
 
 
-
-
 Wegmans_mildBonVivant <- function() new( # try again?
-  Class = 'nutrition', wegmans = 226424L,
+  Class = 'nutrition', wegmans = 226424L, usd = 24.19/16,
   name = 'Mild Bon Vivant',
-  servingGram = 28, fat = 9, sodium = .16, protein = 5)
+  servingGram = 28, 
+  calorie = 100,
+  fat = 9, cholesterol = .030, sodium = .16, protein = 5)
 
 
 
 
 Wegmans_mildCremeuxDeBourgogne <- function() new( # try again?
-  Class = 'nutrition', wegmans = 227321L,
+  Class = 'nutrition', wegmans = 227321L, usd = 2.14,
   name = 'Mild Cremeux de Bourgogne Soft Ripened Cheese',
-  servingGram = 28, fat = 11, sodium = .12, protein = 3)
+  servingGram = 28, 
+  calorie = 110,
+  fat = 11, cholesterol = .035, sodium = .12, protein = 3)
 
 
 
 
 Wegmans_LangaLaTur <- function() new(
-  Class = 'nutrition', wegmans = 25755L,
+  Class = 'nutrition', wegmans = 25755L, usd = 32.19/16,
   name = 'Caseificio dell\'Alta Langa La Tur Cheese',
-  servingGram = 28, fat = 7, sodium = .11, protein = 4)
+  servingGram = 28, 
+  calorie = 80,
+  fat = 7, cholesterol = .03, sodium = .11, protein = 4)
 
 
 
 
 
 Wegmans_mildGoatBrie <- function() new(
-  Class = 'nutrition', wegmans = 222234L,
+  Class = 'nutrition', wegmans = 222234L, usd = 1.64,
   name = 'Mild Goat\U1f410 Brie Cheese',
-  servingGram = 30, fat = 7, sodium = .13, protein = 6,
+  servingGram = 30, 
+  calorie = 90,
+  fat = 7, cholesterol = .025, sodium = .13, protein = 6,
   review = 'Stinks!! Dont buy!!!!')
 
 
 BelGioioso_mascarpone <- function() new(
   Class = 'nutrition', 
   belgioioso = 'mascarpone', name = 'Mascarpone',
-  wegmans = 253687L, usd = 7.49/32,
+  wegmans = 11544L, usd = .65,
   fdc = 1726641L, # this brand!!
-  servingGram = 453/32, servingTbsp = 1, 
-  fat = 7, cholesterol = .02, sodium = .005, protein = 1)
+  servingGram = 28,
+  calorie = 120,
+  fat = 13, cholesterol = .035, sodium = .015, carbohydrate = 1, sugar = 1, protein = 2)
 
 BelGioioso_ricotta <- function() new(
   Class = 'nutrition', 
