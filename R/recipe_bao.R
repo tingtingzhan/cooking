@@ -123,15 +123,30 @@ bao_butter <- function() new(
 #' @export
 pumpkin_bao <- function() new(
   Class = 'bao', 
-  breadFlour = c(KingArthur_bread = 500), 
-  pastryFlour = numeric(),
-  pumpkin = 260, # feels just right!!
+  breadFlour = c(KingArthur_bread = 200), pastryFlour = c(Wegmans_pastry = 300),
+  pumpkin = 285, # 260*.4+300*.6, 
   sugar_Tbsp = 2,
-  note = c(
-    '300g pumpkin puree + 500g Wegmans\'s patry flour, perfect wetness, but not enough support. This is how I determine water content of Libby\'s pumpkin puree',
-    '270g pumpkin puree + 500g King Arthur bread flour, tiny tiny too wet, I like the support! Although mantou shrinks, not sure why..'
-  ),
-  date = as.Date('2024-09-26'))
+  review = 'try!!'
+  #date = as.Date('2024-09-28')
+  )
+
+.pumpkin_bread_bao <- function() new(
+  Class = 'bao', 
+  pumpkin = 260, breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(), # perfect wetness!! (tiny bit on wet-side)
+  sugar_Tbsp = 2,
+  pros = 'a little on the wet side, but generally perfect wetness',
+  cons = 'a little too tight',
+  date = as.Date('2024-09-28'))
+
+.pumpkin_pastry_bao <- function() new(
+  Class = 'bao', 
+  pumpkin = 300, # 500g Wegmans\'s patry flour
+  sugar_Tbsp = 2,
+  pros = 'perfect wetness', 
+  cons = 'not enough support',
+  review = 'how I determine water content of Libby\'s pumpkin puree',
+  date = as.Date('2023-01-01'))
+
 
 
 
