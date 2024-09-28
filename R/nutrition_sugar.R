@@ -15,6 +15,7 @@ Domino_10x <- function() new(
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch
   name = '10x\u7cd6\u7c89 Sugar, Confectioners',
   bjs = 'domino-confectioners-sugar-4-lbs/3000000000000139695', usd = 5.29/(4*454)*30, # 2023-11-11
+  wegmans = 54235L,
   servingGram = 30, 
   # servingTsp = 12, # packaging
   servingTsp = 30/(33/12), # actual experiment: 1/4 cup = 33 grams
@@ -27,6 +28,7 @@ Domino_granulated <- function() new(
   domino = 'granulated-sugar',# Ingredients: cane sugar, 
   name = '\u767d\u7802\u7cd6 Granulated Sugar',
   walmart = '219588515', usd = 5.92/1590*8,
+  wegmans = 23344L,
   servingGram = 8, servingTsp = 2, # packaging
   calorie = 30,
   carbohydrate = 8, sugar = 8)
@@ -35,6 +37,7 @@ Domino_golden <- function() new(
   Class = 'nutrition',
   domino = 'golden-sugar',
   name = '\u7c97\u7802\u7cd6 Golden Sugar',
+  wegmans = 26095611L, usd = 1.48/454*8,
   servingGram = 8, servingTsp = 2, # packaging
   calorie = 30,
   carbohydrate = 8, sugar = 8)
@@ -64,6 +67,7 @@ Domino_darkBrown <- function() new(
   Class = 'nutrition', domino = 'dark-brown-sugar',
   name = '\u7ea2\u7cd6 Dark Brown Sugar',
   walmart = '10291798', usd = 3.12/(2*454)*8,
+  wegmans = 26106291L,
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   addedSugar = 8)
@@ -72,6 +76,7 @@ Domino_lightBrown <- function() new(
   Class = 'nutrition', domino = 'light-brown-sugar',
   name = '\u7ea2\u7cd6 Light Brown Sugar',
   walmart = '35690427', usd = 5.54/1.81*8, # 4lb
+  wegmans = 26106288L,
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   addedSugar = 8)

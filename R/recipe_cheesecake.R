@@ -381,6 +381,15 @@ pumpkin_cheesecake_Junior <- function() new(
   url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook'
 )
 
+Wegmans_pumpkin_cheesecake <- function() new(
+  Class = 'nutrition', wegmans = 18074L,
+  name = 'Pumpkin Cheesecake',
+  usd = .62/28.3495 * 130, # 0.62/oz
+  servingGram = 130,
+  calorie = 460,
+  fat = 29, cholesterol = .115, sodium = .33,
+  carbohydrate = 47, sugar = 27, addedSugar = 18, protein = 6)
+
 #' @rdname cheesecake
 #' @export
 cappuccino_cheesecake_Junior = function() new(

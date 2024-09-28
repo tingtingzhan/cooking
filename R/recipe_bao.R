@@ -132,10 +132,10 @@ pumpkin_bao <- function() new(
 
 .pumpkin_bread_bao <- function() new(
   Class = 'bao', 
-  pumpkin = 260, breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(), # perfect wetness!! (tiny bit on wet-side)
+  pumpkin = 260, breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(),
   sugar_Tbsp = 2,
   pros = 'a little on the wet side, but generally perfect wetness',
-  cons = 'a little too tight',
+  cons = 'severely shrinks; bread flour cannot be used for bao?',
   date = as.Date('2024-09-28'))
 
 .pumpkin_pastry_bao <- function() new(

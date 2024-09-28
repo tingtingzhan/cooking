@@ -125,7 +125,6 @@ Wegmans_cranberryGoat <- function() new(
   review = 'Nice!')
 
 
-
 NaturalKosher_mozzarella <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/')),
