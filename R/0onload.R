@@ -526,6 +526,7 @@
   fat2breadflour <- function(x) switch(
     class(x), 
     cornbread =, noodlelinda =, wrapperlinda = NA_real_,
+    bao = .03,
     bread = if (length(x@cocoa)) .08 else .075,
     NULL)
   
@@ -644,6 +645,7 @@
     
   bakingPowder2breadflour <- function(x) switch(
     class(x),
+    bao = .0095,
     gateau = .02,
     #cornbread = NA_real_,
     NULL)
@@ -666,6 +668,7 @@
   
   yeast2breadflour <- function(x) switch(
     class(x), 
+    bao = .0095, 
     bread = .02,
     NULL)
   

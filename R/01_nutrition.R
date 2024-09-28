@@ -359,7 +359,10 @@ nutrition.nutrition <- function(x) {
     } else if (length(x@kikkomanusa)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://kikkomanusa.com/foodservice/products/%s', x@kikkomanusa), text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5'))
     } else if (length(x@kingarthur)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.kingarthurbaking.com/items/%d', x@kingarthur), text = 'King Arthur\U1f1fa\U1f1f8'))
+      unclass(style_hyperlink(url = sprintf(
+        #fmt = 'https://shop.kingarthurbaking.com/items/%d',
+        fmt = 'https://www.kingarthurbaking.com/search?query=%d', 
+        x@kingarthur), text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@kingarthurpro)) {
       unclass(style_hyperlink(url = 'https://www.kingarthurbaking.com/pro/products', text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
