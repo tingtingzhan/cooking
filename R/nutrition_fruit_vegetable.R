@@ -48,7 +48,9 @@ Kirkland_strawberry <- function() new(
     # '11273181' # rarely seen in store
   ),
   name = '\u8349\u8393 Strawberry\U1f353',
-  servingGram = 140, servingCup = 1, calorie = 50, sugar = 6, protein = 1)
+  servingGram = 140, servingCup = 1, 
+  calorie = 50, 
+  carbohydrate = 13, sugar = 6)
 
 Kirkland_yellowCorn <- function() new(
   Class = 'nutrition', url = 'costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
@@ -91,7 +93,8 @@ mango <- function() new(
 
 HappyVillage_strawberry <- function() new( # frozen; sold at Costco
   Class = 'nutrition', 
-  brand = 'Happy Village', name = '\u8349\u8393 Strawberry\U1f353',
+  brand = 'Happy Village', 
+  name = '\u8349\u8393 Strawberry\U1f353',
   url = 'www.instacart.com/products/25833270-happy-village-frozen-organic-strawberries-4-lb',
   servingGram = 140, servingCup = 1, 
   calorie = 50, sugar = 6, protein = 1)
@@ -356,5 +359,12 @@ pistachio <- function() new(
 OsmanthusFragrans <- function() new(Class = 'nutrition', name = 'OsmanthusFragrans')
 
 
+banana <- function() new(
+  Class = 'nutrition', fdc = 1102653L,
+  name = '\u9999\u8549 Banana\U1f34c', wegmans = 35418L,
+  servingGram = 100,
+  calorie = 89, # kcal
+  water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)
+  
 
 

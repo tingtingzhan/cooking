@@ -19,18 +19,19 @@
 #' @slot fruit \link[base]{numeric} vector, weight of fresh fruit, diced (in grams)
 #' @slot fruit_pc \link[base]{numeric} vector, weight of one or more fresh fruit pulp or juice (in grams)
 #' 
+#' @slot applesauce \link[base]{numeric} scalar, weight of Motts no sugar added applesauce (in grams)
+#' @slot banana \link[base]{numeric} scalar
+#' @slot darkCherry \link[base]{numeric} scalar, weight of Happy Village dark cherry puree (in grams)
+#' @slot durian \link[base]{numeric} scalar, weight of Lucky Taro durian pulp (in grams), seed removed
+#' @slot mandarine \link[base]{numeric} scalar, weight of blended Del Monte canned mandarine (in grams)
+#' @slot mango \link[base]{numeric} scalar, weight of blended Pickd frozen mango (in grams)
+#' @slot pear \link[base]{numeric} scalar, weight of blended Del Monte canned pear (in grams)
+#' @slot pineapple \link[base]{numeric} scalar, weight of blended Dole canned pineapple (in grams)
 #' @slot pumpkin \link[base]{numeric} scalar, weight of Libby's pumpkin puree (in grams)
 #' @slot pumpkinPieMix \link[base]{numeric} scalar, weight of Libby's pumpkin pie mix (in grams)
 #' @slot strawberry \link[base]{numeric} scalar, weight of Kirkland frozen strawberry (in grams)
-#' @slot pineapple \link[base]{numeric} scalar, weight of blended Dole canned pineapple (in grams)
-#' @slot pear \link[base]{numeric} scalar, weight of blended Del Monte canned pear (in grams)
-#' @slot mandarine \link[base]{numeric} scalar, weight of blended Del Monte canned mandarine (in grams)
-#' @slot mango \link[base]{numeric} scalar, weight of blended Pickd frozen mango (in grams)
 #' @slot tomato \link[base]{numeric} scalar, weight of Wegmans Organic tomato puree (in grams)
-#' @slot darkCherry \link[base]{numeric} scalar, weight of Happy Village dark cherry puree (in grams)
 #' @slot yellowCorn \link[base]{numeric} scalar, weight of Kirkland frozen yellow corn (in grams)
-#' @slot durian \link[base]{numeric} scalar, weight of Lucky Taro durian pulp (in grams), seed removed
-#' @slot applesauce \link[base]{numeric} scalar, weight of Motts no sugar added applesauce (in grams)
 #' 
 #' @slot butter,butter_tsp,butter_Tbsp,butter_cup \link[base]{numeric} scalar, weight of Kerrygold unsalted butter (in grams)
 #' @slot ghee \link[base]{numeric} scalar, weight of Wegmans ghee butter (in grams)
@@ -302,18 +303,19 @@ setClass(Class = 'recipe', slots = c(
   teabag = 'numeric', tealoose = 'numeric',
   
   # puree
+  applesauce = 'numeric',
+  banana = 'numeric',
+  darkCherry = 'numeric',
+  durian = 'numeric',
+  mandarine = 'numeric',
+  mango = 'numeric',
+  pear = 'numeric',
+  pineapple = 'numeric',
   pumpkin = 'numeric',
   pumpkinPieMix = 'numeric',
   strawberry = 'numeric',
-  pineapple = 'numeric',
-  pear = 'numeric',
-  mandarine = 'numeric',
-  mango = 'numeric',
   tomato = 'numeric',
-  darkCherry = 'numeric',
   yellowCorn = 'numeric',
-  durian = 'numeric',
-  applesauce = 'numeric',
   
   # all dairy product
   butter = 'numeric', butter_tsp = 'numeric', butter_Tbsp = 'numeric', butter_cup = 'numeric',
@@ -594,18 +596,20 @@ recipe <- function(x) {
   x <- addNameLen1(x, which = 'water80', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'boilingWater', name1 = 'Wegmans_water')
   
+  x <- addNameLen1(x, which = 'applesauce', name1 = 'Motts_applesauce')
+  x <- addNameLen1(x, which = 'banana', name1 = 'banana')
+  x <- addNameLen1(x, which = 'darkCherry', name1 = 'HappyVillage_darkCherry')
+  x <- addNameLen1(x, which = 'durian', name1 = 'LuckyTaro_durian')
+  x <- addNameLen1(x, which = 'mandarine', name1 = 'DelMonte_mandarine')
+  x <- addNameLen1(x, which = 'mango', name1 = 'mango')
+  x <- addNameLen1(x, which = 'pear', name1 = 'DelMonte_pear')
+  x <- addNameLen1(x, which = 'pineapple', name1 = 'Dole_pineapple')
   x <- addNameLen1(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
   x <- addNameLen1(x, which = 'pumpkinPieMix', name1 = 'Libbys_pumpkinPieMix')
   x <- addNameLen1(x, which = 'strawberry', name1 = 'Kirkland_strawberry')
-  x <- addNameLen1(x, which = 'pineapple', name1 = 'Dole_pineapple')
-  x <- addNameLen1(x, which = 'pear', name1 = 'DelMonte_pear')
-  x <- addNameLen1(x, which = 'mandarine', name1 = 'DelMonte_mandarine')
-  x <- addNameLen1(x, which = 'mango', name1 = 'mango')
   x <- addNameLen1(x, which = 'tomato', name1 = 'WegmansOrganic_tomato')
-  x <- addNameLen1(x, which = 'darkCherry', name1 = 'HappyVillage_darkCherry')
   x <- addNameLen1(x, which = 'yellowCorn', name1 = 'Kirkland_yellowCorn')
-  x <- addNameLen1(x, which = 'durian', name1 = 'LuckyTaro_durian')
-  x <- addNameLen1(x, which = 'applesauce', name1 = 'Motts_applesauce')
+  
   x <- addNameLen1(x, which = 'blackSesame', name1 = 'Greenmax_blackSesame')
   
   x <- combineVol(x, which = 'flavor')
@@ -1029,7 +1033,7 @@ nutrition.recipe <- function(x) {
   
   riceFlour <- sum(x@riceFlour, x@glutinousRiceFlour)
   
-  puree <- sum(x@puree, x@pumpkin, x@pumpkinPieMix, x@strawberry, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@darkCherry, x@yellowCorn, x@durian, x@applesauce)
+  puree <- sum(x@puree, x@pumpkin, x@pumpkinPieMix, x@strawberry, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@darkCherry, x@yellowCorn, x@durian, x@applesauce, x@banana)
   starch <- sum(x@starch)
   drymilk <- sum(x@drymilk)
   tea <- sum_.(getTealoose(x@teabag), x@tealoose)
@@ -1388,7 +1392,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, autoVolume(puree_vol)), sep = '')
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
-  puree_no_vol <- c(object@puree, object@darkCherry, object@strawberry)
+  puree_no_vol <- c(object@puree, object@darkCherry, object@strawberry, object@banana)
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), sep = '')
   
   fruit <- c(object@fruit, object@durian)

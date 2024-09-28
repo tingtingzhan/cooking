@@ -39,29 +39,31 @@ general recipe
 
 \item{\code{fruit_pc}}{\link[base]{numeric} vector, weight of one or more fresh fruit pulp or juice (in grams)}
 
+\item{\code{applesauce}}{\link[base]{numeric} scalar, weight of Motts no sugar added applesauce (in grams)}
+
+\item{\code{banana}}{\link[base]{numeric} scalar}
+
+\item{\code{darkCherry}}{\link[base]{numeric} scalar, weight of Happy Village dark cherry puree (in grams)}
+
+\item{\code{durian}}{\link[base]{numeric} scalar, weight of Lucky Taro durian pulp (in grams), seed removed}
+
+\item{\code{mandarine}}{\link[base]{numeric} scalar, weight of blended Del Monte canned mandarine (in grams)}
+
+\item{\code{mango}}{\link[base]{numeric} scalar, weight of blended Pickd frozen mango (in grams)}
+
+\item{\code{pear}}{\link[base]{numeric} scalar, weight of blended Del Monte canned pear (in grams)}
+
+\item{\code{pineapple}}{\link[base]{numeric} scalar, weight of blended Dole canned pineapple (in grams)}
+
 \item{\code{pumpkin}}{\link[base]{numeric} scalar, weight of Libby's pumpkin puree (in grams)}
 
 \item{\code{pumpkinPieMix}}{\link[base]{numeric} scalar, weight of Libby's pumpkin pie mix (in grams)}
 
 \item{\code{strawberry}}{\link[base]{numeric} scalar, weight of Kirkland frozen strawberry (in grams)}
 
-\item{\code{pineapple}}{\link[base]{numeric} scalar, weight of blended Dole canned pineapple (in grams)}
-
-\item{\code{pear}}{\link[base]{numeric} scalar, weight of blended Del Monte canned pear (in grams)}
-
-\item{\code{mandarine}}{\link[base]{numeric} scalar, weight of blended Del Monte canned mandarine (in grams)}
-
-\item{\code{mango}}{\link[base]{numeric} scalar, weight of blended Pickd frozen mango (in grams)}
-
 \item{\code{tomato}}{\link[base]{numeric} scalar, weight of Wegmans Organic tomato puree (in grams)}
 
-\item{\code{darkCherry}}{\link[base]{numeric} scalar, weight of Happy Village dark cherry puree (in grams)}
-
 \item{\code{yellowCorn}}{\link[base]{numeric} scalar, weight of Kirkland frozen yellow corn (in grams)}
-
-\item{\code{durian}}{\link[base]{numeric} scalar, weight of Lucky Taro durian pulp (in grams), seed removed}
-
-\item{\code{applesauce}}{\link[base]{numeric} scalar, weight of Motts no sugar added applesauce (in grams)}
 
 \item{\code{butter,butter_tsp,butter_Tbsp,butter_cup}}{\link[base]{numeric} scalar, weight of Kerrygold unsalted butter (in grams)}
 
