@@ -84,7 +84,7 @@ matcha_froyo <- function() new(
 emma_froyo <- function() new(
   Class = 'recipe', author = 'Emma\'s Goodies', alias_flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',
-  heavyCream = 400,
+  heavyCream_cup = 1.75,
   yogurtGreek = 170, 
   sugar = 130)
 

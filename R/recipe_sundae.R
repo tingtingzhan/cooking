@@ -242,7 +242,7 @@ SweetDumpling_matcha_icecream <- function() new(
 cuisinart_icecream <- function() new(
   Class = 'recipe', author = 'Cuisinart', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
-  milk = 250, # 1 cup
+  milk_cup = 1,
   sugar = 150, # ¾ cup granulated sugar 
   heavyCream = 500, # 2 cups heavy cream 
   vanilla_tsp = 1)

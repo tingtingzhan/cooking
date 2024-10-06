@@ -47,8 +47,8 @@ eggnog <- function() new(
 JeanPierre_eggnog <- function() new(
   Class = 'recipe',
   author = 'Chef Jean-Pierre', alias_flavor = 'Eggnog',
-  milk = 500, # 2 cups
-  heavyCream = 240, # 1 cup
+  milk_cup = 2,
+  heavyCream_cup = 1,
   egg_pc = 6,
   sugar = 200*2/3, # 2/3 cup Sugar divided
   cinnamon_tsp = 1/4,
@@ -68,8 +68,8 @@ PreppyKitchen_eggnog <- function() new(
   Class = 'recipe', alias_flavor = 'Eggnog',
   egg_pc = 6,
   sugar = 200, # 1 cup granulated sugar (200g)
-  milk = 500, # 1 to 2 cups whole milk (240-480ml)
-  heavyCream = 240, # 1 cup 
+  milk_cup = 1.5, # 1 to 2 cups whole milk (240-480ml)
+  heavyCream_cup = 1,
   # nutmeg_tsp = 1/4, # not written yet
   vanilla_Tbsp = 1, 
   liqueur_cup = c(Kahlua_coffee = 1), # 1 cup bourbon (brandy and rum work as well) (240ml)

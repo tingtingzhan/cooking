@@ -313,7 +313,7 @@ Junior_cookbook <- function() new(
   starch_cup = c(Wegmans_corn = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
-  heavyCream = c(Wegmans = 180) # 3/4 cup heavy cream
+  heavyCream_cup = 3/4
 )
 
 #' @rdname cheesecake
@@ -374,7 +374,7 @@ pumpkin_cheesecake_Junior <- function() new(
   starch_cup = c(Wegmans_corn = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
-  heavyCream = 180, # .75 cup
+  heavyCream_cup = 3/4,
   pumpkin = 244, # 1 cup; original
   brownSugar = 130,
   pumpkinSpice_tsp = 1,
@@ -401,7 +401,7 @@ cappuccino_cheesecake_Junior = function() new(
   starch_cup = c(Wegmans_corn = 1/3),
   vanilla_Tbsp = 1,
   egg_pc = 2,
-  heavyCream = 180, # .75 cup
+  heavyCream_cup = 3/4,
   url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')
 
 

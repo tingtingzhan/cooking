@@ -81,7 +81,7 @@ general recipe
 
 \item{\code{sourCream}}{\link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)}
 
-\item{\code{heavyCream}}{\link[base]{numeric} scalar, weight of Wegmans heavy cream or heavy whipping cream (in grams)}
+\item{\code{heavyCream,heavyCream_tsp,heavyCream_Tbsp,heavyCream_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans heavy cream or heavy whipping cream (in grams)}
 
 \item{\code{lightCream}}{\link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)}
 
@@ -93,7 +93,7 @@ general recipe
 
 \item{\code{drymilk,drymilk_tsp,drymilk_Tbsp,drymilk_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Nestle Carnation fat-free dry milk, i.e., milk powder}
 
-\item{\code{milk}}{\link[base]{numeric} scalar, weight of Wegmans Organic vitamin D whole milk (in grams)}
+\item{\code{milk,milk_tsp,milk_Tbsp,milk_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic vitamin D whole milk (in grams)}
 
 \item{\code{buttermilk}}{\link[base]{numeric} scalar, weight of Upstate Farms whole buttermilk (in grams)}
 

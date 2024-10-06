@@ -123,7 +123,8 @@ AddaPinch_chocolate_cake <- function() new(
   flour = 240, sugar = 396,
   cocoa = 63, coffee = 2.3,
   bakingPowder_tsp = 2, NaHCO3_tsp = 1.5, salt = 2.8,
-  milk = 227, egg_pc = 2,
+  milk_cup = 1,
+  egg_pc = 2,
   oil = c(Wegmans_vegetable = 99),
   vanilla_tsp = 2,
   boilingWater = 227)
@@ -136,7 +137,8 @@ PreppyKitchen_chocolate_cake <- function() new(
   flour = 240, sugar = 400,
   cocoa = 50,
   bakingPowder_tsp = 1.5, NaHCO3_tsp = 1.5, salt_tsp = 1/4, # ½ teaspoon kosher salt
-  milk = 250, egg_pc = 2,
+  milk_cup = 1, 
+  egg_pc = 2,
   oil = c(Wegmans_vegetable = 14*8), # ½ cup vegetable oil (180mL)
   vanilla_Tbsp = 1,
   boilingWater = 240,

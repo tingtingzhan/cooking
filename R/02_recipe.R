@@ -41,13 +41,13 @@
 #' @slot yogurtGreek \link[base]{numeric} scalar, weight of non-fat Greek yogurt (in grams)
 #' @slot creamCheese \link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese
 #' @slot sourCream \link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)
-#' @slot heavyCream \link[base]{numeric} scalar, weight of Wegmans heavy cream or heavy whipping cream (in grams)
+#' @slot heavyCream,heavyCream_tsp,heavyCream_Tbsp,heavyCream_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans heavy cream or heavy whipping cream (in grams)
 #' @slot lightCream \link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)
 #' @slot yogurt \link[base]{numeric} scalar, weight of yogurt (in grams)
 #' @slot kefir \link[base]{numeric} scalar
 #' @slot filmjolk \link[base]{numeric} scalar
 #' @slot drymilk,drymilk_tsp,drymilk_Tbsp,drymilk_cup  \link[base]{numeric} scalars, weight (in grams) and volume of Nestle Carnation fat-free dry milk, i.e., milk powder
-#' @slot milk \link[base]{numeric} scalar, weight of Wegmans Organic vitamin D whole milk (in grams)
+#' @slot milk,milk_tsp,milk_Tbsp,milk_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic vitamin D whole milk (in grams)
 #' @slot buttermilk \link[base]{numeric} scalar, weight of Upstate Farms whole buttermilk (in grams)
 #' @slot evaporatedMilk \link[base]{numeric} scalar, weight of Nestle Carnation full-fat \strong{unsweetened} evaporated milk (in grams)
 #' @slot condensedMilk \link[base]{numeric} scalar, weight of Nestle Carnation full-fat \strong{sweetened} condensed milk (in grams)
@@ -331,10 +331,10 @@ setClass(Class = 'recipe', slots = c(
   filmjolk = 'numeric',
   creamCheese = 'numeric',
   sourCream = 'numeric',
-  heavyCream = 'numeric',
+  heavyCream = 'numeric', heavyCream_tsp = 'numeric', heavyCream_Tbsp = 'numeric', heavyCream_cup = 'numeric',
   lightCream = 'numeric',
   drymilk = 'numeric', drymilk_tsp = 'numeric', drymilk_Tbsp = 'numeric', drymilk_cup = 'numeric', 
-  milk = 'numeric',
+  milk = 'numeric', milk_tsp = 'numeric', milk_Tbsp = 'numeric', milk_cup = 'numeric', 
   buttermilk = 'numeric',
   evaporatedMilk = 'numeric',
   condensedMilk = 'numeric',
@@ -682,9 +682,11 @@ recipe <- function(x) {
   x <- dairyName(x, dairy = 'creamCheese', name1 = 'Nancys')
   x <- combineVol(x, which = 'drymilk', name1 = 'Carnation_drymilk')
   x <- dairyName(x, dairy = 'drymilk')
+  x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
   x <- dairyName(x, dairy = 'milk', name1 = 'WegmansOrganic_whole')
   x <- dairyName(x, dairy = 'buttermilk', name1 = 'UpstateFarms')
-  x <- dairyName(x, dairy = 'heavyCream', name1 = 'Wegmans')
+  x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
+  x <- dairyName(x, dairy = 'heavyCream', name1 = 'Wegmans') 
   x <- dairyName(x, dairy = 'lightCream', name1 = 'Lucerne')
   x <- dairyName(x, dairy = 'sourCream', name1 = 'Daisy')
   

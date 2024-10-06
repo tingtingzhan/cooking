@@ -74,7 +74,7 @@ matcha_millecrepe <- function() new(
   matcha_tsp = 4, 
   # sugar_Tbsp = 2, # for heavyCream = 70
   sugar_tsp = 6.5, # for heavyCream = 85
-  cons = 'matcha better made in filling, not ini crepe')
+  cons = 'matcha better made in filling, not in crepe')
 
 #' @rdname millecrepe
 #' @export
@@ -108,7 +108,7 @@ Kahlua_millecrepe_FAIL <- function() new(
 #' @export
 xiaogaojie_millecrepe <- function() new(
   Class = 'recipe', alias_flavor = 'millecrepe',
-  milk = 300, 
+  milk = 300, # in grams in original recipe
   pastryFlour = 100,
   sugar = 12, 
   egg_pc = 2,
@@ -123,7 +123,7 @@ iwen_mango_millecrepe <- function() new(
   sugar = 75,
   pastryFlour = 300,
   salt_tsp = 1/2,
-  milk = 750,
+  milk = 750, # in grams in original recipe
   butter = 100,
   youtube = 'tIOzt4XWy7k')
   
@@ -137,7 +137,7 @@ iwen_cocoa_millecrepe <- function() new(
   cocoa = 23,
   flour = 240,
   salt_tsp = 1/2,
-  milk = 750,
+  milk = 750, # in grams in original recipe
   butter = 105,
   starch = c(Wegmans_corn = 37.5),
   youtube = 'Z7WcSVGa6R4')
@@ -150,7 +150,7 @@ qiong_cocoa_millecrepe <- function() new(
   egg_pc = 2,
   butter = 40,
   cocoa = 10,
-  milk = 400,
+  milk = 400, # in grams in original recipe
   sugar = 50,
   pastryFlour = 80)
 
@@ -161,7 +161,8 @@ qiong_tiramisu_millecrepe <- function() new(
   egg_pc = 2, #
   butter = 30, #
   cocoa = 8, #
-  milk = 410 + 15, # and 15ml  Coffee Rum    1tbsp
+  milk = 410, # in grams in original recipe
+  # 15ml  Coffee Rum    1tbsp
   sugar = 50, #
   coffee = 6.6, #
   pastryFlour = 80) #
@@ -192,7 +193,7 @@ sweetTaste_matcha_millecrepe <- function() new(
   egg_pc = 2,
   sugar = 30,
   oil = c(Wegmans_vegetable = 15),
-  milk = 250
+  milk = 250 # in grams in original recipe
 )
 
 #' @rdname millecrepe
@@ -240,7 +241,7 @@ JustOne_matcha_millecrepe <- function() new(
   Class = 'recipe', 
   alias_flavor = '\u62b9\u8336\u5343\u5c42', 
   just1cookbook = c('vfUu0eedUYI' = 'matcha-mille-crepe-cake'),
-  milk = 250*1.75, # 1.75 cup
+  milk_cup = 1.75,
   sugar = 12.5*3, # 3 Tbsp granulated sugar
   egg_pc = 3,
   butter = 25,

@@ -128,7 +128,7 @@ PreppyKitchen_Bundt <- function() new(
   sugar = 400,
   egg_pc = 6,
   vanilla_Tbsp = 1,
-  milk = 250,
+  milk_cup = 1,
   preppykitchen = c('x2W3j23xSKs' = 'vanilla-bundt-cake'))
     
 

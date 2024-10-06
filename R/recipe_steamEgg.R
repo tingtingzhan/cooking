@@ -47,7 +47,7 @@ shangshi_pudding <- function() new(
   # 4 croissants 可颂面包
   milk = 720, # 3 cups 
   sugar = 75, # 1/3 cup
-  heavyCream = 240, #1 cup (240g) heavy whipping cream 鲜奶油
+  heavyCream_cup = 1,
   egg_pc = 5#, 
   #200g walnuts 核桃仁
   #120g raisins 葡萄干

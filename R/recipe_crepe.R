@@ -57,7 +57,7 @@ jennyc819_crepe <- function() new(
   allrecipes = '16383/basic-crepes/',
   flour = 120, # 1 cup all-purpose flour
   egg_pc = 2,
-  milk = 125, # ½ cup milk
+  milk_cup = 1/2,
   water = 118.3, # ½ cup water
   salt_tsp = 1/4,
   butter = 227/16*2 # 2 tablespoons butter, melted
@@ -71,7 +71,7 @@ cyberchef_crepeFrench <- function() new(
   allrecipes = '20931/french-crepes/',
   flour = 120, # 1 cup all-purpose flour
   egg_pc = 3, # yes
-  milk = 500, # 2 cups milk
+  milk_cup = 2,
   sugar_tsp = 1,
   salt_tsp = 1/4,
   butter = 227/16*2 # 2 tablespoons butter, melted
@@ -86,7 +86,7 @@ Carina_crepe <- function() new(
   flour = 120, # 1 cup
   egg_pc = 2,
   salt_tsp = 1/2,
-  milk = 1.25*250, # 1¼ Cups | 310ml Milk
+  milk_cup = 1.25,
   butter = 227/16*2 #2 tbsp Melted Butter + extra for cooking
 )
 
@@ -101,7 +101,7 @@ Aya_crepe <- function() new(
   salt_tsp = 1/2,
   egg_pc = 4,
   butter = 50,
-  milk = 500
+  milk_cup = 2
   # Dark rum: 1 Tbsp (or 2 Tbsp if you love it!)
 )
 
@@ -111,7 +111,7 @@ Natasha_crepe <- function() new(
   Class = 'recipe', author = 'Natasha', alias_flavor = 'Crepe',
   youtube = 'uA4KRfE_MNM',
   water = 118.3,  # ½ cup lukewarm water
-  milk = 250, # 1 cup milk, warm
+  milk_cup = 1,
   egg_pc = 4,
   butter = 227/16*4, # 4 Tbsp unsalted butter, melted. Plus more to sauté.
   flour = 120, # 1 cup all-purpose flour
@@ -126,7 +126,7 @@ Daat_crepe <- function() new(
   Class = 'recipe', alias_flavor = 'crepe',
   flour = 230,
   egg_pc = 3,
-  milk = 300,
+  milk = 300, # in grams in original recipe
   water = 500,
   butter = 15,
   salt = 5,

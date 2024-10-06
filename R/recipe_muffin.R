@@ -43,7 +43,7 @@ Brody_muffin <- function() new(
   sugar = 300,
   egg_pc = 2,
   oil = c(Wegmans_vegetable = 224), # 1 cup, original
-  milk = 240 * 2/3, water = numeric(), # original (2/3 cup milk, with all-purpose flour)
+  milk_cup = 2/3, 
   yogurt = 170 / (2/3), # 1 cup yogurt
   vanilla_tsp = 2, # original
   pastryFlour = numeric(), flour = 270, # 2.25 cup
@@ -60,7 +60,7 @@ Introvert_muffin = function() new(
   sugar = 100,
   bakingPowder_tsp = 2,
   salt_tsp = .5,
-  milk = 180,
+  milk_cup = .75,
   butter = 113.5,
   egg_pc = 2)
 
@@ -76,7 +76,7 @@ CulinaryHill_muffin <- function() new(
   salt_tsp = 1/2,
   egg_pc = 2,
   butter = 113.5,
-  milk = 120,
+  milk_cup = .5,
   vanilla_tsp = 1)
 
 
@@ -89,5 +89,5 @@ Lori_muffin <- function() new(
   salt_tsp = 1/2,
   sugar = 150, 
   egg_pc = 1,
-  milk = 240,
+  milk_cup = 1,
   oil = c(Wegmans_vegetable = 224/4))

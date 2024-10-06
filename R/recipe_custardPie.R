@@ -20,9 +20,8 @@ if (FALSE) {
       sugar = 60, # original 150, # 3/4 cup sugar
       # salt_tsp = 1/4, # I remove
       # vanilla_tsp = 1,
-      #heavyCream = 230, # 1 cup heavy cream
-      #milk = 360, # 1 1/2 cups milk
-      heavyCream = 100, milk = 490, 
+      heavyCream_cup = 1,
+      milk_cup = 1.5, 
       # 1/4 teaspoon nutmeg # I remove
       url = 'https://www.smalltownwoman.com/old-fashioned-silky-creamy-custard-pie/'
   )

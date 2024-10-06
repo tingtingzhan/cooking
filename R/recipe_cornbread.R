@@ -90,7 +90,7 @@ bluegirl_cornbread <- function() new(
   sugar = 200*2/3,
   bakingPowder_tsp = 3.5,
   salt_tsp = 1,
-  milk = 250,
+  milk_cup = 1,
   oil_tsp = c(Wegmans_vegetable = 16), # ⅓ cup vegetable oil
   egg_pc = 1,
   allrecipes = '17891/golden-sweet-cornbread/')
@@ -104,7 +104,7 @@ PreppyKitchen_cornbread <- function() new(
   sugar = 30,
   bakingPowder_tsp = 2,
   salt_tsp = 1,
-  milk = 360,
+  milk_cup = 1.5,
   butter = 56,
   egg_pc = 1,
   oil_Tbsp = c(Wegmans_vegetable = 1),
