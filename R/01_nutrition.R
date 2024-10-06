@@ -306,6 +306,14 @@ nutrition_name_brand <- function(x) {
 #' @export
 nutrition.nutrition <- function(x) {
   
+  # process user-input `@url` first
+  if (length(x@url)) {
+    x@url <- unclass(style_hyperlink(
+      url = x@url, 
+      text = gsub('^https://|^http://', replacement = '', x = x@url)
+    ))
+  }
+  
   if (!length(x@brand)) { # manufacturer
     x@brand <- if (length(x@bachans)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://bachans.com/products/%s', x@bachans), text = 'Bachan\'s\U1f1fa\U1f1f8'))
@@ -446,10 +454,11 @@ nutrition.nutrition <- function(x) {
   add_store_url_ <- function(x, store, fmt, store_brand, store_name = store_brand) {
     x_store <- slot(x, name = store)
     if (!length(x_store)) return(x)
+    store_url <- sprintf(fmt = fmt, x_store)
     if (!length(x@brand)) {
       if (is.na(store_brand)) stop('must have `store_brand`')
-      x@brand <- unclass(style_hyperlink(url = sprintf(fmt = fmt, x_store), text = store_brand))
-    } else x@url <- c(x@url, paste('\U1f6d2', unclass(style_hyperlink(url = sprintf(fmt = fmt, x_store), text = store_name))))
+      x@brand <- unclass(style_hyperlink(url = store_url, text = store_brand))
+    } else x@url <- c(x@url, paste('\U1f6d2', unclass(style_hyperlink(url = store_url, text = store_name))))
     slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
     return(x)
   }
@@ -735,7 +744,7 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
   if (length(obj@fdc)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central'))), sep = '\n')
   if (length(obj@pubchem)) cat(paste('\U1f4dd', unclass(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')
   
-  if (length(obj@url)) cat(styleURL(url_ = sprintf(fmt = '%s', obj@url)), sep = '\n')
+  if (length(obj@url)) cat(obj@url, sep = '\n')
 
 })
 

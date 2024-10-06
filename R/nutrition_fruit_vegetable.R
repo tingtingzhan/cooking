@@ -73,14 +73,9 @@ Kirkland_peach <- function() new(
 
 mango <- function() new( 
   Class = 'nutrition', 
-  url = c(
-    # all frozen; sold at Costco
-    'www.alasko.com/category?family=13&commodite=1&class=1', # Pickd, super nice!
-    'www.sunopta.com/our-brands/', # Sunrise Growers, hit or miss
-    'ultra-organics.com/en/products/products-catalog/' # Too dry; too sour.  Do not buy!
-  ),
   fdc = 169910L, # water 83.5%
-  brand = 'Pickd', name = '\u8292\u679c(\u6ce5) Mango\U1f96d',
+  brand = 'Ultra Organics', name = '\u8292\u679c(\u6ce5) Mango\U1f96d',
+  costcoBiz = '100370260',
   servingGram = 140, 
   servingCup = 1, # puree density; confirm with experiment!!
   sugar = 19, protein = 1,

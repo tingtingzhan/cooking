@@ -1,8 +1,9 @@
 
 
 Mazola_corn_oil <- function() new(
-  Class = 'nutrition', url = 'https://www.mazola.com/products/mazolareg-corn-oil/',
-  brand = 'Mazola', name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
+  Class = 'nutrition', 
+  brand = unclass(style_hyperlink(text = 'Mazola', url = 'https://www.mazola.com/products/mazolareg-corn-oil/')),
+  name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
@@ -38,8 +39,12 @@ Wegmans_olive_oil <- function() new(
 
 Kadoya_sesameOil <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Kadoya\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/english/products/family.html')),
+  brand = paste0(
+    unclass(style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html')),
+    unclass(style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html'))
+  ),
   name = '\u829d\u9ebb\u6cb9 Sesame Oil',
+  wegmans = 27984L, usd = .82/2, # 1fl oz = 2tbsp
   servingGram = 14, servingTbsp = 1, 
   calorie = 130,
   fat = 14)

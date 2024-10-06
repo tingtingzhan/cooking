@@ -33,9 +33,7 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
     'Ferment for 30min',
     'Choose Bread program (90min)'
   ),
-  url = c(
-    'v.douyin.com/idoJXYAX/'
-  )
+  url = 'v.douyin.com/idoJXYAX/'
 ))
 
 # air fryer does not work for this dough ..

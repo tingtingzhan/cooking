@@ -36,6 +36,7 @@
       .08
     } else .035, 
     marinade = .04,
+    milktea = .05,
     matchaLatteHot =, matchaLatteFrappe = .04, # perfect! 2024 late summer
     stickyRice =, riceCake =, riceMousse = .05, 
     cornbread = .05, # well tested!
@@ -46,8 +47,7 @@
     }, 
     caffeLatteHot =, caffeLatteFrappe = .055,
     mocaccinoHot =, mocaccinoFrappe = .06,
-    matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # perfect!! whole goat milk 
-    teaLatte = .067,
+    matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # early 2024; whole goat milk; try to reduce with tenju!
     sundae = if (length(x@matcha)) {
       .095
     } else if (length(x@coffee)) {
@@ -111,7 +111,7 @@
   
   addedSugar <- function(x) switch(
     class(x),
-    teaLatte = .0035,
+    milktea = .013,
     mocaccinoHot =, mocaccinoFrappe = .015,
     cocoaMix = .063,
     NA_real_)
@@ -138,6 +138,7 @@
     } else .055,
     millecrepe = if (length(x@liqueur)) .05 else .06,
     pudding = .05, # trying
+    milktea = .065,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .075, 
     stickyRice =, riceCake = .1, # need to re-think!!
     matchaLatteHot =, matchaLatteFrappe = .075, # taste better than .09 !
@@ -145,7 +146,6 @@
     caffeLatteHot =, caffeLatteFrappe =,
     mocaccinoHot =, mocaccinoFrappe =,
     hotdrink =, frappe = .09, # match Carnation_drymilk() can label
-    teaLatte = .122, # tested on Earl Grey, Ceylon
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,

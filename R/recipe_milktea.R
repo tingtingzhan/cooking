@@ -1,6 +1,6 @@
 
 
-#' @title \linkS4class{teaLatte} Recipes
+#' @title \linkS4class{milktea} Recipes
 #' 
 #' @description
 #' Latte from a tea bag.
@@ -12,39 +12,57 @@
 # @slot brownSugar_tsp has better color than `sugar`
 #' 
 #' @examples
-#' # I love!
-#' EarlGrey_latte_Twinings()
-#' Ceylon_latte_Stassen()
-#' chai_latte_Twinings()
+#' EarlGrey_milktea()
+#' Ceylon_milktea()
+#' chai_milktea()
 #' 
-#' @name teaLatte
-#' @aliases teaLatte-class
+#' @name milktea
+#' @aliases milktea-class
 #' @export
-setClass(Class = 'teaLatte', contains = 'recipe', prototype = prototype(
+setClass(Class = 'milktea', contains = 'recipe', prototype = prototype(
   alias_class = '\u5976\u8336',
-  drymilk = 35, 
-  brownSugar_tsp = .25,
-  boilingWater = 250, 
+  drymilk = 40, 
+  brownSugar_tsp = 2, # 1tsp too bland; 1Tbsp too sweet
+  water90 = 560, 
   instruction = c(
+    'Stanley 20oz quencher',
     'Add half of boiling water to powders, whisk until froth',
     'Add rest of boiling water, whisk',
-    'Add tea bag'
+    'Add tea bags',
+    'Soak (covered) for 1hr+'
   )
 ))
 
 
 
-#' @rdname teaLatte
+#' @rdname milktea
 #' @export
-EarlGrey_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_strongEarlGrey = 1), pros = 'I like!')
+EarlGrey_milktea <- function() new(
+  Class = 'milktea', 
+  alias_flavor = 'Earl Grey', 
+  teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), 
+  review = 'try')
 
-#' @rdname teaLatte
-#' @export
-Ceylon_latte_Stassen <- function() new(Class = 'teaLatte', teabag = c(Stassen_Ceylon = 1), pros = 'I like!')
 
-#' @rdname teaLatte
+#' @rdname milktea
 #' @export
-chai_latte_Twinings <- function() new(Class = 'teaLatte', teabag = c(Twinings_ultraChai = 1), pros = 'I like!')
+Ceylon_milktea <- function() new(
+  Class = 'milktea', 
+  teabag = c(Stassen_Ceylon = 4), 
+  date = as.Date('2024-10-06'),
+  pros = 'I like!')
+
+
+
+#' @rdname milktea
+#' @export
+chai_milktea <- function() new(
+  Class = 'milktea', 
+  teabag = c(Twinings_ultraChai = 4), 
+  review = 're-try')
+
+
+
 
 
 

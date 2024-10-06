@@ -74,11 +74,9 @@ Lucerne_European_butter <- function() new(
 Minerva_Amish_butter <- function() new(
   Class = 'nutrition',
   # wegmans = 43730L, # this is the salted version
-  brand = 'Minerva\U1f1fa\U1f1f8', name = 'Amish Butter',
-  url = c(
-    'minervadairy.com/product/unsalted/',
-    'minervadairy.com/product/2lbs-unsalted-roll-butter/'
-  ),
+  brand = unclass(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
+  name = 'Amish Butter',
+  url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
   webstaurant = '874880039', usd = 92.49/6/(2*16),
   servingGram = 227/16, servingTbsp = 1,
   calorie = 100,
