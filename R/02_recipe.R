@@ -197,6 +197,7 @@
 #' @slot KSMICM \linkS4class{tool}, Kitchen Aid ice cream maker KSMICM
 #' @slot CuisinartICE70 \linkS4class{tool}, Cuisinart ice cream maker ICE70
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
+#' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
 #' @slot RobamCT763 \linkS4class{tool}
 #' @slot InstantPot \linkS4class{tool}
@@ -263,7 +264,7 @@ setClass(Class = 'recipe', slots = c(
   KSM3316X = 'tool',
   KSMICM = 'tool',
   CuisinartICE70 = 'tool',
-  JoyoungDJ13U = 'tool',
+  JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
   RobamCT763 = 'tool',
   InstantPot = 'tool',
@@ -1550,6 +1551,7 @@ setMethod(f = show, signature = signature(object = 'recipe'), definition = funct
   show(object@KSMICM)
   show(object@CuisinartICE70)
   show(object@JoyoungDJ13U)
+  show(object@JoyoungDJ06M)
   show(object@JoyoungCJA9U)
   show(object@RobamCT763)
   show(object@InstantPot)

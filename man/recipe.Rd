@@ -317,6 +317,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{JoyoungDJ13U}}{\linkS4class{tool}, Joyoung soymilk maker DJ13U-P10}
 
+\item{\code{JoyoungDJ06M}}{\linkS4class{tool}, Joyoung mini soymilk maker DJ06M}
+
 \item{\code{JoyoungCJA9U}}{\linkS4class{tool}, Joyoung stir-fry machine CJ-A9U}
 
 \item{\code{RobamCT763}}{\linkS4class{tool}}

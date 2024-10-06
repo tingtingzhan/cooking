@@ -120,22 +120,32 @@ KSM3316X <- function(...) new(Class = 'tool', name = 'Kitchen Aid Stand Mixer KS
 RobamCT763 <- function(...) new(Class = 'tool', name = 'Robam R-Box CT763 Combi Steam Oven', ...)
 
 JoyoungDJ13U <- function(...) new(Class = 'tool', name = '\u4e5d\u9633\u8c46\u6d46\u673a Joyoung Soymilk Maker DJ13U-P10', ...)
+JoyoungDJ06M <- function(...) new(Class = 'tool', name = '\u4e5d\u9633\u8ff7\u4f60\u8c46\u6d46\u673a Joyoung Mini Soymilk Maker DJ06M', ...)
 
 
 JoyoungDJ13U_soymilk <- function(
     treatment = c(
-      'Soak dry beans \033[94me.g., soybean, chickpea, mung bean, etc.\033[0m overnight in fridge',
-      '1300ml water line'
+      'Soak dry beans \033[94me.g., soybean, chickpea, mung bean, etc.\033[0m overnight in fridge'
     ),
-    program = '\u8001\u8c46\u6d46\u7a0b\u5e8f Classic Soymilk program',
+    program = '\u8001\u8c46\u6d46\u7a0b\u5e8f Classic Soymilk program, 1300ml water line',
+    waterLost = 45, # whole machine, 4175 - 4131, 2024-09-15
     ...
-) JoyoungDJ13U(treatment = treatment, program = program, ...)
+) JoyoungDJ13U(treatment = treatment, program = program, waterLost = waterLost, ...)
+
+
+JoyoungDJ06M_soymilk <- function(
+    treatment = c(
+      'Soak dry beans \033[94me.g., soybean, chickpea, mung bean, etc.\033[0m overnight in fridge'
+    ),
+    program = '\u8c46\u6d46\u7a0b\u5e8f Soymilk program, 600ml water line',
+    waterLost = 10, # re-weigh whole machine, xx - yy, 2024-mm-dd
+    ...
+) JoyoungDJ06M(treatment = treatment, program = program, waterLost = waterLost, ...)
 
 
 JoyoungDJ13U_cornjuice <- function(
-  program = '\u7389\u7c73\u6c41\u7a0b\u5e8f Corn\U1f33d Juice program',
+  program = '\u7389\u7c73\u6c41\u7a0b\u5e8f Corn\U1f33d Juice program, 900ml water line',
   operation = c(
-    '900ml water line',
     'Do not use 1300ml water line, cannot push down blades',
     'Machine gives error if pre-blended'
   ), 

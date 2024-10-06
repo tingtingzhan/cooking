@@ -10,10 +10,9 @@ tofu <- function() new(
   waterLost = 100, # in coagulation
   JoyoungDJ13U = JoyoungDJ13U(
     treatment = c(
-      'Soak dry soybeans + room-temperature water',
-      '1300ml water line'
+      'Soak dry soybeans + room-temperature water'
     ),
-    program = '\u5e72\u6e7f\u8c46\u7a0b\u5e8f Dry/Soaked Beans program',
+    program = '\u5e72\u6e7f\u8c46\u7a0b\u5e8f Dry/Soaked Beans program, 1300ml water line',
     operation = c(
       'Wait until temperature drops to 80C/175F'
     ),

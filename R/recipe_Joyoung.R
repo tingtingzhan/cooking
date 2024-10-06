@@ -18,18 +18,26 @@
 #' @aliases soymilk-class
 #' @export
 setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
-  alias_class = '\u4e5d\u9633\u8001\u8c46\u6d461300ml'
+  alias_class = '\u8c46\u6d46'
 ))
+
+#' @rdname soymilk
+#' @export
+soymilk_DJ13U <- function() new(
+  Class = 'soymilk',
+  soybean = 45, # my favorite is 1 Joyoung small cup
+  water = 1300 - 45, # confirmed!!
+  JoyoungDJ13U = JoyoungDJ13U_soymilk(),
+  date = as.Date('2024-09-15'))
+
 
 #' @rdname soymilk
 #' @export
 soymilk <- function() new(
   Class = 'soymilk',
-  soybean = 45, # my favorite is 1 Joyoung small cup
-  water = 1300 - 45, # confirmed!!
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(
-    waterLost = 45 # whole machine, 4175 - 4131, 2024-09-15
-  ),
+  soybean = 22, # my favorite is 1/2 Joyoung small cup
+  water = 610 - 22, # to be confirmed
+  JoyoungDJ06M = JoyoungDJ06M_soymilk(),
   date = as.Date('2024-09-15'))
 
 
@@ -41,9 +49,7 @@ chickpeaMilk <- function() new(
   soybean = 45, # 1 Joyoung small cup
   chickpea = 45/2, # 1/2 Joyoung small cup
   water = 1300 - 45 - 22.5, 
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(
-    waterLost = 50 # reweigh using whole machine!!
-  ))
+  JoyoungDJ13U = JoyoungDJ13U_soymilk())
 
 #' @rdname soymilk
 #' @export
@@ -52,7 +58,7 @@ cashewMilk <- function() new(
   soybean = 45, # 1 Joyoung small cup
   cashew = 80, # confirmed!
   water = 1300-45-80, # confirmed!
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(waterLost = 35), # 4169 - 4135
+  JoyoungDJ13U = JoyoungDJ13U_soymilk(),
   pros = 'thick and nice!')
 
 
@@ -111,8 +117,7 @@ veggieSoymilk <- function() new(
 setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
   alias_class = '\u7c73\u7cca',
   JoyoungDJ13U = JoyoungDJ13U(
-    treatment = '900ml water line',
-    program = '\u7c73\u7cca\u7a0b\u5e8f Rice Paste program',
+    program = '\u7c73\u7cca\u7a0b\u5e8f Rice Paste program, 900ml water line',
     waterLost = 20
   )
 ))
