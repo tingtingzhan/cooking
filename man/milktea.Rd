@@ -16,7 +16,7 @@ Ceylon_milktea()
 chai_milktea()
 }
 \description{
-Latte from a tea bag.
+Milk tea (from tea bags).
 }
 \examples{
 EarlGrey_milktea()

@@ -6,11 +6,14 @@
 \alias{soytea-class}
 \alias{EarlGrey_soytea}
 \alias{Ceylon_soytea}
+\alias{chai_soytea}
 \title{\linkS4class{soytea} Recipes}
 \usage{
 EarlGrey_soytea()
 
 Ceylon_soytea()
+
+chai_soytea()
 }
 \description{
 Soymilk with black tea.
@@ -18,5 +21,6 @@ Soymilk with black tea.
 \examples{
 EarlGrey_soytea()
 Ceylon_soytea()
+chai_soytea()
 
 }

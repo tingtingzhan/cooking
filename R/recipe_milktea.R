@@ -3,13 +3,7 @@
 #' @title \linkS4class{milktea} Recipes
 #' 
 #' @description
-#' Latte from a tea bag.
-#' 
-# @slot boilingWater 250 grams of boiling water, for a tea mug
-#' 
-# @slot drymilk 35 grams of dry milk
-#' 
-# @slot brownSugar_tsp has better color than `sugar`
+#' Milk tea (from tea bags).
 #' 
 #' @examples
 #' EarlGrey_milktea()
@@ -77,6 +71,7 @@ chai_milktea <- function() new(
 #' @examples
 #' EarlGrey_soytea()
 #' Ceylon_soytea()
+#' chai_soytea()
 #' 
 #' @name soytea
 #' @aliases soytea-class
@@ -96,6 +91,8 @@ EarlGrey_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_strongEa
 #' @export
 Ceylon_soytea <- function() new(Class = 'soytea', teabag = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'I like')
 
-
+#' @rdname soytea
+#' @export
+chai_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_ultraChai = 4), date = as.Date('2024-09-15'), pros = 'I love!')
 
 
