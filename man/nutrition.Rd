@@ -116,6 +116,8 @@ Nutrition information.
 
 \item{\code{kingarthur,kingarthurpro}}{\link[base]{integer} scalars}
 
+\item{\code{kraftheinzawayfromhome,philadelphia}}{\link[base]{character} scalars}
+
 \item{\code{leaperrins}}{\link[base]{character} scalar}
 
 \item{\code{leekumkee}}{\link[base]{character} scalar}

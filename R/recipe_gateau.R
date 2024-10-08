@@ -155,7 +155,7 @@ DessertFor2_matcha_cake <- function() new(
   matcha_tsp = 1.5*3,
   flour = 120,
   bakingPowder_tsp = 1,
-  buttermilk = 240/3, # ⅓ cup buttermilk
+  buttermilk_cup = 1/3,
   url = 'https://www.dessertfortwo.com/matcha-cake/')
 
 

@@ -48,7 +48,7 @@
 #' @slot filmjolk \link[base]{numeric} scalar
 #' @slot drymilk,drymilk_tsp,drymilk_Tbsp,drymilk_cup  \link[base]{numeric} scalars, weight (in grams) and volume of Nestle Carnation fat-free dry milk, i.e., milk powder
 #' @slot milk,milk_tsp,milk_Tbsp,milk_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic vitamin D whole milk (in grams)
-#' @slot buttermilk \link[base]{numeric} scalar, weight of Upstate Farms whole buttermilk (in grams)
+#' @slot buttermilk,buttermilk_tsp,buttermilk_Tbsp,buttermilk_cup \link[base]{numeric} scalar, weight (in grams) and volume of Upstate Farms whole buttermilk (in grams)
 #' @slot evaporatedMilk \link[base]{numeric} scalar, weight of Nestle Carnation full-fat \strong{unsweetened} evaporated milk (in grams)
 #' @slot condensedMilk \link[base]{numeric} scalar, weight of Nestle Carnation full-fat \strong{sweetened} condensed milk (in grams)
 #' 
@@ -335,7 +335,7 @@ setClass(Class = 'recipe', slots = c(
   lightCream = 'numeric',
   drymilk = 'numeric', drymilk_tsp = 'numeric', drymilk_Tbsp = 'numeric', drymilk_cup = 'numeric', 
   milk = 'numeric', milk_tsp = 'numeric', milk_Tbsp = 'numeric', milk_cup = 'numeric', 
-  buttermilk = 'numeric',
+  buttermilk = 'numeric', buttermilk_tsp = 'numeric', buttermilk_Tbsp = 'numeric', buttermilk_cup = 'numeric', 
   evaporatedMilk = 'numeric',
   condensedMilk = 'numeric',
   
@@ -684,6 +684,7 @@ recipe <- function(x) {
   x <- dairyName(x, dairy = 'drymilk')
   x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
   x <- dairyName(x, dairy = 'milk', name1 = 'WegmansOrganic_whole')
+  x <- combineVol(x, which = 'buttermilk', name1 = 'UpstateFarms_buttermilk')
   x <- dairyName(x, dairy = 'buttermilk', name1 = 'UpstateFarms')
   x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
   x <- dairyName(x, dairy = 'heavyCream', name1 = 'Wegmans') 

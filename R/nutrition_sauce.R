@@ -34,6 +34,7 @@ mizkan_brownRiceVinegar <- function() new(
 LeaPerrins_Worcestershire <- function() new(
   Class = 'nutrition', 
   leaperrins = '00051600000044',
+  # kraftheinzawayfromhome = '10051600003011',
   name = '\u55bc\u6c41 Worcestershire Sauce',
   servingTsp = 1, servingGram = 5, 
   calorie = 5,

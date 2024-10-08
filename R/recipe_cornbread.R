@@ -73,7 +73,7 @@ BethanyWeathersby_cornbread <- function() new(
   butter = 227/2, 
   sugar = 200*2/3,
   egg_pc = 2,
-  buttermilk = 240, 
+  buttermilk_cup = 1, 
   NaHCO3_tsp = 1/2, 
   cornmeal = 120,
   flour = 120,
@@ -126,7 +126,7 @@ JoshuaWeissman_cornbread <- function() new(
   bakingPowder_Tbsp = 1,
   cornmeal = 175,
   egg_pc = 2,
-  buttermilk = 350, # 1.5 cup 
+  buttermilk_cup = 1.5,
   youtube = 'et5OlhhD2Bo',
   url = 'https://www.joshuaweissman.com/post/homemade-cornbread'
 )

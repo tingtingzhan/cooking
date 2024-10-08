@@ -106,18 +106,29 @@ Carnation_condensedMilk <- function() new(
 
 Philadelphia_creamCheese <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = 'Philadelphia\U1f1fa\U1f1f8', url = 'https://www.kraftheinzawayfromhome.com/products/10021000616005/')),
+  kraftheinzawayfromhome = '10021000616005',
+  philadelphia = '00021000612239',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
   servingGram = 28, # no volume info!!
   calorie = 100,
   fat = 9, cholesterol = .03, sodium = .11, carbohydrate = 1, sugar = 1, protein = 2)
 
+Philadelphia_creamCheeseSpread <- function() new(
+  Class = 'nutrition',
+  philadelphia = '00021000000142',
+  kraftheinzawayfromhome = '10021000614063',
+  name = '\u5976\u6cb9\u5976\u916a\u62b9\u6599 Cream Cheese Spread',
+  contain = c('guar gum'),
+  servingGram = 31, servingTbsp = 2,
+  calorie = 80,
+  fat = 7, cholesterol = .02, sodium = .125, carbohydrate = 2, sugar = 1, protein = 2)
 
 
 PhiladelphiaNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Philadelphia\U1f1fa\U1f1f8', url = 'https://www.kraftheinzawayfromhome.com/products/10021000616401/')),
+  kraftheinzawayfromhome = '10021000616401',
+  philadelphia = '00021000612475',
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cream Cheese',
   walmart = '36647454', usd = 4.98/2/227*28, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
@@ -125,6 +136,17 @@ PhiladelphiaNeufchatel_creamCheese <- function() new(
   calorie = 70,
   fat = 6, cholesterol = .02, sodium = .125, carbohydrate = 2, sugar = 1, protein = 2)
 
+PhiladelphiaNeufchatel_creamCheeseSpread <- function() new(
+  Class = 'nutrition', 
+  philadelphia = '00021000000289',
+  kraftheinzawayfromhome = '10021000726704',
+  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a\u62b9\u6599 Neufcha\u0302tel Cream Cheese Spread',
+  contain = c('carob bean gum', 'guar gum', 'natamycin'),
+  servingGram = 31, servingTbsp = 2,
+  calorie = 60,
+  fat = 5, cholesterol = .02, sodium = .12, carbohydrate = 2, sugar = 2, protein = 3)
+
+# nutrition_(Philadelphia_creamCheese, Philadelphia_creamCheeseSpread, PhiladelphiaNeufchatel_creamCheese, PhiladelphiaNeufchatel_creamCheeseSpread)
 
 LucerneNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', acme = 137100657L,

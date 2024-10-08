@@ -74,6 +74,7 @@ setOldClass('cli_glue_delay')
 #' @slot kerrygold,kerrygoldusa \link[base]{character} scalar
 #' @slot kikkomanusa \link[base]{character} scalar
 #' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
+#' @slot kraftheinzawayfromhome,philadelphia \link[base]{character} scalars
 #' @slot leaperrins \link[base]{character} scalar
 #' @slot leekumkee \link[base]{character} scalar
 #' @slot maeda \link[base]{character} scalar
@@ -187,6 +188,7 @@ setClass(Class = 'nutrition', slots = c(
   kerrygold = 'character', kerrygoldusa = 'character',
   kikkomanusa = 'character',
   kingarthur = 'integer', kingarthurpro = 'integer',
+  kraftheinzawayfromhome = 'character', philadelphia = 'character',
   leaperrins = 'character',
   leekumkee = 'character',
   maeda = 'character',
@@ -373,6 +375,12 @@ nutrition.nutrition <- function(x) {
         x@kingarthur), text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@kingarthurpro)) {
       unclass(style_hyperlink(url = 'https://www.kingarthurbaking.com/pro/products', text = 'King Arthur\U1f1fa\U1f1f8'))
+    } else if (length(x@kraftheinzawayfromhome)) {
+      if (length(x@philadelphia)) {
+        nm <- strsplit(x@name, split = ' ')[[1L]]
+        x@name <- paste(c(nm[1L], unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', x@philadelphia), text = 'Philadelphia')), nm[-1L]), collapse = ' ')
+      }
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', x@kraftheinzawayfromhome), text = 'Kraft Heinz\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text = 'Lea & Perrins\U1f1ec\U1f1e7'))
     } else if (length(x@leekumkee)) {

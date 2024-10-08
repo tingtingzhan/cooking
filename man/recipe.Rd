@@ -95,7 +95,7 @@ general recipe
 
 \item{\code{milk,milk_tsp,milk_Tbsp,milk_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic vitamin D whole milk (in grams)}
 
-\item{\code{buttermilk}}{\link[base]{numeric} scalar, weight of Upstate Farms whole buttermilk (in grams)}
+\item{\code{buttermilk,buttermilk_tsp,buttermilk_Tbsp,buttermilk_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Upstate Farms whole buttermilk (in grams)}
 
 \item{\code{evaporatedMilk}}{\link[base]{numeric} scalar, weight of Nestle Carnation full-fat \strong{unsweetened} evaporated milk (in grams)}
 
