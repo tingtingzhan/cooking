@@ -55,7 +55,7 @@ general recipe
 
 \item{\code{pineapple}}{\link[base]{numeric} scalar, weight of blended Dole canned pineapple (in grams)}
 
-\item{\code{pumpkin}}{\link[base]{numeric} scalar, weight of Libby's pumpkin puree (in grams)}
+\item{\code{pumpkin,pumpkin_tsp,pumpkin_Tbsp,pumpkin_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Libby's pumpkin puree (in grams)}
 
 \item{\code{pumpkinPieMix}}{\link[base]{numeric} scalar, weight of Libby's pumpkin pie mix (in grams)}
 

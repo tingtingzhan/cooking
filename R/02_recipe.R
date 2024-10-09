@@ -27,7 +27,7 @@
 #' @slot mango \link[base]{numeric} scalar, weight of blended Pickd frozen mango (in grams)
 #' @slot pear \link[base]{numeric} scalar, weight of blended Del Monte canned pear (in grams)
 #' @slot pineapple \link[base]{numeric} scalar, weight of blended Dole canned pineapple (in grams)
-#' @slot pumpkin \link[base]{numeric} scalar, weight of Libby's pumpkin puree (in grams)
+#' @slot pumpkin,pumpkin_tsp,pumpkin_Tbsp,pumpkin_cup \link[base]{numeric} scalar, weight (in grams) and volume of Libby's pumpkin puree (in grams)
 #' @slot pumpkinPieMix \link[base]{numeric} scalar, weight of Libby's pumpkin pie mix (in grams)
 #' @slot strawberry \link[base]{numeric} scalar, weight of Kirkland frozen strawberry (in grams)
 #' @slot tomato \link[base]{numeric} scalar, weight of Wegmans Organic tomato puree (in grams)
@@ -313,7 +313,7 @@ setClass(Class = 'recipe', slots = c(
   mango = 'numeric',
   pear = 'numeric',
   pineapple = 'numeric',
-  pumpkin = 'numeric',
+  pumpkin = 'numeric', pumpkin_tsp = 'numeric', pumpkin_Tbsp = 'numeric', pumpkin_cup = 'numeric',
   pumpkinPieMix = 'numeric',
   strawberry = 'numeric',
   tomato = 'numeric',
@@ -605,7 +605,8 @@ recipe <- function(x) {
   x <- addNameLen1(x, which = 'mango', name1 = 'mango')
   x <- addNameLen1(x, which = 'pear', name1 = 'DelMonte_pear')
   x <- addNameLen1(x, which = 'pineapple', name1 = 'Dole_pineapple')
-  x <- addNameLen1(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
+  x <- combineVol(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
+  #x <- addNameLen1(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
   x <- addNameLen1(x, which = 'pumpkinPieMix', name1 = 'Libbys_pumpkinPieMix')
   x <- addNameLen1(x, which = 'strawberry', name1 = 'Kirkland_strawberry')
   x <- addNameLen1(x, which = 'tomato', name1 = 'WegmansOrganic_tomato')
@@ -910,8 +911,6 @@ recipe <- function(x) {
         '\u6930\u84c9\U1f965'
       } else if (length(x@darkCherry)) {
         '\u751c\u6a31\u6843\U1f352'
-      } else if (length(x@ginger)) {
-        '\u59dc\u9999\U1fada'
       } else if (length(x@mandarine)) {
         '\u6a58\u5b50\U1f34a'
       } else if (length(x@mango)) {
@@ -940,6 +939,8 @@ recipe <- function(x) {
         '\u725b\u8089'
       } else if (length(x@pork)) {
         '\u732a\u8089'
+      } else if (length(x@ginger)) {
+        '\u59dc\u9999\U1fada'
       } else if (length(x@liqueur) == 1L) {
         nutrition_name_brand(nutrition(do.call(what = names(x@liqueur), args = list())))
         # if (length(liqueur_nm <- names(x@liqueur))) {

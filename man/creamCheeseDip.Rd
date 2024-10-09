@@ -5,9 +5,15 @@
 \alias{creamCheeseDip}
 \alias{creamCheeseDip-class}
 \alias{pumpkin_creamCheeseDip}
+\alias{pumpkin_creamCheeseDip_bakethat}
+\alias{pumpkin_creamCheeseDip_Julie}
 \title{\linkS4class{creamCheeseDip} Recipes}
 \usage{
 pumpkin_creamCheeseDip()
+
+pumpkin_creamCheeseDip_bakethat()
+
+pumpkin_creamCheeseDip_Julie()
 }
 \description{
 \linkS4class{creamCheeseDip} contains much more water than
@@ -19,5 +25,10 @@ thus cannot be \emph{spread}ed.
 \examples{
 pumpkin_creamCheeseDip()
 
+nutrition_(
+ pumpkin_creamCheeseDip,
+ subtract(pumpkin_creamCheeseDip_bakethat, sugar = 185),
+ subtract(pumpkin_creamCheeseDip_Julie, sugar = 245)
+)
 
 }

@@ -602,6 +602,8 @@ autoVolume <- function(x, nm = names(x)) {
   
   y_less_cup <- y %% 48
   
+  # '\u2154' # 2/3
+  
   cup2 <- y_less_cup %/% (48/2) # 0 or 1
   y_less_cup2 <- y_less_cup %% (48/2)
   cup2_txt <- ifelse(cup2 > 0, yes = '\u00bdCup', no = '')
