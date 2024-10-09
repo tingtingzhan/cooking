@@ -154,6 +154,7 @@ setClass(Class = 'nutrition', slots = c(
   bjs = 'character',
   costco = 'character', costcoBiz = 'character',
   giantfood = 'integer',
+  kraftheinzawayfromhome = 'character', 
   sams = 'character',
   target = 'character',
   totalwine = 'character',
@@ -188,7 +189,7 @@ setClass(Class = 'nutrition', slots = c(
   kerrygold = 'character', kerrygoldusa = 'character',
   kikkomanusa = 'character',
   kingarthur = 'integer', kingarthurpro = 'integer',
-  kraftheinzawayfromhome = 'character', philadelphia = 'character',
+  philadelphia = 'character',
   leaperrins = 'character',
   leekumkee = 'character',
   maeda = 'character',
@@ -375,12 +376,8 @@ nutrition.nutrition <- function(x) {
         x@kingarthur), text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@kingarthurpro)) {
       unclass(style_hyperlink(url = 'https://www.kingarthurbaking.com/pro/products', text = 'King Arthur\U1f1fa\U1f1f8'))
-    } else if (length(x@kraftheinzawayfromhome)) {
-      if (length(x@philadelphia)) {
-        nm <- strsplit(x@name, split = ' ')[[1L]]
-        x@name <- paste(c(nm[1L], unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', x@philadelphia), text = 'Philadelphia')), nm[-1L]), collapse = ' ')
-      }
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', x@kraftheinzawayfromhome), text = 'Kraft Heinz\U1f1fa\U1f1f8'))
+    } else if (length(x@philadelphia)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', x@philadelphia), text = 'Philadelphia\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text = 'Lea & Perrins\U1f1ec\U1f1e7'))
     } else if (length(x@leekumkee)) {
@@ -477,6 +474,7 @@ nutrition.nutrition <- function(x) {
   x <- add_store_url_(x, store = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery')
   #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
   x <- add_store_url_(x, store = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.')
+  x <- add_store_url_(x, store = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
   x <- add_store_url_(x, store = 'target', fmt = 'https://www.target.com/p/%s', store_brand = NA_character_, store_name = 'Target')
   x <- add_store_url_(x, store = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')

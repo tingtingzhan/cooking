@@ -104,8 +104,8 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
   egg_pc = 2,
   water = 100, 
   portion = c(
-    'raibow cupcake 3in' = 60, 
-    'Philips Airfryer cupcake 2.75in' = 80,
+    'cupcake 2.75in' = 80,
+    'cupcake 3in' = 60, 
     'Emile Henry 9in, crustless' = 1400 
   ),
   instruction = c(

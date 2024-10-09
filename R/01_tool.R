@@ -62,30 +62,27 @@ setMethod(f = show, signature = signature(object = 'tool'), definition = functio
   cat(sprintf(fmt = '\u2756 %s \u2756\n', object@name))
   
   if (length(object@recipe_pc)) {
-    cat(sprintf(fmt = '\u0020\u2726 Makes x%.1f recipes at a time\n', object@recipe_pc))
+    cat(sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n', object@recipe_pc))
   }
   
   # object@recipe_weight
+  # stopifnot(identical(' ', '\u0020'))
+  cat(sprintf(fmt = ' \u21ac %s\n', object@treatment), sep = '')
   
-  cat(sprintf(fmt = '\u0020\u21ac %s\n', object@treatment), sep = '')
-  
-  cat(sprintf(fmt = '\u0020\u2726 %s\n', object@program))
-  
-  cat(sprintf(fmt = '\u0020\u0020\U1f6e0 %s\n', object@attachment))
-  
-  cat(sprintf(fmt = '\u0020\u0020\U1f321 %d\u00b0F or %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
+  cat(sprintf(fmt = ' \u2726 %s\n', object@program))
+  cat(sprintf(fmt = '  \U1f6e0 %s\n', object@attachment))
+  cat(sprintf(fmt = '  \U1f321 %d\u00b0F; %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
   
   if (length(object@minute)) {
-    if (is.null(names(object@minute))) {
-      names(object@minute) <- character(length = length(object@minute))
-    }
-    cat(paste0('\u0020\u0020\u23f0 ', ifelse(
-      test = object@minute > 60, 
-      yes = sprintf(fmt = '%.2g hours', object@minute / 60),
-      no = sprintf(fmt = '%d minutes', object@minute)
+    min_ <- object@minute
+    if (is.null(names(min_))) names(min_) <- character(length = length(min_))
+    cat(paste0('  \u23f0 ', ifelse(
+      test = min_ > 60, 
+      yes = sprintf(fmt = '%.2g hours', min_ / 60),
+      no = sprintf(fmt = '%d minutes', min_)
     ), ifelse(
-      test = nchar(names(object@minute)) > 0L,
-      yes = sprintf(fmt = ', %s', names(object@minute)),
+      test = nchar(names(min_)) > 0L,
+      yes = sprintf(fmt = ', %s', names(min_)),
       no = ''
     )), sep = '\n')
   }
@@ -93,13 +90,13 @@ setMethod(f = show, signature = signature(object = 'tool'), definition = functio
   object@operation <- gsub(pattern = '\n', replacement = '', x = object@operation)
   object@operation <- gsub(pattern = '^ *|(?<= ) | *$', replacement = '', x = object@operation, perl = TRUE)
   n <- length(object@operation)
-  cat(sprintf(fmt = '\u0020\u21ac %s\n', object@operation), sep = '')
+  cat(sprintf(fmt = ' \u21ac %s\n', object@operation), sep = '')
   
-  cat(sprintf(fmt = '\u0020\u21ac %s\n', object@cooling), sep = '')
+  cat(sprintf(fmt = ' \u21ac %s\n', object@cooling), sep = '')
   
-  cat(sprintf(fmt = '\u0020\u2756 water evaporated: %.0f grams\n', object@waterLost))
+  cat(sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n', object@waterLost))
   
-  cat(sprintf(fmt = '\u0020\u2756 %s\n', object@note), sep = '')
+  cat(sprintf(fmt = ' \u2756 %s\n', object@note), sep = '')
   
   cat('\n')
   
