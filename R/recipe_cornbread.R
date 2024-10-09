@@ -47,8 +47,14 @@ setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
     'Whisk everything except baking powder', # NEW practice!!
     'Soak batter, covered in mixing bowl, in fridge 6hr+ or overnight',
     'Whisk baking powder into chilled batter', # NEW practice!!
-    'Transfer to mold. Bake chilled batter directly',
-    'Robam CT763: Steam bake, 275\u00b0F/40min, Trudeau loaf pan (half recipe)'
+    'Transfer to mold. Bake chilled batter directly'
+  ),
+  RobamCT763 = RobamCT763(
+    program = 'Steam Bake',
+    fahrenheit = 275, 
+    minute = c(
+      'Trudeau loaf pan (half recipe)' = 40
+    )
   )
 ))
 

@@ -135,7 +135,7 @@ JoyoungDJ06M_soymilk <- function(
       'Soak dry beans \033[94me.g., soybean, chickpea, mung bean, etc.\033[0m overnight in fridge'
     ),
     program = '\u8c46\u6d46\u7a0b\u5e8f Soymilk program, 600ml water line',
-    waterLost = 10, # re-weigh whole machine, xx - yy, 2024-mm-dd
+    waterLost = 5, # soymilk 2130 - 2126, confirmed 2024-10-08
     ...
 ) JoyoungDJ06M(treatment = treatment, program = program, waterLost = waterLost, ...)
 

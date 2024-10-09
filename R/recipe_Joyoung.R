@@ -18,7 +18,7 @@
 #' @aliases soymilk-class
 #' @export
 setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
-  alias_class = '\u8c46\u6d46'
+  alias_class = '\u9c9c\u69a8\u8c46\u6d46'
 ))
 
 #' @rdname soymilk
@@ -36,9 +36,9 @@ soymilk_DJ13U <- function() new(
 soymilk <- function() new(
   Class = 'soymilk',
   soybean = 22, # my favorite is 1/2 Joyoung small cup
-  water = 610 - 22, # to be confirmed
-  JoyoungDJ06M = JoyoungDJ06M_soymilk(),
-  date = as.Date('2024-09-15'))
+  water = 588, # confirmed 2024-10-08
+  JoyoungDJ06M = JoyoungDJ06M_soymilk(), 
+  date = as.Date('2024-10-08'))
 
 
 
@@ -79,7 +79,7 @@ mungMilk_thick <- function() new(
 #' @rdname soymilk
 #' @export
 cornSoymilk <- function() new(
-  Class = 'soymilk', alias = '\u7389\u7c73\U1f33d\u8c46\u6d46',
+  Class = 'soymilk', 
   soybean = 100, # weigh and confirm
   yellowCorn = 100, # weigh and confirm
   water = 1100, # weigh and confirm

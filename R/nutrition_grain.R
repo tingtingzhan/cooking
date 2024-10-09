@@ -9,8 +9,9 @@ Quaker_oat <- function() new(
 
 
 HaiTai_blackRice <- function() new(
-  Class = 'nutrition', url = 'https://www.yamibuy.com/zh/p/haitai-black-rice-910g/1021027741',
-  brand = 'HaiTai\U1f1f0\U1f1f7', name = '\u9ed1\u7c73 Black Rice',
+  Class = 'nutrition',
+  brand = unclass(style_hyperlink(text = 'HaiTai\U1f1f0\U1f1f7', url = 'https://www.haitaiusa.com/grains')), 
+  name = '\u9ed1\u7c73 Black Rice',
   servingGram = 45, servingCup = 1/4, 
   calorie = 160, usd = 6.99/910*45,
   fat = 2, carbohydrate = 33, sugar = 1, protein = 3)
