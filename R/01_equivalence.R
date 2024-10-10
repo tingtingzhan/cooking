@@ -122,7 +122,7 @@ sprintf_bincode <- function(x) {
 #' 
 #' 
 #' @export
-setMethod(f = show, signature = signature(object = 'equiv'), definition = function(object) {
+setMethod(f = show, signature = 'equiv', definition = function(object) {
   print(format.equiv(object))
 })
 
@@ -398,7 +398,7 @@ show_endpoint <- function(x) {
 #' 
 # @importFrom cli.tzh print_ANSI_matrix
 #' @export
-setMethod(f = show, signature = signature(object = 'recipeDx'), definition = function(object) {
+setMethod(f = show, signature = 'recipeDx', definition = function(object) {
   ret <- format.recipeDx(object)
   if (!length(ret)) return(invisible())
   cat('\033[0;103m', sprintf(fmt = '\u214c %s\n', object@per), '\033[0m', sep = '')

@@ -111,7 +111,6 @@ hotdrink.recipe <- function(x, water80 = new(Class = 'hotdrink')@water80) {
 
 #' @export
 hotdrink.nutrition <- function(x, water80 = new(Class = 'hotdrink')@water80) {
-  x <- nutrition.nutrition(x)
   x@cost_ <- character()
   x@usd <- sum(x@usd, Wegmans_water()@usd/Wegmans_water()@servingGram * water80)
   x@jpy <- numeric()

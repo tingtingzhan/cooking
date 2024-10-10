@@ -303,11 +303,10 @@ nutrition_name_brand <- function(x) {
   
 }
 
-#' @rdname nutrition
 #' @importFrom cli style_hyperlink
-#' @export nutrition.nutrition
-#' @export
-nutrition.nutrition <- function(x) {
+#' @importFrom methods setMethod initialize callNextMethod
+setMethod(f = initialize, signature = 'nutrition', definition = function(.Object, ...) {
+  x <- callNextMethod(.Object, ...)
   
   # process user-input `@url` first
   if (length(x@url)) {
@@ -544,12 +543,17 @@ nutrition.nutrition <- function(x) {
   
   return(x)
   
-}
+})
+
+
 
 
 
 #' @export
-nutrition.default <- function(x) stop('exception handling')
+nutrition.default <- function(x) {
+  if (inherits(x, what = 'nutrition')) return(x)
+  stop('exception handling')
+}
 
 
 gram_per_tsp <- function(x) {
@@ -694,9 +698,9 @@ autoVolume <- function(x, nm = names(x)) {
 #' @return nothing is returned
 #' 
 #' @export
-setMethod(f = show, signature = signature(object = 'nutrition'), definition = function(object) {
+setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
-  obj <- nutrition.nutrition(object)
+  obj <- object
   
   if (!identical(obj@name_cli_glue_delay$str, '')) {
     cli__message(type = 'text', args = list(text = obj@name_cli_glue_delay))
@@ -759,7 +763,7 @@ setMethod(f = show, signature = signature(object = 'nutrition'), definition = fu
 
 
 format_ingredient_perc <- function(x, name) {
-  # `x` is the return of [nutrition.nutrition]
+  # `x` is \linkS4class{nutrition}
   x_ <- slot(x, name = name)
   if (!length(x_) || (x_ == 0)) return(character())
   pct <- x_ / x@servingGram

@@ -543,23 +543,10 @@ get_flavor_ <- function(x) {
 }
 
 
-
-#' @title Trim \linkS4class{recipe}
-#' 
-#' @description
-#' ..
-#' 
-#' @param x a \linkS4class{recipe} object
-#' 
-#' @export
-recipe <- function(x) {
-  
-  if (!inherits(x, 'recipe')) stop('input must be `recipe` class')
-  
-  #ret <- new(Class = 'recipe')
-  
-  #slot_ <- getSlots('recipe')
-  #for (i in names(slot_)) slot(ret, name = i) <- slot(x, name = i)
+#' @importFrom cli style_hyperlink
+#' @importFrom methods setMethod initialize callNextMethod
+setMethod(f = initialize, signature = 'recipe', definition = function(.Object, ...) {
+  x <- callNextMethod(.Object, ...)
   
   # processing 'numeric'
   
@@ -970,7 +957,7 @@ recipe <- function(x) {
   }
   
   return(x)
-}
+})
 
 
 
@@ -981,8 +968,6 @@ recipe <- function(x) {
 
 #' @export
 nutrition.recipe <- function(x) {
-  
-  x <- recipe(x)
   
   lost <- c('waterLost', 'fatLost', 'sugarLost')
   ingredient0 <- setdiff(names(which(getSlots('recipe') == 'numeric')), y = c('portion', lost))
@@ -1362,8 +1347,6 @@ nutrition.recipe <- function(x) {
 #' @export
 setMethod(f = show, signature = signature(object = 'recipe'), definition = function(object) {
   
-  object <- recipe(object)
-
   y <- nutrition.recipe(x = object)
   #show(y)
   cat(y@name, '\n\n')
@@ -1664,9 +1647,6 @@ setMethod(f = '/', signature = signature(e1 = 'recipe', e2 = 'numeric'), definit
 #' @export
 setMethod(f = '+', signature = signature(e1 = 'recipe', e2 = 'recipe'), definition = function(e1, e2) {
   
-  e1 <- recipe(e1)
-  e2 <- recipe(e2)
-  
   slots_dbl <- setdiff(names(which(getSlots('recipe') == 'numeric')), c('portion'))
   names(slots_dbl) <- slots_dbl
   ret0 <- lapply(slots_dbl, FUN = function(i) sum_.(slot(e1, name = i), slot(e2, name = i)))
@@ -1694,9 +1674,6 @@ setMethod(f = '+', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
 #' 
 #' @export
 setMethod(f = '/', signature = signature(e1 = 'recipe', e2 = 'recipe'), definition = function(e1, e2) {
-  
-  e1 <- recipe(e1)
-  e2 <- recipe(e2)
   
   slots_dbl <- setdiff(names(which(getSlots('recipe') == 'numeric')), c('portion'))
   e1_ <- attributes(e1)[slots_dbl]
@@ -1739,8 +1716,6 @@ setMethod(f = '/', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
 #' 
 #' @export
 setMethod(f = '-', signature = signature(e1 = 'recipe', e2 = 'recipe'), definition = function(e1, e2) {
-  e1 <- recipe(e1)
-  e2 <- recipe(e2)
   slots_dbl <- setdiff(names(which(getSlots('recipe') == 'numeric')), c('portion'))
   names(slots_dbl) <- slots_dbl
   ret0 <- lapply(slots_dbl, FUN = function(i) { # (i = slots_dbl[[1L]])

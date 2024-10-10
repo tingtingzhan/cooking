@@ -6,7 +6,6 @@
 \alias{nutrition-class}
 \alias{nutrition.character}
 \alias{nutrition.function}
-\alias{nutrition.nutrition}
 \title{\linkS4class{nutrition} Information}
 \usage{
 nutrition(x)
@@ -14,8 +13,6 @@ nutrition(x)
 \method{nutrition}{character}(x)
 
 \method{nutrition}{`function`}(x)
-
-\method{nutrition}{nutrition}(x)
 }
 \arguments{
 \item{x}{..}

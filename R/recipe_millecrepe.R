@@ -59,8 +59,7 @@ setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
     'how to use ladle' = 'RIs-3KLk0gI'
   )
 ), validity = function(object) {
-  obj <- recipe(object)
-  if (length(obj@liqueur)) stop('Do not use `@liqueur` in millecrepe; cooked liqueur tastes wierd. Use in mascarponeGanache instead!')
+  if (length(object@liqueur)) stop('Do not use `@liqueur` in millecrepe; cooked liqueur tastes wierd. Use in mascarponeGanache instead!')
 })
 
 #' @rdname millecrepe

@@ -5,7 +5,7 @@
 #' @description ..
 #' 
 #' @examples 
-#' # ..
+#' pumpkin_creamCheeseSpread()
 #' 
 #' nutrition_(
 #'  pumpkin_creamCheeseSpread,
@@ -33,7 +33,7 @@ pumpkin_creamCheeseSpread <- function() new(
   Class = 'creamCheeseSpread', 
   #creamCheese = c(Nancys = 227),
   pumpkin = 122,
-  sugar = 16,
+  brownSugar = 16,
   pros = 'Effie\'s Signature'
 )
 

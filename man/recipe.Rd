@@ -5,16 +5,8 @@
 \alias{recipe}
 \alias{recipe-class}
 \title{\linkS4class{recipe}}
-\usage{
-recipe(x)
-}
-\arguments{
-\item{x}{a \linkS4class{recipe} object}
-}
 \description{
 general recipe
-
-..
 }
 \section{Slots}{
 

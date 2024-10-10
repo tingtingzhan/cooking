@@ -19,7 +19,7 @@ pumpkin_creamCheeseSpread_Lynn()
 ..
 }
 \examples{
-# ..
+pumpkin_creamCheeseSpread()
 
 nutrition_(
  pumpkin_creamCheeseSpread,

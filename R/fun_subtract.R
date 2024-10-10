@@ -25,7 +25,7 @@ subtract.function <- function(object, ...) subtract(do.call(object, args = list(
 #' @export
 subtract.recipe <- function(object, ...) {
   
-  obj <- recipe(object)
+  obj <- object
   txt <- character()
   
   args <- list(...)
@@ -63,7 +63,7 @@ subtract.recipe <- function(object, ...) {
 #' @export
 subtract.nutrition <- function(object, ...) {
   
-  obj <- nutrition.nutrition(object)
+  obj <- object
   txt <- character()
   
   args <- list(...)
