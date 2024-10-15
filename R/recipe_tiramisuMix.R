@@ -128,7 +128,7 @@ ryeWhisky_latte_FAIL <- function() new(
 #' @param object \linkS4class{tiramisuMix} object
 #' 
 #' @export
-setMethod(f = show, signature(object = 'tiramisuMix'), definition = function(object) {
+setMethod(f = show, signature = 'tiramisuMix', definition = function(object) {
   
   callNextMethod(object)
   

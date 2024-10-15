@@ -21,7 +21,9 @@ Nishiki_brownRice <- function() new(
   Class = 'nutrition', amazon = 'B006SFAS6C',
   brand = 'Nishiki\u9326\U1f1fa\U1f1f8', name = '\u7384\u7c73 Premium Brown Rice',
   jfc = '69969',
-  servingGram = 39, servingCup = 1/4, fat = 1, protein = 3)
+  servingGram = 39, servingCup = 1/4, 
+  calorie = 140,
+  fat = 1, protein = 3)
 
 
 Dynasty_brownRice <- function() new(
@@ -32,4 +34,5 @@ Dynasty_brownRice <- function() new(
   wegmans = 42848L,
   usd = 3.99/907*45,
   servingGram = 45, servingCup = 1/4, 
+  calorie = 160,
   carbohydrate = 37, protein = 2)

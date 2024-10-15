@@ -55,7 +55,7 @@ setClass(Class = 'tool', slots = c(
 
 #' @rdname tool
 #' @export
-setMethod(f = show, signature = signature(object = 'tool'), definition = function(object) {
+setMethod(f = show, signature = 'tool', definition = function(object) {
   
   if (identical(object, new(Class = 'tool'))) return(invisible())
     

@@ -157,7 +157,7 @@ frappe.recipe <- function(x) {
 #' @param object \linkS4class{drinkMix} object
 #' 
 #' @export
-setMethod(f = show, signature(object = 'drinkMix'), definition = function(object) {
+setMethod(f = show, signature = 'drinkMix', definition = function(object) {
   
   callNextMethod(object)
 

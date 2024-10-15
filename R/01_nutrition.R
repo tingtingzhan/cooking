@@ -133,9 +133,6 @@ setOldClass('cli_glue_delay')
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
 #' 
-#' @param x ..
-#' 
-#' @name nutrition
 #' @aliases nutrition-class  
 #' @export
 setClass(Class = 'nutrition', slots = c(
@@ -257,38 +254,7 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
-#' @rdname nutrition
-#' @export
-nutrition <- function(x) UseMethod(generic = 'nutrition')
 
-
-#' @rdname nutrition
-#' @export nutrition.character
-#' @export
-nutrition.character <- function(x) {
-  if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
-    print(x)
-    stop('illegal nutrition names')
-  }
-  x0 <- parse(text = x)[[1L]]
-  xval <- if (is.symbol(x0)) eval(call(name = x)) else eval(x0)
-  if (inherits(xval, what = c('recipe'))) {
-    ret <- nutrition.recipe(xval)
-    ret@name_cli_glue_delay <- glue_cmd(sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', ret@name, x, x)) # no color
-    #ret@name_cli_glue_delay <- glue_cmd(sprintf(
-    #  fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', 
-    #  ret@name, 
-    #  sprintf(fmt = '\033[0;32m%s\033[0m', x), # `[` messes up with `[%s]`
-    #  x))
-    return(ret)
-  }
-  return(nutrition(xval))
-}
-
-#' @rdname nutrition
-#' @export nutrition.function
-#' @export
-nutrition.function <- function(x) nutrition(do.call(x, args = list()))
 
 
 nutrition_name_brand <- function(x) {

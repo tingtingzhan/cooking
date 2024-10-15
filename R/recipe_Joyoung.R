@@ -158,16 +158,17 @@ brownRicemilk <- function() new(
   water = 845, review = 'to confirm')
 
 
-brownRice_porridge <- function() new(
-  Class = 'recipe', alias_class = '\u6e7f\u7c73\u996d', # consider `Class = 'wetRice'`
-  brownRice = c(Dynasty_brownRice = 270), water = 900, # weight confirmed
+brownRice <- function() new(
+  Class = 'recipe', alias_class = '\u7c73\u996d', # consider `Class = 'rice'`
+  brownRice = c(Dynasty_brownRice = 270), water = 700, # weight confirmed!
   JoyoungDJ13U = JoyoungDJ13U(
-    program = '\u852c\u83dc\u7ca5 Porridge', 
-    note = '1100ml waterline, 3 cups of rice',
-    cooling = 'unplug from power, let stand for 1hr'
+    program = '\u852c\u83dc\u7ca5\u7a0b\u5e8f Porridge program, 900ml water line', 
+    note = '3 cups of rice',
+    cooling = 'Unplug from power, let stand for 2hr+'
+    # waterLost = ? # confirm next time!
   ),
-  pros = 'quite okay; good for using up my brown rice',
-  date = as.Date('2024-08-31'))
+  pros = 'perfect wetness, brown rice fluffy and soft',
+  date = as.Date('2024-10-15'))
 
 
 
