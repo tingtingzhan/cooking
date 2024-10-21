@@ -1,6 +1,6 @@
 
 
-#' @title \link[base]{brownrice} Recipe
+#' @title \linkS4class{brownrice} Recipe
 #' 
 #' @description
 #' Use JoyoungDJ13U's Porridge program to cook brown rice.
