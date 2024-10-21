@@ -944,7 +944,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (!length(x@alias)) {
     x@alias <- if (length(x@alias_class) & length(x@alias_flavor)) {
-      paste(x@alias_flavor, x@alias_class)
+      trimws(paste(x@alias_flavor, x@alias_class))
     } else if (length(x@alias_class) & !length(x@alias_flavor)) {
       x@alias_class
     } else x@alias 

@@ -10,7 +10,7 @@ Quaker_oat <- function() new(
 
 HaiTai_blackRice <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = 'HaiTai\U1f1f0\U1f1f7', url = 'https://www.haitaiusa.com/grains')), 
+  haitaiusa = 'black-rice-\ud751\ubbf8-2lbs', 
   name = '\u9ed1\u7c73 Black Rice',
   servingGram = 45, servingCup = 1/4, 
   calorie = 160, usd = 6.99/910*45,
@@ -18,12 +18,13 @@ HaiTai_blackRice <- function() new(
 
 
 Nishiki_brownRice <- function() new(
-  Class = 'nutrition', amazon = 'B006SFAS6C',
+  Class = 'nutrition', 
   brand = 'Nishiki\u9326\U1f1fa\U1f1f8', name = '\u7384\u7c73 Premium Brown Rice',
-  jfc = '69969',
-  servingGram = 39, servingCup = 1/4, 
-  calorie = 140,
-  fat = 1, protein = 3)
+  jfc = '69969', wegmans = 10902L, amazon = 'B006SFAS6C',
+  servingGram = 45, servingCup = 1/4, 
+  usd = 2.40/454*45, # Wegmans, 2024 Fall
+  calorie = 160,
+  fat = 1, carbohydrate = 34, protein = 3)
 
 
 Dynasty_brownRice <- function() new(

@@ -91,7 +91,7 @@ matcha_sundae <- function() new(
 
 corn_sundae <- function() new(
   Class = 'sundae',
-  puree = c(cornjuice = 400), water = numeric(), yogurt = numeric(),
+  homemade = c(cornjuice = 400), water = numeric(), yogurt = numeric(),
   review = 'try')
 
 #' @rdname sundae

@@ -83,7 +83,7 @@ redKidneyBeanPaste <- function() new(
 
 #adzukiBeanPaste_OLD <- function() new(
 #  Class = 'beanPaste', alias_flavor = '\u7ea2',
-#  puree = c(adzukiBeanMud = 600), waterLost = 300, # confirmed!!
+#  homemade = c(adzukiBeanMud = 600), waterLost = 300, # confirmed!!
 #  brownSugar = 30,
 #  butter = 24,
 #  JoyoungCJA9U = JoyoungCJA9U(

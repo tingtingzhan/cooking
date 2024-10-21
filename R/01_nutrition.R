@@ -64,6 +64,7 @@ setOldClass('cli_glue_delay')
 #' @slot frontiercoop \link[base]{character} scalar
 #' @slot ghirardelli \link[base]{character} scalar
 #' @slot haagendazs \link[base]{character} scalar
+#' @slot haitaiusa \link[base]{character} scalar
 #' @slot harney \link[base]{character} scalar
 #' @slot heinz \link[base]{character} scalar
 #' @slot hellmanns \link[base]{character} scalar
@@ -176,6 +177,7 @@ setClass(Class = 'nutrition', slots = c(
   frontiercoop = 'character',
   ghirardelli = 'character',
   haagendazs = 'character',
+  haitaiusa = 'character',
   harney = 'character',
   heinz = 'character',
   hellmanns = 'character',
@@ -311,6 +313,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ghirardelli.com/%s', x@ghirardelli), text = 'Ghirardelli\U1f1fa\U1f1f8'))
     } else if (length(x@haagendazs)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8'))
+    } else if (length(x@haitaiusa)) {
+      # not sure if same company
+      # https://en.wikipedia.org/wiki/Haitai
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.haitaiusa.com/product-page/%s', x@haitaiusa), text = 'HaiTai\U1f1fa\U1f1f8'))
     } else if (length(x@harney)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.harney.com/products/%s', x@harney), text = 'Harney & Sons\U1f1fa\U1f1f8'))
     } else if (length(x@heinz)) {

@@ -80,6 +80,8 @@ Nutrition information.
 
 \item{\code{haagendazs}}{\link[base]{character} scalar}
 
+\item{\code{haitaiusa}}{\link[base]{character} scalar}
+
 \item{\code{harney}}{\link[base]{character} scalar}
 
 \item{\code{heinz}}{\link[base]{character} scalar}

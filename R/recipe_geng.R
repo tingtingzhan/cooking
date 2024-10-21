@@ -18,7 +18,7 @@
 #' @export
 setClass(Class = 'cornGeng', contains = 'recipe', prototype = prototype(
   alias_class = '(\u6d77\u9c9c\U1f990\U1f991)\u7389\u7c73\U1f33d\u7fb9\U1f963',
-  puree = c(cornjuice = 300), boilingWater = 200,
+  homemade = c(cornjuice = 300), boilingWater = 200,
   egg_pc = 1,
   instruction = c(
     'Bring corn milk and boiling water to a boil',

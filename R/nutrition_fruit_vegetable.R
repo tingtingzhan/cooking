@@ -321,8 +321,8 @@ Palouse_chickpea <- function() new(
 HaiTai_mung <- function() new(
   Class = 'nutrition', fdc = 174256L,
   name = '(\u5e26\u76ae)\u7eff\u8c46 Mung Bean', 
-  brand = unclass(style_hyperlink(text = 'HaiTai\U1f1f0\U1f1f7', url = 'https://www.haitaiusa.com/grains')),
-  usd = 5.99/910*38, url = 'www.yamibuy.com/zh/p/mung-bean-2lb/1149010281',
+  haitaiusa = 'mung-bean-\ub179\ub450',
+  usd = 5.99/910*38, # https://www.yamibuy.com/zh/p/mung-bean-2lb/1149010281
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
   #servingGram = 100 - 9.05, protein = 23.9, fat = 1.15, sugar = 6.6, sodium = .015, # fdc
   #machine = function(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
@@ -331,7 +331,7 @@ HaiTai_mung <- function() new(
 HaiTai_adzuki <- function() new(
   Class = 'nutrition', fdc = 543753L,
   name = '\u7ea2\u8c46 Adzuki Bean', 
-  brand = unclass(style_hyperlink(text = 'HaiTai\U1f1f0\U1f1f7', url = 'https://www.haitaiusa.com/grains')),
+  haitaiusa = 'red-bean-\ud325-4-lb',
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
   usd = 8.99/907*45, 
   # url = 'www.yamibuy.com/zh/p/red-bean-2lb/1149010271'
@@ -363,5 +363,4 @@ banana <- function() new(
   calorie = 89, # kcal
   water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)
   
-
 
