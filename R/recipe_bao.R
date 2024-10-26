@@ -172,11 +172,9 @@ beet_bao <- function() new(
 #' @rdname bao
 #' @export
 cocoa_bao_Navitas <- function() new(
-  Class = 'bao', bao(), cocoa_Tbsp = c(Navitas_cacao = 6), sugar_Tbsp = 5,
-  bakingPowder_tsp = numeric(), NaHCO3_tsp = 1/4, # for acidity in natural cocoa powder!!!
-  # https://www.armandhammer.com/articles/baking-soda-vs-baking-powder
+  Class = 'bao', bao(), cocoa_Tbsp = c(KingArthur_Bensdorp = 6), sugar_Tbsp = 5,
   portion = c(mantou_portion(), sweetBao_portion()),
-  review = 'retry with baking soda!!')
+  review = 'retry with Dutch cocoa')
 
 #' @rdname bao
 #' @export

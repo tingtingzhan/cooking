@@ -8,7 +8,6 @@
 \alias{matcha_bread}
 \alias{pumpkin_bread}
 \alias{cocoa_bread}
-\alias{blackCocoa_bread}
 \alias{tomato_bread}
 \alias{coffee_bread}
 \alias{pineapple_bread}
@@ -24,8 +23,6 @@ matcha_bread()
 pumpkin_bread()
 
 cocoa_bread()
-
-blackCocoa_bread()
 
 tomato_bread()
 
@@ -54,8 +51,6 @@ matcha_bread() + cocoa_ganache() / 4 # try
 pineapple_bread() + pineapple_ganache() / 4 # try
 
 pumpkin_bread() + tomato_bread() + matcha_bread() + beet_bread() # ribbon Challah
-
-blackCocoa_bread() + coffee_bread() # ribbon Challah
 
 }
 \references{

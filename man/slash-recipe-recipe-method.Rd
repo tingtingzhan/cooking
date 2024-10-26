@@ -13,7 +13,7 @@
 ..
 }
 \examples{
-hotcc = cocoaMix()
+hotcc = mocaccino()
 hotdrink(hotcc) * 2 / hotcc
 
 }

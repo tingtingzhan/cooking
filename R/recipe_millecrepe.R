@@ -87,10 +87,10 @@ beet_millecrepe <- function() new(
 #' @export
 cocoa_millecrepe <- function() new(
   Class = 'millecrepe',
-  cocoa_tsp = 9.5, 
+  cocoa_tsp = c(KingArthur_Bensdorp = 9.5), 
   # heavyCream = 70, cocoa_Tbsp = 3, sugar_Tbsp = 2, # not enough sugar
   sugar_tsp = 10.5, # try
-  review = 'try again, already pretty good')
+  review = 'try again with dutch cocoa, natural cocoa already pretty good')
 
 
 Kahlua_millecrepe_FAIL <- function() new(

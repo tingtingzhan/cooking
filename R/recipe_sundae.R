@@ -147,10 +147,11 @@ if (FALSE) {
     eggYolk_pc = 6,
     drymilk = 52, 
     water = 220, # 250*.881
-    cocoa = 30 * 1.07, sugar = 36 * 1.07, 
+    cocoa = c(KingArthur_Bensdorp = 30 * 1.07), 
+    sugar = 36 * 1.07, 
     review = c(
-      'perfect sweetness for old prototype',
-      'retry for new prototype'
+      'natural cocoa, perfect sweetness for old prototype',
+      'retry for new prototype + dutch cocoa'
     ))
   
   

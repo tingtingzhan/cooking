@@ -88,7 +88,10 @@ matcha_whippedCream <- function() new(Class = 'whippedCream', matcha_tsp = 1.5, 
 
 #' @rdname whippedCream
 #' @export
-cocoa_whippedCream <- function() new(Class = 'whippedCream', cocoa_tsp = 3, sugar_tsp = 4.5)
+cocoa_whippedCream <- function() new(
+  Class = 'whippedCream', 
+  cocoa_tsp = c(KingArthur_Bensdorp = 3), 
+  sugar_tsp = 4.5)
 
 
 
@@ -186,7 +189,7 @@ pineapple_mascarponeFrosting <- function() new(Class = 'mascarponeFrosting', pin
 cocoa_frosting <- function() new(
   Class = 'frosting', 
   alias_flavor = 'keke', 
-  sugar_tsp = 13, cocoa_Tbsp = 3, review = 'try')
+  sugar_tsp = 13, cocoa_Tbsp = c(KingArthur_Bensdorp = 3), review = 'try')
 
 
 #' @rdname whippedCream
@@ -216,7 +219,7 @@ setClass(Class = 'mascarponeSpread', contains = 'mascarponeGanache', prototype =
 #' @export
 cocoa_ganache <- function() new(
   Class = 'ganache',  
-  sugar_tsp = 13, cocoa_tsp = 7,
+  sugar_tsp = 13, cocoa_tsp = c(KingArthur_Bensdorp = 7),
   review = 'try')
 
 

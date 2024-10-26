@@ -5,7 +5,6 @@
 \alias{gateau}
 \alias{gateau-class}
 \alias{cocoa_gateau}
-\alias{blackCocoa_gateau}
 \alias{matcha_gateau}
 \alias{pumpkin_gateau}
 \alias{AddaPinch_chocolate_cake}
@@ -15,8 +14,6 @@
 \title{\linkS4class{gateau} Recipes}
 \usage{
 cocoa_gateau()
-
-blackCocoa_gateau()
 
 matcha_gateau()
 

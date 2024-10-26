@@ -64,7 +64,7 @@ setMethod(f = '+', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
 #' @param e1,e2 \linkS4class{recipe} objects
 #' 
 #' @examples
-#' hotcc = cocoaMix()
+#' hotcc = mocaccino()
 #' hotdrink(hotcc) * 2 / hotcc
 #' 
 #' @export

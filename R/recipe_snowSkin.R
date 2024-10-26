@@ -89,7 +89,10 @@ acai_snowSkin <- function() new(Class = 'snowSkin', acai_tsp = 2, pros = 'I love
   
 #' @rdname snowSkin
 #' @export
-cocoa_snowSkin <- function() new(Class = 'snowSkin', cocoa_tsp = 1.5, pros = 'I love')
+cocoa_snowSkin <- function() new(
+  Class = 'snowSkin', 
+  cocoa_tsp = c(KingArthur_Bensdorp = 1.5), 
+  pros = 'I love (natural cocoa); retry with dutch cocoa')
 
 #' @rdname snowSkin
 #' @export

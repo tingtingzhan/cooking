@@ -23,6 +23,6 @@ lemonSoda <- function() new(Class = 'SodaStream', lemon_pc = 1, review = 'try')
 
 lemonadeSoda <- function() new(
   Class = 'SodaStream',
-  drinkmix_Tbsp = c(CountryTime_Lemonade = 1),
+  flavor_Tbsp = c(CountryTime_Lemonade = 1),
   pros = c('Acidity just right', 'Not sweet at all')
 )

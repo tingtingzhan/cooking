@@ -12,7 +12,7 @@ setClass(Class = 'tiramisuMix', contains = 'recipe', prototype = prototype(
   
   # new base!!!
   coffee_tsp = c(NescafeGold_espresso_blonde = 2.5),
-  cocoaDutch_tsp = c(KingArthur_Bensdorp = .375)
+  cocoa_tsp = c(KingArthur_Bensdorp = .375)
 ))
 
 

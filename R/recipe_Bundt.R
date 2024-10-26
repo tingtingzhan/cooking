@@ -74,10 +74,9 @@ Bundt_OLD <- function() new(
 #' @export
 cocoa_Bundt <- function() new(
   Class = 'Bundt',
-  cocoa = 60,
+  cocoa = c(KingArthur_Bensdorp = 60),
   sugar = 250,
   butter = 113, 
-  NaHCO3_tsp = 1, bakingPowder_tsp = numeric(), # regular cocoa powder contains acid
   salt_tsp = .5#, vanilla_tsp = 1.5
 )
 

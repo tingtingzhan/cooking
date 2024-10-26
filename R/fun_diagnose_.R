@@ -53,7 +53,7 @@ diagnose_ <- function(..., dots = list(...)) {
   tmpfun(which = 'pastryBaker')
   tmpfun(which = 'breadBaker')
   tmpfun(which = 'riceBaker')
-  tmpfun(which = 'cocoaDutchMix')
+  tmpfun(which = 'cocoaDx')
   tmpfun(which = 'uncooked')
   
   return(invisible())

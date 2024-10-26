@@ -33,8 +33,6 @@
 #' 
 #' pumpkin_bread() + tomato_bread() + matcha_bread() + beet_bread() # ribbon Challah
 #' 
-#' blackCocoa_bread() + coffee_bread() # ribbon Challah
-#' 
 #' @references
 #' \url{https://youtu.be/w83YFWkyYqA}, ribbon Challah; remove cup for round Challah
 #' 
@@ -147,20 +145,12 @@ pumpkin_bread <- function() new(Class = 'bread', pumpkin = 400, drymilk = 34, su
 cocoa_bread <- function() new(
   Class = 'bread', bread(),
   #cocoa_tsp = 16, # 4%
-  cocoa_tsp = 20, # 5%, as in bao(), tastes nice!
+  cocoa_tsp = c(KingArthur_Bensdorp = 20), # 5%, as in bao(), tastes nice!
   drymilk = 33, sugar = 40, 
-  review = 'try') # more water, less dry milk
+  review = 're-try with dutch cocoa') # more water, less dry milk
 
 
 
-#' @rdname bread
-#' @export
-blackCocoa_bread <- function() new(
-  Class = 'bread', alias_flavor = '\u9ed1\u5de7\u514b\u529b\U1f36b',
-  bread(),   
-  cocoa_tsp = c(KingArthur_blackCocoa = 16), 
-  drymilk = 32, sugar = 40, 
-  review = 'try')
 
 
 

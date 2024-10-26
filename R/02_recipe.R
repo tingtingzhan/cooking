@@ -93,7 +93,6 @@
 #' @slot brownRice \link[base]{numeric} scalar, weight of brown rice (in grams)
 #' 
 #' @slot sugar,sugar_tsp,sugar_Tbsp,sugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar 
-#' @slot drinkmix,drinkmix_tsp,drinkmix_Tbsp,drinkmix_cup \link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar 
 #' 
 #' @slot brownSugar,brownSugar_tsp,brownSugar_Tbsp,brownSugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of dark brown sugar
 #' 
@@ -115,8 +114,7 @@
 #' 
 #' @slot blackSesame \link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed
 #' 
-#' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of cocoa powder
-#' @slot cocoaDutch,cocoaDutch_tsp,cocoaDutch_Tbsp,cocoaDutch_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
+#' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
 #' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
 #' 
 #' @slot ginger,ginger_tsp,ginger_Tbsp,ginger_cup \link[base]{numeric} scalar, weight (in grams) and volume of Simply Organic ginger powder
@@ -341,7 +339,6 @@ setClass(Class = 'recipe', slots = c(
   yeast = 'numeric', yeast_tsp = 'numeric', yeast_Tbsp = 'numeric', yeast_cup = 'numeric',
   
   sugar = 'numeric', sugar_tsp = 'numeric', sugar_Tbsp = 'numeric', sugar_cup = 'numeric',
-  drinkmix = 'numeric', drinkmix_tsp = 'numeric', drinkmix_Tbsp = 'numeric', drinkmix_cup = 'numeric',
   
   brownSugar = 'numeric', 
   brownSugar_tsp = 'numeric', brownSugar_Tbsp = 'numeric', brownSugar_cup = 'numeric',
@@ -390,7 +387,6 @@ setClass(Class = 'recipe', slots = c(
   
   vanilla = 'numeric', vanilla_tsp = 'numeric', vanilla_Tbsp = 'numeric', vanilla_cup = 'numeric',
   cocoa = 'numeric', cocoa_tsp = 'numeric', cocoa_Tbsp = 'numeric', cocoa_cup = 'numeric',
-  cocoaDutch = 'numeric', cocoaDutch_tsp = 'numeric', cocoaDutch_Tbsp = 'numeric', cocoaDutch_cup = 'numeric',
   coffee = 'numeric', coffee_tsp = 'numeric', coffee_Tbsp = 'numeric', coffee_cup = 'numeric',
   matcha = 'numeric', matcha_tsp = 'numeric', matcha_Tbsp = 'numeric', matcha_cup = 'numeric', 
   beet = 'numeric', beet_tsp = 'numeric', beet_Tbsp = 'numeric', beet_cup = 'numeric',
@@ -630,7 +626,6 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   # with density info
   x <- combineVol(x, which = 'sugar', name1 = 'US_10x')
   x <- combineVol(x, which = 'brownSugar', name1 = 'Domino_darkBrown')
-  x <- combineVol(x, which = 'drinkmix')
   x <- combineVol(x, which = 'syrup')
   x <- combineVol(x, which = 'salt', name1 = 'Morton_salt')
   x <- combineVol(x, which = 'msg', name1 = 'Ajinomoto_msg')
@@ -640,8 +635,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'yeast', name1 = 'Fleischmanns_instant')
   x <- combineVol(x, which = 'matcha', name1 = 'Ippodo_ikuyo')
   #x <- combineVol(x, which = 'matchaSado', name1 = 'Marukyu_tenju')
-  x <- combineVol(x, which = 'cocoa', name1 = 'Navitas_cacao')
-  x <- combineVol(x, which = 'cocoaDutch', name1 = 'KingArthur_Bensdorp')
+  x <- combineVol(x, which = 'cocoa', name1 = 'KingArthur_Bensdorp')
   x <- combineVol(x, which = 'coffee', name1 = 'NescafeTastersChoice_decaf')
   x <- combineVol(x, which = 'beet', name1 = 'Wegmans_beet')
   x <- combineVol(x, which = 'acai', name1 = 'Wegmans_acai')
@@ -701,7 +695,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {
     extraWater <- function(z) sum(z * vapply(names(z), FUN = function(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
-    x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@cocoaDutch) + extraWater(x@acai)
+    x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@acai)
   }
   x <- addNameLen1(x, which = 'water_extra', name1 = 'Wegmans_water')
   
@@ -841,9 +835,9 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     x@alias_flavor <- if (length(x@coffee)) {
       if (length(x@liqueur)) {
         'Tiramisu\u0300'
-      } else if (length(x@cocoaDutch)) {
-        if (grepl('blackcocoa', x = tolower(names(x@cocoaDutch)))) stop('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
-        if (x@cocoaDutch / x@coffee < 1) 'Caff\u00e8' else 'Caff\u00e8 Mocha'
+      } else if (length(x@cocoa)) {
+        if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) stop('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
+        if (x@cocoa / x@coffee < 1) 'Caff\u00e8' else 'Caff\u00e8 Mocha'
       } else if (length(x@syrup)) {
         if (any(grepl('ryeWhisky', x = names(x@syrup)))){
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
@@ -891,7 +885,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         '\u8170\u679c'
       } else if (length(x@chickpea)) {
         '\u9e70\u5634\u8c46'
-      } else if (length(x@cocoa) || length(x@cocoaDutch)) { # `cocoa` has higher priority than `coffee`
+      } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
         '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
       } else if (length(x@coconut)) {
         '\u6930\u84c9\U1f965'
@@ -1067,8 +1061,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(sprintf(fmt = '%s %.1f grams \033[1;95m%.2gbag\033[0m\n', nm_[names(object@teabag)], getTealoose(object@teabag), object@teabag), sep = '')
   
   allSugar <- c(
-    object@sugar, object@brownSugar,
-    object@drinkmix
+    object@sugar, object@brownSugar
   )
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, autoVolume(allSugar)), sep = '')
   
@@ -1084,7 +1077,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@spiceItalian, object@spice5, object@pumpkinSpice,
     object@chiliMix,
     object@spice, object@curry,
-    object@matcha, object@coffee, object@cocoa, object@cocoaDutch, object@beet, object@acai, object@creamTartar, object@vanilla,
+    object@matcha, object@coffee, object@cocoa, object@beet, object@acai, object@creamTartar, object@vanilla,
     object@salt, object@msg, object@NaHCO3, object@Na2CO3, object@bakingPowder,
     object@yeast,
     object@oil, object@sesameOil, object@greenPeppercornOil,
@@ -1133,9 +1126,9 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@usd, y@calorie))
   } else cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@usd))
   
-  #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDutchMix')]
+  #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
   # need to write a [show] method for \linkS4class{mixWheatFlour}
-  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDutchMix')]
+  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
   has_attr_dx <- (lengths(attr_dx, use.names = FALSE) > 0L)
   lapply(attr_dx[has_attr_dx], FUN = show)
   #if (!any(has_attr_dx)) {

@@ -45,8 +45,7 @@
     hotdrink =, frappe = if (length(x@coffee) && length(x@liqueur)) {
       .055
     }, 
-    caffeLatteHot =, caffeLatteFrappe = .055,
-    mocaccinoHot =, mocaccinoFrappe = .06,
+    caffeLatteHot =, caffeLatteFrappe =, mocaccinoHot =, mocaccinoFrappe = .055,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .07, # early 2024; whole goat milk; try to reduce with tenju!
     sundae = if (length(x@matcha)) {
       .095
@@ -99,11 +98,10 @@
       .22 
     } else .2,
     tomyumStew = .16,
-    cocoaMix = .35,
-    mocaccinoMix = .37,
+    mocaccinoMix = .38,
     matchaLatteMix = .4,
     matchaGoatLatteMix = .515,
-    drinkMix = if (length(x@syrup)) {
+    drinkmix = if (length(x@syrup)) {
       .515
     } else NA_real_,
     caffeLatteMix = NA_real_,
@@ -113,12 +111,11 @@
     class(x),
     milktea = .013,
     mocaccinoHot =, mocaccinoFrappe = .015,
-    cocoaMix = .063,
     NA_real_)
   
-  addedSugar2cocoaDutch <- function(x) switch(
+  addedSugar2cocoa <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .35,
+    mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .36,
     caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = NA_real_,
     NULL) 
   
@@ -141,25 +138,22 @@
     milktea = .065,
     matchaGoatLatteHot =, matchaGoatLatteFrappe = .075, 
     stickyRice =, riceCake = .1, # need to re-think!!
-    matchaLatteHot =, matchaLatteFrappe = .075, # taste better than .09 !
+    matchaLatteHot =, matchaLatteFrappe =, mocaccinoHot =, mocaccinoFrappe = .075, # taste better than .09 !
     cocoaHot =, 
     caffeLatteHot =, caffeLatteFrappe =,
-    mocaccinoHot =, mocaccinoFrappe =,
     hotdrink =, frappe = .09, # match Carnation_drymilk() can label
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,
     matchaGoatLatteMix = .53,
-    cocoaMix = .54,
-    mocaccinoMix = .58,
-    matchaLatteMix = NA_character_,
+    mocaccinoMix =, matchaLatteMix = NA_character_,
     #tiramisuMix = .7,
     caffeLatteMix = NA_real_, 
     NULL)
   
-  drymilk2cocoaDutch <- function(x) switch(
+  drymilk2cocoa <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = 2,
+    mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe =,
     caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = NA_real_,
     NULL)
   
@@ -175,7 +169,7 @@
    
   fat <- function(x) switch(
     class(x), 
-    noodlelinda =, wrapperlinda =, flavoredButter =, cocoaMix =, soymilk = NA_real_,
+    noodlelinda =, wrapperlinda =, flavoredButter =, soymilk = NA_real_,
     hotdrink = NA_real_,
     matchaLatteHot =, matchaLatteFrappe = .004, 
     stickyTortilla =, TangYuan = .01, 
@@ -191,8 +185,8 @@
     riceMousse = .05, 
     beanPaste = .05,
     crepeCake = .07,
-    mocaccinoMix = .07,
     matchaGoatLatteMix = .075,
+    mocaccinoMix = .077,
     millecrepe = if (length(x@liqueur)) .075 else .1, 
     custardFilling = .09,
     cornbread = .11, 
@@ -234,12 +228,11 @@
     shrimpfill_garlicHerb = .002,
     meatmash =, meatball = .0025, # some salt cooks into soup
     shrimpfillCantonese = .003,
-    cocoaMix = .002,
-    drinkMix = if (length(x@coffee) && length(x@syrup)) {
+    mocaccinoMix = .002,
+    drinkmix = if (length(x@coffee) && length(x@syrup)) {
       .0028
     } else NA_real_,
     cheesecake = .0025, # 3:1 mixed cheese
-    mocaccinoMix = .0025,
     # fishBall = .003, # obviously too salt
     beeffillLeeKumKee = .0025, # confirmed!
     geng = .0025, # .003 too salty
@@ -328,7 +321,7 @@
     caffeLatteHot =, caffeLatteFrappe = .011,
     mocaccinoHot =, mocaccinoFrappe = .043, 
     goatKefir = if (length(x@coffee)) .043, 
-    cheesecake = if (length(x@cocoaDutch)) .043,
+    cheesecake = if (length(x@cocoa)) .043,
     # cookie = .04, 
     bao = .05, # tested!!
     bread = .05, # retry
@@ -337,17 +330,16 @@
     gateau = .05, # I think this is not enough..
     cocoaHot = .063,
     caffeLatteMix = .09,
-    mocaccinoMix = .28,
-    cocoaMix = .39,
+    mocaccinoMix = .31,
     NULL)
   
   coffee <- function(x) switch(
     class(x), 
     mocaccinoHot =, mocaccinoFrappe = .009, 
-    goatKefir = if (length(x@cocoaDutch)) .009,
+    goatKefir = if (length(x@cocoa)) .009,
     cheesecake = if (length(x@liqueur)) {
       .0073
-    } else if (length(x@cocoaDutch)) .009,
+    } else if (length(x@cocoa)) .009,
     sundae = .015, # love!
     bao =, bread = .015, # tested on bread() and love!
     caffeLatteHot =, caffeLatteFrappe = .015, # tested and love!!
@@ -355,13 +347,13 @@
     snowSkin = .016, # try
     gateau = if (length(x@cocoa)) .002,
     hotdrink =, frappe = if (length(x@liqueur)) .009,
-    mocaccinoMix = .06,
+    mocaccinoMix = .065,
     caffeLatteMix = .12,
     NULL)
   
-  coffee2cocoaDutch <- function(x) switch(
+  coffee2cocoa <- function(x) switch(
     class(x),
-    cheesecake =, mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .20,
+    cheesecake =, mocaccinoMix =, mocaccinoHot =, mocaccinoFrappe = .21,
     caffeLatteMix =, caffeLatteHot =, caffeLatteFrappe = 1.3,
     tiramisuMix = 2.2,
     NULL)
@@ -469,7 +461,7 @@
     tomyumStew = .035,
     NULL)
   
-  alcohol2cocoaDutch <- function(x) switch(
+  alcohol2cocoa <- function(x) switch(
     class(x),
     tiramisuMix = 1.3,
     NULL)
@@ -704,20 +696,20 @@
   options(devrecipe = mget(c(
     'carbohydrate',
     'sugar', 
-    'addedSugar', 'addedSugar2cocoaDutch',
-    'drymilk', 'drymilk2cocoaDutch',
+    'addedSugar', 'addedSugar2cocoa',
+    'drymilk', 'drymilk2cocoa',
     'creamcheese',
     'fat', 
     'sodium',
     
     'water',
     'bakingPowder',
-    'alcohol', 'alcohol2cocoaDutch',
+    'alcohol', 'alcohol2cocoa',
     'matcha',
     'beet',
     'blackSesame',
     'cocoa',
-    'coffee', 'coffee2cocoaDutch',
+    'coffee', 'coffee2cocoa',
     'ginger',
     'garlic',
     'whitePepper',

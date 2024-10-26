@@ -81,14 +81,6 @@ cocoa_gateau_FAIL <- function() new(
 
   review = 'try')
 
-#' @rdname gateau
-#' @export
-blackCocoa_gateau <- function() new(
-  Class = 'gateau',
-  cocoa = c(KingArthur_blackCocoa = 30), # 5% cocoa overall, not enough
-  coffee_tsp = 1, # 2/1000 overall
-  sugar = 62,
-  review = 'try')
 
 
 #' @rdname gateau

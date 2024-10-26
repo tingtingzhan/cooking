@@ -90,7 +90,7 @@ PreppyKitchen_cookie <- function() new(
 cocoa_cookie <- function() new(
   Class = 'cookie',
   sugar = 130, drymilk = 150, 
-  cocoa = 64,
+  cocoa = c(KingArthur_Bensdorp = 64),
   flour = c(Wegmans_bread = 330),
   review = 'try')
 

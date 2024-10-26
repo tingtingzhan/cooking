@@ -246,7 +246,7 @@ matcha_cheesecake <- function() new(
 mocaccino_cheesecake <- function() new(
   Class = 'cheesecake',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 4),
-  cocoaDutch_tsp = c(KingArthur_Bensdorp = 6*3+1),
+  cocoa_tsp = c(KingArthur_Bensdorp = 6*3+1),
   sugar = 100,
   review = 'try')
 

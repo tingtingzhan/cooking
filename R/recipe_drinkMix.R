@@ -1,13 +1,17 @@
 
 
-#' @title \linkS4class{drinkMix} and \linkS4class{hotdrink} Recipes
+# Must use Dutch-processed cocoa powder'
+# https://www.seriouseats.com/difference-dutch-process-natural-cocoa-powder-substitute
+# Since Dutch process cocoa isn't acidic, it doesn't react with alkaline leaveners like baking soda to produce carbon dioxide. That's why recipes that use Dutch process cocoa are usually leavened by baking powder, which has a neutral pH.
+
+
+
+#' @title \linkS4class{drinkmix} and \linkS4class{hotdrink} Recipes
 #' 
 #' @description ..
 #' 
 #' @examples
-#' cocoaMix()
 #' nutrition_(
-#'  cocoaMix,
 #'  StarbucksKcup_cocoa,
 #'  Starbucks_cocoa,
 #'  SwissMiss_milkCocoa,
@@ -21,14 +25,14 @@
 #'  AmandaRettke_cocoa
 #' )
 #' @name drink
-#' @aliases drinkMix-class
+#' @aliases drinkmix-class
 #' @export
-setClass(Class = 'drinkMix', contains = 'recipe', prototype = prototype(
+setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
   alias_class = '\u901f\u6eb6\u7c89'
 ), validity = function(object) {
   if (length(object@boilingWater) || length(object@iceWater) ||
       length(object@water90) || length(object@water80) || length(object@water70)) # all kind of water
-    stop('`drinkMix` object cannot have water')
+    stop('`drinkmix` object cannot have water')
 })
 
 
@@ -36,10 +40,8 @@ setClass(Class = 'drinkMix', contains = 'recipe', prototype = prototype(
 #' @aliases hotdrink-class
 #' @export
 setClass(Class = 'hotdrink', contains = 'recipe', prototype = prototype(
-  #alias_class = paste('\u70ed\u996e', '\033[94m1 Cup\033[0m'),
   alias_class = '\u70ed\u996e',
-  #alias_class = '',
-  water80 = 236.6, # 1 US cup
+  water80 = 236.6*2, # 2 US cup
   instruction = c(
     'Whisk together all powders (syrup also okay)', 
     'Add half of water, whisk until smooth',
@@ -61,10 +63,9 @@ setClass(Class = 'mocaccinoHot', contains = 'hotdrink')
 #' @aliases frappe-class
 #' @export
 setClass(Class = 'frappe', contains = 'recipe', prototype = prototype(
-  #alias_class = paste('Frapp\u00e9', '\033[94m20 fl oz, Venti\033[0m'),
   alias_class = 'Frapp\u00e9',
   note = 'Nutribullet Ultra 20 fl. oz. blending cup',
-  ice = 235, iceWater = 235 # Nutribullet can handle!!
+  ice = 236.6, iceWater = 236.6 # Nutribullet can handle!!
 ))
 setClass(Class = 'caffeLatteFrappe', contains = 'frappe')
 setClass(Class = 'caffeGoatLatteFrappe', contains = 'frappe')
@@ -79,18 +80,16 @@ setClass(Class = 'matchaGoatLatteFrappe', contains = 'frappe', prototype = proto
 
 #' @rdname drink
 #' 
-#' @param x \linkS4class{drinkMix} object
+#' @param x \linkS4class{drinkmix} object
 #' 
 #' @param water80 ..
 #' 
 #' @details
-#' Function [hotdrink] converts \linkS4class{drinkMix} to \linkS4class{hotdrink}
-#' by adding 1 US cup or 236.6 grams of hot water (70-80C).
+#' Function [hotdrink] converts \linkS4class{drinkmix} to \linkS4class{hotdrink}
+#' by adding 2 US cup or 236.6*2 grams of hot water (70-80C).
 #' 
 #' @returns
 #' Function [hotdrink] returns a \linkS4class{hotdrink} object.
-#' 
-#' Function [frappe] returns a \linkS4class{frappe} object.
 #' 
 #' @export
 hotdrink <- function(x, water80) UseMethod(generic = 'hotdrink') 
@@ -101,9 +100,9 @@ hotdrink.function <- function(x, water80 = new(Class = 'hotdrink')@water80) hotd
 #' @export
 hotdrink.recipe <- function(x, water80 = new(Class = 'hotdrink')@water80) {
   x@water80 <- water80
-  new_(Class = if (identical(class(x), structure('drinkMix', package = 'cooking'))) {
+  new_(Class = if (identical(class(x), structure('drinkmix', package = 'cooking'))) {
     'hotdrink'
-  } else if (inherits(x, what = 'drinkMix')) {
+  } else if (inherits(x, what = 'drinkmix')) {
     gsub('Mix$', replacement = 'Hot', x = class(x))
   } else 'hotdrink', x)
 }
@@ -124,11 +123,14 @@ hotdrink.nutrition <- function(x, water80 = new(Class = 'hotdrink')@water80) {
 #' @rdname drink
 #' 
 #' @details
-#' Function [frappe] converts \linkS4class{drinkMix} to \linkS4class{frappe}
+#' Function [frappe] converts \linkS4class{drinkmix} to \linkS4class{frappe}
 #' by adding 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice.
 #' Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.
 #' 320g ice cubs (one OXO tray), plus 150g ice water, is too dry for Nutribullet Ultra 24oz cup, 
 #' also too dry for drinking.
+#' 
+#' @returns
+#' Function [frappe] returns a \linkS4class{frappe} object.
 #' 
 #' @export
 frappe <- function(x) UseMethod(generic = 'frappe')
@@ -138,45 +140,34 @@ frappe.function <- function(x) frappe(x = x())
 
 #' @export
 frappe.recipe <- function(x) {
-  x1 <- x*2
-  ret <- new_(Class = if (identical(class(x), structure('drinkMix', package = 'cooking'))) {
+  ret <- new_(Class = if (identical(class(x), structure('drinkmix', package = 'cooking'))) {
     'frappe'
-  } else if (inherits(x, what = 'drinkMix')) {
+  } else if (inherits(x, what = 'drinkmix')) {
     gsub('Mix$', replacement = 'Frappe', x = class(x))
-  } else 'frappe', x1)
-  if (length(x1@milk)) ret@iceWater <- numeric()
+  } else 'frappe', x)
+  if (length(x@milk)) ret@iceWater <- numeric()
   return(ret)
 }
 
 
-#' @title Show \linkS4class{drinkMix}
+#' @title Show \linkS4class{drinkmix}
 #' 
 #' @description
 #' ..
 #' 
-#' @param object \linkS4class{drinkMix} object
+#' @param object \linkS4class{drinkmix} object
 #' 
 #' @export
-setMethod(f = show, signature = 'drinkMix', definition = function(object) {
-  
+setMethod(f = show, signature = 'drinkmix', definition = function(object) {
   callNextMethod(object)
 
-  hot <- hotdrink(object)
-  hot_nutri <- nutrition(hot)
-  
-  icy <- frappe(object)
-  icy_nutri <- nutrition(icy)
-  
-  hotFlavor <- attr(hot_nutri, which = 'cookedFlavor', exact = TRUE)
-  hotFlavor@per <- sprintf(fmt = '%s + %.0fg Hot Water, US\U1f4b5 %.2f', hotFlavor@per, hot@water80, hot_nutri@usd)
-  print(hotFlavor)
+  hot <- hotdrink(object) # 2-cup hot water, or shaved ice
+  nutri_ <- nutrition(hot)
+  flavor_ <- attr(nutri_, which = 'cookedFlavor', exact = TRUE)
+  flavor_@per <- sprintf(fmt = '%s + %.0fg Hot Water / Shaved Ice, US\U1f4b5 %.2f', flavor_@per, hot@water80, nutri_@usd)
+  print(flavor_)
 
-  icyFlavor <- attr(icy_nutri, which = 'cookedFlavor', exact = TRUE)
-  icyFlavor@per <- sprintf(fmt = '%s 2x + %.0fg Shaved Ice, US\U1f4b5 %.2f', icyFlavor@per, sum(icy@iceWater, icy@ice), icy_nutri@usd)
-  print(icyFlavor)
-  
   cat('\n')
-  
 })
 
 
@@ -197,12 +188,13 @@ setMethod(f = show, signature = 'drinkMix', definition = function(object) {
 #' @name caffeLatte
 #' @aliases caffeLatteMix-class
 #' @export
-setClass(Class = 'caffeLatteMix', contains = 'drinkMix', prototype = prototype(
-  drymilk = c(Carnation_drymilk = 25),
-  coffee_tsp = c(NescafeGold_espresso_blonde = 4), # perfect
-  #coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), # slightly too strong
-  cocoaDutch_tsp = 1,
-  sugar_tsp = 1/2
+setClass(Class = 'caffeLatteMix', contains = 'drinkmix', prototype = prototype(
+  #drymilk = c(Carnation_drymilk = 25*2), # very old; 2024-07-20
+  drymilk = c(Carnation_drymilk = 40), # try new
+  coffee_tsp = c(NescafeGold_espresso_blonde = 4*2), # perfect
+  #coffee_tsp = c(NescafeGold_espresso_blonde = 4.5*2), # slightly too strong
+  cocoa_tsp = c(KingArthur_Bensdorp = 1*2),
+  sugar_tsp = 1/2*2
 ))
 
 
@@ -215,52 +207,27 @@ caffeLatte <- function() new(
 
 
 caffeGoatLatte_blonde <- function() new(
-  Class = 'drinkMix', 
+  Class = 'drinkmix', 
   alias_flavor = 'Caff\u00e8 Goat Latte',
-  drymilk = c(Meyenberg_goatWhole_drymilk = 25),
-  coffee_tsp = c(NescafeGold_espresso_blonde = 4.5), 
+  drymilk = c(Meyenberg_goatWhole_drymilk = 25*2),
+  coffee_tsp = c(NescafeGold_espresso_blonde = 4.5*2), 
   pros = 'I love')
 
 caffeLatte_intense <- function() new(
-  Class = 'drinkMix', 
-  drymilk = c(Carnation_drymilk = 25),
-  coffee_tsp = c(NescafeGold_espresso_intense = 4.5),
+  Class = 'drinkmix', 
+  drymilk = c(Carnation_drymilk = 25*2),
+  coffee_tsp = c(NescafeGold_espresso_intense = 4.5*2),
   cons = 'I prefer caffeLatte()')
 
 caffeLatte_decaf <- function() new(
-  Class = 'drinkMix',
-  drymilk = c(Carnation_drymilk = 25),
-  coffee_tsp = c(NescafeGold_espresso_decaf = 6),
+  Class = 'drinkmix',
+  drymilk = c(Carnation_drymilk = 25*2),
+  coffee_tsp = c(NescafeGold_espresso_decaf = 6*2),
   cons = 'has an undesirable flavor, not sure how to describe')
 
 
 
 
-
-
-
-
-setClass(Class = 'cocoaMix', contains = 'drinkMix', prototype = prototype(
-  drymilk = c(Carnation_drymilk = 25), 
-  sugar_tsp = 1, # very nice! but do not further reduce sugar
-  cocoaDutch_Tbsp = c(KingArthur_Bensdorp = 2), 
-  note = c(
-    'Must use Dutch-processed cocoa powder'
-    # https://www.seriouseats.com/difference-dutch-process-natural-cocoa-powder-substitute
-    # Since Dutch process cocoa isn't acidic, it doesn't react with alkaline leaveners like baking soda to produce carbon dioxide. That's why recipes that use Dutch process cocoa are usually leavened by baking powder, which has a neutral pH.
-  )
-))
-
-
-#' @rdname drink
-#' @export
-cocoaMix <- function() new(Class = 'cocoaMix', cons = 'I prefer mocaccino_*()')
-
-cocoaBurgundy <- function() new(
-  Class = 'cocoaMix',
-  cocoaDutch_Tbsp = c(KingArthur_Burgundy = 2), 
-  # I never thought of trying hahaha
-  cons = 'dont try; I prefer KingArthur_Bensdorp()')
 
 
 
@@ -305,46 +272,45 @@ cocoaBurgundy <- function() new(
 #' @name mocaccino
 #' @aliases mocaccinoMix-class
 #' @export
-setClass(Class = 'mocaccinoMix', contains = 'drinkMix', prototype = prototype(
-  drymilk = c(Carnation_drymilk = 25), 
-  #sugar_tsp = 1, # good & old
-  sugar_tsp = 1.5, # not too sweet
-  cocoaDutch_tsp = c(KingArthur_Bensdorp = 4)
-), validity = function(object) {
-  if (length(object@cocoa)) stop('Must use @cocoaDutch in mocaccino')
-})
+setClass(Class = 'mocaccinoMix', contains = 'drinkmix', prototype = prototype(
+  drymilk = c(Carnation_drymilk = 40), # reduced from very old 50g
+  #sugar_tsp = 1*2, # good & old
+  #sugar_tsp = 1.5*2, # a little little too sweet with 40g dry milk
+  sugar_tsp = 1.25*2, # try next time!
+  cocoa_tsp = c(KingArthur_Bensdorp = 4*2),
+  review = c(
+    'Have tried NescafeGold_espresso_decaf, NescafeGold_decaf, NescafeGold_espresso_intense',
+    'Have tried KingArthur_Burgundy'
+  )
+))
 
-mocaccino_decaf <- function() new(Class = 'mocaccinoMix', coffee_tsp = c(NescafeGold_espresso_decaf = 3), pros = 'I love!')
-mocha_decaf <- function() new(Class = 'mocaccinoMix', coffee_tsp = c(NescafeGold_decaf = 2), pros = 'I love!')
-mocaccino_intense <- function() new(Class = 'mocaccinoMix', coffee_tsp = c(NescafeGold_espresso_intense = 2.5), pros = 'I love!')
 
 #' @rdname mocaccino
 #' @export
-mocaccino <- function() new(Class = 'mocaccinoMix', coffee_tsp = c(NescafeGold_espresso_blonde = 2.5), pros = 'I am addicted!!!')
+mocaccino <- function() new(
+  Class = 'mocaccinoMix', 
+  coffee_tsp = c(NescafeGold_espresso_blonde = 2.5*2), 
+  date = as.Date('2024-10-26'),
+  pros = 'I am addicted!!!')
 
 
 mocaccino_whole <- function() new(
   Class = 'mocaccinoMix', mocaccino(),
-  #sugar_tsp = 3, # a little too sweet
-  sugar_tsp = 2, # try next time
-  drymilk = c(Nido_drymilk = 20), 
+  #sugar_tsp = 3*2, # a little too sweet
+  sugar_tsp = 2*2, # try next time
+  drymilk = c(Nido_drymilk = 20*2), 
   review = 'try')
 
 goatMocaccino <- function() new(
   Class = 'mocaccinoMix', 
-  drymilk = c(Meyenberg_goat_drymilk = 20),
-  coffee_tsp = c(NescafeGold_espresso_decaf = 3),
-  # sugar_tsp = 2.5, # a little little bit too sweet
-  sugar_tsp = 1.5, # try next time
+  drymilk = c(Meyenberg_goat_drymilk = 20*2),
+  coffee_tsp = c(NescafeGold_espresso_decaf = 3*2),
+  # sugar_tsp = 2.5*2, # a little little bit too sweet
+  sugar_tsp = 1.5*2, # try next time
   review = 'try to reduce a little sugar next time')
 
 
 
-mocaccinoBurgundy <- function() new(
-  Class = 'mocaccinoMix', 
-  cocoaDutch_tsp = c(KingArthur_Burgundy = 4), 
-  coffee_tsp = c(NescafeGold_espresso_decaf = 3),
-  cons = paste('For both hot and frappe drink, I prefer', sQuote('KingArthur_Bensdorp()')))
 
 
 
@@ -380,11 +346,11 @@ mocaccinoBurgundy <- function() new(
 #' @name matchaLatte
 #' @aliases matchaLatteMix-class
 #' @export
-setClass(Class = 'matchaLatteMix', contains = 'drinkMix', prototype = prototype(
+setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
   alias_class = 'Latte\u901f\u6eb6\u7c89',
-  # drymilk = c(Carnation_drymilk = 20, Nido_drymilk = 5), # old, I now think too strong
-  drymilk = c(Carnation_drymilk = 16, Nido_drymilk = 4), # drank all ikuyo in Sep 2024. Great!
-  sugar_tsp = 1
+  # drymilk = c(Carnation_drymilk = 20*2, Nido_drymilk = 5*2), # old, I now think this is too strong
+  drymilk = c(Carnation_drymilk = 16*2, Nido_drymilk = 4*2), # drank all ikuyo in Sep 2024. Great!
+  sugar_tsp = 1*2
 ))
 
 
@@ -392,8 +358,8 @@ setClass(Class = 'matchaLatteMix', contains = 'drinkMix', prototype = prototype(
 #' @export
 matchaLatte <- function() new(
   Class = 'matchaLatteMix',
-  matcha_tsp = c(Marukyu_tenju = 3),
-  sugar_tsp = .5,
+  matcha_tsp = c(Marukyu_tenju = 3*2),
+  sugar_tsp = .5*2,
   # date = as.Date('2025-05-31'), # confirm in 2025 (with reduced sugar)
   pros = c(
     'must use the most expensive sado-grade matcha!',
@@ -404,7 +370,7 @@ matchaLatte <- function() new(
 
 ikuyoLatte <- function() new(
   Class = 'matchaLatteMix', 
-  matcha_tsp = c(Ippodo_ikuyo = 3), 
+  matcha_tsp = c(Ippodo_ikuyo = 3*2), 
   date = as.Date('2024-09-10'),
   cons = 'ikuyo oxidize quite fast')
 
@@ -437,22 +403,22 @@ ikuyoLatte <- function() new(
 #' @name matchaGoatLatte
 #' @aliases matchaGoatLatteMix-class
 #' @export
-setClass(Class = 'matchaGoatLatteMix', contains = 'drinkMix', prototype = prototype(
+setClass(Class = 'matchaGoatLatteMix', contains = 'drinkmix', prototype = prototype(
   alias_class = '\u7f8a\u5976Latte\u901f\u6eb6\u7c89',
-  drymilk = c(Meyenberg_goat = 10, Meyenberg_goatWhole = 10)
+  drymilk = c(Meyenberg_goat = 10*2, Meyenberg_goatWhole = 10*2)
 ))
 
 #' @rdname matchaGoatLatte
 #' @export
 matchaGoatLatte <- function() new(
   Class = 'matchaGoatLatteMix', 
-  matcha_tsp = c(Marukyu_tenju = 3), 
-  sugar_tsp = 1.5,
+  matcha_tsp = c(Marukyu_tenju = 3*2), 
+  sugar_tsp = 1.5*2,
   review = 'to confirm in Summer 2025 with new crop of tenju!')
 
-ikuyoGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_ikuyo = 2.5), sugar_tsp = 4, pros = 'okay')
+ikuyoGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_ikuyo = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
 
-sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5), sugar_tsp = 4, pros = 'okay')
+sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
 
 
 
@@ -495,9 +461,9 @@ ItoEn_sweet_matcha <- function() new(
   servingGram = 12, sugar = 11)
 
 
-matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matcha_Tbsp = c(maeda_matcha = 1), sugar_tsp = 1.5, pros = 'okay')
+matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25*2), matcha_Tbsp = c(maeda_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 
-matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25), matcha_Tbsp = c(ItoEn_matcha = 1), sugar_tsp = 1.5, pros = 'okay')
+matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 
 
 
@@ -508,7 +474,7 @@ matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnatio
 # @rdname drink
 # @export
 #lemonade <- function() new(
-#  Class = 'drinkMix', alias_flavor = 
+#  Class = 'drinkmix', alias_flavor = 
 # ### that lemonade mix ???  into an iceDrink
 #)
 
@@ -748,7 +714,7 @@ Starbucks_matchaLatteMix <- function() new(
 bargainmums_mocha <- function() new(
   Class = 'recipe', author = 'Bargain Mums', alias_flavor = 'Mocha',
   coffee = 30, 
-  cocoaDutch = c(KingArthur_Bensdorp = 50), 
+  cocoa = c(KingArthur_Bensdorp = 50), 
   sugar = 100, drymilk = 110, vanilla_tsp = 1,
   url = 'https://bargainmums.com.au/homemade-mocha-mix')
 
@@ -761,7 +727,7 @@ Rebecca_mocha <- function() new(
   sugar_cup = 1,
   drymilk_cup = 1,
   spice_cup = c(Nestle_coffeeMate = 1),
-  cocoaDutch_cup = c(KingArthur_Bensdorp = 1/2),
+  cocoa_cup = c(KingArthur_Bensdorp = 1/2),
   coffee_cup = 1/4)
 
 #' @rdname mocaccino
@@ -772,7 +738,7 @@ Pillsbury_mocha <- function() new(
   spice_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5,
   coffee_cup = c(NescafeGold_espresso_blonde = 3/4),
-  cocoaDutch_cup = 3/4)
+  cocoa_cup = 3/4)
 
 
 #' @rdname drink
@@ -782,7 +748,7 @@ EarlaTaylor_cocoa <- function() new(
   allrecipes = '9335/hot-cocoa-mix/',
   drymilk_cup = 10,
   sugar_cup = 4.75,
-  cocoaDutch_cup = c(KingArthur_Burgundy = 1.75),
+  cocoa_cup = c(KingArthur_Burgundy = 1.75),
   spice_cup = c(Nestle_coffeeMate = 1.75))
 
 

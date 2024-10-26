@@ -295,9 +295,9 @@ setClass(Class = 'riceBaker', contains = 'recipeDx', prototype = prototype(
 ))
 
 #' @rdname diagnosis
-#' @aliases cocoaDutchMix-class
+#' @aliases cocoaDx-class
 #' @export
-setClass(Class = 'cocoaDutchMix', contains = 'recipeDx', prototype = prototype(
+setClass(Class = 'cocoaDx', contains = 'recipeDx', prototype = prototype(
   per = 'Alkalized Cocoa'
 ))
 

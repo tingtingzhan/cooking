@@ -181,7 +181,7 @@ nutrition.recipe <- function(x) {
     curry = equiv(actual = x@curry / total_raw),
     blackSesame = equiv(actual = x@blackSesame / total_raw),
     coconut = equiv(actual = x@coconut / total_raw),
-    cocoa = equiv(actual = sum(x@cocoa, x@cocoaDutch) / total_raw),
+    cocoa = equiv(actual = x@cocoa / total_raw),
     coffee = equiv(actual = x@coffee / total_raw),
     acai = equiv(actual = x@acai / total_raw),
     addedStarch = equiv(actual = starch / total_raw),
@@ -234,7 +234,7 @@ nutrition.recipe <- function(x) {
     curry = equiv(actual = x@curry / total),
     blackSesame = equiv(actual = x@blackSesame / total, ideal = devrecipe$blackSesame(x)),
     coconut = equiv(actual = x@coconut / total),
-    cocoa = equiv(actual = sum(x@cocoa, x@cocoaDutch) / total, ideal = devrecipe$cocoa(x)),
+    cocoa = equiv(actual = x@cocoa / total, ideal = devrecipe$cocoa(x)),
     coffee = equiv(actual = x@coffee / total, ideal = devrecipe$coffee(x)),
     acai = equiv(actual = x@acai / total, ideal = devrecipe$acai(x))
   )
@@ -383,13 +383,13 @@ nutrition.recipe <- function(x) {
     coffee = equiv(actual = x@coffee / riceFlour)
   ) #else new(Class = 'riceBaker')
   
-  attr(ret, which = 'cocoaDutchMix') <- if (length(x@cocoaDutch)) new(
-    Class = 'cocoaDutchMix',
-    alcohol = equiv(actual = alcohol / sum(x@cocoaDutch), ideal = devrecipe$alcohol2cocoaDutch(x)),
-    drymilk = equiv(actual = x@drymilk / sum(x@cocoaDutch), ideal = devrecipe$drymilk2cocoaDutch(x)),
-    sugar = if (TRUE | (sugar > addedSugar)) equiv(actual = sugar / sum(x@cocoaDutch)) else new(Class = 'equiv'),
-    addedSugar = equiv(actual = addedSugar / sum(x@cocoaDutch), ideal = devrecipe$addedSugar2cocoaDutch(x)),
-    coffee = equiv(actual = x@coffee / sum(x@cocoaDutch), ideal = devrecipe$coffee2cocoaDutch(x))
+  attr(ret, which = 'cocoaDx') <- if (length(x@cocoa)) new(
+    Class = 'cocoaDx',
+    alcohol = equiv(actual = alcohol / x@cocoa, ideal = devrecipe$alcohol2cocoa(x)),
+    drymilk = equiv(actual = x@drymilk / x@cocoa, ideal = devrecipe$drymilk2cocoa(x)),
+    sugar = if (TRUE | (sugar > addedSugar)) equiv(actual = sugar / x@cocoa) else new(Class = 'equiv'),
+    addedSugar = equiv(actual = addedSugar / x@cocoa, ideal = devrecipe$addedSugar2cocoa(x)),
+    coffee = equiv(actual = x@coffee / x@cocoa, ideal = devrecipe$coffee2cocoa(x))
   )
   
   attr(ret, which = 'info') <- info

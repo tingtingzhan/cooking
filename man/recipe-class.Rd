@@ -156,8 +156,6 @@ general recipe
 
 \item{\code{sugar,sugar_tsp,sugar_Tbsp,sugar_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar}
 
-\item{\code{drinkmix,drinkmix_tsp,drinkmix_Tbsp,drinkmix_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar}
-
 \item{\code{brownSugar,brownSugar_tsp,brownSugar_Tbsp,brownSugar_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of dark brown sugar}
 
 \item{\code{syrup,syrup_tsp,syrup_Tbsp,syrup_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various (maple) syrup}
@@ -178,9 +176,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{blackSesame}}{\link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed}
 
-\item{\code{cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of cocoa powder}
-
-\item{\code{cocoaDutch,cocoaDutch_tsp,cocoaDutch_Tbsp,cocoaDutch_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder}
+\item{\code{cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder}
 
 \item{\code{matcha,matcha_tsp,matcha_Tbsp,matcha_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder}
 

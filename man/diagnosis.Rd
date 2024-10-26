@@ -10,7 +10,7 @@
 \alias{breadBaker-class}
 \alias{glutenFreeBaker-class}
 \alias{riceBaker-class}
-\alias{cocoaDutchMix-class}
+\alias{cocoaDx-class}
 \alias{cookedTexture-class}
 \alias{cookedFlavor-class}
 \alias{uncooked-class}
