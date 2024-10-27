@@ -4,30 +4,9 @@
 \name{matchaLatte}
 \alias{matchaLatte}
 \alias{matchaLatteMix-class}
-\alias{Ippodo_sayakaLatte}
-\alias{Ippodo_uji_shimizu}
-\alias{ItoEn_sweet_matcha}
-\alias{TraderJoes_matchaLatte}
-\alias{Starbucks_matchaLatte}
-\alias{Starbucks_matchaFrappuccino}
-\alias{Starbucks_matchaLatteMix}
-\title{Matcha Latte, Hot and Frappe}
+\title{Matcha Latte}
 \usage{
 matchaLatte()
-
-Ippodo_sayakaLatte()
-
-Ippodo_uji_shimizu()
-
-ItoEn_sweet_matcha()
-
-TraderJoes_matchaLatte()
-
-Starbucks_matchaLatte()
-
-Starbucks_matchaFrappuccino()
-
-Starbucks_matchaLatteMix()
 }
 \description{
 ..

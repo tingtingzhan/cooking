@@ -4,12 +4,9 @@
 \name{caffeLatte}
 \alias{caffeLatte}
 \alias{caffeLatteMix-class}
-\alias{Starbucks_caffeLatte}
-\title{Caffe Latte, Hot or Frappe}
+\title{Caffe Latte}
 \usage{
 caffeLatte()
-
-Starbucks_caffeLatte()
 }
 \description{
 ..

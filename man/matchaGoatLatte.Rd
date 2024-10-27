@@ -4,7 +4,7 @@
 \name{matchaGoatLatte}
 \alias{matchaGoatLatte}
 \alias{matchaGoatLatteMix-class}
-\title{Matcha Latte with Goat Milk, Hot and Frappe}
+\title{Matcha Latte with Goat Milk}
 \usage{
 matchaGoatLatte()
 }

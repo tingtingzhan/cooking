@@ -7,50 +7,43 @@
 \alias{hotdrink-class}
 \alias{frappe-class}
 \alias{hotdrink}
+\alias{hotdrink.function}
+\alias{hotdrink.recipe}
+\alias{hotdrink.nutrition}
 \alias{frappe}
-\alias{StarbucksKcup_cocoa}
-\alias{Starbucks_cocoa}
-\alias{SwissMiss_milkCocoa}
-\alias{SwissMiss_simplyCocoaMilk}
-\alias{Nestle_richChocolate}
-\alias{Nestle_skimCocoa}
-\alias{KingArthur_milkChocolate}
-\alias{Nestle_cocoSupreme}
-\alias{EarlaTaylor_cocoa}
-\alias{Mels_cocoa}
-\alias{AmandaRettke_cocoa}
-\title{\linkS4class{drinkmix} and \linkS4class{hotdrink} Recipes}
+\alias{frappe.function}
+\alias{frappe.recipe}
+\title{\linkS4class{drinkmix} Recipes}
 \usage{
-hotdrink(x, water80)
+hotdrink(x, ...)
 
-frappe(x)
+\method{hotdrink}{`function`}(x, ...)
 
-StarbucksKcup_cocoa()
+\method{hotdrink}{recipe}(x, water80 = new(Class = "hotdrink")@water80, ...)
 
-Starbucks_cocoa()
+\method{hotdrink}{nutrition}(x, water80 = new(Class = "hotdrink")@water80, ...)
 
-SwissMiss_milkCocoa()
+frappe(x, ...)
 
-SwissMiss_simplyCocoaMilk()
+\method{frappe}{`function`}(x, ...)
 
-Nestle_richChocolate()
-
-Nestle_skimCocoa()
-
-KingArthur_milkChocolate()
-
-Nestle_cocoSupreme()
-
-EarlaTaylor_cocoa()
-
-Mels_cocoa()
-
-AmandaRettke_cocoa()
+\method{frappe}{recipe}(
+  x,
+  ice = new(Class = "frappe")@ice,
+  iceWater = new(Class = "frappe")@iceWater,
+  ...
+)
 }
 \arguments{
 \item{x}{\linkS4class{drinkmix} object}
 
+\item{...}{..}
+
 \item{water80}{..}
+
+\item{ice}{..}
+
+\item{iceWater}{..}
 }
 \value{
 Function \link{hotdrink} returns a \linkS4class{hotdrink} object.
@@ -69,19 +62,4 @@ by adding 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice.
 Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.
 320g ice cubs (one OXO tray), plus 150g ice water, is too dry for Nutribullet Ultra 24oz cup,
 also too dry for drinking.
-}
-\examples{
-nutrition_(
- StarbucksKcup_cocoa,
- Starbucks_cocoa,
- SwissMiss_milkCocoa,
- SwissMiss_simplyCocoaMilk,
- KingArthur_milkChocolate,
- Nestle_skimCocoa,
- Nestle_richChocolate,
- Nestle_cocoSupreme,
- EarlaTaylor_cocoa,
- Mels_cocoa,
- AmandaRettke_cocoa
-)
 }

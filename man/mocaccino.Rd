@@ -4,36 +4,9 @@
 \name{mocaccino}
 \alias{mocaccino}
 \alias{mocaccinoMix-class}
-\alias{WilliamsSonoma_mocha}
-\alias{Starbucks_mochaMix}
-\alias{Ghirardelli_mochaFrappe}
-\alias{Maxwell_mochaSuisse}
-\alias{Starbucks_mocha}
-\alias{Starbucks_mochaFrappuccino}
-\alias{bargainmums_mocha}
-\alias{Rebecca_mocha}
-\alias{Pillsbury_mocha}
-\title{Caffe Mocha, Hot and Frappe}
+\title{Caffe Mocha}
 \usage{
 mocaccino()
-
-WilliamsSonoma_mocha()
-
-Starbucks_mochaMix()
-
-Ghirardelli_mochaFrappe()
-
-Maxwell_mochaSuisse()
-
-Starbucks_mocha()
-
-Starbucks_mochaFrappuccino()
-
-bargainmums_mocha()
-
-Rebecca_mocha()
-
-Pillsbury_mocha()
 }
 \description{
 ..

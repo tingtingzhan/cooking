@@ -854,13 +854,11 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
     } else switch(
       class(x), 
-      matchaLatteHot =, matchaLatteFrappe =, matchaGoatLatteHot =, matchaGoatLatteFrappe = {
-        switch(class(x), matchaLatteHot = {
+      matchaLatte_ =, matchaGoatLatte_ = {
+        switch(class(x), matchaLatte_ = {
           '\u62b9\u8336\U1f375Latte'
-        }, matchaGoatLatteHot = {
+        }, matchaGoatLatte_ = {
           '\u62b9\u8336\U1f375\u7f8a\u5976Latte'
-        }, matchaLatteFrappe =, matchaGoatLatteFrappe = {
-          '\u62b9\u8336\U1f375'
         })
       },
       shortDough =, waterDough = {
