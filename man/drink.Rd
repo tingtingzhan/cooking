@@ -4,8 +4,7 @@
 \name{drink}
 \alias{drink}
 \alias{drinkmix-class}
-\alias{hotdrink-class}
-\alias{frappe-class}
+\alias{drink-class}
 \alias{hotdrink}
 \alias{hotdrink.function}
 \alias{hotdrink.recipe}
@@ -19,20 +18,15 @@ hotdrink(x, ...)
 
 \method{hotdrink}{`function`}(x, ...)
 
-\method{hotdrink}{recipe}(x, water80 = new(Class = "hotdrink")@water80, ...)
+\method{hotdrink}{recipe}(x, water80 = 236.6 * 2, ...)
 
-\method{hotdrink}{nutrition}(x, water80 = new(Class = "hotdrink")@water80, ...)
+\method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 
 frappe(x, ...)
 
 \method{frappe}{`function`}(x, ...)
 
-\method{frappe}{recipe}(
-  x,
-  ice = new(Class = "frappe")@ice,
-  iceWater = new(Class = "frappe")@iceWater,
-  ...
-)
+\method{frappe}{recipe}(x, ice = 236.6, iceWater = 236.6, ...)
 }
 \arguments{
 \item{x}{\linkS4class{drinkmix} object}
@@ -46,19 +40,18 @@ frappe(x, ...)
 \item{iceWater}{..}
 }
 \value{
-Function \link{hotdrink} returns a \linkS4class{hotdrink} object.
+Function \link{hotdrink} returns a \linkS4class{drink} object,
+except for that function \link{hotdrink.nutrition} returns a \linkS4class{nutrition} object.
 
-Function \link{frappe} returns a \linkS4class{frappe} object.
+Function \link{frappe} returns a \linkS4class{drink} object.
 }
 \description{
 ..
 }
 \details{
-Function \link{hotdrink} converts \linkS4class{drinkmix} to \linkS4class{hotdrink}
-by adding 2 US cup or 236.6*2 grams of hot water (70-80C).
+Function \link{hotdrink} adds 2 US cup or 236.6*2 grams of hot water (70-80C) to \linkS4class{drinkmix}.
 
-Function \link{frappe} converts \linkS4class{drinkmix} to \linkS4class{frappe}
-by adding 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice.
+Function \link{frappe} adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
 Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.
 320g ice cubs (one OXO tray), plus 150g ice water, is too dry for Nutribullet Ultra 24oz cup,
 also too dry for drinking.

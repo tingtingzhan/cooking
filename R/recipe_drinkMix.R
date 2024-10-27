@@ -21,39 +21,16 @@ setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
 })
 
 
-setClass(Class = '_drink', contains = 'recipe')
-setClass(Class = 'caffeLatte_', contains = '_drink')
-setClass(Class = 'cocoa_', contains = '_drink')
-setClass(Class = 'matchaGoatLatte_', contains = '_drink')
-setClass(Class = 'matchaLatte_', contains = '_drink')
-setClass(Class = 'mocaccino_', contains = '_drink')
-setClass(Class = 'tiramisu_', contains = '_drink')
-
-
-
 #' @rdname drink
-#' @aliases hotdrink-class
+#' @aliases drink-class
 #' @export
-setClass(Class = 'hotdrink', contains = '_drink', prototype = prototype(
-  alias_class = '\u70ed\u996e',
-  water80 = 236.6*2, # 2 US cup
-  instruction = c(
-    'Whisk together all powders (syrup also okay)', 
-    'Add half of water, whisk until smooth',
-    'Sweep cup bottom with a square spatula',
-    'Add rest of water, whisk until froth',
-    'Add liqueur last, which curdles dry milk'
-  )
-))
-
-#' @rdname drink
-#' @aliases frappe-class
-#' @export
-setClass(Class = 'frappe', contains = '_drink', prototype = prototype(
-  alias_class = 'Frapp\u00e9',
-  ice = 236.6, iceWater = 236.6, # Nutribullet can handle!!
-  note = 'Nutribullet Ultra 20 fl. oz. blending cup'
-))
+setClass(Class = 'drink', contains = 'recipe')
+setClass(Class = 'caffeLatte_', contains = 'drink')
+setClass(Class = 'cocoa_', contains = 'drink')
+setClass(Class = 'matchaGoatLatte_', contains = 'drink')
+setClass(Class = 'matchaLatte_', contains = 'drink')
+setClass(Class = 'mocaccino_', contains = 'drink')
+setClass(Class = 'tiramisu_', contains = 'drink')
 
 
 
@@ -71,74 +48,100 @@ setClass(Class = 'frappe', contains = '_drink', prototype = prototype(
 #' @param ... ..
 #' 
 #' @details
-#' Function [hotdrink] converts \linkS4class{drinkmix} to \linkS4class{hotdrink}
-#' by adding 2 US cup or 236.6*2 grams of hot water (70-80C).
+#' Function [hotdrink] adds 2 US cup or 236.6*2 grams of hot water (70-80C) to \linkS4class{drinkmix}.
 #' 
 #' @returns
-#' Function [hotdrink] returns a \linkS4class{hotdrink} object.
+#' Function [hotdrink] returns a \linkS4class{drink} object, 
+#' except for that function [hotdrink.nutrition] returns a \linkS4class{nutrition} object.
 #' 
 #' @export
 hotdrink <- function(x, ...) UseMethod(generic = 'hotdrink') 
 
 #' @rdname drink
+#' @export hotdrink.function
 #' @export
 hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
+# `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
+#' @export hotdrink.recipe
 #' @export
-hotdrink.recipe <- function(x, water80 = new(Class = 'hotdrink')@water80, ...) {
+hotdrink.recipe <- function(
+    x, 
+    water80 = 236.6*2, # 2 US cup
+    ...
+) {
   x@water80 <- water80
-  new_(Class = if (identical(class(x), structure('drinkmix', package = 'cooking'))) {
-    'hotdrink'
-  } else if (inherits(x, what = 'drinkmix')) {
+  x@alias <- character(); x@alias_class <- '\u70ed\u996e'
+  x@instruction <- c(
+    'Whisk together all powders (syrup also okay)', 
+    'Add half of water, whisk until smooth',
+    'Sweep cup bottom with a square spatula',
+    'Add rest of water, whisk until froth',
+    'Add liqueur last, which curdles dry milk'
+  )
+  new(Class = if (inherits(x, what = 'drinkmix')) {
     gsub('Mix$', replacement = '_', x = class(x))
-  } else 'hotdrink', x)
+  } else 'drink', x)
 }
 
 #' @rdname drink
+#' @export hotdrink.nutrition
 #' @export
-hotdrink.nutrition <- function(x, water80 = new(Class = 'hotdrink')@water80, ...) {
+hotdrink.nutrition <- function(x, water80 = stop('Find suggested hot water on packaging'), ...) {
   x@cost_ <- character()
   x@usd <- sum(x@usd, Wegmans_water()@usd/Wegmans_water()@servingGram * water80)
   x@jpy <- numeric()
   x@water <- sum(x@water, water80)
   x@servingGram <- sum(x@servingGram, water80)
   x@servingTsp <- numeric()
-  return(x)
+  return(new(Class = 'nutrition', x))
 }
 
 
 #' @rdname drink
 #' 
 #' @details
-#' Function [frappe] converts \linkS4class{drinkmix} to \linkS4class{frappe}
-#' by adding 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice.
+#' Function [frappe] adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
 #' Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.
 #' 320g ice cubs (one OXO tray), plus 150g ice water, is too dry for Nutribullet Ultra 24oz cup, 
 #' also too dry for drinking.
 #' 
 #' @returns
-#' Function [frappe] returns a \linkS4class{frappe} object.
+#' Function [frappe] returns a \linkS4class{drink} object.
 #' 
 #' @export
 frappe <- function(x, ...) UseMethod(generic = 'frappe')
 
 #' @rdname drink
+#' @export frappe.function
 #' @export
 frappe.function <- function(x, ...) frappe(x = x(), ...)
+# `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
+#' @export frappe.recipe
 #' @export
-frappe.recipe <- function(x, ice = new(Class = 'frappe')@ice, iceWater = new(Class = 'frappe')@iceWater, ...) {
+frappe.recipe <- function(
+    x, 
+    ice = 236.6, iceWater = 236.6, # Nutribullet can handle!!
+    ...
+) {
   x@ice <- ice
-  x@iceWater <- iceWater
-  if (length(x@milk)) ret@iceWater <- numeric()
-  new_(Class = if (identical(class(x), structure('drinkmix', package = 'cooking'))) {
-    'frappe'
-  } else if (inherits(x, what = 'drinkmix')) {
+  x@iceWater <- if (length(x@milk)) numeric() else iceWater
+  x@alias <- character(); x@alias_class <- 'Frapp\u00e9'
+  x@note <- 'Nutribullet Ultra 20 fl. oz. blending cup'
+  new(Class = if (inherits(x, what = 'drinkmix')) {
     gsub('Mix$', replacement = '_', x = class(x))
-  } else 'frappe', x)
+  } else 'drink', x)
 }
+
+
+
+
+
+
+
 
 
 #' @title Show \linkS4class{drinkmix}
@@ -211,20 +214,20 @@ caffeLatte <- function() new(
 
 
 caffeGoatLatte_blonde <- function() new(
-  Class = 'drinkmix', 
+  Class = 'recipe', 
   alias_flavor = 'Caff\u00e8 Goat Latte',
   drymilk = c(Meyenberg_goatWhole_drymilk = 25*2),
   coffee_tsp = c(NescafeGold_espresso_blonde = 4.5*2), 
   pros = 'I love')
 
 caffeLatte_intense <- function() new(
-  Class = 'drinkmix', 
+  Class = 'recipe', 
   drymilk = c(Carnation_drymilk = 25*2),
   coffee_tsp = c(NescafeGold_espresso_intense = 4.5*2),
   cons = 'I prefer caffeLatte()')
 
 caffeLatte_decaf <- function() new(
-  Class = 'drinkmix',
+  Class = 'recipe',
   drymilk = c(Carnation_drymilk = 25*2),
   coffee_tsp = c(NescafeGold_espresso_decaf = 6*2),
   cons = 'has an undesirable flavor, not sure how to describe')
@@ -430,9 +433,103 @@ matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnatio
 # @rdname drink
 # @export
 #lemonade <- function() new(
-#  Class = 'drinkmix', alias_flavor = 
+#  Class = 'recipe', alias_flavor = 
 # ### that lemonade mix ???  into an iceDrink
 #)
+
+
+
+#' @title \linkS4class{tiramisuMix} Recipes
+#' 
+#' @name tiramisuMix
+#' @aliases tiramisuMix-class
+#' @export
+setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
+  alias_class = '\u901f\u6eb6\u7c89',
+  drymilk = c(Carnation_drymilk = 25*2),
+  
+  # old base
+  #coffee_tsp = c(NescafeGold_espresso_blonde = 2*2)
+  
+  # new base!!!
+  coffee_tsp = c(NescafeGold_espresso_blonde = 2.5*2),
+  cocoa_tsp = c(KingArthur_Bensdorp = .375*2)
+))
+
+
+#' @rdname tiramisuMix
+#' @export
+tiramisuMix <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(Baileys_espresso = 2.25*2), 
+  pros = 'Wow!! Use as default!', date = as.Date('2024-06-10'))
+
+
+tiramisuMix_Baileys <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(Baileys_tiramisu = 2.25*2), 
+  review = 'hypothetical model')
+
+
+
+#' @rdname tiramisuMix
+#' @export
+tiramisuMix_Kahlua <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(Kahlua_coffee = 2*2), 
+  date = as.Date('2024-05-13'), 
+  pros = 'Old base: alcohol just right; I cannot take more', 
+  cons = 'Old base: a little too sweet',
+  review = 'try new base!!')
+
+#' @rdname tiramisuMix
+#' @export
+tiramisuMix_FratelliVincenzi <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(FratelliVincenzi_espresso = 1.25*2), 
+  pros = 'Old base: I like', date = as.Date('2024-05-15'),
+  review = 'try new base!!')
+
+#' @rdname tiramisuMix
+#' @export
+tiramisuMix_CaffeBorghetti <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(CaffeBorghetti = 1.5*2), 
+  pros = 'Old base: sweetness just right', date = as.Date('2024-05-13'))
+
+#' @rdname tiramisuMix
+#' @export
+tiramisuMix_Grind <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(Grind_espresso = 1.25*2), 
+  pros = 'Old base: I love!!', date = as.Date('2024-05-18'))
+
+#' @rdname tiramisuMix
+#' @export
+tiramisuMix_Sabroso <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(Sabroso_coffee = (1+5/8)*2),
+  pros = 'Old base: I like', date = as.Date('2024-05-18'))
+
+
+
+tiramisuMix_CafeGranita <- function() new(
+  Class = 'tiramisuMix',
+  liqueur_tsp = c(CafeGranita_coffee = (1+3/4)*2),
+  review = 'try')
+
+
+tiramisuMix_Kikisi <- function() new(
+  Class = 'tiramisuMix',
+  liqueur_tsp = c(Kikisi_coffee = 1.875*2),
+  review = 'try'
+)
+
+ryeWhisky_latte_FAIL <- function() new(
+  Class = 'tiramisuMix', syrup_tsp = c(Runamok_ryeWhisky = 1.5), coffee_tsp = 1.5, 
+  cons = c('too sweet', 'not enough alcohol'))
+
+
 
 
 

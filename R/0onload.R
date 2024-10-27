@@ -42,7 +42,7 @@
     cornbread = .05, # well tested!
     #tortillaLard = .06,
     cocoa_ = .055,
-    hotdrink =, frappe = if (length(x@coffee) && length(x@liqueur)) {
+    drink = if (length(x@coffee) && length(x@liqueur)) {
       .055
     }, 
     caffeLatte_ = .045, 
@@ -142,7 +142,7 @@
     stickyRice =, riceCake = .1, # need to re-think!!
     matchaLatte_ =, mocaccino_ = .075, # taste better than .09 !
     cocoa_ =, 
-    hotdrink =, frappe = .09, # match Carnation_drymilk() can label
+    drink = .09, # match Carnation_drymilk() can label
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,
@@ -171,7 +171,7 @@
   fat <- function(x) switch(
     class(x), 
     noodlelinda =, wrapperlinda =, flavoredButter =, soymilk = NA_real_,
-    hotdrink = NA_real_,
+    drink = NA_real_,
     matchaLatte_ = .004, 
     stickyTortilla =, TangYuan = .01, 
     mocaccino_ = .01,
@@ -317,7 +317,7 @@
   
   cocoa <- function(x) switch(
     class(x), 
-    hotdrink =, frappe = if (length(x@liqueur)) .004,
+    drink = if (length(x@liqueur)) .004,
     snowSkin = .009, 
     caffeLatte_ = .011,
     mocaccino_ = .043, 
@@ -347,7 +347,7 @@
     cheesecake = .016, # to try
     snowSkin = .016, # try
     gateau = if (length(x@cocoa)) .002,
-    hotdrink =, frappe = if (length(x@liqueur)) .009,
+    drink = if (length(x@liqueur)) .009,
     mocaccinoMix = .065,
     caffeLatteMix = .14,
     NULL)
@@ -456,7 +456,7 @@
     class(x),
     goatKefir =, filmjolk = NA_real_, # do NOT add alcohol, already have strong alcohol flavor!!!!
     millecrepe = NA_real_, # bad idea to cook alcohol
-    hotdrink =, frappe = .0055, # any more, I will feel dizzy
+    drink = .0055, # any more, I will feel dizzy
     #cheesecake =, mascarponeGanache = .015, # need to re-try
     cheesecake = .006, # trying. this is low-temp cooking, probably okay
     tomyumStew = .035,
