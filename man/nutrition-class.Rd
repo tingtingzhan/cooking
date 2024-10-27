@@ -64,6 +64,8 @@ Nutrition information.
 
 \item{\code{bouchard}}{\link[base]{character} scalar}
 
+\item{\code{clearwater}}{\link[base]{character} scalar}
+
 \item{\code{countrytime}}{\link[base]{character} scalar}
 
 \item{\code{daisybrand}}{\link[base]{character} scalar}
@@ -133,6 +135,8 @@ Nutrition information.
 \item{\code{raos}}{\link[base]{character} scalar}
 
 \item{\code{runamok}}{\link[base]{character} scalar}
+
+\item{\code{sanford}}{\link[base]{character} scalar}
 
 \item{\code{simplyorganic}}{\link[base]{character} scalar}
 

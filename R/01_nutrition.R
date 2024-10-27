@@ -56,6 +56,7 @@ setOldClass('cli_glue_delay')
 #' @slot belgioioso \link[base]{character} scalar
 #' @slot bobsredmill \link[base]{character} scalar
 #' @slot bouchard \link[base]{character} scalar
+#' @slot clearwater \link[base]{character} scalar
 #' @slot countrytime \link[base]{character} scalar
 #' @slot daisybrand \link[base]{character} scalar
 #' @slot domino \link[base]{character} scalar
@@ -91,6 +92,7 @@ setOldClass('cli_glue_delay')
 #' @slot paromi \link[base]{character} scalar
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
+#' @slot sanford \link[base]{character} scalar
 #' @slot simplyorganic \link[base]{character} scalar
 #' @slot sodastream \link[base]{character} scalar
 #' @slot starbucks \link[base]{character} scalar
@@ -169,6 +171,7 @@ setClass(Class = 'nutrition', slots = c(
   belgioioso = 'character',
   bobsredmill = 'character',
   bouchard = 'character',
+  clearwater = 'character',
   countrytime = 'character',
   daisybrand = 'character',
   domino = 'character',
@@ -204,6 +207,7 @@ setClass(Class = 'nutrition', slots = c(
   paromi = 'character',
   raos = 'character',
   runamok = 'character',
+  sanford = 'character',
   simplyorganic = 'character', # has SKU number, do not know how to use
   sodastream = 'character',
   starbucks = 'character',
@@ -297,6 +301,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.bobsredmill.com/%s.html', x@bobsredmill), text = 'Bob\'s Red Mill\U1f1fa\U1f1f8'))
     } else if (length(x@bouchard)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://bouchardchocolate.com/products/%s', x@bouchard), text = 'Bouchard\U1f1e7\U1f1ea'))
+    } else if (length(x@clearwater)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.clearwater.ca/en/seafood-industry/%s', x@clearwater), text = 'Clearwater\U1f1e8\U1f1e6'))
     } else if (length(x@countrytime)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/country-time/products/%s', x@countrytime), text = 'Country Time\U1f1fa\U1f1f8'))
     } else if (length(x@daisybrand)) {
@@ -394,12 +400,14 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     } else if (length(x@paromi)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://paromi.com/products/%s', x@paromi), text = 'Paromi\U1f1fa\U1f1f8'))
     } else if (length(x@raos)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f96b\U1f1fa\U1f1f8'))
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f1fa\U1f1f8'))
     } else if (length(x@runamok)) {
       runamok_ <- unclass(style_hyperlink(url = sprintf(fmt = 'https://runamokmaple.com/shop/product/%s', x@runamok), text = 'Runamok\U1f1fa\U1f1f8'))
       if (length(x@whistlepigwhiskey)) {
         paste(runamok_, unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.whistlepigwhiskey.com/products/%s', x@whistlepigwhiskey), text = 'Whistlepig\U1f1fa\U1f1f8')), sep = '-')
       } else runamok_
+    } else if (length(x@sanford)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.sanford.co.nz/our-seafood/our-products/%s', x@sanford), text = 'Sanford\U1f1f3\U1f1ff'))
     } else if (length(x@simplyorganic)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text = 'Simply Organic\U1f1fa\U1f1f8'))
     } else if (length(x@sodastream)) {

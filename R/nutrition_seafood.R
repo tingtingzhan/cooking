@@ -86,6 +86,34 @@ salmonAtlantic <- function() new(
   servingGram = 100, water = 64.9, fat = 13.4, protein = 20.4, sodium = .059, cholesterol = .055)
 
 
+Sanford_mussel <- function() new(
+  Class = 'nutrition',
+  sanford = 'greenshell-mussel-1',
+  name = '\u9752\u53e3\u8d1d Greenshell Mussels',
+  # packaging
+  servingGram = 85,
+  calorie = 94, fat = 2.3, cholesterol = .047, sodium = .507,
+  carbohydrate = 4.7, sugar = .9, protein = 13.5)
+
+Clearwater_surfClam <- function() new(
+  Class = 'nutrition',
+  clearwater = 'clams/arctic-surf-clams',
+  name = '\u5317\u6781\u8d1d Arctic Surf Clams',
+  # packaging
+  servingGram = 110, 
+  calorie = 100,
+  fat = .5, cholesterol = .045, sodium = .35, carbohydrate = 2.2, protein = 16)
+
+Clearwater_cockleClam <- function() new(
+  Class = 'nutrition',
+  clearwater = 'clams/cockle-clams',
+  name = '\u5317\u6781\u767d\u7389\u8d1d Cockle Clams',
+  # website
+  servingGram = 100, 
+  calorie = 90,
+  fat = .5, cholesterol = .02, sodium = .3, carbohydrate = 4, sugar = 1, protein = 16)
+
+
 
 crab_steamed <- function() new(
   Class = 'nutrition', fdc = 1099116L,
