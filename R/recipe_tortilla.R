@@ -47,7 +47,7 @@ ViewRoad_tortilla <- function() new(
 ViewRoad_pumpkin_tortilla <- function() new(
   Class = 'recipe', author = 'View on the Road', alias_flavor = 'Pumpkin Tortilla',
   youtube = 'hPMc1a19CsU', 
-  flour = 1.25 * 120,
+  flour_cup = 1.25,
   pumpkin = 122*2/3,
   butter = 227/4, # 1/4 cup of butter vegetable shortening 
   salt_tsp = 1/4,

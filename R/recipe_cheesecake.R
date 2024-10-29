@@ -357,7 +357,7 @@ pumpkin_cheesecake_NatashasKitchen <- function() new(
   creamCheese = c(Philadelphia = 227*3),
   brownSugar = c(Domino_lightBrown = 288), # 1 1/2 cups packed light brown sugar
   pumpkinPieMix = 425, # 15 oz; original. contains 20.7% sugar 
-  flour = 15,
+  flour_Tbsp = 2, 
   egg_pc = 4,
   sourCream = 60,
   salt_tsp = 1/4,
@@ -430,7 +430,7 @@ pumpkin_cheesecake_PreppyKitchen <- function() new(
   pumpkin = 244,
   sourCream = 120,
   vanilla_tsp = 2,
-  flour = 15,
+  flour_Tbsp = 2,
   pumpkinSpice_tsp = 1.5,
   preppykitchen = c('JwmhZP9vRWM' = 'pumpkin-swirl-cheesecake'))
 

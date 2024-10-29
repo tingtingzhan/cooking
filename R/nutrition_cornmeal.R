@@ -13,7 +13,7 @@ Albertsons_yellowCorn <- function() new(
   name = '\u9ec4\u7389\u7c73\u9762 Yellow Cornmeal\U1f33d',
   servingGram = 30, 
   # servingCup = 1/4, # packaging
-  servingCup = 30/167, # actual experiment, 1cup = 167g
+  servingCup = 30/150, # actual experiment, 1cup = 150g, 2024-10-29
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = 1, protein = 2)
 

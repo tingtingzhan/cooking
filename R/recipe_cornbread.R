@@ -14,13 +14,11 @@
 #' 
 #' diagnose_(
 #'  cornbread,
-#'  subtract(PreppyKitchen_cornbread, sugar = 14),
-#'  subtract(BethanyWeathersby_cornbread, sugar = 116),
-#'  subtract(bluegirl_cornbread, sugar = 118),
-#'  subtract(JoshuaWeissman_cornbread, sugar = 70, brownSugar = 29)
+#'  subtract(PreppyKitchen_cornbread, sugar = 33),
+#'  subtract(BethanyWeathersby_cornbread, sugar = 110),
+#'  subtract(bluegirl_cornbread, sugar = 110),
+#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29)
 #' )
-#' 
-#' 
 #' @name cornbread
 #' @aliases cornbread-class
 #' @export
@@ -77,12 +75,12 @@ cornbread <- function() new(Class = 'cornbread', pros = 'I love!!')
 BethanyWeathersby_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'Bethany Weathersby',
   butter = 227/2, 
-  sugar = 200*2/3,
+  sugar_cup = c(Domino_granulated = 2/3),
   egg_pc = 2,
   buttermilk_cup = 1, 
   NaHCO3_tsp = 1/2, 
-  cornmeal = 120,
-  flour = 120,
+  cornmeal_cup = 1,
+  flour_cup = 1,
   salt_tsp = 1/4,
   allrecipes = '76594/grandmothers-buttermilk-cornbread/')
 
@@ -91,13 +89,13 @@ BethanyWeathersby_cornbread <- function() new(
 #' @export
 bluegirl_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'bluegirl',
-  flour = 120, 
-  cornmeal = 120,
-  sugar = 200*2/3,
+  flour_cup = 1,
+  cornmeal_cup = 1,
+  sugar_cup = c(Domino_granulated = 2/3),
   bakingPowder_tsp = 3.5,
   salt_tsp = 1,
   milk_cup = 1,
-  oil_tsp = c(Wegmans_vegetable = 16), # ⅓ cup vegetable oil
+  oil_cup = c(Wegmans_vegetable = 1/3),
   egg_pc = 1,
   allrecipes = '17891/golden-sweet-cornbread/')
 
@@ -105,9 +103,9 @@ bluegirl_cornbread <- function() new(
 #' @export
 PreppyKitchen_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
-  cornmeal = 255,
-  flour = 90,
-  sugar = 30,
+  cornmeal_cup = 1.5, # this is not 255g,
+  flour_cup = 3/4,
+  sugar_cup = c(Domino_granulated = 1/4), # this is not 30g
   bakingPowder_tsp = 2,
   salt_tsp = 1,
   milk_cup = 1.5,
@@ -121,20 +119,19 @@ PreppyKitchen_cornbread <- function() new(
 #' @rdname cornbread
 #' @export
 JoshuaWeissman_cornbread <- function() new(
-  Class = 'recipe', alias_flavor = 'Cornbread', author = 'Joshua Weissman',
+  Class = 'recipe', alias_flavor = 'Cornbread', 
   butter = 227/2,
   # 1/2 bunch fresh sage 
   # 1/2 bunch fresh thyme 
-  flour = 185,
-  sugar = 70,
+  flour_cup = 1.25, # this is not 185g though..
+  sugar_cup = c(Domino_granulated = 1/3),
   brownSugar = 50,
   salt = 6,
   bakingPowder_Tbsp = 1,
-  cornmeal = 175,
+  cornmeal_cup = 1.25, # this is not 175g
   egg_pc = 2,
   buttermilk_cup = 1.5,
-  youtube = 'et5OlhhD2Bo',
-  url = 'https://www.joshuaweissman.com/post/homemade-cornbread'
+  joshuaweissman = c('et5OlhhD2Bo' = 'homemade-cornbread')
 )
 
 

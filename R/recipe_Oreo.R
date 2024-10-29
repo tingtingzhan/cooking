@@ -24,7 +24,7 @@ KingArthur_fauxReo <- function() new(
   egg_pc = 1, 
   iceWater = 14,
   vanilla_tsp = 1,
-  flour = 180,
+  flour_cup = 1.5,
   cocoa = c(KingArthur_blackCocoa = 64),
   author = 'pj-hamel', kingarthur = 'faux-reos-recipe')
 

@@ -31,7 +31,7 @@ Domino_granulated <- function() new(
   wegmans = 23344L,
   servingGram = 8, servingTsp = 2, # packaging
   calorie = 30,
-  carbohydrate = 8, sugar = 8)
+  carbohydrate = 8, addedSugar = 8)
 
 Domino_golden <- function() new(
   Class = 'nutrition',

@@ -84,8 +84,8 @@ KingArthur_bread <- function() new(
   name = '12.7%\u9ad8\u7b4b\u9762\u7c89 Bread\U1f35e Flour',
   usd = 6.95/2270*30,
   servingGram = 30, 
-  # servingCup = 1/4, # packaging
-  servingCup = 30/160, # actual experiment: 2 cup = 320 g
+  servingCup = 1/4, # packaging, this is fluffed density
+  # servingCup = 30/160, # actual experiment: 2 cup = 320 g
   calorie = 110,
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
@@ -169,7 +169,7 @@ KingArthur_selfRising_homemade <- function() new(
   alias_flavor = 'Homemade Self-Rising Flour',
   author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',
-  flour = 120,
+  flour_cup = 1,
   bakingPowder_tsp = 1.5,
   salt_tsp = 1/4)
 

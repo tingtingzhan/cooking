@@ -65,14 +65,13 @@
 #' @slot teabag \link[base]{numeric} scalars, number of tea bags
 #' @slot tealoose \link[base]{numeric} scalars, weight of loose tea
 #' 
-#' @slot flour \link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)
-# flours, corn meal, almond flour, coconut flour, etc. (in grams)
+#' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)
 #' @slot pastryFlour \link[base]{numeric} scalar, weight of Wegmans pastry flour (in grams)
 #' @slot breadFlour \link[base]{numeric} scalar, weight of King Arthur bread flour (in grams)
 #' @slot wholeWheatFlour \link[base]{numeric} scalar, weight of Wegmans white whole wheat flour (in grams)
 #' @slot glutenFreeFlour \link[base]{numeric} scalar, weight of gluten free measure for measure flour (in grams)
 #' @slot wheatGluten \link[base]{numeric} scalar, weight of wheat gluten (in grams)
-#' @slot cornmeal \link[base]{numeric} scalar, weight of cornmeal (in grams)
+#' @slot cornmeal,cornmeal_tsp,cornmeal_Tbsp,cornmeal_cup \link[base]{numeric} scalar, weight of cornmeal (in grams)
 #' @slot coconut \link[base]{numeric} scalar, weight (in grams) of coconut flour or shredded coconut
 #' @slot riceFlour \link[base]{numeric} scalar, weight of Erawan rice flour (in grams)
 #' @slot glutinousRiceFlour \link[base]{numeric} scalar, weight of Erawan glutinous rice flour (in grams)
@@ -150,7 +149,7 @@
 #' 
 #' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
 #' 
-#' @slot water \link[base]{numeric} scalar, weight of water (in grams)
+#' @slot water,water_tsp,water_Tbsp,water_cup \link[base]{numeric} scalar, weight of water (in grams)
 #' @slot water_extra \link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough
 #' @slot water40 \link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams) 
 #' @slot water70 \link[base]{numeric} scalar, weight of hot (70C-75C) water (in grams) 
@@ -214,6 +213,7 @@
 #' @slot dad1966 \link[base]{character} scalar
 #' @slot happytears \link[base]{character} scalar
 #' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
+#' @slot joshuaweissman \link[base]{character} scalar
 #' @slot just1cookbook \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
 #' @slot laofangu \link[base]{character} scalar
@@ -245,6 +245,7 @@ setClass(Class = 'recipe', slots = c(
   dad1966 = 'character',
   happytears = 'character',
   ippodotea = 'character', ippodoteajpn = 'character',
+  joshuaweissman = 'character',
   just1cookbook = 'character',
   kingarthur = 'character',
   laofangu = 'character',
@@ -339,35 +340,21 @@ setClass(Class = 'recipe', slots = c(
   yeast = 'numeric', yeast_tsp = 'numeric', yeast_Tbsp = 'numeric', yeast_cup = 'numeric',
   
   sugar = 'numeric', sugar_tsp = 'numeric', sugar_Tbsp = 'numeric', sugar_cup = 'numeric',
-  
-  brownSugar = 'numeric', 
-  brownSugar_tsp = 'numeric', brownSugar_Tbsp = 'numeric', brownSugar_cup = 'numeric',
-  
-  syrup = 'numeric',
-  syrup_tsp = 'numeric', syrup_Tbsp = 'numeric', syrup_cup = 'numeric',
-  
-  salt = 'numeric', 
-  salt_tsp = 'numeric', salt_Tbsp = 'numeric', salt_cup = 'numeric',
-  
-  msg = 'numeric',
-  msg_tsp = 'numeric', msg_Tbsp = 'numeric', msg_cup = 'numeric',
-  
-  NaHCO3 = 'numeric',
-  NaHCO3_tsp = 'numeric', NaHCO3_Tbsp = 'numeric', NaHCO3_cup = 'numeric',
-  
-  Na2CO3 = 'numeric',
-  Na2CO3_tsp = 'numeric', Na2CO3_Tbsp = 'numeric', Na2CO3_cup = 'numeric',
-  
-  bakingPowder = 'numeric',
-  bakingPowder_tsp = 'numeric', bakingPowder_Tbsp = 'numeric', bakingPowder_cup = 'numeric',
+  brownSugar = 'numeric', brownSugar_tsp = 'numeric', brownSugar_Tbsp = 'numeric', brownSugar_cup = 'numeric',
+  syrup = 'numeric', syrup_tsp = 'numeric', syrup_Tbsp = 'numeric', syrup_cup = 'numeric',
+  salt = 'numeric', salt_tsp = 'numeric', salt_Tbsp = 'numeric', salt_cup = 'numeric',
+  msg = 'numeric', msg_tsp = 'numeric', msg_Tbsp = 'numeric', msg_cup = 'numeric',
+  NaHCO3 = 'numeric', NaHCO3_tsp = 'numeric', NaHCO3_Tbsp = 'numeric', NaHCO3_cup = 'numeric',
+  Na2CO3 = 'numeric', Na2CO3_tsp = 'numeric', Na2CO3_Tbsp = 'numeric', Na2CO3_cup = 'numeric',
+  bakingPowder = 'numeric', bakingPowder_tsp = 'numeric', bakingPowder_Tbsp = 'numeric', bakingPowder_cup = 'numeric',
   
   pastryFlour = 'numeric',
-  flour = 'numeric',
+  flour = 'numeric', flour_tsp = 'numeric', flour_Tbsp = 'numeric', flour_cup = 'numeric',
   breadFlour = 'numeric',
   wholeWheatFlour = 'numeric',
   glutenFreeFlour = 'numeric',
   wheatGluten = 'numeric',
-  cornmeal = 'numeric',
+  cornmeal = 'numeric', cornmeal_tsp = 'numeric', cornmeal_Tbsp = 'numeric', cornmeal_cup = 'numeric',
   riceFlour = 'numeric',
   glutinousRiceFlour = 'numeric',
   blackRice = 'numeric',
@@ -422,7 +409,7 @@ setClass(Class = 'recipe', slots = c(
   
   vegetable = 'numeric',
   
-  water = 'numeric',
+  water = 'numeric', water_tsp = 'numeric', water_Tbsp = 'numeric', water_cup = 'numeric',
   water_extra = 'numeric',
   iceWater = 'numeric',
   carbonatedWater = 'numeric',
@@ -551,7 +538,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x@eggYolk <- c(eggYolk = sum(eggYolk()@servingGram * sum(x@eggYolk_pc, x@egg_pc), x@eggYolk))
   x@eggWhite_pc <- x@eggYolk_pc <- x@egg_pc <- numeric()
   
-  x <- addNameLen1(x, which = 'flour', name1 = 'KingArthur_allPurpose')
+  x <- combineVol(x, which = 'flour', name1 = 'KingArthur_allPurpose')
   x <- addNameLen1(x, which = 'pastryFlour', name1 = 'Wegmans_pastry')
   
   #x <- addNameLen1(x, which = 'breadFlour', name1 = 'KingArthur_bread')
@@ -561,14 +548,14 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- addNameLen1(x, which = 'wholeWheatFlour', name1 = 'Wegmans_whiteWheat')
   x <- addNameLen1(x, which = 'glutenFreeFlour', name1 = 'KingArthur_M4M')
   x <- addNameLen1(x, which = 'wheatGluten', name1 = 'BobsRedMill_wheatGluten')
-  x <- addNameLen1(x, which = 'cornmeal', name1 = 'Albertsons_yellowCorn')
+  x <- combineVol(x, which = 'cornmeal', name1 = 'Albertsons_yellowCorn')
   x <- addNameLen1(x, which = 'coconut') # , name1 = 'WegmansOrganic_coconutFlour' # compare with other brands?
   x <- addNameLen1(x, which = 'riceFlour', name1 = 'Erawan_riceFlour')
   x <- addNameLen1(x, which = 'glutinousRiceFlour', name1 = 'Erawan_glutinousRiceFlour')
   x <- addNameLen1(x, which = 'blackRice', name1 = 'HaiTai_blackRice')
   x <- addNameLen1(x, which = 'brownRice', name1 = 'Nishiki_brownRice')
   
-  x <- addNameLen1(x, which = 'water', name1 = 'Wegmans_water')
+  x <- combineVol(x, which = 'water', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'iceWater', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'carbonatedWater', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'shavedIce', name1 = 'Wegmans_water')
@@ -767,6 +754,16 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
       x@ippodoteajpn <- character()
     }
+    
+    if (length(x@joshuaweissman)) {
+      if (length(x@author)) stop('@author will be overwritten by @joshuaweissman')
+      if (length(x@joshuaweissman) > 1L) stop('only allow len-1 @joshuaweissman')
+      x@author <- paste(
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
+      )
+      x@joshuaweissman <- character()
+    } 
     
     if (length(x@just1cookbook)) {
       if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')

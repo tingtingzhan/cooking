@@ -33,11 +33,9 @@ cornbread()
 
 diagnose_(
  cornbread,
- subtract(PreppyKitchen_cornbread, sugar = 14),
- subtract(BethanyWeathersby_cornbread, sugar = 116),
- subtract(bluegirl_cornbread, sugar = 118),
- subtract(JoshuaWeissman_cornbread, sugar = 70, brownSugar = 29)
+ subtract(PreppyKitchen_cornbread, sugar = 33),
+ subtract(BethanyWeathersby_cornbread, sugar = 110),
+ subtract(bluegirl_cornbread, sugar = 110),
+ subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29)
 )
-
-
 }

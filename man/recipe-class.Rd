@@ -112,7 +112,7 @@ general recipe
 
 \item{\code{tealoose}}{\link[base]{numeric} scalars, weight of loose tea}
 
-\item{\code{flour}}{\link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)}
+\item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)}
 
 \item{\code{pastryFlour}}{\link[base]{numeric} scalar, weight of Wegmans pastry flour (in grams)}
 
@@ -124,7 +124,7 @@ general recipe
 
 \item{\code{wheatGluten}}{\link[base]{numeric} scalar, weight of wheat gluten (in grams)}
 
-\item{\code{cornmeal}}{\link[base]{numeric} scalar, weight of cornmeal (in grams)}
+\item{\code{cornmeal,cornmeal_tsp,cornmeal_Tbsp,cornmeal_cup}}{\link[base]{numeric} scalar, weight of cornmeal (in grams)}
 
 \item{\code{coconut}}{\link[base]{numeric} scalar, weight (in grams) of coconut flour or shredded coconut}
 
@@ -238,7 +238,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{vegetable}}{\link[base]{numeric} vector, weight of one or more vegetables (in grams)}
 
-\item{\code{water}}{\link[base]{numeric} scalar, weight of water (in grams)}
+\item{\code{water,water_tsp,water_Tbsp,water_cup}}{\link[base]{numeric} scalar, weight of water (in grams)}
 
 \item{\code{water_extra}}{\link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough}
 
@@ -335,6 +335,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 \item{\code{happytears}}{\link[base]{character} scalar}
 
 \item{\code{ippodotea,ippodoteajpn}}{\link[base]{character} scalar}
+
+\item{\code{joshuaweissman}}{\link[base]{character} scalar}
 
 \item{\code{just1cookbook}}{\link[base]{character} scalar}
 

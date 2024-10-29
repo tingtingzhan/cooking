@@ -2,7 +2,7 @@
 
 # Pastéis de Nata
 
-
+# the custard
 
 
 xiaogaojie_pasteisdenata1 <- function() new(
@@ -29,11 +29,11 @@ xiaogaojie_pasteisdenata2 <- function() new(
 Leites_pasteisdenata <- function() new(
   Class = 'recipe',
   alias = 'leites',
-  pastryFlour = 120/16*3, # 3 tablespoons all-purpose flour
-  milk = 240*1.25, # 1 1/4 cups milk, divided
-  sugar = 200 * 4/3, # 1 1/3 cups granulated sugar
+  flour_Tbsp = 3,
+  milk_cup = 1.25,
+  sugar_cup = c(Domino_granulated = 4/3),
   # 1 cinnamon stick
-  water = 236.6 * 2/3, # 2/3 cup water
+  water_cup = 2/3,
   vanilla_tsp = 1/2,
   eggYolk_pc = 6,
   url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
@@ -42,11 +42,11 @@ Leites_pasteisdenata <- function() new(
 TastingTable_pasteisdenata <- function() new(
   Class = 'recipe',
   alias = 'TastingTable',
-  sugar = 200, # 1 cup granulated sugar
-  water = 236.6 * 2/3, # 2/3 cup water
+  sugar_cup = c(Domino_granulated = 1),
+  water_cup = 2/3,
   # 1 cinnamon stick
-  milk = 240 * (1 + 6/16), # 1 cup, plus 6 tablespoons, whole milk, divided
-  pastryFlour = 120 / 2, # 1/2 cup all-purpose flour
+  milk_cup = (1 + 6/16),
+  flour_cup = 1/2,
   eggYolk_pc = 6,
   url = 'https://www.tastingtable.com/686035/portuguese-egg-tart-recipe-pastry/'
 )
