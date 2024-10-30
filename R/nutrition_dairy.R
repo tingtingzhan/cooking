@@ -316,13 +316,17 @@ Wawa_2perc_milk <- function() new(
 # fdc = 170859L
 
 Wegmans_heavyCream <- function() new(
-  Class = 'nutrition', wegmans = 21152L, # ? 220504L
+  Class = 'nutrition', 
+  wegmans = 
+    # 21152L, # discontinued?
+    # 220504L # discontinued
+    149508L,
   name = '\u91cd\u5976\u6cb9 Heavy Cream',
   servingGram = 15, 
   servingTbsp = 1, # packaging
-  usd = 6.49/946*15,
+  usd = 6.29/946*15,
   calorie = 50,
-  fat = 5, cholesterol = .015, water = 15 * .577) 
+  fat = 6, cholesterol = .02, sodium = .005, water = 15 * .577) 
 
 
 WholeFoods365_heavyCream <- function() new( # no filler

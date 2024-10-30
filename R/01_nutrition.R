@@ -72,6 +72,7 @@ setOldClass('cli_glue_delay')
 #' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
 #' @slot itoen \link[base]{character} scalar
 #' @slot jfc \link[base]{character} scalar
+#' @slot justtea \link[base]{character} scalar
 #' @slot kahlua \link[base]{character} scalar
 #' @slot kerrygold,kerrygoldusa \link[base]{character} scalar
 #' @slot kikkomanusa \link[base]{character} scalar
@@ -90,6 +91,7 @@ setOldClass('cli_glue_delay')
 #' @slot oreo \link[base]{character} scalar
 #' @slot organicvalley \link[base]{character} scalar
 #' @slot paromi \link[base]{character} scalar
+#' @slot quaker \link[base]{character} scalar
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
 #' @slot sanford \link[base]{character} scalar
@@ -111,6 +113,7 @@ setOldClass('cli_glue_delay')
 #' @slot machine \link[base]{function}
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
+#' @slot superior \link[base]{character} scalar
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
 #' @slot servingGram \link[base]{numeric} scalar, serving size in grams
@@ -187,6 +190,7 @@ setClass(Class = 'nutrition', slots = c(
   ippodoglobal = 'character', ippodojpn = 'character', ippodousa = 'character',
   itoen = 'character',
   jfc = 'character',
+  justtea = 'character',
   kahlua = 'character',
   kerrygold = 'character', kerrygoldusa = 'character',
   kikkomanusa = 'character',
@@ -205,6 +209,7 @@ setClass(Class = 'nutrition', slots = c(
   oreo = 'character',
   organicvalley = 'character',
   paromi = 'character',
+  quaker = 'character',
   raos = 'character',
   runamok = 'character',
   sanford = 'character',
@@ -224,6 +229,7 @@ setClass(Class = 'nutrition', slots = c(
   
   machine = 'function',
   review = 'character',
+  superior = 'character',
   contain = 'character',
   
   servingGram = 'numeric',
@@ -337,6 +343,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       )
     } else if (length(x@itoen)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://itoen.com/products/%s', x@itoen), text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5'))
+    } else if (length(x@justtea)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/product/%s', x@justtea), text = 'Just Tea\U1f1fa\U1f1f8'))
     } else if (length(x@kahlua)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kahlua.com/en-us/products/%s', x@kahlua), text = 'Kahlu\u0301a\U1f1f2\U1f1fd'))
     } else if (length(x@kerrygold)) {
@@ -399,6 +407,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.organicvalley.coop/products/%s', x@organicvalley), text = 'Organic Valley\U1f1fa\U1f1f8'))
     } else if (length(x@paromi)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://paromi.com/products/%s', x@paromi), text = 'Paromi\U1f1fa\U1f1f8'))
+    } else if (length(x@quaker)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/products/%s', x@quaker), text = 'Quaker\U1f1fa\U1f1f8'))
     } else if (length(x@raos)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f1fa\U1f1f8'))
     } else if (length(x@runamok)) {
@@ -581,6 +591,9 @@ autoVolume <- function(x, nm = names(x)) {
   
   y <- x / gram_per_tsp(nm)
 
+  id <- (ceiling(y) - y < 1e-6)
+  if (any(id, na.rm = TRUE)) y[which(id)] <- ceiling(y[which(id)])
+
   cup <- y %/% 48
   cup_txt <- ifelse(cup > 0, yes = sprintf(fmt = '%dCup', cup), no = '')
   
@@ -720,6 +733,13 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   #  cat('\nMachine:\n')
   #  cat(sprintf(fmt = '%s: %s\n', names(obj@machine), obj@machine), sep = '')
   #}
+  
+  if (length(obj@superior)) {
+    sp <- obj@superior[1L]
+    cli__message(type = 'text', args = list(text = glue_cmd(sprintf(fmt = '\u274c I prefer \U1f3fa{.run [%s](cooking::%s())}', sp, sp))))
+  } 
+  
+  cat('\n')
   
   if (nrv <- length(obj@review)) {
     nm_rv <- names(obj@review)

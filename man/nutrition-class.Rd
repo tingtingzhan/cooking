@@ -96,6 +96,8 @@ Nutrition information.
 
 \item{\code{jfc}}{\link[base]{character} scalar}
 
+\item{\code{justtea}}{\link[base]{character} scalar}
+
 \item{\code{kahlua}}{\link[base]{character} scalar}
 
 \item{\code{kerrygold,kerrygoldusa}}{\link[base]{character} scalar}
@@ -132,6 +134,8 @@ Nutrition information.
 
 \item{\code{paromi}}{\link[base]{character} scalar}
 
+\item{\code{quaker}}{\link[base]{character} scalar}
+
 \item{\code{raos}}{\link[base]{character} scalar}
 
 \item{\code{runamok}}{\link[base]{character} scalar}
@@ -165,6 +169,8 @@ Nutrition information.
 \item{\code{machine}}{\link[base]{function}}
 
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
+
+\item{\code{superior}}{\link[base]{character} scalar}
 
 \item{\code{contain}}{\link[base]{character} scalar or vector, names of additives}
 

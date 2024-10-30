@@ -58,10 +58,9 @@ jennyc819_crepe <- function() new(
   flour_cup = 1,
   egg_pc = 2,
   milk_cup = 1/2,
-  water = 118.3, # ½ cup water
+  water_cup = 1/2, 
   salt_tsp = 1/4,
-  butter = 227/16*2 # 2 tablespoons butter, melted
-)
+  butter_Tbsp = 2)
 
 
 #' @rdname crepe
@@ -74,7 +73,7 @@ cyberchef_crepeFrench <- function() new(
   milk_cup = 2,
   sugar_tsp = 1,
   salt_tsp = 1/4,
-  butter = 227/16*2 # 2 tablespoons butter, melted
+  butter_Tbsp = 2
 )
 
 
@@ -87,7 +86,7 @@ Carina_crepe <- function() new(
   egg_pc = 2,
   salt_tsp = 1/2,
   milk_cup = 1.25,
-  butter = 227/16*2 #2 tbsp Melted Butter + extra for cooking
+  butter_Tbsp = 2
 )
 
 
@@ -113,7 +112,7 @@ Natasha_crepe <- function() new(
   water = 118.3,  # ½ cup lukewarm water
   milk_cup = 1,
   egg_pc = 4,
-  butter = 227/16*4, # 4 Tbsp unsalted butter, melted. Plus more to sauté.
+  butter_Tbsp = 4,
   flour_cup = 1,
   sugar_Tbsp = 2,
   salt_tsp = 1/2

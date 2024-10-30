@@ -109,7 +109,7 @@ PreppyKitchen_chocolate_Bundt <- function() new(
   NaHCO3_tsp = 2.5,
   salt_tsp = 1,
   butter = 213,
-  sourCream = 220,
+  sourCream_cup = 1,
   oil_tsp = c(Wegmans_vegetable = 24),
   egg_pc = 4,
   vanilla_tsp = 1,

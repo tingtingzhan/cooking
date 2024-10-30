@@ -405,7 +405,7 @@ ikuyoLatte <- function() new(
 #' @export
 setClass(Class = 'matchaGoatLatteMix', contains = 'drinkmix', prototype = prototype(
   alias_class = '\u7f8a\u5976Latte\u901f\u6eb6\u7c89',
-  drymilk = c(Meyenberg_goat = 10*2, Meyenberg_goatWhole = 10*2)
+  drymilk = c(Meyenberg_goat_drymilk = 10*2, Meyenberg_goatWhole_drymilk = 10*2)
 ))
 
 #' @rdname matchaGoatLatte

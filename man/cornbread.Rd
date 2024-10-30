@@ -8,6 +8,7 @@
 \alias{bluegirl_cornbread}
 \alias{PreppyKitchen_cornbread}
 \alias{JoshuaWeissman_cornbread}
+\alias{Jiffy_cornMuffin}
 \title{\linkS4class{cornbread} Recipes}
 \usage{
 cornbread()
@@ -19,6 +20,8 @@ bluegirl_cornbread()
 PreppyKitchen_cornbread()
 
 JoshuaWeissman_cornbread()
+
+Jiffy_cornMuffin()
 }
 \description{
 ..
@@ -31,11 +34,14 @@ Fat 11\% (cooked). Do not increase.  Trace of fat on plate!
 \examples{
 cornbread()
 
-diagnose_(
+xs = list(
  cornbread,
- subtract(PreppyKitchen_cornbread, sugar = 33),
+ subtract(PreppyKitchen_cornbread, sugar = 25),
  subtract(BethanyWeathersby_cornbread, sugar = 110),
  subtract(bluegirl_cornbread, sugar = 110),
- subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29)
+ subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29),
+ subtract(nutrition(Jiffy_cornMuffin), sugar = 33)
 )
+nutrition_(dots = xs)
+diagnose_(dots = xs)
 }

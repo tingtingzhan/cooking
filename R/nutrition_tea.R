@@ -20,14 +20,18 @@ Stassen_Ceylon_loose <- function() new(
   review = 'where to buy?')
 
 
-# Harney & Sons, headquarter in New York
-
+#' @title Harney & Sons, headquarter in New York
+#' 
+#' @name harney
+#' @export
 Harney_UvaHighlands <- function() new(
   Class = 'nutrition', harney = 'uva-highlands', 
   name = 'Uva Highlands',
   servingGram = 454, usd = 20, # 2023-11-09
-  review = 'Prefer Organic Assam. Do not buy.')
+  superior = 'Harney_Assam')
 
+#' @rdname harney
+#' @export
 Harney_Assam <- function() new(
   Class = 'nutrition', harney = 'organic-assam',
   name = 'Organic Assam',
@@ -56,7 +60,7 @@ Harney_EarlGreySupreme <- function() new(
   Class = 'nutrition', harney = 'earl-grey-supreme', 
   name = 'Earl Grey Supreme',
   servingGram = 454, usd = 31, # 2023-11-09
-  review = 'Harney&Sons Earl Grey Supreme, bergamont too weak, tea too strong')
+  review = 'bergamont too weak, tea too strong')
 
 Harney_LapSangSouChong <- function() new(
   Class = 'nutrition', harney = 'lapsang-souchong',
@@ -70,9 +74,9 @@ Harney_LapSangSouChong <- function() new(
 
 Twinings_EarlGrey <- function() new(
   Class = 'nutrition', twinings = 'earl-grey', 
-  name = 'Earl Gray',
-  wegmans = 24150L,
-  servingGram = 2, usd = 15.99/100) # 100pcs 2g-bag, 2023-11-09
+  name = 'Earl Grey',
+  wegmans = 24150L, usd = 12.99/100, # 100pcs 2g-bag, Oct 2024
+  servingGram = 2)
 
 Twinings_EarlGrey_loose <- function() new(
   Class = 'nutrition', twinings = 'earl-grey-loose-tea',
@@ -149,4 +153,12 @@ Yogi_licorice <- function() new(
   servingGram = 36/16, usd = 6.99/16)
 
 
+
+# Wegman's Just Tea
+
+JustTea_EarlGrey <- function() new(
+  Class = 'nutrition', justtea = '229018',
+  name = 'Earl Grey',
+  servingGram = 2, usd = 9.49/100,
+  review = 'Bergamot has a different flavor from Twining\'s Earl Grey!')
 

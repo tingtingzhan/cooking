@@ -12,47 +12,53 @@
 #' @examples
 #' cornbread()
 #' 
-#' diagnose_(
+#' xs = list(
 #'  cornbread,
-#'  subtract(PreppyKitchen_cornbread, sugar = 33),
+#'  subtract(PreppyKitchen_cornbread, sugar = 25),
 #'  subtract(BethanyWeathersby_cornbread, sugar = 110),
 #'  subtract(bluegirl_cornbread, sugar = 110),
-#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29)
+#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29),
+#'  subtract(nutrition(Jiffy_cornMuffin), sugar = 33)
 #' )
+#' nutrition_(dots = xs)
+#' diagnose_(dots = xs)
 #' @name cornbread
 #' @aliases cornbread-class
 #' @export
 setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread\U1f33d',
-  breadFlour = c(KingArthur_bread = 160), # King Arthur confirmed!!
-  cornmeal = 320, # perfect!! (flour:cornmeal = 1:3 too crumbly)
+  
+  #breadFlour = c(KingArthur_bread = 160), cornmeal = 320, # 2023. too soft
+  breadFlour = c(KingArthur_bread = 140), cornmeal = 340, # 2024 new experiment
+  # flour:cornmeal = 1:3 too crumbly
   sugar = 50,
   
   #bakingPowder_tsp = 1.5, # cracks like crazy! but tastes super good!
-  bakingPowder_tsp = 1, # should be perfect!
+  #bakingPowder_tsp = 1, # cracks like crazy (160:320)
+  bakingPowder_tsp = 1/2, # try next (140:340)
   
   egg_pc = 2,
   
-  # heavy cream: no longer fresh, after removing clogged butter
-  # confirm recipe with fresh!!! heavy cream in future
-  heavyCream = 340, water = 270, 
+  # heavyCream = 340, water = 270, # a little too fat, 2023
+  # heavyCream = 220, water = 330, # to maintain 43% water
+  heavyCream = 220, water = 270, # try
   waterLost = 45, # to confirm
   
   portion = c(
     'Trudeau loaf pan (7.5x3.75, 8.5x4.5)' = 600
   ),
   instruction = c(
-    'Whisk everything except baking powder', # NEW practice!!
+    'Whisk all dry material, except baking powder',
+    'Whisk in wet material',
     'Soak batter, covered in mixing bowl, in fridge 6hr+ or overnight',
     'Whisk baking powder into chilled batter', # NEW practice!!
     'Transfer to mold. Bake chilled batter directly'
   ),
   RobamCT763 = RobamCT763(
+    treatment = 'Preheat Staub deep skillet, 8.5in',
     program = 'Steam Bake',
-    fahrenheit = 275, 
-    minute = c(
-      'Trudeau loaf pan (half recipe)' = 40
-    )
+    # fahrenheit = 275, minute = c('Trudeau loaf pan (half recipe)' = 40)
+    fahrenheit = 350, minute = 25 # preppy kitchen 425F (traditional oven)
   )
 ))
 
@@ -74,7 +80,7 @@ cornbread <- function() new(Class = 'cornbread', pros = 'I love!!')
 #' @export
 BethanyWeathersby_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'Bethany Weathersby',
-  butter = 227/2, 
+  butter_cup = 1/2,
   sugar_cup = c(Domino_granulated = 2/3),
   egg_pc = 2,
   buttermilk_cup = 1, 
@@ -103,13 +109,13 @@ bluegirl_cornbread <- function() new(
 #' @export
 PreppyKitchen_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
-  cornmeal_cup = 1.5, # this is not 255g,
+  cornmeal = c(Quaker_yellowCorn = 255), # 1.5 cup is not 255g
   flour_cup = 3/4,
   sugar_cup = c(Domino_granulated = 1/4), # this is not 30g
   bakingPowder_tsp = 2,
   salt_tsp = 1,
   milk_cup = 1.5,
-  butter = 56,
+  butter_cup = 1/4,
   egg_pc = 1,
   oil_Tbsp = c(Wegmans_vegetable = 1),
   preppykitchen = c(
@@ -120,7 +126,7 @@ PreppyKitchen_cornbread <- function() new(
 #' @export
 JoshuaWeissman_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', 
-  butter = 227/2,
+  butter_cup = 1/2,
   # 1/2 bunch fresh sage 
   # 1/2 bunch fresh thyme 
   flour_cup = 1.25, # this is not 185g though..
@@ -136,3 +142,23 @@ JoshuaWeissman_cornbread <- function() new(
 
 
 
+Jiffy_cornMuffinMix <- function() new(
+  Class = 'nutrition',
+  brand = unclass(style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/')),
+  name = 'Corn Muffin Mix',
+  servingGram = 78, servingCup = 1/2,
+  calorie = 320,
+  fat = 9, cholesterol = .01, sodium = .69,
+  carbohydrate = 56, addedSugar = 15, protein = 4)
+
+#' @rdname cornbread
+#' @export
+Jiffy_cornMuffin <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Corn Muffin', 
+  author = 'Jiffy', 
+  url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
+  flavor = c(Jiffy_cornMuffinMix = 240),
+  egg_pc = 1,
+  milk_cup = 1/3
+)

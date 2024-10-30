@@ -71,7 +71,7 @@
 #' @export
 setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
   alias_class = '\u6253\u53d1\u91cd\u5976\u6cb9',
-  heavyCream = c(Wegmans = 100),
+  heavyCream = 100,
   instruction = c(
     'KitchenAid stand mixer: mix and whisk until stiff'
   ),
@@ -322,7 +322,7 @@ tiramisu_nytimes <- function() new(
   Class = 'recipe', alias_flavor = 'Tiramisu', 
   eggYolk_pc = 4,
   sugar = 100, 
-  heavyCream = c(Wegmans = 180),
+  heavyCream = 180,
   mascarpone = 453/2,
   nytimes = '1018684')
 
@@ -332,17 +332,17 @@ tiramisu_nytimes <- function() new(
 #' @rdname whippedCream
 #' @export
 foodandjourneys_mascarponeFrosting <- function() new(
-  Class = 'mascarponeFrosting', alias_flavor = 'Food & Journeys',
+  Class = 'mascarponeFrosting', author = 'Food & Journeys',
   sugar_cup = 1/3, # powdered sugar!
   # ▢ 1 vanilla bean, seeded
-  lightCream = 240, # ▢ 1 cup light cream, chilled
+  lightCream_cup = 1,
   url = 'https://foodandjourneys.net/how-to-make-mascarpone-cream/')
 
 #' @rdname whippedCream
 #' @export
 lifeloveandsugar_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar',
-  heavyCream = 300, # 1 1/4 cups
+  heavyCream_cup = 1.25,
   sugar_cup = 3/4,
   vanilla_tsp = 1,
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
@@ -351,7 +351,7 @@ lifeloveandsugar_mascarponeFrosting <- function() new(
 #' @export
 lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar, Cocoa',
-  heavyCream = 300, # 1 1/4 cups
+  heavyCream_cup = 1.25,
   sugar_cup = 1/2,
   cocoa_cup = 1/4,
   vanilla_tsp = 1,
@@ -362,7 +362,7 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
 Marcellina_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', 
   alias_flavor = 'Marcellina in Cucina',
-  heavyCream = 240, # 1 cup (250 milliliters)whipping cream full fat
+  heavyCream_cup = 1,
   sugar_cup = 1/4, # powdered sugar!
   vanilla_tsp = 2,
   url = 'https://www.marcellinaincucina.com/mascarpone-cream/')

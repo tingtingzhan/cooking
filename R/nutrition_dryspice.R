@@ -160,13 +160,18 @@ Kirkland_noSaltSeasoning <- function() new(
 
 # @examples
 # fourC_panko() + fourC_panko_seasoned() / 3
-
+#' @title 4C Panko
+#' 
+#' @name fourC
+#' @export
 fourC_panko_seasoned <- function() new(
   Class = 'nutrition', url = 'https://www.4c.com/4c-product/seasoned-panko-bread-crumbs/',
   brand = '4C\U1f1fa\U1f1f8', name = 'Seasoned Panko Bread Crumbs',
   servingCup = 1/2, servingGram = 28, fat = 1, sodium = .47, sugar = 1, protein = 3,
-  review = 'do NOT buy!  Buy `fourC_panko` instead!')
+  superior = 'fourC_panko')
 
+#' @rdname fourC
+#' @export
 fourC_panko <- function() new(
   Class = 'nutrition', url = 'https://www.4c.com/4c-product/plain-panko-bread-crumbs/',
   brand = '4C\U1f1fa\U1f1f8', name = 'Plain Panko Bread Crumbs',

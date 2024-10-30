@@ -33,23 +33,23 @@ nonfatMilk_Carnation <- function() new(Class = 'powder2milk', alias_flavor = 'Ca
 
 #' @rdname powder2milk
 #' @export
-wholeMilk_Nido <- function() new(Class = 'powder2milk', alias_flavor = 'Nido Whole', drymilk = c(Nido = 30))
+wholeMilk_Nido <- function() new(Class = 'powder2milk', alias_flavor = 'Nido Whole', drymilk = c(Nido_drymilk = 30))
 
 #' @rdname powder2milk
 #' @export
-wholeMilk_KingArthur <- function() new(Class = 'powder2milk', alias_flavor = 'King Arthur Whole', drymilk = c(KingArthur = 6*4))
+wholeMilk_KingArthur <- function() new(Class = 'powder2milk', alias_flavor = 'King Arthur Whole', drymilk = c(KingArthur_drymilk = 6*4))
 
 #' @rdname powder2milk
 #' @export
-bakerMilk_KingArthur <- function() new(Class = 'powder2milk', alias_flavor = 'King Arthur Baker', drymilk = c(KingArthur_baker = 28))
+bakerMilk_KingArthur <- function() new(Class = 'powder2milk', alias_flavor = 'King Arthur Baker', drymilk = c(KingArthur_baker_drymilk = 28))
 
 #' @rdname powder2milk
 #' @export
-nonfatMilk_GreatValue <- function() new(Class = 'powder2milk', alias_flavor = 'Great Value Nonfat', drymilk = c(GreatValue = 23))
+nonfatMilk_GreatValue <- function() new(Class = 'powder2milk', alias_flavor = 'Great Value Nonfat', drymilk = c(GreatValue_drymilk = 23))
 
 #' @rdname powder2milk
 #' @export
-goatMilk_Meyenberg <- function() new(Class = 'powder2milk', alias_flavor = 'Meyenberg Nonfat Goat\U1f410 Milk', drymilk = c(Meyenberg_goat = 28))
+goatMilk_Meyenberg <- function() new(Class = 'powder2milk', alias_flavor = 'Meyenberg Nonfat Goat\U1f410 Milk', drymilk = c(Meyenberg_goat_drymilk = 28))
 
 #' @rdname powder2milk
 #' @export

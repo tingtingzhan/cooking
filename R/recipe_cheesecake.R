@@ -359,7 +359,7 @@ pumpkin_cheesecake_NatashasKitchen <- function() new(
   pumpkinPieMix = 425, # 15 oz; original. contains 20.7% sugar 
   flour_Tbsp = 2, 
   egg_pc = 4,
-  sourCream = 60,
+  sourCream_cup = 1/4,
   salt_tsp = 1/4,
   vanilla_Tbsp = 1,
   pumpkinSpice_tsp = 2,
@@ -414,7 +414,7 @@ cheesecake_PreppyKitchen <- function() new(
   salt_tsp = 1/4,
   vanilla_tsp = 2,
   egg_pc = 3,
-  sourCream = 120,
+  sourCream_cup = 1/2,
   preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
 
 
@@ -428,7 +428,7 @@ pumpkin_cheesecake_PreppyKitchen <- function() new(
   salt_tsp = 1/2,
   egg_pc = 4,
   pumpkin = 244,
-  sourCream = 120,
+  sourCream_cup = 1/2,
   vanilla_tsp = 2,
   flour_Tbsp = 2,
   pumpkinSpice_tsp = 1.5,

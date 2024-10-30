@@ -39,7 +39,8 @@ Wegmans_wheat <- function() new(
   servingCup = 1/4, # packaging
   calorie = 90,
   fat = .5, carbohydrate = 20, protein = 4,
-  review = 'Too dark. Use Wegmans_whiteWheat() instead')
+  superior = 'Wegmans_whiteWheat')
+  #review = 'color Too dark')
 
 
 

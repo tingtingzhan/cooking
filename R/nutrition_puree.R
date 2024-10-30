@@ -29,7 +29,7 @@ Wegmans_tomato <- function() new(
   name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U1f345 Puree',
   servingGram = 63, servingCup = 1/4,
   sodium = .02, sugar = 3, protein = 1, 
-  review = 'don\'t buy; buy Wegmans Organic tomato puree')
+  superior = 'WegmansOrganic_tomato')
 
 
 WegmansOrganic_tomato <- function() new(

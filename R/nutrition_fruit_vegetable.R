@@ -53,7 +53,7 @@ Kirkland_strawberry <- function() new(
   carbohydrate = 13, sugar = 6)
 
 Kirkland_yellowCorn <- function() new(
-  Class = 'nutrition', url = 'costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
+  Class = 'nutrition', url = 'https://costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
   brand = 'Kirkland\U1f1fa\U1f1f8', name = '\u51b7\u51bb\u751c\u7389\u7c73 Frozen Yellow Corn\U1f33d',
   servingGram = 90, 
   #servingCup = 2/3, # packaging
@@ -123,7 +123,7 @@ Wegmans_pineapple <- function() new(
   Class = 'nutrition', wegmans = 10230L,
   name = '\u83e0\u841d\u7f50\u5934 Crushed Pineapple\U1f34d',
   servingGram = 122, servingCup = 1/2, 
-  sugar = 13, review = 'Only when Dole\'s not available.')
+  sugar = 13, superior = 'Dole_pineapple')
 
 Libbys_pineapple <- function() new(
   Class = 'nutrition', 
@@ -309,6 +309,19 @@ Laura_soybean <- function() new(
   servingCup = (100 - 8.54)/45*(1/4), # actual experiment: 45g = 1/4 cup
   calorie = 446,
   protein = 36.5, fat = 19.9, sugar = 7.33, sodium = .002)
+
+Soymerica_soybean <- function() new(
+  Class = 'nutrition',
+  name = '\u9ec4\u8c46 Soy Bean', 
+  brand = 'Soymerica\U1f1fa\U1f1f8', amazon = 'B0763GC8SB', usd = 24.99/(7*453.6)*(100-8.54),
+  fdc = 174270L,
+  servingGram = 100 - 8.54, 
+  servingCup = (100 - 8.54)/45*(1/4), # actual experiment with Laura_soybean(): 45g = 1/4 cup
+  calorie = 446,
+  protein = 36.5, fat = 19.9, sugar = 7.33, sodium = .002,
+  superior = 'Laura_soybean'
+)
+
 
 Palouse_chickpea <- function() new(
   Class = 'nutrition', fdc = 173756L,

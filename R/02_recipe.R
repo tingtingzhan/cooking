@@ -40,9 +40,9 @@
 #' @slot cottageCheese \link[base]{numeric} scalar, weight of Daisy cottage cheese (in grams)
 #' @slot yogurtGreek \link[base]{numeric} scalar, weight of non-fat Greek yogurt (in grams)
 #' @slot creamCheese \link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese
-#' @slot sourCream \link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)
+#' @slot sourCream,sourCream_tsp,sourCream_Tbsp,sourCream_cup \link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)
 #' @slot heavyCream,heavyCream_tsp,heavyCream_Tbsp,heavyCream_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans heavy cream or heavy whipping cream (in grams)
-#' @slot lightCream \link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)
+#' @slot lightCream,lightCream_tsp,lightCream_Tbsp,lightCream_cup \link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)
 #' @slot yogurt \link[base]{numeric} scalar, weight of yogurt (in grams)
 #' @slot kefir \link[base]{numeric} scalar
 #' @slot filmjolk \link[base]{numeric} scalar
@@ -104,18 +104,14 @@
 #' Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
 #' 
 #' @slot bakingPowder,bakingPowder_tsp,bakingPowder_Tbsp,bakingPowder_cup \link[base]{numeric} scalar, weight (in grams) and volume of baking powder
-#' 
 #' @slot salt,salt_tsp,salt_Tbsp,salt_cup \link[base]{numeric} scalar, weight (in grams) and volume of salt
-#' 
 #' @slot msg,msg_tsp,msg_Tbsp,msg_cup \link[base]{numeric} scalar, weight (in grams) and volume of monosodium glutamate (MSG)
-#' 
 #' @slot vanilla,vanilla_tsp,vanilla_Tbsp,vanilla_cup \link[base]{numeric} scalar, weight (in grams) and volume of vanilla extract
 #' 
 #' @slot blackSesame \link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed
 #' 
 #' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
 #' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
-#' 
 #' @slot ginger,ginger_tsp,ginger_Tbsp,ginger_cup \link[base]{numeric} scalar, weight (in grams) and volume of Simply Organic ginger powder
 #' @slot garlic,garlic_tsp,garlic_Tbsp,garlic_cup \link[base]{numeric} scalar, weight of garlic powder (in grams)
 #' @slot onion,onion_tsp,onion_Tbsp,onion_cup \link[base]{numeric} scalar, weight of onion powder (in grams)
@@ -166,7 +162,6 @@
 #' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
 #' 
 #' @slot sauce,sauce_tsp,sauce_Tbsp,sauce_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more sauces
-#' 
 #' @slot liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs
 #' 
 #' @slot yeast,yeast_tsp,yeast_Tbsp,yeast_cup \link[base]{numeric} scalar, weight (in grams) and volume of yeast
@@ -328,9 +323,9 @@ setClass(Class = 'recipe', slots = c(
   kefir = 'numeric',
   filmjolk = 'numeric',
   creamCheese = 'numeric',
-  sourCream = 'numeric',
+  sourCream = 'numeric', sourCream_tsp = 'numeric', sourCream_Tbsp = 'numeric', sourCream_cup = 'numeric',
   heavyCream = 'numeric', heavyCream_tsp = 'numeric', heavyCream_Tbsp = 'numeric', heavyCream_cup = 'numeric',
-  lightCream = 'numeric',
+  lightCream = 'numeric', lightCream_tsp = 'numeric', lightCream_Tbsp = 'numeric', lightCream_cup = 'numeric',
   drymilk = 'numeric', drymilk_tsp = 'numeric', drymilk_Tbsp = 'numeric', drymilk_cup = 'numeric', 
   milk = 'numeric', milk_tsp = 'numeric', milk_Tbsp = 'numeric', milk_cup = 'numeric', 
   buttermilk = 'numeric', buttermilk_tsp = 'numeric', buttermilk_Tbsp = 'numeric', buttermilk_cup = 'numeric', 
@@ -575,7 +570,6 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- addNameLen1(x, which = 'pear', name1 = 'DelMonte_pear')
   x <- addNameLen1(x, which = 'pineapple', name1 = 'Dole_pineapple')
   x <- combineVol(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
-  #x <- addNameLen1(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
   x <- addNameLen1(x, which = 'pumpkinPieMix', name1 = 'Libbys_pumpkinPieMix')
   x <- addNameLen1(x, which = 'strawberry', name1 = 'Kirkland_strawberry')
   x <- addNameLen1(x, which = 'tomato', name1 = 'WegmansOrganic_tomato')
@@ -635,7 +629,6 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'liqueur')
   
   x <- combineVol(x, which = 'butter', name1 = 'Kerrygold_butter')
-  x <- dairyName(x, dairy = 'butter')
   x <- dairyName(x, dairy = 'ghee', name1 = 'WegmansOrganic')
   x <- addNameLen1(x, which = 'cheese')
   x <- dairyName(x, dairy = 'mascarpone', name1 = 'BelGioioso')
@@ -649,15 +642,11 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- dairyName(x, dairy = 'evaporatedMilk', name1 = 'Carnation')
   x <- dairyName(x, dairy = 'creamCheese', name1 = 'Nancys')
   x <- combineVol(x, which = 'drymilk', name1 = 'Carnation_drymilk')
-  x <- dairyName(x, dairy = 'drymilk')
   x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
-  x <- dairyName(x, dairy = 'milk', name1 = 'WegmansOrganic_whole')
   x <- combineVol(x, which = 'buttermilk', name1 = 'UpstateFarms_buttermilk')
-  x <- dairyName(x, dairy = 'buttermilk', name1 = 'UpstateFarms')
   x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
-  x <- dairyName(x, dairy = 'heavyCream', name1 = 'Wegmans') 
-  x <- dairyName(x, dairy = 'lightCream', name1 = 'Lucerne')
-  x <- dairyName(x, dairy = 'sourCream', name1 = 'Daisy')
+  x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne_lightCream')
+  x <- combineVol(x, which = 'sourCream', name1 = 'Daisy_sourCream')
   
   x <- meatName(x, animal = 'pork')
   x <- meatName(x, animal = 'beef')
@@ -710,122 +699,124 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   # processing 'character'
   
-  if (!length(x@alias_class)) {
-    
-    if (length(x@author)) {
-      if (length(x@allrecipes)) {
-        x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author))
-        x@allrecipes <- character()
-      } else if (length(x@youtube)) {
-        x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
-        x@youtube <- x@youtube[-1L]
-      } else if (length(x@url)) {
-        x@author <- unclass(style_hyperlink(url = x@url[1L], text = x@author))
-        x@url <- x@url[-1L]
-      }
-    } # before `if (!length(x@author))` !!!
-    
-    if (length(x@daatgo)) {
-      if (length(x@daatgo) > 1L) stop('only allow len-1 @daatgo')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@daatgo), text = '\u8fbe\u54e5\u53a8\u623f'))
-      x@daatgo <- character()
+  if (length(x@author)) {
+    if (length(x@allrecipes)) {
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author))
+      x@allrecipes <- character()
+    } else if (length(x@youtube)) {
+      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
+      x@youtube <- x@youtube[-1L]
+    } else if (length(x@url)) {
+      x@author <- unclass(style_hyperlink(url = x@url[1L], text = x@author))
+      x@url <- x@url[-1L]
     }
-    
-    if (length(x@dad1966)) {
-      if (length(x@dad1966) > 1L) stop('only allow len-1 @dad1966')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@dad1966), text = '\u8001\u7238\u7684\u98df\u5149'))
-      x@dad1966 <- character()
-    }
-    
-    if (length(x@happytears)) {
-      if (length(x@happytears) > 1L) stop('only allow len-1 @happytears')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@happytears), text = '\u5e78\u798f\u7684\u773c\u6cea'))
-      x@happytears <- character()
-    }
-    
-    if (length(x@ippodotea)) {
-      if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
-      x@ippodotea <- character()
-    }
-    
-    if (length(x@ippodoteajpn)) {
-      if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
-      x@ippodoteajpn <- character()
-    }
-    
-    if (length(x@joshuaweissman)) {
-      if (length(x@author)) stop('@author will be overwritten by @joshuaweissman')
-      if (length(x@joshuaweissman) > 1L) stop('only allow len-1 @joshuaweissman')
-      x@author <- paste(
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua')),
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
-      )
-      x@joshuaweissman <- character()
-    } 
-    
-    if (length(x@just1cookbook)) {
-      if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')
-      x@author <- paste(
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@just1cookbook)), text = 'Just One')),
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.justonecookbook.com/%s', x@just1cookbook), text = 'Cookbook'))
-      )
-      x@just1cookbook <- character()
-    }
-
-    if (length(x@kingarthur)) {
-      if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
-      if (!length(x@author)) stop('King Arthur employee name?')
-      x@author <- paste(
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur')),
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/author/%s', x@author), text = 'Recipe'))
-      )
-      x@kingarthur <- character()
-    }
-
-    if (length(x@laofangu)) {
-      if (length(x@laofangu) > 1L) stop('only allow len-1 @laofangu')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@laofangu), text = '\u8001\u996d\u9aa8'))
-      x@laofangu <- character()
-    }
-    
-    if (length(x@nytimes)) {
-      if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
-      x@nytimes <- character()
-    }
-    
-    if (length(x@pino)) {
-      if (length(x@pino) > 1L) stop('only allow len-1 @pino')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@pino), text = '\u54c1\u8bfa'))
-      # http://www.pinochina.com # temporarily down
-      x@pino <- character()
-    }
-    
-    if (length(x@preppykitchen)) {
-      if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
-      if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
-      x@author <- paste(
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
-        unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
-      )
-      x@preppykitchen <- character()
-    } 
-    
-    if (length(x@shangshikitchen)) {
-      if (length(x@shangshikitchen) > 1L) stop('only allow len-1 @shangshikitchen')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@shangshikitchen), text = '\u5c1a\u98df\u53a8\u623f'))
-      x@shangshikitchen <- character()
-    }
-    
-    if (length(x@xiaogaojie)) {
-      if (length(x@xiaogaojie) > 1L) stop('only allow len-1 @xiaogaojie')
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@xiaogaojie), text = '\u5c0f\u9ad8\u59d0'))
-      x@xiaogaojie <- character()
-    }
-    
-    x@alias_class <- paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m'))
+  } # before `if (!length(x@author))` !!!
+  
+  if (length(x@daatgo)) {
+    if (length(x@daatgo) > 1L) stop('only allow len-1 @daatgo')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@daatgo), text = '\u8fbe\u54e5\u53a8\u623f'))
+    x@daatgo <- character()
+  }
+  
+  if (length(x@dad1966)) {
+    if (length(x@dad1966) > 1L) stop('only allow len-1 @dad1966')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@dad1966), text = '\u8001\u7238\u7684\u98df\u5149'))
+    x@dad1966 <- character()
+  }
+  
+  if (length(x@happytears)) {
+    if (length(x@happytears) > 1L) stop('only allow len-1 @happytears')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@happytears), text = '\u5e78\u798f\u7684\u773c\u6cea'))
+    x@happytears <- character()
+  }
+  
+  if (length(x@ippodotea)) {
+    if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+    x@ippodotea <- character()
+  }
+  
+  if (length(x@ippodoteajpn)) {
+    if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+    x@ippodoteajpn <- character()
+  }
+  
+  if (length(x@joshuaweissman)) {
+    if (length(x@author)) stop('@author will be overwritten by @joshuaweissman')
+    if (length(x@joshuaweissman) > 1L) stop('only allow len-1 @joshuaweissman')
+    x@author <- paste(
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua')),
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
+    )
+    x@joshuaweissman <- character()
+  } 
+  
+  if (length(x@just1cookbook)) {
+    if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')
+    x@author <- paste(
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@just1cookbook)), text = 'Just One')),
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.justonecookbook.com/%s', x@just1cookbook), text = 'Cookbook'))
+    )
+    x@just1cookbook <- character()
+  }
+  
+  if (length(x@kingarthur)) {
+    if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
+    if (!length(x@author)) stop('King Arthur employee name?')
+    x@author <- paste(
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur')),
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/author/%s', x@author), text = 'Recipe'))
+    )
+    x@kingarthur <- character()
+  }
+  
+  if (length(x@laofangu)) {
+    if (length(x@laofangu) > 1L) stop('only allow len-1 @laofangu')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@laofangu), text = '\u8001\u996d\u9aa8'))
+    x@laofangu <- character()
+  }
+  
+  if (length(x@nytimes)) {
+    if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
+    x@nytimes <- character()
+  }
+  
+  if (length(x@pino)) {
+    if (length(x@pino) > 1L) stop('only allow len-1 @pino')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@pino), text = '\u54c1\u8bfa'))
+    # http://www.pinochina.com # temporarily down
+    x@pino <- character()
+  }
+  
+  if (length(x@preppykitchen)) {
+    if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
+    if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
+    x@author <- paste(
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
+    )
+    x@preppykitchen <- character()
+  } 
+  
+  if (length(x@shangshikitchen)) {
+    if (length(x@shangshikitchen) > 1L) stop('only allow len-1 @shangshikitchen')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@shangshikitchen), text = '\u5c1a\u98df\u53a8\u623f'))
+    x@shangshikitchen <- character()
+  }
+  
+  if (length(x@xiaogaojie)) {
+    if (length(x@xiaogaojie) > 1L) stop('only allow len-1 @xiaogaojie')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@xiaogaojie), text = '\u5c0f\u9ad8\u59d0'))
+    x@xiaogaojie <- character()
+  }
+  
+  author <- if (length(x@author)) paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m')) # else NULL
+  x@alias_class <- if (!length(x@alias_class)) {
+    if (length(author)) author else character()
+  } else {
+    if (length(author)) paste(x@alias_class, author) else x@alias_class
   }
   
   if (!length(x@alias_flavor)) {

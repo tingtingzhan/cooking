@@ -69,7 +69,7 @@ crumbcrust <- function() new(Class = 'crumbcrust')
 
 # 170 not 2-cups ..
 #flavor = c(HoneyMaid_graham = 170), # 2 cups
-#butter = 113, # 8 tablespoons, .5 cup
+#butter_cup = 1/2,
 # sugar = 50, # original
 #url = 'https://preppykitchen.com/graham-cracker-crust' # cannot find youtube link
 
@@ -83,7 +83,7 @@ crumbcrust <- function() new(Class = 'crumbcrust')
 PreppyKitchen_grahamCrust1 <- function() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(HoneyMaid_graham = 180), # 1.5 cups
-  butter = 226.8/4, # 1/4 cup = 4 tbsp
+  butter_cup = 1/4,
   preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
 
 #' @rdname grahamCrust
@@ -91,7 +91,7 @@ PreppyKitchen_grahamCrust1 <- function() new(
 PreppyKitchen_grahamCrust2 <- function() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(Nabisco_graham = 270), # 2.25 cups
-  butter = 70, # 5 tbsp
+  butter_Tbsp = 5,
   preppykitchen = c('BSsv6sBD6ow' = 'strawberry-cheesecake'))
 
 #' @rdname grahamCrust
@@ -99,7 +99,7 @@ PreppyKitchen_grahamCrust2 <- function() new(
 PreppyKitchen_grahamCrust3 <- function() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(HoneyMaid_graham = 180), # 1.5 cups
-  butter = 70, # 5 tbsp
+  butter_Tbsp = 5,
   preppykitchen = c('beDAwNsKZUA' = 'blueberry-cheesecake'))
 
 #' @rdname grahamCrust
@@ -107,7 +107,7 @@ PreppyKitchen_grahamCrust3 <- function() new(
 PreppyKitchen_grahamCrust4 <- function() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(Nabisco_graham = 270), # 2.25 cups
-  butter = 84, # 6 tbsp
+  butter_Tbsp = 6,
   preppykitchen = c('x8ezFPOBtfo' = 'lemon-cheesecake'))
 
 #' @rdname grahamCrust
@@ -115,7 +115,7 @@ PreppyKitchen_grahamCrust4 <- function() new(
 PreppyKitchen_grahamCrust5 <- function() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(Nabisco_graham = 260), # 2 cups (should be 240g based on his other recipes)
-  butter = 113, # 1/2 cup
+  butter_cup = 1/2,
   preppykitchen = c('V5YqfJSjYXE' = 'no-bake-cheesecake'))
 
 #' @rdname grahamCrust

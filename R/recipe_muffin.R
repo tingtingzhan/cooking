@@ -46,7 +46,7 @@ Brody_muffin <- function() new(
   milk_cup = 2/3, 
   yogurt = 170 / (2/3), # 1 cup yogurt
   vanilla_tsp = 2, # original
-  pastryFlour = numeric(), flour = 270, # 2.25 cup
+  pastryFlour = numeric(), flour_cup = 2.25,
   bakingPowder_tsp = 2.5, # original
   salt_tsp = .5)
 
@@ -56,12 +56,12 @@ Brody_muffin <- function() new(
 Introvert_muffin = function() new(
   Class = 'recipe', author = 'Introvert', alias_flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
-  flour = 260, # author wrote 2 cup
+  flour_cup = 2,
   sugar = 100,
   bakingPowder_tsp = 2,
   salt_tsp = .5,
   milk_cup = .75,
-  butter = 113.5,
+  butter_cup = 1/2,
   egg_pc = 2)
 
 
@@ -75,7 +75,7 @@ CulinaryHill_muffin <- function() new(
   bakingPowder_tsp = 2,
   salt_tsp = 1/2,
   egg_pc = 2,
-  butter = 113.5,
+  butter_cup = 1/2,
   milk_cup = .5,
   vanilla_tsp = 1)
 

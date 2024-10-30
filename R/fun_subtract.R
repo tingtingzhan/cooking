@@ -108,6 +108,10 @@ subtract.nutrition <- function(object, ...) {
     slot(obj, name = inm) <- integer()
   }
   
+  for (inm in setdiff(names(attributes(obj)), c(names(slt), 'class'))) {
+    attr(obj, which = inm) <- NULL
+  }
+  
   return(obj)
   
 }

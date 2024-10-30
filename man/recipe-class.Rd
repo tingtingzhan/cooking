@@ -70,11 +70,11 @@ general recipe
 
 \item{\code{creamCheese}}{\link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese}
 
-\item{\code{sourCream}}{\link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)}
+\item{\code{sourCream,sourCream_tsp,sourCream_Tbsp,sourCream_cup}}{\link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)}
 
 \item{\code{heavyCream,heavyCream_tsp,heavyCream_Tbsp,heavyCream_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans heavy cream or heavy whipping cream (in grams)}
 
-\item{\code{lightCream}}{\link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)}
+\item{\code{lightCream,lightCream_tsp,lightCream_Tbsp,lightCream_cup}}{\link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)}
 
 \item{\code{yogurt}}{\link[base]{numeric} scalar, weight of yogurt (in grams)}
 

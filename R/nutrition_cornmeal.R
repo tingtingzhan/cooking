@@ -7,6 +7,10 @@ DaoXiangCun_corn <- function() new(
   servingGram = 50, servingCup = 1/2, # volume not accurate!!!
   fat = 1.5)
 
+#' @title Corn Meal
+#' 
+#' @name cornmeal
+#' @export
 Albertsons_yellowCorn <- function() new(
   Class = 'nutrition',
   acme = 117010060L, usd = 3.49/2270*30,
@@ -17,7 +21,8 @@ Albertsons_yellowCorn <- function() new(
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = 1, protein = 2)
 
-
+#' @rdname cornmeal
+#' @export
 IndianHead_whiteCorn <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
@@ -25,8 +30,11 @@ IndianHead_whiteCorn <- function() new(
   walmart = '10311206', usd = 1.56/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
-  fat = 1, protein = 2, review = 'Extremely coarse, do not buy!')
+  fat = 1, protein = 2, 
+  review = 'Extremely coarse, do not buy!')
 
+#' @rdname cornmeal
+#' @export
 IndianHead_yellowCorn <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
@@ -34,5 +42,24 @@ IndianHead_yellowCorn <- function() new(
   walmart = '10311207', usd = 1.56/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
-  fat = 1, sugar = .5, protein = 2, review = 'Extremely coarse, do not buy!')
+  fat = 1, sugar = .5, protein = 2, 
+  superior = 'Albertsons_yellowCorn')
+  # review = 'Extremely coarse, do not buy!')
 
+#' @rdname cornmeal
+#' @export
+Quaker_yellowCorn <- function() new(
+  Class = 'nutrition', quaker = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
+  name = '\u9ec4\u7389\u7c73\u9762 Yellow Cornmeal\U1f33d',
+  servingGram = 27, servingTbsp = 3, 
+  calorie = 90,
+  carbohydrate = 21, protein = 2)
+
+#' @rdname cornmeal
+#' @export
+Quaker_whiteCorn <- function() new(
+  Class = 'nutrition', quaker = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
+  name = '\u9ec4\u7389\u7c73\u9762 White Cornmeal\U1f33d',
+  servingGram = 27, servingTbsp = 3, 
+  calorie = 90,
+  fat = .5, carbohydrate = 21, protein = 2)
