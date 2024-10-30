@@ -28,24 +28,25 @@
 setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread\U1f33d',
   
-  #breadFlour = c(KingArthur_bread = 160), cornmeal = 320, # 2023. too soft
-  breadFlour = c(KingArthur_bread = 140), cornmeal = 340, # 2024 new experiment
+  breadFlour = c(KingArthur_bread = 160), cornmeal = 320,
   # flour:cornmeal = 1:3 too crumbly
+  # do not change `flour:cornmeal=1:2`; I like the center to be soft 
+  
   sugar = 50,
   
   #bakingPowder_tsp = 1.5, # cracks like crazy! but tastes super good!
-  #bakingPowder_tsp = 1, # cracks like crazy (160:320)
-  bakingPowder_tsp = 1/2, # try next (140:340)
+  #bakingPowder_tsp = 1, # cracks like crazy
+  bakingPowder_tsp = 1/2, # try next
   
   egg_pc = 2,
   
   # heavyCream = 340, water = 270, # a little too fat, 2023
-  # heavyCream = 220, water = 330, # to maintain 43% water
-  heavyCream = 220, water = 270, # try
+  heavyCream = 260, water = 270, # try next
   waterLost = 45, # to confirm
   
   portion = c(
-    'Trudeau loaf pan (7.5x3.75, 8.5x4.5)' = 600
+    # 'Trudeau loaf pan (7.5x3.75, 8.5x4.5)' = 600
+    'Staub deep skillet, 8.5in' = 1000
   ),
   instruction = c(
     'Whisk all dry material, except baking powder',
