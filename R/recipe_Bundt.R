@@ -103,9 +103,9 @@ EarlGrey_Bundt <- function() new(
 PreppyKitchen_chocolate_Bundt <- function() new(
   Class = 'recipe', alias_flavor = 'Chocolate Bundt',
   water40 = 360,
-  cocoa = 125,
+  cocoa_cup = c(Ghirardelli_cocoa = 1.25),
   flour = 420,
-  sugar = 500,
+  sugar_cup = c(Domino_granulated = 2.5),
   NaHCO3_tsp = 2.5,
   salt_tsp = 1,
   butter = 213,
@@ -123,10 +123,10 @@ PreppyKitchen_Bundt <- function() new(
   NaHCO3_tsp = .5,
   salt_tsp = 1.5,
   butter = 227,
-  creamCheese = 227,
-  sugar = c(Domino_granulated = 400),
+  creamCheese = c(Philadelphia_creamCheese = 227),
+  sugar_cup = c(Domino_granulated = 2),
   egg_pc = 6,
-  vanilla_Tbsp = 1,
+  vanilla_Tbsp = c(NielsenMassey_vanilla = 1),
   milk_cup = 1,
   preppykitchen = c('x2W3j23xSKs' = 'vanilla-bundt-cake'))
     

@@ -189,7 +189,13 @@ Ghirardelli_whiteChocolate <- function() new(
   calorie = 80,
   fat = 4.5, sodium = .01, carbohydrate = 9, sugar = 9, addedSugar = 7)
 
-
+Ghirardelli_chocolateChips <- function() new(
+  Class = 'nutrition',
+  name = 'Semi-Sweet Chocolate Chips',
+  ghirardelli = 'semisweet-chocolate-premium-baking-chips-chocolate-chips-for-baking-12-bags-64015cs',
+  usd = 69.95/(12*340)*15,
+  servingGram = 15,
+  calorie = 70, carbohydrate = 10, fat = 4, addedSugar = 8)
 
 
 

@@ -621,7 +621,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'beet', name1 = 'Wegmans_beet')
   x <- combineVol(x, which = 'acai', name1 = 'Wegmans_acai')
   x <- combineVol(x, which = 'creamTartar', name1 = 'McCormick_creamTartar')
-  x <- combineVol(x, which = 'vanilla', name1 = 'vanillaExtract')
+  x <- combineVol(x, which = 'vanilla', name1 = 'NielsenMassey_Madagascar')
   
   x <- combineVol(x, which = 'starch')
   x <- combineVol(x, which = 'oil')

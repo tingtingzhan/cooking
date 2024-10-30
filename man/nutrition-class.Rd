@@ -132,6 +132,8 @@ Nutrition information.
 
 \item{\code{nescafe,nescafeGoldEspressoCA,nescafeGoldEspressoUS,nescafeUS,nestle,nido}}{\link[base]{character} scalars}
 
+\item{\code{nielsenmassey}}{\link[base]{character} scalar}
+
 \item{\code{oreo}}{\link[base]{character} scalar}
 
 \item{\code{organicvalley}}{\link[base]{character} scalar}
