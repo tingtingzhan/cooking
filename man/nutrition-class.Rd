@@ -90,6 +90,8 @@ Nutrition information.
 
 \item{\code{hellmanns}}{\link[base]{character} scalar}
 
+\item{\code{horizon}}{\link[base]{character} scalar}
+
 \item{\code{ippodoglobal,ippodojpn,ippodousa}}{\link[base]{character} scalars}
 
 \item{\code{itoen}}{\link[base]{character} scalar}
@@ -107,6 +109,8 @@ Nutrition information.
 \item{\code{kingarthur,kingarthurpro}}{\link[base]{integer} scalars}
 
 \item{\code{kraftheinzawayfromhome,philadelphia}}{\link[base]{character} scalars}
+
+\item{\code{landolakes}}{\link[base]{character} scalar}
 
 \item{\code{leaperrins}}{\link[base]{character} scalar}
 
@@ -161,6 +165,8 @@ Nutrition information.
 \item{\code{thaikitchen}}{\link[base]{character} scalar}
 
 \item{\code{twinings}}{\link[base]{character} scalar}
+
+\item{\code{wesson}}{\link[base]{character} scalar}
 
 \item{\code{whistlepigwhiskey}}{\link[base]{character} scalar}
 

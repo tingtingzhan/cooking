@@ -301,7 +301,17 @@ WegmansOrganic_whole_milk <- function() new(
   name = '\u5168\u8102\u725b\u5976 Vitamin D, Whole Milk',
   servingGram = 250, servingCup = 1, 
   water = 250*.881, 
-  fat = 8, sodium = .115, sugar = 12, protein = 8)
+  calorie = 150,
+  fat = 8, cholesterol = .025, sodium = .115, carbohydrate = 12, sugar = 12, protein = 8)
+
+Horizon_whole_milk_DHA <- function() new(
+  Class = 'nutrition',
+  name = 'Organic Whole Milk with DHA Omega-3',
+  horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
+  servingGram = 250, servingCup = 1,
+  water = 250*.881, 
+  calorie = 160,
+  fat = 8, cholesterol = .035, sodium = .135, carbohydrate = 13, sugar = 12, protein = 8)
 
 Wawa_2perc_milk <- function() new(
   Class = 'nutrition', wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
@@ -354,7 +364,7 @@ NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
 
 LandOLakes_whippedHeavyCream <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(url = 'https://www.landolakes.com/where-to-buy/aerosol-whipped-cream/', text = 'Land O Lakes')), 
+  landolakes = 'whipping-cream-and-half-half/aerosol-whipped-cream',
   name = '\u6253\u53d1\u91cd\u5976\u6cb9 Whipped Heavy Cream',
   costcoBiz = '100284038',
   servingGram = 6, servingTbsp = 2,

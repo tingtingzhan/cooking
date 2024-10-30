@@ -96,7 +96,7 @@ BobsRedMill_drymilk <- function() new(
 
 Horizon_whole_drymilk <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Horizon\U1f1fa\U1f1f8', url = 'https://horizon.com/organic-dairy-products/organic-milk/organic-dry-whole-milk/')),
+  horizon = 'organic-milk/organic-dry-whole-milk',
   name = '\u5168\u8102\u5976\u7c89 Dry Whole Milk',
   sams = 'prod25791985', usd = 23.22/(30.6*28.35)*29,
   walmart = '548381598', # usd = 26.94/(30.6*28.35)*29,

@@ -69,6 +69,7 @@ setOldClass('cli_glue_delay')
 #' @slot harney \link[base]{character} scalar
 #' @slot heinz \link[base]{character} scalar
 #' @slot hellmanns \link[base]{character} scalar
+#' @slot horizon \link[base]{character} scalar
 #' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
 #' @slot itoen \link[base]{character} scalar
 #' @slot jfc \link[base]{character} scalar
@@ -78,6 +79,7 @@ setOldClass('cli_glue_delay')
 #' @slot kikkomanusa \link[base]{character} scalar
 #' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
 #' @slot kraftheinzawayfromhome,philadelphia \link[base]{character} scalars
+#' @slot landolakes \link[base]{character} scalar
 #' @slot leaperrins \link[base]{character} scalar
 #' @slot leekumkee \link[base]{character} scalar
 #' @slot maeda \link[base]{character} scalar
@@ -105,6 +107,7 @@ setOldClass('cli_glue_delay')
 #' @slot swissmiss \link[base]{character} scalar
 #' @slot thaikitchen \link[base]{character} scalar
 #' @slot twinings \link[base]{character} scalar
+#' @slot wesson \link[base]{character} scalar
 #' @slot whistlepigwhiskey \link[base]{character} scalar
 #' @slot yogi \link[base]{character} scalar
 #' 
@@ -187,6 +190,7 @@ setClass(Class = 'nutrition', slots = c(
   harney = 'character',
   heinz = 'character',
   hellmanns = 'character',
+  horizon = 'character',
   ippodoglobal = 'character', ippodojpn = 'character', ippodousa = 'character',
   itoen = 'character',
   jfc = 'character',
@@ -196,6 +200,7 @@ setClass(Class = 'nutrition', slots = c(
   kikkomanusa = 'character',
   kingarthur = 'integer', kingarthurpro = 'integer',
   philadelphia = 'character',
+  landolakes = 'character',
   leaperrins = 'character',
   leekumkee = 'character',
   maeda = 'character',
@@ -224,6 +229,7 @@ setClass(Class = 'nutrition', slots = c(
   swissmiss = 'character',
   thaikitchen = 'character',
   twinings = 'character',
+  wesson = 'character',
   whistlepigwhiskey = 'character',
   yogi = 'character',
   
@@ -335,6 +341,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.heinz.com/products/%s', x@heinz), text = 'Heinz\U1f1fa\U1f1f8'))
     } else if (length(x@hellmanns)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.hellmanns.com/us/en/p/%s', x@hellmanns), text = 'Hellmann\'s\U1f1fa\U1f1f8'))
+    } else if (length(x@horizon)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://horizon.com/organic-dairy-products/%s', x@horizon), text = 'Horizon\U1f1fa\U1f1f8'))
     } else if (length(x@ippodoglobal) & length(x@ippodojpn) & length(x@ippodousa)) {
       x@url <- c(x@url, sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodousa))
       paste(
@@ -363,6 +371,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = 'https://www.kingarthurbaking.com/pro/products', text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@philadelphia)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', x@philadelphia), text = 'Philadelphia\U1f1fa\U1f1f8'))
+    } else if (length(x@landolakes)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.landolakes.com/products/%s', x@landolakes), text = 'Land O Lakes\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text = 'Lea & Perrins\U1f1ec\U1f1e7'))
     } else if (length(x@leekumkee)) {
@@ -440,6 +450,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s', x@thaikitchen), text = 'Thai Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@twinings)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://twiningsusa.com/products/%s', x@twinings), text = 'Twinings\U1f1ec\U1f1e7'))
+    } else if (length(x@wesson)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.purewesson.com/products/%s', x@wesson), text = 'Wesson\U1f1fa\U1f1f8'))
     } else if (length(x@yogi)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.yogi-life.com/en-US/product/%s', x@yogi), text = 'Yogi\U1f1fa\U1f1f8'))
     } else character()

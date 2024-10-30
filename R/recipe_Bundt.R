@@ -124,7 +124,7 @@ PreppyKitchen_Bundt <- function() new(
   salt_tsp = 1.5,
   butter = 227,
   creamCheese = 227,
-  sugar = 400,
+  sugar = c(Domino_granulated = 400),
   egg_pc = 6,
   vanilla_Tbsp = 1,
   milk_cup = 1,

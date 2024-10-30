@@ -23,7 +23,7 @@ Kerrygold_salted_butter <- function() new(
   Class = 'nutrition', 
   kerrygoldusa = 'salted-butter',
   kerrygold = 'kerrygold-pure-irish-salted-butter',
-  name = 'Irish Salted Butter\U1f9c8',
+  name = '\u9ec4\u6cb9 Irish Salted Butter\U1f9c8',
   servingGram = 227/16, servingTbsp = 1, 
   costcoBiz = '100339833',
   calorie = 100,
@@ -38,7 +38,7 @@ Kerrygold_salted_butter <- function() new(
 Plugra_butter <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/')),
-  name = 'European Butter\U1f9c8',
+  name = '\u9ec4\u6cb9 European Butter\U1f9c8',
   acme = 960051793L, usd = 2.99/16,
   servingGram = 227/16, servingTbsp = 1, 
   calorie = 100,
@@ -51,7 +51,7 @@ Plugra_butter <- function() new(
 Wuthrich_butter <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/')),
-  name = 'European Butter\U1f9c8',
+  name = '\u9ec4\u6cb9 European Butter\U1f9c8',
   webstaurant = '999RE3120', usd = 7.99/(16*2),
   servingGram = 227/16, servingTbsp = 1, 
   calorie = 110,
@@ -62,7 +62,7 @@ Wuthrich_butter <- function() new(
 
 Lucerne_European_butter <- function() new(
   Class = 'nutrition',
-  brand = 'Lucerne', name = 'European Butter',
+  brand = 'Lucerne', name = '\u9ec4\u6cb9 European Butter\U1f9c8',
   acme = 960493010L, usd = 2.99/16,
   servingGram = 227/16, servingTbsp = 1,
   calorie = 100,
@@ -75,7 +75,7 @@ Minerva_Amish_butter <- function() new(
   Class = 'nutrition',
   # wegmans = 43730L, # this is the salted version
   brand = unclass(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
-  name = 'Amish Butter',
+  name = '\u9ec4\u6cb9 Amish Butter\U1f9c8',
   url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
   webstaurant = '874880039', usd = 92.49/6/(2*16),
   servingGram = 227/16, servingTbsp = 1,
@@ -85,6 +85,15 @@ Minerva_Amish_butter <- function() new(
   water = 227/16*(1- .85 - .02))
 
 
+
+LandOLakes_butter <- function() new(
+  Class = 'nutrition',
+  landolakes = 'butter-spreads/unsalted-butter',
+  name = '\u9ec4\u6cb9 Butter\U1f9c8',
+  servingGram = 227/16, servingTbsp = 1,
+  calorie = 100,
+  fat = 227/16*.8, # on package 11g
+  cholesterol = .030, water = 227/16*(1- .8 - .02))
 
 
 

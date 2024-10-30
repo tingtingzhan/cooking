@@ -29,6 +29,13 @@ Wegmans_vegetable_oil <- function() new(
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
+Wesson_soy_oil <- function() new(
+  Class = 'nutrition',
+  wesson = 'vegetable-oil',
+  name = '\u5927\u8c46\u6cb9 Soybean Oil',
+  servingGram = 14, servingTbsp = 1, fat = 14)
+
+
 
 Wegmans_olive_oil <- function() new(
   Class = 'nutrition', wegmans = 15183L, # usd = 10.99/??

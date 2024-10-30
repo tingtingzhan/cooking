@@ -115,10 +115,10 @@ PreppyKitchen_cornbread <- function() new(
   sugar_cup = c(Domino_granulated = 1/4), # this is not 30g
   bakingPowder_tsp = 2,
   salt_tsp = 1,
-  milk_cup = 1.5,
-  butter_cup = 1/4,
+  milk_cup = c(Horizon_whole_milk_DHA = 1.5),
+  butter_cup = c(LandOLakes_butter = 1/4),
   egg_pc = 1,
-  oil_Tbsp = c(Wegmans_vegetable = 1),
+  oil_Tbsp = c(Wesson_soy = 1),
   preppykitchen = c(
     'vQM-SFKSqcg' = 'cornbread-recipe' # youtube = '16YfyByvLZg' same recipe!
   ))
