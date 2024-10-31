@@ -85,7 +85,7 @@
 #' 
 #' nutrition_(
 #'  pumpkin_cheesecake,
-#'  subtract(pumpkin_cheesecake_Junior, sugar = 330),
+#'  subtract(pumpkin_cheesecake_Junior, sugar = 200),
 #'  subtract(pumpkin_cheesecake_NatashasKitchen, brownSugar = 245),
 #'  subtract(pumpkin_cheesecake_PreppyKitchen, sugar = 150),
 #'  subtract(CheesecakeFactory_pumpkin, sugar = 14)
@@ -295,8 +295,9 @@ Bourbon_cheesecake_Stonewall <- function() new(
 #' @rdname cheesecake
 #' @export
 Junior_original <- function() new(
-  Class = 'nutrition', wegmans = 81705L,
-  brand = 'Junior', name = '\u8d85\u5e02Cheesecake',
+  Class = 'nutrition', wegmans = 81705L, usd = 13.89/5,
+  juniorscheesecake = 'original-ny-plain-cheesecake',
+  name = 'Original Cheesecake',
   servingGram = 136, 
   calorie = 460,
   fat = 33, cholesterol = .135, sodium = .38, carbohydrate = 30, sugar = 24, addedSugar = 22, protein = 7)
@@ -306,10 +307,10 @@ Junior_original <- function() new(
 #' @export
 Junior_cookbook <- function() new(
   Class = 'recipe', 
-  author = unclass(style_hyperlink(text = 'Junior\'s Cookbook', url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')),
-  alias_flavor = '\u83dc\u8c31Cheesecake',
+  juniorscheesecakecookbook = 34L,
+  alias_flavor = 'Original Cheesecake',
   creamCheese = c(Philadelphia = 227 * 4),
-  sugar = 333, 
+  sugar_cup = c(Domino_granulated = 1+2/3), 
   starch_cup = c(Wegmans_corn = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
@@ -320,9 +321,8 @@ Junior_cookbook <- function() new(
 #' @export
 CheesecakeFactory_original <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Cheesecake Factory\U1f1fa\U1f1f8', url = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/original-cheesecake')),
-  # www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/original-dome
   name = 'Original',
+  cheesecakefactoryfreezer = 'original-cheesecake', cheesecakefactorybakery = 'original-dome',
   target = 'A-15382641', usd = 18.39/964*120,
   servingGram = 120, 
   fat = 24, cholesterol = .105, sodium = .33, sugar = 28, addedSugar = 27, protein = 6)
@@ -331,9 +331,8 @@ CheesecakeFactory_original <- function() new(
 #' @export
 CheesecakeFactory_pumpkin <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Cheesecake Factory\U1f1fa\U1f1f8', url = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/pumpkin-cheesecake')),
-  # www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/pumpkin-cheesecake
   name = 'Pumpkin\U1f383',
+  cheesecakefactoryfreezer = 'pumpkin-cheesecake',
   bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
   usd = 16.99/6, # 6 serving's per container
   servingGram = 123, 
@@ -343,7 +342,7 @@ CheesecakeFactory_pumpkin <- function() new(
 #' @export
 Junior_strawberrySwirl <- function() new(
   Class = 'nutrition', wegmans = 23187893L,
-  brand = 'Junior', name = 'Strawberry Swirl New York Cheesecake',
+  brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
   servingGram = 136, fat = 28, cholesterol = .11, sodium = .33, sugar = 29, protein = 6)
 
 
@@ -368,17 +367,17 @@ pumpkin_cheesecake_NatashasKitchen <- function() new(
 #' @rdname cheesecake
 #' @export
 pumpkin_cheesecake_Junior <- function() new(
-  Class = 'recipe', author = 'Junior', alias_flavor = '\u5357\u74dccheesecake',
+  Class = 'recipe', 
+  alias_flavor = '\u5357\u74dccheesecake',
   creamCheese = c(Philadelphia = 227*4),
-  sugar = 200*(1+2/3), # 1 2/3 cup
+  sugar_cup = c(Domino_granulated = 1+2/3),
   starch_cup = c(Wegmans_corn = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
   heavyCream_cup = 3/4,
-  pumpkin = 244, # 1 cup; original
-  brownSugar = 130,
+  pumpkin_cup = 1,
   pumpkinSpice_tsp = 1,
-  url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook'
+  juniorscheesecakecookbook = 45L
 )
 
 Wegmans_pumpkin_cheesecake <- function() new(
@@ -393,16 +392,17 @@ Wegmans_pumpkin_cheesecake <- function() new(
 #' @rdname cheesecake
 #' @export
 cappuccino_cheesecake_Junior = function() new(
-  Class = 'recipe', author = 'Junior', alias_flavor = 'cappuccino_cheesecake',
+  Class = 'recipe', 
+  alias_flavor = 'Cappuccino Cheesecake',
   creamCheese = c(Philadelphia = 227*4),
   coffee_Tbsp = 1,
   boilingWater = 15,
-  sugar = 200*(1+2/3), # 1 2/3 cup
+  sugar_cup = c(Domino_granulated = 1+2/3),
   starch_cup = c(Wegmans_corn = 1/3),
   vanilla_Tbsp = 1,
   egg_pc = 2,
   heavyCream_cup = 3/4,
-  url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook')
+  juniorscheesecakecookbook = 42L)
 
 
 #' @rdname cheesecake

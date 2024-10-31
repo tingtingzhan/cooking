@@ -64,6 +64,8 @@ Nutrition information.
 
 \item{\code{bouchard}}{\link[base]{character} scalar}
 
+\item{\code{cheesecakefactorybakery,cheesecakefactoryfreezer}}{\link[base]{character} scalars}
+
 \item{\code{clearwater}}{\link[base]{character} scalar}
 
 \item{\code{countrytime}}{\link[base]{character} scalar}
@@ -97,6 +99,8 @@ Nutrition information.
 \item{\code{itoen}}{\link[base]{character} scalar}
 
 \item{\code{jfc}}{\link[base]{character} scalar}
+
+\item{\code{juniorscheesecake}}{\link[base]{character} scalar}
 
 \item{\code{justtea}}{\link[base]{character} scalar}
 

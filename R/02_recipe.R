@@ -209,6 +209,7 @@
 #' @slot happytears \link[base]{character} scalar
 #' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
 #' @slot joshuaweissman \link[base]{character} scalar
+#' @slot juniorscheesecakecookbook \link[base]{integer} scalar
 #' @slot just1cookbook \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
 #' @slot laofangu \link[base]{character} scalar
@@ -216,6 +217,7 @@
 #' @slot pino \link[base]{character} scalar
 #' @slot preppykitchen \link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe
 #' @slot shangshikitchen \link[base]{character} scalar
+#' @slot wegmans \link[base]{character} scalar
 #' @slot xiaogaojie \link[base]{character} scalar
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 #' @slot doi \link[base]{character} scalar or \link[base]{vector}
@@ -241,6 +243,7 @@ setClass(Class = 'recipe', slots = c(
   happytears = 'character',
   ippodotea = 'character', ippodoteajpn = 'character',
   joshuaweissman = 'character',
+  juniorscheesecakecookbook = 'integer',
   just1cookbook = 'character',
   kingarthur = 'character',
   laofangu = 'character',
@@ -248,6 +251,7 @@ setClass(Class = 'recipe', slots = c(
   pino = 'character',
   preppykitchen = 'character', # must len-1
   shangshikitchen = 'character',
+  wegmans = 'character',
   xiaogaojie = 'character',
   youtube = 'character',
   doi = 'character',
@@ -617,7 +621,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'matcha', name1 = 'Ippodo_ikuyo')
   #x <- combineVol(x, which = 'matchaSado', name1 = 'Marukyu_tenju')
   x <- combineVol(x, which = 'cocoa', name1 = 'KingArthur_Bensdorp')
-  x <- combineVol(x, which = 'coffee', name1 = 'NescafeTastersChoice_decaf')
+  x <- combineVol(x, which = 'coffee', name1 = 'NescafeGold_espresso_blonde')
   x <- combineVol(x, which = 'beet', name1 = 'Wegmans_beet')
   x <- combineVol(x, which = 'acai', name1 = 'Wegmans_acai')
   x <- combineVol(x, which = 'creamTartar', name1 = 'McCormick_creamTartar')
@@ -752,6 +756,12 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     x@joshuaweissman <- character()
   } 
   
+  if (length(x@juniorscheesecakecookbook)) {
+    if (length(x@juniorscheesecakecookbook) > 1L) stop('only allow len-1 @juniorscheesecakecookbook')
+    x@author <- unclass(style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook, page %d', x@juniorscheesecakecookbook)))
+    x@juniorscheesecakecookbook <- integer()
+  }
+  
   if (length(x@just1cookbook)) {
     if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')
     x@author <- paste(
@@ -806,13 +816,19 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     x@shangshikitchen <- character()
   }
   
+  if (length(x@wegmans)) {
+    if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans'))
+    x@wegmans <- character()
+  }
+  
   if (length(x@xiaogaojie)) {
     if (length(x@xiaogaojie) > 1L) stop('only allow len-1 @xiaogaojie')
     x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@xiaogaojie), text = '\u5c0f\u9ad8\u59d0'))
     x@xiaogaojie <- character()
   }
   
-  author <- if (length(x@author)) paste0('\U1f3b6', paste0('\033[0;32m', x@author, '\033[0m')) # else NULL
+  author <- if (length(x@author)) paste0('\033[0;32m', x@author, '\033[0m') # else NULL
   x@alias_class <- if (!length(x@alias_class)) {
     if (length(author)) author else character()
   } else {

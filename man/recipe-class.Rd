@@ -338,6 +338,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{joshuaweissman}}{\link[base]{character} scalar}
 
+\item{\code{juniorscheesecakecookbook}}{\link[base]{integer} scalar}
+
 \item{\code{just1cookbook}}{\link[base]{character} scalar}
 
 \item{\code{kingarthur}}{\link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe}
@@ -351,6 +353,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 \item{\code{preppykitchen}}{\link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe}
 
 \item{\code{shangshikitchen}}{\link[base]{character} scalar}
+
+\item{\code{wegmans}}{\link[base]{character} scalar}
 
 \item{\code{xiaogaojie}}{\link[base]{character} scalar}
 

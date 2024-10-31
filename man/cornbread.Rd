@@ -4,6 +4,8 @@
 \name{cornbread}
 \alias{cornbread}
 \alias{cornbread-class}
+\alias{Wegmans_cornbread_recipe}
+\alias{Wegmans_cornbread}
 \alias{BethanyWeathersby_cornbread}
 \alias{bluegirl_cornbread}
 \alias{PreppyKitchen_cornbread}
@@ -12,6 +14,10 @@
 \title{\linkS4class{cornbread} Recipes}
 \usage{
 cornbread()
+
+Wegmans_cornbread_recipe()
+
+Wegmans_cornbread()
 
 BethanyWeathersby_cornbread()
 
@@ -26,21 +32,18 @@ Jiffy_cornMuffin()
 \description{
 ..
 }
-\details{
-Do not add dry milk.  I like the very fresh corn flavor.
-
-Fat 11\% (cooked). Do not increase.  Trace of fat on plate!
-}
 \examples{
 cornbread()
 
 xs = list(
  cornbread,
- subtract(PreppyKitchen_cornbread, sugar = 25),
- subtract(BethanyWeathersby_cornbread, sugar = 110),
- subtract(bluegirl_cornbread, sugar = 110),
- subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29),
- subtract(nutrition(Jiffy_cornMuffin), sugar = 33)
+ subtract(PreppyKitchen_cornbread, sugar = 15),
+ subtract(BethanyWeathersby_cornbread, sugar = 102),
+ subtract(bluegirl_cornbread, sugar = 104),
+ subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 20),
+ subtract(nutrition(Jiffy_cornMuffin), sugar = 30),
+ subtract(Wegmans_cornbread_recipe, sugar = 75),
+ subtract(Wegmans_cornbread, sugar = 10.2)
 )
 nutrition_(dots = xs)
 diagnose_(dots = xs)

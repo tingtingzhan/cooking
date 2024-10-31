@@ -95,6 +95,12 @@ Bassetts_pumpkin <- function() new(
   calorie = 200,
   fat = 11, cholesterol = .045, sodium = .065, sugar = 18, protein = 3)
 
+WholeFoods_berryGelato <- function() new(
+  Class = 'nutrition', wholefoods = 'b07yhcpnpv',
+  name = 'Sweet Wild Berry Italian Gelato',
+  servingGram = 100, servingCup = 2/3,
+  calorie = 210,
+  fat = 9, cholesterol = .005/3, sodium = .05, carbohydrate = 30, sugar = 80/3, addedSugar = 41/3, protein = 7/3)
 
 
 

@@ -21,8 +21,9 @@ Edward_shreddedCoconutLite <- function() new(
   servingTbsp = 4, # packaging
   calorie = 90,
   fat = 7, sodium = .005, carbohydrate = 7, sugar = 1, protein = 1,
+  superior = 'WegmansOrganic_coconutFlour',
   review = c(
-    'I have diarrhea if eat too much! Use coconut flour instead!!'
+    'I have diarrhea if eat too much!'
   ))
 
 
@@ -35,8 +36,9 @@ Edward_shreddedCoconut <- function() new(
   servingTbsp = 2.5, # packaging
   calorie = 100,
   fat = 10, sodium = .005, carbohydrate = 4, sugar = 1, protein = 1,
+  superior = 'WegmansOrganic_coconutFlour',
   review = c(
-    'I have diarrhea if eat too much! Use coconut flour instead!!'
+    'I have diarrhea if eat too much!'
   ))
 
 Edward_coconutFlour <- function() new(

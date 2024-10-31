@@ -13,6 +13,12 @@ Wegmans_corn_oil <- function() new(
   name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
+Wegmans_avocado_oil <- function() new(
+  Class = 'nutrition', wegmans = 155325L,
+  name = '\u9cc4\u68a8\u6cb9 Avocado\U1f951 Oil',
+  servingGram = 14, servingTbsp = 1, fat = 14)
+
+
 Wegmans_basting_oil <- function() new(
   Class = 'nutrition', wegmans = 262361L,
   name = '\u9999\u6599\u6a44\u6984\u6cb9 Basting Oil',

@@ -42,9 +42,9 @@ IndianHead_yellowCorn <- function() new(
   walmart = '10311207', usd = 1.56/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
-  fat = 1, sugar = .5, protein = 2, 
-  superior = 'Albertsons_yellowCorn')
-  # review = 'Extremely coarse, do not buy!')
+  fat = 1, carbohydrate = 23, sugar = .5, protein = 2, 
+  superior = 'Albertsons_yellowCorn',
+  review = 'Extremely coarse')
 
 #' @rdname cornmeal
 #' @export
@@ -63,3 +63,14 @@ Quaker_whiteCorn <- function() new(
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
   fat = .5, carbohydrate = 21, protein = 2)
+
+
+Wegmans_creamCorn <- function() new(
+  Class = 'nutrition',
+  wegmans = 16741L, usd = .69/418*125,
+  name = 'Cream Style Corn\U1f33d',
+  servingGram = 125, servingCup = 1/2,
+  calorie = 80,
+  fat = .5, sodium = .3, carbohydrate = 16, sugar = 8, addedSugar = 4, protein = 2)
+
+

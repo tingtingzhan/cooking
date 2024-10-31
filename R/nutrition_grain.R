@@ -1,9 +1,9 @@
 
 Quaker_oat <- function() new(
   Class = 'nutrition', 
-  #brand = unclass(style_hyperlink(text = 'Quaker\U1f1fa\U1f1f8', url = 'https://www.quakeroats.com/products/hot-cereals/old-fashioned-oats')),
   quaker = 'hot-cereals/old-fashioned-oats',
   name = '\u719f\u538b\u71d5\u9ea6 Old Fashioned Oats',
+  costco = '100381521', usd = 11.99/(10*453.6)*40,
   servingGram = 40, servingCup = 1/2, 
   calorie = 150,
   fat = 3, carbohydrate = 27, sugar = 1, protein = 5)

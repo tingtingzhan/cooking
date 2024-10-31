@@ -131,9 +131,8 @@ Keebler_grahamCrust <- function() new(
 #' @rdname grahamCrust
 #' @export
 WholeFoods365_grahamCrust <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', wholefoods = 'b08ly5bys5',
   name = 'Graham Crust',
-  wholefoods = 'b08ly5bys5',
   servingGram = 21, 
   calorie = 110,
   fat = 6, sodium = .045, addedSugar = 6)

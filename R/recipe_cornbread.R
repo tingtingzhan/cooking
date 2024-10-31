@@ -4,21 +4,19 @@
 #' @description
 #' ..
 #' 
-#' @details
-#' Do not add dry milk.  I like the very fresh corn flavor.
-#' 
-#' Fat 11% (cooked). Do not increase.  Trace of fat on plate!
 #' 
 #' @examples
 #' cornbread()
 #' 
 #' xs = list(
 #'  cornbread,
-#'  subtract(PreppyKitchen_cornbread, sugar = 25),
-#'  subtract(BethanyWeathersby_cornbread, sugar = 110),
-#'  subtract(bluegirl_cornbread, sugar = 110),
-#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 29),
-#'  subtract(nutrition(Jiffy_cornMuffin), sugar = 33)
+#'  subtract(PreppyKitchen_cornbread, sugar = 15),
+#'  subtract(BethanyWeathersby_cornbread, sugar = 102),
+#'  subtract(bluegirl_cornbread, sugar = 104),
+#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 20),
+#'  subtract(nutrition(Jiffy_cornMuffin), sugar = 30),
+#'  subtract(Wegmans_cornbread_recipe, sugar = 75),
+#'  subtract(Wegmans_cornbread, sugar = 10.2)
 #' )
 #' nutrition_(dots = xs)
 #' diagnose_(dots = xs)
@@ -29,50 +27,90 @@ setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread\U1f33d',
   
   breadFlour = c(KingArthur_bread = 160), cornmeal = 320,
-  # flour:cornmeal = 1:3 too crumbly
-  # do not change `flour:cornmeal=1:2`; I like the center to be soft 
   
-  sugar = 50,
+  sugar = 55,
   
-  #bakingPowder_tsp = 1.5, # cracks like crazy! but tastes super good!
-  #bakingPowder_tsp = 1, # cracks like crazy
-  bakingPowder_tsp = 1/2, # try next
+  #bakingPowder_tsp = 1/2, # strong expansion; cracks a lot (in Staub skillet)
+  bakingPowder_tsp = 1/4, # try next time
   
   egg_pc = 2,
   
-  # heavyCream = 340, water = 270, # a little too fat, 2023
-  heavyCream = 260, water = 270, # try next
-  waterLost = 45, # to confirm
+  # heavyCream = 220, water = 270, # perfect fat content!!
+  heavyCream = 220, boilingWater = 270, # try next time
+  
+  # https://www.youtube.com/watch?v=ASnVtPToNCc
+  # scortch corn meal with boiling water???
+  
+  # waterLost = 45, # to confirm
   
   portion = c(
     # 'Trudeau loaf pan (7.5x3.75, 8.5x4.5)' = 600
     'Staub deep skillet, 8.5in' = 1000
   ),
   instruction = c(
-    'Whisk all dry material, except baking powder',
-    'Whisk in wet material',
-    'Soak batter, covered in mixing bowl, in fridge 6hr+ or overnight',
-    'Whisk baking powder into chilled batter', # NEW practice!!
-    'Transfer to mold. Bake chilled batter directly'
+    'Soak cornmeal in boiling water',
+    'Whisk in heavy cream to lower down temperature',
+    'Whisk in bread flour to further lower down temperature',
+    'Whisk in other ingredients',
+    # 'Whisk all dry material, except baking powder',
+    # 'Whisk in wet material',
+    # 'Soak batter, covered in mixing bowl, in fridge overnight',
+    # 'Restore batter to (almost) room temperature',
+    # 'Whisk in baking powder',
+    'Transfer to sizzling hot skillet'
   ),
   RobamCT763 = RobamCT763(
-    treatment = 'Preheat Staub deep skillet, 8.5in',
+    recipe_pc = 1,
+    treatment = 'Preheat Staub deep skillet, 8.5in, for 10min',
     program = 'Steam Bake',
-    # fahrenheit = 275, minute = c('Trudeau loaf pan (half recipe)' = 40)
-    fahrenheit = 350, minute = 25 # preppy kitchen 425F (traditional oven)
+    fahrenheit = 350, minute = 25,
+    cooling = 'Cool down the whole skillet on a rack'
   )
 ))
 
 
 #' @rdname cornbread
 #' @export
-cornbread <- function() new(Class = 'cornbread', pros = 'I love!!')
+cornbread <- function() new(Class = 'cornbread', pros = c(
+  'bread flour to cornmeal 1:2, perfect crunchy crust and soft center (cold water, soaking overnight)',
+  'heavy cream is much easier to work with than butter',
+  'sugar 5.5% tastes better than 5%, although leaves a very slight after-taste',
+  'still experimenting! already very good!'
+))
+
+# crust on top is nice!
+# crust on bottom needs to be improved
+# .. pre-heat skillet for 5min
+# .. next time try: pre-heat skillet for 10min
+# next time also: use boiling water with corn meal, skip soaking overnight
 
 
 
+#' @rdname cornbread
+#' @export
+Wegmans_cornbread_recipe <- function() new(
+  Class = 'recipe', wegmans = '3044',
+  alias_flavor = 'Cornbread',
+  #Wegmans Avocado Oil Cooking Spray
+  cornmeal_cup = c(IndianHead_yellowCorn = 3),
+  bakingPowder_Tbsp = c(Wegmans_bakingPowder = 2),
+  Na2CO3_Tbsp = 1/2,
+  salt_Tbsp = 1/2,
+  sugar_cup = c(Domino_granulated = 2/3),
+  flavor = c(Wegmans_creamCorn = 418*2), #2 cans (14.75 oz each) 
+  sourCream = 453.6, # 1 container (16 oz) Wegmans Organic Sour Cream
+  egg_pc = 6,
+  oil_cup = c(Wegmans_avocado_oil = 1/2)
+)
 
-
-
+#' @rdname cornbread
+#' @export
+Wegmans_cornbread <- function() new(
+  Class = 'nutrition', wegmans = 268359L,
+  name = 'Cornbread', usd = 9.00/9,
+  servingGram = 57, calorie = 240,
+  fat = 10, cholesterol = .045, sodium = .2,
+  carbohydrate = 33, addedSugar = 13, protein = 4)
 
 
 

@@ -56,6 +56,7 @@ setOldClass('cli_glue_delay')
 #' @slot belgioioso \link[base]{character} scalar
 #' @slot bobsredmill \link[base]{character} scalar
 #' @slot bouchard \link[base]{character} scalar
+#' @slot cheesecakefactorybakery,cheesecakefactoryfreezer \link[base]{character} scalars
 #' @slot clearwater \link[base]{character} scalar
 #' @slot countrytime \link[base]{character} scalar
 #' @slot daisybrand \link[base]{character} scalar
@@ -73,6 +74,7 @@ setOldClass('cli_glue_delay')
 #' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
 #' @slot itoen \link[base]{character} scalar
 #' @slot jfc \link[base]{character} scalar
+#' @slot juniorscheesecake \link[base]{character} scalar
 #' @slot justtea \link[base]{character} scalar
 #' @slot kahlua \link[base]{character} scalar
 #' @slot kerrygold,kerrygoldusa \link[base]{character} scalar
@@ -178,6 +180,7 @@ setClass(Class = 'nutrition', slots = c(
   belgioioso = 'character',
   bobsredmill = 'character',
   bouchard = 'character',
+  cheesecakefactorybakery = 'character', cheesecakefactoryfreezer = 'character', 
   clearwater = 'character',
   countrytime = 'character',
   daisybrand = 'character',
@@ -195,6 +198,7 @@ setClass(Class = 'nutrition', slots = c(
   ippodoglobal = 'character', ippodojpn = 'character', ippodousa = 'character',
   itoen = 'character',
   jfc = 'character',
+  juniorscheesecake = 'character',
   justtea = 'character',
   kahlua = 'character',
   kerrygold = 'character', kerrygoldusa = 'character',
@@ -315,6 +319,12 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.bobsredmill.com/%s.html', x@bobsredmill), text = 'Bob\'s Red Mill\U1f1fa\U1f1f8'))
     } else if (length(x@bouchard)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://bouchardchocolate.com/products/%s', x@bouchard), text = 'Bouchard\U1f1e7\U1f1ea'))
+    } else if (length(x@cheesecakefactoryfreezer)) {
+      if (!length(x@cheesecakefactorybakery)) x@cheesecakefactorybakery <- x@cheesecakefactoryfreezer
+      paste(
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', x@cheesecakefactoryfreezer), text = 'Cheesecake')),
+        unclass(style_hyperlink(url = sprintf(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', x@cheesecakefactorybakery), text = 'Factory\U1f1fa\U1f1f8'))
+      )
     } else if (length(x@clearwater)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.clearwater.ca/en/seafood-industry/%s', x@clearwater), text = 'Clearwater\U1f1e8\U1f1e6'))
     } else if (length(x@countrytime)) {
@@ -353,6 +363,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       )
     } else if (length(x@itoen)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://itoen.com/products/%s', x@itoen), text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5'))
+    } else if (length(x@juniorscheesecake)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.juniorscheesecake.com/all-items/%s', x@juniorscheesecake), text = 'Junior\'s\U1f1fa\U1f1f8'))
     } else if (length(x@justtea)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/product/%s', x@justtea), text = 'Just Tea\U1f1fa\U1f1f8'))
     } else if (length(x@kahlua)) {
@@ -481,7 +493,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   x <- add_store_url_(x, store = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.')
   x <- add_store_url_(x, store = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
-  x <- add_store_url_(x, store = 'target', fmt = 'https://www.target.com/p/%s', store_brand = NA_character_, store_name = 'Target')
+  x <- add_store_url_(x, store = 'target', fmt = 'https://www.target.com/p/-/%s', store_brand = NA_character_, store_name = 'Target')
   x <- add_store_url_(x, store = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')
   x <- add_store_url_(x, store = 'traderjoes', fmt = 'https://www.traderjoes.com/home/products/pdp/%s', store_brand = 'Trader Joe\'s\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')

@@ -164,7 +164,7 @@ Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 
 nutrition_(
  pumpkin_cheesecake,
- subtract(pumpkin_cheesecake_Junior, sugar = 330),
+ subtract(pumpkin_cheesecake_Junior, sugar = 200),
  subtract(pumpkin_cheesecake_NatashasKitchen, brownSugar = 245),
  subtract(pumpkin_cheesecake_PreppyKitchen, sugar = 150),
  subtract(CheesecakeFactory_pumpkin, sugar = 14)
