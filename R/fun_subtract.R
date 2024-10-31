@@ -86,6 +86,7 @@ subtract.nutrition <- function(object, ...) {
     
     if (inm == 'sugar') {
       if (length(obj@addedSugar)) obj@addedSugar <- if (obj@addedSugar > ival) obj@addedSugar - ival else numeric()
+      obj@carbohydrate <- obj@carbohydrate - ival
     }
     
     obj@servingGram <- obj@servingGram - ival
