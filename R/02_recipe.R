@@ -216,6 +216,7 @@
 #' @slot nytimes \link[base]{character} scalar
 #' @slot pino \link[base]{character} scalar
 #' @slot preppykitchen \link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe
+#' @slot quakeroats \link[base]{character} scalar
 #' @slot shangshikitchen \link[base]{character} scalar
 #' @slot wegmans \link[base]{character} scalar
 #' @slot xiaogaojie \link[base]{character} scalar
@@ -250,6 +251,7 @@ setClass(Class = 'recipe', slots = c(
   nytimes = 'character',
   pino = 'character',
   preppykitchen = 'character', # must len-1
+  quakeroats = 'character',
   shangshikitchen = 'character',
   wegmans = 'character',
   xiaogaojie = 'character',
@@ -809,6 +811,12 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     )
     x@preppykitchen <- character()
   } 
+  
+  if (length(x@quakeroats)) {
+    if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker'))
+    x@quakeroats <- character()
+  }
   
   if (length(x@shangshikitchen)) {
     if (length(x@shangshikitchen) > 1L) stop('only allow len-1 @shangshikitchen')

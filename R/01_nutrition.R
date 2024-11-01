@@ -81,6 +81,7 @@ setOldClass('cli_glue_delay')
 #' @slot kikkomanusa \link[base]{character} scalar
 #' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
 #' @slot kraftheinzawayfromhome,philadelphia \link[base]{character} scalars
+#' @slot krusteaz \link[base]{character} scalar
 #' @slot landolakes \link[base]{character} scalar
 #' @slot leaperrins \link[base]{character} scalar
 #' @slot leekumkee \link[base]{character} scalar
@@ -96,7 +97,7 @@ setOldClass('cli_glue_delay')
 #' @slot oreo \link[base]{character} scalar
 #' @slot organicvalley \link[base]{character} scalar
 #' @slot paromi \link[base]{character} scalar
-#' @slot quaker \link[base]{character} scalar
+#' @slot quakeroats \link[base]{character} scalar
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
 #' @slot sanford \link[base]{character} scalar
@@ -204,7 +205,7 @@ setClass(Class = 'nutrition', slots = c(
   kerrygold = 'character', kerrygoldusa = 'character',
   kikkomanusa = 'character',
   kingarthur = 'integer', kingarthurpro = 'integer',
-  philadelphia = 'character',
+  krusteaz = 'character',
   landolakes = 'character',
   leaperrins = 'character',
   leekumkee = 'character',
@@ -220,7 +221,8 @@ setClass(Class = 'nutrition', slots = c(
   oreo = 'character',
   organicvalley = 'character',
   paromi = 'character',
-  quaker = 'character',
+  philadelphia = 'character',
+  quakeroats = 'character',
   raos = 'character',
   runamok = 'character',
   sanford = 'character',
@@ -385,6 +387,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = 'https://www.kingarthurbaking.com/pro/products', text = 'King Arthur\U1f1fa\U1f1f8'))
     } else if (length(x@philadelphia)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', x@philadelphia), text = 'Philadelphia\U1f1fa\U1f1f8'))
+    } else if (length(x@krusteaz)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.krusteaz.com/products/%s', x@krusteaz), text = 'Krusteaz\U1f1fa\U1f1f8'))
     } else if (length(x@landolakes)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.landolakes.com/products/%s', x@landolakes), text = 'Land O Lakes\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
@@ -433,8 +437,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.organicvalley.coop/products/%s', x@organicvalley), text = 'Organic Valley\U1f1fa\U1f1f8'))
     } else if (length(x@paromi)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://paromi.com/products/%s', x@paromi), text = 'Paromi\U1f1fa\U1f1f8'))
-    } else if (length(x@quaker)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/products/%s', x@quaker), text = 'Quaker\U1f1fa\U1f1f8'))
+    } else if (length(x@quakeroats)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/products/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8'))
     } else if (length(x@raos)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.raos.com/products/%s', x@raos), text = 'Rao\'s\U1f1fa\U1f1f8'))
     } else if (length(x@runamok)) {

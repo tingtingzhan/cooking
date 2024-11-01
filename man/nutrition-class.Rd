@@ -114,6 +114,8 @@ Nutrition information.
 
 \item{\code{kraftheinzawayfromhome,philadelphia}}{\link[base]{character} scalars}
 
+\item{\code{krusteaz}}{\link[base]{character} scalar}
+
 \item{\code{landolakes}}{\link[base]{character} scalar}
 
 \item{\code{leaperrins}}{\link[base]{character} scalar}
@@ -144,7 +146,7 @@ Nutrition information.
 
 \item{\code{paromi}}{\link[base]{character} scalar}
 
-\item{\code{quaker}}{\link[base]{character} scalar}
+\item{\code{quakeroats}}{\link[base]{character} scalar}
 
 \item{\code{raos}}{\link[base]{character} scalar}
 

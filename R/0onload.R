@@ -10,10 +10,6 @@
 
   sugar <- function(x) switch(
     class(x), 
-    meatchop =, 
-    noodlelinda =, wrapperlinda =, 
-    geng =, cornGeng =,
-    beeffillLeeKumKee =,
     spam = .006,
     shrimpfill_garlicHerb = .009,
     meatmash =, meatball =, shrimpfillCantonese = .008,
@@ -105,7 +101,6 @@
     drinkmix = if (length(x@syrup)) {
       .515
     } else NA_real_,
-    caffeLatteMix = NA_real_,
     NA_real_)
   
   addedSugar <- function(x) switch(
@@ -117,7 +112,6 @@
   addedSugar2cocoa <- function(x) switch(
     class(x),
     mocaccinoMix =, mocaccino_ = .36,
-    caffeLatteMix =, caffeLatte_ = NA_real_,
     NA_real_) 
   
   drymilk <- function(x) switch(
@@ -149,13 +143,10 @@
     matchaGoatLatteMix = .53,
     mocaccinoMix =, matchaLatteMix = NA_character_,
     #tiramisuMix = .7,
-    caffeLatteMix = NA_real_, 
     NA_real_)
   
   drymilk2cocoa <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccino_ =,
-    caffeLatteMix =, caffeLatte_ = NA_real_,
     NA_real_)
   
   creamcheese <- function(x) switch(
@@ -170,8 +161,6 @@
    
   fat <- function(x) switch(
     class(x), 
-    noodlelinda =, wrapperlinda =, flavoredButter =, soymilk = NA_real_,
-    drink = NA_real_,
     matchaLatte_ = .004, 
     stickyTortilla =, TangYuan = .01, 
     mocaccino_ = .01,
@@ -453,8 +442,6 @@
   
   alcohol <- function(x) switch(
     class(x),
-    goatKefir =, filmjolk = NA_real_, # do NOT add alcohol, already have strong alcohol flavor!!!!
-    millecrepe = NA_real_, # bad idea to cook alcohol
     drink = .0055, # any more, I will feel dizzy
     #cheesecake =, mascarponeGanache = .015, # need to re-try
     cheesecake = .006, # trying. this is low-temp cooking, probably okay
@@ -483,7 +470,6 @@
 
   water2breadflour <- function(x) switch(
     class(x), 
-    cornbread = NA_real_,
     wrapperlinda = .57,
     noodlelinda = if (any(grepl('^KingArthur_', names(x@breadFlour)))) .45 else .6,
     bread = .63,
@@ -517,7 +503,6 @@
   
   fat2breadflour <- function(x) switch(
     class(x), 
-    cornbread =, noodlelinda =, wrapperlinda = NA_real_,
     bao = .03,
     bread = if (length(x@cocoa)) .08 else .075,
     NA_real_)

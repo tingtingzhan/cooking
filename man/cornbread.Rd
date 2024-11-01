@@ -4,30 +4,9 @@
 \name{cornbread}
 \alias{cornbread}
 \alias{cornbread-class}
-\alias{Wegmans_cornbread_recipe}
-\alias{Wegmans_cornbread}
-\alias{BethanyWeathersby_cornbread}
-\alias{bluegirl_cornbread}
-\alias{PreppyKitchen_cornbread}
-\alias{JoshuaWeissman_cornbread}
-\alias{Jiffy_cornMuffin}
 \title{\linkS4class{cornbread} Recipes}
 \usage{
 cornbread()
-
-Wegmans_cornbread_recipe()
-
-Wegmans_cornbread()
-
-BethanyWeathersby_cornbread()
-
-bluegirl_cornbread()
-
-PreppyKitchen_cornbread()
-
-JoshuaWeissman_cornbread()
-
-Jiffy_cornMuffin()
 }
 \description{
 ..
@@ -35,16 +14,4 @@ Jiffy_cornMuffin()
 \examples{
 cornbread()
 
-xs = list(
- cornbread,
- subtract(PreppyKitchen_cornbread, sugar = 15),
- subtract(BethanyWeathersby_cornbread, sugar = 102),
- subtract(bluegirl_cornbread, sugar = 104),
- subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 20),
- subtract(nutrition(Jiffy_cornMuffin), sugar = 30),
- subtract(Wegmans_cornbread_recipe, sugar = 75),
- subtract(Wegmans_cornbread, sugar = 10.2)
-)
-nutrition_(dots = xs)
-diagnose_(dots = xs)
 }

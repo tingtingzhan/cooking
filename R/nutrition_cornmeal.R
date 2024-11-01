@@ -49,7 +49,7 @@ IndianHead_yellowCorn <- function() new(
 #' @rdname cornmeal
 #' @export
 Quaker_yellowCorn <- function() new(
-  Class = 'nutrition', quaker = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
+  Class = 'nutrition', quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
   name = '\u9ec4\u7389\u7c73\u9762 Yellow Cornmeal\U1f33d',
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
@@ -58,7 +58,7 @@ Quaker_yellowCorn <- function() new(
 #' @rdname cornmeal
 #' @export
 Quaker_whiteCorn <- function() new(
-  Class = 'nutrition', quaker = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
+  Class = 'nutrition', quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
   name = '\u9ec4\u7389\u7c73\u9762 White Cornmeal\U1f33d',
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,

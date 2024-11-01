@@ -184,7 +184,7 @@ OrganicValley_creamCheese <- function() new(
 
 TraderJoes_creamCheese <- function() new(
   Class = 'nutrition',
-  traderjoes = 'cream-cheese-012491',
+  traderjoes = '012491',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   servingGram = 28, servingTbsp = 2, 

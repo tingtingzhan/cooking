@@ -352,6 +352,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{preppykitchen}}{\link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe}
 
+\item{\code{quakeroats}}{\link[base]{character} scalar}
+
 \item{\code{shangshikitchen}}{\link[base]{character} scalar}
 
 \item{\code{wegmans}}{\link[base]{character} scalar}

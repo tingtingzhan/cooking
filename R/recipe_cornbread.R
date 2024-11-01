@@ -1,4 +1,29 @@
 
+#' @title \linkS4class{cornbreadMix} Recipes
+#' 
+#' @name cornbreadMix
+#' @aliases cornbreadMix-class
+#' @export
+setClass(Class = 'cornbreadMix', contains = 'recipe', prototype = prototype(
+  alias_class = 'Cornbread\U1f33d Mix',
+  breadFlour = c(KingArthur_bread = 160), cornmeal = 320,
+  sugar = 55,
+  #bakingPowder_tsp = 1/2, # strong expansion; cracks a lot (in Staub skillet)
+  bakingPowder_tsp = 1/4, # try next time
+  note = 'Do NOT pre-mix. Need to soak cornmeal alone in boiling water!'
+))
+
+
+#' @rdname cornbreadMix
+#' @export
+cornbreadMix <- function() new(
+  Class = 'cornbreadMix',
+  pros = c(
+    'bread flour to cornmeal 1:2, perfect crunchy crust and soft center (cold water, soaking overnight)'
+  ))
+
+
+
 #' @title \linkS4class{cornbread} Recipes
 #' 
 #' @description
@@ -8,30 +33,14 @@
 #' @examples
 #' cornbread()
 #' 
-#' xs = list(
-#'  cornbread,
-#'  subtract(PreppyKitchen_cornbread, sugar = 15),
-#'  subtract(BethanyWeathersby_cornbread, sugar = 102),
-#'  subtract(bluegirl_cornbread, sugar = 104),
-#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 20),
-#'  subtract(nutrition(Jiffy_cornMuffin), sugar = 30),
-#'  subtract(Wegmans_cornbread_recipe, sugar = 75),
-#'  subtract(Wegmans_cornbread, sugar = 10.2)
-#' )
-#' nutrition_(dots = xs)
-#' diagnose_(dots = xs)
 #' @name cornbread
 #' @aliases cornbread-class
 #' @export
 setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread\U1f33d',
   
-  breadFlour = c(KingArthur_bread = 160), cornmeal = 320,
-  
-  sugar = 55,
-  
-  #bakingPowder_tsp = 1/2, # strong expansion; cracks a lot (in Staub skillet)
-  bakingPowder_tsp = 1/4, # try next time
+  # has bug in ?methods::setClass, but not in ?methods::new
+  #homemade = c(cornbreadMix = nutrition.recipe(cornbreadMix())@servingGram), # has bug; dont understand why
   
   egg_pc = 2,
   
@@ -61,22 +70,29 @@ setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
   ),
   RobamCT763 = RobamCT763(
     recipe_pc = 1,
-    treatment = 'Preheat Staub deep skillet, 8.5in, for 10min',
+    treatment = c(
+      'Preheat Staub deep skillet, 8.5in, for 10min',
+      'Apply cooking spray to sizzling hot skillet'
+    ),
     program = 'Steam Bake',
-    fahrenheit = 350, minute = 25,
-    cooling = 'Cool down the whole skillet on a rack'
+    # fahrenheit = 350, minute = 25, # lightly under baked
+    # cooling = 'Cool down the whole skillet on a rack'
+    fahrenheit = 375, minute = 25, # try next time
+    cooling = 'Flip skillet to release. Cool on a rack'
   )
 ))
 
 
 #' @rdname cornbread
 #' @export
-cornbread <- function() new(Class = 'cornbread', pros = c(
-  'bread flour to cornmeal 1:2, perfect crunchy crust and soft center (cold water, soaking overnight)',
-  'heavy cream is much easier to work with than butter',
-  'sugar 5.5% tastes better than 5%, although leaves a very slight after-taste',
-  'still experimenting! already very good!'
-))
+cornbread <- function() new(
+  Class = 'cornbread', 
+  homemade = c(cornbreadMix = nutrition.recipe(cornbreadMix())@servingGram), # has bug; dont understand why
+  pros = c(
+    'heavy cream is much easier to work with than butter',
+    'sugar 5.5% tastes better than 5%, although leaves a very slight after-taste',
+    'still experimenting! already very good!'
+  ))
 
 # crust on top is nice!
 # crust on bottom needs to be improved
@@ -85,8 +101,28 @@ cornbread <- function() new(Class = 'cornbread', pros = c(
 # next time also: use boiling water with corn meal, skip soaking overnight
 
 
-
-#' @rdname cornbread
+#' @title Other Cornbread Recipes
+#' 
+#' @examples
+#' xs = list(
+#'  cornbread,
+#'  subtract(PreppyKitchen_cornbread, sugar = 15),
+#'  subtract(BethanyWeathersby_cornbread, sugar = 102),
+#'  subtract(bluegirl_cornbread, sugar = 104),
+#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 20),
+#'  subtract(nutrition(Jiffy_cornMuffin), sugar = 30),
+#'  subtract(Wegmans_cornbread_recipe, sugar = 75),
+#'  subtract(Wegmans_cornbread, sugar = 10.2),
+#'  subtract(nutrition(WholeFoods365_cornbread), sugar = 60),
+#'  subtract(nutrition(Stonewall_cornbread), sugar = 113),
+#'  subtract(nutrition(TraderJoes_cornbread), sugar = 105),
+#'  subtract(nutrition(Krusteaz_southern_cornbread), sugar = 20),
+#'  BobsRedMill_cornbread,
+#'  Quaker_cornbread
+#' )
+#' nutrition_(dots = xs)
+#' diagnose_(dots = xs)
+#' @name cornbread_other
 #' @export
 Wegmans_cornbread_recipe <- function() new(
   Class = 'recipe', wegmans = '3044',
@@ -103,7 +139,7 @@ Wegmans_cornbread_recipe <- function() new(
   oil_cup = c(Wegmans_avocado_oil = 1/2)
 )
 
-#' @rdname cornbread
+#' @rdname cornbread_other
 #' @export
 Wegmans_cornbread <- function() new(
   Class = 'nutrition', wegmans = 268359L,
@@ -115,7 +151,7 @@ Wegmans_cornbread <- function() new(
 
 
 
-#' @rdname cornbread
+#' @rdname cornbread_other
 #' @export
 BethanyWeathersby_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'Bethany Weathersby',
@@ -130,7 +166,7 @@ BethanyWeathersby_cornbread <- function() new(
   allrecipes = '76594/grandmothers-buttermilk-cornbread/')
 
 
-#' @rdname cornbread
+#' @rdname cornbread_other
 #' @export
 bluegirl_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'bluegirl',
@@ -144,7 +180,7 @@ bluegirl_cornbread <- function() new(
   egg_pc = 1,
   allrecipes = '17891/golden-sweet-cornbread/')
 
-#' @rdname cornbread
+#' @rdname cornbread_other
 #' @export
 PreppyKitchen_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
@@ -161,7 +197,21 @@ PreppyKitchen_cornbread <- function() new(
     'vQM-SFKSqcg' = 'cornbread-recipe' # youtube = '16YfyByvLZg' same recipe!
   ))
 
-#' @rdname cornbread
+#' @rdname cornbread_other
+#' @export
+Quaker_cornbread <- function() new(
+  Class = 'recipe', alias_flavor = 'Cornbread',
+  quakeroats = 'golden-cornbread',
+  oil_Tbsp = c(Wegmans_vegetable_oil = 2),
+  cornmeal_cup = c(Quaker_yellowCorn = 1.5),
+  flour_Tbsp = 3,
+  salt_tsp = 1,
+  NaHCO3_tsp = 1,
+  buttermilk_cup = 2,
+  egg_pc = 1)
+
+
+#' @rdname cornbread_other
 #' @export
 JoshuaWeissman_cornbread <- function() new(
   Class = 'recipe', alias_flavor = 'Cornbread', 
@@ -181,16 +231,8 @@ JoshuaWeissman_cornbread <- function() new(
 
 
 
-Jiffy_cornMuffinMix <- function() new(
-  Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/')),
-  name = 'Corn Muffin Mix',
-  servingGram = 78, servingCup = 1/2,
-  calorie = 320,
-  fat = 9, cholesterol = .01, sodium = .69,
-  carbohydrate = 56, addedSugar = 15, protein = 4)
 
-#' @rdname cornbread
+#' @rdname cornbread_other
 #' @export
 Jiffy_cornMuffin <- function() new(
   Class = 'recipe',
@@ -199,5 +241,65 @@ Jiffy_cornMuffin <- function() new(
   url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
   flavor = c(Jiffy_cornMuffinMix = 240),
   egg_pc = 1,
-  milk_cup = 1/3
-)
+  milk_cup = 1/3)
+
+
+#' @rdname cornbread_other
+#' @export
+WholeFoods365_cornbread <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Cornbread',
+  author = '365 by Whole Foods', # recipe on packaging
+  flavor = c(WholeFoods365_cornbreadMix = 425),
+  egg_pc = 2,
+  milk_cup = 1,
+  oil_cup = c(Wegmans_vegetable_oil = .5))
+
+
+#' @rdname cornbread_other
+#' @export
+Stonewall_cornbread <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Cornbread',
+  author = 'Stonewall Kitchen', # recipe on packaging
+  flavor = c(Stonewall_cornbreadMix = 453.6),
+  egg_pc = 1,
+  milk_cup = 1,
+  oil_cup = c(Wegmans_vegetable_oil = 1/3))
+
+#' @rdname cornbread_other
+#' @export
+TraderJoes_cornbread <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Cornbread',
+  author = 'Trader Joes', # recipe on packaging
+  flavor = c(TraderJoes_cornbreadMix = 425),
+  egg_pc = 1,
+  milk_cup = 3/4,
+  oil_cup = c(Wegmans_vegetable_oil = 1/2))
+
+
+#' @rdname cornbread_other
+#' @export
+Krusteaz_southern_cornbread <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Cornbread',
+  author = 'Krusteaz', # recipe on packaging
+  flavor = c(Krusteaz_southern_cornbreadMix = 326), # 11.5 oz
+  buttermilk_cup = 1,
+  butter_cup = 1/3,
+  egg_pc = 2)
+
+# check out the fancier recipes https://www.krusteaz.com/recipes/cornbread/
+
+
+#' @rdname cornbread_other
+#' @export
+BobsRedMill_cornbread <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Cornbread',
+  author = 'Bob\'s Red Mill', # recipe on packaging
+  flavor = c(BobsRedMill_cornbreadMix = 680),
+  water_cup = 2.5,
+  egg_pc = 2,
+  oil_cup = c(Wegmans_vegetable_oil = 1/2))
