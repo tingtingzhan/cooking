@@ -60,7 +60,8 @@ KingArthur_Burgundy <- function() new(
   servingTbsp = 5/(24/8*3), # actual experiment 24g = 8tsp
   calorie = 20,
   # no Carbohydrate!!
-  fat = 1, protein = 1)
+  fat = 1, protein = 1,
+  superior = 'KingArthur_Bensdorp')
 
 Ghirardelli_cocoa <- function() new(
   Class = 'nutrition', 

@@ -12,6 +12,7 @@
 #'  subtract(Jiffy_cornMuffinMix, sugar = 7)
 #' )
 #' @name cornbreadMix_other
+#' @keywords internal
 #' @export
 TraderJoes_cornbreadMix <- function() new(
   Class = 'nutrition',

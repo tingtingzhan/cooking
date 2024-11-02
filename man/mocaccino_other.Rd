@@ -5,6 +5,7 @@
 \alias{WilliamsSonoma_mocha}
 \alias{Starbucks_mocha}
 \alias{Starbucks_mochaFrappuccino}
+\alias{Starbucks_mochaFrappuccino_bottle}
 \alias{Maxwell_mochaSuisse}
 \alias{Ghirardelli_mochaFrappe}
 \alias{Starbucks_mochaMix}
@@ -30,6 +31,8 @@ WilliamsSonoma_mocha()
 Starbucks_mocha()
 
 Starbucks_mochaFrappuccino()
+
+Starbucks_mochaFrappuccino_bottle()
 
 Maxwell_mochaSuisse()
 
@@ -71,18 +74,41 @@ StarbucksKcup_cocoa()
 Mocaccino, Commercial or Other People's Recipe
 }
 \examples{
+diagnose_(
+ mocaccino,
+ Rebecca_mocha,
+ Pillsbury_mocha,
+ EarlaTaylor_cocoa,
+ Mels_cocoa,
+ AmandaRettke_cocoa,
+ bargainmums_mocha
+) # compare powder recipes
+
 nutrition_(
- StarbucksKcup_cocoa,
- Starbucks_cocoa,
- SwissMiss_milkCocoa,
- SwissMiss_simplyCocoaMilk,
+ mocaccino,
+ Maxwell_mochaSuisse,
+ WilliamsSonoma_mocha,
+ Ghirardelli_mochaFrappe,
  KingArthur_milkChocolate,
  Nestle_skimCocoa,
  Nestle_richChocolate,
  Nestle_cocoSupreme,
- EarlaTaylor_cocoa,
- Mels_cocoa,
- AmandaRettke_cocoa
-)
+ SwissMiss_simplyCocoaMilk,
+ SwissMiss_milkCocoa,
+ Starbucks_cocoa,
+ StarbucksKcup_cocoa,
+ Starbucks_mochaMix
+) # compare commercial powders
+
+nutrition_(
+ hotdrink(mocaccino),
+ Starbucks_mocha
+) # compare hot drink
+
+nutrition_(
+ frappe(mocaccino),
+ Starbucks_mochaFrappuccino,
+ Starbucks_mochaFrappuccino_bottle
+) # compare frappe
 }
 \keyword{internal}

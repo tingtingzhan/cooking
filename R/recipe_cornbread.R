@@ -7,7 +7,8 @@
 setClass(Class = 'cornbreadMix', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread\U1f33d Mix',
   breadFlour = c(KingArthur_bread = 160), cornmeal = 320,
-  sugar = 55,
+  # sugar = 55, # for heavyCream = 220, water = 270
+  sugar = 50, # for reduced heavy cream
   #bakingPowder_tsp = 1/2, # strong expansion; cracks a lot (in Staub skillet)
   bakingPowder_tsp = 1/4, # try next time
   note = 'Do NOT pre-mix. Need to soak cornmeal alone in boiling water!'
@@ -36,58 +37,59 @@ cornbreadMix <- function() new(
 #' @name cornbread
 #' @aliases cornbread-class
 #' @export
-setClass(Class = 'cornbread', contains = 'recipe', prototype = prototype(
-  alias_class = 'Cornbread\U1f33d',
-  
-  # has bug in ?methods::setClass, but not in ?methods::new
-  #homemade = c(cornbreadMix = nutrition.recipe(cornbreadMix())@servingGram), # has bug; dont understand why
-  
-  egg_pc = 2,
-  
-  # heavyCream = 220, water = 270, # perfect fat content!!
-  heavyCream = 220, boilingWater = 270, # try next time
-  
-  # https://www.youtube.com/watch?v=ASnVtPToNCc
-  # scortch corn meal with boiling water???
-  
-  # waterLost = 45, # to confirm
-  
-  portion = c(
-    # 'Trudeau loaf pan (7.5x3.75, 8.5x4.5)' = 600
-    'Staub deep skillet, 8.5in' = 1000
-  ),
-  instruction = c(
-    'Soak cornmeal in boiling water',
-    'Whisk in heavy cream to lower down temperature',
-    'Whisk in bread flour to further lower down temperature',
-    'Whisk in other ingredients',
-    # 'Whisk all dry material, except baking powder',
-    # 'Whisk in wet material',
-    # 'Soak batter, covered in mixing bowl, in fridge overnight',
-    # 'Restore batter to (almost) room temperature',
-    # 'Whisk in baking powder',
-    'Transfer to sizzling hot skillet'
-  ),
-  RobamCT763 = RobamCT763(
-    recipe_pc = 1,
-    treatment = c(
-      'Preheat Staub deep skillet, 8.5in, for 10min',
-      'Apply cooking spray to sizzling hot skillet'
+setClass(
+  Class = 'cornbread', 
+  contains = 'cornbreadMix', # simplest solution!!!
+  prototype = prototype(
+    alias_class = 'Cornbread\U1f33d',
+    
+    # has bug in ?methods::setClass, but not in ?methods::new
+    #homemade = c(cornbreadMix = nutrition.recipe(cornbreadMix())@servingGram), # has bug; dont understand why
+    
+    egg_pc = 2,
+    
+    # heavyCream = 220, water = 270, # fat content 9.6%, not bad!
+    heavyCream = 200, boilingWater = 270, # fat content 9%, try next time
+    
+    # https://www.youtube.com/watch?v=ASnVtPToNCc
+    # scortch corn meal with boiling water???
+    
+    # waterLost = 45, # to confirm
+    
+    portion = c(
+      # 'Trudeau loaf pan (7.5x3.75, 8.5x4.5)' = 600
+      'Staub deep skillet, 8.5in' = 1000
     ),
-    program = 'Steam Bake',
-    # fahrenheit = 350, minute = 25, # lightly under baked
-    # cooling = 'Cool down the whole skillet on a rack'
-    fahrenheit = 375, minute = 25, # try next time
-    cooling = 'Flip skillet to release. Cool on a rack'
+    instruction = c(
+      'Soak cornmeal in boiling water, let stand until cools down to 50C/120F',
+      'Whisk in other ingredients',
+      # 'Whisk all dry material, except baking powder',
+      # 'Whisk in wet material',
+      # 'Soak batter, covered in mixing bowl, in fridge overnight',
+      # 'Restore batter to (almost) room temperature',
+      # 'Whisk in baking powder',
+      'Transfer to sizzling hot skillet (with cooking spray)'
+    ),
+    RobamCT763 = RobamCT763(
+      recipe_pc = 1,
+      treatment = c(
+        'Preheat Staub deep skillet, 8.5in, for 10min'
+      ),
+      program = 'Steam Bake',
+      # fahrenheit = 350, minute = 25, # crust under baked, center a little too wet
+      # cooling = 'Cool down the whole skillet on a rack'
+      fahrenheit = 375, minute = 25, # try next time
+      cooling = 'Flip skillet to release. Cool on a rack'
+    )
   )
-))
+)
 
 
 #' @rdname cornbread
 #' @export
 cornbread <- function() new(
   Class = 'cornbread', 
-  homemade = c(cornbreadMix = nutrition.recipe(cornbreadMix())@servingGram), # has bug; dont understand why
+  #homemade = c(cornbreadMix = nutrition.recipe(cornbreadMix())@servingGram), # has bug; dont understand why
   pros = c(
     'heavy cream is much easier to work with than butter',
     'sugar 5.5% tastes better than 5%, although leaves a very slight after-taste',

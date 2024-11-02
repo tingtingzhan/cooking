@@ -29,12 +29,6 @@ setClass(Class = 'equiv', slots = c(
 
 
 
-equiv <- function(actual, ideal, ...) {
-  if (missing(ideal)) return(new(Class = 'equiv', actual = actual, ...))
-  if (!length(ideal)) return(new(Class = 'equiv', actual = actual, ideal = numeric(), ...))
-  if (is.na(ideal)) return(new(Class = 'equiv', actual = actual, ...))
-  return(new(Class = 'equiv', actual = actual, ideal = ideal, ...))
-}
 
 
 
@@ -71,7 +65,6 @@ format.equiv <- function(x, ...) {
   sprintf_fun <- sprintf_bincode(min(actual, x@ideal, na.rm = TRUE))
   
   actual <- sprintf_fun(actual)
-  if (!length(x@ideal)) return(c(Actual = actual, Ideal = '?'))
   if (is.na(x@ideal)) return(c(Actual = actual, Ideal = '-'))
   return(c(Actual = actual, Ideal = sprintf_fun(x@ideal)))
 }

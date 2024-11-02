@@ -338,6 +338,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{joshuaweissman}}{\link[base]{character} scalar}
 
+\item{\code{julieseatsandtreats}}{\link[base]{character} scalar}
+
 \item{\code{juniorscheesecakecookbook}}{\link[base]{integer} scalar}
 
 \item{\code{just1cookbook}}{\link[base]{character} scalar}

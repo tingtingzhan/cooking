@@ -36,3 +36,4 @@ nutrition_(
  subtract(Jiffy_cornMuffinMix, sugar = 7)
 )
 }
+\keyword{internal}

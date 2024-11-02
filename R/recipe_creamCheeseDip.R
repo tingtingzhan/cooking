@@ -58,7 +58,7 @@ pumpkin_creamCheeseDip_bakethat <- function() new(
   Class = 'recipe',
   author = 'Bake That!',
   creamCheese = c(Nancys = 227),
-  sugar_cup = 1.5,
+  sugar_cup = c(Domino_10x = 1.5),
   pumpkin = 425, # 15 oz
   vanilla_tsp = 1,
   pumpkinSpice_Tbsp = 1/2,
@@ -71,12 +71,10 @@ pumpkin_creamCheeseDip_bakethat <- function() new(
 #' @export
 pumpkin_creamCheeseDip_Julie <- function() new(
   Class = 'recipe',
-  author = 'Julie\'s Eats & Treats',
+  julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),
   creamCheese = c(Nancys = 227 * 2),
   pumpkin = 425, # 15 oz
-  sugar_cup = 2,
+  sugar_cup = c(Domino_10x = 2),
   cinnamon_tsp = 2,
-  ginger_tsp = 1,
-  youtube = 'ktyuI7JHQ_Q',
-  url = 'https://www.julieseatsandtreats.com/sweet-pumpkin-dip/'
+  ginger_tsp = 1
 )

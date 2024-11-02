@@ -39,10 +39,10 @@
     cocoa_ = .055,
     drink = if (length(x@coffee) && length(x@liqueur)) {
       .055
-    }, 
+    } else NA_real_, 
     caffeLatte_ = .045, 
-    mocaccino_ = .055,
-    cornbread = .055, # will taste better than .05
+    mocaccino_ = .05,
+    cornbread = .055, # tastes better than .05
     matchaGoatLatte_ = .07, # early 2024; whole goat milk; try to reduce with tenju!
     sundae = if (length(x@matcha)) {
       .095
@@ -51,7 +51,7 @@
     } else if (length(x@pumpkin)) {
       .09
     } else if (length(x@cocoa)) {
-      NULL
+      NA_real_
     } else .07,
     mascarponeFrosting =, mascarponeGanache =, whippedCream = if (length(x@liqueur)) {
       .07
@@ -63,7 +63,7 @@
       .08
     } else if (length(x@pumpkin)) {
       .07 # was .065, a little bland
-    },
+    } else NA_real_,
     kefir =, goatKefir =, filmjolk = .075,
     beanPaste = .09,
     lava = .1,
@@ -71,12 +71,12 @@
       .125
     } else if (length(x@cocoa)) {
       .13
-    },
+    } else NA_real_,
     creamCheeseSpread =, creamCheeseDip = .08,
     muffin = .08, # all sugar consumed by people # 1st try .09 too sweet
     gateau = if (length(x@cocoa)) {
       .11
-    },
+    } else NA_real_,
     bread = if (length(x@matcha) || length(x@cocoa)) {
       .075 # great on @matcha 
     } else .045,
@@ -95,7 +95,7 @@
       .22 
     } else .2,
     tomyumStew = .16,
-    mocaccinoMix = .38,
+    mocaccinoMix = .37,
     matchaLatteMix = .4,
     matchaGoatLatteMix = .515,
     drinkmix = if (length(x@syrup)) {
@@ -106,12 +106,11 @@
   addedSugar <- function(x) switch(
     class(x),
     milktea = .013,
-    mocaccino_ = .015,
     NA_real_)
   
   addedSugar2cocoa <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccino_ = .36,
+    mocaccinoMix =, mocaccino_ = .30,
     NA_real_) 
   
   drymilk <- function(x) switch(
@@ -141,7 +140,6 @@
       .08
     } else .15,
     matchaGoatLatteMix = .53,
-    mocaccinoMix =, matchaLatteMix = NA_character_,
     #tiramisuMix = .7,
     NA_real_)
   
@@ -188,7 +186,7 @@
     shrimpfill_garlicHerb = .15, 
     mousse = .15,
     cheesecake = if (length(x@pumpkin)) .16 else .17, # 3:1 mixed cheese
-    lava = if (length(x@blackSesame)) .17 else if (length(x@coconut)) .08,
+    lava = if (length(x@blackSesame)) .17 else if (length(x@coconut)) .08 else NA_real_,
     cookie = if (length(x@blackSesame)) {
       .28
     } else .25, 
@@ -305,12 +303,12 @@
   
   cocoa <- function(x) switch(
     class(x), 
-    drink = if (length(x@liqueur)) .004,
+    drink = if (length(x@liqueur)) .004 else NA_real_,
     snowSkin = .009, 
     caffeLatte_ = .011,
     mocaccino_ = .043, 
-    goatKefir = if (length(x@coffee)) .043, 
-    cheesecake = if (length(x@cocoa)) .043,
+    goatKefir = if (length(x@coffee)) .043 else NA_real_, 
+    cheesecake = if (length(x@cocoa)) .043 else NA_real_,
     # cookie = .04, 
     bao = .05, # tested!!
     bread = .05, # retry
@@ -319,30 +317,33 @@
     gateau = .05, # I think this is not enough..
     cocoa_ = .063,
     caffeLatteMix = .1,
-    mocaccinoMix = .31,
+    mocaccinoMix = .32,
     NA_real_)
   
   coffee <- function(x) switch(
     class(x), 
-    mocaccino_ = .009, 
-    goatKefir = if (length(x@cocoa)) .009,
+    mocaccino_ = .007, 
+    goatKefir = if (length(x@cocoa)) .009 else NA_real_, # forgot if this is tested or hypothetical
     cheesecake = if (length(x@liqueur)) {
       .0073
-    } else if (length(x@cocoa)) .009,
+    } else if (length(x@cocoa)) {
+      .009 
+    } else NA_real_,
     sundae = .015, # love!
     bao =, bread = .015, # tested on bread() and love!
     caffeLatte_ = .015, # tested and love!!
     cheesecake = .016, # to try
     snowSkin = .016, # try
-    gateau = if (length(x@cocoa)) .002,
-    drink = if (length(x@liqueur)) .009,
-    mocaccinoMix = .065,
+    gateau = if (length(x@cocoa)) .002 else NA_real_,
+    drink = if (length(x@liqueur)) .009 else NA_real_,
+    mocaccinoMix = .05,
     caffeLatteMix = .14,
     NA_real_)
   
   coffee2cocoa <- function(x) switch(
     class(x),
-    cheesecake =, mocaccinoMix =, mocaccino_ = .21,
+    mocaccinoMix =, mocaccino_ = .17, # well tested
+    cheesecake = .21, # hypothetical
     caffeLatteMix =, caffeLatte_ = 1.3,
     tiramisuMix = 2.2,
     NA_real_)
@@ -413,7 +414,7 @@
     cheesecake = .03, 
     meatball = .03,
     beeffillLeeKumKee = .04, 
-    custardFilling = if (length(x@pumpkin)) .05,
+    custardFilling = if (length(x@pumpkin)) .05 else NA_real_,
     starchjelly = .1, 
     stickyTortilla = .1,
     NA_real_)
@@ -429,15 +430,15 @@
       .42
     } else .34, # from other puree such as `pineapple`
     whippedCream = .50,
-    lava = if (length(x@blackSesame)) .50 else if (length(x@coconut)) .67,
+    lava = if (length(x@blackSesame)) .50 else if (length(x@coconut)) .67 else NA_real_,
     porkfill = .55,
     sundae = if (length(x@matcha)) {
       .6
-    },
+    } else NA_real_,
     beanPaste = if (length(x@redKidneyBean)) .66 else .6,
     shrimpfillCantonese =, shrimpfill_garlicHerb = .6, 
     beeffillLeeKumKee = .6,
-    meatmash = if (length(x@shrimp)) .7,
+    meatmash = if (length(x@shrimp)) .7 else NA_real_,
     NA_real_)
   
   alcohol <- function(x) switch(

@@ -209,6 +209,7 @@
 #' @slot happytears \link[base]{character} scalar
 #' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
 #' @slot joshuaweissman \link[base]{character} scalar
+#' @slot julieseatsandtreats \link[base]{character} scalar
 #' @slot juniorscheesecakecookbook \link[base]{integer} scalar
 #' @slot just1cookbook \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
@@ -244,6 +245,7 @@ setClass(Class = 'recipe', slots = c(
   happytears = 'character',
   ippodotea = 'character', ippodoteajpn = 'character',
   joshuaweissman = 'character',
+  julieseatsandtreats = 'character',
   juniorscheesecakecookbook = 'integer',
   just1cookbook = 'character',
   kingarthur = 'character',
@@ -756,6 +758,16 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
     )
     x@joshuaweissman <- character()
+  } 
+  
+  if (length(x@julieseatsandtreats)) {
+    if (length(x@author)) stop('@author will be overwritten by @julieseatsandtreats')
+    if (length(x@julieseatsandtreats) > 1L) stop('only allow len-1 @julieseatsandtreats')
+    x@author <- paste(
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@julieseatsandtreats)), text = 'Julie\'s')),
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.julieseatsandtreats.com/%s', x@julieseatsandtreats), text = 'Eats & Treats'))
+    )
+    x@julieseatsandtreats <- character()
   } 
   
   if (length(x@juniorscheesecakecookbook)) {

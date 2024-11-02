@@ -226,11 +226,6 @@ caffeLatte_intense <- function() new(
   coffee_tsp = c(NescafeGold_espresso_intense = 4.5*2),
   cons = 'I prefer caffeLatte()')
 
-caffeLatte_decaf <- function() new(
-  Class = 'recipe',
-  drymilk = c(Carnation_drymilk = 25*2),
-  coffee_tsp = c(NescafeGold_espresso_decaf = 6*2),
-  cons = 'has an undesirable flavor, not sure how to describe')
 
 
 
@@ -243,72 +238,27 @@ caffeLatte_decaf <- function() new(
 #' @description
 #' ..
 #' 
-#' @details
-#' Do not use `NescafeTastersChoice_decaf()`; could taste sour.
-#' 
 #' @references 
 #' \url{https://en.wikipedia.org/wiki/Caffè_mocha}
 #' 
+#' @note
+#' I don't want to try goat milk for mocaccino.
+#' 
 #' @examples
 #' mocaccino()
-#' 
-#' diagnose_(
-#'  mocaccino,
-#'  Rebecca_mocha,
-#'  Pillsbury_mocha,
-#'  bargainmums_mocha
-#' ) # compare powder recipes
-#' 
-#' nutrition_(
-#'  mocaccino,
-#'  Maxwell_mochaSuisse,
-#'  WilliamsSonoma_mocha,
-#'  Ghirardelli_mochaFrappe,
-#'  Starbucks_mochaMix
-#' ) # compare commercial powders
-#' 
-#' nutrition_(
-#'  hotdrink(mocaccino),
-#'  Starbucks_mocha
-#' ) # compare hot drink
-#' 
-#' nutrition_(
-#'  frappe(mocaccino),
-#'  Starbucks_mochaFrappuccino
-#' ) # compare frappe
 #' @name mocaccino
 #' @aliases mocaccinoMix-class
 #' @export
 setClass(Class = 'mocaccinoMix', contains = 'drinkmix', prototype = prototype(
-  drymilk = c(Carnation_drymilk = 40), # reduced from very old 50g
-  #sugar_tsp = 1*2, # good & old
-  #sugar_tsp = 1.5*2, # a little little too sweet with 40g dry milk
-  sugar_tsp = 1.25*2, # try next time!
-  cocoa_tsp = c(KingArthur_Bensdorp = 4*2),
-  review = c(
-    'Have tried NescafeGold_espresso_decaf, NescafeGold_decaf, NescafeGold_espresso_intense',
-    'Have tried KingArthur_Burgundy'
-  )
+  drymilk = c(Carnation_drymilk = 40),
+  coffee_tsp = c(NescafeGold_espresso_blonde = 4),
+  cocoa_tsp = c(KingArthur_Bensdorp = 8),
+  sugar_tsp = 2.5 # well tested!!
 ))
-
 
 #' @rdname mocaccino
 #' @export
-mocaccino <- function() new(
-  Class = 'mocaccinoMix', 
-  coffee_tsp = c(NescafeGold_espresso_blonde = 2.5*2), 
-  date = as.Date('2024-10-26'),
-  pros = 'I am addicted!!!')
-
-
-goatMocaccino <- function() new(
-  Class = 'mocaccinoMix', 
-  drymilk = c(Meyenberg_goat_drymilk = 20*2),
-  coffee_tsp = c(NescafeGold_espresso_decaf = 3*2),
-  # sugar_tsp = 2.5*2, # a little little bit too sweet
-  sugar_tsp = 1.5*2, # try next time
-  review = 'try to reduce a little sugar next time')
-
+mocaccino <- function() new(Class = 'mocaccinoMix', date = as.Date('2024-11-02'), pros = 'perfected!!!')
 
 
 

@@ -11,36 +11,11 @@ mocaccino()
 \description{
 ..
 }
-\details{
-Do not use \code{NescafeTastersChoice_decaf()}; could taste sour.
+\note{
+I don't want to try goat milk for mocaccino.
 }
 \examples{
 mocaccino()
-
-diagnose_(
- mocaccino,
- Rebecca_mocha,
- Pillsbury_mocha,
- bargainmums_mocha
-) # compare powder recipes
-
-nutrition_(
- mocaccino,
- Maxwell_mochaSuisse,
- WilliamsSonoma_mocha,
- Ghirardelli_mochaFrappe,
- Starbucks_mochaMix
-) # compare commercial powders
-
-nutrition_(
- hotdrink(mocaccino),
- Starbucks_mocha
-) # compare hot drink
-
-nutrition_(
- frappe(mocaccino),
- Starbucks_mochaFrappuccino
-) # compare frappe
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Caffè_mocha}

@@ -333,7 +333,7 @@ tiramisu_nytimes <- function() new(
 #' @export
 foodandjourneys_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', author = 'Food & Journeys',
-  sugar_cup = 1/3, # powdered sugar!
+  sugar_cup = c(Domino_10x = 1/3),
   # ▢ 1 vanilla bean, seeded
   lightCream_cup = 1,
   url = 'https://foodandjourneys.net/how-to-make-mascarpone-cream/')
@@ -343,7 +343,7 @@ foodandjourneys_mascarponeFrosting <- function() new(
 lifeloveandsugar_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar',
   heavyCream_cup = 1.25,
-  sugar_cup = 3/4,
+  sugar_cup = c(Domino_10x = 3/4),
   vanilla_tsp = 1,
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
@@ -352,7 +352,7 @@ lifeloveandsugar_mascarponeFrosting <- function() new(
 lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar, Cocoa',
   heavyCream_cup = 1.25,
-  sugar_cup = 1/2,
+  sugar_cup = c(Domino_10x = 1/2),
   cocoa_cup = 1/4,
   vanilla_tsp = 1,
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
@@ -363,7 +363,7 @@ Marcellina_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', 
   alias_flavor = 'Marcellina in Cucina',
   heavyCream_cup = 1,
-  sugar_cup = 1/4, # powdered sugar!
+  sugar_cup = c(Domino_10x = 1/4),
   vanilla_tsp = 2,
   url = 'https://www.marcellinaincucina.com/mascarpone-cream/')
 

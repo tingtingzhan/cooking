@@ -2,19 +2,42 @@
 #' @title Mocaccino, Commercial or Other People's Recipe
 #' 
 #' @examples
+#' diagnose_(
+#'  mocaccino,
+#'  Rebecca_mocha,
+#'  Pillsbury_mocha,
+#'  EarlaTaylor_cocoa,
+#'  Mels_cocoa,
+#'  AmandaRettke_cocoa,
+#'  bargainmums_mocha
+#' ) # compare powder recipes
+#' 
 #' nutrition_(
-#'  StarbucksKcup_cocoa,
-#'  Starbucks_cocoa,
-#'  SwissMiss_milkCocoa,
-#'  SwissMiss_simplyCocoaMilk,
+#'  mocaccino,
+#'  Maxwell_mochaSuisse,
+#'  WilliamsSonoma_mocha,
+#'  Ghirardelli_mochaFrappe,
 #'  KingArthur_milkChocolate,
 #'  Nestle_skimCocoa,
 #'  Nestle_richChocolate,
 #'  Nestle_cocoSupreme,
-#'  EarlaTaylor_cocoa,
-#'  Mels_cocoa,
-#'  AmandaRettke_cocoa
-#' )
+#'  SwissMiss_simplyCocoaMilk,
+#'  SwissMiss_milkCocoa,
+#'  Starbucks_cocoa,
+#'  StarbucksKcup_cocoa,
+#'  Starbucks_mochaMix
+#' ) # compare commercial powders
+#' 
+#' nutrition_(
+#'  hotdrink(mocaccino),
+#'  Starbucks_mocha
+#' ) # compare hot drink
+#' 
+#' nutrition_(
+#'  frappe(mocaccino),
+#'  Starbucks_mochaFrappuccino,
+#'  Starbucks_mochaFrappuccino_bottle
+#' ) # compare frappe
 #' @name mocaccino_other
 #' @keywords internal 
 #' @export
@@ -48,6 +71,17 @@ Starbucks_mochaFrappuccino <- function() new(
   # Caffeine 100 mg*
   fat = 15, cholesterol = .045, sodium = .220, carbohydrate = 54, sugar = 51, protein = 5)
 
+#' @rdname mocaccino_other
+#' @export
+Starbucks_mochaFrappuccino_bottle <- function() new(
+  Class = 'nutrition',
+  name = 'Mocha Frappuccino',
+  brand = 'Starbucks (Bottled)',
+  walmart = '14532482', costcoBiz = '100228968', target = 'A-81793567',
+  serving_floz = 13.7, servingGram = 405, # use water density
+  calorie = 260,
+  fat = 4.5, cholesterol = .02, sodium = .14, carbohydrate = 47, sugar = 45, protein = 9)
+
 
 #' @rdname mocaccino_other
 #' @export
@@ -79,7 +113,7 @@ Ghirardelli_mochaFrappe <- function() new(
 #' @export
 Starbucks_mochaMix <- function() new(
   Class = 'nutrition', amazon = 'B004WYLFG8', # discontinued
-  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Mocha Powder',
+  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Mocha Mix',
   # bottle 396g
   servingGram = 10, servingTbsp = 1,
   calorie = 40,
@@ -91,10 +125,10 @@ Starbucks_mochaMix <- function() new(
 #' @rdname mocaccino_other
 #' @export
 Pillsbury_mocha <- function() new(
-  Class = 'recipe', author = 'Pillsbury', alias_flavor = 'Mocha',
+  Class = 'recipe', author = 'Pillsbury', alias_flavor = 'Mocha Mix',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   spice_cup = c(Nestle_coffeeMate = 2.25),
-  sugar_cup = 1.5,
+  sugar_cup = 1.5, # didnt say confectioners or granulated
   coffee_cup = c(NescafeGold_espresso_blonde = 3/4),
   cocoa_cup = 3/4)
 
@@ -103,9 +137,9 @@ Pillsbury_mocha <- function() new(
 #' @rdname mocaccino_other
 #' @export
 Rebecca_mocha <- function() new(
-  Class = 'recipe', author = 'Rebecca', alias_flavor = 'Mocha',
+  Class = 'recipe', author = 'Rebecca', alias_flavor = 'Mocha Mix',
   allrecipes = '23828/hot-mocha-drink-mix/',
-  sugar_cup = 1,
+  sugar_cup = c(Domino_granulated = 1),
   drymilk_cup = 1,
   spice_cup = c(Nestle_coffeeMate = 1),
   cocoa_cup = c(KingArthur_Bensdorp = 1/2),
@@ -116,7 +150,7 @@ Rebecca_mocha <- function() new(
 #' @rdname mocaccino_other
 #' @export
 bargainmums_mocha <- function() new(
-  Class = 'recipe', author = 'Bargain Mums', alias_flavor = 'Mocha',
+  Class = 'recipe', author = 'Bargain Mums', alias_flavor = 'Mocha Mix',
   coffee = 30, 
   cocoa = c(KingArthur_Bensdorp = 50), 
   sugar = 100, drymilk = 110, vanilla_tsp = 1,
@@ -208,7 +242,7 @@ EarlaTaylor_cocoa <- function() new(
   Class = 'recipe', author = 'Earla Taylor', alias_flavor = 'Cocoa Mix',
   allrecipes = '9335/hot-cocoa-mix/',
   drymilk_cup = 10,
-  sugar_cup = 4.75,
+  sugar_cup = c(Domino_10x = 4.75),
   cocoa_cup = c(KingArthur_Burgundy = 1.75),
   spice_cup = c(Nestle_coffeeMate = 1.75))
 
