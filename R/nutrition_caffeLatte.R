@@ -1,6 +1,12 @@
 
 #' @title Caffe Latte, Commercial or Other People's Recipe
 #' 
+#' @examples
+#' nutrition_(
+#'  hotdrink(caffeLatte),
+#'  Starbucks_caffeLatte,
+#'  Starbucks_coffeeFrappuccino_bottle
+#' ) # compare hot/frappe drink
 #' @name caffeLatte_other
 #' @keywords internal 
 #' @export
@@ -13,7 +19,16 @@ Starbucks_caffeLatte <- function() new(
   fat = 7, cholesterol = .030, sodium = .170, carbohydrate = 19, sugar = 18, protein = 13)
 
 
-
+#' @rdname caffeLatte_other
+#' @export
+Starbucks_coffeeFrappuccino_bottle <- function() new(
+  Class = 'nutrition',
+  name = 'Coffee Frappuccino',
+  brand = 'Starbucks (Bottled)',
+  walmart = '14532479', target = 'A-12959301',
+  serving_floz = 13.7, servingGram = 405, # use water density
+  calorie = 300,
+  fat = 4.5, cholesterol = .02, sodium = .14, carbohydrate = 54, sugar = 47, addedSugar = 34, protein = 9)
 
 
 # how is this website different from https://athome.starbucks.com ?

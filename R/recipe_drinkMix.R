@@ -160,8 +160,6 @@ setMethod(f = show, signature = 'drinkmix', definition = function(object) {
   flavor_ <- attr(nutri_, which = 'cookedFlavor', exact = TRUE)
   flavor_@per <- sprintf(fmt = '%s + %.0fg Hot Water / Shaved Ice, US\U1f4b5 %.2f', flavor_@per, hot@water80, nutri_@usd)
   print(flavor_)
-
-  cat('\n')
 })
 
 
@@ -190,10 +188,6 @@ setMethod(f = show, signature = 'drinkmix', definition = function(object) {
 #' @examples
 #' caffeLatte()
 #' 
-#' nutrition_(
-#'  hotdrink(caffeLatte),
-#'  Starbucks_caffeLatte
-#' ) # compare hot drink
 #' @name caffeLatte
 #' @aliases caffeLatteMix-class
 #' @export
@@ -220,11 +214,6 @@ caffeGoatLatte_blonde <- function() new(
   coffee_tsp = c(NescafeGold_espresso_blonde = 4.5*2), 
   pros = 'I love')
 
-caffeLatte_intense <- function() new(
-  Class = 'recipe', 
-  drymilk = c(Carnation_drymilk = 25*2),
-  coffee_tsp = c(NescafeGold_espresso_intense = 4.5*2),
-  cons = 'I prefer caffeLatte()')
 
 
 

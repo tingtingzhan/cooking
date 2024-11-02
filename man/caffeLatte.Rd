@@ -14,8 +14,4 @@ caffeLatte()
 \examples{
 caffeLatte()
 
-nutrition_(
- hotdrink(caffeLatte),
- Starbucks_caffeLatte
-) # compare hot drink
 }

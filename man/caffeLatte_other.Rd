@@ -3,11 +3,21 @@
 \name{caffeLatte_other}
 \alias{caffeLatte_other}
 \alias{Starbucks_caffeLatte}
+\alias{Starbucks_coffeeFrappuccino_bottle}
 \title{Caffe Latte, Commercial or Other People's Recipe}
 \usage{
 Starbucks_caffeLatte()
+
+Starbucks_coffeeFrappuccino_bottle()
 }
 \description{
 Caffe Latte, Commercial or Other People's Recipe
+}
+\examples{
+nutrition_(
+ hotdrink(caffeLatte),
+ Starbucks_caffeLatte,
+ Starbucks_coffeeFrappuccino_bottle
+) # compare hot/frappe drink
 }
 \keyword{internal}
