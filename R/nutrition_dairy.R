@@ -397,3 +397,14 @@ Lucerne_lightCream <- function() new(
   fat = 3, cholesterol = .01, sodium = .015, sugar = 1)
 
 
+Lucerne_heavyCream <- function() new(
+  Class = 'nutrition', 
+  brand = 'Lucerne', name = 'Heavy Cream',
+  # acme = 960044744L, usd = 3.19/473*14.79, # disappeared?
+  servingGram = 15, servingTbsp = 1,
+  calorie = 50,
+  water = 15*.577,
+  fat = 5, cholesterol = .02, sodium = .005, carbohydrate = 1)
+
+
+

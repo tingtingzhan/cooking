@@ -10,7 +10,10 @@ Stassen_Ceylon <- function() new(
   name = 'Ceylon Black Tea',
   servingGram = 2, # **must** be per-bag!  # servingBag = 1, 
   usd = 12/100, # 2023-11-09
-  review = 'I love')
+  review = c(
+    'Soymilk coagulates -- confirm again',
+    'no other better choice yet'
+  ))
 
 Stassen_Ceylon_loose <- function() new(
   Class = 'nutrition',
@@ -97,12 +100,13 @@ Twinings_decafEarlGrey <- function() new( # no value pack, no loose leaf
   wegmans = 47200L,
   servingGram = 35/20, usd = 4.99/20) # 20pcs of 1.75g-bag, 2023-11-09
 
-Twinings_LadyGrey <- function() new( # Do not like the lemon-mandarin flavor!!
+Twinings_LadyGrey <- function() new(
   Class = 'nutrition', twinings = 'lady-grey',
   name = 'Lady Grey',
   wegmans = 31226L,
   walmart = '15556242',
-  servingGram = 2, usd = 15.99/100) # 100pcs of 2g-bag, 2023-11-09
+  servingGram = 2, usd = 15.99/100, # 100pcs of 2g-bag, 2023-11-09
+  review = 'Great for soytea!')
   
 Twinings_ultraChai <- function() new(
   Class = 'nutrition', twinings = 'ultra-spice-chai',
@@ -160,5 +164,9 @@ JustTea_EarlGrey <- function() new(
   Class = 'nutrition', justtea = '229018',
   name = 'Earl Grey',
   servingGram = 2, usd = 9.49/100,
-  review = 'Bergamot has a different flavor from Twining\'s Earl Grey!')
+  superior = 'Twinings_EarlGrey',
+  review = c(
+    'Soymilk coagulates',
+    'Bergamot has a different flavor from Twining\'s Earl Grey, which is okay'
+  ))
 

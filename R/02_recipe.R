@@ -1103,14 +1103,11 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@salt, object@msg, object@NaHCO3, object@Na2CO3, object@bakingPowder,
     object@yeast,
     object@oil, object@sesameOil, object@greenPeppercornOil,
-    object@sauce, object@liqueur
+    object@sauce, object@liqueur,
+    object@blackRice, object@brownRice,
+    object@syrup
   )
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_)], has_vol_, autoVolume(has_vol_)), sep = '')
-  
-  riceWhole <- c(object@blackRice, object@brownRice)
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(riceWhole)], riceWhole))
-  
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@syrup)], object@syrup, autoVolume(object@syrup)), sep = '') # one or more syrup
   
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
   
@@ -1145,8 +1142,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   }
   
   if (length(y@calorie)) {
-    cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@usd, y@calorie))
-  } else cat(sprintf(fmt = 'Total: %.4g grams\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@usd))
+    cat(sprintf(fmt = 'Total: %.4g grams; %.4g oz\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@servingGram/28.3495, y@usd, y@calorie))
+  } else cat(sprintf(fmt = 'Total: %.4g grams; %.4g oz\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@servingGram/28.3495, y@usd))
   
   #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
   # need to write a [show] method for \linkS4class{mixWheatFlour}

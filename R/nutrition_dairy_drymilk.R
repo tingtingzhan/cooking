@@ -104,3 +104,16 @@ Horizon_whole_drymilk <- function() new(
   servingGram = 29, servingCup = 1/4, # packaging
   calorie = 140,
   fat = 8, cholesterol = .030, sodium = .105, carbohydrate = 11, sugar = 10, protein = 8)
+
+
+# skim
+# https://www.yotsuba-shop.com/Form/Product/ProductDetail.aspx?shop=0&pid=11060&cat=000006134
+
+# whole
+# https://www.yotsuba-shop.com/Form/Product/ProductDetail.aspx?shop=0&pid=10159&cat=000006135
+
+# ??
+# https://www.yotsuba-shop.com/Form/Product/ProductDetail.aspx?shop=0&pid=12714&cat=000006136
+
+# unsalted butter
+# https://www.yotsuba-shop.com/Form/Product/ProductDetail.aspx?shop=0&pid=10425&cat=000002104

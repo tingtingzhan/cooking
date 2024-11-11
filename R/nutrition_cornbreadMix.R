@@ -31,7 +31,7 @@ TraderJoes_cornbreadMix <- function() new(
 #' @export
 WholeFoods365_cornbreadMix <- function() new(
   Class = 'nutrition', wholefoods = 'b07d7bdyh6',
-  name = 'Cornbread & Muffin Mix', 
+  name = 'Cornbread Mix', 
   usd = 3.59/12,
   servingGram = 35, servingTbsp = 3, 
   calorie = 120,
@@ -47,7 +47,7 @@ WholeFoods365_cornbreadMix <- function() new(
 #' @export
 Krusteaz_southern_cornbreadMix <- function() new(
   Class = 'nutrition', krusteaz = 'baking-mixes/southern-cornbread-muffin',
-  name = 'Southern Cornbread & Muffin', usd = 19.68/4/12,
+  name = 'Southern Cornbread Mix', usd = 19.68/4/12,
   servingGram = 27,
   fat = .5, sodium = .4, carbohydrate = 21, sugar = 4, protein = 2,
   review = paste('A bad review from', unclass(style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'))))
@@ -57,7 +57,7 @@ Krusteaz_southern_cornbreadMix <- function() new(
 #' @export
 BobsRedMill_cornbreadMix <- function() new(
   Class = 'nutrition', bobsredmill = 'cornbread-muffin-mix',
-  name = 'Cornbread & Muffin Mix',
+  name = 'Cornbread Mix',
   servingGram = 55, servingCup = 1/3, 
   calorie = 200,
   fat = 1.5, sodium = .65, carbohydrate = 41, sugar = 7, addedSugar = 5, protein = 5,

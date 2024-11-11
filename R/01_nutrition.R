@@ -271,9 +271,6 @@ setClass(Class = 'nutrition', slots = c(
 ), validity = function(object) {
   #if (!length(object@usd)) stop('no pricing info for ', object@brand, ' ' object@name)
   if (!length(object@servingGram)) stop('must have `servingGram` for nutrition object')
-  if (length(review <- object@review) > 1L) {
-    if (!length(names(review))) stop('slot \'@review\' must be fully named')
-  }
 })
 
 
@@ -774,13 +771,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   cat('\n')
   
   if (nrv <- length(obj@review)) {
-    nm_rv <- names(obj@review)
-    if ((nrv == 1L) && !length(nm_rv)) {
-      cat(sprintf(fmt = '\U1f4dd %s\n\n', obj@review))
-    } else {
-      cat(sprintf(fmt = '%s\U1f4dd %s', nm_rv, obj@review), sep = '\n')
-      cat('\n')
-    }
+    cat(sprintf(fmt = '\U1f4dd %s\n', obj@review), sep = '')
+    cat('\n')
   }
   
   if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))

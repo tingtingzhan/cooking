@@ -177,7 +177,7 @@
     mocaccinoMix = .077,
     millecrepe = if (length(x@liqueur)) .075 else .1, 
     custardFilling = .09,
-    cornbread = .10, 
+    cornbread = .09, 
     sundae = .11,
     beeffillLeeKumKee = .11,
     meatmash = .12,
@@ -525,7 +525,7 @@
   
   cornmeal2breadflour <- function(x) switch(
     class(x),
-    cornbread = 2, # tested and perfect!
+    #cornbreadMix = 2, # increase!! for boiling water!!
     NA_real_)
   
   starch2flour <- starch2pastryflour <- starch2breadflour <- starch2glutenFreeFlour <- starch2wheatflourmix <- tmpfun

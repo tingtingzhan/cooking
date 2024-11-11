@@ -24,7 +24,7 @@ Nishiki_brownRice <- function() new(
   Class = 'nutrition', 
   brand = 'Nishiki\u9326\U1f1fa\U1f1f8', name = '\u7384\u7c73 Premium Brown Rice',
   jfc = '69969', wegmans = 10902L, amazon = 'B006SFAS6C',
-  servingGram = 45, servingCup = 1/4, 
+  servingGram = 45, servingCup = 1/4, # packaging, actual 47.5g
   usd = 2.40/454*45, # Wegmans, 2024 Fall
   calorie = 160,
   fat = 1, carbohydrate = 34, protein = 3)

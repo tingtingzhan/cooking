@@ -4,7 +4,11 @@
 \name{brownrice}
 \alias{brownrice}
 \alias{brownrice-class}
+\alias{brownrice_Dynasty}
 \title{\linkS4class{brownrice} Recipe}
+\usage{
+brownrice_Dynasty()
+}
 \description{
 Use JoyoungDJ13U's Porridge program to cook brown rice.
 }
