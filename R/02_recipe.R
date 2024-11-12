@@ -203,6 +203,7 @@
 #' @slot portion \link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)
 #' 
 #' @slot url \link[base]{character} scalar or \link[base]{vector}, URL of original recipe
+#' @slot acme \link[base]{integer} scalar
 #' @slot allrecipes \link[base]{character} scalar
 #' @slot daatgo \link[base]{character} scalar
 #' @slot dad1966 \link[base]{character} scalar
@@ -240,6 +241,7 @@ setClass(Class = 'recipe', slots = c(
   
   url = 'character',
   allrecipes = 'character',
+  acme = 'integer',
   daatgo = 'character',
   dad1966 = 'character',
   happytears = 'character',
@@ -720,6 +722,12 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     }
   } # before `if (!length(x@author))` !!!
   
+  if (length(x@acme)) {
+    if (length(x@acme) > 1L) stop('only allow len-1 @acme')
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons'))
+    x@acme <- integer()
+  }
+   
   if (length(x@daatgo)) {
     if (length(x@daatgo) > 1L) stop('only allow len-1 @daatgo')
     x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@daatgo), text = '\u8fbe\u54e5\u53a8\u623f'))

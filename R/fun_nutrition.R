@@ -268,28 +268,35 @@ nutrition.recipe <- function(x) {
     
   } else {
     
-    attr(ret, which = 'baker') <- if (flour) new(
-      Class = 'baker',
-      puree = new(Class = 'equiv', actual = puree / flour),
-      water = new(Class = 'equiv', actual = water / flour, ideal = devrecipe$water2flour(x), margin = 1.01),
-      cornmeal = new(Class = 'equiv', actual = cornmeal / flour),
-      addedStarch = new(Class = 'equiv', actual = starch / flour),
-      fat = new(Class = 'equiv', actual = fat / flour, ideal = devrecipe$fat2flour(x), margin = 1.05, ignore = .01),
-      blackSesame = new(Class = 'equiv', actual = x@blackSesame / flour, ideal = devrecipe$blackSesame2flour(x)),
-      eggYolk = new(Class = 'equiv', actual = x@eggYolk / flour, ideal = devrecipe$eggYolk2flour(x)),
-      eggWhite = new(Class = 'equiv', actual = x@eggWhite / flour),
-      Na2CO3 = new(Class = 'equiv', actual = x@Na2CO3 / flour, ideal = devrecipe$Na2CO3_2flour(x)),
-      NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / flour),
-      bakingPowder = new(Class = 'equiv', actual = x@bakingPowder / flour, ideal = devrecipe$bakingPowder2flour(x)),
-      salt = new(Class = 'equiv', actual = x@salt / flour, ideal = devrecipe$salt2flour(x)),
-      #sugar = new(Class = 'equiv', actual = sugar / flour),
-      #addedSugar = new(Class = 'equiv', actual = addedSugar / flour),
-      yeast = new(Class = 'equiv', actual = sum(x@yeast) / flour, ideal = devrecipe$yeast2flour(x), margin = 1.1),
-      matcha = new(Class = 'equiv', actual = x@matcha / flour),
-      cocoa = new(Class = 'equiv', actual = x@cocoa / flour),
-      acai = new(Class = 'equiv', actual = x@acai / flour),
-      coffee = new(Class = 'equiv', actual = x@coffee / flour)
-    ) #else new(Class = 'baker')
+    attr(ret, which = 'baker') <- if (flour) {
+      if (length(cornmeal)) { # || length(...)
+        new(
+          Class = 'breadBaker',
+          cornmeal = new(Class = 'equiv', actual = cornmeal / flour, ideal = devrecipe$cornmeal2flour(x))
+        )
+      } else new(
+        Class = 'baker',
+        puree = new(Class = 'equiv', actual = puree / flour),
+        water = new(Class = 'equiv', actual = water / flour, ideal = devrecipe$water2flour(x), margin = 1.01),
+        cornmeal = new(Class = 'equiv', actual = cornmeal / flour),
+        addedStarch = new(Class = 'equiv', actual = starch / flour),
+        fat = new(Class = 'equiv', actual = fat / flour, ideal = devrecipe$fat2flour(x), margin = 1.05, ignore = .01),
+        blackSesame = new(Class = 'equiv', actual = x@blackSesame / flour, ideal = devrecipe$blackSesame2flour(x)),
+        eggYolk = new(Class = 'equiv', actual = x@eggYolk / flour, ideal = devrecipe$eggYolk2flour(x)),
+        eggWhite = new(Class = 'equiv', actual = x@eggWhite / flour),
+        Na2CO3 = new(Class = 'equiv', actual = x@Na2CO3 / flour, ideal = devrecipe$Na2CO3_2flour(x)),
+        NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / flour),
+        bakingPowder = new(Class = 'equiv', actual = x@bakingPowder / flour, ideal = devrecipe$bakingPowder2flour(x)),
+        salt = new(Class = 'equiv', actual = x@salt / flour, ideal = devrecipe$salt2flour(x)),
+        #sugar = new(Class = 'equiv', actual = sugar / flour),
+        #addedSugar = new(Class = 'equiv', actual = addedSugar / flour),
+        yeast = new(Class = 'equiv', actual = sum(x@yeast) / flour, ideal = devrecipe$yeast2flour(x), margin = 1.1),
+        matcha = new(Class = 'equiv', actual = x@matcha / flour),
+        cocoa = new(Class = 'equiv', actual = x@cocoa / flour),
+        acai = new(Class = 'equiv', actual = x@acai / flour),
+        coffee = new(Class = 'equiv', actual = x@coffee / flour)
+      )
+    } #else NULL
     
     attr(ret, which = 'pastryBaker') <- if (pastryFlour & !glutenFreeFlour & !coconut & !cornmeal) new(
       Class = 'pastryBaker',

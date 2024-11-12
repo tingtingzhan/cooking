@@ -326,6 +326,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{url}}{\link[base]{character} scalar or \link[base]{vector}, URL of original recipe}
 
+\item{\code{acme}}{\link[base]{integer} scalar}
+
 \item{\code{allrecipes}}{\link[base]{character} scalar}
 
 \item{\code{daatgo}}{\link[base]{character} scalar}

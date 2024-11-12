@@ -14,6 +14,7 @@
 \alias{Stonewall_cornbread}
 \alias{TraderJoes_cornbread}
 \alias{Krusteaz_southern_cornbread}
+\alias{Albertsons_cornbread}
 \alias{BobsRedMill_cornbread}
 \title{Other Cornbread Recipes}
 \usage{
@@ -41,6 +42,8 @@ TraderJoes_cornbread()
 
 Krusteaz_southern_cornbread()
 
+Albertsons_cornbread()
+
 BobsRedMill_cornbread()
 }
 \description{
@@ -61,6 +64,7 @@ xs = list(
  subtract(nutrition(TraderJoes_cornbread), sugar = 108),
  subtract(nutrition(Krusteaz_southern_cornbread), sugar = 23),
  subtract(nutrition(BobsRedMill_cornbread), sugar = 7),
+ subtract(Albertsons_cornbread, sugar = 25),
  Quaker_cornbread
 )
 nutrition_(dots = xs)

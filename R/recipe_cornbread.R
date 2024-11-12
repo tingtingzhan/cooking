@@ -36,18 +36,12 @@ cornbreadMix <- function() new(
 #' @export
 setClass(
   Class = 'cornbread', 
-  contains = 'cornbreadMix', # simplest solution!!!
+  contains = 'cornbreadMix',
   prototype = prototype(
     alias_class = 'Cornbread',
     egg_pc = 2,
-    
-    #heavyCream = 200, water90 = 320, # slightly too wet and greasy
-    # I choose to decrease water, instead of increase bread flour
-    
-    heavyCream = 175, water90 = 320, # almost perfect!!!
-    
-    # waterLost = 45, # to confirm
-    
+    heavyCream = 175, water90 = 320, # perfect!!!
+    # waterLost = 45, # forget this. other people's recipes are all raw
     portion = c(
       'Staub deep skillet, 8.5in' = 1000
     ),
@@ -62,8 +56,6 @@ setClass(
         'Preheat Staub deep skillet, 8.5in, for 10min'
       ),
       program = 'Steam Bake',
-      # fahrenheit = 350, minute = 25, # crust under baked, center a little too wet
-      # cooling = 'Cool down the whole skillet on a rack'
       fahrenheit = 375, minute = 25, # try next time
       cooling = 'Flip skillet to release. Cool on a rack'
     )
@@ -106,6 +98,7 @@ cornbread <- function() new(
 #'  subtract(nutrition(TraderJoes_cornbread), sugar = 108),
 #'  subtract(nutrition(Krusteaz_southern_cornbread), sugar = 23),
 #'  subtract(nutrition(BobsRedMill_cornbread), sugar = 7),
+#'  subtract(Albertsons_cornbread, sugar = 25),
 #'  Quaker_cornbread
 #' )
 #' nutrition_(dots = xs)
@@ -280,6 +273,20 @@ Krusteaz_southern_cornbread <- function() new(
   egg_pc = 2)
 
 # check out those fancier recipes https://www.krusteaz.com/recipes/cornbread/
+
+#' @rdname cornbread_other
+#' @export
+Albertsons_cornbread <- function() new(
+  Class = 'recipe', alias_flavor = 'Cornbread',
+  acme = 117010060L,
+  butter_cup = 1/4,
+  cornmeal_cup = c(Albertsons_yellowCorn = 1),
+  flour_cup = 1,
+  bakingPowder_tsp = 4,
+  sugar_cup = c(Domino_granulated = 1/4),
+  salt_tsp = 1,
+  milk_cup = 1,
+  egg_pc = 2)
 
 
 #' @rdname cornbread_other
