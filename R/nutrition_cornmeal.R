@@ -13,7 +13,7 @@ DaoXiangCun_corn <- function() new(
 #' @export
 Albertsons_yellowCorn <- function() new(
   Class = 'nutrition',
-  acme = 117010060L, usd = 3.49/2270*30,
+  acme = 117010060L, usd = 4.29/2270*30,
   name = '\u9ec4\u7389\u7c73\u9762 Yellow Cornmeal\U1f33d',
   servingGram = 30, 
   # servingCup = 1/4, # packaging
@@ -27,7 +27,7 @@ IndianHead_whiteCorn <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'White Cornmeal\U1f33d',  
-  walmart = '10311206', usd = 1.56/907*30,
+  wegmans = 19868L, usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, protein = 2, 
@@ -39,7 +39,7 @@ IndianHead_yellowCorn <- function() new(
   Class = 'nutrition', 
   brand = unclass(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'Yellow Cornmeal\U1f33d',
-  walmart = '10311207', usd = 1.56/907*30,
+  wegmans = 19981L, usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = .5, protein = 2, 
@@ -51,6 +51,7 @@ IndianHead_yellowCorn <- function() new(
 Quaker_yellowCorn <- function() new(
   Class = 'nutrition', quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
   name = '\u9ec4\u7389\u7c73\u9762 Yellow Cornmeal\U1f33d',
+  wegmans = 16686L, usd = 2.99/680*27,
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
   carbohydrate = 21, protein = 2)

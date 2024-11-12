@@ -389,8 +389,8 @@ if (FALSE) {
 
 Lucerne_lightCream <- function() new(
   Class = 'nutrition', 
-  brand = 'Lucerne', name = 'Light Cream',
-  acme = 960044744L, usd = 3.19/473*14.79,
+  name = 'Light Cream',
+  lucerne = 960044744L, usd = 3.19/473*14.79,
   servingGram = 15, servingTbsp = 1,
   calorie = 30,
   water = 15*.635,
@@ -399,8 +399,8 @@ Lucerne_lightCream <- function() new(
 
 Lucerne_heavyCream <- function() new(
   Class = 'nutrition', 
-  brand = 'Lucerne', name = 'Heavy Cream',
-  # acme = 960044744L, usd = 3.19/473*14.79, # disappeared?
+  name = '\u91cd\u5976\u6cb9 Heavy Cream',
+  lucerne = 136150034L, usd = 3.19/473*14.79, # disappeared?
   servingGram = 15, servingTbsp = 1,
   calorie = 50,
   water = 15*.577,

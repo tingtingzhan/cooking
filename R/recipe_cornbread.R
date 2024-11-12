@@ -9,7 +9,7 @@ setClass(Class = 'cornbreadMix', contains = 'recipe', prototype = prototype(
   breadFlour = c(KingArthur_bread = 50), 
   cornmeal = c(Albertsons_yellowCorn = 320),
   sugar = 45, # maintain final product 5.5% sugar
-  bakingPowder_tsp = 1/4 # cracks just right
+  bakingPowder_tsp = 1/2 # cracks just right
 ))
 
 
@@ -40,7 +40,8 @@ setClass(
   prototype = prototype(
     alias_class = 'Cornbread',
     egg_pc = 2,
-    heavyCream = 175, water90 = 320, # perfect!!!
+    heavyCream = c(Lucerne_heavyCream = 175), 
+    water95 = 320, # perfect!!!
     # waterLost = 45, # forget this. other people's recipes are all raw
     portion = c(
       'Staub deep skillet, 8.5in' = 1000
@@ -51,7 +52,6 @@ setClass(
       'Transfer to sizzling hot skillet (with cooking spray)'
     ),
     RobamCT763 = RobamCT763(
-      recipe_pc = 1,
       treatment = c(
         'Preheat Staub deep skillet, 8.5in, for 10min'
       ),

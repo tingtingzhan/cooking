@@ -34,6 +34,8 @@ Nutrition information.
 
 \item{\code{giantfood}}{\link[base]{integer} scalar}
 
+\item{\code{lucerne}}{\link[base]{integer} scalar}
+
 \item{\code{sams}}{\link[base]{character} scalar, Sam's Club ID}
 
 \item{\code{target}}{\link[base]{character} scalar, Target ID}

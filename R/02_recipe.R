@@ -150,7 +150,7 @@
 #' @slot water40 \link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams) 
 #' @slot water70 \link[base]{numeric} scalar, weight of hot (70C-75C) water (in grams) 
 #' @slot water80 \link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams) 
-#' @slot water90 \link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams) 
+#' @slot water95 \link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams) 
 #' @slot boilingWater \link[base]{numeric} scalar, weight of boiling water (in grams)
 #' @slot iceWater \link[base]{numeric} scalar, weight of ice water (in grams)
 #' @slot carbonatedWater \link[base]{numeric} scalar, weight of carbonated water (in grams)
@@ -420,7 +420,7 @@ setClass(Class = 'recipe', slots = c(
   carbonatedWater = 'numeric',
   shavedIce = 'numeric',
   ice = 'numeric',
-  water40 = 'numeric', water70 = 'numeric', water80 = 'numeric', water90 = 'numeric',
+  water40 = 'numeric', water70 = 'numeric', water80 = 'numeric', water95 = 'numeric',
   boilingWater = 'numeric',
   
   sauce = 'numeric', sauce_tsp = 'numeric', sauce_Tbsp = 'numeric', sauce_cup = 'numeric',
@@ -568,7 +568,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- addNameLen1(x, which = 'water40', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water70', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water80', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'water90', name1 = 'Wegmans_water')
+  x <- addNameLen1(x, which = 'water95', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'boilingWater', name1 = 'Wegmans_water')
   
   x <- addNameLen1(x, which = 'applesauce', name1 = 'Motts_applesauce')
@@ -1129,7 +1129,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(sprintf(fmt = '40\u00b0C\u6e29\u6c34 Warm Water, 104\u00b0F %.0f grams %s\n', object@water40, autoVolume(object@water40)))
   cat(sprintf(fmt = '70\u00b0C\u70ed\u6c34 Hot Water, 160\u00b0F %.0f grams %s\n', object@water70, autoVolume(object@water70)))
   cat(sprintf(fmt = '80\u00b0C\u70ed\u6c34 Hot Water, 175\u00b0F %.0f grams %s\n', object@water80, autoVolume(object@water80)))
-  cat(sprintf(fmt = '90\u00b0C\u70ed\u6c34 Hot Water, 195\u00b0F %.0f grams %s\n', object@water90, autoVolume(object@water90)))
+  cat(sprintf(fmt = '95\u00b0C\u70ed\u6c34 Hot Water, 203\u00b0F %.0f grams %s\n', object@water95, autoVolume(object@water95)))
   cat(sprintf(fmt = '\u5f00\u6c34 Boiling Water %.0f grams %s\n', object@boilingWater, autoVolume(object@boilingWater)))
   cat(sprintf(fmt = '\u51b0\u6c34 Iced Water %.0f grams %s\n', object@iceWater, autoVolume(object@iceWater)))
   cat(sprintf(fmt = '\u6c14\u6ce1\u6c34 Carbonated Water %.0f grams %s\n', object@carbonatedWater, autoVolume(object@carbonatedWater)))

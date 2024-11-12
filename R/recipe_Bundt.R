@@ -15,11 +15,12 @@
 setClass(Class = 'Bundt', contains = 'recipe', prototype = prototype(
   alias_class = 'Bundt',
   pastryFlour = 400,
-  sugar = 25,
-  drymilk = 55,
+  sugar = 20,
+  drymilk = 50,
   bakingPowder_tsp = .75,
-  heavyCream = 300,
-  water = 270, waterLost = 40, 
+  heavyCream = 160,
+  water = 100, 
+  #waterLost = 40, 
   egg_pc = 2#,
   #instruction = c(
   #  'Grease a Bundt pan with vegetable oil', # Dust with flavored powder (if applicable) or flour

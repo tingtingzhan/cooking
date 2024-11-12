@@ -248,7 +248,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{water80}}{\link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams)}
 
-\item{\code{water90}}{\link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams)}
+\item{\code{water95}}{\link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams)}
 
 \item{\code{boilingWater}}{\link[base]{numeric} scalar, weight of boiling water (in grams)}
 

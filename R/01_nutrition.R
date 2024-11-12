@@ -40,6 +40,7 @@ setOldClass('cli_glue_delay')
 #' @slot bjs \link[base]{character} scalar, BJ's ID
 #' @slot costco,costcoBiz \link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}
 #' @slot giantfood \link[base]{integer} scalar
+#' @slot lucerne \link[base]{integer} scalar
 #' @slot sams \link[base]{character} scalar, Sam's Club ID
 #' @slot target \link[base]{character} scalar, Target ID
 #' @slot totalwine \link[base]{character} scalar
@@ -165,6 +166,7 @@ setClass(Class = 'nutrition', slots = c(
   costco = 'character', costcoBiz = 'character',
   giantfood = 'integer',
   kraftheinzawayfromhome = 'character', 
+  lucerne = 'integer',
   sams = 'character',
   target = 'character',
   totalwine = 'character',
@@ -493,6 +495,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
   x <- add_store_url_(x, store = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.')
   x <- add_store_url_(x, store = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'lucerne', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Lucerne\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club')
   x <- add_store_url_(x, store = 'target', fmt = 'https://www.target.com/p/-/%s', store_brand = NA_character_, store_name = 'Target')
   x <- add_store_url_(x, store = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine')

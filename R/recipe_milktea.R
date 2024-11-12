@@ -17,7 +17,7 @@ setClass(Class = 'milktea', contains = 'recipe', prototype = prototype(
   alias_class = '\u5976\u8336',
   drymilk = 40, 
   brownSugar_tsp = 2, # 1tsp too bland; 1Tbsp too sweet
-  water90 = 560, 
+  water95 = 560, 
   instruction = c(
     'Stanley 20oz quencher',
     'Add half of boiling water to powders, whisk until froth',
