@@ -14,6 +14,8 @@
 \alias{bargainmums_mocha}
 \alias{Starbucks_cocoa}
 \alias{SwissMiss_milkCocoa}
+\alias{Godiva_milkCocoa}
+\alias{Godiva_cocoa}
 \alias{SwissMiss_simplyCocoaMilk}
 \alias{Nestle_richChocolate}
 \alias{Nestle_skimCocoa}
@@ -49,6 +51,10 @@ bargainmums_mocha()
 Starbucks_cocoa()
 
 SwissMiss_milkCocoa()
+
+Godiva_milkCocoa()
+
+Godiva_cocoa()
 
 SwissMiss_simplyCocoaMilk()
 
@@ -89,6 +95,8 @@ nutrition_(
  Maxwell_mochaSuisse,
  WilliamsSonoma_mocha,
  Ghirardelli_mochaFrappe,
+ Godiva_milkCocoa,
+ Godiva_cocoa,
  KingArthur_milkChocolate,
  Nestle_skimCocoa,
  Nestle_richChocolate,

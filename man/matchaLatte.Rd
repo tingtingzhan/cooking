@@ -13,25 +13,4 @@ matchaLatte()
 }
 \examples{
 matchaLatte()
-
-nutrition_(
- matchaLatte,
- Ippodo_uji_shimizu,
- Starbucks_matchaLatteMix,
- TraderJoes_matchaLatte
-) # compare dry powder
-
-nutrition_(
- Ippodo_sayakaLatte,
- hotdrink(matchaLatte),
- Starbucks_matchaLatte,
- hotdrink(Starbucks_matchaLatteMix, water80 = 180),
- hotdrink(Ippodo_uji_shimizu, water80 = 150),
- hotdrink(ItoEn_sweet_matcha, water80 = 120)
-) # compare hot drink
-
-nutrition_(
- frappe(matchaLatte),
- Starbucks_matchaFrappuccino
-) # compare frappe
 }

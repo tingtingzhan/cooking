@@ -66,6 +66,7 @@ setOldClass('cli_glue_delay')
 #' @slot fleischmannsyeast \link[base]{integer} scalar
 #' @slot frontiercoop \link[base]{character} scalar
 #' @slot ghirardelli \link[base]{character} scalar
+#' @slot godiva \link[base]{character} scalar
 #' @slot haagendazs \link[base]{character} scalar
 #' @slot haitaiusa \link[base]{character} scalar
 #' @slot harney \link[base]{character} scalar
@@ -192,6 +193,7 @@ setClass(Class = 'nutrition', slots = c(
   fleischmannsyeast = 'integer',
   frontiercoop = 'character',
   ghirardelli = 'character',
+  godiva = 'character',
   haagendazs = 'character',
   haitaiusa = 'character',
   harney = 'character',
@@ -342,6 +344,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s', x@frontiercoop), text = 'Frontier Co-op\U1f1fa\U1f1f8'))
     } else if (length(x@ghirardelli)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ghirardelli.com/%s', x@ghirardelli), text = 'Ghirardelli\U1f1fa\U1f1f8'))
+    } else if (length(x@godiva)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.godiva.com/%s.html', x@godiva), text = 'Godiva\U1f1e7\U1f1ea'))
     } else if (length(x@haagendazs)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', x@haagendazs), text = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8'))
     } else if (length(x@haitaiusa)) {

@@ -17,6 +17,8 @@
 #'  Maxwell_mochaSuisse,
 #'  WilliamsSonoma_mocha,
 #'  Ghirardelli_mochaFrappe,
+#'  Godiva_milkCocoa,
+#'  Godiva_cocoa,
 #'  KingArthur_milkChocolate,
 #'  Nestle_skimCocoa,
 #'  Nestle_richChocolate,
@@ -164,7 +166,7 @@ Starbucks_cocoa <- function() new(
   Class = 'nutrition', 
   sams = 'P03020738', usd = 8.48/567*28,
   costco = '100071096',
-  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa (Tin)',
+  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa, Tin',
   servingGram = 28, servingTbsp = 2.5, 
   calorie = 100,
   fat = 2.5, carbohydrate = 22, sugar = 17, addedSugar = 16, protein = 2)
@@ -178,6 +180,28 @@ SwissMiss_milkCocoa <- function() new(
   servingGram = 39, 
   calorie = 160,
   fat = 2.5, sodium = .17, carbohydrate = 34, sugar = 28, addedSugar = 23, protein = 1)
+
+
+#' @rdname mocaccino_other
+#' @export
+Godiva_milkCocoa <- function() new(
+  Class = 'nutrition', 
+  godiva = '16024', name = 'Milk Chocolate Hot Cocoa',
+  servingGram = 34, servingTbsp = 3, 
+  calorie = 140,
+  fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2)
+
+#' @rdname mocaccino_other
+#' @export
+Godiva_cocoa <- function() new(
+  Class = 'nutrition', 
+  godiva = '16022', name = 'Dark Chocolate Hot Cocoa',
+  servingGram = 34, servingTbsp = 3, 
+  calorie = 140,
+  fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3)
+
+
+
 
 #' @rdname mocaccino_other
 #' @export
@@ -277,7 +301,7 @@ AmandaRettke_cocoa <- function() new(
 #' @export
 StarbucksKcup_cocoa <- function() new(
   Class = 'nutrition', starbucks = 'classic-hot-cocoa',
-  name = 'Hot Cocoa (K-cup)',
+  name = 'Hot Cocoa, K-cup',
   servingGram = 21, 
   calorie = 90,
   fat = 3, sodium = .19, carbohydrate = 13, addedSugar = 13, protein = 2)

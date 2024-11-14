@@ -13,7 +13,7 @@
 #' @aliases drinkmix-class
 #' @export
 setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
-  alias_class = '\u901f\u6eb6\u7c89'
+  alias_class = 'Mix' # '\u901f\u6eb6\u7c89'
 ), validity = function(object) {
   if (length(object@boilingWater) || length(object@iceWater) ||
       length(object@water95) || length(object@water80) || length(object@water70)) # all kind of water
@@ -261,32 +261,11 @@ mocaccino <- function() new(Class = 'mocaccinoMix', date = as.Date('2024-11-02')
 #' 
 #' @examples
 #' matchaLatte()
-#' 
-#' nutrition_(
-#'  matchaLatte,
-#'  Ippodo_uji_shimizu,
-#'  Starbucks_matchaLatteMix,
-#'  TraderJoes_matchaLatte
-#' ) # compare dry powder
-#' 
-#' nutrition_(
-#'  Ippodo_sayakaLatte,
-#'  hotdrink(matchaLatte),
-#'  Starbucks_matchaLatte,
-#'  hotdrink(Starbucks_matchaLatteMix, water80 = 180),
-#'  hotdrink(Ippodo_uji_shimizu, water80 = 150),
-#'  hotdrink(ItoEn_sweet_matcha, water80 = 120)
-#' ) # compare hot drink
-#' 
-#' nutrition_(
-#'  frappe(matchaLatte),
-#'  Starbucks_matchaFrappuccino
-#' ) # compare frappe
 #' @name matchaLatte
 #' @aliases matchaLatteMix-class
 #' @export
 setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
-  alias_class = 'Latte\u901f\u6eb6\u7c89',
+  alias_class = 'Latte Mix', # 'Latte\u901f\u6eb6\u7c89',
   # drymilk = c(Carnation_drymilk = 20*2, Nido_drymilk = 5*2), # old, I now think this is too strong
   drymilk = c(Carnation_drymilk = 16*2, Nido_drymilk = 4*2), # drank all ikuyo in Sep 2024. Great!
   sugar_tsp = 1*2

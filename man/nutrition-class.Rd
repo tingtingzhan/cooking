@@ -84,6 +84,8 @@ Nutrition information.
 
 \item{\code{ghirardelli}}{\link[base]{character} scalar}
 
+\item{\code{godiva}}{\link[base]{character} scalar}
+
 \item{\code{haagendazs}}{\link[base]{character} scalar}
 
 \item{\code{haitaiusa}}{\link[base]{character} scalar}
