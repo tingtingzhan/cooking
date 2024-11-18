@@ -377,3 +377,17 @@ banana <- function() new(
   water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)
   
 
+carrot <- function() new(
+  Class = 'nutrition', fdc = 170393L,
+  name = '\u751f\u80e1\u841d\u535c Carrot\U1f955',
+  servingGram = 100, 
+  calorie = 41,
+  water = 88.3, protein = .93, fat = .24, carbohydrate = 9.58, sugar = 4.74, sodium = .069)
+
+
+walnut <- function() new(
+  Class = 'nutrition', fdc = 2346394L,
+  name = '\u751f\u6838\u6843 Walnut',
+  servingGram = 100,
+  calorie = 730,
+  water = 3.14, protein = 14.6, fat = 69.7, carbohydrate = 10.9, sodium = .0025)

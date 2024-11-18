@@ -47,7 +47,7 @@ setClass(
       'Staub deep skillet, 8.5in' = 1000
     ),
     instruction = c(
-      'Mix cornmeal with boiling water. Let dough cool to 50C/120F',
+      'Mix cornmeal and sugar with boiling water. Let dough cool to 50C/120F',
       'Whisk in other ingredients',
       'Transfer to sizzling hot skillet (with cooking spray)'
     ),
