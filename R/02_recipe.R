@@ -1150,8 +1150,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   }
   
   if (length(y@calorie)) {
-    cat(sprintf(fmt = 'Total: %.4g grams; %.4g oz\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@servingGram/28.3495, y@usd, y@calorie))
-  } else cat(sprintf(fmt = 'Total: %.4g grams; %.4g oz\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@servingGram/28.3495, y@usd))
+    cat(sprintf(fmt = 'Total: %.4g grams; %.1f oz\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@servingGram/28.3495, y@usd, y@calorie))
+  } else cat(sprintf(fmt = 'Total: %.4g grams; %.1f oz\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@servingGram/28.3495, y@usd))
   
   #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
   # need to write a [show] method for \linkS4class{mixWheatFlour}
@@ -1165,8 +1165,12 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   show(attr(y, which = 'cookedFlavor', exact = TRUE))
   
   if (length(object@portion)) {
-    portion_nm <- paste0('\033[1;35m', names(object@portion), '\033[0m')
-    cat(sprintf(fmt = '\u058d %.1f \u00d7 %.0fg \u058e %s', y@servingGram/object@portion, object@portion, portion_nm), sep = '\n')
+    cat(sprintf(
+      fmt = '\u058d %.1f \u00d7 %.0f grams \u058e %s', 
+      y@servingGram/object@portion, 
+      object@portion, 
+      paste0('\033[1;35m', names(object@portion), '\033[0m')
+    ), sep = '\n')
     cat('\n')
   } # else NULL
   

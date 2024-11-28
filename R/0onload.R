@@ -175,7 +175,7 @@
     crepeCake = .07,
     matchaGoatLatteMix = .075,
     mocaccinoMix = .077,
-    cornbread = .077, 
+    cornbread = .08, 
     millecrepe = if (length(x@liqueur)) .075 else .1, 
     custardFilling = .09,
     sundae = .11,
@@ -608,8 +608,8 @@
   
   bakingPowder <- function(x) switch(
     class(x),
-    cornbread = .0025,
     gateau = .004,
+    cornbread = .005,
     bao =, wheatBao = .006,
     NA_real_)
   

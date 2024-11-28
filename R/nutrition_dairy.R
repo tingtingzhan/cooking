@@ -401,7 +401,7 @@ Lucerne_heavyCream <- function() new(
   Class = 'nutrition', 
   name = '\u91cd\u5976\u6cb9 Heavy Cream',
   lucerne = 136150034L, usd = 3.19/473*14.79, # disappeared?
-  servingGram = 15, servingTbsp = 1,
+  servingGram = 240/16, servingTbsp = 1, # actual experiment: 1 cup = 240g
   calorie = 50,
   water = 15*.577,
   fat = 5, cholesterol = .02, sodium = .005, carbohydrate = 1)

@@ -9,7 +9,8 @@ setClass(Class = 'cornbreadMix', contains = 'recipe', prototype = prototype(
   breadFlour = c(KingArthur_bread = 50), 
   cornmeal = c(Albertsons_yellowCorn = 320),
   sugar = 45, # maintain final product 5.5% sugar
-  bakingPowder_tsp = 1/2 # cracks just right
+  # bakingPowder_tsp = 1/2 # cracks just right 
+  bakingPowder_tsp = 1 # I think this is better than '1/2 tsp'
 ))
 
 
@@ -41,23 +42,33 @@ setClass(
     alias_class = 'Cornbread',
     egg_pc = 2,
     heavyCream = c(Lucerne_heavyCream = 175), 
-    water95 = 320, # perfect!!!
+    
+    # water95 = 320, 
+    # muffin, fully cool down, not too wet.
+    # but skillet, flipping over will likely break apart
+    water95 = 300, # try next time
+    
     # waterLost = 45, # forget this. other people's recipes are all raw
     portion = c(
-      'Staub deep skillet, 8.5in' = 1000
+      'Staub deep skillet, 8.5in' = 1000,
+      'Cupcake 2.75in' = 65
     ),
     instruction = c(
-      'Mix cornmeal and sugar with boiling water. Let dough cool to 50C/120F',
-      'Whisk in other ingredients',
-      'Transfer to sizzling hot skillet (with cooking spray)'
+      'mix cornmeal, sugar and hot water. Let dough cool to 50C/120F',
+      'mix in other ingredients',
+      '(optional) transfer to sizzling hot skillet (with cooking spray)'
     ),
     RobamCT763 = RobamCT763(
-      treatment = c(
-        'Preheat Staub deep skillet, 8.5in, for 10min'
-      ),
+      #treatment = c(
+      #  'Preheat Staub deep skillet, 8.5in, for 10min'
+      #),
       program = 'Steam Bake',
-      fahrenheit = 375, minute = 25, # try next time
-      cooling = 'Flip skillet to release. Cool on a rack'
+      fahrenheit = 375, 
+      minute = c(
+        'Staub Skillet (preheated; experimenting)' = 25, # try next time with more baking powder
+        'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
+      ),
+      cooling = '(optional) flip cast iron skillet to release. Cool on a rack'
     )
   )
 )
@@ -69,7 +80,7 @@ cornbread <- function() new(
   Class = 'cornbread', 
   date = as.Date('2024-11-11'),
   pros = c(
-    'cornmeal to boiling water 1:1, dough soft and bouncy',
+    'Must add sugar in hot dough. Sugar makes dough softer',
     'heavy cream is much easier to work with than butter',
     'sugar 5.5% tastes better than 5%'
   ))

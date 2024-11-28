@@ -117,8 +117,9 @@ setClass(Class = 'curryRub', contains = 'rub', prototype = prototype(
     Kirkland_noSaltSeasoning = 3
   ),
   portion = c(
-    'New York strip (Choice or Prime)' = 10,
-    'Top sirloin (Prime)' = 7
+    'New York strip, Choice or Prime' = 10,
+    'Top sirloin, Prime' = 7,
+    'Duck\U1f986, whole' = 25
   )
 ))
 
