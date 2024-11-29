@@ -3,7 +3,7 @@
 .onLoad <- function(libname, pkgname = 'cooking') {
   
   # learn ?insight:::.supports_color carefully!!!
-  if (!identical(Sys.getenv('RSTUDIO'), '1')) stop('Package cooking works best in RStudio https://posit.co/download/rstudio-desktop/')
+  if (!identical(Sys.getenv('RSTUDIO'), '1')) stop('Package ', sQuote('cooking'), ' works best in RStudio, https://posit.co/download/rstudio-desktop/')
   
   # `x` is \linkS4class{recipe}
   
