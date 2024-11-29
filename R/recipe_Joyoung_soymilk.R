@@ -38,13 +38,16 @@ soymilk <- function() new(
   JoyoungDJ06M = JoyoungDJ06M_soymilk(), 
   date = as.Date('2024-10-08'))
 
+#' @rdname soymilk
+#' @export
 thick_soymilk <- function() new(
   Class = 'soymilk',
-  alias_flavor = '\u6d53',
+  alias = '\u9c9c\u69a8\u6d53\u8c46\u6d46',
   soybean = 22, 
-  glutinousRiceFlour = c(Erawan_glutinousRiceFlour = 10),
-  water = 588 - 10, # to confirm
+  glutinousRiceFlour = c(Erawan_glutinousRiceFlour = 5), # 11g too much, I can taste rice
+  water = 588 - 5, # to confirm
   JoyoungDJ06M = JoyoungDJ06M_soymilk(), 
+  # pros = 'perfect thickness!', # not yet :)
   date = as.Date('2024-11-29'))
 
 

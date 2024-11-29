@@ -997,9 +997,10 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
 #' @export
 setMethod(f = show, signature = 'recipe', definition = function(object) {
   
+  cat('\n')
   y <- nutrition.recipe(x = object)
   #show(y)
-  cat(style_bold(y@name), '\n\n')
+  cat(style_bold(col_grey(y@name)), '\n\n')
   
   if (length(object@date)) {
     cat(col_green(format.Date(object@date, format = '%A, %B %e, %Y')), '\n\n')

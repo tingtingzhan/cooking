@@ -5,6 +5,7 @@
 \alias{soymilk}
 \alias{soymilk-class}
 \alias{soymilk_DJ13U}
+\alias{thick_soymilk}
 \alias{chickpeaMilk}
 \alias{cashewMilk}
 \alias{mungMilk_thick}
@@ -15,6 +16,8 @@
 soymilk_DJ13U()
 
 soymilk()
+
+thick_soymilk()
 
 chickpeaMilk()
 

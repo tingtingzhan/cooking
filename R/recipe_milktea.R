@@ -77,9 +77,13 @@ chai_milktea <- function() new(
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
-  homemade = c(soymilk = 600),
+  #homemade = c(soymilk = 600), # old
+  homemade = c(thick_soymilk = 600), # old
   brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
-  note = c('Freshly brewed soy milk', 'Soak in Stanley 20oz quencher (covered) for 1hr+')
+  note = c(
+    'Freshly brewed soy milk', 
+    paste('Soak in', style_hyperlink(text = 'Stanley 20oz quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz'), '(covered) for 1hr+')
+  )
 ))
 
 #' @rdname soytea
@@ -90,6 +94,8 @@ EarlGrey_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_strongEa
 #' @export
 chai_soytea <- function() new(Class = 'soytea', teabag = c(Twinings_ultraChai = 4), date = as.Date('2024-09-15'), pros = 'super flavorful!')
 
-Ceylon_soytea <- function() new(Class = 'soytea', teabag = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'okay')
+#' @rdname soytea
+#' @export
+Ceylon_soytea <- function() new(Class = 'soytea', teabag = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'not bad!')
 
 
