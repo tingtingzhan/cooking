@@ -999,10 +999,10 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   
   y <- nutrition.recipe(x = object)
   #show(y)
-  cat(y@name, '\n\n')
+  cat(style_bold(y@name), '\n\n')
   
   if (length(object@date)) {
-    cat(format.Date(object@date, format = '%A, %B %e, %Y'), '\n\n')
+    cat(col_green(format.Date(object@date, format = '%A, %B %e, %Y')), '\n\n')
   }
     
   nm_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name', exact = TRUE)

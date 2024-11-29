@@ -771,7 +771,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   if (length(obj@superior)) {
     sp <- obj@superior[1L]
-    cli__message(type = 'text', args = list(text = glue_cmd(sprintf(fmt = '\u274c I prefer \U1f3fa{.run [%s](cooking::%s())}', style_bold(col_green(sp)), sp))))
+    cli__message(type = 'text', args = list(text = glue_cmd(sprintf(fmt = '\u274c I prefer \U1f3fa{.run [%s](cooking::%s())}', style_bold(col_yellow(sp)), sp))))
   } 
   
   cat('\n')

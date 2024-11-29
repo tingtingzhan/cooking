@@ -102,22 +102,51 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   
 })
 
-thermometer <- function(...) new(Class = 'tool', name = 'Etekcity Lasergrip 1260', ...)
+thermometer <- function(...) new(
+  Class = 'tool', 
+  name = unclass(style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer')), 
+  ...)
 
-CuisinartICE70 <- function(...) new(Class = 'tool', name = 'Cuisinart Ice Cream Maker ICE-70', ...)
+CuisinartICE70 <- function(...) new(
+  Class = 'tool', 
+  name = unclass(style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html')),
+  ...)
 
-InstantPot <- function(...) new(Class = 'tool', name = 'Instant Pot Pro, 8 Quart', ...)
+InstantPot <- function(...) new(
+  Class = 'tool', 
+  name = unclass(style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker')),
+  ...)
 
-KSMICM <- function(...) new(Class = 'tool', name = 'Kitchen Aid Ice Cream Maker KSMICM', ...)
+KSMICM <- function(...) new(
+  Class = 'tool', 
+  name = 'Kitchen Aid Ice Cream Maker KSMICM', 
+  ...)
 
-KSM8990 <- function(...) new(Class = 'tool', name = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', ...)
+KSM8990 <- function(...) new(
+  Class = 'tool', 
+  name = unclass(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/commercial-products/commercial-stand-mixers/p.nsf-certified-commercial-series-8-quart-bowl-lift-stand-mixer-with-stainless-steel-bowl-guard.ksmc895ob.html')),
+  ...)
 
-KSM3316X <- function(...) new(Class = 'tool', name = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', ...)
+KSM3316X <- function(...) new(
+  Class = 'tool', 
+  name = unclass(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/stand-mixers/tilt-head-stand-mixers/p.artisan-mini-3.5-quart-tilt-head-stand-mixer.ksm3316xer.html')),
+  ...)
 
-RobamCT763 <- function(...) new(Class = 'tool', name = 'Robam R-Box CT763 Combi Steam Oven', ...)
+RobamCT763 <- function(...) new(
+  Class = 'tool', 
+  name = unclass(style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763')),
+  ...)
 
-JoyoungDJ13U <- function(...) new(Class = 'tool', name = '\u4e5d\u9633\u8c46\u6d46\u673a Joyoung Soymilk Maker DJ13U-P10', ...)
-JoyoungDJ06M <- function(...) new(Class = 'tool', name = '\u4e5d\u9633\u8ff7\u4f60\u8c46\u6d46\u673a Joyoung Mini Soymilk Maker DJ06M', ...)
+JoyoungDJ13U <- function(...) new(
+  Class = 'tool', 
+  name = paste('\u4e5d\u9633\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html')),
+  ...)
+
+
+JoyoungDJ06M <- function(...) new(
+  Class = 'tool', 
+  name = paste('\u4e5d\u9633\u8ff7\u4f60\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html')),
+  ...)
 
 
 JoyoungDJ13U_soymilk <- function(

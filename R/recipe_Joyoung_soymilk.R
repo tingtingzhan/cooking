@@ -38,6 +38,15 @@ soymilk <- function() new(
   JoyoungDJ06M = JoyoungDJ06M_soymilk(), 
   date = as.Date('2024-10-08'))
 
+thick_soymilk <- function() new(
+  Class = 'soymilk',
+  alias_flavor = '\u6d53',
+  soybean = 22, 
+  glutinousRiceFlour = c(Erawan_glutinousRiceFlour = 10),
+  water = 588 - 10, # to confirm
+  JoyoungDJ06M = JoyoungDJ06M_soymilk(), 
+  date = as.Date('2024-11-29'))
+
 
 
 #' @rdname soymilk
@@ -79,7 +88,7 @@ mungMilk_thick <- function() new(
 cornSoymilk <- function() new(
   Class = 'soymilk', 
   soybean = 100, # weigh and confirm
-  yellowCorn = 100, # weigh and confirm
+  yellowCorn = c(Kirkland_yellowCorn = 100), # weigh and confirm
   water = 1100, # weigh and confirm
   note = c('One (1) measure cup of soy bean',
            'One (1) US cup of frozen corn'),
