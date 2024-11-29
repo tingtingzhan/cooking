@@ -299,6 +299,7 @@ setClass(Class = 'cocoaDx', contains = 'recipeDx', prototype = prototype(
 #' @export
 setClass(Class = 'cookedTexture', contains = 'recipeDx', prototype = prototype(
   per = 'Serving; \033[31mTexture Profile\033[0m' 
+  #per = paste0('Serving; ', color_text('Texture Profile', color = 'red'))
 ))
 
 #' @rdname diagnosis
@@ -306,6 +307,7 @@ setClass(Class = 'cookedTexture', contains = 'recipeDx', prototype = prototype(
 #' @export
 setClass(Class = 'cookedFlavor', contains = 'recipeDx', prototype = prototype(
   per = 'Serving; \033[31mFlavor Profile\033[0m'
+  #per = paste0('Serving; ', color_text('Flavor Profile', color = 'red'))
 ))
 
 #' @rdname diagnosis
@@ -389,7 +391,6 @@ show_endpoint <- function(x) {
 #' 
 #' @param object \linkS4class{recipeDx} object
 #' 
-# @importFrom cli.tzh print_ANSI_matrix
 #' @export
 setMethod(f = show, signature = 'recipeDx', definition = function(object) {
   ret <- format.recipeDx(object)

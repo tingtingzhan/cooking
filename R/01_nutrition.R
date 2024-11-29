@@ -296,8 +296,6 @@ nutrition_name_brand <- function(x) {
   
 }
 
-#' @importFrom cli style_hyperlink
-#' @importFrom methods setMethod initialize callNextMethod
 setMethod(f = initialize, signature = 'nutrition', definition = function(.Object, ...) {
   x <- callNextMethod(.Object, ...)
   

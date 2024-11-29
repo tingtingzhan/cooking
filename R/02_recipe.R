@@ -530,8 +530,6 @@ get_flavor_ <- function(x) {
 }
 
 
-#' @importFrom cli style_hyperlink
-#' @importFrom methods setMethod initialize callNextMethod
 setMethod(f = initialize, signature = 'recipe', definition = function(.Object, ...) {
   x <- callNextMethod(.Object, ...)
   

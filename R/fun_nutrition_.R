@@ -47,7 +47,6 @@ nutrition_ <- function(..., dots = list(...)) {
   
 }
 
-# @importFrom cli.tzh print_ANSI_matrix
 #' @export
 print.nutrition_ <- function(x, ...) {
   ret0 <- x
