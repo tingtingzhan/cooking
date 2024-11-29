@@ -34,17 +34,19 @@ setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
     # 'Pan sear, without oil, 1/3 from Medium to High',
     'Pan sear, with vegetable oil, 1/3 from Medium to High',
     'Philips Air Fryer, four (4) guo-kui, 375F, 6min+4min'
-  ),
-  youtube = c(
-    '\u5927\u5e08\u7684\u83dc \u5468\u4e50\u5168' = 'cohQ56AqXkg',
-    '\u56db\u5ddd\u53f0 \u5468\u4e50\u5168' = 'U04g7sVK9O4',
-    '\u6df1\u5733\u536b\u89c6 \u5468\u4e50\u5168 \u9ad8\u7b4b\u7c89;\u53d1\u9175\u5145\u5206' = 'jOAQzcoDYZQ?t=174',
-    '\u4e8c\u66f4TV \u5468\u4e50\u5168' = 'Ok9fdWDUsx4',
-    '\u8001\u996d\u9aa8\u6454\u9762' = 'OWitdw0j0S4?t=222',
-    '\u4e0d\u8981\u7528\u9ad8\u7b4b\u7c89!' = '_2Ly_zbPg7g?t=229'
   )
 ))
 
+
+# write down
+#youtube = c(
+#  '\u5927\u5e08\u7684\u83dc \u5468\u4e50\u5168' = 'cohQ56AqXkg',
+#  '\u56db\u5ddd\u53f0 \u5468\u4e50\u5168' = 'U04g7sVK9O4',
+#  '\u6df1\u5733\u536b\u89c6 \u5468\u4e50\u5168 \u9ad8\u7b4b\u7c89;\u53d1\u9175\u5145\u5206' = 'jOAQzcoDYZQ?t=174',
+#  '\u4e8c\u66f4TV \u5468\u4e50\u5168' = 'Ok9fdWDUsx4',
+#  '\u8001\u996d\u9aa8\u6454\u9762' = 'OWitdw0j0S4?t=222',
+#  '\u4e0d\u8981\u7528\u9ad8\u7b4b\u7c89!' = '_2Ly_zbPg7g?t=229'
+#s)
 
 
 

@@ -53,14 +53,17 @@ setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
     'Cool crepe pan under running water down to below 100\u00b0C',
     'KitchenAid downdraft range: side 1, Low; side 2, turn off range',
     'Use rateau instead of ladle!'
-  ),
-  youtube = c(
-    'how to use rateau' = 'BeN3zKZ6qJ4',
-    'how to use ladle' = 'RIs-3KLk0gI'
   )
 ), validity = function(object) {
   if (length(object@liqueur)) stop('Do not use `@liqueur` in millecrepe; cooked liqueur tastes wierd. Use in mascarponeGanache instead!')
 })
+
+
+#youtube = c(
+#  'how to use rateau' = 'BeN3zKZ6qJ4',
+#  'how to use ladle' = 'RIs-3KLk0gI'
+#)
+
 
 #' @rdname millecrepe
 #' @export

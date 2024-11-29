@@ -365,8 +365,6 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 \item{\code{xiaogaojie}}{\link[base]{character} scalar}
 
 \item{\code{youtube}}{\link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe}
-
-\item{\code{doi}}{\link[base]{character} scalar or \link[base]{vector}}
 }}
 
 \references{

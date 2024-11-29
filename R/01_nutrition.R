@@ -361,7 +361,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     } else if (length(x@horizon)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://horizon.com/organic-dairy-products/%s', x@horizon), text = 'Horizon\U1f1fa\U1f1f8'))
     } else if (length(x@ippodoglobal) & length(x@ippodojpn) & length(x@ippodousa)) {
-      x@url <- c(x@url, sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodousa))
+      x@url <- c(x@url, style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodousa), text = '\U1f6d2 US Shop'))
       paste(
         unclass(style_hyperlink(url = sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s', x@ippodoglobal), text = 'Ippodo\U1f375')),
         unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodojpn), text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
@@ -401,7 +401,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     } else if (length(x@maeda)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://maeda-en.com/collections/matcha-powder/products/%s', x@maeda), text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5'))
     } else if (length(x@marukyu)) {
-      x@url <- c(x@url, 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf')
+      x@url <- c(x@url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
       paste(
         unclass(style_hyperlink(url = sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', x@marukyu), text = 'Marukyu Koyamaen\U1f375')),
         unclass(style_hyperlink(url = sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', x@marukyu), text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5'))
@@ -487,7 +487,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     if (!length(x@brand)) {
       if (is.na(store_brand)) stop('must have `store_brand`')
       x@brand <- unclass(style_hyperlink(url = store_url, text = store_brand))
-    } else x@url <- c(x@url, paste('\U1f6d2', unclass(style_hyperlink(url = store_url, text = store_name))))
+    } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
     slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
     return(x)
   }
@@ -771,7 +771,13 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   if (length(obj@superior)) {
     sp <- obj@superior[1L]
-    cli__message(type = 'text', args = list(text = glue_cmd(sprintf(fmt = '\u274c I prefer \U1f3fa{.run [%s](cooking::%s())}', style_bold(col_yellow(sp)), sp))))
+    cli__message(type = 'text', args = list(
+      text = glue_cmd(sprintf(
+        fmt = '\u274c I prefer \U1f3fa{.run [%s](cooking::%s())}', 
+        style_bold(col_yellow(sp)), 
+        sp
+      ))
+    ))
   } 
   
   cat('\n')

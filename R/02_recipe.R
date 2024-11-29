@@ -223,7 +223,7 @@
 #' @slot wegmans \link[base]{character} scalar
 #' @slot xiaogaojie \link[base]{character} scalar
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
-#' @slot doi \link[base]{character} scalar or \link[base]{vector}
+# @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
 #' @references
 #' \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
@@ -260,7 +260,7 @@ setClass(Class = 'recipe', slots = c(
   wegmans = 'character',
   xiaogaojie = 'character',
   youtube = 'character',
-  doi = 'character',
+  #doi = 'character',
   
   machine = 'list',
   KSM8990 = 'tool',
@@ -1241,12 +1241,16 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat('\n')
   }
   
-  if (length(object@url) || length(object@youtube) || length(object@doi)) {
+  #if (length(object@url) || length(object@youtube) || length(object@doi)) {
+  if (length(object@url) || length(object@youtube)) {
     
     cat('Reference:\n')
-    if (length(object@url)) cat(styleURL(url_ = object@url, text_ = names(object@url)), sep = '\n')
-    if (length(object@youtube)) cat(styleURL(url_ = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text_ = names(object@youtube)), sep = '\n')
-    if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
+    cat(object@url, sep = '\n') # len0 compatible
+    if (n_ytb <- length(object@youtube)) {
+      if (n_ytb != 1L) stop('only allow scalar @youtube')
+      cat(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text = object@youtube), '\n')
+    }
+    #if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
     cat('\n')
     
   }

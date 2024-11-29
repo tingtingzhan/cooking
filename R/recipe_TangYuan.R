@@ -24,13 +24,14 @@ setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
   butter = 3,
   portion = 5,
   instruction = 'Boil 7% of the dough (1min after floats up)',
-  note = 'Do not use powdered flavoring and/or coloring, will be cooked into the soup',
-  youtube = c(
-    ref1 = 'Ypm36U8LGzA', 
-    ref2 = '1P1Jf-sbcFM', 
-    ref3 = 't-pop_dGsgc')
+  note = 'Do not use powdered flavoring and/or coloring, will be cooked into the soup'
 ))
 
+# write down these original recipes
+#youtube = c(
+#  ref1 = 'Ypm36U8LGzA', 
+#  ref2 = '1P1Jf-sbcFM', 
+#  ref3 = 't-pop_dGsgc')
 
 
 

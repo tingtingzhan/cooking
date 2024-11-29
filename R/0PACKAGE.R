@@ -23,3 +23,8 @@
 # cyan: 6
 # white: 7
 # grey: '\033[90m'
+
+
+# illegal use of un-exported functions
+glue_cmd <- cli:::glue_cmd
+cli__message <- cli:::cli__message
