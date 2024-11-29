@@ -22,12 +22,7 @@ nutrition.character <- function(x) {
   xval <- if (is.symbol(x0)) eval(call(name = x)) else eval(x0)
   if (inherits(xval, what = c('recipe'))) {
     ret <- nutrition.recipe(xval)
-    ret@name_cli_glue_delay <- glue_cmd(sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', ret@name, x, x)) # no color
-    #ret@name_cli_glue_delay <- glue_cmd(sprintf(
-    #  fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', 
-    #  ret@name, 
-    #  sprintf(fmt = '\033[0;32m%s\033[0m', x), # `[` messes up with `[%s]`
-    #  x))
+    ret@name_cli_glue_delay <- glue_cmd(sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', ret@name, col_green(x), x))
     return(ret)
   }
   return(nutrition(xval))

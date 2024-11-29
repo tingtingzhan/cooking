@@ -22,7 +22,7 @@ setClass(Class = 'cornGeng', contains = 'recipe', prototype = prototype(
   egg_pc = 1,
   instruction = c(
     'Bring corn milk and boiling water to a boil',
-    'Remove from heat. Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() \033[31motherwise brings temperature too low\033[0m. Cover for 5min',
+    paste0('Remove from heat. Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() ', col_red('otherwise brings temperature too low'), '. Cover for 5min'),
     'Add beaten egg slowly. Keep stirring',
     '(Optional) add dried seaweed. Cover and soak for 2min'
   )
@@ -55,8 +55,8 @@ setClass(Class = 'geng', contains = 'recipe', prototype = prototype(
     'Make a slurry of corn starch and room-temperature water',
     '(Optional) add sauce and seasoning to boiling water',
     'Turn to low heat. Add slurry. Stir until thickens',
-    'Remove from heat. Add a beaten egg \033[31mto bring temperature down to ~90C for seafood\033[0m. Let sit for 5sec \033[31mto have bigger egg flakes\033[0m, then stir gently',
-    'Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() \033[31motherwise brings temperature too low\033[0m. Cover for 5min',
+    paste0('Remove from heat. Add a beaten egg ', col_red('to bring temperature down to ~90C for seafood'), '. Let sit for 5sec ', col_red('to have bigger egg flakes'), ', then stir gently'),
+    paste0('Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() ', col_red('otherwise brings temperature too low'), '. Cover for 5min'),
     # tried 7pcs 31-40ct shrimp, very good
     '(Optional) add dried seaweed. Cover and soak for 2min'
   )

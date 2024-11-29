@@ -78,9 +78,8 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   portion = c(mantou_portion(), savoryBao_portion(), sweetBao_portion()), 
 
   instruction = c(
-    'Manually whisk all powders together \033[31mto protect baking powder/soda and yeast from direct contact with water\033[0m',
-    # 'Add water, manually whisk with two chopsticks to form small even lumps until no dry powder visible \033[34mnecessary for relatively dry doughs\033[0m',
-    '(Optional) blend canned or frozen fruit \033[94me.g., pineapple, etc.\033[0m',
+    paste0('Manually whisk all powders together ', col_red('to protect baking powder/soda and yeast from direct contact with water')),
+    paste('(Optional) blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
     'Add water or puree. Manually whisk until mini-doughs form', 
     'And lard. Knead at Level 2',
     'Wrap and rest on countertop for 15min. Must rest overnight if whole wheat flour and/or puree is used, then restore to room temperature',

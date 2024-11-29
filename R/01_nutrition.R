@@ -291,7 +291,9 @@ nutrition_name_brand <- function(x) {
   }
   
   if (length(x@brand)) {
-    trimws(sprintf(fmt = '%s \033[38;5;166m%s\033[0m', x@name, x@brand))
+    #trimws(sprintf(fmt = '%s \033[38;5;166m%s\033[0m', x@name, x@brand)) 
+    # do not know how to do customized ANSI color
+    trimws(paste(x@name, style_bold(col_yellow(x@brand))))
   } else x@name
   
 }
@@ -559,7 +561,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     cost_source[cost_source == '(US$)'] <- ''
     cost_min <- which.min(cost_)
     cost_txt0 <- sprintf(fmt = 'US\U1f4b5 %.2f%s', cost_, cost_source)
-    cost_txt0[cost_min] <- paste0('\033[0;103m', cost_txt0[cost_min], '\033[0m')
+    cost_txt0[cost_min] <- bg_br_yellow(cost_txt0[cost_min])
     x@cost_ <- paste(cost_txt0, collapse = '\n')
     x@usd <- unname(cost_[cost_min]) # to calculate price in 'recipe'
     #x@jpy <- numeric() # other currency no use
@@ -601,7 +603,7 @@ gram_per_tsp <- function(x) {
 
 getPc <- function(object, name) {
   ret <- slot(object, name = name) / eval(call(name))@servingGram
-  sprintf(fmt = '\033[1;95m%.3gpcs\033[0m', ret)
+  style_bold(col_br_magenta(sprintf(fmt = '%.3gpcs', ret)))
 }
 
 getTealoose <- function(x) {
@@ -616,7 +618,7 @@ getTealoose <- function(x) {
 
 
 getGelatinLeaf <- function(x) {
-  paste0('\033[94m', x/2, ' leaves \033[0m')
+  col_br_blue(sprintf(fmt = '%.1f leaves', x/2))
 }
 
 
@@ -706,8 +708,7 @@ autoVolume <- function(x, nm = names(x)) {
     z1 <- z0[nzchar(z0)]
     z <- z1[seq_len(min(3L, length(z1)))]
     if (all(is.na(z1))) return('') # `z1` either all-NA, or none-NA
-    ret <- paste(z, collapse = ' ')
-    paste0('\033[1;94m', ret, '\033[0m')
+    style_bold(col_br_blue(paste(z, collapse = ' ')))
   }, dots = vol, MoreArgs = NULL)
   
 }
@@ -796,7 +797,7 @@ format_ingredient_perc <- function(x, name) {
   x_ <- slot(x, name = name)
   if (!length(x_) || (x_ == 0)) return(character())
   pct <- x_ / x@servingGram
-  paste0('\033[32m', sprintf_bincode(pct)(pct), '\033[0m')
+  col_green(sprintf_bincode(pct)(pct))
 }
 
 

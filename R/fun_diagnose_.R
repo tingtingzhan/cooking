@@ -40,7 +40,7 @@ diagnose_ <- function(..., dots = list(...)) {
       sprintf_bincode(median.default(y3[,i], na.rm = TRUE))(y3[,i])
     }))
     dimnames(y) <- dimnames(y3)
-    cat('\033[0;103m', sprintf(fmt = '\u214c %s\n', new(Class = which)@per), '\033[0m', sep = '')
+    cat(bg_br_yellow(sprintf(fmt = '\u214c %s\n', new(Class = which)@per)))
     print_ANSI_matrix(y)
     cat('\n')
     return(invisible(y))

@@ -854,7 +854,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     x@xiaogaojie <- character()
   }
   
-  author <- if (length(x@author)) paste0('\033[0;32m', x@author, '\033[0m') # else NULL
+  author <- if (length(x@author)) unclass(col_green(x@author)) # else NULL
+  
   x@alias_class <- if (!length(x@alias_class)) {
     if (length(author)) author else character()
   } else {
@@ -973,7 +974,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   } # else do nothing
   
   if (length(x@key)) {
-    x@alias <- paste0(x@alias, '\033[0;105;97m', x@key, '\033[0m')
+    x@alias <- paste0(x@alias, bg_br_magenta(col_br_white(x@key)))
     x@key <- character()
   }
   
@@ -1035,11 +1036,13 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   fruit <- c(object@fruit, object@durian)
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), sep = '') # one or more fruit_pc
   cat(sprintf(
-    #fmt = '%s %.0f grams (%.1f pcs)\n', 
-    fmt = '%s %.0f grams \033[1;95m%.1fpcs\033[0m\n', 
+    fmt = '%s %.0f grams %s\n', 
     nm_[names(object@fruit_pc)], 
     object@fruit_pc,
-    object@fruit_pc / vapply(names(object@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)
+    style_bold(col_br_magenta(sprintf(
+      fmt = '%.1fpcs', 
+      object@fruit_pc / vapply(names(object@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_))
+    ))
     #getPc(object, name = 'fruit') # dont know how to use this yet
   ), sep = '') # one or more fruit_pc
   
@@ -1086,7 +1089,10 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')))
   
   cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
-  cat(sprintf(fmt = '%s %.1f grams \033[1;95m%.2gbag\033[0m\n', nm_[names(object@teabag)], getTealoose(object@teabag), object@teabag), sep = '')
+  cat(sprintf(fmt = '%s %.1f grams %s\n', 
+              nm_[names(object@teabag)], 
+              getTealoose(object@teabag), 
+              style_bold(col_br_magenta(sprintf(fmt = '%.2gbag', object@teabag)))), sep = '')
   
   allSugar <- c(
     object@sugar, object@brownSugar
@@ -1121,7 +1127,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f grams %s\n', object@water, autoVolume(object@water)))
   } else {
     water <- sum_.(object@water, object@water_extra)
-    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f=%.0f%s+%.0f%s grams %s\n', water, object@water, '\033[91m', object@water_extra, '\033[0m', autoVolume(water)))
+    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f=%.0f%s grams %s\n', water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), autoVolume(water)))
   }
   
   cat(sprintf(fmt = '40\u00b0C\u6e29\u6c34 Warm Water, 104\u00b0F %.0f grams %s\n', object@water40, autoVolume(object@water40)))
@@ -1167,7 +1173,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
       fmt = '\u058d %.1f \u00d7 %.0f grams \u058e %s', 
       y@servingGram/object@portion, 
       object@portion, 
-      paste0('\033[1;35m', names(object@portion), '\033[0m')
+      style_bold(col_magenta(names(object@portion)))
     ), sep = '\n')
     cat('\n')
   } # else NULL

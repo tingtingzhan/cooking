@@ -298,16 +298,14 @@ setClass(Class = 'cocoaDx', contains = 'recipeDx', prototype = prototype(
 #' @aliases cookedTexture-class
 #' @export
 setClass(Class = 'cookedTexture', contains = 'recipeDx', prototype = prototype(
-  per = 'Serving; \033[31mTexture Profile\033[0m' 
-  #per = paste0('Serving; ', color_text('Texture Profile', color = 'red'))
+  per = paste0('Serving; ', col_red('Texture Profile'))
 ))
 
 #' @rdname diagnosis
 #' @aliases cookedFlavor-class
 #' @export
 setClass(Class = 'cookedFlavor', contains = 'recipeDx', prototype = prototype(
-  per = 'Serving; \033[31mFlavor Profile\033[0m'
-  #per = paste0('Serving; ', color_text('Flavor Profile', color = 'red'))
+  per = paste0('Serving; ', col_red('Flavor Profile'))
 ))
 
 #' @rdname diagnosis
@@ -340,13 +338,11 @@ format.recipeDx <- function(x, ...) {
     ret <- .mapply(dots = list(ret0, relat), MoreArgs = NULL, FUN = function(x, rel) {
       # i = 3L; x = ret0[[i]]; rel = relat[[i]]
       x[1L] <- switch(as.character(rel), '1' = { # actual < ideal
-        #paste0('\033[1;34m', x[1L], '\033[0m') # bold blue
-        paste0('\033[1;94m', x[1L], '\033[0m') # bold high-intensity blue
+        style_bold(col_br_blue(x[1L]))
       }, 'NA' =, '2' = { # actual == ideal
-        paste0('\033[90m', x[1L], '\033[0m') # grey
+        col_grey(x[1L])
       }, '3' = { # actual > ideal
-        #paste0('\033[1;31m', x[1L], '\033[0m') # bold red
-        paste0('\033[1;91m', x[1L], '\033[0m') # bold high-intensity red
+        style_bold(col_br_red(x[1L]))
       })
       return(x)
     })
@@ -372,12 +368,12 @@ show_endpoint <- function(x) {
   #x[x == 'sodium'] <- 'Na\u3253'
   x[x == 'bakingPowder'] <- 'bkPwd'
   x[x == 'cholesterol'] <- 'cholr'
-  x[x == 'blackSesame'] <- '\033[40;97msesame\033[0m'
+  x[x == 'blackSesame'] <- bg_black(col_br_white('sesame'))
   x[x == 'whitePepper'] <- 'whitePp'
   x[x == 'blackPepper'] <- 'blackPp'
   x[x == 'sesameOil'] <- 'ssmOil'
   x[x == 'creamCheese'] <- 'creamChs'
-  x[x == 'greenPeppercornOil'] <- '\033[42;97mppcOil\033[0m'
+  x[x == 'greenPeppercornOil'] <- bg_green(col_br_white('ppcOil'))
   return(x)
 }
 
@@ -395,7 +391,7 @@ show_endpoint <- function(x) {
 setMethod(f = show, signature = 'recipeDx', definition = function(object) {
   ret <- format.recipeDx(object)
   if (!length(ret)) return(invisible())
-  cat('\033[0;103m', sprintf(fmt = '\u214c %s\n', object@per), '\033[0m', sep = '')
+  cat(bg_br_yellow(sprintf(fmt = '\u214c %s\n', object@per)))
   print_ANSI_matrix(ret)
   cat('\n')
 })

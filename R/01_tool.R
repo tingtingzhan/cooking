@@ -122,7 +122,7 @@ JoyoungDJ06M <- function(...) new(Class = 'tool', name = '\u4e5d\u9633\u8ff7\u4f
 
 JoyoungDJ13U_soymilk <- function(
     treatment = c(
-      'Soak dry beans \033[94me.g., soybean, chickpea, mung bean, etc.\033[0m overnight in fridge'
+      paste('Soak dry beans', col_br_blue('e.g., soybean, chickpea, mung bean, etc.'), 'overnight in fridge')
     ),
     program = '\u8001\u8c46\u6d46\u7a0b\u5e8f Classic Soymilk program, 1300ml water line',
     waterLost = 45, # whole machine, 4175 - 4131, 2024-09-15
@@ -132,7 +132,7 @@ JoyoungDJ13U_soymilk <- function(
 
 JoyoungDJ06M_soymilk <- function(
     treatment = c(
-      'Soak dry beans \033[94me.g., soybean, chickpea, mung bean, etc.\033[0m overnight in fridge'
+      paste0('Soak dry beans ', col_br_blue('e.g., soybean, chickpea, mung bean, etc.'), ' overnight in fridge')
     ),
     program = '\u8c46\u6d46\u7a0b\u5e8f Soymilk program, 600ml water line',
     waterLost = 5, # soymilk 2130 - 2126, confirmed 2024-10-08
