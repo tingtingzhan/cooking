@@ -14,7 +14,7 @@ Nutrition information.
 
 \item{\code{name}}{\link[base]{character} scalar, product name}
 
-\item{\code{name_glue}}{\code{'cli_glue_delay'} object, returned from function \code{cli:::glue_cmd}}
+\item{\code{name_glue}}{\link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse \code{cli:::glue_cmd})}
 
 \item{\code{extra}}{\linkS4class{extra} object}
 

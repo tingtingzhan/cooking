@@ -35,12 +35,7 @@ nutrition_ <- function(..., dots = list(...)) {
   #machine <- lapply(dots, FUN = slot, name = 'machine')
   #attr(ret, which = 'machine') <- machine[lengths(machine, use.names = FALSE) > 0L]
   
-  attr(ret, which = 'name') <- vapply(dots, FUN = nutrition_name_brand, FUN.VALUE = '')
-  attr(ret, which = 'name_cli') <- lapply(dots, FUN = function(x) {
-    # (x = dots[[1L]])
-    if (!identical(x@name_glue$str, '')) return(x@name_glue)
-    nutrition_name_brand(x)
-  })
+  attr(ret, which = 'name') <- vapply(dots, FUN = nutrition_name, FUN.VALUE = '')
   
   class(ret) <- 'nutrition_'
   return(ret)

@@ -127,11 +127,11 @@ nutrition.recipe <- function(x) {
   )
   
   cl <- match.call()
-  x. <- as.list(cl$x)
+  x. <- as.list(cl$x) # `cl$x`, e.g. `quote(soymilk())`
   if (length(x.) == 1L) {
     if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
     x_ <- as.character(x.[[1L]])
-    ret@name_glue <- glue_cmd(sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, style_bold(col_yellow(x_)), x_))
+    ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, style_bold(col_yellow(x_)), x_)
   }
   
   attr(ret, which = 'total_lost') <- total_lost

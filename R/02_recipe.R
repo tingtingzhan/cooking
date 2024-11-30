@@ -951,7 +951,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       } else if (length(x@ginger)) {
         '\u59dc\u9999\U1fada'
       } else if (length(x@liqueur) == 1L) {
-        nutrition_name_brand(nutrition(do.call(what = names(x@liqueur), args = list())))
+        nutrition_name(nutrition(do.call(what = names(x@liqueur), args = list())))
         # if (length(liqueur_nm <- names(x@liqueur))) {
         #  if (any(endsWith(liqueur_nm, suffix = '_coffee'))) {
         #    'Tiramisu\u0300'
@@ -1006,8 +1006,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat(col_green(format.Date(object@date, format = '%A, %B %e, %Y')), '\n\n')
   }
     
-  nm_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name', exact = TRUE)
-  nm_cli_ <- attr(attr(y, which = 'info', exact = TRUE), which = 'name_cli', exact = TRUE)
+  y_info <- attr(y, which = 'info', exact = TRUE)
+  nm_ <- attr(y_info, which = 'name', exact = TRUE)
   
   meat_seafood <- c(
     object@shrimp,
@@ -1050,10 +1050,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), sep = '') # one or more flavor
   
   mapply(FUN = function(glue, gram) {
-    glue$str <- sprintf(fmt = '%s %.0f grams', glue$str, gram) # no need to linebreak with ?cli:::cli__message
-    cli__message(type = 'text', args = list(text = glue))
-    return(invisible())
-  }, glue = nm_cli_[names(object@homemade)], gram = object@homemade)
+    cli_text(sprintf(fmt = '%s %.0f grams', glue, gram)) # no returned value
+  }, glue = nm_[names(object@homemade)], gram = object@homemade)
   
   grain_bean_nut <- c(
     object@grain,
