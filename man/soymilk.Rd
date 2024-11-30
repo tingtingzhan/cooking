@@ -5,39 +5,16 @@
 \alias{soymilk}
 \alias{soymilk-class}
 \alias{soymilk_DJ13U}
-\alias{thick_soymilk}
-\alias{chickpeaMilk}
-\alias{cashewMilk}
-\alias{mungMilk_thick}
-\alias{cornSoymilk}
-\alias{veggieSoymilk}
 \title{\linkS4class{soymilk} Recipes}
 \usage{
-soymilk_DJ13U()
-
 soymilk()
 
-thick_soymilk()
-
-chickpeaMilk()
-
-cashewMilk()
-
-mungMilk_thick()
-
-cornSoymilk()
-
-veggieSoymilk()
+soymilk_DJ13U()
 }
 \description{
-Plant-based milk made by Joyoung DJ13U soymilk maker,
-using program Classic Soymilk at 1300ml water line
+Homemade soymilk with thickener.
 }
 \examples{
 soymilk()
-chickpeaMilk()
-cashewMilk()
-cornSoymilk()
-veggieSoymilk()
-
+soymilk_DJ13U()
 }

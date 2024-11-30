@@ -77,8 +77,7 @@ chai_milktea <- function() new(
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
-  #homemade = c(soymilk = 600), # old
-  homemade = c(thick_soymilk = 600), # old
+  homemade = c(soymilk = 600), # old
   brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
   note = c(
     'Freshly brewed soy milk', 

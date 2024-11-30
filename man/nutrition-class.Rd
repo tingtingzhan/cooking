@@ -144,6 +144,8 @@ Nutrition information.
 
 \item{\code{nielsenmassey}}{\link[base]{character} scalar}
 
+\item{\code{nishiki}}{\link[base]{character} scalar}
+
 \item{\code{oreo}}{\link[base]{character} scalar}
 
 \item{\code{organicvalley}}{\link[base]{character} scalar}

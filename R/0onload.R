@@ -154,6 +154,7 @@
   
   carbohydrate <- function(x) switch(
     class(x),
+    soymilk = .007,
     beanPaste = if (length(x@redKidneyBean)) .125 else .15,
     NA_real_)
    

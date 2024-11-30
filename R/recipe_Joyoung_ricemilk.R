@@ -8,7 +8,7 @@
 #' Brown rice, I have tried Japanese (Nishiki) and Thai (\url{shop.wegmans.com/product/42848})
 #' 
 #' @examples
-#' blackRicemilk()
+#' black_ricemilk()
 #' # blackRice_paste() # not exported yet
 #' 
 #' 
@@ -26,9 +26,17 @@ setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
 
 #' @rdname ricemilk
 #' @export
-blackRicemilk <- function() new(
-  Class = 'ricemilk', blackRice = 105, water = 845,
+black_ricemilk <- function() new(
+  Class = 'ricemilk', alias = '\u9ed1\u7c73\u7cca',
+  blackRice = 105, water = 845,
   pros = 'such distinct and delicate smell!')
+
+#' @rdname ricemilk
+#' @export
+brown_ricemilk <- function() new(
+  Class = 'ricemilk', alias = '\u7cd9\u7c73\u7cca',
+  brownRice = 97,
+  water = 845, review = 'to confirm')
 
 
 setClass(Class = 'ricepaste', contains = 'recipe', prototype = prototype(
@@ -44,12 +52,6 @@ setClass(Class = 'ricepaste', contains = 'recipe', prototype = prototype(
 
 blackRice_paste <- function() new(
   Class = 'ricepaste',
-  homemade = c(blackRicemilk = 600)
+  homemade = c(black_ricemilk = 600)
 )
 
-#' @rdname ricemilk
-#' @export
-brownRicemilk <- function() new(
-  Class = 'ricemilk',
-  brownRice = 97,
-  water = 845, review = 'to confirm')

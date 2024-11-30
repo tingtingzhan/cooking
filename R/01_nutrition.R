@@ -96,6 +96,7 @@ setOldClass('cli_glue_delay')
 #' @slot navitas \link[base]{character} scalar
 #' @slot nescafe,nescafeGoldEspressoCA,nescafeGoldEspressoUS,nescafeUS,nestle,nido \link[base]{character} scalars
 #' @slot nielsenmassey \link[base]{character} scalar
+#' @slot nishiki \link[base]{character} scalar
 #' @slot oreo \link[base]{character} scalar
 #' @slot organicvalley \link[base]{character} scalar
 #' @slot paromi \link[base]{character} scalar
@@ -222,6 +223,7 @@ setClass(Class = 'nutrition', slots = c(
   navitas = 'character',
   nescafe = 'character', nescafeGoldEspressoCA = 'character', nescafeGoldEspressoUS = 'character', nescafeUS = 'character', nestle = 'character', nido = 'character',
   nielsenmassey = 'character',
+  nishiki = 'character',
   oreo = 'character',
   organicvalley = 'character',
   paromi = 'character',
@@ -434,6 +436,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.goodnes.com/nido/products/nido-%s', x@nido), text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed'))
     } else if (length(x@nielsenmassey)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://nielsenmassey.com/products/%s', x@nielsenmassey), text = 'Nielsen-Massey\U1f1fa\U1f1f8'))
+    } else if (length(x@nishiki)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.jfc.com/product/item/%s', x@nishiki), text = 'Nishiki\u9326\U1f1fa\U1f1f8'))
     } else if (length(x@oreo)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.oreo.com/products/%s', x@oreo), text = 'Nabisco\U1f1fa\U1f1f8'))
     } else if (length(x@organicvalley)) {

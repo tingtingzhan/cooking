@@ -4,13 +4,13 @@
 \name{ricemilk}
 \alias{ricemilk}
 \alias{ricemilk-class}
-\alias{blackRicemilk}
-\alias{brownRicemilk}
+\alias{black_ricemilk}
+\alias{brown_ricemilk}
 \title{\linkS4class{ricemilk} Recipes}
 \usage{
-blackRicemilk()
+black_ricemilk()
 
-brownRicemilk()
+brown_ricemilk()
 }
 \description{
 ..
@@ -19,7 +19,7 @@ brownRicemilk()
 Brown rice, I have tried Japanese (Nishiki) and Thai (\url{shop.wegmans.com/product/42848})
 }
 \examples{
-blackRicemilk()
+black_ricemilk()
 # blackRice_paste() # not exported yet
 
 

@@ -61,7 +61,7 @@ Wegmans_darkBrown <- function() new(
   name = '\u7ea2\u7cd6 Dark Brown Sugar',
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
-  addedSugar = 8)
+  carbohydrate = 8, addedSugar = 8)
 
 Domino_darkBrown <- function() new(
   Class = 'nutrition', domino = 'dark-brown-sugar',
@@ -70,7 +70,7 @@ Domino_darkBrown <- function() new(
   wegmans = 26106291L,
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
-  addedSugar = 8)
+  carbohydrate = 8, addedSugar = 8)
 
 Domino_lightBrown <- function() new(
   Class = 'nutrition', domino = 'light-brown-sugar',
@@ -79,4 +79,4 @@ Domino_lightBrown <- function() new(
   wegmans = 26106288L,
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
-  addedSugar = 8)
+  carbohydrate = 8, addedSugar = 8)

@@ -25,7 +25,7 @@ brownrice_Nishiki <- function() new(
   Class = 'brownrice', 
   brownRice = c(Nishiki_brownRice = 95*3.5), # 3 cup not enough
   water = 700, # confirmed!!
-  # whole machin: 3913g
+  # whole machine: 3913g
   #pros = 'perfect wetness, brown rice fluffy and soft',
   #date = as.Date('2024-10-15')
   review = 'to confirm')
