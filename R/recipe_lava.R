@@ -10,7 +10,7 @@
 #' sesame_lava()
 #' coconut_lava()
 #' 
-#' diagnose_(
+#' diagnose(
 #'   sesame_lava,
 #'   Daat_sesamelava,
 #'   xiaogaojie_sesamelava,
@@ -18,7 +18,7 @@
 #'   xiaomin_sesamelava
 #' )
 #' 
-#' diagnose_(
+#' diagnose(
 #'   sesame_lava,
 #'   subtract(Daat_sesamelava, sugar = 107),
 #'   subtract(xiaogaojie_sesamelava, sugar = 60),

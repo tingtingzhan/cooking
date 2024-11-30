@@ -53,7 +53,7 @@ sweetBao_portion <- function() c(
 #' cocoa_bao_Navitas()
 #' acai_bao()
 #' 
-#' diagnose_(
+#' diagnose(
 #'  bao,
 #'  pumpkin_bao,
 #'  pineapple_bao,

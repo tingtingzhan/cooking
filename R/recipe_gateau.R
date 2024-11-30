@@ -14,18 +14,18 @@
 #' matcha_gateau()
 #' pumpkin_gateau()
 #' 
-#' diagnose_(
+#' diagnose(
 #'  cocoa_gateau,
 #'  subtract(AddaPinch_chocolate_cake, sugar = 300),
 #'  subtract(PreppyKitchen_chocolate_cake, sugar = 300)
 #' )
 #' 
-#' diagnose_(
+#' diagnose(
 #'  matcha_gateau,
 #'  subtract(DessertFor2_matcha_cake, sugar = 150)
 #' )
 #' 
-#' diagnose_(
+#' diagnose(
 #'  pumpkin_gateau,
 #'  subtract(Sallys_pumpkin_cake, sugar = 100, brownSugar = 90)
 #' )

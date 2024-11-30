@@ -365,7 +365,7 @@ show_endpoint <- function(x) {
   x[x == 'addedStarch'] <- '+starch'
   #x[x == 'eggYolk'] <- '\U0001f95ayolk'
   #x[x == 'eggWhite'] <- '\U0001f95awhite'
-  #x[x == 'sodium'] <- 'Na\u3253'
+  x[x == 'sodium'] <- 'Na\u207a'
   x[x == 'bakingPowder'] <- 'bkPwd'
   x[x == 'cholesterol'] <- 'cholr'
   x[x == 'blackSesame'] <- bg_black(col_br_white('sesame'))

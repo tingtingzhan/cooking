@@ -9,7 +9,7 @@
 #' 
 #' crepe() / 2
 #' 
-#' diagnose_(
+#' diagnose(
 #'  jennyc819_crepe,
 #'  Carina_crepe,
 #'  Aya_crepe,

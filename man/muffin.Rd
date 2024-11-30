@@ -25,7 +25,7 @@ Lori_muffin()
 }
 \examples{
 muffin()
-diagnose_(
+diagnose(
  muffin,
  subtract(Brody_muffin, sugar = 237),
  subtract(Introvert_muffin, sugar = 50),

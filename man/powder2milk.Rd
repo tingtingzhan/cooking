@@ -36,7 +36,7 @@ Suggested serving instruction printed on the can of dry milk.
 1/4 (or 1/3) cup dry milk + 1 cup boiling water.
 }
 \examples{
-diagnose_(
+diagnose(
  nonfatMilk_Carnation,
  bakerMilk_KingArthur,
  nonfatMilk_GreatValue,

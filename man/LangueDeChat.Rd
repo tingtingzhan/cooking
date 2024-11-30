@@ -25,7 +25,7 @@ Giallozafferano_LangueDeChat()
 ..
 }
 \examples{
-diagnose_(
+diagnose(
  subtract(Giallozafferano_LangueDeChat, sugar = 45),
  subtract(Ying_LangueDeChat, sugar = 7.5),
  subtract(Jadore_LangueDeChat, sugar = 22),

@@ -80,7 +80,7 @@ StarbucksKcup_cocoa()
 Mocaccino, Commercial or Other People's Recipe
 }
 \examples{
-diagnose_(
+diagnose(
  mocaccino,
  Rebecca_mocha,
  Pillsbury_mocha,

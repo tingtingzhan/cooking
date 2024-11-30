@@ -1,6 +1,6 @@
 
 if (FALSE) {
-  diagnose_(
+  diagnose(
     youtiao,
     mathstar_youtiao,
     xiaogaojie_youtiao,

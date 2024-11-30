@@ -7,7 +7,7 @@
 #' @examples 
 #' pudding()
 #' 
-#' diagnose_(
+#' diagnose(
 #'  pudding,
 #'  shangshi_pudding
 #' )

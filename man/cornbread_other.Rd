@@ -68,5 +68,5 @@ xs = list(
  Quaker_cornbread
 )
 nutrition_(dots = xs)
-diagnose_(dots = xs)
+diagnose(dots = xs)
 }

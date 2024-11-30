@@ -17,7 +17,7 @@ shangshi_pudding()
 \examples{
 pudding()
 
-diagnose_(
+diagnose(
  pudding,
  shangshi_pudding
 )

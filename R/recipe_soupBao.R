@@ -3,7 +3,7 @@
 
 
 if (FALSE) {
-  diagnose_(
+  diagnose(
     Daat_soupBao,
     xiaogaojie_soupBao,
     PinNuo_soupBao,

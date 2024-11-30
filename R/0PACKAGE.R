@@ -25,11 +25,6 @@
 # white: 7
 # grey: '\033[90m'
 
-# see
-# cli:::ansi_fg_r
-# cli:::ansi_bg_r
-# ?cli::ansi_palettes
-
 if (FALSE) {
   #?cli::cli_text # does not have a returned value
   cli::cli_text('Tingting\'s {.run [soymilk](cooking::soymilk())}')
@@ -38,7 +33,4 @@ if (FALSE) {
   class(ret0) # cli_glue_delay
   cli:::cli__message(type = 'text', args = list(text = ret0))
   
-  # illegal use of un-exported functions
-  #glue_cmd <- cli:::glue_cmd
-  #cli__message <- cli:::cli__message
 }

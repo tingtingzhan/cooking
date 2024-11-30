@@ -36,7 +36,7 @@
 #' such as black sesame seeds.
 #' 
 #' @examples
-#' diagnose_(
+#' diagnose(
 #'  new(Class = 'recipe', alias_class = 'Mascarpone\u88f1\u82b1', 
 #'  mascarpone = 453/2, water = 70, 
 #'  sugar_tsp = 10.5, matcha_tsp = 4, 
@@ -59,7 +59,7 @@
 #' pumpkin_mascarponeFrosting()
 #' tiramisuFrosting_Kahlua()
 #' 
-#' diagnose_(
+#' diagnose(
 #'  foodandjourneys_mascarponeFrosting,
 #'  lifeloveandsugar_mascarponeFrosting,
 #'  lifeloveandsugar_cocoa_mascarponeFrosting,

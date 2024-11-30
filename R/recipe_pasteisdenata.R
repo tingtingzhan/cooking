@@ -57,7 +57,7 @@ if (FALSE) {
 
   
   
-  diagnose_(
+  diagnose(
     subtract(xiaogaojie_pasteisdenata1, sugar = 130),
     xiaogaojie_pasteisdenata2,
     subtract(Leites_pasteisdenata, sugar = 200),

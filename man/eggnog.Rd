@@ -21,7 +21,7 @@ PreppyKitchen_eggnog()
 
 eggnog()
 
-diagnose_(
+diagnose(
  eggnog,
  subtract(JeanPierre_eggnog, sugar = 25),
  subtract(PreppyKitchen_eggnog, sugar = 130)

@@ -9,7 +9,7 @@
 #' @description ..
 #' 
 #' @examples 
-#' diagnose_(
+#' diagnose(
 #'  Dad_yolkPastry_waterDough,
 #'  Dad_oxTongue1_waterDough, 
 #'  Dad_oxTongue2_waterDough,
@@ -23,7 +23,7 @@
 #'  Dad_sweetPastry_waterDough
 #' )
 #' 
-#' diagnose_(
+#' diagnose(
 #'  shangshi_oxTongue_shortDough,
 #'  Dad_flowerPastry_shortDough,
 #'  Dad_oxTongue1_shortDough,
@@ -34,7 +34,7 @@
 #'  laofangu_durianSu_shortDough
 #' )
 #' 
-#' diagnose_(
+#' diagnose(
 #'  Dad_blackSesamePastry_largeYouSu,
 #'  PinNuo_largeYouSu
 #' )

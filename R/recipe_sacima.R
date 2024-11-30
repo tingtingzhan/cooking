@@ -10,7 +10,7 @@
 #' @examples
 #' new(Class = 'sacima')
 #' 
-#' diagnose_(
+#' diagnose(
 #'  xiaogaojie_sacima,
 #'  Dad_sacima,
 #'  shangshi_sacima)

@@ -6,7 +6,7 @@
 #' ..
 #' 
 #' @examples
-#' diagnose_(
+#' diagnose(
 #'  SoupedUp_niangaoNingbo,
 #'  niangaoNingbo,
 #'  Jenny_niangaoNingbo,

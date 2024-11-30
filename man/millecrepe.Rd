@@ -63,19 +63,19 @@ cocoa_millecrepe()
 
 
 
-diagnose_(
+diagnose(
  millecrepe,
  xiaogaojie_millecrepe,
  iwen_mango_millecrepe,
  lisa_mango_millecrepe)
 
-diagnose_(
+diagnose(
  cocoa_millecrepe,
  iwen_cocoa_millecrepe,
  qiong_cocoa_millecrepe,
  qiong_tiramisu_millecrepe)
  
-diagnose_(
+diagnose(
  amanda_matcha_millecrepe,
  oreomachi_matcha_millecrepe, 
  matcha_millecrepe,

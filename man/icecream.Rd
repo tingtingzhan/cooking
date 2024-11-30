@@ -29,7 +29,7 @@ Yumna_icecream()
 ..
 }
 \examples{
-diagnose_(
+diagnose(
  subtract(xiaogaojie_icecream, sugar = 57),
  subtract(happytears_icecream, sugar = 80)
 )

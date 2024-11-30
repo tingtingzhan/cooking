@@ -280,7 +280,7 @@ nutrition.recipe <- function(x) {
     attr(ret, which = 'baker') <- if (flour) {
       if (length(cornmeal)) { # || length(...)
         new(
-          Class = 'breadBaker',
+          Class = 'baker',
           cornmeal = new(Class = 'equiv', actual = cornmeal / flour, ideal = devrecipe$cornmeal2flour(x))
         )
       } else new(

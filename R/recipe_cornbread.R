@@ -113,7 +113,7 @@ cornbread <- function() new(
 #'  Quaker_cornbread
 #' )
 #' nutrition_(dots = xs)
-#' diagnose_(dots = xs)
+#' diagnose(dots = xs)
 #' @name cornbread_other
 #' @export
 Wegmans_cornbread_recipe <- function() new(

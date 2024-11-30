@@ -1052,8 +1052,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   mapply(FUN = function(glue, gram) {
     cli_text(sprintf(fmt = '%s %.0f grams', glue, gram)) # no returned value
   }, glue = nm_[names(object@homemade)], gram = object@homemade)
-  #cli_text(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@homemade)], object@homemade))
-  # see ?cli::cli_text; 'Newlines are *not* preserved'
+  # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
   
   grain_bean_nut <- c(
     object@grain,

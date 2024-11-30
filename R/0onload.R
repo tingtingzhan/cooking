@@ -4,7 +4,7 @@
   
   # `x` is \linkS4class{recipe}
   
-  tmpfun <- function(x) switch(
+  fn. <- function(x) switch(
     class(x),
     NA_real_)
 
@@ -250,7 +250,7 @@
     matchaLatteMix = .25, 
     NA_real_)
   
-  matcha2flour <- tmpfun
+  matcha2flour <- fn.
   
   matcha2pastryflour <- function(x) switch(
     class(x),
@@ -264,9 +264,9 @@
     bread = .07,
     NA_real_)
   
-  matcha2glutenFreeFlour <- tmpfun
+  matcha2glutenFreeFlour <- fn.
   
-  matcha2wheatflourmix <- tmpfun
+  matcha2wheatflourmix <- fn.
   
   matcha2riceflour <- function(x) switch(
     class(x),
@@ -280,7 +280,7 @@
     bao =, bread = .04,
     NA_real_)
   
-  beet2flour <- tmpfun
+  beet2flour <- fn.
   
   beet2pastryflour <- function(x) switch(
     class(x),
@@ -293,9 +293,9 @@
     bread = .075,
     NA_real_)
   
-  beet2glutenFreeFlour <- tmpfun
+  beet2glutenFreeFlour <- fn.
   
-  beet2wheatflourmix <- tmpfun
+  beet2wheatflourmix <- fn.
   
   beet2riceflour <- function(x) switch(
     class(x),
@@ -405,7 +405,7 @@
     class(x),
     NA_real_)
     
-  acai2flour <- acai2glutenFreeFlour <- acai2wheatflourmix <- tmpfun
+  acai2flour <- acai2glutenFreeFlour <- acai2wheatflourmix <- fn.
   
   starch <- function(x) switch(
     class(x), 
@@ -477,7 +477,7 @@
     bread = .63,
     NA_real_)
   
-  water2glutenFreeFlour <- tmpfun
+  water2glutenFreeFlour <- fn.
   
   water2wheatflourmix <- function(x) switch(
     class(x),
@@ -509,7 +509,7 @@
     bread = if (length(x@cocoa)) .08 else .075,
     NA_real_)
   
-  fat2glutenFreeFlour <- tmpfun
+  fat2glutenFreeFlour <- fn.
   
   fat2wheatflourmix <- function(x) switch(
     class(x),
@@ -522,14 +522,14 @@
     snowSkin = .05,
     NA_real_)
   
-  cornmeal2flour <- cornmeal2pastryflour <- cornmeal2glutenFreeFlour <- cornmeal2wheatflourmix <- cornmeal2riceflour <- tmpfun
+  cornmeal2flour <- cornmeal2pastryflour <- cornmeal2glutenFreeFlour <- cornmeal2wheatflourmix <- cornmeal2riceflour <- fn.
   
   cornmeal2breadflour <- function(x) switch(
     class(x),
     #cornbreadMix = 2, # increase!! for boiling water!!
     NA_real_)
   
-  starch2flour <- starch2pastryflour <- starch2breadflour <- starch2glutenFreeFlour <- starch2wheatflourmix <- tmpfun
+  starch2flour <- starch2pastryflour <- starch2breadflour <- starch2glutenFreeFlour <- starch2wheatflourmix <- fn.
   
   starch2riceflour <- function(x) switch(
     class(x),
@@ -537,14 +537,14 @@
     snowSkin = .25,
     NA_real_)
   
-  rice2flour <- rice2pastryflour <- rice2breadflour <- rice2glutenFreeFlour <- rice2wheatflourmix <- tmpfun
+  rice2flour <- rice2pastryflour <- rice2breadflour <- rice2glutenFreeFlour <- rice2wheatflourmix <- fn.
   
   rice2riceflour <- function(x) switch(
     class(x),
     snowSkin = .5,
     NA_real_)
   
-  glutinousRice2flour <- glutinousRice2pastryflour <- glutinousRice2breadflour <- glutinousRice2glutenFreeFlour <- glutinousRice2wheatflourmix <- tmpfun
+  glutinousRice2flour <- glutinousRice2pastryflour <- glutinousRice2breadflour <- glutinousRice2glutenFreeFlour <- glutinousRice2wheatflourmix <- fn.
   
   glutinousRice2riceflour <- function(x) switch(
     class(x),
@@ -561,7 +561,7 @@
     bread =, noodlelinda =, wrapperlinda = .003,
     NA_real_)
   
-  salt2pastryflour <- salt2wheatflourmix <- salt2glutenFreeFlour <- salt2riceflour <- tmpfun
+  salt2pastryflour <- salt2wheatflourmix <- salt2glutenFreeFlour <- salt2riceflour <- fn.
   
   eggYolk2flour <- function(x) switch(
     class(x),
@@ -578,7 +578,7 @@
     bread = .035,
     NA_real_)
   
-  eggYolk2glutenFreeFlour <- eggYolk2wheatflourmix <- eggYolk2riceflour <- tmpfun
+  eggYolk2glutenFreeFlour <- eggYolk2wheatflourmix <- eggYolk2riceflour <- fn.
   
   blackSesame2flour <- function(x) switch(
     class(x),
@@ -586,26 +586,26 @@
     cookie = .375,
     NA_real_) 
   
-  blackSesame2pastryflour <- tmpfun
+  blackSesame2pastryflour <- fn.
 
-  blackSesame2breadflour <- tmpfun
+  blackSesame2breadflour <- fn.
   
-  blackSesame2glutenFreeFlour <- blackSesame2wheatflourmix <- tmpfun
+  blackSesame2glutenFreeFlour <- blackSesame2wheatflourmix <- fn.
   
-  blackSesame2riceflour <- tmpfun
+  blackSesame2riceflour <- fn.
   
-  Na2CO3_2flour <- tmpfun
+  Na2CO3_2flour <- fn.
   
-  Na2CO3_2pastryflour <- tmpfun
+  Na2CO3_2pastryflour <- fn.
 
   Na2CO3_2breadflour <- function(x) switch(
     class(x), 
     noodlelinda =, wrapperlinda = .0015,
     NA_real_)
   
-  Na2CO3_2glutenFreeFlour <- Na2CO3_2wheatflourmix <- tmpfun
+  Na2CO3_2glutenFreeFlour <- Na2CO3_2wheatflourmix <- fn.
   
-  Na2CO3_2riceflour <- tmpfun
+  Na2CO3_2riceflour <- fn.
   
   bakingPowder <- function(x) switch(
     class(x),
@@ -614,7 +614,7 @@
     bao =, wheatBao = .006,
     NA_real_)
   
-  bakingPowder2flour <- tmpfun
+  bakingPowder2flour <- fn.
   
   bakingPowder2pastryflour <- function(x) switch(
     class(x), 
@@ -627,16 +627,16 @@
     gateau = .02,
     NA_real_)
   
-  bakingPowder2glutenFreeFlour <- tmpfun
+  bakingPowder2glutenFreeFlour <- fn.
   
   bakingPowder2wheatflourmix <- function(x) switch(
     class(x), 
     wheatBao = .0095,
     NA_real_)
     
-  bakingPowder2riceflour <- tmpfun
+  bakingPowder2riceflour <- fn.
   
-  yeast2flour <- tmpfun
+  yeast2flour <- fn.
   
   yeast2pastryflour <- function(x) switch(
     class(x),
@@ -649,14 +649,14 @@
     bread = .02,
     NA_real_)
   
-  yeast2glutenFreeFlour <- tmpfun
+  yeast2glutenFreeFlour <- fn.
   
   yeast2wheatflourmix <- function(x) switch(
     class(x), 
     wheatBao = .0095,
     NA_real_)
   
-  yeast2riceflour <- tmpfun
+  yeast2riceflour <- fn.
   
   gelatin2water <- function(x) switch(
     class(x), 

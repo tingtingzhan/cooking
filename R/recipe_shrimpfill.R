@@ -18,13 +18,13 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 #' ..
 #' 
 #' @examples
-#' diagnose_(
+#' diagnose(
 #'   shrimpfillCantonese,
 #'   shrimpball,
 #'   shrimpmash
 #' )
 #' 
-#' diagnose_(
+#' diagnose(
 #'  shrimpfillCantonese,
 #'  whiteSwan_shrimpfill,
 #'  Daat_shrimpfill,

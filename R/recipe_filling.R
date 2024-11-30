@@ -2,7 +2,7 @@
 
 
 if (FALSE) {
-  diagnose_(
+  diagnose(
     Dad_blackSesame_filling1,
     Dad_blackSesame_filling2,
     Dad_blackSesame_filling3
