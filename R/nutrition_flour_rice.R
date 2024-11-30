@@ -5,6 +5,7 @@ Erawan_riceFlour <- function() new(
   brand = unclass(style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours')),
   name = '\u7c98\u7c73\u7c89 Rice\U1f33e Flour', # \u6c34\u78e8
   servingGram = 30, 
+  calorie = 110,
   servingTbsp = 3, # https://www.traditionaloven.com/culinary-arts/flours/rice-flour/convert-gram-to-table-spoon.html
   carbohydrate = 24, sodium = .01, protein = 2)
 
@@ -15,6 +16,7 @@ Erawan_glutinousRiceFlour <- function() new(
   brand = unclass(style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours')),
   name = '\u7cef\u7c73\u7c89 Glutinous Rice\U1f33e Flour', # \u6c34\u78e8
   servingGram = 30, 
+  calorie = 110,
   servingTbsp = 3, # https://www.traditionaloven.com/culinary-arts/flours/rice-flour/convert-gram-to-table-spoon.html
   carbohydrate = 24, protein = 2)
 

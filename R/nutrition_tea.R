@@ -6,7 +6,7 @@
 
 Stassen_Ceylon <- function() new(
   Class = 'nutrition', 
-  stassentea = '4',
+  stassentea = '100-etb-stassen-pure-ceylon-black-tea',
   name = 'Ceylon Black Tea',
   servingGram = 2, # **must** be per-bag!  # servingBag = 1, 
   usd = 12/100, # 2023-11-09
@@ -14,13 +14,6 @@ Stassen_Ceylon <- function() new(
     'Soymilk coagulates -- confirm again',
     'no other better choice yet'
   ))
-
-Stassen_Ceylon_loose <- function() new(
-  Class = 'nutrition',
-  stassentea = '6', 
-  name = 'Ceylon Black Tea, Loose',
-  servingGram = 250, usd = 6.42, # 2023-11-09
-  review = 'where to buy?')
 
 
 #' @title Harney & Sons, headquarter in New York

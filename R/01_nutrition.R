@@ -462,7 +462,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     } else if (length(x@starbucks_iced)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/iced/nutrition', x@starbucks_iced), text = 'Starbucks\U1f1fa\U1f1f8'))
     } else if (length(x@stassentea)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.stassentea.com/product/%s', x@stassentea), text = 'Stassen\U1f1f1\U1f1f0'))
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.stassentea.com/shop-now/%s', x@stassentea), text = 'Stassen\U1f1f1\U1f1f0'))
     } else if (length(x@stonewall)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.stonewallkitchen.com/%d.html', x@stonewall), text = 'Stonewall Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@swiftmeats)) {
