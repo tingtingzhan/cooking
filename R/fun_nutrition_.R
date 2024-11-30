@@ -38,7 +38,7 @@ nutrition_ <- function(..., dots = list(...)) {
   attr(ret, which = 'name') <- vapply(dots, FUN = nutrition_name_brand, FUN.VALUE = '')
   attr(ret, which = 'name_cli') <- lapply(dots, FUN = function(x) {
     # (x = dots[[1L]])
-    if (!identical(x@name_cli_glue_delay$str, '')) return(x@name_cli_glue_delay)
+    if (!identical(x@name_glue$str, '')) return(x@name_glue)
     nutrition_name_brand(x)
   })
   

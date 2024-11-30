@@ -27,7 +27,7 @@ setOldClass('cli_glue_delay')
 #' 
 #' @slot brand \link[base]{character} scalar, manufacture brand
 #' @slot name \link[base]{character} scalar, product name
-#' @slot name_cli_glue_delay `'cli_glue_delay'` object, returned from function `cli:::glue_cmd`
+#' @slot name_glue `'cli_glue_delay'` object, returned from function `cli:::glue_cmd`
 #' 
 #' @slot extra \linkS4class{extra} object
 #' 
@@ -154,7 +154,7 @@ setOldClass('cli_glue_delay')
 setClass(Class = 'nutrition', slots = c(
   brand = 'character',
   name = 'character',
-  name_cli_glue_delay = 'cli_glue_delay',
+  name_glue = 'cli_glue_delay',
   
   extra = 'extra',
   
@@ -272,7 +272,7 @@ setClass(Class = 'nutrition', slots = c(
   protein = 'numeric',
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
-  name_cli_glue_delay = cli:::glue_cmd(character()), # must use `:::`
+  name_glue = cli:::glue_cmd(character()), # must use `:::`
   machine = function(x) NULL
 ), validity = function(object) {
   #if (!length(object@usd)) stop('no pricing info for ', object@brand, ' ' object@name)
@@ -294,8 +294,8 @@ nutrition_name_brand <- function(x) {
   
   if (length(x@brand)) {
     #trimws(sprintf(fmt = '%s \033[38;5;166m%s\033[0m', x@name, x@brand)) 
-    # do not know how to do customized ANSI color
-    trimws(paste(x@name, style_bold(col_yellow(x@brand))))
+    # do not know how to do customized ANSI color by RGB
+    trimws(paste(x@name, style_bold(make_ansi_style('sienna')(x@brand))))
   } else x@name
   
 }
@@ -734,8 +734,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   obj <- object
   
-  if (!identical(obj@name_cli_glue_delay$str, '')) {
-    cli__message(type = 'text', args = list(text = obj@name_cli_glue_delay))
+  if (!identical(obj@name_glue$str, '')) {
+    cli__message(type = 'text', args = list(text = obj@name_glue))
   } else cat(nutrition_name_brand(obj), '\n\n')
   
   #cat('Nutrition Facts\n\n')

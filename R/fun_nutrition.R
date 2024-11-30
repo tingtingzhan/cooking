@@ -16,23 +16,29 @@ nutrition <- function(x) UseMethod(generic = 'nutrition')
 nutrition.character <- function(x) {
   if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
     print(x)
-    stop('illegal nutrition names')
+    stop('nutrition name must be len-1 character')
   }
-  x0 <- parse(text = x)[[1L]]
-  xval <- if (is.symbol(x0)) eval(call(name = x)) else eval(x0)
-  if (inherits(xval, what = c('recipe'))) {
-    ret <- nutrition.recipe(xval)
-    ret@name_cli_glue_delay <- glue_cmd(sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', ret@name, style_bold(col_yellow(x)), x))
-    return(ret)
-  }
-  return(nutrition(xval))
+  return(eval(call(name = 'nutrition', x = parse(text = x)[[1L]])))
 }
 
 #' @rdname nutrition
 #' @export nutrition.function
 #' @export
-nutrition.function <- function(x) nutrition(do.call(x, args = list()))
-
+nutrition.function <- function(x) {
+  
+  cl <- match.call()
+  if (is.symbol(cl$x)) {
+    # to pass correct call to [nutrition.recipe]
+    cl[[1L]] <- quote(nutrition)
+    cl$x <- as.call(list(cl$x)) # wow!
+    return(eval(cl))
+  } 
+  
+  # will not pass correct call to [nutrition.recipe]
+  # when used in lapply(., FUN = nutrition)
+  # .. when `cl$x` will be `X[[i]]`
+  return(nutrition(x())) 
+}
 
 
 #' @rdname nutrition
@@ -119,6 +125,14 @@ nutrition.recipe <- function(x) {
     # water = if (water) water else numeric(),
     water = if (waterCooked) waterCooked else numeric()
   )
+  
+  cl <- match.call()
+  x. <- as.list(cl$x)
+  if (length(x.) == 1L) {
+    if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
+    x_ <- as.character(x.[[1L]])
+    ret@name_glue <- glue_cmd(sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, style_bold(col_yellow(x_)), x_))
+  }
   
   attr(ret, which = 'total_lost') <- total_lost
   

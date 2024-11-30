@@ -13,7 +13,7 @@
 #' @export
 diagnose_ <- function(..., dots = list(...)) {
   
-  xs <- lapply(dots, FUN = function(i) nutrition(i))
+  xs <- lapply(dots, FUN = nutrition)
   
   nm <- vapply(xs, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   names(xs) <- nm
