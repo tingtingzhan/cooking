@@ -334,6 +334,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{dad1966}}{\link[base]{character} scalar}
 
+\item{\code{guga}}{\link[base]{character} scalar}
+
 \item{\code{happytears}}{\link[base]{character} scalar}
 
 \item{\code{ippodotea,ippodoteajpn}}{\link[base]{character} scalar}

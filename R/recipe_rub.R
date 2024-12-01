@@ -9,23 +9,22 @@
 # #33593 New York strip (choice); $8.99/lb; Mar 30, 24
 
 
-#' @title \linkS4class{rub}
+#' @title \linkS4class{sousvide} and \linkS4class{airfryer} Rub Recipes
 #' 
 #' @description ..
 #' 
 #' @examples
-#' cuminMontreal_rub()
-#' #Montreal_rub()
-#' 
+#' cuminMontreal_sousvide()
+#' vindaloo_sousvide()
 #' 
 #' @name rub
-#' @aliases rub-class
+#' @aliases sousvide-class
 #' @export
-setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
-  alias_class = '\u814c\u6599',
-  #instruction = c(
-  #  'Rest in fridge overnight. Most liquid will be absorbed'
-  #) # this is sous vide instruction
+setClass(Class = 'sousvide', contains = 'recipe', prototype = prototype(
+  alias_class = '\u6c34\u6d74\u814c\u6599',
+  instruction = c(
+    'Rest in fridge overnight. Most liquid will be absorbed'
+  ),
   portion = c(
     'New York strip (Choice or Prime)' = 10,
     'Top sirloin (Prime)' = 7
@@ -33,9 +32,27 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
 ))
 
 #' @rdname rub
+#' @aliases airfryer-class
 #' @export
-cuminMontreal_rub <- function() new(
-  Class = 'rub',
+setClass(Class = 'airfryer', contains = 'recipe', prototype = prototype(
+  alias_class = '\u7a7a\u6c14\u70b8\u9505\u814c\u6599',
+  instruction = c(
+    'Rest in fridge 3 day',
+    'Wash off before air frying'
+  ),
+  portion = c(
+    'Duck\U1f986, whole' = 25 # ???
+  )
+))
+
+
+
+
+
+#' @rdname rub
+#' @export
+cuminMontreal_sousvide <- function() new(
+  Class = 'sousvide',
   alias_flavor = 'Cumin+Montreal',
   cumin_tsp = 1,
   spice_tsp = c(
@@ -48,8 +65,8 @@ cuminMontreal_rub <- function() new(
 )
 
 
-Montreal_rub_try1 <- function() new(
-  Class = 'rub',
+Montreal_sousvide1 <- function() new(
+  Class = 'sousvide',
   spice_tsp = c(
     McCormick_MontrealSteak = 1,
     Kirkland_noSaltSeasoning = 3
@@ -60,8 +77,8 @@ Montreal_rub_try1 <- function() new(
 
 #' @rdname rub
 #' @export
-Montreal_rub <- function() new( # inspired by Guga
-  Class = 'rub',
+Montreal_sousvide <- function() new( # inspired by Guga
+  Class = 'sousvide',
   brownSugar_tsp = 1,
   # cinnamon_tsp = 1/8, # leave this to next try
   spice_tsp = c(
@@ -75,74 +92,57 @@ Montreal_rub <- function() new( # inspired by Guga
 
 
 
-#' @title Chili Rub over the World!
-#' 
-#' @description
-#' ..
-#' 
-#' @name chiliRub
-#' @aliases chiliRub-class
-#' @export
-setClass(Class = 'chiliRub', contains = 'rub', prototype = prototype(
-  alias_class = '\u9999\u8fa3\u814c\u6599',
-  spice_tsp = c(
-    Kirkland_noSaltSeasoning = 3
-  )
-))
 
-
-#' @rdname chiliRub
+#' @rdname rub
 #' @export
-Southwest_rub <- function() new(
-  Class = 'chiliRub', 
+Southwest_souvide <- function() new(
+  Class = 'sousvide', 
   salt_tsp = .75,
-  
+  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
   # chiliMix_tsp = c(SimplyOrganic_Southwest = 3), # a little too hot
   chiliMix_tsp = c(SimplyOrganic_Southwest = 2), # try
-  
   pros = 'try again')
 
-#' @rdname chiliRub
+#' @rdname rub
 #' @export
-harissa_rub <- function() new(
-  Class = 'chiliRub',
+harissa_sousvide <- function() new(
+  Class = 'sousvide',
   salt_tsp = .75,
-  chiliMix_tsp = c(FrontierCoop_harissa = 3),
+  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
+  chiliMix_Tbsp = c(FrontierCoop_harissa = 1),
   pros = 'not bad!')
 
 
-setClass(Class = 'curryRub', contains = 'rub', prototype = prototype(
-  alias_class = '\u5496\u55b1\u814c\u6599',
-  spice_tsp = c(
-    Kirkland_noSaltSeasoning = 3
-  ),
-  portion = c(
-    'New York strip, Choice or Prime' = 10,
-    'Top sirloin, Prime' = 7,
-    'Duck\U1f986, whole' = 25
-  )
-))
 
 
-#' @rdname chiliRub
+#' @rdname rub
 #' @export
-vindaloo_rub <- function() new(
-  Class = 'curryRub',
+vindaloo_sousvide <- function() new(
+  Class = 'sousvide',
+  #alias_class = '\u5496\u55b1\u814c\u6599',
   salt_tsp = .75,
-  curry_tsp = c(FrontierCoop_vindaloo = 3),
+  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
+  curry_Tbsp = c(FrontierCoop_vindaloo = 1),
   pros = 'I am addicted!!')
 
 
-
-
+#' @rdname rub
+#' @export
+vindaloo_airfryer <- function() new(
+  Class = 'airfryer',
+  salt_Tbsp = 1, # sodium .219
+  #salt = 16.5, # sodium .211
+  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
+  curry_Tbsp = c(FrontierCoop_vindaloo = 1),
+  review = 'trying (salt = 16.5)'
+)
 
 
 
 
 
 Guga_rub <- function() new(
-  Class = 'rub',
-  alias_flavor = 'Guga', youtube = 'omXFw_JnP4E',
+  Class = 'recipe', guga = 'omXFw_JnP4E',
   salt_cup = 1/4,
   brownSugar_cup = 1/4,
   paprika_cup = 1/4,
@@ -155,9 +155,8 @@ Guga_rub <- function() new(
 
 # Guga has more: https://www.youtube.com/watch?v=lF2uz5Nz02E
 
-
 kalbi_rub <- function() new( # confirm next time!
-  Class = 'rub',
+  Class = 'recipe',
   alias_flavor = '\u97e9\u5f0f\u725b\u4ed4\u9aa8',
   sauce_Tbsp = c(
     LeeKumKee_blackPepper = 3*2,

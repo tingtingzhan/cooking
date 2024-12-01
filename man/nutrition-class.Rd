@@ -130,7 +130,7 @@ Nutrition information.
 
 \item{\code{marukyu}}{\link[base]{character} scalar}
 
-\item{\code{mccormickculinary,oldbay,grillmates}}{\link[base]{character} scalar}
+\item{\code{mccormick,mccormickculinary,oldbay,grillmates}}{\link[base]{character} scalar}
 
 \item{\code{meyenberg}}{\link[base]{character} scalar}
 

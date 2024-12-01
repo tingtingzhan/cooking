@@ -16,7 +16,7 @@ FrontierCoop_harissa <- function() new(
 
 FrontierCoop_vindaloo <- function() new(
   Class = 'nutrition', frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
-  name = 'Vindaloo Curry Seasoning',
+  name = 'Vindaloo Curry Seasoning', # \u5496\u55b1\u7c89 
   contain = c(
     'Tomato Concentrate', 'Guar Gum', 'Cumin', 'Chili Pepper', 'Cayenne', 'Turmeric', 'Coriander', 'Cinnamon', 'Yellow Mustard', 'Fenugreek', 'Garlic', 'Ginger', 'Black Pepper', 'Cardamom', 'Clove'
   ),

@@ -87,7 +87,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot leekumkee \link[base]{character} scalar
 #' @slot maeda \link[base]{character} scalar
 #' @slot marukyu \link[base]{character} scalar
-#' @slot mccormickculinary,oldbay,grillmates \link[base]{character} scalar
+#' @slot mccormick,mccormickculinary,oldbay,grillmates \link[base]{character} scalar
 #' @slot meyenberg \link[base]{character} scalar
 #' @slot mizkanjpn,mizkanusa \link[base]{character} scalars
 #' @slot nancysyogurt \link[base]{character} scalar
@@ -214,7 +214,7 @@ setClass(Class = 'nutrition', slots = c(
   leekumkee = 'character',
   maeda = 'character',
   marukyu = 'character',
-  mccormickculinary = 'character', oldbay = 'character', grillmates = 'character',
+  mccormick = 'character', mccormickculinary = 'character', oldbay = 'character', grillmates = 'character',
   meyenberg = 'character',
   mizkanjpn = 'character', mizkanusa = 'character',
   nancysyogurt = 'character',
@@ -409,12 +409,14 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
         unclass(style_hyperlink(url = sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', x@marukyu), text = 'Marukyu Koyamaen\U1f375')),
         unclass(style_hyperlink(url = sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', x@marukyu), text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5'))
       )
+    } else if (length(x@mccormick)) {
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormick.com/%s', x@mccormick), text = 'McCormick\U1f1fa\U1f1f8'))
     } else if (length(x@mccormickculinary)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/%s', x@mccormickculinary), text = 'McCormick Culinary\U1f1fa\U1f1f8'))
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/%s', x@mccormickculinary), text = 'McCormick\U1f1fa\U1f1f8'))
     } else if (length(x@oldbay)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/old-bay/%s', x@oldbay), text = 'McCormick Culinary\U1f1fa\U1f1f8'))
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/old-bay/%s', x@oldbay), text = 'McCormick\U1f1fa\U1f1f8'))
     } else if (length(x@grillmates)) {
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/grill-mates/%s', x@grillmates), text = 'McCormick Culinary\U1f1fa\U1f1f8'))
+      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/grill-mates/%s', x@grillmates), text = 'McCormick\U1f1fa\U1f1f8'))
     } else if (length(x@meyenberg)) {
       unclass(style_hyperlink(url = sprintf(fmt = 'https://www.meyenberg.com/products/%s', x@meyenberg), text = 'Meyenberg\U1f1fa\U1f1f8'))
     } else if (length(x@mizkanjpn)) {

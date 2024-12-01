@@ -86,8 +86,8 @@ McCormick_ginger <- function() new(
 )
 
 McCormick_oldBay_lowSodium <- function() new(
-  Class = 'nutrition', url = 'https://www.mccormick.com/old-bay/products/seasonings-and-sauces/old-bay-less-sodium-seasoning',
-  brand = 'McCormick\U1f1fa\U1f1f8', name = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599(\u4f4e\u76d0) Old Bay, Less Sodium',
+  Class = 'nutrition', mccormick = 'old-bay/products/seasonings-and-sauces/old-bay-less-sodium-seasoning',
+  name = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599(\u4f4e\u76d0) Old Bay, Less Sodium',
   servingGram = .6, servingTsp = 1/4, sodium = .095)
 
 
@@ -275,8 +275,9 @@ SimplyOrganic_garlic <- function() new(
 
 
 Chinata_paprika <- function() new(
-  Class = 'nutrition', simplyorganic = 'www.lachinata.com/index.php/pimenton-ahumado/latas-original/tin-70-gr-d-o-sweet.html',
-  brand = 'La Chinata\U1f1ea\U1f1f8', name = '\u7ea2\u751c\u6912\u7c89 Sweet Smoked Paprika\U1f336', 
+  Class = 'nutrition',
+  brand = unclass(style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://www.lachinatausa.com/index.php/buy-our-smoked-paprika-powder/tin-70-gr-d-o-sweet.html')),
+  name = '\u7ea2\u751c\u6912\u7c89 Sweet Smoked Paprika\U1f336', 
   servingGram = 15, servingTbsp = 2
   # https://www.aqua-calc.com/calculate/food-volume-to-weight
   # https://www.traditionaloven.com/foods/exchange/tbsp/g-gram/spice-paprika.html

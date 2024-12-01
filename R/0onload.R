@@ -230,7 +230,7 @@
     #caffeLatteMix = .0033,
     marinade = .011,
     tomyumStew = .02,
-    rub =, chiliRub = .1,
+    sousvide = .1,
     flavoredButter = .015,
     NA_real_)
   
