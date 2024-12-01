@@ -1130,9 +1130,10 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat('\n')
   }
   
-  if (length(y@calorie)) {
-    cat(sprintf(fmt = 'Total: %.4g grams; %.1f oz\n\nUS\U1f4b5 %.2f\nCalories\U1f525 %.0f\n\n', y@servingGram, y@servingGram/28.3495, y@usd, y@calorie))
-  } else cat(sprintf(fmt = 'Total: %.4g grams; %.1f oz\n\nUS\U1f4b5 %.2f\n\n', y@servingGram, y@servingGram/28.3495, y@usd))
+  cat(sprintf(fmt = 'Total: %.4g grams; %.1f oz\n\n', y@servingGram, y@servingGram/28.3495))
+  cat('US', style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', y@usd))), '\n')
+  if (length(y@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie))), '\n')
+  cat('\n')
   
   #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
   # need to write a [show] method for \linkS4class{mixWheatFlour}
@@ -1147,9 +1148,12 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   
   if (length(object@portion)) {
     cat(sprintf(
-      fmt = '\u058d %.1f \u00d7 %.0f grams \u058e %s', 
+      #fmt = '\u058d %.1f \u00d7 %.0f grams %s %s \u058e %s', 
+      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', 
       y@servingGram/object@portion, 
       object@portion, 
+      style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', y@usd / y@servingGram * object@portion))),
+      style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie / y@servingGram * object@portion))),
       style_bold(col_magenta(names(object@portion)))
     ), sep = '\n')
     cat('\n')

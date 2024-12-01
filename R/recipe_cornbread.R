@@ -6,7 +6,8 @@
 #' @export
 setClass(Class = 'cornbreadMix', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread Mix',
-  breadFlour = c(KingArthur_bread = 50), 
+  #breadFlour = c(KingArthur_bread = 50), # was
+  pastryFlour = c(Wegmans_pastry = 50),
   cornmeal = c(Albertsons_yellowCorn = 320),
   sugar = 45, # maintain final product 5.5% sugar
   # bakingPowder_tsp = 1/2 # cracks just right 
@@ -43,15 +44,15 @@ setClass(
     egg_pc = 2,
     heavyCream = c(Lucerne_heavyCream = 175), 
     
-    # water95 = 320, 
+    water95 = 320, 
     # muffin, fully cool down, not too wet.
     # but skillet, flipping over will likely break apart
-    water95 = 300, # try next time
+    #water95 = 300, # try next time
     
     # waterLost = 45, # forget this. other people's recipes are all raw
     portion = c(
       'Staub deep skillet, 8.5in' = 1000,
-      'Cupcake 2.75in' = 65
+      'Cupcake 2.75in' = 60
     ),
     instruction = c(
       'mix cornmeal, sugar and hot water. Let dough cool to 50C/120F',
@@ -80,7 +81,7 @@ cornbread <- function() new(
   Class = 'cornbread', 
   date = as.Date('2024-11-11'),
   pros = c(
-    'Must add sugar in hot dough. Sugar makes dough softer',
+    # 'Must add sugar in hot dough. Sugar makes dough softer',
     'heavy cream is much easier to work with than butter',
     'sugar 5.5% tastes better than 5%'
   ))
