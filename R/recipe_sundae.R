@@ -27,7 +27,7 @@
 #' #Bourbon_icecream() # future
 #' 
 #' matcha_sundae() * 2
-#' nutrition_(
+#' diagnose(
 #'  subtract(nutrition(cooking23s_icecream), sugar = 32),
 #'  subtract(nutrition(SweetDumpling_matcha_icecream()), sugar = 63),
 #'  subtract(xiaogaojie_icecream, sugar = 57),
@@ -46,13 +46,13 @@
 #' )
 #' 
 #' 
-#' nutrition_(
+#' diagnose(
 #'  subtract(Bassetts_coffee, sugar = 12.7),
 #'  subtract(HaagenDazs_coffee, sugar = 16),
 #'  coffee_sundae
 #' )
 #' 
-#' nutrition_(
+#' diagnose(
 #'  subtract(Bassetts_pumpkin, sugar = 11),
 #'  pumpkin_sundae
 #' )

@@ -44,18 +44,15 @@ setClass(
     egg_pc = 2,
     heavyCream = c(Lucerne_heavyCream = 175), 
     
-    water95 = 320, 
-    # muffin, fully cool down, not too wet.
-    # but skillet, flipping over will likely break apart
-    #water95 = 300, # try next time
-    
+    water95 = 320, # good for muffin; yet to experiment for skillet
+
     # waterLost = 45, # forget this. other people's recipes are all raw
     portion = c(
       'Staub deep skillet, 8.5in' = 1000,
       'Cupcake 2.75in' = 60
     ),
     instruction = c(
-      'mix cornmeal, sugar and hot water. Let dough cool to 50C/120F',
+      'mix cornmeal and hot water. Let dough cool to 50C/120F',
       'mix in other ingredients',
       '(optional) transfer to sizzling hot skillet (with cooking spray)'
     ),
@@ -81,9 +78,9 @@ cornbread <- function() new(
   Class = 'cornbread', 
   date = as.Date('2024-11-11'),
   pros = c(
-    # 'Must add sugar in hot dough. Sugar makes dough softer',
-    'heavy cream is much easier to work with than butter',
-    'sugar 5.5% tastes better than 5%'
+    paste('must use', style_bold(col_br_magenta('pastry flour'))),
+    paste('I prefer', style_bold(col_br_magenta('heavy cream')), 'to vegetable oil'),
+    paste(style_bold(col_br_magenta('sugar 5.5%')), 'tastes better than 5%')
   ))
 
 # crust on top is nice!
@@ -96,7 +93,7 @@ cornbread <- function() new(
 #' @title Other Cornbread Recipes
 #' 
 #' @examples
-#' xs = list(
+#' diagnose(
 #'  cornbread,
 #'  subtract(PreppyKitchen_cornbread, sugar = 17),
 #'  subtract(BethanyWeathersby_cornbread, sugar = 105),
@@ -113,8 +110,6 @@ cornbread <- function() new(
 #'  subtract(Albertsons_cornbread, sugar = 25),
 #'  Quaker_cornbread
 #' )
-#' nutrition_(dots = xs)
-#' diagnose(dots = xs)
 #' @name cornbread_other
 #' @export
 Wegmans_cornbread_recipe <- function() new(

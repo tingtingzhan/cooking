@@ -4,7 +4,7 @@
 # https://www.youtube.com/watch?v=b_hDOHmF9nE
 
 if (FALSE) {
-  nutrition_(
+  diagnose(
     Nabisco_waferOreo,
     Nabisco_Oreo,
     Nabisco_OreoThins

@@ -30,7 +30,7 @@ KingArthur_fauxReo <- function() new(
 
 
 if (FALSE) {
-  nutrition_(
+  diagnose(
     fauxReo,
     KingArthur_fauxReo,
     Nabisco_waferOreo

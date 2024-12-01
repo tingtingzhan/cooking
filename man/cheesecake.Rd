@@ -140,7 +140,7 @@ If possible, use room-temperature syrup to increase batter fluidity.
 
 \examples{
 
-nutrition_(
+diagnose(
  cheesecake(),
  subtract(cheesecake_PreppyKitchen, sugar = 125),
  subtract(Junior_original, sugar = 12),
@@ -162,7 +162,7 @@ blueberry_cheesecake()
 # I don't like!!
 Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 
-nutrition_(
+diagnose(
  pumpkin_cheesecake,
  subtract(pumpkin_cheesecake_Junior, sugar = 200),
  subtract(pumpkin_cheesecake_NatashasKitchen, brownSugar = 245),

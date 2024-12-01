@@ -21,7 +21,7 @@ pumpkin_creamCheeseSpread_Lynn()
 \examples{
 pumpkin_creamCheeseSpread()
 
-nutrition_(
+diagnose(
  pumpkin_creamCheeseSpread,
  pumpkin_creamCheeseSpread_GoodLifeEats,
  pumpkin_creamCheeseSpread_Lynn

@@ -724,7 +724,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@acme)) {
     if (length(x@acme) > 1L) stop('only allow len-1 @acme')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons'))
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons\U1f1fa\U1f1f8'))
     x@acme <- integer()
   }
   
@@ -844,7 +844,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       if (length(x@liqueur)) {
         'Tiramisu\u0300'
       } else if (length(x@cocoa)) {
-        if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) stop('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
+        if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
         if (x@cocoa / x@coffee < 1) 'Caff\u00e8' else 'Caff\u00e8 Mocha'
       } else if (length(x@syrup)) {
         if (any(grepl('ryeWhisky', x = names(x@syrup)))){

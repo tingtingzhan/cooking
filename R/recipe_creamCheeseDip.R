@@ -14,7 +14,7 @@
 #' @examples
 #' pumpkin_creamCheeseDip()
 #' 
-#' nutrition_(
+#' diagnose(
 #'  pumpkin_creamCheeseDip,
 #'  subtract(pumpkin_creamCheeseDip_bakethat, sugar = 185),
 #'  subtract(pumpkin_creamCheeseDip_Julie, sugar = 245)

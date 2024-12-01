@@ -50,7 +50,7 @@ BobsRedMill_cornbread()
 Other Cornbread Recipes
 }
 \examples{
-xs = list(
+diagnose(
  cornbread,
  subtract(PreppyKitchen_cornbread, sugar = 17),
  subtract(BethanyWeathersby_cornbread, sugar = 105),
@@ -67,6 +67,4 @@ xs = list(
  subtract(Albertsons_cornbread, sugar = 25),
  Quaker_cornbread
 )
-nutrition_(dots = xs)
-diagnose(dots = xs)
 }

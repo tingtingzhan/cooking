@@ -4,7 +4,7 @@
 # https://www.barry-callebaut.com/en/manufacturers/product-filter?topic_groups%5B0%5D=6&categories_level_1%5B0%5D=4&categories_level_2%5B0%5D=6&brands%5B0%5D=201
 
 if (FALSE) {
-  nutrition_(
+  diagnose(
     KingArthur_blackCocoa,
     KingArthur_Burgundy,
     KingArthur_Bensdorp, 

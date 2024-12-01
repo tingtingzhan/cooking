@@ -13,6 +13,7 @@
 nutrition_ <- function(..., dots = list(...)) {
   
   dots <- lapply(dots, FUN = nutrition)
+  #names(dots) <- vapply(dots, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   
   ret0 <- lapply(dots, FUN = function(v) c(
     calorie = sum(v@calorie),
@@ -56,8 +57,9 @@ print.nutrition_ <- function(x, ...) {
     sprintf_bincode(max(ret1[,i]))(ret1[,i])
   })
   
-  ret <- do.call(cbind, ret2)
-  dimnames(ret) <- list(attr(x, which = 'name'), show_endpoint(colnames(ret1)))
+  ret <- do.call(cbind, args = ret2)
+  #dimnames(ret) <- list(rownames(ret1), show_endpoint(colnames(ret1)))
+  dimnames(ret) <- list(attr(x, which = 'name', exact = TRUE), show_endpoint(colnames(ret1)))
 
   print_ANSI_matrix(ret)
   cat('\n')

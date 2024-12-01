@@ -29,14 +29,14 @@ ItoEn_sweet_matcha()
 Matcha Latte, Commercial or Other People's Recipe
 }
 \examples{
-nutrition_(
+diagnose(
  matchaLatte,
  Ippodo_uji_shimizu,
  Starbucks_matchaLatteMix,
  TraderJoes_matchaLatte
 ) # compare dry powder
 
-nutrition_(
+diagnose(
  hotdrink(matchaLatte),
  Ippodo_sayakaLatte,
  Starbucks_matchaLatte,
@@ -45,7 +45,7 @@ nutrition_(
  hotdrink(ItoEn_sweet_matcha, water80 = 120)
 ) # compare hot drink
 
-nutrition_(
+diagnose(
  frappe(matchaLatte),
  Starbucks_matchaFrappuccino
 ) # compare frappe

@@ -18,6 +18,9 @@ diagnose <- function(..., dots = list(...)) {
   
   cat('\n')
   
+  cat(bg_br_yellow('Nutrition\n'))
+  print.nutrition_(nutrition_(dots = dots))
+  
   diagnose_(dots, which = 'baker')
   diagnose_(dots, which = 'pastryBaker')
   diagnose_(dots, which = 'breadBaker')
@@ -49,7 +52,8 @@ diagnose_ <- function(dots, which) {
   if (all(!lengths(y0))) stop('wont happen')
   y1 <- do.call(rbind, args = y0)
   y2 <- y1[, colMeans(is.na(y1)) != 1L, drop = FALSE]
-  y3 <- y2[rowMeans(is.na(y2)) != 1L, , drop = FALSE]
+  #y3 <- y2[rowMeans(is.na(y2)) != 1L, , drop = FALSE]
+  y3 <- y2
   if (!length(y3)) return(invisible())
   colnames(y3) <- show_endpoint(colnames(y3))
   

@@ -27,7 +27,7 @@ Although it still tastes wonderful!
 \examples{
 blackSesame_crumbcrust()
 
-nutrition_(
+diagnose(
  blackSesame_crumbcrust,
  subtract(nutrition(PreppyKitchen_grahamCrust2), sugar = 35),
  subtract(nutrition(PreppyKitchen_grahamCrust1), sugar = 23),

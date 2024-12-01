@@ -146,7 +146,7 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- function() new(
   calorie = 60,
   fat = 5, cholesterol = .02, sodium = .12, carbohydrate = 2, sugar = 2, protein = 3)
 
-# nutrition_(Philadelphia_creamCheese, Philadelphia_creamCheeseSpread, PhiladelphiaNeufchatel_creamCheese, PhiladelphiaNeufchatel_creamCheeseSpread)
+# diagnose(Philadelphia_creamCheese, Philadelphia_creamCheeseSpread, PhiladelphiaNeufchatel_creamCheese, PhiladelphiaNeufchatel_creamCheeseSpread)
 
 LucerneNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', acme = 137100657L,
@@ -371,10 +371,10 @@ LandOLakes_whippedHeavyCream <- function() new(
   fat = 2, cholesterol = .01, sugar = 1)
 
 if (FALSE) {
-  nutrition_(
+  diagnose(
     LandOLakes_whippedHeavyCream,
     Wegmans_heavyCream
-  ) # same fat content!!
+  )
 }
 
 

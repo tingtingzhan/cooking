@@ -21,7 +21,7 @@ Pocky_double_matcha <- function() new(
 # https://pocky.glico.com/global/products/ja/matcha.html
 
 if (FALSE) {
-  nutrition_(
+  diagnose(
     Pocky_matcha,
     Pocky_double_matcha
   )

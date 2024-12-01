@@ -26,7 +26,7 @@ Jiffy_cornMuffinMix()
 Other Cornbread Mix
 }
 \examples{
-nutrition_(
+diagnose(
  cornbreadMix,
  subtract(TraderJoes_cornbreadMix, sugar = 10.7),
  subtract(WholeFoods365_cornbreadMix, sugar = 4.5),

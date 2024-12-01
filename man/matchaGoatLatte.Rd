@@ -14,12 +14,12 @@ matchaGoatLatte()
 \examples{
 matchaGoatLatte()
 
-nutrition_(
+diagnose(
  matchaLatte,
  matchaGoatLatte
 ) # compare dry powder
 
-nutrition_(
+diagnose(
  hotdrink(matchaLatte),
  hotdrink(matchaGoatLatte)
 ) # compare hot drink

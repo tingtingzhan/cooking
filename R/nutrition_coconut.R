@@ -1,6 +1,6 @@
 
 if (FALSE) {
-  nutrition_(
+  diagnose(
     Edward_shreddedCoconut,
     Edward_shreddedCoconutLite,
     Edward_coconutFlour,

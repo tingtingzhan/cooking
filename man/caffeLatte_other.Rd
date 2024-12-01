@@ -14,7 +14,7 @@ Starbucks_coffeeFrappuccino_bottle()
 Caffe Latte, Commercial or Other People's Recipe
 }
 \examples{
-nutrition_(
+diagnose(
  hotdrink(caffeLatte),
  Starbucks_caffeLatte,
  Starbucks_coffeeFrappuccino_bottle

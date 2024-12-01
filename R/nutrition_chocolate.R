@@ -9,8 +9,7 @@
 #' only 'case' page!!  ingredients more accurate!
 #' 
 #' @examples
-#'  
-#' nutrition_(
+#' diagnose(
 #'  Guittard_bittersweet63,
 #'  Guittard_eclipse50,
 #'  Guittard_solitaire54,
@@ -22,7 +21,6 @@
 #'  Guittard_heritage32milk,
 #'  Guittard_highSierra28white
 #' )
-#' 
 #' @name Guittard
 #' @export
 Guittard_31milk <- function() new(

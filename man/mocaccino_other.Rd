@@ -90,7 +90,7 @@ diagnose(
  bargainmums_mocha
 ) # compare powder recipes
 
-nutrition_(
+diagnose(
  mocaccino,
  Maxwell_mochaSuisse,
  WilliamsSonoma_mocha,
@@ -108,12 +108,12 @@ nutrition_(
  Starbucks_mochaMix
 ) # compare commercial powders
 
-nutrition_(
+diagnose(
  hotdrink(mocaccino),
  Starbucks_mocha
 ) # compare hot drink
 
-nutrition_(
+diagnose(
  frappe(mocaccino),
  Starbucks_mochaFrappuccino,
  Starbucks_mochaFrappuccino_bottle
