@@ -162,6 +162,7 @@ nutrition.recipe <- function(x) {
     sesameOil = new(Class = 'equiv', actual = x@sesameOil / total_raw),
     greenPeppercornOil = new(Class = 'equiv', actual = x@greenPeppercornOil / total_raw),
     bakingPowder = new(Class = 'equiv', actual = x@bakingPowder / total_raw),
+    NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / total_raw),
     msg = new(Class = 'equiv', actual = x@msg / total_raw),
     drymilk = new(Class = 'equiv', actual = drymilk / total_raw),
     tea = new(Class = 'equiv', actual = tea / total_raw),

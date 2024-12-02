@@ -43,7 +43,7 @@
 #' @slot sourCream,sourCream_tsp,sourCream_Tbsp,sourCream_cup \link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)
 #' @slot heavyCream,heavyCream_tsp,heavyCream_Tbsp,heavyCream_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans heavy cream or heavy whipping cream (in grams)
 #' @slot lightCream,lightCream_tsp,lightCream_Tbsp,lightCream_cup \link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)
-#' @slot yogurt \link[base]{numeric} scalar, weight of yogurt (in grams)
+#' @slot yogurt,yogurt_tsp,yogurt_Tbsp,yogurt_cup \link[base]{numeric} scalar, weight of yogurt (in grams)
 #' @slot kefir \link[base]{numeric} scalar
 #' @slot filmjolk \link[base]{numeric} scalar
 #' @slot drymilk,drymilk_tsp,drymilk_Tbsp,drymilk_cup  \link[base]{numeric} scalars, weight (in grams) and volume of Nestle Carnation fat-free dry milk, i.e., milk powder
@@ -331,7 +331,7 @@ setClass(Class = 'recipe', slots = c(
   mascarpone = 'numeric',
   cottageCheese = 'numeric',
   yogurtGreek = 'numeric',
-  yogurt = 'numeric',
+  yogurt = 'numeric', yogurt_tsp = 'numeric', yogurt_Tbsp = 'numeric', yogurt_cup = 'numeric',
   kefir = 'numeric',
   filmjolk = 'numeric',
   creamCheese = 'numeric',
@@ -657,6 +657,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
   x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne_lightCream')
   x <- combineVol(x, which = 'sourCream', name1 = 'Daisy_sourCream')
+  x <- combineVol(x, which = 'yogurt', name1 = 'Stonyfield_yogurt')
   
   x <- meatName(x, animal = 'pork')
   x <- meatName(x, animal = 'beef')

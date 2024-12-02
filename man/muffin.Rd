@@ -4,33 +4,48 @@
 \name{muffin}
 \alias{muffin}
 \alias{muffin-class}
-\alias{Brody_muffin}
-\alias{Introvert_muffin}
-\alias{CulinaryHill_muffin}
-\alias{Lori_muffin}
+\alias{cornbreadMix}
+\alias{cornbread}
 \title{\linkS4class{muffin} Recipes}
 \usage{
-muffin()
+cornbreadMix()
 
-Brody_muffin()
-
-Introvert_muffin()
-
-CulinaryHill_muffin()
-
-Lori_muffin()
+cornbread()
 }
 \description{
-..
+Muffin, or batter bread recipes.
 }
 \examples{
-muffin()
+cornbreadMix()
+cornbread()
+
 diagnose(
- muffin,
- subtract(Brody_muffin, sugar = 237),
- subtract(Introvert_muffin, sugar = 50),
- subtract(CulinaryHill_muffin, sugar = 155),
- subtract(Lori_muffin, sugar = 110))
+ cornbreadMix,
+ subtract(TraderJoes_cornbreadMix, sugar = 10.2),
+ subtract(WholeFoods365_cornbreadMix, sugar = 4),
+ subtract(Krusteaz_southern_cornbreadMix, sugar = .5),
+ BobsRedMill_cornbreadMix,
+ subtract(Stonewall_cornbreadMix, sugar = 8.1),
+ subtract(Jiffy_cornMuffinMix, sugar = 5.5),
+ subtract(Fleischmanns_cornbreadMix, sugar = 5.1)
+)
 
-
+diagnose(
+ cornbread,
+ subtract(PreppyKitchen_cornbread, sugar = 17),
+ subtract(BethanyWeathersby_cornbread, sugar = 105),
+ subtract(bluegirl_cornbread, sugar = 108),
+ subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 23),
+ subtract(nutrition(Jiffy_cornMuffin), sugar = 32),
+ subtract(Wegmans_cornbread_recipe, sugar = 88),
+ subtract(Wegmans_cornbread, sugar = 10.5),
+ subtract(nutrition(WholeFoods365_cornbread), sugar = 64),
+ subtract(nutrition(Stonewall_cornbread), sugar = 117),
+ subtract(nutrition(TraderJoes_cornbread), sugar = 108),
+ subtract(nutrition(Krusteaz_southern_cornbread), sugar = 23),
+ subtract(nutrition(BobsRedMill_cornbread), sugar = 7),
+ subtract(Albertsons_cornbread, sugar = 25),
+ subtract(nutrition(Fleischmanns_cornbread), sugar = 100),
+ Quaker_cornbread
+)
 }

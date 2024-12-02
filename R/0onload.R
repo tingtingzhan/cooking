@@ -522,12 +522,7 @@
     snowSkin = .05,
     NA_real_)
   
-  flour2cornmeal <- pastryflour2cornmeal <- glutenFreeFlour2cornmeal <- wheatflourmix2cornmeal <- riceflour2cornmeal <- fn.
-  
-  breadflour2cornmeal <- function(x) switch(
-    class(x),
-    #cornbreadMix = 2, # increase!! for boiling water!!
-    NA_real_)
+  flour2cornmeal <- pastryflour2cornmeal <- breadflour2cornmeal <- glutenFreeFlour2cornmeal <- wheatflourmix2cornmeal <- riceflour2cornmeal <- fn.
   
   starch2flour <- starch2pastryflour <- starch2breadflour <- starch2glutenFreeFlour <- starch2wheatflourmix <- fn.
   

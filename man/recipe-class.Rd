@@ -76,7 +76,7 @@ general recipe
 
 \item{\code{lightCream,lightCream_tsp,lightCream_Tbsp,lightCream_cup}}{\link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)}
 
-\item{\code{yogurt}}{\link[base]{numeric} scalar, weight of yogurt (in grams)}
+\item{\code{yogurt,yogurt_tsp,yogurt_Tbsp,yogurt_cup}}{\link[base]{numeric} scalar, weight of yogurt (in grams)}
 
 \item{\code{kefir}}{\link[base]{numeric} scalar}
 
