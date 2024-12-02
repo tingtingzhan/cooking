@@ -64,6 +64,17 @@ UpstateFarms_buttermilk <- function() new(
   water = floor(240 - 8 - .03 - .22 - 13 - 9)
 )
 
+OakFarms_buttermilk <- function() new(
+  Class = 'nutrition',
+  brand = unclass(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
+  name = '\u916a\u6d46 Bulgarian\U1f1e7\U1f1ec Buttermilk',
+  servingGram = 240, servingCup = 1,
+  calorie = 160,
+  fat = 8, cholesterol = .035, sodium = .25, carbohydrate = 13, sugar = 12, protein = 9,
+  fdc = 172225L, # water = 240*.879 # greater than total weight!
+  water = floor(240 - 8 - .035 - .25 - 13 - 9)
+)
+
 
 
 Carnation_evaporatedMilk <- function() new(

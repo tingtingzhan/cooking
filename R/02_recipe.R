@@ -653,7 +653,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- dairyName(x, dairy = 'creamCheese', name1 = 'Nancys')
   x <- combineVol(x, which = 'drymilk', name1 = 'Carnation_drymilk')
   x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
-  x <- combineVol(x, which = 'buttermilk', name1 = 'UpstateFarms_buttermilk')
+  x <- combineVol(x, which = 'buttermilk', name1 = 'OakFarms_buttermilk')
   x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
   x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne_lightCream')
   x <- combineVol(x, which = 'sourCream', name1 = 'Daisy_sourCream')
@@ -1135,9 +1135,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   if (length(y@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie))), '\n')
   cat('\n')
   
-  #attr_dx <- attributes(y)[c('mixWheatFlour', 'riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
   # need to write a [show] method for \linkS4class{mixWheatFlour}
-  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cocoaDx')]
+  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx')]
   has_attr_dx <- (lengths(attr_dx, use.names = FALSE) > 0L)
   lapply(attr_dx[has_attr_dx], FUN = show)
   #if (!any(has_attr_dx)) {

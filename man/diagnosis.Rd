@@ -9,6 +9,7 @@
 \alias{mixBaker-class}
 \alias{breadBaker-class}
 \alias{glutenFreeBaker-class}
+\alias{cornBaker-class}
 \alias{riceBaker-class}
 \alias{cocoaDx-class}
 \alias{cookedTexture-class}
@@ -42,6 +43,12 @@ Cooked percentage ..
 \item{\code{salt}}{\linkS4class{equiv}}
 
 \item{\code{yeast}}{\linkS4class{equiv}}
+
+\item{\code{flour}}{\linkS4class{equiv}}
+
+\item{\code{breadFlour}}{\linkS4class{equiv}}
+
+\item{\code{pastryFlour}}{\linkS4class{equiv}}
 
 \item{\code{water}}{\linkS4class{equiv}}
 

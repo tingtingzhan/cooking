@@ -143,6 +143,10 @@ setMethod(f = show, signature = 'equiv', definition = function(object) {
 #' @slot salt \linkS4class{equiv}
 #' @slot yeast \linkS4class{equiv}
 #' 
+#' @slot flour \linkS4class{equiv}
+#' @slot breadFlour \linkS4class{equiv}
+#' @slot pastryFlour \linkS4class{equiv}
+#' 
 #' @slot water \linkS4class{equiv}
 #' @slot carbohydrate \linkS4class{equiv}
 #' @slot sugar \linkS4class{equiv}
@@ -190,8 +194,8 @@ setClass(Class = 'recipeDx', slots = c(
   water = 'equiv',
   carbohydrate = 'equiv',
   addedStarch = 'equiv',
-  rice = 'equiv',
-  glutinousRice = 'equiv',
+  flour = 'equiv', breadFlour = 'equiv', pastryFlour = 'equiv',
+  rice = 'equiv', glutinousRice = 'equiv',
   gelatin = 'equiv',
   alcohol = 'equiv',
   cornmeal = 'equiv',
@@ -281,6 +285,14 @@ setClass(Class = 'glutenFreeBaker', contains = 'recipeDx', prototype = prototype
 ))
 
 #' @rdname diagnosis
+#' @aliases cornBaker-class
+#' @export
+setClass(Class = 'cornBaker', contains = 'recipeDx', prototype = prototype(
+  per = 'Cornmeal\U1f33d'
+))
+
+
+#' @rdname diagnosis
 #' @aliases riceBaker-class
 #' @export
 setClass(Class = 'riceBaker', contains = 'recipeDx', prototype = prototype(
@@ -363,8 +375,8 @@ show_endpoint <- function(x) {
   x[x == 'glutinousRice'] <- 'glutRice'
   x[x == 'addedSugar'] <- '+sugar'
   x[x == 'addedStarch'] <- '+starch'
-  #x[x == 'eggYolk'] <- '\U0001f95ayolk'
-  #x[x == 'eggWhite'] <- '\U0001f95awhite'
+  x[x == 'eggYolk'] <- '\U0001f95ayolk'
+  x[x == 'eggWhite'] <- '\U0001f95awhite'
   x[x == 'sodium'] <- 'Na\u207a'
   x[x == 'bakingPowder'] <- 'bkPwd'
   x[x == 'cholesterol'] <- 'cholr'
@@ -374,6 +386,8 @@ show_endpoint <- function(x) {
   x[x == 'sesameOil'] <- 'ssmOil'
   x[x == 'creamCheese'] <- 'creamChs'
   x[x == 'greenPeppercornOil'] <- bg_green(col_br_white('ppcOil'))
+  x[x == 'pastryFlour'] <- '\U0001f370flour'
+  x[x == 'breadFlour'] <- '\U0001f35eflour'
   return(x)
 }
 
@@ -391,7 +405,7 @@ show_endpoint <- function(x) {
 setMethod(f = show, signature = 'recipeDx', definition = function(object) {
   ret <- format.recipeDx(object)
   if (!length(ret)) return(invisible())
-  cat(bg_br_yellow(sprintf(fmt = '\u214c %s\n', object@per)))
+  cat(bg_br_yellow(style_bold(sprintf(fmt = '\u214c %s\n', object@per))))
   print_ANSI_matrix(ret)
   cat('\n')
 })

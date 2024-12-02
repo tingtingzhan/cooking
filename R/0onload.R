@@ -522,9 +522,9 @@
     snowSkin = .05,
     NA_real_)
   
-  cornmeal2flour <- cornmeal2pastryflour <- cornmeal2glutenFreeFlour <- cornmeal2wheatflourmix <- cornmeal2riceflour <- fn.
+  flour2cornmeal <- pastryflour2cornmeal <- glutenFreeFlour2cornmeal <- wheatflourmix2cornmeal <- riceflour2cornmeal <- fn.
   
-  cornmeal2breadflour <- function(x) switch(
+  breadflour2cornmeal <- function(x) switch(
     class(x),
     #cornbreadMix = 2, # increase!! for boiling water!!
     NA_real_)
@@ -706,11 +706,13 @@
     
     c(outer(X = c('water', 'fat', 'salt', 'eggYolk', 
                   'matcha', 'beet', 'acai', 'blackSesame', 
-                  'cornmeal', 'starch', 
+                  'starch', 
                   'glutinousRice', # 'rice', 
                   'yeast', 'bakingPowder', 'Na2CO3_'), 
             Y = c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), 
             FUN = paste, sep = '2')),
+    
+    paste0(c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), '2cornmeal'),
     
     'gelatin2water',
     NULL

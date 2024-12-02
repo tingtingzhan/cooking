@@ -241,15 +241,26 @@ nutrition.recipe <- function(x) {
     acai = new(Class = 'equiv', actual = x@acai / total, ideal = devrecipe$acai(x))
   )
   
-  if (sum(mix0_wheat_flour > 0) > 1L) {
+  if (cornmeal) {
     
-    attr(ret, which = 'mixWheatFlour') <- mix0_wheat_flour
+    attr(ret, which = 'cornBaker') <- new(
+      Class = 'cornBaker',
+      # water = new(Class = 'equiv', actual = water/cornmeal), # depends on `flour` as well
+      flour = new(Class = 'equiv', actual = flour/cornmeal, ideal = devrecipe$flour2cornmeal(x)),
+      breadFlour = new(Class = 'equiv', actual = breadFlour/cornmeal, ideal = devrecipe$breadflour2cornmeal(x)),
+      pastryFlour = new(Class = 'equiv', actual = pastryFlour/cornmeal, ideal = devrecipe$pastryflour2cornmeal(x)),
+      eggYolk = new(Class = 'equiv', actual = x@eggYolk/cornmeal),
+      eggWhite = new(Class = 'equiv', actual = x@eggWhite/cornmeal)
+    )
+    
+  } else if (sum(mix0_wheat_flour > 0) > 1L) {
+    
+    #attr(ret, which = 'mixWheatFlour') <- mix0_wheat_flour
     
     attr(ret, which = 'mixBaker') <- new(
       Class = 'mixBaker',
       puree = new(Class = 'equiv', actual = puree / mix_wheat_flour),
       water = new(Class = 'equiv', actual = water / mix_wheat_flour, ideal = devrecipe$water2wheatflourmix(x)),
-      cornmeal = new(Class = 'equiv', actual = cornmeal / mix_wheat_flour, ideal = devrecipe$cornmeal2wheatflourmix(x)),
       addedStarch = new(Class = 'equiv', actual = starch / mix_wheat_flour),
       fat = new(Class = 'equiv', actual = fat / mix_wheat_flour, ideal = devrecipe$fat2wheatflourmix(x)),
       blackSesame = new(Class = 'equiv', actual = x@blackSesame / mix_wheat_flour),
@@ -271,16 +282,10 @@ nutrition.recipe <- function(x) {
   } else {
     
     attr(ret, which = 'baker') <- if (flour) {
-      if (length(cornmeal)) { # || length(...)
-        new(
-          Class = 'baker',
-          cornmeal = new(Class = 'equiv', actual = cornmeal / flour, ideal = devrecipe$cornmeal2flour(x))
-        )
-      } else new(
+      new(
         Class = 'baker',
         puree = new(Class = 'equiv', actual = puree / flour),
         water = new(Class = 'equiv', actual = water / flour, ideal = devrecipe$water2flour(x), margin = 1.01),
-        cornmeal = new(Class = 'equiv', actual = cornmeal / flour),
         addedStarch = new(Class = 'equiv', actual = starch / flour),
         fat = new(Class = 'equiv', actual = fat / flour, ideal = devrecipe$fat2flour(x), margin = 1.05, ignore = .01),
         blackSesame = new(Class = 'equiv', actual = x@blackSesame / flour, ideal = devrecipe$blackSesame2flour(x)),
@@ -301,12 +306,7 @@ nutrition.recipe <- function(x) {
     } #else NULL
     
     attr(ret, which = 'pastryBaker') <- if (pastryFlour) {
-      if (length(cornmeal)) {
-        new(
-          Class = 'pastryBaker',
-          cornmeal = new(Class = 'equiv', actual = cornmeal / pastryFlour, ideal = devrecipe$cornmeal2pastryflour(x))
-        )
-      } else new(
+      new(
         Class = 'pastryBaker',
         puree = new(Class = 'equiv', actual = puree / pastryFlour),
         water = new(Class = 'equiv', actual = water / pastryFlour, ideal = devrecipe$water2pastryflour(x), margin = 1.01),
@@ -333,17 +333,11 @@ nutrition.recipe <- function(x) {
     }
     
     attr(ret, which = 'breadBaker') <- if (breadFlour) {
-      if (length(cornmeal)) { # || length(...)
-        new(
-          Class = 'breadBaker',
-          cornmeal = new(Class = 'equiv', actual = cornmeal / breadFlour, ideal = devrecipe$cornmeal2breadflour(x))
-        )
-      } else new(
+      new(
         Class = 'breadBaker',
         puree = new(Class = 'equiv', actual = puree / breadFlour),
         water = new(Class = 'equiv', actual = water / breadFlour, ideal = devrecipe$water2breadflour(x), margin = 1.01),
         gelatin = new(Class = 'equiv', actual = x@gelatin / breadFlour),
-        # cornmeal = new(Class = 'equiv', actual = sum(x@cornmeal) / breadFlour, ideal = devrecipe$cornmeal2breadflour(x)),
         addedStarch = new(Class = 'equiv', actual = starch / breadFlour),
         fat = new(Class = 'equiv', actual = fat / breadFlour, ideal = devrecipe$fat2breadflour(x), margin = 1.05),
         blackSesame = new(Class = 'equiv', actual = x@blackSesame / breadFlour, ideal = devrecipe$blackSesame2breadflour(x)),

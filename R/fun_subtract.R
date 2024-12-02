@@ -53,7 +53,7 @@ subtract.recipe <- function(object, ...) {
   }
 
   txt[txt == 'brownSugar'] <- 'sugar'
-  obj@alias <- paste(obj@alias, bg_br_green(paste0('-', paste0(unique.default(txt), collapse = '/'))))
+  obj@alias <- paste(obj@alias, bg_br_green(col_grey(paste0('-', paste0(unique.default(txt), collapse = '/')))))
   
   return(obj)
   
@@ -94,7 +94,7 @@ subtract.nutrition <- function(object, ...) {
     
   }
   
-  obj@name <- paste(obj@name, bg_br_green(paste0('-', paste0(unique.default(txt), collapse = '/'))))
+  obj@name <- paste(obj@name, bg_br_green(col_grey(paste0('-', paste0(unique.default(txt), collapse = '/')))))
   
   obj@calorie <- numeric() # ideally I should be able to calculate this Haha
   

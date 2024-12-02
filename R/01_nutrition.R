@@ -558,16 +558,18 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     x@cost_ <- character()
   } else if (n_cost_ == 1L) {
     if (names(cost_) == 'US$') {
-      x@cost_ <- sprintf(fmt = 'US\U1f4b5 %.2f', cost_)
+      x@cost_ <- paste('US', style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', cost_))))
     } else {
-      x@cost_ <- sprintf(fmt = 'US\U1f4b5 %.2f(%s)', cost_, names(cost_))
+      x@cost_ <- paste('US', style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', cost_))), sprintf(fmt = '(%s)', names(cost_)))
       x@usd <- unname(cost_)
     }
   } else {
-    cost_source <- sprintf(fmt = '(%s)', names(cost_))
-    cost_source[cost_source == '(US$)'] <- ''
+    #cost_source <- sprintf(fmt = '(%s)', names(cost_))
+    #cost_source[cost_source == '(US$)'] <- ''
+    cost_source <- names(cost_)
+    cost_source[cost_source == 'US$'] <- ''
     cost_min <- which.min(cost_)
-    cost_txt0 <- sprintf(fmt = 'US\U1f4b5 %.2f%s', cost_, cost_source)
+    cost_txt0 <- paste('US', style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', cost_))), style_bold(col_br_red(cost_source)))
     cost_txt0[cost_min] <- bg_br_yellow(cost_txt0[cost_min])
     x@cost_ <- paste(cost_txt0, collapse = '\n')
     x@usd <- unname(cost_[cost_min]) # to calculate price in 'recipe'
@@ -744,7 +746,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
 
   cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, autoVolume(x = obj@servingGram, nm = list(obj))))
   cat(sprintf(fmt = '%s\n', obj@cost_))
-  cat(sprintf(fmt = 'Calories\U1f525 %.0f\n', obj@calorie))
+  if (length(obj@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', obj@calorie))), '\n')
   cat('\n')
   
   cat(sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, format_ingredient_perc(obj, 'water')))
