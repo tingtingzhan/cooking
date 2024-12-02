@@ -855,6 +855,72 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         } else stop('more syrup?')
       } else 'Caff\u00e8' # \u2615
      
+    } else if (length(x@acai)) {
+      '\u5df4\u897f\u8393'
+    } else if (length(x@adzukibean)) {
+      '\u7ea2\u8c46'
+    } else if (length(x@applesauce)) {
+      '\u82f9\u679c\U1f34e'
+    } else if (length(x@beet)) {
+      '\u751c\u83dc'
+    } else if (length(x@blackRice)) {
+      '\u9ed1\u7c73'
+    } else if (length(x@blackSesame)) {
+      '\u9ed1\u829d\u9ebb'
+    } else if (length(x@brownRice)) {
+      '\u7cd9\u7c73'
+    } else if (length(x@cashew)) {
+      '\u8170\u679c'
+    } else if (length(x@chickpea)) {
+      '\u9e70\u5634\u8c46'
+    } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
+      '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
+    } else if (length(x@coconut)) {
+      '\u6930\u84c9\U1f965'
+    } else if (length(x@darkCherry)) {
+      '\u751c\u6a31\u6843\U1f352'
+    } else if (length(x@mandarine)) {
+      '\u6a58\u5b50\U1f34a'
+    } else if (length(x@mango)) {
+      '\u8292\u679c\U1f96d'
+    } else if (length(x@matcha)) {
+      '\u62b9\u8336\U1f375'
+    } else if (length(x@mungbean)) {
+      '\u7eff\u8c46'
+    } else if (length(x@pear)) {
+      '\u68a8\U1f350'
+    } else if (length(x@pineapple)) {
+      '\u83e0\u841d\U1f34d'
+    } else if (length(x@pumpkin)) {
+      '\u5357\u74dc\U1f383'
+    } else if (length(x@redKidneyBean)) {
+      '\u7ea2\u82b8\u8c46'
+    } else if (length(x@strawberry)) {
+      '\u8349\u8393\U1f353'
+    } else if (length(x@tomato)) {
+      '\u897f\u7ea2\u67ff\U1f345'
+    } else if (length(x@yellowCorn)) {
+      '\u7389\u7c73\U1f33d'
+    } else if (length(x@shrimp)) {
+      '\u867e\U1f990'
+    } else if (length(x@beef)) {
+      '\u725b\u8089'
+    } else if (length(x@pork)) {
+      '\u732a\u8089'
+    } else if (length(x@ginger)) {
+      '\u59dc\u9999\U1fada'
+    } else if (length(x@liqueur) == 1L) {
+      nutrition_name(nutrition(do.call(what = names(x@liqueur), args = list())))
+      # if (length(liqueur_nm <- names(x@liqueur))) {
+      #  if (any(endsWith(liqueur_nm, suffix = '_coffee'))) {
+      #    'Tiramisu\u0300'
+      #  } else character()
+    } else if (length(x@sauce)) {
+      if (any(grepl('tomyum', x = names(x@sauce)))) {
+        '\u51ac\u9634'
+      } else character()
+    } else if (length(x@syrup)) {
+      get_flavor_(names(x@syrup))
     } else if (length(x@curry)) {
       get_flavor_(names(x@curry))
     } else if (length(x@chiliMix)) {
@@ -876,73 +942,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         if (length(x@lard)) {
           '\u732a\u6cb9'
         }
-      }, if (length(x@acai)) {
-        '\u5df4\u897f\u8393'
-      } else if (length(x@adzukibean)) {
-        '\u7ea2\u8c46'
-      } else if (length(x@applesauce)) {
-        '\u82f9\u679c\U1f34e'
-      } else if (length(x@beet)) {
-        '\u751c\u83dc'
-      } else if (length(x@blackRice)) {
-        '\u9ed1\u7c73'
-      } else if (length(x@blackSesame)) {
-        '\u9ed1\u829d\u9ebb'
-      } else if (length(x@brownRice)) {
-        '\u7cd9\u7c73'
-      } else if (length(x@cashew)) {
-        '\u8170\u679c'
-      } else if (length(x@chickpea)) {
-        '\u9e70\u5634\u8c46'
-      } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
-        '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
-      } else if (length(x@coconut)) {
-        '\u6930\u84c9\U1f965'
-      } else if (length(x@darkCherry)) {
-        '\u751c\u6a31\u6843\U1f352'
-      } else if (length(x@mandarine)) {
-        '\u6a58\u5b50\U1f34a'
-      } else if (length(x@mango)) {
-        '\u8292\u679c\U1f96d'
-      } else if (length(x@matcha)) {
-        '\u62b9\u8336\U1f375'
-      } else if (length(x@mungbean)) {
-        '\u7eff\u8c46'
-      } else if (length(x@pear)) {
-        '\u68a8\U1f350'
-      } else if (length(x@pineapple)) {
-        '\u83e0\u841d\U1f34d'
-      } else if (length(x@pumpkin)) {
-        '\u5357\u74dc\U1f383'
-      } else if (length(x@redKidneyBean)) {
-        '\u7ea2\u82b8\u8c46'
-      } else if (length(x@strawberry)) {
-        '\u8349\u8393\U1f353'
-      } else if (length(x@tomato)) {
-        '\u897f\u7ea2\u67ff\U1f345'
-      } else if (length(x@yellowCorn)) {
-        '\u7389\u7c73\U1f33d'
-      } else if (length(x@shrimp)) {
-        '\u867e\U1f990'
-      } else if (length(x@beef)) {
-        '\u725b\u8089'
-      } else if (length(x@pork)) {
-        '\u732a\u8089'
-      } else if (length(x@ginger)) {
-        '\u59dc\u9999\U1fada'
-      } else if (length(x@liqueur) == 1L) {
-        nutrition_name(nutrition(do.call(what = names(x@liqueur), args = list())))
-        # if (length(liqueur_nm <- names(x@liqueur))) {
-        #  if (any(endsWith(liqueur_nm, suffix = '_coffee'))) {
-        #    'Tiramisu\u0300'
-        #  } else character()
-      } else if (length(x@sauce)) {
-        if (any(grepl('tomyum', x = names(x@sauce)))) {
-          '\u51ac\u9634'
-        } else character()
-      } else if (length(x@syrup)) {
-        get_flavor_(names(x@syrup))
-      } else character())
+      }, character())
   }
   
   if (!length(x@alias)) {

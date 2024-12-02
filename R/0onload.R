@@ -42,7 +42,11 @@
     } else NA_real_, 
     caffeLatte_ = .045, 
     mocaccino_ = .05,
-    cornbread = .055, # tastes better than .05
+    muffin = if (length(x@cornmeal)) {
+      .055 # tastes better than .05
+    } else if (length(x@pumpkin)) {
+      .08
+    } else NA_real_,
     matchaGoatLatte_ = .07, # early 2024; whole goat milk; try to reduce with tenju!
     sundae = if (length(x@matcha)) {
       .095
@@ -176,7 +180,7 @@
     crepeCake = .07,
     matchaGoatLatteMix = .075,
     mocaccinoMix = .077,
-    cornbread = .08, 
+    muffin = .08, 
     millecrepe = if (length(x@liqueur)) .075 else .1, 
     custardFilling = .09,
     sundae = .11,
@@ -606,7 +610,7 @@
   bakingPowder <- function(x) switch(
     class(x),
     gateau = .004,
-    cornbread = .005,
+    muffin = .005,
     bao =, wheatBao = .006,
     NA_real_)
   

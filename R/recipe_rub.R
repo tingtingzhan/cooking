@@ -37,7 +37,7 @@ setClass(Class = 'sousvide', contains = 'recipe', prototype = prototype(
 setClass(Class = 'airfryer', contains = 'recipe', prototype = prototype(
   alias_class = '\u7a7a\u6c14\u70b8\u9505\u814c\u6599',
   portion = c(
-    'Duck\U1f986, whole' = 25 # ???
+    'Duck\U1f986, whole' = 30 # confirmed
   ),
   PhilipsHD9867 = PhilipsHD9867(
     treatment = c(
@@ -138,7 +138,7 @@ vindaloo_airfryer <- function() new(
   spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
   curry_Tbsp = c(FrontierCoop_vindaloo = 1),
   date = as.Date('2024-12-02'),
-  pros = 'nice!'
+  pros = 'perfect sodium level!'
 )
 
 

@@ -43,7 +43,13 @@
 #' @name muffin
 #' @aliases muffin-class
 #' @export
-setClass(Class = 'muffin', contains = 'recipe')
+setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
+  alias_class = 'Muffin',
+  portion = c(
+    'Staub deep skillet, 8.5in' = 1000,
+    'Cupcake 2.75in' = 60
+  )
+))
 
 
 #' @rdname muffin
@@ -61,16 +67,19 @@ cornbreadMix <- function() new(
 #' @rdname muffin
 #' @export
 cornbread <- function() new(
-  Class = 'muffin', alias = 'Cornbread', cornbreadMix(),
+  Class = 'muffin', alias = 'Cornbread\U1f33d', 
+  
+  #cornbreadMix(), # will overwrite `@portion`!!
+  pastryFlour = c(Wegmans_pastry = 50), # breadFlour does **not** work!!!
+  cornmeal = c(Albertsons_yellowCorn = 320),
+  sugar = 45,
+  bakingPowder_tsp = 1, # best, so far
+  
   egg_pc = 2,
   heavyCream = c(Lucerne_heavyCream = 175), 
   water95 = 320, # good for muffin; yet to experiment for skillet
   # waterLost = 45, # forget this, for now
   
-  portion = c(
-    'Staub deep skillet, 8.5in' = 1000,
-    'Cupcake 2.75in' = 60
-  ),
   instruction = c(
     'mix cornmeal and hot water. Let dough sit for 5min',
     'mix in other ingredients'#,
@@ -101,8 +110,19 @@ cornbread <- function() new(
 
 
 
-# pumpkin_muffin
+pumpkin_muffin <- function() new(
+  Class = 'muffin', 
+  pumpkin = 600,
+  pastryFlour = 100, # to adjust!!!
+  bakingPowder_tsp = 1,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 2),
+  creamCheese = c(Nancys_creamCheese = 227),
+  sugar = c(Domino_darkBrown = 50),
+  eggYolk_pc = 2, eggWhite_pc = 2
+)
 
-
+if (FALSE) {
+  diagnose(cornbread, pumpkin_muffin)
+}
 
 
