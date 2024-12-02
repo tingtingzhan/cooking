@@ -9,6 +9,7 @@
 #' 
 #' @param dots a \link[base]{list} of objects convertible to \linkS4class{nutrition} class
 #' 
+#' @keywords internal
 #' @export
 nutrition_ <- function(..., dots = list(...)) {
   

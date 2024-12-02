@@ -8,6 +8,7 @@
 \alias{BobsRedMill_cornbreadMix}
 \alias{Stonewall_cornbreadMix}
 \alias{Jiffy_cornMuffinMix}
+\alias{Fleischmanns_cornbreadMix}
 \title{Other Cornbread Mix}
 \usage{
 TraderJoes_cornbreadMix()
@@ -21,19 +22,10 @@ BobsRedMill_cornbreadMix()
 Stonewall_cornbreadMix()
 
 Jiffy_cornMuffinMix()
+
+Fleischmanns_cornbreadMix()
 }
 \description{
 Other Cornbread Mix
-}
-\examples{
-diagnose(
- cornbreadMix,
- subtract(TraderJoes_cornbreadMix, sugar = 10.7),
- subtract(WholeFoods365_cornbreadMix, sugar = 4.5),
- subtract(Krusteaz_southern_cornbreadMix, sugar = 1),
- subtract(BobsRedMill_cornbreadMix, sugar = .6),
- subtract(Stonewall_cornbreadMix, sugar = 8.5),
- subtract(Jiffy_cornMuffinMix, sugar = 7)
-)
 }
 \keyword{internal}

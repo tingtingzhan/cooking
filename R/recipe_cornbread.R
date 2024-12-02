@@ -1,17 +1,32 @@
 
 #' @title \linkS4class{cornbreadMix} Recipes
 #' 
+#' @description
+#' Cornbread mix recipes.
+#' 
+#' 
+#' @examples
+#' cornbreadMix()
+#' 
+#' diagnose(
+#'  cornbreadMix,
+#'  subtract(TraderJoes_cornbreadMix, sugar = 10.2),
+#'  subtract(WholeFoods365_cornbreadMix, sugar = 4),
+#'  subtract(Krusteaz_southern_cornbreadMix, sugar = .5),
+#'  BobsRedMill_cornbreadMix,
+#'  subtract(Stonewall_cornbreadMix, sugar = 8.1),
+#'  subtract(Jiffy_cornMuffinMix, sugar = 5.5),
+#'  subtract(Fleischmanns_cornbreadMix, sugar = 5.1)
+#' )
 #' @name cornbreadMix
 #' @aliases cornbreadMix-class
 #' @export
 setClass(Class = 'cornbreadMix', contains = 'recipe', prototype = prototype(
   alias_class = 'Cornbread Mix',
-  #breadFlour = c(KingArthur_bread = 50), # was
-  pastryFlour = c(Wegmans_pastry = 50),
+  pastryFlour = c(Wegmans_pastry = 50), # breadFlour does **not** work!!!
   cornmeal = c(Albertsons_yellowCorn = 320),
-  sugar = 45, # maintain final product 5.5% sugar
-  # bakingPowder_tsp = 1/2 # cracks just right 
-  bakingPowder_tsp = 1 # I think this is better than '1/2 tsp'
+  sugar = 45,
+  bakingPowder_tsp = 1 # best, so far
 ))
 
 
@@ -33,66 +48,6 @@ cornbreadMix <- function() new(
 #' @examples
 #' cornbread()
 #' 
-#' @name cornbread
-#' @aliases cornbread-class
-#' @export
-setClass(
-  Class = 'cornbread', 
-  contains = 'cornbreadMix',
-  prototype = prototype(
-    alias_class = 'Cornbread',
-    egg_pc = 2,
-    heavyCream = c(Lucerne_heavyCream = 175), 
-    
-    water95 = 320, # good for muffin; yet to experiment for skillet
-
-    # waterLost = 45, # forget this. other people's recipes are all raw
-    portion = c(
-      'Staub deep skillet, 8.5in' = 1000,
-      'Cupcake 2.75in' = 60
-    ),
-    instruction = c(
-      'mix cornmeal and hot water. Let dough cool to 50C/120F',
-      'mix in other ingredients',
-      '(optional) transfer to sizzling hot skillet (with cooking spray)'
-    ),
-    RobamCT763 = RobamCT763(
-      #treatment = c(
-      #  'Preheat Staub deep skillet, 8.5in, for 10min'
-      #),
-      program = 'Steam Bake',
-      fahrenheit = 375, 
-      minute = c(
-        'Staub Skillet (preheated; experimenting)' = 25, # try next time with more baking powder
-        'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
-      ),
-      cooling = '(optional) flip cast iron skillet to release. Cool on a rack'
-    )
-  )
-)
-
-
-#' @rdname cornbread
-#' @export
-cornbread <- function() new(
-  Class = 'cornbread', 
-  date = as.Date('2024-11-11'),
-  pros = c(
-    paste('must use', style_bold(col_br_magenta('pastry flour'))),
-    paste('I prefer', style_bold(col_br_magenta('heavy cream')), 'to vegetable oil'),
-    paste(style_bold(col_br_magenta('sugar 5.5%')), 'tastes better than 5%')
-  ))
-
-# crust on top is nice!
-# crust on bottom needs to be improved
-# .. pre-heat skillet for 5min
-# .. next time try: pre-heat skillet for 10min
-# next time also: use boiling water with corn meal, skip soaking overnight
-
-
-#' @title Other Cornbread Recipes
-#' 
-#' @examples
 #' diagnose(
 #'  cornbread,
 #'  subtract(PreppyKitchen_cornbread, sugar = 17),
@@ -108,9 +63,65 @@ cornbread <- function() new(
 #'  subtract(nutrition(Krusteaz_southern_cornbread), sugar = 23),
 #'  subtract(nutrition(BobsRedMill_cornbread), sugar = 7),
 #'  subtract(Albertsons_cornbread, sugar = 25),
+#'  subtract(nutrition(Fleischmanns_cornbread), sugar = 100),
 #'  Quaker_cornbread
 #' )
+#' @name cornbread
+#' @aliases cornbread-class
+#' @export
+setClass(Class = 'cornbread', contains = 'cornbreadMix', prototype = prototype(
+  alias_class = 'Cornbread',
+  egg_pc = 2,
+  heavyCream = c(Lucerne_heavyCream = 175), 
+  water95 = 320, # good for muffin; yet to experiment for skillet
+  # waterLost = 45, # forget this, for now
+  
+  portion = c(
+    'Staub deep skillet, 8.5in' = 1000,
+    'Cupcake 2.75in' = 60
+  ),
+  instruction = c(
+    'mix cornmeal and hot water. Let dough sit for 5min',
+    'mix in other ingredients'#,
+    # '(optional) transfer to sizzling hot skillet (with cooking spray)'
+  ),
+  RobamCT763 = RobamCT763(
+    #treatment = c(
+    #  'Preheat Staub deep skillet, 8.5in, for 10min'
+    # crust on top is nice!
+    # crust on bottom needs to be improved
+    # .. pre-heat skillet for 5min
+    # .. next time try: pre-heat skillet for 10min
+    #),
+    program = 'Steam Bake',
+    fahrenheit = 375, 
+    minute = c(
+      'Staub Skillet (preheated; experimenting)' = 25, # try next time with more baking powder
+      'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
+    ),
+    cooling = '(optional) flip cast iron skillet to release. Cool on a rack'
+  )
+))
+
+
+#' @rdname cornbread
+#' @export
+cornbread <- function() new(
+  Class = 'cornbread', 
+  date = as.Date('2024-12-01'),
+  pros = c(
+    paste('must use', style_bold(col_br_magenta('pastry flour'))),
+    paste('I prefer', style_bold(col_br_magenta('heavy cream')), 'to vegetable oil'),
+    paste(style_bold(col_br_magenta('sugar 5.5%')), 'tastes better than 5%')
+  ))
+
+
+
+
+#' @title Other Cornbread Recipes
+#' 
 #' @name cornbread_other
+#' @keywords internal
 #' @export
 Wegmans_cornbread_recipe <- function() new(
   Class = 'recipe', wegmans = '3044',
@@ -306,3 +317,15 @@ BobsRedMill_cornbread <- function() new(
   water_cup = 2.5,
   egg_pc = 2,
   oil_cup = c(Wegmans_vegetable_oil = 1/2))
+
+#' @rdname cornbread_other
+#' @export
+Fleischmanns_cornbread <- function() new(
+  Class = 'recipe',
+  alias_flavor = 'Cornbread',
+  author = Fleischmanns_cornbreadMix()@brand,
+  flavor = c(Fleischmanns_cornbreadMix = 425),
+  milk_cup = 2/3,
+  butter_cup = 1/3,
+  egg_pc = 1,
+  portion = c('standard muffin' = 60))

@@ -1,16 +1,6 @@
 
 #' @title Other Cornbread Mix
 #' 
-#' @examples
-#' diagnose(
-#'  cornbreadMix,
-#'  subtract(TraderJoes_cornbreadMix, sugar = 10.7),
-#'  subtract(WholeFoods365_cornbreadMix, sugar = 4.5),
-#'  subtract(Krusteaz_southern_cornbreadMix, sugar = 1),
-#'  subtract(BobsRedMill_cornbreadMix, sugar = .6),
-#'  subtract(Stonewall_cornbreadMix, sugar = 8.5),
-#'  subtract(Jiffy_cornMuffinMix, sugar = 7)
-#' )
 #' @name cornbreadMix_other
 #' @keywords internal
 #' @export
@@ -92,3 +82,15 @@ Jiffy_cornMuffinMix <- function() new(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
   )), 'says it\'s just okay'))
+
+
+#' @rdname cornbreadMix_other
+#' @export
+Fleischmanns_cornbreadMix <- function() new(
+  Class = 'nutrition',
+  brand = unclass(style_hyperlink(text = 'Fleischmann\'s\U1f1fa\U1f1f8', url = 'https://www.simplyhomemade.com/products')),
+  name = 'Cornbread Mix',
+  walmart = '38065267', usd = 1.93/425*27,
+  servingGram = 27, servingTbsp = 3,
+  calorie = 100,
+  fat = 1, sodium = .24, carbohydrate = 21, sugar = 8, protein = 1)

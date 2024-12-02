@@ -14,4 +14,22 @@ cornbread()
 \examples{
 cornbread()
 
+diagnose(
+ cornbread,
+ subtract(PreppyKitchen_cornbread, sugar = 17),
+ subtract(BethanyWeathersby_cornbread, sugar = 105),
+ subtract(bluegirl_cornbread, sugar = 108),
+ subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 23),
+ subtract(nutrition(Jiffy_cornMuffin), sugar = 32),
+ subtract(Wegmans_cornbread_recipe, sugar = 88),
+ subtract(Wegmans_cornbread, sugar = 10.5),
+ subtract(nutrition(WholeFoods365_cornbread), sugar = 64),
+ subtract(nutrition(Stonewall_cornbread), sugar = 117),
+ subtract(nutrition(TraderJoes_cornbread), sugar = 108),
+ subtract(nutrition(Krusteaz_southern_cornbread), sugar = 23),
+ subtract(nutrition(BobsRedMill_cornbread), sugar = 7),
+ subtract(Albertsons_cornbread, sugar = 25),
+ subtract(nutrition(Fleischmanns_cornbread), sugar = 100),
+ Quaker_cornbread
+)
 }

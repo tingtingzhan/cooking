@@ -821,13 +821,13 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@quakeroats)) {
     if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker'))
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8'))
     x@quakeroats <- character()
   }
   
   if (length(x@wegmans)) {
     if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans'))
+    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans\U1f1fa\U1f1f8'))
     x@wegmans <- character()
   }
   

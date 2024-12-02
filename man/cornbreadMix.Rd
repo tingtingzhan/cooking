@@ -9,5 +9,19 @@
 cornbreadMix()
 }
 \description{
-\linkS4class{cornbreadMix} Recipes
+Cornbread mix recipes.
+}
+\examples{
+cornbreadMix()
+
+diagnose(
+ cornbreadMix,
+ subtract(TraderJoes_cornbreadMix, sugar = 10.2),
+ subtract(WholeFoods365_cornbreadMix, sugar = 4),
+ subtract(Krusteaz_southern_cornbreadMix, sugar = .5),
+ BobsRedMill_cornbreadMix,
+ subtract(Stonewall_cornbreadMix, sugar = 8.1),
+ subtract(Jiffy_cornMuffinMix, sugar = 5.5),
+ subtract(Fleischmanns_cornbreadMix, sugar = 5.1)
+)
 }
