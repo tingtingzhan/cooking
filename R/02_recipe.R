@@ -191,6 +191,7 @@
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
+#' @slot PhilipsHD9867 \linkS4class{tool}
 #' @slot RobamCT763 \linkS4class{tool}
 #' @slot InstantPot \linkS4class{tool}
 #' 
@@ -271,6 +272,7 @@ setClass(Class = 'recipe', slots = c(
   CuisinartICE70 = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
+  PhilipsHD9867 = 'tool',
   RobamCT763 = 'tool',
   InstantPot = 'tool',
   
@@ -712,20 +714,20 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@author)) {
     if (length(x@allrecipes)) {
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author))
+      x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author))
       x@allrecipes <- character()
     } else if (length(x@youtube)) {
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
+      x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
       x@youtube <- x@youtube[-1L]
     } else if (length(x@url)) {
-      x@author <- unclass(style_hyperlink(url = x@url[1L], text = x@author))
+      x@author <- c(style_hyperlink(url = x@url[1L], text = x@author))
       x@url <- x@url[-1L]
     }
   } # before `if (!length(x@author))` !!!
   
   if (length(x@acme)) {
     if (length(x@acme) > 1L) stop('only allow len-1 @acme')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons\U1f1fa\U1f1f8'))
+    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons\U1f1fa\U1f1f8'))
     x@acme <- integer()
   }
   
@@ -733,7 +735,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   for (yt in c('daatgo', 'dad1966', 'guga', 'happytears', 'laofangu', 'pino', 'shangshikitchen', 'xiaogaojie')) {
     if (length(yt. <- slot(x, name = yt))) {
       if (length(yt.) > 1L) stop('only allow len-1 @', yt)
-      x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', yt.), text = switch(
+      x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', yt.), text = switch(
         yt, 
         daatgo = '\u8fbe\u54e5\u53a8\u623f',
         dad1966 = '\u8001\u7238\u7684\u98df\u5149',
@@ -749,13 +751,13 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@ippodotea)) {
     if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
     x@ippodotea <- character()
   }
   
   if (length(x@ippodoteajpn)) {
     if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
     x@ippodoteajpn <- character()
   }
   
@@ -763,8 +765,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@author)) stop('@author will be overwritten by @joshuaweissman')
     if (length(x@joshuaweissman) > 1L) stop('only allow len-1 @joshuaweissman')
     x@author <- paste(
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua')),
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua')),
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
     )
     x@joshuaweissman <- character()
   } 
@@ -773,23 +775,23 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@author)) stop('@author will be overwritten by @julieseatsandtreats')
     if (length(x@julieseatsandtreats) > 1L) stop('only allow len-1 @julieseatsandtreats')
     x@author <- paste(
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@julieseatsandtreats)), text = 'Julie\'s')),
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.julieseatsandtreats.com/%s', x@julieseatsandtreats), text = 'Eats & Treats'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@julieseatsandtreats)), text = 'Julie\'s')),
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.julieseatsandtreats.com/%s', x@julieseatsandtreats), text = 'Eats & Treats'))
     )
     x@julieseatsandtreats <- character()
   } 
   
   if (length(x@juniorscheesecakecookbook)) {
     if (length(x@juniorscheesecakecookbook) > 1L) stop('only allow len-1 @juniorscheesecakecookbook')
-    x@author <- unclass(style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook, page %d', x@juniorscheesecakecookbook)))
+    x@author <- c(style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook, page %d', x@juniorscheesecakecookbook)))
     x@juniorscheesecakecookbook <- integer()
   }
   
   if (length(x@just1cookbook)) {
     if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')
     x@author <- paste(
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@just1cookbook)), text = 'Just One')),
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.justonecookbook.com/%s', x@just1cookbook), text = 'Cookbook'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@just1cookbook)), text = 'Just One')),
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.justonecookbook.com/%s', x@just1cookbook), text = 'Cookbook'))
     )
     x@just1cookbook <- character()
   }
@@ -798,15 +800,15 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
     if (!length(x@author)) stop('King Arthur employee name?')
     x@author <- paste(
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur')),
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/author/%s', x@author), text = 'Recipe'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur')),
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/author/%s', x@author), text = 'Recipe'))
     )
     x@kingarthur <- character()
   }
   
   if (length(x@nytimes)) {
     if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
+    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
     x@nytimes <- character()
   }
   
@@ -814,25 +816,25 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
     if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
     x@author <- paste(
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
-      unclass(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
+      c(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
     )
     x@preppykitchen <- character()
   } 
   
   if (length(x@quakeroats)) {
     if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8'))
+    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8'))
     x@quakeroats <- character()
   }
   
   if (length(x@wegmans)) {
     if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
-    x@author <- unclass(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans\U1f1fa\U1f1f8'))
+    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans\U1f1fa\U1f1f8'))
     x@wegmans <- character()
   }
   
-  author <- if (length(x@author)) unclass(col_green(x@author)) # else NULL
+  author <- if (length(x@author)) c(col_green(x@author)) # else NULL
   
   x@alias_class <- if (!length(x@alias_class)) {
     if (length(author)) author else character()
@@ -1176,6 +1178,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   show(object@JoyoungDJ13U)
   show(object@JoyoungDJ06M)
   show(object@JoyoungCJA9U)
+  show(object@PhilipsHD9867)
   show(object@RobamCT763)
   show(object@InstantPot)
   

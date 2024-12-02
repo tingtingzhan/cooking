@@ -36,12 +36,17 @@ setClass(Class = 'sousvide', contains = 'recipe', prototype = prototype(
 #' @export
 setClass(Class = 'airfryer', contains = 'recipe', prototype = prototype(
   alias_class = '\u7a7a\u6c14\u70b8\u9505\u814c\u6599',
-  instruction = c(
-    'Rest in fridge 3 day',
-    'Wash off before air frying'
-  ),
   portion = c(
     'Duck\U1f986, whole' = 25 # ???
+  ),
+  PhilipsHD9867 = PhilipsHD9867(
+    treatment = c(
+      'marinade in fridge, loosely covered, 2-3 days',
+      'wash off; pat dry'
+    ),
+    fahrenheit = 350,
+    minute = c('half duck\U1f986, skin face up' = 35),
+    cooling = 'let stand 30min+'
   )
 ))
 
@@ -119,7 +124,6 @@ harissa_sousvide <- function() new(
 #' @export
 vindaloo_sousvide <- function() new(
   Class = 'sousvide',
-  #alias_class = '\u5496\u55b1\u814c\u6599',
   salt_tsp = .75,
   spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
   curry_Tbsp = c(FrontierCoop_vindaloo = 1),
@@ -130,11 +134,11 @@ vindaloo_sousvide <- function() new(
 #' @export
 vindaloo_airfryer <- function() new(
   Class = 'airfryer',
-  salt_Tbsp = 1, # sodium .219
-  #salt = 16.5, # sodium .211
+  salt_tsp = 2.75, # skin a little too salty, meat just fine
   spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
   curry_Tbsp = c(FrontierCoop_vindaloo = 1),
-  review = 'trying (salt = 16.5)'
+  date = as.Date('2024-12-02'),
+  pros = 'nice!'
 )
 
 

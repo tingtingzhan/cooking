@@ -4,6 +4,9 @@
 #' @description
 #' Muffin, or batter bread recipes.
 #' 
+#' @references 
+#' \url{https://en.wikipedia.org/wiki/Batter_bread}
+#' 
 #' @examples
 #' cornbreadMix()
 #' cornbread()

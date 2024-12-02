@@ -3,7 +3,7 @@
 
 Melegatti_pandoro_tiramisu <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Melegatti\U1f1ee\U1f1f9', url = 'https://www.melegattiusa.com/seasonal-cake/pandoro-tiramisu/')),
+  brand = c(style_hyperlink(text = 'Melegatti\U1f1ee\U1f1f9', url = 'https://www.melegattiusa.com/seasonal-cake/pandoro-tiramisu/')),
   name = 'Pandoro Tiramisu\u0300',
   servingGram = 80,
   fat = 15, cholesterol = .07, sodium = .162, sugar = 20, addedSugar = 11, protein = 5

@@ -25,7 +25,7 @@ Albertsons_yellowCorn <- function() new(
 #' @export
 IndianHead_whiteCorn <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
+  brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'White Cornmeal\U1f33d',  
   wegmans = 19868L, usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
@@ -37,7 +37,7 @@ IndianHead_whiteCorn <- function() new(
 #' @export
 IndianHead_yellowCorn <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
+  brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'Yellow Cornmeal\U1f33d',
   wegmans = 19981L, usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,

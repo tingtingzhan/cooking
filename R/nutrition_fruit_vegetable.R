@@ -1,21 +1,21 @@
 # dried fruits
 OceanSpray_cranberry <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
+  brand = c(style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
   name = 'Dried Cranberries',
   costco = '100400518',
   servingGram = 40, sugar = 29)
 
 SunnyFruit_fig <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
+  brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
                   name = 'Dried Figs',
   costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
 SunnyFruit_date <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
+  brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
   name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 
@@ -134,7 +134,7 @@ Libbys_pineapple <- function() new(
 
 Dole_pineapple <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'dolesunshine.com/us/en/products/pantry/canned-fruit/', text = 'Dole\U1f33a')),
+  brand = c(style_hyperlink(url = 'dolesunshine.com/us/en/products/pantry/canned-fruit/', text = 'Dole\U1f33a')),
   name = '\u83e0\u841d\u7f50\u5934 Pineapple\U1f34d in 100% Juice',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
@@ -147,7 +147,7 @@ Dole_pineapple <- function() new(
 
 DelMonte_pear <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/pears/sliced-pears-no-sugar-added')),
+  brand = c(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/pears/sliced-pears-no-sugar-added')),
   name = '\u68a8\u7f50\u5934 Sliced Pears\U1f350',
   servingGram = 121, servingCup = 1/2,
   water = 121 * 240/255, # tested with bao()
@@ -156,7 +156,7 @@ DelMonte_pear <- function() new(
 
 DelMonte_mandarine <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/mandarin-oranges/mandarin-oranges-no-sugar-added')),
+  brand = c(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/mandarin-oranges/mandarin-oranges-no-sugar-added')),
   name = '\u6a58\u5b50\u7f50\u5934 Mandarin Oranges\U1f34a',
   servingGram = 123, servingCup = 1/2,
   water = 123 * 240/245, # tested with bao()
@@ -168,7 +168,7 @@ DelMonte_mandarine <- function() new(
 
 DelMonte_peach <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added')),
+  brand = c(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added')),
   name = '\u9ec4\u6843 Yellow Cling Peaches\U1f351',
   servingGram = 121, servingCup = 1/2,
   calorie = 35,
@@ -179,7 +179,7 @@ DelMonte_peach <- function() new(
 
 Bruces_yam <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Bruce\'s', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/')),
+  brand = c(style_hyperlink(text = 'Bruce\'s', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/')),
   name = 'Yam',
   review = 'may need Vitamix immersion blender - dont know how to use, dont buy for now',
   servingGram = 166, sodium = .07, sugar = 9, protein = 2)
@@ -302,7 +302,7 @@ watermelon <- function() new(
 Laura_soybean <- function() new(
   Class = 'nutrition', fdc = 174270L,
   name = '\u9ec4\u8c46 Soy Bean', 
-  brand = unclass(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
+  brand = c(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
   servingGram = 100 - 8.54, 
@@ -355,7 +355,7 @@ HaiTai_adzuki <- function() new(
 redKidneyBean <- function() new(
   Class = 'nutrition', fdc = 173744L,
   name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U1fad8', 
-  brand = unclass(style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/')),
+  brand = c(style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/')),
   amazon = 'B079S8D2YP', usd = 8.86/(4*454)*42,
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
   servingGram = 42, servingCup = 1/4, sodium = .005, carbohydrate = 26, sugar = 1, protein = 9)

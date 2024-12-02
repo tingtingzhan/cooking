@@ -12,7 +12,7 @@ Lato_seaGrapes <- function() new(
 
 Crown_Bourbon <- function() new( # lacks bourbon flavor!!!
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Crown Maple', url = 'https://crownmaple.store/crown-maple-bourbon-barrel-aged-organic-maple-syrup-750ml-25-fl-oz/')),
+  brand = c(style_hyperlink(text = 'Crown Maple', url = 'https://crownmaple.store/crown-maple-bourbon-barrel-aged-organic-maple-syrup-750ml-25-fl-oz/')),
   name = 'Bourbon Barrel Aged Maple\U1f341 Syrup',
   # full bottle 1700g; empty bottle xxx
   servingGram = 40, servingTbsp = 2, # serving_ml = 30, # (1700 - xxx) / 750 * 30

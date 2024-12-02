@@ -276,7 +276,7 @@ SimplyOrganic_garlic <- function() new(
 
 Chinata_paprika <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://www.lachinatausa.com/index.php/buy-our-smoked-paprika-powder/tin-70-gr-d-o-sweet.html')),
+  brand = c(style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://www.lachinatausa.com/index.php/buy-our-smoked-paprika-powder/tin-70-gr-d-o-sweet.html')),
   name = '\u7ea2\u751c\u6912\u7c89 Sweet Smoked Paprika\U1f336', 
   servingGram = 15, servingTbsp = 2
   # https://www.aqua-calc.com/calculate/food-volume-to-weight

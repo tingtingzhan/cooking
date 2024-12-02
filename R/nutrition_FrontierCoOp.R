@@ -22,6 +22,7 @@ FrontierCoop_vindaloo <- function() new(
   ),
   usd = 31.20/454*3.5, 
   servingGram = 3.5, servingTsp = 2, # packaging
+  calorie = 10,
   carbohydrate = 2)
 
 

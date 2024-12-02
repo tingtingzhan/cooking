@@ -127,7 +127,7 @@ Wegmans_cranberryGoat <- function() new(
 
 NaturalKosher_mozzarella <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/')),
+  brand = c(style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/')),
   name = 'Shredded Mozzarella',
   servingGram = 28, fat = 6, sodium = .135, protein = 6,
   review = 'Store in freezer. Use directly from freezer')

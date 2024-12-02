@@ -49,3 +49,6 @@ diagnose(
  Quaker_cornbread
 )
 }
+\references{
+\url{https://en.wikipedia.org/wiki/Batter_bread}
+}

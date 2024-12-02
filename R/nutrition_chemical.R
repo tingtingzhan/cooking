@@ -9,7 +9,7 @@ MgCl2 <- function() new(
 
 Ohsawa_nigari <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5')), 
+  brand = c(style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5')), 
   name = '\u82e6\u6c41/\u6ef7\u6c41 Nigari',
   amazon = 'B0019L8KUG',
   usd = 8.79/454*6,
@@ -19,7 +19,7 @@ Ohsawa_nigari <- function() new(
 
 Morton_salt <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/')),
+  brand = c(style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/')),
   name = '\u76d0 Salt\U1f9c2',
   servingTsp = 1/4, 
   servingGram = 1.5, # packaging!
@@ -29,7 +29,7 @@ Morton_salt <- function() new(
 
 Ajinomoto_msg <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
+  brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
   name = '\u5473\u7cbe Monosodium Glutamate',
   # 'www.yamibuy.com/zh/p/msg-aji-no-motot-in-bag-1lb/1148033131'
   usd = 3.99/454,
@@ -43,7 +43,7 @@ Ajinomoto_msg <- function() new(
 
 ArmHammer_NaHCO3 <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8')),
+  brand = c(style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8')),
   name = '\u5c0f\u82cf\u6253 Baking Soda, NaHCO\u2083',
   pubchem = '516892',
   servingGram = .6, 

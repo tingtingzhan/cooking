@@ -2,7 +2,7 @@
 
 Pocky_matcha <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', url = 'https://www.pocky.com/products/')),
+  brand = c(style_hyperlink(text = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', url = 'https://www.pocky.com/products/')),
   name = 'Matcha Pocky',
   servingGram = 40,
   calorie = 200,

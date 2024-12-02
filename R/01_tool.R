@@ -70,13 +70,13 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   cat(sprintf(fmt = ' \u21ac %s\n', object@treatment), sep = '')
   
   cat(sprintf(fmt = ' \u2726 %s\n', object@program))
-  cat(sprintf(fmt = '  \U1f6e0 %s\n', object@attachment))
-  cat(sprintf(fmt = '  \U1f321 %d\u00b0F; %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
+  cat(sprintf(fmt = ' \U1f6e0 %s\n', object@attachment))
+  cat(sprintf(fmt = ' \U1f321 %d\u00b0F; %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
   
   if (length(object@minute)) {
     min_ <- object@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
-    cat(paste0('  \u23f0 ', ifelse(
+    cat(paste0(' \u23f0 ', ifelse(
       test = min_ > 60, 
       yes = sprintf(fmt = '%.2g hours', min_ / 60),
       no = sprintf(fmt = '%d minutes', min_)
@@ -104,17 +104,17 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
 
 thermometer <- function(...) new(
   Class = 'tool', 
-  name = unclass(style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer')), 
+  name = c(style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer')), 
   ...)
 
 CuisinartICE70 <- function(...) new(
   Class = 'tool', 
-  name = unclass(style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html')),
+  name = c(style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html')),
   ...)
 
 InstantPot <- function(...) new(
   Class = 'tool', 
-  name = unclass(style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker')),
+  name = c(style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker')),
   ...)
 
 KSMICM <- function(...) new(
@@ -124,28 +124,41 @@ KSMICM <- function(...) new(
 
 KSM8990 <- function(...) new(
   Class = 'tool', 
-  name = unclass(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/commercial-products/commercial-stand-mixers/p.nsf-certified-commercial-series-8-quart-bowl-lift-stand-mixer-with-stainless-steel-bowl-guard.ksmc895ob.html')),
+  name = c(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/commercial-products/commercial-stand-mixers/p.nsf-certified-commercial-series-8-quart-bowl-lift-stand-mixer-with-stainless-steel-bowl-guard.ksmc895ob.html')),
   ...)
 
 KSM3316X <- function(...) new(
   Class = 'tool', 
-  name = unclass(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/stand-mixers/tilt-head-stand-mixers/p.artisan-mini-3.5-quart-tilt-head-stand-mixer.ksm3316xer.html')),
+  name = c(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/stand-mixers/tilt-head-stand-mixers/p.artisan-mini-3.5-quart-tilt-head-stand-mixer.ksm3316xer.html')),
   ...)
 
 RobamCT763 <- function(...) new(
   Class = 'tool', 
-  name = unclass(style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763')),
+  name = c(style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763')),
   ...)
+
+
+Staub1200023 <- function(...) new(
+  Class = 'tool',
+  name = paste('\u94f8\u94c1\u70e4\u9e21\u67b6', style_hyperlink(text = 'Staub Vertical Chicken Roaster', url = 'https://www.zwilling.com/us/staub-cast-iron---baking-dishes-roasters-vertical-chicken-roaster---black-1200023')),
+  ...)
+
+
+PhilipsHD9867 <- function(...) new(
+  Class = 'tool', 
+  name = paste('\u7a7a\u6c14\u70b8\u9505', style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16/premium-airfryer-xxl')),
+  ...)
+
 
 JoyoungDJ13U <- function(...) new(
   Class = 'tool', 
-  name = paste('\u4e5d\u9633\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html')),
+  name = paste('\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html')),
   ...)
 
 
 JoyoungDJ06M <- function(...) new(
   Class = 'tool', 
-  name = paste('\u4e5d\u9633\u8ff7\u4f60\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html')),
+  name = paste('\u8ff7\u4f60\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html')),
   ...)
 
 
@@ -184,6 +197,6 @@ JoyoungCJA9U <- function(
     ...
 ) new(
   Class = 'tool',
-  name = '\u4e5d\u9633\u7092\u83dc\u673a Joyoung Stir-Frying Machine CJ-A9U',
+  name = '\u7092\u83dc\u673a Joyoung Stir-Frying Machine CJ-A9U',
   program = program,
   ...)

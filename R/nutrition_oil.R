@@ -2,7 +2,7 @@
 
 Mazola_corn_oil <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Mazola', url = 'https://www.mazola.com/products/mazolareg-corn-oil/')),
+  brand = c(style_hyperlink(text = 'Mazola', url = 'https://www.mazola.com/products/mazolareg-corn-oil/')),
   name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
@@ -53,8 +53,8 @@ Wegmans_olive_oil <- function() new(
 Kadoya_sesameOil <- function() new(
   Class = 'nutrition', 
   brand = paste0(
-    unclass(style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html')),
-    unclass(style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html'))
+    c(style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html')),
+    c(style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html'))
   ),
   name = '\u829d\u9ebb\u6cb9 Sesame Oil',
   wegmans = 27984L, usd = .82/2, # 1fl oz = 2tbsp
@@ -65,7 +65,7 @@ Kadoya_sesameOil <- function() new(
 
 YouJia_greenPeppercornOil <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = '\u53cb\u52a0\U1f1e8\U1f1f3', url = 'https://www.youjiafood.com/productinfo.aspx?ContentID=102')),
+  brand = c(style_hyperlink(text = '\u53cb\u52a0\U1f1e8\U1f1f3', url = 'https://www.youjiafood.com/productinfo.aspx?ContentID=102')),
   name = '\u85e4\u6912\u6cb9 Green Peppercorn Oil',
   usd = 4.99/250*15,
   servingGram = 14, servingTbsp = 1, fat = 14)

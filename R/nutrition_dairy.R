@@ -2,7 +2,7 @@
 
 FageTotal0_yogurtGreek <- function() new(
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0')),
+  brand = c(style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0')),
   name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
   servingGram = 170, # sold at Costco, 3lb, 1360g
   servingCup = 3/4, # packaging
@@ -66,7 +66,7 @@ UpstateFarms_buttermilk <- function() new(
 
 OakFarms_buttermilk <- function() new(
   Class = 'nutrition',
-  brand = unclass(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
+  brand = c(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
   name = '\u916a\u6d46 Bulgarian\U1f1e7\U1f1ec Buttermilk',
   servingGram = 240, servingCup = 1,
   calorie = 160,
@@ -367,7 +367,7 @@ TraderJoes_heavyCream <- function() new( #
 
 NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
   Class = 'nutrition', 
-  brand = unclass(style_hyperlink(url = 'https://www.naturalbynaturedairy.com/heavy-cream', text = 'Nature By Nature')), 
+  brand = c(style_hyperlink(url = 'https://www.naturalbynaturedairy.com/heavy-cream', text = 'Nature By Nature')), 
   name = '\u91cd\u5976\u6cb9 Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   fat = 6, water = 15 * .577)

@@ -23,7 +23,7 @@ Meyenberg_goatWhole_drymilk <- function() new(
 
 Carnation_drymilk <- function() new(
   Class = 'nutrition', #nestle = '12428935',
-  brand = unclass(style_hyperlink(text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz')),
+  brand = c(style_hyperlink(text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz')),
   name = '\u8131\u8102\u5976\u7c89 Nonfat Dry Milk',
   walmart = '978118310', usd = 4.48/272*23, # April 2024; $4.48 in store
   target = 'A-13898456', #usd = 4.89/272*23, # Feb 2024

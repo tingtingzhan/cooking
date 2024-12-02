@@ -230,8 +230,9 @@
     #caffeLatteMix = .0033,
     marinade = .011,
     tomyumStew = .02,
-    sousvide = .1,
     flavoredButter = .015,
+    sousvide = .1,
+    airfryer = .21,
     NA_real_)
   
   matcha <- function(x) switch(
