@@ -170,6 +170,7 @@ setMethod(f = show, signature = 'equiv', definition = function(object) {
 #' @slot blackPepper \linkS4class{equiv}
 #' @slot curry \linkS4class{equiv}
 #' @slot chiliMix \linkS4class{equiv}
+#' @slot pumpkinSpice \linkS4class{equiv}
 #' @slot blackSesame \linkS4class{equiv}
 #' @slot coconut \linkS4class{equiv}
 #' @slot cocoa \linkS4class{equiv}
@@ -234,6 +235,7 @@ setClass(Class = 'recipeDx', slots = c(
   cinnamon = 'equiv',
   paprika = 'equiv',
   chiliMix = 'equiv',
+  pumpkinSpice = 'equiv',
   curry = 'equiv',
   whitePepper = 'equiv',
   blackPepper = 'equiv',
@@ -383,8 +385,9 @@ show_endpoint <- function(x) {
   x[x == 'blackSesame'] <- bg_black(col_br_white('sesame'))
   x[x == 'whitePepper'] <- 'whitePp'
   x[x == 'blackPepper'] <- 'blackPp'
+  x[x == 'pumpkinSpice'] <- '\U0001f383spice'
   x[x == 'sesameOil'] <- 'ssmOil'
-  x[x == 'creamCheese'] <- 'creamChs'
+  x[x == 'creamCheese'] <- 'creamChz'
   x[x == 'greenPeppercornOil'] <- bg_green(col_br_white('ppcOil'))
   x[x == 'pastryFlour'] <- '\U0001f370flour'
   x[x == 'breadFlour'] <- '\U0001f35eflour'

@@ -181,6 +181,7 @@ nutrition.recipe <- function(x) {
     paprika = new(Class = 'equiv', actual = x@paprika / total_raw),
     coriander = new(Class = 'equiv', actual = x@coriander / total_raw),
     chiliMix = new(Class = 'equiv', actual = x@chiliMix / total_raw),
+    pumpkinSpice = new(Class = 'equiv', actual = x@pumpkinSpice / total_raw),
     curry = new(Class = 'equiv', actual = x@curry / total_raw),
     blackSesame = new(Class = 'equiv', actual = x@blackSesame / total_raw),
     coconut = new(Class = 'equiv', actual = x@coconut / total_raw),
@@ -234,6 +235,7 @@ nutrition.recipe <- function(x) {
     paprika = new(Class = 'equiv', actual = x@paprika / total), # , ideal = devrecipe$paprika(x)
     coriander = new(Class = 'equiv', actual = x@coriander / total, ideal = devrecipe$coriander(x)),
     chiliMix = new(Class = 'equiv', actual = x@chiliMix / total),
+    pumpkinSpice = new(Class = 'equiv', actual = x@pumpkinSpice / total, ideal = devrecipe$pumpkinSpice(x)),
     curry = new(Class = 'equiv', actual = x@curry / total),
     blackSesame = new(Class = 'equiv', actual = x@blackSesame / total, ideal = devrecipe$blackSesame(x)),
     coconut = new(Class = 'equiv', actual = x@coconut / total),

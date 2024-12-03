@@ -7,7 +7,7 @@
 \alias{drink-class}
 \alias{hotdrink}
 \alias{hotdrink.function}
-\alias{hotdrink.recipe}
+\alias{hotdrink.drinkmix}
 \alias{hotdrink.nutrition}
 \alias{frappe}
 \alias{frappe.function}
@@ -18,7 +18,7 @@ hotdrink(x, ...)
 
 \method{hotdrink}{`function`}(x, ...)
 
-\method{hotdrink}{recipe}(x, water80 = 236.6 * 2, ...)
+\method{hotdrink}{drinkmix}(x, water80 = 236.6 * 2, ...)
 
 \method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 

@@ -1086,20 +1086,24 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), sep = '')
   
   # ingredients with volumn info
-  has_vol_ <- c(
+  has_vol_small <- c(
     object@ginger, object@garlic, object@onion, object@coriander, object@cumin, object@cilantro, object@clove, object@cinnamon, object@whitePepper, object@blackPepper, object@turmeric, object@paprika,
     object@spiceItalian, object@spice5, object@pumpkinSpice,
     object@chiliMix,
     object@spice, object@curry,
     object@matcha, object@coffee, object@cocoa, object@beet, object@acai, object@creamTartar, object@vanilla,
     object@salt, object@msg, object@NaHCO3, object@Na2CO3, object@bakingPowder,
+    object@sesameOil, object@greenPeppercornOil,
     object@yeast,
-    object@oil, object@sesameOil, object@greenPeppercornOil,
-    object@sauce, object@liqueur,
+    object@sauce, object@liqueur
+  )
+  has_vol_large <- c(
+    object@oil, 
     object@blackRice, object@brownRice,
     object@syrup
   )
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_)], has_vol_, autoVolume(has_vol_)), sep = '')
+  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, autoVolume(has_vol_small)), sep = '')
+  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, autoVolume(has_vol_large)), sep = '')
   
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
   

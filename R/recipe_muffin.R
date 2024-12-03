@@ -48,6 +48,22 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
   portion = c(
     'Staub deep skillet, 8.5in' = 1000,
     'Cupcake 2.75in' = 60
+  ),
+  RobamCT763 = RobamCT763(
+    #treatment = c(
+    #  'Preheat Staub deep skillet, 8.5in, for 10min'
+    # crust on top is nice!
+    # crust on bottom needs to be improved
+    # .. pre-heat skillet for 5min
+    # .. next time try: pre-heat skillet for 10min
+    #),
+    program = 'Steam Bake',
+    fahrenheit = 375, 
+    minute = c(
+      # 'Staub Skillet (preheated; experimenting)' = 25, # try next time with more baking powder
+      'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
+    )#,
+    #cooling = '(optional) flip cast iron skillet to release. Cool on a rack'
   )
 ))
 
@@ -85,22 +101,6 @@ cornbread <- function() new(
     'mix in other ingredients'#,
     # '(optional) transfer to sizzling hot skillet (with cooking spray)'
   ),
-  RobamCT763 = RobamCT763(
-    #treatment = c(
-    #  'Preheat Staub deep skillet, 8.5in, for 10min'
-    # crust on top is nice!
-    # crust on bottom needs to be improved
-    # .. pre-heat skillet for 5min
-    # .. next time try: pre-heat skillet for 10min
-    #),
-    program = 'Steam Bake',
-    fahrenheit = 375, 
-    minute = c(
-      'Staub Skillet (preheated; experimenting)' = 25, # try next time with more baking powder
-      'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
-    ),
-    cooling = '(optional) flip cast iron skillet to release. Cool on a rack'
-  ),
   date = as.Date('2024-12-01'),
   pros = c(
     paste('must use', style_bold(col_br_magenta('pastry flour'))),
@@ -109,16 +109,28 @@ cornbread <- function() new(
   ))
 
 
-
 pumpkin_muffin <- function() new(
   Class = 'muffin', 
-  pumpkin = 600,
-  pastryFlour = 100, # to adjust!!!
+  pumpkin = 600, sugar = c(Domino_darkBrown = 55), 
+  pastryFlour = 150, 
   bakingPowder_tsp = 1,
-  spice_tsp = c(SimplyOrganic_pumpkinSpice = 2),
-  creamCheese = c(Nancys_creamCheese = 227),
-  sugar = c(Domino_darkBrown = 50),
+  pumpkinSpice_tsp = 1.25,
+  butter = 90,
   eggYolk_pc = 2, eggWhite_pc = 2
+)
+
+pumpkin_muffin_FAIL <- function() new(
+  Class = 'muffin', 
+  pumpkin = 600, sugar = c(Domino_darkBrown = 50), 
+  pastryFlour = 50, 
+  bakingPowder_tsp = 1,
+  pumpkinSpice_tsp = 1.25,
+  creamCheese = c(Nancys_creamCheese = 227),
+  eggYolk_pc = 2, eggWhite_pc = 2,
+  cons = c(
+    'cannot use cream cheese. need to bake like cheesecake',
+    'otherwise, flavor profile not bad!'
+  )
 )
 
 if (FALSE) {

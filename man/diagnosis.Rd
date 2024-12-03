@@ -96,6 +96,8 @@ Cooked percentage ..
 
 \item{\code{chiliMix}}{\linkS4class{equiv}}
 
+\item{\code{pumpkinSpice}}{\linkS4class{equiv}}
+
 \item{\code{blackSesame}}{\linkS4class{equiv}}
 
 \item{\code{coconut}}{\linkS4class{equiv}}

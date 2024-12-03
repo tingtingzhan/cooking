@@ -139,7 +139,7 @@
     stickyRice =, riceCake = .1, # need to re-think!!
     matchaLatte_ =, mocaccino_ = .075, # taste better than .09 !
     cocoa_ =, 
-    drink = .09, # match Carnation_drymilk() can label
+    drink = .075, # match Carnation_drymilk() can label
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,
@@ -377,6 +377,11 @@
     porkfill = .002,
     NA_real_)
   
+  pumpkinSpice <- function(x) switch(
+    class(x), 
+    drinkmix = NA_real_,
+    .002) 
+    
   coriander <- function(x) switch(
     class(x),
     porkfill = .0006,
@@ -699,6 +704,7 @@
     'garlic',
     'whitePepper',
     'coriander',
+    'pumpkinSpice',
     'acai',
     'starch',
     'sesameOil',

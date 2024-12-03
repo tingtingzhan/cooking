@@ -96,7 +96,7 @@ Sallys_pumpkin_muffin <- function() new(
   flour_cup = 1.75,
   NaHCO3_tsp = 1,
   cinnamon_tsp = 1.5,
-  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
+  pumpkinSpice_tsp = 1.5,
   ginger_tsp = 1/4,
   salt_tsp = 1/2,
   oil_cup = c(Wegmans_vegetable = 1/2),

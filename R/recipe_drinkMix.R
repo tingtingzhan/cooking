@@ -64,9 +64,11 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
-#' @export hotdrink.recipe
+# @export hotdrink.recipe
+#' @export hotdrink.drinkmix
 #' @export
-hotdrink.recipe <- function(
+#hotdrink.recipe <- function(
+hotdrink.drinkmix <- function(
     x, 
     water80 = 236.6*2, # 2 US cup
     ...
@@ -80,9 +82,10 @@ hotdrink.recipe <- function(
     'Add rest of water, whisk until froth',
     'Add liqueur last, which curdles dry milk'
   )
-  new(Class = if (inherits(x, what = 'drinkmix')) {
-    gsub('Mix$', replacement = '_', x = class(x))
-  } else 'drink', x)
+  cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
+  new(Class = if (cls == 'drinkmix') {
+    'drink' # undefined 'drinkmix'
+  } else gsub('Mix$', replacement = '_', x = class(x)), x)
 }
 
 #' @rdname drink
@@ -131,9 +134,10 @@ frappe.recipe <- function(
   x@iceWater <- if (length(x@milk)) numeric() else iceWater
   x@alias <- character(); x@alias_class <- 'Frapp\u00e9'
   x@note <- 'Nutribullet Ultra 20 fl. oz. blending cup'
-  new(Class = if (inherits(x, what = 'drinkmix')) {
-    gsub('Mix$', replacement = '_', x = class(x))
-  } else 'drink', x)
+  cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
+  new(Class = if (cls == 'drinkmix') {
+    'drink' # undefined 'drinkmix'
+  } else gsub('Mix$', replacement = '_', x = class(x)), x)
 }
 
 
@@ -343,6 +347,17 @@ matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnat
 matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 
 
+
+
+pumpkinSpiceLatte <- function() new(
+  Class = 'drinkmix',
+  alias_flavor = 'Pumpkin Spice Latte',
+  drymilk = c(Carnation_drymilk = 40),
+  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),
+  brownSugar_Tbsp = 1,
+  pumpkin_Tbsp = 3,
+  pumpkinSpice_tsp = 1/2 + 1/8
+)
 
 
 
