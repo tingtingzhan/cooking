@@ -169,7 +169,7 @@ ginger_crumbcrust <- function() new(
   Class = 'crumbcrust', 
   # pastryFlour = 360, # original
   pastryFlour = 370, # to have 50% fat:flour
-  butter = 227,
+  butter_brick = 1,
   sugar = 7.5,
   #iceWater = 50, # 60g-90g,
   ginger = 10, sugar = 80,

@@ -110,9 +110,12 @@ pumpkin_custardFilling <- function() new(
   pumpkin = 600, waterLost = 250, # confirmed on 2023-11-04
   # drymilk = 50, # now I no longer like drymilk that much..
   drymilk = 30, 
-  sugar = 50,
+  # sugar = 50, # 2023-11-04
+  brownSugar = 50, # 2024 Dec
   butter = 55,
+  pumpkinSpice_tsp = 1/2+1/4, # 2024 Dec
   JoyoungCJA9U = JoyoungCJA9U_filling(operation = '15min + 2min30sec'),
+  review = 'retry with brown sugar and pumpkin spice!',
   pros = 'I love!')
 
 

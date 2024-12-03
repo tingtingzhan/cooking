@@ -177,7 +177,14 @@ matcha_ganache <- function() new(
 
 #' @rdname whippedCream
 #' @export
-pumpkin_mascarponeFrosting <- function() new(Class = 'mascarponeFrosting', pumpkin = 100, sugar_tsp = 7.5, pros = 'Effie\'s Signature!')
+pumpkin_mascarponeFrosting <- function() new(
+  Class = 'mascarponeFrosting', 
+  pumpkin = 100, 
+  #sugar_tsp = 7.5, # was
+  brownSugar = 22, # new
+  pumpkinSpice_tsp = 1/4+1/8, # new
+  review = 'retry',
+  pros = 'Effie\'s Signature!')
 
 #' @rdname whippedCream
 #' @export
@@ -374,7 +381,7 @@ Marcellina_mascarponeFrosting <- function() new(
 #' @export
 setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototype(
   alias_class = '\u6253\u53d1Cream Cheese',
-  creamCheese = c(Nancys = 227)
+  creamCheese_brick = c(Nancys = 1)
 ))  
   
 #' @rdname whippedCream

@@ -125,6 +125,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
 #' @slot servingGram \link[base]{numeric} scalar, serving size in grams
+#' @slot serving_oz \link[base]{numeric} scalar, serving size in ounces
 #' @slot servingCup,servingTbsp,servingTsp \link[base]{numeric} scalar, serving size in cups, tablespoons, teaspoons
 # @slot servingBag \link[base]{numeric} scalar, serving size in (tea) bags
 #' @slot serving_floz \link[base]{numeric} scalar, serving size in fluid ounce
@@ -250,7 +251,7 @@ setClass(Class = 'nutrition', slots = c(
   superior = 'character',
   contain = 'character',
   
-  servingGram = 'numeric',
+  servingGram = 'numeric', serving_oz = 'numeric',
   servingCup = 'numeric', servingTbsp = 'numeric', servingTsp = 'numeric',
   #servingBag = 'numeric',
   serving_floz = 'numeric',
@@ -271,10 +272,7 @@ setClass(Class = 'nutrition', slots = c(
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
   machine = function(x) NULL
-), validity = function(object) {
-  #if (!length(object@usd)) stop('no pricing info for ', object@brand, ' ' object@name)
-  if (!length(object@servingGram)) stop('must have `servingGram` for nutrition object')
-})
+))
 
 
 
@@ -302,7 +300,14 @@ nutrition_name <- function(x) {
 
 
 setMethod(f = initialize, signature = 'nutrition', definition = function(.Object, ...) {
+  
   x <- callNextMethod(.Object, ...)
+  
+  if (length(x@serving_oz)) {
+    if (length(x@servingGram)) warning('@servingGram over written by @serving_oz')
+    x@servingGram <- x@serving_oz * 28.3495
+  }
+  if (!length(x@servingGram)) stop('must have `servingGram` for nutrition object')
   
   # process user-input `@url` first
   if (length(x@url)) {

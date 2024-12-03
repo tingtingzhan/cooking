@@ -44,7 +44,7 @@
 #' @aliases muffin-class
 #' @export
 setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
-  alias_class = 'Muffin',
+  alias_class = 'Muffin\U1f9c1',
   portion = c(
     'Staub deep skillet, 8.5in' = 1000,
     'Cupcake 2.75in' = 60
@@ -116,7 +116,7 @@ pumpkin_muffin <- function() new(
   bakingPowder_tsp = 1,
   pumpkinSpice_tsp = 1.25,
   butter = 90,
-  eggYolk_pc = 2, eggWhite_pc = 2
+  egg_pc = 2
 )
 
 pumpkin_muffin_FAIL <- function() new(
@@ -125,8 +125,8 @@ pumpkin_muffin_FAIL <- function() new(
   pastryFlour = 50, 
   bakingPowder_tsp = 1,
   pumpkinSpice_tsp = 1.25,
-  creamCheese = c(Nancys_creamCheese = 227),
-  eggYolk_pc = 2, eggWhite_pc = 2,
+  creamCheese_brick = 1,
+  egg_pc = 2,
   cons = c(
     'cannot use cream cheese. need to bake like cheesecake',
     'otherwise, flavor profile not bad!'

@@ -102,7 +102,7 @@ Sallys_pumpkin_muffin <- function() new(
   oil_cup = c(Wegmans_vegetable = 1/2),
   sugar_cup = c(Domino_granulated = 1/2, Domino_darkBrown = 1/2),
   pumpkin = 340,
-  eggYolk_pc = 2, eggWhite_pc = 2,
+  egg_pc = 2,
   milk_cup = 1/4
 )
 

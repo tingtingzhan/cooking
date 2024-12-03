@@ -214,7 +214,7 @@ SimplyOrganic_parsley <- function() new(
 
 SimplyOrganic_pumpkinSpice <- function() new(
   Class = 'nutrition', simplyorganic = 'pumpkin-spice-1-94-oz',
-  name = 'Pumpkin Spice',
+  name = '\u5357\u74dc\u8089\u6842\u9999\u6599 Pumpkin\U1f383 Spice',
   servingGram = 55, usd = 6.79, # 2023-12-06
   servingTbsp = 10)
 

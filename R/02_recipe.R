@@ -33,13 +33,13 @@
 #' @slot tomato \link[base]{numeric} scalar, weight of Wegmans Organic tomato puree (in grams)
 #' @slot yellowCorn \link[base]{numeric} scalar, weight of Kirkland frozen yellow corn (in grams)
 #' 
-#' @slot butter,butter_tsp,butter_Tbsp,butter_cup \link[base]{numeric} scalar, weight of Kerrygold unsalted butter (in grams)
+#' @slot butter,butter_tsp,butter_Tbsp,butter_cup,butter_brick \link[base]{numeric} scalar, weight of Kerrygold unsalted butter (in grams)
 #' @slot ghee \link[base]{numeric} scalar, weight of Wegmans ghee butter (in grams)
 #' @slot cheese \link[base]{numeric} \link[base]{vector} or scalar
 #' @slot mascarpone \link[base]{numeric} scalar, weight of BelGioioso mascarpone cheese (in grams)
 #' @slot cottageCheese \link[base]{numeric} scalar, weight of Daisy cottage cheese (in grams)
 #' @slot yogurtGreek \link[base]{numeric} scalar, weight of non-fat Greek yogurt (in grams)
-#' @slot creamCheese \link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese
+#' @slot creamCheese,creamCheese_brick \link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese
 #' @slot sourCream,sourCream_tsp,sourCream_Tbsp,sourCream_cup \link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)
 #' @slot heavyCream,heavyCream_tsp,heavyCream_Tbsp,heavyCream_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans heavy cream or heavy whipping cream (in grams)
 #' @slot lightCream,lightCream_tsp,lightCream_Tbsp,lightCream_cup \link[base]{numeric} scalar, weight of Lucerne table cream (or light cream) (in grams)
@@ -327,7 +327,7 @@ setClass(Class = 'recipe', slots = c(
   yellowCorn = 'numeric',
   
   # all dairy product
-  butter = 'numeric', butter_tsp = 'numeric', butter_Tbsp = 'numeric', butter_cup = 'numeric',
+  butter = 'numeric', butter_tsp = 'numeric', butter_Tbsp = 'numeric', butter_cup = 'numeric', butter_brick = 'numeric',
   ghee = 'numeric',
   cheese = 'numeric',
   mascarpone = 'numeric',
@@ -336,7 +336,7 @@ setClass(Class = 'recipe', slots = c(
   yogurt = 'numeric', yogurt_tsp = 'numeric', yogurt_Tbsp = 'numeric', yogurt_cup = 'numeric',
   kefir = 'numeric',
   filmjolk = 'numeric',
-  creamCheese = 'numeric',
+  creamCheese = 'numeric', creamCheese_brick = 'numeric',
   sourCream = 'numeric', sourCream_tsp = 'numeric', sourCream_Tbsp = 'numeric', sourCream_cup = 'numeric',
   heavyCream = 'numeric', heavyCream_tsp = 'numeric', heavyCream_Tbsp = 'numeric', heavyCream_cup = 'numeric',
   lightCream = 'numeric', lightCream_tsp = 'numeric', lightCream_Tbsp = 'numeric', lightCream_cup = 'numeric',
@@ -474,14 +474,21 @@ addNameLen1 <- function(x, which, name1 = stop('no default!')) {
 }
 
 combineVol <- function(x, which, name1 = stop('no default!')) {
+  .slotnm <- names(getSlots(class(x)))
   ._tsp <- paste0(which, '_tsp')
+  has_tsp <- ._tsp %in% .slotnm
   ._Tbsp <- paste0(which, '_Tbsp')
+  has_Tbsp <- ._Tbsp %in% .slotnm
   ._cup <- paste0(which, '_cup')
+  has_cup <- ._cup %in% .slotnm
+  ._brick <- paste0(which, '_brick')
+  has_brick <- ._brick %in% .slotnm
   x_gram <- slot(addNameLen1(x, which = which, name1 = name1), name = which)
-  x_tsp <- slot(addNameLen1(x, which = ._tsp, name1 = name1), name = ._tsp) # else NULL
-  x_Tbsp <- slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
-  x_cup <- slot(addNameLen1(x, which = ._cup, name1 = name1), name = ._cup) # else NULL
-  if (which %in% c('starch', 'oil')) {
+  x_tsp <- if (has_tsp) slot(addNameLen1(x, which = ._tsp, name1 = name1), name = ._tsp) # else NULL
+  x_Tbsp <- if (has_Tbsp) slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
+  x_cup <- if (has_cup) slot(addNameLen1(x, which = ._cup, name1 = name1), name = ._cup) # else NULL
+  x_brick <- if (has_brick) slot(addNameLen1(x, which = ._brick, name1 = name1), name = ._brick) # else NULL
+  if (which %in% c('starch', 'oil', 'creamCheese')) {
     add_suffix <- function(x0, which) {
       if (!length(names(x0))) return(x0)
       idx <- !endsWith(names(x0), suffix = paste0('_', which))
@@ -494,18 +501,24 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
       return(x0)
     }
     x_gram <- add_suffix(x_gram, which = which)
-    x_tsp <- add_suffix(x_tsp, which = which)
-    x_Tbsp <- add_suffix(x_Tbsp, which = which)
-    x_cup <- add_suffix(x_cup, which = which)
+    if (has_tsp) x_tsp <- add_suffix(x_tsp, which = which)
+    if (has_Tbsp) x_Tbsp <- add_suffix(x_Tbsp, which = which)
+    if (has_cup) x_cup <- add_suffix(x_cup, which = which)
+    if (has_brick) x_brick <- add_suffix(x_brick, which = which)
   }
   
   slot(x, name = which) <- sum_.(
     x_gram, 
-    gram_per_tsp(names(x_tsp)) * x_tsp, 
-    gram_per_tsp(names(x_Tbsp)) * (3 * x_Tbsp), # parenthesis needed!! otherwise floating issue!!!
-    gram_per_tsp(names(x_cup)) * (48 * x_cup)
+    if (has_tsp) gram_per_tsp(names(x_tsp)) * x_tsp, 
+    if (has_Tbsp) gram_per_tsp(names(x_Tbsp)) * (3 * x_Tbsp), # parenthesis needed!! otherwise floating issue!!!
+    if (has_cup) gram_per_tsp(names(x_cup)) * (48 * x_cup),
+    if (has_brick) 226.796 * x_brick
   )
-  slot(x, name = ._tsp) <- slot(x, name = ._Tbsp) <- slot(x, name = ._cup) <- numeric()
+  
+  if (has_tsp) slot(x, name = ._tsp) <- numeric()
+  if (has_Tbsp) slot(x, name = ._Tbsp) <- numeric() 
+  if (has_cup) slot(x, name = ._cup) <- numeric() 
+  if (has_brick) slot(x, name = ._brick) <- numeric()
   return(x)
 }
 
@@ -652,7 +665,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- dairyName(x, dairy = 'filmjolk')
   x <- dairyName(x, dairy = 'condensedMilk', name1 = 'Carnation')
   x <- dairyName(x, dairy = 'evaporatedMilk', name1 = 'Carnation')
-  x <- dairyName(x, dairy = 'creamCheese', name1 = 'Nancys')
+  x <- combineVol(x, which = 'creamCheese', name1 = 'Nancys')
   x <- combineVol(x, which = 'drymilk', name1 = 'Carnation_drymilk')
   x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
   x <- combineVol(x, which = 'buttermilk', name1 = 'OakFarms_buttermilk')
@@ -892,7 +905,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     } else if (length(x@pineapple)) {
       '\u83e0\u841d\U1f34d'
     } else if (length(x@pumpkin)) {
-      '\u5357\u74dc\U1f383'
+      # '\u5357\u74dc\U1f383'
+      'Pumpkin\U1f383'
     } else if (length(x@redKidneyBean)) {
       '\u7ea2\u82b8\u8c46'
     } else if (length(x@strawberry)) {
@@ -973,7 +987,6 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
 #' 
 #' @param object \linkS4class{recipe} object
 #'
-#' @importFrom methods show
 #' @export
 setMethod(f = show, signature = 'recipe', definition = function(object) {
   
@@ -1051,10 +1064,16 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   )
   cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, autoVolume(fat_vol_)), sep = '')
   
+  halfpound_brick <- c(
+    object@creamCheese
+  )
+  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
+              style_bold(col_br_magenta(sprintf(fmt = '%.0fbricks', halfpound_brick/226.796)))), sep = '')
+  
   other <- c(
     object@vegetable,
     #object@cheese, 
-    object@condensedMilk, object@creamCheese # dairy without volume info
+    object@condensedMilk # dairy without volume info
   )
   cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), sep = '')
   

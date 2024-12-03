@@ -5,15 +5,9 @@
 \alias{creamCheeseSpread}
 \alias{creamCheeseSpread-class}
 \alias{pumpkin_creamCheeseSpread}
-\alias{pumpkin_creamCheeseSpread_GoodLifeEats}
-\alias{pumpkin_creamCheeseSpread_Lynn}
 \title{\linkS4class{creamCheeseSpread} Recipes}
 \usage{
 pumpkin_creamCheeseSpread()
-
-pumpkin_creamCheeseSpread_GoodLifeEats()
-
-pumpkin_creamCheeseSpread_Lynn()
 }
 \description{
 ..

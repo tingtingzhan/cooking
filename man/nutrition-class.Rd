@@ -196,6 +196,8 @@ Nutrition information.
 
 \item{\code{servingGram}}{\link[base]{numeric} scalar, serving size in grams}
 
+\item{\code{serving_oz}}{\link[base]{numeric} scalar, serving size in ounces}
+
 \item{\code{servingCup,servingTbsp,servingTsp}}{\link[base]{numeric} scalar, serving size in cups, tablespoons, teaspoons}
 
 \item{\code{serving_floz}}{\link[base]{numeric} scalar, serving size in fluid ounce}

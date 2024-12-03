@@ -15,7 +15,7 @@ setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
   alias_class = 'Shortcrust',
   # pastryFlour = 360, # original
   pastryFlour = 370, # to have 50% fat:flour
-  butter = 227,
+  butter_brick = 1,
   sugar = 7.5,
   # salt_tsp = 1/4,
   iceWater = 50, # 60g-90g,

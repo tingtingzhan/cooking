@@ -39,7 +39,7 @@
 #' @export
 setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
   alias_class = '\u997c\u5e72',
-  butter = 227,
+  butter_brick = 1,
   eggYolk_pc = 9,
   portion = c(
     # do NOT need pie weight!!
@@ -76,7 +76,7 @@ Assam_cookie <- function() new(
 PreppyKitchen_cookie <- function() new(
   Class = 'recipe', author = 'Preppy Kitchen', alias_flavor = 'Butter Cookie',
   flour = c(Wegmans_bread = 120, Wegmans_pastry = 120),
-  butter = 227,
+  butter_brick = 1,
   sugar = 70,
   eggYolk_pc = 2
 )
@@ -256,7 +256,7 @@ EarlGrey_cookie_Twinings = function() new(
 
 PreppyKitchen_thumbprintCookie <- function() new(
   Class = 'recipe',
-  butter = 227,
+  butter_brick = 1,
   sugar = 150,
   eggYolk_pc = 2,
   vanilla_tsp = 1,

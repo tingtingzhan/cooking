@@ -18,7 +18,14 @@ hotdrink(x, ...)
 
 \method{hotdrink}{`function`}(x, ...)
 
-\method{hotdrink}{drinkmix}(x, water80 = 236.6 * 2, ...)
+\method{hotdrink}{drinkmix}(
+  x,
+  water80 = if (inherits(x, what = "pumpkinSpiceLatteMix")) {
+     236.6 * 2 - x@pumpkin
+
+    } else 236.6 * 2,
+  ...
+)
 
 \method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 

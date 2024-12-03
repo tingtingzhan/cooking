@@ -379,7 +379,8 @@
   
   pumpkinSpice <- function(x) switch(
     class(x), 
-    drinkmix = NA_real_,
+    pumpkinSpiceLatteMix = NA_real_,
+    pumpkinSpiceLatte_ = .001, # .002 too much
     .002) 
     
   coriander <- function(x) switch(

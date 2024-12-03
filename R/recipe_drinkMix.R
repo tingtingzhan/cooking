@@ -31,6 +31,7 @@ setClass(Class = 'matchaGoatLatte_', contains = 'drink')
 setClass(Class = 'matchaLatte_', contains = 'drink')
 setClass(Class = 'mocaccino_', contains = 'drink')
 setClass(Class = 'tiramisu_', contains = 'drink')
+setClass(Class = 'pumpkinSpiceLatte_', contains = 'drink')
 
 
 
@@ -70,7 +71,9 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 #hotdrink.recipe <- function(
 hotdrink.drinkmix <- function(
     x, 
-    water80 = 236.6*2, # 2 US cup
+    water80 = if (inherits(x, what = 'pumpkinSpiceLatteMix')) {
+      236.6*2 - x@pumpkin
+    } else 236.6*2, # 2 US cup
     ...
 ) {
   x@water80 <- water80
@@ -348,15 +351,29 @@ matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnatio
 
 
 
-
-pumpkinSpiceLatte <- function() new(
-  Class = 'drinkmix',
-  alias_flavor = 'Pumpkin Spice Latte',
+#' @title Pumpkin Spice Latte Mix
+#' 
+#' @examples
+#' pumpkinSpiceLatte()
+#' 
+#' @name pumpkinSpiceLatte
+#' @aliases pumpkinSpiceLatteMix-class
+#' @export
+setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prototype(
+  alias_flavor = 'Pumpkin\U1f383 Spice Latte',
   drymilk = c(Carnation_drymilk = 40),
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),
   brownSugar_Tbsp = 1,
-  pumpkin_Tbsp = 3,
-  pumpkinSpice_tsp = 1/2 + 1/8
+  #pumpkin_Tbsp = 3, # was
+  pumpkin_Tbsp = 4.5, # new
+  #pumpkinSpice_tsp = 1/2 + 1/8 # too much
+  pumpkinSpice_tsp = 1/4
+))
+
+#' @rdname pumpkinSpiceLatte
+#' @export
+pumpkinSpiceLatte <- function() new(
+  Class = 'pumpkinSpiceLatteMix'
 )
 
 

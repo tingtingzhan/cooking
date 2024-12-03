@@ -5,8 +5,7 @@ function() new(
   Class = 'recipe', 
   pastryFlour = 90,
   sugar = 20, # originally 90g
-  eggWhite_pc = 3,
-  eggYolk_pc = 3,
+  egg_pc = 3,
   drymilk = 5,
   water = 20,
   oil = c(Wegmans_vegetable = 25),

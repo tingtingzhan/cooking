@@ -15,7 +15,7 @@
 #' @export
 setClass(Class = 'flavoredButter', contains = 'recipe', prototype = prototype(
   alias_class = '\u98ce\u5473\u9ec4\u6cb9',
-  butter = 227
+  butter_brick = 1
 ))
 
 #' @rdname flavoredButter

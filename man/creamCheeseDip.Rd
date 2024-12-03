@@ -17,7 +17,7 @@ pumpkin_creamCheeseDip_Julie()
 }
 \description{
 \linkS4class{creamCheeseDip} contains much more water than
-deprecated \code{creamCheeseSpread} class,
+\linkS4class{creamCheeseSpread},
 thus cannot be \emph{spread}ed.
 
 \linkS4class{creamCheeseDip} is also perfect for dressing.
@@ -27,8 +27,8 @@ pumpkin_creamCheeseDip()
 
 diagnose(
  pumpkin_creamCheeseDip,
- subtract(pumpkin_creamCheeseDip_bakethat, sugar = 185),
- subtract(pumpkin_creamCheeseDip_Julie, sugar = 245)
+ subtract(pumpkin_creamCheeseDip_bakethat, sugar = 165),
+ subtract(pumpkin_creamCheeseDip_Julie, sugar = 220)
 )
 
 }

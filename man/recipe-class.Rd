@@ -56,7 +56,7 @@ general recipe
 
 \item{\code{yellowCorn}}{\link[base]{numeric} scalar, weight of Kirkland frozen yellow corn (in grams)}
 
-\item{\code{butter,butter_tsp,butter_Tbsp,butter_cup}}{\link[base]{numeric} scalar, weight of Kerrygold unsalted butter (in grams)}
+\item{\code{butter,butter_tsp,butter_Tbsp,butter_cup,butter_brick}}{\link[base]{numeric} scalar, weight of Kerrygold unsalted butter (in grams)}
 
 \item{\code{ghee}}{\link[base]{numeric} scalar, weight of Wegmans ghee butter (in grams)}
 
@@ -68,7 +68,7 @@ general recipe
 
 \item{\code{yogurtGreek}}{\link[base]{numeric} scalar, weight of non-fat Greek yogurt (in grams)}
 
-\item{\code{creamCheese}}{\link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese}
+\item{\code{creamCheese,creamCheese_brick}}{\link[base]{numeric} scalar, weight of Nancy's full-fat cream cheese}
 
 \item{\code{sourCream,sourCream_tsp,sourCream_Tbsp,sourCream_cup}}{\link[base]{numeric} scalar, weight of Daisy regular (i.e., full-fat) sour cream (in grams)}
 

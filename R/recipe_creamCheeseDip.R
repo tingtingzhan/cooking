@@ -5,8 +5,7 @@
 #' 
 #' @description
 #' \linkS4class{creamCheeseDip} contains much more water than 
-# \linkS4class{creamCheeseSpread}, 
-#' deprecated `creamCheeseSpread` class,
+#' \linkS4class{creamCheeseSpread},
 #' thus cannot be *spread*ed.
 #' 
 #' \linkS4class{creamCheeseDip} is also perfect for dressing.
@@ -16,16 +15,17 @@
 #' 
 #' diagnose(
 #'  pumpkin_creamCheeseDip,
-#'  subtract(pumpkin_creamCheeseDip_bakethat, sugar = 185),
-#'  subtract(pumpkin_creamCheeseDip_Julie, sugar = 245)
+#'  subtract(pumpkin_creamCheeseDip_bakethat, sugar = 165),
+#'  subtract(pumpkin_creamCheeseDip_Julie, sugar = 220)
 #' )
 #' 
 #' @name creamCheeseDip
 #' @aliases creamCheeseDip-class
 #' @export
 setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
-  alias_class = '\u5976\u6cb9\u5976\u916a\u8638\u6599',
-  creamCheese = c(Nancys = 227),
+  # alias_class = '\u5976\u6cb9\u5976\u916a\u8638\u6599',
+  alias_class = 'Cream Cheese Dip',
+  creamCheese_brick = c(Nancys = 1),
   instruction = c(
     'Whip everything (chilled). Careful not to splash',
     'Do not freeze'
@@ -41,9 +41,7 @@ pumpkin_creamCheeseDip <- function() new(
   Class = 'creamCheeseDip', 
   pumpkin = 300,
   brownSugar = 25,
-  pumpkinSpice_Tbsp = 1/2,
-  cinnamon_tsp = 1/2,
-  ginger_tsp = 1/2,
+  pumpkinSpice_tsp = 1/2 + 1/8,
   review = 'try'
 )
 
@@ -57,7 +55,7 @@ pumpkin_creamCheeseDip <- function() new(
 pumpkin_creamCheeseDip_bakethat <- function() new(
   Class = 'recipe',
   author = 'Bake That!',
-  creamCheese = c(Nancys = 227),
+  creamCheese_brick = c(Nancys = 1),
   sugar_cup = c(Domino_10x = 1.5),
   pumpkin = 425, # 15 oz
   vanilla_tsp = 1,
@@ -72,7 +70,7 @@ pumpkin_creamCheeseDip_bakethat <- function() new(
 pumpkin_creamCheeseDip_Julie <- function() new(
   Class = 'recipe',
   julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),
-  creamCheese = c(Nancys = 227 * 2),
+  creamCheese_brick = 2,
   pumpkin = 425, # 15 oz
   sugar_cup = c(Domino_10x = 2),
   cinnamon_tsp = 2,

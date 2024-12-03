@@ -121,7 +121,7 @@ Philadelphia_creamCheese <- function() new(
   philadelphia = '00021000612239',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
-  servingGram = 28, # no volume info!!
+  serving_oz = 1,
   calorie = 100,
   fat = 9, cholesterol = .03, sodium = .11, carbohydrate = 1, sugar = 1, protein = 2)
 
@@ -141,9 +141,9 @@ PhiladelphiaNeufchatel_creamCheese <- function() new(
   kraftheinzawayfromhome = '10021000616401',
   philadelphia = '00021000612475',
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cream Cheese',
-  walmart = '36647454', usd = 4.98/2/227*28, # 2023-11-11
+  walmart = '36647454', usd = 4.98/16, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
-  servingGram = 28, 
+  serving_oz = 1, 
   calorie = 70,
   fat = 6, cholesterol = .02, sodium = .125, carbohydrate = 2, sugar = 1, protein = 2)
 
@@ -162,14 +162,14 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- function() new(
 LucerneNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', acme = 137100657L,
   brand = 'Lucerne', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
-  servingGram = 28, fat = 6, sodium = .105, sugar = 2, protein = 2)
+  serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
 GreatValueNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', 
-  walmart = '10452358', usd = 1.48/227*28,
+  walmart = '10452358', usd = 1.48/8,
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
-  servingGram = 28, fat = 6, sodium = .105, sugar = 2, protein = 2)
+  serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
 OrganicValleyNeufchatel_creamCheese <- function() new(
@@ -177,7 +177,7 @@ OrganicValleyNeufchatel_creamCheese <- function() new(
   organicvalley = 'cream-cheese/neufchatel/neufchatel-8-oz-bar',
   name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
   wegmans = 182L, usd = 4.59/8,
-  servingGram = 28, servingTbsp = 2,
+  serving_oz = 1, servingTbsp = 2,
   calorie = 70,
   fat = 6, sodium = .115, sugar = 1, protein = 2)
 
@@ -187,7 +187,7 @@ OrganicValley_creamCheese <- function() new(
   organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   wegmans = 11914L, usd = 4.59/8,
-  servingGram = 28, servingTbsp = 2,
+  serving_oz = 1, servingTbsp = 2,
   calorie = 110,
   fat = 10, cholesterol = 30, sodium = .1, 
   carbohydrate = 2, sugar = 1, protein = 2)
@@ -198,7 +198,7 @@ TraderJoes_creamCheese <- function() new(
   traderjoes = '012491',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese',
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
-  servingGram = 28, servingTbsp = 2, 
+  serving_oz = 1, servingTbsp = 2, 
   calorie = 90,
   fat = 9, cholesterol = .03, sodium = .095, carbohydrate = 2, sugar = 1)
 
@@ -208,7 +208,7 @@ TraderJoesLight_creamCheese <- function() new(
   Class = 'nutrition',
   brand = 'Trader Joe\'s', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Light Cream Cheese',
   contain = c('whey proteins', 'xanthan gum', 'locust bean gum', 'guar gum', 'microbial rennet'),
-  servingGram = 28, 
+  serving_oz = 1, 
   fat = 9, sodium = .095, sugar = 1)
 
 
@@ -217,7 +217,7 @@ WholeFoods365_creamCheese <- function() new(
   Class = 'nutrition', wholefoods = 'b074h6qz3j',
   name = '\u5976\u6cb9\u5976\u916a Cream Cheese', 
   contain = 'locust bean gum',
-  servingGram = 28, servingTbsp = 2, 
+  serving_oz = 1, servingTbsp = 2, 
   calorie = 100,
   fat = 10, cholesterol = .03, sodium = .095, carbohydrate = 2, protein = 2)
 
@@ -263,7 +263,7 @@ Daisy_cottageCheese <- function() new(
   name = 'Cottage Cheese',
   walmart = '15716748', usd = 3.78/680*113,
   wegmans = 265495L,
-  servingGram = 113, servingCup = 1/2,
+  serving_oz = 4, servingCup = 1/2,
   fdc = 172179L, water = 113*.798,
   fat = 5, cholesterol = .02, sodium = .39, sugar = 4, protein = 13)
 
@@ -272,7 +272,7 @@ DaisyLite_cottageCheese <- function() new(
   name = 'Low Fat Cottage Cheese',
   walmart = '15716747', usd = 3.78/680*113,
   wegmans = 265512L,
-  servingGram = 113, servingCup = 1/2,
+  serving_oz = 4, servingCup = 1/2,
   fdc = 328841L, water = 113*.811,
   fat = 2.5, cholesterol = .01, sodium = .35, sugar = 4, protein = 13)
 
@@ -281,7 +281,7 @@ Lucerne_cottageCheese <- function() new(
   Class = 'nutrition', 
   brand = 'Lucerne', name = 'Cottage Cheese',
   acme = 960109551L, usd = 4.19/680*113,
-  servingGram = 113, servingCup = 1/2,
+  serving_oz = 4, servingCup = 1/2,
   cholesterol = .005, sodium = .42, protein = 12)
 
 
