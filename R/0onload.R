@@ -32,7 +32,7 @@
       .08
     } else .035, 
     marinade = .04,
-    milktea = .05,
+    milktea_ = .05,
     matchaLatte_ = .04, # perfect! 2024 late summer
     stickyRice =, riceCake =, riceMousse = .05, 
     #tortillaLard = .06,
@@ -110,7 +110,7 @@
   
   addedSugar <- function(x) switch(
     class(x),
-    milktea = .013,
+    milktea_ = .013,
     NA_real_)
   
   addedSugar2cocoa <- function(x) switch(
@@ -134,7 +134,7 @@
     } else .055,
     millecrepe = if (length(x@liqueur)) .05 else .06,
     pudding = .05, # trying
-    milktea = .065,
+    milktea_ = .065,
     caffeLatte_ = .075,
     matchaGoatLatte_ = .075, 
     stickyRice =, riceCake = .1, # need to re-think!!

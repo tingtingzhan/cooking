@@ -11,7 +11,7 @@
 \alias{hotdrink.nutrition}
 \alias{frappe}
 \alias{frappe.function}
-\alias{frappe.recipe}
+\alias{frappe.drinkmix}
 \title{\linkS4class{drinkmix} Recipes}
 \usage{
 hotdrink(x, ...)
@@ -21,9 +21,12 @@ hotdrink(x, ...)
 \method{hotdrink}{drinkmix}(
   x,
   water80 = if (inherits(x, what = "pumpkinSpiceLatteMix")) {
-     236.6 * 2 - x@pumpkin
-
-    } else 236.6 * 2,
+     236.6 * 2 -
+    unname(x@pumpkin)
+ } else if (inherits(x, what = "milkteaMix")) {
+     560
+ } else
+    236.6 * 2,
   ...
 )
 
@@ -33,7 +36,15 @@ frappe(x, ...)
 
 \method{frappe}{`function`}(x, ...)
 
-\method{frappe}{recipe}(x, ice = 236.6, iceWater = 236.6, ...)
+\method{frappe}{drinkmix}(
+  x,
+  ice = if (inherits(x, what = "pumpkinSpiceLatteMix")) {
+     236.6 -
+    unname(x@pumpkin)/2
+ } else 236.6,
+  iceWater = ice,
+  ...
+)
 }
 \arguments{
 \item{x}{\linkS4class{drinkmix} object}

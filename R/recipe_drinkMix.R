@@ -32,6 +32,7 @@ setClass(Class = 'matchaLatte_', contains = 'drink')
 setClass(Class = 'mocaccino_', contains = 'drink')
 setClass(Class = 'tiramisu_', contains = 'drink')
 setClass(Class = 'pumpkinSpiceLatte_', contains = 'drink')
+setClass(Class = 'milktea_', contains = 'drink')
 
 
 
@@ -65,26 +66,27 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
-# @export hotdrink.recipe
 #' @export hotdrink.drinkmix
 #' @export
-#hotdrink.recipe <- function(
 hotdrink.drinkmix <- function(
     x, 
     water80 = if (inherits(x, what = 'pumpkinSpiceLatteMix')) {
       236.6*2 - unname(x@pumpkin)
+    } else if (inherits(x, what = 'milkteaMix')) {
+      560 # fit in 20oz mug
+      # cannot make 'frappe' from teabags 
     } else 236.6*2, # 2 US cup
     ...
 ) {
   x@water80 <- water80
   x@alias <- character(); x@alias_class <- '\u70ed\u996e'
-  x@instruction <- c(
-    'Whisk together all powders (syrup also okay)', 
-    'Add half of water, whisk until smooth',
-    'Sweep cup bottom with a square spatula',
-    'Add rest of water, whisk until froth',
-    'Add liqueur last, which curdles dry milk'
-  )
+  x@Stanley20 <- Stanley20(treatment = c(
+    'whisk together all powders (syrup also okay)', 
+    'add half of water, whisk until smooth',
+    'sweep cup bottom with a square spatula',
+    'add rest of water, whisk until froth',
+    '(optional) add liqueur last, which curdles dry milk'
+  ))
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {
     'drink' # undefined 'drinkmix'
@@ -126,17 +128,22 @@ frappe.function <- function(x, ...) frappe(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
-#' @export frappe.recipe
+#' @export frappe.drinkmix
 #' @export
-frappe.recipe <- function(
+frappe.drinkmix <- function(
     x, 
-    ice = 236.6, iceWater = 236.6, # Nutribullet can handle!!
+    ice = if (inherits(x, what = 'pumpkinSpiceLatteMix')) {
+      236.6 - unname(x@pumpkin)/2
+    } else 236.6, # 1 US cup, Nutribullet can handle!!
+    iceWater = ice,
     ...
 ) {
   x@ice <- ice
   x@iceWater <- if (length(x@milk)) numeric() else iceWater
   x@alias <- character(); x@alias_class <- 'Frapp\u00e9'
-  x@note <- 'Nutribullet Ultra 20 fl. oz. blending cup'
+  x@nutribullet20 <- nutribullet20(
+    treatment = 'put in ice cubes first, powders next, liquids last'
+  )
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {
     'drink' # undefined 'drinkmix'
@@ -385,6 +392,72 @@ pumpkinSpiceLatte <- function() new(
 #  Class = 'recipe', alias_flavor = 
 # ### that lemonade mix ???  into an iceDrink
 #)
+
+
+
+
+
+
+#' @title \linkS4class{milkteaMix} Recipes
+#' 
+#' @description
+#' Milk tea (from tea bags).
+#' 
+#' @examples
+#' EarlGrey_milktea()
+#' Ceylon_milktea()
+#' chai_milktea()
+#' 
+#' @name milkteaMix
+#' @aliases milkteaMix-class
+#' @export
+setClass(Class = 'milkteaMix', contains = 'drinkmix', prototype = prototype(
+  alias_class = '\u5976\u8336',
+  drymilk = 40, 
+  brownSugar_tsp = 2, # 1tsp too bland; 1Tbsp too sweet
+  #water95 = 560, 
+  Stanley20 = Stanley20(treatment = c(
+    'add half of boiling water to powders, whisk until froth',
+    'add rest of boiling water, whisk',
+    'add tea bags',
+    'soak (covered) for 1hr+'
+  ))
+))
+
+
+
+#' @rdname milkteaMix
+#' @export
+EarlGrey_milktea <- function() new(
+  Class = 'milkteaMix', 
+  alias_flavor = 'Earl Grey', 
+  teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), 
+  review = 'try')
+
+
+#' @rdname milkteaMix
+#' @export
+Ceylon_milktea <- function() new(
+  Class = 'milkteaMix', 
+  teabag = c(Stassen_Ceylon = 4), 
+  date = as.Date('2024-10-06'),
+  pros = 'I like!')
+
+
+
+#' @rdname milkteaMix
+#' @export
+chai_milktea <- function() new(
+  Class = 'milkteaMix', 
+  teabag = c(Twinings_ultraChai = 4), 
+  review = 're-try')
+
+
+
+
+
+
+
 
 
 

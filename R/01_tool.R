@@ -200,3 +200,14 @@ JoyoungCJA9U <- function(
   name = paste('\u7092\u83dc\u673a', unclass(style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html'))),
   program = program,
   ...)
+
+nutribullet20 <- function(...) new(
+  Class = 'tool',
+  name = c(style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. blending cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/')),
+  ...) 
+
+
+Stanley20 <- function(...) new(
+  Class = 'tool',
+  name = c(style_hyperlink(text = 'Stanley 20oz quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz')),
+  ...)
