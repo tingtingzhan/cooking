@@ -47,6 +47,7 @@
     } else if (length(x@pumpkin)) {
       .08
     } else NA_real_,
+    pumpkinSpiceLatte_ = .065,
     matchaGoatLatte_ = .07, # early 2024; whole goat milk; try to reduce with tenju!
     sundae = if (length(x@matcha)) {
       .095
@@ -139,7 +140,7 @@
     stickyRice =, riceCake = .1, # need to re-think!!
     matchaLatte_ =, mocaccino_ = .075, # taste better than .09 !
     cocoa_ =, 
-    drink = .075, # match Carnation_drymilk() can label
+    pumpkinSpiceLatte_ = .075, # match Carnation_drymilk() can label
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,
@@ -380,8 +381,8 @@
   pumpkinSpice <- function(x) switch(
     class(x), 
     pumpkinSpiceLatteMix = NA_real_,
-    pumpkinSpiceLatte_ = .001, # .002 too much
-    .002) 
+    pumpkinSpiceLatte_ = .001, # confirmed!!
+    .002) # all other desserts
     
   coriander <- function(x) switch(
     class(x),

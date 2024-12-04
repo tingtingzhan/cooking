@@ -72,7 +72,7 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 hotdrink.drinkmix <- function(
     x, 
     water80 = if (inherits(x, what = 'pumpkinSpiceLatteMix')) {
-      236.6*2 - x@pumpkin
+      236.6*2 - unname(x@pumpkin)
     } else 236.6*2, # 2 US cup
     ...
 ) {
@@ -360,21 +360,20 @@ matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnatio
 #' @aliases pumpkinSpiceLatteMix-class
 #' @export
 setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prototype(
-  alias_flavor = 'Pumpkin\U1f383 Spice Latte',
-  drymilk = c(Carnation_drymilk = 40),
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),
-  brownSugar_Tbsp = 1,
-  #pumpkin_Tbsp = 3, # was
-  pumpkin_Tbsp = 4.5, # new
-  #pumpkinSpice_tsp = 1/2 + 1/8 # too much
-  pumpkinSpice_tsp = 1/4
+  alias_flavor = 'Pumpkin\U1f383 Spice Latte'
 ))
 
 #' @rdname pumpkinSpiceLatte
 #' @export
 pumpkinSpiceLatte <- function() new(
-  Class = 'pumpkinSpiceLatteMix'
-)
+  Class = 'pumpkinSpiceLatteMix',
+  drymilk = c(Carnation_drymilk = 40),
+  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),
+  brownSugar_Tbsp = 1,
+  pumpkin = 70,
+  pumpkinSpice_tsp = 1/4,
+  date = as.Date('2024-12-04'),
+  pros = 'I love!!')
 
 
 

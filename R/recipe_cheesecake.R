@@ -105,8 +105,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
   egg_pc = 2,
   water = 100, 
   portion = c(
-    'cupcake 2.75in' = 80,
-    'cupcake 3in' = 60, 
+    'cupcake' = 60, 
     'Emile Henry 9in, crustless' = 1400 
   ),
   instruction = c(
@@ -213,13 +212,22 @@ tiramisu_cheesecake <- function() new(
 #' @export
 pumpkin_cheesecake <- function() new(
   Class = 'cheesecake',
-  water = numeric(),
+  water = numeric(), starch_cup = numeric(),
+  
   #pumpkin = 300, brownSugar = 100, starch_tsp = c(Wegmans_corn = 13), # 10% sugar, slightly too plain
-  pumpkin = 300, brownSugar = 120, starch_tsp = c(Wegmans_corn = 14), # 11% sugar, should be perfect!
+  #pumpkin = 300, brownSugar = 120, starch_tsp = c(Wegmans_corn = 14), # 11% sugar, should be perfect!
   #pumpkin = 500, brownSugar = 150, starch_tsp = c(Wegmans_corn = 15), # dont try yet
+  
+  #change the whole idea!!!
+  pumpkin = 600, 
+  brownSugar = 110, 
+  JoyoungCJA9U = JoyoungCJA9U(
+    minute = 30,
+    waterLost = 250
+  ),
   pumpkinSpice_tsp = 1.5,
   review = c(
-    'retry with corn starch (and more sugar). Tapioca flour does not coagulate well enough' 
+    'retry with JoyoungCJA9U' 
   ))
 
 

@@ -197,6 +197,6 @@ JoyoungCJA9U <- function(
     ...
 ) new(
   Class = 'tool',
-  name = '\u7092\u83dc\u673a Joyoung Stir-Frying Machine CJ-A9U',
+  name = paste('\u7092\u83dc\u673a', unclass(style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html'))),
   program = program,
   ...)
