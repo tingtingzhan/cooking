@@ -195,7 +195,8 @@ SimplyOrganic_Italian <- function() new(
   Class = 'nutrition', simplyorganic = 'italian-seasoning-0-95-oz',
   name = 'Italian Seasoning',
   servingGram = 27, usd = 6.29, # 2023-11-09
-  servingTbsp = 10)
+  servingTbsp = 10,
+  contain = c('oregano', 'marjoram', 'thyme', 'basil', 'rosemary', 'sage'))
 
 SimplyOrganic_Southwest <- function() new(
   Class = 'nutrition', # discontinued
@@ -216,13 +217,15 @@ SimplyOrganic_pumpkinSpice <- function() new(
   Class = 'nutrition', simplyorganic = 'pumpkin-spice-1-94-oz',
   name = '\u5357\u74dc\u8089\u6842\u9999\u6599 Pumpkin\U1f383 Spice',
   servingGram = 55, usd = 6.79, # 2023-12-06
-  servingTbsp = 10)
+  servingTbsp = 10,
+  contain = c('cinnamon', 'ginger', 'nutmeg', 'clove'))
 
 SimplyOrganic_5spice <- function() new(
   Class = 'nutrition', simplyorganic = 'five-spice-powder-2-01-oz',
   name = '\u4e94\u9999\u7c89 Five Spice Powder',
   servingGram = 57, usd = 7.89, # 2023-12-06
-  servingTbsp = 10)
+  servingTbsp = 10,
+  contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
 
 SimplyOrganic_ginger <- function() new(
   Class = 'nutrition', simplyorganic = 'ginger-root-ground-1-64-oz',

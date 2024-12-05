@@ -797,7 +797,32 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
     cat('\n')
   }
   
-  if (length(obj@contain)) cat(sprintf(fmt = 'Contains: %s\n\n', paste0(obj@contain, collapse = ', ')))
+  if (length(contain <- obj@contain)) {
+    contain_chn <- character(length = length(contain))
+    contain_chn[tolower(contain) == 'basil'] <- '\u7f57\u52d2'
+    contain_chn[tolower(contain) == 'black pepper'] <- '\u9ed1\u80e1\u6912'
+    contain_chn[tolower(contain) == 'caraway'] <- '\u9999\u82b9\u7c7d'
+    contain_chn[tolower(contain) == 'cardamom'] <- '\u5c0f\u8c46\u853b'
+    contain_chn[tolower(contain) == 'cinnamon'] <- '\u6842\u76ae'
+    contain_chn[tolower(contain) == 'clove'] <- '\u4e01\u9999'
+    contain_chn[tolower(contain) == 'coriander'] <- '\u82ab\u837d\u7c7d'
+    contain_chn[tolower(contain) == 'cumin'] <- '\u5b5c\u7136'
+    contain_chn[tolower(contain) == 'garlic'] <- '\u849c\U1f9c4'
+    contain_chn[tolower(contain) == 'ginger'] <- '\u59dc\U1fada'
+    contain_chn[tolower(contain) == 'fennel'] <- '\u5c0f\u8334\u9999'
+    contain_chn[tolower(contain) == 'fenugreek'] <- '\u80e1\u82a6\u5df4'
+    contain_chn[tolower(contain) == 'nutmeg'] <- '\u8089\u8c46\u853b'
+    contain_chn[tolower(contain) == 'oregano'] <- '\u725b\u81f3'
+    contain_chn[tolower(contain) == 'rosemary'] <- '\u8ff7\u8fed\u9999'
+    contain_chn[tolower(contain) == 'sage'] <- '\u9f20\u5c3e\u8349'
+    contain_chn[tolower(contain) == 'star anise'] <- '\u516b\u89d2'
+    contain_chn[tolower(contain) == 'thyme'] <- '\u767e\u91cc\u9999'
+    contain_chn[tolower(contain) == 'tomato concentrate'] <- '\u6d53\u7f29\u897f\u7ea2\u67ff\U0001f345'
+    contain_chn[tolower(contain) == 'turmeric'] <- '\u59dc\u9ec4'
+    contain_chn[tolower(contain) == 'white pepper'] <- '\u767d\u80e1\u6912'
+    contain_chn[tolower(contain) == 'yellow mustard'] <- '\u82a5\u672b'
+    cat(sprintf(fmt = 'Contains %s\n\n', paste0(col_blue(contain_chn), col_br_magenta(contain), collapse = ' ')))
+  }
 
   if (length(obj@fdc)) cat(paste('\U1f4dd', c(style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central'))), sep = '\n')
   if (length(obj@pubchem)) cat(paste('\U1f4dd', c(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')

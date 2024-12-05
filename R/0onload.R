@@ -335,11 +335,11 @@
       .0073
     } else if (length(x@cocoa)) {
       .009 
-    } else NA_real_,
+    } else .016, # to try
+    pumpkinSpiceLatte_ = .0085,
     sundae = .015, # love!
     bao =, bread = .015, # tested on bread() and love!
     caffeLatte_ = .015, # tested and love!!
-    cheesecake = .016, # to try
     snowSkin = .016, # try
     gateau = if (length(x@cocoa)) .002 else NA_real_,
     drink = if (length(x@liqueur)) .009 else NA_real_,
@@ -381,7 +381,7 @@
   pumpkinSpice <- function(x) switch(
     class(x), 
     pumpkinSpiceLatteMix = NA_real_,
-    pumpkinSpiceLatte_ = .001, # confirmed!!
+    pumpkinSpiceLatte_ = .00085, # confirmed!!
     .002) # all other desserts
     
   coriander <- function(x) switch(

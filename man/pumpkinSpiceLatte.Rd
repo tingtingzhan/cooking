@@ -15,3 +15,6 @@ Pumpkin Spice Latte Mix
 pumpkinSpiceLatte()
 
 }
+\references{
+\url{https://en.wikipedia.org/wiki/Pumpkin_Spice_Latte}
+}

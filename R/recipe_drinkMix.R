@@ -79,7 +79,7 @@ hotdrink.drinkmix <- function(
     ...
 ) {
   x@water80 <- water80
-  x@alias <- character(); x@alias_class <- '\u70ed\u996e'
+  x@alias <- character(); x@alias_class <- '' # '\u70ed\u996e'
   x@Stanley20 <- Stanley20(treatment = c(
     'whisk together all powders (syrup also okay)', 
     'add half of water, whisk until smooth',
@@ -362,6 +362,9 @@ matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnatio
 #' 
 #' @examples
 #' pumpkinSpiceLatte()
+#' 
+#' @references
+#' \url{https://en.wikipedia.org/wiki/Pumpkin_Spice_Latte}
 #' 
 #' @name pumpkinSpiceLatte
 #' @aliases pumpkinSpiceLatteMix-class
