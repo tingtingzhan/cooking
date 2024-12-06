@@ -745,7 +745,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   obj <- object
   
   cli_text(nutrition_name(obj))
-  cat('\n\n')
+  cat('\n')
   
   #cat('Nutrition Facts\n\n')
 
@@ -784,8 +784,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   if (length(obj@superior)) {
     cli_text(sprintf(
-      fmt = '\u274c I prefer \U1f3fa{.run [%s](cooking::%s())}', 
-      style_bold(col_yellow(obj@superior[1L])), 
+      fmt = '\u274c I prefer {.run [%s](cooking::%s())}', 
+      style_bold(make_ansi_style('sienna')(obj@superior[1L])), 
       obj@superior[1L]
     ))
   } 
