@@ -787,11 +787,11 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   #}
   
   if (length(obj@superior)) {
-    cli_text(sprintf(
-      fmt = '\u274c I prefer {.run [%s](cooking::%s())}', 
-      style_bold(make_ansi_style('sienna')(obj@superior[1L])), 
-      obj@superior[1L]
-    ))
+    cli_text('\u274c I prefer ', paste(sprintf(
+      fmt = '{.run [%s](cooking::%s())}', 
+      style_bold(make_ansi_style('sienna')(obj@superior)),
+      obj@superior
+    ), collapse = ', '))
   } 
   
   cat('\n')
@@ -804,10 +804,13 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   if (length(contain <- obj@contain)) {
     contain_chn <- character(length = length(contain))
     contain_chn[tolower(contain) == 'basil'] <- '\u7f57\u52d2'
+    contain_chn[tolower(contain) == 'bay leaves'] <- '\u6708\u6842\u53f6'
     contain_chn[tolower(contain) == 'black pepper'] <- '\u9ed1\u80e1\u6912'
     contain_chn[tolower(contain) == 'caraway'] <- '\u9999\u82b9\u7c7d'
     contain_chn[tolower(contain) == 'cardamom'] <- '\u5c0f\u8c46\u853b'
+    contain_chn[tolower(contain) == 'carrot'] <- '\u80e1\u841d\u535c\U1f955'
     contain_chn[tolower(contain) == 'cinnamon'] <- '\u6842\u76ae'
+    contain_chn[tolower(contain) == 'citric acid'] <- '\u67e0\u6aac\u9178'
     contain_chn[tolower(contain) == 'clove'] <- '\u4e01\u9999'
     contain_chn[tolower(contain) == 'coriander'] <- '\u82ab\u837d\u7c7d'
     contain_chn[tolower(contain) == 'cumin'] <- '\u5b5c\u7136'
@@ -815,13 +818,20 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
     contain_chn[tolower(contain) == 'ginger'] <- '\u59dc\U1fada'
     contain_chn[tolower(contain) == 'fennel'] <- '\u5c0f\u8334\u9999'
     contain_chn[tolower(contain) == 'fenugreek'] <- '\u80e1\u82a6\u5df4'
+    contain_chn[tolower(contain) == 'lavender flowers'] <- '\u85b0\u8863\u8349'
+    contain_chn[tolower(contain) == 'lemon peel'] <- '\u67e0\u6aac\U0001f34b\u76ae'
+    contain_chn[tolower(contain) == 'marjoram'] <- '\u58a8\u89d2\u5170'
     contain_chn[tolower(contain) == 'nutmeg'] <- '\u8089\u8c46\u853b'
+    contain_chn[tolower(contain) == 'onion'] <- '\u6d0b\u8471\U1f9c5'
+    contain_chn[tolower(contain) == 'orange peel'] <- '\u9648\U1f34a\u76ae'
     contain_chn[tolower(contain) == 'oregano'] <- '\u725b\u81f3'
+    contain_chn[tolower(contain) == 'parsley'] <- '\u6b27\u82b9'
+    contain_chn[tolower(contain) == 'red bell pepper'] <- '\u7ea2\u751c\u6912'
     contain_chn[tolower(contain) == 'rosemary'] <- '\u8ff7\u8fed\u9999'
     contain_chn[tolower(contain) == 'sage'] <- '\u9f20\u5c3e\u8349'
     contain_chn[tolower(contain) == 'star anise'] <- '\u516b\u89d2'
     contain_chn[tolower(contain) == 'thyme'] <- '\u767e\u91cc\u9999'
-    contain_chn[tolower(contain) == 'tomato concentrate'] <- '\u6d53\u7f29\u897f\u7ea2\u67ff\U0001f345'
+    contain_chn[tolower(contain) %in% c('tomato', 'tomato granules', 'tomato concentrate')] <- '\u897f\u7ea2\u67ff\U0001f345'
     contain_chn[tolower(contain) == 'turmeric'] <- '\u59dc\u9ec4'
     contain_chn[tolower(contain) == 'white pepper'] <- '\u767d\u80e1\u6912'
     contain_chn[tolower(contain) == 'yellow mustard'] <- '\u82a5\u672b'

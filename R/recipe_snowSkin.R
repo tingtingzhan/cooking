@@ -29,7 +29,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   glutinousRiceFlour = 50, riceFlour = 50, 
   starch = c(ManSang_wheat = 25),
   water = 185,
-  drymilk = c(Carnation_drymilk = 15),
+  drymilk = c(Carnation = 15),
   butter = 6,
   portion = c(mochi = 5, 'mooncake 30g' = 15, 'potsticker' = 20),
   instruction = c(

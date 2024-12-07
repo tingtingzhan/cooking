@@ -490,7 +490,11 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   x_Tbsp <- if (has_Tbsp) slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
   x_cup <- if (has_cup) slot(addNameLen1(x, which = ._cup, name1 = name1), name = ._cup) # else NULL
   x_brick <- if (has_brick) slot(addNameLen1(x, which = ._brick, name1 = name1), name = ._brick) # else NULL
-  if (which %in% c('starch', 'oil', 'creamCheese')) {
+  if (which %in% c(
+    'starch', 'oil', 
+    'butter', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 'filmjolk', 'ghee', 'heavyCream', 'kefir', 'mascarpone', 
+    'yogurt', 'yogurtGreek'
+  )) {
     add_suffix <- function(x0, which) {
       if (!length(names(x0))) return(x0)
       idx <- !endsWith(names(x0), suffix = paste0('_', which))
@@ -533,15 +537,15 @@ meatName <- function(x, animal = stop('')) {
   return(x)
 }
 
-dairyName <- function(x, dairy = stop(''), name1 = stop()) {
-  if (!length(slot(x, name = dairy))) return(x)
-  x <- addNameLen1(x, which = dairy, name1 = name1)
-  nm <- names(slot(x, name = dairy))
-  if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('incomplete dairy name')
-  idx <- !endsWith(nm, suffix = paste0('_', dairy))
-  names(slot(x, name = dairy))[idx] <- paste0(nm[idx], '_', dairy)
-  return(x)
-}
+#dairyName <- function(x, dairy = stop(''), name1 = stop()) {
+#  if (!length(slot(x, name = dairy))) return(x)
+#  x <- addNameLen1(x, which = dairy, name1 = name1)
+#  nm <- names(slot(x, name = dairy))
+#  if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('incomplete dairy name')
+#  idx <- !endsWith(nm, suffix = paste0('_', dairy))
+#  names(slot(x, name = dairy))[idx] <- paste0(nm[idx], '_', dairy)
+#  return(x)
+#}
 
 
 get_flavor_ <- function(x) {
@@ -655,20 +659,19 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'sauce')
   x <- combineVol(x, which = 'liqueur')
   
-  x <- combineVol(x, which = 'butter', name1 = 'Kerrygold_butter')
-  x <- dairyName(x, dairy = 'ghee', name1 = 'WegmansOrganic')
+  x <- combineVol(x, which = 'butter', name1 = 'Kerrygold')
+  x <- combineVol(x, which = 'ghee', name1 = 'WegmansOrganic')
   x <- addNameLen1(x, which = 'cheese')
-  x <- dairyName(x, dairy = 'mascarpone', name1 = 'BelGioioso')
-  x <- dairyName(x, dairy = 'cottageCheese', name1 = 'Daisy')
-  x <- dairyName(x, dairy = 'yogurtGreek', name1 = 'FageTotal0')
-  #x <- dairyName(x, dairy = 'yogurt', name1 = 'Stonyfield')
-  x <- dairyName(x, dairy = 'yogurt', name1 = 'Nancys') # taste best!!
-  x <- dairyName(x, dairy = 'kefir')
-  x <- dairyName(x, dairy = 'filmjolk')
-  x <- dairyName(x, dairy = 'condensedMilk', name1 = 'Carnation')
-  x <- dairyName(x, dairy = 'evaporatedMilk', name1 = 'Carnation')
+  x <- combineVol(x, which = 'mascarpone', name1 = 'BelGioioso')
+  x <- combineVol(x, which = 'cottageCheese', name1 = 'Daisy')
+  x <- combineVol(x, which = 'yogurtGreek', name1 = 'FageTotal0')
+  x <- combineVol(x, which = 'yogurt', name1 = 'Nancys') # taste best!!
+  x <- combineVol(x, which = 'kefir', name1 = 'GreenValley')
+  x <- combineVol(x, which = 'filmjolk', name1 = 'Siggis')
+  x <- combineVol(x, which = 'condensedMilk', name1 = 'Carnation')
+  x <- combineVol(x, which = 'evaporatedMilk', name1 = 'Carnation')
   x <- combineVol(x, which = 'creamCheese', name1 = 'Nancys')
-  x <- combineVol(x, which = 'drymilk', name1 = 'Carnation_drymilk')
+  x <- combineVol(x, which = 'drymilk', name1 = 'Carnation')
   x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
   x <- combineVol(x, which = 'buttermilk', name1 = 'OakFarms_buttermilk')
   x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')

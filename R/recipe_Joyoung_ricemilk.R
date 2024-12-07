@@ -42,8 +42,8 @@ brown_ricemilk <- function() new(
 setClass(Class = 'ricepaste', contains = 'recipe', prototype = prototype(
   alias_class = '\u5976\u9999\u7c73\u7cca',
   # for 600g 'ricemilk'
-  #drymilk = c(Carnation_drymilk = 15), # 2.5%, a little too much
-  drymilk_tsp = c(Carnation_drymilk = 5),
+  #drymilk = c(Carnation = 15), # 2.5%, a little too much
+  drymilk_tsp = c(Carnation = 5),
   portion = c(
     'Ciroa mug' = 610,
     'Starbucks mug' = 305

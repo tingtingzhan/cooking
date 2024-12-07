@@ -27,7 +27,7 @@ setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
   alias_class = 'Cre\u0302pe',
   breadFlour = 100, # using bread flour is still not strong enough
   egg_pc = 2,
-  drymilk = c(Carnation_drymilk = 11.5),
+  drymilk = c(Carnation = 11.5),
   
   heavyCream = 90, water = 130*2, 
   # water 3.90, fat 39.3%, try!!

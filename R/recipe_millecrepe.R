@@ -41,7 +41,7 @@ setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
   portion = c('mille cre\u0302pe cake 11in' = 1100),
   pastryFlour = 100,
   egg_pc = 2,
-  drymilk = c(Carnation_drymilk = 23),
+  drymilk = c(Carnation = 23),
   heavyCream = 85,
   water = 240,
   waterLost = 200, 

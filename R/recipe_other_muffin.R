@@ -40,7 +40,7 @@ Brody_muffin <- function() new(
   egg_pc = 2,
   oil = c(Wegmans_vegetable = 224), # 1 cup, original
   milk_cup = 2/3, 
-  yogurt_cup = c(SimpleTruth_yogurt = 1),
+  yogurt_cup = c(SimpleTruth = 1),
   vanilla_tsp = 2, # original
   flour_cup = 2.25,
   bakingPowder_tsp = 2.5, # original

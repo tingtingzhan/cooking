@@ -20,7 +20,7 @@ strawberry_frappe0 <- function() new(
   Class = 'fruitFrappe',
   strawberry = c(Kirkland_strawberry = 275), # yes, cannot pack any tighter!!
   iceWater = 225, # yes, need that much..
-  #drymilk = c(Carnation_drymilk = 25, Nido_drymilk = 15)
+  #drymilk = c(Carnation = 25, Nido_drymilk = 15)
   drymilk = 30, # before I go to Walmart again..
   cons = c(
     'needs Vitamix to break strawberry seeds',

@@ -69,7 +69,7 @@
     } else if (length(x@pumpkin)) {
       .07 # was .065, a little bland
     } else NA_real_,
-    kefir =, goatKefir =, filmjolk = .075,
+    kefir =, goatKefir = .075,
     beanPaste = .09,
     lava = .1,
     frosting =, ganache = if (length(x@matcha)) {

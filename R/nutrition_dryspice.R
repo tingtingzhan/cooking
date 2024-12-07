@@ -198,6 +198,14 @@ SimplyOrganic_Italian <- function() new(
   servingTbsp = 10,
   contain = c('oregano', 'marjoram', 'thyme', 'basil', 'rosemary', 'sage'))
 
+SimplyOrganic_Provence <- function() new(
+  Class = 'nutrition', simplyorganic = 'simply-organic-herbes-de-provence-1-oz',
+  name = 'Herbes de Provence',
+  servingGram = 28, usd = 6.29, # Dec 2024
+  servingTbsp = 10,
+  contain = c('thyme', 'rosemary', 'basil', 'parsley', 'oregano', 'marjoram', 'lavender flowers'))
+
+
 SimplyOrganic_Southwest <- function() new(
   Class = 'nutrition', # discontinued
   brand = 'Simply Organic\U1f1fa\U1f1f8', name = 'Southwest Seasoning',

@@ -70,7 +70,7 @@ PreppyKitchen_cornbread <- function() new(
   bakingPowder_tsp = 2,
   salt_tsp = 1,
   milk_cup = c(Horizon_whole_milk_DHA = 1.5),
-  butter_cup = c(LandOLakes_butter = 1/4),
+  butter_cup = c(LandOLakes = 1/4),
   egg_pc = 1,
   oil_Tbsp = c(Wesson_soy = 1),
   preppykitchen = c(

@@ -29,7 +29,7 @@ setClass(Class = 'powder2milk', contains = 'recipe', prototype = prototype(
 
 #' @rdname powder2milk
 #' @export
-nonfatMilk_Carnation <- function() new(Class = 'powder2milk', alias_flavor = 'Carnation Nonfat', drymilk = c(Carnation_drymilk = 23))
+nonfatMilk_Carnation <- function() new(Class = 'powder2milk', alias_flavor = 'Carnation Nonfat', drymilk = c(Carnation = 23))
 
 #' @rdname powder2milk
 #' @export

@@ -92,7 +92,7 @@ cornbread <- function() new(
   bakingPowder_tsp = 1, # best, so far
   
   egg_pc = 2,
-  heavyCream = c(Lucerne_heavyCream = 175), 
+  heavyCream = c(Lucerne = 175), 
   water95 = 320, # good for muffin; yet to experiment for skillet
   # waterLost = 45, # forget this, for now
   

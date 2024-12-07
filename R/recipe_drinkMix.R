@@ -208,7 +208,8 @@ setMethod(f = show, signature = 'drinkmix', definition = function(object) {
 #' @aliases caffeLatteMix-class
 #' @export
 setClass(Class = 'caffeLatteMix', contains = 'drinkmix', prototype = prototype(
-  drymilk = c(Carnation_drymilk = 40),
+  #drymilk = c(Carnation = 40),
+  drymilk = c(Carnation = 40),
   coffee_tsp = c(NescafeGold_espresso_blonde = 4*2), # perfect, do not add more!
   cocoa_tsp = c(KingArthur_Bensdorp = 1*2),
   sugar_tsp = 1
@@ -255,7 +256,7 @@ caffeGoatLatte_blonde <- function() new(
 #' @aliases mocaccinoMix-class
 #' @export
 setClass(Class = 'mocaccinoMix', contains = 'drinkmix', prototype = prototype(
-  drymilk = c(Carnation_drymilk = 40),
+  drymilk = c(Carnation = 40),
   coffee_tsp = c(NescafeGold_espresso_blonde = 4),
   cocoa_tsp = c(KingArthur_Bensdorp = 8),
   sugar_tsp = 2.5 # well tested!!
@@ -282,7 +283,7 @@ mocaccino <- function() new(Class = 'mocaccinoMix', date = as.Date('2024-11-02')
 #' @export
 setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
   alias_class = 'Latte Mix', # 'Latte\u901f\u6eb6\u7c89',
-  drymilk = c(Carnation_drymilk = 32, Nido_drymilk = 8),
+  drymilk = c(Carnation = 32, Nido_drymilk = 8),
   sugar_tsp = 1*2
 ))
 
@@ -353,9 +354,9 @@ ikuyoGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ip
 
 sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
 
-matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25*2), matcha_Tbsp = c(maeda_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
+matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(maeda_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 
-matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation_drymilk = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
+matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 
 
 
@@ -378,7 +379,7 @@ setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prot
 #' @export
 pumpkinSpiceLatte <- function() new(
   Class = 'pumpkinSpiceLatteMix',
-  drymilk = c(Carnation_drymilk = 40),
+  drymilk = c(Carnation = 40),
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),
   brownSugar_Tbsp = 1,
   pumpkin = 70,
@@ -472,8 +473,8 @@ chai_milktea <- function() new(
 #' @export
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
   #alias_class = '\u901f\u6eb6\u7c89',
-  #drymilk = c(Carnation_drymilk = 50), # old
-  drymilk = c(Carnation_drymilk = 40), # new!!!
+  #drymilk = c(Carnation = 50), # old
+  drymilk = c(Carnation = 40), # new!!!
   
   # old base
   #coffee_tsp = c(NescafeGold_espresso_blonde = 2*2)
