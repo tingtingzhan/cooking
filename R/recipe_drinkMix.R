@@ -282,8 +282,7 @@ mocaccino <- function() new(Class = 'mocaccinoMix', date = as.Date('2024-11-02')
 #' @export
 setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
   alias_class = 'Latte Mix', # 'Latte\u901f\u6eb6\u7c89',
-  # drymilk = c(Carnation_drymilk = 20*2, Nido_drymilk = 5*2), # old, I now think this is too strong
-  drymilk = c(Carnation_drymilk = 16*2, Nido_drymilk = 4*2), # drank all ikuyo in Sep 2024. Great!
+  drymilk = c(Carnation_drymilk = 32, Nido_drymilk = 8),
   sugar_tsp = 1*2
 ))
 
