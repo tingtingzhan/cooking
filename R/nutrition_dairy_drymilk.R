@@ -20,7 +20,6 @@ Meyenberg_goatWhole_drymilk <- function() new(
   fat = 8, cholesterol = .035, sodium = .085, carbohydrate = 10, sugar = 10, protein = 7)
 
 
-
 Carnation_drymilk <- function() new(
   Class = 'nutrition', #nestle = '12428935',
   brand = c(style_hyperlink(text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz')),

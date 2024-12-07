@@ -102,6 +102,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot raos \link[base]{character} scalar
 #' @slot runamok \link[base]{character} scalar
 #' @slot sanford \link[base]{character} scalar
+#' @slot siggis \link[base]{character} scalar
 #' @slot simplyorganic \link[base]{character} scalar
 #' @slot sodastream \link[base]{character} scalar
 #' @slot starbucks \link[base]{character} scalar
@@ -231,6 +232,7 @@ setClass(Class = 'nutrition', slots = c(
   raos = 'character',
   runamok = 'character',
   sanford = 'character',
+  siggis = 'character',
   simplyorganic = 'character', # has SKU number, do not know how to use
   sodastream = 'character',
   starbucks = 'character',
@@ -463,6 +465,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       } else runamok_
     } else if (length(x@sanford)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.sanford.co.nz/our-seafood/our-products/%s', x@sanford), text = 'Sanford\U1f1f3\U1f1ff'))
+    } else if (length(x@siggis)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://siggis.com/product/%s', x@siggis), text = 'Siggi\'s\U1f1fa\U1f1f8'))
     } else if (length(x@simplyorganic)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', x@simplyorganic), text = 'Simply Organic\U1f1fa\U1f1f8'))
     } else if (length(x@sodastream)) {

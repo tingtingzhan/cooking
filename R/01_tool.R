@@ -59,7 +59,7 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   
   if (identical(object, new(Class = 'tool'))) return(invisible())
     
-  cat(sprintf(fmt = '\u2756 %s \u2756\n', object@name))
+  cat(style_bold(make_ansi_style('navy')(sprintf(fmt = '\u2756 %s \u2756\n', object@name))))
   
   if (length(object@recipe_pc)) {
     cat(sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n', object@recipe_pc))
@@ -203,11 +203,11 @@ JoyoungCJA9U <- function(
 
 nutribullet20 <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. blending cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/')),
+  name = c(style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/')),
   ...) 
 
 
 Stanley20 <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Stanley 20oz quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz')),
+  name = c(style_hyperlink(text = 'Stanley 20oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz')),
   ...)

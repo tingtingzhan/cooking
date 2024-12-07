@@ -66,26 +66,30 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
+#' @export hotdrink.milkteaMix
+#' @export
+hotdrink.milkteaMix <- function(x, water80 = 560, ...) {
+  # fit in 20oz mug
+  # cannot make 'frappe' from teabags 
+  hotdrink.drinkmix(x, water80 = water80, ...)
+}
+
+
+#' @rdname drink
 #' @export hotdrink.drinkmix
 #' @export
 hotdrink.drinkmix <- function(
     x, 
-    water80 = if (inherits(x, what = 'pumpkinSpiceLatteMix')) {
-      236.6*2 - unname(x@pumpkin)
-    } else if (inherits(x, what = 'milkteaMix')) {
-      560 # fit in 20oz mug
-      # cannot make 'frappe' from teabags 
-    } else 236.6*2, # 2 US cup
+    water80 = 236.6*2 - sum(x@pumpkin, x@liqueur), 
     ...
 ) {
   x@water80 <- water80
   x@alias <- character(); x@alias_class <- '' # '\u70ed\u996e'
   x@Stanley20 <- Stanley20(treatment = c(
-    'whisk together all powders (syrup also okay)', 
-    'add half of water, whisk until smooth',
-    'sweep cup bottom with a square spatula',
-    'add rest of water, whisk until froth',
-    '(optional) add liqueur last, which curdles dry milk'
+    paste('whisk together all powders,', col_cyan('including syrup')), 
+    paste('add half of water,', col_red('sweep cup bottom with a square spatula,'), 'whisk until smooth'),
+    paste('(optional) add liqueur', col_red('which curdles dry milk')),
+    'add rest of water, whisk until froth'
   ))
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {
@@ -132,9 +136,7 @@ frappe.function <- function(x, ...) frappe(x = x(), ...)
 #' @export
 frappe.drinkmix <- function(
     x, 
-    ice = if (inherits(x, what = 'pumpkinSpiceLatteMix')) {
-      236.6 - unname(x@pumpkin)/2
-    } else 236.6, # 1 US cup, Nutribullet can handle!!
+    ice = 236.6 - sum(x@pumpkin, x@liqueur)/2, # 1 US cup, Nutribullet can handle!!
     iceWater = ice,
     ...
 ) {
@@ -470,8 +472,9 @@ chai_milktea <- function() new(
 #' @aliases tiramisuMix-class
 #' @export
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
-  alias_class = '\u901f\u6eb6\u7c89',
-  drymilk = c(Carnation_drymilk = 25*2),
+  #alias_class = '\u901f\u6eb6\u7c89',
+  #drymilk = c(Carnation_drymilk = 50), # old
+  drymilk = c(Carnation_drymilk = 40), # new!!!
   
   # old base
   #coffee_tsp = c(NescafeGold_espresso_blonde = 2*2)

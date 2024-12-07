@@ -370,13 +370,14 @@ format.recipeDx <- function(x, ...) {
 
 
 show_endpoint <- function(x) {
+  x[x == 'addedSugar'] <- '+sugar'
+  x[x == 'addedStarch'] <- '+starch'
+  # x[x == 'alcohol'] <- '\U1f943'
   x[x == 'carbohydrate'] <- 'carb' 
   x[x == 'NaHCO3'] <- 'NaHCO\u2083' 
   x[x == 'Na2CO3'] <- 'Na\u2082CO\u2083' 
   x[x == 'cornmeal'] <- '\U1f33d'
   x[x == 'glutinousRice'] <- 'glutRice'
-  x[x == 'addedSugar'] <- '+sugar'
-  x[x == 'addedStarch'] <- '+starch'
   x[x == 'eggYolk'] <- '\U0001f95ayolk'
   x[x == 'eggWhite'] <- '\U0001f95awhite'
   x[x == 'sodium'] <- 'Na\u207a'

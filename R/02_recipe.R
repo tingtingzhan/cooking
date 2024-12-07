@@ -1158,7 +1158,10 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat('\n')
   }
   
-  cat(sprintf(fmt = 'Total: %.4g grams; %.1f oz\n\n', y@servingGram, y@servingGram/28.3495))
+  cat('Total:', 
+      style_bold(make_ansi_style('purple')(sprintf(fmt = '%.4g grams', y@servingGram))),
+      style_bold(make_ansi_style('seagreen')(sprintf(fmt = '%.1f oz\n\n', y@servingGram/28.3495))))
+  
   cat('US', style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', y@usd))), '\n')
   if (length(y@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie))), '\n')
   cat('\n')

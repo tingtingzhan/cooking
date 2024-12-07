@@ -160,6 +160,8 @@ Nutrition information.
 
 \item{\code{sanford}}{\link[base]{character} scalar}
 
+\item{\code{siggis}}{\link[base]{character} scalar}
+
 \item{\code{simplyorganic}}{\link[base]{character} scalar}
 
 \item{\code{sodastream}}{\link[base]{character} scalar}

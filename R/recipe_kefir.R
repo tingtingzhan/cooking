@@ -40,12 +40,15 @@ blueberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_blueberry
 #' @export
 setClass(Class = 'goatKefir', contains = 'recipe', prototype = prototype(
   alias_class = '\u7f8a\u5976Kefir',
-  kefir = c(TraderJoes_goat = 200)
+  kefir = c(Meyenberg_goat = 200)
 ))
 
 #' @rdname kefir
 #' @export
 ryeWhisky_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Runamok_ryeWhisky = 21), pros = 'Effie', date = as.Date('2024-04-02'))
+
+
+
 
 #' @rdname kefir
 #' @export

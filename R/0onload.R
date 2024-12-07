@@ -456,7 +456,7 @@
   
   alcohol <- function(x) switch(
     class(x),
-    drink = .0055, # any more, I will feel dizzy
+    tiramisu_ = .006, # any more, I will feel dizzy (for drink)
     #cheesecake =, mascarponeGanache = .015, # need to re-try
     cheesecake = .006, # trying. this is low-temp cooking, probably okay
     tomyumStew = .035,

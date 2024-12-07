@@ -7,6 +7,7 @@
 \alias{drink-class}
 \alias{hotdrink}
 \alias{hotdrink.function}
+\alias{hotdrink.milkteaMix}
 \alias{hotdrink.drinkmix}
 \alias{hotdrink.nutrition}
 \alias{frappe}
@@ -18,17 +19,9 @@ hotdrink(x, ...)
 
 \method{hotdrink}{`function`}(x, ...)
 
-\method{hotdrink}{drinkmix}(
-  x,
-  water80 = if (inherits(x, what = "pumpkinSpiceLatteMix")) {
-     236.6 * 2 -
-    unname(x@pumpkin)
- } else if (inherits(x, what = "milkteaMix")) {
-     560
- } else
-    236.6 * 2,
-  ...
-)
+\method{hotdrink}{milkteaMix}(x, water80 = 560, ...)
+
+\method{hotdrink}{drinkmix}(x, water80 = 236.6 * 2 - sum(x@pumpkin, x@liqueur), ...)
 
 \method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 
@@ -36,15 +29,7 @@ frappe(x, ...)
 
 \method{frappe}{`function`}(x, ...)
 
-\method{frappe}{drinkmix}(
-  x,
-  ice = if (inherits(x, what = "pumpkinSpiceLatteMix")) {
-     236.6 -
-    unname(x@pumpkin)/2
- } else 236.6,
-  iceWater = ice,
-  ...
-)
+\method{frappe}{drinkmix}(x, ice = 236.6 - sum(x@pumpkin, x@liqueur)/2, iceWater = ice, ...)
 }
 \arguments{
 \item{x}{\linkS4class{drinkmix} object}
