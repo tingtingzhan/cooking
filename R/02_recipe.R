@@ -499,11 +499,6 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
       if (!length(names(x0))) return(x0)
       idx <- !endsWith(names(x0), suffix = paste0('_', which))
       names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
-      #names(x0)[idx] <- ifelse(
-      #  test = vapply(names(x0)[idx], FUN = exists, where = 'package:cooking', FUN.VALUE = NA), 
-      #  yes = names(x0)[idx],
-      #  no = paste0(names(x0)[idx], '_', which))
-      # dont know how to use \link[base]{exists}
       return(x0)
     }
     x_gram <- add_suffix(x_gram, which = which)
@@ -537,15 +532,6 @@ meatName <- function(x, animal = stop('')) {
   return(x)
 }
 
-#dairyName <- function(x, dairy = stop(''), name1 = stop()) {
-#  if (!length(slot(x, name = dairy))) return(x)
-#  x <- addNameLen1(x, which = dairy, name1 = name1)
-#  nm <- names(slot(x, name = dairy))
-#  if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('incomplete dairy name')
-#  idx <- !endsWith(nm, suffix = paste0('_', dairy))
-#  names(slot(x, name = dairy))[idx] <- paste0(nm[idx], '_', dairy)
-#  return(x)
-#}
 
 
 get_flavor_ <- function(x) {
