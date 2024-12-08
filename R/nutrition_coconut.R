@@ -13,7 +13,7 @@ if (FALSE) {
 
 
 Edward_shreddedCoconutLite <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut')),
   name = '\u51cf\u8102\u6930\u84c9 Less Fat Shredded Coconut\U1f965',
   usd = 3.89/250*16,
@@ -28,7 +28,7 @@ Edward_shreddedCoconutLite <- function() new(
 
 
 Edward_shreddedCoconut <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut')),
   name = '\u6930\u84c9 Shredded Coconut\U1f965',
   usd = 3.89/227*15,
@@ -42,7 +42,7 @@ Edward_shreddedCoconut <- function() new(
   ))
 
 Edward_coconutFlour <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour')),
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   usd = 5.99/454*14,
@@ -52,7 +52,7 @@ Edward_coconutFlour <- function() new(
   fat = 2, sodium = .005, carbohydrate = 9, sugar = 1, protein = 2)
 
 BobsRedMill_coconutFlour <- function() new(
-  Class = 'nutrition', bobsredmill = 'organic-coconut-flour',
+  Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'organic-coconut-flour',
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   servingGram = 14, 
   servingTbsp = 2, # packaging
@@ -60,7 +60,7 @@ BobsRedMill_coconutFlour <- function() new(
   fat = 1.5, sodium = .01, carbohydrate = 9, sugar = 3, protein = 3)
 
 AnthonysGoods_coconutFlour <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
   brand = 'Anthony\'s Goods', 
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
@@ -72,7 +72,7 @@ AnthonysGoods_coconutFlour <- function() new(
 
 
 WegmansOrganic_coconutFlour <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   wegmansorganic = 253623L, usd = 3.79/454*14,
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   servingGram = 14, 
@@ -82,7 +82,7 @@ WegmansOrganic_coconutFlour <- function() new(
   fat = 2, sodium = .01, carbohydrate = 8, sugar = 1, protein = 2)
 
 ThaiKitchen_coconutmilkLite <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
   name = 'Lite Coconut\U1f965 Milk',
   review = 'Effie diarrhea!!',
@@ -93,7 +93,7 @@ ThaiKitchen_coconutmilkLite <- function() new(
 
 
 ThaiKitchen_coconutmilk <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-coconut-milk',
   name = 'Coconut\U1f965 Milk',
   review = 'Effie diarrhea!!',
@@ -106,7 +106,7 @@ ThaiKitchen_coconutmilk <- function() new(
 # fdc = 1097553L
 
 Silk_coconutmilk <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text = 'Silk')), 
   name = 'Coconutmilk\U1f965',
   target = 'A-15423909', usd = 4.99/8,
@@ -115,7 +115,7 @@ Silk_coconutmilk <- function() new(
   fat = 4, sodium = .045)
 
 SoDelicious_coconutmilk <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965',
   brand = c(style_hyperlink(text = 'So Delicious', url = c(
     'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable

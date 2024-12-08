@@ -1,37 +1,41 @@
 
-
+#' @title Dry Spice
+#' 
+#' @keywords internal
+#' @name nutrition_dryspice
+NULL
 
 
 
 McCormick_creamTartar <- function() new(
-  Class = 'nutrition', url = 'https://www.mccormick.com/spices-and-flavors/herbs-and-spices/spices/cream-of-tartar',
+  Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.mccormick.com/spices-and-flavors/herbs-and-spices/spices/cream-of-tartar',
   brand = 'McCormick\U1f1fa\U1f1f8', name = 'Cream of Tartar',
   servingGram = 3, servingTsp = 1)
 
 
 McCormick_chive <- function() new(
-  Class = 'nutrition', mccormickculinary = 'chives-freeze-dried',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'chives-freeze-dried',
   name = '\u51bb\u5e72\u97ed\u83dc Chives, Freeze Dried',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
 McCormick_blackPepper <- function() new(
-  Class = 'nutrition', mccormickculinary = 'black-pepper-pure-ground',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'black-pepper-pure-ground',
   name = '\u9ed1\u80e1\u6912\u7c89 Black Pepper, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
 McCormick_turmeric <- function() new(
-  Class = 'nutrition', mccormickculinary = 'turmeric',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'turmeric',
   name = '\u59dc\u9ec4\u7c89 Turmeric, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
 McCormick_parsley <- function() new(
-  Class = 'nutrition', mccormickculinary = 'parsley-flakes',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'parsley-flakes',
   name = 'Parsley Flakes',
   amazon = 'B0000EYJ1M', usd = 6.29/56*4.5,
   servingGram = 4.5, # ???
@@ -40,7 +44,7 @@ McCormick_parsley <- function() new(
   
   
 McCormick_garlic_powder <- function() new(
-  Class = 'nutrition', mccormickculinary = 'garlic-powder',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'garlic-powder',
   name = '\u849c\u7c89 Garlic\U1f9c4 Powder', 
   amazon = 'B008OGCEHO', usd = 11.87/595*4.5, # 21oz = 595g
   servingGram = 9, # no nutrition info available
@@ -48,7 +52,7 @@ McCormick_garlic_powder <- function() new(
 )
 
 McCormick_onion_powder <- function() new(
-  Class = 'nutrition', mccormickculinary = 'onion-powder',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'onion-powder',
   name = '\u6d0b\u8471\u7c89 Onion\U1f9c5 Powder',
   amazon = 'B008OGCPSM', usd = 17.90/566*4.5, # 1.25lb = 566g
   servingGram = 4.5, # ???
@@ -56,7 +60,7 @@ McCormick_onion_powder <- function() new(
 )
 
 McCormick_cilantro <- function() new(
-  Class = 'nutrition', mccormickculinary = 'cilantro-freeze-dried',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'cilantro-freeze-dried',
   name = '\u51bb\u5e72\u82ab\u837d Cilantro, Freeze Dried',
   amazon = 'B00B0424FE', usd = 13.89/35,
   servingGram = 1,
@@ -65,7 +69,7 @@ McCormick_cilantro <- function() new(
 
 
 McCormick_cumin <- function() new(
-  Class = 'nutrition', mccormickculinary = 'cumin-ground',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'cumin-ground',
   name = '\u5b5c\u7136\u7c89 Cumin, Ground',
   amazon = 'B008OGCCLC', usd = 12.75/396*1,
   servingGram = 1,
@@ -73,28 +77,28 @@ McCormick_cumin <- function() new(
 )
 
 McCormick_oldBay <- function() new(
-  Class = 'nutrition', oldbay = 'old-bay-seasoning',
+  Class = 'nutrition', call = match.call()[[1L]], oldbay = 'old-bay-seasoning',
   name = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599 Old Bay',
   servingGram = .6, servingTsp = 1/4, sodium = .14,
   contain = c('salt', 'celery seed', 'red pepper', 'black pepper', 'paprika'))
 
 
 McCormick_ginger <- function() new(
-  Class = 'nutrition', mccormickculinary = 'ginger-ground',
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'ginger-ground',
   name = '\u59dc\u7c89 Ginger\U1fada, Ground',
   servingGram = 1,
   servingTbsp = 1 #??
 )
 
 McCormick_oldBay_lowSodium <- function() new(
-  Class = 'nutrition', mccormick = 'old-bay/products/seasonings-and-sauces/old-bay-less-sodium-seasoning',
-  name = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599(\u4f4e\u76d0) Old Bay, Less Sodium',
+  Class = 'nutrition', call = match.call()[[1L]], mccormick = 'old-bay/products/seasonings-and-sauces/old-bay-less-sodium-seasoning',
+  name = 'Old Bay, Less Sodium', alias = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599(\u4f4e\u76d0)',
   servingGram = .6, servingTsp = 1/4, sodium = .095)
 
 
 
 McCormick_MontrealSteak <- function() new(
-  Class = 'nutrition', grillmates = 'montreal-steak',
+  Class = 'nutrition', call = match.call()[[1L]], grillmates = 'montreal-steak',
   name = 'Montreal Steak Seasoning',
   costco = '100381527', usd = 9.49/822*.8,
   contain = c(
@@ -109,7 +113,7 @@ McCormick_MontrealSteak <- function() new(
 
 
 McCormick_whitePepper <- function() new(
-  Class = 'nutrition', url = 'https://www.mccormick.com/gourmet/spices-and-flavors/organic/organic-white-pepper-ground',
+  Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.mccormick.com/gourmet/spices-and-flavors/organic/organic-white-pepper-ground',
   # https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/white-pepper-ground
   brand = 'McCormick Gourmet\U1f1fa\U1f1f8', name = '\u767d\u80e1\u6912\u7c89 Organic White Pepper',
   servingGram = 49, usd = 5.12, # 2023-11-09 Walmart
@@ -119,7 +123,7 @@ McCormick_whitePepper <- function() new(
 
 
 McCormick_rum <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   # 'Imitation' contains chemicals (i.e., not natural)
   # mccormickculinary = 'imitation-rum-extract',
   # name = 'Imitation Rum Extract',
@@ -139,7 +143,7 @@ McCormick_rum <- function() new(
 
 
 SpiceIslands_cumin <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Spice Islands\U1f1fa\U1f1f8', name = '\u5b5c\u7136\u7c89 Cumin Seed',
   url = 'https://spiceislands.com/product/ground-cumin-seed/',
   # sold at Costco, 425g
@@ -148,7 +152,7 @@ SpiceIslands_cumin <- function() new(
 )
 
 Kirkland_noSaltSeasoning <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   name = 'Organic No-Salt Seasoning',
   costco = '100334965',
   usd = 9.99/411*9,
@@ -166,16 +170,18 @@ Kirkland_noSaltSeasoning <- function() new(
 #' @name fourC
 #' @export
 fourC_panko_seasoned <- function() new(
-  Class = 'nutrition', url = 'https://www.4c.com/4c-product/seasoned-panko-bread-crumbs/',
-  brand = '4C\U1f1fa\U1f1f8', name = 'Seasoned Panko Bread Crumbs',
+  Class = 'nutrition', call = match.call()[[1L]], 
+  fourC = 'seasoned-panko-bread-crumbs',
+  name = 'Seasoned Panko Bread Crumbs', alias = '\u8c03\u5473\u9762\u5305\u7ce0',
   servingCup = 1/2, servingGram = 28, fat = 1, sodium = .47, sugar = 1, protein = 3,
   superior = 'fourC_panko')
 
 #' @rdname fourC
 #' @export
 fourC_panko <- function() new(
-  Class = 'nutrition', url = 'https://www.4c.com/4c-product/plain-panko-bread-crumbs/',
-  brand = '4C\U1f1fa\U1f1f8', name = 'Plain Panko Bread Crumbs',
+  Class = 'nutrition', call = match.call()[[1L]], 
+  fourC = 'plain-panko-bread-crumbs',
+  name = 'Plain Panko Bread Crumbs', alias = '\u9762\u5305\u7ce0',
   servingCup = 1/2, servingGram = 28, sodium = .045, sugar = 2, protein = 3)
 
 
@@ -193,14 +199,14 @@ fourC_panko <- function() new(
 # volume: (292-143) / 14.7868 approx 10Tbsp
 
 SimplyOrganic_Italian <- function() new(
-  Class = 'nutrition', simplyorganic = 'italian-seasoning-0-95-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'italian-seasoning-0-95-oz',
   name = 'Italian Seasoning',
   servingGram = 27, usd = 6.29, # 2023-11-09
   servingTbsp = 10,
   contain = c('oregano', 'marjoram', 'thyme', 'basil', 'rosemary', 'sage'))
 
 SimplyOrganic_Provence <- function() new(
-  Class = 'nutrition', simplyorganic = 'simply-organic-herbes-de-provence-1-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'simply-organic-herbes-de-provence-1-oz',
   name = 'Herbes de Provence',
   servingGram = 28, usd = 6.29, # Dec 2024
   servingTbsp = 10,
@@ -208,7 +214,7 @@ SimplyOrganic_Provence <- function() new(
 
 
 SimplyOrganic_Southwest <- function() new(
-  Class = 'nutrition', # discontinued
+  Class = 'nutrition', call = match.call()[[1L]], # discontinued
   brand = 'Simply Organic\U1f1fa\U1f1f8', name = 'Southwest Seasoning',
   servingGram = .6, 
   #servingTsp = 1/4 # packaging
@@ -217,66 +223,68 @@ SimplyOrganic_Southwest <- function() new(
 
 
 SimplyOrganic_parsley <- function() new(
-  Class = 'nutrition', simplyorganic = 'parsley-0-26-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'parsley-0-26-oz',
   name = 'Parsley',
   servingGram = 7, usd = 5.39, # Feb 2024
   servingTbsp = 10)
 
+#' @rdname nutrition_dryspice
+#' @export
 SimplyOrganic_pumpkinSpice <- function() new(
-  Class = 'nutrition', simplyorganic = 'pumpkin-spice-1-94-oz',
-  name = '\u5357\u74dc\u8089\u6842\u9999\u6599 Pumpkin\U1f383 Spice',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'pumpkin-spice-1-94-oz',
+  name = 'Pumpkin\U1f383 Spice', alias = '\u5357\u74dc\u8089\u6842\u9999\u6599',
   servingGram = 55, usd = 6.79, # 2023-12-06
   servingTbsp = 10,
   contain = c('cinnamon', 'ginger', 'nutmeg', 'clove'))
 
 SimplyOrganic_5spice <- function() new(
-  Class = 'nutrition', simplyorganic = 'five-spice-powder-2-01-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'five-spice-powder-2-01-oz',
   name = '\u4e94\u9999\u7c89 Five Spice Powder',
   servingGram = 57, usd = 7.89, # 2023-12-06
   servingTbsp = 10,
   contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
 
 SimplyOrganic_ginger <- function() new(
-  Class = 'nutrition', simplyorganic = 'ginger-root-ground-1-64-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'ginger-root-ground-1-64-oz',
   name = '\u59dc\u7c89 Ginger\U1fada Root, Ground',
   servingGram = 46, usd = 6.79,  # 2023-11-09
   servingTbsp = 10)
 
 SimplyOrganic_dill <- function() new(
-  Class = 'nutrition', simplyorganic = 'dill-weed-0-81-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'dill-weed-0-81-oz',
   name = '\u83b3\u841d\u8349 Dill Weed',
   servingGram = 23, usd = 6.79,  # 2023-11-09
   servingTbsp = 10)
 
 
 SimplyOrganic_clove <- function() new(
-  Class = 'nutrition', simplyorganic = 'cloves-ground-2-82-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'cloves-ground-2-82-oz',
   name = 'Cloves',
   servingGram = 80, usd = 8.99, # 2023-11-09
   servingTbsp = 10)
 
 SimplyOrganic_cinnamonCeylon <- function() new(
-  Class = 'nutrition', simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
   name = '\u8089\u6842\u7c89 Ceylon Cinnamon',
   servingGram = 59, usd = 10.89, # 2023-11-09
   servingTbsp = 10)
 
 
 SimplyOrganic_cumin <- function() new(
-  Class = 'nutrition', simplyorganic = 'cumin-seed-ground-2-31-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'cumin-seed-ground-2-31-oz',
   name = '\u5b5c\u7136\u7c89 Cumin Seed, Ground',
   servingGram = 65, usd = 6.79, # 2023-11-09
   servingTbsp = 10)
 
 SimplyOrganic_coriander <- function() new(
-  Class = 'nutrition', simplyorganic = 'coriander-seed-ground-2-29-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'coriander-seed-ground-2-29-oz',
   name = '\u82ab\u837d\u7c7d\u7c89 Coriander Seed',
   servingGram = 65, usd = 6.29,  # 2023-11-09
   servingTbsp = 10)
 
 
 SimplyOrganic_garlic <- function() new(
-  Class = 'nutrition', simplyorganic = 'garlic-powder-3-64-oz',
+  Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'garlic-powder-3-64-oz',
   name = '\u849c\u7c89 Garlic\U1f9c4',
   servingGram = 103, usd = 8.99, # Jan 2024
   servingTbsp = 10)
@@ -287,7 +295,7 @@ SimplyOrganic_garlic <- function() new(
 
 
 Chinata_paprika <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://www.lachinatausa.com/index.php/buy-our-smoked-paprika-powder/tin-70-gr-d-o-sweet.html')),
   name = '\u7ea2\u751c\u6912\u7c89 Sweet Smoked Paprika\U1f336', 
   servingGram = 15, servingTbsp = 2

@@ -1,10 +1,20 @@
 
-# in future, don't buy any coffee liqueur with AbV <30%
 
+#' @title Coffee Liqueur
+#' 
+#' @name nutrition_coffeeLiqueur
+#' @aliases coffeeLiqueur-class
+#' @export
+setClass(Class = 'coffeeLiqueur', contains = 'nutrition', prototype = prototype(
+  alias = '\u5496\u5561\u9152'
+))
+
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Kahlua_coffee <- function() new(
-  Class = 'nutrition', 
+  Class = 'coffeeLiqueur', call = match.call()[[1L]], 
   kahlua = 'original-coffee-liqueur',
-  name = '\u5496\u5561\u9152 Rum & Coffee Liqueur',
+  name = 'Rum & Coffee Liqueur',
   totalwine = '1804750', usd = 23.99/750*74, # 750ml
   servingGram = 74, servingTsp = 15, # 74ml
   calorie = 200,
@@ -13,10 +23,12 @@ Kahlua_coffee <- function() new(
   carbohydrate = 29.7, sugar = 29.7)
 
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Kahlua_especial <- function() new(
-  Class = 'nutrition', 
+  Class = 'coffeeLiqueur', call = match.call()[[1L]], 
   kahlua = 'kahlua-especial',
-  name = '\u5496\u5561\u9152 Especial Rum & Coffee Liqueur',
+  name = 'Especial Rum & Coffee Liqueur',
   totalwine = '94488750', usd = 23.99/750*44, # 750ml
   servingGram = 44, servingTsp = 9, # 44ml
   calorie = 143,
@@ -25,59 +37,70 @@ Kahlua_especial <- function() new(
   carbohydrate = 14.4, sugar = 14.4)
 
 
-
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 CafeGranita_coffee <- function() new(
-  Class = 'nutrition', 
+  Class = 'coffeeLiqueur', call = match.call()[[1L]], 
   #url = 
   brand = 'Cafe Granita\U1f1fa\U1f1f8', 
   # bottled by the Cafe Granita Brand Company, Princeton, MN
-  name = '\u5496\u5561\u9152 Coffee Liqueur',
+  name = 'Coffee Liqueur',
   totalwine = '100834750', usd = 14.99/750*44, # 750ml
   servingGram = 44, servingTsp = 9,
   AbV = .21
 )
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 FratelliVincenzi_espresso <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/')),
-  name = '\u5496\u5561\u9152 Espresso Liqueur',
+  name = 'Espresso Liqueur',
   totalwine = '348072750', usd = 21.99/750*44,
   servingGram = 44, servingTsp = 9, # `servingTsp` my guess
   AbV = .3
 )
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Kikisi_coffee <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = 'Kikisi\U1f1f2\U1f1fd',
-  name = '\u5496\u5561\u9152 Coffee Liqueur',
+  name = 'Coffee Liqueur',
   totalwine = '243193750', usd = 18.99/750*44,
   servingGram = 44, servingTsp = 9, # `servingTsp` my guess
   AbV = .2
 )
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 CaffeBorghetti <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti')),
-  name = '\u5496\u5561\u9152 di Vero Caff\u00e8 Espresso Liqueur',
+  name = 'di Vero Caff\u00e8 Espresso Liqueur',
   totalwine = '130512750', usd = 33.99/750*44,
   servingGram = 44, servingTsp = 9,
   AbV = .25
 )
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Grind_espresso <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html')),
-  name = '\u5496\u5561\u9152 Espresso Shot',
+  name = 'Espresso Shot',
   totalwine = '159626750', usd = 18.49/750*44,
   servingGram = 44, servingTsp = 9,
   AbV = .3
 )
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Baileys_espresso <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   baileys = 'baileys-espresso-creme',
   #url = 'www.baileys.com/en-us/products/baileys-espresso-creme' # no nutrition info
-  name = '\u5496\u5561\u5976\u6cb9\u9152 Espresso Cre\u0300me',
+  name = 'Espresso Cre\u0300me', alias = '\u5496\u5561\u5976\u6cb9\u9152',
   totalwine = '151853750', usd = 28.99/750*100, # 750ml
   servingGram = 100, # my guess
   serving_ml = 100,
@@ -87,37 +110,46 @@ Baileys_espresso <- function() new(
   fat = 14, carbohydrate = 22, sugar = 19, protein = 3
 )
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Sabroso_coffee <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = 'Sabroso\U1f1f2\U1f1fd',
-  name = '\u5496\u5561\u9152 Licor de Caf\u00e9',
+  name = 'Licor de Caf\u00e9',
   totalwine = '704750', usd = 9.99/750*44,
   servingGram = 44, servingTsp = 9,
   AbV = .24
 )
 
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Patron_XO <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html')),
-  name = '\u5496\u5561\u9152 XO Cafe',
+  name = 'XO Cafe',
   totalwine = '96430750', usd = 43.99/750*44,
   servingGram = 44, servingTsp = 9,
   AbV = .35)
 
 
-elPadrino_coffee <- function() new(
-  Class = 'nutrition',
+#' @rdname nutrition_coffeeLiqueur
+#' @export
+Padrino_coffee <- function() new(
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  # https://www.tequilapadrino.com/products # cannot find
   brand = 'El Padrino\U1f1f2\U1f1fd',
-  name = '\u5496\u5561\u9152 Caf\u00e9',
+  name = 'Caf\u00e9',
   totalwine = '243336750', usd = 27.99/750*44,
   servingGram = 44, servingTsp = 9,
   AbV = .35)
 
+#' @rdname nutrition_coffeeLiqueur
+#' @export
 Amigos3_mocha <- function() new(
-  Class = 'nutrition',
+  Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/')),
-  name = '\u5496\u5561\u9152 Cafe Mocha',
+  name = 'Cafe Mocha',
   totalwine = '244117750', usd = 28.99/750*44,
   servingGram = 44, servingTsp = 9,
   AbV = .32)

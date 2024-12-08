@@ -1,7 +1,7 @@
 
 
 CountryTime_Lemonade <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = '\u67e0\u6aac\u996e\u6599\u901f\u6eb6\u7c89 Lemonade Mix',
   countrytime = '00043000951170', 
   costco = '100381589',
@@ -13,7 +13,7 @@ CountryTime_Lemonade <- function() new(
 
 
 CountryTime_blackCherryLemonade <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   countrytime = '00043000062500', # webpage missing!!
   name = 'Black Cherry Lemonade',
   servingGram = 33, servingTbsp = 2, sugar = 30)

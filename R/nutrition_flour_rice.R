@@ -1,7 +1,7 @@
 
 
 Erawan_riceFlour <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours')),
   name = '\u7c98\u7c73\u7c89 Rice\U1f33e Flour', # \u6c34\u78e8
   servingGram = 30, 
@@ -12,7 +12,7 @@ Erawan_riceFlour <- function() new(
 
 
 Erawan_glutinousRiceFlour <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours')),
   name = '\u7cef\u7c73\u7c89 Glutinous Rice\U1f33e Flour', # \u6c34\u78e8
   servingGram = 30, 
@@ -22,7 +22,7 @@ Erawan_glutinousRiceFlour <- function() new(
 
 
 KingArthur_M4M <- function() new(
-  Class = 'nutrition', kingarthur = 200725L,
+  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 200725L,
   name = '\u6742\u7cae\u7c89 No-Gluten Measure4Measure', # 
   usd = 10.95/(3*454) * 31,
   servingGram = 31, 

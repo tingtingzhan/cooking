@@ -1,7 +1,7 @@
 
 
 BobsRedMill_almondFlour <- function() new(
-  Class = 'nutrition', bobsredmill = 'almond-meal-flour',
+  Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'almond-meal-flour',
   name = 'Almond Flour',
   servingGram = 13, servingTbsp = 2, 
   calorie = 80,
