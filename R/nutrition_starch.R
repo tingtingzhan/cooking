@@ -27,7 +27,7 @@ Wegmans_corn_starch <- function() new(
 Argo_corn_starch <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://www.argostarch.com/products.html')),
-  name = '\u7389\u7c73\u6dc0\u7c89 Corn\U1f33d Starch',
+  name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
   wegmans = 34585L, usd = 2.49/454*8,
   servingGram = 8, 
   # servingTbsp = 1 # packaging
@@ -51,7 +51,7 @@ sweetPotato_starch <- function() new(
 
 mung_starch <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = '\u7eff\u8c46\u6dc0\u7c89 Mung Bean Starch',
+  name = 'Mung Bean Starch', alias = '\u7eff\u8c46\u6dc0\u7c89',
   servingGram = 100, 
   servingTbsp = 10, # I guessed from other starch..
   fat = 1, protein = 2)
