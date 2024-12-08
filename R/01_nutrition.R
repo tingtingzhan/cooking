@@ -282,7 +282,8 @@ setClass(Class = 'nutrition', slots = c(
   protein = 'numeric',
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
-  machine = function(x) NULL
+  machine = function(x) NULL,
+  calorie = 0
 ))
 
 

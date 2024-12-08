@@ -1170,12 +1170,11 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   
   if (length(object@portion)) {
     cat(sprintf(
-      #fmt = '\u058d %.1f \u00d7 %.0f grams %s %s \u058e %s', 
-      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', 
+      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
       y@servingGram/object@portion, 
       object@portion, 
       style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', y@usd / y@servingGram * object@portion))),
-      style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie / y@servingGram * object@portion))),
+      if (length(y@calorie)) style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie / y@servingGram * object@portion))) else '',
       style_bold(col_magenta(names(object@portion)))
     ), sep = '\n')
     cat('\n')

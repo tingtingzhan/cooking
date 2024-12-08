@@ -100,7 +100,7 @@ subtract.nutrition <- function(object, ...) {
   
   obj@name <- paste(obj@name, bg_br_green(col_grey(paste0('-', paste0(unique.default(txt), collapse = '/')))))
   
-  obj@calorie <- numeric() # ideally I should be able to calculate this Haha
+  obj@calorie <- 0 #numeric() # ideally I should be able to calculate this Haha
   
   obj@cost_ <- character()
   obj@usd <- obj@jpy <- numeric() # etc.

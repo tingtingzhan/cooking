@@ -239,53 +239,53 @@ SimplyOrganic_pumpkinSpice <- function() new(
 
 SimplyOrganic_5spice <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'five-spice-powder-2-01-oz',
-  name = '\u4e94\u9999\u7c89 Five Spice Powder',
+  name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
   servingGram = 57, usd = 7.89, # 2023-12-06
   servingTbsp = 10,
   contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
 
 SimplyOrganic_ginger <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'ginger-root-ground-1-64-oz',
-  name = '\u59dc\u7c89 Ginger\U1fada Root, Ground',
+  name = 'Ginger\U1fada Root, Ground', alias = '\u59dc\u7c89',
   servingGram = 46, usd = 6.79,  # 2023-11-09
   servingTbsp = 10)
 
 SimplyOrganic_dill <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'dill-weed-0-81-oz',
-  name = '\u83b3\u841d\u8349 Dill Weed',
+  name = 'Dill Weed', alias = '\u83b3\u841d\u8349',
   servingGram = 23, usd = 6.79,  # 2023-11-09
   servingTbsp = 10)
 
 
 SimplyOrganic_clove <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'cloves-ground-2-82-oz',
-  name = 'Cloves',
+  name = 'Cloves', alias = '\u4e01\u9999',
   servingGram = 80, usd = 8.99, # 2023-11-09
   servingTbsp = 10)
 
 SimplyOrganic_cinnamonCeylon <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
-  name = '\u8089\u6842\u7c89 Ceylon Cinnamon',
+  name = 'Ceylon Cinnamon', alias = '\u8089\u6842\u7c89',
   servingGram = 59, usd = 10.89, # 2023-11-09
   servingTbsp = 10)
 
 
 SimplyOrganic_cumin <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'cumin-seed-ground-2-31-oz',
-  name = '\u5b5c\u7136\u7c89 Cumin Seed, Ground',
+  name = 'Cumin Seed, Ground', alias = '\u5b5c\u7136\u7c89',
   servingGram = 65, usd = 6.79, # 2023-11-09
   servingTbsp = 10)
 
 SimplyOrganic_coriander <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'coriander-seed-ground-2-29-oz',
-  name = '\u82ab\u837d\u7c7d\u7c89 Coriander Seed',
+  name = 'Coriander Seed', alias = '\u82ab\u837d\u7c7d\u7c89',
   servingGram = 65, usd = 6.29,  # 2023-11-09
   servingTbsp = 10)
 
 
 SimplyOrganic_garlic <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'garlic-powder-3-64-oz',
-  name = '\u849c\u7c89 Garlic\U1f9c4',
+  name = 'Garlic\U1f9c4', alias = '\u849c\u7c89',
   servingGram = 103, usd = 8.99, # Jan 2024
   servingTbsp = 10)
 
