@@ -8,7 +8,7 @@
 
 
 Fleischmanns_instant <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   fleischmannsyeast = 4L,
   name = '\u901f\u53d1\u9175\u6bcd Instant Yeast',
   servingGram = 7.09, servingTsp = 2.25#,
@@ -18,7 +18,7 @@ Fleischmanns_instant <- function() new(
 
 
 Fleischmanns_active <- function() new(
-  Class = 'nutrition', fleischmannsyeast = 2L,
+  Class = 'nutrition', call = match.call()[[1L]], fleischmannsyeast = 2L,
   name = 'Active Dry Yeast',
   servingGram = 7.09, servingTsp = 2.25)
 

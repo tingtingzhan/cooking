@@ -14,6 +14,10 @@ Nutrition information.
 
 \item{\code{name}}{\link[base]{character} scalar, product name}
 
+\item{\code{alias}}{\link[base]{character} scalar, product alias}
+
+\item{\code{call}}{\link[base]{language}, function name to create this nutrition}
+
 \item{\code{name_glue}}{\link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse \code{cli:::glue_cmd})}
 
 \item{\code{extra}}{\linkS4class{extra} object}
@@ -79,6 +83,8 @@ Nutrition information.
 \item{\code{epicprovisions}}{\link[base]{character} scalar}
 
 \item{\code{fleischmannsyeast}}{\link[base]{integer} scalar}
+
+\item{\code{fourC}}{\link[base]{character} scalar}
 
 \item{\code{frontiercoop}}{\link[base]{character} scalar}
 

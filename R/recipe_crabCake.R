@@ -10,12 +10,14 @@
 #' @name crabCake
 #' @aliases crabCake-class
 #' @export
-setClass(Class = 'crabCake', contains = 'recipe')
+setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
+  alias_class = 'Crab Cake'
+))
 
 #' @rdname crabCake
 #' @export
 crabCake <- function() new(
-  Class = 'crabCake', 
+  Class = 'crabCake',
   egg_pc = 2,
   sauce_tsp = c(
     Hellmanns_mayonnaise = 2.5,

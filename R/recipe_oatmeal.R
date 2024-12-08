@@ -1,24 +1,25 @@
 
 
-#' @title \linkS4class{grainMeal} Recipes
+#' @title \linkS4class{oatmeal} Recipes
 #' 
 #' @description ..
 #' 
 #' @examples 
-#' oatMeal()
+#' oatmeal()
 #' 
-#' @name grainMeal
-#' @aliases grainMeal-class
+#' @name oatmeal
+#' @aliases oatmeal-class
 #' @export
-setClass(Class = 'grainMeal', contains = 'recipe', prototype = prototype(
+setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
+  alias_class = 'Oatmeal'
 ))
 
 
 
-#' @rdname grainMeal
+#' @rdname oatmeal
 #' @export
-oatMeal <- function() new(
-  Class = 'grainMeal', 
+oatmeal <- function() new(
+  Class = 'oatmeal', 
   grain = c(Quaker_oat = 75), water = 300,
   instruction = c(
     'Instant Pot, 2min, natural release',

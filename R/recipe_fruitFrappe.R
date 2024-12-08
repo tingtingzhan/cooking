@@ -31,7 +31,7 @@ strawberry_frappe0 <- function() new(
 
 
 Starbucks_strawberryFrappuccino <- function() new(
-  Class = 'nutrition', starbucks_iced = 2122724L,
+  Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 2122724L,
   name = 'Strawberry Frappuccino',
   servingGram = 470, serving_floz = 16, # 473.176ml
   calorie = 370,

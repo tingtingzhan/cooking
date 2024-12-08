@@ -1,7 +1,7 @@
 
 
 salmonSashimi <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = '\u9bad\u523a\u8eab Alpine King Salmon, Sashimi',
   wegmans = 260546L, usd = 43/454*100,
   servingGram = 113, 
@@ -10,7 +10,7 @@ salmonSashimi <- function() new(
 
 
 ahiTunaSashimi <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   name = '\u9baa\u523a\u8eab Ahi(Bigeye) Tuna, Sashimi',
   wegmans = 30372L, usd = 43/454*100,
   servingGram = 113,
@@ -18,7 +18,7 @@ ahiTunaSashimi <- function() new(
   calorie = 130, fat = 2, cholesterol = .045, sodium = .070, protein = 27)
 
 yellowtailSashimi <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   name = '\u9c24\u523a\u8eab Yellowtail, Sashimi',
   wegmans = 260467L, usd = 43/454*100,
   servingGram = 113,
@@ -28,12 +28,12 @@ yellowtailSashimi <- function() new(
 
 
 tilapia <- function() new(
-  Class = 'nutrition', fdc = 175176L,
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 175176L,
   name = '\u7f57\u975e\u9c7c Tilapia\U1f41f',
   servingGram = 100, water = 78.1, fat = 1.7, protein = 20.1, sodium = .052)
 
 Kirkland_shrimp_31_40 <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   #fdc = 475625L,
   #fdc = 175180L, cooked
   #fdc = 972415, historical data, raw
@@ -57,7 +57,7 @@ Kirkland_shrimp_31_40 <- function() new(
 
 
 Kirkland_shrimpArgentine <- function() new(
-  Class = 'nutrition', fdc = 2401277L,
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 2401277L,
   name = '\u7ea2\u867e Argentine\U1f1e6\U1f1f7 Red Shrimp\U1f990 30-50ct',
   costcoBiz = '100439398',
   # package 2lb, 908g, fully drained ???
@@ -70,14 +70,14 @@ Kirkland_shrimpArgentine <- function() new(
 
 
 cuttlefish <- function() new(
-  Class = 'nutrition', fdc = 174215L,
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 174215L,
   name = '\u58a8\u9c7c Cuttlefish\U1f991',
   servingGram = 100, 
   water = 80.6, protein = 16.2, fat = 0.7, sodium = .372, cholesterol = .112)
 
 
 salmonAtlantic <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   fdc = 175167L,
   # fdc = 175138L, fdc = 1098960L, # what is this??
   name = '\u5927\u897f\u6d0b\u9c91 Atlantic Salmon',
@@ -87,7 +87,7 @@ salmonAtlantic <- function() new(
 
 
 Sanford_mussel <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   sanford = 'greenshell-mussel-1',
   name = '\u9752\u53e3\u8d1d Greenshell Mussels',
   # packaging
@@ -96,7 +96,7 @@ Sanford_mussel <- function() new(
   carbohydrate = 4.7, sugar = .9, protein = 13.5)
 
 Clearwater_surfClam <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   clearwater = 'clams/arctic-surf-clams',
   name = '\u5317\u6781\u8d1d Arctic Surf Clams',
   # packaging
@@ -105,7 +105,7 @@ Clearwater_surfClam <- function() new(
   fat = .5, cholesterol = .045, sodium = .35, carbohydrate = 2.2, protein = 16)
 
 Clearwater_cockleClam <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   clearwater = 'clams/cockle-clams',
   name = '\u5317\u6781\u767d\u7389\u8d1d Cockle Clams',
   # website
@@ -116,7 +116,7 @@ Clearwater_cockleClam <- function() new(
 
 
 crab_steamed <- function() new(
-  Class = 'nutrition', fdc = 1099116L,
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 1099116L,
   name = 'Crab Meat',
   servingGram = 100, water = 79.17, fat = .74, protein = 17.76, sodium = .647)
 

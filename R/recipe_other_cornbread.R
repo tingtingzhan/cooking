@@ -22,7 +22,7 @@ Wegmans_cornbread_recipe <- function() new(
 #' @rdname cornbread_other
 #' @export
 Wegmans_cornbread <- function() new(
-  Class = 'nutrition', wegmans = 268359L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 268359L,
   name = 'Cornbread', usd = 9.00/9,
   servingGram = 57, calorie = 240,
   fat = 10, cholesterol = .045, sodium = .2,
@@ -69,7 +69,7 @@ PreppyKitchen_cornbread <- function() new(
   sugar_cup = c(Domino_granulated = 1/4), # this is not 30g
   bakingPowder_tsp = 2,
   salt_tsp = 1,
-  milk_cup = c(Horizon_whole_milk_DHA = 1.5),
+  milk_cup = c(Horizon_wholeDHA = 1.5),
   butter_cup = c(LandOLakes = 1/4),
   egg_pc = 1,
   oil_Tbsp = c(Wesson_soy = 1),

@@ -11,7 +11,9 @@
 #' @name starchDough
 #' @aliases starchDough-class
 #' @export
-setClass(Class = 'starchDough', contains = 'recipe')
+setClass(Class = 'starchDough', contains = 'recipe', prototype = prototype(
+  alias_class = 'Starch Dough'
+))
 
 
 

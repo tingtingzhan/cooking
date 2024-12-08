@@ -305,7 +305,7 @@ Bourbon_cheesecake_Stonewall <- function() new(
 #' @rdname cheesecake
 #' @export
 Junior_original <- function() new(
-  Class = 'nutrition', wegmans = 81705L, usd = 13.89/5,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 81705L, usd = 13.89/5,
   juniorscheesecake = 'original-ny-plain-cheesecake',
   name = 'Original Cheesecake',
   servingGram = 136, 
@@ -330,7 +330,7 @@ Junior_cookbook <- function() new(
 #' @rdname cheesecake
 #' @export
 CheesecakeFactory_original <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Original',
   cheesecakefactoryfreezer = 'original-cheesecake', cheesecakefactorybakery = 'original-dome',
   target = 'A-15382641', usd = 18.39/964*120,
@@ -340,7 +340,7 @@ CheesecakeFactory_original <- function() new(
 #' @rdname cheesecake
 #' @export
 CheesecakeFactory_pumpkin <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Pumpkin\U1f383',
   cheesecakefactoryfreezer = 'pumpkin-cheesecake',
   bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
@@ -351,7 +351,7 @@ CheesecakeFactory_pumpkin <- function() new(
 #' @rdname cheesecake
 #' @export
 Junior_strawberrySwirl <- function() new(
-  Class = 'nutrition', wegmans = 23187893L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 23187893L,
   brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
   servingGram = 136, fat = 28, cholesterol = .11, sodium = .33, sugar = 29, protein = 6)
 
@@ -391,7 +391,7 @@ pumpkin_cheesecake_Junior <- function() new(
 )
 
 Wegmans_pumpkin_cheesecake <- function() new(
-  Class = 'nutrition', wegmans = 18074L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 18074L,
   name = 'Pumpkin\U1f383 Cheesecake',
   usd = .62/28.3495 * 130, # 0.62/oz
   servingGram = 130,

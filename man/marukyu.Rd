@@ -4,11 +4,23 @@
 \alias{marukyu}
 \alias{Marukyu_tenju}
 \alias{Marukyu_kiwamiChoan}
+\alias{Marukyu_choan}
+\alias{Marukyu_unkaku}
+\alias{Marukyu_eiju}
+\alias{Marukyu_kinrin}
 \title{Marukyu}
 \usage{
 Marukyu_tenju()
 
 Marukyu_kiwamiChoan()
+
+Marukyu_choan()
+
+Marukyu_unkaku()
+
+Marukyu_eiju()
+
+Marukyu_kinrin()
 }
 \description{
 Marukyu

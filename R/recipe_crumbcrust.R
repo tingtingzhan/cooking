@@ -121,7 +121,7 @@ PreppyKitchen_grahamCrust5 <- function() new(
 #' @rdname grahamCrust
 #' @export
 Keebler_grahamCrust <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Keebler', name = 'Graham Crust',
   url = 'https://www.keebler.com/en/sweet-treat/pie-crusts/graham/ready-crust-graham-cracker',
   wegmans = 260909L, usd = 2.99/170*21,
@@ -131,7 +131,7 @@ Keebler_grahamCrust <- function() new(
 #' @rdname grahamCrust
 #' @export
 WholeFoods365_grahamCrust <- function() new(
-  Class = 'nutrition', wholefoods = 'b08ly5bys5',
+  Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b08ly5bys5',
   name = 'Graham Crust',
   servingGram = 21, 
   calorie = 110,
@@ -141,7 +141,7 @@ WholeFoods365_grahamCrust <- function() new(
 #' @rdname grahamCrust
 #' @export
 MiDel_grahamCrust <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel')), 
   name = 'Graham Crust',
   servingGram = 25, 
@@ -150,13 +150,13 @@ MiDel_grahamCrust <- function() new(
 
 
 MiDel_chocolateCrust <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   url = 'https://midelcookies.com/products/chocolate-snap-pie-crust/',
   servingGram = 25, fat = 4.5, sodium = .07, sugar = 9, protein = 1)
 
 
 DiamondNuts_chocolateCrust <- function() new(
-  Class = 'nutrition', url = 'https://shop.diamondnuts.com/collections/nut-pie-crusts/products/6-oz-ready-to-use-chocolate-nut-pie-crust',
+  Class = 'nutrition', call = match.call()[[1L]], url = 'https://shop.diamondnuts.com/collections/nut-pie-crusts/products/6-oz-ready-to-use-chocolate-nut-pie-crust',
   wegmans = 25249000L,
   servingGram = 21, fat = 7, sodium = .08, sugar = 4, protein = 2)
 # https://shop.diamondnuts.com/collections/nut-pie-crusts
