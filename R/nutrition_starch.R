@@ -37,7 +37,8 @@ Argo_corn_starch <- function() new(
 
 ManSang_wheat_starch <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = 'ManSang\u6c11\u751f\U1f1ed\U1f1f0', name = '\u98db\u51c0\u6f84\u9eb5 Wheat Starch',
+  brand = 'ManSang\u6c11\u751f\U1f1ed\U1f1f0', 
+  name = 'Wheat Starch', alias = '\u98db\u51c0\u6f84\u9eb5',
   servingGram = 10, servingTbsp = 1)
 
 

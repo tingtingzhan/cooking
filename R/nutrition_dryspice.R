@@ -115,7 +115,8 @@ McCormick_MontrealSteak <- function() new(
 McCormick_whitePepper <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.mccormick.com/gourmet/spices-and-flavors/organic/organic-white-pepper-ground',
   # https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/white-pepper-ground
-  brand = 'McCormick Gourmet\U1f1fa\U1f1f8', name = '\u767d\u80e1\u6912\u7c89 Organic White Pepper',
+  brand = 'McCormick Gourmet\U1f1fa\U1f1f8', 
+  name = 'Organic White Pepper', alias = '\u767d\u80e1\u6912\u7c89',
   servingGram = 49, usd = 5.12, # 2023-11-09 Walmart
   servingTbsp = 7) # https://freefoodtips.com/white-pepper-ground-spices-grams-to-ml/
 

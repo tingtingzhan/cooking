@@ -37,7 +37,7 @@ Kirkland_shrimp_31_40 <- function() new(
   #fdc = 475625L,
   #fdc = 175180L, cooked
   #fdc = 972415, historical data, raw
-  name = '\u867e Shrimp\U1f990 31-40ct',
+  name = 'Shrimp\U1f990 31-40ct', alias = '\u867e',
   costcoBiz = '100385031',
   # package 2lb, 908g, fully drained 750g
   usd = 11.99/750*112, # Costco, Jan 2024
@@ -58,11 +58,12 @@ Kirkland_shrimp_31_40 <- function() new(
 
 Kirkland_shrimpArgentine <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 2401277L,
-  name = '\u7ea2\u867e Argentine\U1f1e6\U1f1f7 Red Shrimp\U1f990 30-50ct',
+  name = 'Argentine\U1f1e6\U1f1f7 Red Shrimp\U1f990 10-30ct', alias = '\u7ea2\u867e',
   costcoBiz = '100439398',
   # package 2lb, 908g, fully drained ???
   usd = 21.49/750*112, # Costco, Jan 2024
   servingGram = 112, 
+  calorie = 80,
   water = 112*.743, # using `fdc = 175180L` data
   protein = 18, fat = .5, sodium = .2, cholesterol = .150)
 

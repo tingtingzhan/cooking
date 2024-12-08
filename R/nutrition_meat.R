@@ -31,7 +31,7 @@ eggWhite <- function() new(
 
 pork_belly <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 167812L,
-  name = '\u732a\u4e94\u82b1(\u7626) Pork\U1f416 Belly',
+  name = 'Pork\U1f416 Belly', alias = '\u732a\u4e94\u82b1(\u7626)',
   costcoBiz = '100174353', usd = 3.99/454*100, # Costco, Jan 2024
   servingGram = 100, 
   calorie = 518,
@@ -39,13 +39,13 @@ pork_belly <- function() new(
 
 pork_fatbelly <- function() new( # my guess :)
   Class = 'nutrition', call = match.call()[[1L]], #url = 'www.healthline.com/nutrition/pork-belly-nutrition#nutrients',
-  name = '\u732a\u4e94\u82b1(\u80a5) Pork\U1f416 Fat Belly',
+  name = 'Pork\U1f416 Fat Belly', alias = '\u732a\u4e94\u82b1(\u80a5)',
   costcoBiz = '100174353', usd = 3.99/454*100, # Costco, Jan 2024
   servingGram = 100, water = 36.7, fat = 60, protein = 3, sodium = .032)
 
 pork_fat <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'nutrientoptimiser.com/nutritional-value-pork-fresh-separable-fat-raw/',
-  name = '\u732a\u80a5\u8089 Pork\U1f416 Fat',
+  name = 'Pork\U1f416 Fat', alias = '\u732a\u80a5\u8089',
   costcoBiz = '100174353', servingGram = 100, 
   calorie = 628,
   water = 23, fat = 66, cholesterol = .072, sodium = .047, protein = 9)
@@ -53,7 +53,7 @@ pork_fat <- function() new(
 pork_tenderloin <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   swiftmeats = 'pork-tenderloin', 
-  name = '\u732a\u5c0f\u91cc\u810a Pork\U1f416 Tenderloin',
+  name = 'Pork\U1f416 Tenderloin', alias = '\u732a\u5c0f\u91cc\u810a',
   #wegmans = 760L, usd = 2.69 / 454 * 100,
   fdc = 168249L, water = 112*.76, # fdc data
   costcoBiz = '100082095', usd = 2 / 454 * 112,
@@ -64,7 +64,7 @@ pork_tenderloin <- function() new(
 pork_butt <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   swiftmeats = 'pork-butt',
-  name = '\u6885\u82b1\u8089 Pork\U1f416 Shoulder Butt',
+  name = 'Pork\U1f416 Shoulder Butt', alias = '\u6885\u82b1\u8089',
   servingGram = 112,
   calorie = 210,
   fat = 14, cholesterol = .07, sodium = .07, protein = 20,

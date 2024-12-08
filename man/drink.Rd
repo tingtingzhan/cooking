@@ -8,6 +8,7 @@
 \alias{hotdrink}
 \alias{hotdrink.function}
 \alias{hotdrink.milkteaMix}
+\alias{hotdrink.tiramisuMix}
 \alias{hotdrink.drinkmix}
 \alias{hotdrink.nutrition}
 \alias{frappe}
@@ -21,7 +22,9 @@ hotdrink(x, ...)
 
 \method{hotdrink}{milkteaMix}(x, water80 = 560, ...)
 
-\method{hotdrink}{drinkmix}(x, water80 = 236.6 * 2 - sum(x@pumpkin, x@liqueur), ...)
+\method{hotdrink}{tiramisuMix}(x, water80 = 560, ...)
+
+\method{hotdrink}{drinkmix}(x, water80 = 560 - sum(x@pumpkin, x@liqueur), ...)
 
 \method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 
@@ -52,7 +55,8 @@ Function \link{frappe} returns a \linkS4class{drink} object.
 ..
 }
 \details{
-Function \link{hotdrink} adds 2 US cup or 236.6*2 grams of hot water (70-80C) to \linkS4class{drinkmix}.
+Function \link{hotdrink} adds hot water (70-80C) to \linkS4class{drinkmix},
+fitting in 20oz mug.
 
 Function \link{frappe} adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
 Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.

@@ -75,7 +75,7 @@ YouJia_greenPeppercornOil <- function() new(
 Epic_lard <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   epicprovisions = 'organic-pork-fat',
-  name = '\u732a\u6cb9 Pork\U1f416 Lard',
+  name = 'Pork\U1f416 Lard', alias = '\u732a\u6cb9',
   servingGram = 14, 
   servingTbsp = 1, # packaging
   usd = 13.89/312*14,
@@ -85,14 +85,15 @@ Epic_lard <- function() new(
 Morrell_lard <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   walmart = '13439653', usd = 2.32/454*13,
-  brand = 'John Morrell\U1f1fa\U1f1f8', name = '\u732a\u6cb9 Lard',
+  brand = 'John Morrell\U1f1fa\U1f1f8', 
+  name = 'Lard', alias = '\u732a\u6cb9',
   servingGram = 13, servingTbsp = 1, # packaging
   fat = 13)
 
 Epic_tallow <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   epicprovisions = 'beef-tallow-animal-oil-single-jar',
-  name = '\u725b\u6cb9 Beef\U1f402 Tallow',
+  name = 'Beef\U1f402 Tallow', alias = '\u725b\u6cb9',
   usd = 13.89/312*14,
   calorie = 130,
   servingGram = 14, servingTbsp = 1, fat = 14)
@@ -100,7 +101,7 @@ Epic_tallow <- function() new(
 Epic_duck <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   epicprovisions = 'duck-fat-animal-oil-single-jar',
-  name = '\u9e2d\u6cb9 Duck\U1f986 Fat',
+  name = 'Duck\U1f986 Fat', alias = '\u9e2d\u6cb9',
   usd = 13.89/312*14,
   calorie = 130,
   servingGram = 14, servingTbsp = 1, fat = 14)

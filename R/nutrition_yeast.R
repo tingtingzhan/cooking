@@ -10,7 +10,7 @@
 Fleischmanns_instant <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   fleischmannsyeast = 4L,
-  name = '\u901f\u53d1\u9175\u6bcd Instant Yeast',
+  name = 'Instant Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
   servingGram = 7.09, servingTsp = 2.25#,
   #machine = function(x) 'Protect Fleischmanns RapidRise instant yeast with flour'
   )

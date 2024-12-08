@@ -135,15 +135,15 @@
     millecrepe = if (length(x@liqueur)) .05 else .06,
     pudding = .05, # trying
     milktea_ = .065,
-    caffeLatte_ = .075,
-    matchaGoatLatte_ = .075, 
-    stickyRice =, riceCake = .1, # need to re-think!!
-    matchaLatte_ =, mocaccino_ = .075, # taste better than .09 !
+    caffeLatte_ = .065,
+    matchaGoatLatte_ = .065, 
+    matchaLatte_ =, mocaccino_ = .065, # taste better than .09 !
     cocoa_ =, 
-    pumpkinSpiceLatte_ = .075, # match Carnation_drymilk() can label
+    pumpkinSpiceLatte_ = .065,
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,
+    stickyRice =, riceCake = .1, # need to re-think!!
     matchaGoatLatteMix = .53,
     #tiramisuMix = .7,
     NA_real_)
@@ -456,7 +456,7 @@
   
   alcohol <- function(x) switch(
     class(x),
-    tiramisu_ = .006, # any more, I will feel dizzy (for drink)
+    tiramisu_ = .005, # any more, I will feel dizzy (for drink)
     #cheesecake =, mascarponeGanache = .015, # need to re-try
     cheesecake = .006, # trying. this is low-temp cooking, probably okay
     tomyumStew = .035,

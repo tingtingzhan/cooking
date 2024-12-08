@@ -50,7 +50,9 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' @param ... ..
 #' 
 #' @details
-#' Function [hotdrink] adds 2 US cup or 236.6*2 grams of hot water (70-80C) to \linkS4class{drinkmix}.
+#' Function [hotdrink] adds hot water (70-80C) to \linkS4class{drinkmix},
+#' fitting in 20oz mug.
+#' 
 #' 
 #' @returns
 #' Function [hotdrink] returns a \linkS4class{drink} object, 
@@ -69,10 +71,17 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 #' @export hotdrink.milkteaMix
 #' @export
 hotdrink.milkteaMix <- function(x, water80 = 560, ...) {
-  # fit in 20oz mug
   # cannot make 'frappe' from teabags 
   hotdrink.drinkmix(x, water80 = water80, ...)
 }
+
+#' @rdname drink
+#' @export hotdrink.tiramisuMix
+#' @export
+hotdrink.tiramisuMix <- function(x, water80 = 560, ...) {
+  hotdrink.drinkmix(x, water80 = water80, ...)
+}
+
 
 
 #' @rdname drink
@@ -80,7 +89,7 @@ hotdrink.milkteaMix <- function(x, water80 = 560, ...) {
 #' @export
 hotdrink.drinkmix <- function(
     x, 
-    water80 = 236.6*2 - sum(x@pumpkin, x@liqueur), 
+    water80 = 560 - sum(x@pumpkin, x@liqueur), 
     ...
 ) {
   x@water80 <- water80
