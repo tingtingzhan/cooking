@@ -1,6 +1,6 @@
 
 Baileys_chocolatLuxe <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'baileys-chocolat-luxe',
   name = '\u5de7\u514b\u529b\u9152 Chocolat Luxe',
   servingGram = 50, # my guess
@@ -12,7 +12,7 @@ Baileys_chocolatLuxe <- function() new(
 
 
 Baileys_colada <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'baileys-colada',
   # creamy coconut and sweet, juicy pineapples.
   name = 'Colada',
@@ -25,7 +25,7 @@ Baileys_colada <- function() new(
 
 
 Baileys_tiramisu <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'baileys-tiramisu-cocktail',
   # mascarpone, espresso with hints of chocolate.
   name = 'Tiramisu Cocktail',
@@ -38,7 +38,7 @@ Baileys_tiramisu <- function() new(
 )
 
 Baileys_smores <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'baileys-s-mores',
   name = 'S\'mores',
   servingGram = 100,
@@ -53,7 +53,7 @@ Baileys_smores <- function() new(
 
   
 Baileys_icedCoffeeLatte <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'baileys-iced-coffee-latte',
   name = 'Iced Coffee Latte',
   servingGram = 100, # my guess

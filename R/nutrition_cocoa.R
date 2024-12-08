@@ -1,24 +1,27 @@
 
-
-
 # https://www.barry-callebaut.com/en/manufacturers/product-filter?topic_groups%5B0%5D=6&categories_level_1%5B0%5D=4&categories_level_2%5B0%5D=6&brands%5B0%5D=201
 
-if (FALSE) {
-  diagnose(
-    KingArthur_blackCocoa,
-    KingArthur_Burgundy,
-    KingArthur_Bensdorp, 
-    Ghirardelli_sunrise,
-    Ghirardelli_majestic,
-    Navitas_cacao
-  )
-}
+#' @title Cocoa Powder
+#' 
+#' @examples
+#' diagnose(
+#'  KingArthur_blackCocoa,
+#'  KingArthur_Burgundy,
+#'  KingArthur_Bensdorp, 
+#'  Ghirardelli_sunrise,
+#'  Ghirardelli_majestic,
+#'  Navitas_cacao
+#' )
+#' @keywords internal
+#' @name nutrition_cocoa
+NULL
 
-
+#' @rdname nutrition_cocoa
+#' @export
 Navitas_cacao <- function() new(
-  Class = 'nutrition', navitas = 'cacao-powder',
+  Class = 'nutrition', call = match.call()[[1L]], navitas = 'cacao-powder',
   # bought at Costco once, but didn't see any more
-  name = '\u53ef\u53ef\u7c89 Cacao Powder',
+  name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
   extra = new(Class = 'extra', water = 1), # tested with bao()
   usd = 7/680*6, # price not sure
   servingGram = 6, 
@@ -28,9 +31,11 @@ Navitas_cacao <- function() new(
   fat = .5, carbohydrate = 3, protein = 2)
 
 
+#' @rdname nutrition_cocoa
+#' @export
 KingArthur_blackCocoa <- function() new(
-  Class = 'nutrition', kingarthur = 211821L, 
-  name = '\u78b1\u5316\u9ed1\u53ef\u53ef\u7c89 Black Cocoa',
+  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211821L, 
+  name = 'Black Cocoa', alias = '\u78b1\u5316\u9ed1\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
   # servingTbsp = 1, # on package
@@ -41,9 +46,11 @@ KingArthur_blackCocoa <- function() new(
     'I don\'t like it for hot chocolate'
   ))
 
+#' @rdname nutrition_cocoa
+#' @export
 KingArthur_Bensdorp <- function() new(
-  Class = 'nutrition', kingarthur = 211698L,
-  name = '\u78b1\u5316\u53ef\u53ef\u7c89 Bensdorp Cocoa',
+  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211698L,
+  name = 'Bensdorp Cocoa', alias = '\u78b1\u5316\u53ef\u53ef\u7c89',
   usd = 14.95/397*6, # 2023-11-12
   servingGram = 6, 
   #servingTbsp = 1, # on package
@@ -51,9 +58,11 @@ KingArthur_Bensdorp <- function() new(
   calorie = 20,
   fat = 1.5, carbohydrate = 3, protein = 1)
 
+#' @rdname nutrition_cocoa
+#' @export
 KingArthur_Burgundy <- function() new(
-  Class = 'nutrition', kingarthur = 211822L,
-  name = '\u78b1\u5316\u53ef\u53ef\u7c89 Burgundy Cocoa',
+  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211822L,
+  name = 'Burgundy Cocoa', alias = '\u78b1\u5316\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
   #servingTbsp = 1, # on package
@@ -63,8 +72,10 @@ KingArthur_Burgundy <- function() new(
   fat = 1, protein = 1,
   superior = 'KingArthur_Bensdorp')
 
+#' @rdname nutrition_cocoa
+#' @export
 Ghirardelli_cocoa <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = 'premium-baking-cocoa-100-unsweetened-cocoa-powder-6-bags-61703cs',
   name = 'Ground Cocoa',
   usd = 39.95/(6*227)*6, 
@@ -74,24 +85,30 @@ Ghirardelli_cocoa <- function() new(
 
 
 
+#' @rdname nutrition_cocoa
+#' @export
 Ghirardelli_sunrise <- function() new(
-  Class = 'nutrition', webstaurant = '40869069',
+  Class = 'nutrition', call = match.call()[[1L]], webstaurant = '40869069',
   name = 'Sunrise, 15-17% Cocoa Butter',
   ghirardelli = 'cocoa-powders-information',
   servingGram = 100, servingTbsp = 100/6, # packaging
   calorie = 234, 
   fat = 15.3, sodium = .03, carbohydrate = 49.7, sugar = .6, protein = 21.3)
 
+#' @rdname nutrition_cocoa
+#' @export
 Ghirardelli_majestic <- function() new(
-  Class = 'nutrition', webstaurant = '40869096',
+  Class = 'nutrition', call = match.call()[[1L]], webstaurant = '40869096',
   ghirardelli = 'cocoa-powders-information',
   name = 'Majestic, 20-22% Cocoa Butter',
   servingGram = 100, servingTbsp = 100/6, # packaging
   calorie = 368,
   fat = 20.7, sodium = .03, carbohydrate = 41.2, sugar = .3, protein = 20.8)
 
+#' @rdname nutrition_cocoa
+#' @export
 Ghirardelli_superior <- function() new(
-  Class = 'nutrition', webstaurant = '40869072',
+  Class = 'nutrition', call = match.call()[[1L]], webstaurant = '40869072',
   ghirardelli = 'cocoa-powders-information',
   name = 'Superior, 10-12% Cocoa Butter',
   servingGram = 100, servingTbsp = 100/6, # packaging

@@ -5,7 +5,7 @@
 
 
 Wegmans_CambozolaBlueTorte <- function() new(
-  Class = 'nutrition', wegmans = 53941L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 53941L,
   name = 'Cambozola Blue Caramel Torte Cheese',
   serving_oz = 1, fat = 11, sodium = .125, sugar = 2, protein = 3,
   review = 'Super nice! Not too salty, not too sweet.  Try to assemble using my invert-sugar-syrup, mixed nuts (from Costco)')
@@ -13,7 +13,7 @@ Wegmans_CambozolaBlueTorte <- function() new(
 
 
 Wegmans_Cambozola <- function() new(
-  Class = 'nutrition', wegmans = 8603L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 8603L,
   name = 'Cambozola Blue Triple Cr\u00e8me Cheese',
   serving_oz = 1, fat = 12, sodium = .19, protein = 4)
 
@@ -21,7 +21,7 @@ Wegmans_Cambozola <- function() new(
 
 
 Wegmans_mildBrie <- function() new(
-  Class = 'nutrition', wegmans = 38341L, usd = 21.89/16,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 38341L, usd = 21.89/16,
   name = 'Cave-Ripened Mild Brie Cheese, Milky',
   serving_oz = 1, 
   calorie = 100,
@@ -33,7 +33,7 @@ Wegmans_mildBrie <- function() new(
 
 
 Wegmans_mildTripleCreme <- function() new(
-  Class = 'nutrition', wegmans = 873L, usd = 27.59/16,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 873L, usd = 27.59/16,
   name = 'Cave-Ripened Mild Triple Cr\u00e8me Cheese',
   serving_oz = 1, 
   calorie = 110,
@@ -42,7 +42,7 @@ Wegmans_mildTripleCreme <- function() new(
 
 
 Wegmans_mildBonVivant <- function() new( # try again?
-  Class = 'nutrition', wegmans = 226424L, usd = 24.19/16,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 226424L, usd = 24.19/16,
   name = 'Mild Bon Vivant',
   serving_oz = 1, 
   calorie = 100,
@@ -52,7 +52,7 @@ Wegmans_mildBonVivant <- function() new( # try again?
 
 
 Wegmans_mildCremeuxDeBourgogne <- function() new( # try again?
-  Class = 'nutrition', wegmans = 227321L, usd = 2.14,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 227321L, usd = 2.14,
   name = 'Mild Cremeux de Bourgogne Soft Ripened Cheese',
   serving_oz = 1, 
   calorie = 110,
@@ -62,7 +62,7 @@ Wegmans_mildCremeuxDeBourgogne <- function() new( # try again?
 
 
 Wegmans_LangaLaTur <- function() new(
-  Class = 'nutrition', wegmans = 25755L, usd = 32.19/16,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 25755L, usd = 32.19/16,
   name = 'Caseificio dell\'Alta Langa La Tur Cheese',
   serving_oz = 1, 
   calorie = 80,
@@ -73,7 +73,7 @@ Wegmans_LangaLaTur <- function() new(
 
 
 Wegmans_mildGoatBrie <- function() new(
-  Class = 'nutrition', wegmans = 222234L, usd = 1.64,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 222234L, usd = 1.64,
   name = 'Mild Goat\U1f410 Brie Cheese',
   servingGram = 30, 
   calorie = 90,
@@ -82,7 +82,7 @@ Wegmans_mildGoatBrie <- function() new(
 
 
 BelGioioso_mascarpone <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   belgioioso = 'mascarpone', name = 'Mascarpone',
   wegmans = 11544L, usd = .65,
   fdc = 1726641L, # this brand!!
@@ -91,7 +91,7 @@ BelGioioso_mascarpone <- function() new(
   fat = 13, cholesterol = .035, sodium = .015, carbohydrate = 1, sugar = 1, protein = 2)
 
 BelGioioso_ricotta <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   wegmans = 265931L, usd = 7.49/907*55,
   belgioioso = 'ricotta-con-latte', name = 'Ricotta con Latte',
   fdc = 2288192L, # this brand!!
@@ -104,20 +104,20 @@ BelGioioso_ricotta <- function() new(
 
 
 Friendship_farmer <- function() new(
-  Class = 'nutrition', wegmans = 9715L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 9715L,
   brand = 'Friendship Dairies', name = 'Farmer Cheese, No Salt Added',
   # https://www.friendshipdairies.com/en/products/farmer-cheese # has salt!!
   servingGram = 30, fat = 2.5, sodium = .01, protein = 4)
 
 
 Wegmans_Castelbelo <- function() new( 
-  Class = 'nutrition', wegmans = 25571L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 25571L,
   name = 'Caseificio dell\'Alta Langa Castelbelo Cheese',
   serving_oz = 1, fat = 8, sodium = .14, protein = 5,
   review = 'Much much less salty than Wegmans_mildBrie(), otherwise very similar.  Like it!')
 
 Wegmans_cranberryGoat <- function() new(
-  Class = 'nutrition', wegmans = 261050L,
+  Class = 'nutrition', call = match.call()[[1L]], wegmans = 261050L,
   name = 'Goat\U1f410 Cheese with Cranberries',
   serving_oz = 1, fat = 5, 
   sodium = .16, # website says `sodium = .86`, must be wrong
@@ -126,7 +126,7 @@ Wegmans_cranberryGoat <- function() new(
 
 
 NaturalKosher_mozzarella <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/')),
   name = 'Shredded Mozzarella',
   serving_oz = 1, fat = 6, sodium = .135, protein = 6,

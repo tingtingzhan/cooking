@@ -24,7 +24,10 @@ setClass(Class = 'extra', slots = c(
 #' Nutrition information.
 #' 
 #' @slot brand \link[base]{character} scalar, manufacture brand
+#' 
 #' @slot name \link[base]{character} scalar, product name
+#' @slot alias \link[base]{character} scalar, product alias
+#' @slot call \link[base]{language}, function name to create this nutrition
 #' @slot name_glue \link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse `cli:::glue_cmd`)
 #' 
 #' @slot extra \linkS4class{extra} object
@@ -62,6 +65,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot domino \link[base]{character} scalar
 #' @slot epicprovisions \link[base]{character} scalar
 #' @slot fleischmannsyeast \link[base]{integer} scalar
+#' @slot fourC \link[base]{character} scalar
 #' @slot frontiercoop \link[base]{character} scalar
 #' @slot ghirardelli \link[base]{character} scalar
 #' @slot godiva \link[base]{character} scalar
@@ -152,7 +156,11 @@ setClass(Class = 'extra', slots = c(
 #' @aliases nutrition-class  
 #' @export
 setClass(Class = 'nutrition', slots = c(
+  
   brand = 'character',
+  
+  alias = 'character',
+  call = 'language',
   name = 'character',
   name_glue = 'character',
   
@@ -192,6 +200,7 @@ setClass(Class = 'nutrition', slots = c(
   domino = 'character',
   epicprovisions = 'character',
   fleischmannsyeast = 'integer',
+  fourC = 'character',
   frontiercoop = 'character',
   ghirardelli = 'character',
   godiva = 'character',
@@ -305,6 +314,33 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   
   x <- callNextMethod(.Object, ...)
   
+  # name
+  if (!length(x@alias) & length(x@name)) {
+    if (length(x@name) != 1L) {
+      #print(unclass(x))
+      #print(x@name)
+      stop('here')
+    }
+    x@alias <- switch(tolower(x@name), 'cream cheese' = {
+      '\u5976\u6cb9\u5976\u916a'
+    }, 'heavy cream' = {
+      '\u91cd\u5976\u6cb9'
+    }, character())
+  }
+  
+  if (length(x@alias)) {
+    cl <- if (is.symbol(x@call)) {
+      x@call
+    } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
+      x@call[[3L]]
+    } else stop('then?')
+    x@name <- sprintf(fmt = '{.run [%s](cooking::%s())} %s',
+                     x@alias, as.character(cl), x@name)
+    x@alias <- character()
+    x@call <- quote(`<UNDEFINED>`)
+  }
+  
+  # serving weight
   if (length(x@serving_oz)) {
     if (length(x@servingGram)) warning('@servingGram over written by @serving_oz')
     x@servingGram <- x@serving_oz * 28.3495
@@ -350,6 +386,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://epicprovisions.com/products/%s', x@epicprovisions), text = 'Epic\U1f1fa\U1f1f8'))
     } else if (length(x@fleischmannsyeast)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.fleischmannsyeast.com/product-page/#%d', x@fleischmannsyeast), text = 'Fleischmann\'s\U1f1fa\U1f1f8'))
+    } else if (length(x@fourC)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.4c.com/4c-product/%s', x@fourC), text = '4C\U1f1fa\U1f1f8'))
     } else if (length(x@frontiercoop)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s', x@frontiercoop), text = 'Frontier Co-op\U1f1fa\U1f1f8'))
     } else if (length(x@ghirardelli)) {
@@ -748,6 +786,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   obj <- object
   
+  cat('\n')
   cli_text(nutrition_name(obj))
   cat('\n')
   
@@ -825,10 +864,12 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
     contain_chn[tolower(contain) == 'onion'] <- '\u6d0b\u8471\U1f9c5'
     contain_chn[tolower(contain) == 'orange peel'] <- '\u9648\U1f34a\u76ae'
     contain_chn[tolower(contain) == 'oregano'] <- '\u725b\u81f3'
+    contain_chn[tolower(contain) == 'paprika'] <- '\u7ea2\u751c\u6912\u7c89'
     contain_chn[tolower(contain) == 'parsley'] <- '\u6b27\u82b9'
     contain_chn[tolower(contain) == 'red bell pepper'] <- '\u7ea2\u751c\u6912'
     contain_chn[tolower(contain) == 'rosemary'] <- '\u8ff7\u8fed\u9999'
     contain_chn[tolower(contain) == 'sage'] <- '\u9f20\u5c3e\u8349'
+    contain_chn[tolower(contain) == 'sunflower oil'] <- '\u8475\u82b1\u7c7d\U1f33b\u6cb9'
     contain_chn[tolower(contain) == 'star anise'] <- '\u516b\u89d2'
     contain_chn[tolower(contain) == 'thyme'] <- '\u767e\u91cc\u9999'
     contain_chn[tolower(contain) %in% c('tomato', 'tomato granules', 'tomato concentrate')] <- '\u897f\u7ea2\u67ff\U0001f345'

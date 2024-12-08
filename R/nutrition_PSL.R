@@ -17,7 +17,7 @@ NULL
 #' @rdname PSL_other
 #' @export
 Starbucks_pumpkinSpiceLatte <- function() new(
-  Class = 'nutrition', starbucks_hot = 418L,
+  Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 418L,
   name = 'Pumpkin Spice Latte',
   servingGram = 470, serving_floz = 16, # 473.176ml
   #caffeine 150 mg*
@@ -28,7 +28,7 @@ Starbucks_pumpkinSpiceLatte <- function() new(
 #' @rdname PSL_other
 #' @export
 Starbucks_pumpkinSpiceFrappuccino <- function() new(
-  Class = 'nutrition', starbucks_iced = 427L,
+  Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 427L,
   name = 'Pumpkin Spice Frappuccino',
   servingGram = 470, serving_floz = 16, # 473.176ml
   #caffeine 100 mg*

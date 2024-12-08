@@ -4,7 +4,7 @@
 #' @name kefir
 #' @export
 TraderJoes_goat_kefir <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Trader Joe\'s', 
   name = '\u7f8a\u5976\u9152 Goat\U1f410 Milk Kefir',
   usd = 5.69/32*8,
@@ -15,7 +15,7 @@ TraderJoes_goat_kefir <- function() new(
 #' @rdname kefir
 #' @export
 Meyenberg_goat_kefir <- function() new(
-  Class = 'nutrition', meyenberg = 'goatyogurt-1-1',
+  Class = 'nutrition', call = match.call()[[1L]], meyenberg = 'goatyogurt-1-1',
   name = '\u7f8a\u5976\u9152 Goat\U1f410 Kefir', 
   wegmans = 4937L, usd = 8.99/32*8, 
   # https://redwoodhill.com/redwood-hill-to-become-meyenberg
@@ -33,7 +33,7 @@ if (FALSE) {
 #' @rdname kefir
 #' @export
 GreenValley_kefir <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir')),
   name = '\u4f4e\u8102\u725b\u5976\u9152 Lowfat Kefir',
   wegmans = 227007L, usd = 6.99/32*8,
@@ -46,7 +46,7 @@ GreenValley_kefir <- function() new(
 #' @rdname kefir
 #' @export
 Siggis_filmjolk <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   siggis = 'plain-drinkable-nonfat-yogurt',
   name = 'Swedish\U1f1f8\U1f1ea Filmj\u00f6lk',
   wegmans = 39729L, usd = 4.99/32*6,

@@ -1,7 +1,7 @@
 
 
 Runamok_Bourbon <- function() new(
-  Class = 'nutrition', runamok = 'bourbon-barrel-aged-maple-syrup',
+  Class = 'nutrition', call = match.call()[[1L]], runamok = 'bourbon-barrel-aged-maple-syrup',
   name = 'Bourbon Barrel-Aged Maple\U1f341 Syrup',
   servingGram = 40, serving_ml = 30,
   sodium = .005, addedSugar = 24,
@@ -9,7 +9,7 @@ Runamok_Bourbon <- function() new(
 
 
 Runamok_rum <- function() new(
-  Class = 'nutrition', runamok = 'rum-barrel-aged-maple-syrup',
+  Class = 'nutrition', call = match.call()[[1L]], runamok = 'rum-barrel-aged-maple-syrup',
   name = 'Rum Barrel-Aged Maple\U1f341 Syrup',
   # full bottle 690g
   servingGram = 80, serving_ml = 60,
@@ -17,7 +17,7 @@ Runamok_rum <- function() new(
   usd = 18.95/250*60) # 2023-11-09
 
 Runamok_ryeWhisky <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   runamok = 'whistlepig-rye-whiskey-barrel-aged-maple-syrup',
   whistlepigwhiskey = 'barrel-aged-maple-syrup',
   name = 'Rye Whiskey Barrel-Aged Maple\U1f341 Syrup',
@@ -29,7 +29,7 @@ Runamok_ryeWhisky <- function() new(
   usd = 24.95/375*30) # 2023-11-09
 
 Runamok_brandy <- function() new(
-  Class = 'nutrition', runamok = 'apple-brandy-barrel-aged-organic-maple-syrup',
+  Class = 'nutrition', call = match.call()[[1L]], runamok = 'apple-brandy-barrel-aged-organic-maple-syrup',
   name = 'Apple Brandy Barrel-Aged Maple\U1f341 Syrup',
   # full bottle 675g; 
   servingGram = 40, serving_ml = 30,

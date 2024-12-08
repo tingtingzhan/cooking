@@ -108,7 +108,7 @@ nutrition.recipe <- function(x) {
   devrecipe <- getOption('devrecipe') 
   
   ret <- new(
-    Class = 'nutrition', 
+    Class = 'nutrition', call = match.call()[[1L]], 
     name = x@alias,
     #review = x@review,
     servingGram = total, # after sutracting everything lost!!

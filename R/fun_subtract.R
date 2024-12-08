@@ -19,7 +19,11 @@ subtract <- function(object, ...) UseMethod(generic = 'subtract')
 
 #' @rdname subtract
 #' @export
-subtract.function <- function(object, ...) subtract(do.call(object, args = list()), ...)
+subtract.function <- function(object, ...) {
+  subtract(object(), ...)
+}
+
+
 
 #' @rdname subtract
 #' @export

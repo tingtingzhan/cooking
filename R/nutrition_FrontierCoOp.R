@@ -1,7 +1,7 @@
 
 
 FrontierCoop_harissa <- function() new(
-  Class = 'nutrition', frontiercoop = 'harissa-seasoning-organic-1-90-oz',
+  Class = 'nutrition', call = match.call()[[1L]], frontiercoop = 'harissa-seasoning-organic-1-90-oz',
   name = 'Harissa Seasoning',
   contain = c(
     'paprika', 'caraway', 'red chili pepper', 'cayenne', 'coriander', 'cumin', 'garlic', 'peppermint'
@@ -15,7 +15,7 @@ FrontierCoop_harissa <- function() new(
 
 
 FrontierCoop_vindaloo <- function() new(
-  Class = 'nutrition', frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
+  Class = 'nutrition', call = match.call()[[1L]], frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
   name = 'Vindaloo Curry Seasoning', # \u5496\u55b1\u7c89 
   contain = c(
     'tomato concentrate', 'guar gum', 'cumin', 'chili pepper', 'cayenne', 'turmeric', 'coriander', 'cinnamon', 'yellow mustard', 'fenugreek', 'garlic', 'ginger', 'black pepper', 'cardamom', 'clove'

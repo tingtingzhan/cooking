@@ -1,14 +1,14 @@
 
 
 MgCl2 <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   name = '\u76d0\u5364 Magnesium Chloride MgCl\u2082',
   pubchem = 'Magnesium-chloride-_MgCl2',
   servingGram = 1)
   
 
 Ohsawa_nigari <- function() new(
-  Class = 'nutrition',
+  Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5')), 
   name = '\u82e6\u6c41/\u6ef7\u6c41 Nigari',
   amazon = 'B0019L8KUG',
@@ -18,7 +18,7 @@ Ohsawa_nigari <- function() new(
   sodium = 1.966)
 
 Morton_salt <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/')),
   name = '\u76d0 Salt\U1f9c2',
   servingTsp = 1/4, 
@@ -28,7 +28,7 @@ Morton_salt <- function() new(
 
 
 Ajinomoto_msg <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
   name = '\u5473\u7cbe Monosodium Glutamate',
   # 'www.yamibuy.com/zh/p/msg-aji-no-motot-in-bag-1lb/1148033131'
@@ -42,7 +42,7 @@ Ajinomoto_msg <- function() new(
 
 
 ArmHammer_NaHCO3 <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8')),
   name = '\u5c0f\u82cf\u6253 Baking Soda, NaHCO\u2083',
   pubchem = '516892',
@@ -51,7 +51,7 @@ ArmHammer_NaHCO3 <- function() new(
   sodium = 23/(23+1+12+16*3) * .6)
 
 Na2CO3 <- function() new(
-  Class = 'nutrition', # presume no volumn change when baking
+  Class = 'nutrition', call = match.call()[[1L]], # presume no volumn change when baking
   name = '\u78b1\u9762 Soda Ash Na\u2082CO\u2083',
   pubchem = '10340',
   # 2 NaHCO3 = Na2CO3 + H2O + CO2
@@ -64,7 +64,7 @@ Na2CO3 <- function() new(
 
 
 Wegmans_bakingPowder <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = '\u6ce1\u6253\u7c89 Baking Powder, 2x Acting',
   wegmans = 23397L, usd = 1.99/383,
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
@@ -72,7 +72,7 @@ Wegmans_bakingPowder <- function() new(
 
 
 TraderJoes_bakingPowder <- function() new(
-  Class = 'nutrition', fdc = 172804L,
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 172804L,
   brand = 'Trader Joe\'s\U1f1fa\U1f1f8', 
   name = '\u6ce1\u6253\u7c89 Baking Powder, 2x Acting', 
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
@@ -83,7 +83,7 @@ TraderJoes_bakingPowder <- function() new(
 
 
 Wegmans_water <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Purified Water',
   wegmans = 259520L, usd = 1.29, # 2023-11-09
   servingGram = 3785.41, servingCup = 16, # one gallon 

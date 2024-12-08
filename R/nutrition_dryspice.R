@@ -75,7 +75,8 @@ McCormick_cumin <- function() new(
 McCormick_oldBay <- function() new(
   Class = 'nutrition', oldbay = 'old-bay-seasoning',
   name = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599 Old Bay',
-  servingGram = .6, servingTsp = 1/4, sodium = .14)
+  servingGram = .6, servingTsp = 1/4, sodium = .14,
+  contain = c('salt', 'celery seed', 'red pepper', 'black pepper', 'paprika'))
 
 
 McCormick_ginger <- function() new(
@@ -97,7 +98,7 @@ McCormick_MontrealSteak <- function() new(
   name = 'Montreal Steak Seasoning',
   costco = '100381527', usd = 9.49/822*.8,
   contain = c(
-    'Black Pepper', 'Red Pepper', 'Garlic', 'Onion', 'Sunflower Oil', 'Paprika'
+    'black pepper', 'red pepper', 'garlic', 'onion', 'sunflower oil', 'paprika'
   ),
   servingGram = .8, 
   # servingTsp = 1/4, # label

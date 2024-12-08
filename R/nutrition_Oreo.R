@@ -12,7 +12,7 @@ if (FALSE) {
 }
 
 Nabisco_waferOreo <- function() new(
-  Class = 'nutrition', amazon = 'B07H9V7Q8S',
+  Class = 'nutrition', call = match.call()[[1L]], amazon = 'B07H9V7Q8S',
   brand = 'Nabisco', name = 'Oreo Wafers',
   servingGram = 31, 
   calorie = 140,
@@ -22,14 +22,14 @@ Nabisco_waferOreo <- function() new(
   
 
 Nabisco_Oreo <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   oreo = 'oreo-cookie', name = 'Oreo',
   servingGram = 34, 
   calorie = 160,
   fat = 7, sodium = .13, carbohydrate = 25, sugar = 14, protein = 1)
 
 Nabisco_OreoThins <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   oreo = 'oreo-thins-original-cookies', name = 'Oreo Thins',
   servingGram = 29, 
   calorie = 140,
@@ -40,13 +40,13 @@ Nabisco_OreoThins <- function() new(
 
 
 Nabisco_graham <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = 'Nabisco', name = 'Grahams, Original',
   walmart = '10292704', usd = 4.68/408*31,
   servingGram = 31, fat = 3.5, sodium = .17, addedSugar = 8, protein = 2)
 
 HoneyMaid_graham <- function() new(
-  Class = 'nutrition', 
+  Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Nabisco Honey Maid', url = 'https://www.snackworks.com/product/00044000004637/')),
   name = 'Honey Graham',
   walmart = '10292699', usd = 4.68/408*30,

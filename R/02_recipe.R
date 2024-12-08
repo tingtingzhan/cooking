@@ -492,7 +492,8 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   x_brick <- if (has_brick) slot(addNameLen1(x, which = ._brick, name1 = name1), name = ._brick) # else NULL
   if (which %in% c(
     'starch', 'oil', 
-    'butter', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 'filmjolk', 'ghee', 'heavyCream', 'kefir', 'mascarpone', 
+    'butter', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 
+    'filmjolk', 'ghee', 'heavyCream', 'kefir', 'mascarpone', 'milk',
     'yogurt', 'yogurtGreek'
   )) {
     add_suffix <- function(x0, which) {
@@ -998,7 +999,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@seafood,
     object@pork, object@beef, object@lamb, object@chicken, # meat
     NULL)
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood), FUN = cli_text)
   
   flour <- c(object@flour, object@pastryFlour, object@breadFlour, object@wholeWheatFlour,
              object@glutenFreeFlour, 
@@ -1006,21 +1007,21 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
              object@riceFlour, object@glutinousRiceFlour,
              object@cornmeal,
              object@coconut)
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, autoVolume(flour)), sep = '') # one or more flour
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, autoVolume(flour)), FUN = cli_text) # one or more flour
   
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@starch)], object@starch, autoVolume(object@starch)), sep = '') 
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@starch)], object@starch, autoVolume(object@starch)), FUN = cli_text) 
   
   # commercial puree with volume info
   puree_vol <- c(object@pumpkin, object@pumpkinPieMix, object@pineapple, object@pear, object@mandarine, object@mango, object@tomato, object@yellowCorn, object@applesauce)
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, autoVolume(puree_vol)), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, autoVolume(puree_vol)), FUN = cli_text)
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
   puree_no_vol <- c(object@puree, object@darkCherry, object@strawberry, object@banana)
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), FUN = cli_text)
   
   fruit <- c(object@fruit, object@durian)
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), sep = '') # one or more fruit_pc
-  cat(sprintf(
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), FUN = cli_text) # one or more fruit_pc
+  lapply(sprintf(
     fmt = '%s %.0f grams %s\n', 
     nm_[names(object@fruit_pc)], 
     object@fruit_pc,
@@ -1029,9 +1030,9 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
       object@fruit_pc / vapply(names(object@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_))
     ))
     #getPc(object, name = 'fruit') # dont know how to use this yet
-  ), sep = '') # one or more fruit_pc
+  ), FUN = cli_text) # one or more fruit_pc
   
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), sep = '') # one or more flavor
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), FUN = cli_text) # one or more flavor
   
   mapply(FUN = function(glue, gram) {
     cli_text(sprintf(fmt = '%s %.0f grams', glue, gram)) # no returned value
@@ -1046,54 +1047,54 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   grain_bean_nut_vol_ <- c(
     object@soybean
   )
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), sep = '') # one or more grain
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, autoVolume(grain_bean_nut_vol_)), sep = '') # one or more grain
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), FUN = cli_text) # one or more grain
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, autoVolume(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
   
   fat_vol_ <- c(
     object@fat,
     object@lard, object@tallow
   )
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, autoVolume(fat_vol_)), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, autoVolume(fat_vol_)), FUN = cli_text)
   
   halfpound_brick <- c(
     object@creamCheese
   )
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
-              style_bold(col_br_magenta(sprintf(fmt = '%.0fbricks', halfpound_brick/226.796)))), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
+              style_bold(col_br_magenta(sprintf(fmt = '%.0fbricks', halfpound_brick/226.796)))), FUN = cli_text)
   
   other <- c(
     object@vegetable,
     #object@cheese, 
     object@condensedMilk # dairy without volume info
   )
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), FUN = cli_text)
   
   dairy_vol_ <- c(# dairy with volume info
     object@cheese, 
     object@mascarpone, object@cottageCheese, object@yogurt, object@yogurtGreek, object@kefir, object@filmjolk,
     object@butter, object@ghee, object@evaporatedMilk, object@drymilk, object@milk, object@buttermilk, object@heavyCream, object@lightCream, object@sourCream
   )
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol_)], dairy_vol_, autoVolume(dairy_vol_)), sep = '')
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol_)], dairy_vol_, autoVolume(dairy_vol_)), FUN = cli_text)
   
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggYolk)], object@eggYolk, getPc(object, 'eggYolk')))
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')))
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggYolk)], object@eggYolk, getPc(object, 'eggYolk')), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')), FUN = cli_text)
   
   cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
-  cat(sprintf(fmt = '%s %.1f grams %s\n', 
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', 
               nm_[names(object@teabag)], 
               getTealoose(object@teabag), 
-              style_bold(col_br_magenta(sprintf(fmt = '%.2gbag', object@teabag)))), sep = '')
+              style_bold(col_br_magenta(sprintf(fmt = '%.2gbag', object@teabag)))), FUN = cli_text)
   
   allSugar <- c(
     object@sugar, object@brownSugar
   )
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, autoVolume(allSugar)), sep = '')
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, autoVolume(allSugar)), FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
     object@blackSesame
   )
-  cat(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), sep = '')
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), FUN = cli_text)
   
   # ingredients with volumn info
   has_vol_small <- c(
@@ -1112,8 +1113,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@blackRice, object@brownRice,
     object@syrup
   )
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, autoVolume(has_vol_small)), sep = '')
-  cat(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, autoVolume(has_vol_large)), sep = '')
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, autoVolume(has_vol_small)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, autoVolume(has_vol_large)), FUN = cli_text)
   
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
   
