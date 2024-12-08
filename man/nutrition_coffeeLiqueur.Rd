@@ -11,7 +11,6 @@
 \alias{Kikisi_coffee}
 \alias{CaffeBorghetti}
 \alias{Grind_espresso}
-\alias{Baileys_espresso}
 \alias{Sabroso_coffee}
 \alias{Patron_XO}
 \alias{Padrino_coffee}
@@ -31,8 +30,6 @@ Kikisi_coffee()
 CaffeBorghetti()
 
 Grind_espresso()
-
-Baileys_espresso()
 
 Sabroso_coffee()
 

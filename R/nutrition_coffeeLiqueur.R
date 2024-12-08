@@ -94,21 +94,7 @@ Grind_espresso <- function() new(
   AbV = .3
 )
 
-#' @rdname nutrition_coffeeLiqueur
-#' @export
-Baileys_espresso <- function() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
-  baileys = 'baileys-espresso-creme',
-  #url = 'www.baileys.com/en-us/products/baileys-espresso-creme' # no nutrition info
-  name = 'Espresso Cre\u0300me', alias = '\u5496\u5561\u5976\u6cb9\u9152',
-  totalwine = '151853750', usd = 28.99/750*100, # 750ml
-  servingGram = 100, # my guess
-  serving_ml = 100,
-  AbV = .17, 
-  alcohol = 13.5,
-  calorie = 313,
-  fat = 14, carbohydrate = 22, sugar = 19, protein = 3
-)
+
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export

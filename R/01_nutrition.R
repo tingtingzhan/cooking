@@ -883,6 +883,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   if (length(obj@pubchem)) cat(paste('\U1f4dd', c(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')
   
   if (length(obj@url)) cat(obj@url, sep = '\n')
+  
+  cat('\n')
 
 })
 
