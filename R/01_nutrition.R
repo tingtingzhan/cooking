@@ -334,8 +334,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
       x@call[[3L]]
     } else stop('then?')
-    x@name <- sprintf(fmt = '{.run [%s](cooking::%s())} %s',
-                     x@alias, as.character(cl), x@name)
+    x@name <- paste(make_ansi_style('orchid4')(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(cl))), x@name)
     x@alias <- character()
     x@call <- quote(`<UNDEFINED>`)
   }

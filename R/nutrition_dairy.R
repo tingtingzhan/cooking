@@ -166,7 +166,7 @@ PhiladelphiaNeufchatel_creamCheese <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   kraftheinzawayfromhome = '10021000616401',
   philadelphia = '00021000612475',
-  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cream Cheese',
+  name = 'Neufcha\u0302tel Cream Cheese', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a',
   walmart = '36647454', usd = 4.98/16, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   serving_oz = 1, 
@@ -271,7 +271,7 @@ Nancys_creamCheese <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   nancysyogurt = 'organic-natural-cream-cheese',
   wegmans = 260929L, usd = 4.59/227*30, # in store price cheaper than online, 2023-11-11
-  name = '\u5976\u6cb9\u5976\u916a Organic Cultured Cream Cheese',
+  name = 'Organic Cultured Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   servingGram = 30, servingTbsp = 2,
   calorie = 110,
   fat = 10, cholesterol = .025, sodium = .04, carbohydrate = 2, sugar = 1, protein = 1)

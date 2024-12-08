@@ -211,3 +211,11 @@ Stanley20 <- function(...) new(
   Class = 'tool',
   name = c(style_hyperlink(text = 'Stanley 20oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz')),
   ...)
+
+
+Staub_vertRoaster <- function(...) new(
+  Class = 'tool',
+  name = paste('\u94f8\u94c1\u70e4\u9e21\u67b6', style_hyperlink(text = 'Staub Vertical Chicken Roaster', url = 'https://www.zwilling.com/us/1200023/40509-339-0.html')),
+  ...)
+
+

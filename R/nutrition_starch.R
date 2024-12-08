@@ -16,7 +16,7 @@ BobsRedMill_potato_starch <- function() new( # very coarse!  I don't like!!
 Wegmans_corn_starch <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmans = 8127L, usd = 1.79/454*8, # 2023-11-11
-  name = '\u7389\u7c73\u6dc0\u7c89 Corn\U1f33d Starch',
+  name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
   servingGram = 8, 
   # servingTbsp = 1 # packaging
   servingTbsp = 8/10, # actual experiment 1tbsp = 10g

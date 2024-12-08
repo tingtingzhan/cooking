@@ -20,7 +20,7 @@ Runamok_ryeWhisky <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   runamok = 'whistlepig-rye-whiskey-barrel-aged-maple-syrup',
   whistlepigwhiskey = 'barrel-aged-maple-syrup',
-  name = 'Rye Whiskey Barrel-Aged Maple\U1f341 Syrup',
+  name = 'Rye Whiskey Barrel-Aged Maple\U1f341 Syrup', alias = '\u9152\u6876\u67ab\u7cd6',
   # full bottle 948g
   servingGram = 40, # my guess, yet
   serving_ml = 30,

@@ -70,18 +70,18 @@ Harney_LapSangSouChong <- function() new(
 
 Twinings_EarlGrey <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey', 
-  name = 'Earl Grey',
+  name = 'Earl Grey', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
   wegmans = 24150L, usd = 12.99/100, # 100pcs 2g-bag, Oct 2024
   servingGram = 2)
 
 Twinings_EarlGrey_loose <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey-loose-tea',
-  name = 'Earl Grey, Loose',
+  name = 'Earl Grey, Loose', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
   servingGram = 200, usd = 11.99) # 2023-11-09
 
 Twinings_strongEarlGrey <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey-strong',
-  name = 'Earl Grey, Extra Strong',
+  name = 'Earl Grey, Extra Strong', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
   wegmans = 13354L,
   webstaurant = '110TWNG13541',
   servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-16

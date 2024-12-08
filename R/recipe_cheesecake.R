@@ -166,26 +166,26 @@ raspberry_cheesecake <- function() new(
 #' @rdname cheesecake
 #' @export
 ryeWhisky_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Rye Whiskey\u9152\u6876\u67ab\u7cd6',
+  Class = 'cheesecake', alias_flavor = 'Rye Whiskey\u67ab\u7cd6',
   syrup = c(Runamok_ryeWhisky = 160), 
   pros = 'Xu Chang (100% Neufchatel)')
 
 #' @rdname cheesecake
 #' @export
 rum_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Rum\u9152\u6876\u67ab\u7cd6\u6d46',
+  Class = 'cheesecake', alias_flavor = 'Rum\u67ab\u7cd6\u6d46',
   syrup = c(Runamok_rum = 160), review = 'try')
 
 #' @rdname cheesecake
 #' @export
 brandy_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Apple Brandy\u9152\u6876\u67ab\u7cd6\u6d46',
+  Class = 'cheesecake', alias_flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
   syrup = c(Runamok_brandy = 160), review = 'try')
 
 #' @rdname cheesecake
 #' @export
 Bourbon_cheesecake_Crown <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Bourbon\u9152\u6876\u67ab\u7cd6\u6d46',
+  Class = 'cheesecake', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46',
   syrup = c(Crown_Bourbon = 200), # do NOT reduce syrup!
   water = 90, 
   # 22min too wet!! added 15min
@@ -297,7 +297,7 @@ Kahlua_cheesecake <- function() new(
 #' @rdname cheesecake
 #' @export
 Bourbon_cheesecake_Stonewall <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Bourbon\u9152\u6876\u67ab\u7cd6\u6d46(Stonewall)',
+  Class = 'cheesecake', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',
   syrup = c(Stonewall_Bourbon = 160),
   review = 'try')
 

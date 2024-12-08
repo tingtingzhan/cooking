@@ -65,7 +65,7 @@ Na2CO3 <- function() new(
 
 Wegmans_bakingPowder <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = '\u6ce1\u6253\u7c89 Baking Powder, 2x Acting',
+  name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
   wegmans = 23397L, usd = 1.99/383,
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   servingTsp = 1/8, servingGram = 230/383, sodium = .05)
@@ -74,7 +74,7 @@ Wegmans_bakingPowder <- function() new(
 TraderJoes_bakingPowder <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 172804L,
   brand = 'Trader Joe\'s\U1f1fa\U1f1f8', 
-  name = '\u6ce1\u6253\u7c89 Baking Powder, 2x Acting', 
+  name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   amazon = 'B00AAOVIB6', usd = 12.93/(2*383),
   servingGram = 230/383, # 0.6g 

@@ -39,14 +39,19 @@ setClass(Class = 'airfryer', contains = 'recipe', prototype = prototype(
   portion = c(
     'Duck\U1f986, whole' = 30 # confirmed
   ),
+  instruction = c(
+    'marinade in fridge, loosely covered, 2-3 days',
+    'wash off; pat dry',
+    'let stand 30min+ before carving'
+  ),
   PhilipsHD9867 = PhilipsHD9867(
-    treatment = c(
-      'marinade in fridge, loosely covered, 2-3 days',
-      'wash off; pat dry'
-    ),
     fahrenheit = 350,
-    minute = c('half duck\U1f986, skin face up' = 35),
-    cooling = 'let stand 30min+'
+    minute = c('\U1f389 half duck\U1f986, skin face up' = 35)
+  ),
+  Staub_vertRoaster = Staub_vertRoaster(
+    treatment = 'conventional oven',
+    fahrenheit = 350,
+    minute = c('\U1f389 whole duck\U1f986' = 90)
   )
 ))
 
@@ -68,6 +73,18 @@ cuminMontreal_sousvide <- function() new(
     'Lamb\U1f411 loin chop'
   )
 )
+
+
+cuminMontreal_airfryer <- function() new(
+  Class = 'airfryer',
+  alias_flavor = 'Cumin+Montreal',
+  cumin_tsp = 1,
+  spice_Tbsp = c(
+    McCormick_MontrealSteak = 1.5
+  ),
+  review = 'try on duck'
+)
+
 
 
 Montreal_sousvide1 <- function() new(

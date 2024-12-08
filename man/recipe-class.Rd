@@ -312,6 +312,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{PhilipsHD9867}}{\linkS4class{tool}}
 
+\item{\code{Staub_vertRoaster}}{\linkS4class{tool}}
+
 \item{\code{RobamCT763}}{\linkS4class{tool}}
 
 \item{\code{InstantPot}}{\linkS4class{tool}}
