@@ -326,6 +326,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     }
     x@alias <- switch(tolower(x@name), 'cream cheese' = {
       '\u5976\u6cb9\u5976\u916a'
+    }, 'ghee' = {
+      '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924'
     }, 'heavy cream' = {
       '\u91cd\u5976\u6cb9'
     }, character())

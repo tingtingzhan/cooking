@@ -506,7 +506,7 @@ tiramisuMix_Baileys <- function() new(
 tiramisuMix_Kahlua <- function() new(
   Class = 'tiramisuMix', 
   liqueur_tsp = c(Kahlua_coffee = 2*2), 
-  heavyCream_tsp = 1.5,
+  drymilk = c(Carnation = 30, Nido = 10),
   # date = as.Date('2024-05-13'), 
   review = 'try added fat!')
 
@@ -515,7 +515,7 @@ tiramisuMix_Kahlua <- function() new(
 tiramisuMix_FratelliVincenzi <- function() new(
   Class = 'tiramisuMix', 
   liqueur_Tbsp = c(FratelliVincenzi_espresso = 1), 
-  heavyCream_tsp = 1.5,
+  drymilk = c(Carnation = 30, Nido = 10),
   sugar_tsp = 1.5,
   # date = as.Date('2024-05-15'),
   review = 'try added fat & sugar')
@@ -525,7 +525,7 @@ tiramisuMix_FratelliVincenzi <- function() new(
 tiramisuMix_CaffeBorghetti <- function() new(
   Class = 'tiramisuMix', 
   liqueur_tsp = c(CaffeBorghetti = 3+1/4), 
-  heavyCream_tsp = 1.5,
+  drymilk = c(Carnation = 30, Nido = 10),
   sugar_tsp = 1.5,
   #date = as.Date('2024-05-13'),
   review = 'try added fat & sugar')
@@ -535,7 +535,7 @@ tiramisuMix_CaffeBorghetti <- function() new(
 tiramisuMix_Grind <- function() new(
   Class = 'tiramisuMix', 
   liqueur_Tbsp = c(Grind_espresso = 1), 
-  heavyCream_tsp = 1.5,
+  drymilk = c(Carnation = 30, Nido = 10),
   sugar_tsp = 1.5,
   pros = 'Old base: I love!!', date = as.Date('2024-05-18'))
 
@@ -543,7 +543,9 @@ tiramisuMix_Grind <- function() new(
 #' @export
 tiramisuMix_Sabroso <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_tsp = c(Sabroso_coffee = (1+5/8)*2),
+  drymilk = c(Carnation = 30, Nido = 10),
+  sugar_tsp = 1.5,
+  liqueur_tsp = c(Sabroso_coffee = 3.25),
   pros = 'Old base: I like', date = as.Date('2024-05-18'))
 
 
@@ -551,7 +553,7 @@ tiramisuMix_Sabroso <- function() new(
 tiramisuMix_CafeGranita <- function() new(
   Class = 'tiramisuMix',
   liqueur_tsp = c(CafeGranita_coffee = 4),
-  heavyCream_tsp = 1.5,
+  drymilk = c(Carnation = 30, Nido = 10),
   sugar_tsp = 1.5,
   review = 'try')
 
@@ -559,7 +561,7 @@ tiramisuMix_CafeGranita <- function() new(
 tiramisuMix_Kikisi <- function() new(
   Class = 'tiramisuMix',
   liqueur_tsp = c(Kikisi_coffee = 4),
-  heavyCream_tsp = 1.5,
+  drymilk = c(Carnation = 30, Nido = 10),
   sugar_tsp = 1.5,
   review = 'try'
 )

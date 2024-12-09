@@ -50,7 +50,7 @@ Plugra_butter <- function() new(
 Wuthrich_butter <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/')),
-  name = '\u9ec4\u6cb9 European Butter\U1f9c8',
+  name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   webstaurant = '999RE3120', usd = 7.99/(16*2),
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 110,
@@ -61,7 +61,8 @@ Wuthrich_butter <- function() new(
 
 Lucerne_European_butter <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = 'Lucerne', name = '\u9ec4\u6cb9 European Butter\U1f9c8',
+  brand = 'Lucerne', 
+  name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   acme = 960493010L, usd = 2.99/16,
   serving_oz = 8/16, servingTbsp = 1,
   calorie = 100,
@@ -74,7 +75,7 @@ Minerva_Amish_butter <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   # wegmans = 43730L, # this is the salted version
   brand = c(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
-  name = '\u9ec4\u6cb9 Amish Butter\U1f9c8',
+  name = 'Amish Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
   webstaurant = '874880039', usd = 92.49/6/(2*16),
   serving_oz = 8/16, servingTbsp = 1,
@@ -88,7 +89,7 @@ Minerva_Amish_butter <- function() new(
 LandOLakes_butter <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   landolakes = 'butter-spreads/unsalted-butter',
-  name = '\u9ec4\u6cb9 Butter\U1f9c8',
+  name = 'Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   serving_oz = 8/16, servingTbsp = 1,
   calorie = 100,
   fat = 226.796/16*.8, # on package 11g
@@ -101,8 +102,16 @@ LandOLakes_butter <- function() new(
 
 WegmansOrganic_ghee <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 258519L,
-  name = 'Ghee',
+  name = 'Ghee', 
   usd = 7.99/213*15,
   servingGram = 15, servingTbsp = 1, 
-  calorie = 130,
-  fat = 15)
+  calorie = 130, fat = 15)
+
+
+Nanak_ghee <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], costco = '100444109',
+  name = 'Ghee', brand = c(style_hyperlink(text = 'Nanak\U1f1fa\U1f1f8', url = 'https://nanakfoods.com/products/ghee')),
+  usd = 24.99/1587.57*14,
+  servingGram = 14, servingTbsp = 1, 
+  calorie = 120, fat = 14) 
+
