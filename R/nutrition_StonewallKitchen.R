@@ -20,14 +20,14 @@ Stonewall_maple <- function() new(
 
 Stonewall_blueberrySyrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 170802L,
-  name = '\u84dd\u8393\u7cd6\u6d46 Wild Maine Blueberry\U1fad0 Syrup',
+  name = 'Wild Maine Blueberry\U1fad0 Syrup', alias = '\u84dd\u8393\u7cd6\u6d46',
   usd = 8.95/250*60, # 2023-11-11
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
   addedSugar = 34)
 
 Stonewall_raspberrySyrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 170804L,
-  name = '\u8986\u76c6\u5b50\u7cd6\u6d46 Raspberry Syrup',
+  name = 'Raspberry Syrup', alias = '\u8986\u76c6\u5b50\u7cd6\u6d46',
   # full bottle 580g
   usd = 9.95/250*60, # 2023-11-11
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
@@ -42,7 +42,7 @@ Stonewall_fig <- function() new(
 
 Stonewall_figWalnut <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 161014L,
-  name = '\u6838\u6843\u65e0\u82b1\u679c\u9171 Fig & Walnut Butter',
+  name = 'Fig & Walnut Butter', alias = '\u6838\u6843\u65e0\u82b1\u679c\u9171',
   servingGram = 15, servingTbsp = 1,
   usd = 9.50/361*15,
   calorie = 40,

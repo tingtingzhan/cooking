@@ -64,7 +64,7 @@ blueberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_b
 
 #' @rdname kefir
 #' @export
-figWalnut_goatKefir <- function() new(Class = 'goatKefir', alias_flavor = 'Fig & Walnut', flavor = c(Stonewall_figWalnut = 25), pros = 'super nice!', date = as.Date('2024-05-16'))
+figWalnut_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnut = 25), pros = 'super nice!', date = as.Date('2024-05-16'))
 
 
 

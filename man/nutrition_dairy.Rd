@@ -42,6 +42,10 @@
 \alias{LandOLakes_whippedHeavyCream}
 \alias{Lucerne_lightCream}
 \alias{Lucerne_heavyCream}
+\alias{TraderJoes_goat_kefir}
+\alias{Meyenberg_goat_kefir}
+\alias{GreenValley_kefir}
+\alias{Siggis_filmjolk}
 \title{Dairy Products}
 \usage{
 FageTotal0_yogurtGreek()
@@ -123,6 +127,14 @@ LandOLakes_whippedHeavyCream()
 Lucerne_lightCream()
 
 Lucerne_heavyCream()
+
+TraderJoes_goat_kefir()
+
+Meyenberg_goat_kefir()
+
+GreenValley_kefir()
+
+Siggis_filmjolk()
 }
 \description{
 Dairy Products
