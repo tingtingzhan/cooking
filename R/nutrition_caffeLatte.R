@@ -13,7 +13,7 @@
 Starbucks_caffeLatte <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 407L,
   name = 'Caff\u00e8 Latte',
-  servingGram = 470, serving_floz = 16, # 473.176ml
+  servingGram = 470, serving_floz = 16,
   #caffeine 150 mg*
   calorie = 190, 
   fat = 7, cholesterol = .030, sodium = .170, carbohydrate = 19, sugar = 18, protein = 13)

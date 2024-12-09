@@ -37,7 +37,7 @@ GreenValley_kefir <- function() new(
   brand = c(style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir')),
   name = '\u4f4e\u8102\u725b\u5976\u9152 Lowfat Kefir',
   wegmans = 227007L, usd = 6.99/32*8,
-  # full bottle (with cap): 1086g, 946ml
+  # full bottle (with cap): 1086g, 32floz
   # empty bottle (with cap): 59g
   servingGram = (1086-59)/32*8, servingCup = 1, # 8floz
   calorie = 120,
@@ -56,4 +56,4 @@ Siggis_filmjolk <- function() new(
   calorie = 60,
   cholesterol = .005, sodium = .115, carbohydrate = 9, sugar = 7, protein = 6,
   superior = c('Meyenberg_goat_kefir', 'GreenValley_kefir'),
-  review = 'too sour and alcoholic')
+  review = 'too sour')

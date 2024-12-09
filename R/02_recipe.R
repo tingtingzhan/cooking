@@ -666,7 +666,6 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
   x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne_lightCream')
   x <- combineVol(x, which = 'sourCream', name1 = 'Daisy_sourCream')
-  x <- combineVol(x, which = 'yogurt', name1 = 'Stonyfield_yogurt')
   
   x <- meatName(x, animal = 'pork')
   x <- meatName(x, animal = 'beef')

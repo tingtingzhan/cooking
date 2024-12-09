@@ -11,9 +11,10 @@ NULL
 FageTotal0_yogurtGreek <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0')),
-  name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
+  name = 'Nonfat Greek Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
   servingGram = 170, # sold at Costco, 3lb, 1360g
   servingCup = 3/4, # packaging
+  calorie = 90,
   sodium = .065, sugar = 5, protein = 18,
   fdc = 170903L, water = 170*.836)
 
@@ -23,9 +24,10 @@ FageTotal0_yogurtGreek <- function() new(
 MembersMark_yogurtGreek <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   sams = 'prod23131577', usd = 4.38/1130*170, # sold at Sams, 2.5lb
-  name = '\u8131\u8102\u5e0c\u814a\u9178\u5976 Nonfat Greek Yogurt',
+  name = 'Nonfat Greek Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
   servingGram = 170, 
   servingCup = 3/4,
+  calorie = 100,
   cholesterol = .01, sodium = .055, sugar = 6, protein = 18,
   fdc = 170903L, water = 170*.836)
 
@@ -35,9 +37,9 @@ SimpleTruth_yogurt <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   url = 'https://www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
   brand = 'Simple Truth Organic', 
-  name = 'Low-Fat Yogurt',
-  alias = '\u4f4e\u8102\u9178\u5976',
+  name = 'Low-Fat Yogurt', alias = '\u4f4e\u8102\u9178\u5976',
   servingGram = 170, servingCup = 2/3,
+  calorie = 120,
   fat = 2.5, sodium = .110, sugar = 12, protein = 8,
   fdc = 171284L, water = 170*.879)
 
@@ -45,8 +47,9 @@ SimpleTruth_yogurt <- function() new(
 #' @rdname nutrition_dairy
 #' @export
 Stonyfield_yogurt <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.stonyfield.com/products/nonfat-yogurt-plain-32-oz/',
-  brand = 'Stonyfield Organic', name = '\u9178\u5976 Yogurt',
+  Class = 'nutrition', call = match.call()[[1L]], 
+  stonyfield = 'nonfat-yogurt-plain-32-oz',
+  name = 'Nonfat Yogurt', alias = '\u8131\u8102\u9178\u5976',
   wegmans = 33829L, usd = 4.99/907*170,
   servingGram = 170, servingCup = 3/4,
   cholesterol = .005, sodium = .12, sugar = 7, protein = 7,
@@ -58,19 +61,19 @@ Stonyfield_yogurt <- function() new(
 Nancys_yogurt <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nancysyogurt = 'organic-100-grass-fed-yogurt',
-  name = '\u9178\u5976 Organic 100% Grass-Fed Yogurt',
-  # Nancy's yogurt has a very pleasant signature flavor!!!
+  name = 'Organic 100% Grass-Fed Yogurt', alias = '\u9178\u5976',
   wegmans = 224506L, usd = 5.99/680*170,
   servingGram = 170, 
   servingCup = 3/4, # no label
   fat = 6, sodium = .115, cholesterol = .025, sugar = 11, protein = 7,
-  fdc = 171284L, water = 170*.879)
+  fdc = 171284L, water = 170*.879,
+  review = 'has a very pleasant signature flavor')
 
 #' @rdname nutrition_dairy
 #' @export
 UpstateFarms_buttermilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 237692L,
-  brand = 'Upstate Farms', name = '\u916a\u6d46 Whole Buttermilk',
+  brand = 'Upstate Farms', name = 'Whole Buttermilk', alias = '\u916a\u6d46',
   # https://www.upstatefarms.com/products # no whole version!!
   servingGram = 240, servingCup = 1,
   fat = 8, cholesterol = .03, sodium = .22, sugar = 13, protein = 9,
@@ -80,10 +83,22 @@ UpstateFarms_buttermilk <- function() new(
 
 #' @rdname nutrition_dairy
 #' @export
+NatureByNature_buttermilk <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Nature By Nature')), 
+  name = 'Low-Fat Buttermilk', alias = '\u4f4e\u8102\u916a\u6d46',
+  servingGram = 240, servingCup = 1,
+  calorie = 80,
+  fat = .5, cholesterol = .005, sodium = .24, carbohydrate = 8, sugar = 1, protein = 7,
+  water = floor(240 - .5 - .005 - .24 - 8 - 7)
+)
+
+#' @rdname nutrition_dairy
+#' @export
 OakFarms_buttermilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
-  name = '\u916a\u6d46 Bulgarian\U1f1e7\U1f1ec Buttermilk',
+  name = 'Bulgarian\U1f1e7\U1f1ec Buttermilk', alias = '\u916a\u6d46',
   servingGram = 240, servingCup = 1,
   calorie = 160,
   fat = 8, cholesterol = .035, sodium = .25, carbohydrate = 13, sugar = 12, protein = 9,
@@ -96,10 +111,12 @@ OakFarms_buttermilk <- function() new(
 #' @export
 Carnation_evaporatedMilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], nestle = '11002753',
-  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = '\u6de1\u5976 Evaporated Milk',
-  walmart = '10291864', usd = 1.08/354*30,
-  # 354ml, full can 422g, empty can 46g,
-  servingGram = (422 - 46)/354*30, servingTbsp = 2,
+  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
+  name = 'Evaporated Milk', alias = '\u6de1\u5976',
+  walmart = '10291864', usd = 1.72/12,
+  # 12floz, full can 422g, empty can 46g,
+  servingGram = (422 - 46)/12, serving_floz = 1, #servingTbsp = 2, # 12floz in total
+  calorie = 40,
   fat = 2, sugar = 3, sodium = .03, protein = 2)
 
 # https://www.walmart.com/ip/Nestle-Carnation-Lowfat-2-Evaporated-Milk-Vitamins-A-and-D-Added-12-fl-oz/10804669?from=/search
@@ -108,10 +125,12 @@ Carnation_evaporatedMilk <- function() new(
 #' @export
 CarnationFatFree_evaporatedMilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  walmart = '1363902922', usd = 6.88/354*30, # 2023-11-11
-  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = '\u8131\u8102\u6de1\u5976 Fat Free Evaporated Milk',
+  walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
+  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
+  name = 'Fat Free Evaporated Milk', alias = '\u8131\u8102\u6de1\u5976',
   # fullweight = 431, emptyweight = 46,
-  servingGram = (431-46)/354*30, servingTbsp = 2,
+  servingGram = (431-46)/12, serving_floz = 1, #servingTbsp = 2,
+  calorie = 25,
   sodium = .035, sugar = 3, protein = 2)
 
 
@@ -358,18 +377,19 @@ TraderJoesLight_sourCream <- function() new( # no filler
 #' @export
 Wegmans_whole_milk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 171265L,
-  wegmans = 19907L,
-  name = '\u5168\u8102\u725b\u5976 Vitamin D, Whole Milk',
+  wegmans = 26105632L, usd = 3.19/16, # 1 gal
+  name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
+  calorie = 150,
   water = 250*.881, 
-  fat = 8, sodium = .115, sugar = 12, protein = 8)
+  fat = 8, cholesterol = .025, sodium = .115, carbohydrate = 12, sugar = 12, protein = 8)
 
 #' @rdname nutrition_dairy
 #' @export
 WegmansOrganic_whole_milk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 171265L, 
-  wegmansorganic = 9975L,
-  name = '\u5168\u8102\u725b\u5976 Vitamin D, Whole Milk',
+  wegmansorganic = 9975L, usd = 6.99/16, # 1 gal
+  name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
   water = 250*.881, 
   calorie = 150,
@@ -379,7 +399,7 @@ WegmansOrganic_whole_milk <- function() new(
 #' @export
 Horizon_wholeDHA_milk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = 'Organic Whole Milk with DHA Omega-3',
+  name = 'Organic Whole Milk with DHA Omega-3', alias = '\u5168\u8102\u725b\u5976',
   horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
   servingGram = 250, servingCup = 1,
   water = 250*.881, 
@@ -412,7 +432,7 @@ Wegmans_heavyCream <- function() new(
   name = 'Heavy Cream',
   servingGram = 15, 
   servingTbsp = 1, # packaging
-  usd = 6.29/946*15,
+  usd = 6.29/64, # 1floz = 2Tbsp; 32floz in total
   calorie = 50,
   fat = 6, cholesterol = .02, sodium = .005, water = 15 * .577) 
 
@@ -423,6 +443,7 @@ WholeFoods365_heavyCream <- function() new( # no filler
   Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b07qf6f984',
   name = 'Heavy Cream', 
   servingGram = 15, servingTbsp = 1,
+  calorie = 50,
   fat = 6, cholesterol = .015, water = 15 * .577)
 
 #' @rdname nutrition_dairy
@@ -440,10 +461,11 @@ TraderJoes_heavyCream <- function() new( #
 #' @export
 NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(url = 'https://www.naturalbynaturedairy.com/heavy-cream', text = 'Nature By Nature')), 
+  brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Nature By Nature')), 
   name = 'Heavy Cream',
   servingGram = 15, servingTbsp = 1,
-  fat = 6, water = 15 * .577)
+  calorie = 60,
+  fat = 6, cholesterol = .015, water = 15 * .577)
 
 
 #' @rdname nutrition_dairy
@@ -451,7 +473,7 @@ NatureByNature_heavyCream <- function() new( # no filler, sold at Giant
 LandOLakes_whippedHeavyCream <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   landolakes = 'whipping-cream-and-half-half/aerosol-whipped-cream',
-  name = '\u6253\u53d1\u91cd\u5976\u6cb9 Whipped Heavy Cream',
+  name = 'Whipped Heavy Cream', alias = '\u6253\u53d1\u91cd\u5976\u6cb9',
   costcoBiz = '100284038',
   servingGram = 6, servingTbsp = 2,
   fat = 2, cholesterol = .01, sugar = 1)
@@ -459,6 +481,7 @@ LandOLakes_whippedHeavyCream <- function() new(
 if (FALSE) {
   diagnose(
     LandOLakes_whippedHeavyCream,
+    Lucerne_heavyCream,
     Wegmans_heavyCream
   )
 }
@@ -478,7 +501,7 @@ if (FALSE) {
 Lucerne_lightCream <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Light Cream',
-  lucerne = 960044744L, usd = 3.19/473*14.79,
+  lucerne = 960044744L, usd = 3.19/32,
   servingGram = 15, servingTbsp = 1,
   calorie = 30,
   water = 15*.635,
@@ -491,13 +514,10 @@ Lucerne_heavyCream <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Heavy Cream',
   fdc = 170859L,
-  lucerne = 136150034L, usd = 3.19/473*14.79, # disappeared?
+  lucerne = 136150034L, usd = 3.19/32, # disappeared?
   servingGram = 240/16, servingTbsp = 1, # actual experiment: 1 cup = 240g
   calorie = 50,
   water = 15*.577,
   fat = 5, cholesterol = .02, sodium = .005, carbohydrate = 1)
 
-if (FALSE) {
-  diagnose(Lucerne_heavyCream, Wegmans_heavyCream)
-}
 

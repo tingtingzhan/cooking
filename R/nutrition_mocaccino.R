@@ -57,7 +57,7 @@ WilliamsSonoma_mocha <- function() new(
 Starbucks_mocha <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 408L,
   name = 'Caff\u00e8 Mocha',
-  servingGram = 470, serving_floz = 16, # 473.176ml
+  servingGram = 470, serving_floz = 16,
   #caffeine 175 mg*
   calorie = 370, 
   fat = 15, cholesterol = .045, sodium = .150, carbohydrate = 43, sugar = 35, protein = 14)
@@ -68,7 +68,7 @@ Starbucks_mocha <- function() new(
 Starbucks_mochaFrappuccino <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 426L,
   name = 'Mocha Frappuccino',
-  servingGram = 470, serving_floz = 16, # 473.176ml
+  servingGram = 470, serving_floz = 16,
   calorie = 370,
   # Caffeine 100 mg*
   fat = 15, cholesterol = .045, sodium = .220, carbohydrate = 54, sugar = 51, protein = 5)
@@ -252,9 +252,9 @@ Nestle_cocoSupreme <- function() new(
 #' @export
 Starbucks_mochaSauce <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  walmart = '903031815', usd = 8.43/354*30,
+  walmart = '903031815', usd = 8.43/12, # out of stock
   brand = 'Starbucks', name = 'Mocha Sauce',
-  servingGram = 30, servingTbsp = 2, # 30ml
+  servingGram = 30, serving_floz = 1, # servingTbsp = 2, # 12floz
   calorie = 100,
   fat = .5, carbohydrate = 23, sugar = 19, protein = 1)
 

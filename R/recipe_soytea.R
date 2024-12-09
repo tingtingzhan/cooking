@@ -5,11 +5,12 @@
 #' @title \linkS4class{soytea} Recipes
 #' 
 #' @description
-#' Soymilk with black tea.
+#' Black tea soaked in \linkS4class{soymilk}, slightly sweetened.
 #' 
 #' @examples
 #' EarlGrey_soytea()
 #' chai_soytea()
+#' Ceylon_soytea()
 #' 
 #' @name soytea
 #' @aliases soytea-class

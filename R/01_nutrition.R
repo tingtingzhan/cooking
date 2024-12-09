@@ -113,6 +113,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot starbucks_hot,starbucks_iced \link[base]{integer} scalars
 #' @slot stassentea \link[base]{character} scalar
 #' @slot stonewall \link[base]{integer} scalar
+#' @slot stonyfield \link[base]{character} scalar
 #' @slot swiftmeats \link[base]{character} scalar
 #' @slot swissmiss \link[base]{character} scalar
 #' @slot thaikitchen \link[base]{character} scalar
@@ -249,6 +250,7 @@ setClass(Class = 'nutrition', slots = c(
   starbucks_iced = 'integer',
   stassentea = 'character',
   stonewall = 'integer',
+  stonyfield = 'character',
   swiftmeats = 'character',
   swissmiss = 'character',
   thaikitchen = 'character',
@@ -519,6 +521,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://www.stassentea.com/shop-now/%s', x@stassentea), text = 'Stassen\U1f1f1\U1f1f0'))
     } else if (length(x@stonewall)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.stonewallkitchen.com/%d.html', x@stonewall), text = 'Stonewall Kitchen\U1f1fa\U1f1f8'))
+    } else if (length(x@stonyfield)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.stonyfield.com/products/%s', x@stonyfield), text = 'Stonyfield\U1f1fa\U1f1f8'))
     } else if (length(x@swiftmeats)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://swiftmeats.com/products/%s', x@swiftmeats), text = 'Swift\U1f1fa\U1f1f8'))
     } else if (length(x@swissmiss)) {

@@ -180,6 +180,8 @@ Nutrition information.
 
 \item{\code{stonewall}}{\link[base]{integer} scalar}
 
+\item{\code{stonyfield}}{\link[base]{character} scalar}
+
 \item{\code{swiftmeats}}{\link[base]{character} scalar}
 
 \item{\code{swissmiss}}{\link[base]{character} scalar}

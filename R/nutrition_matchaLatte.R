@@ -35,7 +35,7 @@ TraderJoes_matchaLatte <- function() new(
 Starbucks_matchaLatte <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 468L,
   name = 'Matcha\U1f375 Latte',
-  servingGram = 450, serving_floz = 16, # 473.176 ml. not sure about weight..
+  servingGram = 450, serving_floz = 16,
   usd = 4.95, # Spring 2024
   calorie = 240,
   fat = 7, cholesterol = .025, sodium = .16, sugar = 32, protein = 12)
@@ -45,8 +45,7 @@ Starbucks_matchaLatte <- function() new(
 Starbucks_matchaFrappuccino <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 439L,
   name = 'Matcha\U1f375 Frappuccino',
-  servingGram = 450, 
-  serving_floz = 16, # 473.176 ml. not sure about weight..
+  servingGram = 450, serving_floz = 16,
   usd = 5.45, # Spring 2024
   calorie = 420,
   fat = 16, cholesterol = .050, sodium = .240, carbohydrate = 62, sugar = 61, protein = 6)

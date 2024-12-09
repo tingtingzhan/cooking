@@ -16,10 +16,11 @@ chai_soytea()
 Ceylon_soytea()
 }
 \description{
-Soymilk with black tea.
+Black tea soaked in \linkS4class{soymilk}, slightly sweetened.
 }
 \examples{
 EarlGrey_soytea()
 chai_soytea()
+Ceylon_soytea()
 
 }

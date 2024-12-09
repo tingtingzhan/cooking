@@ -8,6 +8,7 @@
 \alias{Stonyfield_yogurt}
 \alias{Nancys_yogurt}
 \alias{UpstateFarms_buttermilk}
+\alias{NatureByNature_buttermilk}
 \alias{OakFarms_buttermilk}
 \alias{Carnation_evaporatedMilk}
 \alias{CarnationFatFree_evaporatedMilk}
@@ -54,6 +55,8 @@ Stonyfield_yogurt()
 Nancys_yogurt()
 
 UpstateFarms_buttermilk()
+
+NatureByNature_buttermilk()
 
 OakFarms_buttermilk()
 

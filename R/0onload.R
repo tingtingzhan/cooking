@@ -31,6 +31,7 @@
     } else if (length(x@beet)) {
       .08
     } else .035, 
+    tiramisu_ = .04,
     marinade = .04,
     milktea_ = .05,
     matchaLatte_ = .04, # perfect! 2024 late summer
@@ -176,6 +177,7 @@
     matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
+    tiramisuMix = .05,
     riceMousse = .05, 
     beanPaste = .05,
     crepeCake = .07,
@@ -352,7 +354,6 @@
     mocaccinoMix =, mocaccino_ = .17, # well tested
     cheesecake = .21, # hypothetical
     caffeLatteMix =, caffeLatte_ = 1.3,
-    tiramisuMix = 2.2,
     NA_real_)
   
   ginger <- function(x) switch(
@@ -464,7 +465,6 @@
   
   alcohol2cocoa <- function(x) switch(
     class(x),
-    tiramisuMix = 1.3,
     NA_real_)
     
   water2flour <- function(x) switch(
