@@ -429,7 +429,6 @@ setClass(Class = 'milkteaMix', contains = 'drinkmix', prototype = prototype(
   alias_class = '\u5976\u8336',
   drymilk = 40, 
   brownSugar_tsp = 2, # 1tsp too bland; 1Tbsp too sweet
-  #water95 = 560, 
   Stanley20 = Stanley20(treatment = c(
     'add half of boiling water to powders, whisk until froth',
     'add rest of boiling water, whisk',

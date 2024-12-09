@@ -8,7 +8,7 @@
 Ippodo_ikuyo <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha175512', ippodojpn = 'matcha105033', ippodousa = 'ikuyo-100',
-  name = '\u5e7e\u4e16\u306e\u6614 Ikuyo',
+  name = 'Ikuyo', alias = '\u5e7e\u4e16\u306e\u6614',
   servingGram = 2, servingTbsp = 2/7, # actual 1Tbsp = 7g
   #servingTsp = 1, # packaging
   usd = 50/100*2, jpy = 3300/100*2, # global site, shipping excluded
@@ -96,7 +96,7 @@ maeda_matcha <- function() new(
 Ippodo_sayaka <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha173512', ippodojpn = 'matcha103644', ippodousa = 'sayaka-100g',
-  name = '\u660e\u6614 Sayaka',
+  name = 'Sayaka', alias = '\u660e\u6614',
   servingGram = 2, servingTbsp = 2/7, # actual 1Tbsp = 7g
   #servingTsp = 1, # packaging
   usd = 75/100*2, jpy = 6000/100*2,
