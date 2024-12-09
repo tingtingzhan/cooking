@@ -2,6 +2,24 @@
 
 #' @title Coffee Liqueur
 #' 
+#' @examples
+#' diagnose(
+#'   Baileys_tiramisu,
+#'   Baileys_espresso,
+#'   Kahlua_coffee,
+#'   Kahlua_especial,
+#'   CafeGranita_coffee,
+#'   FratelliVincenzi_espresso,
+#'   Kikisi_coffee,
+#'   CaffeBorghetti,
+#'   Grind_espresso,
+#'   Sabroso_coffee,
+#'   Patron_XO,
+#'   Padrino_coffee,
+#'   Amigos3_mocha
+#' )
+#' 
+#' @keywords internal
 #' @name nutrition_coffeeLiqueur
 #' @aliases coffeeLiqueur-class
 #' @export

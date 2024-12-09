@@ -97,9 +97,11 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
   #alias_class = '\u91cd\u4e73\u916a\u86cb\u7cd5',
   alias_class = 'NY Cheesecake',
   creamCheese_brick = c(
-    Nancys = 1, PhiladelphiaNeufchatel = 3
-    #PhiladelphiaNeufchatel = 4
-    #Nancys = 4
+    #PhiladelphiaNeufchatel = 4 # fat 15.5%, sodium 3.2-per-mille
+    Nancys = 1, PhiladelphiaNeufchatel = 3 # fat 17.8%, sodium 2.6-per-mille
+    #Nancys = 2, PhiladelphiaNeufchatel = 2 # fat 20.2%, sodium 2-per-mille
+    #Nancys = 4 # fat 25%, sodium 1.1-per-mille
+    #Philadelphia = 4 # fat 22.7%, sodium 2.8-per-mille
   ),
   starch_cup = c(Wegmans_corn = 1/4),
   egg_pc = 2,
@@ -118,7 +120,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
     program = 'Steam Bake (Steam-&-Baking Tray)',
     fahrenheit = 300, 
     minute = c(
-      'Silicone Cupcake, 2.75in' = 14, # 15min minor cracks
+      'cupcake' = 14, # 15min minor cracks
       'Emile Henry 9in, crustless' = 22, # 25min minor cracks
       'Emile Henry 9in, cookie crust' = 22 # 20min center not completely set
     )
@@ -166,20 +168,21 @@ raspberry_cheesecake <- function() new(
 #' @rdname cheesecake
 #' @export
 ryeWhisky_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Rye Whiskey\u67ab\u7cd6',
+  Class = 'cheesecake',
   syrup = c(Runamok_ryeWhisky = 160), 
+  date = as.Date('2023-12-01'),
   pros = 'Xu Chang (100% Neufchatel)')
 
 #' @rdname cheesecake
 #' @export
 rum_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Rum\u67ab\u7cd6\u6d46',
-  syrup = c(Runamok_rum = 160), review = 'try')
+  Class = 'cheesecake',
+  syrup = c(Runamok_rum = 150), review = 'try')
 
 #' @rdname cheesecake
 #' @export
 brandy_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
+  Class = 'cheesecake', #alias_flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
   syrup = c(Runamok_brandy = 160), review = 'try')
 
 #' @rdname cheesecake
@@ -193,9 +196,11 @@ Bourbon_cheesecake_Crown <- function() new(
 
 
 tiramisu_cheesecake <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Tiramisu\u0300',
+  Class = 'cheesecake',
   # syrup = c(Kahlua_coffee = 230), sugar = numeric(), water = numeric(), #100 - 230*.441, # too high alcohol
-  liqueur = c(Kahlua_coffee = 120), water = 100 - 120*.441, sugar = 50,
+  liqueur = c(Kahlua_coffee = 80), 
+  water = 100 - 80*.441, 
+  sugar = 65,
   cons = 'dont try, I dont think it will be huge success')
 
 

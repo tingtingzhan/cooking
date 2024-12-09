@@ -293,56 +293,43 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
-nutrition_name <- function(x) {
-  
-  if (length(x@name_glue)) return(x@name_glue)
-  
-  if (length(x@AbV)) {
-    x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
-  }
-  
-  if (length(x@brand)) {
-    #return(trimws(sprintf(fmt = '%s \033[38;5;166m%s\033[0m', x@name, x@brand))) 
-    # do not know how to do customized ANSI color by RGB
-    return(trimws(paste(x@name, style_bold(make_ansi_style('sienna')(x@brand)))))
-  } 
-  
-  return(x@name)
-  
-}
-
-
-
 setMethod(f = initialize, signature = 'nutrition', definition = function(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
-  # name
-  if (!length(x@alias) & length(x@name)) {
-    if (length(x@name) != 1L) {
-      #print(unclass(x))
-      #print(x@name)
-      stop('here')
-    }
-    x@alias <- switch(tolower(x@name), 'cream cheese' = {
-      '\u5976\u6cb9\u5976\u916a'
-    }, 'ghee' = {
-      '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924'
-    }, 'heavy cream' = {
-      '\u91cd\u5976\u6cb9'
-    }, character())
+  if (length(x@AbV)) {
+    if (!length(x@alcohol)) x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
+    x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
+    x@AbV <- numeric()
   }
   
-  if (length(x@alias)) {
-    cl <- if (is.symbol(x@call)) {
-      x@call
-    } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
-      x@call[[3L]]
-    } else stop('then?')
-    x@name <- paste(make_ansi_style('orchid4')(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(cl))), x@name)
-    x@alias <- character()
-    x@call <- quote(`<UNDEFINED>`)
+  # name
+  if (length(x@name)) {
+    
+    if (!length(x@alias)) {
+      x@alias <- switch(tolower(x@name), 'cream cheese' = {
+        '\u5976\u6cb9\u5976\u916a'
+      }, 'ghee' = {
+        '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924'
+      }, 'heavy cream' = {
+        '\u91cd\u5976\u6cb9'
+      }, character())
+    }
+    
+    if (length(x@alias)) {
+      cl <- if (is.symbol(x@call)) {
+        x@call
+      } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
+        x@call[[3L]]
+      } else stop('then?')
+      x@call <- quote(`<UNDEFINED>`)
+      x@name_glue <- paste(make_ansi_style('orchid4')(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(cl))), x@name)
+      x@name <- paste(make_ansi_style('orchid4')(x@alias), x@name) # after `@name_glue <-` :)
+      x@alias <- character()
+    } else x@name_glue <- x@name
+    
   }
+  
   
   # serving weight
   if (length(x@serving_oz)) {
@@ -571,6 +558,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
   
+  if (length(x@brand)) {
+    x@brand <- c(style_bold(make_ansi_style('sienna')(x@brand)))
+  }
+  
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
   if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp` and `@servingTsp`')
   if (vol[1L]) {
@@ -594,11 +585,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   
   if (!length(x@sugar) && length(x@addedSugar)) {
     x@sugar <- x@addedSugar
-  }
-  
-  if (!length(x@alcohol) && length(x@AbV)) {
-    x@alcohol <- x@servingGram * x@AbV * .78927
-    # google abv to alcohol by weight
   }
   
   cost_ <- c(
@@ -793,7 +779,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   obj <- object
   
   cat('\n')
-  cli_text(nutrition_name(obj))
+  cli_text(paste(c(obj@name_glue, obj@brand), collapse = ' '))
   cat('\n')
   
   #cat('Nutrition Facts\n\n')

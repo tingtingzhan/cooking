@@ -37,8 +37,8 @@ nutrition_ <- function(..., dots = list(...)) {
   #machine <- lapply(dots, FUN = slot, name = 'machine')
   #attr(ret, which = 'machine') <- machine[lengths(machine, use.names = FALSE) > 0L]
   
-  attr(ret, which = 'name') <- vapply(dots, FUN = nutrition_name, FUN.VALUE = '')
-  
+  rownames(ret) <- vapply(dots, FUN = function(i) paste(c(i@name, i@brand), collapse = ' '), FUN.VALUE = '')
+  attr(ret, which = 'glue') <- vapply(dots, FUN = function(i) paste(c(i@name_glue, i@brand), collapse = ' '), FUN.VALUE = '')
   class(ret) <- 'nutrition_'
   return(ret)
   
@@ -54,14 +54,10 @@ print.nutrition_ <- function(x, ...) {
   # remove all-0 columns
   ret1 <- ret0[, colMeans(ret0 == 0) != 1]
   
-  ret2 <- lapply(seq_len(ncol(ret1)), FUN = function(i) {
+  ret <- do.call(cbind, args = lapply(seq_len(ncol(ret1)), FUN = function(i) {
     sprintf_bincode(max(ret1[,i]))(ret1[,i])
-  })
-  
-  ret <- do.call(cbind, args = ret2)
-  #dimnames(ret) <- list(rownames(ret1), show_endpoint(colnames(ret1)))
-  dimnames(ret) <- list(attr(x, which = 'name', exact = TRUE), show_endpoint(colnames(ret1)))
-
+  }))
+  dimnames(ret) <- list(rownames(ret1), show_endpoint(colnames(ret1)))
   print_ANSI_matrix(ret)
   cat('\n')
   return(invisible(ret))

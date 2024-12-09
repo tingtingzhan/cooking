@@ -4,12 +4,10 @@
 \alias{diagnose}
 \title{diagnose}
 \usage{
-diagnose(..., dots = list(...))
+diagnose(...)
 }
 \arguments{
 \item{...}{objects convertible to \linkS4class{recipe} class}
-
-\item{dots}{a \link[base]{list} of objects convertible to \linkS4class{recipe} class}
 }
 \description{
 ..

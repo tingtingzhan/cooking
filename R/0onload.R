@@ -193,7 +193,7 @@
     shrimpfillCantonese = .14, 
     shrimpfill_garlicHerb = .15, 
     mousse = .15,
-    cheesecake = if (length(x@pumpkin)) .16 else .17, # 3:1 mixed cheese
+    cheesecake = if (length(x@pumpkin)) .16 else .18, # 3:1 mixed cheese
     lava = if (length(x@blackSesame)) .17 else if (length(x@coconut)) .08 else NA_real_,
     cookie = if (length(x@blackSesame)) {
       .28

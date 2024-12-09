@@ -543,6 +543,7 @@ get_flavor_ <- function(x) {
 
 
 setMethod(f = initialize, signature = 'recipe', definition = function(.Object, ...) {
+  
   x <- callNextMethod(.Object, ...)
   
   # processing 'numeric'
@@ -916,12 +917,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       '\u732a\u8089'
     } else if (length(x@ginger)) {
       '\u59dc\u9999\U1fada'
-    } else if (length(x@liqueur) == 1L) {
-      nutrition_name(nutrition(do.call(what = names(x@liqueur), args = list())))
-      # if (length(liqueur_nm <- names(x@liqueur))) {
-      #  if (any(endsWith(liqueur_nm, suffix = '_coffee'))) {
-      #    'Tiramisu\u0300'
-      #  } else character()
+    } else if (length(x@liqueur)) {
+      get_flavor_(names(x@liqueur))
     } else if (length(x@sauce)) {
       if (any(grepl('tomyum', x = names(x@sauce)))) {
         '\u51ac\u9634'
@@ -985,7 +982,6 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   
   cat('\n')
   y <- nutrition.recipe(x = object)
-  #show(y)
   cli_text(style_bold(col_grey(y@name)))
   cat('\n')
   
@@ -994,7 +990,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   }
     
   y_info <- attr(y, which = 'info', exact = TRUE)
-  nm_ <- attr(y_info, which = 'name', exact = TRUE)
+  nm_ <- attr(y_info, which = 'glue', exact = TRUE)
   
   meat_seafood <- c(
     object@shrimp,

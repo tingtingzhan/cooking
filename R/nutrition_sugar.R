@@ -26,7 +26,7 @@ Domino_10x <- function() new(
 Domino_granulated <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   domino = 'granulated-sugar',# Ingredients: cane sugar, 
-  name = '\u767d\u7802\u7cd6 Granulated Sugar',
+  name = 'Granulated Sugar', alias = '\u767d\u7802\u7cd6',
   walmart = '219588515', usd = 5.92/1590*8,
   wegmans = 23344L,
   servingGram = 8, servingTsp = 2, # packaging

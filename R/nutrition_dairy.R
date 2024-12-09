@@ -1,6 +1,15 @@
 
 #' @title Dairy Products
 #' 
+#' @examples
+#' diagnose(
+#'  Nancys_creamCheese,
+#'  Philadelphia_creamCheese,
+#'  OrganicValley_creamCheese,
+#'  TraderJoes_creamCheese,
+#'  Tillamook_creamCheese
+#' )
+#' 
 #' @keywords internal
 #' @name nutrition_dairy
 NULL
@@ -162,7 +171,7 @@ Philadelphia_creamCheese <- function() new(
   philadelphia = '00021000612239',
   name = 'Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
-  serving_oz = 1,
+  serving_oz = 1, servingTbsp = 2,
   calorie = 100,
   fat = 9, cholesterol = .03, sodium = .11, carbohydrate = 1, sugar = 1, protein = 2)
 
@@ -223,6 +232,17 @@ GreatValueNeufchatel_creamCheese <- function() new(
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
+
+#' @rdname nutrition_dairy
+#' @export
+Tillamook_creamCheese <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  brand = c(style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese')),
+  name = 'Cream Cheese',
+  servingTbsp = 2, serving_oz = 1,
+  calorie = 100,
+  fat	= 10, cholesterol	= .03, sodium = .105, carbohydrate = 2, sugar = 2, protein = 2)
+
 #' @rdname nutrition_dairy
 #' @export
 OrganicValleyNeufchatel_creamCheese <- function() new(
@@ -257,7 +277,7 @@ TraderJoes_creamCheese <- function() new(
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   serving_oz = 1, servingTbsp = 2, 
   calorie = 90,
-  fat = 9, cholesterol = .03, sodium = .095, carbohydrate = 2, sugar = 1)
+  fat = 9, cholesterol = .03, sodium = .095, carbohydrate = 2, sugar = 1, protein = 1)
 
 
 
@@ -291,7 +311,7 @@ Nancys_creamCheese <- function() new(
   nancysyogurt = 'organic-natural-cream-cheese',
   wegmans = 260929L, usd = 4.59/227*30, # in store price cheaper than online, 2023-11-11
   name = 'Organic Cultured Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
-  servingGram = 30, servingTbsp = 2,
+  serving_oz = 1, servingTbsp = 2,
   calorie = 110,
   fat = 10, cholesterol = .025, sodium = .04, carbohydrate = 2, sugar = 1, protein = 1)
 

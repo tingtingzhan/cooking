@@ -7,13 +7,18 @@
 #' 
 #' @param ... objects convertible to \linkS4class{recipe} class
 #' 
-#' @param dots a \link[base]{list} of objects convertible to \linkS4class{recipe} class
+# @param dots a \link[base]{list} of objects convertible to \linkS4class{recipe} class
 #' 
 #' @importFrom stats median.default
 #' @export
-diagnose <- function(..., dots = list(...)) {
+diagnose <- function(...) { # , dots = list(...)
   
-  dots <- lapply(dots, FUN = nutrition)
+  # dots <- lapply(dots, FUN = nutrition) # mess up with call later
+  dots <- lapply(as.list(match.call())[-1L], FUN = function(x) {
+    # (x = as.list(match.call())[-1L][[1L]])
+    return(eval(call(name = 'nutrition', x)))
+    do.call(what = 'nutrition', args = list(x)) # seems equivalent
+  })
   names(dots) <- vapply(dots, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   
   cat('\n')

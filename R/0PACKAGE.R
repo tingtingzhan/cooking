@@ -26,6 +26,11 @@
 # grey: '\033[90m'
 
 if (FALSE) {
+  cat('\033[38;5;166mabc\033[0m') 
+  # do not know how to do customized ANSI color by RGB using \CRANpkg{cli} functions
+}
+
+if (FALSE) {
   #?cli::cli_text # does not have a returned value
   cli::cli_text('Tingting\'s {.run [soymilk](cooking::soymilk())}')
   

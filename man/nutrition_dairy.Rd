@@ -19,6 +19,7 @@
 \alias{PhiladelphiaNeufchatel_creamCheeseSpread}
 \alias{LucerneNeufchatel_creamCheese}
 \alias{GreatValueNeufchatel_creamCheese}
+\alias{Tillamook_creamCheese}
 \alias{OrganicValleyNeufchatel_creamCheese}
 \alias{OrganicValley_creamCheese}
 \alias{TraderJoes_creamCheese}
@@ -82,6 +83,8 @@ LucerneNeufchatel_creamCheese()
 
 GreatValueNeufchatel_creamCheese()
 
+Tillamook_creamCheese()
+
 OrganicValleyNeufchatel_creamCheese()
 
 OrganicValley_creamCheese()
@@ -138,5 +141,15 @@ Siggis_filmjolk()
 }
 \description{
 Dairy Products
+}
+\examples{
+diagnose(
+ Nancys_creamCheese,
+ Philadelphia_creamCheese,
+ OrganicValley_creamCheese,
+ TraderJoes_creamCheese,
+ Tillamook_creamCheese
+)
+
 }
 \keyword{internal}
