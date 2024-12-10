@@ -128,20 +128,23 @@ LuckyTaro_durian <- function() new(
 
 Wegmans_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 10230L,
-  name = '\u83e0\u841d\u7f50\u5934 Crushed Pineapple\U1f34d',
+  name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
   servingGram = 122, servingCup = 1/2, 
-  sugar = 13, superior = 'Dole_pineapple')
+  calorie = 70,
+  carbohydrate = 16, sugar = 13, 
+  superior = 'Dole_pineapple')
 
-#' @rdname nutrition_fruit_vegetable
-#' @export
 Libbys_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmans = 20294L,
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
   name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
   servingGram = 122, servingCup = 1/2, 
-  sugar = 13, review = 'Don\'t buy. Chopped, not crushed. More expensive than Wegmans.')
+  carbohydrate = 17, sugar = 15, 
+  superior = 'Dole_pineapple')
 
+#' @rdname nutrition_fruit_vegetable
+#' @export
 Dole_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
@@ -156,45 +159,49 @@ Dole_pineapple <- function() new(
 
 Dole_sweetened_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(url = 'https://www.dolesunshine.com/us/en/products/canned-crushed-pineapple-in-heavy-syrup-20oz/', text = 'Dole\U1f33a')),
-  name = 'Pineapple\U1f34d in Heavy Syrup', alias = '\u83e0\u841d\u7f50\u5934',
+  dolesunshine = 'canned-crushed-pineapple-in-heavy-syrup-20oz/',
+  name = 'Pineapple\U1f34d in Heavy Syrup', alias = '\u52a0\u7cd6\u83e0\u841d\u7f50\u5934',
   servingGram = 123, servingCup = 1/2,
   # usd = /567*123,
-  water = 123-26, # looks like they only added sugar, but not evaporated water..
-  carbohydrate = 26, sugar = 25, addedSugar = 10)
+  calorie = 100,
+  water = 123-26,
+  carbohydrate = 26, sugar = 25, addedSugar = 10,
+  review = 'looks like they only added sugar, but not evaporated water',
+  superior = 'Dole_pineapple')
 
 
 DelMonte_pear <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/pears/sliced-pears-no-sugar-added')),
-  name = '\u68a8\u7f50\u5934 Sliced Pears\U1f350',
+  delmonte = 'fruits/pears/sliced-pears-no-sugar-added',
+  name = 'Sliced Pears\U1f350', alias = '\u68a8\u7f50\u5934',
   servingGram = 121, servingCup = 1/2,
-  water = 121 * 240/255, # tested with bao()
-  calorie = 40, sodium = .005, sugar = 7) 
+  water = 121-10-1, # 121 * 240/255, # tested with bao()
+  calorie = 40, 
+  sodium = .005, 
+  carbohydrate = 10, sugar = 7) 
 
 
 DelMonte_mandarine <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/mandarin-oranges/mandarin-oranges-no-sugar-added')),
-  name = '\u6a58\u5b50\u7f50\u5934 Mandarin Oranges\U1f34a',
+  delmonte = 'fruits/mandarin-oranges/mandarin-oranges-no-sugar-added',
+  name = 'Mandarin Oranges\U1f34a', alias = '\u6a58\u5b50\u7f50\u5934',
   servingGram = 123, servingCup = 1/2,
-  water = 123 * 240/245, # tested with bao()
+  water = 123-13-4-1, # 123 * 240/245, # tested with bao()
   calorie = 60, 
-  #sugar = 5, protein = 1 # packaging; add up to more than 100%
-  sugar = 123*5/245
-) 
+  carbohydrate = 13,
+  sugar = 5, # sugarAlcohol = 4, # slot not written yet
+  protein = 1) 
 
 
 DelMonte_peach <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8', url = 'www.delmonte.com/products/fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added')),
-  name = '\u9ec4\u6843 Yellow Cling Peaches\U1f351',
+  delmonte = 'fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added',
+  name = 'Yellow Cling Peaches\U1f351', alias = '\u9ec4\u6843\u7f50\u5934',
   servingGram = 121, servingCup = 1/2,
   calorie = 35,
-  water = 121* 240/255, # tested with bao()
-  #carbohydrate = 8, # add up to more than 100%
-  carbohydrate = 121* 15/255,
-  sugar = 7)
+  water = 121-8-1, # 121* 240/255, # tested with bao()
+  sodium = .005,
+  carbohydrate = 8, sugar = 7)
 
 Bruces_yam <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
@@ -207,7 +214,9 @@ Bruces_yam <- function() new(
 Wegmans_peanutButter <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 26774L,
   name = 'Peanut Butter',
-  servingTbsp = 2, servingGram = 32, fat = 16, sugar = 2, protein = 8)
+  servingTbsp = 2, servingGram = 32, 
+  calorie = 190,
+  fat = 16, carbohydrate = 7, sugar = 2, protein = 8)
 
 
 Wegmans_beet <- function() new(
@@ -350,32 +359,37 @@ Libbys_pumpkinPieMix <- function() new(
 
 Wegmans_tomato <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 109068L,
-  name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U1f345 Puree',
+  name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   servingGram = 63, servingCup = 1/4,
   sodium = .02, sugar = 3, protein = 1, 
   superior = 'WegmansOrganic_tomato')
 
 
+#' @rdname nutrition_fruit_vegetable
+#' @export
 WegmansOrganic_tomato <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmansorganic = 19227L, usd = 2.89/822*63, # instore should be cheaper
-  name = '\u897f\u7ea2\u67ff\u6ce5 Tomato\U1f345 Puree',
+  name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   servingGram = 63, servingCup = 1/4, 
   calorie = 25,
-  sodium = .02, sugar = 3, protein = 1, 
+  sodium = .02, carbohydrate = 6, sugar = 3, protein = 1, 
   water = 63 * 300/400)
 
 
+#' @rdname nutrition_fruit_vegetable
+#' @export
 Motts_applesauce <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce')),
-  name = '\u82f9\u679c\u6ce5 Applesauce\U1f34e No Sugar',
+  name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
   wegmans = 2450L, usd = 3.99/1300*123,
   # nutrition facts on bottle label (sold at Costco, Wegmans, etc), not from merchandise website
   servingGram = 123, servingCup = 1/2, 
-  water = 123*.8822,
-  sugar = 12)
+  calorie = 50,
+  water = 123-14-1, # 123*.8822#, # matches
+  carbohydrate = 14, sugar = 12)
 
 
 #ThriveMarket_apple <- function() new(
@@ -386,6 +400,8 @@ Motts_applesauce <- function() new(
 
 
 
+#' @rdname nutrition_fruit_vegetable
+#' @export
 Laura_soybean <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174270L,
   name = '\u9ec4\u8c46 Soy Bean', 

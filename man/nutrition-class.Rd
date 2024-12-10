@@ -78,6 +78,8 @@ Nutrition information.
 
 \item{\code{daisybrand}}{\link[base]{character} scalar}
 
+\item{\code{delmonte}}{\link[base]{character} scalar}
+
 \item{\code{dolesunshine}}{\link[base]{character} scalar}
 
 \item{\code{domino}}{\link[base]{character} scalar}

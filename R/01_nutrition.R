@@ -62,6 +62,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot clearwater \link[base]{character} scalar
 #' @slot countrytime \link[base]{character} scalar
 #' @slot daisybrand \link[base]{character} scalar
+#' @slot delmonte \link[base]{character} scalar
 #' @slot dolesunshine \link[base]{character} scalar
 #' @slot domino \link[base]{character} scalar
 #' @slot epicprovisions \link[base]{character} scalar
@@ -199,6 +200,7 @@ setClass(Class = 'nutrition', slots = c(
   clearwater = 'character',
   countrytime = 'character',
   daisybrand = 'character',
+  delmonte = 'character',
   dolesunshine = 'character',
   domino = 'character',
   epicprovisions = 'character',
@@ -373,6 +375,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/country-time/products/%s', x@countrytime), text = 'Country Time\U1f1fa\U1f1f8'))
     } else if (length(x@daisybrand)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.daisybrand.com/%s', x@daisybrand), text = 'Daisy\U1f1fa\U1f1f8'))
+    } else if (length(x@delmonte)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.delmonte.com/products/%s', x@delmonte), text = 'Del Monte\U1f1fa\U1f1f8'))
     } else if (length(x@dolesunshine)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.dolesunshine.com/us/en/products/%s', x@dolesunshine), text = 'Dole\U1f33a'))
     } else if (length(x@domino)) {
@@ -808,8 +812,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
     } else cat(sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * obj@sodium, format_ingredient_perc(obj, 'sodium')))
   }
   cat(sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', obj@carbohydrate, format_ingredient_perc(obj, 'carbohydrate')))
-  cat(sprintf(fmt = 'Sugar: %.4g grams %s\n', obj@sugar, format_ingredient_perc(obj, 'sugar')))
-  cat(sprintf(fmt = 'Added Sugar: %.4g grams %s\n', obj@addedSugar, format_ingredient_perc(obj, 'addedSugar')))
+  cat(sprintf(fmt = ' \u21ac Sugar: %.4g grams %s\n', obj@sugar, format_ingredient_perc(obj, 'sugar')))
+  cat(sprintf(fmt = ' \u21ac Added Sugar: %.4g grams %s\n', obj@addedSugar, format_ingredient_perc(obj, 'addedSugar')))
   cat(sprintf(fmt = 'Alcohol: %.4g grams %s\n', obj@alcohol, format_ingredient_perc(obj, 'alcohol')))
   cat(sprintf(fmt = 'Protein: %.3g grams %s\n', obj@protein, format_ingredient_perc(obj, 'protein')))
   

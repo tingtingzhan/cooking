@@ -2,13 +2,22 @@
 % Please edit documentation in R/nutrition_fruit_vegetable.R
 \name{nutrition_fruit_vegetable}
 \alias{nutrition_fruit_vegetable}
-\alias{Libbys_pineapple}
+\alias{Dole_pineapple}
 \alias{Libbys_pumpkin}
+\alias{WegmansOrganic_tomato}
+\alias{Motts_applesauce}
+\alias{Laura_soybean}
 \title{Fruit and Vegetable}
 \usage{
-Libbys_pineapple()
+Dole_pineapple()
 
 Libbys_pumpkin()
+
+WegmansOrganic_tomato()
+
+Motts_applesauce()
+
+Laura_soybean()
 }
 \description{
 Fruit and Vegetable

@@ -4,10 +4,8 @@
   
   # `x` is \linkS4class{recipe}
   
-  fn. <- function(x) switch(
-    class(x),
-    NA_real_)
-
+  fn. <- function(x) NA_real_
+  
   sugar <- function(x) switch(
     class(x), 
     spam = .006,

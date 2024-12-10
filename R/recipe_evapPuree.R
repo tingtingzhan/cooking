@@ -18,7 +18,7 @@ setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
 #' @export
 pineapple_evap <- function() new(
   Class = 'evap',
-  pineapple = 567*2,
+  pineapple = c(Dole_pineapple = 567*2),
   JoyoungCJA9U = JoyoungCJA9U(
     minute = 15+6,
     waterLost = 600
