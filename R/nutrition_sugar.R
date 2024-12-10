@@ -13,7 +13,7 @@
 Domino_10x <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch
-  name = '10x\u7cd6\u7c89 Sugar, Confectioners',
+  name = 'Sugar, Confectioners', alias = '10x\u7cd6\u7c89',
   bjs = 'domino-confectioners-sugar-4-lbs/3000000000000139695', usd = 5.29/(4*454)*30, # 2023-11-11
   wegmans = 54235L,
   servingGram = 30, 
