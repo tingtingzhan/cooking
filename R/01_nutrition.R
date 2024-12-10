@@ -147,6 +147,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot calorie \link[base]{numeric} scalar, calories per serving
 #' @slot water \link[base]{numeric} scalar, water (in grams) per serving
 #' @slot carbohydrate \link[base]{numeric} scalar, total carbohydrate (in grams) per serving
+#' @slot fiber \link[base]{numeric} scalar, dietary fiber (in grams) per serving
 #' @slot sugar \link[base]{numeric} scalar, sugar (in grams) per serving
 #' @slot addedSugar \link[base]{numeric} scalar, added sugar (in grams) per serving
 #' @slot fat \link[base]{numeric} scalar, fat (in grams) per serving
@@ -281,7 +282,7 @@ setClass(Class = 'nutrition', slots = c(
   calorie = 'numeric',
   water = 'numeric',
   carbohydrate = 'numeric',
-  sugar = 'numeric', addedSugar = 'numeric',
+  fiber = 'numeric', sugar = 'numeric', addedSugar = 'numeric',
   fat = 'numeric',
   cholesterol = 'numeric',
   sodium = 'numeric',
@@ -812,6 +813,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
     } else cat(sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * obj@sodium, format_ingredient_perc(obj, 'sodium')))
   }
   cat(sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', obj@carbohydrate, format_ingredient_perc(obj, 'carbohydrate')))
+  cat(sprintf(fmt = ' \u21ac Dietary Fiber: %.4g grams %s\n', obj@fiber, format_ingredient_perc(obj, 'fiber')))
   cat(sprintf(fmt = ' \u21ac Sugar: %.4g grams %s\n', obj@sugar, format_ingredient_perc(obj, 'sugar')))
   cat(sprintf(fmt = ' \u21ac Added Sugar: %.4g grams %s\n', obj@addedSugar, format_ingredient_perc(obj, 'addedSugar')))
   cat(sprintf(fmt = 'Alcohol: %.4g grams %s\n', obj@alcohol, format_ingredient_perc(obj, 'alcohol')))
@@ -895,7 +897,7 @@ format_ingredient_perc <- function(x, name) {
   x_ <- slot(x, name = name)
   if (!length(x_) || (x_ == 0)) return(character())
   pct <- x_ / x@servingGram
-  col_magenta(sprintf_bincode(pct)(pct))
+  style_bold(make_ansi_style('olivedrab')(sprintf_bincode(pct)(pct)))
 }
 
 

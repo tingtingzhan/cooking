@@ -155,7 +155,7 @@ Dole_pineapple <- function() new(
   servingGram = 122, servingCup = 1/2,
   calorie = 80,
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
-  carbohydrate = 18, sugar = 15, protein = 1)
+  carbohydrate = 18, fiber = 1, sugar = 15, protein = 1)
 
 Dole_sweetened_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
@@ -165,7 +165,7 @@ Dole_sweetened_pineapple <- function() new(
   # usd = /567*123,
   calorie = 100,
   water = 123-26,
-  carbohydrate = 26, sugar = 25, addedSugar = 10,
+  carbohydrate = 26, fiber = 2, sugar = 25, addedSugar = 10,
   review = 'looks like they only added sugar, but not evaporated water',
   superior = 'Dole_pineapple')
 
@@ -341,7 +341,7 @@ Libbys_pumpkin <- function() new(
   # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall
   servingGram = 122, servingCup = 1/2,
   calorie = 45,
-  fat = .5, sodium = .005, carbohydrate = 10, sugar = 5, protein = 1, 
+  fat = .5, sodium = .005, carbohydrate = 10, fiber = 5, sugar = 5, protein = 1, 
   fdc = 168450L,
   water = 122 * 240/300) # bao, I trust best
 

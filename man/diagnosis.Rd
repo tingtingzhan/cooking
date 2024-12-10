@@ -55,6 +55,8 @@ Cooked percentage ..
 
 \item{\code{carbohydrate}}{\linkS4class{equiv}}
 
+\item{\code{fiber}}{\linkS4class{equiv}}
+
 \item{\code{sugar}}{\linkS4class{equiv}}
 
 \item{\code{addedSugar}}{\linkS4class{equiv}}

@@ -20,6 +20,7 @@ nutrition_ <- function(..., dots = list(...)) {
     calorie = sum(v@calorie),
     water = sum(v@water), # sum(numeric()) returns 0
     carbohydrate = sum(v@carbohydrate),
+    fiber = sum(v@fiber),
     sugar = sum(v@sugar), 
     addedSugar = sum(v@addedSugar), 
     fat = sum(v@fat), 

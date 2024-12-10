@@ -210,7 +210,16 @@ pumpkin_cheesecake <- function() new(
   starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
   pumpkin = 500, brownSugar = 150, 
   pumpkinSpice_tsp = 1.75,
-  date = as.Date('2024-12-09'), pros = 'I love!')
+  date = as.Date('2024-12-09'), 
+  pros = c('perfect texture', 'perfect flavor'))
+
+
+tomato_cheesecake <- function() new(
+  Class = 'cheesecake',
+  water = numeric(), 
+  starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
+  tomato = 500, sugar = 150, 
+  review = 'try!!')
 
 
 

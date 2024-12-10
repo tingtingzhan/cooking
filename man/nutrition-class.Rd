@@ -232,6 +232,8 @@ Nutrition information.
 
 \item{\code{carbohydrate}}{\link[base]{numeric} scalar, total carbohydrate (in grams) per serving}
 
+\item{\code{fiber}}{\link[base]{numeric} scalar, dietary fiber (in grams) per serving}
+
 \item{\code{sugar}}{\link[base]{numeric} scalar, sugar (in grams) per serving}
 
 \item{\code{addedSugar}}{\link[base]{numeric} scalar, added sugar (in grams) per serving}

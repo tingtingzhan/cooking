@@ -75,6 +75,7 @@ nutrition.recipe <- function(x) {
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
   carbohydrate <- tmp['carbohydrate']
+  fiber <- tmp['fiber']
   sugar <- tmp['sugar'] - sum(x@sugarLost)
   addedSugar <- max(0, tmp['addedSugar'] - sum(x@sugarLost))
   sodium <- tmp['sodium']
@@ -115,6 +116,7 @@ nutrition.recipe <- function(x) {
     usd = unname(usd), # `recipe` already dealt with currency conversion
     calorie = if (calorie) calorie else numeric(),
     carbohydrate = if (carbohydrate) carbohydrate else numeric(),
+    fiber = if (fiber) fiber else numeric(),
     sugar = if (sugar) sugar else numeric(),
     addedSugar = if (addedSugar) addedSugar else numeric(),
     alcohol = if (alcohol) alcohol else numeric(),
@@ -199,6 +201,7 @@ nutrition.recipe <- function(x) {
     #water = new(Class = 'equiv', actual = if (waterCooked / total > .8) NULL else waterCooked / total, ideal = devrecipe$water(x)),
     water = new(Class = 'equiv', actual = waterCooked / total, ideal = devrecipe$water(x)),
     carbohydrate = new(Class = 'equiv', actual = carbohydrate / total, ideal = devrecipe$carbohydrate(x)),
+    fiber = new(Class = 'equiv', actual = fiber / total), #, ideal = devrecipe$carbohydrate(x)
     NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / total), # , ideal = devrecipe$NaHCO3(x)
     fat = new(Class = 'equiv', actual = fat / total, ideal = devrecipe$fat(x), margin = 1.2, ignore = .001),
     #cholesterol = new(Class = 'equiv', actual = cholesterol / total),
@@ -416,6 +419,7 @@ nutrition.recipe <- function(x) {
   attr(ret, which = 'creamcheeseDx') <- if (length(x@creamCheese)) new(
     Class = 'creamcheeseDx',
     water = new(Class = 'equiv', actual = water/sum(x@creamCheese), ideal = devrecipe$water2creamcheese(x)),
+    fiber = new(Class = 'equiv', actual = fiber/sum(x@creamCheese)), # , ideal = devrecipe$water2creamcheese(x)
     addedStarch = new(Class = 'equiv', actual = starch/sum(x@creamCheese)), #, ideal = devrecipe$addedSugar2cocoa(x)),
     eggYolk = new(Class = 'equiv', actual = x@eggYolk/sum(x@creamCheese)),
     eggWhite = new(Class = 'equiv', actual = x@eggWhite/sum(x@creamCheese))

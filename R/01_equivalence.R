@@ -149,6 +149,7 @@ setMethod(f = show, signature = 'equiv', definition = function(object) {
 #' 
 #' @slot water \linkS4class{equiv}
 #' @slot carbohydrate \linkS4class{equiv}
+#' @slot fiber \linkS4class{equiv}
 #' @slot sugar \linkS4class{equiv}
 #' @slot addedSugar \linkS4class{equiv}
 #' @slot sodium \linkS4class{equiv}
@@ -211,6 +212,7 @@ setClass(Class = 'recipeDx', slots = c(
   coconut = 'equiv',
   eggYolk = 'equiv',
   eggWhite = 'equiv',
+  fiber = 'equiv',
   sugar = 'equiv',
   addedSugar = 'equiv',
   yeast = 'equiv',

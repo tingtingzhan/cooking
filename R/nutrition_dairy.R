@@ -274,7 +274,7 @@ OrganicValley_creamCheese <- function() new(
   wegmans = 11914L, usd = 4.59/8,
   serving_oz = 1, servingTbsp = 2,
   calorie = 110,
-  fat = 10, cholesterol = 30, sodium = .1, 
+  fat = 10, cholesterol = .030, sodium = .1, 
   carbohydrate = 2, sugar = 1, protein = 2)
 
 
