@@ -2,21 +2,36 @@
 % Please edit documentation in R/recipe_other_pumpkin_cheesecake.R
 \name{pumpkinCheesecake_other}
 \alias{pumpkinCheesecake_other}
-\alias{pumpkin_cheesecake_NatashasKitchen}
-\alias{pumpkin_cheesecake_Junior}
-\alias{pumpkin_cheesecake_PreppyKitchen}
+\alias{Natasha_pumpkin_cheesecake}
+\alias{Junior_pumpkin_cheesecake}
+\alias{PreppyKitchen_pumpkin_cheesecake}
 \alias{Wegmans_pumpkin_cheesecake}
-\title{Other People's Pumpkin Cheesecake}
+\alias{CheesecakeFactory_pumpkin}
+\alias{BrianLagerstrom_burntBasque}
+\title{Other Peoples Pumpkin Cheesecake}
 \usage{
-pumpkin_cheesecake_NatashasKitchen()
+Natasha_pumpkin_cheesecake()
 
-pumpkin_cheesecake_Junior()
+Junior_pumpkin_cheesecake()
 
-pumpkin_cheesecake_PreppyKitchen()
+PreppyKitchen_pumpkin_cheesecake()
 
 Wegmans_pumpkin_cheesecake()
+
+CheesecakeFactory_pumpkin()
+
+BrianLagerstrom_burntBasque()
 }
 \description{
-Other People's Pumpkin Cheesecake
+..
+}
+\examples{
+diagnose(
+ pumpkin_cheesecake,
+ subtract(Junior_pumpkin_cheesecake, sugar = 170),
+ subtract(Natasha_pumpkin_cheesecake, brownSugar = 230),
+ subtract(PreppyKitchen_pumpkin_cheesecake, sugar = 140),
+ subtract(CheesecakeFactory_pumpkin, sugar = 12)
+)
 }
 \keyword{internal}

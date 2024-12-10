@@ -13,6 +13,7 @@
 \alias{Carnation_evaporatedMilk}
 \alias{CarnationFatFree_evaporatedMilk}
 \alias{Carnation_condensedMilk}
+\alias{Wegmans_goat_cheese}
 \alias{Philadelphia_creamCheese}
 \alias{Philadelphia_creamCheeseSpread}
 \alias{PhiladelphiaNeufchatel_creamCheese}
@@ -70,6 +71,8 @@ Carnation_evaporatedMilk()
 CarnationFatFree_evaporatedMilk()
 
 Carnation_condensedMilk()
+
+Wegmans_goat_cheese()
 
 Philadelphia_creamCheese()
 

@@ -107,16 +107,16 @@ Aya_crepe <- function() new(
 #' @rdname crepe
 #' @export
 Natasha_crepe <- function() new(
-  Class = 'recipe', author = 'Natasha', alias_flavor = 'Crepe',
-  youtube = 'uA4KRfE_MNM',
+  Class = 'recipe', 
+  natashaskitchen = c('uA4KRfE_MNM' = 'easy-crepe-recipe'), 
+  alias_flavor = 'Crepe',
   water = 118.3,  # ½ cup lukewarm water
   milk_cup = 1,
   egg_pc = 4,
   butter_Tbsp = 4,
   flour_cup = 1,
   sugar_Tbsp = 2,
-  salt_tsp = 1/2
-)
+  salt_tsp = 1/2)
 
 
 #' @rdname crepe

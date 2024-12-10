@@ -155,7 +155,7 @@
   
   creamcheese <- function(x) switch(
     class(x),
-    cheesecake = if (length(x@pumpkin)) .62 else .7,
+    cheesecake = if (length(x@pumpkin)) .5 else .7,
     NA_real_)
   
   carbohydrate <- function(x) switch(
@@ -227,7 +227,6 @@
     drinkmix = if (length(x@coffee) && length(x@syrup)) {
       .0028
     } else NA_real_,
-    cheesecake = .0025, # 3:1 mixed cheese
     # fishBall = .003, # obviously too salt
     beeffillLeeKumKee = .0025, # confirmed!
     geng = .0025, # .003 too salty

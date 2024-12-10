@@ -62,6 +62,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot clearwater \link[base]{character} scalar
 #' @slot countrytime \link[base]{character} scalar
 #' @slot daisybrand \link[base]{character} scalar
+#' @slot dolesunshine \link[base]{character} scalar
 #' @slot domino \link[base]{character} scalar
 #' @slot epicprovisions \link[base]{character} scalar
 #' @slot fleischmannsyeast \link[base]{integer} scalar
@@ -198,6 +199,7 @@ setClass(Class = 'nutrition', slots = c(
   clearwater = 'character',
   countrytime = 'character',
   daisybrand = 'character',
+  dolesunshine = 'character',
   domino = 'character',
   epicprovisions = 'character',
   fleischmannsyeast = 'integer',
@@ -371,6 +373,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/country-time/products/%s', x@countrytime), text = 'Country Time\U1f1fa\U1f1f8'))
     } else if (length(x@daisybrand)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.daisybrand.com/%s', x@daisybrand), text = 'Daisy\U1f1fa\U1f1f8'))
+    } else if (length(x@dolesunshine)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.dolesunshine.com/us/en/products/%s', x@dolesunshine), text = 'Dole\U1f33a'))
     } else if (length(x@domino)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.dominosugar.com/products/%s', x@domino), text = 'Domino\U1f1fa\U1f1f8'))
     } else if (length(x@epicprovisions)) {

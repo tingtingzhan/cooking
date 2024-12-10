@@ -358,6 +358,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{laofangu}}{\link[base]{character} scalar}
 
+\item{\code{natashaskitchen}}{\link[base]{character} scalar}
+
 \item{\code{nytimes}}{\link[base]{character} scalar}
 
 \item{\code{pino}}{\link[base]{character} scalar}

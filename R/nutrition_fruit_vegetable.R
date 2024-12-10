@@ -144,15 +144,24 @@ Libbys_pineapple <- function() new(
 
 Dole_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(url = 'dolesunshine.com/us/en/products/pantry/canned-fruit/', text = 'Dole\U1f33a')),
-  name = '\u83e0\u841d\u7f50\u5934 Pineapple\U1f34d in 100% Juice',
+  dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
+  name = 'Pineapple\U1f34d in 100% Juice', alias = '\u83e0\u841d\u7f50\u5934',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
+  wegmans = 53679L,
   servingGram = 122, servingCup = 1/2,
-  water = 122 * (240/270), # confirmed with bao()
-  #sugar = 15, # on package label, but add up to more than 122..
-  sugar = (122 * (30/270) - 1) * .99,
-  protein = 1)
+  calorie = 80,
+  water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
+  carbohydrate = 18, sugar = 15, protein = 1)
+
+Dole_sweetened_pineapple <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  brand = c(style_hyperlink(url = 'https://www.dolesunshine.com/us/en/products/canned-crushed-pineapple-in-heavy-syrup-20oz/', text = 'Dole\U1f33a')),
+  name = 'Pineapple\U1f34d in Heavy Syrup', alias = '\u83e0\u841d\u7f50\u5934',
+  servingGram = 123, servingCup = 1/2,
+  # usd = /567*123,
+  water = 123-26, # looks like they only added sugar, but not evaporated water..
+  carbohydrate = 26, sugar = 25, addedSugar = 10)
 
 
 DelMonte_pear <- function() new(
@@ -334,7 +343,7 @@ Libbys_pumpkinPieMix <- function() new(
   target = 'A-14886100', usd = 4.49/850*87,
   servingGram = 87, servingCup = 1/3, 
   calorie = 80,
-  water = 87 * 240/300, # using [Libbys_pumpkin] data
+  water = (87-16) * 240/300, # using [Libbys_pumpkin] data
   sodium = .11, sugar = 18, addedSugar = 16)
 
 
@@ -471,3 +480,14 @@ walnut <- function() new(
   servingGram = 100,
   calorie = 730,
   water = 3.14, protein = 14.6, fat = 69.7, carbohydrate = 10.9, sodium = .0025)
+
+
+
+Bossen_pineapple <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  name = 'Pineapple\U1f34d Concentrated Syrup', alias = '\u83e0\u841d\u7cd6\u6d46',
+  brand = c(style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new')),
+  webstaurant = '535SYPPINAPL',
+  usd = 12.93/2500*25,
+  # why all added sugar?
+  servingGram = 25, carbohydrate = 17, sugar = 17, addedSugar = 17)

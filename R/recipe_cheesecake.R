@@ -61,19 +61,11 @@
 #' 
 #' @examples
 #' 
-#' diagnose(
-#'  cheesecake(),
-#'  subtract(cheesecake_PreppyKitchen, sugar = 125),
-#'  subtract(Junior_original, sugar = 12),
-#'  subtract(Junior_cookbook, sugar = 230),
-#'  subtract(CheesecakeFactory_original, sugar = 18)
-#' )
-#' 
 #' # my recipes, huge success!!
 #' maple_cheesecake() # hit!
 #' raspberry_cheesecake() # hit!
 #' ryeWhisky_cheesecake() # hit!!!
-#' pumpkin_cheesecake() # just add a little more sugar!
+#' pumpkin_cheesecake() # confirmed!
 #' rum_cheesecake() # try next
 #' appleBrandy_cheesecake() # try next
 #' 
@@ -83,13 +75,6 @@
 #' # I don't like!!
 #' Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 #' 
-#' diagnose(
-#'  pumpkin_cheesecake,
-#'  subtract(pumpkin_cheesecake_Junior, sugar = 170),
-#'  subtract(pumpkin_cheesecake_NatashasKitchen, brownSugar = 230),
-#'  subtract(pumpkin_cheesecake_PreppyKitchen, sugar = 140),
-#'  subtract(CheesecakeFactory_pumpkin, sugar = 12)
-#' )
 #' @name cheesecake
 #' @aliases cheesecake-class
 #' @export
@@ -136,13 +121,6 @@ cheesecake <- function() new(
   sugar = 95, review = 'hypothetic model')
   
 
-#' @rdname cheesecake
-#' @export
-cheesecake_Nancy <- function() new(
-  Class = 'cheesecake', alias_flavor = 'Full Fat',
-  creamCheese_brick = c(Nancys = 4),
-  sugar = 90, review = 'hypothetic model')
-
 
 
 #' @rdname cheesecake
@@ -169,6 +147,16 @@ raspberry_cheesecake <- function() new(
 #' @rdname cheesecake
 #' @export
 ryeWhisky_cheesecake <- function() new(
+  Class = 'cheesecake',
+  starch = c(Argo_corn = 45), starch_cup = numeric(),
+  syrup = c(Runamok_ryeWhisky = 170), 
+  water = 150,
+  #date = as.Date('2023-12-01'),
+  pros = 'try again')
+
+
+
+ryeWhisky_cheesecake_LowWater <- function() new(
   Class = 'cheesecake',
   syrup = c(Runamok_ryeWhisky = 160), 
   date = as.Date('2023-12-01'),
@@ -219,12 +207,20 @@ tiramisu_cheesecake <- function() new(
 pumpkin_cheesecake <- function() new(
   Class = 'cheesecake',
   water = numeric(), 
-  starch_tsp = c(Wegmans_corn = 17), starch_cup = numeric(),
+  starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
   pumpkin = 500, brownSugar = 150, 
   pumpkinSpice_tsp = 1.75,
-  date = as.Date('2024-12-09'),
-  pros = 'I love!')
+  date = as.Date('2024-12-09'), pros = 'I love!')
 
+
+
+pineapple_cheesecake <- function() new(
+  Class = 'cheesecake',
+  water = numeric(),
+  starch_cup = c(Wegmans_corn = 1/3),
+  homemade = c(pineapple_evap = 500), 
+  review = 'try'
+)
 
 
 #' @rdname cheesecake
@@ -295,96 +291,4 @@ Bourbon_cheesecake_Stonewall <- function() new(
   Class = 'cheesecake', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',
   syrup = c(Stonewall_Bourbon = 160),
   review = 'try')
-
-
-#' @rdname cheesecake
-#' @export
-Junior_original <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 81705L, usd = 13.89/5,
-  juniorscheesecake = 'original-ny-plain-cheesecake',
-  name = 'Original Cheesecake',
-  servingGram = 136, 
-  calorie = 460,
-  fat = 33, cholesterol = .135, sodium = .38, carbohydrate = 30, sugar = 24, addedSugar = 22, protein = 7)
-
-
-#' @rdname cheesecake
-#' @export
-Junior_cookbook <- function() new(
-  Class = 'recipe', 
-  juniorscheesecakecookbook = 34L,
-  alias_flavor = 'Original Cheesecake',
-  creamCheese_brick = c(Philadelphia = 4),
-  sugar_cup = c(Domino_granulated = 1+2/3), 
-  starch_cup = c(Wegmans_corn = 1/4),
-  vanilla_Tbsp = 1,
-  egg_pc = 2,
-  heavyCream_cup = 3/4
-)
-
-#' @rdname cheesecake
-#' @export
-CheesecakeFactory_original <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
-  name = 'Original',
-  cheesecakefactoryfreezer = 'original-cheesecake', cheesecakefactorybakery = 'original-dome',
-  target = 'A-15382641', usd = 18.39/964*120,
-  servingGram = 120, 
-  fat = 24, cholesterol = .105, sodium = .33, sugar = 28, addedSugar = 27, protein = 6)
-
-#' @rdname cheesecake
-#' @export
-CheesecakeFactory_pumpkin <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
-  name = 'Pumpkin\U1f383',
-  cheesecakefactoryfreezer = 'pumpkin-cheesecake',
-  bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
-  usd = 16.99/6, # 6 serving's per container
-  servingGram = 123, 
-  fat = 25, cholesterol = .105, sodium = .26, sugar = 25, addedSugar = 23, protein = 5)
-
-#' @rdname cheesecake
-#' @export
-Junior_strawberrySwirl <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 23187893L,
-  brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
-  servingGram = 136, fat = 28, cholesterol = .11, sodium = .33, sugar = 29, protein = 6)
-
-
-
-
-
-
-
-
-
-#' @rdname cheesecake
-#' @export
-cappuccino_cheesecake_Junior = function() new(
-  Class = 'recipe', 
-  alias_flavor = 'Cappuccino Cheesecake',
-  creamCheese_brick = c(Philadelphia = 4),
-  coffee_Tbsp = 1,
-  boilingWater = 15,
-  sugar_cup = c(Domino_granulated = 1+2/3),
-  starch_cup = c(Wegmans_corn = 1/3),
-  vanilla_Tbsp = 1,
-  egg_pc = 2,
-  heavyCream_cup = 3/4,
-  juniorscheesecakecookbook = 42L)
-
-
-#' @rdname cheesecake
-#' @export
-cheesecake_PreppyKitchen <- function() new(
-  Class = 'recipe', alias_flavor = 'Cheesecake',
-  creamCheese_brick = c(Philadelphia = 3),
-  sugar = 200,
-  salt_tsp = 1/4,
-  vanilla_tsp = 2,
-  egg_pc = 3,
-  sourCream_cup = 1/2,
-  preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
-
-
 

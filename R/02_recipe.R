@@ -219,6 +219,7 @@
 #' @slot just1cookbook \link[base]{character} scalar
 #' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
 #' @slot laofangu \link[base]{character} scalar
+#' @slot natashaskitchen \link[base]{character} scalar
 #' @slot nytimes \link[base]{character} scalar
 #' @slot pino \link[base]{character} scalar
 #' @slot preppykitchen \link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe
@@ -257,6 +258,7 @@ setClass(Class = 'recipe', slots = c(
   just1cookbook = 'character',
   kingarthur = 'character',
   laofangu = 'character',
+  natashaskitchen = 'character',
   nytimes = 'character',
   pino = 'character',
   preppykitchen = 'character', # must len-1
@@ -494,7 +496,7 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   x_brick <- if (has_brick) slot(addNameLen1(x, which = ._brick, name1 = name1), name = ._brick) # else NULL
   if (which %in% c(
     'starch', 'oil', 
-    'butter', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 
+    'butter', 'cheese', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 
     'filmjolk', 'ghee', 'heavyCream', 'kefir', 'mascarpone', 'milk',
     'yogurt', 'yogurtGreek'
   )) {
@@ -538,7 +540,16 @@ meatName <- function(x, animal = stop('')) {
 
 
 get_flavor_ <- function(x) {
-  paste(vapply(x, FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
+  xval <- lapply(x, FUN = function(i) eval(call(i)))
+  paste(vapply(xval, FUN = function(i) {
+    if (inherits(i, 'nutrition')) {
+      i@name
+    } else if (inherits(i, 'recipe')) {
+      #i@alias_flavor
+      i@alias
+    } else stop('what happens?')
+  }, FUN.VALUE = ''), collapse = ' + ')
+  #paste(vapply(x, FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
 }
 
 
@@ -651,7 +662,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   x <- combineVol(x, which = 'butter', name1 = 'Kerrygold')
   x <- combineVol(x, which = 'ghee', name1 = 'WegmansOrganic')
-  x <- addNameLen1(x, which = 'cheese')
+  x <- combineVol(x, which = 'cheese')
   x <- combineVol(x, which = 'mascarpone', name1 = 'BelGioioso')
   x <- combineVol(x, which = 'cottageCheese', name1 = 'Daisy')
   x <- combineVol(x, which = 'yogurtGreek', name1 = 'FageTotal0')
@@ -813,6 +824,16 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     x@kingarthur <- character()
   }
   
+  if (length(x@natashaskitchen)) {
+    if (length(x@author)) stop('@author will be overwritten by @natashaskitchen')
+    if (length(x@natashaskitchen) > 1L) stop('only allow len-1 @natashaskitchen')
+    x@author <- paste(
+      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@natashaskitchen)), text = 'Natasha\'s')),
+      c(style_hyperlink(url = sprintf(fmt = 'https://natashaskitchen.com/%s/', x@natashaskitchen), text = 'Kitchen'))
+    )
+    x@natashaskitchen <- character()
+  } 
+  
   if (length(x@nytimes)) {
     if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
     x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
@@ -933,6 +954,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       get_flavor_(names(tea))
     } else if (length(x@spice)) {
       get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
+    } else if (length(x@homemade)) {
+      get_flavor_(names(x@homemade))
     } else switch(
       class(x), 
       matchaLatte_ =, matchaGoatLatte_ = {
@@ -1058,7 +1081,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@creamCheese
   )
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
-              style_bold(col_br_magenta(sprintf(fmt = '%.0fbrick', halfpound_brick/226.796)))), FUN = cli_text)
+              style_bold(col_br_magenta(sprintf(fmt = '%.2gbrick', halfpound_brick/226.796)))), FUN = cli_text)
   
   other <- c(
     object@vegetable,

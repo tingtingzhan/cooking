@@ -165,6 +165,16 @@ Carnation_condensedMilk <- function() new(
 
 #' @rdname nutrition_dairy
 #' @export
+Wegmans_goat_cheese <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  wegmans = 44383L, usd = 8.49/8,
+  name = 'Goat\U1f410 Cheese, Mild', alias = '\u7f8a\u5976\u916a',
+  serving_oz = 1,
+  calorie = 80,
+  fat = 6, cholesterol = .025, sodium = .06, carbohydrate = 1, sugar = 1, protein = 5)
+
+#' @rdname nutrition_dairy
+#' @export
 Philadelphia_creamCheese <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   kraftheinzawayfromhome = '10021000616005',
@@ -439,6 +449,16 @@ Wawa_2perc_milk <- function() new(
 
 # Water content of heavy cream is 57.7%, 
 # fdc = 170859L
+
+Byrne_heavyCream <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  brand = c(style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = 'https://www.byrnedairy.com/creams-near-ny-state/')),
+  name = 'Heavy Cream 40%', alias = '\u91cd\u5976\u6cb9',
+  # nutrition from https://www.fooducate.com/product/Byrne-Dairy-Heavy-Whipping-Cream/61EE9DAB-F8E3-1A30-4818-B69A923F5C70
+  servingGram = 15, servingTbsp = 1,
+  calorie = 50,
+  fat = 6, cholesterol = .015, water = 15 * .577)
+
 
 #' @rdname nutrition_dairy
 #' @export
