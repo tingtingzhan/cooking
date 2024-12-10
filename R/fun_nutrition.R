@@ -167,6 +167,7 @@ nutrition.recipe <- function(x) {
     drymilk = new(Class = 'equiv', actual = drymilk / total_raw),
     tea = new(Class = 'equiv', actual = tea / total_raw),
     creamCheese = new(Class = 'equiv', actual = sum(x@creamCheese) / total_raw),
+    puree = new(Class = 'equiv', actual = puree / total_raw), 
     matcha = new(Class = 'equiv', actual = x@matcha / total_raw),
     beet = new(Class = 'equiv', actual = x@beet / total_raw),
     ginger = new(Class = 'equiv', actual = x@ginger / total_raw),
@@ -284,7 +285,7 @@ nutrition.recipe <- function(x) {
     
   } else {
     
-    attr(ret, which = 'baker') <- if (flour) {
+    attr(ret, which = 'baker') <- if (flour && !inherits(x, what = 'cheesecake')) {
       new(
         Class = 'baker',
         puree = new(Class = 'equiv', actual = puree / flour),
@@ -410,6 +411,14 @@ nutrition.recipe <- function(x) {
     sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', actual = sugar / x@cocoa) else new(Class = 'equiv'),
     addedSugar = new(Class = 'equiv', actual = addedSugar / x@cocoa, ideal = devrecipe$addedSugar2cocoa(x)),
     coffee = new(Class = 'equiv', actual = x@coffee / x@cocoa, ideal = devrecipe$coffee2cocoa(x))
+  )
+  
+  attr(ret, which = 'creamcheeseDx') <- if (length(x@creamCheese)) new(
+    Class = 'creamcheeseDx',
+    water = new(Class = 'equiv', actual = water/sum(x@creamCheese), ideal = devrecipe$water2creamcheese(x)),
+    addedStarch = new(Class = 'equiv', actual = starch/sum(x@creamCheese)), #, ideal = devrecipe$addedSugar2cocoa(x)),
+    eggYolk = new(Class = 'equiv', actual = x@eggYolk/sum(x@creamCheese)),
+    eggWhite = new(Class = 'equiv', actual = x@eggWhite/sum(x@creamCheese))
   )
   
   attr(ret, which = 'info') <- info

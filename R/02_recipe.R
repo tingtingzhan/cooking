@@ -790,7 +790,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@juniorscheesecakecookbook)) {
     if (length(x@juniorscheesecakecookbook) > 1L) stop('only allow len-1 @juniorscheesecakecookbook')
-    x@author <- c(style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook, page %d', x@juniorscheesecakecookbook)))
+    x@author <- c(style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x@juniorscheesecakecookbook)))
     x@juniorscheesecakecookbook <- integer()
   }
   
@@ -898,7 +898,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       '\u68a8\U1f350'
     } else if (length(x@pineapple)) {
       '\u83e0\u841d\U1f34d'
-    } else if (length(x@pumpkin)) {
+    } else if (length(x@pumpkin) || length(x@pumpkinPieMix)) {
       # '\u5357\u74dc\U1f383'
       'Pumpkin\U1f383'
     } else if (length(x@redKidneyBean)) {
@@ -1058,7 +1058,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@creamCheese
   )
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
-              style_bold(col_br_magenta(sprintf(fmt = '%.0fbricks', halfpound_brick/226.796)))), FUN = cli_text)
+              style_bold(col_br_magenta(sprintf(fmt = '%.0fbrick', halfpound_brick/226.796)))), FUN = cli_text)
   
   other <- c(
     object@vegetable,
@@ -1155,7 +1155,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat('\n')
   
   # need to write a [show] method for \linkS4class{mixWheatFlour}
-  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx')]
+  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx', 'creamcheeseDx')]
   has_attr_dx <- (lengths(attr_dx, use.names = FALSE) > 0L)
   lapply(attr_dx[has_attr_dx], FUN = show)
   #if (!any(has_attr_dx)) {

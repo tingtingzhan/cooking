@@ -12,6 +12,7 @@
 \alias{cornBaker-class}
 \alias{riceBaker-class}
 \alias{cocoaDx-class}
+\alias{creamcheeseDx-class}
 \alias{cookedTexture-class}
 \alias{cookedFlavor-class}
 \alias{uncooked-class}

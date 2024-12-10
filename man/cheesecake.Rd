@@ -10,7 +10,7 @@
 \alias{raspberry_cheesecake}
 \alias{ryeWhisky_cheesecake}
 \alias{rum_cheesecake}
-\alias{brandy_cheesecake}
+\alias{appleBrandy_cheesecake}
 \alias{Bourbon_cheesecake_Crown}
 \alias{pumpkin_cheesecake}
 \alias{coffee_cheesecake}
@@ -25,11 +25,8 @@
 \alias{CheesecakeFactory_original}
 \alias{CheesecakeFactory_pumpkin}
 \alias{Junior_strawberrySwirl}
-\alias{pumpkin_cheesecake_NatashasKitchen}
-\alias{pumpkin_cheesecake_Junior}
 \alias{cappuccino_cheesecake_Junior}
 \alias{cheesecake_PreppyKitchen}
-\alias{pumpkin_cheesecake_PreppyKitchen}
 \title{New York \linkS4class{cheesecake} Filling Recipes}
 \usage{
 cheesecake()
@@ -46,7 +43,7 @@ ryeWhisky_cheesecake()
 
 rum_cheesecake()
 
-brandy_cheesecake()
+appleBrandy_cheesecake()
 
 Bourbon_cheesecake_Crown()
 
@@ -76,15 +73,9 @@ CheesecakeFactory_pumpkin()
 
 Junior_strawberrySwirl()
 
-pumpkin_cheesecake_NatashasKitchen()
-
-pumpkin_cheesecake_Junior()
-
 cappuccino_cheesecake_Junior()
 
 cheesecake_PreppyKitchen()
-
-pumpkin_cheesecake_PreppyKitchen()
 }
 \description{
 A low sodium, low fat modification of Junior's Original New York Cheesecake filling
@@ -154,7 +145,7 @@ raspberry_cheesecake() # hit!
 ryeWhisky_cheesecake() # hit!!!
 pumpkin_cheesecake() # just add a little more sugar!
 rum_cheesecake() # try next
-brandy_cheesecake() # try next
+appleBrandy_cheesecake() # try next
 
 # color bad, don't do it again
 blueberry_cheesecake() 
@@ -164,10 +155,10 @@ Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 
 diagnose(
  pumpkin_cheesecake,
- subtract(pumpkin_cheesecake_Junior, sugar = 200),
- subtract(pumpkin_cheesecake_NatashasKitchen, brownSugar = 245),
- subtract(pumpkin_cheesecake_PreppyKitchen, sugar = 150),
- subtract(CheesecakeFactory_pumpkin, sugar = 14)
+ subtract(pumpkin_cheesecake_Junior, sugar = 170),
+ subtract(pumpkin_cheesecake_NatashasKitchen, brownSugar = 230),
+ subtract(pumpkin_cheesecake_PreppyKitchen, sugar = 140),
+ subtract(CheesecakeFactory_pumpkin, sugar = 12)
 )
 }
 \references{

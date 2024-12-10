@@ -309,6 +309,14 @@ setClass(Class = 'cocoaDx', contains = 'recipeDx', prototype = prototype(
 ))
 
 #' @rdname diagnosis
+#' @aliases creamcheeseDx-class
+#' @export
+setClass(Class = 'creamcheeseDx', contains = 'recipeDx', prototype = prototype(
+  per = 'Cream Cheese'
+))
+
+
+#' @rdname diagnosis
 #' @aliases cookedTexture-class
 #' @export
 setClass(Class = 'cookedTexture', contains = 'recipeDx', prototype = prototype(

@@ -28,7 +28,7 @@ Runamok_ryeWhisky <- function() new(
   sodium = .005, carbohydrate = 27, addedSugar = 24, water = 40-27,
   usd = 24.95/375*30) # 2023-11-09
 
-Runamok_brandy <- function() new(
+Runamok_appleBrandy <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], runamok = 'apple-brandy-barrel-aged-organic-maple-syrup',
   name = 'Apple Brandy Barrel-Aged Maple\U1f341 Syrup', alias = '\u9152\u6876\u67ab\u7cd6',
   # full bottle 675g; 

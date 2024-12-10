@@ -74,7 +74,7 @@ Domino_darkBrown <- function() new(
 
 Domino_lightBrown <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], domino = 'light-brown-sugar',
-  name = '\u7ea2\u7cd6 Light Brown Sugar',
+  name = 'Light Brown Sugar', alias = '\u7ea2\u7cd6',
   walmart = '35690427', usd = 5.54/1.81*8, # 4lb
   wegmans = 26106288L,
   servingGram = 8, servingTsp = 2, 

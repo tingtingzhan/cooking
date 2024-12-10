@@ -20,7 +20,7 @@ Ohsawa_nigari <- function() new(
 Morton_salt <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/')),
-  name = '\u76d0 Salt\U1f9c2',
+  name = 'Salt\U1f9c2', alias = '\u76d0',
   servingTsp = 1/4, 
   servingGram = 1.5, # packaging!
   # different size of salt rock has different density!!!

@@ -329,9 +329,12 @@ Libbys_pumpkin <- function() new(
 
 Libbys_pumpkinPieMix <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = 'Libby\'s\U1f1fa\U1f1f8', name = 'Pumpkin\U1f383 Pie Mix',
+  brand = 'Libby\'s\U1f1fa\U1f1f8', 
+  name = 'Pumpkin\U1f383 Pie Mix', alias = '\u8c03\u5473\u5357\u74dc\u6ce5',
   target = 'A-14886100', usd = 4.49/850*87,
   servingGram = 87, servingCup = 1/3, 
+  calorie = 80,
+  water = 87 * 240/300, # using [Libbys_pumpkin] data
   sodium = .11, sugar = 18, addedSugar = 16)
 
 

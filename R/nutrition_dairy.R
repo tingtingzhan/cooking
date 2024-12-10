@@ -321,7 +321,7 @@ Nancys_creamCheese <- function() new(
 Daisy_sourCream <- function() new( # no filler
   Class = 'nutrition', call = match.call()[[1L]], 
   daisybrand = 'sour-cream',
-  name = 'Sour Cream',
+  name = 'Sour Cream', alias = '\u9178\u5976\u6cb9',
   servingGram = 30, servingTbsp = 2,
   calorie = 60,
   fdc = 171257L, water = 30*.731,

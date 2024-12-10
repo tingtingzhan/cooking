@@ -86,7 +86,7 @@
     bread = if (length(x@matcha) || length(x@cocoa)) {
       .075 # great on @matcha 
     } else .045,
-    cheesecake = if (length(x@pumpkin)) .11 else .1,
+    cheesecake = if (length(x@pumpkin)) .12 else .1,
     # froyo = NA_real_, # Greek yogurt flavor too strong to cover
     custardFilling = if (length(x@pumpkin)) {
       .13 
@@ -193,7 +193,7 @@
     shrimpfillCantonese = .14, 
     shrimpfill_garlicHerb = .15, 
     mousse = .15,
-    cheesecake = if (length(x@pumpkin)) .16 else .18, # 3:1 mixed cheese
+    cheesecake = if (length(x@pumpkin)) .14 else .18, # 3:1 mixed cheese
     lava = if (length(x@blackSesame)) .17 else if (length(x@coconut)) .08 else NA_real_,
     cookie = if (length(x@blackSesame)) {
       .28
@@ -502,6 +502,11 @@
     snowSkin = 1.86,
     NA_real_)
   
+  water2creamcheese <- function(x) switch(
+    class(x),
+    cheesecake = if (length(x@pumpkin)) .5 else .25,
+    NA_real_)
+  
   fat2flour <- function(x) switch(
     class(x), 
     #tortillaOlive = .05,
@@ -719,6 +724,8 @@
                   'yeast', 'bakingPowder', 'Na2CO3_'), 
             Y = c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), 
             FUN = paste, sep = '2')),
+    
+    'water2creamcheese',
     
     paste0(c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), '2cornmeal'),
     

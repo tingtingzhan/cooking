@@ -11,7 +11,7 @@ Stonewall_Bourbon <- function() new(
 
 Stonewall_maple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 170801L,
-  name = 'Maine Maple\U1f341 Syrup',
+  name = 'Maine Maple\U1f341 Syrup', alias = '\u67ab\u7cd6',
   # servingGram = 60, servingCup = 1/4, sodium = .005, addedSugar = 36) # webpage
   # empty bottle 253g
   usd = 17.95/250*30, # 2023-11-11
