@@ -200,7 +200,7 @@ nutrition.recipe <- function(x) {
     Class = 'cookedTexture',
     #water = new(Class = 'equiv', actual = if (waterCooked / total > .8) NULL else waterCooked / total, ideal = devrecipe$water(x)),
     water = new(Class = 'equiv', actual = waterCooked / total, ideal = devrecipe$water(x)),
-    carbohydrate = new(Class = 'equiv', actual = carbohydrate / total, ideal = devrecipe$carbohydrate(x)),
+    #carbohydrate = new(Class = 'equiv', actual = carbohydrate / total, ideal = devrecipe$carbohydrate(x)),
     fiber = new(Class = 'equiv', actual = fiber / total), #, ideal = devrecipe$carbohydrate(x)
     NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / total), # , ideal = devrecipe$NaHCO3(x)
     fat = new(Class = 'equiv', actual = fat / total, ideal = devrecipe$fat(x), margin = 1.2, ignore = .001),
