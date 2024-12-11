@@ -51,6 +51,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot webstaurant \link[base]{character} scalar
 #' @slot wegmans,wegmansorganic \link[base]{integer} scalar, Wegmans Food Markets ID
 #' @slot wholefoods \link[base]{character} scalar, Wholel Foods ID
+#' @slot yamibuy \link[base]{character} scalar
 #' 
 #' @slot bachans \link[base]{character} scalar
 #' @slot baileys \link[base]{character} scalar
@@ -79,6 +80,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot horizon \link[base]{character} scalar
 #' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
 #' @slot itoen \link[base]{character} scalar
+#' @slot jayone \link[base]{character} scalar
 #' @slot jfc \link[base]{character} scalar
 #' @slot juniorscheesecake \link[base]{character} scalar
 #' @slot justtea \link[base]{character} scalar
@@ -185,11 +187,12 @@ setClass(Class = 'nutrition', slots = c(
   target = 'character',
   totalwine = 'character',
   traderjoes = 'character',
-  webstaurant = 'character',
-  wholefoods = 'character',
-  wegmans = 'integer', wegmansorganic = 'integer',
   walmart = 'character',
   wawa = 'character',
+  webstaurant = 'character',
+  wegmans = 'integer', wegmansorganic = 'integer',
+  wholefoods = 'character',
+  yamibuy = 'character',
   
   bachans = 'character',
   baileys = 'character',
@@ -218,6 +221,7 @@ setClass(Class = 'nutrition', slots = c(
   horizon = 'character',
   ippodoglobal = 'character', ippodojpn = 'character', ippodousa = 'character',
   itoen = 'character',
+  jayone = 'character',
   jfc = 'character',
   juniorscheesecake = 'character',
   justtea = 'character',
@@ -416,6 +420,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       )
     } else if (length(x@itoen)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://itoen.com/products/%s', x@itoen), text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5'))
+    } else if (length(x@jayone)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.jayonefoods.com/product/%s', x@jayone), text = 'JayOne\U1f1f0\U1f1f7'))
     } else if (length(x@juniorscheesecake)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.juniorscheesecake.com/all-items/%s', x@juniorscheesecake), text = 'Junior\'s\U1f1fa\U1f1f8'))
     } else if (length(x@justtea)) {
@@ -566,6 +572,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   x <- add_store_url_(x, store = 'wegmans', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8', store_name = 'Wegmans')
   x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8')
+  x <- add_store_url_(x, store = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
   if (length(x@brand)) {
     x@brand <- c(style_bold(make_ansi_style('sienna')(x@brand)))

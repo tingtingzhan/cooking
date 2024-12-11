@@ -438,7 +438,7 @@ HaiTai_mung <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174256L,
   name = '(\u5e26\u76ae)\u7eff\u8c46 Mung Bean', 
   haitaiusa = 'mung-bean-\ub179\ub450',
-  usd = 5.99/910*38, # https://www.yamibuy.com/zh/p/mung-bean-2lb/1149010281
+  usd = 5.99/910*38, yamibuy = '25775187',
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
   #servingGram = 100 - 9.05, protein = 23.9, fat = 1.15, sugar = 6.6, sodium = .015, # fdc
   #machine = function(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
@@ -449,8 +449,7 @@ HaiTai_adzuki <- function() new(
   name = '\u7ea2\u8c46 Adzuki Bean', 
   haitaiusa = 'red-bean-\ud325-4-lb',
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
-  usd = 8.99/907*45, 
-  # url = 'www.yamibuy.com/zh/p/red-bean-2lb/1149010271'
+  usd = 8.99/907*45, yamibuy = '25775203',
   servingGram = 45, servingCup = 1/4, sodium = .008, carbohydrate = 27, sugar = 1, protein = 8
   #machine = function(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
 )

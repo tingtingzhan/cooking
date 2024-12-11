@@ -58,6 +58,8 @@ Nutrition information.
 
 \item{\code{wholefoods}}{\link[base]{character} scalar, Wholel Foods ID}
 
+\item{\code{yamibuy}}{\link[base]{character} scalar}
+
 \item{\code{bachans}}{\link[base]{character} scalar}
 
 \item{\code{baileys}}{\link[base]{character} scalar}
@@ -111,6 +113,8 @@ Nutrition information.
 \item{\code{ippodoglobal,ippodojpn,ippodousa}}{\link[base]{character} scalars}
 
 \item{\code{itoen}}{\link[base]{character} scalar}
+
+\item{\code{jayone}}{\link[base]{character} scalar}
 
 \item{\code{jfc}}{\link[base]{character} scalar}
 

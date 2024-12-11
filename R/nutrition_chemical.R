@@ -31,8 +31,7 @@ Ajinomoto_msg <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
   name = '\u5473\u7cbe Monosodium Glutamate',
-  # 'www.yamibuy.com/zh/p/msg-aji-no-motot-in-bag-1lb/1148033131'
-  usd = 3.99/454,
+  usd = 3.99/454, yamibuy = '25775165',
   servingGram = 1, 
   servingTsp = 1/4, # packaging
   pubchem = 'Monosodium-Glutamate',
