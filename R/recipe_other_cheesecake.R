@@ -72,7 +72,8 @@ Junior_cookbook <- function() new(
   starch_cup = c(Wegmans_corn = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
-  heavyCream_cup = c(Byrne = 3/4) # see 1:00 of https://youtu.be/dUtq2hETohc
+  heavyCream_cup = c(Byrne = 3/4),
+  youtube = 'dUtq2hETohc' # see 1:00, brand of heavy cream
 )
 
 #' @rdname cheesecake_other

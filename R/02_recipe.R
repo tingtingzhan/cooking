@@ -1270,11 +1270,11 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   #if (length(object@url) || length(object@youtube) || length(object@doi)) {
   if (length(object@url) || length(object@youtube)) {
     
-    cat('Reference:\n')
-    cat(object@url, sep = '\n') # len0 compatible
+    cat('\U1f4d6 Reference:\n')
+    if (length(object@url)) cat('', object@url, sep = '\n') # len0 compatible
     if (n_ytb <- length(object@youtube)) {
       if (n_ytb != 1L) stop('only allow scalar @youtube')
-      cat(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text = object@youtube), '\n')
+      cat(' \U1f4f9', style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text = object@youtube), '\n')
     }
     #if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
     cat('\n')

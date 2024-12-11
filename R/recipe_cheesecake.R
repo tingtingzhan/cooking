@@ -148,9 +148,9 @@ raspberry_cheesecake <- function() new(
 #' @export
 ryeWhisky_cheesecake <- function() new(
   Class = 'cheesecake',
-  starch = c(Argo_corn = 45), starch_cup = numeric(),
-  syrup = c(Runamok_ryeWhisky = 170), 
-  water = 150,
+  starch = c(Argo_corn = 50), starch_cup = numeric(),
+  syrup = c(Runamok_ryeWhisky = 180), 
+  water = 200,
   #date = as.Date('2023-12-01'),
   pros = 'try again')
 
