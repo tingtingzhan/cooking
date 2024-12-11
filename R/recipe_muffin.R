@@ -109,32 +109,5 @@ cornbread <- function() new(
   ))
 
 
-pumpkin_muffin <- function() new(
-  Class = 'muffin', 
-  pumpkin = 600, sugar = c(Domino_darkBrown = 55), 
-  pastryFlour = 150, 
-  bakingPowder_tsp = 1,
-  pumpkinSpice_tsp = 1.25,
-  butter = 90,
-  egg_pc = 2
-)
-
-pumpkin_muffin_FAIL <- function() new(
-  Class = 'muffin', 
-  pumpkin = 600, sugar = c(Domino_darkBrown = 50), 
-  pastryFlour = 50, 
-  bakingPowder_tsp = 1,
-  pumpkinSpice_tsp = 1.25,
-  creamCheese_brick = 1,
-  egg_pc = 2,
-  cons = c(
-    'cannot use cream cheese. need to bake like cheesecake',
-    'otherwise, flavor profile not bad!'
-  )
-)
-
-if (FALSE) {
-  diagnose(cornbread, pumpkin_muffin)
-}
 
 

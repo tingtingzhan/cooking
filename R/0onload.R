@@ -464,7 +464,7 @@
     class(x),
     NA_real_)
     
-  water2flour <- function(x) switch(
+  addedWater2flour <- function(x) switch(
     class(x), 
     cookie = if (length(x@blackSesame)) .17 else .22, 
     crumbcrust = if (length(x@blackSesame)) .28 else .23, # try first with \linkS4class{cookie} info
@@ -472,36 +472,36 @@
     #tortillaLard =, tortillaOlive = .6,
     NA_real_)
   
-  water2pastryflour <- function(x) switch(
+  addedWater2pastryflour <- function(x) switch(
     class(x), 
     bao = .48,
     juntun = .56, # ?? do I really need this?
     millecrepe = 3.7,
     NA_real_)
 
-  water2breadflour <- function(x) switch(
+  addedWater2breadflour <- function(x) switch(
     class(x), 
     wrapperlinda = .57,
     noodlelinda = if (any(grepl('^KingArthur_', names(x@breadFlour)))) .45 else .6,
     bread = .63,
     NA_real_)
   
-  water2glutenFreeFlour <- fn.
+  addedWater2glutenFreeFlour <- fn.
   
-  water2wheatflourmix <- function(x) switch(
+  addedWater2wheatflourmix <- function(x) switch(
     class(x),
     wheatBao = .5,
     NA_real_)
   
-  water2riceflour <- function(x) switch(
+  addedWater2riceflour <- function(x) switch(
     class(x),
     stickyTortilla = 1.6,
     snowSkin = 1.86,
     NA_real_)
   
-  water2creamcheese <- function(x) switch(
+  addedWater2creamcheese <- function(x) switch(
     class(x),
-    cheesecake = if (length(x@pumpkin)) .5 else .25,
+    cheesecake = if (length(x@pumpkin)) .6 else .25,
     NA_real_)
   
   fat2flour <- function(x) switch(
@@ -714,7 +714,7 @@
     'sesameOil',
     'greenPeppercornOil',
     
-    c(outer(X = c('water', 'fat', 'salt', 'eggYolk', 
+    c(outer(X = c('addedWater', 'fat', 'salt', 'eggYolk', 
                   'matcha', 'beet', 'acai', 'blackSesame', 
                   'starch', 
                   'glutinousRice', # 'rice', 
@@ -722,7 +722,7 @@
             Y = c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), 
             FUN = paste, sep = '2')),
     
-    'water2creamcheese',
+    'addedWater2creamcheese',
     
     paste0(c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), '2cornmeal'),
     

@@ -33,6 +33,11 @@ nutrition_ <- function(..., dots = list(...)) {
   
   ret <- do.call(what = rbind, args = ret0) # matrix
   
+  if (!('water' %in% colnames(ret))) stop('should never happen')
+  addedWater_ <- water_ <- ret[,'water']
+  addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
+  ret <- cbind(ret, addedWater = addedWater_)
+  
   #review <- lapply(dots, FUN = slot, name = 'review')
   #attr(ret, which = 'review') <- review[lengths(review, use.names = FALSE) > 0L]
   #machine <- lapply(dots, FUN = slot, name = 'machine')
@@ -50,10 +55,11 @@ print.nutrition_ <- function(x, ...) {
   ret0 <- x
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
   
-  # do not print `calorie` and `usd`, meaningless (i.e., calorie/servingGram)
-  ret0 <- ret0[, !(colnames(ret0) %in% c('calorie', 'usd'))]
-  # remove all-0 columns
-  ret1 <- ret0[, colMeans(ret0 == 0) != 1]
+  ret0 <- ret0[, !(colnames(ret0) %in% c(
+    'calorie', 'usd', # meaningless (i.e., calorie/servingGram)
+    'addedWater'
+  ))]
+  ret1 <- ret0[, colMeans(ret0 == 0) != 1] # remove all-0 columns
   
   ret <- do.call(cbind, args = lapply(seq_len(ncol(ret1)), FUN = function(i) {
     sprintf_bincode(max(ret1[,i]))(ret1[,i])

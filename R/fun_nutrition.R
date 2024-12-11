@@ -84,6 +84,7 @@ nutrition.recipe <- function(x) {
   protein <- tmp['protein']
   alcohol <- tmp['alcohol']
   water <- tmp['water']
+  addedWater <- tmp['addedWater']
   waterCooked <- tmp['water'] - waterLost
   usd <- tmp['usd']
   
@@ -267,7 +268,7 @@ nutrition.recipe <- function(x) {
     attr(ret, which = 'mixBaker') <- new(
       Class = 'mixBaker',
       puree = new(Class = 'equiv', actual = puree / mix_wheat_flour),
-      water = new(Class = 'equiv', actual = water / mix_wheat_flour, ideal = devrecipe$water2wheatflourmix(x)),
+      water = new(Class = 'equiv', actual = water / mix_wheat_flour, ideal = devrecipe$addedWater2wheatflourmix(x)),
       addedStarch = new(Class = 'equiv', actual = starch / mix_wheat_flour),
       fat = new(Class = 'equiv', actual = fat / mix_wheat_flour, ideal = devrecipe$fat2wheatflourmix(x)),
       blackSesame = new(Class = 'equiv', actual = x@blackSesame / mix_wheat_flour),
@@ -292,7 +293,7 @@ nutrition.recipe <- function(x) {
       new(
         Class = 'baker',
         puree = new(Class = 'equiv', actual = puree / flour),
-        water = new(Class = 'equiv', actual = water / flour, ideal = devrecipe$water2flour(x), margin = 1.01),
+        water = new(Class = 'equiv', actual = water / flour, ideal = devrecipe$addedWater2flour(x), margin = 1.01),
         addedStarch = new(Class = 'equiv', actual = starch / flour),
         fat = new(Class = 'equiv', actual = fat / flour, ideal = devrecipe$fat2flour(x), margin = 1.05, ignore = .01),
         blackSesame = new(Class = 'equiv', actual = x@blackSesame / flour, ideal = devrecipe$blackSesame2flour(x)),
@@ -316,7 +317,7 @@ nutrition.recipe <- function(x) {
       new(
         Class = 'pastryBaker',
         puree = new(Class = 'equiv', actual = puree / pastryFlour),
-        water = new(Class = 'equiv', actual = water / pastryFlour, ideal = devrecipe$water2pastryflour(x), margin = 1.01),
+        water = new(Class = 'equiv', actual = water / pastryFlour, ideal = devrecipe$addedWater2pastryflour(x), margin = 1.01),
         gelatin = new(Class = 'equiv', actual = x@gelatin / pastryFlour),
         cornmeal = new(Class = 'equiv', actual = cornmeal / pastryFlour),
         addedStarch = new(Class = 'equiv', actual = starch / pastryFlour),
@@ -343,7 +344,7 @@ nutrition.recipe <- function(x) {
       new(
         Class = 'breadBaker',
         puree = new(Class = 'equiv', actual = puree / breadFlour),
-        water = new(Class = 'equiv', actual = water / breadFlour, ideal = devrecipe$water2breadflour(x), margin = 1.01),
+        addedWater = new(Class = 'equiv', actual = addedWater / breadFlour, ideal = devrecipe$addedWater2breadflour(x), margin = 1.01),
         gelatin = new(Class = 'equiv', actual = x@gelatin / breadFlour),
         addedStarch = new(Class = 'equiv', actual = starch / breadFlour),
         fat = new(Class = 'equiv', actual = fat / breadFlour, ideal = devrecipe$fat2breadflour(x), margin = 1.05),
@@ -371,7 +372,7 @@ nutrition.recipe <- function(x) {
   attr(ret, which = 'glutenFreeBaker') <- if (glutenFreeFlour & !breadFlour & !pastryFlour & !flour) new(
     Class = 'glutenFreeBaker',
     puree = new(Class = 'equiv', actual = puree / glutenFreeFlour),
-    water = new(Class = 'equiv', actual = water / glutenFreeFlour, ideal = devrecipe$water2glutenFreeFlour(x), margin = 1.01),
+    water = new(Class = 'equiv', actual = water / glutenFreeFlour, ideal = devrecipe$addedWater2glutenFreeFlour(x), margin = 1.01),
     gelatin = new(Class = 'equiv', actual = x@gelatin / glutenFreeFlour),
     addedStarch = new(Class = 'equiv', actual = starch / glutenFreeFlour),
     fat = new(Class = 'equiv', actual = fat / glutenFreeFlour, ideal = devrecipe$fat2glutenFreeFlour(x), margin = 1.05, ignore = .01),
@@ -393,7 +394,7 @@ nutrition.recipe <- function(x) {
   
   attr(ret, which = 'riceBaker') <- if (riceFlour) new(
     Class = 'riceBaker',
-    water = new(Class = 'equiv', actual = water / riceFlour, ideal = devrecipe$water2riceflour(x)),
+    water = new(Class = 'equiv', actual = water / riceFlour, ideal = devrecipe$addedWater2riceflour(x)),
     # rice = new(Class = 'equiv', actual = x@riceFlour / riceFlour, ideal = devrecipe$rice2riceflour(x)),
     glutinousRice = new(Class = 'equiv', actual = x@glutinousRiceFlour / riceFlour, ideal = devrecipe$glutinousRice2riceflour(x)),
     gelatin = new(Class = 'equiv', actual = x@gelatin / riceFlour),
@@ -418,9 +419,9 @@ nutrition.recipe <- function(x) {
   
   attr(ret, which = 'creamcheeseDx') <- if (length(x@creamCheese)) new(
     Class = 'creamcheeseDx',
-    water = new(Class = 'equiv', actual = water/sum(x@creamCheese), ideal = devrecipe$water2creamcheese(x)),
-    fiber = new(Class = 'equiv', actual = fiber/sum(x@creamCheese)), # , ideal = devrecipe$water2creamcheese(x)
-    addedStarch = new(Class = 'equiv', actual = starch/sum(x@creamCheese)), #, ideal = devrecipe$addedSugar2cocoa(x)),
+    addedWater = new(Class = 'equiv', actual = addedWater/sum(x@creamCheese), ideal = devrecipe$addedWater2creamcheese(x)),
+    fiber = new(Class = 'equiv', actual = fiber/sum(x@creamCheese)), 
+    addedStarch = new(Class = 'equiv', actual = starch/sum(x@creamCheese)), 
     eggYolk = new(Class = 'equiv', actual = x@eggYolk/sum(x@creamCheese)),
     eggWhite = new(Class = 'equiv', actual = x@eggWhite/sum(x@creamCheese))
   )

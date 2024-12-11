@@ -100,7 +100,7 @@ KingArthur_bread <- function() new(
 
 KingArthur_highGluten <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 100185L, 
-  name = '14.2%\u9ad8\u7b4b\u9762\u7c89 High-Gluten Flour',
+  name = 'High-Gluten Flour', alias = '14.2%\u9ad8\u7b4b\u9762\u7c89',
   usd = 12.95/1360*30,
   servingGram = 30, servingCup = 1/4, 
   calorie = 110,
@@ -109,20 +109,20 @@ KingArthur_highGluten <- function() new(
 KingArthur_Lancelot <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], webstaurant = '104NFL5100S',
   kingarthurpro = 13050L,
-  name = '14%\u9ad8\u7b4b\u9762\u7c89 Sir Lancelot',
+  name = 'Sir Lancelot', alias = '14%\u9ad8\u7b4b\u9762\u7c89',
   usd = 28.49/(50*454)*100,
-  servingGram = 100, 
+  servingGram = 100, servingCup = (100/30)*(1/4), # using [KingArthur_bread] info
   calorie = 364, 
-  fat = .98, carbohydrate = 70.5, sugar = .27, protein = 14, water = 14)
+  fat = .98, carbohydrate = 70.5, fiber = 2.7, sugar = .27, protein = 14, water = 14)
 
 KingArthur_Galahad <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], webstaurant = '104NFL5110S',
   kingarthurpro = 12050L,
-  name = '11.7%\u4e2d\u7b4b\u9762\u7c89 Sir Galahad',
+  name = 'Sir Galahad', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 25.14/(50*454)*100,
   servingGram = 100, 
   calorie = 364, 
-  fat = .98, carbohydrate = 72.82, sugar = .27, protein = 11.7, water = 14)
+  fat = .98, carbohydrate = 72.82, fiber = 2.7, sugar = .27, protein = 11.7, water = 14)
 
 
 KingArthur_allPurpose <- function() new(

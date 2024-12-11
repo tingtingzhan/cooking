@@ -53,6 +53,8 @@ Cooked percentage ..
 
 \item{\code{water}}{\linkS4class{equiv}}
 
+\item{\code{addedWater}}{\linkS4class{equiv}}
+
 \item{\code{carbohydrate}}{\linkS4class{equiv}}
 
 \item{\code{fiber}}{\linkS4class{equiv}}

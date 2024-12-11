@@ -148,6 +148,7 @@ setMethod(f = show, signature = 'equiv', definition = function(object) {
 #' @slot pastryFlour \linkS4class{equiv}
 #' 
 #' @slot water \linkS4class{equiv}
+#' @slot addedWater \linkS4class{equiv}
 #' @slot carbohydrate \linkS4class{equiv}
 #' @slot fiber \linkS4class{equiv}
 #' @slot sugar \linkS4class{equiv}
@@ -193,7 +194,7 @@ setMethod(f = show, signature = 'equiv', definition = function(object) {
 setClass(Class = 'recipeDx', slots = c(
   per = 'character',
   puree = 'equiv',
-  water = 'equiv',
+  water = 'equiv', addedWater = 'equiv',
   carbohydrate = 'equiv',
   addedStarch = 'equiv',
   flour = 'equiv', breadFlour = 'equiv', pastryFlour = 'equiv',
@@ -380,6 +381,7 @@ format.recipeDx <- function(x, ...) {
 
 
 show_endpoint <- function(x) {
+  x[x == 'addedWater'] <- '+water'
   x[x == 'addedSugar'] <- '+sugar'
   x[x == 'addedStarch'] <- '+starch'
   # x[x == 'alcohol'] <- '\U1f943'

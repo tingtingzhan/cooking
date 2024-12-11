@@ -343,7 +343,7 @@ Libbys_pumpkin <- function() new(
   calorie = 45,
   fat = .5, sodium = .005, carbohydrate = 10, fiber = 5, sugar = 5, protein = 1, 
   fdc = 168450L,
-  water = 122 * 240/300) # bao, I trust best
+  water = 122-10-1-1) #122 * 240/300) # bao, I trust best
 
 Libbys_pumpkinPieMix <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
