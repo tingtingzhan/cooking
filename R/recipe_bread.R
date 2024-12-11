@@ -44,19 +44,15 @@
 #' @aliases bread-class
 #' @export
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
-  alias_class = '\u9762\u5305',
-  key = '\U1f35e 63%;7.5%',
+  alias_class = 'Bread\U1f35e', # '\u9762\u5305',
   breadFlour = c(KingArthur_bread = 500), 
-  # this recipe was experimented in early 2023. 
-  # should be King Arthur bread flour,
-  # because Wegmans bread flour 60% hydration is supposed to be my [noodlelinda].
-  # [coffee_bread] I developed in 2024-01-25 is definitely KingArthur
-  
-  waterLost = 50, # confirmed with beet_bread() (water = 300, 2023-01-05)
-  butter = 40,
+  #eggYolk_pc = 1, # was. too difficult to store the egg white
+  egg_pc = 1,
   yeast_Tbsp = 1,
   salt_tsp = 1/4,
-  eggYolk_pc = 1, 
+  butter = 40,
+  
+  waterLost = 50, # confirmed with beet_bread() (water = 300, 2023-01-05)
   
   portion = c(
     'Philips cupcake; 250\u00b0F/17min' = 35,
@@ -112,7 +108,11 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
 
 #' @rdname bread
 #' @export
-bread <- function() new(Class = 'bread', water = 300, drymilk = 30, sugar = 40) # theoretical model
+bread <- function() new(
+  Class = 'bread', 
+  water = 300,  
+  drymilk = 30, 
+  sugar = 40) # theoretical model
 
 #' @rdname bread
 #' @export
@@ -136,7 +136,10 @@ matcha_bread <- function() new(
 
 #' @rdname bread
 #' @export
-pumpkin_bread <- function() new(Class = 'bread', pumpkin = 400, drymilk = 34, sugar = 25, review = 'try')
+pumpkin_bread <- function() new(
+  Class = 'bread', 
+  pumpkin = 350, drymilk = 34, brownSugar = 25, 
+  review = 'try')
 
 
 

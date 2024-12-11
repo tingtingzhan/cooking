@@ -16,8 +16,6 @@ general recipe
 
 \item{\code{author}}{\link[base]{character} scalar}
 
-\item{\code{key}}{\link[base]{character} scalar, key diagnosis}
-
 \item{\code{date}}{\link[base]{Date} scalar}
 
 \item{\code{homemade}}{\link[base]{numeric} vector}

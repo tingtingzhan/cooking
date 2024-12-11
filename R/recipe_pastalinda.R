@@ -59,7 +59,7 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
 #' @export
 setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
   alias_class = '\u6c64\u9762\U1f35c \u6c34\u997a\U1f95f\u6284\u624b\u76ae',
-  key = '\U1f35e 57%',
+  #key = '\U1f35e 57%',
   portion = c(
     '\u6284\u624b\u76ae wonton; 6x thru Thickness-2' = 5, # tried and nice.  Weigh to confirm
     

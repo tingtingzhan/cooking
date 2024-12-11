@@ -286,7 +286,7 @@ tomato_bao <- function() new(
 #' @export
 setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
   alias_flavor = '\u5168\u9ea6',
-  key = '(King Arthur/Wegmans)50%;4.5%',
+  #key = '(King Arthur/Wegmans)50%;4.5%',
   breadFlour = c(KingArthur_bread = 300), pastryFlour = numeric(),
   wholeWheatFlour = c(Wegmans_whiteWheat = 200),
   lard = 19,
@@ -326,7 +326,6 @@ wheatBao_duckFat <- function() new(
 lowGlutenBao_FAIL <- function() new(
   Class = 'bao',
   alias_flavor = '\u6742\u7cae\u7c89',
-  key = character(),
   glutenFreeFlour = c(KingArthur_M4M = 150),
   pastryFlour = c(Wegmans_pastry = 350),
   lard = 16.5,
@@ -340,7 +339,6 @@ lowGlutenBao_FAIL <- function() new(
 coconutBao_FAIL <- function() new(
   Class = 'bao', 
   alias_class = '\u6930\u8089\u7c89\u5305\u5b50\u9992\u5934',
-  key = character(),
   coconut = c(WegmansOrganic_coconutFlour = 125),
   breadFlour = c(KingArthur_bread = 375), pastryFlour = numeric(),
   lard = numeric(),

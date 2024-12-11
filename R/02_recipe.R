@@ -9,7 +9,7 @@
 #' @slot alias \link[base]{character} scalar in Unicode, alias (e.g., in Chinese)
 #' @slot alias_class,alias_flavor \link[base]{character} scalar in Unicode, alias (e.g., in Chinese) of class and flavor
 #' @slot author \link[base]{character} scalar
-#' @slot key \link[base]{character} scalar, key diagnosis
+# @slot key \link[base]{character} scalar, key diagnosis
 #' @slot date \link[base]{Date} scalar
 #' 
 #' @slot homemade \link[base]{numeric} vector
@@ -241,7 +241,7 @@ setClass(Class = 'recipe', slots = c(
   alias_class = 'character', 
   alias_flavor = 'character',
   author = 'character',
-  key = 'character',
+  #key = 'character',
   date = 'Date',
   
   url = 'character',
@@ -980,10 +980,10 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     } else x@alias 
   } # else do nothing
   
-  if (length(x@key)) {
-    x@alias <- paste0(x@alias, bg_br_magenta(col_br_white(x@key)))
-    x@key <- character()
-  }
+  #if (length(x@key)) {
+  #  x@alias <- paste0(x@alias, bg_br_magenta(col_br_white(x@key)))
+  #  x@key <- character()
+  #}
   
   return(x)
 })
