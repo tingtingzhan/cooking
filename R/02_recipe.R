@@ -954,6 +954,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       get_flavor_(names(tea))
     } else if (length(x@spice)) {
       get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
+    } else if (length(x@grain)) {
+      get_flavor_(names(x@grain))
     } else if (length(x@homemade)) {
       get_flavor_(names(x@homemade))
     } else switch(
@@ -1146,15 +1148,15 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f=%.0f%s grams %s\n', water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), autoVolume(water)))
   }
   
-  cat(sprintf(fmt = '40\u00b0C\u6e29\u6c34 Warm Water, 104\u00b0F %.0f grams %s\n', object@water40, autoVolume(object@water40)))
-  cat(sprintf(fmt = '70\u00b0C\u70ed\u6c34 Hot Water, 160\u00b0F %.0f grams %s\n', object@water70, autoVolume(object@water70)))
-  cat(sprintf(fmt = '80\u00b0C\u70ed\u6c34 Hot Water, 175\u00b0F %.0f grams %s\n', object@water80, autoVolume(object@water80)))
-  cat(sprintf(fmt = '95\u00b0C\u70ed\u6c34 Hot Water, 203\u00b0F %.0f grams %s\n', object@water95, autoVolume(object@water95)))
-  cat(sprintf(fmt = '\u5f00\u6c34 Boiling Water %.0f grams %s\n', object@boilingWater, autoVolume(object@boilingWater)))
-  cat(sprintf(fmt = '\u51b0\u6c34 Iced Water %.0f grams %s\n', object@iceWater, autoVolume(object@iceWater)))
-  cat(sprintf(fmt = '\u6c14\u6ce1\u6c34 Carbonated Water %.0f grams %s\n', object@carbonatedWater, autoVolume(object@carbonatedWater)))
-  cat(sprintf(fmt = '\u51b0\u6c99 Shaved Ice\U1f367 %.0f grams %s\n', object@shavedIce, autoVolume(object@shavedIce)))
-  cat(sprintf(fmt = '\u51b0\u5757 Ice\U1f9ca Cubes %.0f grams\n', object@ice))
+  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), object@water40, autoVolume(object@water40)))
+  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), object@water70, autoVolume(object@water70)))
+  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), object@water80, autoVolume(object@water80)))
+  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), object@water95, autoVolume(object@water95)))
+  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), object@boilingWater, autoVolume(object@boilingWater)))
+  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), object@iceWater, autoVolume(object@iceWater)))
+  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', make_ansi_style('orchid4')('\u6c14\u6ce1\u6c34'), object@carbonatedWater, autoVolume(object@carbonatedWater)))
+  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c99'), object@shavedIce, autoVolume(object@shavedIce)))
+  cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', make_ansi_style('orchid4')('\u51b0\u5757'), object@ice))
   
   cat('\n')
   
