@@ -673,7 +673,7 @@ gram_per_tsp <- function(x) {
 }
 
 
-getPc <- function(object, name) {
+format_pc <- function(object, name) {
   ret <- slot(object, name = name) / eval(call(name))@servingGram
   style_bold(col_br_magenta(sprintf(fmt = '%.3gpcs', ret)))
 }
@@ -694,7 +694,7 @@ getGelatinLeaf <- function(x) {
 }
 
 
-autoVolume <- function(x, nm = names(x)) {
+format_vol <- function(x, nm = names(x)) {
   if (!length(x)) return(character())
   
   y <- x / gram_per_tsp(nm)
@@ -702,86 +702,57 @@ autoVolume <- function(x, nm = names(x)) {
   id <- (ceiling(y) - y < 1e-6)
   if (any(id, na.rm = TRUE)) y[which(id)] <- ceiling(y[which(id)])
 
-  cup <- y %/% 48
-  cup_txt <- ifelse(cup > 0, yes = sprintf(fmt = '%dCup', cup), no = '')
-  
-  y_less_cup <- y %% 48
+  cup <- y %/% 48 # 1cup is 48tsp
+  y_cup <- y %% 48
   
   # '\u2154' # 2/3
   
-  cup2 <- y_less_cup %/% (48/2) # 0 or 1
-  y_less_cup2 <- y_less_cup %% (48/2)
-  cup2_txt <- ifelse(cup2 > 0, yes = '\u00bdCup', no = '')
+  cup2 <- y_cup %/% (48/2) # 0 or 1; number of half-cup
+  y_cup2 <- y_cup %% (48/2)
   
-  cup3 <- y_less_cup2 %/% (48/3) # 0 or 1
-  y_less_cup3 <- y_less_cup2 %% (48/3)
-  cup3_txt <- ifelse(cup3 > 0, yes = '\u2153Cup', no = '')
+  cup3 <- y_cup2 %/% (48/3) # 0 or 1; number of 1/3 cup (at most one 1/3 cup in less than one 1/2 cup)
+  y_cup3 <- y_cup2 %% (48/3)
   
-  cup4 <- y_less_cup3 %/% (48/4) # 0 or 1
-  y_less_cup4 <- y_less_cup3 %% (48/4)
-  cup4_txt <- ifelse(cup4 > 0, yes = '\u00bcCup', no = '')
+  cup4 <- y_cup3 %/% (48/4) # 0 or 1; number of quarter-cup (at most one quarter cup in less than one 1/3 cup)
+  y_cup4 <- y_cup3 %% (48/4)
   
-  Tbsp <- y_less_cup4 %/% 3
-  tsp <- y_less_cup4 %% 3
-  Tbsp_txt <- ifelse(Tbsp > 0, yes = sprintf(fmt = '%dTbsp', Tbsp), no = '')
+  Tbsp <- y_cup4 %/% 3 
+  y_Tbsp <- y_cup4 %% 3
+  tsp <- y_cup4 %% 3 # back compatibility
   
-  tsp_mat <- NULL
-  while (any(tsp >= 1/8, na.rm = TRUE)) {
-    tsp_mat <- rbind(tsp_mat, ifelse(
-      test = (tsp >= 1.5), 
-      yes = '1\u00bdtsp', 
-      no = ifelse(
-        test = (tsp >= 1),
-        yes = '1tsp',
-        no = ifelse(
-          test = (tsp >= 1/2),
-          yes = '\u00bdtsp',
-          no = ifelse(
-            test = (tsp >= 1/4),
-            yes = '\u00bctsp',
-            no = ifelse(
-              test = (tsp >= 1/8),
-              yes = '\u215btsp',
-              no = ''
-            )
-          )
-        )
-      )
-    ))
-    tsp <- ifelse(
-      test = (tsp >= 1.5), 
-      yes = tsp - 1.5, 
-      no = ifelse(
-        test = (tsp >= 1), 
-        yes = tsp - 1, 
-        no = ifelse(
-          test = (tsp >= 1/2), 
-          yes = tsp - 1/2, 
-          no = ifelse(
-            test = (tsp >= 1/4), 
-            yes = tsp - 1/4, 
-            no = ifelse(
-              test = (tsp >= 1/8), 
-              yes = tsp - 1/8, 
-              no = tsp
-            )
-          )
-        )
-      )
-    )
-  } 
+  tsp1 <- y_Tbsp %/% 1.5 # 0 or 1, number of 1.5 tsp
+  y_tsp1 <- y_Tbsp %% 1.5
   
-  vol <- c(list(
-    cup_txt, cup2_txt, cup3_txt, cup4_txt, Tbsp_txt
-  ), if (length(tsp_mat)) apply(tsp_mat, MARGIN = 1L, FUN = identity, simplify = FALSE))
-    
-  .mapply(FUN = function(...) {
+  tsp2 <- y_tsp1 %/% 1 # 0 or 1, number of 1tsp
+  y_tsp2 <- y_tsp1 %% 1
+  
+  tsp3 <- y_tsp2 %/% .5 # 0 or 1, number of half-tsp
+  y_tsp3 <- y_tsp2 %% .5
+  
+  tsp4 <- y_tsp3 %/% .25 # 0 or 1, number of quarter-tsp
+  y_tsp4 <- y_tsp3 %% .25
+  
+  tsp5 <- y_tsp4 %/% .125 # 0 or 1, number of one-eighth tsp
+  # y_tsp5 <- y_tsp4 %% .125 # no longer care
+  
+  unlist(.mapply(FUN = function(...) {
     z0 <- c(...)
-    z1 <- z0[nzchar(z0)]
+    z1 <- z0[!is.na(z0)]
+    if (!length(z1)) return('') # `z1` either all-NA, or none-NA
     z <- z1[seq_len(min(3L, length(z1)))]
-    if (all(is.na(z1))) return('') # `z1` either all-NA, or none-NA
     style_bold(col_br_blue(paste(z, collapse = ' ')))
-  }, dots = vol, MoreArgs = NULL)
+  }, dots = list(
+    ifelse(cup > 0, yes = sprintf(fmt = '%dCup', cup), no = NA_character_), 
+    ifelse(cup2, yes = '\u00bdCup', no = NA_character_), 
+    ifelse(cup3, yes = '\u2153Cup', no = NA_character_), 
+    ifelse(cup4, yes = '\u00bcCup', no = NA_character_), 
+    ifelse(Tbsp > 0, yes = sprintf(fmt = '%dTbsp', Tbsp), no = NA_character_),
+    ifelse(tsp1, yes = '1\u00bdtsp', no = NA_character_),
+    ifelse(tsp2, yes = '1tsp', no = NA_character_),
+    ifelse(tsp3, yes = '\u00bdtsp', no = NA_character_),
+    ifelse(tsp4, yes = '\u00bctsp', no = NA_character_),
+    ifelse(tsp5, yes = '\u215btsp', no = NA_character_)
+  ), MoreArgs = NULL))
   
 }
 
@@ -808,7 +779,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   #cat('Nutrition Facts\n\n')
 
-  cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, autoVolume(x = obj@servingGram, nm = list(obj))))
+  cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, format_vol(x = obj@servingGram, nm = list(obj))))
   cat(sprintf(fmt = '%s\n', obj@cost_))
   if (length(obj@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', obj@calorie))), '\n')
   cat('\n')

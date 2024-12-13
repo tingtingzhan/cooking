@@ -1030,13 +1030,13 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
              object@riceFlour, object@glutinousRiceFlour,
              object@cornmeal,
              object@coconut)
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, autoVolume(flour)), FUN = cli_text) # one or more flour
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)), FUN = cli_text) # one or more flour
   
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@starch)], object@starch, autoVolume(object@starch)), FUN = cli_text) 
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@starch)], object@starch, format_vol(object@starch)), FUN = cli_text) 
   
   # commercial puree with volume info
   puree_vol <- c(object@pumpkin, object@pumpkinPieMix, object@pineapple, object@pear, object@mandarine, object@mango, object@tomato, object@yellowCorn, object@applesauce)
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, autoVolume(puree_vol)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)), FUN = cli_text)
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
   puree_no_vol <- c(object@puree, object@darkCherry, object@strawberry, object@banana)
@@ -1052,7 +1052,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
       fmt = '%.1fpcs', 
       object@fruit_pc / vapply(names(object@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_))
     ))
-    #getPc(object, name = 'fruit') # dont know how to use this yet
+    #format_pc(object, name = 'fruit') # dont know how to use this yet
   ), FUN = cli_text) # one or more fruit_pc
   
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), FUN = cli_text) # one or more flavor
@@ -1071,13 +1071,13 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@soybean
   )
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), FUN = cli_text) # one or more grain
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, autoVolume(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
   
   fat_vol_ <- c(
     object@fat,
     object@lard, object@tallow
   )
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, autoVolume(fat_vol_)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, format_vol(fat_vol_)), FUN = cli_text)
   
   halfpound_brick <- c(
     object@creamCheese
@@ -1097,10 +1097,10 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@mascarpone, object@cottageCheese, object@yogurt, object@yogurtGreek, object@kefir, object@filmjolk,
     object@butter, object@ghee, object@evaporatedMilk, object@drymilk, object@milk, object@buttermilk, object@heavyCream, object@lightCream, object@sourCream
   )
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol_)], dairy_vol_, autoVolume(dairy_vol_)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol_)], dairy_vol_, format_vol(dairy_vol_)), FUN = cli_text)
   
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggYolk)], object@eggYolk, getPc(object, 'eggYolk')), FUN = cli_text)
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, getPc(object, 'eggWhite')), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggYolk)], object@eggYolk, format_pc(object, 'eggYolk')), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, format_pc(object, 'eggWhite')), FUN = cli_text)
   
   cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
   lapply(sprintf(fmt = '%s %.1f grams %s\n', 
@@ -1111,7 +1111,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   allSugar <- c(
     object@sugar, object@brownSugar
   )
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, autoVolume(allSugar)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)), FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
@@ -1136,26 +1136,26 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     object@blackRice, object@brownRice,
     object@syrup
   )
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, autoVolume(has_vol_small)), FUN = cli_text)
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, autoVolume(has_vol_large)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)), FUN = cli_text)
   
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
   
   if (!length(object@water_extra)) {
-    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f grams %s\n', object@water, autoVolume(object@water)))
+    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f grams %s\n', object@water, format_vol(object@water)))
   } else {
     water <- sum_.(object@water, object@water_extra)
-    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f=%.0f%s grams %s\n', water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), autoVolume(water)))
+    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f=%.0f%s grams %s\n', water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), format_vol(water)))
   }
   
-  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), object@water40, autoVolume(object@water40)))
-  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), object@water70, autoVolume(object@water70)))
-  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), object@water80, autoVolume(object@water80)))
-  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), object@water95, autoVolume(object@water95)))
-  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), object@boilingWater, autoVolume(object@boilingWater)))
-  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), object@iceWater, autoVolume(object@iceWater)))
-  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', make_ansi_style('orchid4')('\u6c14\u6ce1\u6c34'), object@carbonatedWater, autoVolume(object@carbonatedWater)))
-  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c99'), object@shavedIce, autoVolume(object@shavedIce)))
+  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), object@water40, format_vol(object@water40)))
+  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), object@water70, format_vol(object@water70)))
+  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), object@water80, format_vol(object@water80)))
+  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), object@water95, format_vol(object@water95)))
+  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), object@boilingWater, format_vol(object@boilingWater)))
+  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), object@iceWater, format_vol(object@iceWater)))
+  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', make_ansi_style('orchid4')('\u6c14\u6ce1\u6c34'), object@carbonatedWater, format_vol(object@carbonatedWater)))
+  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c99'), object@shavedIce, format_vol(object@shavedIce)))
   cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', make_ansi_style('orchid4')('\u51b0\u5757'), object@ice))
   
   cat('\n')

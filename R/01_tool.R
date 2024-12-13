@@ -76,15 +76,7 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   if (length(object@minute)) {
     min_ <- object@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
-    cat(paste0(' \u23f0 ', ifelse(
-      test = min_ > 60, 
-      yes = sprintf(fmt = '%.2g hours', min_ / 60),
-      no = sprintf(fmt = '%d minutes', min_)
-    ), ifelse(
-      test = nchar(names(min_)) > 0L,
-      yes = sprintf(fmt = ', %s', names(min_)),
-      no = ''
-    )), sep = '\n')
+    cat(paste(' \u23f0', format_minute(min_), names(min_)), sep = '\n')
   }
   
   object@operation <- gsub(pattern = '\n', replacement = '', x = object@operation)
@@ -101,6 +93,27 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   cat('\n')
   
 })
+
+
+format_minute <- function(x) {
+  # `x` is \link[base]{numeric} \link[base]{vector}
+  if (anyNA(x)) stop('do not allow missingness in [format_minute]')
+  day <- x %/% (60*24)
+  x_day <- x %% (60*24)
+  hour <- x_day %/% 60
+  min_ <- x %% 60
+  unlist(.mapply(FUN = function(...) {
+    z0 <- c(...)
+    z <- z0[!is.na(z0)]
+    if (!length(z)) return('')
+    paste(z, collapse = ' ')
+  }, dots = list(
+    ifelse(day > 0, yes = sprintf(fmt = '%dd', day), no = NA_character_), 
+    ifelse(hour > 0, yes = sprintf(fmt = '%dhr', hour), no = NA_character_), 
+    ifelse(min_ > 0, yes = sprintf(fmt = '%dmin', min_), no = NA_character_)
+  ), MoreArgs = NULL))
+}
+
 
 thermometer <- function(...) new(
   Class = 'tool', 
