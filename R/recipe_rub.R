@@ -40,7 +40,7 @@ setClass(Class = 'airfryer', contains = 'recipe', prototype = prototype(
     'Duck\U1f986, whole' = 30 # confirmed
   ),
   instruction = c(
-    'marinade in fridge, loosely covered, 2-3 days',
+    'marinade in fridge, loosely covered, 1-2 days',
     'wash off; pat dry',
     'let stand 30min+ before carving'
   ),
