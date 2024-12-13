@@ -506,6 +506,13 @@ tiramisuMix_Baileys <- function() new(
 tiramisuMix_Kahlua <- function() new(
   Class = 'tiramisuMix', 
   liqueur_tsp = c(Kahlua_coffee = 2*2), 
+  heavyCream_tsp = 1.5,
+  # date = as.Date('2024-05-13'), 
+  review = 'try added fat!')
+
+tiramisuMix2_Kahlua <- function() new(
+  Class = 'tiramisuMix', 
+  liqueur_tsp = c(Kahlua_coffee = 2*2), 
   drymilk = c(Carnation = 30, Nido = 10),
   # date = as.Date('2024-05-13'), 
   review = 'try added fat!')

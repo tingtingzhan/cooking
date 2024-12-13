@@ -248,6 +248,8 @@ Nutrition information.
 
 \item{\code{sodium}}{\link[base]{numeric} scalar, sodium (in grams) per serving}
 
+\item{\code{salt}}{\link[base]{numeric} scalar, salt (in grams) per serving}
+
 \item{\code{protein}}{\link[base]{numeric} scalar, protein (in grams) per serving}
 
 \item{\code{AbV}}{\link[base]{numeric} scalar between 0 and 1, alcohol by volume}

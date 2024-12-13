@@ -40,7 +40,7 @@
       .055
     } else NA_real_, 
     caffeLatte_ = .045, 
-    mocaccino_ = .05,
+    mocaccino_ = .045,
     muffin = if (length(x@cornmeal)) {
       .055 # tastes better than .05
     } else if (length(x@pumpkin)) {
@@ -312,7 +312,7 @@
     drink = if (length(x@liqueur)) .004 else NA_real_,
     snowSkin = .009, 
     caffeLatte_ = .011,
-    mocaccino_ = .043, 
+    mocaccino_ = .04, 
     goatKefir = if (length(x@coffee)) .043 else NA_real_, 
     cheesecake = if (length(x@cocoa)) .043 else NA_real_,
     # cookie = .04, 
@@ -328,7 +328,7 @@
   
   coffee <- function(x) switch(
     class(x), 
-    mocaccino_ = .007, 
+    mocaccino_ = .006, 
     goatKefir = if (length(x@cocoa)) .009 else NA_real_, # forgot if this is tested or hypothetical
     cheesecake = if (length(x@liqueur)) {
       .0073

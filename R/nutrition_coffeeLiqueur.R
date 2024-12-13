@@ -37,7 +37,7 @@ Kahlua_coffee <- function() new(
   servingGram = 74, servingTsp = 15, # 74ml
   calorie = 200,
   AbV = .2,
-  water = 74 - 11.68 - 29.7,
+  water = floor(74 - 11.68 - 29.7),
   carbohydrate = 29.7, sugar = 29.7)
 
 
@@ -50,7 +50,7 @@ Kahlua_especial <- function() new(
   totalwine = '94488750', usd = 23.99/750*44, # 750ml
   servingGram = 44, servingTsp = 9, # 44ml
   calorie = 143,
-  water = 44 - 12.15 - 14.4,
+  water = floor(44 - 12.15 - 14.4),
   AbV = .35,
   carbohydrate = 14.4, sugar = 14.4)
 

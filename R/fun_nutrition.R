@@ -408,7 +408,7 @@ nutrition.recipe <- function(x) {
     coffee = new(Class = 'equiv', actual = x@coffee / riceFlour)
   ) #else new(Class = 'riceBaker')
   
-  attr(ret, which = 'cocoaDx') <- if (length(x@cocoa) && !inherits(x, what = 'tiramisuMix')) new(
+  attr(ret, which = 'cocoaDx') <- if (length(x@cocoa) && !inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
     Class = 'cocoaDx',
     alcohol = new(Class = 'equiv', actual = alcohol / x@cocoa, ideal = devrecipe$alcohol2cocoa(x)),
     drymilk = new(Class = 'equiv', actual = x@drymilk / x@cocoa, ideal = devrecipe$drymilk2cocoa(x)),

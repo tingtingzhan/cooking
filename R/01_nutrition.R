@@ -155,6 +155,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot fat \link[base]{numeric} scalar, fat (in grams) per serving
 #' @slot cholesterol \link[base]{numeric} scalar, cholesterol (in grams) per serving
 #' @slot sodium \link[base]{numeric} scalar, sodium (in grams) per serving
+#' @slot salt \link[base]{numeric} scalar, salt (in grams) per serving
 #' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
@@ -289,7 +290,7 @@ setClass(Class = 'nutrition', slots = c(
   fiber = 'numeric', sugar = 'numeric', addedSugar = 'numeric',
   fat = 'numeric',
   cholesterol = 'numeric',
-  sodium = 'numeric',
+  sodium = 'numeric', salt = 'numeric',
   protein = 'numeric',
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
@@ -310,6 +311,13 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     if (!length(x@alcohol)) x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
     x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
     x@AbV <- numeric()
+  }
+  
+  # salt
+  if (length(x@salt)) {
+    if (length(x@sodium)) stop('should not have both @salt and @sodium')
+    x@sodium <- x@salt / (35.453+22.990)*22.990
+    x@salt <- numeric()
   }
   
   # name
@@ -359,7 +367,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     x@brand <- if (length(x@bachans)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://bachans.com/products/%s', x@bachans), text = 'Bachan\'s\U1f1fa\U1f1f8'))
     } else if (length(x@baileys)) {
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.baileys.com/en/products/%s', x@baileys), text = 'Baileys\U1f1ee\U1f1ea'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.baileys.com/en/products/baileys-%s', x@baileys), text = 'Baileys\U1f1ee\U1f1ea'))
     } else if (length(x@bassetts)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.bassettsicecream.com/_files/ugd/%s.pdf', x@bassetts), text = 'Bassetts\U1f368\U1f1fa\U1f1f8'))
     } else if (length(x@belgioioso)) {

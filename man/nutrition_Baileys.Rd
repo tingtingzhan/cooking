@@ -7,6 +7,7 @@
 \alias{Baileys_colada}
 \alias{Baileys_tiramisu}
 \alias{Baileys_smores}
+\alias{Baileys_pumpkinSpice}
 \alias{Baileys_icedCoffeeLatte}
 \title{Baileys Liqueur}
 \usage{
@@ -20,8 +21,11 @@ Baileys_tiramisu()
 
 Baileys_smores()
 
+Baileys_pumpkinSpice()
+
 Baileys_icedCoffeeLatte()
 }
 \description{
 Baileys Liqueur
 }
+\keyword{internal}
