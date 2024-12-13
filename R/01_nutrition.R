@@ -695,6 +695,7 @@ getGelatinLeaf <- function(x) {
 
 
 format_vol <- function(x, nm = names(x)) {
+  
   if (!length(x)) return(character())
   
   y <- x / gram_per_tsp(nm)
