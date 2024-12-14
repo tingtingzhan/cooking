@@ -18,7 +18,7 @@
 \section{Slots}{
 
 \describe{
-\item{\code{name}}{\link[base]{character} scalar, brand and name of kitchen tool}
+\item{\code{name,name2}}{\link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool}
 
 \item{\code{recipe_pc}}{\link[base]{numeric} scalar, how many times of recipe}
 
@@ -41,5 +41,9 @@
 \item{\code{note}}{\link[base]{character} scalar or \link[base]{vector}, other notes}
 
 \item{\code{waterLost}}{\link[base]{numeric} scalar, water evaporated in cooking (in grams)}
+
+\item{\code{alias}}{\link[base]{character} scalar}
+
+\item{\code{kitchenaid}}{\link[base]{character} scalar}
 }}
 

@@ -8,7 +8,7 @@
 #' 
 #' @description ..
 #' 
-#' @slot name \link[base]{character} scalar, brand and name of kitchen tool
+#' @slot name,name2 \link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool
 #' 
 #' @slot recipe_pc \link[base]{numeric} scalar, how many times of recipe
 #' 
@@ -32,13 +32,19 @@
 #' 
 #' @slot waterLost \link[base]{numeric} scalar, water evaporated in cooking (in grams) 
 #' 
+#' @slot alias \link[base]{character} scalar
+#' @slot kitchenaid \link[base]{character} scalar
+#' 
+#' 
+#' 
 #' @param object \linkS4class{tool} object
 #' 
 #' @name tool
 #' @aliases tool-class
 #' @export
 setClass(Class = 'tool', slots = c(
-  name = 'character',
+  name = 'character', alias = 'character',
+  name2 = 'character',
   recipe_pc = 'numeric',
   recipe_weight = 'numeric',
   treatment = 'character',
@@ -49,8 +55,30 @@ setClass(Class = 'tool', slots = c(
   minute = 'numeric',
   cooling = 'character',
   note = 'character',
-  waterLost = 'numeric'
+  waterLost = 'numeric',
+  
+  kitchenaid = 'character'
 ))
+
+
+setMethod(f = initialize, signature = 'tool', definition = function(.Object, ...) {
+  
+  x <- callNextMethod(.Object, ...)
+  
+  if (length(x@kitchenaid)) {
+    x@name <- c(style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html', x@kitchenaid)))
+    x@kitchenaid <- character()
+  }
+  
+  if (length(x@alias)) {
+    x@name <- paste(x@alias, x@name)
+    x@alias <- character()
+  }
+
+  return(x)
+  
+})
+
 
 
 #' @rdname tool
@@ -59,7 +87,8 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   
   if (identical(object, new(Class = 'tool'))) return(invisible())
     
-  cat(style_bold(make_ansi_style('navy')(sprintf(fmt = '\u2756 %s \u2756\n', object@name))))
+  cat(make_ansi_style('navy')(sprintf(fmt = '\u2756 %s \u2756\n', object@name)))
+  cat(make_ansi_style('navy')(sprintf(fmt = '\u2756 %s \u2756\n', object@name2)))
   
   if (length(object@recipe_pc)) {
     cat(sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n', object@recipe_pc))
@@ -132,17 +161,22 @@ InstantPot <- function(...) new(
 
 KSMICM <- function(...) new(
   Class = 'tool', 
-  name = 'Kitchen Aid Ice Cream Maker KSMICM', 
+  name = 'Kitchen Aid Ice Cream Attachment KSMICM', kitchenaid = 'ksmicm',
   ...)
 
 KSM8990 <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/commercial-products/commercial-stand-mixers/p.nsf-certified-commercial-series-8-quart-bowl-lift-stand-mixer-with-stainless-steel-bowl-guard.ksmc895ob.html')),
+  name = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', kitchenaid = 'ksmc895ob',
   ...)
 
 KSM3316X <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', url = 'https://www.kitchenaid.com/countertop-appliances/stand-mixers/tilt-head-stand-mixers/p.artisan-mini-3.5-quart-tilt-head-stand-mixer.ksm3316xer.html')),
+  name = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', kitchenaid = 'ksm3316xer',
+  ...)
+
+KSEG950ESS <- function(...) new(
+  Class = 'tool',
+  name = 'Kitchen Aid Downdraft Range KSEG950ESS', kitchenaid = 'kseg950ess', alias = '\u70e4\u7bb1',
   ...)
 
 RobamCT763 <- function(...) new(
@@ -151,27 +185,23 @@ RobamCT763 <- function(...) new(
   ...)
 
 
-Staub1200023 <- function(...) new(
-  Class = 'tool',
-  name = paste('\u94f8\u94c1\u70e4\u9e21\u67b6', style_hyperlink(text = 'Staub Vertical Chicken Roaster', url = 'https://www.zwilling.com/us/staub-cast-iron---baking-dishes-roasters-vertical-chicken-roaster---black-1200023')),
-  ...)
 
 
 PhilipsHD9867 <- function(...) new(
   Class = 'tool', 
-  name = paste('\u7a7a\u6c14\u70b8\u9505', style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16/premium-airfryer-xxl')),
+  name = c(style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16')), alias = '\u7a7a\u6c14\u70b8\u9505',
   ...)
 
 
 JoyoungDJ13U <- function(...) new(
   Class = 'tool', 
-  name = paste('\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html')),
+  name = c(style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html')), alias = '\u8c46\u6d46\u673a', 
   ...)
 
 
 JoyoungDJ06M <- function(...) new(
   Class = 'tool', 
-  name = paste('\u8ff7\u4f60\u8c46\u6d46\u673a', style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html')),
+  name = c(style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html')), alias = '\u8ff7\u4f60\u8c46\u6d46\u673a', 
   ...)
 
 
@@ -210,7 +240,7 @@ JoyoungCJA9U <- function(
     ...
 ) new(
   Class = 'tool',
-  name = paste('\u7092\u83dc\u673a', unclass(style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html'))),
+  name = c(unclass(style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html'))), alias = '\u7092\u83dc\u673a',
   program = program,
   ...)
 
@@ -228,7 +258,9 @@ Stanley20 <- function(...) new(
 
 Staub_vertRoaster <- function(...) new(
   Class = 'tool',
-  name = paste('\u94f8\u94c1\u70e4\u9e21\u67b6', style_hyperlink(text = 'Staub Vertical Chicken Roaster', url = 'https://www.zwilling.com/us/1200023/40509-339-0.html')),
+  name = c(style_hyperlink(text = 'Staub Vertical Chicken Roaster', url = 'https://www.zwilling.com/us/staub-cast-iron---baking-dishes-roasters-vertical-chicken-roaster---black-1200023')), alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
+  name2 = KSEG950ESS()@name,
   ...)
+
 
 

@@ -40,18 +40,17 @@ setClass(Class = 'airfryer', contains = 'recipe', prototype = prototype(
     'Duck\U1f986, whole' = 30 # confirmed
   ),
   instruction = c(
-    'marinade in fridge, loosely covered, 1-2 days',
+    'marinade in fridge, loosely covered, 24 hours',
     'wash off; pat dry',
     'let stand 30min+ before carving'
   ),
   PhilipsHD9867 = PhilipsHD9867(
     fahrenheit = 350,
-    minute = c('\U1f389 half duck\U1f986, skin face up' = 35)
+    minute = c('\U1f389 half duck\U1f986, 3-3.5lb, skin face up' = 35)
   ),
   Staub_vertRoaster = Staub_vertRoaster(
-    treatment = 'conventional oven',
     fahrenheit = 350,
-    minute = c('\U1f389 whole duck\U1f986' = 90)
+    minute = c('\U1f389 whole duck\U1f986, 3-3.5lb' = 90)
   )
 ))
 
