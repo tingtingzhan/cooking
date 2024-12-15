@@ -34,6 +34,10 @@ if (FALSE) {
   #?cli::cli_text # does not have a returned value
   cli::cli_text('Tingting\'s {.run [soymilk](cooking::soymilk())}')
   
+  cli::cli_text('Tingting\'s {.run [rnorm(10L)](stats::rnorm(10L))}') # no!
+  cli::cli_text('Tingting\'s {.run [load_all](devtools::load_all())}') # yes
+  cli::cli_text('Tingting\'s {.run [load_all](devtools::?load_all)}') # no!
+  
   ret0 <- cli:::glue_cmd('Tingting\'s {.run [soymilk](cooking::soymilk())}')
   class(ret0) # cli_glue_delay
   cli:::cli__message(type = 'text', args = list(text = ret0))
