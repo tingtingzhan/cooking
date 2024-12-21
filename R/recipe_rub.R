@@ -33,7 +33,7 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
     name2 = Staub_deepSkillet()@name,
     program = 'Sous Vide',
     fahrenheit = c(140),
-    minute = c('\U1f389 New York strip steak' = 60),
+    minute = c('\U1f389 New York strip steak, 1-1.5inch' = 60),
     cooling = c(
       'let stand 10min in bag, pat dry',
       'pan-sear fat cap'

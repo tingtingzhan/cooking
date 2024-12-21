@@ -282,7 +282,7 @@ Staub_vertRoaster <- function(...) new(
 
 Staub_deepSkillet <- function(...) new(
   Class = 'tool',
-  name = 'Staub Deep Skillet, 8.5-inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
+  name = 'Staub Deep Skillet, 8.5 inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
   ...
 )
 
