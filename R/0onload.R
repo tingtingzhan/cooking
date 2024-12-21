@@ -153,7 +153,11 @@
   
   creamcheese <- function(x) switch(
     class(x),
-    cheesecake = if (length(x@pumpkin)) .5 else .7,
+    cheesecake = if (length(x@pumpkin)) {
+      .5 
+    } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
+      .55
+    } else .7,
     NA_real_)
   
   carbohydrate <- function(x) switch(
@@ -191,7 +195,11 @@
     shrimpfillCantonese = .14, 
     shrimpfill_garlicHerb = .15, 
     mousse = .15,
-    cheesecake = if (length(x@pumpkin)) .14 else .18, # 3:1 mixed cheese
+    cheesecake = if (length(x@pumpkin)) {
+      .14 
+    } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
+      .145
+    } else .18, # 3:1 mixed cheese
     lava = if (length(x@blackSesame)) .17 else if (length(x@coconut)) .08 else NA_real_,
     cookie = if (length(x@blackSesame)) {
       .28
@@ -235,8 +243,7 @@
     marinade = .011,
     tomyumStew = .02,
     flavoredButter = .015,
-    sousvide = .1,
-    airfryer = .21,
+    rub = .2,
     NA_real_)
   
   matcha <- function(x) switch(
@@ -501,7 +508,11 @@
   
   addedWater2creamcheese <- function(x) switch(
     class(x),
-    cheesecake = if (length(x@pumpkin)) .6 else .25,
+    cheesecake = if (length(x@pumpkin)) {
+      .6 
+    } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
+      .5
+    } else .25,
     NA_real_)
   
   fat2flour <- function(x) switch(

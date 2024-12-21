@@ -125,6 +125,11 @@ beef_rib <- function() new(
   calorie = 175,
   servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081)
 
+#beef_strip <- function() new(
+#  Class = 'nutrition', 
+#)
+
+
 beef_rib_Angus <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170783L, wegmans = 2874L,
   name = 'Angus Beef\U1f402 Boneless Short Ribs',

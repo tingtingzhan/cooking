@@ -12,6 +12,14 @@ FrontierCoop_harissa <- function() new(
   calorie = 15,
   fat = .5, sodium = .03, carbohydrate = 2, protein = 1)
 
+FrontierCoop_5spice <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], frontiercoop = 'frontier-co-op-five-spice-powder-1-92-oz',
+  name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
+  contain = c(
+    'cinnamon', 'fennel seed', 'clove', 'star anise', 'white pepper'
+  ),
+  usd = 5.19,
+  servingGram = 54)
 
 
 FrontierCoop_vindaloo <- function() new(

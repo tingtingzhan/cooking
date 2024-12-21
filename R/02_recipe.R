@@ -546,7 +546,7 @@ get_flavor_ <- function(x) {
       i@name
     } else if (inherits(i, 'recipe')) {
       #i@alias_flavor
-      i@alias
+      trimws(gsub('Evaporated', replacement = '', i@alias))
     } else stop('what happens?')
   }, FUN.VALUE = ''), collapse = ' + ')
   #paste(vapply(x, FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
@@ -918,7 +918,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     } else if (length(x@pear)) {
       '\u68a8\U1f350'
     } else if (length(x@pineapple)) {
-      '\u83e0\u841d\U1f34d'
+      # '\u83e0\u841d\U1f34d'
+      'Pineapple\U1f34d'
     } else if (length(x@pumpkin) || length(x@pumpkinPieMix)) {
       # '\u5357\u74dc\U1f383'
       'Pumpkin\U1f383'

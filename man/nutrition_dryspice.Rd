@@ -3,9 +3,12 @@
 \name{nutrition_dryspice}
 \alias{nutrition_dryspice}
 \alias{SimplyOrganic_pumpkinSpice}
+\alias{SimplyOrganic_5spice}
 \title{Dry Spice}
 \usage{
 SimplyOrganic_pumpkinSpice()
+
+SimplyOrganic_5spice()
 }
 \description{
 Dry Spice

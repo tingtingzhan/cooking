@@ -3,33 +3,28 @@
 \docType{class}
 \name{rub}
 \alias{rub}
-\alias{sousvide-class}
-\alias{airfryer-class}
-\alias{cuminMontreal_sousvide}
-\alias{Montreal_sousvide}
-\alias{Southwest_souvide}
-\alias{harissa_sousvide}
-\alias{vindaloo_sousvide}
-\alias{vindaloo_airfryer}
-\title{\linkS4class{sousvide} and \linkS4class{airfryer} Rub Recipes}
+\alias{rub-class}
+\alias{cuminMontreal_rub}
+\alias{Montreal_rub}
+\alias{Southwest_rub}
+\alias{harissa_rub}
+\alias{vindaloo_rub}
+\title{\linkS4class{rub} Recipes}
 \usage{
-cuminMontreal_sousvide()
+cuminMontreal_rub()
 
-Montreal_sousvide()
+Montreal_rub()
 
-Southwest_souvide()
+Southwest_rub()
 
-harissa_sousvide()
+harissa_rub()
 
-vindaloo_sousvide()
-
-vindaloo_airfryer()
+vindaloo_rub()
 }
 \description{
 ..
 }
 \examples{
-cuminMontreal_sousvide()
-vindaloo_sousvide()
+cuminMontreal_rub()
 
 }

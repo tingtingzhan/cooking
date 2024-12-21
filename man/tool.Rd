@@ -45,5 +45,7 @@
 \item{\code{alias}}{\link[base]{character} scalar}
 
 \item{\code{kitchenaid}}{\link[base]{character} scalar}
+
+\item{\code{staub}}{\link[base]{character} scalar}
 }}
 

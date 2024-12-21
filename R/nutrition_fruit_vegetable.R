@@ -5,6 +5,20 @@
 #' @name nutrition_fruit_vegetable
 NULL
 
+Kirkland_honey <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  costco = '100516925',
+  name = 'Wild Flower Honey\U1f36f', alias = '\u8702\u871c',
+  servingGram = 21, servingTbsp = 1, 
+  calorie = 60, carbohydrate = 17, sugar = 17, addedSugar = 17)
+
+Kirkland_rawHoney <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  costco = '100334136',
+  name = 'Organic Raw Honey\U1f36f', alias = '\u8702\u871c',
+  servingGram = 21, servingTbsp = 1, 
+  calorie = 60, carbohydrate = 17, sugar = 16)
+
 # dried fruits
 OceanSpray_cranberry <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
@@ -213,7 +227,7 @@ Bruces_yam <- function() new(
 
 Wegmans_peanutButter <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 26774L,
-  name = 'Peanut Butter',
+  name = 'Peanut\U1f95c Butter',
   servingTbsp = 2, servingGram = 32, 
   calorie = 190,
   fat = 16, carbohydrate = 7, sugar = 2, protein = 8)
@@ -252,9 +266,13 @@ Navitas_acai <- function() new(
 # fresh vegetables
 bambooShoot <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 169210L,
-  name = '\u7af9\u7b0b Bamboo Shoots', # \U1f38d
+  name = 'Bamboo Shoots', alias = '\u7af9\u7b0b', # \U1f38d
   servingGram = 100, water = 91, protein = 2.6, fat = .3, sugar = 3, sodium = .004)
 
+garlic <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 2597546L,
+  name = 'Garlic\U1f9c4, Fresh', alias = '\u849c\u84c9',
+  servingGram = 100, carbohydrate = 20)
 
 celeriac <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170400L,

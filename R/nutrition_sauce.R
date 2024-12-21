@@ -126,3 +126,13 @@ ThaiKitchen_redCurry <- function() new(
   calorie = 5,
   carbohydrate = 1, sodium = .095, review = 'Love!')
 
+
+
+Squid_fishSauce <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  brand = c(style_hyperlink(text = 'Squid\U1f1f9\U1f1ed', url = 'https://squidbrand.com/en/product-category/export-en/')),
+  name = 'Fish\U1f41f Sauce', alias = '\u9c7c\u9732',
+  serving_ml = 15, servingGram = 15, #?
+  sodium = 1.46, protein = 2
+  # https://www.sayweee.com/zh/product/Squid-Brand-Fish-Sauce/27743
+)

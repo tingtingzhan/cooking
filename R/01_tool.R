@@ -34,7 +34,7 @@
 #' 
 #' @slot alias \link[base]{character} scalar
 #' @slot kitchenaid \link[base]{character} scalar
-#' 
+#' @slot staub \link[base]{character} scalar
 #' 
 #' 
 #' @param object \linkS4class{tool} object
@@ -57,7 +57,8 @@ setClass(Class = 'tool', slots = c(
   note = 'character',
   waterLost = 'numeric',
   
-  kitchenaid = 'character'
+  kitchenaid = 'character',
+  staub = 'character'
 ))
 
 
@@ -68,6 +69,11 @@ setMethod(f = initialize, signature = 'tool', definition = function(.Object, ...
   if (length(x@kitchenaid)) {
     x@name <- c(style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html', x@kitchenaid)))
     x@kitchenaid <- character()
+  }
+  
+  if (length(x@staub)) {
+    x@name <- c(style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.zwilling.com/us/%s.html', x@staub)))
+    x@staub <- character()
   }
   
   if (length(x@alias)) {
@@ -87,8 +93,8 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   
   if (identical(object, new(Class = 'tool'))) return(invisible())
     
-  cat(make_ansi_style('navy')(sprintf(fmt = '\u2756 %s \u2756\n', object@name)))
-  cat(make_ansi_style('navy')(sprintf(fmt = '\u2756 %s \u2756\n', object@name2)))
+  cat(make_ansi_style('royalblue')(sprintf(fmt = '\u2756 %s \u2756\n', object@name)))
+  cat(make_ansi_style('royalblue')(sprintf(fmt = '\u2756 %s \u2756\n', object@name2)))
   
   if (length(object@recipe_pc)) {
     cat(sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n', object@recipe_pc))
@@ -100,13 +106,25 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   
   cat(sprintf(fmt = ' \u2726 %s\n', object@program))
   cat(sprintf(fmt = ' \U1f6e0 %s\n', object@attachment))
-  cat(sprintf(fmt = ' \U1f321 %d\u00b0F; %d\u00b0C\n', object@fahrenheit, round((object@fahrenheit - 32) * 5/9)))
+  
+  txt_fahrenheit <- col_blue(sprintf(fmt = '%.0f\u00b0F', object@fahrenheit))
+  txt_celsius <- col_magenta(sprintf(fmt = '%.0f\u00b0C', (object@fahrenheit - 32) * 5/9))
   
   if (length(object@minute)) {
     min_ <- object@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
-    cat(paste(' \u23f0', format_minute(min_), names(min_)), sep = '\n')
-  }
+    #cat(paste(' \u23f0', format_minute(min_), names(min_)), sep = '\n')
+    cat(sprintf(
+      fmt = ' \U1f321%s \U1f321%s \u23f0%s %s', 
+      txt_fahrenheit, txt_celsius, 
+      style_bold(col_red(format_minute(min_))), 
+      names(min_)), sep = '\n')
+  } else cat(sprintf(
+    fmt = ' \U1f321%s \U1f321%s', 
+    txt_fahrenheit, 
+    txt_celsius
+  ), sep = '\n')
+  
   
   object@operation <- gsub(pattern = '\n', replacement = '', x = object@operation)
   object@operation <- gsub(pattern = '^ *|(?<= ) | *$', replacement = '', x = object@operation, perl = TRUE)
@@ -156,7 +174,7 @@ CuisinartICE70 <- function(...) new(
 
 InstantPot <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker')),
+  name = c(style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker')), alias = '\u7535\u9ad8\u538b\u9505',
   ...)
 
 KSMICM <- function(...) new(
@@ -258,9 +276,14 @@ Stanley20 <- function(...) new(
 
 Staub_vertRoaster <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Staub Vertical Chicken Roaster', url = 'https://www.zwilling.com/us/staub-cast-iron---baking-dishes-roasters-vertical-chicken-roaster---black-1200023')), alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
+  name = 'Staub Vertical Chicken Roaster', staub = '1200023', alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
   name2 = KSEG950ESS()@name,
   ...)
 
+Staub_deepSkillet <- function(...) new(
+  Class = 'tool',
+  name = 'Staub Deep Skillet, 8.5-inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
+  ...
+)
 
 

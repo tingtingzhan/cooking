@@ -13,7 +13,7 @@
 \alias{appleBrandy_cheesecake}
 \alias{Bourbon_cheesecake_Crown}
 \alias{pumpkin_cheesecake}
-\alias{coffee_cheesecake}
+\alias{pineapple_cheesecake}
 \alias{matcha_cheesecake}
 \alias{mocaccino_cheesecake}
 \alias{ginger_cheesecake}
@@ -41,7 +41,7 @@ Bourbon_cheesecake_Crown()
 
 pumpkin_cheesecake()
 
-coffee_cheesecake()
+pineapple_cheesecake()
 
 matcha_cheesecake()
 
@@ -101,8 +101,6 @@ Using 100\% Philadelphia Neufchatel cream cheese gives a high sodium (.3\%) and 
 
 \section{To add flavoring to the filling}{
 
-
-Use of powdered flavor, e.g., \link{coffee_cheesecake}.
 
 Use of infused syrup, which is my favorite option, e.g.,
 \link{ryeWhisky_cheesecake}.

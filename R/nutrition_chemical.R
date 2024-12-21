@@ -30,7 +30,7 @@ Morton_salt <- function() new(
 Ajinomoto_msg <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
-  name = '\u5473\u7cbe Monosodium Glutamate',
+  name = 'Monosodium Glutamate', alias = '\u5473\u7cbe',
   usd = 3.99/454, yamibuy = '25775165',
   servingGram = 1, 
   servingTsp = 1/4, # packaging

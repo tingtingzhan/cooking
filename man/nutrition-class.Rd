@@ -138,7 +138,9 @@ Nutrition information.
 
 \item{\code{leaperrins}}{\link[base]{character} scalar}
 
-\item{\code{leekumkee}}{\link[base]{character} scalar}
+\item{\code{lkkhk}}{\link[base]{character} scalar}
+
+\item{\code{lkkusa}}{\link[base]{character} scalar}
 
 \item{\code{maeda}}{\link[base]{character} scalar}
 
@@ -193,6 +195,8 @@ Nutrition information.
 \item{\code{swiftmeats}}{\link[base]{character} scalar}
 
 \item{\code{swissmiss}}{\link[base]{character} scalar}
+
+\item{\code{tsemporium}}{\link[base]{character} scalar}
 
 \item{\code{thaikitchen}}{\link[base]{character} scalar}
 

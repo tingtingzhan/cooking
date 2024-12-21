@@ -55,6 +55,7 @@ PreppyKitchen_cheesecake <- function() new(
 Junior_original <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 81705L, usd = 13.89/5,
   juniorscheesecake = 'original-ny-plain-cheesecake',
+  # watch this carefully!!! https://www.youtube.com/watch?v=hktm2mvQKc0
   name = 'Original Cheesecake',
   servingGram = 136, 
   calorie = 460,

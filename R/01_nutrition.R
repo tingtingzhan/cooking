@@ -92,7 +92,8 @@ setClass(Class = 'extra', slots = c(
 #' @slot krusteaz \link[base]{character} scalar
 #' @slot landolakes \link[base]{character} scalar
 #' @slot leaperrins \link[base]{character} scalar
-#' @slot leekumkee \link[base]{character} scalar
+#' @slot lkkhk \link[base]{character} scalar
+#' @slot lkkusa \link[base]{character} scalar
 #' @slot maeda \link[base]{character} scalar
 #' @slot marukyu \link[base]{character} scalar
 #' @slot mccormick,mccormickculinary,oldbay,grillmates \link[base]{character} scalar
@@ -120,6 +121,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot stonyfield \link[base]{character} scalar
 #' @slot swiftmeats \link[base]{character} scalar
 #' @slot swissmiss \link[base]{character} scalar
+#' @slot tsemporium \link[base]{character} scalar
 #' @slot thaikitchen \link[base]{character} scalar
 #' @slot twinings \link[base]{character} scalar
 #' @slot wesson \link[base]{character} scalar
@@ -233,7 +235,8 @@ setClass(Class = 'nutrition', slots = c(
   krusteaz = 'character',
   landolakes = 'character',
   leaperrins = 'character',
-  leekumkee = 'character',
+  lkkhk = 'character',
+  lkkusa = 'character',
   maeda = 'character',
   marukyu = 'character',
   mccormick = 'character', mccormickculinary = 'character', oldbay = 'character', grillmates = 'character',
@@ -263,6 +266,7 @@ setClass(Class = 'nutrition', slots = c(
   stonyfield = 'character',
   swiftmeats = 'character',
   swissmiss = 'character',
+  tsemporium = 'character',
   thaikitchen = 'character',
   twinings = 'character',
   wesson = 'character',
@@ -458,8 +462,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://www.landolakes.com/products/%s', x@landolakes), text = 'Land O Lakes\U1f1fa\U1f1f8'))
     } else if (length(x@leaperrins)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s', x@leaperrins), text = 'Lea & Perrins\U1f1ec\U1f1e7'))
-    } else if (length(x@leekumkee)) {
-      c(style_hyperlink(url = sprintf(fmt = 'https://usa.lkk.com/zh-hk/products/%s', x@leekumkee), text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0'))
+    } else if (length(x@lkkhk)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://hk.lkk.com/zh-hk/foodservices/products/%s', x@lkkhk), text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0'))
+    } else if (length(x@lkkusa)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://usa.lkk.com/zh-hk/products/%s', x@lkkusa), text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0'))
     } else if (length(x@maeda)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://maeda-en.com/collections/matcha-powder/products/%s', x@maeda), text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5'))
     } else if (length(x@marukyu)) {
@@ -539,6 +545,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://swiftmeats.com/products/%s', x@swiftmeats), text = 'Swift\U1f1fa\U1f1f8'))
     } else if (length(x@swissmiss)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.swissmiss.com/%s', x@swissmiss), text = 'Swiss Miss\U1f1fa\U1f1f8'))
+    } else if (length(x@tsemporium)) {
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.tsemporium.com/en_us/xproduct/index/index/s/%s', x@tsemporium), text = 'Tak Shing Hong\u5fb7\u6210\u884c\U1f1fa\U1f1f8'))
     } else if (length(x@thaikitchen)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s', x@thaikitchen), text = 'Thai Kitchen\U1f1fa\U1f1f8'))
     } else if (length(x@twinings)) {
@@ -831,6 +839,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   if (length(contain <- obj@contain)) {
     contain_chn <- character(length = length(contain))
+    contain_chn[tolower(contain) == 'anise'] <- '\u8334\u82b9'
     contain_chn[tolower(contain) == 'basil'] <- '\u7f57\u52d2'
     contain_chn[tolower(contain) == 'bay leaves'] <- '\u6708\u6842\u53f6'
     contain_chn[tolower(contain) == 'black pepper'] <- '\u9ed1\u80e1\u6912'
@@ -844,7 +853,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
     contain_chn[tolower(contain) == 'cumin'] <- '\u5b5c\u7136'
     contain_chn[tolower(contain) == 'garlic'] <- '\u849c\U1f9c4'
     contain_chn[tolower(contain) == 'ginger'] <- '\u59dc\U1fada'
-    contain_chn[tolower(contain) == 'fennel'] <- '\u5c0f\u8334\u9999'
+    contain_chn[tolower(contain) %in% c('fennel', 'fennel seed')] <- '\u5c0f\u8334\u9999'
     contain_chn[tolower(contain) == 'fenugreek'] <- '\u80e1\u82a6\u5df4'
     contain_chn[tolower(contain) == 'lavender flowers'] <- '\u85b0\u8863\u8349'
     contain_chn[tolower(contain) == 'lemon peel'] <- '\u67e0\u6aac\U0001f34b\u76ae'

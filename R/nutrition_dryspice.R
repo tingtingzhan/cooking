@@ -82,6 +82,15 @@ McCormick_oldBay <- function() new(
   servingGram = .6, servingTsp = 1/4, sodium = .14,
   contain = c('salt', 'celery seed', 'red pepper', 'black pepper', 'paprika'))
 
+McCormick_5spice <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'chinese-five-spice',
+  name = 'Chinese Five Spice', alias = '\u4e94\u9999\u7c89',
+  amazon = 'B005D8T86G', usd = 23.99/453,
+  contain = c('anise', 'cinnamon', 'star anise', 'clove', 'ginger', 'sulfiting agents'),
+  servingGram = 1, servingTbsp = 1 #??
+)
+
+
 
 McCormick_ginger <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'ginger-ground',
@@ -113,10 +122,11 @@ McCormick_MontrealSteak <- function() new(
 
 
 McCormick_whitePepper <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.mccormick.com/gourmet/spices-and-flavors/organic/organic-white-pepper-ground',
-  # https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/white-pepper-ground
-  brand = 'McCormick Gourmet\U1f1fa\U1f1f8', 
-  name = 'Organic White Pepper', alias = '\u767d\u80e1\u6912\u7c89',
+  Class = 'nutrition', call = match.call()[[1L]], 
+  mccormickculinary = 'white-pepper-ground',
+  #brand = 'McCormick Gourmet\U1f1fa\U1f1f8', url = 'https://www.mccormick.com/gourmet/spices-and-flavors/organic/organic-white-pepper-ground', name = 'Organic White Pepper', 
+  name = 'White Pepper, Ground', 
+  alias = '\u767d\u80e1\u6912\u7c89',
   servingGram = 49, usd = 5.12, # 2023-11-09 Walmart
   servingTbsp = 7) # https://freefoodtips.com/white-pepper-ground-spices-grams-to-ml/
 
@@ -238,10 +248,13 @@ SimplyOrganic_pumpkinSpice <- function() new(
   servingTbsp = 10,
   contain = c('cinnamon', 'ginger', 'nutmeg', 'clove'))
 
+#' @rdname nutrition_dryspice
+#' @export
 SimplyOrganic_5spice <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'five-spice-powder-2-01-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
-  servingGram = 57, usd = 7.89, # 2023-12-06
+  wegmans = 202649L, usd = 5.99, # 2024-12-06
+  servingGram = 57, 
   servingTbsp = 10,
   contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
 
@@ -303,4 +316,20 @@ Chinata_paprika <- function() new(
   # https://www.aqua-calc.com/calculate/food-volume-to-weight
   # https://www.traditionaloven.com/foods/exchange/tbsp/g-gram/spice-paprika.html
   ) 
+
+
+TakShing_starAnise <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  tsemporium = '640769097776',
+  name = 'Dried Star Anise Powder', alias = '\u516b\u89d2\u7c89',
+  serving_oz = 16, usd = 9.99
+)
+
+
+TakShing_KGalanga <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  tsemporium = '640769094966',
+  name = 'Kaempferia Galanga Powder', alias = '\u6c99\u59dc\u7c89',
+  serving_oz = 16, usd = 10.99
+)
 

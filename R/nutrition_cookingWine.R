@@ -3,7 +3,7 @@
 Wegmans_Marsala <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270922L, usd = 3.29/375*30,
-  name = '\u6599\u9152 Marsala Cooking Wine',
+  name = 'Marsala Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 35,
   sodium = .17,
@@ -15,7 +15,7 @@ Wegmans_Marsala <- function() new(
 Wegmans_Sherry <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270943L, usd = 3.29/375*30,
-  name = '\u6599\u9152 Sherry Cooking Wine',
+  name = 'Sherry Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 35,
   sodium = .18,
@@ -26,7 +26,7 @@ Wegmans_Sherry <- function() new(
 Wegmans_redCookingWine <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270926L, usd = 3.29/375*30,
-  name = '\u6599\u9152 Red Cooking Wine',
+  name = 'Red Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 20,
   sodium = .18,
@@ -35,7 +35,7 @@ Wegmans_redCookingWine <- function() new(
 Wegmans_whiteCookingWine <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270899L, usd = 3.29/375*30,
-  name = '\u6599\u9152 White Cooking Wine',
+  name = 'White Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 35,
   sodium = .15,

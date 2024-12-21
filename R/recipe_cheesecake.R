@@ -36,7 +36,7 @@
 #' 
 # Use of toppings, which is not covered in this document.
 #' 
-#' Use of powdered flavor, e.g., [coffee_cheesecake].
+# Use of powdered flavor, e.g., [coffee_cheesecake].
 #' 
 #' Use of infused syrup, which is my favorite option, e.g.,
 #' [ryeWhisky_cheesecake].
@@ -223,17 +223,22 @@ tomato_cheesecake <- function() new(
 
 
 
+#' @rdname cheesecake
+#' @export
 pineapple_cheesecake <- function() new(
   Class = 'cheesecake',
   water = numeric(),
   starch_cup = c(Wegmans_corn = 1/3),
   homemade = c(pineapple_evap = 500), 
-  review = 'try'
+  sugar = 35,
+  date = as.Date('2024-12-15'),
+  pros = 'unique flavor',
+  cons = 'pineapple bitterness' # https://www.reddit.com/r/Cooking/comments/1442r6h/why_my_pineapple_based_dish_turn_out_to_be_bitter/?rdt=51261
 )
 
 
-#' @rdname cheesecake
-#' @export
+
+
 coffee_cheesecake <- function() new(
   Class = 'cheesecake',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 7), sugar = 100,

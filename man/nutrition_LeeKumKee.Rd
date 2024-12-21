@@ -5,6 +5,10 @@
 \alias{LeeKumKee_chickenBouillon}
 \alias{LeeKumKee_5spiceMarinade}
 \alias{LeeKumKee_brownBraising}
+\alias{LeeKumKee_sweetBean}
+\alias{LeeKumKee_ChuHou}
+\alias{LeeKumKee_hoisin}
+\alias{LeeKumKee_sesameSauce}
 \alias{LeeKumKee_garlic}
 \alias{LeeKumKee_premium_oyster}
 \alias{LeeKumKee_oyster}
@@ -19,6 +23,14 @@ LeeKumKee_chickenBouillon()
 LeeKumKee_5spiceMarinade()
 
 LeeKumKee_brownBraising()
+
+LeeKumKee_sweetBean()
+
+LeeKumKee_ChuHou()
+
+LeeKumKee_hoisin()
+
+LeeKumKee_sesameSauce()
 
 LeeKumKee_garlic()
 
