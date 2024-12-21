@@ -25,28 +25,16 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
     'whole duck\U1f986, 3-3.5lb, inside' = 10, # 30g was for inside-and-outside
     'New York strip steak' = 10 # to confirm!!!
   ),
-  PhilipsHD9867 = PhilipsHD9867(
-    fahrenheit = 350,
-    minute = c('\U1f389 half duck\U1f986, 3-3.5lb, skin face up' = 35)
-  ),
   InstantPot = InstantPot(
     name2 = Staub_deepSkillet()@name,
-    program = 'Sous Vide',
+    program = '\u4f4e\u6e29\u6c34\u6d74\u7a0b\u5e8f Sous Vide program',
     fahrenheit = c(140),
     minute = c('\U1f389 New York strip steak, 1-1.5inch' = 60),
     cooling = c(
-      'let stand 10min in bag, pat dry',
+      'let stand 10min in bag', 
+      'pat dry',
       'pan-sear fat cap'
     )
-  ),
-  Staub_vertRoaster = Staub_vertRoaster(
-    treatment = c(
-      'marinade in fridge, loosely covered, 24 hours',
-      'wash off; pat dry'
-    ),
-    fahrenheit = 350,
-    minute = c('\U1f389 whole duck\U1f986, 3-3.5lb' = 90),
-    cooling = 'let stand 30min+ before carving'
   )
 ))
 
@@ -135,6 +123,19 @@ duck_coating <- function() new(
   flavor = c(Kirkland_rawHoney = 20),
   liqueur = c(Wegmans_Marsala = 30),
   water = 10,
+  PhilipsHD9867 = PhilipsHD9867(
+    fahrenheit = 350,
+    minute = c('\U1f389 half duck\U1f986, 3-3.5lb, skin face up' = 35)
+  ),
+  Staub_vertRoaster = Staub_vertRoaster(
+    treatment = c(
+      'marinade in fridge, loosely covered, 24 hours',
+      'wash off; pat dry'
+    ),
+    fahrenheit = 350,
+    minute = c('\U1f389 whole duck\U1f986, 3-3.5lb' = 90),
+    cooling = 'let stand 30min+ before carving'
+  ),
   review = 'try'
 )
 
