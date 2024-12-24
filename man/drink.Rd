@@ -33,11 +33,9 @@ frappe(x, ...)
 
 \item{...}{..}
 
-\item{water80}{..}
+\item{water, water90}{\link[base]{numeric} scalars, for \link{hotdrink}}
 
-\item{ice}{..}
-
-\item{iceWater}{..}
+\item{ice, iceWater}{\link[base]{numeric} scalars, for \link{frappe}}
 }
 \value{
 Function \link{hotdrink} returns a \linkS4class{drink} object,
