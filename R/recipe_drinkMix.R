@@ -16,7 +16,7 @@ setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
   alias_class = 'Mix' # '\u901f\u6eb6\u7c89'
 ), validity = function(object) {
   if (length(object@boilingWater) || length(object@iceWater) ||
-      length(object@water95) || length(object@water80) || length(object@water70)) # all kind of water
+      length(object@water95) || length(object@water90) || length(object@water80) || length(object@water70)) # all kind of water
     stop('`drinkmix` object cannot have water')
 })
 
@@ -67,38 +67,25 @@ hotdrink <- function(x, ...) UseMethod(generic = 'hotdrink')
 hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
-#' @rdname drink
-#' @export hotdrink.milkteaMix
-#' @export
-hotdrink.milkteaMix <- function(x, water80 = 560, ...) {
-  # cannot make 'frappe' from teabags 
-  hotdrink.drinkmix(x, water80 = water80, ...)
-}
-
-#' @rdname drink
-#' @export hotdrink.tiramisuMix
-#' @export
-hotdrink.tiramisuMix <- function(x, water80 = 560, ...) {
-  hotdrink.drinkmix(x, water80 = water80, ...)
-}
-
-
 
 #' @rdname drink
 #' @export hotdrink.drinkmix
 #' @export
 hotdrink.drinkmix <- function(
     x, 
-    water80 = 560 - sum(x@pumpkin, x@liqueur), 
+    water = 100,
+    water90 = 560 - 100 - sum(x@pumpkin, x@liqueur), 
     ...
 ) {
-  x@water80 <- water80
+  x@water <- water
+  x@water90 <- water90
   x@alias <- character(); x@alias_class <- '' # '\u70ed\u996e'
   x@Stanley20 <- Stanley20(treatment = c(
     paste('whisk together all powders,', col_cyan('including syrup')), 
-    paste('add half of water,', col_red('sweep cup bottom with a square spatula,'), 'whisk until smooth'),
-    paste('(optional) add liqueur', col_red('which curdles dry milk')),
-    'add rest of water, whisk until froth'
+    paste('add room-temperature water,', col_red('sweep cup bottom with a square scoop,'), 'whisk until smooth'),
+    paste(col_green('optional'), 'add liqueur', col_red('which curdles dry milk')),
+    'add hot water, whisk until froth',
+    paste(col_green('optional'), 'add tea bags, soak (covered) for 1hr+')
   ))
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {
@@ -428,13 +415,7 @@ pumpkinSpiceLatte <- function() new(
 setClass(Class = 'milkteaMix', contains = 'drinkmix', prototype = prototype(
   alias_class = '\u5976\u8336',
   drymilk = 40, 
-  brownSugar_tsp = 2, # 1tsp too bland; 1Tbsp too sweet
-  Stanley20 = Stanley20(treatment = c(
-    'add half of boiling water to powders, whisk until froth',
-    'add rest of boiling water, whisk',
-    'add tea bags',
-    'soak (covered) for 1hr+'
-  ))
+  brownSugar_tsp = 2 # 1tsp too bland; 1Tbsp too sweet
 ))
 
 
@@ -490,7 +471,7 @@ setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
 #' @export
 tiramisuMix <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_tsp = c(Baileys_espresso = 4.5), 
+  liqueur = c(Baileys_espresso = 30), 
   pros = 'Wow!! Use as default!', date = as.Date('2024-06-10'))
 
 

@@ -150,7 +150,8 @@
 #' @slot water40 \link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams) 
 #' @slot water70 \link[base]{numeric} scalar, weight of hot (70C-75C) water (in grams) 
 #' @slot water80 \link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams) 
-#' @slot water95 \link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams) 
+#' @slot water90 \link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams) 
+#' @slot water95 \link[base]{numeric} scalar, weight of hot (95C, 203F) water (in grams) 
 #' @slot boilingWater \link[base]{numeric} scalar, weight of boiling water (in grams)
 #' @slot iceWater \link[base]{numeric} scalar, weight of ice water (in grams)
 #' @slot carbonatedWater \link[base]{numeric} scalar, weight of carbonated water (in grams)
@@ -430,7 +431,7 @@ setClass(Class = 'recipe', slots = c(
   carbonatedWater = 'numeric',
   shavedIce = 'numeric',
   ice = 'numeric',
-  water40 = 'numeric', water70 = 'numeric', water80 = 'numeric', water95 = 'numeric',
+  water40 = 'numeric', water70 = 'numeric', water80 = 'numeric', water90 = 'numeric', water95 = 'numeric',
   boilingWater = 'numeric',
   
   sauce = 'numeric', sauce_tsp = 'numeric', sauce_Tbsp = 'numeric', sauce_cup = 'numeric',
@@ -590,6 +591,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- addNameLen1(x, which = 'water40', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water70', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water80', name1 = 'Wegmans_water')
+  x <- addNameLen1(x, which = 'water90', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water95', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'boilingWater', name1 = 'Wegmans_water')
   
@@ -1143,15 +1145,16 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
   
   if (!length(object@water_extra)) {
-    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f grams %s\n', object@water, format_vol(object@water)))
+    cat(sprintf(fmt = '%s Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), object@water, format_vol(object@water)))
   } else {
     water <- sum_.(object@water, object@water_extra)
-    cat(sprintf(fmt = '\u5e38\u6e29\u6c34 Water %.0f=%.0f%s grams %s\n', water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), format_vol(water)))
+    cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), format_vol(water)))
   }
   
   cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), object@water40, format_vol(object@water40)))
   cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), object@water70, format_vol(object@water70)))
   cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), object@water80, format_vol(object@water80)))
+  cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('90\u00b0C\u70ed\u6c34'), object@water90, format_vol(object@water90)))
   cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), object@water95, format_vol(object@water95)))
   cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), object@boilingWater, format_vol(object@boilingWater)))
   cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), object@iceWater, format_vol(object@iceWater)))

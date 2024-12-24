@@ -29,8 +29,8 @@
     } else if (length(x@beet)) {
       .08
     } else .035, 
-    tiramisu_ = .04,
     marinade = .04,
+    tiramisu_ = .045,
     milktea_ = .05,
     matchaLatte_ = .04, # perfect! 2024 late summer
     stickyRice =, riceCake =, riceMousse = .05, 
@@ -461,9 +461,9 @@
   
   alcohol <- function(x) switch(
     class(x),
-    tiramisu_ = .005, # any more, I will feel dizzy (for drink)
     #cheesecake =, mascarponeGanache = .015, # need to re-try
     cheesecake = .006, # trying. this is low-temp cooking, probably okay
+    tiramisu_ = .0065, # any more, I will feel dizzy (for drink)
     tomyumStew = .035,
     NA_real_)
   
