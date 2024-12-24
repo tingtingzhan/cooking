@@ -33,7 +33,7 @@ frappe(x, ...)
 
 \item{...}{..}
 
-\item{water, water90}{\link[base]{numeric} scalars, for \link{hotdrink}}
+\item{water, water80, water90}{\link[base]{numeric} scalars, for \link{hotdrink}}
 
 \item{ice, iceWater}{\link[base]{numeric} scalars, for \link{frappe}}
 }

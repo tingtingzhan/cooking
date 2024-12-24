@@ -41,7 +41,7 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' 
 #' @param x \linkS4class{drinkmix} object
 #' 
-#' @param water,water90 \link[base]{numeric} scalars, for [hotdrink]
+#' @param water,water80,water90 \link[base]{numeric} scalars, for [hotdrink]
 #' 
 #' @param ice,iceWater \link[base]{numeric} scalars, for [frappe]
 #' 
