@@ -7,11 +7,11 @@ NULL
 #' @rdname nutrition_egg
 #' @export
 eggYolk <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 172184L,
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Egg\U1f95a Yolk, Large', alias = '\u9e21\u86cb\u9ec4',
   wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
   servingGram = 17.3, 
-  # servingGram = 100, # fdc numbers are per 100g
+  fdc = 172184L, # servingGram = 100, # fdc numbers are per 100g
   calorie = 322/100*17.3,
   water = .523*17.3, protein = .159*17.3, fat = .265*17.3, cholesterol = 1.08/100*17.3, sugar = .0056*17.3, sodium = .00048*17.3
 )
@@ -19,11 +19,11 @@ eggYolk <- function() new(
 #' @rdname nutrition_egg
 #' @export
 eggWhite <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 172183L,
+  Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Egg\U1f95a White, Large', alias = '\u9e21\u86cb\u6e05',
   wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
   servingGram = 34.7, 
-  # servingGram = 100, # fdc numbers are per 100g
+  fdc = 172183L, # servingGram = 100, # fdc numbers are per 100g
   calorie = 52/100*34.7,
   water = .876*34.7, protein = .109*34.7, fat = .0017*34.7, sugar = .0071*34.7, sodium = .00166*34.7)
 

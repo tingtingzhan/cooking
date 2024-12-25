@@ -7,6 +7,9 @@
 \alias{KingArthur_Bensdorp}
 \alias{KingArthur_Burgundy}
 \alias{Ghirardelli_cocoa}
+\alias{Ghirardelli_bittersweet}
+\alias{Ghirardelli_semisweet_bar}
+\alias{Ghirardelli_semisweet_chip}
 \alias{Ghirardelli_sunrise}
 \alias{Ghirardelli_majestic}
 \alias{Ghirardelli_superior}
@@ -21,6 +24,12 @@ KingArthur_Bensdorp()
 KingArthur_Burgundy()
 
 Ghirardelli_cocoa()
+
+Ghirardelli_bittersweet()
+
+Ghirardelli_semisweet_bar()
+
+Ghirardelli_semisweet_chip()
 
 Ghirardelli_sunrise()
 

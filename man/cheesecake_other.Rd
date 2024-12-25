@@ -7,6 +7,7 @@
 \alias{Junior_original}
 \alias{CheesecakeFactory_original}
 \alias{Junior_strawberrySwirl}
+\alias{PreppyKitchen_chocolate_cheesecake}
 \title{Other Peoples Cheesecake}
 \usage{
 Junior_cappuccino_cheesecake()
@@ -18,6 +19,8 @@ Junior_original()
 CheesecakeFactory_original()
 
 Junior_strawberrySwirl()
+
+PreppyKitchen_chocolate_cheesecake()
 }
 \description{
 ..

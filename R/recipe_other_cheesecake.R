@@ -30,8 +30,9 @@ Junior_cappuccino_cheesecake <- function() new(
   sugar_cup = c(Domino_granulated = 1+2/3),
   starch_cup = c(Wegmans_corn = 1/3),
   vanilla_Tbsp = 1,
-  egg_pc = 2,
+  egg_pc = 2/3.25*4, # 2 extra-large eggs  https://en.wikipedia.org/wiki/Chicken_egg_sizes
   heavyCream_cup = 3/4,
+  cocoa_Tbsp = 1,
   juniorscheesecakecookbook = 42L)
 
 
@@ -98,6 +99,22 @@ Junior_strawberrySwirl <- function() new(
 
 
 
+
+#' @rdname cheesecake_other
+#' @export
+PreppyKitchen_chocolate_cheesecake <- function() new(
+  Class = 'recipe', alias_flavor = 'Cheesecake',
+  # 1/4 cup coffee hot ???
+  # 1 cup bittersweet chocolate ???
+  # 3/4 cup semisweet chocolate ???
+  # 1 pinch salt ???
+  creamCheese_brick = c(Philadelphia = 3),
+  flour_Tbsp = 3,
+  sugar = 200,
+  vanilla_Tbsp = 1,
+  egg_pc = 4,
+  sourCream_cup = 1/4,
+  preppykitchen = c('b5Hpv2FE22Q' = 'chocolate-cheesecake'))
 
 
 
