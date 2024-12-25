@@ -72,7 +72,7 @@ hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
 hotdrink.drinkmix <- function(
     x, 
     water = 100,
-    water90 = 560 - 100 - sum(x@pumpkin, x@liqueur), 
+    water90 = 560 - 100 - sum(x@pumpkin, x@liqueur, x@heavyCream), 
     ...
 ) {
   x@water <- water
@@ -470,12 +470,13 @@ setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
 tiramisuMix <- function() new(
   Class = 'tiramisuMix', 
   liqueur = c(Baileys_espresso = 30), 
-  pros = 'Wow!! Use as default!', date = as.Date('2024-06-10'))
+  pros = 'Wow!! Use as default!', 
+  date = as.Date('2024-12-01'))
 
 
 tiramisuMix_Baileys <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_tsp = c(Baileys_tiramisu = 4.5), 
+  liqueur = c(Baileys_tiramisu = 30), 
   review = 'hypothetical model')
 
 
@@ -484,71 +485,62 @@ tiramisuMix_Baileys <- function() new(
 #' @export
 tiramisuMix_Kahlua <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_tsp = c(Kahlua_coffee = 2*2), 
-  heavyCream_tsp = 1.5,
-  # date = as.Date('2024-05-13'), 
-  review = 'try added fat!')
+  liqueur = c(Kahlua_coffee = 20), 
+  heavyCream = 10,
+  review = 'try')
 
-tiramisuMix2_Kahlua <- function() new(
-  Class = 'tiramisuMix', 
-  liqueur_tsp = c(Kahlua_coffee = 2*2), 
-  drymilk = c(Carnation = 30, Nido = 10),
-  # date = as.Date('2024-05-13'), 
-  review = 'try added fat!')
 
 #' @rdname tiramisuMix
 #' @export
 tiramisuMix_FratelliVincenzi <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_Tbsp = c(FratelliVincenzi_espresso = 1), 
-  drymilk = c(Carnation = 30, Nido = 10),
-  sugar_tsp = 1.5,
-  # date = as.Date('2024-05-15'),
-  review = 'try added fat & sugar')
+  liqueur = c(FratelliVincenzi_espresso = 17), 
+  heavyCream = 10,
+  sugar_tsp = 2,
+  review = 'try')
 
 #' @rdname tiramisuMix
 #' @export
 tiramisuMix_CaffeBorghetti <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_tsp = c(CaffeBorghetti = 3+1/4), 
-  drymilk = c(Carnation = 30, Nido = 10),
-  sugar_tsp = 1.5,
-  #date = as.Date('2024-05-13'),
-  review = 'try added fat & sugar')
+  liqueur = c(CaffeBorghetti = 20), 
+  heavyCream = 10,
+  sugar_tsp = 2,
+  review = 'try')
 
 #' @rdname tiramisuMix
 #' @export
 tiramisuMix_Grind <- function() new(
   Class = 'tiramisuMix', 
-  liqueur_Tbsp = c(Grind_espresso = 1), 
-  drymilk = c(Carnation = 30, Nido = 10),
-  sugar_tsp = 1.5,
+  liqueur = c(Grind_espresso = 17), 
+  heavyCream = 10,
+  sugar_tsp = 2,
   pros = 'Old base: I love!!', date = as.Date('2024-05-18'))
 
 #' @rdname tiramisuMix
 #' @export
 tiramisuMix_Sabroso <- function() new(
   Class = 'tiramisuMix', 
-  drymilk = c(Carnation = 30, Nido = 10),
-  sugar_tsp = 1.5,
-  liqueur_tsp = c(Sabroso_coffee = 3.25),
+  liqueur = c(Sabroso_coffee = 20),
+  heavyCream = 10,
+  sugar_tsp = 2,
   pros = 'Old base: I like', date = as.Date('2024-05-18'))
 
 
 
 tiramisuMix_CafeGranita <- function() new(
   Class = 'tiramisuMix',
-  liqueur_tsp = c(CafeGranita_coffee = 4),
-  drymilk = c(Carnation = 30, Nido = 10),
-  sugar_tsp = 1.5,
+  liqueur = c(CafeGranita_coffee = 23),
+  heavyCream = 12,
+  sugar_tsp = 2,
   review = 'try')
 
 
 tiramisuMix_Kikisi <- function() new(
   Class = 'tiramisuMix',
-  liqueur_tsp = c(Kikisi_coffee = 4),
-  drymilk = c(Carnation = 30, Nido = 10),
-  sugar_tsp = 1.5,
+  liqueur = c(Kikisi_coffee = 25),
+  heavyCream = 12,
+  sugar_tsp = 2,
   review = 'try'
 )
 

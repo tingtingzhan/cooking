@@ -18,7 +18,12 @@ hotdrink(x, ...)
 
 \method{hotdrink}{`function`}(x, ...)
 
-\method{hotdrink}{drinkmix}(x, water = 100, water90 = 560 - 100 - sum(x@pumpkin, x@liqueur), ...)
+\method{hotdrink}{drinkmix}(
+  x,
+  water = 100,
+  water90 = 560 - 100 - sum(x@pumpkin, x@liqueur, x@heavyCream),
+  ...
+)
 
 \method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 

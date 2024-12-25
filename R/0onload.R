@@ -169,6 +169,7 @@
   fat <- function(x) switch(
     class(x), 
     matchaLatte_ = .004, 
+    tiramisu_ = .008,
     stickyTortilla =, TangYuan = .01, 
     mocaccino_ = .01,
     matchaGoatLatte_ = .01,
@@ -179,9 +180,9 @@
     matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
-    tiramisuMix = .05,
     riceMousse = .05, 
     beanPaste = .05,
+    tiramisuMix = .06,
     crepeCake = .07,
     matchaGoatLatteMix = .075,
     mocaccinoMix = .077,

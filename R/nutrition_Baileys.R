@@ -39,6 +39,22 @@ Baileys_chocolatLuxe <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
+Baileys_chocolate <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  baileys = 'chocolate-liqueur',
+  # url = 'https://www.baileys.com/en-us/products/baileys-chocolate-liqueur' # nutrition info here
+  name = 'Chocolate', alias = '\u5de7\u514b\u529b\u9152',
+  servingGram = 100, # my guess
+  serving_ml = 100,
+  usd = 26.99/750*100, totalwine = '2126221061',
+  AbV = .157,
+  alcohol = 12.5,
+  calorie = 339,
+  fat = 15, salt = .27, carbohydrate = 26, sugar = 22, protein = 3.2)
+
+
+#' @rdname nutrition_Baileys
+#' @export
 Baileys_colada <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'colada',
@@ -99,6 +115,39 @@ Baileys_pumpkinSpice <- function() new(
   fat = 14, carbohydrate = 21, sugar = 18, 
   alcohol = 13.5
 )
+
+
+#' @rdname nutrition_Baileys
+#' @export
+Baileys_strawberry <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  baileys = 'strawberries-cream',
+  name = 'Strawberries\U1f353 & Cream', alias = '\u8349\u8393\u9152',
+  servingGram = 100,
+  serving_ml = 100,
+  totalwine = '193107750', usd = 25.99/750*100,
+  AbV = .17,
+  calorie = 313,
+  protein = 3, salt = .2,
+  fat = 14, carbohydrate = 21, sugar = 18, 
+  alcohol = 13.5)
+
+
+#' @rdname nutrition_Baileys
+#' @export
+Baileys_almande <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  baileys = 'almande',
+  name = 'Almande', alias = '\u674f\u4ec1\u9152',
+  servingGram = 100,
+  serving_ml = 100,
+  totalwine = '171638750', usd = 23.99/750*100,
+  AbV = .13,
+  calorie = 53,
+  protein = .8,
+  fat = 1.1, carbohydrate = 3.3, # sugar = 4.4, # ??? 
+  alcohol = 4)
+
 
 
 

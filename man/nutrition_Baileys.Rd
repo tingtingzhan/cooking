@@ -4,16 +4,21 @@
 \alias{nutrition_Baileys}
 \alias{Baileys_espresso}
 \alias{Baileys_chocolatLuxe}
+\alias{Baileys_chocolate}
 \alias{Baileys_colada}
 \alias{Baileys_tiramisu}
 \alias{Baileys_smores}
 \alias{Baileys_pumpkinSpice}
+\alias{Baileys_strawberry}
+\alias{Baileys_almande}
 \alias{Baileys_icedCoffeeLatte}
 \title{Baileys Liqueur}
 \usage{
 Baileys_espresso()
 
 Baileys_chocolatLuxe()
+
+Baileys_chocolate()
 
 Baileys_colada()
 
@@ -22,6 +27,10 @@ Baileys_tiramisu()
 Baileys_smores()
 
 Baileys_pumpkinSpice()
+
+Baileys_strawberry()
+
+Baileys_almande()
 
 Baileys_icedCoffeeLatte()
 }
