@@ -99,7 +99,7 @@
       .22 
     } else .2,
     tomyumStew = .16,
-    mocaccinoMix = .37,
+    mocaccino = .37,
     matchaLatteMix = .4,
     matchaGoatLatteMix = .515,
     drinkmix = if (length(x@syrup)) {
@@ -114,7 +114,7 @@
   
   addedSugar2cocoa <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccino_ = .30,
+    mocaccino =, mocaccino_ = .30,
     NA_real_) 
   
   drymilk <- function(x) switch(
@@ -185,7 +185,7 @@
     tiramisuMix = .06,
     crepeCake = .07,
     matchaGoatLatteMix = .075,
-    mocaccinoMix = .077,
+    mocaccino = .077,
     muffin = .08, 
     millecrepe = if (length(x@liqueur)) .075 else .1, 
     custardFilling = .09,
@@ -230,7 +230,7 @@
     shrimpfill_garlicHerb = .002,
     meatmash =, meatball = .0025, # some salt cooks into soup
     shrimpfillCantonese = .003,
-    mocaccinoMix = .002,
+    mocaccino = .002,
     drinkmix = if (length(x@coffee) && length(x@syrup)) {
       .0028
     } else NA_real_,
@@ -240,7 +240,7 @@
     matchaLatteMix = .0028,
     porkfill = .003, # yes!
     beefchop = .0035,
-    #caffeLatteMix = .0033,
+    #caffeLatte = .0033,
     marinade = .011,
     tomyumStew = .02,
     flavoredButter = .015,
@@ -330,8 +330,8 @@
     whippedCream =, frosting =, ganache = .05,
     gateau = .05, # I think this is not enough..
     cocoa_ = .063,
-    caffeLatteMix = .1,
-    mocaccinoMix = .32,
+    caffeLatte = .1,
+    mocaccino = .32,
     NA_real_)
   
   coffee <- function(x) switch(
@@ -350,15 +350,15 @@
     snowSkin = .016, # try
     gateau = if (length(x@cocoa)) .002 else NA_real_,
     drink = if (length(x@liqueur)) .009 else NA_real_,
-    mocaccinoMix = .05,
-    caffeLatteMix = .14,
+    mocaccino = .05,
+    caffeLatte = .14,
     NA_real_)
   
   coffee2cocoa <- function(x) switch(
     class(x),
-    mocaccinoMix =, mocaccino_ = .17, # well tested
+    mocaccino =, mocaccino_ = .17, # well tested
     cheesecake = .21, # hypothetical
-    caffeLatteMix =, caffeLatte_ = 1.3,
+    caffeLatte =, caffeLatte_ = 1.3,
     NA_real_)
   
   ginger <- function(x) switch(

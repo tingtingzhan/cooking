@@ -308,7 +308,7 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{JoyoungCJA9U}}{\linkS4class{tool}, Joyoung stir-fry machine CJ-A9U}
 
-\item{\code{nutribullet20,Stanley20}}{\linkS4class{tool}}
+\item{\code{nutribullet20,nutribullet24,Stanley20}}{\linkS4class{tool}}
 
 \item{\code{PhilipsHD9867}}{\linkS4class{tool}}
 

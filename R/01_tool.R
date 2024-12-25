@@ -267,6 +267,10 @@ nutribullet20 <- function(...) new(
   name = c(style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/')),
   ...) 
 
+nutribullet24 <- function(...) new(
+  Class = 'tool',
+  name = c(style_hyperlink(text = 'Nutribullet Ultra 24 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-24-oz-cup-with-to-go-lid/')),
+  ...) 
 
 Stanley20 <- function(...) new(
   Class = 'tool',

@@ -31,7 +31,12 @@ frappe(x, ...)
 
 \method{frappe}{`function`}(x, ...)
 
-\method{frappe}{drinkmix}(x, ice = 236.6 - sum(x@pumpkin, x@liqueur)/2, iceWater = ice, ...)
+\method{frappe}{drinkmix}(
+  x,
+  ice = 560/2 - sum(x@pumpkin, x@liqueur, x@heavyCream)/2,
+  iceWater = ice,
+  ...
+)
 }
 \arguments{
 \item{x}{\linkS4class{drinkmix} object}
