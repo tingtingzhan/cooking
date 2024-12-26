@@ -7,7 +7,7 @@
 #' @importFrom cli col_red col_green col_yellow col_blue col_magenta col_cyan col_white col_grey
 #' @importFrom cli col_br_red col_br_green col_br_blue col_br_magenta col_br_white
 #' @importFrom cli bg_black bg_green bg_blue
-#' @importFrom cli bg_br_red bg_br_green bg_br_yellow bg_br_blue bg_br_magenta bg_br_cyan
+#' @importFrom cli bg_br_red bg_br_green bg_br_yellow bg_br_blue bg_br_magenta bg_br_cyan bg_br_white
 #' @importFrom cli style_hyperlink style_bold
 #' @importFrom cli cli_text make_ansi_style
 #' @importFrom methods callNextMethod getSlots initialize new setClass prototype setMethod show signature slot slot<- slotNames

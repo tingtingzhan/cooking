@@ -45,7 +45,7 @@ suggested.nutrition <- function(object, ...) {
   do.call(what = new, args = c(list(
     Class = 'recipe', 
     #alias = sprintf(fmt = 'Suggested {.run [%s](cooking::%s())}', style_bold(col_yellow(nm)), nm),
-    alias = sprintf(fmt = 'Suggested %s', style_bold(make_ansi_style('sienna')(nm))),
+    alias = c(bg_br_white(sprintf(fmt = 'Suggested %s', style_bold(make_ansi_style('sienna')(nm))))),
     flavor = flavor
   ), suggestion))
 }

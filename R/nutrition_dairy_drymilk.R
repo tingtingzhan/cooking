@@ -83,7 +83,7 @@ Nido_drymilk <- function() new(
   nido = 'fortificada-dry-whole-milk-beverage-564-oz/',
   walmart = '14869811', usd = 19.98/1600*30, # 2023-11-11
   servingGram = 30, servingCup = 1/4,
-  fat = 8, sodium = .105, sugar = 11, protein = 8,
+  fat = 8, sodium = .105, carbohydrate = 11, sugar = 11, protein = 8,
   suggestion = list(water80_cup = 1))
 
 #' @rdname nutrition_drymilk

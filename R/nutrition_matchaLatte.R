@@ -82,7 +82,7 @@ Ippodo_sayakaLatte <- function() new(
 Ippodo_uji_shimizu <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodousa = 'uji-shimizu-sticks', ippodoglobal = 'matcha642402',
-  name = '\u5b87\u6cbb\u6e05\u6c34 Uji Shimizu\U1f375',
+  name = 'Uji Shimizu\U1f375', alias = '\u5b87\u6cbb\u6e05\u6c34',
   usd = 18/12, jpy = 700/400*15,
   servingGram = 15, servingTbsp = 1.5,
   calorie = 60,
