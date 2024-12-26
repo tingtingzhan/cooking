@@ -14,10 +14,12 @@
 #' @export
 setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
   alias_class = 'Mix' # '\u901f\u6eb6\u7c89'
-), validity = function(object) {
+))
+
+setValidity(Class = 'drinkmix', method = function(object) {
   if (length(object@boilingWater) || length(object@iceWater) ||
       length(object@water95) || length(object@water90) || length(object@water80) || length(object@water70)) # all kind of water
-    stop('`drinkmix` object cannot have water')
+    stop('`drinkmix` cannot have water')
 })
 
 

@@ -41,7 +41,7 @@ ViewRoad_tortilla <- function() new(
   flour = 2.5 * 120,
   salt_tsp = 1,
   lard_cup = c(Morrell_lard = 1/2),
-  water = 237)
+  water_cup = 1)
 
 
 ViewRoad_pumpkin_tortilla <- function() new(

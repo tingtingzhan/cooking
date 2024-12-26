@@ -54,10 +54,11 @@ setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
     'KitchenAid downdraft range: side 1, Low; side 2, turn off range',
     'Use rateau instead of ladle!'
   )
-), validity = function(object) {
+))
+
+setValidity(Class = 'millecrepe', method = function(object) {
   if (length(object@liqueur)) stop('Do not use `@liqueur` in millecrepe; cooked liqueur tastes wierd. Use in mascarponeGanache instead!')
 })
-
 
 #youtube = c(
 #  'how to use rateau' = 'BeN3zKZ6qJ4',

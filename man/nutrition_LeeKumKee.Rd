@@ -9,6 +9,8 @@
 \alias{LeeKumKee_ChuHou}
 \alias{LeeKumKee_hoisin}
 \alias{LeeKumKee_sesameSauce}
+\alias{LeeKumKee_soySauce}
+\alias{LeeKumKee_plumSauce}
 \alias{LeeKumKee_garlic}
 \alias{LeeKumKee_premium_oyster}
 \alias{LeeKumKee_oyster}
@@ -31,6 +33,10 @@ LeeKumKee_ChuHou()
 LeeKumKee_hoisin()
 
 LeeKumKee_sesameSauce()
+
+LeeKumKee_soySauce()
+
+LeeKumKee_plumSauce()
 
 LeeKumKee_garlic()
 

@@ -119,11 +119,11 @@ coffee_sundae <- function() new(
 setClass(Class = 'mascarponeSundae', contains = 'recipe', prototype = prototype(
   alias_class = 'Sundae\U1f366',
   mascarpone = 453/4
-), validity = function(object) {
+))
+
+setValidity(Class = 'mascarponeSundae', method = function(object) {
   if (length(object@water)) stop('Use `sundae` instead!')
 })
-
-
 
 
 

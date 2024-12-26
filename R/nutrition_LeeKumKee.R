@@ -70,12 +70,25 @@ LeeKumKee_peanutSauce <- function() new(
   calorie = 230,
   fat = 22, carbohydrate = 3, fiber = 1, protein = 6)
 
-
+#' @rdname nutrition_LeeKumKee
+#' @export
 LeeKumKee_soySauce <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'soy-sauce',
   name = 'Soy Sauce', alias = '\u9bae\u5473\u751f\u62bd',
   servingGram = 15, servingTbsp = 1,
-  sodium = 1.16, carbohydrate = 2, sugar = 1, protein = 1)
+  calorie = 15,
+  sodium = 1.15, carbohydrate = 2, sugar = 2, protein = 1)
+
+
+
+#' @rdname nutrition_LeeKumKee
+#' @export
+LeeKumKee_plumSauce <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'plum-sauce',
+  name = 'Plum Sauce', alias = '\u8607\u6885\u91ac',
+  servingGram = 40, servingTbsp = 2,
+  calorie = 100,
+  sodium = .47, carbohydrate = 24, addedSugar = 24)
 
 
 #' @rdname nutrition_LeeKumKee
