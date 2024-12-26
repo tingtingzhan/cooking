@@ -20,8 +20,8 @@ hotdrink(x, ...)
 
 \method{hotdrink}{drinkmix}(
   x,
-  water = 100,
-  water90 = 560 - 100 - sum(x@pumpkin, x@liqueur, x@heavyCream),
+  water = 70,
+  water90 = 560 - 70 - sum(x@pumpkin, x@liqueur, x@heavyCream),
   ...
 )
 

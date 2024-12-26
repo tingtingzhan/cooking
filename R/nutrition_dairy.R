@@ -416,6 +416,20 @@ Wegmans_whole_milk <- function() new(
 
 #' @rdname nutrition_dairy
 #' @export
+WegmansOrganic_2perc_milk <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], fdc = 2483143L,
+  wegmansorganic = 12983L, usd = 6.99/16, # 1 gal
+  name = '2% Reduced Fat Milk', alias = '\u534a\u8102\u725b\u5976',
+  servingGram = 250, servingCup = 1, 
+  calorie = 120,
+  water = 250*.891, 
+  fat = 5, cholesterol = .02, sodium = .115, carbohydrate = 12, sugar = 12, protein = 8)
+
+
+
+
+#' @rdname nutrition_dairy
+#' @export
 WegmansOrganic_whole_milk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 171265L, 
   wegmansorganic = 9975L, usd = 6.99/16, # 1 gal

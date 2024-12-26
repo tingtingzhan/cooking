@@ -30,6 +30,8 @@ setClass(Class = 'extra', slots = c(
 #' @slot call \link[base]{language}, function name to create this nutrition
 #' @slot name_glue \link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse `cli:::glue_cmd`)
 #' 
+#' @slot suggestion \link[base]{list}
+#' 
 #' @slot extra \linkS4class{extra} object
 #' 
 #' @slot url \link[base]{character} scalar, link to manufacturer webpage
@@ -172,6 +174,8 @@ setClass(Class = 'nutrition', slots = c(
   call = 'language',
   name = 'character',
   name_glue = 'character',
+  
+  suggestion = 'list',
   
   extra = 'extra',
   
@@ -338,19 +342,18 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     }
     
     if (length(x@alias)) {
-      cl <- if (is.symbol(x@call)) {
-        x@call
+      if (is.symbol(x@call)) {
+        # do nothing
       } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
-        x@call[[3L]]
+        x@call <- x@call[[3L]]
       } else stop('then?')
-      x@call <- quote(`<UNDEFINED>`)
-      x@name_glue <- paste(make_ansi_style('orchid4')(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(cl))), x@name)
+      #x@call <- quote(`<UNDEFINED>`) # no need
+      x@name_glue <- paste(make_ansi_style('orchid4')(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call))), x@name)
       x@name <- paste(make_ansi_style('orchid4')(x@alias), x@name) # after `@name_glue <-` :)
       x@alias <- character()
     } else x@name_glue <- x@name
     
   }
-  
   
   # serving weight
   if (length(x@serving_oz)) {
@@ -424,12 +427,11 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
       c(style_hyperlink(url = sprintf(fmt = 'https://www.hellmanns.com/us/en/p/%s', x@hellmanns), text = 'Hellmann\'s\U1f1fa\U1f1f8'))
     } else if (length(x@horizon)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://horizon.com/organic-dairy-products/%s', x@horizon), text = 'Horizon\U1f1fa\U1f1f8'))
-    } else if (length(x@ippodoglobal) & length(x@ippodojpn) & length(x@ippodousa)) {
+    } else if (length(x@ippodoglobal) & length(x@ippodousa)) {
       x@url <- c(x@url, style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodousa), text = '\U1f6d2 US Shop'))
-      paste(
-        c(style_hyperlink(url = sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s', x@ippodoglobal), text = 'Ippodo\U1f375')),
-        c(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodojpn), text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
-      )
+      jpn_ <- c(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodojpn), text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+      global_ <- c(style_hyperlink(url = sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s', x@ippodoglobal), text = 'Ippodo\U1f375'))
+      paste(global_, jpn_)
     } else if (length(x@itoen)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://itoen.com/products/%s', x@itoen), text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5'))
     } else if (length(x@jayone)) {
@@ -769,6 +771,7 @@ format_vol <- function(x, nm = names(x)) {
 
 
 
+
 #' @title Show \linkS4class{nutrition} Object
 #' 
 #' @description ..
@@ -881,6 +884,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   if (length(obj@pubchem)) cat(paste('\U1f4dd', c(style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem'))), sep = '\n')
   
   if (length(obj@url)) cat(obj@url, sep = '\n')
+  
+  if (length(suggested_ <- suggested(object))) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
   
   cat('\n')
 

@@ -23,7 +23,7 @@ setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
     'Meat chopper, not grinder',
     'Paddle in all dry seasoning',
     'Saute. **Drained oil**',
-    '(Optional) add sauce, briefly saute',
+    paste(col_green('optional'), 'add sauce, briefly saute'),
     'Serve with noodle or lasagna'
   )
 ))

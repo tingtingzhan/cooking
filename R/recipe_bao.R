@@ -79,7 +79,7 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
 
   instruction = c(
     paste0('Manually whisk all powders together ', col_red('to protect baking powder/soda and yeast from direct contact with water')),
-    paste('(Optional) blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
+    paste(col_green('optional'), 'blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
     'Add water or puree. Manually whisk until mini-doughs form', 
     'And lard. Knead at Level 2',
     'Wrap and rest on countertop for 15min. Must rest overnight if whole wheat flour and/or puree is used, then restore to room temperature',

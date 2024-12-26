@@ -13,9 +13,9 @@
 #'  hotdrink(matchaLatte),
 #'  Ippodo_sayakaLatte,
 #'  Starbucks_matchaLatte,
-#'  hotdrink(Starbucks_matchaLatteMix, water80 = 180),
-#'  hotdrink(Ippodo_uji_shimizu, water80 = 150),
-#'  hotdrink(ItoEn_sweet_matcha, water80 = 120)
+#'  suggested(Starbucks_matchaLatteMix),
+#'  suggested(Ippodo_uji_shimizu),
+#'  suggested(ItoEn_sweet_matcha)
 #' ) # compare hot drink
 #' 
 #' diagnose(
@@ -59,7 +59,8 @@ Starbucks_matchaLatteMix <- function() new(
   usd = 10.99/4, yamibuy = '25775250',
   servingGram = 24, 
   calorie = 103,
-  protein = 3.4, fat = 2.8, carbohydrate = 16, sugar = 16, sodium = .13)
+  protein = 3.4, fat = 2.8, carbohydrate = 16, sugar = 16, sodium = .13,
+  suggestion = list(water80 = 180))
 
 
 
@@ -85,7 +86,8 @@ Ippodo_uji_shimizu <- function() new(
   usd = 18/12, jpy = 700/400*15,
   servingGram = 15, servingTbsp = 1.5,
   calorie = 60,
-  carbohydrate = 15, addedSugar = 14)
+  carbohydrate = 15, addedSugar = 14, 
+  suggestion = list(water80 = 150))
 
 #' @rdname matchaLatte_other
 #' @export
@@ -93,7 +95,8 @@ ItoEn_sweet_matcha <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
   name = 'Sweet Matcha',
-  servingGram = 12, sugar = 11)
+  servingGram = 12, sugar = 11,
+  suggestion = list(water80 = 120))
 
 
 

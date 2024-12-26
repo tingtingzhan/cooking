@@ -20,6 +20,8 @@ Nutrition information.
 
 \item{\code{name_glue}}{\link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse \code{cli:::glue_cmd})}
 
+\item{\code{suggestion}}{\link[base]{list}}
+
 \item{\code{extra}}{\linkS4class{extra} object}
 
 \item{\code{url}}{\link[base]{character} scalar, link to manufacturer webpage}

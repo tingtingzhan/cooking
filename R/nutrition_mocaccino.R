@@ -189,7 +189,8 @@ Godiva_milkCocoa <- function() new(
   godiva = '16024', name = 'Milk Chocolate Hot Cocoa',
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
-  fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2)
+  fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
+  suggestion = list(milk_cup = 1))
 
 #' @rdname mocaccino_other
 #' @export
@@ -198,7 +199,8 @@ Godiva_cocoa <- function() new(
   godiva = '16022', name = 'Dark Chocolate Hot Cocoa',
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
-  fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3)
+  fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3,
+  suggestion = list(milk_cup = 1))
 
 
 
@@ -211,7 +213,10 @@ SwissMiss_simplyCocoaMilk <- function() new(
   name = 'Simply Cocoa Milk Chocolate',
   servingGram = 24, 
   calorie = 100,
-  sodium = .15, carbohydrate = 22, addedSugar = 20, protein = 1)
+  sodium = .15, carbohydrate = 22, addedSugar = 20, protein = 1,
+  suggestion = list(
+    milk_cup = c(WegmansOrganic_2perc = 1)
+  ))
 
 
 
@@ -220,14 +225,26 @@ SwissMiss_simplyCocoaMilk <- function() new(
 Nestle_richChocolate <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
   brand = 'Nestl\u00e9\U1f1e8\U1f1ed', name = 'Rich Chocolate',
-  servingGram = 20, fat = 2, sodium = .19, carbohydrate = 15, sugar = 12, addedSugar = 10)
+  servingGram = 20, 
+  calorie = 80,
+  fat = 2, sodium = .19, carbohydrate = 16, sugar = 12, addedSugar = 10,
+  suggestion = list(
+    #6 fl. oz. hot water or milk
+    water80_cup = 6/8
+  ))
 
 #' @rdname mocaccino_other
 #' @export
 Nestle_skimCocoa <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], nestle = '12240821',
   name = 'Skim Hot Cocoa',
-  servingGram = 8, sodium = .135, carbohydrate = 5, sugar = 4, protein = 1)
+  servingGram = 8, 
+  calorie = 25,
+  sodium = .135, carbohydrate = 5, sugar = 4, protein = 1,
+  suggestion = list(
+    # 6 fl. oz. hot water or milk
+    water80_cup = 6/8
+  ))
 
 #' @rdname mocaccino_other
 #' @export

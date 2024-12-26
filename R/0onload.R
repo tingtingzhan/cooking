@@ -30,17 +30,14 @@
       .08
     } else .035, 
     marinade = .04,
-    tiramisu_ = .045,
-    milktea_ = .05,
     matchaLatte_ = .04, # perfect! 2024 late summer
+    tiramisu_ = .045,
+    caffeLatte_ = .045, 
+    mocaccino_ = .045,
+    milktea_ = .05,
     stickyRice =, riceCake =, riceMousse = .05, 
     #tortillaLard = .06,
     cocoa_ = .055,
-    drink = if (length(x@coffee) && length(x@liqueur)) {
-      .055
-    } else NA_real_, 
-    caffeLatte_ = .045, 
-    mocaccino_ = .045,
     muffin = if (length(x@cornmeal)) {
       .055 # tastes better than .05
     } else if (length(x@pumpkin)) {
@@ -136,15 +133,15 @@
     milktea_ = .065,
     caffeLatte_ = .065,
     matchaGoatLatte_ = .065, 
-    matchaLatte_ =, mocaccino_ = .065, # taste better than .09 !
+    matchaLatte_ =, mocaccino_ = .065,
     cocoa_ =, 
     pumpkinSpiceLatte_ = .065,
+    tiramisu_ = .065,
     cookie = if (length(x@blackSesame)) {
       .08
     } else .15,
     stickyRice =, riceCake = .1, # need to re-think!!
     matchaGoatLatteMix = .53,
-    #tiramisuMix = .7,
     NA_real_)
   
   drymilk2cocoa <- function(x) switch(
@@ -317,7 +314,7 @@
   
   cocoa <- function(x) switch(
     class(x), 
-    drink = if (length(x@liqueur)) .004 else NA_real_,
+    tiramisu_ = .004,
     snowSkin = .009, 
     caffeLatte_ = .011,
     mocaccino_ = .04, 
@@ -337,6 +334,7 @@
   coffee <- function(x) switch(
     class(x), 
     mocaccino_ = .006, 
+    tiramisu_ = .008,
     goatKefir = if (length(x@cocoa)) .009 else NA_real_, # forgot if this is tested or hypothetical
     cheesecake = if (length(x@liqueur)) {
       .0073
@@ -349,7 +347,6 @@
     caffeLatte_ = .015, # tested and love!!
     snowSkin = .016, # try
     gateau = if (length(x@cocoa)) .002 else NA_real_,
-    drink = if (length(x@liqueur)) .009 else NA_real_,
     mocaccino = .05,
     caffeLatte = .14,
     NA_real_)

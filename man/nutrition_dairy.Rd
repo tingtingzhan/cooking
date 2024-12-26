@@ -34,6 +34,7 @@
 \alias{Lucerne_cottageCheese}
 \alias{TraderJoesLight_sourCream}
 \alias{Wegmans_whole_milk}
+\alias{WegmansOrganic_2perc_milk}
 \alias{WegmansOrganic_whole_milk}
 \alias{Horizon_wholeDHA_milk}
 \alias{Wawa_2perc_milk}
@@ -113,6 +114,8 @@ Lucerne_cottageCheese()
 TraderJoesLight_sourCream()
 
 Wegmans_whole_milk()
+
+WegmansOrganic_2perc_milk()
 
 WegmansOrganic_whole_milk()
 

@@ -40,4 +40,20 @@ Horizon_whole_drymilk()
 \description{
 Dry Milk
 }
+\examples{
+diagnose(
+ suggested(Carnation_drymilk),
+ suggested(GreatValue_drymilk),
+ suggested(MembersMark_drymilk),
+ suggested(BobsRedMill_drymilk),
+ suggested(Nido_drymilk),
+ suggested(Horizon_whole_drymilk)
+)
+
+diagnose(
+ suggested(Meyenberg_goat_drymilk),
+ suggested(Meyenberg_goatWhole_drymilk)
+)
+
+}
 \keyword{internal}

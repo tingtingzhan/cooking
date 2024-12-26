@@ -40,9 +40,9 @@ diagnose(
  hotdrink(matchaLatte),
  Ippodo_sayakaLatte,
  Starbucks_matchaLatte,
- hotdrink(Starbucks_matchaLatteMix, water80 = 180),
- hotdrink(Ippodo_uji_shimizu, water80 = 150),
- hotdrink(ItoEn_sweet_matcha, water80 = 120)
+ suggested(Starbucks_matchaLatteMix),
+ suggested(Ippodo_uji_shimizu),
+ suggested(ItoEn_sweet_matcha)
 ) # compare hot drink
 
 diagnose(

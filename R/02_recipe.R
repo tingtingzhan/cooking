@@ -149,7 +149,7 @@
 #' @slot water_extra \link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough
 #' @slot water40 \link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams) 
 #' @slot water70 \link[base]{numeric} scalar, weight of hot (70C-75C) water (in grams) 
-#' @slot water80 \link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams) 
+#' @slot water80,water80_tsp,water80_Tbsp,water80_cup \link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams) 
 #' @slot water90 \link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams) 
 #' @slot water95 \link[base]{numeric} scalar, weight of hot (95C, 203F) water (in grams) 
 #' @slot boilingWater \link[base]{numeric} scalar, weight of boiling water (in grams)
@@ -431,7 +431,9 @@ setClass(Class = 'recipe', slots = c(
   carbonatedWater = 'numeric',
   shavedIce = 'numeric',
   ice = 'numeric',
-  water40 = 'numeric', water70 = 'numeric', water80 = 'numeric', water90 = 'numeric', water95 = 'numeric',
+  water40 = 'numeric', water70 = 'numeric', 
+  water80 = 'numeric', water80_tsp = 'numeric', water80_Tbsp = 'numeric', water80_cup = 'numeric',
+  water90 = 'numeric', water95 = 'numeric',
   boilingWater = 'numeric',
   
   sauce = 'numeric', sauce_tsp = 'numeric', sauce_Tbsp = 'numeric', sauce_cup = 'numeric',
@@ -446,8 +448,14 @@ setClass(Class = 'recipe', slots = c(
   fatLost = 'numeric'
   
 ), prototype = prototype(
-  date = as.Date.numeric(numeric())
+  date = as.Date.numeric(numeric()) # must!!
 ))
+
+
+
+
+
+
 
 
 
@@ -590,7 +598,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- addNameLen1(x, which = 'ice', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water40', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water70', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'water80', name1 = 'Wegmans_water')
+  x <- combineVol(x, which = 'water80', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water90', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'water95', name1 = 'Wegmans_water')
   x <- addNameLen1(x, which = 'boilingWater', name1 = 'Wegmans_water')
