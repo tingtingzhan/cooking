@@ -506,8 +506,9 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   if (which %in% c(
     'starch', 'oil', 
     'butter', 'cheese', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 
-    'filmjolk', 'ghee', 'heavyCream', 'kefir', 'mascarpone', 'milk',
-    'yogurt', 'yogurtGreek'
+    'filmjolk', 'ghee', 'heavyCream', 'kefir', 'lightCream', 'mascarpone', 'milk',
+    'sourCream', 'yogurt', 'yogurtGreek',
+    'syrup'
   )) {
     add_suffix <- function(x0, which) {
       if (!length(names(x0))) return(x0)
@@ -685,9 +686,9 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- combineVol(x, which = 'drymilk', name1 = 'Carnation')
   x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
   x <- combineVol(x, which = 'buttermilk', name1 = 'OakFarms_buttermilk')
-  x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans_heavyCream')
-  x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne_lightCream')
-  x <- combineVol(x, which = 'sourCream', name1 = 'Daisy_sourCream')
+  x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans')
+  x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne')
+  x <- combineVol(x, which = 'sourCream', name1 = 'Daisy')
   
   x <- meatName(x, animal = 'pork')
   x <- meatName(x, animal = 'beef')

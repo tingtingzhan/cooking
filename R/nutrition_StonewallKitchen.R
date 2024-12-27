@@ -2,14 +2,14 @@
 
 
 
-Stonewall_Bourbon <- function() new(
+Stonewall_Bourbon_syrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 553167L,
   name = 'Bourbon Barrel-Aged Maple\U1f341 Syrup',
   usd = 19.95/250*30, # 2023-11-11
   servingGram = 40, servingTbsp = 2, #serving_ml = 30,
   sodium = .005, addedSugar = 24)
 
-Stonewall_maple <- function() new(
+Stonewall_maple_syrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 170801L,
   name = 'Maine Maple\U1f341 Syrup', alias = '\u67ab\u7cd6',
   # servingGram = 60, servingCup = 1/4, sodium = .005, addedSugar = 36) # webpage
@@ -18,14 +18,14 @@ Stonewall_maple <- function() new(
   servingGram = 40, servingTbsp = 2, #serving_ml = 30,
   sodium = .005, addedSugar = 24) # bottle label, I tasted it and think this is correct
 
-Stonewall_blueberrySyrup <- function() new(
+Stonewall_blueberry_syrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 170802L,
   name = 'Wild Maine Blueberry\U1fad0 Syrup', alias = '\u84dd\u8393\u7cd6\u6d46',
   usd = 8.95/250*60, # 2023-11-11
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
   addedSugar = 34)
 
-Stonewall_raspberrySyrup <- function() new(
+Stonewall_raspberry_syrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 170804L,
   name = 'Raspberry Syrup', alias = '\u8986\u76c6\u5b50\u7cd6\u6d46',
   # full bottle 580g

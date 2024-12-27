@@ -127,7 +127,7 @@ cheesecake <- function() new(
 #' @export
 blueberry_cheesecake <- function() new(
   Class = 'cheesecake',
-  syrup = c(Stonewall_blueberrySyrup = 250), 
+  syrup = c(Stonewall_blueberry = 250), 
   cons = 'color not pretty') # tested 100% Nancy's
 
 #' @rdname cheesecake
@@ -140,7 +140,7 @@ maple_cheesecake <- function() new(
 #' @export
 raspberry_cheesecake <- function() new(
   Class = 'cheesecake',
-  syrup = c(Stonewall_raspberrySyrup = 250),
+  syrup = c(Stonewall_raspberry = 250),
   pros = c('Effie loves (100% Neufchatel)',
            'Do not reduce raspberry syrup (do not want to lose raspberry flavor)'))
 

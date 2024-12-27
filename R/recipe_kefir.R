@@ -19,7 +19,7 @@ setClass(Class = 'kefir', contains = 'recipe', prototype = prototype(
 
 #' @rdname kefir
 #' @export
-raspberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_raspberrySyrup = 15), pros = 'Effie', date = as.Date('2024-04-16'))
+raspberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_raspberry = 15), pros = 'Effie', date = as.Date('2024-04-16'))
 
 #' @rdname kefir
 #' @export
@@ -31,7 +31,7 @@ figWalnut_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_figWalnut
 
 #' @rdname kefir
 #' @export
-blueberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_blueberrySyrup = 15), pros = 'I like', date = as.Date('2024-05-19'))
+blueberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_blueberry = 15), pros = 'I like', date = as.Date('2024-05-19'))
 
 
 
@@ -56,11 +56,11 @@ mocaccino_goatKefir <- function() new(Class = 'goatKefir', coffee_tsp = c(Nescaf
 
 #' @rdname kefir
 #' @export
-raspberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_raspberrySyrup = 30), pros = 'I like', date = as.Date('2024-05-13'))
+raspberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_raspberry = 30), pros = 'I like', date = as.Date('2024-05-13'))
 
 #' @rdname kefir
 #' @export
-blueberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_blueberrySyrup = 30), pros = 'super nice!', date = as.Date('2024-05-15'))
+blueberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_blueberry = 30), pros = 'super nice!', date = as.Date('2024-05-15'))
 
 #' @rdname kefir
 #' @export

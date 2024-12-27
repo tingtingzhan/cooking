@@ -1,12 +1,14 @@
 
-
-
-# syrup
-TraderJoes_date <- function() new(
+TraderJoes_date_syrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  servingGram = 44.4, sugar = 26)
+  brand = 'Trader Joe\'s', name = 'Date Syrup', alias = '\u7ea2\u67a3\u7cd6\u6d46',
+  servingGram = 35, # to be confirmed
+  servingTbsp = 2,
+  calorie = 100,
+  sodium = .01,
+  carbohydrate = 28, sugar = 26)
 
-TraderJoes_blueAgave <- function() new(
+TraderJoes_blueAgave_syrup <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   servingGram = 44.4, sugar = 30)
 

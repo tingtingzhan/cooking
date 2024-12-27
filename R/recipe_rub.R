@@ -82,6 +82,16 @@ Montreal_rub <- function() new( # inspired by Guga
 
 
 
+duckCoat1 <- function() new(
+  Class = 'recipe',
+  alias = '\u70e4\u9e2d\u76ae\u6c34',
+  syrup = c(TraderJoes_date = 20), # do again to confirm
+  liqueur = c(Wegmans_Marsala = 20), # do again to confirm
+  date = as.Date('2024-12-25'),
+  pros = c('took all gamey flavor!!')
+)
+
+
 duckPaste <- function() new(
   Class = 'recipe',
   alias = 'Duck Paste',
