@@ -714,37 +714,40 @@ format_vol <- function(x, nm = names(x)) {
   if (any(id, na.rm = TRUE)) y[which(id)] <- ceiling(y[which(id)])
 
   cup <- y %/% 48 # 1cup is 48tsp
-  y_cup <- y %% 48
+  y <- y %% 48
   
-  # '\u2154' # 2/3
+  cup1 <- y %/% (48*2/3) # 2/3 cup
+  y <- y %% (48*2/3)
   
-  cup2 <- y_cup %/% (48/2) # 0 or 1; number of half-cup
-  y_cup2 <- y_cup %% (48/2)
+  cup2 <- y %/% (48/2) # 0 or 1; number of half-cup
+  y <- y %% (48/2)
   
-  cup3 <- y_cup2 %/% (48/3) # 0 or 1; number of 1/3 cup (at most one 1/3 cup in less than one 1/2 cup)
-  y_cup3 <- y_cup2 %% (48/3)
+  cup3 <- y %/% (48/3) # 0 or 1; number of 1/3 cup (at most one 1/3 cup in less than one 1/2 cup)
+  y <- y %% (48/3)
   
-  cup4 <- y_cup3 %/% (48/4) # 0 or 1; number of quarter-cup (at most one quarter cup in less than one 1/3 cup)
-  y_cup4 <- y_cup3 %% (48/4)
+  cup4 <- y %/% (48/4) # 0 or 1; number of quarter-cup (at most one quarter cup in less than one 1/3 cup)
+  y <- y %% (48/4)
   
-  Tbsp <- y_cup4 %/% 3 
-  y_Tbsp <- y_cup4 %% 3
-  tsp <- y_cup4 %% 3 # back compatibility
+  Tbsp <- y %/% 3 
+  y <- y %% 3
   
-  tsp1 <- y_Tbsp %/% 1.5 # 0 or 1, number of 1.5 tsp
-  y_tsp1 <- y_Tbsp %% 1.5
+  tsp1a <- y %/% 2 # 0 or 1, number of 2tsp
+  y <- y %% 2
   
-  tsp2 <- y_tsp1 %/% 1 # 0 or 1, number of 1tsp
-  y_tsp2 <- y_tsp1 %% 1
+  tsp1 <- y %/% 1.5 # 0 or 1, number of 1.5 tsp
+  y <- y %% 1.5
   
-  tsp3 <- y_tsp2 %/% .5 # 0 or 1, number of half-tsp
-  y_tsp3 <- y_tsp2 %% .5
+  tsp2 <- y %/% 1 # 0 or 1, number of 1tsp
+  y <- y %% 1
   
-  tsp4 <- y_tsp3 %/% .25 # 0 or 1, number of quarter-tsp
-  y_tsp4 <- y_tsp3 %% .25
+  tsp3 <- y %/% .5 # 0 or 1, number of half-tsp
+  y <- y %% .5
   
-  tsp5 <- y_tsp4 %/% .125 # 0 or 1, number of one-eighth tsp
-  # y_tsp5 <- y_tsp4 %% .125 # no longer care
+  tsp4 <- y %/% .25 # 0 or 1, number of quarter-tsp
+  y <- y %% .25
+  
+  tsp5 <- y %/% .125 # 0 or 1, number of one-eighth tsp
+  # y <- y %% .125 # no longer care
   
   unlist(.mapply(FUN = function(...) {
     z0 <- c(...)
@@ -754,10 +757,12 @@ format_vol <- function(x, nm = names(x)) {
     style_bold(col_br_blue(paste(z, collapse = ' ')))
   }, dots = list(
     ifelse(cup > 0, yes = sprintf(fmt = '%dCup', cup), no = NA_character_), 
+    ifelse(cup1, yes = '\u2154Cup', no = NA_character_), 
     ifelse(cup2, yes = '\u00bdCup', no = NA_character_), 
     ifelse(cup3, yes = '\u2153Cup', no = NA_character_), 
     ifelse(cup4, yes = '\u00bcCup', no = NA_character_), 
     ifelse(Tbsp > 0, yes = sprintf(fmt = '%dTbsp', Tbsp), no = NA_character_),
+    ifelse(tsp1a, yes = '2tsp', no = NA_character_),
     ifelse(tsp1, yes = '1\u00bdtsp', no = NA_character_),
     ifelse(tsp2, yes = '1tsp', no = NA_character_),
     ifelse(tsp3, yes = '\u00bdtsp', no = NA_character_),

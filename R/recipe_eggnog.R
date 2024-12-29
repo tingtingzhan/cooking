@@ -50,7 +50,7 @@ JeanPierre_eggnog <- function() new(
   milk_cup = 2,
   heavyCream_cup = 1,
   egg_pc = 6,
-  sugar = 200*2/3, # 2/3 cup Sugar divided
+  sugar_cup = c(Domino_granulated = 2/3),
   cinnamon_tsp = 1/4,
   # nutmeg_tsp = 1/4, # not written yet
   salt_tsp = 1/8, # 1 pinch of Salt
