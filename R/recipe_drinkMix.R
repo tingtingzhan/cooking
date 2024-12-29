@@ -81,7 +81,6 @@ hotdrink.drinkmix <- function(
   x@water90 <- water90
   x@alias <- character(); x@alias_class <- '' # '\u70ed\u996e'
   x@Stanley20 <- Stanley20(treatment = c(
-    #paste('whisk together all powders,', col_cyan('including syrup')), 
     'add room-temperature water',
     paste('add powders,', col_red('sweep cup bottom with a square scoop,'), 'whisk until smooth'),
     'add hot water, whisk until froth',
