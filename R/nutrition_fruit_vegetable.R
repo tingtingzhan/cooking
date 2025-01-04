@@ -422,7 +422,7 @@ Motts_applesauce <- function() new(
 #' @export
 Laura_soybean <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174270L,
-  name = '\u9ec4\u8c46 Soy Bean', 
+  name = 'Soy Bean', alias = '\u9ec4\u8c46',
   brand = c(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
