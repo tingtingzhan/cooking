@@ -82,15 +82,6 @@ Montreal_rub <- function() new( # inspired by Guga
 
 
 
-duckCoat1 <- function() new(
-  Class = 'recipe',
-  alias = '\u70e4\u9e2d\u76ae\u6c34',
-  syrup = c(TraderJoes_date = 20), # do again to confirm
-  liqueur = c(Wegmans_Marsala = 20), # do again to confirm
-  date = as.Date('2024-12-25'),
-  pros = c('took all gamey flavor!!')
-)
-
 
 duckPaste <- function() new(
   Class = 'recipe',
@@ -130,23 +121,29 @@ duckSalt <- function() new(
 
 duck_coating <- function() new(
   Class = 'recipe',
-  flavor = c(Kirkland_rawHoney = 20),
-  liqueur = c(Wegmans_Marsala = 30),
-  water = 10,
+  alias = '\u70e4\u9e2d\u76ae\u6c34',
+  
+  syrup = c(TraderJoes_date = 20), # do again to confirm
+  liqueur = c(Wegmans_Marsala = 30), # do again to confirm
+  date = as.Date('2024-12-25'),
+  pros = c('took all gamey flavor!!'),
+  
   PhilipsHD9867 = PhilipsHD9867(
     fahrenheit = 350,
     minute = c('\U1f389 half duck\U1f986, 3-3.5lb, skin face up' = 35)
   ),
   Staub_vertRoaster = Staub_vertRoaster(
     treatment = c(
-      'marinade in fridge, loosely covered, 24 hours',
-      'wash off; pat dry'
+      'scald skin by dipping in boiling water; pluck feather; wash off',
+      'pat dry; season inside',
+      'hang over vertical roaster in oven',
+      'brush coating on skin'
     ),
     fahrenheit = 350,
     minute = c('\U1f389 whole duck\U1f986, 3-3.5lb' = 90),
     cooling = 'let stand 30min+ before carving'
   ),
-  review = 'try'
+  review = 'do again to confirm!!!!'
 )
 
 
