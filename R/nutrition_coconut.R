@@ -127,3 +127,17 @@ SoDelicious_coconutmilk <- function() new(
   water = 240*.9457,
   fat = 4, sodium = .01)
 
+
+Freenow_coconutmilk <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Barista Coconut\U1f965', alias = '0\u7cd6\u539a\u6930\u4e73',
+  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
+  usd = 6.29/1e3*1e2,
+  servingGram = 100, serving_ml = 100, # guess
+  fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
+  contain = c('erythritol'),
+  yamibuy = '1159001781'
+)
+ #http://www.freenowmilk.com/col.jsp?id=103
+
+

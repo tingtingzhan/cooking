@@ -8,7 +8,7 @@ maple_yogurt <- function() new(
 )
 
 
-tmp2 <- function() new(
+ryeWhisky_yogurt_fail <- function() new(
   Class = 'recipe',
   yogurt = c(Nancys = 200),
   syrup = c(Runamok_ryeWhisky = 45),

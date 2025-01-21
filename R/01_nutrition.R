@@ -847,6 +847,7 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   if (length(contain <- obj@contain)) {
     contain_chn <- character(length = length(contain))
+    contain_chn[tolower(contain) == 'erythritol'] <- '\u8d64\u85d3\u7cd6\u9187'
     contain_chn[tolower(contain) == 'anise'] <- '\u8334\u82b9'
     contain_chn[tolower(contain) == 'basil'] <- '\u7f57\u52d2'
     contain_chn[tolower(contain) == 'bay leaves'] <- '\u6708\u6842\u53f6'

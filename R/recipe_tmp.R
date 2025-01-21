@@ -1,7 +1,7 @@
 
 
 
-tmp = function() new(
+sparkingCocoa = function() new(
   Class = 'recipe',
   cocoa_Tbsp = c(KingArthur_blackCocoa = 2),
   drymilk = c(Carnation = 20),

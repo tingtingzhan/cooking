@@ -16,7 +16,7 @@ sweetPotatoNoodle_soaked <- function() new(
   Class = 'soaked',
   alias_flavor = '\u7ea2\u85af\u7c89', 
   grain = c(JayOne_sweetPotato = 300), # weighed
-  boilingWater = (1933-898) - 300, # confirmed!!
+  boilingWater = 1060 - 300, # confirmed!!
   instruction = c(
     'prepare 1.2x boiling water',
     'remove from heat as long as noodle softens',

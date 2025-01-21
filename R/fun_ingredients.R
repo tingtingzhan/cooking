@@ -24,7 +24,16 @@ sum_. <- function(...) {
   
   ns <- lengths(xs, use.names = FALSE)
   nms <- lapply(xs, FUN = names)
-  if (all(ns == 1L, lengths(nms) == 0L)) return(sum(unlist(xs, use.names = FALSE)))
+  nms_len <- lengths(nms, use.names = FALSE)
+  if (all(ns == 1L)) {
+    if (all(nms_len == 0L)) return(sum(unlist(xs, use.names = FALSE)))
+    if (sum(nms_len) == 1L) {
+      # beautiful! only one ingredient has name
+      ret <- sum(unlist(xs, use.names = FALSE))
+      names(ret) <- nms[[which(nms_len == 1L)]]
+      return(ret)
+    }
+  }
   
   nm <- unique.default(unlist(nms, use.names = FALSE))
   ret <- numeric(length = length(nm))
