@@ -123,6 +123,6 @@ setMethod(f = '-', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
   ret <- ret0[lengths(ret0, use.names = FALSE) > 0L]
   do.call(new, args = c(list(
     Class = 'recipe',
-    alias = '\u8865\u5145\u6750\u6599'
+    alias = '\u8865\u5145\u6750\u6599 Ingredients to Add'
   ), ret))
 })
