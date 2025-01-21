@@ -45,8 +45,8 @@ if (FALSE) {
   tmp2 = tmp
   tmp2@alias = 'corrected caffeCoconut'
   tmp2@cons = character()
-  tmp2@coconut = sum_.(tmp@coconut, 143)
-  tmp2@water = sum_.(tmp@water, 27)
+  tmp2@coconut = sum_by_name(tmp@coconut, 143)
+  tmp2@water = sum_by_name(tmp@water, 27)
   tmp2
   
   diagnose(caffeCoconut, tmp2) # quite close!  nice!

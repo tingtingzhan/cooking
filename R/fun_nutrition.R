@@ -105,7 +105,7 @@ nutrition.recipe <- function(x) {
   puree <- sum(x@puree, x@pumpkin, x@pumpkinPieMix, x@strawberry, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@darkCherry, x@yellowCorn, x@durian, x@applesauce, x@banana)
   starch <- sum(x@starch)
   drymilk <- sum(x@drymilk)
-  tea <- sum_.(getTealoose(x@teabag), x@tealoose)
+  tea <- sum_by_name(getTealoose(x@teabag), x@tealoose)
   
   devrecipe <- getOption('devrecipe') 
   

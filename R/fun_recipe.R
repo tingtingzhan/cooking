@@ -44,7 +44,7 @@ setMethod(f = '+', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
   
   slots_dbl <- setdiff(names(which(getSlots('recipe') == 'numeric')), c('portion'))
   names(slots_dbl) <- slots_dbl
-  ret0 <- lapply(slots_dbl, FUN = function(i) sum_.(slot(e1, name = i), slot(e2, name = i)))
+  ret0 <- lapply(slots_dbl, FUN = function(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
   
   ret1 <- ret0[lengths(ret0, use.names = FALSE) > 0L]
   ret <- do.call(what = new, args = c(list(

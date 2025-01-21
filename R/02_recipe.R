@@ -523,7 +523,7 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
     if (has_brick) x_brick <- add_suffix(x_brick, which = which)
   }
   
-  slot(x, name = which) <- sum_.(
+  slot(x, name = which) <- sum_by_name(
     x_gram, 
     if (has_tsp) gram_per_tsp(names(x_tsp)) * x_tsp, 
     if (has_Tbsp) gram_per_tsp(names(x_Tbsp)) * (3 * x_Tbsp), # parenthesis needed!! otherwise floating issue!!!
@@ -696,7 +696,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- meatName(x, animal = 'chicken')
   x <- addNameLen1(x, which = 'shrimp', name1 = 'Kirkland_shrimp_31_40')
   
-  x@fruit_pc <- sum_.( # is this correct???
+  x@fruit_pc <- sum_by_name( # is this correct???
     addNameLen1(x, which = 'fruit_pc')@fruit_pc, 
     c(avocado = avocado()@pieceWeight * x@avocado_pc),
     c(lemonJuice = lemonJuice()@pieceWeight * x@lemon_pc),
@@ -962,7 +962,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       get_flavor_(names(x@curry))
     } else if (length(x@chiliMix)) {
       get_flavor_(names(x@chiliMix))
-    } else if (length(tea <- sum_.(getTealoose(x@teabag), x@tealoose))) {
+    } else if (length(tea <- sum_by_name(getTealoose(x@teabag), x@tealoose))) {
       get_flavor_(names(tea))
     } else if (length(x@spice)) {
       get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
@@ -1156,7 +1156,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   if (!length(object@water_extra)) {
     cat(sprintf(fmt = '%s Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), object@water, format_vol(object@water)))
   } else {
-    water <- sum_.(object@water, object@water_extra)
+    water <- sum_by_name(object@water, object@water_extra)
     cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), format_vol(water)))
   }
   

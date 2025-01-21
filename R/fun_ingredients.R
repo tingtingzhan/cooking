@@ -8,16 +8,16 @@
 #' @param ... \strong{named} \link[base]{numeric} vectors
 #' 
 #' @return 
-#' Function [sum_.] returns a \link[base]{numeric} vector.
+#' Function [sum_by_name] returns a \link[base]{numeric} vector.
 #' 
 #' @examples
 #' x1 = c(a = 2, b = 3)
 #' x2 = c(b = 2, c = 1)
 #' x3 = c(a = 3, b = 2, c = 1)
-#' sum_.(x1, x2, x3)
+#' sum_by_name(x1, x2, x3)
 #' 
 #' @export
-sum_. <- function(...) {
+sum_by_name <- function(...) {
   xs <- list(...)
   xs <- xs[lengths(xs, use.names = FALSE) > 0L]
   if (!length(xs)) return(numeric())
