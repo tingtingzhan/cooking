@@ -5,12 +5,13 @@
 #' @export
 caffeCoconut <- function() new(
   Class = 'recipe', 
-  alias = '\u751f\u6930\u62ff\u94c1',
-  drymilk = c(Carnation = 20),
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = 2),
-  cocoa_tsp = c(KingArthur_Bensdorp = 1.5),
-  coconut = c(Freenow_coconutmilk = 320),
-  water = 265,
+  alias = '\u751f\u6930\U1f965\u62ff\u94c1',
+  drymilk = c(Carnation = 14),
+  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.4),
+  cocoa_tsp = c(KingArthur_Bensdorp = 1),
+  coconut = c(Freenow_coconutmilk = 225),
+  water = 185,
+  Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!'),
   date = as.Date('2025-01-21'),
   pros = c(
     'almost tastes the same as commercial version!'
@@ -40,7 +41,7 @@ if (FALSE) {
   )
   
   (tmp = caffeCoconut_try1()/614*334)
-  caffeCoconut()*.82 - tmp
+  caffeCoconut()*1.18 - tmp
   
   tmp2 = tmp
   tmp2@alias = 'corrected caffeCoconut'

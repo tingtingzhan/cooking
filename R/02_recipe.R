@@ -192,7 +192,7 @@
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
-#' @slot nutribullet20,nutribullet24,Stanley20 \linkS4class{tool}
+#' @slot nutribullet20,nutribullet24,Stanley20,Stanley14 \linkS4class{tool}
 #' @slot PhilipsHD9867 \linkS4class{tool}
 #' @slot Staub_vertRoaster \linkS4class{tool}
 #' @slot RobamCT763 \linkS4class{tool}
@@ -277,7 +277,7 @@ setClass(Class = 'recipe', slots = c(
   CuisinartICE70 = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley20 = 'tool',
+  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley20 = 'tool', Stanley14 = 'tool',
   PhilipsHD9867 = 'tool',
   Staub_vertRoaster = 'tool',
   RobamCT763 = 'tool',
@@ -1231,7 +1231,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   show(object@JoyoungDJ13U)
   show(object@JoyoungDJ06M)
   show(object@JoyoungCJA9U)
-  show(object@nutribullet20); show(object@nutribullet24); show(object@Stanley20)
+  show(object@nutribullet20); show(object@nutribullet24); show(object@Stanley20); show(object@Stanley14)
   show(object@PhilipsHD9867)
   show(object@Staub_vertRoaster)
   show(object@RobamCT763)

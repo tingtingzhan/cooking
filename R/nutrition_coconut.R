@@ -21,10 +21,8 @@ Edward_shreddedCoconutLite <- function() new(
   servingTbsp = 4, # packaging
   calorie = 90,
   fat = 7, sodium = .005, carbohydrate = 7, sugar = 1, protein = 1,
-  superior = 'WegmansOrganic_coconutFlour',
-  review = c(
-    'I have diarrhea if eat too much!'
-  ))
+  superior = 'WegmansOrganic_coconutFlour'
+  )
 
 
 Edward_shreddedCoconut <- function() new(
@@ -36,10 +34,7 @@ Edward_shreddedCoconut <- function() new(
   servingTbsp = 2.5, # packaging
   calorie = 100,
   fat = 10, sodium = .005, carbohydrate = 4, sugar = 1, protein = 1,
-  superior = 'WegmansOrganic_coconutFlour',
-  review = c(
-    'I have diarrhea if eat too much!'
-  ))
+  superior = 'WegmansOrganic_coconutFlour')
 
 Edward_coconutFlour <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
@@ -85,7 +80,6 @@ ThaiKitchen_coconutmilkLite <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
   name = 'Lite Coconut\U1f965 Milk',
-  review = 'Effie diarrhea!!',
   walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
   # fullweight = 475, emptyweight = 59,
   servingGram = (475-59)/403*80, servingCup = 1/3,
@@ -96,7 +90,6 @@ ThaiKitchen_coconutmilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-coconut-milk',
   name = 'Coconut\U1f965 Milk',
-  review = 'Effie diarrhea!!',
   costco = '100452749', usd = (12.99/6)/403*80, # price retrieved 2024-09-02
   # fullweight = 475, emptyweight = 59, 
   servingGram = (475-59)/403*80, servingCup = 1/3,

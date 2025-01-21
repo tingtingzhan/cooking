@@ -119,11 +119,11 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
       txt_fahrenheit, txt_celsius, 
       style_bold(col_red(format_minute(min_))), 
       names(min_)), sep = '\n')
-  } else cat(sprintf(
+  } else cat(paste(sprintf(
     fmt = ' \U1f321%s \U1f321%s', 
     txt_fahrenheit, 
     txt_celsius
-  ), sep = '\n')
+  ), collapse = '\n'))
   
   
   object@operation <- gsub(pattern = '\n', replacement = '', x = object@operation)
@@ -277,6 +277,10 @@ Stanley20 <- function(...) new(
   name = c(style_hyperlink(text = 'Stanley 20oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz')),
   ...)
 
+Stanley14 <- function(...) new(
+  Class = 'tool',
+  name = c(style_hyperlink(text = 'Stanley 14oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-14-oz')),
+  ...)
 
 Staub_vertRoaster <- function(...) new(
   Class = 'tool',
