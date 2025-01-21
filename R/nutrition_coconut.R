@@ -129,7 +129,7 @@ Freenow_coconutmilk <- function() new(
   servingGram = 100, serving_ml = 100, # guess
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
   contain = c('erythritol'),
-  yamibuy = '1159001781'
+  yamibuy = '26796422'
 )
  #http://www.freenowmilk.com/col.jsp?id=103
 
