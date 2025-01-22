@@ -123,7 +123,7 @@ SoDelicious_coconutmilk <- function() new(
 
 Freenow_coconutmilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = 'Barista Coconut\U1f965', alias = '0\u7cd6\u539a\u6930\u4e73',
+  name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
   usd = 6.29/1e3*1e2,
   servingGram = 100, serving_ml = 100, # guess

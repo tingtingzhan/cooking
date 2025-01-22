@@ -7,9 +7,8 @@ caffeCoconut <- function() new(
   Class = 'recipe', 
   alias = '\u751f\u6930\U1f965\u62ff\u94c1',
   drymilk = c(Carnation = 14),
-  #coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.4), # coffee too strong
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1), # try
-  cocoa_tsp = c(KingArthur_Bensdorp = 1),
+  coffee_Tbsp = c(NescafeGold_espresso_blonde = .5),
+  cocoa_tsp = c(KingArthur_Bensdorp = .25),
   coconut = c(Freenow_coconutmilk = 225),
   water = 185,
   Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!'),

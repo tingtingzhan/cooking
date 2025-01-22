@@ -129,5 +129,5 @@ setMethod(f = '-', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
   # allow negative ingredients
   # only contains ingredients slots
   # do not methods::show nutrition analysis
-  # Tingting prefers inherits('recipe', what = 'recipe_')
+  # Tingting prefers inherits('recipe', what = 'ingredients')
 })
