@@ -257,10 +257,10 @@ durian_ganache <- function() new(
   review = 'try')
 
 
-coconut_mascarponeGanache_Silk <- function() new(
-  Class = 'mascarponeGanache', alias_flavor = '\u6930\u5b50\U1f965(Silk)',
-  puree = c(Silk_coconutmilk = 110),
-  sugar = 22,
+coconut_mascarponeGanache <- function() new(
+  Class = 'mascarponeGanache', 
+  alias_flavor = '\u6930\u5b50\U1f965',
+  coconut = c(Freenow_coconutmilk = 150),
   review = 'try'
 )
 

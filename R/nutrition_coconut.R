@@ -127,10 +127,22 @@ Freenow_coconutmilk <- function() new(
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
   usd = 6.29/1e3*1e2,
   servingGram = 100, serving_ml = 100, # guess
+  calorie = 70,
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
   contain = c('erythritol'),
   yamibuy = '26796422'
 )
- #http://www.freenowmilk.com/col.jsp?id=103
+
+
+Kara_coconutmilk <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Coconut\U1f965 Cream', alias = '\u6930\u6d46',
+  brand = c(style_hyperlink(text = 'Kara\U1f1ee\U1f1e9', url = 'https://kara-coconut.com/cn/product/uht-coconut-cream/')),
+  usd = 1.89/200*15, # https://www.yamibuy.com/zh/p/kara-coconut-cream-200ml/1020034401 # out of stock right now
+  servingGram = 15, serving_ml = 15, # guessed weight
+  calorie = 35,
+  fat = 3.5
+)
+
 
 

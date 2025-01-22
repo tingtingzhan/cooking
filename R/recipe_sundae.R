@@ -208,7 +208,7 @@ happytears_icecream <- function() new(
   Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   eggYolk_pc = 5,
   sugar = 150,
-  flavor = c(ThaiKitchen_coconutmilkLite = 500),
+  coconut = c(Kara_coconutmilk = 500),
   heavyCream = 250,
   happytears = 'UDVHsBR7s3Y')
 
