@@ -125,4 +125,9 @@ setMethod(f = '-', signature = signature(e1 = 'recipe', e2 = 'recipe'), definiti
     Class = 'recipe',
     alias = '\u8865\u5145\u6750\u6599 Ingredients to Add'
   ), ret))
+  # Future: define a new class (either inherits or being inherited by 'recipe')
+  # allow negative ingredients
+  # only contains ingredients slots
+  # do not methods::show nutrition analysis
+  # Tingting prefers inherits('recipe', what = 'recipe_')
 })

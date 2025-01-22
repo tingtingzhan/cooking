@@ -104,13 +104,7 @@ diff_ingredients <- function(e1, e2) {
     e1
   }
   
-  if (any(ret < -.Machine$double.eps)) {
-  #  print(e1)
-  #  print(e2)
-  #  print(ret)
-    stop('some ingredient is negative')
-  }
-  
-  return(ret[abs(ret) > .Machine$double.eps])
+  # negative return okay!!!
+  return(ret)
   
 }
