@@ -187,9 +187,6 @@ if (FALSE) {
 #'  subtract(xiaogaojie_icecream, sugar = 57),
 #'  subtract(happytears_icecream, sugar = 80)
 #' )
-#' 
-#' 
-#' 
 #' @name icecream
 #' @export
 xiaogaojie_icecream <- function() new(
@@ -208,7 +205,7 @@ happytears_icecream <- function() new(
   Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   eggYolk_pc = 5,
   sugar = 150,
-  coconut = c(Kara_coconutmilk = 500),
+  coconut = c(Kara_coconutcream = 500),
   heavyCream = 250,
   happytears = 'UDVHsBR7s3Y')
 

@@ -455,7 +455,7 @@ Horizon_wholeDHA_milk <- function() new(
 Wawa_2perc_milk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
   name = '2% Reduced Fat Milk',
-  servingGram = 240, serving_ml = 240,
+  servingGram = 240, servingCup = 1,
   usd = 2.75/8,
   calorie = 120,
   fat = 5, cholesterol = .02, sodium = .115, carbohydrate = 12, sugar = 12, protein = 8)
@@ -595,7 +595,7 @@ Meyenberg_goat_kefir <- function() new(
   name = 'Goat\U1f410 Kefir', alias = '\u7f8a\u5976\u9152',
   wegmans = 4937L, usd = 8.99/32*8, 
   # https://redwoodhill.com/redwood-hill-to-become-meyenberg
-  servingGram = 240, servingCup = 1, # 8floz
+  servingGram = 240, servingCup = 1,
   # full bottle with cap 1060g
   # use it as staple
   calorie = 140,
