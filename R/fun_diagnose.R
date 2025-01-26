@@ -19,13 +19,12 @@ diagnose <- function(...) { # , dots = list(...)
     return(eval(call(name = 'nutrition', x)))
     do.call(what = 'nutrition', args = list(x)) # seems equivalent
   })
-  names(dots) <- vapply(dots, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   
   cat('\n')
-  
   cat(bg_br_yellow('Nutrition\n'))
   print.nutrition_(nutrition_(dots = dots))
   
+  names(dots) <- vapply(dots, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   diagnose_(dots, which = 'baker')
   diagnose_(dots, which = 'pastryBaker')
   diagnose_(dots, which = 'breadBaker')

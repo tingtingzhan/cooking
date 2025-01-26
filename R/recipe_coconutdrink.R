@@ -7,12 +7,12 @@ caffeCoconut <- function() new(
   Class = 'recipe', 
   alias = '\u751f\u6930\U1f965\u62ff\u94c1',
   drymilk = c(Carnation = 14),
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = .5),
+  coffee_tsp = c(NescafeGold_espresso_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   coconut = c(Freenow_coconutBarista = 225),
   water = 185,
   Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!'),
-  date = as.Date('2025-01-22'),
+  date = as.Date('2025-01-24'),
   pros = c(
     'almost tastes the same as commercial version!'
   )
@@ -23,10 +23,9 @@ caffeCoconut2 <- function() new(
   Class = 'recipe', 
   alias = '\u751f\u6930\U1f965\u62ff\u94c1',
   drymilk = c(Carnation = 14),
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = .5),
+  coffee_tsp = c(NescafeGold_espresso_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   coconut = c(CalifiaFarms_coconutBarista = 225+185),
-  #water = ,
   Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!'),
   #date = as.Date('2025-01-22'),
   review = c(

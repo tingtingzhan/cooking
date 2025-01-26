@@ -86,11 +86,14 @@ WegmansOrganic_coconutFlour <- function() new(
 #'  ThaiKitchen_coconutmilk,
 #'  ThaiKitchen_coconutmilkLite,
 #'  Freenow_coconutBarista,
+#'  CalifiaFarms_coconutmilk,
 #'  PacificFoods_coconutBarista,
 #'  CalifiaFarms_coconutBarista,
 #'  Dream_coconutBarista,
+#'  CoconutPalm_coconutmilk,
 #'  Silk_coconutmilk,
-#'  SoDelicious_coconutmilk
+#'  SoDelicious_coconutmilk,
+#'  CalifiaFarms_coconutmilkwater
 #' )
 #' @name coconutmilk
 #' @export
@@ -166,15 +169,20 @@ SoDelicious_coconutmilk <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'So Delicious\U1f1fa\U1f1f8', url = c(
-    'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
-    # 'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
+    # 'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
+    'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
   ))),
-  walmart = '667624971', # usd = 2.68/4,
-  costco = '100449940', usd = 12.99/6/4, # 32 oz, 6-Count
+  wegmans = 44959L, usd = 3.99/64*8, # need to chill
+  # walmart = '667624971', # usd = 2.68/4, # shelf-stable
+  # costco = '100449940', usd = 12.99/6/4, # shelf-stable 32 oz, 6-Count
   servingGram = 240, servingCup = 1, 
   water = 240*.9457,
   calorie = 45,
-  fat = 4, sodium = .01)
+  fat = 4, sodium = .01,
+  review = c(
+    'too much thickener',
+    'almost no coconut flavor'
+  ))
 
 #' @rdname coconutmilk
 #' @export
@@ -186,7 +194,8 @@ Freenow_coconutBarista <- function() new(
   servingGram = 100, serving_ml = 100, # guess
   calorie = 70,
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
-  contain = c('erythritol'))
+  contain = c('erythritol'),
+  review = 'too sweet (too much sugar alchohol)')
 
 #' @rdname coconutmilk
 #' @export
@@ -212,6 +221,21 @@ CalifiaFarms_coconutBarista <- function() new(
 
 #' @rdname coconutmilk
 #' @export
+CalifiaFarms_coconutmilkwater <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
+  brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/go-coconuts-coconutmilk/')),
+  wegmans = 28942L, usd = 4.29/48*8,
+  servingGram = 240, servingCup = 1,
+  calorie = 45,
+  fat = 4, sodium = .140, carbohydrate = 2, sugar = 1,
+  review = c(
+    'too much thickener',
+    'almost no coconut flavor'
+  ))
+
+#' @rdname coconutmilk
+#' @export
 Dream_coconutBarista <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
@@ -221,5 +245,28 @@ Dream_coconutBarista <- function() new(
   calorie = 90,
   fat = 5, sodium = .140, carbohydrate = 10, addedSugar = 9, protein = 1)
 
+#' @rdname coconutmilk
+#' @export
+CoconutPalm_coconutmilk <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
+  brand = c(style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = c(
+    'http://www.yeshu.com/guoyan/liucheng.html'
+  ))),
+  # https://www.yamibuy.com/zh/p/coconut-oalm-brand-coconut-juice-1l/1020035561
+  servingGram = 250, servingCup = 1, 
+  calorie = 120,
+  fat = 5, sodium = .03, carbohydrate = 17, addedSugar = 17, protein = 1)
 
+
+#' @rdname coconutmilk
+#' @export
+CalifiaFarms_coconutmilk <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
+  brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/organic-coconutmilk/')),
+  target = 'A-92783096', usd = 4.99/48*8,
+  servingGram = 240, servingCup = 1,
+  calorie = 90,
+  fat = 8, sodium = .080, carbohydrate = 3, sugar = 2)
 

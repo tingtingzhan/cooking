@@ -138,7 +138,6 @@ print_ANSI_matrix <- function(x) {
   
   prt <- .mapply(FUN = paste, dots = c(list(rnm_prt), x_prt), MoreArgs = list(collapse = ' '))
   lapply(prt, FUN = cat, sep = '\n')
-  
   # ?cli::cli_text does not respect duplicate spaces, as of 2024-06-21
   # cli::cli_text('a           b')
   # lapply(prt, FUN = cli_text, sep = '\n')

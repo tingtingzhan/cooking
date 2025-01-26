@@ -658,10 +658,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
 
 
 #' @export
-nutrition.default <- function(x) {
-  if (inherits(x, what = 'nutrition')) return(x)
-  stop('exception handling')
-}
+nutrition.default <- function(x) stop('exception handling')
+
+#' @export
+nutrition.nutrition <- identity
 
 
 gram_per_tsp <- function(x) {
@@ -836,9 +836,8 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
       style_bold(make_ansi_style('sienna')(obj@superior)),
       obj@superior
     ), collapse = ', '))
+    cat('\n')
   } 
-  
-  cat('\n')
   
   if (nrv <- length(obj@review)) {
     cat(sprintf(fmt = '\U1f4dd %s\n', obj@review), sep = '')

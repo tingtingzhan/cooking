@@ -11,7 +11,10 @@
 \alias{Freenow_coconutBarista}
 \alias{PacificFoods_coconutBarista}
 \alias{CalifiaFarms_coconutBarista}
+\alias{CalifiaFarms_coconutmilkwater}
 \alias{Dream_coconutBarista}
+\alias{CoconutPalm_coconutmilk}
+\alias{CalifiaFarms_coconutmilk}
 \title{Coconut Milk}
 \usage{
 ThaiKitchen_coconutmilkLite()
@@ -32,7 +35,13 @@ PacificFoods_coconutBarista()
 
 CalifiaFarms_coconutBarista()
 
+CalifiaFarms_coconutmilkwater()
+
 Dream_coconutBarista()
+
+CoconutPalm_coconutmilk()
+
+CalifiaFarms_coconutmilk()
 }
 \description{
 Coconut Milk
@@ -44,10 +53,13 @@ diagnose(
  ThaiKitchen_coconutmilk,
  ThaiKitchen_coconutmilkLite,
  Freenow_coconutBarista,
+ CalifiaFarms_coconutmilk,
  PacificFoods_coconutBarista,
  CalifiaFarms_coconutBarista,
  Dream_coconutBarista,
+ CoconutPalm_coconutmilk,
  Silk_coconutmilk,
- SoDelicious_coconutmilk
+ SoDelicious_coconutmilk,
+ CalifiaFarms_coconutmilkwater
 )
 }

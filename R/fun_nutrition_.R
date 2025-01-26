@@ -14,7 +14,6 @@
 nutrition_ <- function(..., dots = list(...)) {
   
   dots <- lapply(dots, FUN = nutrition)
-  #names(dots) <- vapply(dots, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   
   ret0 <- lapply(dots, FUN = function(v) c(
     calorie = sum(v@calorie),
@@ -42,9 +41,12 @@ nutrition_ <- function(..., dots = list(...)) {
   #attr(ret, which = 'review') <- review[lengths(review, use.names = FALSE) > 0L]
   #machine <- lapply(dots, FUN = slot, name = 'machine')
   #attr(ret, which = 'machine') <- machine[lengths(machine, use.names = FALSE) > 0L]
+
+  nm <- vapply(dots, FUN = function(i) paste(c(i@name, i@brand), collapse = ' '), FUN.VALUE = '')
+  nm_glue <- vapply(dots, FUN = function(i) paste(c(i@name_glue, i@brand), collapse = ' '), FUN.VALUE = '')
   
-  rownames(ret) <- vapply(dots, FUN = function(i) paste(c(i@name, i@brand), collapse = ' '), FUN.VALUE = '')
-  attr(ret, which = 'glue') <- vapply(dots, FUN = function(i) paste(c(i@name_glue, i@brand), collapse = ' '), FUN.VALUE = '')
+  rownames(ret) <- nm # *not* `nm_glue`
+  attr(ret, which = 'glue') <- nm_glue
   class(ret) <- 'nutrition_'
   return(ret)
   
