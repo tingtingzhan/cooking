@@ -86,6 +86,7 @@ WegmansOrganic_coconutFlour <- function() new(
 #'  ThaiKitchen_coconutmilk,
 #'  ThaiKitchen_coconutmilkLite,
 #'  Freenow_coconutBarista,
+#'  Freenow_coconutBarista_0sugar,
 #'  CalifiaFarms_coconutmilk,
 #'  PacificFoods_coconutBarista,
 #'  CalifiaFarms_coconutBarista,
@@ -186,7 +187,7 @@ SoDelicious_coconutmilk <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Freenow_coconutBarista <- function() new(
+Freenow_coconutBarista_0sugar <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
@@ -196,6 +197,18 @@ Freenow_coconutBarista <- function() new(
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
   contain = c('erythritol'),
   review = 'too sweet (too much sugar alchohol)')
+
+#' @rdname coconutmilk
+#' @export
+Freenow_coconutBarista <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
+  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
+  #yamibuy = '26796422', usd = 6.29/1e3*1e2,
+  usd = 5.19/980*240, # https://www.sayweee.com/zh/product/Fresh-Yolo-Coconut-Milk-Multiple-Versions-/89394
+  servingGram = 240, serving_ml = 240, # guess
+  calorie = 200,
+  fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
 #' @rdname coconutmilk
 #' @export

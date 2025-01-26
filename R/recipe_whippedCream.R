@@ -260,7 +260,7 @@ durian_ganache <- function() new(
 coconut_mascarponeGanache <- function() new(
   Class = 'mascarponeGanache', 
   alias_flavor = '\u6930\u5b50\U1f965',
-  coconut = c(Freenow_coconutBarista = 150),
+  coconut = c(Freenow_coconutBarista_0sugar = 150),
   review = 'try'
 )
 

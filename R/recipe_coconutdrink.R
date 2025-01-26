@@ -9,7 +9,7 @@ caffeCoconut <- function() new(
   drymilk = c(Carnation = 14),
   coffee_tsp = c(NescafeGold_espresso_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
-  coconut = c(Freenow_coconutBarista = 225),
+  coconut = c(Freenow_coconutBarista_0sugar = 225),
   water = 185,
   Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!'),
   date = as.Date('2025-01-24'),
@@ -46,7 +46,7 @@ if (FALSE) {
     drymilk = c(Carnation = 14),
     coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.4), # coffee too strong
     cocoa_tsp = c(KingArthur_Bensdorp = 1),
-    coconut = c(Freenow_coconutBarista = 225),
+    coconut = c(Freenow_coconutBarista_0sugar = 225),
     water = 185,
     Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!'),
     date = as.Date('2025-01-21'),
