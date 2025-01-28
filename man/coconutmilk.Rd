@@ -10,6 +10,7 @@
 \alias{SoDelicious_coconutmilk}
 \alias{Freenow_coconutBarista_0sugar}
 \alias{Freenow_coconutBarista}
+\alias{Luckin_coconutmilk}
 \alias{PacificFoods_coconutBarista}
 \alias{CalifiaFarms_coconutBarista}
 \alias{CalifiaFarms_coconutmilkwater}
@@ -34,6 +35,8 @@ Freenow_coconutBarista_0sugar()
 
 Freenow_coconutBarista()
 
+Luckin_coconutmilk()
+
 PacificFoods_coconutBarista()
 
 CalifiaFarms_coconutBarista()
@@ -57,6 +60,7 @@ diagnose(
  ThaiKitchen_coconutmilkLite,
  Freenow_coconutBarista,
  Freenow_coconutBarista_0sugar,
+ Luckin_coconutmilk,
  CalifiaFarms_coconutmilk,
  PacificFoods_coconutBarista,
  CalifiaFarms_coconutBarista,

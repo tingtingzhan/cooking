@@ -56,6 +56,8 @@ Nutrition information.
 
 \item{\code{webstaurant}}{\link[base]{character} scalar}
 
+\item{\code{weee}}{\link[base]{character} scalar}
+
 \item{\code{wegmans,wegmansorganic}}{\link[base]{integer} scalar, Wegmans Food Markets ID}
 
 \item{\code{wholefoods}}{\link[base]{character} scalar, Wholel Foods ID}

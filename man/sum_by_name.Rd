@@ -19,6 +19,7 @@ Function \link{sum_by_name} returns a \link[base]{numeric} vector.
 x1 = c(a = 2, b = 3)
 x2 = c(b = 2, c = 1)
 x3 = c(a = 3, b = 2, c = 1)
+x4 = c(a = -1, b = -2, c = -1)
 sum_by_name(x1, x2, x3)
-
+sum_by_name(x1, x2, x4)
 }

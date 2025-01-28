@@ -10,7 +10,10 @@
 #' @importFrom cli bg_br_red bg_br_green bg_br_yellow bg_br_blue bg_br_magenta bg_br_cyan bg_br_white
 #' @importFrom cli style_hyperlink style_bold
 #' @importFrom cli cli_text make_ansi_style
-#' @importFrom methods callNextMethod getSlots initialize new setClass prototype setMethod setValidity show signature slot slot<- slotNames
+#' @importFrom methods callNextMethod 
+#' @importFrom methods getSlots getMethod slot slot<- slotNames
+#' @importFrom methods initialize new setClass prototype setMethod setValidity show signature 
+#' @importFrom methods as setAs
 #' @keywords internal
 '_PACKAGE'
 

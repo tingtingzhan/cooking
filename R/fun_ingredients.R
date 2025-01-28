@@ -14,8 +14,9 @@
 #' x1 = c(a = 2, b = 3)
 #' x2 = c(b = 2, c = 1)
 #' x3 = c(a = 3, b = 2, c = 1)
+#' x4 = c(a = -1, b = -2, c = -1)
 #' sum_by_name(x1, x2, x3)
-#' 
+#' sum_by_name(x1, x2, x4)
 #' @export
 sum_by_name <- function(...) {
   xs <- list(...)
@@ -43,6 +44,13 @@ sum_by_name <- function(...) {
 }
 
 
+
+
+
+
+
+
+
 #' @title Ratio between Ingredients
 #' 
 #' @description ..
@@ -50,10 +58,11 @@ sum_by_name <- function(...) {
 #' @param e1,e2 \strong{named} \link[base]{numeric} vectors
 #' 
 #' @return 
-#' Function [ratio_ingredients] returns a \link[base]{numeric} scalar.
+#' Function [ratio_by_name] returns a \link[base]{numeric} scalar.
 #' 
 #' @export
-ratio_ingredients <- function(e1, e2) {
+ratio_by_name <- function(e1, e2) {
+  .Deprecated(msg = 'needs a full re-write')
   if (!(n1 <- length(e1))) stop('exclude in parent function')
   if (!(n2 <- length(e2))) stop('exclude in parent function')
   nm1 <- names(e1)
@@ -72,39 +81,3 @@ ratio_ingredients <- function(e1, e2) {
 }
 
 
-#' @title Difference between Ingredients
-#' 
-#' @description ..
-#' 
-#' @param e1,e2 \strong{named} \link[base]{character} vectors
-#' 
-#' @return 
-#' Function [diff_ingredients] returns a \link[base]{character} vector.
-#' 
-#' @export
-diff_ingredients <- function(e1, e2) {
-  
-  if (!(n1 <- length(e1))) return(e1)
-  if (!(n2 <- length(e2))) return(e1)
-  
-  nm1 <- names(e1)
-  nm2 <- names(e2)
-  
-  ret <- if ((n1 == 1L) && (n2 == 1L) && !length(nm1) && !length(nm2)) {
-    e1 - e2
-  } else {
-    if (!length(nm1) || anyNA(nm1) || !all(nzchar(nm1)) ||
-        !length(nm2) || anyNA(nm2) || !all(nzchar(nm2))) {
-      print(e1)
-      print(e2)
-      stop('must both be fully named')
-    }
-    if (!length(nm <- intersect(nm1, nm2))) return(e1)
-    e1[nm] <- e1[nm] - e2[nm]
-    e1
-  }
-  
-  # negative return okay!!!
-  return(ret)
-  
-}

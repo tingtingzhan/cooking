@@ -36,9 +36,6 @@
 #' @slot kitchenaid \link[base]{character} scalar
 #' @slot staub \link[base]{character} scalar
 #' 
-#' 
-#' @param object \linkS4class{tool} object
-#' 
 #' @name tool
 #' @aliases tool-class
 #' @export
@@ -87,7 +84,8 @@ setMethod(f = initialize, signature = 'tool', definition = function(.Object, ...
 
 
 
-#' @rdname tool
+#' @rdname show_cooking
+#' @aliases show,tool-method
 #' @export
 setMethod(f = show, signature = 'tool', definition = function(object) {
   

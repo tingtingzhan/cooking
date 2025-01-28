@@ -1,10 +1,12 @@
 # '\u2318' 
 # c('\u058d', '\u058e')
 
-
-#' @title \linkS4class{recipe}
+#' @title Recipe
 #' 
-#' @description general recipe
+#' @description 
+#' S4 class \linkS4class{recipe0} is the mathematical model, allowing negative ingredients.
+#' 
+#' S4 class \linkS4class{recipe} is the executable recipe.
 #' 
 #' @slot alias \link[base]{character} scalar in Unicode, alias (e.g., in Chinese)
 #' @slot alias_class,alias_flavor \link[base]{character} scalar in Unicode, alias (e.g., in Chinese) of class and flavor
@@ -63,7 +65,7 @@
 #' @slot eggYolk,eggWhite \link[base]{numeric} scalars, weight of egg yolks and whites (in grams)
 #' 
 #' @slot teabag \link[base]{numeric} scalars, number of tea bags
-#' @slot tealoose \link[base]{numeric} scalars, weight of loose tea
+#' @slot tea \link[base]{numeric} scalars, weight of loose tea in grams
 #' 
 #' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)
 #' @slot pastryFlour \link[base]{numeric} scalar, weight of Wegmans pastry flour (in grams)
@@ -234,63 +236,10 @@
 #' @references
 #' \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
 #' 
-#' @aliases recipe-class
+#' @name recipe
+#' @aliases recipe0-class
 #' @export
-setClass(Class = 'recipe', slots = c(
-  
-  alias = 'character',
-  alias_class = 'character', 
-  alias_flavor = 'character',
-  author = 'character',
-  #key = 'character',
-  date = 'Date',
-  
-  url = 'character',
-  allrecipes = 'character',
-  acme = 'integer',
-  daatgo = 'character',
-  dad1966 = 'character',
-  guga = 'character',
-  happytears = 'character',
-  ippodotea = 'character', ippodoteajpn = 'character',
-  joshuaweissman = 'character',
-  julieseatsandtreats = 'character',
-  juniorscheesecakecookbook = 'integer',
-  just1cookbook = 'character',
-  kingarthur = 'character',
-  laofangu = 'character',
-  natashaskitchen = 'character',
-  nytimes = 'character',
-  pino = 'character',
-  preppykitchen = 'character', # must len-1
-  quakeroats = 'character',
-  shangshikitchen = 'character',
-  wegmans = 'character',
-  xiaogaojie = 'character',
-  youtube = 'character',
-  #doi = 'character',
-  
-  machine = 'list',
-  KSM8990 = 'tool',
-  KSM3316X = 'tool',
-  KSMICM = 'tool',
-  CuisinartICE70 = 'tool',
-  JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
-  JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley20 = 'tool', Stanley14 = 'tool',
-  PhilipsHD9867 = 'tool',
-  Staub_vertRoaster = 'tool',
-  RobamCT763 = 'tool',
-  InstantPot = 'tool',
-  
-  waterBath = 'tool',
-  
-  note = 'character',
-  instruction = 'character',
-  review = 'character',
-  pros = 'character', cons = 'character',
-  portion = 'numeric',
-  
+setClass(Class = 'recipe0', slots = c(
   lemon_pc = 'numeric',
   lime_pc = 'numeric',
   avocado_pc = 'numeric',
@@ -316,7 +265,7 @@ setClass(Class = 'recipe', slots = c(
   eggYolk = 'numeric', eggWhite = 'numeric',   
   egg_pc = 'numeric', eggYolk_pc = 'numeric', eggWhite_pc = 'numeric',
   
-  teabag = 'numeric', tealoose = 'numeric',
+  teabag = 'numeric', tea = 'numeric',
   
   # puree
   applesauce = 'numeric',
@@ -441,7 +390,67 @@ setClass(Class = 'recipe', slots = c(
   liqueur = 'numeric', liqueur_tsp = 'numeric', liqueur_Tbsp = 'numeric', liqueur_cup = 'numeric',
   
   gelatin = 'numeric',
-  gelatin_leaf = 'numeric',
+  gelatin_leaf = 'numeric'
+))
+
+
+#' @rdname recipe
+#' @aliases recipe-class
+#' @export
+setClass(Class = 'recipe', contains = 'recipe0', slots = c(
+  
+  alias = 'character',
+  alias_class = 'character', 
+  alias_flavor = 'character',
+  author = 'character',
+  #key = 'character',
+  date = 'Date',
+  
+  url = 'character',
+  allrecipes = 'character',
+  acme = 'integer',
+  daatgo = 'character',
+  dad1966 = 'character',
+  guga = 'character',
+  happytears = 'character',
+  ippodotea = 'character', ippodoteajpn = 'character',
+  joshuaweissman = 'character',
+  julieseatsandtreats = 'character',
+  juniorscheesecakecookbook = 'integer',
+  just1cookbook = 'character',
+  kingarthur = 'character',
+  laofangu = 'character',
+  natashaskitchen = 'character',
+  nytimes = 'character',
+  pino = 'character',
+  preppykitchen = 'character', # must len-1
+  quakeroats = 'character',
+  shangshikitchen = 'character',
+  wegmans = 'character',
+  xiaogaojie = 'character',
+  youtube = 'character',
+  #doi = 'character',
+  
+  machine = 'list',
+  KSM8990 = 'tool',
+  KSM3316X = 'tool',
+  KSMICM = 'tool',
+  CuisinartICE70 = 'tool',
+  JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
+  JoyoungCJA9U = 'tool',
+  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley20 = 'tool', Stanley14 = 'tool',
+  PhilipsHD9867 = 'tool',
+  Staub_vertRoaster = 'tool',
+  RobamCT763 = 'tool',
+  InstantPot = 'tool',
+  
+  waterBath = 'tool',
+  
+  note = 'character',
+  instruction = 'character',
+  review = 'character',
+  pros = 'character', cons = 'character',
+  portion = 'numeric',
   
   waterLost = 'numeric',
   sugarLost = 'numeric',
@@ -453,7 +462,12 @@ setClass(Class = 'recipe', slots = c(
 
 
 
-
+setAs(from = 'recipe', to = 'recipe0', def = function(from) {
+  slt0 <- names(getSlots(x = 'recipe0'))
+  atr0 <- attributes(from)[slt0]
+  atr <- atr0[lengths(atr0, use.names = FALSE) > 0L]
+  do.call(what = new, args = c(list(Class = 'recipe0'), atr))
+})
 
 
 
@@ -489,15 +503,15 @@ addNameLen1 <- function(x, which, name1 = stop('no default!')) {
 }
 
 combineVol <- function(x, which, name1 = stop('no default!')) {
-  .slotnm <- names(getSlots(class(x)))
+  slt0 <- names(getSlots(x = 'recipe0'))
   ._tsp <- paste0(which, '_tsp')
-  has_tsp <- ._tsp %in% .slotnm
+  has_tsp <- ._tsp %in% slt0
   ._Tbsp <- paste0(which, '_Tbsp')
-  has_Tbsp <- ._Tbsp %in% .slotnm
+  has_Tbsp <- ._Tbsp %in% slt0
   ._cup <- paste0(which, '_cup')
-  has_cup <- ._cup %in% .slotnm
+  has_cup <- ._cup %in% slt0
   ._brick <- paste0(which, '_brick')
-  has_brick <- ._brick %in% .slotnm
+  has_brick <- ._brick %in% slt0
   x_gram <- slot(addNameLen1(x, which = which, name1 = name1), name = which)
   x_tsp <- if (has_tsp) slot(addNameLen1(x, which = ._tsp, name1 = name1), name = ._tsp) # else NULL
   x_Tbsp <- if (has_Tbsp) slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
@@ -563,7 +577,7 @@ get_flavor_ <- function(x) {
 }
 
 
-setMethod(f = initialize, signature = 'recipe', definition = function(.Object, ...) {
+setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
@@ -711,20 +725,41 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   x <- addNameLen1(x, which = 'cashew', name1 = 'Kirkland_cashew_organic')
   x <- addNameLen1(x, which = 'nut')
   
+  x@tea <- sum_by_name(getTealoose(x@teabag), x@tea)
+  x@teabag <- numeric()
+  
   if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {
     extraWater <- function(z) sum(z * vapply(names(z), FUN = function(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
     x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@acai)
   }
   x <- addNameLen1(x, which = 'water_extra', name1 = 'Wegmans_water')
   
-  x@machine <- x@machine[lengths(x@machine) > 0L]
-  
-  for (i in names(which(getSlots('recipe') == 'numeric'))) {
+  for (i in names(getSlots(x = 'recipe0'))) {
     ival <- slot(object = x, name = i)
     # generic method '+' will create 0's
     if (anyNA(ival)) stop(i)
     if (length(ival) && all(ival == 0)) slot(object = x, name = i) <- numeric()
   }
+  
+  return(x)
+  
+})
+
+
+
+
+
+
+
+
+setMethod(f = initialize, signature = 'recipe', definition = function(.Object, ...) {
+  
+  x <- callNextMethod(.Object, ...)
+  
+  # is this the correct way of doing things?????
+  x <- getMethod(f = 'initialize', signature = 'recipe0')(x)
+  
+  x@machine <- x@machine[lengths(x@machine) > 0L]
   
   if (length(x@yeast) && !length(x@sugarLost)) {
     x@sugarLost <- if (inherits(x, what = 'bao')) {
@@ -962,8 +997,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       get_flavor_(names(x@curry))
     } else if (length(x@chiliMix)) {
       get_flavor_(names(x@chiliMix))
-    } else if (length(tea <- sum_by_name(getTealoose(x@teabag), x@tealoose))) {
-      get_flavor_(names(tea))
+    } else if (length(x@tea)) {
+      get_flavor_(names(x@tea))
     } else if (length(x@spice)) {
       get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
     } else if (length(x@grain)) {
@@ -1008,170 +1043,188 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
 
 
 
-#' @title Show \linkS4class{recipe} Object
-#' 
-#' @description Print ingredients and nutrition information of a recipe
-#' 
-#' @param object \linkS4class{recipe} object
-#'
+#' @rdname show_cooking
+#' @aliases show,recipe0-method
 #' @export
-setMethod(f = show, signature = 'recipe', definition = function(object) {
+setMethod(f = show, signature = 'recipe0', definition = function(object) print.recipe0(object))
+
+#' @export
+print.recipe0 <- function(x, ...) {
   
-  cat('\n')
-  y <- nutrition.recipe(x = object)
-  cli_text(style_bold(col_grey(y@name)))
-  cat('\n')
+  y <- nutrition(x = x) # dispatch to [nutrition.recipe0] or [nutrition.recipe]
   
-  if (length(object@date)) {
-    cat(col_green(format.Date(object@date, format = '%A, %B %e, %Y')), '\n\n')
+  if (length(y@name)) {
+    cli_text(style_bold(col_grey(y@name)))
+    # cli_text(NULL) # prints a line break
+    # cli_text(character()) # also prints a line break
   }
-    
-  y_info <- attr(y, which = 'info', exact = TRUE)
-  nm_ <- attr(y_info, which = 'glue', exact = TRUE)
+  
+  cat('\n')
+  
+  nm_ <- y |>
+    attr(which = 'info', exact = TRUE) |>
+    attr(which = 'glue', exact = TRUE)
   
   meat_seafood <- c(
-    object@shrimp,
-    object@seafood,
-    object@pork, object@beef, object@lamb, object@chicken, # meat
+    x@shrimp,
+    x@seafood,
+    x@pork, x@beef, x@lamb, x@chicken, # meat
     NULL)
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood), FUN = cli_text)
   
-  flour <- c(object@flour, object@pastryFlour, object@breadFlour, object@wholeWheatFlour,
-             object@glutenFreeFlour, 
-             object@wheatGluten, 
-             object@riceFlour, object@glutinousRiceFlour,
-             object@cornmeal,
-             object@coconut)
+  flour <- c(x@flour, x@pastryFlour, x@breadFlour, x@wholeWheatFlour,
+             x@glutenFreeFlour, 
+             x@wheatGluten, 
+             x@riceFlour, x@glutinousRiceFlour,
+             x@cornmeal,
+             x@coconut)
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)), FUN = cli_text) # one or more flour
   
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(object@starch)], object@starch, format_vol(object@starch)), FUN = cli_text) 
+  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, format_vol(x@starch)), FUN = cli_text) 
   
   # commercial puree with volume info
-  puree_vol <- c(object@pumpkin, object@pumpkinPieMix, object@pineapple, object@pear, object@mandarine, object@mango, object@tomato, object@yellowCorn, object@applesauce)
+  puree_vol <- c(x@pumpkin, x@pumpkinPieMix, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@yellowCorn, x@applesauce)
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)), FUN = cli_text)
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
-  puree_no_vol <- c(object@puree, object@darkCherry, object@strawberry, object@banana)
+  puree_no_vol <- c(x@puree, x@darkCherry, x@strawberry, x@banana)
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), FUN = cli_text)
   
-  fruit <- c(object@fruit, object@durian)
+  fruit <- c(x@fruit, x@durian)
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), FUN = cli_text) # one or more fruit_pc
   lapply(sprintf(
     fmt = '%s %.0f grams %s\n', 
-    nm_[names(object@fruit_pc)], 
-    object@fruit_pc,
+    nm_[names(x@fruit_pc)], 
+    x@fruit_pc,
     style_bold(col_br_magenta(sprintf(
       fmt = '%.1fpcs', 
-      object@fruit_pc / vapply(names(object@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_))
+      x@fruit_pc / vapply(names(x@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_))
     ))
-    #format_pc(object, name = 'fruit') # dont know how to use this yet
+    #format_pc(x, name = 'fruit') # dont know how to use this yet
   ), FUN = cli_text) # one or more fruit_pc
   
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(object@flavor)], object@flavor), FUN = cli_text) # one or more flavor
+  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor), FUN = cli_text) # one or more flavor
   
   mapply(FUN = function(glue, gram) {
     cli_text(sprintf(fmt = '%s %.0f grams', glue, gram)) # no returned value
-  }, glue = nm_[names(object@homemade)], gram = object@homemade)
+  }, glue = nm_[names(x@homemade)], gram = x@homemade)
   # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
   
   grain_bean_nut <- c(
-    object@grain,
-    object@chickpea, object@adzukibean, object@mungbean, object@redKidneyBean,
-    object@cashew, object@nut
+    x@grain,
+    x@chickpea, x@adzukibean, x@mungbean, x@redKidneyBean,
+    x@cashew, x@nut
   )
   grain_bean_nut_vol_ <- c(
-    object@soybean
+    x@soybean
   )
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), FUN = cli_text) # one or more grain
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
   
   fat_vol_ <- c(
-    object@fat,
-    object@lard, object@tallow
+    x@fat,
+    x@lard, x@tallow
   )
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, format_vol(fat_vol_)), FUN = cli_text)
   
   halfpound_brick <- c(
-    object@creamCheese
+    x@creamCheese
   )
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
-              style_bold(col_br_magenta(sprintf(fmt = '%.2gbrick', halfpound_brick/226.796)))), FUN = cli_text)
+                 style_bold(col_br_magenta(sprintf(fmt = '%.2gbrick', halfpound_brick/226.796)))), FUN = cli_text)
   
   other <- c(
-    object@vegetable,
-    #object@cheese, 
-    object@condensedMilk # dairy without volume info
+    x@vegetable,
+    #x@cheese, 
+    x@condensedMilk # dairy without volume info
   )
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), FUN = cli_text)
   
   dairy_vol_ <- c(# dairy with volume info
-    object@cheese, 
-    object@mascarpone, object@cottageCheese, object@yogurt, object@yogurtGreek, object@kefir, object@filmjolk,
-    object@butter, object@ghee, object@evaporatedMilk, object@drymilk, object@milk, object@buttermilk, object@heavyCream, object@lightCream, object@sourCream
+    x@cheese, 
+    x@mascarpone, x@cottageCheese, x@yogurt, x@yogurtGreek, x@kefir, x@filmjolk,
+    x@butter, x@ghee, x@evaporatedMilk, x@drymilk, x@milk, x@buttermilk, x@heavyCream, x@lightCream, x@sourCream
   )
   lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol_)], dairy_vol_, format_vol(dairy_vol_)), FUN = cli_text)
   
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggYolk)], object@eggYolk, format_pc(object, 'eggYolk')), FUN = cli_text)
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@eggWhite)], object@eggWhite, format_pc(object, 'eggWhite')), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, format_pc(x, 'eggYolk')), FUN = cli_text)
+  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, format_pc(x, 'eggWhite')), FUN = cli_text)
   
-  cat(sprintf(fmt = '%s %.1f grams\n', nm_[names(object@tealoose)], object@tealoose))
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', 
-              nm_[names(object@teabag)], 
-              getTealoose(object@teabag), 
-              style_bold(col_br_magenta(sprintf(fmt = '%.2gbag', object@teabag)))), FUN = cli_text)
+  lapply(sprintf(
+    fmt = '%s %.1f grams %s\n', 
+    nm_[names(x@tea)], 
+    x@tea,
+    style_bold(col_br_magenta(sprintf(fmt = '%.2gbag', getTeabag(x@tea))))), FUN = cli_text)
   
   allSugar <- c(
-    object@sugar, object@brownSugar
+    x@sugar, x@brownSugar
   )
   lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)), FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
-    object@blackSesame
+    x@blackSesame
   )
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), FUN = cli_text)
   
   # ingredients with volumn info
   has_vol_small <- c(
-    object@ginger, object@garlic, object@onion, object@coriander, object@cumin, object@cilantro, object@clove, object@cinnamon, object@whitePepper, object@blackPepper, object@turmeric, object@paprika,
-    object@spiceItalian, object@spice5, object@pumpkinSpice,
-    object@chiliMix,
-    object@spice, object@curry,
-    object@matcha, object@coffee, object@cocoa, object@beet, object@acai, object@creamTartar, object@vanilla,
-    object@salt, object@msg, object@NaHCO3, object@Na2CO3, object@bakingPowder,
-    object@sesameOil, object@greenPeppercornOil,
-    object@yeast,
-    object@sauce, object@liqueur
+    x@ginger, x@garlic, x@onion, x@coriander, x@cumin, x@cilantro, x@clove, x@cinnamon, x@whitePepper, x@blackPepper, x@turmeric, x@paprika,
+    x@spiceItalian, x@spice5, x@pumpkinSpice,
+    x@chiliMix,
+    x@spice, x@curry,
+    x@matcha, x@coffee, x@cocoa, x@beet, x@acai, x@creamTartar, x@vanilla,
+    x@salt, x@msg, x@NaHCO3, x@Na2CO3, x@bakingPowder,
+    x@sesameOil, x@greenPeppercornOil,
+    x@yeast,
+    x@sauce, x@liqueur
   )
   has_vol_large <- c(
-    object@oil, 
-    object@blackRice, object@brownRice,
-    object@syrup
+    x@oil, 
+    x@blackRice, x@brownRice,
+    x@syrup
   )
   lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)), FUN = cli_text)
   lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)), FUN = cli_text)
   
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(object@gelatin)], object@gelatin, getGelatinLeaf(object@gelatin)))
+  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)))
   
-  if (!length(object@water_extra)) {
-    cat(sprintf(fmt = '%s Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), object@water, format_vol(object@water)))
+  if (!length(x@water_extra)) {
+    cat(sprintf(fmt = '%s Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)))
   } else {
-    water <- sum_by_name(object@water, object@water_extra)
-    cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), water, object@water, col_br_red(sprintf('+%.0f', object@water_extra)), format_vol(water)))
+    water <- sum_by_name(x@water, x@water_extra)
+    cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), water, x@water, col_br_red(sprintf('+%.0f', x@water_extra)), format_vol(water)))
   }
   
-  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), object@water40, format_vol(object@water40)))
-  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), object@water70, format_vol(object@water70)))
-  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), object@water80, format_vol(object@water80)))
-  cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('90\u00b0C\u70ed\u6c34'), object@water90, format_vol(object@water90)))
-  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), object@water95, format_vol(object@water95)))
-  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), object@boilingWater, format_vol(object@boilingWater)))
-  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), object@iceWater, format_vol(object@iceWater)))
-  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', make_ansi_style('orchid4')('\u6c14\u6ce1\u6c34'), object@carbonatedWater, format_vol(object@carbonatedWater)))
-  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c99'), object@shavedIce, format_vol(object@shavedIce)))
-  cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', make_ansi_style('orchid4')('\u51b0\u5757'), object@ice))
+  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)))
+  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)))
+  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)))
+  cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)))
+  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)))
+  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)))
+  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)))
+  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', make_ansi_style('orchid4')('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)))
+  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)))
+  cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', make_ansi_style('orchid4')('\u51b0\u5757'), x@ice))
   
   cat('\n')
+  
+}
+
+#' @rdname show_cooking
+#' @aliases show,recipe-method
+#' @export
+setMethod(f = show, signature = 'recipe', definition = function(object) {
+  
+  cat('\n')
+  
+  if (length(object@date)) {
+    cat(col_green(format.Date(object@date, format = '%A, %B %e, %Y')), '\n\n')
+  }
+  
+  print.recipe0(object)
+  
+  y <- nutrition.recipe(x = object) # still need
   
   tool_slot <- names(which(getSlots('recipe') == 'tool'))
   waterLost <- sum(object@waterLost, unlist(lapply(tool_slot, FUN = function(i) slot(object, name = i)@waterLost), use.names = FALSE))

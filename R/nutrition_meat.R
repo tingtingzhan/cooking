@@ -74,9 +74,10 @@ pork_butt <- function() new(
 
 beef_heel <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = c(style_hyperlink(text = 'Swift\U1f1fa\U1f1f8', url = 'https://www.sayweee.com/en/product/Swift-Boneless-Beef-Round-Heel-Muscle--Frozen-1/11275')),
+  brand = #c(style_hyperlink(text = 
+    'Swift\U1f1fa\U1f1f8', 
   name = 'Beef\U1f402 Round Heel Muscle', alias = '\u725b\u8171',
-  usd = 10.66/454*100, # weee! 
+  weee = '11275', usd = 10.66/454*100,
   url = 'https://www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll-2', # source of nutrition
   servingGram = 100, # 3.5 oz
   calorie = 130,

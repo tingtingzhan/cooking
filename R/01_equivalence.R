@@ -51,10 +51,6 @@ setClass(Class = 'equiv', slots = c(
 #' @export
 format.equiv <- function(x, ...) {
   if (!(n <- length(x@actual))) return(invisible()) # exception handling
-  #if (n != 1L) {
-  #  print(x@actual)
-  #  stop('S4 class \'equiv\' is not vectorized')
-  #} # teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3)
   actual <- sum(x@actual)
   if (is.na(actual)) stop('Slot `@actual` cannot be missing')
   if (abs(actual) < x@ignore) return(invisible()) # exception handling
@@ -106,14 +102,8 @@ sprintf_bincode <- function(x) {
 
 
 
-#' @title show equiv
-#' 
-#' @description
-#' ..
-#' 
-#' @param object \linkS4class{equiv} object
-#' 
-#' 
+#' @rdname show_cooking
+#' @aliases show,equiv-method
 #' @export
 setMethod(f = show, signature = 'equiv', definition = function(object) {
   print(format.equiv(object))
@@ -410,13 +400,8 @@ show_endpoint <- function(x) {
 
 
 
-#' @title Show Diagnoses Object
-#' 
-#' @description
-#' ..
-#' 
-#' @param object \linkS4class{recipeDx} object
-#' 
+#' @rdname show_cooking
+#' @aliases show,recipeDx-method
 #' @export
 setMethod(f = show, signature = 'recipeDx', definition = function(object) {
   ret <- format.recipeDx(object)

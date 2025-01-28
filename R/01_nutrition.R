@@ -51,6 +51,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot walmart \link[base]{character} scalar, Walmart ID
 #' @slot wawa \link[base]{character} scalar
 #' @slot webstaurant \link[base]{character} scalar
+#' @slot weee \link[base]{character} scalar
 #' @slot wegmans,wegmansorganic \link[base]{integer} scalar, Wegmans Food Markets ID
 #' @slot wholefoods \link[base]{character} scalar, Wholel Foods ID
 #' @slot yamibuy \link[base]{character} scalar
@@ -197,6 +198,7 @@ setClass(Class = 'nutrition', slots = c(
   walmart = 'character',
   wawa = 'character',
   webstaurant = 'character',
+  weee = 'character',
   wegmans = 'integer', wegmansorganic = 'integer',
   wholefoods = 'character',
   yamibuy = 'character',
@@ -587,6 +589,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   x <- add_store_url_(x, store = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart')
   x <- add_store_url_(x, store = 'wawa', fmt = 'https://order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant')
+  x <- add_store_url_(x, store = 'weee', fmt = 'https://www.sayweee.com/zh/product/weee/%s', store_brand = NA_character_, store_name = 'Weee!')
   x <- add_store_url_(x, store = 'wegmans', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8', store_name = 'Wegmans')
   x <- add_store_url_(x, store = 'wegmansorganic', fmt = 'https://shop.wegmans.com/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8')
   x <- add_store_url_(x, store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8', store_name = 'Whole Foods\U1f1fa\U1f1f8')
@@ -697,6 +700,15 @@ getTealoose <- function(x) {
   }, pc = x, info = info_)
 }
 
+getTeabag <- function(x) {
+  # `x` is recipe@tea, weight of loose tea
+  if (!length(x)) return(numeric())
+  info_ <- lapply(names(x), FUN = function(i) eval(call(i)))
+  mapply(FUN = function(info, wt) {
+    wt / info@servingGram
+  }, wt = x, info = info_)
+}
+
 
 
 getGelatinLeaf <- function(x) {
@@ -777,14 +789,8 @@ format_vol <- function(x, nm = names(x)) {
 
 
 
-#' @title Show \linkS4class{nutrition} Object
-#' 
-#' @description ..
-#' 
-#' @param object \linkS4class{nutrition} object
-#' 
-#' @return nothing is returned
-#' 
+#' @rdname show_cooking
+#' @aliases show,nutrition-method
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = function(object) {
   

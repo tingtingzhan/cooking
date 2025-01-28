@@ -42,16 +42,83 @@ nutrition.function <- function(x) {
 
 
 #' @rdname nutrition
+#' @export nutrition.recipe0
+#' @export
+nutrition.recipe0 <- function(x) {
+  
+  atr0 <- attributes(x)[names(getSlots(x = 'recipe0'))] # [nutrition.recipe0] might be applied to \linkS4class{recipe}
+  atr <- atr0[lengths(atr0, use.names = FALSE) > 0L]
+  
+  grams <- unlist(unname(atr), use.names = TRUE)
+  if (!length(grams)) stop('shouldnt happen!!!')
+  grams_nm <- names(grams)
+  names(grams_nm) <- grams_nm
+  
+  nutri <- lapply(grams_nm, FUN = nutrition.character)
+  
+  info <- nutrition_(dots = nutri)
+  # print(info) # debug
+  tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
+  calorie <- tmp['calorie']
+  carbohydrate <- tmp['carbohydrate']
+  fiber <- tmp['fiber']
+  sugar <- tmp['sugar']
+  addedSugar <- max(0, tmp['addedSugar'])
+  sodium <- tmp['sodium']
+  fat <- tmp['fat']
+  cholesterol <- tmp['cholesterol']
+  protein <- tmp['protein']
+  alcohol <- tmp['alcohol']
+  water <- tmp['water']
+  addedWater <- tmp['addedWater']
+  water <- tmp['water']
+  usd <- tmp['usd']
+  
+  ret <- new(
+    Class = 'nutrition', call = match.call()[[1L]], 
+    name = character(),
+    servingGram = sum(unlist(atr, use.names = FALSE)),
+    usd = unname(usd), # `recipe` already dealt with currency conversion
+    calorie = if (calorie) calorie else numeric(),
+    carbohydrate = if (carbohydrate) carbohydrate else numeric(),
+    fiber = if (fiber) fiber else numeric(),
+    sugar = if (sugar) sugar else numeric(),
+    addedSugar = if (addedSugar) addedSugar else numeric(),
+    alcohol = if (alcohol) alcohol else numeric(),
+    sodium = if (sodium) sodium else numeric(),
+    fat = if (fat) fat else numeric(),
+    cholesterol = if (cholesterol) cholesterol else numeric(),
+    protein = if (protein) protein else numeric(),
+    water = if (water) water else numeric()
+  )
+  
+  cl <- match.call()
+  x. <- as.list(cl$x) # `cl$x`, e.g. `quote(soymilk())`
+  if (length(x.) == 1L) {
+    if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
+    x_ <- as.character(x.[[1L]])
+    if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
+      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, style_bold(col_yellow(x_)), x_)
+    } # else do nothing
+  }
+  
+  attr(ret, which = 'info') <- info
+  return(ret)
+
+}
+
+
+
+#' @rdname nutrition
 #' @export nutrition.recipe
 #' @export
 nutrition.recipe <- function(x) {
   
   lost <- c('waterLost', 'fatLost', 'sugarLost')
-  ingredient0 <- setdiff(names(which(getSlots('recipe') == 'numeric')), y = c('portion', lost))
-  ingredient <- names(which(lengths(attributes(x)[ingredient0]) > 0L))
+  slt0 <- names(getSlots(x = 'recipe0'))
+  ingredient <- names(which(lengths(attributes(x)[slt0]) > 0L))
   
   atr <- attributes(x)[ingredient]
-  atr$teabag <- getTealoose(x@teabag)
   
   total_raw <- sum(unlist(atr, use.names = FALSE))
   
@@ -105,7 +172,6 @@ nutrition.recipe <- function(x) {
   puree <- sum(x@puree, x@pumpkin, x@pumpkinPieMix, x@strawberry, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@darkCherry, x@yellowCorn, x@durian, x@applesauce, x@banana)
   starch <- sum(x@starch)
   drymilk <- sum(x@drymilk)
-  tea <- sum_by_name(getTealoose(x@teabag), x@tealoose)
   
   devrecipe <- getOption('devrecipe') 
   
@@ -139,8 +205,6 @@ nutrition.recipe <- function(x) {
     } # else do nothing
   }
   
-  attr(ret, which = 'total_lost') <- total_lost
-  
   attr(ret, which = 'uncooked') <- new(
     # focus on material, *not* on nutrition!!
     Class = 'uncooked',
@@ -168,7 +232,7 @@ nutrition.recipe <- function(x) {
     NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / total_raw),
     msg = new(Class = 'equiv', actual = x@msg / total_raw),
     drymilk = new(Class = 'equiv', actual = drymilk / total_raw),
-    tea = new(Class = 'equiv', actual = tea / total_raw),
+    tea = new(Class = 'equiv', actual = x@tea / total_raw),
     creamCheese = new(Class = 'equiv', actual = sum(x@creamCheese) / total_raw),
     puree = new(Class = 'equiv', actual = puree / total_raw), 
     matcha = new(Class = 'equiv', actual = x@matcha / total_raw),
@@ -224,7 +288,7 @@ nutrition.recipe <- function(x) {
     sodium = new(Class = 'equiv', actual = sodium / total, ideal = devrecipe$sodium(x), ignore = .0001),
     msg = new(Class = 'equiv', actual = x@msg / total),
     drymilk = new(Class = 'equiv', actual = drymilk / total, ideal = devrecipe$drymilk(x)),
-    tea = new(Class = 'equiv', actual = tea / total), # , ideal = devrecipe$tea(x)
+    tea = new(Class = 'equiv', actual = x@tea / total), # , ideal = devrecipe$tea(x)
     creamCheese = new(Class = 'equiv', actual = sum(x@creamCheese) / total, ideal = devrecipe$creamcheese(x)),
     matcha = new(Class = 'equiv', actual = x@matcha / total, ideal = devrecipe$matcha(x)),
     beet = new(Class = 'equiv', actual = x@beet / total, ideal = devrecipe$beet(x)),

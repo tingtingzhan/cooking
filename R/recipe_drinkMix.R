@@ -166,13 +166,8 @@ frappe.drinkmix <- function(
 
 
 
-#' @title Show \linkS4class{drinkmix}
-#' 
-#' @description
-#' ..
-#' 
-#' @param object \linkS4class{drinkmix} object
-#' 
+#' @rdname show_cooking
+#' @aliases show,drinkmix-method
 #' @export
 setMethod(f = show, signature = 'drinkmix', definition = function(object) {
   callNextMethod(object)
