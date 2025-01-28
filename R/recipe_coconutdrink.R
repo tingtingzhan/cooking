@@ -3,7 +3,7 @@
 #' 
 #' @examples
 #' diagnose(
-#'  caffeCoconut_FreeNow,
+#'  caffeCoconut,
 #'  caffeCoconut_Luckin,
 #'  caffeCoconut_FreeNow0sugar 
 #' )
@@ -18,6 +18,20 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!')
 ))
 
+
+#' @rdname coconutdrink
+#' @export
+caffeCoconut <- function() new(
+  Class = 'caffeCoconut', 
+  alias_flavor = 'FreeNow',
+  coconut = c(Freenow_coconutBarista = 225),
+  water = 185,
+  date = as.Date('2025-01-28'),
+  pros = c('I like this sweetness'))
+
+
+
+
 #' @rdname coconutdrink
 #' @export
 caffeCoconut_FreeNow0sugar <- function() new(
@@ -26,19 +40,8 @@ caffeCoconut_FreeNow0sugar <- function() new(
   coconut = c(Freenow_coconutBarista_0sugar = 225),
   water = 185,
   date = as.Date('2025-01-24'),
-  pros = c('almost tastes the same as commercial version!')
-)
+  pros = c('almost tastes the same as commercial version!'))
 
-#' @rdname coconutdrink
-#' @export
-caffeCoconut_FreeNow <- function() new(
-  Class = 'caffeCoconut', 
-  alias_flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 225),
-  water = 185,
-  date = as.Date('2025-01-28'),
-  pros = c('I like this sweetness')
-)
 
 
 #' @rdname coconutdrink
@@ -47,10 +50,9 @@ caffeCoconut_Luckin <- function() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'Luckin',
   coconut = c(Luckin_coconutmilk = 225+25),
-  water = 185-25#,
-  #date = as.Date('2025-01-28'),
-  #pros = c('I like this sweetness')
-)
+  water = 185-25,
+  date = as.Date('2025-01-28'),
+  cons = c('too sweet', 'still feels not enough fat'))
 
 
 

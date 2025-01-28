@@ -181,6 +181,7 @@ SoDelicious_coconutmilk <- function() new(
   water = 240*.9457,
   calorie = 45,
   fat = 4, sodium = .01,
+  superior = 'Freenow_coconutBarista',
   review = c(
     'too much thickener',
     'almost no coconut flavor'
@@ -197,6 +198,7 @@ Freenow_coconutBarista_0sugar <- function() new(
   calorie = 70,
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
   contain = c('erythritol'),
+  superior = 'Freenow_coconutBarista',
   review = 'too sweet (too much sugar alchohol)')
 
 #' @rdname coconutmilk
@@ -218,7 +220,9 @@ Luckin_coconutmilk <- function() new(
   brand = c(style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com')),
   weee = '106361', usd = 4.49/3/600*100, # https://www.sayweee.com/zh/product/weee/106361
   servingGram = 100, serving_ml = 100, # guess
-  fat = 5, sodium = .110, carbohydrate = 6, addedSugar = 2, protein = 1)
+  fat = 5, sodium = .110, carbohydrate = 6, addedSugar = 2, protein = 1,
+  superior = 'Freenow_coconutBarista',
+  review = 'too sweet')
 
 #' @rdname coconutmilk
 #' @export
@@ -252,6 +256,7 @@ CalifiaFarms_coconutmilkwater <- function() new(
   servingGram = 240, servingCup = 1,
   calorie = 45,
   fat = 4, sodium = .140, carbohydrate = 2, sugar = 1,
+  superior = 'Freenow_coconutBarista',
   review = c(
     'too much thickener',
     'almost no coconut flavor'

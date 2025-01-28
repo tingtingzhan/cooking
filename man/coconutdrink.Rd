@@ -4,14 +4,14 @@
 \name{coconutdrink}
 \alias{coconutdrink}
 \alias{caffeCoconut-class}
+\alias{caffeCoconut}
 \alias{caffeCoconut_FreeNow0sugar}
-\alias{caffeCoconut_FreeNow}
 \alias{caffeCoconut_Luckin}
 \title{Coconut Drink}
 \usage{
-caffeCoconut_FreeNow0sugar()
+caffeCoconut()
 
-caffeCoconut_FreeNow()
+caffeCoconut_FreeNow0sugar()
 
 caffeCoconut_Luckin()
 }
@@ -20,7 +20,7 @@ Coconut Drink
 }
 \examples{
 diagnose(
- caffeCoconut_FreeNow,
+ caffeCoconut,
  caffeCoconut_Luckin,
  caffeCoconut_FreeNow0sugar 
 )

@@ -121,6 +121,7 @@
       if (all(grepl('Rice$', names(x@flavor)))) .035 else .05
     }, 
     stickyTortilla = .03,
+    caffeCoconut = .033,
     bread = .035, # perfect with match, coffee
     snowSkin =, custardFilling = .045, 
     sundae = if (length(x@matcha)) {
@@ -174,6 +175,7 @@
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
     wheatBao = .028,
+    caffeCoconut = .03,
     matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
@@ -314,6 +316,7 @@
   
   cocoa <- function(x) switch(
     class(x), 
+    caffeCoconut = .0018,
     tiramisu_ = .004,
     snowSkin = .009, 
     caffeLatte_ = .011,
@@ -333,6 +336,7 @@
   
   coffee <- function(x) switch(
     class(x), 
+    caffeCoconut = .0025,
     mocaccino_ = .006, 
     tiramisu_ = .008,
     goatKefir = if (length(x@cocoa)) .009 else NA_real_, # forgot if this is tested or hypothetical
