@@ -1103,7 +1103,9 @@ print.recipe0 <- function(x, ...) {
     #format_pc(x, name = 'fruit') # dont know how to use this yet
   ), FUN = cli_text) # one or more fruit_pc
   
+  #lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, format_vol(x@flavor)), FUN = cli_text) # one or more flavor
   lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor), FUN = cli_text) # one or more flavor
+  # my `@flavor` slot is very complicated
   
   mapply(FUN = function(glue, gram) {
     cli_text(sprintf(fmt = '%s %.0f grams', glue, gram)) # no returned value
