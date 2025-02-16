@@ -595,9 +595,8 @@ Meyenberg_goat_kefir <- function() new(
   name = 'Goat\U1f410 Kefir', alias = '\u7f8a\u5976\u9152',
   wegmans = 4937L, usd = 8.99/32*8, 
   # https://redwoodhill.com/redwood-hill-to-become-meyenberg
-  servingGram = 240, servingCup = 1,
-  # full bottle with cap 1060g
-  # use it as staple
+  servingGram = (1060-60)/4, servingCup = 1,
+  # full bottle with cap 1060g; empty bottle with cap 60g
   calorie = 140,
   fat = 8, cholesterol = .035, sodium = .12, carbohydrate = 10, sugar = 5, protein = 8)
 
