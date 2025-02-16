@@ -10,7 +10,7 @@
 #' @aliases evap-class
 #' @export
 setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
-  #alias_class = '\u6d53\u7f29\u679c\u6ce5'
+  #alias_class = '\u679c\u6ce5'
   alias_class = 'Evaporated'
 ))
 

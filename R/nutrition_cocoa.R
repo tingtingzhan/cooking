@@ -35,7 +35,7 @@ Navitas_cacao <- function() new(
 #' @export
 KingArthur_blackCocoa <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211821L, 
-  name = 'Black Cocoa', alias = '\u78b1\u5316\u9ed1\u53ef\u53ef\u7c89',
+  name = 'Black Cocoa', alias = '\u9ed1\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
   # servingTbsp = 1, # on package
@@ -50,7 +50,7 @@ KingArthur_blackCocoa <- function() new(
 #' @export
 KingArthur_Bensdorp <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211698L,
-  name = 'Bensdorp Cocoa', alias = '\u78b1\u5316\u53ef\u53ef\u7c89',
+  name = 'Bensdorp Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*6, # 2023-11-12
   servingGram = 6, 
   #servingTbsp = 1, # on package
@@ -62,7 +62,7 @@ KingArthur_Bensdorp <- function() new(
 #' @export
 KingArthur_Burgundy <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211822L,
-  name = 'Burgundy Cocoa', alias = '\u78b1\u5316\u53ef\u53ef\u7c89',
+  name = 'Burgundy Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
   #servingTbsp = 1, # on package

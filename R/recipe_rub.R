@@ -21,21 +21,40 @@
 #' @export
 setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
   alias_class = '\u814c\u6599', # \u7a7a\u6c14\u70b8\u9505
+  
   portion = c(
-    'whole duck\U1f986, 3-3.5lb, inside' = 10, # 30g was for inside-and-outside
-    'New York strip steak' = 10 # to confirm!!!
+    'whole duck\U1f986, 3-3.5lb, inside rub' = 18,
+    'New York strip steak\U1f969' = 10 # to confirm!!!
   ),
+  
   InstantPot = InstantPot(
     name2 = Staub_deepSkillet()@name,
     program = '\u4f4e\u6e29\u6c34\u6d74\u7a0b\u5e8f Sous Vide program',
     fahrenheit = c(140),
-    minute = c('\U1f389 New York strip steak, 1-1.5inch' = 60),
+    minute = c('New York strip steak\U1f969, 1-1.5inch' = 60),
     cooling = c(
       'let stand 10min in bag', 
       'pat dry',
       'pan-sear fat cap'
     )
+  ),
+  
+  Staub_vertRoaster = Staub_vertRoaster(
+    treatment = c(
+      'scald trussed poultry skin using boiling water',
+      'pat dry; season inside',
+      'stand on vertical roaster, brush coating on skin'
+    ),
+    fahrenheit = 350,
+    minute = c('whole duck\U1f986, 3-3.5lb' = 90),
+    cooling = 'let stand 30min+ before carving'
+  ),
+  
+  PhilipsHD9867 = PhilipsHD9867(
+    fahrenheit = 350,
+    minute = c('half duck\U1f986, 3-3.5lb, skin face up' = 35)
   )
+
 ))
 
 
@@ -83,68 +102,59 @@ Montreal_rub <- function() new( # inspired by Guga
 
 
 
-duckPaste <- function() new(
-  Class = 'recipe',
-  alias = 'Duck Paste',
-  msg = 6*50,
-  sugar = 500+2*50,
-  garlic = c(garlic = 2.5*500),
-  sauce = c(
-    LeeKumKee_ChuHou = 4*500,
-    LeeKumKee_hoisin = 2*500,
-    LeeKumKee_sesameSauce = 500+2*50,
-    LeeKumKee_chickenBouillon = 500/2,
-    LeeKumKee_peanutSauce = 455/2,
-    LeeKumKee_soySauce = 250/2,
-    Squid_fishSauce = 4*50
-  ),
-  # 麦芽粉 1两???
-  portion = c('whole duck' = 15)
-)
 
 
-duckSalt <- function() new(
-  Class = 'recipe',
+if (FALSE) {
+  
+  duckPaste <- function() new(
+    Class = 'recipe',
+    alias = 'Duck Paste',
+    msg = 6*50,
+    sugar = 500+2*50,
+    garlic = c(garlic = 2.5*500),
+    sauce = c(
+      LeeKumKee_ChuHou = 4*500,
+      LeeKumKee_hoisin = 2*500,
+      LeeKumKee_sesameSauce = 500+2*50,
+      LeeKumKee_chickenBouillon = 500/2,
+      LeeKumKee_peanutSauce = 455/2,
+      LeeKumKee_soySauce = 250/2,
+      Squid_fishSauce = 4*50
+    )
+    # 麦芽粉 1两???
+  )
+  
+  duckSalt <- function() new(
+    Class = 'recipe',
+    alias = 'Duck Salt',
+    sugar = 10*500,
+    salt = 5*500,
+    msg = 1*500,
+    greenPeppercornOil = 3*50, # cannot find szechuan peppercorn powder
+    spice = c(
+      SimplyOrganic_5spice = 3*50,
+      McCormick_whitePepper = 3*50,
+      TakShing_starAnise = 3*50,
+      TakShing_KGalanga = 3*50
+    )
+  )
+}
+
+
+#' @rdname rub
+#' @export
+duck_rub <- function() new(
+  Class = 'rub',
   alias = 'Duck Salt',
-  sugar = 10*500,
-  salt = 5*500,
-  msg = 1*500,
-  greenPeppercornOil = 3*50, # cannot find szechuan peppercorn powder
-  spice = c(
-    SimplyOrganic_5spice = 3*50,
-    McCormick_whitePepper = 3*50,
-    TakShing_starAnise = 3*50,
-    TakShing_KGalanga = 3*50
+  spice_tsp = c(
+    SimplyOrganic_5spice = 1.5 #my experiment using a Chinese brand
   ),
-  portion = c('whole duck' = 15)
+  salt_tsp = 1.5,
+  sugar_tsp = c(Domino_10x = 1.5),
+  date = as.Date('2025-02-15')
 )
 
-duck_coating <- function() new(
-  Class = 'recipe',
-  alias = '\u70e4\u9e2d\u76ae\u6c34',
-  
-  syrup = c(TraderJoes_date = 20), # do again to confirm
-  liqueur = c(Wegmans_Marsala = 30), # do again to confirm
-  date = as.Date('2024-12-25'),
-  pros = c('took all gamey flavor!!'),
-  
-  PhilipsHD9867 = PhilipsHD9867(
-    fahrenheit = 350,
-    minute = c('\U1f389 half duck\U1f986, 3-3.5lb, skin face up' = 35)
-  ),
-  Staub_vertRoaster = Staub_vertRoaster(
-    treatment = c(
-      'scald skin by dipping in boiling water; pluck feather; wash off',
-      'pat dry; season inside',
-      'hang over vertical roaster in oven',
-      'brush coating on skin'
-    ),
-    fahrenheit = 350,
-    minute = c('\U1f389 whole duck\U1f986, 3-3.5lb' = 90),
-    cooling = 'let stand 30min+ before carving'
-  ),
-  review = 'do again to confirm!!!!'
-)
+
 
 
 #' @rdname rub

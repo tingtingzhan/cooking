@@ -36,7 +36,7 @@ NescafeGold_decaf <- function() new(
 NescafeGold_espresso_decaf <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoCA = 'decaf-gold-espresso-instant-coffee',
-  name = '\u901f\u6eb6\u6d53\u7f29\u5496\u5561 Decaf', #\u2615
+  name = '\u901f\u6eb6\u5496\u5561 Decaf', #\u2615
   usd = 13.95/90*2, # one bottle 90g
   servingGram = 2, #servingTsp = 1, # packaging
   servingTsp = 2, # actual experiment: 3g = 1Tbsp
@@ -53,7 +53,7 @@ NescafeGold_espresso_intense <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'intense-instant-coffee-35-oz-jar',
   walmart = '5066099258',
-  name = '\u901f\u6eb6\u6d53\u7f29\u5496\u5561 Intense', #\u2615
+  name = '\u901f\u6eb6\u5496\u5561 Intense', #\u2615
   usd = 6.68/100*2,
   servingGram = 2, servingTsp = 2, # using NescafeGold_espresso_decaf() data
   superior = 'NescafeGold_espresso_blonde'
@@ -65,7 +65,7 @@ NescafeGold_espresso_blonde <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'blonde-instant-coffee-35-oz-jar',
   walmart = '5066099259',
-  name = 'Blonde', alias = '\u901f\u6eb6\u6d53\u7f29\u5496\u5561', #\u2615
+  name = 'Blonde', alias = '\u901f\u6eb6\u5496\u5561', #\u2615
   usd = 6.68/100*2,
   servingGram = 2,
   servingTsp = 2 # using NescafeGold_espresso_decaf() data

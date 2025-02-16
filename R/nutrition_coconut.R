@@ -207,10 +207,10 @@ Freenow_coconutBarista <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
-  weee = '89394', usd = 5.19/1000*100, 
-  servingGram = 100, serving_ml = 100, # guess
-  calorie = 80,
-  fat = 5.6, sodium = .088, carbohydrate = 6.2, protein = 1.2)
+  weee = '89394', usd = 5.49/980*240, 
+  servingGram = 240, serving_ml = 240, # guess
+  calorie = 200,
+  fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
 #' @rdname coconutmilk
 #' @export
@@ -220,6 +220,7 @@ Luckin_coconutmilk <- function() new(
   brand = c(style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com')),
   weee = '106361', usd = 4.49/3/600*100, # https://www.sayweee.com/zh/product/weee/106361
   servingGram = 100, serving_ml = 100, # guess
+  calorie = 80,
   fat = 5, sodium = .110, carbohydrate = 6, addedSugar = 2, protein = 1,
   superior = 'Freenow_coconutBarista',
   review = 'too sweet')

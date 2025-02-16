@@ -1319,7 +1319,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   #}
   
   if (length(object@review)) {
-    cat(sprintf(fmt = '\U1f4dd %s', object@review), sep = '\n')
+    lapply(sprintf(fmt = '\U1f4dd %s', object@review), FUN = cli_text)
     cat('\n')
   }
   

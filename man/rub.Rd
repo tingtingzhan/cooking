@@ -6,6 +6,7 @@
 \alias{rub-class}
 \alias{cuminMontreal_rub}
 \alias{Montreal_rub}
+\alias{duck_rub}
 \alias{Southwest_rub}
 \alias{harissa_rub}
 \alias{vindaloo_rub}
@@ -14,6 +15,8 @@
 cuminMontreal_rub()
 
 Montreal_rub()
+
+duck_rub()
 
 Southwest_rub()
 

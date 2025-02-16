@@ -116,7 +116,7 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
       fmt = ' \U1f321%s \U1f321%s \u23f0%s %s', 
       txt_fahrenheit, txt_celsius, 
       style_bold(col_red(format_minute(min_))), 
-      names(min_)), sep = '\n')
+      bg_br_yellow(names(min_))), sep = '\n')
   } else cat(paste(sprintf(
     fmt = ' \U1f321%s \U1f321%s', 
     txt_fahrenheit, 

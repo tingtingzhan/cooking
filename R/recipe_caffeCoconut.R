@@ -1,5 +1,5 @@
 
-#' @title Coconut Drink
+#' @title Caffe Coconut
 #' 
 #' @examples
 #' diagnose(
@@ -7,7 +7,7 @@
 #'  caffeCoconut_Luckin,
 #'  caffeCoconut_FreeNow0sugar 
 #' )
-#' @name coconutdrink
+#' @name caffeCoconut
 #' @aliases caffeCoconut-class
 #' @export
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
@@ -15,62 +15,50 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   drymilk = c(Carnation = 14),
   coffee_tsp = c(NescafeGold_espresso_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
-  Stanley14 = Stanley14(note = 'I cannot eat too much coconut butter!!')
+  Stanley14 = Stanley14(treatment = c(
+    'add hot water',
+    'add all powders, whisk smooth',
+    'add barista coconut'
+  ))
 ))
 
 
-#' @rdname coconutdrink
+#' @rdname caffeCoconut
 #' @export
 caffeCoconut <- function() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'FreeNow',
   coconut = c(Freenow_coconutBarista = 225),
-  water = 185,
-  date = as.Date('2025-01-28'),
-  pros = c('I like this sweetness'))
+  water80 = 185,
+  date = as.Date('2025-01-28'))
 
 
 
 
-#' @rdname coconutdrink
+#' @rdname caffeCoconut
 #' @export
 caffeCoconut_FreeNow0sugar <- function() new(
   Class = 'caffeCoconut', 
-  alias_flavor = 'FreeNow 0Sugar',
+  alias_flavor = 'FreeNow Zero-Sugar',
   coconut = c(Freenow_coconutBarista_0sugar = 225),
-  water = 185,
+  water80 = 185,
   date = as.Date('2025-01-24'),
+  cons = 'too sweet for me',
   pros = c('almost tastes the same as commercial version!'))
 
 
 
-#' @rdname coconutdrink
+#' @rdname caffeCoconut
 #' @export
 caffeCoconut_Luckin <- function() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'Luckin',
   coconut = c(Luckin_coconutmilk = 225+25),
-  water = 185-25,
+  water80 = 185-25,
   date = as.Date('2025-01-28'),
-  cons = c('too sweet', 'still feels not enough fat'))
+  cons = c('too sweet', 'taste not enough fat'))
 
 
 
 
-if (FALSE) {
-  # to salvage a failed experiment
-  
-  caffeCoconut_try2 <- function() new(
-    Class = 'caffeCoconut', 
-    coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.4), # coffee too strong
-    cocoa_tsp = c(KingArthur_Bensdorp = 1),
-    coconut = c(Freenow_coconutBarista_0sugar = 225),
-    water = 185
-  )
-  
-  (tmp = caffeCoconut_try2()/431.2*334)
-  e1 = caffeCoconut_FreeNow0sugar()*4; e2 = tmp
-  (e1 - e2)
-  
-}
 

@@ -13,6 +13,7 @@
     meatmash =, meatball =, shrimpfillCantonese = .008,
     crumbcrust = if (length(x@blackSesame)) .11 else .01, 
     ricepaste = .015,
+    caffeCoconut = .017,
     soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
     bao =, wheatBao = if (length(x@matcha) || length(x@beet) || length(x@cocoa)) {
       .04 
@@ -30,9 +31,9 @@
       .08
     } else .035, 
     marinade = .04,
+    caffeLatte_ = .04, 
     matchaLatte_ = .04, # perfect! 2024 late summer
     tiramisu_ = .045,
-    caffeLatte_ = .045, 
     mocaccino_ = .045,
     milktea_ = .05,
     stickyRice =, riceCake =, riceMousse = .05, 
@@ -319,7 +320,7 @@
     caffeCoconut = .0018,
     tiramisu_ = .004,
     snowSkin = .009, 
-    caffeLatte_ = .011,
+    caffeLatte_ = .01,
     mocaccino_ = .04, 
     goatKefir = if (length(x@coffee)) .043 else NA_real_, 
     cheesecake = if (length(x@cocoa)) .043 else NA_real_,
