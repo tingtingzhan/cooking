@@ -7,16 +7,31 @@
 mod_(e1, e2, tol = .Machine$double.eps)
 }
 \arguments{
-\item{e1, e2}{\link[base]{numeric} \link[base]{vector}s, see functions \verb{base::\%/\%} and \verb{base::\%\%}}
+\item{e1, e2}{\link[base]{numeric} \link[base]{vector}s,
+the shorter length will be recycled}
 
 \item{tol}{\link[base]{double} scalar, default \code{.Machine$double.eps}}
 }
+\value{
+Function \link{mod_} returns a \link[base]{numeric} scalar or \link[base]{vector} of
+the integer division (similar to function \link[base]{\%/\%}), with an \link[base]{attributes}
+\describe{
+\item{\code{attr(,'e1')}}{\link[base]{numeric} scalar or \link[base]{vector}, the modulo (similar to function \link[base]{\%\%})}
+}
+}
 \description{
-Integer Division and Modulo with a \code{tol}
+Integer division (see function \link[base]{\%/\%}) and
+modulo (see function \link[base]{\%\%})
+at a user-specified \code{tol}erance.
 }
 \examples{
-(x = 48*2 - .Machine$double.eps * 1e3L)
+x0 = 48*2 - .Machine$double.eps*1e1
+x0 \%/\% 48 # good; R takes care of this
+x0 \%\% 48 # good; R takes care of this
+
+(x = 48*2 - .Machine$double.eps*1e2)
 x \%/\% 48 # nah
 x \%\% 48 # nah
+
 mod_(x, e2 = 48, tol = 1e-6) # yeah!
 }
