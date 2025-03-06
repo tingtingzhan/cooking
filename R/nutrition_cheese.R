@@ -86,7 +86,7 @@ BelGioioso_mascarpone <- function() new(
   belgioioso = 'mascarpone', name = 'Mascarpone',
   wegmans = 11544L, usd = .65,
   fdc = 1726641L, # this brand!!
-  serving_oz = 1,
+  serving_oz = 1, 
   calorie = 120,
   fat = 13, cholesterol = .035, sodium = .015, carbohydrate = 1, sugar = 1, protein = 2)
 

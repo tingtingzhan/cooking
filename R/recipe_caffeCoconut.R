@@ -17,6 +17,7 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   Stanley14 = Stanley14(treatment = c(
     'add hot water',
+    paste(col_green('optional'), 'use boiling water and 1 teabag'),
     'add all powders, whisk smooth',
     'add barista coconut'
   ))

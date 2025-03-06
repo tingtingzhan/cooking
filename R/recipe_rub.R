@@ -154,6 +154,15 @@ duck_rub <- function() new(
   date = as.Date('2025-02-15')
 )
 
+if (FALSE) {
+  new(Class = 'recipe', 
+      spice_tsp = c(
+        SimplyOrganic_5spice = 1.5 #my experiment using a Chinese brand
+      ))
+  
+  #format_vol(c())
+}
+
 
 
 

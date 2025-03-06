@@ -716,51 +716,27 @@ getGelatinLeaf <- function(x) {
 }
 
 
-format_vol <- function(x, nm = names(x)) {
+
+
+
+
+format_vol <- function(x, nm = names(x), tol = 1e-6) {
   
   if (!length(x)) return(character())
   
-  y <- x / gram_per_tsp(nm)
+  cup <- (x/gram_per_tsp(nm)) |> mod_(e2 = 48, tol = tol) # number of 1cup (48tsp)
+  cup1 <- cup |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48*2/3, tol = tol) # 0 or 1; number of 2/3 cup
+  cup2 <- cup1 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48/2, tol = tol) # 0 or 1; number of 1/2 cup
+  cup3 <- cup2 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48/3, tol = tol) # 0 or 1; number of 1/3 cup
+  cup4 <- cup3 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48/4, tol = tol) # 0 or 1; number of 1/4 cup
+  Tbsp <- cup4 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 3, tol = tol) # 0 or 1 or 2; number of Tbsp
+  tsp1a <- Tbsp |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 2, tol = tol) # 0 or 1, number of 2tsp
+  tsp1 <- tsp1a |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 1.5, tol = tol) # 0 or 1, number of 1.5 tsp
+  tsp2 <- tsp1 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 1, tol = tol) # 0 or 1, number of 1tsp
+  tsp3 <- tsp2 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .5, tol = tol) # 0 or 1, number of 1/2tsp
+  tsp4 <- tsp3 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .25, tol = tol) # 0 or 1, number of 1/4tsp
+  tsp5 <- tsp4 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .125, tol = tol) # 0 or 1, number of 1/8tsp
 
-  id <- (ceiling(y) - y < 1e-6)
-  if (any(id, na.rm = TRUE)) y[which(id)] <- ceiling(y[which(id)])
-
-  cup <- y %/% 48 # 1cup is 48tsp
-  y <- y %% 48
-  
-  cup1 <- y %/% (48*2/3) # 2/3 cup
-  y <- y %% (48*2/3)
-  
-  cup2 <- y %/% (48/2) # 0 or 1; number of half-cup
-  y <- y %% (48/2)
-  
-  cup3 <- y %/% (48/3) # 0 or 1; number of 1/3 cup (at most one 1/3 cup in less than one 1/2 cup)
-  y <- y %% (48/3)
-  
-  cup4 <- y %/% (48/4) # 0 or 1; number of quarter-cup (at most one quarter cup in less than one 1/3 cup)
-  y <- y %% (48/4)
-  
-  Tbsp <- y %/% 3 
-  y <- y %% 3
-  
-  tsp1a <- y %/% 2 # 0 or 1, number of 2tsp
-  y <- y %% 2
-  
-  tsp1 <- y %/% 1.5 # 0 or 1, number of 1.5 tsp
-  y <- y %% 1.5
-  
-  tsp2 <- y %/% 1 # 0 or 1, number of 1tsp
-  y <- y %% 1
-  
-  tsp3 <- y %/% .5 # 0 or 1, number of half-tsp
-  y <- y %% .5
-  
-  tsp4 <- y %/% .25 # 0 or 1, number of quarter-tsp
-  y <- y %% .25
-  
-  tsp5 <- y %/% .125 # 0 or 1, number of one-eighth tsp
-  # y <- y %% .125 # no longer care
-  
   unlist(.mapply(FUN = function(...) {
     z0 <- c(...)
     z1 <- z0[!is.na(z0)]
@@ -768,12 +744,12 @@ format_vol <- function(x, nm = names(x)) {
     z <- z1[seq_len(min(3L, length(z1)))]
     style_bold(col_br_blue(paste(z, collapse = ' ')))
   }, dots = list(
-    ifelse(cup > 0, yes = sprintf(fmt = '%dCup', cup), no = NA_character_), 
+    ifelse(cup, yes = sprintf(fmt = '%dCup', cup), no = NA_character_), 
     ifelse(cup1, yes = '\u2154Cup', no = NA_character_), 
     ifelse(cup2, yes = '\u00bdCup', no = NA_character_), 
     ifelse(cup3, yes = '\u2153Cup', no = NA_character_), 
     ifelse(cup4, yes = '\u00bcCup', no = NA_character_), 
-    ifelse(Tbsp > 0, yes = sprintf(fmt = '%dTbsp', Tbsp), no = NA_character_),
+    ifelse(Tbsp, yes = sprintf(fmt = '%dTbsp', Tbsp), no = NA_character_),
     ifelse(tsp1a, yes = '2tsp', no = NA_character_),
     ifelse(tsp1, yes = '1\u00bdtsp', no = NA_character_),
     ifelse(tsp2, yes = '1tsp', no = NA_character_),

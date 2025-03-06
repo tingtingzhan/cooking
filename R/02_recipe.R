@@ -1078,21 +1078,21 @@ print.recipe0 <- function(x, ...) {
              x@riceFlour, x@glutinousRiceFlour,
              x@cornmeal,
              x@coconut)
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)), FUN = cli_text) # one or more flour
+  if (length(flour)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)), FUN = cli_text) # one or more flour
   
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, format_vol(x@starch)), FUN = cli_text) 
+  if (length(x@starch)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, format_vol(x@starch)), FUN = cli_text) 
   
   # commercial puree with volume info
   puree_vol <- c(x@pumpkin, x@pumpkinPieMix, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@yellowCorn, x@applesauce)
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)), FUN = cli_text)
+  if (length(puree_vol)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)), FUN = cli_text)
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
   puree_no_vol <- c(x@puree, x@darkCherry, x@strawberry, x@banana)
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), FUN = cli_text)
+  if (length(puree_no_vol)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), FUN = cli_text)
   
   fruit <- c(x@fruit, x@durian)
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), FUN = cli_text) # one or more fruit_pc
-  lapply(sprintf(
+  if (length(fruit)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), FUN = cli_text) # one or more fruit_pc
+  if (length(x@fruit_pc)) lapply(sprintf(
     fmt = '%s %.0f grams %s\n', 
     nm_[names(x@fruit_pc)], 
     x@fruit_pc,
@@ -1104,7 +1104,7 @@ print.recipe0 <- function(x, ...) {
   ), FUN = cli_text) # one or more fruit_pc
   
   #lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, format_vol(x@flavor)), FUN = cli_text) # one or more flavor
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor), FUN = cli_text) # one or more flavor
+  if (length(x@flavor)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor), FUN = cli_text) # one or more flavor
   # my `@flavor` slot is very complicated
   
   mapply(FUN = function(glue, gram) {
@@ -1120,19 +1120,19 @@ print.recipe0 <- function(x, ...) {
   grain_bean_nut_vol_ <- c(
     x@soybean
   )
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), FUN = cli_text) # one or more grain
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
+  if (length(grain_bean_nut)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), FUN = cli_text) # one or more grain
+  if (length(grain_bean_nut_vol_)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
   
-  fat_vol_ <- c(
+  fat_vol <- c(
     x@fat,
     x@lard, x@tallow
   )
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol_)], fat_vol_, format_vol(fat_vol_)), FUN = cli_text)
+  if (length(fat_vol)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, format_vol(fat_vol)), FUN = cli_text)
   
   halfpound_brick <- c(
     x@creamCheese
   )
-  lapply(sprintf(
+  if (length(halfpound_brick)) lapply(sprintf(
     fmt = '%s %.0f grams %s\n', 
     nm_[names(halfpound_brick)], 
     halfpound_brick, 
@@ -1144,19 +1144,19 @@ print.recipe0 <- function(x, ...) {
     #x@cheese, 
     x@condensedMilk # dairy without volume info
   )
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), FUN = cli_text)
+  if (length(other)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), FUN = cli_text)
   
-  dairy_vol_ <- c(# dairy with volume info
+  dairy_vol <- c(# dairy with volume info
     x@cheese, 
     x@mascarpone, x@cottageCheese, x@yogurt, x@yogurtGreek, x@kefir, x@filmjolk,
     x@butter, x@ghee, x@evaporatedMilk, x@drymilk, x@milk, x@buttermilk, x@heavyCream, x@lightCream, x@sourCream
   )
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol_)], dairy_vol_, format_vol(dairy_vol_)), FUN = cli_text)
+  if (length(dairy_vol)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol)], dairy_vol, format_vol(dairy_vol)), FUN = cli_text)
   
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, format_pc(x, 'eggYolk')), FUN = cli_text)
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, format_pc(x, 'eggWhite')), FUN = cli_text)
+  if (length(x@eggYolk)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, format_pc(x, 'eggYolk')), FUN = cli_text)
+  if (length(x@eggWhite)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, format_pc(x, 'eggWhite')), FUN = cli_text)
   
-  lapply(sprintf(
+  if (length(x@tea)) lapply(sprintf(
     fmt = '%s %.1f grams %s\n', 
     nm_[names(x@tea)], 
     x@tea,
@@ -1166,13 +1166,13 @@ print.recipe0 <- function(x, ...) {
   allSugar <- c(
     x@sugar, x@brownSugar
   )
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)), FUN = cli_text)
+  if (length(allSugar)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)), FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
     x@blackSesame
   )
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), FUN = cli_text)
+  if (length(no_vol_)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), FUN = cli_text)
   
   # ingredients with volumn info
   has_vol_small <- c(
@@ -1191,10 +1191,10 @@ print.recipe0 <- function(x, ...) {
     x@blackRice, x@brownRice,
     x@syrup
   )
-  lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)), FUN = cli_text)
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)), FUN = cli_text)
+  if (length(has_vol_small)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)), FUN = cli_text)
+  if (length(has_vol_large)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)), FUN = cli_text)
   
-  cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)))
+  if (length(x@gelatin)) cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)))
   
   if (!length(x@water_extra)) {
     cat(sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)))
@@ -1203,16 +1203,16 @@ print.recipe0 <- function(x, ...) {
     cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, col_br_red(sprintf('+%.0f', x@water_extra)), format_vol(water)))
   }
   
-  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)))
-  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)))
-  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)))
-  cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)))
-  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)))
-  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)))
-  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)))
-  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)))
-  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)))
-  cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice))
+  if (length(x@water40)) cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)))
+  if (length(x@water70)) cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)))
+  if (length(x@water80)) cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)))
+  if (length(x@water90)) cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)))
+  if (length(x@water95)) cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)))
+  if (length(x@boilingWater)) cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)))
+  if (length(x@iceWater)) cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)))
+  if (length(x@carbonatedWater)) cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)))
+  if (length(x@shavedIce)) cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)))
+  if (length(x@ice)) cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice))
   
   cat('\n')
   
