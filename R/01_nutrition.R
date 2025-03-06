@@ -350,8 +350,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
         x@call <- x@call[[3L]]
       } else stop('then?')
       #x@call <- quote(`<UNDEFINED>`) # no need
-      x@name_glue <- paste(make_ansi_style('orchid4')(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call))), x@name)
-      x@name <- paste(make_ansi_style('orchid4')(x@alias), x@name) # after `@name_glue <-` :)
+      x@name_glue <- paste(col_orchid4(sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call))), x@name)
+      x@name <- paste(col_orchid4(x@alias), x@name) # after `@name_glue <-` :)
       x@alias <- character()
     } else x@name_glue <- x@name
     

@@ -1132,8 +1132,12 @@ print.recipe0 <- function(x, ...) {
   halfpound_brick <- c(
     x@creamCheese
   )
-  lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(halfpound_brick)], halfpound_brick, 
-                 style_bold(col_br_magenta(sprintf(fmt = '%.2gbrick', halfpound_brick/226.796)))), FUN = cli_text)
+  lapply(sprintf(
+    fmt = '%s %.0f grams %s\n', 
+    nm_[names(halfpound_brick)], 
+    halfpound_brick, 
+    (halfpound_brick/226.796) |> sprintf(fmt = '%.2gbrick') |> col_br_magenta() |> style_bold()
+  ), FUN = cli_text)
   
   other <- c(
     x@vegetable,
@@ -1156,7 +1160,8 @@ print.recipe0 <- function(x, ...) {
     fmt = '%s %.1f grams %s\n', 
     nm_[names(x@tea)], 
     x@tea,
-    style_bold(col_br_magenta(sprintf(fmt = '%.2gbag', getTeabag(x@tea))))), FUN = cli_text)
+    x@tea |> getTeabag() |> sprintf(fmt = '%.2gbag') |> col_br_magenta() |> style_bold()
+  ), FUN = cli_text)
   
   allSugar <- c(
     x@sugar, x@brownSugar
@@ -1192,26 +1197,29 @@ print.recipe0 <- function(x, ...) {
   cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)))
   
   if (!length(x@water_extra)) {
-    cat(sprintf(fmt = '%s Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)))
+    cat(sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)))
   } else {
     water <- sum_by_name(x@water, x@water_extra)
-    cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', make_ansi_style('orchid4')('\u5e38\u6e29\u6c34'), water, x@water, col_br_red(sprintf('+%.0f', x@water_extra)), format_vol(water)))
+    cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, col_br_red(sprintf('+%.0f', x@water_extra)), format_vol(water)))
   }
   
-  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)))
-  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)))
-  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)))
-  cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)))
-  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', make_ansi_style('orchid4')('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)))
-  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', make_ansi_style('orchid4')('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)))
-  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)))
-  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', make_ansi_style('orchid4')('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)))
-  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', make_ansi_style('orchid4')('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)))
-  cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', make_ansi_style('orchid4')('\u51b0\u5757'), x@ice))
+  cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)))
+  cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)))
+  cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)))
+  cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)))
+  cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)))
+  cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)))
+  cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)))
+  cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)))
+  cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)))
+  cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice))
   
   cat('\n')
   
 }
+
+
+
 
 #' @rdname show_cooking
 #' @aliases show,recipe-method

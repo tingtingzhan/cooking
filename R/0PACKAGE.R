@@ -18,6 +18,9 @@
 '_PACKAGE'
 
 
+
+col_orchid4 <- make_ansi_style('orchid4')
+
 # black: 0
 # red: 1
 # green: 2
