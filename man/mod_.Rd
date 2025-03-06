@@ -15,6 +15,8 @@ mod_(e1, e2, tol = .Machine$double.eps)
 Integer Division and Modulo with a \code{tol}
 }
 \examples{
-x = 48*2 - .Machine$double.eps/2
-mod_(x, 48)
+(x = 48*2 - .Machine$double.eps * 1e3L)
+x \%/\% 48 # nah
+x \%\% 48 # nah
+mod_(x, e2 = 48, tol = 1e-6) # yeah!
 }
