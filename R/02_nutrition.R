@@ -527,11 +527,11 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
     } else if (length(x@navitas)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://navitasorganics.com/products/%s', x@navitas), text = 'Navitas\U1f1fa\U1f1f8'))
     } else if (length(x@nescafe)) {
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/our-coffees/%s', x@nescafe), text = 'Nescaf\u00e9\U1f1e8\U1f1ed'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/coffees/%s', x@nescafe), text = 'Nescaf\u00e9\U1f1e8\U1f1ed'))
     } else if (length(x@nescafeGoldEspressoCA)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.madewithnestle.ca/nescafe/nescafe-%s', x@nescafeGoldEspressoCA), text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed'))
     } else if (length(x@nescafeGoldEspressoUS)) {
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/us/products/gold-espresso-%s', x@nescafeGoldEspressoUS), text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed'))
+      c(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/us/products/%s', x@nescafeGoldEspressoUS), text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed'))
     } else if (length(x@nescafeUS)) {
       c(style_hyperlink(url = sprintf(fmt = 'https://www.nescafe.com/us/products/%s', x@nescafeUS), text = 'Nescaf\u00e9\U1f1e8\U1f1ed'))
     } else if (length(x@nestle)) {

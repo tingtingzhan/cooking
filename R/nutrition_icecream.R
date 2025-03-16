@@ -57,7 +57,7 @@ HaagenDazs_pistachio <- function() new(
 #' @export
 HaagenDazs_coffee <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = '\u5496\u5561', #\u2615
+  name = '\u5496\u5561',
   haagendazs = 'coffee',
   servingCup = 2/3, servingGram = 128,
   fat = 21, cholesterol = .095, sodium = .065, sugar = 24, addedSugar = 18, protein = 5)
@@ -71,7 +71,7 @@ HaagenDazs_coffee <- function() new(
 #' @name Bassetts
 #' @export
 Bassetts_coffee <- function() new(
-  Class = 'nutrition', call = match.call()[[1L]], name = '\u5496\u5561', # \u2615
+  Class = 'nutrition', call = match.call()[[1L]], name = '\u5496\u5561',
   bassetts = '0e1be7_e571839fafff4f22833ede48fa3c99f1',
   servingCup = 2/3, servingGram = 102,
   calorie = 270,

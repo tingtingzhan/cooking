@@ -926,7 +926,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         if (any(grepl('ryeWhisky', x = names(x@syrup)))){
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
-      } else 'Caff\u00e8' # \u2615
+      } else 'Caff\u00e8'
      
     } else if (length(x@acai)) {
       '\u5df4\u897f\u8393'

@@ -4,8 +4,9 @@
 \alias{nutrition_coffee}
 \alias{NescafeTastersChoice_decaf}
 \alias{NescafeGold_decaf}
-\alias{NescafeGold_espresso_decaf}
+\alias{NescafeGold_espresso_decaf_Canada}
 \alias{NescafeGold_espresso_intense}
+\alias{NescafeGold_espresso_decaf}
 \alias{NescafeGold_espresso_blonde}
 \title{Instant Coffee}
 \usage{
@@ -13,9 +14,11 @@ NescafeTastersChoice_decaf()
 
 NescafeGold_decaf()
 
-NescafeGold_espresso_decaf()
+NescafeGold_espresso_decaf_Canada()
 
 NescafeGold_espresso_intense()
+
+NescafeGold_espresso_decaf()
 
 NescafeGold_espresso_blonde()
 }
