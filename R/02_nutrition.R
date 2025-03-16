@@ -810,7 +810,13 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   
   #cat('Nutrition Facts\n\n')
 
-  cat(sprintf(fmt = 'Serving Size: %.4g grams %s\n\n', obj@servingGram, format_vol(x = obj@servingGram, nm = list(obj))))
+  cat(sprintf(
+    fmt = 'Serving Size %s %s %s\n\n', 
+    style_bold(make_ansi_style('purple')(sprintf(fmt = '%.4g grams', obj@servingGram))), 
+    style_bold(make_ansi_style('seagreen')(sprintf(fmt = '%.1f oz', obj@servingGram/28.3495))),
+    format_vol(x = obj@servingGram, nm = list(obj))
+  ))
+             
   cat(sprintf(fmt = '%s\n', obj@cost_))
   if (length(obj@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', obj@calorie))), '\n')
   cat('\n')
