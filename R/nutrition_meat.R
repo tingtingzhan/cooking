@@ -71,6 +71,19 @@ pork_butt <- function() new(
   costcoBiz = '11113588', # not swift brand
   fdc = 167850L, water = 112*.55)
 
+pork_trotter <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  name = 'Pork\U1f416 Trotter',
+  servingGram = 500,
+  InstantPot = InstantPot(
+    program = 'Pressure Cook, High',
+    fahrenheit = 240,
+    minute = c('pork\U1f416 trotter' = 25), # confirmed!!!
+    cooling = 'natural release'
+  )
+)
+
+
 
 beef_heel <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
@@ -168,15 +181,4 @@ lamb_loinchop <- function() new(
   name = '\u7f8a\u810a\u9aa8(\u7626\u8089) Lamb\U1f411 Loin Chop',
   usd = 5.99/(.85*454)*100, # Costco
   servingGram = 100, water = 60.48, fat = 9.65, protein = 29.74, sodium = .406)
-
-chicken_thigh <- function() new(# meat and skin
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 172385L,
-  name = '(\u53bb\u76ae)\u9e21\u817f\u8089 Chicken Thigh',
-  servingGram = 100, water = 66.5, fat = 16.6, protein = 16.5, sodium = .081)
-
-chicken_breast <- function() new(# skinless, boneless
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 171077L,
-  name = 'Chicken Breast',
-  servingGram = 100, water = 73.9, fat = 2.62, protein = 22.5, sodium = .045)
-
 

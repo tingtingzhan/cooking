@@ -112,7 +112,7 @@ Twinings_ultraChai <- function() new(
 
 Twinings_Darjeeling <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], twinings = 'darjeeling',
-  name = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982 Darjeeling',
+  name = 'Darjeeling', alias = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982',
   wegmans = 30993L,
   servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
   review = 'lacks a signature flavor')
@@ -123,6 +123,11 @@ Twinings_Ceylon <- function() new(
   webstaurant = '110TWNG05324',
   servingGram = 2, usd = 4.99/20)
 
+Twinings_EnglishBreakfast <- function() new(
+  Class = 'nutrition', call = match.call()[[1L]], twinings = 'english-breakfast',
+  name = 'English Breakfast', alias = '\u62fc\u914d\u7ea2\u8336',
+  #webstaurant = '110TWNG05324',
+  servingGram = 2, usd = 4.99/20)
 
 # Paromi
 

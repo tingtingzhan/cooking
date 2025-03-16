@@ -432,6 +432,7 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
   #doi = 'character',
   
   machine = 'list',
+  waterBath = 'tool',
   KSM8990 = 'tool',
   KSM3316X = 'tool',
   KSMICM = 'tool',
@@ -443,8 +444,6 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
   Staub_vertRoaster = 'tool',
   RobamCT763 = 'tool',
   InstantPot = 'tool',
-  
-  waterBath = 'tool',
   
   note = 'character',
   instruction = 'character',
@@ -1256,7 +1255,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat('\n')
   
   # need to write a [show] method for \linkS4class{mixWheatFlour}
-  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx', 'creamcheeseDx')]
+  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx', 'teaDx', 'creamcheeseDx')]
   has_attr_dx <- (lengths(attr_dx, use.names = FALSE) > 0L)
   lapply(attr_dx[has_attr_dx], FUN = show)
   #if (!any(has_attr_dx)) {
@@ -1286,7 +1285,6 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   }
   
   show(object@waterBath)
-  
   show(object@KSM8990)
   show(object@KSM3316X)
   show(object@KSMICM)

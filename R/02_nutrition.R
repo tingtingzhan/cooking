@@ -141,6 +141,7 @@ setClass(Class = 'extra', slots = c(
 #' 
 #' @slot servingGram \link[base]{numeric} scalar, serving size in grams
 #' @slot serving_oz \link[base]{numeric} scalar, serving size in ounces
+#' @slot serving_lb \link[base]{numeric} scalar, serving size in pounds
 #' @slot servingCup,servingTbsp,servingTsp \link[base]{numeric} scalar, serving size in cups, tablespoons, teaspoons
 # @slot servingBag \link[base]{numeric} scalar, serving size in (tea) bags
 #' @slot serving_floz \link[base]{numeric} scalar, serving size in fluid ounce
@@ -164,6 +165,20 @@ setClass(Class = 'extra', slots = c(
 #' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
+#' 
+#' @slot waterBath \linkS4class{tool}
+#' @slot KSM8990 \linkS4class{tool}, Kitchen Aid commercial stand mixer KSM8990, 8 quart
+#' @slot KSM3316X \linkS4class{tool}, Kitchen Aid stand mixer KSM3316X, 3.5 quart
+#' @slot KSMICM \linkS4class{tool}, Kitchen Aid ice cream maker KSMICM
+#' @slot CuisinartICE70 \linkS4class{tool}, Cuisinart ice cream maker ICE70
+#' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
+#' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
+#' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
+#' @slot nutribullet20,nutribullet24,Stanley20,Stanley14 \linkS4class{tool}
+#' @slot PhilipsHD9867 \linkS4class{tool}
+#' @slot Staub_vertRoaster \linkS4class{tool}
+#' @slot RobamCT763 \linkS4class{tool}
+#' @slot InstantPot \linkS4class{tool}
 #' 
 #' @aliases nutrition-class  
 #' @export
@@ -279,12 +294,26 @@ setClass(Class = 'nutrition', slots = c(
   whistlepigwhiskey = 'character',
   yogi = 'character',
   
-  machine = 'function',
+  machine = 'function', # should be deprecated
+  
+  waterBath = 'tool',
+  KSM8990 = 'tool',
+  KSM3316X = 'tool',
+  KSMICM = 'tool',
+  CuisinartICE70 = 'tool',
+  JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
+  JoyoungCJA9U = 'tool',
+  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley20 = 'tool', Stanley14 = 'tool',
+  PhilipsHD9867 = 'tool',
+  Staub_vertRoaster = 'tool',
+  RobamCT763 = 'tool',
+  InstantPot = 'tool',
+
   review = 'character',
   superior = 'character',
   contain = 'character',
   
-  servingGram = 'numeric', serving_oz = 'numeric',
+  servingGram = 'numeric', serving_oz = 'numeric', serving_lb = 'numeric',
   servingCup = 'numeric', servingTbsp = 'numeric', servingTsp = 'numeric',
   #servingBag = 'numeric',
   serving_floz = 'numeric',
@@ -361,6 +390,9 @@ setMethod(f = initialize, signature = 'nutrition', definition = function(.Object
   if (length(x@serving_oz)) {
     if (length(x@servingGram)) warning('@servingGram over written by @serving_oz')
     x@servingGram <- x@serving_oz * 28.3495
+  } else if (length(x@serving_lb)) {
+    if (length(x@servingGram)) warning('@servingGram over written by @serving_lb')
+    x@servingGram <- x@serving_lb * 453.6
   }
   if (!length(x@servingGram)) stop('must have `servingGram` for nutrition object')
   
@@ -875,6 +907,20 @@ setMethod(f = show, signature = 'nutrition', definition = function(object) {
   if (length(suggested_ <- suggested(object))) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
   
   cat('\n')
+  
+  show(object@waterBath)
+  show(object@KSM8990)
+  show(object@KSM3316X)
+  show(object@KSMICM)
+  show(object@CuisinartICE70)
+  show(object@JoyoungDJ13U)
+  show(object@JoyoungDJ06M)
+  show(object@JoyoungCJA9U)
+  show(object@nutribullet20); show(object@nutribullet24); show(object@Stanley20); show(object@Stanley14)
+  show(object@PhilipsHD9867)
+  show(object@Staub_vertRoaster)
+  show(object@RobamCT763)
+  show(object@InstantPot)
 
 })
 

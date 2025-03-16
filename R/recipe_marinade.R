@@ -39,5 +39,4 @@ tomyum_marinade <- function() new(
     Siam_tomyum = 100,
     LeeKumKee_5spiceMarinade = 150
   ),
-  greenPeppercornOil = 5,
   review = 'to finalized what I have been doing')#, #date = as.Date('2024-06-22'))

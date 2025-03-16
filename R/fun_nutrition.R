@@ -478,7 +478,15 @@ nutrition.recipe <- function(x) {
     drymilk = new(Class = 'equiv', actual = x@drymilk / x@cocoa, ideal = devrecipe$drymilk2cocoa(x)),
     sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', actual = sugar / x@cocoa) else new(Class = 'equiv'),
     addedSugar = new(Class = 'equiv', actual = addedSugar / x@cocoa, ideal = devrecipe$addedSugar2cocoa(x)),
-    coffee = new(Class = 'equiv', actual = x@coffee / x@cocoa, ideal = devrecipe$coffee2cocoa(x))
+    coffee = new(Class = 'equiv', actual = x@coffee / x@cocoa, ideal = devrecipe$coffee2cocoa(x)),
+    tea = new(Class = 'equiv', actual = x@tea / x@cocoa)
+  )
+  
+  attr(ret, which = 'teaDx') <- if (length(x@tea)) new(
+    Class = 'teaDx',
+    drymilk = new(Class = 'equiv', actual = x@drymilk / x@tea),
+    coffee = new(Class = 'equiv', actual = x@coffee / x@tea),
+    cocoa = new(Class = 'equiv', actual = x@cocoa / x@tea)
   )
   
   attr(ret, which = 'creamcheeseDx') <- if (length(x@creamCheese)) new(

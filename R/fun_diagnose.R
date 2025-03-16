@@ -31,6 +31,7 @@ diagnose <- function(...) { # , dots = list(...)
   diagnose_(dots, which = 'cornBaker')
   diagnose_(dots, which = 'riceBaker')
   diagnose_(dots, which = 'cocoaDx')
+  diagnose_(dots, which = 'teaDx')
   diagnose_(dots, which = 'creamcheeseDx')
   diagnose_(dots, which = 'uncooked')
   
