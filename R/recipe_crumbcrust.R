@@ -142,7 +142,7 @@ WholeFoods365_grahamCrust <- function() new(
 #' @export
 MiDel_grahamCrust <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = c(style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel')), 
+  brand = style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel') |> c(), 
   name = 'Graham Crust',
   servingGram = 25, 
   calorie = 120,

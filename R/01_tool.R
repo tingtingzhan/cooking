@@ -64,12 +64,12 @@ setMethod(f = initialize, signature = 'tool', definition = function(.Object, ...
   x <- callNextMethod(.Object, ...)
   
   if (length(x@kitchenaid)) {
-    x@name <- c(style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html', x@kitchenaid)))
+    x@name <- style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html', x@kitchenaid)) |> c()
     x@kitchenaid <- character()
   }
   
   if (length(x@staub)) {
-    x@name <- c(style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.zwilling.com/us/%s.html', x@staub)))
+    x@name <- style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.zwilling.com/us/%s.html', x@staub)) |> c()
     x@staub <- character()
   }
   
@@ -91,49 +91,50 @@ setMethod(f = show, signature = 'tool', definition = function(object) {
   
   if (identical(object, new(Class = 'tool'))) return(invisible())
     
-  cat(make_ansi_style('royalblue')(sprintf(fmt = '\u2756 %s \u2756\n', object@name)))
-  cat(make_ansi_style('royalblue')(sprintf(fmt = '\u2756 %s \u2756\n', object@name2)))
+  object@name |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
+  object@name2 |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
   
   if (length(object@recipe_pc)) {
-    cat(sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n', object@recipe_pc))
+    object@recipe_pc |> sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n') |> cat()
   }
   
   # object@recipe_weight
   # stopifnot(identical(' ', '\u0020'))
-  cat(sprintf(fmt = ' \u21ac %s\n', object@treatment), sep = '')
+  object@treatment |> sprintf(fmt = ' \u21ac %s\n') |> cat(sep = '')
   
-  cat(sprintf(fmt = ' \u2726 %s\n', object@program))
-  cat(sprintf(fmt = ' \U1f6e0 %s\n', object@attachment))
+  object@program |> sprintf(fmt = ' \u2726 %s\n') |> cat()
+  object@attachment |> sprintf(fmt = ' \U1f6e0 %s\n') |> cat()
   
-  txt_fahrenheit <- col_blue(sprintf(fmt = '%.0f\u00b0F', object@fahrenheit))
-  txt_celsius <- col_magenta(sprintf(fmt = '%.0f\u00b0C', (object@fahrenheit - 32) * 5/9))
+  txt_fahrenheit <- object@fahrenheit |> sprintf(fmt = '%.0f\u00b0F') |> col_blue()
+  txt_celsius <- ((object@fahrenheit - 32) * 5/9) |> sprintf(fmt = '%.0f\u00b0C') |> col_magenta()
   
   if (length(object@minute)) {
     min_ <- object@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
-    #cat(paste(' \u23f0', format_minute(min_), names(min_)), sep = '\n')
-    cat(sprintf(
+    # paste(' \u23f0', format_minute(min_), names(min_)) |> cat(sep = '\n')
+    sprintf(
       fmt = ' \U1f321%s \U1f321%s \u23f0%s %s', 
       txt_fahrenheit, txt_celsius, 
-      style_bold(col_red(format_minute(min_))), 
-      bg_br_yellow(names(min_))), sep = '\n')
-  } else cat(paste(sprintf(
+      min_ |> format_minute() |> col_red() |> style_bold(), 
+      min_ |> names() |> bg_br_yellow()
+    ) |> cat(sep = '\n')
+  } else sprintf(
     fmt = ' \U1f321%s \U1f321%s', 
     txt_fahrenheit, 
     txt_celsius
-  ), collapse = '\n'))
+  ) |> paste(collapse = '\n') |> cat()
   
+  object@operation |>
+    gsub(pattern = '\n', replacement = '') |>
+    gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
+    sprintf(fmt = ' \u21ac %s\n') |> 
+    cat(sep = '')
   
-  object@operation <- gsub(pattern = '\n', replacement = '', x = object@operation)
-  object@operation <- gsub(pattern = '^ *|(?<= ) | *$', replacement = '', x = object@operation, perl = TRUE)
-  n <- length(object@operation)
-  cat(sprintf(fmt = ' \u21ac %s\n', object@operation), sep = '')
+  object@cooling |> sprintf(fmt = ' \u21ac %s\n') |> cat(sep = '')
   
-  cat(sprintf(fmt = ' \u21ac %s\n', object@cooling), sep = '')
+  object@waterLost |> sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n') |> cat()
   
-  cat(sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n', object@waterLost))
-  
-  cat(sprintf(fmt = ' \u2756 %s\n', object@note), sep = '')
+  object@note |> sprintf(fmt = ' \u2756 %s\n') |> cat(sep = '')
   
   cat('\n')
   
@@ -162,17 +163,18 @@ format_minute <- function(x) {
 
 thermometer <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer')), 
+  name = style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer') |> c(), 
   ...)
 
 CuisinartICE70 <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html')),
+  name = style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html') |> c(),
   ...)
 
 InstantPot <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker')), alias = '\u7535\u9ad8\u538b\u9505',
+  name = style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker') |> c(), 
+  alias = '\u7535\u9ad8\u538b\u9505',
   ...)
 
 KSMICM <- function(...) new(
@@ -197,7 +199,7 @@ KSEG950ESS <- function(...) new(
 
 RobamCT763 <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763')),
+  name = style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763') |> c(),
   ...)
 
 
@@ -205,19 +207,22 @@ RobamCT763 <- function(...) new(
 
 PhilipsHD9867 <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16')), alias = '\u7a7a\u6c14\u70b8\u9505',
+  name = style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16') |> c(), 
+  alias = '\u7a7a\u6c14\u70b8\u9505',
   ...)
 
 
 JoyoungDJ13U <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html')), alias = '\u8c46\u6d46\u673a', 
+  name = style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html') |> c(), 
+  alias = '\u8c46\u6d46\u673a', 
   ...)
 
 
 JoyoungDJ06M <- function(...) new(
   Class = 'tool', 
-  name = c(style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html')), alias = '\u8ff7\u4f60\u8c46\u6d46\u673a', 
+  name = style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html') |> c(), 
+  alias = '\u8ff7\u4f60\u8c46\u6d46\u673a', 
   ...)
 
 
@@ -256,28 +261,29 @@ JoyoungCJA9U <- function(
     ...
 ) new(
   Class = 'tool',
-  name = c(unclass(style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html'))), alias = '\u7092\u83dc\u673a',
+  name = style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html') |> c(), 
+  alias = '\u7092\u83dc\u673a',
   program = program,
   ...)
 
 nutribullet20 <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/')),
+  name = style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/') |> c(),
   ...) 
 
 nutribullet24 <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Nutribullet Ultra 24 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-24-oz-cup-with-to-go-lid/')),
+  name = style_hyperlink(text = 'Nutribullet Ultra 24 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-24-oz-cup-with-to-go-lid/') |> c(),
   ...) 
 
 Stanley20 <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Stanley 20oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz')),
+  name = style_hyperlink(text = 'Stanley 20oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz') |> c(),
   ...)
 
 Stanley14 <- function(...) new(
   Class = 'tool',
-  name = c(style_hyperlink(text = 'Stanley 14oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-14-oz')),
+  name = style_hyperlink(text = 'Stanley 14oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-14-oz') |> c(),
   ...)
 
 Staub_vertRoaster <- function(...) new(

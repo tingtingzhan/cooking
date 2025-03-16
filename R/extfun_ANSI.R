@@ -59,7 +59,7 @@ strwidth_ <- function(x) {
     # https://en.wikipedia.org/wiki/Regional_indicator_symbol
     # '\U1F1E6' as A; '\U1F1FF' as Z
     regInd0 <- sprintf(fmt = '%X', as.hexmode('1F1E6'):as.hexmode('1F1FF'))
-    regInd <- intToUtf8(paste0('0x', regInd0), multiple = TRUE)
+    regInd <- paste0('0x', regInd0) |> intToUtf8(multiple = TRUE)
     id <- which(x0 %in% regInd)
     # consecutive `id` be regarded as a country, whether it is indeed a country or not!
     x1 <- if (nid <- length(id)) {

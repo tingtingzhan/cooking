@@ -34,7 +34,7 @@ col_orchid4 <- make_ansi_style('orchid4')
 # grey: '\033[90m'
 
 if (FALSE) {
-  cat('\033[38;5;166mabc\033[0m') 
+  '\033[38;5;166mabc\033[0m' |> cat() 
   # do not know how to do customized ANSI color by RGB using \CRANpkg{cli} functions
 }
 

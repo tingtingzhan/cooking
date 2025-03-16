@@ -519,7 +519,7 @@ walnut <- function() new(
 Bossen_pineapple <- function() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Pineapple\U1f34d Concentrated Syrup', alias = '\u83e0\u841d\u7cd6\u6d46',
-  brand = c(style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new')),
+  brand = style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new') |> c(),
   webstaurant = '535SYPPINAPL',
   usd = 12.93/2500*25,
   # why all added sugar?

@@ -42,22 +42,22 @@ subtract.recipe <- function(object, ...) {
     txt <- c(txt, inm)
     
     ival <- args[[i]]
-    if (!is.numeric(ival) || length(ival) != 1L || is.na(ival)) stop(sprintf(fmt = 'illegal `%s`', arg_nm[i]))
+    if (!is.numeric(ival) || length(ival) != 1L || is.na(ival)) arg_nm[i] |> sprintf(fmt = 'illegal `%s`') |> stop()
     # `ival <= 0` allowed, 'adding' an ingredient
     
-    if (!(inm %in% slotNames(obj))) stop(sprintf(fmt = '`%s` is not a supported ingredient', inm))
+    if (!(inm %in% slotNames(obj))) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
     old <- slot(obj, name = inm)
     n_old <- length(old)
-    if (!n_old) stop(sprintf(fmt = 'orginal recipe does not contain `@%s`', inm))
-    if (n_old > 1L) stop(sprintf(fmt = 'orginal recipe contains multiple brands of `@%s`', inm))
-    if (ival > old) stop(sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old))
+    if (!n_old) sprintf(fmt = 'orginal recipe does not contain `@%s`', inm) |> stop()
+    if (n_old > 1L) sprintf(fmt = 'orginal recipe contains multiple brands of `@%s`', inm) |> stop()
+    if (ival > old) sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> stop()
     new <- old - ival # \link[base]{names} preserved
     slot(obj, name = inm) <- if (new > 0) new else numeric()
     
   }
 
   txt[txt == 'brownSugar'] <- 'sugar'
-  obj@alias <- paste(obj@alias, bg_br_green(col_grey(paste0('-', paste0(unique.default(txt), collapse = '/')))))
+  obj@alias <- paste(obj@alias, paste0('-', paste0(unique.default(txt), collapse = '/')) |> col_grey() |> bg_br_green())
   
   return(obj)
   
@@ -80,11 +80,11 @@ subtract.nutrition <- function(object, ...) {
     txt <- c(txt, inm)
     
     ival <- args[[i]]
-    if (!is.numeric(ival) || length(ival) != 1L || is.na(ival) || ival <= 0) stop(sprintf(fmt = 'illegal `%s`', arg_nm[i]))
+    if (!is.numeric(ival) || length(ival) != 1L || is.na(ival) || ival <= 0) sprintf(fmt = 'illegal `%s`', arg_nm[i]) |> stop()
     
-    if (!(inm %in% slotNames(obj))) stop(sprintf(fmt = '`%s` is not a supported ingredient', inm))
+    if (!(inm %in% slotNames(obj))) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
     old <- slot(obj, name = inm)
-    if (ival > old) stop(sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old))
+    if (ival > old) sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> stop()
     new <- old - ival # \link[base]{names} preserved
     slot(obj, name = inm) <- if (new > 0) new else numeric()
     
@@ -98,7 +98,7 @@ subtract.nutrition <- function(object, ...) {
     
   }
   
-  obj@name <- paste(obj@name, bg_br_green(col_grey(paste0('-', paste0(unique.default(txt), collapse = '/')))))
+  obj@name <- paste(obj@name, paste0('-', paste0(unique.default(txt), collapse = '/')) |> col_grey() |> bg_br_green())
   
   obj@calorie <- numeric() # ideally I should be able to calculate this Haha
   

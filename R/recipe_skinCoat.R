@@ -24,7 +24,7 @@ duck_coat <- function() new(
   review = c(
     paste(sprintf(
       fmt = '{.run [%s](cooking::%s())}', 
-      style_bold(make_ansi_style('sienna')('TraderJoes_date_syrup')),
+      'TraderJoes_date_syrup' |> make_ansi_style('sienna')() |> style_bold(),
       'TraderJoes_date_syrup'
     ), 'is slightly too dark')
   ),

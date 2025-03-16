@@ -103,9 +103,9 @@ cornbread <- function() new(
   ),
   date = as.Date('2024-12-01'),
   pros = c(
-    paste('must use', style_bold(col_br_magenta('pastry flour'))),
-    paste('I prefer', style_bold(col_br_magenta('heavy cream')), 'to vegetable oil'),
-    paste(style_bold(col_br_magenta('sugar 5.5%')), 'tastes better than 5%')
+    paste('must use', 'pastry flour' |> col_br_magenta() |> style_bold()),
+    paste('I prefer', 'heavy cream' |> col_br_magenta() |> style_bold(), 'to vegetable oil'),
+    paste('sugar 5.5%' |> col_br_magenta() |> style_bold(), 'tastes better than 5%')
   ))
 
 

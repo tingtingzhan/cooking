@@ -12,10 +12,10 @@ TraderJoes_cornbreadMix <- function() new(
   servingGram = 47,
   calorie = 170,
   sodium = .24, carbohydrate = 38, sugar = 15, protein = 3,
-  review = paste('Even Americans from', c(style_hyperlink(
+  review = paste('Even Americans from', style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
-  )), 'think this is too sweet'))
+  ), 'think this is too sweet'))
 
 #' @rdname cornbreadMix_other
 #' @export
@@ -26,10 +26,10 @@ WholeFoods365_cornbreadMix <- function() new(
   servingGram = 35, servingTbsp = 3, 
   calorie = 120,
   sodium = .39, carbohydrate = 27, addedSugar = 8, protein = 2,
-  review = paste(c(style_hyperlink(
+  review = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
-  )), 'loves it'))
+  ), 'loves it'))
 
 
 
@@ -40,7 +40,7 @@ Krusteaz_southern_cornbreadMix <- function() new(
   name = 'Southern Cornbread Mix', usd = 19.68/4/12,
   servingGram = 27,
   fat = .5, sodium = .4, carbohydrate = 21, sugar = 4, protein = 2,
-  review = paste('A bad review from', c(style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'))))
+  review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
   
 
 #' @rdname cornbreadMix_other
@@ -51,7 +51,7 @@ BobsRedMill_cornbreadMix <- function() new(
   servingGram = 55, servingCup = 1/3, 
   calorie = 200,
   fat = 1.5, sodium = .65, carbohydrate = 41, sugar = 7, addedSugar = 5, protein = 5,
-  review = paste('A bad review from', c(style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'))))
+  review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
 
 
 #' @rdname cornbreadMix_other
@@ -62,10 +62,10 @@ Stonewall_cornbreadMix <- function() new(
   servingGram = 38,
   calorie = 140,
   sodium = .18, carbohydrate = 31, addedSugar = 12, protein = 2,
-  review = paste(c(style_hyperlink(
+  review = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
-  )), 'loves it'))
+  ), 'loves it'))
 
 
 #' @rdname cornbreadMix_other
@@ -78,10 +78,10 @@ Jiffy_cornMuffinMix <- function() new(
   calorie = 320,
   fat = 9, cholesterol = .01, sodium = .69,
   carbohydrate = 56, addedSugar = 15, protein = 4,
-  review = paste(c(style_hyperlink(
+  review = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
-  )), 'says it\'s just okay'))
+  ), 'says it\'s just okay'))
 
 
 #' @rdname cornbreadMix_other

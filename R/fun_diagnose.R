@@ -21,7 +21,7 @@ diagnose <- function(...) { # , dots = list(...)
   })
   
   cat('\n')
-  cat(bg_br_yellow('Nutrition\n'))
+  'Nutrition\n' |> bg_br_yellow() |> cat()
   print.nutrition_(nutrition_(dots = dots))
   
   names(dots) <- vapply(dots, FUN = slot, name = 'name', FUN.VALUE = NA_character_)
@@ -51,10 +51,10 @@ diagnose_ <- function(dots, which) {
   y0 <- lapply(atr, FUN = function(a) {
     snm <- names(which(getSlots(class(a)) == 'equiv'))
     names(snm) <- snm
-    unlist(lapply(snm, FUN = function(j) {
+    lapply(snm, FUN = function(j) {
       j_actual <- slot(a, name = j)@actual
       if (length(j_actual) && (j_actual > 0)) unname(j_actual) else NA_real_
-    }), use.names = TRUE)
+    }) |> unlist(use.names = TRUE)
   })
   if (all(!lengths(y0))) stop('wont happen')
   y1 <- do.call(rbind, args = y0)
@@ -68,7 +68,7 @@ diagnose_ <- function(dots, which) {
     sprintf_bincode(median.default(y3[,i], na.rm = TRUE))(y3[,i])
   }))
   dimnames(y) <- dimnames(y3)
-  cat(bg_br_yellow(style_bold(sprintf(fmt = '\u214c %s\n', new(Class = which)@per))))
+  (new(Class = which)@per) |> sprintf(fmt = '\u214c %s\n') |> style_bold() |> bg_br_yellow() |> cat()
   print_ANSI_matrix(y)
   cat('\n')
   return(invisible(y))

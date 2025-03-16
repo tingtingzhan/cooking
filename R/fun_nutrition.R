@@ -98,7 +98,7 @@ nutrition.recipe0 <- function(x) {
     if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
     x_ <- as.character(x.[[1L]])
     if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
-      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, style_bold(col_yellow(x_)), x_)
+      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
     } # else do nothing
   }
   
@@ -123,7 +123,7 @@ nutrition.recipe <- function(x) {
   total_raw <- sum(unlist(atr, use.names = FALSE))
   
   tool_slot <- names(which(getSlots('recipe') == 'tool'))
-  waterLost <- sum(x@waterLost, unlist(lapply(tool_slot, FUN = function(i) slot(x, name = i)@waterLost), use.names = FALSE))
+  waterLost <- sum(x@waterLost, lapply(tool_slot, FUN = function(i) slot(x, name = i)@waterLost) |> unlist(use.names = FALSE))
   total_lost <- sum(
     waterLost,
     unlist(attributes(x)[setdiff(lost, 'waterLost')], use.names = FALSE)
@@ -201,7 +201,7 @@ nutrition.recipe <- function(x) {
     if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
     x_ <- as.character(x.[[1L]])
     if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
-      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, style_bold(col_yellow(x_)), x_)
+      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
     } # else do nothing
   }
   
@@ -504,7 +504,7 @@ nutrition.recipe <- function(x) {
   #attr(ret, which = 'review') <- review[names(review) == class(x)]
   
   #machine <- attr(info, which = 'machine')
-  #attr(ret, which = 'machine') <- unlist(lapply(machine, FUN = function(ifun) ifun(class(x))), use.names = FALSE)
+  #attr(ret, which = 'machine') <- lapply(machine, FUN = function(ifun) ifun(class(x))) |> unlist(use.names = FALSE)
   #attr(ret, which = 'machine') <- machine[names(machine) == class(x)]
   
   return(ret)

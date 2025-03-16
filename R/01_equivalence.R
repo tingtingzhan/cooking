@@ -360,11 +360,11 @@ format.recipeDx <- function(x, ...) {
     ret <- .mapply(dots = list(ret0, relat), MoreArgs = NULL, FUN = function(x, rel) {
       # i = 3L; x = ret0[[i]]; rel = relat[[i]]
       x[1L] <- switch(as.character(rel), '1' = { # actual < ideal
-        style_bold(col_br_blue(x[1L]))
+        (x[1L]) |> col_br_blue() |> style_bold()
       }, 'NA' =, '2' = { # actual == ideal
-        col_grey(x[1L])
+        (x[1L]) |> col_grey()
       }, '3' = { # actual > ideal
-        style_bold(col_br_red(x[1L]))
+        (x[1L]) |> col_br_red() |> style_bold()
       })
       return(x)
     })
@@ -392,13 +392,13 @@ show_endpoint <- function(x) {
   x[x == 'sodium'] <- 'Na\u207a'
   x[x == 'bakingPowder'] <- 'bkPwd'
   x[x == 'cholesterol'] <- 'cholr'
-  x[x == 'blackSesame'] <- bg_black(col_br_white('sesame'))
+  x[x == 'blackSesame'] <- 'sesame' |> col_br_white() |> bg_black()
   x[x == 'whitePepper'] <- 'whitePp'
   x[x == 'blackPepper'] <- 'blackPp'
   x[x == 'pumpkinSpice'] <- '\U0001f383spice'
   x[x == 'sesameOil'] <- 'ssmOil'
   x[x == 'creamCheese'] <- 'creamChz'
-  x[x == 'greenPeppercornOil'] <- bg_green(col_br_white('ppcOil'))
+  x[x == 'greenPeppercornOil'] <- 'ppcOil' |> col_br_white() |> bg_green()
   x[x == 'pastryFlour'] <- '\U0001f370flour'
   x[x == 'breadFlour'] <- '\U0001f35eflour'
   return(x)
@@ -413,7 +413,11 @@ show_endpoint <- function(x) {
 setMethod(f = show, signature = 'recipeDx', definition = function(object) {
   ret <- format.recipeDx(object)
   if (!length(ret)) return(invisible())
-  cat(bg_br_yellow(style_bold(sprintf(fmt = '\u214c %s\n', object@per))))
+  object@per |> 
+    sprintf(fmt = '\u214c %s\n') |> 
+    style_bold() |>
+    bg_br_yellow() |>
+    cat()
   print_ANSI_matrix(ret)
   cat('\n')
 })

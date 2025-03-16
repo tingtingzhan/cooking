@@ -72,7 +72,7 @@ CafeGranita_coffee <- function() new(
 #' @export
 FratelliVincenzi_espresso <- function() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
-  brand = c(style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/')),
+  brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/') |> c(),
   name = 'Espresso Liqueur',
   totalwine = '348072750', usd = 21.99/750*44,
   servingGram = 44, servingTsp = 9, # `servingTsp` my guess

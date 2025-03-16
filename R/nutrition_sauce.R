@@ -60,7 +60,7 @@ Bachans_original <- function() new(
 
 GreyPoupon_Dijon <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], costco = '100381596',
-  brand = c(style_hyperlink(text = 'Grey Poupon\U1f1eb\U1f1f7', url = 'https://greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g')),
+  brand = style_hyperlink(text = 'Grey Poupon\U1f1eb\U1f1f7', url = 'https://greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g') |> c(),
   name = 'Dijon Mustard',
   servingTsp = 1, servingGram = 5, sodium = .12)
 
@@ -130,7 +130,7 @@ ThaiKitchen_redCurry <- function() new(
 
 Squid_fishSauce <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Squid\U1f1f9\U1f1ed', url = 'https://squidbrand.com/en/product-category/export-en/')),
+  brand = style_hyperlink(text = 'Squid\U1f1f9\U1f1ed', url = 'https://squidbrand.com/en/product-category/export-en/') |> c(),
   name = 'Fish\U1f41f Sauce', alias = '\u9c7c\u9732',
   weee = '27743',
   serving_ml = 15, servingGram = 15, #?

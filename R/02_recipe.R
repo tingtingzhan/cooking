@@ -567,9 +567,9 @@ get_flavor_ <- function(x) {
   paste(vapply(xval, FUN = function(i) {
     if (inherits(i, 'nutrition')) {
       i@name
-    } else if (inherits(i, 'recipe')) {
+    } else if (inherits(i, what = 'recipe')) {
       #i@alias_flavor
-      trimws(gsub('Evaporated', replacement = '', i@alias))
+      i@alias |> gsub(pattern = 'Evaporated', replacement = '') |> trimws()
     } else stop('what happens?')
   }, FUN.VALUE = ''), collapse = ' + ')
   #paste(vapply(x, FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
@@ -588,126 +588,120 @@ setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, 
   x@eggYolk <- c(eggYolk = sum(eggYolk()@servingGram * sum(x@eggYolk_pc, x@egg_pc), x@eggYolk))
   x@eggWhite_pc <- x@eggYolk_pc <- x@egg_pc <- numeric()
   
-  x <- combineVol(x, which = 'flour', name1 = 'KingArthur_allPurpose')
-  x <- addNameLen1(x, which = 'pastryFlour', name1 = 'Wegmans_pastry')
-  
-  #x <- addNameLen1(x, which = 'breadFlour', name1 = 'KingArthur_bread')
-  x <- addNameLen1(x, which = 'breadFlour', name1 = 'Wegmans_bread') # 2024-04-02
-  # Wegmans_bread() has *much* higher water absorbency, and much cheaper than KingArthur_bread()
-  
-  x <- addNameLen1(x, which = 'wholeWheatFlour', name1 = 'Wegmans_whiteWheat')
-  x <- addNameLen1(x, which = 'glutenFreeFlour', name1 = 'KingArthur_M4M')
-  x <- addNameLen1(x, which = 'wheatGluten', name1 = 'BobsRedMill_wheatGluten')
-  x <- combineVol(x, which = 'cornmeal', name1 = 'Albertsons_yellowCorn')
-  x <- addNameLen1(x, which = 'coconut') # , name1 = 'WegmansOrganic_coconutFlour' # compare with other brands?
-  x <- addNameLen1(x, which = 'riceFlour', name1 = 'Erawan_riceFlour')
-  x <- addNameLen1(x, which = 'glutinousRiceFlour', name1 = 'Erawan_glutinousRiceFlour')
-  x <- addNameLen1(x, which = 'blackRice', name1 = 'HaiTai_blackRice')
-  x <- addNameLen1(x, which = 'brownRice', name1 = 'Nishiki_brownRice')
-  
-  x <- combineVol(x, which = 'water', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'iceWater', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'carbonatedWater', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'shavedIce', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'ice', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'water40', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'water70', name1 = 'Wegmans_water')
-  x <- combineVol(x, which = 'water80', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'water90', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'water95', name1 = 'Wegmans_water')
-  x <- addNameLen1(x, which = 'boilingWater', name1 = 'Wegmans_water')
-  
-  x <- addNameLen1(x, which = 'applesauce', name1 = 'Motts_applesauce')
-  x <- addNameLen1(x, which = 'banana', name1 = 'banana')
-  x <- addNameLen1(x, which = 'darkCherry', name1 = 'HappyVillage_darkCherry')
-  x <- addNameLen1(x, which = 'durian', name1 = 'LuckyTaro_durian')
-  x <- addNameLen1(x, which = 'mandarine', name1 = 'DelMonte_mandarine')
-  x <- addNameLen1(x, which = 'mango', name1 = 'mango')
-  x <- addNameLen1(x, which = 'pear', name1 = 'DelMonte_pear')
-  x <- addNameLen1(x, which = 'pineapple', name1 = 'Dole_pineapple')
-  x <- combineVol(x, which = 'pumpkin', name1 = 'Libbys_pumpkin')
-  x <- addNameLen1(x, which = 'pumpkinPieMix', name1 = 'Libbys_pumpkinPieMix')
-  x <- addNameLen1(x, which = 'strawberry', name1 = 'Kirkland_strawberry')
-  x <- addNameLen1(x, which = 'tomato', name1 = 'WegmansOrganic_tomato')
-  x <- addNameLen1(x, which = 'yellowCorn', name1 = 'Kirkland_yellowCorn')
-  
-  x <- addNameLen1(x, which = 'blackSesame', name1 = 'Greenmax_blackSesame')
-  
-  x <- combineVol(x, which = 'flavor')
-  x <- combineVol(x, which = 'sesameOil', name1 = 'Kadoya_sesameOil')
-  x <- combineVol(x, which = 'greenPeppercornOil', name1 = 'YouJia_greenPeppercornOil')
-  x <- combineVol(x, which = 'fat')
-  x <- combineVol(x, which = 'lard', name1 = 'Epic_lard')
-  x <- combineVol(x, which = 'tallow', name1 = 'Epic_tallow')
-  
-  # no accurate density info available yet
-  x <- combineVol(x, which = 'ginger', name1 = 'SimplyOrganic_ginger')
-  x <- combineVol(x, which = 'garlic', name1 = 'McCormick_garlic_powder')
-  x <- combineVol(x, which = 'onion', name1 = 'McCormick_onion_powder')
-  x <- combineVol(x, which = 'coriander', name1 = 'SimplyOrganic_coriander')
-  x <- combineVol(x, which = 'cumin', name1 = 'SimplyOrganic_cumin')
-  x <- combineVol(x, which = 'cilantro', name1 = 'McCormick_cilantro')
-  x <- combineVol(x, which = 'spiceItalian', name1 = 'SimplyOrganic_Italian')
-  x <- combineVol(x, which = 'clove', name1 = 'SimplyOrganic_clove')
-  x <- combineVol(x, which = 'cinnamon', name1 = 'SimplyOrganic_cinnamonCeylon')
-  x <- combineVol(x, which = 'whitePepper', name1 = 'McCormick_whitePepper')
-  x <- combineVol(x, which = 'blackPepper', name1 = 'McCormick_blackPepper')
-  x <- combineVol(x, which = 'turmeric', name1 = 'McCormick_turmeric')
-  x <- combineVol(x, which = 'paprika', name1 = 'Chinata_paprika')
-  x <- combineVol(x, which = 'spice5', name1 = 'SimplyOrganic_5spice')
-  x <- combineVol(x, which = 'pumpkinSpice', name1 = 'SimplyOrganic_pumpkinSpice')
-  x <- combineVol(x, which = 'spice')
-  x <- combineVol(x, which = 'chiliMix')
-  x <- combineVol(x, which = 'curry')
-  
-  # with density info
-  x <- combineVol(x, which = 'sugar', name1 = 'US_10x')
-  x <- combineVol(x, which = 'brownSugar', name1 = 'Domino_darkBrown')
-  x <- combineVol(x, which = 'syrup')
-  x <- combineVol(x, which = 'salt', name1 = 'Morton_salt')
-  x <- combineVol(x, which = 'msg', name1 = 'Ajinomoto_msg')
-  x <- combineVol(x, which = 'NaHCO3', name1 = 'ArmHammer_NaHCO3')
-  x <- combineVol(x, which = 'Na2CO3', name1 = 'Na2CO3')
-  x <- combineVol(x, which = 'bakingPowder', name1 = 'TraderJoes_bakingPowder')
-  x <- combineVol(x, which = 'yeast', name1 = 'Fleischmanns_instant')
-  x <- combineVol(x, which = 'matcha', name1 = 'Ippodo_ikuyo')
-  #x <- combineVol(x, which = 'matchaSado', name1 = 'Marukyu_tenju')
-  x <- combineVol(x, which = 'cocoa', name1 = 'KingArthur_Bensdorp')
-  x <- combineVol(x, which = 'coffee', name1 = 'NescafeGold_espresso_blonde')
-  x <- combineVol(x, which = 'beet', name1 = 'Wegmans_beet')
-  x <- combineVol(x, which = 'acai', name1 = 'Wegmans_acai')
-  x <- combineVol(x, which = 'creamTartar', name1 = 'McCormick_creamTartar')
-  x <- combineVol(x, which = 'vanilla', name1 = 'NielsenMassey_Madagascar')
-  
-  x <- combineVol(x, which = 'starch')
-  x <- combineVol(x, which = 'oil')
-  x <- combineVol(x, which = 'sauce')
-  x <- combineVol(x, which = 'liqueur')
-  
-  x <- combineVol(x, which = 'butter', name1 = 'Kerrygold')
-  x <- combineVol(x, which = 'ghee', name1 = 'WegmansOrganic')
-  x <- combineVol(x, which = 'cheese')
-  x <- combineVol(x, which = 'mascarpone', name1 = 'BelGioioso')
-  x <- combineVol(x, which = 'cottageCheese', name1 = 'Daisy')
-  x <- combineVol(x, which = 'yogurtGreek', name1 = 'FageTotal0')
-  x <- combineVol(x, which = 'yogurt', name1 = 'Nancys') # taste best!!
-  x <- combineVol(x, which = 'kefir', name1 = 'GreenValley')
-  x <- combineVol(x, which = 'filmjolk', name1 = 'Siggis')
-  x <- combineVol(x, which = 'condensedMilk', name1 = 'Carnation')
-  x <- combineVol(x, which = 'evaporatedMilk', name1 = 'Carnation')
-  x <- combineVol(x, which = 'creamCheese', name1 = 'Nancys')
-  x <- combineVol(x, which = 'drymilk', name1 = 'Carnation')
-  x <- combineVol(x, which = 'milk', name1 = 'WegmansOrganic_whole_milk')
-  x <- combineVol(x, which = 'buttermilk', name1 = 'OakFarms_buttermilk')
-  x <- combineVol(x, which = 'heavyCream', name1 = 'Wegmans')
-  x <- combineVol(x, which = 'lightCream', name1 = 'Lucerne')
-  x <- combineVol(x, which = 'sourCream', name1 = 'Daisy')
-  
-  x <- meatName(x, animal = 'pork')
-  x <- meatName(x, animal = 'beef')
-  x <- meatName(x, animal = 'lamb')
-  x <- meatName(x, animal = 'chicken')
-  x <- addNameLen1(x, which = 'shrimp', name1 = 'Kirkland_shrimp_31_40')
+  x <- x |> 
+    combineVol(which = 'flour', name1 = 'KingArthur_allPurpose') |>
+    addNameLen1(which = 'pastryFlour', name1 = 'Wegmans_pastry') |>
+    addNameLen1(which = 'breadFlour', name1 = 'Wegmans_bread') |> # 2024-04-02 # Wegmans_bread() has *much* higher water absorbency, and much cheaper than KingArthur_bread()
+    addNameLen1(which = 'wholeWheatFlour', name1 = 'Wegmans_whiteWheat') |>
+    addNameLen1(which = 'glutenFreeFlour', name1 = 'KingArthur_M4M') |>
+    addNameLen1(which = 'wheatGluten', name1 = 'BobsRedMill_wheatGluten') |>
+    combineVol(which = 'cornmeal', name1 = 'Albertsons_yellowCorn') |>
+    addNameLen1(which = 'coconut') |> # , name1 = 'WegmansOrganic_coconutFlour' # compare with other brands?
+    addNameLen1(which = 'riceFlour', name1 = 'Erawan_riceFlour') |>
+    addNameLen1(which = 'glutinousRiceFlour', name1 = 'Erawan_glutinousRiceFlour') |>
+    addNameLen1(which = 'blackRice', name1 = 'HaiTai_blackRice') |>
+    addNameLen1(which = 'brownRice', name1 = 'Nishiki_brownRice') |>
+    combineVol(which = 'water', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'iceWater', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'carbonatedWater', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'shavedIce', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'ice', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'water40', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'water70', name1 = 'Wegmans_water') |>
+    combineVol(which = 'water80', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'water90', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'water95', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'boilingWater', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'applesauce', name1 = 'Motts_applesauce') |>
+    addNameLen1(which = 'banana', name1 = 'banana') |>
+    addNameLen1(which = 'darkCherry', name1 = 'HappyVillage_darkCherry') |>
+    addNameLen1(which = 'durian', name1 = 'LuckyTaro_durian') |>
+    addNameLen1(which = 'mandarine', name1 = 'DelMonte_mandarine') |>
+    addNameLen1(which = 'mango', name1 = 'mango') |>
+    addNameLen1(which = 'pear', name1 = 'DelMonte_pear') |>
+    addNameLen1(which = 'pineapple', name1 = 'Dole_pineapple') |>
+    combineVol(which = 'pumpkin', name1 = 'Libbys_pumpkin') |>
+    addNameLen1(which = 'pumpkinPieMix', name1 = 'Libbys_pumpkinPieMix') |>
+    addNameLen1(which = 'strawberry', name1 = 'Kirkland_strawberry') |>
+    addNameLen1(which = 'tomato', name1 = 'WegmansOrganic_tomato') |>
+    addNameLen1(which = 'yellowCorn', name1 = 'Kirkland_yellowCorn') |>
+    addNameLen1(which = 'blackSesame', name1 = 'Greenmax_blackSesame') |>
+    combineVol(which = 'flavor') |>
+    combineVol(which = 'sesameOil', name1 = 'Kadoya_sesameOil') |>
+    combineVol(which = 'greenPeppercornOil', name1 = 'YouJia_greenPeppercornOil') |>
+    combineVol(which = 'fat') |>
+    combineVol(which = 'lard', name1 = 'Epic_lard') |>
+    combineVol(which = 'tallow', name1 = 'Epic_tallow') |>
+    # no accurate density info available yet
+    combineVol(which = 'ginger', name1 = 'SimplyOrganic_ginger') |>
+    combineVol(which = 'garlic', name1 = 'McCormick_garlic_powder') |>
+    combineVol(which = 'onion', name1 = 'McCormick_onion_powder') |>
+    combineVol(which = 'coriander', name1 = 'SimplyOrganic_coriander') |>
+    combineVol(which = 'cumin', name1 = 'SimplyOrganic_cumin') |>
+    combineVol(which = 'cilantro', name1 = 'McCormick_cilantro') |>
+    combineVol(which = 'spiceItalian', name1 = 'SimplyOrganic_Italian') |>
+    combineVol(which = 'clove', name1 = 'SimplyOrganic_clove') |>
+    combineVol(which = 'cinnamon', name1 = 'SimplyOrganic_cinnamonCeylon') |>
+    combineVol(which = 'whitePepper', name1 = 'McCormick_whitePepper') |>
+    combineVol(which = 'blackPepper', name1 = 'McCormick_blackPepper') |>
+    combineVol(which = 'turmeric', name1 = 'McCormick_turmeric') |>
+    combineVol(which = 'paprika', name1 = 'Chinata_paprika') |>
+    combineVol(which = 'spice5', name1 = 'SimplyOrganic_5spice') |>
+    combineVol(which = 'pumpkinSpice', name1 = 'SimplyOrganic_pumpkinSpice') |>
+    combineVol(which = 'spice') |>
+    combineVol(which = 'chiliMix') |>
+    combineVol(which = 'curry') |>
+    # with density info
+    combineVol(which = 'sugar', name1 = 'US_10x') |>
+    combineVol(which = 'brownSugar', name1 = 'Domino_darkBrown') |>
+    combineVol(which = 'syrup') |>
+    combineVol(which = 'salt', name1 = 'Morton_salt') |>
+    combineVol(which = 'msg', name1 = 'Ajinomoto_msg') |>
+    combineVol(which = 'NaHCO3', name1 = 'ArmHammer_NaHCO3') |>
+    combineVol(which = 'Na2CO3', name1 = 'Na2CO3') |>
+    combineVol(which = 'bakingPowder', name1 = 'TraderJoes_bakingPowder') |>
+    combineVol(which = 'yeast', name1 = 'Fleischmanns_instant') |>
+    combineVol(which = 'matcha', name1 = 'Ippodo_ikuyo') |>
+    combineVol(which = 'cocoa', name1 = 'KingArthur_Bensdorp') |>
+    combineVol(which = 'coffee', name1 = 'NescafeGold_espresso_blonde') |>
+    combineVol(which = 'beet', name1 = 'Wegmans_beet') |>
+    combineVol(which = 'acai', name1 = 'Wegmans_acai') |>
+    combineVol(which = 'creamTartar', name1 = 'McCormick_creamTartar') |>
+    combineVol(which = 'vanilla', name1 = 'NielsenMassey_Madagascar') |>
+    combineVol(which = 'starch') |>
+    combineVol(which = 'oil') |>
+    combineVol(which = 'sauce') |>
+    combineVol(which = 'liqueur') |>
+    combineVol(which = 'butter', name1 = 'Kerrygold') |>
+    combineVol(which = 'ghee', name1 = 'WegmansOrganic') |>
+    combineVol(which = 'cheese') |>
+    combineVol(which = 'mascarpone', name1 = 'BelGioioso') |>
+    combineVol(which = 'cottageCheese', name1 = 'Daisy') |>
+    combineVol(which = 'yogurtGreek', name1 = 'FageTotal0') |>
+    combineVol(which = 'yogurt', name1 = 'Nancys') |> # taste best!!
+    combineVol(which = 'kefir', name1 = 'GreenValley') |>
+    combineVol(which = 'filmjolk', name1 = 'Siggis') |>
+    combineVol(which = 'condensedMilk', name1 = 'Carnation') |>
+    combineVol(which = 'evaporatedMilk', name1 = 'Carnation') |>
+    combineVol(which = 'creamCheese', name1 = 'Nancys') |>
+    combineVol(which = 'drymilk', name1 = 'Carnation') |>
+    combineVol(which = 'milk', name1 = 'WegmansOrganic_whole_milk') |>
+    combineVol(which = 'buttermilk', name1 = 'OakFarms_buttermilk') |>
+    combineVol(which = 'heavyCream', name1 = 'Wegmans') |>
+    combineVol(which = 'lightCream', name1 = 'Lucerne') |>
+    combineVol(which = 'sourCream', name1 = 'Daisy') |>
+    meatName(animal = 'pork') |>
+    meatName(animal = 'beef') |>
+    meatName(animal = 'lamb') |>
+    meatName(animal = 'chicken') |>
+    addNameLen1(which = 'shrimp', name1 = 'Kirkland_shrimp_31_40') |>
+    addNameLen1(which = 'soybean', name1 = 'Laura_soybean') |>
+    addNameLen1(which = 'chickpea', name1 = 'Palouse_chickpea') |>
+    addNameLen1(which = 'adzukibean', name1 = 'HaiTai_adzuki') |>
+    addNameLen1(which = 'mungbean', name1 = 'HaiTai_mung') |>
+    addNameLen1(which = 'redKidneyBean', name1 = 'redKidneyBean') |>
+    addNameLen1(which = 'cashew', name1 = 'Kirkland_cashew_organic') |>
+    addNameLen1(which = 'nut')
   
   x@fruit_pc <- sum_by_name( # is this correct???
     addNameLen1(x, which = 'fruit_pc')@fruit_pc, 
@@ -716,14 +710,6 @@ setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, 
     c(limeJuice = limeJuice()@pieceWeight * x@lime_pc))
   x@avocado_pc <- x@lemon_pc <- x@lime_pc <- numeric()
   
-  x <- addNameLen1(x, which = 'soybean', name1 = 'Laura_soybean')
-  x <- addNameLen1(x, which = 'chickpea', name1 = 'Palouse_chickpea')
-  x <- addNameLen1(x, which = 'adzukibean', name1 = 'HaiTai_adzuki')
-  x <- addNameLen1(x, which = 'mungbean', name1 = 'HaiTai_mung')
-  x <- addNameLen1(x, which = 'redKidneyBean', name1 = 'redKidneyBean')
-  x <- addNameLen1(x, which = 'cashew', name1 = 'Kirkland_cashew_organic')
-  x <- addNameLen1(x, which = 'nut')
-  
   x@tea <- sum_by_name(getTealoose(x@teabag), x@tea)
   x@teabag <- numeric()
   
@@ -731,7 +717,8 @@ setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, 
     extraWater <- function(z) sum(z * vapply(names(z), FUN = function(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
     x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@acai)
   }
-  x <- addNameLen1(x, which = 'water_extra', name1 = 'Wegmans_water')
+  x <- x |> 
+    addNameLen1(which = 'water_extra', name1 = 'Wegmans_water')
   
   for (i in names(getSlots(x = 'recipe0'))) {
     ival <- slot(object = x, name = i)
@@ -777,20 +764,20 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@author)) {
     if (length(x@allrecipes)) {
-      x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author))
+      x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author) |> c()
       x@allrecipes <- character()
     } else if (length(x@youtube)) {
-      x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author))
+      x@author <- style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author) |> c()
       x@youtube <- x@youtube[-1L]
     } else if (length(x@url)) {
-      x@author <- c(style_hyperlink(url = x@url[1L], text = x@author))
+      x@author <- style_hyperlink(url = x@url[1L], text = x@author) |> c()
       x@url <- x@url[-1L]
     }
   } # before `if (!length(x@author))` !!!
   
   if (length(x@acme)) {
     if (length(x@acme) > 1L) stop('only allow len-1 @acme')
-    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons\U1f1fa\U1f1f8'))
+    x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons\U1f1fa\U1f1f8') |> c()
     x@acme <- integer()
   }
   
@@ -798,7 +785,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   for (yt in c('daatgo', 'dad1966', 'guga', 'happytears', 'laofangu', 'pino', 'shangshikitchen', 'xiaogaojie')) {
     if (length(yt. <- slot(x, name = yt))) {
       if (length(yt.) > 1L) stop('only allow len-1 @', yt)
-      x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', yt.), text = switch(
+      x@author <- style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', yt.), text = switch(
         yt, 
         daatgo = '\u8fbe\u54e5\u53a8\u623f',
         dad1966 = '\u8001\u7238\u7684\u98df\u5149',
@@ -807,20 +794,20 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         laofangu = '\u8001\u996d\u9aa8',
         pino = '\u54c1\u8bfa', # http://www.pinochina.com # temporarily down
         shangshikitchen = '\u5c1a\u98df\u53a8\u623f',
-        xiaogaojie = '\u5c0f\u9ad8\u59d0')))
+        xiaogaojie = '\u5c0f\u9ad8\u59d0')) |> c()
       slot(x, name = yt) <- character()
     }
   }
   
   if (length(x@ippodotea)) {
     if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
-    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+    x@author <- style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> c()
     x@ippodotea <- character()
   }
   
   if (length(x@ippodoteajpn)) {
     if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
-    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5'))
+    x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> c()
     x@ippodoteajpn <- character()
   }
   
@@ -828,8 +815,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@author)) stop('@author will be overwritten by @joshuaweissman')
     if (length(x@joshuaweissman) > 1L) stop('only allow len-1 @joshuaweissman')
     x@author <- paste(
-      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua')),
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman'))
+      style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua') |> c(),
+      style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman') |> c()
     )
     x@joshuaweissman <- character()
   } 
@@ -838,15 +825,15 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@author)) stop('@author will be overwritten by @julieseatsandtreats')
     if (length(x@julieseatsandtreats) > 1L) stop('only allow len-1 @julieseatsandtreats')
     x@author <- paste(
-      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@julieseatsandtreats)), text = 'Julie\'s')),
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.julieseatsandtreats.com/%s', x@julieseatsandtreats), text = 'Eats & Treats'))
+      style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@julieseatsandtreats)), text = 'Julie\'s') |> c(),
+      style_hyperlink(url = sprintf(fmt = 'https://www.julieseatsandtreats.com/%s', x@julieseatsandtreats), text = 'Eats & Treats') |> c()
     )
     x@julieseatsandtreats <- character()
   } 
   
   if (length(x@juniorscheesecakecookbook)) {
     if (length(x@juniorscheesecakecookbook) > 1L) stop('only allow len-1 @juniorscheesecakecookbook')
-    x@author <- c(style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x@juniorscheesecakecookbook)))
+    x@author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x@juniorscheesecakecookbook)) |> c()
     x@juniorscheesecakecookbook <- integer()
   }
   
@@ -881,7 +868,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (length(x@nytimes)) {
     if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
-    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking'))
+    x@author <- style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking') |> c()
     x@nytimes <- character()
   }
   
@@ -889,25 +876,25 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
     if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
     x@author <- paste(
-      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy')),
-      c(style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen'))
+      style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy') |> c(),
+      style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen') |> c()
     )
     x@preppykitchen <- character()
   } 
   
   if (length(x@quakeroats)) {
     if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')
-    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8'))
+    x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8') |> c()
     x@quakeroats <- character()
   }
   
   if (length(x@wegmans)) {
     if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
-    x@author <- c(style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans\U1f1fa\U1f1f8'))
+    x@author <- style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans\U1f1fa\U1f1f8') |> c()
     x@wegmans <- character()
   }
   
-  author <- if (length(x@author)) c(col_green(x@author)) # else NULL
+  author <- if (length(x@author)) x@author |> col_green() |> c() # else NULL
   
   x@alias_class <- if (!length(x@alias_class)) {
     if (length(author)) author else character()
@@ -1022,14 +1009,14 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
   
   if (!length(x@alias)) {
     x@alias <- if (length(x@alias_class) & length(x@alias_flavor)) {
-      trimws(paste(x@alias_flavor, x@alias_class))
+      paste(x@alias_flavor, x@alias_class) |> trimws()
     } else if (length(x@alias_class) & !length(x@alias_flavor)) {
       x@alias_class
     } else x@alias 
   } # else do nothing
   
   #if (length(x@key)) {
-  #  x@alias <- paste0(x@alias, bg_br_magenta(col_br_white(x@key)))
+  #  x@alias <- paste0(x@alias, x@key |> col_br_white() |> bg_br_magenta())
   #  x@key <- character()
   #}
   
@@ -1053,7 +1040,7 @@ print.recipe0 <- function(x, ...) {
   y <- nutrition(x = x) # dispatch to [nutrition.recipe0] or [nutrition.recipe]
   
   if (length(y@name)) {
-    cli_text(style_bold(col_grey(y@name)))
+    y@name |> col_grey() |> style_bold() |> cli_text()
     # cli_text(NULL) # prints a line break
     # cli_text(character()) # also prints a line break
   }
@@ -1069,7 +1056,7 @@ print.recipe0 <- function(x, ...) {
     x@seafood,
     x@pork, x@beef, x@lamb, x@chicken, # meat
     NULL)
-  lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood), FUN = cli_text)
+  sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood) |> lapply(FUN = cli_text)
   
   flour <- c(x@flour, x@pastryFlour, x@breadFlour, x@wholeWheatFlour,
              x@glutenFreeFlour, 
@@ -1077,37 +1064,35 @@ print.recipe0 <- function(x, ...) {
              x@riceFlour, x@glutinousRiceFlour,
              x@cornmeal,
              x@coconut)
-  if (length(flour)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)), FUN = cli_text) # one or more flour
+  if (length(flour)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)) |> lapply(FUN = cli_text) # one or more flour
   
-  if (length(x@starch)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, format_vol(x@starch)), FUN = cli_text) 
+  if (length(x@starch)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, format_vol(x@starch)) |> lapply(FUN = cli_text) 
   
   # commercial puree with volume info
   puree_vol <- c(x@pumpkin, x@pumpkinPieMix, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@yellowCorn, x@applesauce)
-  if (length(puree_vol)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)), FUN = cli_text)
+  if (length(puree_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)) |> lapply(FUN = cli_text)
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
   puree_no_vol <- c(x@puree, x@darkCherry, x@strawberry, x@banana)
-  if (length(puree_no_vol)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol), FUN = cli_text)
+  if (length(puree_no_vol)) sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol) |> lapply(FUN = cli_text)
   
   fruit <- c(x@fruit, x@durian)
-  if (length(fruit)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit), FUN = cli_text) # one or more fruit_pc
-  if (length(x@fruit_pc)) lapply(sprintf(
+  if (length(fruit)) sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit) |> lapply(FUN = cli_text) # one or more fruit_pc
+  if (length(x@fruit_pc)) sprintf(
     fmt = '%s %.0f grams %s\n', 
     nm_[names(x@fruit_pc)], 
     x@fruit_pc,
-    style_bold(col_br_magenta(sprintf(
-      fmt = '%.1fpcs', 
-      x@fruit_pc / vapply(names(x@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_))
-    ))
+    (x@fruit_pc / vapply(names(x@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)) |>
+      sprintf(fmt = '%.1fpcs') |> col_br_magenta() |> style_bold()
     #format_pc(x, name = 'fruit') # dont know how to use this yet
-  ), FUN = cli_text) # one or more fruit_pc
+  ) |> lapply(FUN = cli_text) # one or more fruit_pc
   
-  #lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, format_vol(x@flavor)), FUN = cli_text) # one or more flavor
-  if (length(x@flavor)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor), FUN = cli_text) # one or more flavor
+  # sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, format_vol(x@flavor)) |> lapply(FUN = cli_text) # one or more flavor
+  if (length(x@flavor)) sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor) |> lapply(FUN = cli_text) # one or more flavor
   # my `@flavor` slot is very complicated
   
   mapply(FUN = function(glue, gram) {
-    cli_text(sprintf(fmt = '%s %.0f grams', glue, gram)) # no returned value
+    sprintf(fmt = '%s %.0f grams', glue, gram) |> cli_text() # no returned value
   }, glue = nm_[names(x@homemade)], gram = x@homemade)
   # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
   
@@ -1119,59 +1104,59 @@ print.recipe0 <- function(x, ...) {
   grain_bean_nut_vol_ <- c(
     x@soybean
   )
-  if (length(grain_bean_nut)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut), FUN = cli_text) # one or more grain
-  if (length(grain_bean_nut_vol_)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)), FUN = cli_text) # one or more grain
+  if (length(grain_bean_nut)) sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut) |> lapply(FUN = cli_text) # one or more grain
+  if (length(grain_bean_nut_vol_)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)) |> lapply(FUN = cli_text) # one or more grain
   
   fat_vol <- c(
     x@fat,
     x@lard, x@tallow
   )
-  if (length(fat_vol)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, format_vol(fat_vol)), FUN = cli_text)
+  if (length(fat_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, format_vol(fat_vol)) |> lapply(FUN = cli_text)
   
   halfpound_brick <- c(
     x@creamCheese
   )
-  if (length(halfpound_brick)) lapply(sprintf(
+  if (length(halfpound_brick)) sprintf(
     fmt = '%s %.0f grams %s\n', 
     nm_[names(halfpound_brick)], 
     halfpound_brick, 
     (halfpound_brick/226.796) |> sprintf(fmt = '%.2gbrick') |> col_br_magenta() |> style_bold()
-  ), FUN = cli_text)
+  ) |> lapply(FUN = cli_text)
   
   other <- c(
     x@vegetable,
     #x@cheese, 
     x@condensedMilk # dairy without volume info
   )
-  if (length(other)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other), FUN = cli_text)
+  if (length(other)) sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other) |> lapply(FUN = cli_text)
   
   dairy_vol <- c(# dairy with volume info
     x@cheese, 
     x@mascarpone, x@cottageCheese, x@yogurt, x@yogurtGreek, x@kefir, x@filmjolk,
     x@butter, x@ghee, x@evaporatedMilk, x@drymilk, x@milk, x@buttermilk, x@heavyCream, x@lightCream, x@sourCream
   )
-  if (length(dairy_vol)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol)], dairy_vol, format_vol(dairy_vol)), FUN = cli_text)
+  if (length(dairy_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol)], dairy_vol, format_vol(dairy_vol)) |> lapply(FUN = cli_text)
   
-  if (length(x@eggYolk)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, format_pc(x, 'eggYolk')), FUN = cli_text)
-  if (length(x@eggWhite)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, format_pc(x, 'eggWhite')), FUN = cli_text)
+  if (length(x@eggYolk)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, format_pc(x, 'eggYolk')) |> lapply(FUN = cli_text)
+  if (length(x@eggWhite)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, format_pc(x, 'eggWhite')) |> lapply(FUN = cli_text)
   
-  if (length(x@tea)) lapply(sprintf(
+  if (length(x@tea)) sprintf(
     fmt = '%s %.1f grams %s\n', 
     nm_[names(x@tea)], 
     x@tea,
     x@tea |> getTeabag() |> sprintf(fmt = '%.2gbag') |> col_br_magenta() |> style_bold()
-  ), FUN = cli_text)
+  ) |> lapply(FUN = cli_text)
   
   allSugar <- c(
     x@sugar, x@brownSugar
   )
-  if (length(allSugar)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)), FUN = cli_text)
+  if (length(allSugar)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)) |> lapply(FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
     x@blackSesame
   )
-  if (length(no_vol_)) lapply(sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_), FUN = cli_text)
+  if (length(no_vol_)) sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_) |> lapply(FUN = cli_text)
   
   # ingredients with volumn info
   has_vol_small <- c(
@@ -1190,28 +1175,28 @@ print.recipe0 <- function(x, ...) {
     x@blackRice, x@brownRice,
     x@syrup
   )
-  if (length(has_vol_small)) lapply(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)), FUN = cli_text)
-  if (length(has_vol_large)) lapply(sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)), FUN = cli_text)
+  if (length(has_vol_small)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)) |> lapply(FUN = cli_text)
+  if (length(has_vol_large)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)) |> lapply(FUN = cli_text)
   
-  if (length(x@gelatin)) cat(sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)))
+  if (length(x@gelatin)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> cat()
   
   if (!length(x@water_extra)) {
-    cat(sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)))
+    sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)) |> cat()
   } else {
     water <- sum_by_name(x@water, x@water_extra)
-    cat(sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, col_br_red(sprintf('+%.0f', x@water_extra)), format_vol(water)))
+    sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_extra) |> col_br_red(), format_vol(water)) |> cat()
   }
   
-  if (length(x@water40)) cat(sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)))
-  if (length(x@water70)) cat(sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)))
-  if (length(x@water80)) cat(sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)))
-  if (length(x@water90)) cat(sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)))
-  if (length(x@water95)) cat(sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)))
-  if (length(x@boilingWater)) cat(sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)))
-  if (length(x@iceWater)) cat(sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)))
-  if (length(x@carbonatedWater)) cat(sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)))
-  if (length(x@shavedIce)) cat(sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)))
-  if (length(x@ice)) cat(sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice))
+  if (length(x@water40)) sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)) |> cat()
+  if (length(x@water70)) sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)) |> cat()
+  if (length(x@water80)) sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)) |> cat()
+  if (length(x@water90)) sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)) |> cat()
+  if (length(x@water95)) sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)) |> cat()
+  if (length(x@boilingWater)) sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)) |> cat()
+  if (length(x@iceWater)) sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)) |> cat()
+  if (length(x@carbonatedWater)) sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)) |> cat()
+  if (length(x@shavedIce)) sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)) |> cat()
+  if (length(x@ice)) sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice) |> cat()
   
   cat('\n')
   
@@ -1228,7 +1213,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat('\n')
   
   if (length(object@date)) {
-    cat(col_green(format.Date(object@date, format = '%A, %B %e, %Y')), '\n\n')
+    cat(object@date |> format.Date(format = '%A, %B %e, %Y') |> col_green(), '\n\n')
   }
   
   print.recipe0(object)
@@ -1236,22 +1221,22 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   y <- nutrition.recipe(x = object) # still need
   
   tool_slot <- names(which(getSlots('recipe') == 'tool'))
-  waterLost <- sum(object@waterLost, unlist(lapply(tool_slot, FUN = function(i) slot(object, name = i)@waterLost), use.names = FALSE))
+  waterLost <- sum(object@waterLost, lapply(tool_slot, FUN = function(i) slot(object, name = i)@waterLost) |> unlist(use.names = FALSE))
   if (waterLost == 0) waterLost <- numeric()
 
   if (length(waterLost) || length(object@fatLost) || length(object@sugarLost)) {
-    cat(sprintf(fmt = 'Water evaporated in cooking: %.0f grams\n', waterLost))
-    cat(sprintf(fmt = 'Fat drained in cooking: %.0f grams\n', object@fatLost))
-    cat(sprintf(fmt = 'Sugar consumed in fermentation: %.1f grams\n', object@sugarLost))
+    waterLost |> sprintf(fmt = 'Water evaporated in cooking: %.0f grams\n') |> cat()
+    object@fatLost |> sprintf(fmt = 'Fat drained in cooking: %.0f grams\n') |> cat()
+    object@sugarLost |> sprintf(fmt = 'Sugar consumed in fermentation: %.1f grams\n') |> cat()
     cat('\n')
   }
   
   cat('Total', 
-      style_bold(make_ansi_style('purple')(sprintf(fmt = '%.4g grams', y@servingGram))),
-      style_bold(make_ansi_style('seagreen')(sprintf(fmt = '%.1f oz\n\n', y@servingGram/28.3495))))
+      y@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(),
+      (y@servingGram/28.3495) |> sprintf(fmt = '%.1f oz\n\n') |> make_ansi_style('seagreen')() |> style_bold())
   
-  cat('US', style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', y@usd))), '\n')
-  if (length(y@calorie)) cat('Calories', style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie))), '\n')
+  cat('US', y@usd |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), '\n')
+  if (length(y@calorie)) cat('Calories', y@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   cat('\n')
   
   # need to write a [show] method for \linkS4class{mixWheatFlour}
@@ -1265,22 +1250,24 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   show(attr(y, which = 'cookedFlavor', exact = TRUE))
   
   if (length(object@portion)) {
-    cat(sprintf(
+    sprintf(
       fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
       y@servingGram/object@portion, 
       object@portion, 
-      style_bold(col_green(sprintf(fmt = '\U1f4b5%.2f', y@usd / y@servingGram * object@portion))),
-      if (length(y@calorie)) style_bold(col_br_red(sprintf(fmt = '\U1f525%.0f', y@calorie / y@servingGram * object@portion))) else '',
-      style_bold(col_magenta(names(object@portion)))
-    ), sep = '\n')
+      (y@usd / y@servingGram * object@portion) |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(),
+      if (length(y@calorie)) (y@calorie / y@servingGram * object@portion) |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold() else '',
+      object@portion |> names() |> col_magenta() |> style_bold()
+    ) |> cat(sep = '\n')
     cat('\n')
   } # else NULL
   
   if (length(object@instruction)) {
-    instr1 <- gsub(pattern = '\n', replacement = ' ', object@instruction)
-    instr2 <- gsub(pattern = '^ *|(?<= ) | *$', replacement = '', x = instr1, perl = TRUE)
     cat('Instructions:\n')
-    cat(sprintf(fmt = '\u21ac %s\n', instr2), sep = '')
+    object@instruction |> 
+      gsub(pattern = '\n', replacement = ' ', ) |>
+      gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |> 
+      sprintf(fmt = '\u21ac %s\n') |> 
+      cat(sep = '')
     cat('\n')
   }
   
@@ -1300,44 +1287,44 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   
   if (length(object@machine)) {
     cat('Machine:\n')
-    cat(sprintf(
+    sprintf(
       fmt = '\n\u2726%s\u2726%s\n', 
       names(object@machine), 
       vapply(object@machine, FUN = function(i) paste0('\n   ', paste(i, collapse = '\n   ')), FUN.VALUE = '')
-    ), sep = '')
+    ) |> cat(sep = '')
     cat('\n')
   }
   
   if (length(object@note)) {
     #cat('Note:\n')
-    cat(sprintf(fmt = '\u2756 %s', object@note), sep = '\n')
+    object@note |> sprintf(fmt = '\u2756 %s') |> cat(sep = '\n')
     cat('\n')
   }
   
   #if (length(review <- attr(y, which = 'review', exact = TRUE))) {
   #  cat('Reviews on Ingredients:\n')
-  #  cat(sprintf(fmt = '\u26a0 %s', review), sep = '\n')
+  #  review |> sprintf(fmt = '\u26a0 %s') |> cat(sep = '\n')
   #  cat('\n')
   #}
   
   #if (length(machine <- attr(y, which = 'machine', exact = TRUE))) {
   #  cat('Machine on Ingredients:\n')
-  #  cat(sprintf(fmt = '\u2726 %s', machine), sep = '\n')
+  #  machine |> sprintf(fmt = '\u2726 %s') |> cat(sep = '\n')
   #  cat('\n')
   #}
   
   if (length(object@review)) {
-    lapply(sprintf(fmt = '\U1f4dd %s', object@review), FUN = cli_text)
+    object@review |> sprintf(fmt = '\U1f4dd %s') |> lapply(FUN = cli_text)
     cat('\n')
   }
   
   if (length(object@pros)) {
-    cat(sprintf(fmt = '\U1f389 %s', object@pros), sep = '\n')
+    object@pros |> sprintf(fmt = '\U1f389 %s') |> cat(sep = '\n')
     cat('\n')
   }
   
   if (length(object@cons)) {
-    cat(sprintf(fmt = '\U1f940 %s', object@cons), sep = '\n')
+    object@cons |> sprintf(fmt = '\U1f940 %s') |> cat(sep = '\n')
     cat('\n')
   }
   

@@ -53,8 +53,8 @@ Wegmans_olive_oil <- function() new(
 Kadoya_sesameOil <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = paste0(
-    c(style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html')),
-    c(style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html'))
+    style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html') |> c(),
+    style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html') |> c()
   ),
   name = '\u829d\u9ebb\u6cb9 Sesame Oil',
   wegmans = 27984L, usd = .82/2, # 1fl oz = 2tbsp
