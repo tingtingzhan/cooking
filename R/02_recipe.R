@@ -910,7 +910,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
         if (x@cocoa / x@coffee < 1) 'Caff\u00e8' else 'Caff\u00e8 Mocha'
       } else if (length(x@syrup)) {
-        if (any(grepl('ryeWhisky', x = names(x@syrup)))){
+        if (names(x@syrup) |> grepl(pattern = 'ryeWhisky') |> any()) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
       } else 'Caff\u00e8'
@@ -974,19 +974,19 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
     } else if (length(x@liqueur)) {
       get_flavor_(names(x@liqueur))
     } else if (length(x@sauce)) {
-      if (any(grepl('tomyum', x = names(x@sauce)))) {
+      if (grepl(pattern = 'tomyum', x = names(x@sauce)) |> any()) {
         '\u51ac\u9634'
       } else character()
     } else if (length(x@syrup)) {
-      get_flavor_(names(x@syrup))
+      x@syrup |> names() |> get_flavor_()
     } else if (length(x@curry)) {
       get_flavor_(names(x@curry))
     } else if (length(x@chiliMix)) {
       get_flavor_(names(x@chiliMix))
     } else if (length(x@tea)) {
-      get_flavor_(names(x@tea))
+      x@tea |> names() |> get_flavor_()
     } else if (length(x@spice)) {
-      get_flavor_(setdiff(names(x@spice), 'Kirkland_noSaltSeasoning'))
+      x@spice |> names() |> setdiff(y = 'Kirkland_noSaltSeasoning') |> get_flavor_()
     } else if (length(x@grain)) {
       get_flavor_(names(x@grain))
     } else if (length(x@homemade)) {
@@ -1120,7 +1120,7 @@ print.recipe0 <- function(x, ...) {
     fmt = '%s %.0f grams %s\n', 
     nm_[names(halfpound_brick)], 
     halfpound_brick, 
-    (halfpound_brick/226.796) |> sprintf(fmt = '%.2gbrick') |> col_br_magenta() |> style_bold()
+    (halfpound_brick/226.796) |> sprintf(fmt = '%.2gbrick') |> col_br_blue() |> style_bold()
   ) |> lapply(FUN = cli_text)
   
   other <- c(
@@ -1231,9 +1231,12 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     cat('\n')
   }
   
-  cat('Total', 
-      y@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(),
-      (y@servingGram/28.3495) |> sprintf(fmt = '%.1f oz\n\n') |> make_ansi_style('seagreen')() |> style_bold())
+  cat(
+    'Total', 
+    y@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(),
+    # (y@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(), # cannot calculate volumn based on density of water hahaha
+    '\n\n'
+  )
   
   cat('US', y@usd |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), '\n')
   if (length(y@calorie)) cat('Calories', y@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')

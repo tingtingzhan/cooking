@@ -1,6 +1,6 @@
 
 
-# Must use Dutch-processed cocoa powder'
+# Must use Dutch-processed cocoa powder
 # https://www.seriouseats.com/difference-dutch-process-natural-cocoa-powder-substitute
 # Since Dutch process cocoa isn't acidic, it doesn't react with alkaline leaveners like baking soda to produce carbon dioxide. That's why recipes that use Dutch process cocoa are usually leavened by baking powder, which has a neutral pH.
 
@@ -50,13 +50,13 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' @param ... ..
 #' 
 #' @details
-#' Function [hotdrink] adds hot water (70-80C) to \linkS4class{drinkmix},
+#' Function [hotdrink()] adds hot water (70-80C) to \linkS4class{drinkmix},
 #' fitting in 20oz mug.
 #' 
 #' 
 #' @returns
-#' Function [hotdrink] returns a \linkS4class{drink} object, 
-#' except for that function [hotdrink.nutrition] returns a \linkS4class{nutrition} object.
+#' Function [hotdrink()] returns a \linkS4class{drink} object, 
+#' except for that function [hotdrink.nutrition()] returns a \linkS4class{nutrition} object.
 #' 
 #' @export
 hotdrink <- function(x, ...) UseMethod(generic = 'hotdrink') 

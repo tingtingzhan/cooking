@@ -399,7 +399,7 @@ WegmansOrganic_tomato <- function() new(
 #' @export
 Motts_applesauce <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce')),
+  brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
   wegmans = 2450L, usd = 3.99/1300*123,

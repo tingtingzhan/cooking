@@ -1,7 +1,7 @@
 
 Galil_roastedChestnut <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Galil', url = 'https://shopgalil.com/products/galil-organic-roasted-chestnuts-shelled-3-5oz-pack-of-24')),
+  brand = style_hyperlink(text = 'Galil', url = 'https://shopgalil.com/products/galil-organic-roasted-chestnuts-shelled-3-5oz-pack-of-24') |> c(),
   name = 'Roasted Chestnut', 
   usd = 2.99/100*50,
   servingGram = 50, 
@@ -21,7 +21,7 @@ SavannaOrchards_cashewAlmondPecanPistachio <- function() new(
 
 Greenmax_blackSesame <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', url = 'https://www.greenmax.com.tw/product_view.php?id=62772')),
+  brand = style_hyperlink(text = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', url = 'https://www.greenmax.com.tw/product_view.php?id=62772') |> c(),
   name = '\u9ed1\u829d\u9ebb\u7c89 Black Sesame Powder',
   usd = 5.99/400*40,
   servingGram = 40, 

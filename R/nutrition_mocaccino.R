@@ -45,7 +45,7 @@
 #' @export
 WilliamsSonoma_mocha <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/')),
+  brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/') |> c(),
   name = 'Mocha Hot Chocolate',
   servingGram = 41, servingTbsp = 5, 
   usd = 24.95/340*41,
@@ -89,7 +89,7 @@ Starbucks_mochaFrappuccino_bottle <- function() new(
 #' @export
 Maxwell_mochaSuisse <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432')),
+  brand = style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432') |> c(),
   name = 'Suisse Mocha',
   target = 'A-12959531', usd = 3.59/117*11,
   servingGram = 11, servingTbsp = 2, 

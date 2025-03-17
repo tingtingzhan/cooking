@@ -492,7 +492,7 @@
   addedWater2breadflour <- function(x) switch(
     class(x), 
     wrapperlinda = .57,
-    noodlelinda = if (any(grepl('^KingArthur_', names(x@breadFlour)))) .45 else .6,
+    noodlelinda = if (grepl(pattern = '^KingArthur_', names(x@breadFlour)) |> any()) .45 else .6,
     bread = .63,
     NA_real_)
   
@@ -684,7 +684,7 @@
   gelatin2water <- function(x) switch(
     class(x), 
     #riceMousse = {
-    #if (any(grepl('coconutmilk', names(obj@flavor)))) .01 else .02
+    #if (grepl('coconutmilk', names(obj@flavor)) |> any()) .01 else .02
     #},
     mousse = .036,
     NA_real_)
