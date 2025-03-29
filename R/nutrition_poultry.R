@@ -15,8 +15,10 @@ chicken_breast <- function() new(# skinless, boneless
 
 duck_whole <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = 'Duck\U1f986, whole',
+  name = 'Duck\U1f986, whole', 
+  brand = style_hyperlink(text = 'Maple Leaf Farms\U1f1fa\U1f1f8', url = 'https://shopmapleleaffarms.com/collections/duck-catalog') |> c(),
   serving_lb = 3.5,
+  weee = '104919',
   Staub_vertRoaster = Staub_vertRoaster(
     fahrenheit = 350,
     minute = c('whole duck\U1f986, 3-3.5lb' = 90)

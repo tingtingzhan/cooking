@@ -39,6 +39,12 @@ if (FALSE) {
 }
 
 if (FALSE) {
+  
+  # read carefully!!!
+  # https://cli.r-lib.org/reference/links.html
+  # \CRANpkg{cli} https://cran.r-project.org/src/contrib/Archive/cli/
+  # is very actively updated!!!
+  
   #?cli::cli_text # does not have a returned value
   cli::cli_text('Tingting\'s {.run [soymilk](cooking::soymilk())}')
   

@@ -110,7 +110,7 @@ if (FALSE) {
     Class = 'recipe',
     alias = 'Duck Paste',
     msg = 6*50,
-    sugar = 500+2*50,
+    sugar = c(Domino_granulated = 500+2*50),
     garlic = c(garlic = 2.5*500),
     sauce = c(
       LeeKumKee_ChuHou = 4*500,
@@ -127,7 +127,7 @@ if (FALSE) {
   duckSalt <- function() new(
     Class = 'recipe',
     alias = 'Duck Salt',
-    sugar = 10*500,
+    sugar = c(Domino_granulated = 10*500),
     salt = 5*500,
     msg = 1*500,
     greenPeppercornOil = 3*50, # cannot find szechuan peppercorn powder

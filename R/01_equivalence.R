@@ -349,7 +349,7 @@ format.recipeDx <- function(x, ...) {
   ret0 <- fmt_equiv[id]
   names(ret0) <- show_endpoint(slt[id])
   
-  relat <- vapply(equiv_slot[id], FUN = function(i) {
+  relat <- vapply(equiv_slot[id], FUN = \(i) {
     if (!length(i@ideal) || is.na(i@ideal)) return(NA_integer_)
     .bincode(i@actual/i@ideal, breaks = c(0, 1/i@margin, i@margin, Inf))
   }, FUN.VALUE = NA_integer_)
@@ -357,7 +357,7 @@ format.recipeDx <- function(x, ...) {
   if (all(is.na(relat))) {
     ret <- lapply(ret0, FUN = `[`, 1L) 
   } else {
-    ret <- .mapply(dots = list(ret0, relat), MoreArgs = NULL, FUN = function(x, rel) {
+    ret <- .mapply(dots = list(ret0, relat), MoreArgs = NULL, FUN = \(x, rel) {
       # i = 3L; x = ret0[[i]]; rel = relat[[i]]
       x[1L] <- switch(as.character(rel), '1' = { # actual < ideal
         (x[1L]) |> col_br_blue() |> style_bold()

@@ -14,7 +14,7 @@
 diagnose <- function(...) { # , dots = list(...)
   
   # dots <- lapply(dots, FUN = nutrition) # mess up with call later
-  dots <- lapply(as.list(match.call())[-1L], FUN = function(x) {
+  dots <- lapply(as.list(match.call())[-1L], FUN = \(x) {
     # (x = as.list(match.call())[-1L][[1L]])
     return(eval(call(name = 'nutrition', x)))
     do.call(what = 'nutrition', args = list(x)) # seems equivalent
@@ -48,10 +48,10 @@ diagnose_ <- function(dots, which) {
   atr <- atr[lengths(atr) > 0L]
   if (!length(atr)) return(invisible())
   
-  y0 <- lapply(atr, FUN = function(a) {
+  y0 <- lapply(atr, FUN = \(a) {
     snm <- names(which(getSlots(class(a)) == 'equiv'))
     names(snm) <- snm
-    lapply(snm, FUN = function(j) {
+    lapply(snm, FUN = \(j) {
       j_actual <- slot(a, name = j)@actual
       if (length(j_actual) && (j_actual > 0)) unname(j_actual) else NA_real_
     }) |> unlist(use.names = TRUE)
@@ -64,7 +64,7 @@ diagnose_ <- function(dots, which) {
   if (!length(y3)) return(invisible())
   colnames(y3) <- show_endpoint(colnames(y3))
   
-  y <- do.call(cbind, args = lapply(seq_len(dim(y3)[2L]), FUN = function(i) {
+  y <- do.call(cbind, args = lapply(seq_len(dim(y3)[2L]), FUN = \(i) {
     sprintf_bincode(median.default(y3[,i], na.rm = TRUE))(y3[,i])
   }))
   dimnames(y) <- dimnames(y3)

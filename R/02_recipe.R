@@ -563,8 +563,8 @@ meatName <- function(x, animal = stop('')) {
 
 
 get_flavor_ <- function(x) {
-  xval <- lapply(x, FUN = function(i) eval(call(i)))
-  paste(vapply(xval, FUN = function(i) {
+  xval <- lapply(x, FUN = \(i) eval(call(i)))
+  paste(vapply(xval, FUN = \(i) {
     if (inherits(i, 'nutrition')) {
       i@name
     } else if (inherits(i, what = 'recipe')) {
@@ -572,7 +572,7 @@ get_flavor_ <- function(x) {
       i@alias |> gsub(pattern = 'Evaporated', replacement = '') |> trimws()
     } else stop('what happens?')
   }, FUN.VALUE = ''), collapse = ' + ')
-  #paste(vapply(x, FUN = function(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
+  #paste(vapply(x, FUN = \(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
 }
 
 
@@ -714,7 +714,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, 
   x@teabag <- numeric()
   
   if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {
-    extraWater <- function(z) sum(z * vapply(names(z), FUN = function(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
+    extraWater <- function(z) sum(z * vapply(names(z), FUN = \(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
     x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@acai)
   }
   x <- x |> 
@@ -1082,7 +1082,7 @@ print.recipe0 <- function(x, ...) {
     fmt = '%s %.0f grams %s\n', 
     nm_[names(x@fruit_pc)], 
     x@fruit_pc,
-    (x@fruit_pc / vapply(names(x@fruit_pc), FUN = function(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)) |>
+    (x@fruit_pc / vapply(names(x@fruit_pc), FUN = \(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)) |>
       sprintf(fmt = '%.1fpcs') |> col_br_magenta() |> style_bold()
     #format_pc(x, name = 'fruit') # dont know how to use this yet
   ) |> lapply(FUN = cli_text) # one or more fruit_pc
@@ -1091,7 +1091,7 @@ print.recipe0 <- function(x, ...) {
   if (length(x@flavor)) sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor) |> lapply(FUN = cli_text) # one or more flavor
   # my `@flavor` slot is very complicated
   
-  mapply(FUN = function(glue, gram) {
+  mapply(FUN = \(glue, gram) {
     sprintf(fmt = '%s %.0f grams', glue, gram) |> cli_text() # no returned value
   }, glue = nm_[names(x@homemade)], gram = x@homemade)
   # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
@@ -1221,7 +1221,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   y <- nutrition.recipe(x = object) # still need
   
   tool_slot <- names(which(getSlots('recipe') == 'tool'))
-  waterLost <- sum(object@waterLost, lapply(tool_slot, FUN = function(i) slot(object, name = i)@waterLost) |> unlist(use.names = FALSE))
+  waterLost <- sum(object@waterLost, lapply(tool_slot, FUN = \(i) slot(object, name = i)@waterLost) |> unlist(use.names = FALSE))
   if (waterLost == 0) waterLost <- numeric()
 
   if (length(waterLost) || length(object@fatLost) || length(object@sugarLost)) {
@@ -1293,7 +1293,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     sprintf(
       fmt = '\n\u2726%s\u2726%s\n', 
       names(object@machine), 
-      vapply(object@machine, FUN = function(i) paste0('\n   ', paste(i, collapse = '\n   ')), FUN.VALUE = '')
+      vapply(object@machine, FUN = \(i) paste0('\n   ', paste(i, collapse = '\n   ')), FUN.VALUE = '')
     ) |> cat(sep = '')
     cat('\n')
   }

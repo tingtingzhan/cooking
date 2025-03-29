@@ -132,7 +132,7 @@ print_ANSI_matrix <- function(x) {
     paste0(rnm_ANSI, ws_justify(rnm))
   } # else NULL
   
-  x_prt <- lapply(seq_len(d[2L]), FUN = function(i) {
+  x_prt <- lapply(seq_len(d[2L]), FUN = \(i) {
     paste0(ws_justify(x1[,i]), x1_ANSI[,i])
   })
   

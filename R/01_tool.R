@@ -148,7 +148,7 @@ format_minute <- function(x) {
   x_day <- x %% (60*24)
   hour <- x_day %/% 60
   min_ <- x %% 60
-  unlist(.mapply(FUN = function(...) {
+  unlist(.mapply(FUN = \(...) {
     z0 <- c(...)
     z <- z0[!is.na(z0)]
     if (!length(z)) return('')

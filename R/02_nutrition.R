@@ -710,13 +710,13 @@ gram_per_tsp <- function(x) {
   x1 <- if (is.character(x)) {
     if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
     names(x) <- x
-    lapply(x, FUN = function(i) nutrition(eval(call(i))))
+    lapply(x, FUN = \(i) nutrition(eval(call(i))))
   } else x
   
   if (!is.recursive(x1) || !all(vapply(x1, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) 
     stop('input cannot be converted to `nutrition`')
   
-  vapply(x1, FUN = function(i) {
+  vapply(x1, FUN = \(i) {
     if (!length(i@servingTsp)) return(NA_real_) #stop(ix@name, ' does not have volume info')
     i@servingGram / i@servingTsp
   }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
@@ -734,8 +734,8 @@ format_pc <- function(object, name) {
 getTealoose <- function(x) {
   # `x` is recipe@teabag, number of tea bags
   if (!length(x)) return(numeric())
-  info_ <- lapply(names(x), FUN = function(i) eval(call(i)))
-  mapply(FUN = function(info, pc) {
+  info_ <- lapply(names(x), FUN = \(i) eval(call(i)))
+  mapply(FUN = \(info, pc) {
     info@servingGram * pc
   }, pc = x, info = info_)
 }
@@ -743,8 +743,8 @@ getTealoose <- function(x) {
 getTeabag <- function(x) {
   # `x` is recipe@tea, weight of loose tea
   if (!length(x)) return(numeric())
-  info_ <- lapply(names(x), FUN = function(i) eval(call(i)))
-  mapply(FUN = function(info, wt) {
+  info_ <- lapply(names(x), FUN = \(i) eval(call(i)))
+  mapply(FUN = \(info, wt) {
     wt / info@servingGram
   }, wt = x, info = info_)
 }
@@ -777,7 +777,7 @@ format_vol <- function(x, nm = names(x), tol = 1e-6) {
   tsp4 <- tsp3 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .25, tol = tol) # 0 or 1, number of 1/4tsp
   tsp5 <- tsp4 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .125, tol = tol) # 0 or 1, number of 1/8tsp
 
-  unlist(.mapply(FUN = function(...) {
+  unlist(.mapply(FUN = \(...) {
     z0 <- c(...)
     z1 <- z0[!is.na(z0)]
     if (!length(z1)) return('') # `z1` either all-NA, or none-NA

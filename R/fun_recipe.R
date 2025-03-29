@@ -48,7 +48,7 @@ setMethod(f = '+', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), defini
   
   slt0 <- names(getSlots(x = 'recipe0'))
   names(slt0) <- slt0
-  ret0 <- lapply(slt0, FUN = function(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
+  ret0 <- lapply(slt0, FUN = \(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
   
   ret1 <- ret0[lengths(ret0, use.names = FALSE) > 0L]
   ret <- do.call(what = new, args = c(list(
