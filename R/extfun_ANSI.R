@@ -103,7 +103,7 @@ print_ANSI_matrix <- function(x) {
   
   d <- dim(x)
   dnm <- dimnames(x)
-  dnm0 <- lapply(dimnames(x), FUN = ansi_strip)
+  dnm0 <- dnm |> lapply(FUN = ansi_strip)
   
   x_ <- array(x, dim = d, dimnames = NULL)
   x0 <- array(ansi_strip(x), dim = d, dimnames = NULL)
@@ -191,7 +191,7 @@ ws_justify <- function(x) {
   }
   
   if (FALSE) {
-    strw <- vapply(x, FUN = strwidth_, FUN.VALUE = NA_real_)
+    strw <- x |> vapply(FUN = strwidth_, FUN.VALUE = NA_real_)
     strw_a <- strwidth('a', units = 'inches') # do not use `' '` 
     stri_dup(str = ' ', times = round((max(strw) - strw) / strw_a))
   } # unicode error when ?devtools::check # conversion failure in 'mbcsToSbcs'

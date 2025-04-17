@@ -58,45 +58,63 @@ format.equiv <- function(x, ...) {
   if (actual < 0) return(invisible())
   # I do not have `@water` for all puree, yet
   
-  sprintf_fun <- sprintf_bincode(min(actual, x@ideal, na.rm = TRUE))
+  .label <- min(actual, x@ideal, na.rm = TRUE) |> .label_bin_()
   
-  actual <- sprintf_fun(actual)
+  actual <- .label(actual)
   if (is.na(x@ideal)) return(c(Actual = actual, Ideal = '-'))
-  return(c(Actual = actual, Ideal = sprintf_fun(x@ideal)))
+  return(c(Actual = actual, Ideal = .label(x@ideal)))
 }
 
 
 
-
-sprintf_bincode <- function(x) {
-  if ((length(x) != 1L) || !is.numeric(x) || is.na(x)) stop('illegal input')
-  switch(.bincode(
-    x, 
-    #breaks = c(0, .002, .02, 1, Inf),
-    breaks = c(0, .001, .01, 1, Inf),
-    right = FALSE # important!!
-  ), '1' = { # (0, .001)
-    fmt <- '%.1f\u2031' # nchar('\u2031') == 1L # Per Ten Thousand
-    m <- 1e4
-  }, '2' = { # [.001, .01)
-    fmt <- '%.1f\u2030' # nchar('\u2030') == 1L # Per Mille
-    m <- 1e3
-  }, '3' = { # [.01, 1)
-    fmt <- '%.1f%%'
-    m <- 1e2
-  }, '4' = { # [1, Inf) 
-    fmt <- '%.2f'
-    m <- 1
-  }, stop('shouldnt come here'))
+#' @importFrom scales.tzh label_permille label_per10thousand
+#' @importFrom scales label_number label_percent
+.label_bin_ <- function(x) {
   
-  function(newx) {
-    # `newx` can be vector
-    tmp <- sprintf(fmt = fmt, m * newx) 
-    tmp[is.na(newx) | (newx < 1e-4)] <- '-'
-    return(tmp)
-  }
+  if ((length(x) != 1L) || !is.numeric(x) || is.na(x)) stop('illegal input')
+  
+  x |> 
+    .bincode(
+      breaks = c(0, .001, .01, 1, Inf),
+      right = FALSE # important!!
+    ) |> 
+    switch('1' = { # (0, .001)
+      function(newx) {
+        z <- label_per10thousand(accuracy = .1)(newx)
+        z[is.na(newx) | (newx < 1e-5)] <- '-'
+        return(z)
+      }
+    }, '2' = { # [.001, .01)
+      function(newx) {
+        z <- label_permille(accuracy = .1)(newx)
+        z[is.na(newx) | (newx < 1e-4)] <- '-'
+        return(z)
+      }
+    }, '3' = { # [.01, 1)
+      function(newx) {
+        z <- label_percent(accuracy = .1)(newx)
+        z[is.na(newx) | (newx < 1e-3)] <- '-'
+        return(z)
+      }
+    }, '4' = { # [1, Inf) 
+      function(newx) {
+        z <- label_number(accuracy = .2)(newx)
+        z[is.na(newx) | (newx < 1e-2)] <- '-'
+        return(z)
+      }
+    }, stop('shouldnt come here'))
+  
 }
 
+
+# @param x \link[base]{numeric} \link[base]{matrix}
+col_label_bin_ <- function(x, FUN, ...) {
+  x |> 
+    apply(MARGIN = 2L, FUN = function(i) {
+      i |> .label_bin_(FUN(i, ...))()
+    }, simplify = FALSE) |>
+    do.call(what = cbind) # un-simplify then cbind, to make sure not getting a 'vector' :)
+}  
 
 
 
@@ -341,8 +359,8 @@ setClass(Class = 'uncooked', contains = 'recipeDx', prototype = prototype(
 #' @export
 format.recipeDx <- function(x, ...) {
   slt <- names(which(getSlots(class(x)) == 'equiv'))
-  equiv_slot <- lapply(slt, FUN = slot, object = x) # all 'equiv' slots
-  fmt_equiv <- lapply(equiv_slot, FUN = format.equiv)
+  equiv_slot <- slt |> lapply(FUN = slot, object = x) # all 'equiv' slots
+  fmt_equiv <- equiv_slot |> lapply(FUN = format.equiv)
   
   id <- (lengths(fmt_equiv, use.names = FALSE) > 0L)
   if (!any(id)) return(invisible())
@@ -355,7 +373,7 @@ format.recipeDx <- function(x, ...) {
   }, FUN.VALUE = NA_integer_)
   
   if (all(is.na(relat))) {
-    ret <- lapply(ret0, FUN = `[`, 1L) 
+    ret <- ret0 |> lapply(FUN = `[`, 1L) 
   } else {
     ret <- .mapply(dots = list(ret0, relat), MoreArgs = NULL, FUN = \(x, rel) {
       # i = 3L; x = ret0[[i]]; rel = relat[[i]]

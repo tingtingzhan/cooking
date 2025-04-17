@@ -563,16 +563,17 @@ meatName <- function(x, animal = stop('')) {
 
 
 get_flavor_ <- function(x) {
-  xval <- lapply(x, FUN = \(i) eval(call(i)))
-  paste(vapply(xval, FUN = \(i) {
-    if (inherits(i, 'nutrition')) {
-      i@name
-    } else if (inherits(i, what = 'recipe')) {
-      #i@alias_flavor
-      i@alias |> gsub(pattern = 'Evaporated', replacement = '') |> trimws()
-    } else stop('what happens?')
-  }, FUN.VALUE = ''), collapse = ' + ')
-  #paste(vapply(x, FUN = \(i) eval(call(i))@name, FUN.VALUE = ''), collapse = ' + ')
+  x |>
+    lapply(FUN = \(i) eval(call(i))) |>
+    vapply(FUN = \(i) {
+      if (inherits(i, 'nutrition')) {
+        i@name
+      } else if (inherits(i, what = 'recipe')) {
+        #i@alias_flavor
+        i@alias |> gsub(pattern = 'Evaporated', replacement = '') |> trimws()
+      } else stop('what happens?')
+    }, FUN.VALUE = '') |>
+    paste(collapse = ' + ')
 }
 
 
@@ -1234,7 +1235,9 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat(
     'Total', 
     y@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(),
-    # (y@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(), # cannot calculate volumn based on density of water hahaha
+    if (inherits(object, what = c('caffeCoconut', 'yuenyeungCoconut'))) {
+      (y@servingGram/29.5735) |> sprintf(fmt = '%.1f fl oz') |> make_ansi_style('seagreen')() |> style_bold() # use water density
+    },
     '\n\n'
   )
   
@@ -1245,12 +1248,12 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   # need to write a [show] method for \linkS4class{mixWheatFlour}
   attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx', 'teaDx', 'creamcheeseDx')]
   has_attr_dx <- (lengths(attr_dx, use.names = FALSE) > 0L)
-  lapply(attr_dx[has_attr_dx], FUN = show)
+  attr_dx[has_attr_dx] |> lapply(FUN = show)
   #if (!any(has_attr_dx)) {
-    show(attr(y, which = 'cookedTexture', exact = TRUE))
-  #} else lapply(attr_dx[has_attr_dx], FUN = show)
-  #show(attr(y, which = 'uncooked', exact = TRUE))
-  show(attr(y, which = 'cookedFlavor', exact = TRUE))
+  y |> attr(which = 'cookedTexture', exact = TRUE) |> show()
+  #} else attr_dx[has_attr_dx] |> lapply(FUN = show)
+  # y |> attr(which = 'uncooked', exact = TRUE) |> show()
+  y |> attr(which = 'cookedFlavor', exact = TRUE) |> show()
   
   if (length(object@portion)) {
     sprintf(
@@ -1293,7 +1296,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
     sprintf(
       fmt = '\n\u2726%s\u2726%s\n', 
       names(object@machine), 
-      vapply(object@machine, FUN = \(i) paste0('\n   ', paste(i, collapse = '\n   ')), FUN.VALUE = '')
+      object@machine |> vapply(FUN = \(i) paste0('\n   ', paste(i, collapse = '\n   ')), FUN.VALUE = '')
     ) |> cat(sep = '')
     cat('\n')
   }

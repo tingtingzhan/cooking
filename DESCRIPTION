@@ -5,7 +5,7 @@ Version: 0.1.0
 Date: 2024-07-16
 Description: Need to think more..
 Authors@R: c(person(given = "Tingting", family = "Zhan", role =
-        c("aut", "cre", "cph"), email = "tingtingzhan@gmail.com", comment = c(ORCID =
+        c("aut", "cre"), email = "tingtingzhan@gmail.com", comment = c(ORCID =
         '0000-0001-9971-4844')))
 Language: en-US
 Roxygen: list(markdown = TRUE)
@@ -13,4 +13,4 @@ RoxygenNote: 7.3.2
 Encoding: UTF-8
 License: GPL-2
 Depends: R (>= 4.2)
-Imports: methods, stats, cli, stringi
+Imports: methods, stats, cli, stringi, scales, scales.tzh

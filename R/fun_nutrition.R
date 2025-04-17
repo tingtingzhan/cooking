@@ -476,6 +476,7 @@ nutrition.recipe <- function(x) {
     Class = 'cocoaDx',
     alcohol = new(Class = 'equiv', actual = alcohol / x@cocoa, ideal = devrecipe$alcohol2cocoa(x)),
     drymilk = new(Class = 'equiv', actual = x@drymilk / x@cocoa, ideal = devrecipe$drymilk2cocoa(x)),
+    coconut = new(Class = 'equiv', actual = x@coconut / x@cocoa),
     sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', actual = sugar / x@cocoa) else new(Class = 'equiv'),
     addedSugar = new(Class = 'equiv', actual = addedSugar / x@cocoa, ideal = devrecipe$addedSugar2cocoa(x)),
     coffee = new(Class = 'equiv', actual = x@coffee / x@cocoa, ideal = devrecipe$coffee2cocoa(x)),
