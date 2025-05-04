@@ -5,9 +5,12 @@
 \alias{yuenyeung}
 \alias{yuenyeungCoconut-class}
 \alias{yuenyeungCoconut}
+\alias{yuenyeungCoconut_summer}
 \title{Yuen Yeung Latte and Coconut Latte}
 \usage{
 yuenyeungCoconut()
+
+yuenyeungCoconut_summer()
 }
 \description{
 Yuen Yeung Latte and Coconut Latte
