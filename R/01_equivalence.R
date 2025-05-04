@@ -79,25 +79,26 @@ format.equiv <- function(x, ...) {
       right = FALSE # important!!
     ) |> 
     switch('1' = { # (0, .001)
-      function(newx) {
+      \(newx) {
         z <- label_per10thousand(accuracy = .1)(newx)
         z[is.na(newx) | (newx < 1e-5)] <- '-'
         return(z)
       }
     }, '2' = { # [.001, .01)
-      function(newx) {
+      \(newx) {
         z <- label_permille(accuracy = .1)(newx)
         z[is.na(newx) | (newx < 1e-4)] <- '-'
         return(z)
       }
     }, '3' = { # [.01, 1)
-      function(newx) {
+      \(newx) {
         z <- label_percent(accuracy = .1)(newx)
         z[is.na(newx) | (newx < 1e-3)] <- '-'
         return(z)
       }
     }, '4' = { # [1, Inf) 
-      function(newx) {
+      \
+      (newx) {
         z <- label_number(accuracy = .2)(newx)
         z[is.na(newx) | (newx < 1e-2)] <- '-'
         return(z)
@@ -110,7 +111,7 @@ format.equiv <- function(x, ...) {
 # @param x \link[base]{numeric} \link[base]{matrix}
 col_label_bin_ <- function(x, FUN, ...) {
   x |> 
-    apply(MARGIN = 2L, FUN = function(i) {
+    apply(MARGIN = 2L, FUN = \(i) {
       i |> .label_bin_(FUN(i, ...))()
     }, simplify = FALSE) |>
     do.call(what = cbind) # un-simplify then cbind, to make sure not getting a 'vector' :)
@@ -124,7 +125,7 @@ col_label_bin_ <- function(x, FUN, ...) {
 #' @aliases show,equiv-method
 #' @export
 setMethod(f = show, signature = 'equiv', definition = function(object) {
-  print(format.equiv(object))
+  object |> format.equiv() |> print()
 })
 
 

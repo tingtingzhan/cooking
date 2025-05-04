@@ -12,7 +12,7 @@ Fleischmanns_instant <- function() new(
   fleischmannsyeast = 4L,
   name = 'Instant Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
   servingGram = 7.09, servingTsp = 2.25#,
-  #machine = function(x) 'Protect Fleischmanns RapidRise instant yeast with flour'
+  #machine = \(x) 'Protect Fleischmanns RapidRise instant yeast with flour'
   )
 
 

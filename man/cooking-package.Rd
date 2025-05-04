@@ -4,9 +4,9 @@
 \name{cooking-package}
 \alias{cooking}
 \alias{cooking-package}
-\title{cooking}
+\title{cooking: cooking}
 \description{
-..
+Need to think more..
 }
 \author{
 \strong{Maintainer}: Tingting Zhan \email{tingtingzhan@gmail.com} (\href{https://orcid.org/0000-0001-9971-4844}{ORCID})

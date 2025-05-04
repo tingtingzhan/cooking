@@ -49,7 +49,7 @@ Brody_muffin <- function() new(
 
 #' @rdname muffin_other
 #' @export
-Introvert_muffin = function() new(
+Introvert_muffin <- function() new(
   Class = 'recipe', author = 'Introvert', alias_flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   flour_cup = 2,

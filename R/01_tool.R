@@ -286,6 +286,12 @@ Stanley14 <- function(...) new(
   name = style_hyperlink(text = 'Stanley 14oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-14-oz') |> c(),
   ...)
 
+Stanley40 <- function(...) new(
+  Class = 'tool',
+  name = style_hyperlink(text = 'Stanley 40oz Quencher', url = 'https://www.stanley1913.com/products/quencher-protour-flipstraw-tumbler') |> c(),
+  ...)
+
+
 Staub_vertRoaster <- function(...) new(
   Class = 'tool',
   name = 'Staub Vertical Chicken Roaster', staub = '1200023', alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',

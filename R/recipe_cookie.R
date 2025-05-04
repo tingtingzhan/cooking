@@ -233,7 +233,7 @@ ginger_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-EarlGrey_cookie2022_Twinings = function() new(
+EarlGrey_cookie2022_Twinings <- function() new(
   Class = 'cookie',
   note = 'Blade grinder',
   review = 'Mike loves it. Gloria says cannot stop.  Do NOT try to reduce sugar or dry milk!!',
@@ -241,7 +241,7 @@ EarlGrey_cookie2022_Twinings = function() new(
   pastryFlour = 360, 
   sugar = 136, drymilk = 140)
 
-EarlGrey_cookie_Twinings = function() new(
+EarlGrey_cookie_Twinings <- function() new(
   Class = 'cookie',
   note = 'Blade grinder',
   review = 'new experiment.  I want to reduce drymilk a little',

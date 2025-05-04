@@ -194,7 +194,7 @@
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
-#' @slot nutribullet20,nutribullet24,Stanley20,Stanley14 \linkS4class{tool}
+#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40 \linkS4class{tool}
 #' @slot PhilipsHD9867 \linkS4class{tool}
 #' @slot Staub_vertRoaster \linkS4class{tool}
 #' @slot RobamCT763 \linkS4class{tool}
@@ -439,7 +439,7 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
   CuisinartICE70 = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley20 = 'tool', Stanley14 = 'tool',
+  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool',
   PhilipsHD9867 = 'tool',
   Staub_vertRoaster = 'tool',
   RobamCT763 = 'tool',
@@ -664,7 +664,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, 
     combineVol(which = 'yeast', name1 = 'Fleischmanns_instant') |>
     combineVol(which = 'matcha', name1 = 'Ippodo_ikuyo') |>
     combineVol(which = 'cocoa', name1 = 'KingArthur_Bensdorp') |>
-    combineVol(which = 'coffee', name1 = 'NescafeGold_espresso_blonde') |>
+    combineVol(which = 'coffee', name1 = 'NescafeGold_espresso_decaf') |> 
     combineVol(which = 'beet', name1 = 'Wegmans_beet') |>
     combineVol(which = 'acai', name1 = 'Wegmans_acai') |>
     combineVol(which = 'creamTartar', name1 = 'McCormick_creamTartar') |>
@@ -909,7 +909,11 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
         'Tiramisu\u0300'
       } else if (length(x@cocoa)) {
         if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
-        if (x@cocoa / x@coffee < 1) 'Caff\u00e8' else 'Caff\u00e8 Mocha'
+        if (length(x@tea) && length(x@coconut)) {
+          '\u751f\u6930\u9e33\u9e2f'
+        } else if (x@cocoa / x@coffee < 1) {
+          'Caff\u00e8' 
+        } else 'Caff\u00e8 Mocha'
       } else if (length(x@syrup)) {
         if (names(x@syrup) |> grepl(pattern = 'ryeWhisky') |> any()) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
@@ -1013,6 +1017,8 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
       paste(x@alias_flavor, x@alias_class) |> trimws()
     } else if (length(x@alias_class) & !length(x@alias_flavor)) {
       x@alias_class
+    } else if (!length(x@alias_class) & length(x@alias_flavor)) {
+      x@alias_flavor
     } else x@alias 
   } # else do nothing
   
@@ -1285,7 +1291,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   show(object@JoyoungDJ13U)
   show(object@JoyoungDJ06M)
   show(object@JoyoungCJA9U)
-  show(object@nutribullet20); show(object@nutribullet24); show(object@Stanley20); show(object@Stanley14)
+  show(object@nutribullet20); show(object@nutribullet24); 
+  show(object@Stanley14); show(object@Stanley20); show(object@Stanley40)
   show(object@PhilipsHD9867)
   show(object@Staub_vertRoaster)
   show(object@RobamCT763)

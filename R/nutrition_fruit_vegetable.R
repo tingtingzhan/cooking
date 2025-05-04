@@ -87,7 +87,7 @@ Kirkland_peach <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], costcoBiz = '100237862',
   name = 'Sliced Peaches',
   servingGram = 120, sodium = .01, sugar = 14,
-  machine = function(x) { # `x` is class(recipe)
+  machine = \(x) { # `x` is class(recipe)
     switch(x, c('Drain Kirkland Sliced Peaches and discard syrup (contains added sugar)'))
   })
 
@@ -290,7 +290,7 @@ FlavorFarmer_whitePeach <- function() new(
   servingGram = 100, pieceWeight = 130,
   water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
   review = 'Fresh white peach sold at Costco in summer',
-  machine = function(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
+  machine = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
 
 
 kabochaSquash <- function() new(
@@ -459,7 +459,7 @@ HaiTai_mung <- function() new(
   usd = 5.99/910*38, yamibuy = '25775187',
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
   #servingGram = 100 - 9.05, protein = 23.9, fat = 1.15, sugar = 6.6, sodium = .015, # fdc
-  #machine = function(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
+  #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
   review = 'Must use peeled mung bean for dessert!')
 
 HaiTai_adzuki <- function() new(
@@ -469,7 +469,7 @@ HaiTai_adzuki <- function() new(
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
   usd = 8.99/907*45, yamibuy = '25775203',
   servingGram = 45, servingCup = 1/4, sodium = .008, carbohydrate = 27, sugar = 1, protein = 8
-  #machine = function(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
+  #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
 )
 
 redKidneyBean <- function() new(

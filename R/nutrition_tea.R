@@ -32,14 +32,14 @@ Harney_Assam <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], harney = 'organic-assam',
   name = 'Organic Assam',
   servingGram = 454, usd = 27, # 2023-11-09
-  machine = function(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
+  machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Good base black tea.')
 
 Harney_PuErh <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], harney = 'pu-erh',
   name = 'Pu-Erh',
   servingGram = 454, usd = 26, # 2023-11-09
-  machine = function(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
+  machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Very distinct and delightful aroma when raw.')
 
 Harney_decafCeylon <- function() new(
@@ -62,7 +62,7 @@ Harney_LapSangSouChong <- function() new(
   Class = 'nutrition', call = match.call()[[1L]], harney = 'lapsang-souchong',
   name = '\u7acb\u5c71\u5c0f\u79cd Lap Sang Sou Chong',
   servingGram = 454, usd = 28, # 2023-11-09
-  machine = function(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
+  machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Quite an acquired taste.')
 
 

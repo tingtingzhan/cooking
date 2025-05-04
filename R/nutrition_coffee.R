@@ -55,7 +55,7 @@ NescafeGold_espresso_intense <- function() new(
   nescafeGoldEspressoUS = 'gold-espresso-intense-instant-coffee-35-oz-jar',
   walmart = '5066099258',
   name = 'Intense, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
-  usd = 6.68/100*2,
+  usd = 7.47/100*2,
   servingGram = 2, servingTsp = 2, # using NescafeGold_espresso_decaf_Canada() data
   superior = 'NescafeGold_espresso_blonde'
 )
@@ -67,9 +67,9 @@ NescafeGold_espresso_decaf <- function() new(
   nescafeGoldEspressoUS = 'gold-decaf-espresso-instant-coffee',
   walmart = '12273958388',
   name = 'Decaf, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
-  usd = 8.58/100*2,
-  servingGram = 2, servingTsp = 2#, # using NescafeGold_espresso_decaf_Canada() data
-  #superior = 'NescafeGold_espresso_blonde'
+  usd = 7.47/100*2,
+  servingGram = 2, servingTsp = 2, # using NescafeGold_espresso_decaf_Canada() data
+  review = 'almost as good as NescafeGold_espresso_blonde'
 )
 
 #' @rdname nutrition_coffee
@@ -79,7 +79,7 @@ NescafeGold_espresso_blonde <- function() new(
   nescafeGoldEspressoUS = 'gold-espresso-blonde-instant-coffee-35-oz-jar',
   walmart = '5066099259',
   name = 'Blonde, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
-  usd = 6.68/100*2,
+  usd = 7.47/100*2,
   servingGram = 2,
   servingTsp = 2 # using NescafeGold_espresso_decaf_Canada() data
 )

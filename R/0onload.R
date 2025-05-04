@@ -30,6 +30,7 @@
       .08
     } else .035, 
     marinade = .04,
+    yuenyeungCoconut = .04,
     caffeCoconut = .04,
     caffeLatte_ = .04, 
     matchaLatte_ = .04, # perfect! 2024 late summer
