@@ -2,6 +2,10 @@
 
 .onLoad <- function(libname, pkgname = 'cooking') {
   
+  Sys.setenv('_R_CHECK_SYSTEM_CLOCK_' = 0)
+  # https://stackoverflow.com/questions/63613301/r-cmd-check-note-unable-to-verify-current-time
+  # to disable "checking for future file timestamps" in R Check
+  
   # `x` is \linkS4class{recipe}
   
   fn. <- \(x) NA_real_

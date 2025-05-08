@@ -1047,9 +1047,8 @@ print.recipe0 <- function(x, ...) {
   y <- nutrition(x = x) # dispatch to [nutrition.recipe0] or [nutrition.recipe]
   
   if (length(y@name)) {
-    y@name |> col_grey() |> style_bold() |> cli_text()
-    # cli_text(NULL) # prints a line break
-    # cli_text(character()) # also prints a line break
+    y@name |> col_grey() |> style_bold() |> cat()
+    cat('\n')
   }
   
   cat('\n')
@@ -1220,7 +1219,8 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   cat('\n')
   
   if (length(object@date)) {
-    cat(object@date |> format.Date(format = '%A, %B %e, %Y') |> col_green(), '\n\n')
+    object@date |> format.Date(format = '%A, %B %e, %Y') |> col_green() |> cat()
+    cat('\n\n')
   }
   
   print.recipe0(object)
