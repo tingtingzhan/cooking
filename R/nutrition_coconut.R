@@ -209,7 +209,7 @@ Freenow_coconutBarista <- function() new(
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
   weee = '89394', usd = 5.49/980*240, 
   servingGram = 240, serving_ml = 240, # guess
-  calorie = 200,
+  calorie = 110/30*240,
   fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
 #' @rdname coconutmilk
