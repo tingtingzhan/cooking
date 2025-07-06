@@ -56,6 +56,42 @@ yuenyeungCoconut_summer <- function() new(
   date = as.Date('2025-05-01'))
 
 
+# https://www.youtube.com/watch?v=0RdWl5PJvMQ
+#咖啡 Coffee—900cc (300+600)
+#糖 Sugar—70g
+#吉利丁 Gelatin—25g.  25/900 = 0.02777
+#煉乳 Condensed Milk—30g
+#牛奶 Milk—200cc
+#鮮奶油 Heavy cream
+#砂糖 Sugar
+# my sesame_lava(); gelatin 24/(80+640)= 0.0333
+
+
+
+yuenyeungCoconut_jelly <- function() new(
+  Class = 'recipe',
+  # same water quantity as yuenyeungCoconut_summer()
+  # adding gelatin
+  # reducing coconut to fit Stanley JAR + SPORK | 36 OZ
+  coconut = c(Freenow_coconutBarista = 400),
+  water95 = 530,
+  gelatin_leaf = 8,
+  drymilk = c(Carnation = 25),
+  coffee_tsp = c(NescafeGold_espresso_decaf = 2.5),
+  cocoa_tsp = c(KingArthur_Bensdorp = .625),
+  teabag = c(Twinings_EnglishBreakfast = 4),
+  StanleyJar36 = StanleyJar36(treatment = c(
+    'Cut gelatin leaf into small pieces',
+    'Soak teabags (and powder) in hot water inside, loosely covered, for 1hr',
+    'After temp reducing to 80C, add gelatin pieces, soak again, and stir well',
+    'put in fridge over night, see if this works..',
+    'maybe this is not the correct tool..'
+  ))
+)
+
+
+
+
 
 
 

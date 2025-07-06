@@ -291,6 +291,12 @@ Stanley40 <- function(...) new(
   name = style_hyperlink(text = 'Stanley 40oz Quencher', url = 'https://www.stanley1913.com/products/quencher-protour-flipstraw-tumbler') |> c(),
   ...)
 
+StanleyJar36 <- function(...) new(
+  Class = 'tool',
+  name = style_hyperlink(text = 'Stanley 36oz Food Jar', url = 'https://www.stanley1913.com/products/adventure-to-go-food-jar-spork-36-oz') |> c(),
+  ...)
+
+
 
 Staub_vertRoaster <- function(...) new(
   Class = 'tool',

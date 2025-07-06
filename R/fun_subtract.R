@@ -98,7 +98,9 @@ subtract.nutrition <- function(object, ...) {
     
   }
   
-  obj@name <- paste(obj@name, paste0('-', paste0(unique.default(txt), collapse = '/')) |> col_grey() |> bg_br_green())
+  tmp <- paste0('-', paste0(unique.default(txt), collapse = '/')) |> col_grey() |> bg_br_green()
+  obj@name <- paste(obj@name, tmp)
+  obj@name_glue <- paste(obj@name_glue, tmp)
   
   obj@calorie <- numeric() # ideally I should be able to calculate this Haha
   
@@ -106,7 +108,7 @@ subtract.nutrition <- function(object, ...) {
   obj@usd <- obj@jpy <- numeric() # etc.
   
   slt <- getSlots('nutrition')
-  for (inm in setdiff(names(slt)[which(slt == 'character')], c('name', 'brand'))) {
+  for (inm in setdiff(names(slt)[which(slt == 'character')], c('name', 'name_glue', 'brand'))) {
     slot(obj, name = inm) <- character()
   }
   for (inm in names(slt)[which(slt == 'integer')]) {

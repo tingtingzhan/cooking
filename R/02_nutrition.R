@@ -174,7 +174,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
-#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40 \linkS4class{tool}
+#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40,StanleyJar36 \linkS4class{tool}
 #' @slot PhilipsHD9867 \linkS4class{tool}
 #' @slot Staub_vertRoaster \linkS4class{tool}
 #' @slot RobamCT763 \linkS4class{tool}
@@ -303,7 +303,7 @@ setClass(Class = 'nutrition', slots = c(
   CuisinartICE70 = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool',
+  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool', StanleyJar36 = 'tool',
   PhilipsHD9867 = 'tool',
   Staub_vertRoaster = 'tool',
   RobamCT763 = 'tool',

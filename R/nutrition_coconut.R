@@ -210,6 +210,7 @@ Freenow_coconutBarista <- function() new(
   weee = '89394', usd = 5.49/980*240, 
   servingGram = 240, serving_ml = 240, # guess
   calorie = 110/30*240,
+  water = 240 - 15 - 15 - 5,
   fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
 #' @rdname coconutmilk

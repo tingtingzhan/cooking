@@ -282,7 +282,7 @@ Nutrition information.
 
 \item{\code{JoyoungCJA9U}}{\linkS4class{tool}, Joyoung stir-fry machine CJ-A9U}
 
-\item{\code{nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40}}{\linkS4class{tool}}
+\item{\code{nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40,StanleyJar36}}{\linkS4class{tool}}
 
 \item{\code{PhilipsHD9867}}{\linkS4class{tool}}
 

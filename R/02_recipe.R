@@ -194,7 +194,7 @@
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
-#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40 \linkS4class{tool}
+#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40,StanleyJar36 \linkS4class{tool}
 #' @slot PhilipsHD9867 \linkS4class{tool}
 #' @slot Staub_vertRoaster \linkS4class{tool}
 #' @slot RobamCT763 \linkS4class{tool}
@@ -439,7 +439,7 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
   CuisinartICE70 = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool',
+  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool', StanleyJar36 = 'tool',
   PhilipsHD9867 = 'tool',
   Staub_vertRoaster = 'tool',
   RobamCT763 = 'tool',
@@ -1184,13 +1184,15 @@ print.recipe0 <- function(x, ...) {
   if (length(has_vol_small)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)) |> lapply(FUN = cli_text)
   if (length(has_vol_large)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)) |> lapply(FUN = cli_text)
   
-  if (length(x@gelatin)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> cat()
+  if (length(x@gelatin)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> cli_text()
   
-  if (!length(x@water_extra)) {
-    sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)) |> cat()
-  } else {
-    water <- sum_by_name(x@water, x@water_extra)
-    sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_extra) |> col_br_red(), format_vol(water)) |> cat()
+  if (length(x@water)) {
+    if (!length(x@water_extra)) {
+      sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)) |> cli_text()
+    } else {
+      water <- sum_by_name(x@water, x@water_extra)
+      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_extra) |> col_br_red(), format_vol(water)) |> cli_text()
+    }
   }
   
   if (length(x@water40)) sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)) |> cli_text()
@@ -1292,7 +1294,7 @@ setMethod(f = show, signature = 'recipe', definition = function(object) {
   show(object@JoyoungDJ06M)
   show(object@JoyoungCJA9U)
   show(object@nutribullet20); show(object@nutribullet24); 
-  show(object@Stanley14); show(object@Stanley20); show(object@Stanley40)
+  show(object@Stanley14); show(object@Stanley20); show(object@Stanley40); show(object@StanleyJar36)
   show(object@PhilipsHD9867)
   show(object@Staub_vertRoaster)
   show(object@RobamCT763)
