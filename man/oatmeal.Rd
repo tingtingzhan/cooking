@@ -5,9 +5,12 @@
 \alias{oatmeal}
 \alias{oatmeal-class}
 \alias{coconut_oatmeal}
+\alias{soymilk_oatmeal}
 \title{\linkS4class{oatmeal} Recipes}
 \usage{
 coconut_oatmeal()
+
+soymilk_oatmeal()
 }
 \description{
 ..

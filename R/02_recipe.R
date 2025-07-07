@@ -1103,11 +1103,11 @@ print.recipe0 <- function(x, ...) {
   # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
   
   grain_bean_nut <- c(
-    x@grain,
     x@chickpea, x@adzukibean, x@mungbean, x@redKidneyBean,
     x@cashew, x@nut
   )
   grain_bean_nut_vol_ <- c(
+    x@grain,
     x@soybean
   )
   if (length(grain_bean_nut)) sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut) |> lapply(FUN = cli_text) # one or more grain

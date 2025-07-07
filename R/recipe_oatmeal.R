@@ -29,15 +29,18 @@ coconut_oatmeal <- function() new(
   Class = 'oatmeal',
   coconut = c(Freenow_coconutBarista = 60),
   water = 80,
-  date = as.Date('2025-07-07'),
+  date = as.Date('2025-07-06'),
   review = 'nice!'
 )
 
-
+#' @rdname oatmeal
+#' @export
 soymilk_oatmeal <- function() new(
   Class = 'oatmeal',
   homemade = c(soymilk_DJ13U = 140),
-  review = 'try'
+  syrup = c(Runamok_ryeWhisky = 5),
+  date = as.Date('2025-07-06'),
+  review = 'nice!'
 )
 
 
