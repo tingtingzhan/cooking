@@ -28,9 +28,11 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
 caffeCoconut <- function() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 225),
-  water80 = 215,
-  date = as.Date('2025-01-28'))
+  coconut = c(Freenow_coconutBarista = 180), # was 225
+  water80 = 260, # was 215
+  #date = as.Date('2025-01-28'), # was
+  review = 'try'
+  )
 
 
 

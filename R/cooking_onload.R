@@ -24,6 +24,7 @@
     snowSkin = if (length(x@beet)) .03 else .023,
     porkfill = .023,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 
+    yuenyeungCoconut = .035,
     millecrepe = if (length(x@matcha)) {
       .075
     } else if (length(x@cocoa)) {
@@ -34,7 +35,6 @@
       .08
     } else .035, 
     marinade = .04,
-    yuenyeungCoconut = .04,
     caffeCoconut = .04,
     caffeLatte_ = .04, 
     matchaLatte_ = .04, # perfect! 2024 late summer
@@ -180,8 +180,8 @@
     snowSkin = .015, 
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
+    caffeCoconut =, yuenyeungCoconut = .025,
     wheatBao = .028,
-    caffeCoconut =, yuenyeungCoconut = .03,
     matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,

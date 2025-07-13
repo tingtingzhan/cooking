@@ -20,8 +20,8 @@ setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
 yuenyeungCoconut <- function() new(
   Class = 'yuenyeungCoconut', 
   #alias_flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 225),
-  boilingWater = 210,
+  coconut = c(Freenow_coconutBarista = 180),
+  boilingWater = 255,
   drymilk = c(Carnation = 10),
   coffee_tsp = c(NescafeGold_espresso_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
@@ -31,16 +31,18 @@ yuenyeungCoconut <- function() new(
     'add all powders, whisk smooth',
     'add barista coconut'
   )),
-  date = as.Date('2025-03-15'))
+  date = as.Date('2025-07-13'))
 
 #' @rdname yuenyeung
 #' @export
 yuenyeungCoconut_summer <- function() new(
   Class = 'yuenyeungCoconut', 
   #alias_flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 560),
-  #total water = 210*2.5,
-  boilingWater = 200,
+  # coconut = c(Freenow_coconutBarista = 560), # was 225*2.5
+  coconut = c(Freenow_coconutBarista = 450), # try 180*2.5
+  #total water = 210*2.5, # was
+  #total water = 255*2.5, # try
+  boilingWater = 310,
   ice = 330,
   drymilk = c(Carnation = 25),
   coffee_tsp = c(NescafeGold_espresso_decaf = 2.5),
