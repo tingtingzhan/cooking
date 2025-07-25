@@ -67,8 +67,7 @@ format.equiv <- function(x, ...) {
 
 
 
-#' @importFrom scales.tzh label_permille label_per10thousand
-#' @importFrom scales label_number label_percent
+#' @importFrom scales label_number
 .label_bin_ <- function(x) {
   
   if ((length(x) != 1L) || !is.numeric(x) || is.na(x)) stop('illegal input')
@@ -80,25 +79,24 @@ format.equiv <- function(x, ...) {
     ) |> 
     switch('1' = { # (0, .001)
       \(newx) {
-        z <- label_per10thousand(accuracy = .1)(newx)
+        z <- label_number(scale = 1e4, suffix = '\u2031', accuracy = .1)(newx)
         z[is.na(newx) | (newx < 1e-5)] <- '-'
         return(z)
       }
     }, '2' = { # [.001, .01)
       \(newx) {
-        z <- label_permille(accuracy = .1)(newx)
+        z <- label_number(scale = 1e3, suffix = '\u2030', accuracy = .1)(newx)
         z[is.na(newx) | (newx < 1e-4)] <- '-'
         return(z)
       }
     }, '3' = { # [.01, 1)
       \(newx) {
-        z <- label_percent(accuracy = .1)(newx)
+        z <- label_number(scale = 1e2, suffix = '%', accuracy = .1)(newx)
         z[is.na(newx) | (newx < 1e-3)] <- '-'
         return(z)
       }
     }, '4' = { # [1, Inf) 
-      \
-      (newx) {
+      \(newx) {
         z <- label_number(accuracy = .2)(newx)
         z[is.na(newx) | (newx < 1e-2)] <- '-'
         return(z)
