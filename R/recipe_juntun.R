@@ -53,7 +53,7 @@ setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
 
 #' @rdname juntun
 #' @export
-juntun <- function() new(
+juntun <- \() new(
   Class = 'juntun',
   water = 280,
   review = 'try again!'
@@ -63,7 +63,7 @@ juntun <- function() new(
 # pumpkin_juntun <- function
 
 
-juntun_filling <- function() new(
+juntun_filling <- \() new(
   Class = 'recipe',
   alias = '\u519b\u5c6f\u9505\u76d4\u9985',
   #pork = c(belly = 550), # too fat!!

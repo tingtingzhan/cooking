@@ -11,7 +11,7 @@
 #' 
 #' @importFrom stats median.default
 #' @export
-diagnose <- function(...) { # , dots = list(...)
+diagnose <- \(...) { # , dots = list(...)
   
   # dots <- lapply(dots, FUN = nutrition) # mess up with call later
   dots <- lapply(as.list(match.call())[-1L], FUN = \(x) {

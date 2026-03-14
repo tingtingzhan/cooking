@@ -10,7 +10,7 @@
 #' @keywords internal
 #' @name creamCheeseSpread_other
 #' @export
-GoodLifeEats_pumpkin_creamCheeseSpread <- function() new(
+GoodLifeEats_pumpkin_creamCheeseSpread <- \() new(
   Class = 'recipe',
   alias_class = 'Spread\U1f96f', # 'Cream Cheese Spread',
   author = 'Good Life Eats',
@@ -24,7 +24,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- function() new(
 
 #' @rdname creamCheeseSpread_other
 #' @export
-Lynn_pumpkin_creamCheeseSpread <- function() new(
+Lynn_pumpkin_creamCheeseSpread <- \() new(
   Class = 'recipe',
   alias_class = 'Spread\U1f96f', # 'Cream Cheese Spread',
   author = 'Lynn',

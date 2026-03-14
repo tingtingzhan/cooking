@@ -7,7 +7,7 @@
 #' @name Bundt_other
 NULL
 
-Bundt_OLD2 <- function() new(
+Bundt_OLD2 <- \() new(
   Class = 'recipe',
   alias_class = 'Bundt',
   pastryFlour = 400,
@@ -33,7 +33,7 @@ Bundt_OLD2 <- function() new(
   #)
 )
 
-Bundt_OLD1 <- function() new(
+Bundt_OLD1 <- \() new(
   Class = 'recipe', alias_class = 'Bundt', alias_flavor = 'OLD',
   pastryFlour = 210,
   #water = 160, waterLost = 60, # a little too wet
@@ -66,7 +66,7 @@ Bundt_OLD1 <- function() new(
 
 #' @rdname Bundt_other
 #' @export
-PreppyKitchen_chocolate_Bundt <- function() new(
+PreppyKitchen_chocolate_Bundt <- \() new(
   Class = 'recipe', alias_flavor = 'Chocolate Bundt',
   water40 = 360,
   cocoa_cup = c(Ghirardelli_cocoa = 1.25),
@@ -84,7 +84,7 @@ PreppyKitchen_chocolate_Bundt <- function() new(
 
 #' @rdname Bundt_other
 #' @export
-PreppyKitchen_Bundt <- function() new(
+PreppyKitchen_Bundt <- \() new(
   Class = 'recipe', alias_flavor = 'Bundt',
   flour = 360,
   bakingPowder_tsp = 1,

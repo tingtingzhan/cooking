@@ -25,14 +25,14 @@
 #' @name matchaLatte_other
 #' @keywords internal 
 #' @export
-TraderJoes_matchaLatte <- function() new(
+TraderJoes_matchaLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], traderjoes = '052512',
   name = 'Matcha\U1f375 Latte Mix',
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
 #' @rdname matchaLatte_other
 #' @export
-Starbucks_matchaLatte <- function() new(
+Starbucks_matchaLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 468L,
   name = 'Matcha\U1f375 Latte',
   servingGram = 450, serving_floz = 16,
@@ -42,7 +42,7 @@ Starbucks_matchaLatte <- function() new(
 
 #' @rdname matchaLatte_other
 #' @export
-Starbucks_matchaFrappuccino <- function() new(
+Starbucks_matchaFrappuccino <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 439L,
   name = 'Matcha\U1f375 Frappuccino',
   servingGram = 450, serving_floz = 16,
@@ -52,7 +52,7 @@ Starbucks_matchaFrappuccino <- function() new(
 
 #' @rdname matchaLatte_other
 #' @export
-Starbucks_matchaLatteMix <- function() new(
+Starbucks_matchaLatteMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = 'Starbucks\U1f1fa\U1f1f8', 
   name = 'Matcha\U1f375 Latte Mix',
@@ -68,7 +68,7 @@ Starbucks_matchaLatteMix <- function() new(
 
 #' @rdname matchaLatte_other
 #' @export
-Ippodo_sayakaLatte <- function() new(
+Ippodo_sayakaLatte <- \() new(
   Class = 'recipe',
   alias_flavor = 'Sayaka Latte', 
   ippodotea = 'sayaka-100g',
@@ -79,7 +79,7 @@ Ippodo_sayakaLatte <- function() new(
 
 #' @rdname matchaLatte_other
 #' @export
-Ippodo_uji_shimizu <- function() new(
+Ippodo_uji_shimizu <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodousa = 'uji-shimizu-sticks', ippodoglobal = 'matcha642402',
   name = 'Uji Shimizu\U1f375', alias = '\u5b87\u6cbb\u6e05\u6c34',
@@ -91,7 +91,7 @@ Ippodo_uji_shimizu <- function() new(
 
 #' @rdname matchaLatte_other
 #' @export
-ItoEn_sweet_matcha <- function() new(
+ItoEn_sweet_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
   name = 'Sweet Matcha',

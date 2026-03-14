@@ -17,7 +17,7 @@
 #' @name muffin_other
 NULL
 
-muffin_tmp <- function() new(
+muffin_tmp <- \() new(
   Class = 'recipe', 
   alias = 'Muffin',
   portion = c('Trudeau 12-cup muffin' = 80),
@@ -34,7 +34,7 @@ muffin_tmp <- function() new(
 
 #' @rdname muffin_other
 #' @export
-Brody_muffin <- function() new(
+Brody_muffin <- \() new(
   Class = 'recipe', author = 'Brody', alias_flavor = 'Muffin', 
   sugar = 300,
   egg_pc = 2,
@@ -49,7 +49,7 @@ Brody_muffin <- function() new(
 
 #' @rdname muffin_other
 #' @export
-Introvert_muffin <- function() new(
+Introvert_muffin <- \() new(
   Class = 'recipe', author = 'Introvert', alias_flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   flour_cup = 2,
@@ -63,7 +63,7 @@ Introvert_muffin <- function() new(
 
 #' @rdname muffin_other
 #' @export
-CulinaryHill_muffin <- function() new(
+CulinaryHill_muffin <- \() new(
   Class = 'recipe', author = 'Culinary Hill', alias_flavor = 'Muffin', 
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = 240,
@@ -78,7 +78,7 @@ CulinaryHill_muffin <- function() new(
 
 #' @rdname muffin_other
 #' @export
-Lori_muffin <- function() new(
+Lori_muffin <- \() new(
   Class = 'recipe', author = 'Lori', alias_flavor = 'Muffin', allrecipes = '6874/best-ever-muffins/',
   flour = 240, 
   bakingPowder_Tbsp = 1,
@@ -90,7 +90,7 @@ Lori_muffin <- function() new(
 
 
 
-Sallys_pumpkin_muffin <- function() new(
+Sallys_pumpkin_muffin <- \() new(
   Class = 'recipe', author = 'Sally\'s', alias_flavor = 'Pumpkin Muffin',
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
   flour_cup = 1.75,

@@ -20,13 +20,13 @@ setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
 
 #' @rdname caffeLatte
 #' @export
-caffeLatte <- function() new(
+caffeLatte <- \() new(
   Class = 'caffeLatte', 
   date = as.Date('2024-10-27'),
   pros = 'my favorite so far')
 
 
-caffeGoatLatte_blonde <- function() new(
+caffeGoatLatte_blonde <- \() new(
   Class = 'recipe', 
   alias_flavor = 'Caff\u00e8 Goat Latte',
   drymilk = c(Meyenberg_goatWhole_drymilk = 25*2),

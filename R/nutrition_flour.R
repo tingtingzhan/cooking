@@ -10,7 +10,7 @@ NULL
 
 #' @rdname nutrition_wheatFlour
 #' @export
-Wegmans_pastry <- function() new(
+Wegmans_pastry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Pastry\U1f370 Flour',
   alias = '\u4f4e\u7b4b\u9762\u7c89',
@@ -21,7 +21,7 @@ Wegmans_pastry <- function() new(
   carbohydrate = 23, protein = 30*.08)
 
 
-Wegmans_bread <- function() new(
+Wegmans_bread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = '\u9ad8\u7b4b\u9762\u7c89 Bread\U1f35e Flour', # Enriched Unbleached
   wegmans = 24587L, usd = 3.69/2270*30,
@@ -30,7 +30,7 @@ Wegmans_bread <- function() new(
   calorie = 100,
   carbohydrate = 23, protein = 3)
 
-Wegmans_whiteWheat <- function() new(
+Wegmans_whiteWheat <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 35705L,
   name = '\u767d\u5168\u9ea6\u9762\u7c89 White Whole Wheat Flour',
   usd = 3.49/2270*28,
@@ -39,7 +39,7 @@ Wegmans_whiteWheat <- function() new(
   calorie = 90,
   fat = .5, carbohydrate = 20, protein = 4)
 
-Wegmans_wheat <- function() new(
+Wegmans_wheat <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 54401L,
   name = '\u5168\u9ea6\u9762\u7c89 Whole Wheat Flour',
   usd = 3.49/2270*28,
@@ -59,7 +59,7 @@ Wegmans_wheat <- function() new(
 # https://shop.kingarthurbaking.com/items/100-whole-wheat-flour # 13.2% protein content
 # https://shop.kingarthurbaking.com/items/100-organic-whole-wheat-flour # 13.8% protein content
 
-KingArthur_whiteWheat <- function() new(
+KingArthur_whiteWheat <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 305555L,
   name = 'White Whole Wheat Flour', alias = '12.2%\u767d\u5168\u9ea6\u9762\u7c89',
   # https://shop.kingarthurbaking.com/items/stone-ground-white-whole-wheat-flour # 12.2% protein content
@@ -69,7 +69,7 @@ KingArthur_whiteWheat <- function() new(
   calorie = 110,
   fat = 1, carbohydrate = 22, protein = 30*.122)
 
-KingArthur_whiteWheat_organic <- function() new(
+KingArthur_whiteWheat_organic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308102L,
   name = 'White Whole Wheat Flour, Organic', alias = '12.2%\u767d\u5168\u9ea6\u9762\u7c89',
   usd = 10.95/2270*30,
@@ -79,7 +79,7 @@ KingArthur_whiteWheat_organic <- function() new(
   carbohydrate = 21, protein = 28*.122)
 
 
-KingArthur_bread_organic <- function() new(
+KingArthur_bread_organic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308104L, 
   name = 'Bread\U1f35e Flour, Organic', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 10.95/2270*30,
@@ -88,7 +88,7 @@ KingArthur_bread_organic <- function() new(
   calorie = 110,
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
-KingArthur_bread <- function() new(
+KingArthur_bread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 304105L, 
   name = 'Bread\U1f35e Flour', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
@@ -98,7 +98,7 @@ KingArthur_bread <- function() new(
   calorie = 110,
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
-KingArthur_highGluten <- function() new(
+KingArthur_highGluten <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 100185L, 
   name = 'High-Gluten Flour', alias = '14.2%\u9ad8\u7b4b\u9762\u7c89',
   usd = 12.95/1360*30,
@@ -106,7 +106,7 @@ KingArthur_highGluten <- function() new(
   calorie = 110,
   carbohydrate = 21, protein = 30*.142) # 14.2% gluten-forming protein
 
-KingArthur_Lancelot <- function() new(
+KingArthur_Lancelot <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], webstaurant = '104NFL5100S',
   kingarthurpro = 13050L,
   name = 'Sir Lancelot', alias = '14%\u9ad8\u7b4b\u9762\u7c89',
@@ -115,7 +115,7 @@ KingArthur_Lancelot <- function() new(
   calorie = 364, 
   fat = .98, carbohydrate = 70.5, fiber = 2.7, sugar = .27, protein = 14, water = 14)
 
-KingArthur_Galahad <- function() new(
+KingArthur_Galahad <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], webstaurant = '104NFL5110S',
   kingarthurpro = 12050L,
   name = 'Sir Galahad', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
@@ -125,7 +125,7 @@ KingArthur_Galahad <- function() new(
   fat = .98, carbohydrate = 72.82, fiber = 2.7, sugar = .27, protein = 11.7, water = 14)
 
 
-KingArthur_allPurpose <- function() new(
+KingArthur_allPurpose <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 301050L, 
   name = 'All-Purpose Flour', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
@@ -134,7 +134,7 @@ KingArthur_allPurpose <- function() new(
   calorie = 110,
   carbohydrate = 23, protein = 30*.117) # 11.7% protein content
 
-KingArthur_allPurpose_organic <- function() new(
+KingArthur_allPurpose_organic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308006L, 
   name = '\u4e2d\u7b4b\u9762\u7c89 All-Purpose Flour, Organic',
   usd = 10.95/2270*30,
@@ -145,7 +145,7 @@ KingArthur_allPurpose_organic <- function() new(
 
 
 
-KingArthur_cake <- function() new(
+KingArthur_cake <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   kingarthur = 300004L, 
   name = 'Cake\U1f370 Flour', alias = '10%\u4f4e\u7b4b\u9762\u7c89',
@@ -154,7 +154,7 @@ KingArthur_cake <- function() new(
 # kingarthurpro = 19050L, # professional 'unbleached cake flour' is 7% !!!
 
 
-KingArthur_pastry <- function() new(
+KingArthur_pastry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 100184L, 
   name = 'Pastry\U1f370 Flour', alias = '8%\u4f4e\u7b4b\u9762\u7c89',
   usd = 12.95/1360*26,
@@ -164,7 +164,7 @@ KingArthur_pastry <- function() new(
 # kingarthurpro = c(29025L, 28050L), # professional 'pastry flour' is 9% !!! 
 
 
-KingArthur_selfRising <- function() new(
+KingArthur_selfRising <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 301330L, 
   name = 'Self-Rising Flour, Unbleached',
   usd = 6.95/2270*30,
@@ -174,7 +174,7 @@ KingArthur_selfRising <- function() new(
   sodium = .36, carbohydrate = 22, protein = 30*.08) # < 8.5% protein content
 
 
-KingArthur_selfRising_homemade <- function() new(
+KingArthur_selfRising_homemade <- \() new(
   Class = 'recipe', 
   alias_flavor = 'Homemade Self-Rising Flour',
   author = 'brinna-sands',
@@ -185,7 +185,7 @@ KingArthur_selfRising_homemade <- function() new(
 
 
 
-BobsRedMill_wheatGluten <- function() new(
+BobsRedMill_wheatGluten <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'vital-wheat-gluten',
   name = 'Wheat Gluten Flour', alias = '\u9762\u7b4b\u7c89',
   wegmans = 219620L, usd = 7.79/567*30,

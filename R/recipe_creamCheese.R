@@ -51,7 +51,7 @@ setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
 
 #' @rdname creamCheese
 #' @export
-pumpkin_creamCheeseSpread <- function() new(
+pumpkin_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', 
   #pumpkin = 122, brownSugar = 16, # was; too watery
   pumpkin = 100, brownSugar = 23, # 2024 Dec
@@ -63,7 +63,7 @@ pumpkin_creamCheeseSpread <- function() new(
 
 #' @rdname creamCheese
 #' @export
-pumpkin_creamCheeseDip <- function() new(
+pumpkin_creamCheeseDip <- \() new(
   Class = 'creamCheeseDip', 
   pumpkin = 300,
   brownSugar = 37,
@@ -76,19 +76,19 @@ pumpkin_creamCheeseDip <- function() new(
 
 
 
-date_creamCheeseSpread <- function() new(
+date_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', 
   flavor = c(SunnyFruit_date = 50),
   water = 50,
   review = 'retry')
 
 
-plum_creamCheeseSpread <- function() new(
+plum_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', flavor = c(Kirkland_plum_dried = 75), 
   water = 50, 
   review = 'try') # try!
 
-fig_creamCheeseSpread <- function() new(
+fig_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', flavor = c(SunnyFruit_fig = 65), 
   water = 50, review = 'try') # try!
 

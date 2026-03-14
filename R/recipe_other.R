@@ -1,6 +1,6 @@
 
 
-guacamole <- function() new(
+guacamole <- \() new(
   Class = 'recipe', 
   avocado_pc = 3,
   lime_pc = 1/2,

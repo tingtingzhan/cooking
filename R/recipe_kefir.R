@@ -19,19 +19,19 @@ setClass(Class = 'kefir', contains = 'recipe', prototype = prototype(
 
 #' @rdname kefir
 #' @export
-raspberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_raspberry = 15), pros = 'Effie', date = as.Date('2024-04-16'))
+raspberry_kefir <- \() new(Class = 'kefir', syrup = c(Stonewall_raspberry = 15), pros = 'Effie', date = as.Date('2024-04-16'))
 
 #' @rdname kefir
 #' @export
-ryeWhisky_kefir <- function() new(Class = 'kefir', syrup = c(Runamok_ryeWhisky = 10), pros = 'I love!', date = as.Date('2024-05-12'))
+ryeWhisky_kefir <- \() new(Class = 'kefir', syrup = c(Runamok_ryeWhisky = 10), pros = 'I love!', date = as.Date('2024-05-12'))
 
 #' @rdname kefir
 #' @export
-figWalnut_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_figWalnut = 13), pros = 'super nice!', date = as.Date('2024-05-16'))
+figWalnut_kefir <- \() new(Class = 'kefir', syrup = c(Stonewall_figWalnut = 13), pros = 'super nice!', date = as.Date('2024-05-16'))
 
 #' @rdname kefir
 #' @export
-blueberry_kefir <- function() new(Class = 'kefir', syrup = c(Stonewall_blueberry = 15), pros = 'I like', date = as.Date('2024-05-19'))
+blueberry_kefir <- \() new(Class = 'kefir', syrup = c(Stonewall_blueberry = 15), pros = 'I like', date = as.Date('2024-05-19'))
 
 
 
@@ -45,26 +45,26 @@ setClass(Class = 'goatKefir', contains = 'recipe', prototype = prototype(
 
 #' @rdname kefir
 #' @export
-ryeWhisky_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Runamok_ryeWhisky = 21), pros = 'Effie', date = as.Date('2024-04-02'))
+ryeWhisky_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Runamok_ryeWhisky = 21), pros = 'Effie', date = as.Date('2024-04-02'))
 
 
 
 
 #' @rdname kefir
 #' @export
-mocaccino_goatKefir <- function() new(Class = 'goatKefir', coffee_tsp = c(NescafeGold_espresso_blonde = 2), cocoa_tsp = c(KingArthur_Bensdorp = 3.25), sugar_tsp = 4.5, pros = 'strong alcohol flavor, interesting!', date = as.Date('2024-05-14'))
+mocaccino_goatKefir <- \() new(Class = 'goatKefir', coffee_tsp = c(NescafeGold_espresso_blonde = 2), cocoa_tsp = c(KingArthur_Bensdorp = 3.25), sugar_tsp = 4.5, pros = 'strong alcohol flavor, interesting!', date = as.Date('2024-05-14'))
 
 #' @rdname kefir
 #' @export
-raspberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_raspberry = 30), pros = 'I like', date = as.Date('2024-05-13'))
+raspberry_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_raspberry = 30), pros = 'I like', date = as.Date('2024-05-13'))
 
 #' @rdname kefir
 #' @export
-blueberry_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_blueberry = 30), pros = 'super nice!', date = as.Date('2024-05-15'))
+blueberry_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_blueberry = 30), pros = 'super nice!', date = as.Date('2024-05-15'))
 
 #' @rdname kefir
 #' @export
-figWalnut_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnut = 25), pros = 'super nice!', date = as.Date('2024-05-16'))
+figWalnut_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnut = 25), pros = 'super nice!', date = as.Date('2024-05-16'))
 
 
 
@@ -86,14 +86,14 @@ figWalnut_goatKefir <- function() new(Class = 'goatKefir', syrup = c(Stonewall_f
 #  filmjolk = c(Siggis = 200)
 #))
 
-#Kahlua_filmjolk <- function() new(
+#Kahlua_filmjolk <- \() new(
 #  Class = 'filmjolk',
 #  liqueur_Tbsp = c(Kahlua_coffee = 1),
 #  cons = 'alcohol too heavy', date = as.Date('2024-04-05'))
 
 # @rdname filmjolk
 # @export
-#ryeWhisky_filmjolk <- function() new(
+#ryeWhisky_filmjolk <- \() new(
 #  Class = 'filmjolk',
 #  syrup = c(Runamok_ryeWhisky = 14),
 #  pros = 'Effie loves!',

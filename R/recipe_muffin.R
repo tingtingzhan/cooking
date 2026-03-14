@@ -70,7 +70,7 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
 
 #' @rdname muffin
 #' @export
-cornbreadMix <- function() new(
+cornbreadMix <- \() new(
   Class = 'recipe', alias = 'Cornbread Mix',
   pastryFlour = c(Wegmans_pastry = 50), # breadFlour does **not** work!!!
   cornmeal = c(Albertsons_yellowCorn = 320),
@@ -82,7 +82,7 @@ cornbreadMix <- function() new(
 
 #' @rdname muffin
 #' @export
-cornbread <- function() new(
+cornbread <- \() new(
   Class = 'muffin', alias = 'Cornbread\U1f33d', 
   
   #cornbreadMix(), # will overwrite `@portion`!!

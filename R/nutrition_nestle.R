@@ -1,6 +1,6 @@
 
 
-Nestle_coffeeMate <- function() new(
+Nestle_coffeeMate <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], nestle = '12482915',
   name = '\u690d\u8102\u672b Coffee Mate Creamer',
   servingGram = 2,

@@ -1,5 +1,5 @@
 
-Quaker_oat <- function() new(
+Quaker_oat <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   quakeroats = 'hot-cereals/old-fashioned-oats',
   name = 'Old Fashioned Oats', alias = '\u719f\u538b\u71d5\u9ea6',
@@ -11,7 +11,7 @@ Quaker_oat <- function() new(
 
 
 
-HaiTai_blackRice <- function() new(
+HaiTai_blackRice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   haitaiusa = 'black-rice-\ud751\ubbf8-2lbs', 
   name = '\u9ed1\u7c73 Black Rice',
@@ -20,7 +20,7 @@ HaiTai_blackRice <- function() new(
   fat = 2, carbohydrate = 33, sugar = 1, protein = 3)
 
 
-Nishiki_brownRice <- function() new(
+Nishiki_brownRice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   nishiki = '69969', name = '\u7384\u7c73 Premium Brown Rice',
   wegmans = 10902L, amazon = 'B006SFAS6C',
@@ -30,7 +30,7 @@ Nishiki_brownRice <- function() new(
   fat = 1, carbohydrate = 34, protein = 3)
 
 
-Dynasty_brownRice <- function() new(
+Dynasty_brownRice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Dynasty\U1f1fa\U1f1f8', 
   name = '\u6cf0\u570b\u9999\u7cd9\u7c73 Brown Rice, Jasmine',
@@ -40,3 +40,15 @@ Dynasty_brownRice <- function() new(
   servingGram = 45, servingCup = 1/4, 
   calorie = 160,
   carbohydrate = 37, protein = 2)
+
+Botan_rice <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  brand = 'Botan\u5bcc\u8d35\u82b1',
+  name = '\u52a0\u5dde\u4e2d\u7c92\u7c73Calrose Rice',
+  jfc = '01714',
+  wegmans = 143657L,
+  usd = 9.49/2270*45,
+  servingGram = 45, servingCup = 1/4,
+  calorie = 160,
+  carbohydrate = 36, protein = 3
+)

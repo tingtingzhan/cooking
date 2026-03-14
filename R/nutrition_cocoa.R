@@ -18,7 +18,7 @@ NULL
 
 #' @rdname nutrition_cocoa
 #' @export
-Navitas_cacao <- function() new(
+Navitas_cacao <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], navitas = 'cacao-powder',
   # bought at Costco once, but didn't see any more
   name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
@@ -33,7 +33,7 @@ Navitas_cacao <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-KingArthur_blackCocoa <- function() new(
+KingArthur_blackCocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211821L, 
   name = 'Black Cocoa', alias = '\u9ed1\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
@@ -48,7 +48,7 @@ KingArthur_blackCocoa <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-KingArthur_Bensdorp <- function() new(
+KingArthur_Bensdorp <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211698L,
   name = 'Bensdorp Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*6, # 2023-11-12
@@ -60,7 +60,7 @@ KingArthur_Bensdorp <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-KingArthur_Burgundy <- function() new(
+KingArthur_Burgundy <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211822L,
   name = 'Burgundy Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
@@ -74,7 +74,7 @@ KingArthur_Burgundy <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_cocoa <- function() new(
+Ghirardelli_cocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = 'premium-baking-cocoa-100-unsweetened-cocoa-powder-6-bags-61703cs',
   name = 'Ground Cocoa',
@@ -86,7 +86,7 @@ Ghirardelli_cocoa <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_bittersweet <- function() new(
+Ghirardelli_bittersweet <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = '60-cacao-bittersweet-chocolate-premium-baking-chips-12-bags-61274cs',
   name = 'Bittersweet, Chips, 60% Cacao', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
@@ -98,7 +98,7 @@ Ghirardelli_bittersweet <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_semisweet_bar <- function() new(
+Ghirardelli_semisweet_bar <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = 'semi-sweet-chocolate-baking-bar-case-of-12',
   name = 'Semi-Sweet\U1f36b', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
@@ -109,7 +109,7 @@ Ghirardelli_semisweet_bar <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_semisweet_chip <- function() new(
+Ghirardelli_semisweet_chip <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = 'semisweet-chocolate-premium-baking-chips-chocolate-chips-for-baking-12-bags-64015cs',
   name = 'Semi-Sweet, Chips', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
@@ -121,7 +121,7 @@ Ghirardelli_semisweet_chip <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_sunrise <- function() new(
+Ghirardelli_sunrise <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Sunrise, 15-17%\U1f9c8', alias = '\u53ef\u53ef\u7c89',
   ghirardelli = 'cocoa-powders-information',
@@ -132,7 +132,7 @@ Ghirardelli_sunrise <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_majestic <- function() new(
+Ghirardelli_majestic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = 'cocoa-powders-information', alias = '\u53ef\u53ef\u7c89',
   name = 'Majestic, 20-22%\U1f9c8',
@@ -143,7 +143,7 @@ Ghirardelli_majestic <- function() new(
 
 #' @rdname nutrition_cocoa
 #' @export
-Ghirardelli_superior <- function() new(
+Ghirardelli_superior <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   ghirardelli = 'cocoa-powders-information',
   name = 'Superior, 10-12%\U1f9c8', alias = '\u53ef\u53ef\u7c89',

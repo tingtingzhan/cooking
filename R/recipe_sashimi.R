@@ -1,6 +1,6 @@
 
 
-sashimi1 <- function() new(
+sashimi1 <- \() new(
   Class = 'recipe',
   # sesameOil = 13, # maybe a little too overwhelming
   sesameOil = 10, # try next time

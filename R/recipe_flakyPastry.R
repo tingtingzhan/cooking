@@ -54,7 +54,7 @@ setClass(Class = 'waterDough', contains = 'recipe', prototype = prototype(
   alias_class = '\u6dee\u626c\u6c34\u6cb9\u9762\u76ae'
 ))
 
-waterDough <- function() new(
+waterDough <- \() new(
   Class = 'waterDough',
   pastryFlour = 400, lard = 50, water = 150,
   review = 'try'
@@ -75,7 +75,7 @@ setClass(Class = 'shortDough', contains = 'recipe', prototype = prototype(
 #' @rdname flakyPastry
 #' @aliases shortDough-class
 #' @export
-shortDough_lard <- function() new(
+shortDough_lard <- \() new(
   Class = 'shortDough', 
   pastryFlour = 200, lard = 80,
   review = 'try'
@@ -111,7 +111,7 @@ setClass(Class = 'largeYouSu', contains = 'recipe', prototype = prototype(
 
 #' @rdname flakyPastry
 #' @export
-Dad_flowerPastry_waterDough <- function() new(
+Dad_flowerPastry_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u9c9c\u82b1\u997c(\u6c34)', 
   dad1966 = 'DNnpZDUWJYk',
   flour = 150, oil = c(Wegmans_vegetable = 40), sugar = 10, water = 85,
@@ -120,7 +120,7 @@ Dad_flowerPastry_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_flowerPastry_shortDough <- function() new(
+Dad_flowerPastry_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u9c9c\u82b1\u997c water', 
   dad1966 = 'DNnpZDUWJYk',
   flour = 150, oil = c(Wegmans_vegetable = 75),
@@ -129,7 +129,7 @@ Dad_flowerPastry_shortDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_oxTongue1_waterDough <- function() new(
+Dad_oxTongue1_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u725b\u820c\u997c1(\u6c34)',
   flour = 120, oil = c(Wegmans_vegetable = 30), sugar = 10, water = 60,
   portion = c(
@@ -139,7 +139,7 @@ Dad_oxTongue1_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_oxTongue1_shortDough <- function() new(
+Dad_oxTongue1_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u725b\u820c\u997c1',
   flour = 120,
   oil = c(Wegmans_vegetable = 60),
@@ -153,7 +153,7 @@ Dad_oxTongue1_shortDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-shangshi_oxTongue_shortDough <- function() new(
+shangshi_oxTongue_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u725b\u820c\u997c', 
   shangshikitchen = '2maemGhLN8c',
   flour = 140, butter = 70,
@@ -161,7 +161,7 @@ shangshi_oxTongue_shortDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-shangshi_oxTongue_waterDough <- function() new(
+shangshi_oxTongue_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = 200,
   portion = c('\u5c0f\u5305\u9165' = 24),
@@ -172,7 +172,7 @@ shangshi_oxTongue_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_blackSesamePastry_waterDough <- function() new(
+Dad_blackSesamePastry_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u9165\u997c(\u6c34)', 
   dad1966 = 'n_J9ly98Tvw',
   flour = 300, sugar = 30, water = 160, lard = 50,
@@ -181,7 +181,7 @@ Dad_blackSesamePastry_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_blackSesamePastry_largeYouSu <- function() new(
+Dad_blackSesamePastry_largeYouSu <- \() new(
   Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u9165\u997c', 
   dad1966 = 'n_J9ly98Tvw',
   flour = 100, oil = c(Mazola_corn = 100),
@@ -191,7 +191,7 @@ Dad_blackSesamePastry_largeYouSu <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_yolkPastry_waterDough <- function() new(
+Dad_yolkPastry_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u9165(\u6c34)',
   flour = 240,
   ghee = 80, sugar = 10, water = 120,
@@ -199,7 +199,7 @@ Dad_yolkPastry_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-Dad_yolkPastry_shortDough <- function() new(
+Dad_yolkPastry_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u9165',
   flour = 240,
   ghee = 120,
@@ -207,18 +207,18 @@ Dad_yolkPastry_shortDough <- function() new(
 
 # @rdname flakyPastry
 # @export
-cocoa_Dad_yolkPastry_largeYouSu <- function() new(
+cocoa_Dad_yolkPastry_largeYouSu <- \() new(
   Class = 'recipe', Dad_yolkPastry_shortDough(), cocoa = 12)
 
 # @rdname flakyPastry
 # @export
-matcha_Dad_yolkPastry_largeYouSu <- function() new(
+matcha_Dad_yolkPastry_largeYouSu <- \() new(
   Class = 'recipe', Dad_yolkPastry_shortDough(), matcha = 12)
 
 
 #' @rdname flakyPastry
 #' @export
-PinNuo_oxTongue_waterDough <- function() new(
+PinNuo_oxTongue_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = 500,
   yeast = 4, Na2CO3 = 1, water = 320, 
@@ -226,7 +226,7 @@ PinNuo_oxTongue_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-PinNuo_largeYouSu <- function() new(
+PinNuo_largeYouSu <- \() new(
   Class = 'recipe', alias_flavor = 'large you-su',
   flour = 100,
   spice5 = 3,
@@ -236,28 +236,28 @@ PinNuo_largeYouSu <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-laofangu_magnolia_waterDough <- function() new(
+laofangu_magnolia_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u7389\u5170\u82b1(\u6c34)', 
   laofangu = 'h39opPVlGKo',
   flour = 125, lard = 30, water = 80)
 
 #' @rdname flakyPastry
 #' @export
-laofangu_magnolia_shortDough <- function() new(
+laofangu_magnolia_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u7389\u5170\u82b1', 
   laofangu = 'h39opPVlGKo',
   pastryFlour = 125, lard = 65) # pastryFlour confirmed!!
 
 #' @rdname flakyPastry
 #' @export
-Dad_pepperPastry_waterDough <- function() new(
+Dad_pepperPastry_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u6912\u76d0\u9165(\u6c34)', 
   dad1966 = 'D5bRV_pcywY',
   flour = 400, water = 210, butter = 60)
 
 #' @rdname flakyPastry
 #' @export
-Dad_pepperPastry_shortDough <- function() new(
+Dad_pepperPastry_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u6912\u76d0\u9165', 
   dad1966 = 'D5bRV_pcywY',
   starch = c(Wegmans_corn = 150), # will be more flaky!
@@ -267,7 +267,7 @@ Dad_pepperPastry_shortDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-laofangu_durianSu_waterDough <- function() new(
+laofangu_durianSu_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u69b4\u83b2\u9165(\u6c34)', 
   laofangu = 'p7CExuQQWiA',
   pastryFlour = 250, sugar = 25, lard = 25, # pastryFlour!!
@@ -276,28 +276,28 @@ laofangu_durianSu_waterDough <- function() new(
 
 #' @rdname flakyPastry
 #' @export
-laofangu_durianSu_shortDough <- function() new(
+laofangu_durianSu_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u69b4\u83b2\u9165', 
   laofangu = 'p7CExuQQWiA',
   pastryFlour = 250, butter = 450) # pastryFlour!!
 
 #' @rdname flakyPastry
 #' @export
-Dad_sweetPastry_waterDough <- function() new(
+Dad_sweetPastry_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u7cd6\u9165\u997c(\u6c34)', 
   dad1966 = 'CEHbZrNHNG4',
   flour = 500, yeast = 4, water = 320)
 
 #' @rdname flakyPastry
 #' @export
-Dad_sweetPastry_shortDough <- function() new(
+Dad_sweetPastry_shortDough <- \() new(
   Class = 'recipe', alias_flavor = '\u7cd6\u9165\u997c', 
   dad1966 = 'CEHbZrNHNG4',
   flour = 300, oil = c(Wegmans_vegetable = 160))
 
 #' @rdname flakyPastry
 #' @export
-Dad_oxTongue2_waterDough <- function() new(
+Dad_oxTongue2_waterDough <- \() new(
   Class = 'recipe', alias_flavor = '\u725b\u820c\u997c2(\u6c34)',
   flour = 200, water = 100, lard = 60,
   dad1966 = 'XLj7W76UFbs')

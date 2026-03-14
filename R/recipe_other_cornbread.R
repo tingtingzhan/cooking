@@ -4,7 +4,7 @@
 #' @name cornbread_other
 #' @keywords internal
 #' @export
-Wegmans_cornbread_recipe <- function() new(
+Wegmans_cornbread_recipe <- \() new(
   Class = 'recipe', wegmans = '3044',
   alias_flavor = 'Cornbread',
   #Wegmans Avocado Oil Cooking Spray
@@ -21,7 +21,7 @@ Wegmans_cornbread_recipe <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Wegmans_cornbread <- function() new(
+Wegmans_cornbread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 268359L,
   name = 'Cornbread', usd = 9.00/9,
   servingGram = 57, calorie = 240,
@@ -33,7 +33,7 @@ Wegmans_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-BethanyWeathersby_cornbread <- function() new(
+BethanyWeathersby_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'Bethany Weathersby',
   butter_cup = 1/2,
   sugar_cup = c(Domino_granulated = 2/3),
@@ -48,7 +48,7 @@ BethanyWeathersby_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-bluegirl_cornbread <- function() new(
+bluegirl_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'bluegirl',
   flour_cup = 1,
   cornmeal_cup = 1,
@@ -62,7 +62,7 @@ bluegirl_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-PreppyKitchen_cornbread <- function() new(
+PreppyKitchen_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
   cornmeal = c(Quaker_yellowCorn = 255), # 1.5 cup is not 255g
   flour_cup = 3/4,
@@ -79,7 +79,7 @@ PreppyKitchen_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Quaker_cornbread <- function() new(
+Quaker_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
   quakeroats = 'golden-cornbread',
   oil_Tbsp = c(Wegmans_vegetable_oil = 2),
@@ -93,7 +93,7 @@ Quaker_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-JoshuaWeissman_cornbread <- function() new(
+JoshuaWeissman_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread', 
   butter_cup = 1/2,
   # 1/2 bunch fresh sage 
@@ -114,7 +114,7 @@ JoshuaWeissman_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Jiffy_cornMuffin <- function() new(
+Jiffy_cornMuffin <- \() new(
   Class = 'recipe',
   alias_flavor = 'Corn Muffin', 
   author = 'Jiffy', 
@@ -126,7 +126,7 @@ Jiffy_cornMuffin <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-WholeFoods365_cornbread <- function() new(
+WholeFoods365_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
   author = WholeFoods365_cornbreadMix()@brand,
@@ -138,7 +138,7 @@ WholeFoods365_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Stonewall_cornbread <- function() new(
+Stonewall_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
   author = Stonewall_cornbreadMix()@brand, 
@@ -149,7 +149,7 @@ Stonewall_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-TraderJoes_cornbread <- function() new(
+TraderJoes_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
   #author = 'Trader Joes', # recipe on packaging
@@ -162,7 +162,7 @@ TraderJoes_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Krusteaz_southern_cornbread <- function() new(
+Krusteaz_southern_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
   author = Krusteaz_southern_cornbreadMix()@brand,
@@ -175,7 +175,7 @@ Krusteaz_southern_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Albertsons_cornbread <- function() new(
+Albertsons_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
   acme = 117010060L,
   butter_cup = 1/4,
@@ -190,7 +190,7 @@ Albertsons_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-BobsRedMill_cornbread <- function() new(
+BobsRedMill_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
   author = BobsRedMill_cornbreadMix()@brand,
@@ -201,7 +201,7 @@ BobsRedMill_cornbread <- function() new(
 
 #' @rdname cornbread_other
 #' @export
-Fleischmanns_cornbread <- function() new(
+Fleischmanns_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
   author = Fleischmanns_cornbreadMix()@brand,

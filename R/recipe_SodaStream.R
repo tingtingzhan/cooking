@@ -13,15 +13,15 @@ setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
 
 #' @rdname SodaStream
 #' @export
-limeSoda <- function() new(Class = 'SodaStream', lime_pc = 1.5, pros = 'I love!')
+limeSoda <- \() new(Class = 'SodaStream', lime_pc = 1.5, pros = 'I love!')
 
 #' @rdname SodaStream
 #' @export
-lemonSoda <- function() new(Class = 'SodaStream', lemon_pc = 1, review = 'try')
+lemonSoda <- \() new(Class = 'SodaStream', lemon_pc = 1, review = 'try')
 
 
 
-lemonadeSoda <- function() new(
+lemonadeSoda <- \() new(
   Class = 'SodaStream',
   flavor_Tbsp = c(CountryTime_Lemonade = 1),
   pros = c('Acidity just right', 'Not sweet at all')

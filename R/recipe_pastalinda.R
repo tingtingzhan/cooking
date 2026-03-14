@@ -78,14 +78,14 @@ setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
 
 #' @rdname pastalinda
 #' @export
-wrapperlinda <- function() new(
+wrapperlinda <- \() new(
   Class = 'wrapperlinda',
   water = 285, # Wegmans bread flour
   review = 'a hypothetical model')
 
 #' @rdname pastalinda
 #' @export
-pumpkin_wrapperlinda <- function() new(
+pumpkin_wrapperlinda <- \() new(
   Class = 'wrapperlinda', 
   pumpkin = 380, # Wegmans bread flour
   review = c(
@@ -141,21 +141,21 @@ setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
 
 #' @rdname noodlelinda
 #' @export
-noodlelinda <- function() new(
+noodlelinda <- \() new(
   Class = 'noodlelinda', 
   water = 300,
   review = 'old experiment, retry to confirm')
 
 #' @rdname noodlelinda
 #' @export
-noodlelinda_KingArthur <- function() new(
+noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500), 
   water = 225, # 220g too dry, 225g just right
   date = as.Date('2024-06-02'), pros = 'perfect wetness for KitchenAid KSM8990 and Pastalinda')
 
 #' @rdname noodlelinda
 #' @export
-pumpkin_noodlelinda_KingArthur <- function() new(
+pumpkin_noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500),
   pumpkin = 270, # try with fresh can
   date = as.Date('2024-06-25'), pros = '280g for opened can'
@@ -165,7 +165,7 @@ pumpkin_noodlelinda_KingArthur <- function() new(
 
 #' @rdname noodlelinda
 #' @export
-pumpkin_noodlelinda <- function() new(
+pumpkin_noodlelinda <- \() new(
   Class = 'noodlelinda', 
   pumpkin = 400,
   review = 'retry to confirm')
@@ -173,14 +173,14 @@ pumpkin_noodlelinda <- function() new(
 
 #' @rdname noodlelinda
 #' @export
-tomato_noodlelinda <- function() new(
+tomato_noodlelinda <- \() new(
   Class = 'noodlelinda', 
   tomato = 400, 
   review = 'try')
 
 #' @rdname noodlelinda
 #' @export
-matcha_noodlelinda <- function() new(Class = 'noodlelinda', noodlelinda(), matcha_tsp = 7, review = 'retry!!')
+matcha_noodlelinda <- \() new(Class = 'noodlelinda', noodlelinda(), matcha_tsp = 7, review = 'retry!!')
 
 
 

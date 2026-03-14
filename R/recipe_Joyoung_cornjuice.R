@@ -20,7 +20,7 @@ setClass(Class = 'cornjuice', contains = 'recipe', prototype = prototype(
 
 #' @rdname cornjuice
 #' @export
-cornjuice <- function() new(
+cornjuice <- \() new(
   Class = 'cornjuice', alias_flavor = '',
   yellowCorn = 367, water = 560,
   JoyoungDJ13U = JoyoungDJ13U_cornjuice(
@@ -29,7 +29,7 @@ cornjuice <- function() new(
 
 #' @rdname cornjuice
 #' @export
-cornVeggiePaste <- function() new(
+cornVeggiePaste <- \() new(
   Class = 'cornjuice', alias_flavor = '\u852c\u83dc\U1f955\U1fadb',
   yellowCorn = 246,
   puree = c(Kirkland_mixedVeggies = 123), water = 560,

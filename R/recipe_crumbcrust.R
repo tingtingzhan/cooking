@@ -63,7 +63,7 @@ setClass(Class = 'crumbcrust', contains = 'recipe', prototype = prototype(
 
 #' @rdname crumbcrust
 #' @export
-crumbcrust <- function() new(Class = 'crumbcrust')
+crumbcrust <- \() new(Class = 'crumbcrust')
 
 
 
@@ -80,7 +80,7 @@ crumbcrust <- function() new(Class = 'crumbcrust')
 #' 
 #' @name grahamCrust
 #' @export
-PreppyKitchen_grahamCrust1 <- function() new(
+PreppyKitchen_grahamCrust1 <- \() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(HoneyMaid_graham = 180), # 1.5 cups
   butter_cup = 1/4,
@@ -88,7 +88,7 @@ PreppyKitchen_grahamCrust1 <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-PreppyKitchen_grahamCrust2 <- function() new(
+PreppyKitchen_grahamCrust2 <- \() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(Nabisco_graham = 270), # 2.25 cups
   butter_Tbsp = 5,
@@ -96,7 +96,7 @@ PreppyKitchen_grahamCrust2 <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-PreppyKitchen_grahamCrust3 <- function() new(
+PreppyKitchen_grahamCrust3 <- \() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(HoneyMaid_graham = 180), # 1.5 cups
   butter_Tbsp = 5,
@@ -104,7 +104,7 @@ PreppyKitchen_grahamCrust3 <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-PreppyKitchen_grahamCrust4 <- function() new(
+PreppyKitchen_grahamCrust4 <- \() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(Nabisco_graham = 270), # 2.25 cups
   butter_Tbsp = 6,
@@ -112,7 +112,7 @@ PreppyKitchen_grahamCrust4 <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-PreppyKitchen_grahamCrust5 <- function() new(
+PreppyKitchen_grahamCrust5 <- \() new(
   Class = 'recipe', alias_flavor = 'Graham Crust',
   flavor = c(Nabisco_graham = 260), # 2 cups (should be 240g based on his other recipes)
   butter_cup = 1/2,
@@ -120,7 +120,7 @@ PreppyKitchen_grahamCrust5 <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-Keebler_grahamCrust <- function() new(
+Keebler_grahamCrust <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Keebler', name = 'Graham Crust',
   url = 'https://www.keebler.com/en/sweet-treat/pie-crusts/graham/ready-crust-graham-cracker',
@@ -130,7 +130,7 @@ Keebler_grahamCrust <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-WholeFoods365_grahamCrust <- function() new(
+WholeFoods365_grahamCrust <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b08ly5bys5',
   name = 'Graham Crust',
   servingGram = 21, 
@@ -140,7 +140,7 @@ WholeFoods365_grahamCrust <- function() new(
 
 #' @rdname grahamCrust
 #' @export
-MiDel_grahamCrust <- function() new(
+MiDel_grahamCrust <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel') |> c(), 
   name = 'Graham Crust',
@@ -149,13 +149,13 @@ MiDel_grahamCrust <- function() new(
   fat = 5, sodium = .14, addedSugar = 8, protein = 1)
 
 
-MiDel_chocolateCrust <- function() new(
+MiDel_chocolateCrust <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   url = 'https://midelcookies.com/products/chocolate-snap-pie-crust/',
   servingGram = 25, fat = 4.5, sodium = .07, sugar = 9, protein = 1)
 
 
-DiamondNuts_chocolateCrust <- function() new(
+DiamondNuts_chocolateCrust <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'https://shop.diamondnuts.com/collections/nut-pie-crusts/products/6-oz-ready-to-use-chocolate-nut-pie-crust',
   wegmans = 25249000L,
   servingGram = 21, fat = 7, sodium = .08, sugar = 4, protein = 2)
@@ -165,7 +165,7 @@ DiamondNuts_chocolateCrust <- function() new(
 
 #' @rdname crumbcrust
 #' @export
-ginger_crumbcrust <- function() new(
+ginger_crumbcrust <- \() new(
   Class = 'crumbcrust', 
   # pastryFlour = 360, # original
   pastryFlour = 370, # to have 50% fat:flour
@@ -176,7 +176,7 @@ ginger_crumbcrust <- function() new(
   review = 'try'
 )
 
-blackSesame_crumbcrust_OLD <- function() new(
+blackSesame_crumbcrust_OLD <- \() new(
   Class = 'crumbcrust', 
   flour = c(Wegmans_bread = 390), 
   blackSesame = 110, 
@@ -187,7 +187,7 @@ blackSesame_crumbcrust_OLD <- function() new(
 
 #' @rdname crumbcrust
 #' @export
-blackSesame_crumbcrust <- function() new(
+blackSesame_crumbcrust <- \() new(
   Class = 'crumbcrust',
   flour = c(Wegmans_bread = 250), 
   blackSesame = 250, 

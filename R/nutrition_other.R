@@ -1,5 +1,5 @@
 
-Lato_seaGrapes <- function() new(
+Lato_seaGrapes <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], amazon = 'B083L49P5F',
   brand = 'Lato', name = 'Sea Grapes (Caulerpa Lentillifera)',
   servingGram = 50, fat = .05, sodium = .112, protein = .2,
@@ -10,7 +10,7 @@ Lato_seaGrapes <- function() new(
 
 
 
-Crown_Bourbon_syrup <- function() new( # lacks bourbon flavor!!!
+Crown_Bourbon_syrup <- \() new( # lacks bourbon flavor!!!
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Crown Maple', url = 'https://crownmaple.store/crown-maple-bourbon-barrel-aged-organic-maple-syrup-750ml-25-fl-oz/') |> c(),
   name = 'Bourbon Barrel-Aged Maple\U1f341 Syrup', alias = '\u9152\u6876\u67ab\u7cd6',

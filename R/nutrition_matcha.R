@@ -5,7 +5,7 @@
 #' 
 #' @name ippodo
 #' @export
-Ippodo_ikuyo <- function() new(
+Ippodo_ikuyo <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha175512', ippodojpn = 'matcha105033', ippodousa = 'ikuyo-100',
   name = 'Ikuyo', alias = '\u5e7e\u4e16\u306e\u6614',
@@ -24,7 +24,7 @@ Ippodo_ikuyo <- function() new(
 #' 
 #' @name marukyu
 #' @export
-Marukyu_tenju <- function() new(
+Marukyu_tenju <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1111020c1', name = 'Tenju', alias = '\u5929\u6388',
   servingGram = 2, 
@@ -40,12 +40,12 @@ Marukyu_tenju <- function() new(
 
 # some recipes/commercial sweetened matcha
 
-Ippodo_sayakaThin <- function() new(
+Ippodo_sayakaThin <- \() new(
   Class = 'recipe', alias_flavor = '\u660e\u6614 \u8584\u8336\u306e\u70b9\u3066\u65b9',
   matcha = c(Ippodo_sayaka = 2), water80 = 60,
   ippodoteajpn = 'matcha103644')
 
-Ippodo_sayakaThick <- function() new(
+Ippodo_sayakaThick <- \() new(
   Class = 'recipe', 
   alias_flavor = '\u660e\u6614 \u6fc3\u8336\u306e\u7df4\u308a\u65b9',
   matcha = c(Ippodo_sayaka = 4), water80 = 30,
@@ -54,7 +54,7 @@ Ippodo_sayakaThick <- function() new(
 
 # all other matcha
 
-Sencha_matcha <- function() new(
+Sencha_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = style_hyperlink(url = 'https://senchanaturals.com/collections/all-products-1/products/organic-emperors-matcha', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(),
   name = 'Emperor\'s Matcha\U1f375',
@@ -62,7 +62,7 @@ Sencha_matcha <- function() new(
   servingGram = 1.5, servingTsp = .5, # on package
   calorie = 5, carbohydrate = 1)
 
-Sencha_everyday_matcha <- function() new(
+Sencha_everyday_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
   name = '\u62b9\u8336\u7c89 Matcha\U1f375 Powder',
@@ -78,13 +78,13 @@ Sencha_everyday_matcha <- function() new(
 )
 
 
-ItoEn_matcha <- function() new(
+ItoEn_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   itoen = 'matcha-love-organic', name = 'Ceremonial Matcha\U1f375',
   servingGram = 2, servingTsp = 1,#, # packaging
   usd = 17/20*2)
 
-maeda_matcha <- function() new(
+maeda_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Ceremonial Matcha\U1f375',
   maeda = 'maeda-en-ceremonial-matcha', jfc = '18422',
@@ -93,7 +93,7 @@ maeda_matcha <- function() new(
 
 #' @rdname ippodo
 #' @export
-Ippodo_sayaka <- function() new(
+Ippodo_sayaka <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha173512', ippodojpn = 'matcha103644', ippodousa = 'sayaka-100g',
   name = 'Sayaka', alias = '\u660e\u6614',
@@ -104,7 +104,7 @@ Ippodo_sayaka <- function() new(
 
 #' @rdname ippodo
 #' @export
-Ippodo_seiun <- function() new(
+Ippodo_seiun <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha102044', ippodojpn = 'matcha102044', ippodousa = 'seiun',
   name = 'Seiun', alias = '\u9752\u96f2',
@@ -114,7 +114,7 @@ Ippodo_seiun <- function() new(
 
 #' @rdname marukyu
 #' @export
-Marukyu_kiwamiChoan <- function() new(
+Marukyu_kiwamiChoan <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1g36020c1', name = 'Kiwami Choan', alias = '\u6975\u9577\u5b89',
   servingGram = 2, servingTbsp = 2/7, # using ikuyo/sayaka data
@@ -123,7 +123,7 @@ Marukyu_kiwamiChoan <- function() new(
 
 #' @rdname marukyu
 #' @export
-Marukyu_choan <- function() new(
+Marukyu_choan <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1121020c1', name = 'Choan', alias = '\u9577\u5b89',
   servingGram = 2, servingTbsp = 2/7, # using ikuyo/sayaka data
@@ -132,7 +132,7 @@ Marukyu_choan <- function() new(
 
 #' @rdname marukyu
 #' @export
-Marukyu_unkaku <- function() new(
+Marukyu_unkaku <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1141020c1', name = 'Unkaku', alias = '\u96f2\u9db4',
   servingGram = 2, servingTbsp = 2/7, # using ikuyo/sayaka data
@@ -141,7 +141,7 @@ Marukyu_unkaku <- function() new(
 
 #' @rdname marukyu
 #' @export
-Marukyu_eiju <- function() new(
+Marukyu_eiju <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1131020c1', name = 'Eiju', alias = '\u6c38\u5bff',
   servingGram = 2, servingTbsp = 2/7, # using ikuyo/sayaka data
@@ -150,7 +150,7 @@ Marukyu_eiju <- function() new(
 
 #' @rdname marukyu
 #' @export
-Marukyu_kinrin <- function() new(
+Marukyu_kinrin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1151020c1', name = 'Kinrin', alias = '\u91d1\u8f2a',
   servingGram = 2, servingTbsp = 2/7, # using ikuyo/sayaka data
@@ -165,21 +165,21 @@ Marukyu_kinrin <- function() new(
 
 
 
-ItoEn_culinary_matcha <- function() new(
+ItoEn_culinary_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Culinary Matcha\U1f375', 
   itoen = 'matcha-love-culinary', jfc = '40360',
   servingGram = 2, servingTsp = 1, # packaging
   usd = 19/100*2)
 
-maeda_culinary_matcha <- function() new(
+maeda_culinary_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Culinary Matcha\U1f375',
   maeda = 'culinary-matcha', jfc = '18424',
   servingGram = 2, servingTsp = 1, # packaging?
   usd = 9/28*2)
 
-maeda_universal_matcha <- function() new(
+maeda_universal_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Universal Matcha\U1f375',
   maeda = 'maeda-en-shiki-matcha', jfc = '05448',

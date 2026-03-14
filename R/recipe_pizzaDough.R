@@ -20,4 +20,4 @@ setClass(Class = 'pizzaDough', contains = 'recipe', prototype = prototype(
 
 #' @rdname pizzaDough
 #' @export
-pizzaDough <- function() new(Class = 'pizzaDough')
+pizzaDough <- \() new(Class = 'pizzaDough')

@@ -1,7 +1,7 @@
 
 
 
-QuocViet_beefPho <- function() new(
+QuocViet_beefPho <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Qu\u1ed1c Vi\u1ec7t\U1f1fa\U1f1f8', url = 'https://quocvietfoods.com/products/beef-flavored-pho-soup-base-cot-pho-bo') |> c(),
   name = 'Beef Flavored Ph\u1edf Soup Base',

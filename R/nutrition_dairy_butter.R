@@ -1,6 +1,6 @@
 
 
-Kerrygold_butter <- function() new(
+Kerrygold_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   kerrygold = 'kerrygold-pure-irish-unsalted-butter',
   kerrygoldusa = 'unsalted-butter',
@@ -18,7 +18,7 @@ Kerrygold_butter <- function() new(
 )
 
 
-Kerrygold_salted_butter <- function() new(
+Kerrygold_salted_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   kerrygoldusa = 'salted-butter',
   kerrygold = 'kerrygold-pure-irish-salted-butter',
@@ -34,7 +34,7 @@ Kerrygold_salted_butter <- function() new(
 )
 
 
-Plugra_butter <- function() new(
+Plugra_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/')),
   name = '\u9ec4\u6cb9 European Butter\U1f9c8',
@@ -47,7 +47,7 @@ Plugra_butter <- function() new(
 
 
 
-Wuthrich_butter <- function() new(
+Wuthrich_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/')),
   name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
@@ -59,7 +59,7 @@ Wuthrich_butter <- function() new(
   water = 226.796/16*(1- .83 - .02))
 
 
-Lucerne_European_butter <- function() new(
+Lucerne_European_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Lucerne', 
   name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
@@ -71,7 +71,7 @@ Lucerne_European_butter <- function() new(
   water = 226.796/16*(1- .82 - .02))
 
 
-Minerva_Amish_butter <- function() new(
+Minerva_Amish_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   # wegmans = 43730L, # this is the salted version
   brand = c(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
@@ -86,7 +86,7 @@ Minerva_Amish_butter <- function() new(
 
 
 
-LandOLakes_butter <- function() new(
+LandOLakes_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   landolakes = 'butter-spreads/unsalted-butter',
   name = 'Butter\U1f9c8', alias = '\u9ec4\u6cb9',
@@ -100,7 +100,7 @@ LandOLakes_butter <- function() new(
 
 
 
-WegmansOrganic_ghee <- function() new(
+WegmansOrganic_ghee <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 258519L,
   name = 'Ghee', 
   usd = 7.99/213*15,
@@ -108,7 +108,7 @@ WegmansOrganic_ghee <- function() new(
   calorie = 130, fat = 15)
 
 
-Nanak_ghee <- function() new(
+Nanak_ghee <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costco = '100444109',
   name = 'Ghee', brand = c(style_hyperlink(text = 'Nanak\U1f1fa\U1f1f8', url = 'https://nanakfoods.com/products/ghee')),
   usd = 24.99/1587.57*14,

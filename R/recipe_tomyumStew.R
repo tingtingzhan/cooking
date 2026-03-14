@@ -19,7 +19,7 @@ setClass(Class = 'tomyumStew', contains = 'recipe', prototype = prototype(
 
 #' @rdname tomyumStew
 #' @export
-tomyumStew <- function() new(
+tomyumStew <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_Marsala = 25),
   water = 20,
@@ -30,7 +30,7 @@ tomyumStew <- function() new(
 
 
 
-tomyumStew_Sherry <- function() new(
+tomyumStew_Sherry <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_Sherry = 20),
   water = 25,
@@ -42,7 +42,7 @@ tomyumStew_Sherry <- function() new(
 
 
 
-tomyumStew_redWegmans <- function() new(
+tomyumStew_redWegmans <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_redCookingWine = 30),
   sugar_tsp = 1.5,
@@ -51,7 +51,7 @@ tomyumStew_redWegmans <- function() new(
   #date = as.Date('2024-05-26'),
   #pros = 'also nice')
 
-tomyumStew_whiteWegmans <- function() new(
+tomyumStew_whiteWegmans <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_whiteCookingWine = 25),
   water = 20,

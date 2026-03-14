@@ -58,13 +58,13 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
 
 #' @rdname spam
 #' @export
-tilapiaSpam <- function() new(
+tilapiaSpam <- \() new(
   Class = 'spam', alias_flavor = '\u7f57\u975e\u9c7c',
   pork = c(fatbelly = 180), seafood = c(tilapia = 220), pros = 'Effie\'s Signature')
 
 #' @rdname spam
 #' @export
-porkSpam <- function() new(
+porkSpam <- \() new(
   Class = 'spam',
   pork = c(belly = 400), pros = 'Effie\'s Signature!')
 
@@ -72,13 +72,13 @@ porkSpam <- function() new(
 
 #' @rdname spam
 #' @export
-shrimpSpam <- function() new(
+shrimpSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e',
   pork = c(fatbelly = 180), shrimp = 220, pros = 'Effie\'s Signature')
 
 #' @rdname spam
 #' @export
-shrimpLambSpam <- function() new(
+shrimpLambSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e\u7f8a',
   cumin_tsp = .25,
   pork = c(fatbelly = 100), lamb = c(leg = 100), shrimp = 200,
@@ -87,7 +87,7 @@ shrimpLambSpam <- function() new(
 
 #' @rdname spam
 #' @export
-chickenBreastSpam <- function() new(
+chickenBreastSpam <- \() new(
   Class = 'spam', alias_flavor = '\u9e21',
   pork = c(fatbelly = 100), chicken = c(breast = 300), pros = 'Effie\'s Signature')
 
@@ -96,7 +96,7 @@ chickenBreastSpam <- function() new(
 
 #' @rdname spam
 #' @export
-beefSpam <- function() new(
+beefSpam <- \() new(
   Class = 'spam', alias_flavor = '\u725b',
   cumin_tsp = .25,
   pork = c(belly = 320), beef = c(chuck = 80), 
@@ -105,7 +105,7 @@ beefSpam <- function() new(
 
 #' @rdname spam
 #' @export
-shrimpBeefSpam <- function() new(
+shrimpBeefSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e\u725b',
   cumin_tsp = .25,
   # pork = c(fatbelly = 100), beef = c(leanchuck = 200), shrimp = 200, # texture not good

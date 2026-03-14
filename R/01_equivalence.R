@@ -122,7 +122,7 @@ col_label_bin_ <- function(x, FUN, ...) {
 #' @rdname show_cooking
 #' @aliases show,equiv-method
 #' @export
-setMethod(f = show, signature = 'equiv', definition = function(object) {
+setMethod(f = show, signature = 'equiv', definition = \(object) {
   object |> format.equiv() |> print()
 })
 
@@ -427,7 +427,7 @@ show_endpoint <- function(x) {
 #' @rdname show_cooking
 #' @aliases show,recipeDx-method
 #' @export
-setMethod(f = show, signature = 'recipeDx', definition = function(object) {
+setMethod(f = show, signature = 'recipeDx', definition = \(object) {
   ret <- format.recipeDx(object)
   if (!length(ret)) return(invisible())
   object@per |> 

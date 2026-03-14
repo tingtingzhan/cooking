@@ -1,6 +1,6 @@
 
 
-AmishHeritage_carrotcake <- function() new(
+AmishHeritage_carrotcake <- \() new(
   Class = 'recipe',
   author = 'Amish Heritage', alias_flavor = 'Carrot Cake',
   url = 'https://amish-heritage.org/carrot-cake-with-pineapple-and-pecans-amish-recipe/',

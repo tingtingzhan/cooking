@@ -7,7 +7,7 @@ setClass(Class = 'fruitFrappe', contains = 'recipe', prototype = prototype(
 ))
 
 # what I am actually having
-strawberry_frappe <- function() new(
+strawberry_frappe <- \() new(
   Class = 'fruitFrappe',
   strawberry = c(Kirkland_strawberry = 200), # to confirm
   banana = 75, # to confirm
@@ -16,7 +16,7 @@ strawberry_frappe <- function() new(
 )
 
 
-strawberry_frappe0 <- function() new(
+strawberry_frappe0 <- \() new(
   Class = 'fruitFrappe',
   strawberry = c(Kirkland_strawberry = 275), # yes, cannot pack any tighter!!
   iceWater = 225, # yes, need that much..
@@ -30,7 +30,7 @@ strawberry_frappe0 <- function() new(
 
 
 
-Starbucks_strawberryFrappuccino <- function() new(
+Starbucks_strawberryFrappuccino <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 2122724L,
   name = 'Strawberry Frappuccino',
   servingGram = 470, serving_floz = 16,

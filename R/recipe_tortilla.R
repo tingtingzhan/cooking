@@ -35,7 +35,7 @@ setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
 ))
 
 
-ViewRoad_tortilla <- function() new(
+ViewRoad_tortilla <- \() new(
   Class = 'recipe', author = 'View on the Road', alias_flavor = 'Tortilla',
   youtube = 'fA68XXQJN4Y', 
   flour = 2.5 * 120,
@@ -44,7 +44,7 @@ ViewRoad_tortilla <- function() new(
   water_cup = 1)
 
 
-ViewRoad_pumpkin_tortilla <- function() new(
+ViewRoad_pumpkin_tortilla <- \() new(
   Class = 'recipe', author = 'View on the Road', alias_flavor = 'Pumpkin Tortilla',
   youtube = 'hPMc1a19CsU', 
   flour_cup = 1.25,
@@ -79,12 +79,12 @@ setClass(Class = 'tortillaLard', contains = 'tortilla', prototype = prototype(
 ))
 
 
-tortillaOlive <- function() new(
+tortillaOlive <- \() new(
   Class = 'tortillaOlive',
   water = 370, # based on [pumpkin_tortillaOlive]
   review = 'A hypothetical model')
 
-tortillaLard <- function() new(
+tortillaLard <- \() new(
   Class = 'tortillaLard',
   water = 370,
   review = 'A hypothetical model')
@@ -92,7 +92,7 @@ tortillaLard <- function() new(
 
 #' @rdname tortilla
 #' @export
-pumpkin_tortillaOlive <- function() new(Class = 'tortillaOlive', pumpkin = 520, review = 'not completely satisfied')
+pumpkin_tortillaOlive <- \() new(Class = 'tortillaOlive', pumpkin = 520, review = 'not completely satisfied')
 
 #' @rdname tortilla
 #' @export

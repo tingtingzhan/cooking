@@ -56,11 +56,11 @@ setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = pro
 
 #' @rdname shrimpfill
 #' @export
-shrimpfillCantonese <- function() new(Class = 'shrimpfillCantonese', pros = 'I love!')
+shrimpfillCantonese <- \() new(Class = 'shrimpfillCantonese', pros = 'I love!')
   
 #' @rdname shrimpfill
 #' @export
-shrimpfillCantonese_Argentine <- function() new(
+shrimpfillCantonese_Argentine <- \() new(
   Class = 'shrimpfillCantonese', 
   shrimp = c(Kirkland_shrimpArgentine = 850), 
   salt_tsp = 1/4, 
@@ -72,7 +72,7 @@ shrimpfillCantonese_Argentine <- function() new(
   whitePepper_tsp = 1/2,
   pros = 'I love', cons = 'Too expensive')
 
-shrimpfillCantonese_OLD <- function() new(
+shrimpfillCantonese_OLD <- \() new(
   Class = 'recipe', 
   shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
   pork = c(fat = 200),
@@ -106,7 +106,7 @@ setClass(Class = 'shrimpfillMaine', contains = 'shrimpfill', prototype = prototy
 ))
 
 
-shrimpfillMaine <- function() new(
+shrimpfillMaine <- \() new(
   Class = 'shrimpfillMaine',
   review = 'try!'
 )
@@ -139,7 +139,7 @@ setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = p
   )
 ))
 
-shrimpfill_garlicHerb <- function() new(Class = 'shrimpfill_garlicHerb', review = 'try next')
+shrimpfill_garlicHerb <- \() new(Class = 'shrimpfill_garlicHerb', review = 'try next')
 
 
 
@@ -171,7 +171,7 @@ setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = proto
 
 #' @rdname shrimpfill
 #' @export
-shrimpfill_oldBay <- function() new(
+shrimpfill_oldBay <- \() new(
   Class = 'shrimpfill_oldBay', 
   shrimp = c(Kirkland_shrimpArgentine = 800), 
   review = 'try')
@@ -179,7 +179,7 @@ shrimpfill_oldBay <- function() new(
 
 
 
-Wegmans_grilledShrimp <- function() new(
+Wegmans_grilledShrimp <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 208419L,
   name = 'Grilled Shrimp w. Basting Oil',
   # (Shrimp [Shrimp, Water, Salt, Sugar], Basting Oil [Safflower Oil, Sunflower Oil, Natural Flavor], Garlic [Garlic, Water, Citric Acid]).
@@ -188,7 +188,7 @@ Wegmans_grilledShrimp <- function() new(
   fat = 2, cholesterol = .145, sodium = .85, protein = 18)
 
 
-Wegmans_oldBayShrimp <- function() new(
+Wegmans_oldBayShrimp <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 25758L,
   name = 'Old Bay Garlic & Herb Shrimp',
   # Fresh Cooked Shrimp (Shrimp, Water, Salt, Sugar), Basting Oil (Soybean Oil, Dried Thyme, Dried Parsley, Natural Garlic Flavor), Chopped Garlic (Garlic, Extra Virgin Olive Oil, Water, Citric Acid), Old Bay Seasoning (Celery Salt [Salt, Celery Seed], Spices [including Red Pepper and Black Pepper], and Paprika), Rosemary.
@@ -196,7 +196,7 @@ Wegmans_oldBayShrimp <- function() new(
   calorie = 110,
   fat = 3.50, cholesterol = .160, sodium = .360, protein = 20)
 
-Wegmans_garlicShrimp <- function() new(
+Wegmans_garlicShrimp <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 38730L,
   name = 'Garlic Herb Shrimp',
   # Ingredients: Fresh Cooked Shrimp (Shrimp, Water, Salt, Sugar), Basting Oil (Soybean Oil, Dried Thyme, Dried Parsley, Natural Garlic Flavor), Chopped Garlic (Garlic, Extra Virgin Olive Oil, Water, Citric Acid), Parsley, Kosher Salt, Ground Black Pepper, Crystallized Lemon (Citric Acid, Lemon Oil, Lemon Juice).
@@ -214,7 +214,7 @@ Wegmans_garlicShrimp <- function() new(
 
 #' @rdname shrimpfill
 #' @export
-Daat_shrimpfill <- function() new(
+Daat_shrimpfill <- \() new(
   Class = 'recipe', alias_flavor = '\u867e\U1f990\u997a\u9985', 
   daatgo = 'SYLIYqVV2N4',
   shrimp = 600, lard = 30, pork = c(fat = 120),
@@ -225,7 +225,7 @@ Daat_shrimpfill <- function() new(
 
 #' @rdname shrimpfill
 #' @export
-whiteSwan_shrimpfill <- function() new(
+whiteSwan_shrimpfill <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
   shrimp = 250, pork = c(fat = 50), lard = 35,
   salt = 3, msg = 2,

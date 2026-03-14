@@ -7,7 +7,7 @@
 # A: Mainly names, but these are all the same yeast! Use interchangeably.
 
 
-Fleischmanns_instant <- function() new(
+Fleischmanns_instant <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   fleischmannsyeast = 4L,
   name = 'Instant Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
@@ -17,7 +17,7 @@ Fleischmanns_instant <- function() new(
 
 
 
-Fleischmanns_active <- function() new(
+Fleischmanns_active <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fleischmannsyeast = 2L,
   name = 'Active Dry Yeast',
   servingGram = 7.09, servingTsp = 2.25)

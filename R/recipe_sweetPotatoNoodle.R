@@ -12,7 +12,7 @@ setClass(Class = 'soaked', contains = 'recipe', prototype = prototype(
 
 #' @rdname soaked
 #' @export
-sweetPotatoNoodle_soaked <- function() new(
+sweetPotatoNoodle_soaked <- \() new(
   Class = 'soaked',
   alias_flavor = '\u7ea2\u85af\u7c89', 
   flavor = c(JayOne_sweetPotato = 300), # weighed
@@ -25,7 +25,7 @@ sweetPotatoNoodle_soaked <- function() new(
 )
 
 
-#sweetPotatoNoodle <- function() new(
+#sweetPotatoNoodle <- \() new(
 #  Class = 'recipe',
 #  homemade = c(sweetPotatoNoodle_soaked = 150),
 #  boilingWater = 50

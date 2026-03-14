@@ -13,14 +13,14 @@ setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
 
 #' @rdname tiramisuMix
 #' @export
-tiramisuMix <- function() new(
+tiramisuMix <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Baileys_espresso = 30), 
   pros = 'Wow!! Use as default!', 
   date = as.Date('2024-12-01'))
 
 
-tiramisuMix_Baileys <- function() new(
+tiramisuMix_Baileys <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Baileys_tiramisu = 30), 
   review = 'hypothetical model')
@@ -29,7 +29,7 @@ tiramisuMix_Baileys <- function() new(
 
 #' @rdname tiramisuMix
 #' @export
-tiramisuMix_Kahlua <- function() new(
+tiramisuMix_Kahlua <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Kahlua_coffee = 20), 
   heavyCream = 10,
@@ -38,7 +38,7 @@ tiramisuMix_Kahlua <- function() new(
 
 #' @rdname tiramisuMix
 #' @export
-tiramisuMix_FratelliVincenzi <- function() new(
+tiramisuMix_FratelliVincenzi <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(FratelliVincenzi_espresso = 17), 
   heavyCream = 10,
@@ -47,7 +47,7 @@ tiramisuMix_FratelliVincenzi <- function() new(
 
 #' @rdname tiramisuMix
 #' @export
-tiramisuMix_CaffeBorghetti <- function() new(
+tiramisuMix_CaffeBorghetti <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(CaffeBorghetti = 20), 
   heavyCream = 10,
@@ -56,7 +56,7 @@ tiramisuMix_CaffeBorghetti <- function() new(
 
 #' @rdname tiramisuMix
 #' @export
-tiramisuMix_Grind <- function() new(
+tiramisuMix_Grind <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Grind_espresso = 17), 
   heavyCream = 10,
@@ -65,7 +65,7 @@ tiramisuMix_Grind <- function() new(
 
 #' @rdname tiramisuMix
 #' @export
-tiramisuMix_Sabroso <- function() new(
+tiramisuMix_Sabroso <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Sabroso_coffee = 20),
   heavyCream = 10,
@@ -74,7 +74,7 @@ tiramisuMix_Sabroso <- function() new(
 
 
 
-tiramisuMix_CafeGranita <- function() new(
+tiramisuMix_CafeGranita <- \() new(
   Class = 'tiramisuMix',
   liqueur = c(CafeGranita_coffee = 23),
   heavyCream = 12,
@@ -82,7 +82,7 @@ tiramisuMix_CafeGranita <- function() new(
   review = 'try')
 
 
-tiramisuMix_Kikisi <- function() new(
+tiramisuMix_Kikisi <- \() new(
   Class = 'tiramisuMix',
   liqueur = c(Kikisi_coffee = 25),
   heavyCream = 12,
@@ -90,7 +90,7 @@ tiramisuMix_Kikisi <- function() new(
   review = 'try'
 )
 
-ryeWhisky_latte_FAIL <- function() new(
+ryeWhisky_latte_FAIL <- \() new(
   Class = 'tiramisuMix', syrup_tsp = c(Runamok_ryeWhisky = 1.5), coffee_tsp = 1.5, 
   cons = c('too sweet', 'not enough alcohol'))
 

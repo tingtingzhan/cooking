@@ -108,7 +108,7 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
 
 #' @rdname bread
 #' @export
-bread <- function() new(
+bread <- \() new(
   Class = 'bread', 
   water = 300,  
   drymilk = 30, 
@@ -116,14 +116,14 @@ bread <- function() new(
 
 #' @rdname bread
 #' @export
-beet_bread <- function() new(
+beet_bread <- \() new(
   Class = 'bread', bread(), 
   beet_Tbsp = 4, drymilk = 31, sugar = 35, 
   review = 'retry with extra water for beet!!')
 
 #' @rdname bread
 #' @export
-matcha_bread <- function() new(
+matcha_bread <- \() new(
   Class = 'bread', bread(), 
   matcha_tsp = 14, drymilk = 35, sugar = 73, 
   # 47g extra water, according to bao() model, why it's too wet??
@@ -136,7 +136,7 @@ matcha_bread <- function() new(
 
 #' @rdname bread
 #' @export
-pumpkin_bread <- function() new(
+pumpkin_bread <- \() new(
   Class = 'bread', 
   pumpkin = 350, drymilk = 34, brownSugar = 25, 
   review = 'try')
@@ -145,7 +145,7 @@ pumpkin_bread <- function() new(
 
 #' @rdname bread
 #' @export
-cocoa_bread <- function() new(
+cocoa_bread <- \() new(
   Class = 'bread', bread(),
   #cocoa_tsp = 16, # 4%
   cocoa_tsp = c(KingArthur_Bensdorp = 20), # 5%, as in bao(), tastes nice!
@@ -159,21 +159,21 @@ cocoa_bread <- function() new(
 
 #' @rdname bread
 #' @export
-tomato_bread <- function() new(
+tomato_bread <- \() new(
   Class = 'bread', tomato = 400, drymilk = 33, sugar = 40, 
   review = 'try')
 
 
 #' @rdname bread
 #' @export
-coffee_bread <- function() new(
+coffee_bread <- \() new(
   Class = 'bread', bread(), 
   coffee_tsp = 11, drymilk = 30, sugar = 40, 
   water80 = 100, water = 200,
   pros = 'Ethanol from fermentation, tastes like tiramisu!')
 
 
-rootBeer_bread <- function() new(
+rootBeer_bread <- \() new(
   Class = 'bread', bread(),
   water = 290, sauce = c(SodaStream_rootBeer = 45), sugar = numeric(),
   review = 'dont try until I can find sodastream syrup water content')
@@ -182,14 +182,14 @@ rootBeer_bread <- function() new(
 
 #' @rdname bread
 #' @export
-pineapple_bread <- function() new(
+pineapple_bread <- \() new(
   Class = 'bread', pineapple = 337, drymilk = 32, 
   review = 'try')
 
 
 #' @rdname bread
 #' @export
-ginger_bread <- function() new(
+ginger_bread <- \() new(
   Class = 'bread', bread(), 
   ginger_tsp = 2, drymilk = 32, sugar = 70, 
   review = 'try')

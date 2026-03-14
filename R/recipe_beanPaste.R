@@ -30,7 +30,7 @@ setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
 
 #' @rdname beanPaste
 #' @export
-adzukiBeanPaste <- function() new(
+adzukiBeanPaste <- \() new(
   Class = 'beanPaste',
   adzukibean = 200, water = 1330 - 200, # confirmed
   butter = 53, brownSugar = 67,
@@ -52,7 +52,7 @@ adzukiBeanPaste <- function() new(
 
 #' @rdname beanPaste
 #' @export
-redKidneyBeanPaste <- function() new(
+redKidneyBeanPaste <- \() new(
   Class = 'beanPaste',
   redKidneyBean = 200, water = 1325-200, # confirmed
   butter = 60, brownSugar = 85,
@@ -77,11 +77,11 @@ redKidneyBeanPaste <- function() new(
 #  JoyoungDJ13U = JoyoungDJ13U(operation = '900ml water line')
 #))
 
-#adzukiBeanMud <- function() new(
+#adzukiBeanMud <- \() new(
 #  Class = 'beanMud', alias_flavor = '\u7ea2',
 #  adzukibean = 130, water = 815, waterLost = 65)
 
-#adzukiBeanPaste_OLD <- function() new(
+#adzukiBeanPaste_OLD <- \() new(
 #  Class = 'beanPaste', alias_flavor = '\u7ea2',
 #  homemade = c(adzukiBeanMud = 600), waterLost = 300, # confirmed!!
 #  brownSugar = 30,
@@ -100,7 +100,7 @@ redKidneyBeanPaste <- function() new(
 
 #' @rdname beanPaste
 #' @export
-xiaogaojie_adzukiBeanPaste1 <- function() new(
+xiaogaojie_adzukiBeanPaste1 <- \() new(
   Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c991',
   adzukibean = 500,
   water = 350, # actual water absorbed
@@ -115,7 +115,7 @@ xiaogaojie_adzukiBeanPaste1 <- function() new(
 
 #' @rdname beanPaste
 #' @export
-xiaogaojie_adzukiBeanPaste2 <- function() new(
+xiaogaojie_adzukiBeanPaste2 <- \() new(
   Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c992',
   xiaogaojie = 'Jsqhb8i4ntU',
   adzukibean = 200,

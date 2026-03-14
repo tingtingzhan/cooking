@@ -12,7 +12,7 @@ if (FALSE) {
 }
 
 
-Edward_shreddedCoconutLite <- function() new(
+Edward_shreddedCoconutLite <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut')),
   name = '\u51cf\u8102\u6930\u84c9 Shredded Coconut\U1f965, Less Fat',
@@ -25,7 +25,7 @@ Edward_shreddedCoconutLite <- function() new(
   )
 
 
-Edward_shreddedCoconut <- function() new(
+Edward_shreddedCoconut <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut')),
   name = '\u6930\u84c9 Shredded Coconut\U1f965',
@@ -36,7 +36,7 @@ Edward_shreddedCoconut <- function() new(
   fat = 10, sodium = .005, carbohydrate = 4, sugar = 1, protein = 1,
   superior = 'WegmansOrganic_coconutFlour')
 
-Edward_coconutFlour <- function() new(
+Edward_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour')),
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
@@ -46,7 +46,7 @@ Edward_coconutFlour <- function() new(
   calorie = 60,
   fat = 2, sodium = .005, carbohydrate = 9, sugar = 1, protein = 2)
 
-BobsRedMill_coconutFlour <- function() new(
+BobsRedMill_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'organic-coconut-flour',
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
   servingGram = 14, 
@@ -54,7 +54,7 @@ BobsRedMill_coconutFlour <- function() new(
   calorie = 60,
   fat = 1.5, sodium = .01, carbohydrate = 9, sugar = 3, protein = 3)
 
-AnthonysGoods_coconutFlour <- function() new(
+AnthonysGoods_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
   brand = 'Anthony\'s Goods', 
@@ -66,7 +66,7 @@ AnthonysGoods_coconutFlour <- function() new(
   fat = 2, sodium = .01, carbohydrate = 8, sugar = 2, protein = 2)
 
 
-WegmansOrganic_coconutFlour <- function() new(
+WegmansOrganic_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmansorganic = 253623L, usd = 3.79/454*14,
   name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
@@ -99,7 +99,7 @@ WegmansOrganic_coconutFlour <- function() new(
 #' )
 #' @name coconutmilk
 #' @export
-ThaiKitchen_coconutmilkLite <- function() new(
+ThaiKitchen_coconutmilkLite <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
   name = 'Coconut\U1f965 Milk, Lite', alias = '\u4f4e\u8102\u6930\u6d46',
@@ -112,7 +112,7 @@ ThaiKitchen_coconutmilkLite <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-ThaiKitchen_coconutmilk <- function() new(
+ThaiKitchen_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-coconut-milk',
   name = 'Coconut\U1f965 Milk', alias = '\u6930\u6d46',
@@ -124,7 +124,7 @@ ThaiKitchen_coconutmilk <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-ThaiKitchen_coconutcream <- function() new(
+ThaiKitchen_coconutcream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/coconut-cream',
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
@@ -137,7 +137,7 @@ ThaiKitchen_coconutcream <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Kara_coconutcream <- function() new(
+Kara_coconutcream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
   brand = c(style_hyperlink(text = 'Kara\U1f1ee\U1f1e9', url = 'https://kara-coconut.com/cn/product/uht-coconut-cream/')),
@@ -155,7 +155,7 @@ Kara_coconutcream <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Silk_coconutmilk <- function() new(
+Silk_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text = 'Silk\U1f1fa\U1f1f8')), 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
@@ -167,7 +167,7 @@ Silk_coconutmilk <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-SoDelicious_coconutmilk <- function() new(
+SoDelicious_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'So Delicious\U1f1fa\U1f1f8', url = c(
@@ -189,7 +189,7 @@ SoDelicious_coconutmilk <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Freenow_coconutBarista_0sugar <- function() new(
+Freenow_coconutBarista_0sugar <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
@@ -203,7 +203,7 @@ Freenow_coconutBarista_0sugar <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Freenow_coconutBarista <- function() new(
+Freenow_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
@@ -215,7 +215,7 @@ Freenow_coconutBarista <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Luckin_coconutmilk <- function() new(
+Luckin_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u751f\u6930\u6d46',
   brand = c(style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com')),
@@ -228,7 +228,7 @@ Luckin_coconutmilk <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-PacificFoods_coconutBarista <- function() new(
+PacificFoods_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/')),
@@ -239,7 +239,7 @@ PacificFoods_coconutBarista <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-CalifiaFarms_coconutBarista <- function() new(
+CalifiaFarms_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/coconut-barista-blend/')),
@@ -250,7 +250,7 @@ CalifiaFarms_coconutBarista <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-CalifiaFarms_coconutmilkwater <- function() new(
+CalifiaFarms_coconutmilkwater <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/go-coconuts-coconutmilk/')),
@@ -266,7 +266,7 @@ CalifiaFarms_coconutmilkwater <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-Dream_coconutBarista <- function() new(
+Dream_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Dream\U1f1fa\U1f1f8', url = 'https://dreamplantbased.com/products/barista-blend-products/coconutmilk-barista/')),
@@ -277,7 +277,7 @@ Dream_coconutBarista <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-CoconutPalm_coconutmilk <- function() new(
+CoconutPalm_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = c(
@@ -291,7 +291,7 @@ CoconutPalm_coconutmilk <- function() new(
 
 #' @rdname coconutmilk
 #' @export
-CalifiaFarms_coconutmilk <- function() new(
+CalifiaFarms_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/organic-coconutmilk/')),

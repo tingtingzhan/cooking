@@ -22,7 +22,7 @@ setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
 
 #' @rdname marinade
 #' @export 
-marinade <- function() new(
+marinade <- \() new(
   Class = 'marinade', alias_flavor = '', # to suppress automatic `alias_flavor`
   salt = 20,
   sauce = c(LeeKumKee_5spiceMarinade = 150),
@@ -32,7 +32,7 @@ marinade <- function() new(
 
 
 
-tomyum_marinade <- function() new(
+tomyum_marinade <- \() new(
   Class = 'marinade',
   salt = 11,
   sauce = c(

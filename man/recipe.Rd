@@ -306,6 +306,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{CuisinartICE70}}{\linkS4class{tool}, Cuisinart ice cream maker ICE70}
 
+\item{\code{SanyoECJS35S}}{\linkS4class{tool}, Sanyo Rice Cooker ECJ-S35S}
+
 \item{\code{JoyoungDJ13U}}{\linkS4class{tool}, Joyoung soymilk maker DJ13U-P10}
 
 \item{\code{JoyoungDJ06M}}{\linkS4class{tool}, Joyoung mini soymilk maker DJ06M}

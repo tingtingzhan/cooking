@@ -1,6 +1,6 @@
 
 
-CountryTime_Lemonade <- function() new(
+CountryTime_Lemonade <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = '\u67e0\u6aac\u996e\u6599\u901f\u6eb6\u7c89 Lemonade Mix',
   countrytime = '00043000951170', 
@@ -12,7 +12,7 @@ CountryTime_Lemonade <- function() new(
   review = 'Too coarse and granular for cookie.')
 
 
-CountryTime_blackCherryLemonade <- function() new(
+CountryTime_blackCherryLemonade <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   countrytime = '00043000062500', # webpage missing!!
   name = 'Black Cherry Lemonade',

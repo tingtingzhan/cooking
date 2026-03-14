@@ -1,13 +1,13 @@
 
 
-MgCl2 <- function() new(
+MgCl2 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = '\u76d0\u5364 Magnesium Chloride MgCl\u2082',
   pubchem = 'Magnesium-chloride-_MgCl2',
   servingGram = 1)
   
 
-Ohsawa_nigari <- function() new(
+Ohsawa_nigari <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5')), 
   name = '\u82e6\u6c41/\u6ef7\u6c41 Nigari',
@@ -18,7 +18,7 @@ Ohsawa_nigari <- function() new(
   sodium = 1.966)
 
 # different size of salt rock has different density!!!
-Morton_salt <- function() new(
+Morton_salt <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/')),
   name = 'Salt\U1f9c2', alias = '\u76d0',
@@ -28,7 +28,7 @@ Morton_salt <- function() new(
   servingTbsp = 1, servingGram = 21, sodium = 23/(23+35.5) * 21)
 
 
-Ajinomoto_msg <- function() new(
+Ajinomoto_msg <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
   name = 'Monosodium Glutamate', alias = '\u5473\u7cbe',
@@ -41,7 +41,7 @@ Ajinomoto_msg <- function() new(
   sodium = .125)
 
 
-ArmHammer_NaHCO3 <- function() new(
+ArmHammer_NaHCO3 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8')),
   name = '\u5c0f\u82cf\u6253 Baking Soda, NaHCO\u2083',
@@ -50,7 +50,7 @@ ArmHammer_NaHCO3 <- function() new(
   servingTsp = 1/8, # packaging
   sodium = 23/(23+1+12+16*3) * .6)
 
-Na2CO3 <- function() new(
+Na2CO3 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], # presume no volumn change when baking
   name = '\u78b1\u9762 Soda Ash Na\u2082CO\u2083',
   pubchem = '10340',
@@ -63,7 +63,7 @@ Na2CO3 <- function() new(
   review = 'Made from baking Arm and Hammer baking soda, 200\u00b0F/30min')
 
 
-Wegmans_bakingPowder <- function() new(
+Wegmans_bakingPowder <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
   wegmans = 23397L, usd = 1.99/383,
@@ -71,7 +71,7 @@ Wegmans_bakingPowder <- function() new(
   servingTsp = 1/8, servingGram = 230/383, sodium = .05)
 
 
-TraderJoes_bakingPowder <- function() new(
+TraderJoes_bakingPowder <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 172804L,
   brand = 'Trader Joe\'s\U1f1fa\U1f1f8', 
   name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
@@ -82,7 +82,7 @@ TraderJoes_bakingPowder <- function() new(
   sodium = .055)
 
 
-Wegmans_water <- function() new(
+Wegmans_water <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Purified Water',
   wegmans = 259520L, usd = 1.29, # 2023-11-09

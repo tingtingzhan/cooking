@@ -79,7 +79,7 @@ setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototy
 
 #' @rdname beeffill
 #' @export
-beeffillLeeKumKee <- function() new(
+beeffillLeeKumKee <- \() new(
   Class = 'beeffillLeeKumKee',
   pros = 'connect tissue very good!'
 )

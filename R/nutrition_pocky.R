@@ -1,6 +1,6 @@
 
 
-Pocky_matcha <- function() new(
+Pocky_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = style_hyperlink(text = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', url = 'https://www.pocky.com/products/') |> c(),
   name = 'Matcha Pocky',
@@ -8,7 +8,7 @@ Pocky_matcha <- function() new(
   calorie = 200,
   fat = 9, sodium = .08, sugar = 13, addedSugar = 11, protein = 3)
 
-Pocky_double_matcha <- function() new(
+Pocky_double_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', name = 'Double Rich Matcha Pocky',
   # url = 'https://www.pocky.com/products/', #  cannot find online

@@ -3,7 +3,7 @@
 # https://youtu.be/FXX0vkbDon4
 
 
-fauxReo <- function() new(
+fauxReo <- \() new(
   Class = 'recipe', alias = '\u5c71\u5be8\u5965\u5229\u5965 Faux-Reos',
   portion = c(cookie = 26),
   sugar = 50,
@@ -14,7 +14,7 @@ fauxReo <- function() new(
   cocoa = c(KingArthur_blackCocoa = 64))
 
 
-KingArthur_fauxReo <- function() new(
+KingArthur_fauxReo <- \() new(
   Class = 'recipe', alias_flavor = 'Faux-Reos',
   portion = c(cookie = 26),
   sugar = 223,

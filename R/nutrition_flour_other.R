@@ -1,6 +1,6 @@
 
 
-BobsRedMill_almondFlour <- function() new(
+BobsRedMill_almondFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'almond-meal-flour',
   name = 'Almond Flour',
   servingGram = 13, servingTbsp = 2, 

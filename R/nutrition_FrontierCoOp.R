@@ -1,6 +1,6 @@
 
 
-FrontierCoop_harissa <- function() new(
+FrontierCoop_harissa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], frontiercoop = 'harissa-seasoning-organic-1-90-oz',
   name = 'Harissa Seasoning',
   contain = c(
@@ -12,7 +12,7 @@ FrontierCoop_harissa <- function() new(
   calorie = 15,
   fat = .5, sodium = .03, carbohydrate = 2, protein = 1)
 
-FrontierCoop_5spice <- function() new(
+FrontierCoop_5spice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], frontiercoop = 'frontier-co-op-five-spice-powder-1-92-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
   contain = c(
@@ -22,7 +22,7 @@ FrontierCoop_5spice <- function() new(
   servingGram = 54)
 
 
-FrontierCoop_vindaloo <- function() new(
+FrontierCoop_vindaloo <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
   name = 'Vindaloo Curry Seasoning', # \u5496\u55b1\u7c89 
   contain = c(

@@ -115,7 +115,7 @@ setClass(Class = 'mascarponeFrosting', contains = 'recipe', prototype = prototyp
   note = 'For piping'
 ))
 
-setValidity(Class = 'mascarponeFrosting', method = function(object) {
+setValidity(Class = 'mascarponeFrosting', method = \(object) {
   if (length(object@water)) stop('Use `frosting` recipe instead')
 })
 
@@ -129,7 +129,7 @@ setClass(Class = 'frosting', contains = 'recipe', prototype = prototype(
   mascarpone = 453/4, yogurt = 80 # not tried yet
 ))
 
-setValidity(Class = 'frosting', method = function(object) {
+setValidity(Class = 'frosting', method = \(object) {
   if (length(object@water)) stop('do not add water in `frosting`')
   if (length(object@pumpkin) || length(object@pineapple) || length(object@puree)) {
     stop('frosting with mascarpone+yogurt base already contains a lot of water. Cannot use puree. Use powder instead')
@@ -149,7 +149,7 @@ setClass(Class = 'mascarponeGanache', contains = 'recipe', prototype = prototype
 ))
 
 
-setValidity(Class = 'mascarponeGanache', method = function(object) {
+setValidity(Class = 'mascarponeGanache', method = \(object) {
   if (length(object@water)) stop('Use `ganache` recipe instead')
 })
 
@@ -163,7 +163,7 @@ setClass(Class = 'ganache', contains = 'recipe', prototype = prototype(
 ))
 
 
-setValidity(Class = 'ganache', method = function(object) {
+setValidity(Class = 'ganache', method = \(object) {
   # if (length(object@water)) stop('do not add water in `ganache`') # will add a little little now
   if (length(object@pumpkin) || length(object@pineapple) || length(object@puree)) {
     stop('ganache with mascarpone+yogurt base already contains a lot of water. Cannot use puree. Use powder instead')

@@ -1,6 +1,6 @@
 
 
-Siam_tomyum <- function() new(
+Siam_tomyum <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   weee = '61645', usd = 4.99/454*15, 
   brand = #c(style_hyperlink(text = 

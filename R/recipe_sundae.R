@@ -79,7 +79,7 @@ setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
 
 #' @rdname sundae
 #' @export
-matcha_sundae <- function() new(
+matcha_sundae <- \() new(
   Class = 'sundae',
   drymilk = 40, matcha_tsp = 8, sugar_Tbsp = 3,
   pros = 'I love')
@@ -89,14 +89,14 @@ matcha_sundae <- function() new(
 
 
 
-corn_sundae <- function() new(
+corn_sundae <- \() new(
   Class = 'sundae',
   homemade = c(cornjuice = 400), water = numeric(), yogurt = numeric(),
   review = 'try')
 
 #' @rdname sundae
 #' @export
-pumpkin_sundae <- function() new(
+pumpkin_sundae <- \() new(
   Class = 'mascarponeSundae', 
   pumpkin = 350, drymilk = 40, 
   sugar_tsp = 7, 
@@ -104,7 +104,7 @@ pumpkin_sundae <- function() new(
 
 #' @rdname sundae
 #' @export
-coffee_sundae <- function() new(
+coffee_sundae <- \() new(
   Class = 'sundae',
   drymilk = 37, coffee_Tbsp = 2, sugar_tsp = 5, # based on my coffee_gelatoOLD()
   review = 'try')
@@ -121,7 +121,7 @@ setClass(Class = 'mascarponeSundae', contains = 'recipe', prototype = prototype(
   mascarpone = 453/4
 ))
 
-setValidity(Class = 'mascarponeSundae', method = function(object) {
+setValidity(Class = 'mascarponeSundae', method = \(object) {
   if (length(object@water)) stop('Use `sundae` instead!')
 })
 
@@ -130,7 +130,7 @@ setValidity(Class = 'mascarponeSundae', method = function(object) {
 
 #' @rdname sundae
 #' @export
-pineapple_sundae <- function() new(
+pineapple_sundae <- \() new(
   Class = 'mascarponeSundae', 
   pineapple = 210,
   review = c('try!!'))
@@ -141,7 +141,7 @@ pineapple_sundae <- function() new(
 if (FALSE) {
 
   
-  cocoa_icecream <- function() new(
+  cocoa_icecream <- \() new(
     Class = 'recipe', alias_class = '\u51b0\u6dc7\uf9f5\U1f368',
     heavyCream = 480,
     eggYolk_pc = 6,
@@ -156,7 +156,7 @@ if (FALSE) {
   
   
   
-  Bourbon_icecream <- function() new(
+  Bourbon_icecream <- \() new(
     Class = 'recipe', alias_flavor = 'Bourbon \u67ab\u7cd6', 
     alias_class = '\u51b0\u6dc7\uf9f5\U1f368',
     heavyCream = 480,
@@ -189,7 +189,7 @@ if (FALSE) {
 #' )
 #' @name icecream
 #' @export
-xiaogaojie_icecream <- function() new(
+xiaogaojie_icecream <- \() new(
   Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'IQ-t8eSSD3Y',
   eggYolk_pc = 6,
@@ -201,7 +201,7 @@ xiaogaojie_icecream <- function() new(
 
 #' @rdname icecream
 #' @export
-happytears_icecream <- function() new(
+happytears_icecream <- \() new(
   Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   eggYolk_pc = 5,
   sugar = 150,
@@ -213,7 +213,7 @@ happytears_icecream <- function() new(
 
 #' @rdname icecream
 #' @export
-xiaogaojie_cocoa_icecream <- function() new(
+xiaogaojie_cocoa_icecream <- \() new(
   Class = 'recipe', alias_flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'YNzGZMLWY_Q',
   heavyCream = 350,
@@ -228,7 +228,7 @@ xiaogaojie_cocoa_icecream <- function() new(
 
 #' @rdname icecream
 #' @export
-SweetDumpling_matcha_icecream <- function() new(
+SweetDumpling_matcha_icecream <- \() new(
   Class = 'recipe', author = '\u7cd6\u997a\u5b50', alias_flavor = '\u62b9\u8336\U1f375\u51b0\u6dc7\uf9f5\U1f368',
   heavyCream = 250,
   condensedMilk = 170,
@@ -237,7 +237,7 @@ SweetDumpling_matcha_icecream <- function() new(
 
 #' @rdname icecream
 #' @export
-cuisinart_icecream <- function() new(
+cuisinart_icecream <- \() new(
   Class = 'recipe', author = 'Cuisinart', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
   milk_cup = 1,
@@ -248,7 +248,7 @@ cuisinart_icecream <- function() new(
 
 #' @rdname icecream
 #' @export
-cooking23s_icecream <- function() new(
+cooking23s_icecream <- \() new(
   Class = 'recipe', author = 'cooking23s', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://cooking23s.blogspot.com/2021/05/ice-cream.html',
   condensedMilk = 100,
@@ -258,7 +258,7 @@ cooking23s_icecream <- function() new(
 
 #' @rdname icecream
 #' @export
-Yumna_icecream <- function() new(
+Yumna_icecream <- \() new(
   Class = 'recipe', author = 'Yumna', alias_flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
   cottageCheese = 425, # 15 oz,

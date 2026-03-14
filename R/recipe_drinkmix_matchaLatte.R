@@ -17,7 +17,7 @@ setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
 
 #' @rdname matchaLatte
 #' @export
-matchaLatte <- function() new(
+matchaLatte <- \() new(
   Class = 'matchaLatteMix',
   matcha_tsp = c(Marukyu_tenju = 3*2),
   sugar_tsp = .5*2,
@@ -29,7 +29,7 @@ matchaLatte <- function() new(
   review = c('for cheaper sado-grade matcha, slightly increase sugar up to x2',
              'never use culinary-grade matcha!'))
 
-ikuyoLatte <- function() new(
+ikuyoLatte <- \() new(
   Class = 'matchaLatteMix', 
   matcha_tsp = c(Ippodo_ikuyo = 3*2), 
   date = as.Date('2024-09-10'),
@@ -71,17 +71,17 @@ setClass(Class = 'matchaGoatLatteMix', contains = 'drinkmix', prototype = protot
 
 #' @rdname matchaGoatLatte
 #' @export
-matchaGoatLatte <- function() new(
+matchaGoatLatte <- \() new(
   Class = 'matchaGoatLatteMix', 
   matcha_tsp = c(Marukyu_tenju = 3*2), 
   sugar_tsp = 1.5*2,
   review = 'to confirm in Summer 2025 with new crop of tenju!')
 
-ikuyoGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_ikuyo = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
+ikuyoGoatLatte <- \() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_ikuyo = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
 
-sayakaGoatLatte <- function() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
+sayakaGoatLatte <- \() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
 
-matchaLatte_maeda <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(maeda_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
+matchaLatte_maeda <- \() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(maeda_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 
-matchaLatte_ito <- function() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
+matchaLatte_ito <- \() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
 

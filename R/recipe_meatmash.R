@@ -39,7 +39,7 @@ setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
 
 #' @rdname meatmash
 #' @export
-porkmash <- function() new(
+porkmash <- \() new(
   Class = 'meatmash',
   pork = c(tenderloin = 700, belly = 300), # all-pork meatmash needs higher fat
   
@@ -87,7 +87,7 @@ tilapiamash <-function() new(
 
 #' @rdname meatmash
 #' @export
-shrimpmash <- function() new( # Super nice!!
+shrimpmash <- \() new( # Super nice!!
   Class = 'meatmash', 
   # shrimp = 730, pork = c(belly = 270), # lean pork meat does not taste well
   shrimp = 780, pork = c(fat = 220), # should be really perfect!!
@@ -102,7 +102,7 @@ shrimpmash <- function() new( # Super nice!!
 
 
 
-shrimpmash_Argentine <- function() new(
+shrimpmash_Argentine <- \() new(
   Class = 'meatmash', 
   shrimpmash(),
   salt_tsp = 1/2 + 1/4,

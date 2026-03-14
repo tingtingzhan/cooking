@@ -4,7 +4,7 @@
 #' @name cornbreadMix_other
 #' @keywords internal
 #' @export
-TraderJoes_cornbreadMix <- function() new(
+TraderJoes_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   traderjoes = '032809', usd = 2.99/9,
   name = 'Cornbread Mix',
@@ -19,7 +19,7 @@ TraderJoes_cornbreadMix <- function() new(
 
 #' @rdname cornbreadMix_other
 #' @export
-WholeFoods365_cornbreadMix <- function() new(
+WholeFoods365_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b07d7bdyh6',
   name = 'Cornbread Mix', 
   usd = 3.59/12,
@@ -35,7 +35,7 @@ WholeFoods365_cornbreadMix <- function() new(
 
 #' @rdname cornbreadMix_other
 #' @export
-Krusteaz_southern_cornbreadMix <- function() new(
+Krusteaz_southern_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], krusteaz = 'baking-mixes/southern-cornbread-muffin',
   name = 'Southern Cornbread Mix', usd = 19.68/4/12,
   servingGram = 27,
@@ -45,7 +45,7 @@ Krusteaz_southern_cornbreadMix <- function() new(
 
 #' @rdname cornbreadMix_other
 #' @export
-BobsRedMill_cornbreadMix <- function() new(
+BobsRedMill_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'cornbread-muffin-mix',
   name = 'Cornbread Mix',
   servingGram = 55, servingCup = 1/3, 
@@ -56,7 +56,7 @@ BobsRedMill_cornbreadMix <- function() new(
 
 #' @rdname cornbreadMix_other
 #' @export
-Stonewall_cornbreadMix <- function() new(
+Stonewall_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 552594L, usd = 7.95/12,
   name = 'Cornbread Mix',
   servingGram = 38,
@@ -70,7 +70,7 @@ Stonewall_cornbreadMix <- function() new(
 
 #' @rdname cornbreadMix_other
 #' @export
-Jiffy_cornMuffinMix <- function() new(
+Jiffy_cornMuffinMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/')),
   name = 'Corn Muffin Mix',
@@ -86,7 +86,7 @@ Jiffy_cornMuffinMix <- function() new(
 
 #' @rdname cornbreadMix_other
 #' @export
-Fleischmanns_cornbreadMix <- function() new(
+Fleischmanns_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Fleischmann\'s\U1f1fa\U1f1f8', url = 'https://www.simplyhomemade.com/products')),
   name = 'Cornbread Mix',

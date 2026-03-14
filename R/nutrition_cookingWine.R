@@ -1,6 +1,6 @@
 
 
-Wegmans_Marsala <- function() new(
+Wegmans_Marsala <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270922L, usd = 3.29/375*30,
   name = 'Marsala Cooking Wine', alias = '\u6599\u9152',
@@ -12,7 +12,7 @@ Wegmans_Marsala <- function() new(
   AbV = .14)
 
 
-Wegmans_Sherry <- function() new(
+Wegmans_Sherry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270943L, usd = 3.29/375*30,
   name = 'Sherry Cooking Wine', alias = '\u6599\u9152',
@@ -23,7 +23,7 @@ Wegmans_Sherry <- function() new(
   sugar = 1,
   AbV = .17)
 
-Wegmans_redCookingWine <- function() new(
+Wegmans_redCookingWine <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270926L, usd = 3.29/375*30,
   name = 'Red Cooking Wine', alias = '\u6599\u9152',
@@ -32,7 +32,7 @@ Wegmans_redCookingWine <- function() new(
   sodium = .18,
   AbV = .12)
 
-Wegmans_whiteCookingWine <- function() new(
+Wegmans_whiteCookingWine <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wegmans = 270899L, usd = 3.29/375*30,
   name = 'White Cooking Wine', alias = '\u6599\u9152',

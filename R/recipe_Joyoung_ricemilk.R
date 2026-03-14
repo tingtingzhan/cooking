@@ -26,14 +26,14 @@ setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
 
 #' @rdname ricemilk
 #' @export
-black_ricemilk <- function() new(
+black_ricemilk <- \() new(
   Class = 'ricemilk', alias = '\u9ed1\u7c73\u7cca',
   blackRice = 105, water = 845,
   pros = 'such distinct and delicate smell!')
 
 #' @rdname ricemilk
 #' @export
-brown_ricemilk <- function() new(
+brown_ricemilk <- \() new(
   Class = 'ricemilk', alias = '\u7cd9\u7c73\u7cca',
   brownRice = 97,
   water = 845, review = 'to confirm')
@@ -50,7 +50,7 @@ setClass(Class = 'ricepaste', contains = 'recipe', prototype = prototype(
   )
 ))
 
-blackRice_paste <- function() new(
+blackRice_paste <- \() new(
   Class = 'ricepaste',
   homemade = c(black_ricemilk = 600)
 )

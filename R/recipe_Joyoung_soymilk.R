@@ -16,7 +16,7 @@ setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
 
 #' @rdname soymilk
 #' @export
-soymilk <- function() new(
+soymilk <- \() new(
   Class = 'soymilk',
   soybean = 22, # 1/2 Joyoung small cup
   glutinousRiceFlour = c(Erawan_glutinousRiceFlour = 5),
@@ -27,7 +27,7 @@ soymilk <- function() new(
 
 #' @rdname soymilk
 #' @export
-soymilk_DJ13U <- function() new(
+soymilk_DJ13U <- \() new(
   Class = 'soymilk',
   soybean = 45, # 1 Joyoung small cup
   water = 1300 - 45, # confirmed!!
@@ -39,7 +39,7 @@ soymilk_DJ13U <- function() new(
 
 
 
-chickpeaMilk <- function() new(
+chickpeaMilk <- \() new(
   Class = 'soymilk',
   soybean = 45, # 1 Joyoung small cup
   chickpea = 45/2, # 1/2 Joyoung small cup
@@ -47,7 +47,7 @@ chickpeaMilk <- function() new(
   cons = 'I dont like this taste',
   JoyoungDJ13U = JoyoungDJ13U_soymilk())
 
-cashewMilk <- function() new(
+cashewMilk <- \() new(
   Class = 'soymilk',
   soybean = 45, # 1 Joyoung small cup
   cashew = 80, # confirmed!
@@ -56,7 +56,7 @@ cashewMilk <- function() new(
   cons = 'too fat..')
 
 
-mungMilk_thick <- function() new(
+mungMilk_thick <- \() new(
   Class = 'soymilk',
   mungbean = 130, # soaked mung bean (skin removed): 213
   soybean = 45,
@@ -68,7 +68,7 @@ mungMilk_thick <- function() new(
 
 
 
-corn_soymilk <- function() new(
+corn_soymilk <- \() new(
   Class = 'soymilk', 
   soybean = 100, # weigh and confirm
   yellowCorn = c(Kirkland_yellowCorn = 100), # weigh and confirm
@@ -78,7 +78,7 @@ corn_soymilk <- function() new(
            'One (1) US cup of frozen corn'),
   review = 'Super nice to drink!')
 
-veggie_soymilk <- function() new(
+veggie_soymilk <- \() new(
   Class = 'soymilk', alias = '\u852c\u83dc\u8c46\u6d46',
   soybean = 100, # weigh and confirm
   puree = c(Kirkland_mixedVeggies = 123), # weigh and confirm

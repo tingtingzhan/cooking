@@ -16,7 +16,7 @@ NULL
 
 #' @rdname PSL_other
 #' @export
-Starbucks_pumpkinSpiceLatte <- function() new(
+Starbucks_pumpkinSpiceLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 418L,
   name = 'Pumpkin Spice Latte',
   servingGram = 470, serving_floz = 16,
@@ -27,7 +27,7 @@ Starbucks_pumpkinSpiceLatte <- function() new(
 
 #' @rdname PSL_other
 #' @export
-Starbucks_pumpkinSpiceFrappuccino <- function() new(
+Starbucks_pumpkinSpiceFrappuccino <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 427L,
   name = 'Pumpkin Spice Frappuccino',
   servingGram = 470, serving_floz = 16,

@@ -58,7 +58,7 @@ setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
 
 #' @rdname cookie
 #' @export
-Assam_cookie <- function() new(
+Assam_cookie <- \() new(
   Class = 'cookie',
   review = c(
     'I say no less sugar',
@@ -73,7 +73,7 @@ Assam_cookie <- function() new(
 
 
 
-PreppyKitchen_cookie <- function() new(
+PreppyKitchen_cookie <- \() new(
   Class = 'recipe', author = 'Preppy Kitchen', alias_flavor = 'Butter Cookie',
   flour = c(Wegmans_bread = 120, Wegmans_pastry = 120),
   butter_brick = 1,
@@ -87,7 +87,7 @@ PreppyKitchen_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-cocoa_cookie <- function() new(
+cocoa_cookie <- \() new(
   Class = 'cookie',
   sugar = 130, drymilk = 150, 
   cocoa = c(KingArthur_Bensdorp = 64),
@@ -99,7 +99,7 @@ cocoa_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-adzukiBean_cookie <- function() new( 
+adzukiBean_cookie <- \() new( 
   # raw taste too strong. try cook powdered adzukiBean in butter
   Class = 'cookie',
   note = 'Simmer butter and powdered bean over stove',
@@ -113,7 +113,7 @@ adzukiBean_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-mungBean_cookie <- function() new(Class = 'cookie', adzukiBean_cookie(),
+mungBean_cookie <- \() new(Class = 'cookie', adzukiBean_cookie(),
   url = 'https://m.fx361.com/news/2018/0324/3299096.html',
   mungbean = 240)
 
@@ -122,7 +122,7 @@ mungBean_cookie <- function() new(Class = 'cookie', adzukiBean_cookie(),
 
 #' @rdname cookie
 #' @export
-coffee_cookie <- function() new(
+coffee_cookie <- \() new(
   Class = 'cookie', coffee = 40, 
   pastryFlour = 384, sugar = 100, drymilk = 160,
   review = 'try')
@@ -131,7 +131,7 @@ coffee_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-lemon_cookie <- function() new(
+lemon_cookie <- \() new(
   Class = 'cookie', flavor = c(CountryTime_Lemonade = 150), 
   flour = c(Wegmans_bread = 200, Wegmans_pastry = 164), 
   drymilk = 160,
@@ -145,7 +145,7 @@ lemon_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-matcha_cookie <- function() new(
+matcha_cookie <- \() new(
   Class = 'cookie', 
   note = 'Water bath to melt butter only',
   matcha = c(Ippodo_ikuyo = 40), # not too much more expensive!!
@@ -158,7 +158,7 @@ matcha_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-blackSesame_cookie2022 <- function() new(
+blackSesame_cookie2022 <- \() new(
   Class = 'cookie',
   breadFlour = c(Wegmans_bread = 400),
   blackSesame = 150,
@@ -175,7 +175,7 @@ blackSesame_cookie2022 <- function() new(
 
 #' @rdname cookie
 #' @export
-Harney_UvaHighlands_cookie <- function() new(
+Harney_UvaHighlands_cookie <- \() new(
   Class = 'cookie', 
   Assam_cookie(), 
   tea = c(Harney_UvaHighlands = 52), 
@@ -185,7 +185,7 @@ Harney_UvaHighlands_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-Harney_PuErh_cookie <- function() new(
+Harney_PuErh_cookie <- \() new(
   Class = 'cookie', 
   Assam_cookie(), 
   tea = c(Harney_PuErh = 52),
@@ -196,7 +196,7 @@ Harney_PuErh_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-Harney_LapSangSouChong_cookie <- function() new(
+Harney_LapSangSouChong_cookie <- \() new(
   Class = 'cookie', 
   tea = c(Harney_LapSangSouChong = 20), 
   # pastryFlour = 380, 
@@ -210,7 +210,7 @@ Harney_LapSangSouChong_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-Ceylon_cookie <- function() new(
+Ceylon_cookie <- \() new(
   Class = 'cookie', 
   note = 'Blade grinder; Water bath',
   review = 'I like very much',
@@ -222,7 +222,7 @@ Ceylon_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-ginger_cookie <- function() new(
+ginger_cookie <- \() new(
   Class = 'cookie', 
   note = 'Do NOT use bread flour.',
   review = 'Gloria & Mike\'s true love',
@@ -233,7 +233,7 @@ ginger_cookie <- function() new(
 
 #' @rdname cookie
 #' @export
-EarlGrey_cookie2022_Twinings <- function() new(
+EarlGrey_cookie2022_Twinings <- \() new(
   Class = 'cookie',
   note = 'Blade grinder',
   review = 'Mike loves it. Gloria says cannot stop.  Do NOT try to reduce sugar or dry milk!!',
@@ -241,7 +241,7 @@ EarlGrey_cookie2022_Twinings <- function() new(
   pastryFlour = 360, 
   sugar = 136, drymilk = 140)
 
-EarlGrey_cookie_Twinings <- function() new(
+EarlGrey_cookie_Twinings <- \() new(
   Class = 'cookie',
   note = 'Blade grinder',
   review = 'new experiment.  I want to reduce drymilk a little',
@@ -254,7 +254,7 @@ EarlGrey_cookie_Twinings <- function() new(
 
    
 
-PreppyKitchen_thumbprintCookie <- function() new(
+PreppyKitchen_thumbprintCookie <- \() new(
   Class = 'recipe',
   butter_brick = 1,
   sugar = 150,

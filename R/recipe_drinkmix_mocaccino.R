@@ -25,7 +25,7 @@ setClass(Class = 'mocaccino', contains = 'drinkmix', prototype = prototype(
 
 #' @rdname mocaccino
 #' @export
-mocaccino <- function() new(Class = 'mocaccino', date = as.Date('2024-11-02'), pros = 'perfected!!!')
+mocaccino <- \() new(Class = 'mocaccino', date = as.Date('2024-11-02'), pros = 'perfected!!!')
 
 
 

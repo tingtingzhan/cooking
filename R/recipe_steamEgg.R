@@ -28,10 +28,10 @@ setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
   
 #' @rdname pudding
 #' @export
-pudding <- function() new(Class = 'pudding')
+pudding <- \() new(Class = 'pudding')
 
 
-steamEgg_OLD <- function() new(
+steamEgg_OLD <- \() new(
   Class = 'pudding',
   egg_pc = 1,
   water = 120,
@@ -41,7 +41,7 @@ steamEgg_OLD <- function() new(
 
 #' @rdname pudding
 #' @export
-shangshi_pudding <- function() new(
+shangshi_pudding <- \() new(
   Class = 'recipe', alias_flavor = 'pudding', 
   shangshikitchen = 'Nqz-K0TDL5s',
   # 4 croissants 可颂面包
@@ -78,7 +78,7 @@ setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
 
 #' @rdname steamEggWhite
 #' @export
-chicken_steamEggWhite <- function() new(
+chicken_steamEggWhite <- \() new(
   Class = 'steamEggWhite',
   eggWhite_pc = 6,
   water = 100,
@@ -88,7 +88,7 @@ chicken_steamEggWhite <- function() new(
 
 
 
-chicken_steamEggWhite_old <- function() new(
+chicken_steamEggWhite_old <- \() new(
   Class = 'steamEggWhite',
   eggWhite_pc = 6,
   water = 150,

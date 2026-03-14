@@ -29,7 +29,7 @@ setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
 
 #' @rdname LangueDeChat
 #' @export
-cookingTree_LangueDeChat <- function() new(
+cookingTree_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', alias_flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
   butter = 90,
   sugar = 85,
@@ -39,7 +39,7 @@ cookingTree_LangueDeChat <- function() new(
 
 #' @rdname LangueDeChat
 #' @export
-cookingTree_cocoa_LangueDeChat <- function() new(
+cookingTree_cocoa_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', alias_flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
   butter = 45,
   sugar = 45,
@@ -52,7 +52,7 @@ cookingTree_cocoa_LangueDeChat <- function() new(
 
 #' @rdname LangueDeChat
 #' @export
-Ying_LangueDeChat <- function() new(
+Ying_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Ying', alias_flavor = 'Langue De Chat', youtube = '2tlPfiBA9i0',
   butter = 25,
   sugar = 15,
@@ -65,7 +65,7 @@ Ying_LangueDeChat <- function() new(
 
 #' @rdname LangueDeChat
 #' @export
-Jadore_LangueDeChat <- function() new(
+Jadore_LangueDeChat <- \() new(
   Class = 'recipe', author = 'J\'adore', alias_flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
   butter = 43,
   sugar = 34,
@@ -77,7 +77,7 @@ Jadore_LangueDeChat <- function() new(
 
 #' @rdname LangueDeChat
 #' @export
-Giallozafferano_LangueDeChat <- function() new(
+Giallozafferano_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Giallozafferano', alias_flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',
   butter = 50,
   sugar = 60,

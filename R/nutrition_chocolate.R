@@ -23,7 +23,7 @@
 #' )
 #' @name Guittard
 #' @export
-Guittard_31milk <- function() new(
+Guittard_31milk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = '31% Milk',
   webstaurant = '409G0390C50CS',
@@ -35,7 +35,7 @@ Guittard_31milk <- function() new(
  
 #' @rdname Guittard
 #' @export
-Guittard_Dutch34milk <- function() new(
+Guittard_Dutch34milk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Old Dutch 34% Milk',
   webstaurant = '409G0311C50CS',
@@ -46,7 +46,7 @@ Guittard_Dutch34milk <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_bittersweet63 <- function() new(
+Guittard_bittersweet63 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = '63% Bittersweet',
   webstaurant = '409G0502C50CS',
@@ -57,7 +57,7 @@ Guittard_bittersweet63 <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_heritage39 <- function() new(
+Guittard_heritage39 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Molding Heritage 39%',
   webstaurant = '409G0354C50CS',
@@ -68,7 +68,7 @@ Guittard_heritage39 <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_heritage32milk <- function() new(
+Guittard_heritage32milk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Heritage 32% Milk',
   webstaurant = '409G0355C50CS',
@@ -79,7 +79,7 @@ Guittard_heritage32milk <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_vanilla54 <- function() new(
+Guittard_vanilla54 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'French Vanilla 54% Dark',
   webstaurant = '409G0411C50CS',
@@ -90,7 +90,7 @@ Guittard_vanilla54 <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_highSierra28white <- function() new(
+Guittard_highSierra28white <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'High Sierra 28% White',
   webstaurant = '409G9201C50CS',
@@ -102,7 +102,7 @@ Guittard_highSierra28white <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_eclipse50 <- function() new(
+Guittard_eclipse50 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Eclipse 50% Dark',
   webstaurant = '409G0431C50CS',
@@ -113,7 +113,7 @@ Guittard_eclipse50 <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_lustrous55 <- function() new(
+Guittard_lustrous55 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Lustrous 55% Dark',
   webstaurant = '409G0407C50CS',
@@ -125,7 +125,7 @@ Guittard_lustrous55 <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_solitaire54 <- function() new(
+Guittard_solitaire54 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Molding Solitaire 54% Dark',
   webstaurant = '409G0412C50CS',
@@ -136,7 +136,7 @@ Guittard_solitaire54 <- function() new(
 
 #' @rdname Guittard
 #' @export
-Guittard_solitaire52 <- function() new(
+Guittard_solitaire52 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Solitaire 52% Dark',
   webstaurant = '409G0413C50CS',
@@ -157,7 +157,7 @@ Guittard_solitaire52 <- function() new(
 # https://www.guittard.com/our-chocolate/detail/pro_kokoleka-semisweet
 
 
-Bouchard_dark72 <- function() new(
+Bouchard_dark72 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Dark Chocolate Napolitains (72% Cacao)',
   bouchard = 'dark-chocolate-napolitains',
@@ -168,7 +168,7 @@ Bouchard_dark72 <- function() new(
   calorie = 140,
   fat = 12, sugar = 8, protein = 3)
 
-CopperKettleCandy_darkChocolateTruffle <- function() new(
+CopperKettleCandy_darkChocolateTruffle <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Copper Kettle Candy Co.', name = 'Dark Chocolate Truffles',
   # no url ??
@@ -178,7 +178,7 @@ CopperKettleCandy_darkChocolateTruffle <- function() new(
   fat = 12, sodium = .055, sugar = 10, protein = 2)
 
 
-Ghirardelli_whiteChocolate <- function() new(
+Ghirardelli_whiteChocolate <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'White Chocolate Bar',
   ghirardelli = 'premium-baking-bar-white-chocolate-12-bars-61829cs',
@@ -187,7 +187,7 @@ Ghirardelli_whiteChocolate <- function() new(
   calorie = 80,
   fat = 4.5, sodium = .01, carbohydrate = 9, sugar = 9, addedSugar = 7)
 
-Ghirardelli_chocolateChips <- function() new(
+Ghirardelli_chocolateChips <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Semi-Sweet Chocolate Chips',
   ghirardelli = 'semisweet-chocolate-premium-baking-chips-chocolate-chips-for-baking-12-bags-64015cs',

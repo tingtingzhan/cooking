@@ -16,7 +16,7 @@ setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
 
 #' @rdname crabCake
 #' @export
-crabCake <- function() new(
+crabCake <- \() new(
   Class = 'crabCake',
   egg_pc = 2,
   sauce_tsp = c(

@@ -41,7 +41,7 @@ setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
 
 #' @rdname froyo
 #' @export
-Bourbon_froyo <- function() new(
+Bourbon_froyo <- \() new(
   Class = 'froyo', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46',
   syrup = c(Stonewall_Bourbon = 70), # 9% sugar content
   review = c('try')
@@ -54,7 +54,7 @@ Bourbon_froyo <- function() new(
 
 #' @rdname froyo
 #' @export
-pumpkin_froyo <- function() new(
+pumpkin_froyo <- \() new(
   Class = 'froyo',
   pumpkin = 400,
   brownSugar = 55,
@@ -67,7 +67,7 @@ pumpkin_froyo <- function() new(
 
 #' @rdname froyo
 #' @export
-matcha_froyo <- function() new(
+matcha_froyo <- \() new(
   Class = 'froyo',
   matcha = c(Ippodo_ikuyo = 20), sugar = 30 + 15, # adjust for water-added!
   review = 'try again')
@@ -81,7 +81,7 @@ matcha_froyo <- function() new(
 
 #' @rdname froyo
 #' @export
-emma_froyo <- function() new(
+emma_froyo <- \() new(
   Class = 'recipe', author = 'Emma\'s Goodies', alias_flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',
   heavyCream_cup = 1.75,

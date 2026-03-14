@@ -21,7 +21,7 @@ setClass(Class = 'brownrice', contains = 'recipe', prototype = prototype(
 
 # @rdname brownrice
 # @export
-brownrice_Nishiki <- function() new(
+brownrice_Nishiki <- \() new(
   Class = 'brownrice', 
   brownRice = c(Nishiki_brownRice = 95*3.5), # 3 cup not enough
   water = 700, # confirmed!!
@@ -33,7 +33,7 @@ brownrice_Nishiki <- function() new(
 
 #' @rdname brownrice
 #' @export
-brownrice_Dynasty <- function() new(
+brownrice_Dynasty <- \() new(
   Class = 'brownrice', 
   brownRice = c(Dynasty_brownRice = 270), # 3 cup
   water = 700, # weight confirmed!

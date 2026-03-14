@@ -17,7 +17,7 @@ setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
 
 #' @rdname evap
 #' @export
-pineapple_evap <- function() new(
+pineapple_evap <- \() new(
   Class = 'evap',
   pineapple = c(Dole_pineapple = 2070 - 933),
   JoyoungCJA9U = JoyoungCJA9U(

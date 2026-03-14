@@ -5,14 +5,14 @@
 #' @name nutrition_fruit_vegetable
 NULL
 
-Kirkland_honey <- function() new(
+Kirkland_honey <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   costco = '100516925',
   name = 'Wild Flower Honey\U1f36f', alias = '\u8702\u871c',
   servingGram = 21, servingTbsp = 1, 
   calorie = 60, carbohydrate = 17, sugar = 17, addedSugar = 17)
 
-Kirkland_rawHoney <- function() new(
+Kirkland_rawHoney <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   costco = '100334136',
   name = 'Organic Raw Honey\U1f36f', alias = '\u8702\u871c',
@@ -20,40 +20,40 @@ Kirkland_rawHoney <- function() new(
   calorie = 60, carbohydrate = 17, sugar = 16)
 
 # dried fruits
-OceanSpray_cranberry <- function() new(
+OceanSpray_cranberry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
   name = 'Dried Cranberries',
   costco = '100400518',
   servingGram = 40, sugar = 29)
 
-SunnyFruit_fig <- function() new(
+SunnyFruit_fig <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
                   name = 'Dried Figs',
   costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
-SunnyFruit_date <- function() new(
+SunnyFruit_date <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
   name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 
-Kirkland_plum <- function() new(
+Kirkland_plum <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   costco = '100334316',
   name = 'Dried Plums',
   servingGram = 40, sugar = 14)
 
 
-Kirkland_mixedVeggies <- function() new(
+Kirkland_mixedVeggies <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = '\u51b7\u51bb\u6742\u852c Mixed Vegetables\U1f955\U1fadb\U1f33d',
   costcoBiz = '100351236',
   servingGram = 90, fat = .5, sodium = .02, sugar = 4, protein = 2)
 
-Kirkland_blueberry <- function() new(
+Kirkland_blueberry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   costcoBiz = '100206942',
   name = 'Frozen Blueberry\U1fad0',
@@ -62,7 +62,7 @@ Kirkland_blueberry <- function() new(
   sugar = 12, protein = 1,
   water = 140*.866, fdc = 173950L)
 
-Kirkland_strawberry <- function() new(
+Kirkland_strawberry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   costcoBiz = c(
     '100273803' # frequently seen in store
@@ -73,7 +73,7 @@ Kirkland_strawberry <- function() new(
   calorie = 50, 
   carbohydrate = 13, sugar = 6)
 
-Kirkland_yellowCorn <- function() new(
+Kirkland_yellowCorn <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'https://costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
   brand = 'Kirkland\U1f1fa\U1f1f8', name = '\u51b7\u51bb\u751c\u7389\u7c73 Frozen Yellow Corn\U1f33d',
   servingGram = 90, 
@@ -83,7 +83,7 @@ Kirkland_yellowCorn <- function() new(
 
 
 
-Kirkland_peach <- function() new(
+Kirkland_peach <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costcoBiz = '100237862',
   name = 'Sliced Peaches',
   servingGram = 120, sodium = .01, sugar = 14,
@@ -92,7 +92,7 @@ Kirkland_peach <- function() new(
   })
 
 
-mango <- function() new( 
+mango <- \() new( 
   Class = 'nutrition', call = match.call()[[1L]], 
   fdc = 169910L, # water 83.5%
   brand = 'Ultra Organics', name = '\u8292\u679c(\u6ce5) Mango\U1f96d',
@@ -107,7 +107,7 @@ mango <- function() new(
 
 
 
-HappyVillage_strawberry <- function() new( # frozen; sold at Costco
+HappyVillage_strawberry <- \() new( # frozen; sold at Costco
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = 'Happy Village', 
   name = '\u8349\u8393 Strawberry\U1f353',
@@ -115,7 +115,7 @@ HappyVillage_strawberry <- function() new( # frozen; sold at Costco
   servingGram = 140, servingCup = 1, 
   calorie = 50, sugar = 6, protein = 1)
 
-HappyVillage_darkCherry <- function() new(
+HappyVillage_darkCherry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costcoBiz = '100313436',
   brand = 'Happy Village', name = '\u751c\u6a31\u6843 Dark Cherry\U1f352',
   servingGram = 140, servingCup = 1,
@@ -124,7 +124,7 @@ HappyVillage_darkCherry <- function() new(
   carbohydrate = 21, sugar = 16, protein = 1)
 
 # fresh fruit
-LuckyTaro_durian <- function() new(
+LuckyTaro_durian <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   costcoBiz = '2001112853',
   brand = 'Lucky Taro', name = 'Durian',
@@ -140,7 +140,7 @@ LuckyTaro_durian <- function() new(
 
 
 
-Wegmans_pineapple <- function() new(
+Wegmans_pineapple <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 10230L,
   name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
   servingGram = 122, servingCup = 1/2, 
@@ -148,7 +148,7 @@ Wegmans_pineapple <- function() new(
   carbohydrate = 16, sugar = 13, 
   superior = 'Dole_pineapple')
 
-Libbys_pineapple <- function() new(
+Libbys_pineapple <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmans = 20294L,
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
@@ -159,7 +159,7 @@ Libbys_pineapple <- function() new(
 
 #' @rdname nutrition_fruit_vegetable
 #' @export
-Dole_pineapple <- function() new(
+Dole_pineapple <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
   name = 'Pineapple\U1f34d in 100% Juice', alias = '\u83e0\u841d\u7f50\u5934',
@@ -171,7 +171,7 @@ Dole_pineapple <- function() new(
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
   carbohydrate = 18, fiber = 1, sugar = 15, protein = 1)
 
-Dole_sweetened_pineapple <- function() new(
+Dole_sweetened_pineapple <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   dolesunshine = 'canned-crushed-pineapple-in-heavy-syrup-20oz/',
   name = 'Pineapple\U1f34d in Heavy Syrup', alias = '\u52a0\u7cd6\u83e0\u841d\u7f50\u5934',
@@ -184,7 +184,7 @@ Dole_sweetened_pineapple <- function() new(
   superior = 'Dole_pineapple')
 
 
-DelMonte_pear <- function() new(
+DelMonte_pear <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   delmonte = 'fruits/pears/sliced-pears-no-sugar-added',
   name = 'Sliced Pears\U1f350', alias = '\u68a8\u7f50\u5934',
@@ -195,7 +195,7 @@ DelMonte_pear <- function() new(
   carbohydrate = 10, sugar = 7) 
 
 
-DelMonte_mandarine <- function() new(
+DelMonte_mandarine <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   delmonte = 'fruits/mandarin-oranges/mandarin-oranges-no-sugar-added',
   name = 'Mandarin Oranges\U1f34a', alias = '\u6a58\u5b50\u7f50\u5934',
@@ -207,7 +207,7 @@ DelMonte_mandarine <- function() new(
   protein = 1) 
 
 
-DelMonte_peach <- function() new(
+DelMonte_peach <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   delmonte = 'fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added',
   name = 'Yellow Cling Peaches\U1f351', alias = '\u9ec4\u6843\u7f50\u5934',
@@ -217,7 +217,7 @@ DelMonte_peach <- function() new(
   sodium = .005,
   carbohydrate = 8, sugar = 7)
 
-Bruces_yam <- function() new(
+Bruces_yam <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Bruce\'s', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/')),
   name = 'Yam',
@@ -225,7 +225,7 @@ Bruces_yam <- function() new(
   servingGram = 166, sodium = .07, sugar = 9, protein = 2)
 
 
-Wegmans_peanutButter <- function() new(
+Wegmans_peanutButter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 26774L,
   name = 'Peanut\U1f95c Butter',
   servingTbsp = 2, servingGram = 32, 
@@ -233,7 +233,7 @@ Wegmans_peanutButter <- function() new(
   fat = 16, carbohydrate = 7, sugar = 2, protein = 8)
 
 
-Wegmans_beet <- function() new(
+Wegmans_beet <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 137496L,
   name = '\u751c\u83dc\u7c89 Beet Root Powder',
   extra = new(Class = 'extra', water = .6), # tested with bao()
@@ -244,7 +244,7 @@ Wegmans_beet <- function() new(
   sodium = .06, sugar = 2, protein = 1)
 
 
-Wegmans_acai <- function() new(
+Wegmans_acai <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 138189L,
   name = '\u5df4\u897f\u8393\u7c89 A\u00e7a\u00ed Powder',
   usd = 16.79/113*3,
@@ -252,7 +252,7 @@ Wegmans_acai <- function() new(
   servingTsp = 2, # packaging
   extra = new(Class = 'extra', water = 5/38.2)) # tested on bao(): 8.5tbsp needs 5g water extra
 
-Navitas_acai <- function() new(
+Navitas_acai <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   navitas = 'acai-powder',
   name = '\u5df4\u897f\u8393\u7c89 A\u00e7a\u00ed Powder',
@@ -264,27 +264,27 @@ Navitas_acai <- function() new(
 
 
 # fresh vegetables
-bambooShoot <- function() new(
+bambooShoot <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 169210L,
   name = 'Bamboo Shoots', alias = '\u7af9\u7b0b', # \U1f38d
   servingGram = 100, water = 91, protein = 2.6, fat = .3, sugar = 3, sodium = .004)
 
-garlic <- function() new(
+garlic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 2597546L,
   name = 'Garlic\U1f9c4, Fresh', alias = '\u849c\u84c9',
   servingGram = 100, carbohydrate = 20)
 
-celeriac <- function() new(
+celeriac <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170400L,
   name = 'Celery',
   servingGram = 100, water = 88, protein = 1.5, fat = .3, sodium = .1)
 
-parsley <- function() new(
+parsley <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170416L, 
   name = 'Parsley',
   servingGram = 100, water = 87.7, protein = 2.97, fat = .79, sodium = .056)
 
-FlavorFarmer_whitePeach <- function() new(
+FlavorFarmer_whitePeach <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1102677L,
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
   servingGram = 100, pieceWeight = 130,
@@ -293,38 +293,38 @@ FlavorFarmer_whitePeach <- function() new(
   machine = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
 
 
-kabochaSquash <- function() new(
+kabochaSquash <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1685816L,
   name = 'Kabocha Squash',
   servingGram = 100, protein = 1.18, sugar = 3.53)
 
-avocado <- function() new(
+avocado <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 171705L,
   name = '\u725b\u6cb9\u679c Avocado\U1f951',
   servingGram = 100, pieceWeight = 140,
   calorie = 160,
   water = 73.2, protein = 2, fat = 14.7, sugar = .66, sodium = .007)
 
-lemon <- function() new(
+lemon <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1102594L,
   name = '\u67e0\u6aac Lemon\U1f34b',
   servingGram = 100, water = 88.98, protein = 1.1, fat = .3, sugar = 2.5, sodium = .002)
 
-lemonJuice <- function() new(
+lemonJuice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 167747L,
   name = '\u67e0\u6aac\u6c41 Lemon\U1f34b Juice',
   servingGram = 100, pieceWeight = 48,
   water = 92.3, protein = 0.35, fat = 0.24, sugar = 2.52, sodium = .001)
 
 
-lime <- function() new(
+lime <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 168155L,
   name = '\u9752\u67e0 Lime\U1f34b\u200d\U1f7e9',
   servingGram = 100, 
   calorie = 30,
   water = 88.3, protein = .7, fat = .2, sugar = 1.69, sodium = .002)
 
-limeJuice <- function() new(
+limeJuice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 2344679L,
   name = '\u9752\u67e0\u6c41 Lime\U1f34b\u200d\U1f7e9 Juice',
   servingGram = 100, pieceWeight = 44,
@@ -332,13 +332,13 @@ limeJuice <- function() new(
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
 
 
-lemonZest <- function() new(
+lemonZest <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 167749L,
   name = 'Lemon\U1f34b Peel',
   servingGram = 100, water = 81.6, protein = 1.5, fat = .3, sugar = 4.17, sodium = .006)
 
 
-watermelon <- function() new(
+watermelon <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 167765L,
   name = 'Watermelon\U1f349',
   servingGram = 100, water = 91.4, protein = .61, fat = .15, sugar = 6.2, sodium = .001)
@@ -348,7 +348,7 @@ watermelon <- function() new(
 
 #' @rdname nutrition_fruit_vegetable
 #' @export
-Libbys_pumpkin <- function() new(
+Libbys_pumpkin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans')),
   name = 'Pumpkin\U1f383 Puree', alias = '\u5357\u74dc\u6ce5',
@@ -363,7 +363,7 @@ Libbys_pumpkin <- function() new(
   fdc = 168450L,
   water = 122-10-1-1) #122 * 240/300) # bao, I trust best
 
-Libbys_pumpkinPieMix <- function() new(
+Libbys_pumpkinPieMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
   name = 'Pumpkin\U1f383 Pie Mix', alias = '\u8c03\u5473\u5357\u74dc\u6ce5',
@@ -375,7 +375,7 @@ Libbys_pumpkinPieMix <- function() new(
 
 
 
-Wegmans_tomato <- function() new(
+Wegmans_tomato <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 109068L,
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   servingGram = 63, servingCup = 1/4,
@@ -385,7 +385,7 @@ Wegmans_tomato <- function() new(
 
 #' @rdname nutrition_fruit_vegetable
 #' @export
-WegmansOrganic_tomato <- function() new(
+WegmansOrganic_tomato <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmansorganic = 19227L, usd = 2.89/822*63, # instore should be cheaper
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
@@ -397,7 +397,7 @@ WegmansOrganic_tomato <- function() new(
 
 #' @rdname nutrition_fruit_vegetable
 #' @export
-Motts_applesauce <- function() new(
+Motts_applesauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
@@ -410,7 +410,7 @@ Motts_applesauce <- function() new(
   carbohydrate = 14, sugar = 12)
 
 
-#ThriveMarket_apple <- function() new(
+#ThriveMarket_apple <- \() new(
 #  # ThriveMarket.com now force you to join a paid membership
 #  Class = 'nutrition', call = match.call()[[1L]], url = 'https://thrivemarket.com/p/thrive-market-organic-apple-sauce',
 #  brand = 'Thrive Market', name = 'Applesauce\U1f34e',
@@ -420,7 +420,7 @@ Motts_applesauce <- function() new(
 
 #' @rdname nutrition_fruit_vegetable
 #' @export
-Laura_soybean <- function() new(
+Laura_soybean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174270L,
   name = 'Soy Bean', alias = '\u9ec4\u8c46',
   brand = c(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
@@ -431,7 +431,7 @@ Laura_soybean <- function() new(
   calorie = 446,
   protein = 36.5, fat = 19.9, sugar = 7.33, sodium = .002)
 
-Soymerica_soybean <- function() new(
+Soymerica_soybean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = '\u9ec4\u8c46 Soy Bean', 
   brand = 'Soymerica\U1f1fa\U1f1f8', amazon = 'B0763GC8SB', usd = 24.99/(7*453.6)*(100-8.54),
@@ -444,7 +444,7 @@ Soymerica_soybean <- function() new(
 )
 
 
-Palouse_chickpea <- function() new(
+Palouse_chickpea <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 173756L,
   name = '\u9e70\u5634\u8c46 Chickpea', brand = 'Palouse\U1f1fa\U1f1f8',
   url = 'www.palousebrand.com/products/garbanzo-beans-5-lb?variant=40131929407541',
@@ -452,7 +452,7 @@ Palouse_chickpea <- function() new(
   servingGram = 100 - 7.68, 
   protein = 20.5, fat = 6.04, carbohydrate = 30, sugar = 10.7, sodium = .024)
 
-HaiTai_mung <- function() new(
+HaiTai_mung <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174256L,
   name = '(\u5e26\u76ae)\u7eff\u8c46 Mung Bean', 
   haitaiusa = 'mung-bean-\ub179\ub450',
@@ -462,7 +462,7 @@ HaiTai_mung <- function() new(
   #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
   review = 'Must use peeled mung bean for dessert!')
 
-HaiTai_adzuki <- function() new(
+HaiTai_adzuki <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 543753L,
   name = '\u7ea2\u8c46 Adzuki Bean', 
   haitaiusa = 'red-bean-\ud325-4-lb',
@@ -472,7 +472,7 @@ HaiTai_adzuki <- function() new(
   #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
 )
 
-redKidneyBean <- function() new(
+redKidneyBean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 173744L,
   name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U1fad8', 
   brand = c(style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/')),
@@ -480,18 +480,18 @@ redKidneyBean <- function() new(
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
   servingGram = 42, servingCup = 1/4, sodium = .005, carbohydrate = 26, sugar = 1, protein = 9)
 
-pistachio <- function() new(
+pistachio <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170184L,
   name = 'Pistachio, raw',
   servingGram = 100, protein = 20.2, fat = 45.3, sugar = 7.66, sodium = .001)
 
 
-OsmanthusFragrans <- function() new(
+OsmanthusFragrans <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'OsmanthusFragrans')
 
 
-banana <- function() new(
+banana <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1102653L,
   name = '\u9999\u8549 Banana\U1f34c', wegmans = 35418L,
   servingGram = 100,
@@ -499,7 +499,7 @@ banana <- function() new(
   water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)
   
 
-carrot <- function() new(
+carrot <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170393L,
   name = '\u751f\u80e1\u841d\u535c Carrot\U1f955',
   servingGram = 100, 
@@ -507,7 +507,7 @@ carrot <- function() new(
   water = 88.3, protein = .93, fat = .24, carbohydrate = 9.58, sugar = 4.74, sodium = .069)
 
 
-walnut <- function() new(
+walnut <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 2346394L,
   name = '\u751f\u6838\u6843 Walnut',
   servingGram = 100,
@@ -516,7 +516,7 @@ walnut <- function() new(
 
 
 
-Bossen_pineapple <- function() new(
+Bossen_pineapple <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Pineapple\U1f34d Concentrated Syrup', alias = '\u83e0\u841d\u7cd6\u6d46',
   brand = style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new') |> c(),

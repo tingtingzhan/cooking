@@ -42,7 +42,7 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
 
 #' @rdname sacima
 #' @export
-maple_sacima <- function() new(
+maple_sacima <- \() new(
   Class = 'sacima', alias_flavor = '\u84dd\u8393\u7cd6\u6d46',
   # syrup = c(Stonewall_maple = 77*306/164), # sugar 25%, not bad!
   syrup = c(Stonewall_maple = 100),
@@ -53,7 +53,7 @@ maple_sacima <- function() new(
 
 #' @rdname sacima
 #' @export
-sacima <- function() new(
+sacima <- \() new(
   Class = 'sacima',
   #bakingPowder_tsp = 1/8,
   #homemade = c(invertSugar = 50),
@@ -78,14 +78,14 @@ sacima <- function() new(
 
 #' @rdname sacima
 #' @export
-shangshi_sacima <- function() new(
+shangshi_sacima <- \() new(
   Class = 'recipe', alias_flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
   flour = 240,
   egg_pc = 3)
 
 #' @rdname sacima
 #' @export
-xiaogaojie_sacima <- function() new(
+xiaogaojie_sacima <- \() new(
   Class = 'recipe', alias_flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
   flour = 200,
@@ -95,7 +95,7 @@ xiaogaojie_sacima <- function() new(
 
 #' @rdname sacima
 #' @export
-Dad_sacima <- function() new(
+Dad_sacima <- \() new(
   Class = 'recipe', alias_flavor = 'sacima', 
   dad1966 = 'ZK4ZoCewr0E',
   flour = 270,

@@ -10,7 +10,7 @@
 
 
 
-Domino_10x <- function() new(
+Domino_10x <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch
   name = 'Sugar, Confectioners', alias = '10x\u7cd6\u7c89',
@@ -23,7 +23,7 @@ Domino_10x <- function() new(
   calorie = 120,
   carbohydrate = 30, addedSugar = 29)
 
-Domino_granulated <- function() new(
+Domino_granulated <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   domino = 'granulated-sugar',# Ingredients: cane sugar, 
   name = 'Granulated Sugar', alias = '\u767d\u7802\u7cd6',
@@ -33,7 +33,7 @@ Domino_granulated <- function() new(
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)
 
-Domino_golden <- function() new(
+Domino_golden <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   domino = 'golden-sugar',
   name = '\u7c97\u7802\u7cd6 Golden Sugar',
@@ -42,7 +42,7 @@ Domino_golden <- function() new(
   calorie = 30,
   carbohydrate = 8, sugar = 8)
 
-US_10x <- function() new(
+US_10x <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   costco = '100436353',
   costcoBiz = '11830701',
@@ -56,14 +56,14 @@ US_10x <- function() new(
   carbohydrate = 30, addedSugar = 29)
 
 
-Wegmans_darkBrown <- function() new(
+Wegmans_darkBrown <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 23179103L,
   name = '\u7ea2\u7cd6 Dark Brown Sugar',
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)
 
-Domino_darkBrown <- function() new(
+Domino_darkBrown <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], domino = 'dark-brown-sugar',
   name = 'Dark Brown Sugar', alias = '\u7ea2\u7cd6',
   walmart = '10291798', usd = 3.12/(2*454)*8,
@@ -72,7 +72,7 @@ Domino_darkBrown <- function() new(
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)
 
-Domino_lightBrown <- function() new(
+Domino_lightBrown <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], domino = 'light-brown-sugar',
   name = 'Light Brown Sugar', alias = '\u7ea2\u7cd6',
   walmart = '35690427', usd = 5.54/1.81*8, # 4lb

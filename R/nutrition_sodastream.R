@@ -1,6 +1,6 @@
 
 
-SodaStream_dietRootBeer <- function() new(
+SodaStream_dietRootBeer <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   sodastream = 'diet-root-beer',
   name = 'Diet Root Beer',
@@ -8,7 +8,7 @@ SodaStream_dietRootBeer <- function() new(
   # I really need to find the water content!!
   usd = 5.99)
 
-SodaStream_rootBeer <- function() new(
+SodaStream_rootBeer <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   sodastream = 'root-beer',
   name = 'Root Beer',

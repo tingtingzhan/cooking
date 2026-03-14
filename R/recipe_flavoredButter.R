@@ -20,8 +20,8 @@ setClass(Class = 'flavoredButter', contains = 'recipe', prototype = prototype(
 
 #' @rdname flavoredButter
 #' @export
-oldBay_butter <- function() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay = 2), pros = 'Nice for seafood!')
+oldBay_butter <- \() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay = 2), pros = 'Nice for seafood!')
 
 #' @rdname flavoredButter
 #' @export
-oldBay_butter_lowSodium <- function() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay_lowSodium = 3), review = 'try')
+oldBay_butter_lowSodium <- \() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay_lowSodium = 3), review = 'try')

@@ -21,7 +21,7 @@ setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
 
 #' @rdname meatball
 #' @export
-shrimpball <- function() new(
+shrimpball <- \() new(
   Class = 'meatball', 
   shrimp = 500, pork = c(fat = 100),
   #shrimp = 540, lard = 60,
@@ -33,14 +33,14 @@ shrimpball <- function() new(
   whitePepper_tsp = 1/4)
 
 
-shrimpball_Argentine <- function() new(
+shrimpball_Argentine <- \() new(
   Class = 'meatball', shrimpball(),
   shrimp = c(Kirkland_shrimpArgentine = 540),
   review = 'try'
 )
 
 
-beefball <- function() new(
+beefball <- \() new(
   Class = 'meatball',
   beef = c(eyeRound = 500),
   NaHCO3_tsp = 4/16, # 1 Chinese soup spoon 
@@ -53,7 +53,7 @@ beefball <- function() new(
 
 #' @rdname meatball
 #' @export
-GaaDai_beefball <- function() new(
+GaaDai_beefball <- \() new(
   Class = 'meatball',
   youtube = '5nJKNVBRztM',
   beef = c(eyeRound = 16*500),
@@ -68,7 +68,7 @@ GaaDai_beefball <- function() new(
 
 #' @rdname meatball
 #' @export
-Daat_cuttlefishball <- function() new(
+Daat_cuttlefishball <- \() new(
   Class = 'meatball', 
   alias_flavor = '\u8fbe\u54e5\u53a8\u623f \u58a8\u9c7c',
   youtube = 'fLL-DPhSc_E',

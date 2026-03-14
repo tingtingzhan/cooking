@@ -21,7 +21,7 @@ NULL
 
 #' @rdname cheesecake_other
 #' @export
-Junior_cappuccino_cheesecake <- function() new(
+Junior_cappuccino_cheesecake <- \() new(
   Class = 'recipe', 
   alias_flavor = 'Cappuccino Cheesecake',
   creamCheese_brick = c(Philadelphia = 4),
@@ -38,7 +38,7 @@ Junior_cappuccino_cheesecake <- function() new(
 
 #' @rdname cheesecake_other
 #' @export
-PreppyKitchen_cheesecake <- function() new(
+PreppyKitchen_cheesecake <- \() new(
   Class = 'recipe', alias_flavor = 'Cheesecake',
   creamCheese_brick = c(Philadelphia = 3),
   sugar = 200,
@@ -53,7 +53,7 @@ PreppyKitchen_cheesecake <- function() new(
 
 #' @rdname cheesecake_other
 #' @export
-Junior_original <- function() new(
+Junior_original <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 81705L, usd = 13.89/5,
   juniorscheesecake = 'original-ny-plain-cheesecake',
   # watch this carefully!!! https://www.youtube.com/watch?v=hktm2mvQKc0
@@ -65,7 +65,7 @@ Junior_original <- function() new(
 
 #' @rdname cheesecake
 #' @export
-Junior_cookbook <- function() new(
+Junior_cookbook <- \() new(
   Class = 'recipe', 
   juniorscheesecakecookbook = 34L,
   alias_flavor = 'Original',
@@ -80,7 +80,7 @@ Junior_cookbook <- function() new(
 
 #' @rdname cheesecake_other
 #' @export
-CheesecakeFactory_original <- function() new(
+CheesecakeFactory_original <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Original',
   cheesecakefactoryfreezer = 'original-cheesecake', cheesecakefactorybakery = 'original-dome',
@@ -91,7 +91,7 @@ CheesecakeFactory_original <- function() new(
 
 #' @rdname cheesecake_other
 #' @export
-Junior_strawberrySwirl <- function() new(
+Junior_strawberrySwirl <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 23187893L,
   brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
   servingGram = 136, fat = 28, cholesterol = .11, sodium = .33, sugar = 29, protein = 6)
@@ -102,7 +102,7 @@ Junior_strawberrySwirl <- function() new(
 
 #' @rdname cheesecake_other
 #' @export
-PreppyKitchen_chocolate_cheesecake <- function() new(
+PreppyKitchen_chocolate_cheesecake <- \() new(
   Class = 'recipe', alias_flavor = 'Cheesecake',
   # 1/4 cup coffee hot ???
   # 1 cup bittersweet chocolate ???

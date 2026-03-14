@@ -37,20 +37,20 @@ setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
 
 #' @rdname TangYuan
 #' @export
-TangYuan <- function() new(Class = 'TangYuan', water = 86, pros = 'I love!')
+TangYuan <- \() new(Class = 'TangYuan', water = 86, pros = 'I love!')
 
 
 #' @rdname TangYuan
 #' @export
-pumpkin_TangYuan <- function() new(Class = 'TangYuan', pumpkin = 140, pros = 'I love!')
+pumpkin_TangYuan <- \() new(Class = 'TangYuan', pumpkin = 140, pros = 'I love!')
 
 #' @rdname TangYuan
 #' @export
-mango_TangYuan <- function() new(Class = 'TangYuan', mango = 100, pros = 'I love!')
+mango_TangYuan <- \() new(Class = 'TangYuan', mango = 100, pros = 'I love!')
 
 #' @rdname TangYuan
 #' @export
-date_TangYuan <- function() new(
+date_TangYuan <- \() new(
   Class = 'TangYuan', alias_flavor = '\u7ea2\u67a3',
   flavor = c(SunnyFruit_date = 93), water = 107,
   note = 'Soak ground date in water for 4hr+',

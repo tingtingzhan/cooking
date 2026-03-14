@@ -64,7 +64,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
 
 #' @rdname snowSkin
 #' @export
-matcha_snowSkin <- function() new(
+matcha_snowSkin <- \() new(
   Class = 'snowSkin', 
   matcha_Tbsp = c(Sencha_everyday_matcha = 1), 
   #matcha_tsp = 5, # high sugar filling
@@ -76,7 +76,7 @@ matcha_snowSkin <- function() new(
 
 #' @rdname snowSkin
 #' @export
-beet_snowSkin <- function() new(
+beet_snowSkin <- \() new(
   Class = 'snowSkin',
   beet_tsp = 1, 
   pros = c(
@@ -85,25 +85,25 @@ beet_snowSkin <- function() new(
 
 #' @rdname snowSkin
 #' @export
-acai_snowSkin <- function() new(Class = 'snowSkin', acai_tsp = 2, pros = 'I love')
+acai_snowSkin <- \() new(Class = 'snowSkin', acai_tsp = 2, pros = 'I love')
   
 #' @rdname snowSkin
 #' @export
-cocoa_snowSkin <- function() new(
+cocoa_snowSkin <- \() new(
   Class = 'snowSkin', 
   cocoa_tsp = c(KingArthur_Bensdorp = 1.5), 
   pros = 'I love (natural cocoa); retry with dutch cocoa')
 
 #' @rdname snowSkin
 #' @export
-coffee_snowSkin <- function() new(
+coffee_snowSkin <- \() new(
   Class = 'snowSkin',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.75),
   review = 'try')
 
 #' @rdname snowSkin
 #' @export
-ginger_snowSkin <- function() new(
+ginger_snowSkin <- \() new(
   Class = 'snowSkin',
   ginger_tsp = 1/4,
   review = 'try')

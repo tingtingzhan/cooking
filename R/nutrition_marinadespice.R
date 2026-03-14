@@ -1,6 +1,6 @@
 
 
-TonHsing_marinadespice <- function() new(
+TonHsing_marinadespice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = #c(style_hyperlink(text = 
     '\u7d71\u8208\U1f1f9\U1f1fc',

@@ -116,7 +116,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
 
 #' @rdname cheesecake
 #' @export
-cheesecake <- function() new(
+cheesecake <- \() new(
   Class = 'cheesecake', 
   sugar = 95, review = 'hypothetic model')
   
@@ -125,20 +125,20 @@ cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-blueberry_cheesecake <- function() new(
+blueberry_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Stonewall_blueberry = 250), 
   cons = 'color not pretty') # tested 100% Nancy's
 
 #' @rdname cheesecake
 #' @export
-maple_cheesecake <- function() new(
+maple_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Stonewall_maple = 160), pros = 'Effie\'s Signature') # tested 100% Nancy's
 
 #' @rdname cheesecake
 #' @export
-raspberry_cheesecake <- function() new(
+raspberry_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Stonewall_raspberry = 250),
   pros = c('Effie loves (100% Neufchatel)',
@@ -146,7 +146,7 @@ raspberry_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-ryeWhisky_cheesecake <- function() new(
+ryeWhisky_cheesecake <- \() new(
   Class = 'cheesecake',
   starch = c(Argo_corn = 50), starch_cup = numeric(),
   syrup = c(Runamok_ryeWhisky = 180), 
@@ -156,7 +156,7 @@ ryeWhisky_cheesecake <- function() new(
 
 
 
-ryeWhisky_cheesecake_LowWater <- function() new(
+ryeWhisky_cheesecake_LowWater <- \() new(
   Class = 'cheesecake',
   syrup = c(Runamok_ryeWhisky = 160), 
   date = as.Date('2023-12-01'),
@@ -164,19 +164,19 @@ ryeWhisky_cheesecake_LowWater <- function() new(
 
 #' @rdname cheesecake
 #' @export
-rum_cheesecake <- function() new(
+rum_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Runamok_rum = 150), review = 'try')
 
 #' @rdname cheesecake
 #' @export
-appleBrandy_cheesecake <- function() new(
+appleBrandy_cheesecake <- \() new(
   Class = 'cheesecake', #alias_flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
   syrup = c(Runamok_appleBrandy = 160), review = 'try')
 
 #' @rdname cheesecake
 #' @export
-Bourbon_cheesecake_Crown <- function() new(
+Bourbon_cheesecake_Crown <- \() new(
   Class = 'cheesecake',
   syrup = c(Crown_Bourbon = 200), # do NOT reduce syrup!
   water = 90, 
@@ -184,7 +184,7 @@ Bourbon_cheesecake_Crown <- function() new(
   review = 'try 30min')
 
 
-tiramisu_cheesecake <- function() new(
+tiramisu_cheesecake <- \() new(
   Class = 'cheesecake',
   # syrup = c(Kahlua_coffee = 230), sugar = numeric(), water = numeric(), #100 - 230*.441, # too high alcohol
   liqueur = c(Kahlua_coffee = 80), 
@@ -204,7 +204,7 @@ tiramisu_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-pumpkin_cheesecake <- function() new(
+pumpkin_cheesecake <- \() new(
   Class = 'cheesecake',
   water = numeric(), 
   starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
@@ -214,7 +214,7 @@ pumpkin_cheesecake <- function() new(
   pros = c('perfect texture', 'perfect flavor'))
 
 
-tomato_cheesecake <- function() new(
+tomato_cheesecake <- \() new(
   Class = 'cheesecake',
   water = numeric(), 
   starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
@@ -225,7 +225,7 @@ tomato_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-pineapple_cheesecake <- function() new(
+pineapple_cheesecake <- \() new(
   Class = 'cheesecake',
   water = numeric(),
   starch_cup = c(Wegmans_corn = 1/3),
@@ -239,7 +239,7 @@ pineapple_cheesecake <- function() new(
 
 
 
-coffee_cheesecake <- function() new(
+coffee_cheesecake <- \() new(
   Class = 'cheesecake',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 7), sugar = 100,
   cons = 'dont try yet, I will prefer mocaccino_cheesecake()')
@@ -251,14 +251,14 @@ coffee_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-matcha_cheesecake <- function() new(
+matcha_cheesecake <- \() new(
   Class = 'cheesecake',
   matcha = c(Ippodo_ikuyo = 32), sugar = 100,
   review = 'try')
 
 #' @rdname cheesecake
 #' @export
-mocaccino_cheesecake <- function() new(
+mocaccino_cheesecake <- \() new(
   Class = 'cheesecake',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 4),
   cocoa_tsp = c(KingArthur_Bensdorp = 6*3+1),
@@ -267,7 +267,7 @@ mocaccino_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-ginger_cheesecake <- function() new(
+ginger_cheesecake <- \() new(
   Class = 'cheesecake',
   ginger = 15,
   sugar = 110,
@@ -276,7 +276,7 @@ ginger_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-CaffeBorghetti_cheesecake <- function() new(
+CaffeBorghetti_cheesecake <- \() new(
   Class = 'cheesecake',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 3.25),
   liqueur = c(CaffeBorghetti = 65),
@@ -286,7 +286,7 @@ CaffeBorghetti_cheesecake <- function() new(
   
 #' @rdname cheesecake
 #' @export
-Kahlua_cheesecake <- function() new(
+Kahlua_cheesecake <- \() new(
   Class = 'cheesecake',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 3.25),
   liqueur = c(Kahlua_coffee = 50),
@@ -301,7 +301,7 @@ Kahlua_cheesecake <- function() new(
 
 #' @rdname cheesecake
 #' @export
-Bourbon_cheesecake_Stonewall <- function() new(
+Bourbon_cheesecake_Stonewall <- \() new(
   Class = 'cheesecake', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',
   syrup = c(Stonewall_Bourbon = 160),
   review = 'try')

@@ -29,7 +29,7 @@ setClass(Class = 'coffeeLiqueur', contains = 'nutrition', prototype = prototype(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Kahlua_coffee <- function() new(
+Kahlua_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]], 
   kahlua = 'original-coffee-liqueur',
   name = 'Rum & Coffee Liqueur',
@@ -43,7 +43,7 @@ Kahlua_coffee <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Kahlua_especial <- function() new(
+Kahlua_especial <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]], 
   kahlua = 'kahlua-especial',
   name = 'Especial Rum & Coffee Liqueur',
@@ -57,7 +57,7 @@ Kahlua_especial <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-CafeGranita_coffee <- function() new(
+CafeGranita_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]], 
   #url = 
   brand = 'Cafe Granita\U1f1fa\U1f1f8', 
@@ -70,7 +70,7 @@ CafeGranita_coffee <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-FratelliVincenzi_espresso <- function() new(
+FratelliVincenzi_espresso <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/') |> c(),
   name = 'Espresso Liqueur',
@@ -81,7 +81,7 @@ FratelliVincenzi_espresso <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Kikisi_coffee <- function() new(
+Kikisi_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = 'Kikisi\U1f1f2\U1f1fd',
   name = 'Coffee Liqueur',
@@ -92,7 +92,7 @@ Kikisi_coffee <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-CaffeBorghetti <- function() new(
+CaffeBorghetti <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti')),
   name = 'di Vero Caff\u00e8 Espresso Liqueur',
@@ -103,7 +103,7 @@ CaffeBorghetti <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Grind_espresso <- function() new(
+Grind_espresso <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html')),
   name = 'Espresso Shot',
@@ -116,7 +116,7 @@ Grind_espresso <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Sabroso_coffee <- function() new(
+Sabroso_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = 'Sabroso\U1f1f2\U1f1fd',
   name = 'Licor de Caf\u00e9',
@@ -128,7 +128,7 @@ Sabroso_coffee <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Patron_XO <- function() new(
+Patron_XO <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html')),
   name = 'XO Cafe',
@@ -139,7 +139,7 @@ Patron_XO <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Padrino_coffee <- function() new(
+Padrino_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   # https://www.tequilapadrino.com/products # cannot find
   brand = 'El Padrino\U1f1f2\U1f1fd',
@@ -150,7 +150,7 @@ Padrino_coffee <- function() new(
 
 #' @rdname nutrition_coffeeLiqueur
 #' @export
-Amigos3_mocha <- function() new(
+Amigos3_mocha <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/')),
   name = 'Cafe Mocha',

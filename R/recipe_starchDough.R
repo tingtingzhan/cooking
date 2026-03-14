@@ -19,7 +19,7 @@ setClass(Class = 'starchDough', contains = 'recipe', prototype = prototype(
 
 #' @rdname starchDough
 #' @export
-sweetPotato_Noodle_step1 <- function() new(
+sweetPotato_Noodle_step1 <- \() new(
   Class = 'starchDough',
   youtube = 'enleTlAvjCY',
   starch = c(sweetPotato = 20), water = 40
@@ -27,7 +27,7 @@ sweetPotato_Noodle_step1 <- function() new(
 
 #' @rdname starchDough
 #' @export
-sweetPotato_Noodle_step2 <- function() new(
+sweetPotato_Noodle_step2 <- \() new(
   Class = 'starchDough',
   youtube = 'enleTlAvjCY',
   Na2CO3_tsp = .125, starch = c(sweetPotato = 100), water = 40

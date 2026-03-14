@@ -1,7 +1,7 @@
 
 
 
-Melegatti_pandoro_tiramisu <- function() new(
+Melegatti_pandoro_tiramisu <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Melegatti\U1f1ee\U1f1f9', url = 'https://www.melegattiusa.com/seasonal-cake/pandoro-tiramisu/')),
   name = 'Pandoro Tiramisu\u0300',

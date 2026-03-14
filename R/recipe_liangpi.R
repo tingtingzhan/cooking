@@ -7,14 +7,14 @@ setClass(Class = 'liangpi', contains = 'recipe', prototype = prototype(
   water = 800
 ))
 
-liangpi <- function() new(
+liangpi <- \() new(
   Class = 'liangpi',
   review = 'try'
 )
 
 
 
-PinNuo_liangPi <- function() new(
+PinNuo_liangPi <- \() new(
   Class = 'recipe', alias_flavor = '\u51c9\u76ae', 
   pino = 'FrpmqMfZ7CM',
   flour = 350,
@@ -24,7 +24,7 @@ PinNuo_liangPi <- function() new(
 # liangpi sauce
 # https://www.youtube.com/watch?v=MpJZmQ4qXkE
 
-ricePi <- function() new(
+ricePi <- \() new(
   Class = 'recipe',
   alias_class = '\u7c73\u76ae',
   youtube = 'cditsCOMQ4I', # 1kg dry rice + 500g boiling water
@@ -34,7 +34,7 @@ ricePi <- function() new(
 )
 
 
-mianjin <- function() new(
+mianjin <- \() new(
   Class = 'recipe',
   alias_class = '\u591a\u6751\u9ec4\u6559\u716e', alias_flavor = '\u9762\u7b4b', youtube = 'rgmp-ulEeMk',
   flavor = c(BobsRedMill_wheatGluten = 100),

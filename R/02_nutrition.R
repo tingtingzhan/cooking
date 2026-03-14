@@ -171,6 +171,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot KSM3316X \linkS4class{tool}, Kitchen Aid stand mixer KSM3316X, 3.5 quart
 #' @slot KSMICM \linkS4class{tool}, Kitchen Aid ice cream maker KSMICM
 #' @slot CuisinartICE70 \linkS4class{tool}, Cuisinart ice cream maker ICE70
+#' @slot SanyoECJS35S \linkS4class{tool}, Sanyo Rice Cooker ECJ-S35S
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
@@ -301,6 +302,7 @@ setClass(Class = 'nutrition', slots = c(
   KSM3316X = 'tool',
   KSMICM = 'tool',
   CuisinartICE70 = 'tool',
+  SanyoECJS35S = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
   nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool', StanleyJar36 = 'tool',
@@ -342,7 +344,7 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
-setMethod(f = initialize, signature = 'nutrition', definition = function(.Object, ...) {
+setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
@@ -811,7 +813,7 @@ format_vol <- function(x, nm = names(x), tol = 1e-6) {
 #' @rdname show_cooking
 #' @aliases show,nutrition-method
 #' @export
-setMethod(f = show, signature = 'nutrition', definition = function(object) {
+setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
   obj <- object
   
@@ -969,7 +971,7 @@ format_ingredient_perc <- function(x, name) {
 #' @name S4generic_nutrition
 #' @aliases *,nutrition,numeric-method
 #' @export
-setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = function(e1, e2) {
+setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) {
   if (length(e2) != 1L || anyNA(e2) || (e2 <= 0)) stop('illegal `e2`')
   for (i in setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))) {
     slot(e1, name = i) <- slot(e1, name = i) * e2
@@ -981,7 +983,7 @@ setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), defi
 #' @rdname S4generic_nutrition
 #' @aliases /,nutrition,numeric-method
 #' @export
-setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = function(e1, e2) e1 * (1/e2))
+setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
 
 
 
@@ -992,7 +994,7 @@ setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), defi
 # @param e1,e2 \linkS4class{nutrition} object
 # 
 # @export
-#setMethod(f = '+', signature = signature(e1 = 'nutrition', e2 = 'nutrition'), definition = function(e1, e2) {
+#setMethod(f = '+', signature = signature(e1 = 'nutrition', e2 = 'nutrition'), definition = \(e1, e2) {
 #  .Defunct(msg = 'never used')
 #  numeric_slots <- setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))
 #  ret <- e1

@@ -25,7 +25,7 @@ setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
 
 #' @rdname oatmeal
 #' @export
-coconut_oatmeal <- function() new(
+coconut_oatmeal <- \() new(
   Class = 'oatmeal',
   coconut = c(Freenow_coconutBarista = 60),
   water = 80,
@@ -35,7 +35,7 @@ coconut_oatmeal <- function() new(
 
 #' @rdname oatmeal
 #' @export
-soymilk_oatmeal <- function() new(
+soymilk_oatmeal <- \() new(
   Class = 'oatmeal',
   homemade = c(soymilk_DJ13U = 140),
   syrup = c(Runamok_ryeWhisky = 5),
@@ -48,7 +48,7 @@ soymilk_oatmeal <- function() new(
 
 
 
-oatmeal_InstantPot <- function() new(
+oatmeal_InstantPot <- \() new(
   Class = 'oatmeal', 
   grain = c(Quaker_oat = 75), water = 300,
   instruction = c(

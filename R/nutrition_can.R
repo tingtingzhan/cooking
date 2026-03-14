@@ -1,6 +1,6 @@
 
 
-Morinaga_Ogura_an <- function() new(
+Morinaga_Ogura_an <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Morinaga\u68ee\u6c38\u88fd\u83d3\U1f1ef\U1f1f5', name = '\u5c0f\u5009\u871c\u7ea2\u8c46 Ogura An',
   # url = 'https://www.bokksumarket.com/products/ogura-red-bean-paste',

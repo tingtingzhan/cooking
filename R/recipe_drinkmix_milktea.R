@@ -24,7 +24,7 @@ setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
 
 #' @rdname milktea
 #' @export
-EarlGrey_milktea <- function() new(
+EarlGrey_milktea <- \() new(
   Class = 'milktea', 
   alias_flavor = 'Earl Grey', 
   teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), 
@@ -33,7 +33,7 @@ EarlGrey_milktea <- function() new(
 
 #' @rdname milktea
 #' @export
-Ceylon_milktea <- function() new(
+Ceylon_milktea <- \() new(
   Class = 'milktea', 
   teabag = c(Stassen_Ceylon = 4), 
   date = as.Date('2024-10-06'),
@@ -43,7 +43,7 @@ Ceylon_milktea <- function() new(
 
 #' @rdname milktea
 #' @export
-chai_milktea <- function() new(
+chai_milktea <- \() new(
   Class = 'milktea', 
   teabag = c(Twinings_ultraChai = 4), 
   review = 're-try')

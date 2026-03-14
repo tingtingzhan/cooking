@@ -5,7 +5,7 @@
 
 
 
-meatfill_portion <- function() c(
+meatfill_portion <- \() c(
   '\u9984\u9968 wonton' = 15,
   '\u997a\u5b50 gyoza' = 15,
   # '35g bao wrapper \u5305\u5b5035g\u76ae' = 20, # I can do nicely
@@ -13,7 +13,7 @@ meatfill_portion <- function() c(
   '\u5305\u5b50 40g bao wrapper\U1f389' = 40 # too big
 )
 
-meatfill_note <- function() c(
+meatfill_note <- \() c(
   'Extra can be made into meatmash()'
 )
 
@@ -38,7 +38,7 @@ setClass(Class = 'porkfill', contains = 'recipe', prototype = prototype(
   
 ))
 
-porkfill <- function() new(
+porkfill <- \() new(
   Class = 'porkfill',
   pork = c(tenderloin = 500, belly = 500), # tiny too fat
   greenPeppercornOil_tsp = 1, sesameOil_Tbsp = 1,
@@ -60,7 +60,7 @@ porkfill <- function() new(
 
 
 
-Jenny_chickenfill <- function() new(
+Jenny_chickenfill <- \() new(
   Class = 'recipe', author = 'Jenny', alias_flavor = '\u9e21\u817f\u8089\u9985',
   chicken = c(thigh = 500),
   shrimp = 300,
@@ -95,7 +95,7 @@ setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
 
 #' @rdname lambfill
 #' @export
-xiaogaojie_lambfill <- function() new(
+xiaogaojie_lambfill <- \() new(
   Class = 'recipe', alias_flavor = '\u867e\u7f8a\u8089\u9985', 
   xiaogaojie = 'M6DD504lDac',
   portion = c(Baozi = 30),
@@ -116,7 +116,7 @@ xiaogaojie_lambfill <- function() new(
 
 # below: no-so-successful experiments
 
-salmonfill <- function() new(
+salmonfill <- \() new(
   Class = 'recipe',
   seafood = c(salmonAtlantic = 1000),
   starch_Tbsp = c(Wegmans_corn = 2),

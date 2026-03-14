@@ -25,7 +25,7 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
 
 #' @rdname caffeCoconut
 #' @export
-caffeCoconut <- function() new(
+caffeCoconut <- \() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'FreeNow',
   coconut = c(Freenow_coconutBarista = 180), # was 225
@@ -39,7 +39,7 @@ caffeCoconut <- function() new(
 
 #' @rdname caffeCoconut
 #' @export
-caffeCoconut_FreeNow0sugar <- function() new(
+caffeCoconut_FreeNow0sugar <- \() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'FreeNow Zero-Sugar',
   coconut = c(Freenow_coconutBarista_0sugar = 225),
@@ -52,7 +52,7 @@ caffeCoconut_FreeNow0sugar <- function() new(
 
 #' @rdname caffeCoconut
 #' @export
-caffeCoconut_Luckin <- function() new(
+caffeCoconut_Luckin <- \() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'Luckin',
   coconut = c(Luckin_coconutmilk = 225+25),

@@ -50,14 +50,14 @@ setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
 
 #' @rdname gateau
 #' @export
-cocoa_gateau <- function() new(
+cocoa_gateau <- \() new(
   Class = 'gateau',
   cocoa_tsp = c(Navitas_cacao = 14), # 6%, next try
   coffee_tsp = 1,
   sugar = 55,
   review = 'try')
 
-cocoa_gateau_FAIL <- function() new(
+cocoa_gateau_FAIL <- \() new(
   Class = 'recipe',
   alias_class = 'Ga\u0302teau', # 'G\u00e2teau' # ??
   
@@ -85,7 +85,7 @@ cocoa_gateau_FAIL <- function() new(
 
 #' @rdname gateau
 #' @export
-matcha_gateau <- function() new(
+matcha_gateau <- \() new(
   Class = 'gateau',
   matcha_Tbsp = c(Sencha_everyday_matcha = 3),
   drymilk = 30,
@@ -95,7 +95,7 @@ matcha_gateau <- function() new(
 
 #' @rdname gateau
 #' @export
-pumpkin_gateau <- function() new(
+pumpkin_gateau <- \() new(
   Class = 'gateau',
   pumpkin = 290, # (125+160*.577)/.75
   butter = 50, # 160/3
@@ -109,7 +109,7 @@ pumpkin_gateau <- function() new(
 
 #' @rdname gateau
 #' @export
-AddaPinch_chocolate_cake <- function() new(
+AddaPinch_chocolate_cake <- \() new(
   Class = 'recipe', author = 'Add-A-Pinch', alias_flavor = 'Chocolate Cake',
   url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   flour = 240, sugar = 396,
@@ -124,7 +124,7 @@ AddaPinch_chocolate_cake <- function() new(
 
 #' @rdname gateau
 #' @export
-PreppyKitchen_chocolate_cake <- function() new(
+PreppyKitchen_chocolate_cake <- \() new(
   Class = 'recipe', alias_flavor = 'Chocolate Cake',
   flour = 240, sugar = 400,
   cocoa = 50,
@@ -138,7 +138,7 @@ PreppyKitchen_chocolate_cake <- function() new(
 
 #' @rdname gateau
 #' @export
-DessertFor2_matcha_cake <- function() new(
+DessertFor2_matcha_cake <- \() new(
   Class = 'recipe', author = 'DessertFor2', alias_flavor = 'Matcha Cake',
   butter = 99,
   sugar = 200,
@@ -153,7 +153,7 @@ DessertFor2_matcha_cake <- function() new(
 
 #' @rdname gateau
 #' @export
-Sallys_pumpkin_cake <- function() new(
+Sallys_pumpkin_cake <- \() new(
   Class = 'recipe', author = 'Sally\'s', alias_flavor = 'Pumpkin Cake',
   flour = 250,
   bakingPowder_tsp = 2,

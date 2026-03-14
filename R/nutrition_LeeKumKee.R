@@ -7,14 +7,14 @@ NULL
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_chickenBouillon <- function() new(
+LeeKumKee_chickenBouillon <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'premium-bouillon-powder-flavored-with-chicken-no-msg-added',
   name = 'Chicken Bouillon', alias = '\u7279\u7d1a\u8abf\u5473\u96de\u7c89',
   servingGram = 5, servingTsp = 1, sodium = .81)
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_5spiceMarinade <- function() new(
+LeeKumKee_5spiceMarinade <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'selected-five-spices-marinade',
   name = 'Five Spice Marinade', alias = '\u4e94\u9999\u9e75\u6c34\u6c41',
   usd = 4/410*15,
@@ -22,14 +22,14 @@ LeeKumKee_5spiceMarinade <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_brownBraising <- function() new(
+LeeKumKee_brownBraising <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'brown-braising-sauce',
   name = 'Brown Braising Sauce', alias = '\u79d8\u88fd\u7d05\u71d2\u6c41',
   servingGram = 15, servingTbsp = 1, sodium = .59, sugar = 6, protein = 1)
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_sweetBean <- function() new(
+LeeKumKee_sweetBean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'sweet-bean-sauce',
   name = 'Sweet Bean Sauce', alias = '\u751c\u9eb5\u91ac',
   servingGram = 19, servingTbsp = 1, 
@@ -38,7 +38,7 @@ LeeKumKee_sweetBean <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_ChuHou <- function() new(
+LeeKumKee_ChuHou <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'chu-hou-paste',
   name = 'Chu Hou Paste', alias = '\u67f1\u4faf\u91ac',
   servingGram = 18, servingTbsp = 1, 
@@ -47,7 +47,7 @@ LeeKumKee_ChuHou <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_hoisin <- function() new(
+LeeKumKee_hoisin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'hoisin-sauce',
   name = 'Hoisin Paste', alias = '\u6d77\u9bae\u91ac',
   servingGram = 42, servingTbsp = 2, 
@@ -56,14 +56,14 @@ LeeKumKee_hoisin <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_sesameSauce <- function() new(
+LeeKumKee_sesameSauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'sesame-sauce',
   name = 'Sesame Sauce', alias = '\u829d\u9ebb\u91ac',
   servingGram = 15, servingTbsp = 1, 
   calorie = 110,
   fat = 11, sodium = .025, carbohydrate = 2, fiber = 1, protein = 2)
 
-LeeKumKee_peanutSauce <- function() new(
+LeeKumKee_peanutSauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkhk = 'peanut-sauce',
   name = 'Peanut\U1f95c Sauce', alias = '\u82b1\u751f\u91ac',
   servingGram = 32, servingTbsp = 2,
@@ -72,7 +72,7 @@ LeeKumKee_peanutSauce <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_soySauce <- function() new(
+LeeKumKee_soySauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'soy-sauce',
   name = 'Soy Sauce', alias = '\u9bae\u5473\u751f\u62bd',
   servingGram = 15, servingTbsp = 1,
@@ -83,7 +83,7 @@ LeeKumKee_soySauce <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_plumSauce <- function() new(
+LeeKumKee_plumSauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'plum-sauce',
   name = 'Plum Sauce', alias = '\u8607\u6885\u91ac',
   servingGram = 40, servingTbsp = 2,
@@ -93,7 +93,7 @@ LeeKumKee_plumSauce <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_garlic <- function() new(
+LeeKumKee_garlic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'minced-garlic',
   name = 'Minced Garlic\U1f9c4', alias = '\u849c\u84c9',
   usd = 5.69/326*6,
@@ -104,7 +104,7 @@ LeeKumKee_garlic <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_premium_oyster <- function() new(
+LeeKumKee_premium_oyster <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'premium-oyster-flavored-sauce',
   name = 'Oyster Sauce', alias = '\u820a\u5e84\u7279\u7d1a\u8814\u6cb9',
   costcoBiz = '11941145',
@@ -115,7 +115,7 @@ LeeKumKee_premium_oyster <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_oyster <- function() new(
+LeeKumKee_oyster <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'panda-brand-oyster-flavored-sauce',
   name = '\u718a\u8c93\u724c\u9bae\u5473\u8814\u6cb9 Panda\u00ae Oyster Sauce',
   webstaurant = '999LKK0074', # source of nutrition info
@@ -126,7 +126,7 @@ LeeKumKee_oyster <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_KoreanBBQ <- function() new(
+LeeKumKee_KoreanBBQ <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'korean-barbecue-sauce',
   name = 'Korean BBQ Sauce', alias = '\u97d3\u570b\u71d2\u70e4\u91ac',
   servingGram = 36, servingTbsp = 2, calorie = 60,
@@ -134,7 +134,7 @@ LeeKumKee_KoreanBBQ <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_blackPepper <- function() new(
+LeeKumKee_blackPepper <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'black-pepper-sauce',
   name = 'Black Pepper Sauce', alias = '\u9ed1\u6912\u6c41',
   usd = 4.29/350*18,
@@ -144,7 +144,7 @@ LeeKumKee_blackPepper <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_coconutCurry <- function() new(
+LeeKumKee_coconutCurry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'coconut-flavored-curry-sauce',
   name = 'Coconut Curry Sauce', alias = '\u8461\u570b\u96de\u6c41',
   usd = 4.29/235*18,
@@ -154,7 +154,7 @@ LeeKumKee_coconutCurry <- function() new(
 
 #' @rdname nutrition_LeeKumKee
 #' @export
-LeeKumKee_satay <- function() new(
+LeeKumKee_satay <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'satay-sauce',
   name = 'Satay Sauce', alias = '\u6c99\u7239\u9171',
   servingGram = 16, servingTbsp = 1, calorie = 110,

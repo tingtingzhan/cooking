@@ -5,7 +5,7 @@
 # the custard
 
 
-xiaogaojie_pasteisdenata1 <- function() new(
+xiaogaojie_pasteisdenata1 <- \() new(
   Class = 'recipe', alias_flavor = 'pasteisdenata1',
   water = 185,
   sugar = 200,
@@ -17,7 +17,7 @@ xiaogaojie_pasteisdenata1 <- function() new(
   eggYolk_pc = 5,
   xiaogaojie = '-83188U6O8w')
 
-xiaogaojie_pasteisdenata2 <- function() new(
+xiaogaojie_pasteisdenata2 <- \() new(
   Class = 'recipe', alias_flavor = 'pasteisdenata2',
   milk = 180,
   heavyCream = 200,
@@ -26,7 +26,7 @@ xiaogaojie_pasteisdenata2 <- function() new(
   eggWhite_pc = 1,
   xiaogaojie = '-83188U6O8w')
 
-Leites_pasteisdenata <- function() new(
+Leites_pasteisdenata <- \() new(
   Class = 'recipe',
   alias = 'leites',
   flour_Tbsp = 3,
@@ -39,7 +39,7 @@ Leites_pasteisdenata <- function() new(
   url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
 
 
-TastingTable_pasteisdenata <- function() new(
+TastingTable_pasteisdenata <- \() new(
   Class = 'recipe',
   alias = 'TastingTable',
   sugar_cup = c(Domino_granulated = 1),

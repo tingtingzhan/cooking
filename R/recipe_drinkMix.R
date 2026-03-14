@@ -16,7 +16,7 @@ setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
   alias_class = 'Mix' # '\u901f\u6eb6\u7c89'
 ))
 
-setValidity(Class = 'drinkmix', method = function(object) {
+setValidity(Class = 'drinkmix', method = \(object) {
   if (length(object@boilingWater) || length(object@iceWater) ||
       length(object@water95) || length(object@water90) || length(object@water80) || length(object@water70)) # all kind of water
     stop('`drinkmix` cannot have water')
@@ -169,7 +169,7 @@ frappe.drinkmix <- function(
 #' @rdname show_cooking
 #' @aliases show,drinkmix-method
 #' @export
-setMethod(f = show, signature = 'drinkmix', definition = function(object) {
+setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   callNextMethod(object)
 
   hot <- hotdrink(object) # 2-cup hot water, or shaved ice
@@ -190,7 +190,7 @@ setMethod(f = show, signature = 'drinkmix', definition = function(object) {
 
 # @rdname drink
 # @export
-#lemonade <- function() new(
+#lemonade <- \() new(
 #  Class = 'recipe', alias_flavor = 
 # ### that lemonade mix ???  into an iceDrink
 #)

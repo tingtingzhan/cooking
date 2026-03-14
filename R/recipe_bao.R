@@ -8,18 +8,18 @@
 #)
 
 
-mantou_portion <- function() c(
+mantou_portion <- \() c(
   '\u5927\u9992\u5934 large mantou' = 50,
   '\u9992\u5934 mantou' = 40,
   '\u5c0f\u9992\u5934 small mantou' = 30
 )
 
-savoryBao_portion <- function() c(
+savoryBao_portion <- \() c(
   'Pastalinda-3, 40g \u751f\u8089\u9985 raw meat\U1f389' = 40, # big bao, very good!
   'Pastalinda-4, 20g \u719f\u81ca\u5b50\u9985 fried meat chop\U1f389' = 40 # difficult to wrap, best I can do for now
 )
 
-sweetBao_portion <- function() c(
+sweetBao_portion <- \() c(
   # 'Pastalinda-3.5, 25g \u9ed1\u829d\u9ebb\u6d41\u6c99\u9985 sweet lava (trying)' = 40, # too much filling!!
   'Pastalinda-2.5, 15g \u9ed1\u829d\u9ebb\u6d41\u6c99\u9985 sweet lava (try next)' = 40, # try next
   'Pastalinda-4, 40g \u8c46\u6c99\u9985 sweet bean paste\U1f44d' = 40,
@@ -101,14 +101,14 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
 
 #' @rdname bao
 #' @export
-bao <- function() new(Class = 'bao', water = 240, sugar_Tbsp = 3, pros = 'Inna')
+bao <- \() new(Class = 'bao', water = 240, sugar_Tbsp = 3, pros = 'Inna')
 
-bao_heavyCream <- function() new(
+bao_heavyCream <- \() new(
   Class = 'bao', 
   heavyCream = 45, lard = numeric(),
   water = 214, sugar_Tbsp = 3, pros = character())
 
-bao_butter <- function() new(
+bao_butter <- \() new(
   Class = 'bao', 
   lard = numeric(), butter = 18,
   water = 237, sugar_Tbsp = 3, 
@@ -120,7 +120,7 @@ bao_butter <- function() new(
 
 #' @rdname bao
 #' @export
-pumpkin_bao <- function() new(
+pumpkin_bao <- \() new(
   Class = 'bao', 
   breadFlour = c(KingArthur_bread = 200), pastryFlour = c(Wegmans_pastry = 300),
   pumpkin = 285, # 260*.4+300*.6, 
@@ -129,7 +129,7 @@ pumpkin_bao <- function() new(
   #date = as.Date('2024-09-28')
   )
 
-.pumpkin_bread_bao <- function() new(
+.pumpkin_bread_bao <- \() new(
   Class = 'bao', 
   pumpkin = 260, breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(),
   sugar_Tbsp = 2,
@@ -137,7 +137,7 @@ pumpkin_bao <- function() new(
   cons = 'severely shrinks; bread flour cannot be used for bao?',
   date = as.Date('2024-09-28'))
 
-.pumpkin_pastry_bao <- function() new(
+.pumpkin_pastry_bao <- \() new(
   Class = 'bao', 
   pumpkin = 300, # 500g Wegmans\'s patry flour
   sugar_Tbsp = 2,
@@ -151,7 +151,7 @@ pumpkin_bao <- function() new(
 
 #' @rdname bao
 #' @export
-matcha_bao <- function() new(
+matcha_bao <- \() new(
   Class = 'bao', bao(), matcha_Tbsp = c(Sencha_everyday_matcha = 3), sugar_Tbsp = 5,
   water_extra = 25, # retry
   portion = c(mantou_portion(), sweetBao_portion()),
@@ -161,7 +161,7 @@ matcha_bao <- function() new(
 
 #' @rdname bao
 #' @export
-beet_bao <- function() new(
+beet_bao <- \() new(
   Class = 'bao', bao(), beet_tsp = 11, 
   #sugar_Tbsp = 4, # previous data
   sugar_Tbsp = 1, # try next time
@@ -170,14 +170,14 @@ beet_bao <- function() new(
 
 #' @rdname bao
 #' @export
-cocoa_bao_Navitas <- function() new(
+cocoa_bao_Navitas <- \() new(
   Class = 'bao', bao(), cocoa_Tbsp = c(KingArthur_Bensdorp = 6), sugar_Tbsp = 5,
   portion = c(mantou_portion(), sweetBao_portion()),
   review = 'retry with Dutch cocoa')
 
 #' @rdname bao
 #' @export
-pineapple_bao <- function() new(
+pineapple_bao <- \() new(
   Class = 'bao', 
   #pineapple = 270, 
   pineapple = 250, # retry
@@ -186,7 +186,7 @@ pineapple_bao <- function() new(
 
 #' @rdname bao
 #' @export
-pear_bao <- function() new(
+pear_bao <- \() new(
   Class = 'bao', 
   #pear = 255, # 250 too dry; 260 a tiny little too wet but manageable
   pear = 250, # retry
@@ -195,7 +195,7 @@ pear_bao <- function() new(
 
 #' @rdname bao
 #' @export
-peach_bao_DelMonte <- function() new(
+peach_bao_DelMonte <- \() new(
   Class = 'bao', 
   #puree = c(DelMonte_peach = 255),
   puree = c(DelMonte_peach = 250),
@@ -204,7 +204,7 @@ peach_bao_DelMonte <- function() new(
 
 #' @rdname bao
 #' @export
-mandarine_bao <- function() new(
+mandarine_bao <- \() new(
   Class = 'bao', 
   mandarine = 245, sugar_Tbsp = 1,
   portion = c(mantou_portion(), savoryBao_portion()), 
@@ -212,25 +212,25 @@ mandarine_bao <- function() new(
 
 #' @rdname bao
 #' @export
-acai_bao <- function() new(
+acai_bao <- \() new(
   Class = 'bao', bao(), acai_Tbsp = 8.5, sugar_Tbsp = 2,
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
 
-darkCherry_bao <- function() new(
+darkCherry_bao <- \() new(
   Class = 'bao', 
   darkCherry = 310, 
   portion = c(mantou_portion(), savoryBao_portion()), 
   cons = 'Not good!! Dough too dry, skin kneaded out.  Maybe Vitamix')
 
 
-apple_bao <- function() new(
+apple_bao <- \() new(
   Class = 'bao', applesauce = 250,
   review = 'try'
 )
 
-mango_bao <- function() new(
+mango_bao <- \() new(
   Class = 'bao', 
   mango = 270, 
   review = c('try in the summer'))
@@ -238,7 +238,7 @@ mango_bao <- function() new(
 
 #' @rdname bao
 #' @export
-tomato_bao <- function() new(
+tomato_bao <- \() new(
   Class = 'bao', 
   tomato = 300, sugar = 10,
   review = 'try')
@@ -298,7 +298,7 @@ setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
 
 #' @rdname wheatBao
 #' @export
-wheatBao <- function() new(
+wheatBao <- \() new(
   Class = 'wheatBao', 
   pros = c(
     'perfect wetness',
@@ -307,7 +307,7 @@ wheatBao <- function() new(
   )
 )
 
-wheatBao_tmp <- function() new(
+wheatBao_tmp <- \() new(
   Class = 'wheatBao', 
   breadFlour = c(KingArthur_bread = 208),
   pastryFlour = c(Wegmans_pastry = 92),
@@ -315,7 +315,7 @@ wheatBao_tmp <- function() new(
   pros = 'perfect wetness (bread flour ran out)')
 
 
-wheatBao_duckFat <- function() new(
+wheatBao_duckFat <- \() new(
   Class = 'wheatBao', wheatBao(),
   lard = numeric(), fat = c(Epic_duck = 19),
   cons = 'Not as white as using pork lard', 
@@ -323,7 +323,7 @@ wheatBao_duckFat <- function() new(
 
 
 
-lowGlutenBao_FAIL <- function() new(
+lowGlutenBao_FAIL <- \() new(
   Class = 'bao',
   alias_flavor = '\u6742\u7cae\u7c89',
   glutenFreeFlour = c(KingArthur_M4M = 150),
@@ -336,7 +336,7 @@ lowGlutenBao_FAIL <- function() new(
 
 
 
-coconutBao_FAIL <- function() new(
+coconutBao_FAIL <- \() new(
   Class = 'bao', 
   alias_class = '\u6930\u8089\u7c89\u5305\u5b50\u9992\u5934',
   coconut = c(WegmansOrganic_coconutFlour = 125),

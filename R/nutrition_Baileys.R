@@ -8,7 +8,7 @@ NULL
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_espresso <- function() new(
+Baileys_espresso <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   baileys = 'espresso-creme',
   #url = 'www.baileys.com/en-us/products/baileys-espresso-creme' # no nutrition info
@@ -25,7 +25,7 @@ Baileys_espresso <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_chocolatLuxe <- function() new(
+Baileys_chocolatLuxe <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'chocolat-luxe',
   name = 'Chocolat Luxe', alias = '\u5de7\u514b\u529b\u9152',
@@ -39,7 +39,7 @@ Baileys_chocolatLuxe <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_chocolate <- function() new(
+Baileys_chocolate <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'chocolate-liqueur',
   # url = 'https://www.baileys.com/en-us/products/baileys-chocolate-liqueur' # nutrition info here
@@ -55,7 +55,7 @@ Baileys_chocolate <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_colada <- function() new(
+Baileys_colada <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'colada',
   # creamy coconut and sweet, juicy pineapples.
@@ -70,7 +70,7 @@ Baileys_colada <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_tiramisu <- function() new(
+Baileys_tiramisu <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'tiramisu-cocktail',
   # mascarpone, espresso with hints of chocolate.
@@ -85,7 +85,7 @@ Baileys_tiramisu <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_smores <- function() new(
+Baileys_smores <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 's-mores',
   name = 'S\'mores', alias = '\u5de7\u514b\u529b\u68c9\u82b1\u7cd6\u9152',
@@ -102,7 +102,7 @@ Baileys_smores <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_pumpkinSpice <- function() new(
+Baileys_pumpkinSpice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'pumpkin-spice',
   name = 'Pumpkin\U1f383 Spice', alias = '\u5496\u5561\u9152',
@@ -119,7 +119,7 @@ Baileys_pumpkinSpice <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_strawberry <- function() new(
+Baileys_strawberry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'strawberries-cream',
   name = 'Strawberries\U1f353 & Cream', alias = '\u8349\u8393\u9152',
@@ -135,7 +135,7 @@ Baileys_strawberry <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_almande <- function() new(
+Baileys_almande <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'almande',
   name = 'Almande', alias = '\u674f\u4ec1\u9152',
@@ -153,7 +153,7 @@ Baileys_almande <- function() new(
 
 #' @rdname nutrition_Baileys
 #' @export
-Baileys_icedCoffeeLatte <- function() new(
+Baileys_icedCoffeeLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'iced-coffee-latte',
   name = 'Iced Coffee Latte',

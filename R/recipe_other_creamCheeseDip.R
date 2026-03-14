@@ -15,7 +15,7 @@ NULL
 
 #' @rdname creamCheeseDip_other
 #' @export
-pumpkin_creamCheeseDip_bakethat <- function() new(
+pumpkin_creamCheeseDip_bakethat <- \() new(
   Class = 'recipe',
   author = 'Bake That!',
   creamCheese_brick = 1,
@@ -30,7 +30,7 @@ pumpkin_creamCheeseDip_bakethat <- function() new(
 
 #' @rdname creamCheeseDip_other
 #' @export
-pumpkin_creamCheeseDip_Julie <- function() new(
+pumpkin_creamCheeseDip_Julie <- \() new(
   Class = 'recipe',
   julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),
   creamCheese_brick = 2,

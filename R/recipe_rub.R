@@ -63,7 +63,7 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
 
 #' @rdname rub
 #' @export
-cuminMontreal_rub <- function() new(
+cuminMontreal_rub <- \() new(
   Class = 'rub',
   alias_flavor = 'Cumin+Montreal',
   cumin_tsp = 1,
@@ -84,7 +84,7 @@ cuminMontreal_rub <- function() new(
 
 #' @rdname rub
 #' @export
-Montreal_rub <- function() new( # inspired by Guga
+Montreal_rub <- \() new( # inspired by Guga
   Class = 'rub',
   brownSugar_tsp = .5,
   cinnamon_tsp = 1/8,
@@ -106,7 +106,7 @@ Montreal_rub <- function() new( # inspired by Guga
 
 if (FALSE) {
   
-  duckPaste <- function() new(
+  duckPaste <- \() new(
     Class = 'recipe',
     alias = 'Duck Paste',
     msg = 6*50,
@@ -124,7 +124,7 @@ if (FALSE) {
     # 麦芽粉 1两???
   )
   
-  duckSalt <- function() new(
+  duckSalt <- \() new(
     Class = 'recipe',
     alias = 'Duck Salt',
     sugar = c(Domino_granulated = 10*500),
@@ -143,7 +143,7 @@ if (FALSE) {
 
 #' @rdname rub
 #' @export
-duck_rub <- function() new(
+duck_rub <- \() new(
   Class = 'rub',
   alias = 'Duck Salt',
   spice_tsp = c(
@@ -167,7 +167,7 @@ if (FALSE) {
 
 #' @rdname rub
 #' @export
-Southwest_rub <- function() new(
+Southwest_rub <- \() new(
   Class = 'rub', 
   salt_tsp = 2.75,
   spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
@@ -176,7 +176,7 @@ Southwest_rub <- function() new(
 
 #' @rdname rub
 #' @export
-harissa_rub <- function() new(
+harissa_rub <- \() new(
   Class = 'rub',
   #salt_tsp = .75, # for previuos 'sousvide', I wrote `pros = 'not bad!'`
   salt_tsp = 2.75, # 
@@ -190,7 +190,7 @@ harissa_rub <- function() new(
 
 #' @rdname rub
 #' @export
-vindaloo_rub <- function() new(
+vindaloo_rub <- \() new(
   Class = 'rub',
   salt_tsp = 2.75,
   spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
@@ -203,7 +203,7 @@ vindaloo_rub <- function() new(
 
 
 
-Guga_rub <- function() new(
+Guga_rub <- \() new(
   Class = 'recipe', guga = 'omXFw_JnP4E',
   salt_cup = 1/4,
   brownSugar_cup = 1/4,
@@ -217,7 +217,7 @@ Guga_rub <- function() new(
 
 # Guga has more: https://www.youtube.com/watch?v=lF2uz5Nz02E
 
-kalbi_rub <- function() new( # confirm next time!
+kalbi_rub <- \() new( # confirm next time!
   Class = 'recipe',
   alias_flavor = '\u97e9\u5f0f\u725b\u4ed4\u9aa8',
   sauce_Tbsp = c(

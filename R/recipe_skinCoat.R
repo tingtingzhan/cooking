@@ -13,7 +13,7 @@ setClass(Class = 'skinCoat', contains = 'recipe', prototype = prototype(
 
 #' @rdname skinCoat
 #' @export
-duck_coat <- function() new(
+duck_coat <- \() new(
   Class = 'skinCoat',
   alias = 'Duck Skin Coating',
   

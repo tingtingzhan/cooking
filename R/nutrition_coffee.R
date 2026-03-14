@@ -8,7 +8,7 @@ NULL
 
 #' @rdname nutrition_coffee
 #' @export
-NescafeTastersChoice_decaf <- function() new(
+NescafeTastersChoice_decaf <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   nescafeUS = 'decaf-house-blend-medium-light-roast-instant-coffee-7-oz-jar/',
   name = 'Taster\'s Choice\u00ae Decaf', alias = '\u901f\u6eb6\u5496\u5561',
@@ -20,7 +20,7 @@ NescafeTastersChoice_decaf <- function() new(
 
 #' @rdname nutrition_coffee
 #' @export
-NescafeGold_decaf <- function() new(
+NescafeGold_decaf <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafe = 'decaf',
   name = 'Gold\u00ae Decaf', alias = '\u901f\u6eb6\u5496\u5561',
@@ -33,7 +33,7 @@ NescafeGold_decaf <- function() new(
 
 #' @rdname nutrition_coffee
 #' @export
-NescafeGold_espresso_decaf_Canada <- function() new(
+NescafeGold_espresso_decaf_Canada <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoCA = 'decaf-gold-espresso-instant-coffee',
   name = paste('Decaf, Rich Crema', bg_br_white('\U1f1e8\U1f1e6 Market')), 
@@ -50,7 +50,7 @@ NescafeGold_espresso_decaf_Canada <- function() new(
 
 #' @rdname nutrition_coffee
 #' @export
-NescafeGold_espresso_intense <- function() new(
+NescafeGold_espresso_intense <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'gold-espresso-intense-instant-coffee-35-oz-jar',
   walmart = '5066099258',
@@ -62,7 +62,7 @@ NescafeGold_espresso_intense <- function() new(
 
 #' @rdname nutrition_coffee
 #' @export
-NescafeGold_espresso_decaf <- function() new(
+NescafeGold_espresso_decaf <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'gold-decaf-espresso-instant-coffee',
   walmart = '12273958388',
@@ -74,7 +74,7 @@ NescafeGold_espresso_decaf <- function() new(
 
 #' @rdname nutrition_coffee
 #' @export
-NescafeGold_espresso_blonde <- function() new(
+NescafeGold_espresso_blonde <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'gold-espresso-blonde-instant-coffee-35-oz-jar',
   walmart = '5066099259',

@@ -17,14 +17,14 @@ setClass(Class = 'vanilla', contains = 'nutrition', prototype = prototype(
 
 #' @rdname nutrition_vanilla
 #' @export
-NielsenMassey_vanilla <- function() new(
+NielsenMassey_vanilla <- \() new(
   Class = 'vanilla', call = match.call()[[1L]],
   nielsenmassey = 'pure-vanilla-extract',
   name = 'Vanilla')
 
 #' @rdname nutrition_vanilla
 #' @export
-NielsenMassey_Madagascar <- function() new(
+NielsenMassey_Madagascar <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
   nielsenmassey = 'madagascar-bourbon-pure-vanilla-extract',
   name = 'Madagascar\U0001f1f2\U0001f1ec Bourbon Vanilla',
@@ -32,21 +32,21 @@ NielsenMassey_Madagascar <- function() new(
 
 #' @rdname nutrition_vanilla
 #' @export
-NielsenMassey_Indonesian <- function() new(
+NielsenMassey_Indonesian <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
   nielsenmassey = 'indonesian-pure-vanilla-extract',
   name = 'Indonesian\U0001f1ee\U0001f1e9 Bourbon Vanilla')
 
 #' @rdname nutrition_vanilla
 #' @export
-NielsenMassey_Tahitian <- function() new(
+NielsenMassey_Tahitian <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
   nielsenmassey = 'tahitian-pure-vanilla-extract',
   name = 'Tahitian\U0001f1f5\U0001f1eb Bourbon Vanilla')
 
 #' @rdname nutrition_vanilla
 #' @export
-NielsenMassey_Ugandan <- function() new(
+NielsenMassey_Ugandan <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
   nielsenmassey = 'ugandan-pure-vanilla-extract',
   name = 'Ugandan\U0001f1fa\U0001f1ec Bourbon Vanilla')

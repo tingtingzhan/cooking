@@ -28,11 +28,11 @@ setClass(Class = 'niangaoNingbo', contains = 'recipe', prototype = prototype(
 
 #' @rdname niangaoNingbo
 #' @export
-niangaoNingbo <- function() new(Class = 'niangaoNingbo')
+niangaoNingbo <- \() new(Class = 'niangaoNingbo')
 
 #' @rdname niangaoNingbo
 #' @export
-Jenny_niangaoNingbo <- function() new(
+Jenny_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'Jenny', alias_flavor = '\u5b81\u6ce2\u5e74\u7cd5',
   youtube = 'kVsbsJrwLQs',
   riceFlour = 200,
@@ -43,7 +43,7 @@ Jenny_niangaoNingbo <- function() new(
 
 #' @rdname niangaoNingbo
 #' @export
-SoupedUp_niangaoNingbo <- function() new(
+SoupedUp_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'Souped Up', alias_flavor = '\u5b81\u6ce2\u5e74\u7cd5',
   youtube = 'lHR1QohweaA',
   riceFlour = 300,
@@ -52,7 +52,7 @@ SoupedUp_niangaoNingbo <- function() new(
 
 #' @rdname niangaoNingbo
 #' @export
-LuLu_niangaoNingbo <- function() new(
+LuLu_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'LuLu', alias_flavor = '\u5b81\u6ce2\u5e74\u7cd5',
   youtube = 'KPyIG7Tn64I',
   riceFlour = 200,

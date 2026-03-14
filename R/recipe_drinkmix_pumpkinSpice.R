@@ -17,7 +17,7 @@ setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prot
 
 #' @rdname pumpkinSpiceLatte
 #' @export
-pumpkinSpiceLatte <- function() new(
+pumpkinSpiceLatte <- \() new(
   Class = 'pumpkinSpiceLatteMix',
   drymilk = c(Carnation = 40),
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),

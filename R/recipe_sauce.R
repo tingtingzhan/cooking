@@ -9,7 +9,7 @@
 #' meatTenderizer()
 #' 
 #' @export
-meatTenderizer <- function() new(
+meatTenderizer <- \() new(
   Class = 'recipe', 
   alias = '\u5ae9\u8089/\u6d17\u8840\u6c34',
   NaHCO3_tsp = 1/4, 

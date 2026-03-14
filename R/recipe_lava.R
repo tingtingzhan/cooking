@@ -47,7 +47,7 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
 
 #' @rdname lava
 #' @export
-sesame_lava <- function() new(
+sesame_lava <- \() new(
   Class = 'lava',
   blackSesame = 400,
   flavor = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice!
@@ -65,7 +65,7 @@ sesame_lava <- function() new(
 
 #' @rdname lava
 #' @export
-coconut_lava <- function() new(
+coconut_lava <- \() new(
   Class = 'lava',
   coconut = c(WegmansOrganic_coconutFlour = 150),
   sugar = 70,
@@ -75,7 +75,7 @@ coconut_lava <- function() new(
   ))
 
 
-coconut_lava_OLD <- function() new(
+coconut_lava_OLD <- \() new(
   Class = 'lava',
   coconut = c(Edward_shreddedCoconutLite = 200),
   sugar = 100,
@@ -87,7 +87,7 @@ coconut_lava_OLD <- function() new(
 
 #' @rdname lava
 #' @export
-Daat_sesamelava <- function() new(
+Daat_sesamelava <- \() new(
   Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   daatgo = 'FvS_W_qnlxc',
   blackSesame = 160+20,
@@ -103,7 +103,7 @@ Daat_sesamelava <- function() new(
 
 #' @rdname lava
 #' @export
-xiaomin_sesamelava <- function() new(
+xiaomin_sesamelava <- \() new(
   Class = 'recipe', author = '\u5c0f\u654f', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   youtube = 'uCbXXVp4h40',
   blackSesame = 120,
@@ -114,7 +114,7 @@ xiaomin_sesamelava <- function() new(
 
 #' @rdname lava
 #' @export
-FancyNotes_sesamelava <- function() new(
+FancyNotes_sesamelava <- \() new(
   Class = 'recipe', author = '\u4e54\u4e54\u5988', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   blackSesame = 150,
   sugar = 40, 
@@ -123,7 +123,7 @@ FancyNotes_sesamelava <- function() new(
 
 #' @rdname lava
 #' @export
-xiaogaojie_sesamelava <- function() new(
+xiaogaojie_sesamelava <- \() new(
   Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   xiaogaojie = 't-pop_dGsgc',
   blackSesame = 80,
@@ -134,7 +134,7 @@ xiaogaojie_sesamelava <- function() new(
 
 
 
-daat_yolklava <- function() new(
+daat_yolklava <- \() new(
   Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
   eggYolk_pc = 12, # salted duck egg yolk 12pc, 144g
   butter = 180,
@@ -147,7 +147,7 @@ daat_yolklava <- function() new(
 
 
 # not a good idea
-pineapple_lava <- function() new(
+pineapple_lava <- \() new(
   Class = 'recipe', 
   pineapple = 585, 
   gelatin_leaf = 4,
@@ -158,7 +158,7 @@ pineapple_lava <- function() new(
   review = c('Need to use gelatin=6', 'Too sour when hot, don\'t make in future.'))
 
 
-#date_lava <- function() new(
+#date_lava <- \() new(
 #  Class = 'lava', alias_flavor = '\u7ea2\u67a3',
 #  flavor = c(SunnyFruit_date = 80), )
 

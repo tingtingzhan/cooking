@@ -10,7 +10,7 @@
 #' @name caffeLatte_other
 #' @keywords internal 
 #' @export
-Starbucks_caffeLatte <- function() new(
+Starbucks_caffeLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 407L,
   name = 'Caff\u00e8 Latte',
   servingGram = 470, serving_floz = 16,
@@ -21,7 +21,7 @@ Starbucks_caffeLatte <- function() new(
 
 #' @rdname caffeLatte_other
 #' @export
-Starbucks_coffeeFrappuccino_bottle <- function() new(
+Starbucks_coffeeFrappuccino_bottle <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Coffee Frappuccino',
   brand = 'Starbucks (Bottled)',

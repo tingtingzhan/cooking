@@ -30,7 +30,7 @@ setClass(Class = 'cornGeng', contains = 'recipe', prototype = prototype(
 
 #' @rdname cornGeng
 #' @export
-cornGeng <- function() new(Class = 'cornGeng', pros = 'I love!')
+cornGeng <- \() new(Class = 'cornGeng', pros = 'I love!')
 
 
 
@@ -71,7 +71,7 @@ setClass(Class = 'geng', contains = 'recipe', prototype = prototype(
 
 #' @rdname geng
 #' @export
-tomyumGeng <- function() new(
+tomyumGeng <- \() new(
   Class = 'geng',
   sauce = c(
     Siam_tomyum = 36,

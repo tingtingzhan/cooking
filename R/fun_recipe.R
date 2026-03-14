@@ -13,7 +13,7 @@ NULL
 #' @rdname S4generic_recipe
 #' @aliases *,recipe0,numeric-method
 #' @export
-setMethod(f = '*', signature = signature(e1 = 'recipe0', e2 = 'numeric'), definition = function(e1, e2) {
+setMethod(f = '*', signature = signature(e1 = 'recipe0', e2 = 'numeric'), definition = \(e1, e2) {
   e1_ <- as(e1, Class = 'recipe0', strict = TRUE)
   if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
   for (i in slotNames(e1_)) {
@@ -25,12 +25,12 @@ setMethod(f = '*', signature = signature(e1 = 'recipe0', e2 = 'numeric'), defini
 #' @rdname S4generic_recipe
 #' @aliases *,numeric,recipe0-method
 #' @export
-setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'recipe0'), definition = function(e1, e2) e2 * e1)
+setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'recipe0'), definition = \(e1, e2) e2 * e1)
 
 #' @rdname S4generic_recipe
 #' @aliases /,recipe,numeric-method
 #' @export
-setMethod(f = '/', signature = signature(e1 = 'recipe', e2 = 'numeric'), definition = function(e1, e2) e1 * (1/e2))
+setMethod(f = '/', signature = signature(e1 = 'recipe', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
 
 
 
@@ -44,7 +44,7 @@ setMethod(f = '/', signature = signature(e1 = 'recipe', e2 = 'numeric'), definit
 #' @name S4generic_2recipe
 #' @aliases +,recipe0,recipe0-method
 #' @export
-setMethod(f = '+', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), definition = function(e1, e2) {
+setMethod(f = '+', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), definition = \(e1, e2) {
   
   slt0 <- names(getSlots(x = 'recipe0'))
   names(slt0) <- slt0
@@ -61,7 +61,7 @@ setMethod(f = '+', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), defini
 #' @rdname S4generic_2recipe
 #' @aliases -,recipe0,recipe0-method
 #' @export
-setMethod(f = '-', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), definition = function(e1, e2) e1 + (-1) * e2)
+setMethod(f = '-', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), definition = \(e1, e2) e1 + (-1) * e2)
 
 
 #' @title Ratio of Two \linkS4class{recipe} Objects
@@ -76,7 +76,7 @@ setMethod(f = '-', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), defini
 #' # debugging now
 #' 
 #' @export
-setMethod(f = '/', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), definition = function(e1, e2) {
+setMethod(f = '/', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), definition = \(e1, e2) {
   
   e1_ <- as(e1, Class = 'recipe0')
   e2_ <- as(e2, Class = 'recipe0')

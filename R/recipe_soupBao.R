@@ -15,7 +15,7 @@ if (FALSE) {
 }
 
 
-Daat_soupBao <- function() new(
+Daat_soupBao <- \() new(
   Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
   daatgo = 'duldrFRGipM',
   flour = 300,
@@ -23,13 +23,13 @@ Daat_soupBao <- function() new(
   water40 = 175,
   lard = 10)
 
-xiaogaojie_soupBao <- function() new(
+xiaogaojie_soupBao <- \() new(
   Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
   xiaogaojie = 'OMeWvORraxk',
   flour = 400,
   water70 = 250)
 
-PinNuo_soupBao <- function() new(
+PinNuo_soupBao <- \() new(
   Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
   pino = 'EyG2mTF23Vc',
   flour = 500,
@@ -37,7 +37,7 @@ PinNuo_soupBao <- function() new(
   salt = 3,
   water = 150)
 
-shangshi_soupBao <- function() new(
+shangshi_soupBao <- \() new(
   Class = 'recipe', alias_flavor = '\u704c\u6c64\u5305',
   shangshikitchen = 'SXCS1MFtA6s',
   flour = 300,
@@ -46,14 +46,14 @@ shangshi_soupBao <- function() new(
   oil_tsp = c(Wegmans_vegetable = 1)
 )
 
-amanda_soupBao <- function() new(
+amanda_soupBao <- \() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', alias_flavor = '\u704c\u6c64\u5305',
   youtube = 'C4khQGM-K20',
   flour = 200,
   water70 = 105,
   salt_tsp = 1/8)
 
-whiteSwan_soupBao <- function() new(
+whiteSwan_soupBao <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u704c\u6c64\u5305',
   youtube = 'WVPhZdQQ5pc',
   flour = 250,

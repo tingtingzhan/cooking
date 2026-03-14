@@ -21,7 +21,7 @@ NULL
 
 #' @rdname pumpkinCheesecake_other
 #' @export
-Natasha_pumpkin_cheesecake <- function() new(
+Natasha_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   natashaskitchen = 'pumpkin-cheesecake-recipe',
   alias_class = 'Cheesecake',
@@ -39,7 +39,7 @@ Natasha_pumpkin_cheesecake <- function() new(
 
 #' @rdname pumpkinCheesecake_other
 #' @export
-Junior_pumpkin_cheesecake <- function() new(
+Junior_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   creamCheese_brick = c(Philadelphia = 4),
   sugar_cup = c(Domino_granulated = 1+2/3),
@@ -55,7 +55,7 @@ Junior_pumpkin_cheesecake <- function() new(
 
 #' @rdname pumpkinCheesecake_other
 #' @export
-PreppyKitchen_pumpkin_cheesecake <- function() new(
+PreppyKitchen_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   alias_class = 'Cheesecake',
   creamCheese_brick = c(Philadelphia = 3),
@@ -74,7 +74,7 @@ PreppyKitchen_pumpkin_cheesecake <- function() new(
 
 #' @rdname pumpkinCheesecake_other
 #' @export
-Wegmans_pumpkin_cheesecake <- function() new(
+Wegmans_pumpkin_cheesecake <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 18074L,
   name = 'Pumpkin\U1f383 Cheesecake',
   usd = .62/28.3495 * 130, # 0.62/oz
@@ -86,7 +86,7 @@ Wegmans_pumpkin_cheesecake <- function() new(
 
 #' @rdname pumpkinCheesecake_other
 #' @export
-CheesecakeFactory_pumpkin <- function() new(
+CheesecakeFactory_pumpkin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Pumpkin\U1f383',
   cheesecakefactoryfreezer = 'pumpkin-cheesecake',
@@ -98,7 +98,7 @@ CheesecakeFactory_pumpkin <- function() new(
 
 #' @rdname pumpkinCheesecake_other
 #' @export
-BrianLagerstrom_burntBasque <- function() new(
+BrianLagerstrom_burntBasque <- \() new(
   Class = 'recipe',
   alias_flavor = 'Burnt Basque Cheesecake',
   author = 'Brian Lagerstrom', youtube = 'eW-nF1xEFSA',

@@ -6,7 +6,7 @@
 #' 
 #' @name maeda
 #' @export
-maeda_matcha_icecream <- function() new(
+maeda_matcha_icecream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5', url = 'https://maeda-en.com/blogs/ice-cream/ice-cream-collection') |> c(),
   name = '\u62b9\u8336\U1f375\U1f368',
@@ -15,7 +15,7 @@ maeda_matcha_icecream <- function() new(
 
 #' @rdname maeda
 #' @export
-maeda_adzukiBean_icecream <- function() new(
+maeda_adzukiBean_icecream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], brand = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5', name = '\u7ea2\u8c46\U1f368',
   servingCup = 2/3, servingGram = 94,
   fat = 6, cholesterol = .035, sodium = .07, sugar = 20, addedSugar = 15, protein = 3,
@@ -24,7 +24,7 @@ maeda_adzukiBean_icecream <- function() new(
 
 #' @rdname maeda
 #' @export
-maeda_blackSesame_icecream <- function() new(
+maeda_blackSesame_icecream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], brand = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5', name = '\u9ed1\u829d\u9ebb\U1f368',
   servingCup = 2/3, servingGram = 90,
   fat = 10, cholesterol = .035, sodium = .07, sugar = 16, addedSugar = 10, protein = 3,
@@ -39,7 +39,7 @@ maeda_blackSesame_icecream <- function() new(
 #' 
 #' @name HaagenDazs
 #' @export
-HaagenDazs_matcha <- function() new(
+HaagenDazs_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], name = '\u62b9\u8336\U1f375', haagendazs = 'green-tea',
   servingCup = 2/3, servingGram = 128,
   fat = 21, cholesterol = .095, sodium = .065, sugar = 24, addedSugar = 18, protein = 5)
@@ -47,7 +47,7 @@ HaagenDazs_matcha <- function() new(
 
 #' @rdname HaagenDazs
 #' @export
-HaagenDazs_pistachio <- function() new(
+HaagenDazs_pistachio <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], name = 'Pistachio', haagendazs = 'pistachio',
   servingCup = 2/3, servingGram = 131,
   fat = 23, cholesterol = .09, sodium = .1, sugar = 23, addedSugar = 19, protein = 7)
@@ -55,7 +55,7 @@ HaagenDazs_pistachio <- function() new(
 
 #' @rdname HaagenDazs
 #' @export
-HaagenDazs_coffee <- function() new(
+HaagenDazs_coffee <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = '\u5496\u5561',
   haagendazs = 'coffee',
@@ -70,7 +70,7 @@ HaagenDazs_coffee <- function() new(
 #' 
 #' @name Bassetts
 #' @export
-Bassetts_coffee <- function() new(
+Bassetts_coffee <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], name = '\u5496\u5561',
   bassetts = '0e1be7_e571839fafff4f22833ede48fa3c99f1',
   servingCup = 2/3, servingGram = 102,
@@ -79,7 +79,7 @@ Bassetts_coffee <- function() new(
 
 #' @rdname Bassetts
 #' @export
-Bassetts_matcha <- function() new(
+Bassetts_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], name = '\u62b9\u8336\U1f375',
   bassetts = '0e1be7_c899e8de8e894370b2d5e557af518ad6',
   servingCup = 2/3, servingGram = 102,
@@ -88,14 +88,14 @@ Bassetts_matcha <- function() new(
 
 #' @rdname Bassetts
 #' @export
-Bassetts_pumpkin <- function() new(
+Bassetts_pumpkin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], name = '\u5357\u74dc\U1f383',
   bassetts = '0e1be7_028f7e40097b416cb7b5999b2145cbae',
   servingCup = 1/2, servingGram = 77,
   calorie = 200,
   fat = 11, cholesterol = .045, sodium = .065, sugar = 18, protein = 3)
 
-WholeFoods_berryGelato <- function() new(
+WholeFoods_berryGelato <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b07yhcpnpv',
   name = 'Sweet Wild Berry Italian Gelato',
   servingGram = 100, servingCup = 2/3,

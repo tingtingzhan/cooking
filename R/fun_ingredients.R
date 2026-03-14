@@ -18,7 +18,7 @@
 #' sum_by_name(x1, x2, x3)
 #' sum_by_name(x1, x2, x4)
 #' @export
-sum_by_name <- function(...) {
+sum_by_name <- \(...) {
   xs <- list(...)
   xs <- xs[lengths(xs, use.names = FALSE) > 0L]
   if (!length(xs)) return(numeric())

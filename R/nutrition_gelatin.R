@@ -1,7 +1,7 @@
 
 
 
-Champion_gold_gelatin <- function() new(
+Champion_gold_gelatin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Gold Leaf Gelatin', alias = '\u5409\u5229\u4e01\u7247',
   brand = c(style_hyperlink(url = 'https://www.championproteins.com/store/p5/GelatinSheetsGoldLeaf.html', text = 'Champion Proteins\U1f1fa\U1f1f8')), 

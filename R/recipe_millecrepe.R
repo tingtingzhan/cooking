@@ -56,7 +56,7 @@ setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
   )
 ))
 
-setValidity(Class = 'millecrepe', method = function(object) {
+setValidity(Class = 'millecrepe', method = \(object) {
   if (length(object@liqueur)) stop('Do not use `@liqueur` in millecrepe; cooked liqueur tastes wierd. Use in mascarponeGanache instead!')
 })
 
@@ -68,11 +68,11 @@ setValidity(Class = 'millecrepe', method = function(object) {
 
 #' @rdname millecrepe
 #' @export
-millecrepe <- function() new(Class = 'millecrepe', pros = 'good hypothetical model')
+millecrepe <- \() new(Class = 'millecrepe', pros = 'good hypothetical model')
 
 #' @rdname millecrepe
 #' @export
-matcha_millecrepe <- function() new(
+matcha_millecrepe <- \() new(
   Class = 'millecrepe',
   matcha_tsp = 4, 
   # sugar_Tbsp = 2, # for heavyCream = 70
@@ -81,7 +81,7 @@ matcha_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-beet_millecrepe <- function() new(
+beet_millecrepe <- \() new(
   Class = 'millecrepe',
   beet_tsp = 4,
   sugar_Tbsp = 2, 
@@ -89,7 +89,7 @@ beet_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-cocoa_millecrepe <- function() new(
+cocoa_millecrepe <- \() new(
   Class = 'millecrepe',
   cocoa_tsp = c(KingArthur_Bensdorp = 9.5), 
   # heavyCream = 70, cocoa_Tbsp = 3, sugar_Tbsp = 2, # not enough sugar
@@ -97,7 +97,7 @@ cocoa_millecrepe <- function() new(
   review = 'try again with dutch cocoa, natural cocoa already pretty good')
 
 
-Kahlua_millecrepe_FAIL <- function() new(
+Kahlua_millecrepe_FAIL <- \() new(
   Class = 'millecrepe',
   liqueur_Tbsp = c(Kahlua_coffee = 4*2),
   sugar_tsp = numeric(),
@@ -109,7 +109,7 @@ Kahlua_millecrepe_FAIL <- function() new(
 
 #' @rdname millecrepe
 #' @export
-xiaogaojie_millecrepe <- function() new(
+xiaogaojie_millecrepe <- \() new(
   Class = 'recipe', alias_flavor = 'millecrepe',
   milk = 300, # in grams in original recipe
   pastryFlour = 100,
@@ -120,7 +120,7 @@ xiaogaojie_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-iwen_mango_millecrepe <- function() new(
+iwen_mango_millecrepe <- \() new(
   Class = 'recipe', author = 'iwen', alias_flavor = 'mango millecrepe',
   egg_pc = 6,
   sugar = 75,
@@ -133,7 +133,7 @@ iwen_mango_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-iwen_cocoa_millecrepe <- function() new(
+iwen_cocoa_millecrepe <- \() new(
   Class = 'recipe', author = 'iwen', alias_flavor = '\u53ef\u53ef\u5343\u5c42',
   egg_pc = 6,
   sugar = 75,
@@ -148,7 +148,7 @@ iwen_cocoa_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-qiong_cocoa_millecrepe <- function() new(
+qiong_cocoa_millecrepe <- \() new(
   Class = 'recipe', author = '\u5927\u743c', alias_flavor = '\u53ef\u53ef\u5343\u5c42', youtube = 'i8Ii4BZBkmg',
   egg_pc = 2,
   butter = 40,
@@ -159,7 +159,7 @@ qiong_cocoa_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-qiong_tiramisu_millecrepe <- function() new(
+qiong_tiramisu_millecrepe <- \() new(
   Class = 'recipe', author = '\u5927\u743c', alias_flavor = 'tiramisu\u0300 millecrepe', youtube = 'xiVfrjTwaHw',
   egg_pc = 2, #
   butter = 30, #
@@ -176,7 +176,7 @@ qiong_tiramisu_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-amanda_matcha_millecrepe <- function() new(
+amanda_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', alias_flavor = '\u62b9\u8336\u5343\u5c42',
   milk = 650,
   pastryFlour = 240,
@@ -188,7 +188,7 @@ amanda_matcha_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-sweetTaste_matcha_millecrepe <- function() new(
+sweetTaste_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u4e00\u5c0f\u70b9', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'mU8rOo8_WrM',
   pastryFlour = 80,
   starch = c(Wegmans_corn = 15),
@@ -201,7 +201,7 @@ sweetTaste_matcha_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-oreomachi_matcha_millecrepe <- function() new(
+oreomachi_matcha_millecrepe <- \() new(
   Class = 'recipe', author = 'oreomachi', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = '2WESa5wNK0o',
   milk = 360,
   heavyCream = 140,
@@ -216,7 +216,7 @@ oreomachi_matcha_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-lisa_matcha_millecrepe <- function() new(
+lisa_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u8428\u59d0', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'lP0p7qh3E1I',
   egg_pc = 2,
   butter = 30,
@@ -229,7 +229,7 @@ lisa_matcha_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-lisa_mango_millecrepe <- function() new(
+lisa_mango_millecrepe <- \() new(
   Class = 'recipe', author = '\u8428\u59d0', alias_flavor = 'mango millecrepe', youtube = '_Pz6_nKaebw',
   egg_pc = 2, 
   butter = 20,
@@ -240,7 +240,7 @@ lisa_mango_millecrepe <- function() new(
 
 #' @rdname millecrepe
 #' @export
-JustOne_matcha_millecrepe <- function() new(
+JustOne_matcha_millecrepe <- \() new(
   Class = 'recipe', 
   alias_flavor = '\u62b9\u8336\u5343\u5c42', 
   just1cookbook = c('vfUu0eedUYI' = 'matcha-mille-crepe-cake'),

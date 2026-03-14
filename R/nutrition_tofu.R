@@ -1,5 +1,5 @@
 
-tofu <- function() new(
+tofu <- \() new(
   Class = 'recipe',
   soybean = 135, # small cup (45g) x3
   water = 1200, # 1300ml waterline

@@ -47,12 +47,12 @@ setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
 
 #' @rdname crepe
 #' @export
-crepe <- function() new(Class = 'crepe', review = 'try')
+crepe <- \() new(Class = 'crepe', review = 'try')
 
 
 #' @rdname crepe
 #' @export
-jennyc819_crepe <- function() new(
+jennyc819_crepe <- \() new(
   Class = 'recipe', author = 'jennyc819', alias_flavor = 'Crepe',
   allrecipes = '16383/basic-crepes/',
   flour_cup = 1,
@@ -65,7 +65,7 @@ jennyc819_crepe <- function() new(
 
 #' @rdname crepe
 #' @export
-cyberchef_crepeFrench <- function() new(
+cyberchef_crepeFrench <- \() new(
   Class = 'recipe', author = 'cyberchef', alias_flavor = 'French Crepe',
   allrecipes = '20931/french-crepes/',
   flour_cup = 1,
@@ -79,7 +79,7 @@ cyberchef_crepeFrench <- function() new(
 
 #' @rdname crepe
 #' @export
-Carina_crepe <- function() new(
+Carina_crepe <- \() new(
   Class = 'recipe', author = 'Carina', alias_flavor = 'Crepe',
   youtube = 'bX6ghyT6Ig0',
   flour_cup = 1,
@@ -92,7 +92,7 @@ Carina_crepe <- function() new(
 
 #' @rdname crepe
 #' @export
-Aya_crepe <- function() new(
+Aya_crepe <- \() new(
   Class = 'recipe', author = 'Aya', alias_flavor = 'Crepe',
   youtube = 'FfGjDceNRVo',
   flour = 150, 
@@ -106,7 +106,7 @@ Aya_crepe <- function() new(
 
 #' @rdname crepe
 #' @export
-Natasha_crepe <- function() new(
+Natasha_crepe <- \() new(
   Class = 'recipe', 
   natashaskitchen = c('uA4KRfE_MNM' = 'easy-crepe-recipe'), 
   alias_flavor = 'Crepe',
@@ -121,7 +121,7 @@ Natasha_crepe <- function() new(
 
 #' @rdname crepe
 #' @export
-Daat_crepe <- function() new(
+Daat_crepe <- \() new(
   Class = 'recipe', alias_flavor = 'crepe',
   flour = 230,
   egg_pc = 3,

@@ -23,7 +23,7 @@ setClass(Class = 'syrupDough', contains = 'recipe')
 # Always sprinkle with corn starch, not with flour!
 #' @rdname syrupDough
 #' @export
-CantoneseMooncakeShell <- function() new(
+CantoneseMooncakeShell <- \() new(
   Class = 'syrupDough',
   alias_flavor = 'Cantonese Mooncake Shell',
   pastryFlour = 150, 

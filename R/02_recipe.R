@@ -191,6 +191,7 @@
 #' @slot KSM3316X \linkS4class{tool}, Kitchen Aid stand mixer KSM3316X, 3.5 quart
 #' @slot KSMICM \linkS4class{tool}, Kitchen Aid ice cream maker KSMICM
 #' @slot CuisinartICE70 \linkS4class{tool}, Cuisinart ice cream maker ICE70
+#' @slot SanyoECJS35S \linkS4class{tool}, Sanyo Rice Cooker ECJ-S35S
 #' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
 #' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
 #' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
@@ -437,6 +438,7 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
   KSM3316X = 'tool',
   KSMICM = 'tool',
   CuisinartICE70 = 'tool',
+  SanyoECJS35S = 'tool',
   JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
   JoyoungCJA9U = 'tool',
   nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool', StanleyJar36 = 'tool',
@@ -461,7 +463,7 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
 
 
 
-setAs(from = 'recipe', to = 'recipe0', def = function(from) {
+setAs(from = 'recipe', to = 'recipe0', def = \(from) {
   slt0 <- names(getSlots(x = 'recipe0'))
   atr0 <- attributes(from)[slt0]
   atr <- atr0[lengths(atr0, use.names = FALSE) > 0L]
@@ -577,7 +579,7 @@ get_flavor_ <- function(x) {
 }
 
 
-setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, ...) {
+setMethod(f = initialize, signature = 'recipe0', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
@@ -739,7 +741,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = function(.Object, 
 
 
 
-setMethod(f = initialize, signature = 'recipe', definition = function(.Object, ...) {
+setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
@@ -1039,7 +1041,7 @@ setMethod(f = initialize, signature = 'recipe', definition = function(.Object, .
 #' @rdname show_cooking
 #' @aliases show,recipe0-method
 #' @export
-setMethod(f = show, signature = 'recipe0', definition = function(object) print.recipe0(object))
+setMethod(f = show, signature = 'recipe0', definition = \(object) print.recipe0(object))
 
 #' @export
 print.recipe0 <- function(x, ...) {
@@ -1216,7 +1218,7 @@ print.recipe0 <- function(x, ...) {
 #' @rdname show_cooking
 #' @aliases show,recipe-method
 #' @export
-setMethod(f = show, signature = 'recipe', definition = function(object) {
+setMethod(f = show, signature = 'recipe', definition = \(object) {
   
   cat('\n')
   
