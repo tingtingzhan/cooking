@@ -34,7 +34,7 @@ nutrition_ <- function(..., dots = list(...)) {
     }) |>
     do.call(what = rbind) # matrix
   
-  if (!('water' %in% colnames(ret))) stop('should never happen')
+  if ('water' %notin% colnames(ret)) stop('should never happen')
   addedWater_ <- water_ <- ret[,'water']
   addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
   ret <- cbind(ret, addedWater = addedWater_)
@@ -62,10 +62,10 @@ print.nutrition_ <- function(x, ...) {
   ret0 <- x
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
   
-  ret0 <- ret0[, !(colnames(ret0) %in% c(
+  ret0 <- ret0[, colnames(ret0) %notin% c(
     'calorie', 'usd', # meaningless (i.e., calorie/servingGram)
     'addedWater'
-  ))]
+  )]
   
   ret <- ret0[, colMeans(ret0 == 0) != 1] |> 
     col_label_bin_(FUN = max)

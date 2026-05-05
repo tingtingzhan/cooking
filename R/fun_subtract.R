@@ -45,7 +45,7 @@ subtract.recipe <- function(object, ...) {
     if (!is.numeric(ival) || length(ival) != 1L || is.na(ival)) arg_nm[i] |> sprintf(fmt = 'illegal `%s`') |> stop()
     # `ival <= 0` allowed, 'adding' an ingredient
     
-    if (!(inm %in% slotNames(obj))) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
+    if (inm %notin% slotNames(obj)) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
     old <- slot(obj, name = inm)
     n_old <- length(old)
     if (!n_old) sprintf(fmt = 'orginal recipe does not contain `@%s`', inm) |> stop()
@@ -82,7 +82,7 @@ subtract.nutrition <- function(object, ...) {
     ival <- args[[i]]
     if (!is.numeric(ival) || length(ival) != 1L || is.na(ival) || ival <= 0) sprintf(fmt = 'illegal `%s`', arg_nm[i]) |> stop()
     
-    if (!(inm %in% slotNames(obj))) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
+    if (inm %notin% slotNames(obj)) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
     old <- slot(obj, name = inm)
     if (ival > old) sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> stop()
     new <- old - ival # \link[base]{names} preserved
