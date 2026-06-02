@@ -129,6 +129,26 @@ NaturalKosher_mozzarella <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/') |> c(),
   name = 'Shredded Mozzarella',
-  serving_oz = 1, fat = 6, sodium = .135, protein = 6,
-  review = 'Store in freezer. Use directly from freezer')
+  serving_oz = 1, fat = 6, sodium = .135, protein = 6)
 
+Wegmans_mozzarella_skim <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  wegmans = 19182L,
+  name = 'Shredded Mozzarella, Part-Skim',
+  servingGram = 28, 
+  servingCup = 1/4, # packaging
+  usd = 12.49/80, # packaging
+  calorie = 80,
+  fat = 5, cholesterol = .015, sodium = .180, 
+  carbohydrate = 2, sugar = 1, protein = 6)
+
+Wegmans_mozzarella_whole <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  wegmans = 53074L,
+  name = 'Shredded Mozzarella, Whole Milk',
+  servingGram = 28, 
+  servingCup = 1/4, # packaging
+  usd = 7.49/32, # packaging
+  calorie = 80,
+  fat = 7, cholesterol = .025, sodium = .190, 
+  carbohydrate = 1, protein = 6)
