@@ -140,7 +140,8 @@ Wegmans_mozzarella_skim <- \() new(
   usd = 12.49/80, # packaging
   calorie = 80,
   fat = 5, cholesterol = .015, sodium = .180, 
-  carbohydrate = 2, sugar = 1, protein = 6)
+  carbohydrate = 2, sugar = 1, protein = 6,
+  review = 'Not that great. Do not buy again')
 
 Wegmans_mozzarella_whole <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
@@ -149,6 +150,6 @@ Wegmans_mozzarella_whole <- \() new(
   servingGram = 28, 
   servingCup = 1/4, # packaging
   usd = 7.49/32, # packaging
-  calorie = 80,
+  calorie = 90,
   fat = 7, cholesterol = .025, sodium = .190, 
   carbohydrate = 1, protein = 6)
