@@ -743,9 +743,11 @@ importFrom(cli,ansi_strip)
 importFrom(graphics,strwidth)
 importFrom(scales,label_number)
 importFrom(stats,median.default)
-importFrom(stringi,stri_dup)
-importFrom(stringi,stri_enc_isutf16be)
-importFrom(stringi,stri_enc_isutf16le)
-importFrom(stringi,stri_enc_isutf32be)
-importFrom(stringi,stri_enc_isutf32le)
-importFrom(stringi,stri_enc_mark)
+importFrom(stringi,
+  stri_dup,
+  stri_enc_isutf16be,
+  stri_enc_isutf16le,
+  stri_enc_isutf32be,
+  stri_enc_isutf32le,
+  stri_enc_mark
+)
