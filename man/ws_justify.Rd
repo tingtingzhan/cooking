@@ -10,7 +10,7 @@ ws_justify(x)
 \item{x}{an R object of \link[base]{mode} \link[base]{character}}
 }
 \value{
-Function \link{ws_justify} returns a \link[base]{character} \link[base]{vector}.
+The function \link{ws_justify} returns a \link[base]{character} \link[base]{vector}.
 }
 \description{
 Whitespace padded by \link[base]{format.default}.

@@ -48,19 +48,19 @@ frappe(x, ...)
 \item{ice, iceWater}{\link[base]{numeric} scalars, for \link{frappe}}
 }
 \value{
-Function \code{\link[=hotdrink]{hotdrink()}} returns a \linkS4class{drink} object,
+The function \code{\link[=hotdrink]{hotdrink()}} returns a \linkS4class{drink} object,
 except for that function \code{\link[=hotdrink.nutrition]{hotdrink.nutrition()}} returns a \linkS4class{nutrition} object.
 
-Function \link{frappe} returns a \linkS4class{drink} object.
+The function \link{frappe} returns a \linkS4class{drink} object.
 }
 \description{
 ..
 }
 \details{
-Function \code{\link[=hotdrink]{hotdrink()}} adds hot water (70-80C) to \linkS4class{drinkmix},
+The function \code{\link[=hotdrink]{hotdrink()}} adds hot water (70-80C) to \linkS4class{drinkmix},
 fitting in 20oz mug.
 
-Function \link{frappe} adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
+The function \link{frappe} adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
 Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.
 320g ice cubs (one OXO tray), plus 150g ice water, is too dry for Nutribullet Ultra 24oz cup,
 also too dry for drinking.

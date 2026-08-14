@@ -50,12 +50,12 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' @param ... ..
 #' 
 #' @details
-#' Function [hotdrink()] adds hot water (70-80C) to \linkS4class{drinkmix},
+#' The function [hotdrink()] adds hot water (70-80C) to \linkS4class{drinkmix},
 #' fitting in 20oz mug.
 #' 
 #' 
 #' @returns
-#' Function [hotdrink()] returns a \linkS4class{drink} object, 
+#' The function [hotdrink()] returns a \linkS4class{drink} object, 
 #' except for that function [hotdrink.nutrition()] returns a \linkS4class{nutrition} object.
 #' 
 #' @export
@@ -114,13 +114,13 @@ hotdrink.nutrition <- function(x, water80 = stop('Find suggested hot water on pa
 #' @rdname drink
 #' 
 #' @details
-#' Function [frappe] adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
+#' The function [frappe] adds 16 fl oz (1.97 US cup, 473 ml) of ice water + shaved ice to \linkS4class{drinkmix}.
 #' Up to 250g ice cubs, plus 230g ice water, can be used in Nutribullet Ultra 20oz cup.
 #' 320g ice cubs (one OXO tray), plus 150g ice water, is too dry for Nutribullet Ultra 24oz cup, 
 #' also too dry for drinking.
 #' 
 #' @returns
-#' Function [frappe] returns a \linkS4class{drink} object.
+#' The function [frappe] returns a \linkS4class{drink} object.
 #' 
 #' @export
 frappe <- function(x, ...) UseMethod(generic = 'frappe')

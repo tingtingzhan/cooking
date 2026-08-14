@@ -10,7 +10,7 @@ ratio_by_name(e1, e2)
 \item{e1, e2}{\strong{named} \link[base]{numeric} vectors}
 }
 \value{
-Function \link{ratio_by_name} returns a \link[base]{numeric} scalar.
+The function \link{ratio_by_name} returns a \link[base]{numeric} scalar.
 }
 \description{
 ..

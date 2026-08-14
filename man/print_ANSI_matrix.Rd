@@ -10,7 +10,7 @@ print_ANSI_matrix(x)
 \item{x}{\link[base]{character} \link[base]{matrix}}
 }
 \value{
-Function \link{print_ANSI_matrix} does not have a returned value.
+The function \link{print_ANSI_matrix} does not have a returned value.
 }
 \description{
 Print \link[base]{matrix} with ANSI escape sequences in the body

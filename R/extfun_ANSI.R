@@ -8,7 +8,7 @@
 #' @param x \link[base]{character} \link[base]{vector}
 #' 
 #' @returns
-#' Function [strwidth_] returns a \link[base]{numeric} \link[base]{vector}.
+#' The function [strwidth_] returns a \link[base]{numeric} \link[base]{vector}.
 #' 
 #' @examples
 #' \dontrun{
@@ -87,7 +87,7 @@ strwidth_ <- function(x) {
 #' @param x \link[base]{character} \link[base]{matrix}
 #' 
 #' @returns
-#' Function [print_ANSI_matrix] does not have a returned value.
+#' The function [print_ANSI_matrix] does not have a returned value.
 #' 
 #' @seealso `colorDF::colorDF`
 #' 
@@ -158,7 +158,7 @@ print_ANSI_matrix <- function(x) {
 #' by \link[base]{mode} of `x`.
 #' 
 #' @returns
-#' Function [ws_justify] returns a \link[base]{character} \link[base]{vector}.
+#' The function [ws_justify] returns a \link[base]{character} \link[base]{vector}.
 #' 
 #' @examples
 #' ws_justify(c('a', 'abc', 'ab'))

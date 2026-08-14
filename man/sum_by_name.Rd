@@ -10,7 +10,7 @@ sum_by_name(...)
 \item{...}{\strong{named} \link[base]{numeric} vectors}
 }
 \value{
-Function \link{sum_by_name} returns a \link[base]{numeric} vector.
+The function \link{sum_by_name} returns a \link[base]{numeric} vector.
 }
 \description{
 ..

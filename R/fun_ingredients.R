@@ -8,7 +8,7 @@
 #' @param ... \strong{named} \link[base]{numeric} vectors
 #' 
 #' @return 
-#' Function [sum_by_name] returns a \link[base]{numeric} vector.
+#' The function [sum_by_name] returns a \link[base]{numeric} vector.
 #' 
 #' @examples
 #' x1 = c(a = 2, b = 3)
@@ -58,7 +58,7 @@ sum_by_name <- \(...) {
 #' @param e1,e2 \strong{named} \link[base]{numeric} vectors
 #' 
 #' @return 
-#' Function [ratio_by_name] returns a \link[base]{numeric} scalar.
+#' The function [ratio_by_name] returns a \link[base]{numeric} scalar.
 #' 
 #' @export
 ratio_by_name <- function(e1, e2) {

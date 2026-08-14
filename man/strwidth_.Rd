@@ -10,7 +10,7 @@ strwidth_(x)
 \item{x}{\link[base]{character} \link[base]{vector}}
 }
 \value{
-Function \link{strwidth_} returns a \link[base]{numeric} \link[base]{vector}.
+The function \link{strwidth_} returns a \link[base]{numeric} \link[base]{vector}.
 }
 \description{
 ..

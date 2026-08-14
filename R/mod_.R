@@ -15,7 +15,7 @@
 #' @param tol \link[base]{double} scalar, default `.Machine$double.eps`
 #' 
 #' @returns 
-#' Function [mod_] returns a \link[base]{numeric} scalar or \link[base]{vector} of 
+#' The function [mod_] returns a \link[base]{numeric} scalar or \link[base]{vector} of 
 #' the integer division (similar to function \link[base]{%/%}), with an \link[base]{attributes}
 #' \describe{
 #' \item{`attr(,'e1')`}{\link[base]{numeric} scalar or \link[base]{vector}, the modulo (similar to function \link[base]{%%})}
