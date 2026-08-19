@@ -15,8 +15,7 @@
 #'  Dad_sacima,
 #'  shangshi_sacima)
 #' 
-#' @name sacima
-#' @aliases sacima-class
+#' @name sacima-class
 #' @export
 setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
   alias_class = '\u8428\u5176\u9a6c',
@@ -40,7 +39,7 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
 # rice cooker not perfect but much better, however my dough is too glutinous, probably too much kneading
 
 
-#' @rdname sacima
+#' @rdname sacima-class
 #' @export
 maple_sacima <- \() new(
   Class = 'sacima', alias_flavor = '\u84dd\u8393\u7cd6\u6d46',
@@ -51,7 +50,7 @@ maple_sacima <- \() new(
 
 
 
-#' @rdname sacima
+#' @rdname sacima-class
 #' @export
 sacima <- \() new(
   Class = 'sacima',
@@ -76,14 +75,14 @@ sacima <- \() new(
 )
 
 
-#' @rdname sacima
+#' @rdname sacima-class
 #' @export
 shangshi_sacima <- \() new(
   Class = 'recipe', alias_flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
   flour = 240,
   egg_pc = 3)
 
-#' @rdname sacima
+#' @rdname sacima-class
 #' @export
 xiaogaojie_sacima <- \() new(
   Class = 'recipe', alias_flavor = 'sacima', 
@@ -93,7 +92,7 @@ xiaogaojie_sacima <- \() new(
   water = 15,
   egg_pc = 2)
 
-#' @rdname sacima
+#' @rdname sacima-class
 #' @export
 Dad_sacima <- \() new(
   Class = 'recipe', alias_flavor = 'sacima', 

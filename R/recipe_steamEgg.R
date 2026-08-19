@@ -12,8 +12,7 @@
 #'  shangshi_pudding
 #' )
 #' 
-#' @name pudding
-#' @aliases pudding-class
+#' @name pudding-class
 #' @export
 setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
   alias_class = '\u725b\u5976\u84b8\u86cb',
@@ -26,7 +25,7 @@ setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
 
 
   
-#' @rdname pudding
+#' @rdname pudding-class
 #' @export
 pudding <- \() new(Class = 'pudding')
 
@@ -39,7 +38,7 @@ steamEgg_OLD <- \() new(
   review = 'Nice!  A good base')
 
 
-#' @rdname pudding
+#' @rdname pudding-class
 #' @export
 shangshi_pudding <- \() new(
   Class = 'recipe', alias_flavor = 'pudding', 
@@ -64,8 +63,7 @@ shangshi_pudding <- \() new(
 #' @examples
 #' chicken_steamEggWhite()
 #' 
-#' @name steamEggWhite
-#' @aliases steamEggWhite-class
+#' @name steamEggWhite-class
 #' @export
 setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
   eggWhite_pc = 6,
@@ -76,7 +74,7 @@ setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname steamEggWhite
+#' @rdname steamEggWhite-class
 #' @export
 chicken_steamEggWhite <- \() new(
   Class = 'steamEggWhite',

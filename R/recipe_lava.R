@@ -27,8 +27,7 @@
 #'   subtract(xiaomin_sesamelava, sugar = 20)
 #' )
 #' 
-#' @name lava
-#' @aliases lava-class
+#' @name lava-class
 #' @export
 setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   alias_class = '\u6d41\u5fc3\u9985',
@@ -45,7 +44,7 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   )
 ))
 
-#' @rdname lava
+#' @rdname lava-class
 #' @export
 sesame_lava <- \() new(
   Class = 'lava',
@@ -63,7 +62,7 @@ sesame_lava <- \() new(
   )
 )
 
-#' @rdname lava
+#' @rdname lava-class
 #' @export
 coconut_lava <- \() new(
   Class = 'lava',
@@ -85,7 +84,7 @@ coconut_lava_OLD <- \() new(
 
 
 
-#' @rdname lava
+#' @rdname lava-class
 #' @export
 Daat_sesamelava <- \() new(
   Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
@@ -101,7 +100,7 @@ Daat_sesamelava <- \() new(
   gelatin = 15,
   portion = c(bao = 28))
 
-#' @rdname lava
+#' @rdname lava-class
 #' @export
 xiaomin_sesamelava <- \() new(
   Class = 'recipe', author = '\u5c0f\u654f', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
@@ -112,7 +111,7 @@ xiaomin_sesamelava <- \() new(
   lard = 40,
   water = 20)
 
-#' @rdname lava
+#' @rdname lava-class
 #' @export
 FancyNotes_sesamelava <- \() new(
   Class = 'recipe', author = '\u4e54\u4e54\u5988', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
@@ -121,7 +120,7 @@ FancyNotes_sesamelava <- \() new(
   homemade = c(invertSugar = 50), butter = 80,
   youtube = 'PC3YOs77lgE') 
 
-#' @rdname lava
+#' @rdname lava-class
 #' @export
 xiaogaojie_sesamelava <- \() new(
   Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',

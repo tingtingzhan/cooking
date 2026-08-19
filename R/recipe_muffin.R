@@ -40,8 +40,7 @@
 #'  subtract(nutrition(Fleischmanns_cornbread), sugar = 100),
 #'  Quaker_cornbread
 #' )
-#' @name muffin
-#' @aliases muffin-class
+#' @name muffin-class
 #' @export
 setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
   alias_class = 'Muffin\U1f9c1',
@@ -68,7 +67,7 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname muffin
+#' @rdname muffin-class
 #' @export
 cornbreadMix <- \() new(
   Class = 'recipe', alias = 'Cornbread Mix',
@@ -80,7 +79,7 @@ cornbreadMix <- \() new(
 )
 
 
-#' @rdname muffin
+#' @rdname muffin-class
 #' @export
 cornbread <- \() new(
   Class = 'muffin', alias = 'Cornbread\U1f33d', 

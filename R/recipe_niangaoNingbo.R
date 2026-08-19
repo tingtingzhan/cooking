@@ -15,8 +15,7 @@
 #' 
 #' 
 #' 
-#' @name niangaoNingbo
-#' @aliases niangaoNingbo-class
+#' @name niangaoNingbo-class
 #' @export
 setClass(Class = 'niangaoNingbo', contains = 'recipe', prototype = prototype(
   alias_class = '\u5b81\u6ce2\u5e74\u7cd5',
@@ -26,11 +25,11 @@ setClass(Class = 'niangaoNingbo', contains = 'recipe', prototype = prototype(
   oil_Tbsp = c(Wegmans_vegetable = 1)
 ))
 
-#' @rdname niangaoNingbo
+#' @rdname niangaoNingbo-class
 #' @export
 niangaoNingbo <- \() new(Class = 'niangaoNingbo')
 
-#' @rdname niangaoNingbo
+#' @rdname niangaoNingbo-class
 #' @export
 Jenny_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'Jenny', alias_flavor = '\u5b81\u6ce2\u5e74\u7cd5',
@@ -41,7 +40,7 @@ Jenny_niangaoNingbo <- \() new(
   oil_Tbsp = c(Wegmans_vegetable = 1),
   salt_tsp = 1/2)
 
-#' @rdname niangaoNingbo
+#' @rdname niangaoNingbo-class
 #' @export
 SoupedUp_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'Souped Up', alias_flavor = '\u5b81\u6ce2\u5e74\u7cd5',
@@ -50,7 +49,7 @@ SoupedUp_niangaoNingbo <- \() new(
   glutinousRiceFlour = 100,
   water = 300)
 
-#' @rdname niangaoNingbo
+#' @rdname niangaoNingbo-class
 #' @export
 LuLu_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'LuLu', alias_flavor = '\u5b81\u6ce2\u5e74\u7cd5',

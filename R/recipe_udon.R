@@ -11,8 +11,7 @@
 #'  Leo_udon,
 #'  JustOne_udon,
 #'  amanda_udon)
-#' @name udon
-#' @aliases udon-class
+#' @name udon-class
 #' @export
 setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
   alias_class = '\u9942\u98e9\u3046\u3069\u3093',
@@ -20,7 +19,7 @@ setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname udon
+#' @rdname udon-class
 #' @export
 amanda_udon <- function() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', alias_flavor = 'Udon', 
@@ -29,7 +28,7 @@ amanda_udon <- function() new(
   water = 130, salt = 15)
 
 
-#' @rdname udon
+#' @rdname udon-class
 #' @export
 JustOne_udon <- function() new(
   Class = 'recipe', alias_flavor = 'Udon', 
@@ -41,7 +40,7 @@ JustOne_udon <- function() new(
 
 
 
-#' @rdname udon
+#' @rdname udon-class
 #' @export
 Leo_udon <- function() new(
   Class = 'recipe', author = 'Leo', alias_flavor = 'Udon', 

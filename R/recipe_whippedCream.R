@@ -66,8 +66,7 @@
 #'  Marcellina_mascarponeFrosting
 #' )
 #' 
-#' @name whippedCream
-#' @aliases whippedCream-class
+#' @name whippedCream-class
 #' @export
 setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
   alias_class = '\u6253\u53d1\u91cd\u5976\u6cb9',
@@ -82,11 +81,11 @@ setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
 # blackSesame_whippedCream 
 # granular ingredients, I dont like
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 matcha_whippedCream <- function() new(Class = 'whippedCream', matcha_tsp = 1.5, sugar_tsp = 3.5)
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 cocoa_whippedCream <- function() new(
   Class = 'whippedCream', 
@@ -103,7 +102,7 @@ cocoa_whippedCream <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @aliases mascarponeFrosting-class
 #' @export
 setClass(Class = 'mascarponeFrosting', contains = 'recipe', prototype = prototype(
@@ -121,7 +120,7 @@ setValidity(Class = 'mascarponeFrosting', method = \(object) {
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @aliases frosting-class
 #' @export
 setClass(Class = 'frosting', contains = 'recipe', prototype = prototype(
@@ -136,7 +135,7 @@ setValidity(Class = 'frosting', method = \(object) {
   }
 })
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @aliases mascarponeGanache-class
 #' @export
 setClass(Class = 'mascarponeGanache', contains = 'recipe', prototype = prototype(
@@ -153,7 +152,7 @@ setValidity(Class = 'mascarponeGanache', method = \(object) {
   if (length(object@water)) stop('Use `ganache` recipe instead')
 })
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @aliases ganache-class
 #' @export
 setClass(Class = 'ganache', contains = 'recipe', prototype = prototype(
@@ -171,14 +170,14 @@ setValidity(Class = 'ganache', method = \(object) {
 })
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 matcha_frosting <- function() new(
   Class = 'frosting', 
   sugar_tsp = 8, matcha_tsp = 3.5, 
   review = 'try')
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 matcha_ganache <- function() new(
   Class = 'ganache', 
@@ -187,7 +186,7 @@ matcha_ganache <- function() new(
   review = 'try')
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 pumpkin_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', 
@@ -198,12 +197,12 @@ pumpkin_mascarponeFrosting <- function() new(
   review = 'retry',
   pros = 'Effie\'s Signature!')
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 pineapple_mascarponeFrosting <- function() new(Class = 'mascarponeFrosting', pineapple = 100, sugar_tsp = 6, pros = 'Effie\'s Signature!')
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 cocoa_frosting <- function() new(
   Class = 'frosting', 
@@ -211,7 +210,7 @@ cocoa_frosting <- function() new(
   sugar_tsp = 13, cocoa_Tbsp = c(KingArthur_Bensdorp = 3), review = 'try')
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 tiramisuFrosting_Kahlua <- function() new(
   Class = 'frosting',
@@ -224,7 +223,7 @@ tiramisuFrosting_Kahlua <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @aliases mascarponeSpread-class
 #' @export
 setClass(Class = 'mascarponeSpread', contains = 'mascarponeGanache', prototype = prototype(
@@ -234,7 +233,7 @@ setClass(Class = 'mascarponeSpread', contains = 'mascarponeGanache', prototype =
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 cocoa_ganache <- function() new(
   Class = 'ganache',  
@@ -248,7 +247,7 @@ coffee_ganache <- function() new(
   review = 'try')
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 durian_ganache <- function() new(
   Class = 'ganache', alias_flavor = '\u69b4\u83b2',
@@ -266,7 +265,7 @@ coconut_mascarponeGanache <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 tiramisuGanache_Kahlua <- function() new(
   Class = 'ganache',
@@ -288,14 +287,14 @@ if (FALSE) {
   
   
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 tiramisuSpread_Kahlua <- function() new(
   Class = 'mascarponeSpread',
   liqueur_Tbsp = c(Kahlua_coffee = 5),
   review = c('try'))
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 tiramisuSpread_CafeGranita <- function() new(
   Class = 'mascarponeSpread',
@@ -307,14 +306,14 @@ tiramisuSpread_CafeGranita <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 pineapple_ganache <- function() new(
   Class = 'mascarponeGanache', 
   pineapple = 190, sugar_tsp = 5, 
   pros = 'I love!!')
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 pumpkin_ganache <- function() new(
   Class = 'mascarponeGanache',
@@ -335,7 +334,7 @@ pumpkin_ganache <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 tiramisu_nytimes <- function() new(
   Class = 'recipe', alias_flavor = 'Tiramisu', 
@@ -348,7 +347,7 @@ tiramisu_nytimes <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 foodandjourneys_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', author = 'Food & Journeys',
@@ -357,7 +356,7 @@ foodandjourneys_mascarponeFrosting <- function() new(
   lightCream_cup = 1,
   url = 'https://foodandjourneys.net/how-to-make-mascarpone-cream/')
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 lifeloveandsugar_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar',
@@ -366,7 +365,7 @@ lifeloveandsugar_mascarponeFrosting <- function() new(
   vanilla_tsp = 1,
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar, Cocoa',
@@ -376,7 +375,7 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
   vanilla_tsp = 1,
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 Marcellina_mascarponeFrosting <- function() new(
   Class = 'mascarponeFrosting', 
@@ -388,7 +387,7 @@ Marcellina_mascarponeFrosting <- function() new(
 
 
 
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @aliases whippedCreamCheese-class
 #' @export
 setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototype(
@@ -396,7 +395,7 @@ setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototyp
   creamCheese_brick = c(Nancys = 1)
 ))  
   
-#' @rdname whippedCream
+#' @rdname whippedCream-class
 #' @export
 whippedCreamCheese <- function() new(
   Class = 'whippedCreamCheese', 

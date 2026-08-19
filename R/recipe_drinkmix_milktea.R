@@ -11,8 +11,7 @@
 #' Ceylon_milktea()
 #' chai_milktea()
 #' 
-#' @name milktea
-#' @aliases milktea-class
+#' @name milktea-class
 #' @export
 setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
   alias_class = '\u5976\u8336',
@@ -22,7 +21,7 @@ setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
 
 
 
-#' @rdname milktea
+#' @rdname milktea-class
 #' @export
 EarlGrey_milktea <- \() new(
   Class = 'milktea', 
@@ -31,7 +30,7 @@ EarlGrey_milktea <- \() new(
   review = 'try')
 
 
-#' @rdname milktea
+#' @rdname milktea-class
 #' @export
 Ceylon_milktea <- \() new(
   Class = 'milktea', 
@@ -41,7 +40,7 @@ Ceylon_milktea <- \() new(
 
 
 
-#' @rdname milktea
+#' @rdname milktea-class
 #' @export
 chai_milktea <- \() new(
   Class = 'milktea', 

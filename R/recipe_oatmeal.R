@@ -8,8 +8,7 @@
 #' coconut_oatmeal()
 #' soymilk_oatmeal()
 #' 
-#' @name oatmeal
-#' @aliases oatmeal-class
+#' @name oatmeal-class
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
   alias_class = 'Microwave Oatmeal',
@@ -23,7 +22,7 @@ setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname oatmeal
+#' @rdname oatmeal-class
 #' @export
 coconut_oatmeal <- \() new(
   Class = 'oatmeal',
@@ -33,7 +32,7 @@ coconut_oatmeal <- \() new(
   review = 'nice!'
 )
 
-#' @rdname oatmeal
+#' @rdname oatmeal-class
 #' @export
 soymilk_oatmeal <- \() new(
   Class = 'oatmeal',

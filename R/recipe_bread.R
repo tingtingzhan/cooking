@@ -40,8 +40,7 @@
 #' 
 #' \url{https://youtu.be/N5x_Z8bRMaE}, colors as flower
 #' 
-#' @name bread
-#' @aliases bread-class
+#' @name bread-class
 #' @export
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   alias_class = 'Bread\U1f35e', # '\u9762\u5305',
@@ -106,7 +105,7 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   )
 ))
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 bread <- \() new(
   Class = 'bread', 
@@ -114,14 +113,14 @@ bread <- \() new(
   drymilk = 30, 
   sugar = 40) # theoretical model
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 beet_bread <- \() new(
   Class = 'bread', bread(), 
   beet_Tbsp = 4, drymilk = 31, sugar = 35, 
   review = 'retry with extra water for beet!!')
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 matcha_bread <- \() new(
   Class = 'bread', bread(), 
@@ -134,7 +133,7 @@ matcha_bread <- \() new(
 
 
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 pumpkin_bread <- \() new(
   Class = 'bread', 
@@ -143,7 +142,7 @@ pumpkin_bread <- \() new(
 
 
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 cocoa_bread <- \() new(
   Class = 'bread', bread(),
@@ -157,14 +156,14 @@ cocoa_bread <- \() new(
 
 
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 tomato_bread <- \() new(
   Class = 'bread', tomato = 400, drymilk = 33, sugar = 40, 
   review = 'try')
 
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 coffee_bread <- \() new(
   Class = 'bread', bread(), 
@@ -180,14 +179,14 @@ rootBeer_bread <- \() new(
 
 
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 pineapple_bread <- \() new(
   Class = 'bread', pineapple = 337, drymilk = 32, 
   review = 'try')
 
 
-#' @rdname bread
+#' @rdname bread-class
 #' @export
 ginger_bread <- \() new(
   Class = 'bread', bread(), 

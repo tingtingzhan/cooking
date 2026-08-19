@@ -6,8 +6,7 @@
 #' @examples
 #' pineapple_evap()
 #' 
-#' @name evap
-#' @aliases evap-class
+#' @name evap-class
 #' @export
 setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
   #alias_class = '\u679c\u6ce5'
@@ -15,7 +14,7 @@ setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname evap
+#' @rdname evap-class
 #' @export
 pineapple_evap <- \() new(
   Class = 'evap',

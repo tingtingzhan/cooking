@@ -1,8 +1,7 @@
 
 #' @title \linkS4class{tiramisuMix} Recipes
 #' 
-#' @name tiramisuMix
-#' @aliases tiramisuMix-class
+#' @name tiramisuMix-class
 #' @export
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
   #alias_class = '\u901f\u6eb6\u7c89',
@@ -11,7 +10,7 @@ setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
   cocoa_tsp = c(KingArthur_Bensdorp = .375*2)
 ))
 
-#' @rdname tiramisuMix
+#' @rdname tiramisuMix-class
 #' @export
 tiramisuMix <- \() new(
   Class = 'tiramisuMix', 
@@ -27,7 +26,7 @@ tiramisuMix_Baileys <- \() new(
 
 
 
-#' @rdname tiramisuMix
+#' @rdname tiramisuMix-class
 #' @export
 tiramisuMix_Kahlua <- \() new(
   Class = 'tiramisuMix', 
@@ -36,7 +35,7 @@ tiramisuMix_Kahlua <- \() new(
   review = 'try')
 
 
-#' @rdname tiramisuMix
+#' @rdname tiramisuMix-class
 #' @export
 tiramisuMix_FratelliVincenzi <- \() new(
   Class = 'tiramisuMix', 
@@ -45,7 +44,7 @@ tiramisuMix_FratelliVincenzi <- \() new(
   sugar_tsp = 2,
   review = 'try')
 
-#' @rdname tiramisuMix
+#' @rdname tiramisuMix-class
 #' @export
 tiramisuMix_CaffeBorghetti <- \() new(
   Class = 'tiramisuMix', 
@@ -54,7 +53,7 @@ tiramisuMix_CaffeBorghetti <- \() new(
   sugar_tsp = 2,
   review = 'try')
 
-#' @rdname tiramisuMix
+#' @rdname tiramisuMix-class
 #' @export
 tiramisuMix_Grind <- \() new(
   Class = 'tiramisuMix', 
@@ -63,7 +62,7 @@ tiramisuMix_Grind <- \() new(
   sugar_tsp = 2,
   pros = 'Old base: I love!!', date = as.Date('2024-05-18'))
 
-#' @rdname tiramisuMix
+#' @rdname tiramisuMix-class
 #' @export
 tiramisuMix_Sabroso <- \() new(
   Class = 'tiramisuMix', 

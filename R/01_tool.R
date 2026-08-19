@@ -31,8 +31,7 @@
 #' @slot kitchenaid \link[base]{character} scalar
 #' @slot staub \link[base]{character} scalar
 #' 
-#' @name tool
-#' @aliases tool-class
+#' @name tool-class
 #' @export
 setClass(Class = 'tool', slots = c(
   name = 'character', alias = 'character',

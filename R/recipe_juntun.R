@@ -16,8 +16,7 @@
 #' juntun()
 #' 
 #' 
-#' @name juntun
-#' @aliases juntun-class
+#' @name juntun-class
 #' @export
 setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
   alias_class = '\u519b\u5c6f\u9505\u76d4\u76ae',
@@ -51,7 +50,7 @@ setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname juntun
+#' @rdname juntun-class
 #' @export
 juntun <- \() new(
   Class = 'juntun',

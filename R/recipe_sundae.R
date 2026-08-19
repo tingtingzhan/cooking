@@ -58,8 +58,7 @@
 #' )
 #' 
 #' 
-#' @name sundae
-#' @aliases sundae-class
+#' @name sundae-class
 #' @export
 setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
   alias_class = 'Sundae\U1f366',
@@ -77,7 +76,7 @@ setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname sundae
+#' @rdname sundae-class
 #' @export
 matcha_sundae <- \() new(
   Class = 'sundae',
@@ -94,7 +93,7 @@ corn_sundae <- \() new(
   homemade = c(cornjuice = 400), water = numeric(), yogurt = numeric(),
   review = 'try')
 
-#' @rdname sundae
+#' @rdname sundae-class
 #' @export
 pumpkin_sundae <- \() new(
   Class = 'mascarponeSundae', 
@@ -102,7 +101,7 @@ pumpkin_sundae <- \() new(
   sugar_tsp = 7, 
   review = c('try'))
 
-#' @rdname sundae
+#' @rdname sundae-class
 #' @export
 coffee_sundae <- \() new(
   Class = 'sundae',
@@ -113,7 +112,7 @@ coffee_sundae <- \() new(
 
 
 
-#' @name sundae
+#' @rdname sundae-class
 #' @aliases mascarponeSundae-class
 #' @export
 setClass(Class = 'mascarponeSundae', contains = 'recipe', prototype = prototype(
@@ -128,7 +127,7 @@ setValidity(Class = 'mascarponeSundae', method = \(object) {
 
 
 
-#' @rdname sundae
+#' @rdname sundae-class
 #' @export
 pineapple_sundae <- \() new(
   Class = 'mascarponeSundae', 

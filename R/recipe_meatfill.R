@@ -84,8 +84,7 @@ Jenny_chickenfill <- \() new(
 
 #' @title \linkS4class{lambfill}
 #' 
-#' @name lambfill
-#' @aliases lambfill-class
+#' @name lambfill-class
 #' @export
 setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
   
@@ -93,7 +92,7 @@ setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname lambfill
+#' @rdname lambfill-class
 #' @export
 xiaogaojie_lambfill <- \() new(
   Class = 'recipe', alias_flavor = '\u867e\u7f8a\u8089\u9985', 

@@ -1,8 +1,7 @@
 
 #' @title \linkS4class{marinade} Recipes
 #' 
-#' @name marinade
-#' @aliases marinade-class
+#' @name marinade-class
 #' @export 
 setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
   alias_class = '\u5364\u6c41',
@@ -20,7 +19,7 @@ setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname marinade
+#' @rdname marinade-class
 #' @export 
 marinade <- \() new(
   Class = 'marinade', alias_flavor = '', # to suppress automatic `alias_flavor`

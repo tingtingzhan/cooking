@@ -15,14 +15,13 @@
 #'  subtract(PreppyKitchen_eggnog, sugar = 130)
 #' )
 #' 
-#' @name eggnog
-#' @aliases eggnog-class
+#' @name eggnog-class
 #' @export
 setClass(Class = 'eggnog', contains = 'recipe', prototype = prototype(
   alias_class = '\u86cb\u5976\u9152'
 ))
 
-#' @rdname eggnog
+#' @rdname eggnog-class
 #' @export
 eggnog <- \() new(
   Class = 'eggnog', 
@@ -42,7 +41,7 @@ eggnog <- \() new(
 
 
 
-#' @rdname eggnog
+#' @rdname eggnog-class
 #' @export
 JeanPierre_eggnog <- \() new(
   Class = 'recipe',
@@ -62,7 +61,7 @@ JeanPierre_eggnog <- \() new(
   url = 'https://chefjeanpierre.com/recipes/eggnog/')
 
 
-#' @rdname eggnog
+#' @rdname eggnog-class
 #' @export
 PreppyKitchen_eggnog <- \() new(
   Class = 'recipe', alias_flavor = 'Eggnog',

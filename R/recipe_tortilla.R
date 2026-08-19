@@ -13,8 +13,7 @@
 #' @examples
 #' # pumpkin_tortillaOlive()
 #' 
-#' @name tortilla
-#' @aliases tortilla-class
+#' @name tortilla-class
 #' @export
 setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_bread = 625), # 5 cup
@@ -59,8 +58,7 @@ ViewRoad_pumpkin_tortilla <- \() new(
 
 
 
-#' @rdname tortilla
-#' 
+#' @rdname tortilla-class
 #' @aliases tortillaOlive-class
 #' @export
 setClass(Class = 'tortillaOlive', contains = 'tortilla', prototype = prototype(
@@ -69,7 +67,7 @@ setClass(Class = 'tortillaOlive', contains = 'tortilla', prototype = prototype(
 ))
 
 
-#' @rdname tortilla
+#' @rdname tortilla-class
 #' @aliases tortillaLard-class
 #' @export
 setClass(Class = 'tortillaLard', contains = 'tortilla', prototype = prototype(
@@ -90,11 +88,11 @@ tortillaLard <- \() new(
   review = 'A hypothetical model')
 
 
-#' @rdname tortilla
+#' @rdname tortilla-class
 #' @export
 pumpkin_tortillaOlive <- \() new(Class = 'tortillaOlive', pumpkin = 520, review = 'not completely satisfied')
 
-#' @rdname tortilla
+#' @rdname tortilla-class
 #' @export
 tomato_tortillaOlive <- function() new(
   Class = 'tortillaOlive', 
@@ -102,7 +100,7 @@ tomato_tortillaOlive <- function() new(
   review = c('try'))
 
 
-#' @rdname tortilla
+#' @rdname tortilla-class
 #' @export
 pumpkin_tortillaLard <- function() new(
   Class = 'tortillaLard',
@@ -110,7 +108,7 @@ pumpkin_tortillaLard <- function() new(
   review = 'try')
 
 
-#' @rdname tortilla
+#' @rdname tortilla-class
 #' @export
 tomato_tortillaLard <- function() new(
   Class = 'tortillaLard', 

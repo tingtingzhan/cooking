@@ -13,15 +13,14 @@
 #' 
 #' 
 #' 
-#' @name syrupDough
-#' @aliases syrupDough-class
+#' @name syrupDough-class
 #' @export
 setClass(Class = 'syrupDough', contains = 'recipe')
 
 
 # @details 
 # Always sprinkle with corn starch, not with flour!
-#' @rdname syrupDough
+#' @rdname syrupDough-class
 #' @export
 CantoneseMooncakeShell <- \() new(
   Class = 'syrupDough',

@@ -2,15 +2,14 @@
 
 #' @title \linkS4class{soaked} Recipes
 #' 
-#' @name soaked
-#' @aliases soaked-class
+#' @name soaked-class
 #' @export
 setClass(Class = 'soaked', contains = 'recipe', prototype = prototype(
   alias_class = '\u6ce1\u53d1'
 ))
 
 
-#' @rdname soaked
+#' @rdname soaked-class
 #' @export
 sweetPotatoNoodle_soaked <- \() new(
   Class = 'soaked',

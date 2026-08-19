@@ -16,8 +16,7 @@
 #'  pumpkin_cheesecake,
 #'  pumpkin_creamCheeseDip
 #' ) # from dry to wet!
-#' @name creamCheese
-#' @aliases creamCheeseSpread-class
+#' @name creamCheeseSpread-class
 #' @export
 setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype(
   #alias_class = '\u5976\u6cb9\u5976\u916a\u62b9\u6599',
@@ -34,7 +33,7 @@ setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype
 ))
 
 
-#' @rdname creamCheese
+#' @rdname creamCheeseSpread-class
 #' @aliases creamCheeseDip-class
 #' @export
 setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
@@ -49,7 +48,7 @@ setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname creamCheese
+#' @rdname creamCheeseSpread-class
 #' @export
 pumpkin_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', 
@@ -61,7 +60,7 @@ pumpkin_creamCheeseSpread <- \() new(
 )
 
 
-#' @rdname creamCheese
+#' @rdname creamCheeseSpread-class
 #' @export
 pumpkin_creamCheeseDip <- \() new(
   Class = 'creamCheeseDip', 

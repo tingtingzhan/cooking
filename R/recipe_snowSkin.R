@@ -21,8 +21,7 @@
 #' acai_snowSkin()
 #' cocoa_snowSkin()
 #' 
-#' @name snowSkin
-#' @aliases snowSkin-class
+#' @name snowSkin-class
 #' @export
 setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   alias_class = '\u51b0\u76ae', 
@@ -62,7 +61,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname snowSkin
+#' @rdname snowSkin-class
 #' @export
 matcha_snowSkin <- \() new(
   Class = 'snowSkin', 
@@ -74,7 +73,7 @@ matcha_snowSkin <- \() new(
   ))
 
 
-#' @rdname snowSkin
+#' @rdname snowSkin-class
 #' @export
 beet_snowSkin <- \() new(
   Class = 'snowSkin',
@@ -83,25 +82,25 @@ beet_snowSkin <- \() new(
     'Goes best with pineapple_custardFilling()'
   ))
 
-#' @rdname snowSkin
+#' @rdname snowSkin-class
 #' @export
 acai_snowSkin <- \() new(Class = 'snowSkin', acai_tsp = 2, pros = 'I love')
   
-#' @rdname snowSkin
+#' @rdname snowSkin-class
 #' @export
 cocoa_snowSkin <- \() new(
   Class = 'snowSkin', 
   cocoa_tsp = c(KingArthur_Bensdorp = 1.5), 
   pros = 'I love (natural cocoa); retry with dutch cocoa')
 
-#' @rdname snowSkin
+#' @rdname snowSkin-class
 #' @export
 coffee_snowSkin <- \() new(
   Class = 'snowSkin',
   coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.75),
   review = 'try')
 
-#' @rdname snowSkin
+#' @rdname snowSkin-class
 #' @export
 ginger_snowSkin <- \() new(
   Class = 'snowSkin',

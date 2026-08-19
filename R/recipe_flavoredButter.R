@@ -10,18 +10,17 @@
 #' oldBay_butter()
 #' oldBay_butter_lowSodium()
 #' 
-#' @name flavoredButter
-#' @aliases flavoredButter-class
+#' @name flavoredButter-class
 #' @export
 setClass(Class = 'flavoredButter', contains = 'recipe', prototype = prototype(
   alias_class = '\u98ce\u5473\u9ec4\u6cb9',
   butter_brick = 1
 ))
 
-#' @rdname flavoredButter
+#' @rdname flavoredButter-class
 #' @export
 oldBay_butter <- \() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay = 2), pros = 'Nice for seafood!')
 
-#' @rdname flavoredButter
+#' @rdname flavoredButter-class
 #' @export
 oldBay_butter_lowSodium <- \() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay_lowSodium = 3), review = 'try')

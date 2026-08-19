@@ -33,8 +33,7 @@
 #'  sweetTaste_matcha_millecrepe,
 #'  lisa_matcha_millecrepe)
 #'  
-#' @name millecrepe
-#' @aliases millecrepe-class
+#' @name millecrepe-class
 #' @export
 setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
   alias_class = 'Mille Cre\u0302pe',
@@ -66,11 +65,11 @@ setValidity(Class = 'millecrepe', method = \(object) {
 #)
 
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 millecrepe <- \() new(Class = 'millecrepe', pros = 'good hypothetical model')
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 matcha_millecrepe <- \() new(
   Class = 'millecrepe',
@@ -79,7 +78,7 @@ matcha_millecrepe <- \() new(
   sugar_tsp = 6.5, # for heavyCream = 85
   cons = 'matcha better made in filling, not in crepe')
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 beet_millecrepe <- \() new(
   Class = 'millecrepe',
@@ -87,7 +86,7 @@ beet_millecrepe <- \() new(
   sugar_Tbsp = 2, 
   pros = c('Xu Chang'))
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 cocoa_millecrepe <- \() new(
   Class = 'millecrepe',
@@ -107,7 +106,7 @@ Kahlua_millecrepe_FAIL <- \() new(
 
 
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 xiaogaojie_millecrepe <- \() new(
   Class = 'recipe', alias_flavor = 'millecrepe',
@@ -118,7 +117,7 @@ xiaogaojie_millecrepe <- \() new(
   butter = 25,
   xiaogaojie = 'uZ626SU5T2I')
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 iwen_mango_millecrepe <- \() new(
   Class = 'recipe', author = 'iwen', alias_flavor = 'mango millecrepe',
@@ -131,7 +130,7 @@ iwen_mango_millecrepe <- \() new(
   youtube = 'tIOzt4XWy7k')
   
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 iwen_cocoa_millecrepe <- \() new(
   Class = 'recipe', author = 'iwen', alias_flavor = '\u53ef\u53ef\u5343\u5c42',
@@ -146,7 +145,7 @@ iwen_cocoa_millecrepe <- \() new(
   youtube = 'Z7WcSVGa6R4')
 
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 qiong_cocoa_millecrepe <- \() new(
   Class = 'recipe', author = '\u5927\u743c', alias_flavor = '\u53ef\u53ef\u5343\u5c42', youtube = 'i8Ii4BZBkmg',
@@ -157,7 +156,7 @@ qiong_cocoa_millecrepe <- \() new(
   sugar = 50,
   pastryFlour = 80)
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 qiong_tiramisu_millecrepe <- \() new(
   Class = 'recipe', author = '\u5927\u743c', alias_flavor = 'tiramisu\u0300 millecrepe', youtube = 'xiVfrjTwaHw',
@@ -174,7 +173,7 @@ qiong_tiramisu_millecrepe <- \() new(
 
 
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 amanda_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', alias_flavor = '\u62b9\u8336\u5343\u5c42',
@@ -186,7 +185,7 @@ amanda_matcha_millecrepe <- \() new(
   butter = 50,
   youtube = 'Caopoyr53TY')
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 sweetTaste_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u4e00\u5c0f\u70b9', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'mU8rOo8_WrM',
@@ -199,7 +198,7 @@ sweetTaste_matcha_millecrepe <- \() new(
   milk = 250 # in grams in original recipe
 )
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 oreomachi_matcha_millecrepe <- \() new(
   Class = 'recipe', author = 'oreomachi', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = '2WESa5wNK0o',
@@ -214,7 +213,7 @@ oreomachi_matcha_millecrepe <- \() new(
   # Honey 40g ???
 )
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 lisa_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u8428\u59d0', alias_flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'lP0p7qh3E1I',
@@ -227,7 +226,7 @@ lisa_matcha_millecrepe <- \() new(
   pastryFlour = 90
 )
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 lisa_mango_millecrepe <- \() new(
   Class = 'recipe', author = '\u8428\u59d0', alias_flavor = 'mango millecrepe', youtube = '_Pz6_nKaebw',
@@ -238,7 +237,7 @@ lisa_mango_millecrepe <- \() new(
   pastryFlour = 70 
 )
 
-#' @rdname millecrepe
+#' @rdname millecrepe-class
 #' @export
 JustOne_matcha_millecrepe <- \() new(
   Class = 'recipe', 

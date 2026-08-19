@@ -12,8 +12,7 @@
 #' subtract(emma_froyo, sugar = 90)
 #' 
 #' 
-#' @name froyo
-#' @aliases froyo-class
+#' @name froyo-class
 #' @export
 setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
   alias_class = 'Froyo',
@@ -39,7 +38,7 @@ setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname froyo
+#' @rdname froyo-class
 #' @export
 Bourbon_froyo <- \() new(
   Class = 'froyo', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46',
@@ -52,7 +51,7 @@ Bourbon_froyo <- \() new(
 
 
 
-#' @rdname froyo
+#' @rdname froyo-class
 #' @export
 pumpkin_froyo <- \() new(
   Class = 'froyo',
@@ -65,7 +64,7 @@ pumpkin_froyo <- \() new(
   
   
 
-#' @rdname froyo
+#' @rdname froyo-class
 #' @export
 matcha_froyo <- \() new(
   Class = 'froyo',
@@ -79,7 +78,7 @@ matcha_froyo <- \() new(
 
 
 
-#' @rdname froyo
+#' @rdname froyo-class
 #' @export
 emma_froyo <- \() new(
   Class = 'recipe', author = 'Emma\'s Goodies', alias_flavor = 'Froyo\U1f368',
