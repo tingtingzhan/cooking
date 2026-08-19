@@ -1,9 +1,4 @@
 
-
-
-
-
-
 #' @title Kitchen \linkS4class{tool}s
 #' 
 #' @description ..
@@ -85,7 +80,6 @@ setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
 
 
 #' @rdname show_cooking
-#' @aliases show,tool-method
 #' @export
 setMethod(f = show, signature = 'tool', definition = \(object) {
   

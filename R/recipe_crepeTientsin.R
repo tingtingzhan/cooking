@@ -4,8 +4,7 @@
 #' 
 #' @description ..
 #' 
-#' @name crepeTientsin
-#' @aliases crepeTientsin-class
+#' @name crepeTientsin-class
 #' @export
 setClass(Class = 'crepeTientsin', contains = 'recipe', prototype = prototype(
   alias_class = '\u714e\u997c\u9983\u5b50',

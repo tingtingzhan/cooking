@@ -6,7 +6,7 @@
 #' @param ... ..
 #' 
 #' @returns
-#' S3 generic [suggested] returns a \linkS4class{recipe}.
+#' The S3 generic [suggested()] returns a \linkS4class{recipe}.
 #' 
 #' @name suggested
 #' @export
@@ -14,7 +14,6 @@ suggested <- function(object, ...) UseMethod(generic = 'suggested')
 
 
 #' @rdname suggested
-#' @export suggested.function
 #' @export
 suggested.function <- function(object, ...) {
   #suggested(object(), ...)
@@ -34,7 +33,6 @@ suggested.function <- function(object, ...) {
 }  
   
 #' @rdname suggested
-#' @export suggested.nutrition
 #' @export
 suggested.nutrition <- function(object, ...) {
   suggestion <- object@suggestion

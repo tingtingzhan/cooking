@@ -13,8 +13,7 @@
 #' 
 #' @examples
 #' mocaccino()
-#' @name mocaccino
-#' @aliases mocaccino-class
+#' @name mocaccino-class
 #' @export
 setClass(Class = 'mocaccino', contains = 'drinkmix', prototype = prototype(
   drymilk = c(Carnation = 40),
@@ -23,7 +22,7 @@ setClass(Class = 'mocaccino', contains = 'drinkmix', prototype = prototype(
   sugar_tsp = 2.5 # well tested!!
 ))
 
-#' @rdname mocaccino
+#' @rdname mocaccino-class
 #' @export
 mocaccino <- \() new(Class = 'mocaccino', date = as.Date('2024-11-02'), pros = 'perfected!!!')
 

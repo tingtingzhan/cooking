@@ -811,7 +811,6 @@ format_vol <- function(x, nm = names(x), tol = 1e-6) {
 
 
 #' @rdname show_cooking
-#' @aliases show,nutrition-method
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = \(object) {
   

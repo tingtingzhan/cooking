@@ -10,7 +10,7 @@
 \alias{show,recipe-method}
 \alias{show_cooking}
 \alias{show,drinkmix-method}
-\title{S4 Printing Methods in \pkg{cooking}}
+\title{\code{S4} Printing Methods in \pkg{cooking} Package}
 \usage{
 \S4method{show}{equiv}(object)
 

@@ -12,8 +12,7 @@
 #' # blackRice_paste() # not exported yet
 #' 
 #' 
-#' @name ricemilk
-#' @aliases ricemilk-class
+#' @name ricemilk-class
 #' @export
 setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
   alias_class = '\u7c73\u7cca',
@@ -24,14 +23,14 @@ setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname ricemilk
+#' @rdname ricemilk-class
 #' @export
 black_ricemilk <- \() new(
   Class = 'ricemilk', alias = '\u9ed1\u7c73\u7cca',
   blackRice = 105, water = 845,
   pros = 'such distinct and delicate smell!')
 
-#' @rdname ricemilk
+#' @rdname ricemilk-class
 #' @export
 brown_ricemilk <- \() new(
   Class = 'ricemilk', alias = '\u7cd9\u7c73\u7cca',

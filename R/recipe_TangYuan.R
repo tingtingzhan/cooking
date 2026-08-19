@@ -15,8 +15,7 @@
 #' pumpkin_TangYuan()
 #' mango_TangYuan()
 #' 
-#' @name TangYuan
-#' @aliases TangYuan-class
+#' @name TangYuan-class
 #' @export
 setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
   alias_class = '\u6c64\u5706\u76ae',
@@ -35,20 +34,20 @@ setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname TangYuan
+#' @rdname TangYuan-class
 #' @export
 TangYuan <- \() new(Class = 'TangYuan', water = 86, pros = 'I love!')
 
 
-#' @rdname TangYuan
+#' @rdname TangYuan-class
 #' @export
 pumpkin_TangYuan <- \() new(Class = 'TangYuan', pumpkin = 140, pros = 'I love!')
 
-#' @rdname TangYuan
+#' @rdname TangYuan-class
 #' @export
 mango_TangYuan <- \() new(Class = 'TangYuan', mango = 100, pros = 'I love!')
 
-#' @rdname TangYuan
+#' @rdname TangYuan-class
 #' @export
 date_TangYuan <- \() new(
   Class = 'TangYuan', alias_flavor = '\u7ea2\u67a3',

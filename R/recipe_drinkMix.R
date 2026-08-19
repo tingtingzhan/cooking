@@ -167,7 +167,6 @@ frappe.drinkmix <- function(
 
 
 #' @rdname show_cooking
-#' @aliases show,drinkmix-method
 #' @export
 setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   callNextMethod(object)

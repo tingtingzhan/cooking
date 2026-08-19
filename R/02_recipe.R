@@ -237,8 +237,7 @@
 #' @references
 #' \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
 #' 
-#' @name recipe
-#' @aliases recipe0-class
+#' @name recipe0-class
 #' @export
 setClass(Class = 'recipe0', slots = c(
   lemon_pc = 'numeric',
@@ -395,7 +394,7 @@ setClass(Class = 'recipe0', slots = c(
 ))
 
 
-#' @rdname recipe
+#' @rdname recipe0-class
 #' @aliases recipe-class
 #' @export
 setClass(Class = 'recipe', contains = 'recipe0', slots = c(
@@ -476,7 +475,7 @@ setAs(from = 'recipe', to = 'recipe0', def = \(from) {
 
 
 
-check_gelatin <- function(x) {
+check_gelatin <- \(x) {
   if (n_leaf <- length(x@gelatin_leaf)) {
     if (n_leaf > 1L) stop('only use Gold gelatin leaves')
     if (is.na(x@gelatin_leaf) || (x@gelatin_leaf <= 0)) stop('number of gelatin sheets must be all >0')
@@ -1039,7 +1038,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 #' @rdname show_cooking
-#' @aliases show,recipe0-method
 #' @export
 setMethod(f = show, signature = 'recipe0', definition = \(object) print.recipe0(object))
 
@@ -1216,7 +1214,6 @@ print.recipe0 <- function(x, ...) {
 
 
 #' @rdname show_cooking
-#' @aliases show,recipe-method
 #' @export
 setMethod(f = show, signature = 'recipe', definition = \(object) {
   

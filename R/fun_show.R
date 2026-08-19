@@ -1,6 +1,6 @@
 
 
-#' @title S4 Printing Methods in \pkg{cooking}
+#' @title `S4` Printing Methods in \pkg{cooking} Package
 #' 
 #' @description 
 #' ..

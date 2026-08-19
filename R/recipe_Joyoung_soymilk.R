@@ -7,14 +7,13 @@
 #' @examples 
 #' soymilk()
 #' soymilk_DJ13U()
-#' @name soymilk
-#' @aliases soymilk-class
+#' @name soymilk-class
 #' @export
 setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
   alias_class = '\u9c9c\u69a8\u8c46\u6d46'
 ))
 
-#' @rdname soymilk
+#' @rdname soymilk-class
 #' @export
 soymilk <- \() new(
   Class = 'soymilk',
@@ -25,7 +24,7 @@ soymilk <- \() new(
   pros = 'perfect thickness!',
   date = as.Date('2024-11-29'))
 
-#' @rdname soymilk
+#' @rdname soymilk-class
 #' @export
 soymilk_DJ13U <- \() new(
   Class = 'soymilk',

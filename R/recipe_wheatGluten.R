@@ -5,8 +5,7 @@
 #' @description
 #' ..
 #' 
-#' @name wheatGluten
-#' @aliases steamWheatGluten-class
+#' @name steamWheatGluten-class
 #' @export
 setClass(Class = 'steamWheatGluten', contains = 'recipe', prototype = prototype(
   alias_class = '\u84b8\u9762\u7b4b',

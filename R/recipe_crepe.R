@@ -20,8 +20,7 @@
 #' )
 #' 
 #' 
-#' @name crepe
-#' @aliases crepe-class
+#' @name crepe-class
 #' @export
 setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
   alias_class = 'Cre\u0302pe',
@@ -45,12 +44,12 @@ setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 crepe <- \() new(Class = 'crepe', review = 'try')
 
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 jennyc819_crepe <- \() new(
   Class = 'recipe', author = 'jennyc819', alias_flavor = 'Crepe',
@@ -63,7 +62,7 @@ jennyc819_crepe <- \() new(
   butter_Tbsp = 2)
 
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 cyberchef_crepeFrench <- \() new(
   Class = 'recipe', author = 'cyberchef', alias_flavor = 'French Crepe',
@@ -77,7 +76,7 @@ cyberchef_crepeFrench <- \() new(
 )
 
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 Carina_crepe <- \() new(
   Class = 'recipe', author = 'Carina', alias_flavor = 'Crepe',
@@ -90,7 +89,7 @@ Carina_crepe <- \() new(
 )
 
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 Aya_crepe <- \() new(
   Class = 'recipe', author = 'Aya', alias_flavor = 'Crepe',
@@ -104,7 +103,7 @@ Aya_crepe <- \() new(
   # Dark rum: 1 Tbsp (or 2 Tbsp if you love it!)
 )
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 Natasha_crepe <- \() new(
   Class = 'recipe', 
@@ -119,7 +118,7 @@ Natasha_crepe <- \() new(
   salt_tsp = 1/2)
 
 
-#' @rdname crepe
+#' @rdname crepe-class
 #' @export
 Daat_crepe <- \() new(
   Class = 'recipe', alias_flavor = 'crepe',

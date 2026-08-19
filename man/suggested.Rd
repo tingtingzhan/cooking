@@ -18,7 +18,7 @@ suggested(object, ...)
 \item{...}{..}
 }
 \value{
-S3 generic \link{suggested} returns a \linkS4class{recipe}.
+The S3 generic \code{\link[=suggested]{suggested()}} returns a \linkS4class{recipe}.
 }
 \description{
 Suggested \linkS4class{recipe} of \linkS4class{nutrition}

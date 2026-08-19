@@ -7,8 +7,7 @@
 #' @examples
 #' caffeLatte()
 #' 
-#' @name caffeLatte
-#' @aliases caffeLatte-class
+#' @name caffeLatte-class
 #' @export
 setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
   drymilk = c(Carnation = 40),
@@ -18,7 +17,7 @@ setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
 ))
 
 
-#' @rdname caffeLatte
+#' @rdname caffeLatte-class
 #' @export
 caffeLatte <- \() new(
   Class = 'caffeLatte', 

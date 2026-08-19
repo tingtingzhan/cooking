@@ -13,8 +13,8 @@
 #' 
 #' @slot ignore \link[base]{numeric} scalar, default `.Machine$double.eps`
 #' 
-#' @name equiv
-#' @aliases equiv-class
+# @name equiv
+#' @name equiv-class
 #' @export
 setClass(Class = 'equiv', slots = c(
   actual = 'numeric',
@@ -68,7 +68,7 @@ format.equiv <- function(x, ...) {
 
 
 #' @importFrom scales label_number
-.label_bin_ <- function(x) {
+.label_bin_ <- \(x) {
   
   if ((length(x) != 1L) || !is.numeric(x) || is.na(x)) stop('illegal input')
   
@@ -107,7 +107,7 @@ format.equiv <- function(x, ...) {
 
 
 # @param x \link[base]{numeric} \link[base]{matrix}
-col_label_bin_ <- function(x, FUN, ...) {
+col_label_bin_ <- \(x, FUN, ...) {
   x |> 
     apply(MARGIN = 2L, FUN = \(i) {
       i |> .label_bin_(FUN(i, ...))()
@@ -120,7 +120,6 @@ col_label_bin_ <- function(x, FUN, ...) {
 
 
 #' @rdname show_cooking
-#' @aliases show,equiv-method
 #' @export
 setMethod(f = show, signature = 'equiv', definition = \(object) {
   object |> format.equiv() |> print()
@@ -195,8 +194,7 @@ setMethod(f = show, signature = 'equiv', definition = \(object) {
 #' @slot glutinousRice \linkS4class{equiv}
 #' @slot cornmeal \linkS4class{equiv}
 #' 
-#' @name diagnosis
-#' @aliases recipeDx-class
+#' @name recipeDx-class
 #' @export
 setClass(Class = 'recipeDx', slots = c(
   per = 'character',
@@ -253,7 +251,7 @@ setClass(Class = 'recipeDx', slots = c(
 ))
 
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases baker-class
 #' @export
 setClass(Class = 'baker', contains = 'recipeDx', prototype = prototype(
@@ -268,35 +266,35 @@ setClass(Class = 'baker', contains = 'recipeDx', prototype = prototype(
 # water in flour is *not* included!!!
 
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases pastryBaker-class
 #' @export
 setClass(Class = 'pastryBaker', contains = 'recipeDx', prototype = prototype(
   per = 'Pastry\U1f370 Flour'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases mixBaker-class
 #' @export
 setClass(Class = 'mixBaker', contains = 'recipeDx', prototype = prototype(
   per = 'Mixed Wheat Flour'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases breadBaker-class
 #' @export
 setClass(Class = 'breadBaker', contains = 'recipeDx', prototype = prototype(
   per = 'Bread\U1f35e Flour'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases glutenFreeBaker-class
 #' @export
 setClass(Class = 'glutenFreeBaker', contains = 'recipeDx', prototype = prototype(
   per = 'Gluten-Free Flour'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases cornBaker-class
 #' @export
 setClass(Class = 'cornBaker', contains = 'recipeDx', prototype = prototype(
@@ -304,28 +302,28 @@ setClass(Class = 'cornBaker', contains = 'recipeDx', prototype = prototype(
 ))
 
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases riceBaker-class
 #' @export
 setClass(Class = 'riceBaker', contains = 'recipeDx', prototype = prototype(
   per = 'Glutinous+Rice\U1f33e Flour'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases cocoaDx-class
 #' @export
 setClass(Class = 'cocoaDx', contains = 'recipeDx', prototype = prototype(
   per = 'Alkalized Cocoa'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases teaDx-class
 #' @export
 setClass(Class = 'teaDx', contains = 'recipeDx', prototype = prototype(
   per = 'Tea\U1f343'
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases creamcheeseDx-class
 #' @export
 setClass(Class = 'creamcheeseDx', contains = 'recipeDx', prototype = prototype(
@@ -333,21 +331,21 @@ setClass(Class = 'creamcheeseDx', contains = 'recipeDx', prototype = prototype(
 ))
 
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases cookedTexture-class
 #' @export
 setClass(Class = 'cookedTexture', contains = 'recipeDx', prototype = prototype(
   per = paste0('Serving; ', col_red('Texture Profile'))
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases cookedFlavor-class
 #' @export
 setClass(Class = 'cookedFlavor', contains = 'recipeDx', prototype = prototype(
   per = paste0('Serving; ', col_red('Flavor Profile'))
 ))
 
-#' @rdname diagnosis
+#' @rdname recipeDx-class
 #' @aliases uncooked-class
 #' @export
 setClass(Class = 'uncooked', contains = 'recipeDx', prototype = prototype(
@@ -425,7 +423,6 @@ show_endpoint <- function(x) {
 
 
 #' @rdname show_cooking
-#' @aliases show,recipeDx-method
 #' @export
 setMethod(f = show, signature = 'recipeDx', definition = \(object) {
   ret <- format.recipeDx(object)

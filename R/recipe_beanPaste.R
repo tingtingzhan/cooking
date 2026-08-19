@@ -12,8 +12,7 @@
 #' xiaogaojie_adzukiBeanPaste1()
 #' xiaogaojie_adzukiBeanPaste2()
 #' 
-#' @name beanPaste
-#' @aliases beanPaste-class
+#' @name beanPaste-class
 #' @export
 setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6c99(66%)',
@@ -28,7 +27,7 @@ setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname beanPaste
+#' @rdname beanPaste-class
 #' @export
 adzukiBeanPaste <- \() new(
   Class = 'beanPaste',
@@ -50,7 +49,7 @@ adzukiBeanPaste <- \() new(
 
 
 
-#' @rdname beanPaste
+#' @rdname beanPaste-class
 #' @export
 redKidneyBeanPaste <- \() new(
   Class = 'beanPaste',
@@ -98,7 +97,7 @@ redKidneyBeanPaste <- \() new(
 
 
 
-#' @rdname beanPaste
+#' @rdname beanPaste-class
 #' @export
 xiaogaojie_adzukiBeanPaste1 <- \() new(
   Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c991',
@@ -113,7 +112,7 @@ xiaogaojie_adzukiBeanPaste1 <- \() new(
 
 
 
-#' @rdname beanPaste
+#' @rdname beanPaste-class
 #' @export
 xiaogaojie_adzukiBeanPaste2 <- \() new(
   Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c992',

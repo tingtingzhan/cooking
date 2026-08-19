@@ -2,8 +2,7 @@
 #' @title Vanilla Extract
 #' 
 #' @keywords internal
-#' @name nutrition_vanilla
-#' @aliases vanilla-class
+#' @name vanilla-class
 #' @export
 setClass(Class = 'vanilla', contains = 'nutrition', prototype = prototype(
   alias = '\u9999\u8349\u7cbe',
@@ -15,14 +14,14 @@ setClass(Class = 'vanilla', contains = 'nutrition', prototype = prototype(
 
 
 
-#' @rdname nutrition_vanilla
+#' @rdname vanilla-class
 #' @export
 NielsenMassey_vanilla <- \() new(
   Class = 'vanilla', call = match.call()[[1L]],
   nielsenmassey = 'pure-vanilla-extract',
   name = 'Vanilla')
 
-#' @rdname nutrition_vanilla
+#' @rdname vanilla-class
 #' @export
 NielsenMassey_Madagascar <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
@@ -30,21 +29,21 @@ NielsenMassey_Madagascar <- \() new(
   name = 'Madagascar\U0001f1f2\U0001f1ec Bourbon Vanilla',
   costco = '100854905')
 
-#' @rdname nutrition_vanilla
+#' @rdname vanilla-class
 #' @export
 NielsenMassey_Indonesian <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
   nielsenmassey = 'indonesian-pure-vanilla-extract',
   name = 'Indonesian\U0001f1ee\U0001f1e9 Bourbon Vanilla')
 
-#' @rdname nutrition_vanilla
+#' @rdname vanilla-class
 #' @export
 NielsenMassey_Tahitian <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 
   nielsenmassey = 'tahitian-pure-vanilla-extract',
   name = 'Tahitian\U0001f1f5\U0001f1eb Bourbon Vanilla')
 
-#' @rdname nutrition_vanilla
+#' @rdname vanilla-class
 #' @export
 NielsenMassey_Ugandan <- \() new(
   Class = 'vanilla', call = match.call()[[1L]], 

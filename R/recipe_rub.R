@@ -16,8 +16,7 @@
 #' @examples
 #' cuminMontreal_rub()
 #' 
-#' @name rub
-#' @aliases rub-class
+#' @name rub-class
 #' @export
 setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
   alias_class = '\u814c\u6599', # \u7a7a\u6c14\u70b8\u9505
@@ -61,7 +60,7 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname rub
+#' @rdname rub-class
 #' @export
 cuminMontreal_rub <- \() new(
   Class = 'rub',
@@ -82,7 +81,7 @@ cuminMontreal_rub <- \() new(
 
 
 
-#' @rdname rub
+#' @rdname rub-class
 #' @export
 Montreal_rub <- \() new( # inspired by Guga
   Class = 'rub',
@@ -141,7 +140,7 @@ if (FALSE) {
 }
 
 
-#' @rdname rub
+#' @rdname rub-class
 #' @export
 duck_rub <- \() new(
   Class = 'rub',
@@ -165,7 +164,7 @@ if (FALSE) {
 
 
 
-#' @rdname rub
+#' @rdname rub-class
 #' @export
 Southwest_rub <- \() new(
   Class = 'rub', 
@@ -174,7 +173,7 @@ Southwest_rub <- \() new(
   chiliMix_tsp = c(SimplyOrganic_Southwest = 2), # try
   pros = 'try')
 
-#' @rdname rub
+#' @rdname rub-class
 #' @export
 harissa_rub <- \() new(
   Class = 'rub',
@@ -188,7 +187,7 @@ harissa_rub <- \() new(
 
 
 
-#' @rdname rub
+#' @rdname rub-class
 #' @export
 vindaloo_rub <- \() new(
   Class = 'rub',

@@ -14,8 +14,7 @@
 #' porkmash()
 #' 
 #' 
-#' @name meatmash
-#' @aliases meatmash-class
+#' @name meatmash-class
 #' @export
 setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
   alias_class = '\u6ed1',
@@ -37,7 +36,7 @@ setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname meatmash
+#' @rdname meatmash-class
 #' @export
 porkmash <- \() new(
   Class = 'meatmash',
@@ -85,7 +84,7 @@ tilapiamash <-function() new(
 
 
 
-#' @rdname meatmash
+#' @rdname meatmash-class
 #' @export
 shrimpmash <- \() new( # Super nice!!
   Class = 'meatmash', 

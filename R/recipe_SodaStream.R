@@ -2,8 +2,7 @@
 
 #' @title \linkS4class{SodaStream} Recipes
 #' 
-#' @name SodaStream
-#' @aliases SodaStream-class
+#' @name SodaStream-class
 #' @export
 setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
   alias_class = 'SodaStream\u6c7d\u6c34',
@@ -11,11 +10,11 @@ setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname SodaStream
+#' @rdname SodaStream-class
 #' @export
 limeSoda <- \() new(Class = 'SodaStream', lime_pc = 1.5, pros = 'I love!')
 
-#' @rdname SodaStream
+#' @rdname SodaStream-class
 #' @export
 lemonSoda <- \() new(Class = 'SodaStream', lemon_pc = 1, review = 'try')
 

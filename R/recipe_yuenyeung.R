@@ -7,15 +7,14 @@
 #'  caffeCoconut_Luckin,
 #'  caffeCoconut_FreeNow0sugar 
 #' )
-#' @name yuenyeung
-#' @aliases yuenyeungCoconut-class
+#' @name yuenyeungCoconut-class
 #' @export
 setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
   #alias_class = '\u751f\u6930\u9e33\u9e2f'
 ))
 
 
-#' @rdname yuenyeung
+#' @rdname yuenyeungCoconut-class
 #' @export
 yuenyeungCoconut <- function() new(
   Class = 'yuenyeungCoconut', 
@@ -33,7 +32,7 @@ yuenyeungCoconut <- function() new(
   )),
   date = as.Date('2025-07-13'))
 
-#' @rdname yuenyeung
+#' @rdname yuenyeungCoconut-class
 #' @export
 yuenyeungCoconut_summer <- function() new(
   Class = 'yuenyeungCoconut', 

@@ -2,8 +2,7 @@
 
 #' @title \linkS4class{pizzaDough} Recipes
 #' 
-#' @name pizzaDough
-#' @aliases pizzaDough-class
+#' @name pizzaDough-class
 #' @export
 setClass(Class = 'pizzaDough', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_bread = 250),
@@ -18,6 +17,6 @@ setClass(Class = 'pizzaDough', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname pizzaDough
+#' @rdname pizzaDough-class
 #' @export
 pizzaDough <- \() new(Class = 'pizzaDough')
