@@ -15,8 +15,7 @@
 #' Use JoyoungDJ13U's Porridge program to cook brown rice.
 #' 
 #' 
-#' @name rice
-#' @aliases rice-class
+#' @name rice-class
 #' @export
 setClass(Class = 'rice', contains = 'recipe', prototype = prototype(
   alias_class = '\u7c73\u996d', alias_flavor = '',

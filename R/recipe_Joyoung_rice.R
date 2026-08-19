@@ -6,8 +6,7 @@
 #' Use JoyoungDJ13U's Porridge program to cook brown rice.
 #' 
 #' 
-#' @name brownrice
-#' @aliases brownrice-class
+#' @name brownrice-class
 #' @export
 setClass(Class = 'brownrice', contains = 'recipe', prototype = prototype(
   alias_class = '\u7cd9\u7c73\u996d', alias_flavor = '',
@@ -19,7 +18,7 @@ setClass(Class = 'brownrice', contains = 'recipe', prototype = prototype(
   )
 ))
 
-# @rdname brownrice
+# @rdname brownrice-class
 # @export
 brownrice_Nishiki <- \() new(
   Class = 'brownrice', 
@@ -31,7 +30,7 @@ brownrice_Nishiki <- \() new(
   review = 'to confirm')
 
 
-#' @rdname brownrice
+#' @rdname brownrice-class
 #' @export
 brownrice_Dynasty <- \() new(
   Class = 'brownrice', 

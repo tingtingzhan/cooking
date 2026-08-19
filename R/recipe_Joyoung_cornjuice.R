@@ -9,8 +9,7 @@
 #' cornVeggiePaste()
 #' 
 #' 
-#' @name cornjuice
-#' @aliases cornjuice-class
+#' @name cornjuice-class
 #' @export
 setClass(Class = 'cornjuice', contains = 'recipe', prototype = prototype(
   alias_class = '\u7389\u7c73\U1f33d\u6c41'
@@ -18,7 +17,7 @@ setClass(Class = 'cornjuice', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname cornjuice
+#' @rdname cornjuice-class
 #' @export
 cornjuice <- \() new(
   Class = 'cornjuice', alias_flavor = '',
@@ -27,7 +26,7 @@ cornjuice <- \() new(
     waterLost = 90  # confirmed!!
   )) # Perfect thickness for making pastry
 
-#' @rdname cornjuice
+#' @rdname cornjuice-class
 #' @export
 cornVeggiePaste <- \() new(
   Class = 'cornjuice', alias_flavor = '\u852c\u83dc\U1f955\U1fadb',

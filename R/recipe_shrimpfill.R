@@ -31,8 +31,7 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 #'  subtract(Daat_shrimpfill, vegetable = c(bambooShoot = 90))
 #' )
 #' 
-#' @name shrimpfill
-#' @aliases shrimpfillCantonese-class
+#' @name shrimpfillCantonese-class
 #' @export
 setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = prototype(
   alias_flavor = '\u5e7f\u5e9c\u65e9\u8336\u98ce\u5473',
@@ -54,11 +53,11 @@ setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = pro
   note = meatfill_note()
 ))
 
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @export
 shrimpfillCantonese <- \() new(Class = 'shrimpfillCantonese', pros = 'I love!')
   
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @export
 shrimpfillCantonese_Argentine <- \() new(
   Class = 'shrimpfillCantonese', 
@@ -113,7 +112,7 @@ shrimpfillMaine <- \() new(
 
 
 
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @aliases shrimpfill_garlicHerb-class
 #' @export
 setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = prototype(
@@ -147,7 +146,7 @@ shrimpfill_garlicHerb <- \() new(Class = 'shrimpfill_garlicHerb', review = 'try 
 
 
 
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @aliases shrimpfill_oldBay-class
 #' @export
 setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = prototype(
@@ -169,7 +168,7 @@ setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = proto
   )
 ))
 
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @export
 shrimpfill_oldBay <- \() new(
   Class = 'shrimpfill_oldBay', 
@@ -212,7 +211,7 @@ Wegmans_garlicShrimp <- \() new(
 
 
 
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @export
 Daat_shrimpfill <- \() new(
   Class = 'recipe', alias_flavor = '\u867e\U1f990\u997a\u9985', 
@@ -223,7 +222,7 @@ Daat_shrimpfill <- \() new(
   salt = 12, msg = 22,
   sugar = 28, sesameOil = 12, whitePepper_tsp = 1/4)
 
-#' @rdname shrimpfill
+#' @rdname shrimpfillCantonese-class
 #' @export
 whiteSwan_shrimpfill <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',

@@ -64,8 +64,7 @@ sweetBao_portion <- \() c(
 #' )
 #' 
 #' 
-#' @name bao
-#' @aliases bao-class
+#' @name bao-class
 #' @export
 setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   alias_class = '\u5305\u5b50\u9992\u5934', 
@@ -99,7 +98,7 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 bao <- \() new(Class = 'bao', water = 240, sugar_Tbsp = 3, pros = 'Inna')
 
@@ -118,7 +117,7 @@ bao_butter <- \() new(
 
 
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 pumpkin_bao <- \() new(
   Class = 'bao', 
@@ -149,7 +148,7 @@ pumpkin_bao <- \() new(
 
 
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 matcha_bao <- \() new(
   Class = 'bao', bao(), matcha_Tbsp = c(Sencha_everyday_matcha = 3), sugar_Tbsp = 5,
@@ -159,7 +158,7 @@ matcha_bao <- \() new(
   pros = character(),
   review = 're-experiment!  water_extra = 25g too wet!')
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 beet_bao <- \() new(
   Class = 'bao', bao(), beet_tsp = 11, 
@@ -168,14 +167,14 @@ beet_bao <- \() new(
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 cocoa_bao_Navitas <- \() new(
   Class = 'bao', bao(), cocoa_Tbsp = c(KingArthur_Bensdorp = 6), sugar_Tbsp = 5,
   portion = c(mantou_portion(), sweetBao_portion()),
   review = 'retry with Dutch cocoa')
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 pineapple_bao <- \() new(
   Class = 'bao', 
@@ -184,7 +183,7 @@ pineapple_bao <- \() new(
   review = 're-experiment!  pineapple = 270g too wet')
 
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 pear_bao <- \() new(
   Class = 'bao', 
@@ -193,7 +192,7 @@ pear_bao <- \() new(
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 peach_bao_DelMonte <- \() new(
   Class = 'bao', 
@@ -202,7 +201,7 @@ peach_bao_DelMonte <- \() new(
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 mandarine_bao <- \() new(
   Class = 'bao', 
@@ -210,7 +209,7 @@ mandarine_bao <- \() new(
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 acai_bao <- \() new(
   Class = 'bao', bao(), acai_Tbsp = 8.5, sugar_Tbsp = 2,
@@ -236,7 +235,7 @@ mango_bao <- \() new(
   review = c('try in the summer'))
 
 
-#' @rdname bao
+#' @rdname bao-class
 #' @export
 tomato_bao <- \() new(
   Class = 'bao', 
@@ -281,8 +280,7 @@ tomato_bao <- \() new(
 #' 
 #' @examples 
 #' wheatBao()
-#' @name wheatBao
-#' @aliases wheatBao-class
+#' @name wheatBao-class
 #' @export
 setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
   alias_flavor = '\u5168\u9ea6',
@@ -296,7 +294,7 @@ setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
 
 
 
-#' @rdname wheatBao
+#' @rdname wheatBao-class
 #' @export
 wheatBao <- \() new(
   Class = 'wheatBao', 

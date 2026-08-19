@@ -117,8 +117,7 @@ pumpkin_wrapperlinda <- \() new(
 #' # noodle recipes and analysis
 #' noodlelinda()
 #' 
-#' @name noodlelinda
-#' @aliases noodlelinda-class
+#' @name noodlelinda-class
 #' @export
 setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
   alias_class = '\u5e7c\u9762\U1f35d',
@@ -138,21 +137,21 @@ setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
 
 
 
-#' @rdname noodlelinda
+#' @rdname noodlelinda-class
 #' @export
 noodlelinda <- \() new(
   Class = 'noodlelinda', 
   water = 300,
   review = 'old experiment, retry to confirm')
 
-#' @rdname noodlelinda
+#' @rdname noodlelinda-class
 #' @export
 noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500), 
   water = 225, # 220g too dry, 225g just right
   date = as.Date('2024-06-02'), pros = 'perfect wetness for KitchenAid KSM8990 and Pastalinda')
 
-#' @rdname noodlelinda
+#' @rdname noodlelinda-class
 #' @export
 pumpkin_noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500),
@@ -162,7 +161,7 @@ pumpkin_noodlelinda_KingArthur <- \() new(
 
 
 
-#' @rdname noodlelinda
+#' @rdname noodlelinda-class
 #' @export
 pumpkin_noodlelinda <- \() new(
   Class = 'noodlelinda', 
@@ -170,14 +169,14 @@ pumpkin_noodlelinda <- \() new(
   review = 'retry to confirm')
 
 
-#' @rdname noodlelinda
+#' @rdname noodlelinda-class
 #' @export
 tomato_noodlelinda <- \() new(
   Class = 'noodlelinda', 
   tomato = 400, 
   review = 'try')
 
-#' @rdname noodlelinda
+#' @rdname noodlelinda-class
 #' @export
 matcha_noodlelinda <- \() new(Class = 'noodlelinda', noodlelinda(), matcha_tsp = 7, review = 'retry!!')
 

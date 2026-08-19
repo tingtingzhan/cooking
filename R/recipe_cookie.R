@@ -34,8 +34,7 @@
 #' new('cookie', flavor = c(Kirkland_plum = 270), pastryFlour = 360, 
 #'   drymilk = 54)
 #'
-#' @name cookie
-#' @aliases cookie-class
+#' @name cookie-class
 #' @export
 setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
   alias_class = '\u997c\u5e72',
@@ -56,7 +55,7 @@ setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 Assam_cookie <- \() new(
   Class = 'cookie',
@@ -85,7 +84,7 @@ PreppyKitchen_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 cocoa_cookie <- \() new(
   Class = 'cookie',
@@ -97,7 +96,7 @@ cocoa_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 adzukiBean_cookie <- \() new( 
   # raw taste too strong. try cook powdered adzukiBean in butter
@@ -111,7 +110,7 @@ adzukiBean_cookie <- \() new(
 )
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 mungBean_cookie <- \() new(Class = 'cookie', adzukiBean_cookie(),
   url = 'https://m.fx361.com/news/2018/0324/3299096.html',
@@ -120,7 +119,7 @@ mungBean_cookie <- \() new(Class = 'cookie', adzukiBean_cookie(),
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 coffee_cookie <- \() new(
   Class = 'cookie', coffee = 40, 
@@ -129,7 +128,7 @@ coffee_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 lemon_cookie <- \() new(
   Class = 'cookie', flavor = c(CountryTime_Lemonade = 150), 
@@ -143,7 +142,7 @@ lemon_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 matcha_cookie <- \() new(
   Class = 'cookie', 
@@ -156,7 +155,7 @@ matcha_cookie <- \() new(
   review = 'retry with ikuyo')
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 blackSesame_cookie2022 <- \() new(
   Class = 'cookie',
@@ -173,7 +172,7 @@ blackSesame_cookie2022 <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 Harney_UvaHighlands_cookie <- \() new(
   Class = 'cookie', 
@@ -183,7 +182,7 @@ Harney_UvaHighlands_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 Harney_PuErh_cookie <- \() new(
   Class = 'cookie', 
@@ -194,7 +193,7 @@ Harney_PuErh_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 Harney_LapSangSouChong_cookie <- \() new(
   Class = 'cookie', 
@@ -208,7 +207,7 @@ Harney_LapSangSouChong_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 Ceylon_cookie <- \() new(
   Class = 'cookie', 
@@ -220,7 +219,7 @@ Ceylon_cookie <- \() new(
 
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 ginger_cookie <- \() new(
   Class = 'cookie', 
@@ -231,7 +230,7 @@ ginger_cookie <- \() new(
   drymilk = 158)
 
 
-#' @rdname cookie
+#' @rdname cookie-class
 #' @export
 EarlGrey_cookie2022_Twinings <- \() new(
   Class = 'cookie',

@@ -14,8 +14,7 @@
 #' 
 #' \url{https://youtu.be/5nJKNVBRztM}
 #' 
-#' @name beeffill
-#' @aliases beeffill-class
+#' @name beeffill-class
 #' @export
 setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
   alias_class = '\u725b\U1f402\u8089\u9985',
@@ -52,7 +51,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
   
 
 
-#' @rdname beeffill
+#' @rdname beeffill-class
 #' @aliases beeffillLeeKumKee-class
 #' @export
 setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototype(
@@ -77,7 +76,7 @@ setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototy
   )
 ))
 
-#' @rdname beeffill
+#' @rdname beeffill-class
 #' @export
 beeffillLeeKumKee <- \() new(
   Class = 'beeffillLeeKumKee',

@@ -75,8 +75,7 @@
 #' # I don't like!!
 #' Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 #' 
-#' @name cheesecake
-#' @aliases cheesecake-class
+#' @name cheesecake-class
 #' @export
 setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
   #alias_class = '\u91cd\u4e73\u916a\u86cb\u7cd5',
@@ -114,7 +113,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 cheesecake <- \() new(
   Class = 'cheesecake', 
@@ -123,20 +122,20 @@ cheesecake <- \() new(
 
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 blueberry_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Stonewall_blueberry = 250), 
   cons = 'color not pretty') # tested 100% Nancy's
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 maple_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Stonewall_maple = 160), pros = 'Effie\'s Signature') # tested 100% Nancy's
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 raspberry_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -144,7 +143,7 @@ raspberry_cheesecake <- \() new(
   pros = c('Effie loves (100% Neufchatel)',
            'Do not reduce raspberry syrup (do not want to lose raspberry flavor)'))
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 ryeWhisky_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -162,19 +161,19 @@ ryeWhisky_cheesecake_LowWater <- \() new(
   date = as.Date('2023-12-01'),
   pros = 'Xu Chang (100% Neufchatel)')
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 rum_cheesecake <- \() new(
   Class = 'cheesecake',
   syrup = c(Runamok_rum = 150), review = 'try')
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 appleBrandy_cheesecake <- \() new(
   Class = 'cheesecake', #alias_flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
   syrup = c(Runamok_appleBrandy = 160), review = 'try')
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 Bourbon_cheesecake_Crown <- \() new(
   Class = 'cheesecake',
@@ -202,7 +201,7 @@ tiramisu_cheesecake <- \() new(
 
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 pumpkin_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -223,7 +222,7 @@ tomato_cheesecake <- \() new(
 
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 pineapple_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -249,14 +248,14 @@ coffee_cheesecake <- \() new(
 
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 matcha_cheesecake <- \() new(
   Class = 'cheesecake',
   matcha = c(Ippodo_ikuyo = 32), sugar = 100,
   review = 'try')
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 mocaccino_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -265,7 +264,7 @@ mocaccino_cheesecake <- \() new(
   sugar = 100,
   review = 'try')
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 ginger_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -274,7 +273,7 @@ ginger_cheesecake <- \() new(
   review = 'try'
 )
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 CaffeBorghetti_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -284,7 +283,7 @@ CaffeBorghetti_cheesecake <- \() new(
   review = 'try'
 )
   
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 Kahlua_cheesecake <- \() new(
   Class = 'cheesecake',
@@ -299,7 +298,7 @@ Kahlua_cheesecake <- \() new(
 
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake-class
 #' @export
 Bourbon_cheesecake_Stonewall <- \() new(
   Class = 'cheesecake', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',

@@ -5,6 +5,7 @@
 \alias{Junior_cappuccino_cheesecake}
 \alias{PreppyKitchen_cheesecake}
 \alias{Junior_original}
+\alias{Junior_cookbook}
 \alias{CheesecakeFactory_original}
 \alias{Junior_strawberrySwirl}
 \alias{PreppyKitchen_chocolate_cheesecake}
@@ -15,6 +16,8 @@ Junior_cappuccino_cheesecake()
 PreppyKitchen_cheesecake()
 
 Junior_original()
+
+Junior_cookbook()
 
 CheesecakeFactory_original()
 

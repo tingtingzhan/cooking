@@ -7,14 +7,13 @@
 #' @examples 
 #' crabCake()
 #' 
-#' @name crabCake
-#' @aliases crabCake-class
+#' @name crabCake-class
 #' @export
 setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
   alias_class = 'Crab Cake'
 ))
 
-#' @rdname crabCake
+#' @rdname crabCake-class
 #' @export
 crabCake <- \() new(
   Class = 'crabCake',

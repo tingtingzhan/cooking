@@ -28,8 +28,7 @@
 #' )
 #' 
 #' 
-#' @name crumbcrust
-#' @aliases crumbcrust-class
+#' @name crumbcrust-class
 #' @export
 setClass(Class = 'crumbcrust', contains = 'recipe', prototype = prototype(
   alias_class = 'Crumb Crust',
@@ -61,7 +60,7 @@ setClass(Class = 'crumbcrust', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname crumbcrust
+#' @rdname crumbcrust-class
 #' @export
 crumbcrust <- \() new(Class = 'crumbcrust')
 
@@ -163,7 +162,7 @@ DiamondNuts_chocolateCrust <- \() new(
 
 
 
-#' @rdname crumbcrust
+#' @rdname crumbcrust-class
 #' @export
 ginger_crumbcrust <- \() new(
   Class = 'crumbcrust', 
@@ -185,7 +184,7 @@ blackSesame_crumbcrust_OLD <- \() new(
   pros = 'texture not bad as cookie') 
 
 
-#' @rdname crumbcrust
+#' @rdname crumbcrust-class
 #' @export
 blackSesame_crumbcrust <- \() new(
   Class = 'crumbcrust',

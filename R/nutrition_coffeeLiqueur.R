@@ -19,15 +19,13 @@
 #'   Amigos3_mocha
 #' )
 #' 
-#' @keywords internal
-#' @name nutrition_coffeeLiqueur
-#' @aliases coffeeLiqueur-class
+#' @name coffeeLiqueur-class
 #' @export
 setClass(Class = 'coffeeLiqueur', contains = 'nutrition', prototype = prototype(
   alias = '\u5496\u5561\u9152'
 ))
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Kahlua_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]], 
@@ -41,7 +39,7 @@ Kahlua_coffee <- \() new(
   carbohydrate = 29.7, sugar = 29.7)
 
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Kahlua_especial <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]], 
@@ -55,7 +53,7 @@ Kahlua_especial <- \() new(
   carbohydrate = 14.4, sugar = 14.4)
 
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 CafeGranita_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]], 
@@ -68,7 +66,7 @@ CafeGranita_coffee <- \() new(
   AbV = .21
 )
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 FratelliVincenzi_espresso <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -79,7 +77,7 @@ FratelliVincenzi_espresso <- \() new(
   AbV = .3
 )
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Kikisi_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -90,7 +88,7 @@ Kikisi_coffee <- \() new(
   AbV = .2
 )
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 CaffeBorghetti <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -101,7 +99,7 @@ CaffeBorghetti <- \() new(
   AbV = .25
 )
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Grind_espresso <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -114,7 +112,7 @@ Grind_espresso <- \() new(
 
 
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Sabroso_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -126,7 +124,7 @@ Sabroso_coffee <- \() new(
 )
 
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Patron_XO <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -137,7 +135,7 @@ Patron_XO <- \() new(
   AbV = .35)
 
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Padrino_coffee <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
@@ -148,7 +146,7 @@ Padrino_coffee <- \() new(
   servingGram = 44, servingTsp = 9,
   AbV = .35)
 
-#' @rdname nutrition_coffeeLiqueur
+#' @rdname coffeeLiqueur-class
 #' @export
 Amigos3_mocha <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],

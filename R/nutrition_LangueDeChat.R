@@ -15,8 +15,7 @@
 #' )
 #' 
 #' 
-#' @name LangueDeChat
-#' @aliases LangueDeChat-class
+#' @name LangueDeChat-class
 #' @export
 setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
   alias_class = 'Langue de Chat'
@@ -27,7 +26,7 @@ setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname LangueDeChat
+#' @rdname LangueDeChat-class
 #' @export
 cookingTree_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', alias_flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
@@ -37,7 +36,7 @@ cookingTree_LangueDeChat <- \() new(
   vanilla_tsp = .5, # 2g Vanilla extract  
   flour = 110)
 
-#' @rdname LangueDeChat
+#' @rdname LangueDeChat-class
 #' @export
 cookingTree_cocoa_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', alias_flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
@@ -50,7 +49,7 @@ cookingTree_cocoa_LangueDeChat <- \() new(
   cocoa = 7)
 
 
-#' @rdname LangueDeChat
+#' @rdname LangueDeChat-class
 #' @export
 Ying_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Ying', alias_flavor = 'Langue De Chat', youtube = '2tlPfiBA9i0',
@@ -63,7 +62,7 @@ Ying_LangueDeChat <- \() new(
 
 
 
-#' @rdname LangueDeChat
+#' @rdname LangueDeChat-class
 #' @export
 Jadore_LangueDeChat <- \() new(
   Class = 'recipe', author = 'J\'adore', alias_flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
@@ -75,7 +74,7 @@ Jadore_LangueDeChat <- \() new(
   vanilla_tsp = 1/4,
   heavyCream = 13) 
 
-#' @rdname LangueDeChat
+#' @rdname LangueDeChat-class
 #' @export
 Giallozafferano_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Giallozafferano', alias_flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',

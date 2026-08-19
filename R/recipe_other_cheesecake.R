@@ -63,7 +63,7 @@ Junior_original <- \() new(
   fat = 33, cholesterol = .135, sodium = .38, carbohydrate = 30, sugar = 24, addedSugar = 22, protein = 7)
 
 
-#' @rdname cheesecake
+#' @rdname cheesecake_other
 #' @export
 Junior_cookbook <- \() new(
   Class = 'recipe', 

@@ -7,8 +7,7 @@
 #' 
 #' @slot water \link[base]{numeric} scalar
 #' 
-#' @name extra
-#' @aliases extra-class
+#' @name extra-class
 #' @export
 setClass(Class = 'extra', slots = c(
   water = 'numeric'
