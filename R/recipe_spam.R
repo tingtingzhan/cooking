@@ -24,8 +24,7 @@
 #' chickenBreastSpam()
 #' beefSpam()
 #' 
-#' @name spam
-#' @aliases spam-class
+#' @name spam-class
 #' @export
 setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
   alias_class = '\u8089\u7cd5',
@@ -56,13 +55,13 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 tilapiaSpam <- \() new(
   Class = 'spam', alias_flavor = '\u7f57\u975e\u9c7c',
   pork = c(fatbelly = 180), seafood = c(tilapia = 220), pros = 'Effie\'s Signature')
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 porkSpam <- \() new(
   Class = 'spam',
@@ -70,13 +69,13 @@ porkSpam <- \() new(
 
 
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 shrimpSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e',
   pork = c(fatbelly = 180), shrimp = 220, pros = 'Effie\'s Signature')
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 shrimpLambSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e\u7f8a',
@@ -85,7 +84,7 @@ shrimpLambSpam <- \() new(
   review = c('Taste nice! try again with regular water'))
 
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 chickenBreastSpam <- \() new(
   Class = 'spam', alias_flavor = '\u9e21',
@@ -94,7 +93,7 @@ chickenBreastSpam <- \() new(
 
 
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 beefSpam <- \() new(
   Class = 'spam', alias_flavor = '\u725b',
@@ -103,7 +102,7 @@ beefSpam <- \() new(
   review = c('Nice with beef chuck or chuck short ribs at Costco',
              'But this is expensive!!'))
 
-#' @rdname spam
+#' @rdname spam-class
 #' @export
 shrimpBeefSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e\u725b',

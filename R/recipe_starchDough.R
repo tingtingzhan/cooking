@@ -8,8 +8,7 @@
 #' sweetPotato_Noodle_step1()
 #' sweetPotato_Noodle_step2()
 #' 
-#' @name starchDough
-#' @aliases starchDough-class
+#' @name starchDough-class
 #' @export
 setClass(Class = 'starchDough', contains = 'recipe', prototype = prototype(
   alias_class = 'Starch Dough'
@@ -17,7 +16,7 @@ setClass(Class = 'starchDough', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname starchDough
+#' @rdname starchDough-class
 #' @export
 sweetPotato_Noodle_step1 <- \() new(
   Class = 'starchDough',
@@ -25,7 +24,7 @@ sweetPotato_Noodle_step1 <- \() new(
   starch = c(sweetPotato = 20), water = 40
 )
 
-#' @rdname starchDough
+#' @rdname starchDough-class
 #' @export
 sweetPotato_Noodle_step2 <- \() new(
   Class = 'starchDough',
