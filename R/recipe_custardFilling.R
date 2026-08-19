@@ -43,8 +43,7 @@
 #' # alternative oil
 #' blackSesame_custardFilling()
 #' 
-#' @name custardFilling
-#' @aliases custardFilling-class
+#' @name custardFilling-class
 #' @export
 setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
   alias_class = '\u5976\u9ec4\u9985',
@@ -79,7 +78,7 @@ JoyoungCJA9U_filling <- function(operation) JoyoungCJA9U(
 )
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 custardFilling <- \() new(
   Class = 'custardFilling', 
@@ -90,7 +89,7 @@ custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 pineapple_custardFilling <- \() new(
   Class = 'custardFilling',
@@ -103,7 +102,7 @@ pineapple_custardFilling <- \() new(
   cons = 'Slightly too sour if served hot')
   
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 pumpkin_custardFilling <- \() new(
   Class = 'custardFilling',
@@ -120,7 +119,7 @@ pumpkin_custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 apple_custardFilling <- \() new(
   Class = 'custardFilling',
@@ -132,7 +131,7 @@ apple_custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 tomato_custardFilling <- \() new(
   Class = 'custardFilling',
@@ -148,7 +147,7 @@ tomato_custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 darkCherry_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u751c\u6a31\u6843\U1f352',
@@ -164,7 +163,7 @@ darkCherry_custardFilling <- \() new(
   ))
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 blueberry_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u84dd\u8393\U1fad0',
@@ -179,22 +178,7 @@ blueberry_custardFilling <- \() new(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 mango_custardFilling <- \() new(
   Class = 'custardFilling',
@@ -213,7 +197,7 @@ mango_custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 yellowPeach_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u9ec4\u6843\U1f351',
@@ -224,7 +208,7 @@ yellowPeach_custardFilling <- \() new(
   review = 'Lacks a signatrue flavor.  Try without discarding syrup!!!')
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 date_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u7ea2\u67a3',
@@ -237,7 +221,7 @@ date_custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 fig_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u65e0\u82b1\u679c',
@@ -249,7 +233,7 @@ fig_custardFilling <- \() new(
 
 
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 coconut_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u6930\u84c9\U1f965',
@@ -277,7 +261,7 @@ coconut_custardFilling_OLD <- \() new(
 
 ############ Alternative oil
 
-#' @rdname custardFilling
+#' @rdname custardFilling-class
 #' @export
 blackSesame_custardFilling <- \() new(
   Class = 'custardFilling',

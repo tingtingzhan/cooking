@@ -31,8 +31,7 @@
 #' )
 #' 
 #' 
-#' @name gateau
-#' @aliases gateau-class
+#' @name gateau-class
 #' @export
 setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
   alias_class = 'Ga\u0302teau', # 'G\u00e2teau' # ??
@@ -48,7 +47,7 @@ setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 cocoa_gateau <- \() new(
   Class = 'gateau',
@@ -83,7 +82,7 @@ cocoa_gateau_FAIL <- \() new(
 
 
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 matcha_gateau <- \() new(
   Class = 'gateau',
@@ -93,7 +92,7 @@ matcha_gateau <- \() new(
   review = 'try')
 
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 pumpkin_gateau <- \() new(
   Class = 'gateau',
@@ -107,7 +106,7 @@ pumpkin_gateau <- \() new(
 
 
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 AddaPinch_chocolate_cake <- \() new(
   Class = 'recipe', author = 'Add-A-Pinch', alias_flavor = 'Chocolate Cake',
@@ -122,7 +121,7 @@ AddaPinch_chocolate_cake <- \() new(
   boilingWater = 227)
 
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 PreppyKitchen_chocolate_cake <- \() new(
   Class = 'recipe', alias_flavor = 'Chocolate Cake',
@@ -136,7 +135,7 @@ PreppyKitchen_chocolate_cake <- \() new(
   boilingWater = 240,
   preppykitchen = c('vI5w-fK25w4' = 'ultimate-chocolate-cake'))
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 DessertFor2_matcha_cake <- \() new(
   Class = 'recipe', author = 'DessertFor2', alias_flavor = 'Matcha Cake',
@@ -151,7 +150,7 @@ DessertFor2_matcha_cake <- \() new(
   url = 'https://www.dessertfortwo.com/matcha-cake/')
 
 
-#' @rdname gateau
+#' @rdname gateau-class
 #' @export
 Sallys_pumpkin_cake <- \() new(
   Class = 'recipe', author = 'Sally\'s', alias_flavor = 'Pumpkin Cake',

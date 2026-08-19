@@ -2,8 +2,7 @@
 
 #' @title Poultry \linkS4class{skinCoat}
 #' 
-#' @name skinCoat
-#' @aliases skinCoat-class
+#' @name skinCoat-class
 #' @export
 setClass(Class = 'skinCoat', contains = 'recipe', prototype = prototype(
   portion = c('whole duck\U1f986, 3-3.5lb' = 15)
@@ -11,7 +10,7 @@ setClass(Class = 'skinCoat', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname skinCoat
+#' @rdname skinCoat-class
 #' @export
 duck_coat <- \() new(
   Class = 'skinCoat',

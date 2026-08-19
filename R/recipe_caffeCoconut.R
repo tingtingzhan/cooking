@@ -7,8 +7,7 @@
 #'  caffeCoconut_Luckin,
 #'  caffeCoconut_FreeNow0sugar 
 #' )
-#' @name caffeCoconut
-#' @aliases caffeCoconut-class
+#' @name caffeCoconut-class
 #' @export
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   alias_class = '\u751f\u6930\u62ff\u94c1',
@@ -23,7 +22,7 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname caffeCoconut
+#' @rdname caffeCoconut-class
 #' @export
 caffeCoconut <- \() new(
   Class = 'caffeCoconut', 
@@ -37,7 +36,7 @@ caffeCoconut <- \() new(
 
 
 
-#' @rdname caffeCoconut
+#' @rdname caffeCoconut-class
 #' @export
 caffeCoconut_FreeNow0sugar <- \() new(
   Class = 'caffeCoconut', 
@@ -50,7 +49,7 @@ caffeCoconut_FreeNow0sugar <- \() new(
 
 
 
-#' @rdname caffeCoconut
+#' @rdname caffeCoconut-class
 #' @export
 caffeCoconut_Luckin <- \() new(
   Class = 'caffeCoconut', 
