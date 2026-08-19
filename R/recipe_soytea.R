@@ -12,8 +12,7 @@
 #' chai_soytea()
 #' Ceylon_soytea()
 #' 
-#' @name soytea
-#' @aliases soytea-class
+#' @name soytea-class
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
@@ -25,15 +24,15 @@ setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   ))
 ))
 
-#' @rdname soytea
+#' @rdname soytea-class
 #' @export
 EarlGrey_soytea <- \() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), alias_flavor = 'Earl Grey', date = as.Date('2024-09-15'), pros = 'super flavorful!')
 
-#' @rdname soytea
+#' @rdname soytea-class
 #' @export
 chai_soytea <- \() new(Class = 'soytea', teabag = c(Twinings_ultraChai = 4), date = as.Date('2024-09-15'), pros = 'super flavorful!')
 
-#' @rdname soytea
+#' @rdname soytea-class
 #' @export
 Ceylon_soytea <- \() new(Class = 'soytea', teabag = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'not bad!')
 

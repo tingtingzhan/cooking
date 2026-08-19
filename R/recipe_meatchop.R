@@ -10,8 +10,7 @@
 #' porkchop()
 #' 
 #' 
-#' @name meatchop
-#' @aliases meatchop-class
+#' @name meatchop-class
 #' @export
 setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
   alias_class = '\u7092\u81ca\u5b50',
@@ -29,7 +28,7 @@ setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname meatchop
+#' @rdname meatchop-class
 #' @aliases porkchop-class
 #' @export
 setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
@@ -45,7 +44,7 @@ setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
   greenPeppercornOil_tsp = 2
 ))
 
-#' @rdname meatchop
+#' @rdname meatchop-class
 #' @export
 porkchop <- \() new(
   Class = 'porkchop',
@@ -54,7 +53,7 @@ porkchop <- \() new(
 )
 
 
-#' @rdname meatchop
+#' @rdname meatchop-class
 #' @aliases beefchop-class
 #' @export
 setClass(Class = 'beefchop', contains = 'meatchop', prototype = prototype(
@@ -62,7 +61,7 @@ setClass(Class = 'beefchop', contains = 'meatchop', prototype = prototype(
 ))
 
 
-#' @rdname meatchop
+#' @rdname meatchop-class
 #' @export
 beefchop_stew <- \() new(
   Class = 'beefchop',

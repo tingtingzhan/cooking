@@ -26,8 +26,7 @@
 #' 
 #' Maximum wheat:bread flour 2:3.
 #' 
-#' @name pastalinda
-#' @aliases pastalinda-class
+#' @name pastalinda-class
 #' @export
 setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
   breadFlour = c(Wegmans_bread = 500), 
@@ -49,7 +48,7 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname pastalinda
+#' @rdname pastalinda-class
 #' 
 #' @examples
 #' # wrapper recipes
@@ -76,14 +75,14 @@ setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
 #  'Another wonton' = 'TuDmgV3z-_s'
 #)
 
-#' @rdname pastalinda
+#' @rdname pastalinda-class
 #' @export
 wrapperlinda <- \() new(
   Class = 'wrapperlinda',
   water = 285, # Wegmans bread flour
   review = 'a hypothetical model')
 
-#' @rdname pastalinda
+#' @rdname pastalinda-class
 #' @export
 pumpkin_wrapperlinda <- \() new(
   Class = 'wrapperlinda', 

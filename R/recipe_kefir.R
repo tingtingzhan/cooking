@@ -78,8 +78,7 @@ figWalnut_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnu
 
 # @title Sweetened \linkS4class{filmjolk} Recipes
 # 
-# @name filmjolk
-# @aliases filmjolk-class
+# @name filmjolk-class
 # @export
 #setClass(Class = 'filmjolk', contains = 'recipe', prototype = prototype(
 #  alias_class = 'Filmj\u00f6lk',
@@ -91,7 +90,7 @@ figWalnut_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnu
 #  liqueur_Tbsp = c(Kahlua_coffee = 1),
 #  cons = 'alcohol too heavy', date = as.Date('2024-04-05'))
 
-# @rdname filmjolk
+# @rdname filmjolk-class
 # @export
 #ryeWhisky_filmjolk <- \() new(
 #  Class = 'filmjolk',
