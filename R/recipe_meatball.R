@@ -5,8 +5,7 @@
 #' @description
 #' Cantonese style of meatball, squished from the purlicue of chef's hand
 #' 
-#' @name meatball
-#' @aliases meatball-class
+#' @name meatball-class
 #' @export
 setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
   alias_class = '\u4e38',
@@ -19,7 +18,7 @@ setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
 ))
 
 
-#' @rdname meatball
+#' @rdname meatball-class
 #' @export
 shrimpball <- \() new(
   Class = 'meatball', 
@@ -51,7 +50,7 @@ beefball <- \() new(
   tallow = 3*500/16)
 
 
-#' @rdname meatball
+#' @rdname meatball-class
 #' @export
 GaaDai_beefball <- \() new(
   Class = 'meatball',
@@ -66,7 +65,7 @@ GaaDai_beefball <- \() new(
   tallow = 3*500)
 
 
-#' @rdname meatball
+#' @rdname meatball-class
 #' @export
 Daat_cuttlefishball <- \() new(
   Class = 'meatball', 
@@ -93,8 +92,7 @@ Daat_cuttlefishball <- \() new(
 #' @examples 
 #' 1+1
 #' 
-#' @name fishball
-#' @aliases fishball-class
+#' @name fishball-class
 #' @export
 setClass(Class = 'fishball', contains = 'recipe', prototype = prototype(
   alias_class = '\u9c7c\u4e38'
