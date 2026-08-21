@@ -2,7 +2,6 @@
 
 #' @import cli
 #' @import methods
-#' @keywords internal
 '_PACKAGE'
 
 

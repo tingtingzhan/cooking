@@ -180,7 +180,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot RobamCT763 \linkS4class{tool}
 #' @slot InstantPot \linkS4class{tool}
 #' 
-#' @aliases nutrition-class  
+#' @name nutrition-class  
 #' @export
 setClass(Class = 'nutrition', slots = c(
   
