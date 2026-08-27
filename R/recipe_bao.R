@@ -100,7 +100,7 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
 
 #' @rdname bao-class
 #' @export
-bao <- \() new(Class = 'bao', water = 240, sugar_Tbsp = 3, pros = 'Inna')
+bao <- \() new(Class = 'bao', water = 240, sugar_Tbsp = 3)
 
 bao_heavyCream <- \() new(
   Class = 'bao', 

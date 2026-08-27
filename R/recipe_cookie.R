@@ -61,7 +61,7 @@ Assam_cookie <- \() new(
   Class = 'cookie',
   review = c(
     'I say no less sugar',
-    'Inna says no more sugar',
+    'Another friend says no more sugar',
     'Gloria wants slightly more sugar'
   ),
   tea = c(Harney_Assam = 52), 

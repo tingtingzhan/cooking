@@ -80,7 +80,6 @@ shrimpfillCantonese_OLD <- \() new(
   sugar_tsp = 3,
   ginger_tsp = 1/4,
   whitePepper_tsp = 1/2,
-  pros = 'Inna',
   cons = 'Not salty enough')
 
 
