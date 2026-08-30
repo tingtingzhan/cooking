@@ -1,27 +1,7 @@
 
-#' @title Dry Milk
-#' 
-#' @examples
-#' diagnose(
-#'  suggested(Carnation_drymilk),
-#'  suggested(GreatValue_drymilk),
-#'  suggested(MembersMark_drymilk),
-#'  suggested(BobsRedMill_drymilk),
-#'  suggested(Nido_drymilk),
-#'  suggested(Horizon_whole_drymilk)
-#' )
-#' 
-#' diagnose(
-#'  suggested(Meyenberg_goat_drymilk),
-#'  suggested(Meyenberg_goatWhole_drymilk)
-#' )
-#' 
-#' @keywords internal
-#' @name nutrition_drymilk
-NULL
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 Meyenberg_goat_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], meyenberg = 'powdered-nonfat-goat-milk',
   name = 'Nonfat Dry Goat\U1f410 Milk', alias = '\u8131\u8102\u7f8a\u5976\u7c89',
@@ -33,8 +13,8 @@ Meyenberg_goat_drymilk <- \() new(
   suggestion = list(water80_cup = 1))
 
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 Meyenberg_goatWhole_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], meyenberg = 'powdered-whole-goat-milk',
   name = 'Whole Dry Goat\U1f410 Milk', alias = '\u5168\u8102\u7f8a\u5976\u7c89',
@@ -47,8 +27,8 @@ Meyenberg_goatWhole_drymilk <- \() new(
   suggestion = list(water80_cup = 1))
 
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 Carnation_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], #nestle = '12428935',
   brand = c(style_hyperlink(text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz')),
@@ -66,8 +46,8 @@ Carnation_drymilk <- \() new(
 
 
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 Carnation_whole_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], nestle = '12550835',
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
@@ -75,8 +55,8 @@ Carnation_whole_drymilk <- \() new(
   servingGram = 30, servingCup = 1/4, # website does not have servingGram!!
   fat = 8, sodium = .105, sugar = 10, protein = 7)
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 Nido_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Dry Whole Milk', alias = '\u5168\u8102\u5976\u7c89',
@@ -86,8 +66,8 @@ Nido_drymilk <- \() new(
   fat = 8, sodium = .105, carbohydrate = 11, sugar = 11, protein = 8,
   suggestion = list(water80_cup = 1))
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 KingArthur_baker_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 213100L,
   name = 'Baker\'s Special Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
@@ -98,8 +78,8 @@ KingArthur_baker_drymilk <- \() new(
   # no suggestion on package!
   cholesterol = .01, sodium = .11, carbohydrate = 14, sugar = 13, protein = 10)
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 KingArthur_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211706L,
   name = 'Dried Whole Milk', alias = '\u5168\u8102\u5976\u7c89',
@@ -110,8 +90,8 @@ KingArthur_drymilk <- \() new(
   # no suggestion on package!!!
   fat = 1.5, cholesterol = .005, sodium = .02, carbohydrate = 2, sugar = 2, protein = 2)
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 GreatValue_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], walmart = '10415475',
   name = 'Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
@@ -122,8 +102,8 @@ GreatValue_drymilk <- \() new(
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
   suggestion = list(water80_cup = 7/8))
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 MembersMark_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   sams = 'prod21366487', 
@@ -135,8 +115,8 @@ MembersMark_drymilk <- \() new(
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
   suggestion = list(water80_cup = 7/8))
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 BobsRedMill_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'non-fat-dry-milk-powder',
   name = 'Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
@@ -148,8 +128,8 @@ BobsRedMill_drymilk <- \() new(
   suggestion = list(water_cup = 1))
 
 
-#' @rdname nutrition_drymilk
-#' @export
+
+
 Horizon_whole_drymilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   horizon = 'organic-milk/organic-dry-whole-milk',

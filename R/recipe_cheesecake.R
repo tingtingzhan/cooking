@@ -75,14 +75,15 @@
 #' # I don't like!!
 #' Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 #' 
+#' \dontrun{
 #' diagnose(
 #'  pumpkin_cheesecake,
-#'  subtract(cooking:::Junior_pumpkin_cheesecake, sugar = 170),
-#'  subtract(cooking:::Natasha_pumpkin_cheesecake, brownSugar = 230),
-#'  subtract(cooking:::PreppyKitchen_pumpkin_cheesecake, sugar = 140),
-#'  subtract(cooking:::CheesecakeFactory_pumpkin, sugar = 12)
+#'  subtract(Junior_pumpkin_cheesecake, sugar = 170),
+#'  subtract(Natasha_pumpkin_cheesecake, brownSugar = 230),
+#'  subtract(PreppyKitchen_pumpkin_cheesecake, sugar = 140),
+#'  subtract(CheesecakeFactory_pumpkin, sugar = 12)
 #' )
-#' 
+#' }
 #' @name cheesecake-class
 #' @export
 setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(

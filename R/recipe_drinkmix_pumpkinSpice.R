@@ -4,12 +4,13 @@
 #' 
 #' @examples
 #' pumpkinSpiceLatte()
+#' \dontrun{
 #' diagnose(
 #'  hotdrink(pumpkinSpiceLatte()),
-#'  cooking:::Starbucks_pumpkinSpiceLatte,
-#'  cooking:::Starbucks_pumpkinSpiceFrappuccino
+#'  Starbucks_pumpkinSpiceLatte,
+#'  Starbucks_pumpkinSpiceFrappuccino
 #' )
-#' 
+#' }
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Pumpkin_Spice_Latte}
 #' 

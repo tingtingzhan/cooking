@@ -1,13 +1,7 @@
 
-#' @title Instant Coffee
-#' 
-#' @keywords internal
-#' @name nutrition_coffee
-NULL
 
 
-#' @rdname nutrition_coffee
-#' @export
+
 NescafeTastersChoice_decaf <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   nescafeUS = 'decaf-house-blend-medium-light-roast-instant-coffee-7-oz-jar/',
@@ -18,8 +12,8 @@ NescafeTastersChoice_decaf <- \() new(
   superior = 'NescafeGold_espresso_blonde',
   review = 'too sour!!')
 
-#' @rdname nutrition_coffee
-#' @export
+
+
 NescafeGold_decaf <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafe = 'decaf',
@@ -31,8 +25,8 @@ NescafeGold_decaf <- \() new(
 
 # https://www.madewithnestle.ca/nescafe/coffee/gold
 
-#' @rdname nutrition_coffee
-#' @export
+
+
 NescafeGold_espresso_decaf_Canada <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoCA = 'decaf-gold-espresso-instant-coffee',
@@ -48,8 +42,8 @@ NescafeGold_espresso_decaf_Canada <- \() new(
 # https://www.nescafe.com/our-coffees/nescafe-gold-espresso
 
 
-#' @rdname nutrition_coffee
-#' @export
+
+
 NescafeGold_espresso_intense <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'gold-espresso-intense-instant-coffee-35-oz-jar',
@@ -60,8 +54,8 @@ NescafeGold_espresso_intense <- \() new(
   superior = 'NescafeGold_espresso_blonde'
 )
 
-#' @rdname nutrition_coffee
-#' @export
+
+
 NescafeGold_espresso_decaf <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'gold-decaf-espresso-instant-coffee',
@@ -72,8 +66,8 @@ NescafeGold_espresso_decaf <- \() new(
   review = 'almost as good as NescafeGold_espresso_blonde'
 )
 
-#' @rdname nutrition_coffee
-#' @export
+
+
 NescafeGold_espresso_blonde <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   nescafeGoldEspressoUS = 'gold-espresso-blonde-instant-coffee-35-oz-jar',

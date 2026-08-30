@@ -1,10 +1,4 @@
 
-#' @title Dry Spice
-#' 
-#' @keywords internal
-#' @name nutrition_dryspice
-NULL
-
 
 
 McCormick_creamTartar <- \() new(
@@ -239,8 +233,7 @@ SimplyOrganic_parsley <- \() new(
   servingGram = 7, usd = 5.39, # Feb 2024
   servingTbsp = 10)
 
-#' @rdname nutrition_dryspice
-#' @export
+
 SimplyOrganic_pumpkinSpice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'pumpkin-spice-1-94-oz',
   name = 'Pumpkin\U1f383 Spice', alias = '\u5357\u74dc\u8089\u6842\u9999\u6599',
@@ -248,8 +241,7 @@ SimplyOrganic_pumpkinSpice <- \() new(
   servingTbsp = 10,
   contain = c('cinnamon', 'ginger', 'nutmeg', 'clove'))
 
-#' @rdname nutrition_dryspice
-#' @export
+
 SimplyOrganic_5spice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], simplyorganic = 'five-spice-powder-2-01-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',

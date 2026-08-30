@@ -6,12 +6,13 @@
 #' 
 #' @examples
 #' caffeLatte()
+#' \dontrun{
 #' diagnose(
 #'  hotdrink(caffeLatte),
-#'  cooking:::Starbucks_caffeLatte,
-#'  cooking:::Starbucks_coffeeFrappuccino_bottle
+#'  Starbucks_caffeLatte,
+#'  Starbucks_coffeeFrappuccino_bottle
 #' ) # compare hot/frappe drink
-#' 
+#' }
 #' @name caffeLatte-class
 #' @export
 setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
