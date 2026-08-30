@@ -1,7 +1,4 @@
 
-#' @title Starch Noodle
-#' 
-#' @export
 JayOne_sweetPotato <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   jayone = 'wide-glass-noodle-sweet-potato',

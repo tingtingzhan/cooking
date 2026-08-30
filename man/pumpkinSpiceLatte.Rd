@@ -13,6 +13,11 @@ Pumpkin Spice Latte Mix
 }
 \examples{
 pumpkinSpiceLatte()
+diagnose(
+ hotdrink(pumpkinSpiceLatte()),
+ cooking:::Starbucks_pumpkinSpiceLatte,
+ cooking:::Starbucks_pumpkinSpiceFrappuccino
+)
 
 }
 \references{

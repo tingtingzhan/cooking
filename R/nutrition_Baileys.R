@@ -1,13 +1,8 @@
 
-#' @title Baileys Liqueur
-#' 
-#' @keywords internal
-#' @name nutrition_Baileys
-NULL
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_espresso <- \() new(
   Class = 'coffeeLiqueur', call = match.call()[[1L]],
   baileys = 'espresso-creme',
@@ -23,8 +18,8 @@ Baileys_espresso <- \() new(
 )
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_chocolatLuxe <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'chocolat-luxe',
@@ -37,8 +32,8 @@ Baileys_chocolatLuxe <- \() new(
   fat = 15, salt = .3, carbohydrate = 27.2, sugar = 23, protein = 3)
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_chocolate <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'chocolate-liqueur',
@@ -53,8 +48,8 @@ Baileys_chocolate <- \() new(
   fat = 15, salt = .27, carbohydrate = 26, sugar = 22, protein = 3.2)
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_colada <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'colada',
@@ -68,8 +63,8 @@ Baileys_colada <- \() new(
   protein = 3, carbohydrate = 21, sugar = 18, fat = 14, alcohol = 13.5)
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_tiramisu <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'tiramisu-cocktail',
@@ -83,8 +78,8 @@ Baileys_tiramisu <- \() new(
   carbohydrate = 22, sugar = 19, fat = 14
 )
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_smores <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 's-mores',
@@ -100,8 +95,8 @@ Baileys_smores <- \() new(
 )
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_pumpkinSpice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'pumpkin-spice',
@@ -117,8 +112,8 @@ Baileys_pumpkinSpice <- \() new(
 )
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_strawberry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'strawberries-cream',
@@ -133,8 +128,8 @@ Baileys_strawberry <- \() new(
   alcohol = 13.5)
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_almande <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'almande',
@@ -151,8 +146,8 @@ Baileys_almande <- \() new(
 
 
 
-#' @rdname nutrition_Baileys
-#' @export
+
+
 Baileys_icedCoffeeLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   baileys = 'iced-coffee-latte',

@@ -4,6 +4,11 @@
 #' 
 #' @examples
 #' pumpkinSpiceLatte()
+#' diagnose(
+#'  hotdrink(pumpkinSpiceLatte()),
+#'  cooking:::Starbucks_pumpkinSpiceLatte,
+#'  cooking:::Starbucks_pumpkinSpiceFrappuccino
+#' )
 #' 
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Pumpkin_Spice_Latte}

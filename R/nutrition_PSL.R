@@ -1,21 +1,6 @@
 
 
-#' @title Pumpkin Spice Latte, Commercial or Other People's Recipe
-#' 
-#' @examples
-#' diagnose(
-#'  hotdrink(pumpkinSpiceLatte()),
-#'  Starbucks_pumpkinSpiceLatte,
-#'  Starbucks_pumpkinSpiceFrappuccino
-#' )
-#' @name PSL_other
-NULL
 
-
-
-
-#' @rdname PSL_other
-#' @export
 Starbucks_pumpkinSpiceLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 418L,
   name = 'Pumpkin Spice Latte',
@@ -25,8 +10,6 @@ Starbucks_pumpkinSpiceLatte <- \() new(
   fat = 14, cholesterol = .05, sodium = .23, carbohydrate = 52, sugar = 50, protein = 14)
 
 
-#' @rdname PSL_other
-#' @export
 Starbucks_pumpkinSpiceFrappuccino <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 427L,
   name = 'Pumpkin Spice Frappuccino',

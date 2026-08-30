@@ -1,9 +1,4 @@
 
-#' @title Fruit and Vegetable
-#' 
-#' @keywords internal
-#' @name nutrition_fruit_vegetable
-NULL
 
 Kirkland_honey <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
@@ -157,8 +152,7 @@ Libbys_pineapple <- \() new(
   carbohydrate = 17, sugar = 15, 
   superior = 'Dole_pineapple')
 
-#' @rdname nutrition_fruit_vegetable
-#' @export
+
 Dole_pineapple <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
@@ -346,8 +340,6 @@ watermelon <- \() new(
 
 
 
-#' @rdname nutrition_fruit_vegetable
-#' @export
 Libbys_pumpkin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans')),
@@ -383,8 +375,6 @@ Wegmans_tomato <- \() new(
   superior = 'WegmansOrganic_tomato')
 
 
-#' @rdname nutrition_fruit_vegetable
-#' @export
 WegmansOrganic_tomato <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmansorganic = 19227L, usd = 2.89/822*63, # instore should be cheaper
@@ -395,8 +385,6 @@ WegmansOrganic_tomato <- \() new(
   water = 63 * 300/400)
 
 
-#' @rdname nutrition_fruit_vegetable
-#' @export
 Motts_applesauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
@@ -418,8 +406,6 @@ Motts_applesauce <- \() new(
 
 
 
-#' @rdname nutrition_fruit_vegetable
-#' @export
 Laura_soybean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174270L,
   name = 'Soy Bean', alias = '\u9ec4\u8c46',

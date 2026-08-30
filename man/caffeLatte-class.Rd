@@ -13,5 +13,10 @@ caffeLatte()
 }
 \examples{
 caffeLatte()
+diagnose(
+ hotdrink(caffeLatte),
+ cooking:::Starbucks_caffeLatte,
+ cooking:::Starbucks_coffeeFrappuccino_bottle
+) # compare hot/frappe drink
 
 }

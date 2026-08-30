@@ -1,15 +1,8 @@
 
-#' @title Wheat Flour
-#' 
-#' @keywords internal
-#' @name nutrition_wheatFlour
-NULL
 
 # https://shop.wegmans.com/product/277/wegmans-all-purpose-unbleached-flour
 
 
-#' @rdname nutrition_wheatFlour
-#' @export
 Wegmans_pastry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Pastry\U1f370 Flour',

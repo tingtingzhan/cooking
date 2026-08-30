@@ -1,11 +1,5 @@
 
-#' @title Egg
-#' 
-#' @name nutrition_egg
-NULL
 
-#' @rdname nutrition_egg
-#' @export
 eggYolk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Egg\U1f95a Yolk, Large', alias = '\u9e21\u86cb\u9ec4',
@@ -16,8 +10,6 @@ eggYolk <- \() new(
   water = .523*17.3, protein = .159*17.3, fat = .265*17.3, cholesterol = 1.08/100*17.3, sugar = .0056*17.3, sodium = .00048*17.3
 )
 
-#' @rdname nutrition_egg
-#' @export
 eggWhite <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Egg\U1f95a White, Large', alias = '\u9e21\u86cb\u6e05',

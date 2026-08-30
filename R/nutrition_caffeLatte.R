@@ -1,15 +1,4 @@
 
-#' @title Caffe Latte, Commercial or Other People's Recipe
-#' 
-#' @examples
-#' diagnose(
-#'  hotdrink(caffeLatte),
-#'  Starbucks_caffeLatte,
-#'  Starbucks_coffeeFrappuccino_bottle
-#' ) # compare hot/frappe drink
-#' @name caffeLatte_other
-#' @keywords internal 
-#' @export
 Starbucks_caffeLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 407L,
   name = 'Caff\u00e8 Latte',
@@ -19,8 +8,6 @@ Starbucks_caffeLatte <- \() new(
   fat = 7, cholesterol = .030, sodium = .170, carbohydrate = 19, sugar = 18, protein = 13)
 
 
-#' @rdname caffeLatte_other
-#' @export
 Starbucks_coffeeFrappuccino_bottle <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Coffee Frappuccino',

@@ -119,6 +119,14 @@ blueberry_cheesecake()
 # I don't like!!
 Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 
+diagnose(
+ pumpkin_cheesecake,
+ subtract(cooking:::Junior_pumpkin_cheesecake, sugar = 170),
+ subtract(cooking:::Natasha_pumpkin_cheesecake, brownSugar = 230),
+ subtract(cooking:::PreppyKitchen_pumpkin_cheesecake, sugar = 140),
+ subtract(cooking:::CheesecakeFactory_pumpkin, sugar = 12)
+)
+
 }
 \references{
 Junior's Cheesecake Cookbook (2007). Alan Rosen and Beth Allen.

@@ -1,26 +1,6 @@
 
-#' @title Other Peoples Pumpkin Cheesecake
-#' 
-#' @description
-#' ..
-#' 
-#' 
-#' @examples
-#' diagnose(
-#'  pumpkin_cheesecake,
-#'  subtract(Junior_pumpkin_cheesecake, sugar = 170),
-#'  subtract(Natasha_pumpkin_cheesecake, brownSugar = 230),
-#'  subtract(PreppyKitchen_pumpkin_cheesecake, sugar = 140),
-#'  subtract(CheesecakeFactory_pumpkin, sugar = 12)
-#' )
-#' @keywords internal
-#' @name pumpkinCheesecake_other
-NULL
 
 
-
-#' @rdname pumpkinCheesecake_other
-#' @export
 Natasha_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   natashaskitchen = 'pumpkin-cheesecake-recipe',
@@ -37,8 +17,8 @@ Natasha_pumpkin_cheesecake <- \() new(
 
 
 
-#' @rdname pumpkinCheesecake_other
-#' @export
+
+
 Junior_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   creamCheese_brick = c(Philadelphia = 4),
@@ -53,8 +33,8 @@ Junior_pumpkin_cheesecake <- \() new(
 )
 
 
-#' @rdname pumpkinCheesecake_other
-#' @export
+
+
 PreppyKitchen_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   alias_class = 'Cheesecake',
@@ -72,8 +52,8 @@ PreppyKitchen_pumpkin_cheesecake <- \() new(
 
 
 
-#' @rdname pumpkinCheesecake_other
-#' @export
+
+
 Wegmans_pumpkin_cheesecake <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 18074L,
   name = 'Pumpkin\U1f383 Cheesecake',
@@ -84,8 +64,8 @@ Wegmans_pumpkin_cheesecake <- \() new(
   carbohydrate = 47, sugar = 27, addedSugar = 18, protein = 6)
 
 
-#' @rdname pumpkinCheesecake_other
-#' @export
+
+
 CheesecakeFactory_pumpkin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Pumpkin\U1f383',
@@ -96,8 +76,8 @@ CheesecakeFactory_pumpkin <- \() new(
   fat = 25, cholesterol = .105, sodium = .26, sugar = 25, addedSugar = 23, protein = 5)
 
 
-#' @rdname pumpkinCheesecake_other
-#' @export
+
+
 BrianLagerstrom_burntBasque <- \() new(
   Class = 'recipe',
   alias_flavor = 'Burnt Basque Cheesecake',
