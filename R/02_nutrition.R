@@ -584,10 +584,12 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       style_hyperlink(url = x@swiftmeats |> sprintf(fmt = 'https://swiftmeats.com/products/%s'), text = 'Swift\U1f1fa\U1f1f8') |> c()
     } else if (length(x@swissmiss)) {
       style_hyperlink(url = x@swissmiss |> sprintf(fmt = 'https://www.swissmiss.com/%s'), text = 'Swiss Miss\U1f1fa\U1f1f8') |> c()
-    } else if (length(x@tsemporium)) {
-      style_hyperlink(url = x@tsemporium |> sprintf(fmt = 'https://www.tsemporium.com/en_us/xproduct/index/index/s/%s'), text = 'Tak Shing Hong\u5fb7\u6210\u884c\U1f1fa\U1f1f8') |> c()
     } else if (length(x@thaikitchen)) {
       style_hyperlink(url = x@thaikitchen |> sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s'), text = 'Thai Kitchen\U1f1fa\U1f1f8') |> c()
+    } else if (length(x@traderjoes)) {
+      style_hyperlink(url = x@traderjoes |> sprintf(fmt = 'https://www.traderjoes.com/home/products/pdp/%s'), text = 'Trader Joe\'s\U1f1fa\U1f1f8') |> c()
+    } else if (length(x@tsemporium)) {
+      style_hyperlink(url = x@tsemporium |> sprintf(fmt = 'https://www.tsemporium.com/en_us/xproduct/index/index/s/%s'), text = 'Tak Shing Hong\u5fb7\u6210\u884c\U1f1fa\U1f1f8') |> c()
     } else if (length(x@twinings)) {
       style_hyperlink(url = x@twinings |> sprintf(fmt = 'https://twiningsusa.com/products/%s'), text = 'Twinings\U1f1ec\U1f1e7') |> c()
     } else if (length(x@wesson)) {
@@ -597,17 +599,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else character()
   } # manufacturer
   
-  add_store_url_ <- function(x, store, fmt, store_brand, store_name = store_brand) {
-    x_store <- slot(x, name = store)
-    if (!length(x_store)) return(x)
-    store_url <- sprintf(fmt = fmt, x_store)
-    if (!length(x@brand)) {
-      if (is.na(store_brand)) stop('must have `store_brand`')
-      x@brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
-    } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
-    slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
-    return(x)
-  }
   x <- x |>
     add_store_url_(store = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
     add_store_url_(store = 'amazon', fmt = 'https://www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon') |>
@@ -621,7 +612,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_store_url_(store = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club') |>
     add_store_url_(store = 'target', fmt = 'https://www.target.com/p/-/%s', store_brand = NA_character_, store_name = 'Target') |>
     add_store_url_(store = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine') |>
-    add_store_url_(store = 'traderjoes', fmt = 'https://www.traderjoes.com/home/products/pdp/%s', store_brand = 'Trader Joe\'s\U1f1fa\U1f1f8') |>
     add_store_url_(store = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart') |>
     add_store_url_(store = 'wawa', fmt = 'https://order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8') |>
     add_store_url_(store = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant') |>
@@ -1005,3 +995,14 @@ setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), defi
 
 
 
+add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
+  x_store <- slot(x, name = store)
+  if (!length(x_store)) return(x)
+  store_url <- sprintf(fmt = fmt, x_store)
+  if (!length(x@brand)) {
+    if (is.na(store_brand)) stop('must have `store_brand`')
+    x@brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
+  } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
+  slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
+  return(x)
+}

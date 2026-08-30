@@ -136,3 +136,17 @@ Squid_fishSauce <- \() new(
   serving_ml = 15, servingGram = 15, #?
   sodium = 1.46, protein = 2
 )
+
+
+TraderJoes_BalsamicVinaigrette <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Balsamic Vinaigrette',
+  traderjoes = '072499', 
+  usd = 2.99/12,
+  servingGram = 30, # to be confirmed
+  servingTbsp = 2,
+  calorie = 90,
+  fat = 7, 
+  sodium = .055,
+  carbohydrate = 6, sugar = 6, addedSugar = 4
+)
