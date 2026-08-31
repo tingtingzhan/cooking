@@ -62,7 +62,7 @@ porkmash <- \() new(
   coriander_tsp = 1/4,
   paprika_tsp = 1/2,
   sesameOil_Tbsp = 1,
-  greenPeppercornOil_tsp = 1, # 3tsp too much
+  rattanPepperOil_tsp = 1, # 3tsp too much
   review = 'retry!'
 )
 

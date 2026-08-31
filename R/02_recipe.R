@@ -55,7 +55,7 @@
 #' @slot condensedMilk \link[base]{numeric} scalar, weight of Nestle Carnation full-fat \strong{sweetened} condensed milk (in grams)
 #' 
 #' @slot sesameOil,sesameOil_tsp,sesameOil_Tbsp,sesameOil_cup \link[base]{numeric} scalar, weight (in grams) and volume of sesame oil
-#' @slot greenPeppercornOil,greenPeppercornOil_tsp,greenPeppercornOil_Tbsp,greenPeppercornOil_cup \link[base]{numeric} scalar, weight (in grams) and volume of Sichuan green peppercorn oil
+#' @slot rattanPepperOil,rattanPepperOil_tsp,rattanPepperOil_Tbsp,rattanPepperOil_cup \link[base]{numeric} scalar, weight (in grams) and volume of Sichuan rattan peppercorn oil
 #' @slot oil,oil_tsp,oil_Tbsp,oil_cup \link[base]{numeric} scalar, weight (in grams) and volume of vegetable oil
 #' @slot fat,fat_tsp,fat_Tbsp,fat_cup \link[base]{numeric} scalar, weight (in grams) and volume of solid fat
 #' @slot lard,lard_tsp,lard_Tbsp,lard_cup \link[base]{numeric} scalar, weight (in grams) and volume of Epic pork lard
@@ -255,8 +255,8 @@ setClass(Class = 'recipe0', slots = c(
   oil = 'numeric', oil_tsp = 'numeric', oil_Tbsp = 'numeric', oil_cup = 'numeric', 
   sesameOil = 'numeric', sesameOil_tsp = 'numeric', sesameOil_Tbsp = 'numeric', sesameOil_cup = 'numeric',
   
-  greenPeppercornOil = 'numeric',
-  greenPeppercornOil_tsp = 'numeric', greenPeppercornOil_Tbsp = 'numeric', greenPeppercornOil_cup = 'numeric',
+  rattanPepperOil = 'numeric',
+  rattanPepperOil_tsp = 'numeric', rattanPepperOil_Tbsp = 'numeric', rattanPepperOil_cup = 'numeric',
   
   fat = 'numeric', fat_tsp = 'numeric', fat_Tbsp = 'numeric', fat_cup = 'numeric',
   lard = 'numeric', lard_tsp = 'numeric', lard_Tbsp = 'numeric', lard_cup = 'numeric',
@@ -490,7 +490,7 @@ check_gelatin <- \(x) {
 }
 
 # add name to len-1 vector
-addNameLen1 <- function(x, which, name1 = stop('no default!')) {
+addNameLen1 <- \(x, which, name1 = stop('no default!')) {
   nx <- length(slot(x, name = which))
   if (!nx) return(x) # exception
   if (nx == 1L) {
@@ -502,7 +502,7 @@ addNameLen1 <- function(x, which, name1 = stop('no default!')) {
   return(x)
 }
 
-combineVol <- function(x, which, name1 = stop('no default!')) {
+combineVol <- \(x, which, name1 = stop('no default!')) {
   slt0 <- names(getSlots(x = 'recipe0'))
   ._tsp <- paste0(which, '_tsp')
   has_tsp <- ._tsp %in% slt0
@@ -552,7 +552,7 @@ combineVol <- function(x, which, name1 = stop('no default!')) {
   return(x)
 }
 
-meatName <- function(x, animal = stop('')) {
+meatName <- \(x, animal = stop('')) {
   if (!length(slot(x, name = animal))) return(x)
   nm <- names(slot(x, name = animal))
   if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('incomplete meat name')
@@ -563,7 +563,7 @@ meatName <- function(x, animal = stop('')) {
 
 
 
-get_flavor_ <- function(x) {
+get_flavor_ <- \(x) {
   x |>
     lapply(FUN = \(i) eval(call(i))) |>
     vapply(FUN = \(i) {
@@ -630,7 +630,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = \(.Object, ...) {
     addNameLen1(which = 'blackSesame', name1 = 'Greenmax_blackSesame') |>
     combineVol(which = 'flavor') |>
     combineVol(which = 'sesameOil', name1 = 'Kadoya_sesameOil') |>
-    combineVol(which = 'greenPeppercornOil', name1 = 'YouJia_greenPeppercornOil') |>
+    combineVol(which = 'rattanPepperOil', name1 = 'YouJia_rattanPepperOil') |>
     combineVol(which = 'fat') |>
     combineVol(which = 'lard', name1 = 'Epic_lard') |>
     combineVol(which = 'tallow', name1 = 'Epic_tallow') |>
@@ -1172,7 +1172,7 @@ print.recipe0 <- function(x, ...) {
     x@spice, x@curry,
     x@matcha, x@coffee, x@cocoa, x@beet, x@acai, x@creamTartar, x@vanilla,
     x@salt, x@msg, x@NaHCO3, x@Na2CO3, x@bakingPowder,
-    x@sesameOil, x@greenPeppercornOil,
+    x@sesameOil, x@rattanPepperOil,
     x@yeast,
     x@sauce, x@liqueur
   )

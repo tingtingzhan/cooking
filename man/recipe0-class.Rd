@@ -95,7 +95,7 @@ S4 class \linkS4class{recipe} is the executable recipe.
 
 \item{\code{sesameOil,sesameOil_tsp,sesameOil_Tbsp,sesameOil_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of sesame oil}
 
-\item{\code{greenPeppercornOil,greenPeppercornOil_tsp,greenPeppercornOil_Tbsp,greenPeppercornOil_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Sichuan green peppercorn oil}
+\item{\code{rattanPepperOil,rattanPepperOil_tsp,rattanPepperOil_Tbsp,rattanPepperOil_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Sichuan rattan peppercorn oil}
 
 \item{\code{oil,oil_tsp,oil_Tbsp,oil_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of vegetable oil}
 

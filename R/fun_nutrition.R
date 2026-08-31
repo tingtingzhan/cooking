@@ -227,7 +227,7 @@ nutrition.recipe <- function(x) {
     #  new(Class = 'equiv', actual = acid / x@selfRisingFlour, ideal, margin = 1.01)
     #},
     sesameOil = new(Class = 'equiv', actual = x@sesameOil / total_raw),
-    greenPeppercornOil = new(Class = 'equiv', actual = x@greenPeppercornOil / total_raw),
+    rattanPepperOil = new(Class = 'equiv', actual = x@rattanPepperOil / total_raw),
     bakingPowder = new(Class = 'equiv', actual = x@bakingPowder / total_raw),
     NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / total_raw),
     msg = new(Class = 'equiv', actual = x@msg / total_raw),
@@ -283,7 +283,7 @@ nutrition.recipe <- function(x) {
     sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', actual = sugar / total, ideal = devrecipe$sugar(x)) else new(Class = 'equiv'),
     addedSugar = new(Class = 'equiv', actual = addedSugar / total, ideal = devrecipe$addedSugar(x)),
     sesameOil = new(Class = 'equiv', actual = x@sesameOil / total, ideal = devrecipe$sesameOil(x)),
-    greenPeppercornOil = new(Class = 'equiv', actual = x@greenPeppercornOil / total, ideal = devrecipe$greenPeppercornOil(x)),
+    rattanPepperOil = new(Class = 'equiv', actual = x@rattanPepperOil / total, ideal = devrecipe$rattanPepperOil(x)),
     #cholesterol = new(Class = 'equiv', actual = cholesterol / total),
     sodium = new(Class = 'equiv', actual = sodium / total, ideal = devrecipe$sodium(x), ignore = .0001),
     msg = new(Class = 'equiv', actual = x@msg / total),

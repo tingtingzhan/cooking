@@ -63,13 +63,21 @@ Kadoya_sesameOil <- \() new(
   fat = 14)
 
 
-YouJia_greenPeppercornOil <- \() new(
+YouJia_rattanPepperOil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = style_hyperlink(text = '\u53cb\u52a0\U1f1e8\U1f1f3', url = 'https://www.youjiafood.com/productinfo.aspx?ContentID=102') |> c(),
-  name = 'Green Peppercorn Oil', alias = '\u85e4\u6912\u6cb9',
+  youjia = 'green-pepper-oil-210ml-1',
+  name = 'Rattan Pepper Oil', alias = '\u85e4\u6912\u6cb9',
   usd = 4.99/250*15,
   servingGram = 14, servingTbsp = 1, fat = 14)
 
+YaoMaZi_rattanPepperOil <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]],
+  yaomazi = 'news-productshow-id-153',
+  name = 'Rattan Pepper Oil', alias = '\u85e4\u6912\u6cb9',
+  usd = 4.99/250*15,
+  servingGram = 14, servingTbsp = 1, fat = 14)
+
+# https://www.yaomazi.com/news-productshow-id-153
 
 
 Epic_lard <- \() new(

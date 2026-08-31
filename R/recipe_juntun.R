@@ -70,7 +70,7 @@ juntun_filling <- \() new(
   whitePepper_tsp = .5,
   ginger_tsp = .5,
   coriander_tsp = 1/4,
-  greenPeppercornOil_Tbsp = 1, # perfect numbness!!
+  rattanPepperOil_Tbsp = 1, # perfect numbness!!
   salt_tsp = .5,
   instruction = c(
     'Use KitchenAid meat grinder, not meat chopper!'

@@ -727,7 +727,7 @@ if (FALSE) {
     meatmash =, shrimpfillCantonese =, beeffillLeeKumKee =, porkfill =, meatball = .013,
     NA_real_)
   
-  greenPeppercornOil <- \(x) switch(
+  rattanPepperOil <- \(x) switch(
     class(x), 
     beeffillLeeKumKee = .0015, # tested!
     porkfill = .004,
@@ -759,7 +759,7 @@ if (FALSE) {
     'acai',
     'starch',
     'sesameOil',
-    'greenPeppercornOil',
+    'rattanPepperOil',
     
     c(outer(X = c('addedWater', 'fat', 'salt', 'eggYolk', 
                   'matcha', 'beet', 'acai', 'blackSesame', 

@@ -25,7 +25,7 @@ marinade <- \() new(
   Class = 'marinade', alias_flavor = '', # to suppress automatic `alias_flavor`
   salt = 20,
   sauce = c(LeeKumKee_5spiceMarinade = 150),
-  greenPeppercornOil = 15,
+  rattanPepperOil = 15,
   spice = c(TonHsing_marinadespice = 12.5),
   pros = 'I love!', date = as.Date('2024-06-22'))
 

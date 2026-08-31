@@ -41,7 +41,7 @@ setClass(Class = 'porkfill', contains = 'recipe', prototype = prototype(
 porkfill <- \() new(
   Class = 'porkfill',
   pork = c(tenderloin = 500, belly = 500), # tiny too fat
-  greenPeppercornOil_tsp = 1, sesameOil_Tbsp = 1,
+  rattanPepperOil_tsp = 1, sesameOil_Tbsp = 1,
   whitePepper_tsp = 1, ginger_tsp = 1, 
   coriander_tsp = 1/4, # 1/2 a tiny tiny too strong
   sauce = c(
@@ -127,7 +127,7 @@ salmonfill <- \() new(
   ginger_tsp = 1/4,
   whitePepper_tsp = 1/2,
   sesameOil_Tbsp = 1,
-  greenPeppercornOil_tsp = 1/2,
+  rattanPepperOil_tsp = 1/2,
   review = c(
     'Not enough gelatin. Texture not right',
     'Effie loves though!'

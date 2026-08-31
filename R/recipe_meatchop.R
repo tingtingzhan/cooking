@@ -41,7 +41,7 @@ setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
   paprika_tsp = 1/2, # from my porkmash()
   spice5_tsp = 1/4, # from my porkmash()
   sesameOil_Tbsp = 1, # from my porkmash()
-  greenPeppercornOil_tsp = 2
+  rattanPepperOil_tsp = 2
 ))
 
 #' @rdname meatchop-class
@@ -68,7 +68,7 @@ beefchop_stew <- \() new(
   beef = c(stew = 1190),
   waterLost = 270,
   oil_tsp = c(Wegmans_vegetable = 4),
-  greenPeppercornOil = 1.75, 
+  rattanPepperOil = 1.75, 
   sesameOil_tsp = 1.5,
   sauce = c(
     LeeKumKee_5spiceMarinade = 30,

@@ -129,7 +129,7 @@ if (FALSE) {
     sugar = c(Domino_granulated = 10*500),
     salt = 5*500,
     msg = 1*500,
-    greenPeppercornOil = 3*50, # cannot find szechuan peppercorn powder
+    rattanPepperOil = 3*50, # cannot find szechuan peppercorn powder
     spice = c(
       SimplyOrganic_5spice = 3*50,
       McCormick_whitePepper = 3*50,

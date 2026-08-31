@@ -210,7 +210,11 @@ Nutrition information.
 
 \item{\code{whistlepigwhiskey}}{\link[base]{character} scalar}
 
+\item{\code{yaomazi}}{\link[base]{character} scalar}
+
 \item{\code{yogi}}{\link[base]{character} scalar}
+
+\item{\code{youjia}}{\link[base]{character} scalar}
 
 \item{\code{machine}}{\link[base]{function}}
 

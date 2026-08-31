@@ -128,7 +128,9 @@ setClass(Class = 'extra', slots = c(
 #' @slot twinings \link[base]{character} scalar
 #' @slot wesson \link[base]{character} scalar
 #' @slot whistlepigwhiskey \link[base]{character} scalar
+#' @slot yaomazi \link[base]{character} scalar
 #' @slot yogi \link[base]{character} scalar
+#' @slot youjia \link[base]{character} scalar
 #' 
 #' 
 # @slot machine \link[base]{character} scalar or \link[base]{vector}, machine(s) used
@@ -292,7 +294,9 @@ setClass(Class = 'nutrition', slots = c(
   twinings = 'character',
   wesson = 'character',
   whistlepigwhiskey = 'character',
+  yaomazi = 'character',
   yogi = 'character',
+  youjia = 'character',
   
   machine = 'function', # should be deprecated
   
@@ -729,10 +733,20 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         sprintf(fmt = 'https://www.purewesson.com/products/%s') |> 
         style_hyperlink(url = _, text = 'Wesson\U1f1fa\U1f1f8') |> 
         c()
+    } else if (length(x@yaomazi)) {
+      x@yaomazi |> 
+        sprintf(fmt = 'https://www.yaomazi.com/%s') |>
+        style_hyperlink(url = _, text = '\u5e7a\u9ebb\u5b50\U1f1e8\U1f1f3') |> 
+        c()
     } else if (length(x@yogi)) {
       x@yogi |> 
         sprintf(fmt = 'https://www.yogi-life.com/en-US/product/%s') |>
         style_hyperlink(url = _, text = 'Yogi\U1f1fa\U1f1f8') |> 
+        c()
+    } else if (length(x@youjia)) {
+      x@youjia |> 
+        sprintf(fmt = 'https://youjiaflavors.com/products/%s') |>
+        style_hyperlink(url = _, text = '\u53cb\u52a0\U1f1e8\U1f1f3') |> 
         c()
     } else character()
   } # manufacturer

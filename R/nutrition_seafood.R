@@ -2,7 +2,7 @@
 
 salmonSashimi <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = '\u9bad\u523a\u8eab Alpine King Salmon, Sashimi',
+  name = '\u9bad \u523a\u8eab Alpine King Salmon, Sashimi',
   wegmans = 260546L, usd = 43/454*100,
   servingGram = 113, 
   water = 113-24-1-21 - 2,
@@ -11,7 +11,7 @@ salmonSashimi <- \() new(
 
 ahiTunaSashimi <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = '\u9baa\u523a\u8eab Ahi(Bigeye) Tuna, Sashimi',
+  name = '\u9baa \u523a\u8eab Ahi(Bigeye) Tuna, Sashimi',
   wegmans = 30372L, usd = 43/454*100,
   servingGram = 113,
   water = 113-2-27 - 2,
@@ -19,7 +19,7 @@ ahiTunaSashimi <- \() new(
 
 yellowtailSashimi <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = '\u9c24\u523a\u8eab Yellowtail, Sashimi',
+  name = '\u9c24 \u523a\u8eab Yellowtail, Sashimi',
   wegmans = 260467L, usd = 43/454*100,
   servingGram = 113,
   water = 113-6-26 - 2,

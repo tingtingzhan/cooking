@@ -117,7 +117,7 @@ Cooked percentage ..
 
 \item{\code{sesameOil}}{\linkS4class{equiv}}
 
-\item{\code{greenPeppercornOil}}{\linkS4class{equiv}}
+\item{\code{rattanPepperOil}}{\linkS4class{equiv}}
 
 \item{\code{cholesterol}}{\linkS4class{equiv}}
 

@@ -61,7 +61,7 @@ setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototy
   # dog no diarrhea, but a little too fat for me
   # also, 100g water a little too dry!!!
   
-  greenPeppercornOil = 2, 
+  rattanPepperOil = 2, 
   sesameOil_tsp = 3,
   
   # add next time!!
