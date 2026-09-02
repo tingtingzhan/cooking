@@ -136,7 +136,7 @@
 #' @slot beet,beet_tsp,beet_Tbsp,beet_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic beet root powder
 #' @slot acai,acai_tsp,acai_Tbsp,acai_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic acai root powder
 #' @slot creamTartar,creamTartar_tsp,creamTartar_Tbsp,creamTartar_cup ..
-#' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of Nescafe Tasters Choice Decaf Medium Roast
+#' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of `superior = 'NescafeGold_blonde'`
 #' 
 #' @slot pork \link[base]{numeric} vector, weight of one or more cuts of pork (in grams)
 #' @slot beef \link[base]{numeric} vector, weight of one or more cuts of beef (in grams)
@@ -665,7 +665,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = \(.Object, ...) {
     combineVol(which = 'yeast', name1 = 'Fleischmanns_instant') |>
     combineVol(which = 'matcha', name1 = 'Ippodo_ikuyo') |>
     combineVol(which = 'cocoa', name1 = 'KingArthur_Bensdorp') |>
-    combineVol(which = 'coffee', name1 = 'NescafeGold_espresso_decaf') |> 
+    combineVol(which = 'coffee', name1 = 'NescafeGold_blonde') |> 
     combineVol(which = 'beet', name1 = 'Wegmans_beet') |>
     combineVol(which = 'acai', name1 = 'Wegmans_acai') |>
     combineVol(which = 'creamTartar', name1 = 'McCormick_creamTartar') |>

@@ -8,7 +8,7 @@ fauxReo <- \() new(
   portion = c(cookie = 26),
   sugar = 50,
   oil = c(Wegmans_corn = 50),
-  coffee_tsp = c(NescafeGold_espresso_blonde = 1),
+  coffee_tsp = c(1),
   iceWater = 25, # add gradually!!
   breadFlour = 180,
   cocoa = c(KingArthur_blackCocoa = 64))
@@ -20,7 +20,7 @@ KingArthur_fauxReo <- \() new(
   sugar = 223,
   butter = 170,
   salt_tsp = 1/2,
-  coffee_tsp = c(NescafeGold_espresso_blonde = 1),
+  coffee_tsp = c(1),
   egg_pc = 1, 
   iceWater = 14,
   vanilla_tsp = 1,

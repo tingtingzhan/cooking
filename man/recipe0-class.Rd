@@ -223,7 +223,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{creamTartar,creamTartar_tsp,creamTartar_Tbsp,creamTartar_cup}}{..}
 
-\item{\code{coffee,coffee_tsp,coffee_Tbsp,coffee_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Nescafe Tasters Choice Decaf Medium Roast}
+\item{\code{coffee,coffee_tsp,coffee_Tbsp,coffee_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of \code{superior = 'NescafeGold_blonde'}}
 
 \item{\code{pork}}{\link[base]{numeric} vector, weight of one or more cuts of pork (in grams)}
 

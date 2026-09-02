@@ -51,7 +51,7 @@ ryeWhisky_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Runamok_ryeWhisky 
 
 #' @rdname kefir-class
 #' @export
-mocaccino_goatKefir <- \() new(Class = 'goatKefir', coffee_tsp = c(NescafeGold_espresso_blonde = 2), cocoa_tsp = c(KingArthur_Bensdorp = 3.25), sugar_tsp = 4.5, pros = 'strong alcohol flavor, interesting!', date = as.Date('2024-05-14'))
+mocaccino_goatKefir <- \() new(Class = 'goatKefir', coffee_tsp = c(2), cocoa_tsp = c(KingArthur_Bensdorp = 3.25), sugar_tsp = 4.5, pros = 'strong alcohol flavor, interesting!', date = as.Date('2024-05-14'))
 
 #' @rdname kefir-class
 #' @export

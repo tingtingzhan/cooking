@@ -17,7 +17,7 @@
 #' @export
 setClass(Class = 'mocaccino', contains = 'drinkmix', prototype = prototype(
   drymilk = c(Carnation = 40),
-  coffee_tsp = c(NescafeGold_espresso_blonde = 4),
+  coffee_tsp = c(4),
   cocoa_tsp = c(KingArthur_Bensdorp = 8),
   sugar_tsp = 2.5 # well tested!!
 ))

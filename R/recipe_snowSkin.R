@@ -97,7 +97,7 @@ cocoa_snowSkin <- \() new(
 #' @export
 coffee_snowSkin <- \() new(
   Class = 'snowSkin',
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.75),
+  coffee_Tbsp = c(1.75),
   review = 'try')
 
 #' @rdname snowSkin-class

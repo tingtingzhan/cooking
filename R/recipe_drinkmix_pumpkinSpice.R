@@ -26,7 +26,7 @@ setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prot
 pumpkinSpiceLatte <- \() new(
   Class = 'pumpkinSpiceLatteMix',
   drymilk = c(Carnation = 40),
-  coffee_Tbsp = c(NescafeGold_espresso_blonde = 1.5),
+  coffee_Tbsp = c(1.5),
   brownSugar_Tbsp = 1,
   pumpkin = 70,
   pumpkinSpice_tsp = 1/4,

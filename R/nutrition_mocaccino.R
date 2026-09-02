@@ -131,7 +131,7 @@ Pillsbury_mocha <- \() new(
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   spice_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5, # didnt say confectioners or granulated
-  coffee_cup = c(NescafeGold_espresso_blonde = 3/4),
+  coffee_cup = c(3/4),
   cocoa_cup = 3/4)
 
 
