@@ -2,11 +2,8 @@
 #' @title Yuen Yeung Latte and Coconut Latte
 #' 
 #' @examples
-#' diagnose(
-#'  caffeCoconut,
-#'  caffeCoconut_Luckin,
-#'  caffeCoconut_FreeNow0sugar 
-#' )
+#' yuenyeungCoconut()
+#' 
 #' @name yuenyeungCoconut-class
 #' @export
 setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(

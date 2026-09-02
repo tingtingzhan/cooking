@@ -2,23 +2,21 @@
 #' @title Caffe Coconut
 #' 
 #' @examples
-#' diagnose(
-#'  caffeCoconut,
-#'  caffeCoconut_Luckin,
-#'  caffeCoconut_FreeNow0sugar 
-#' )
+#' caffeCoconut()
 #' @name caffeCoconut-class
 #' @export
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   alias_class = '\u751f\u6930\u62ff\u94c1',
-  drymilk = c(Carnation = 10),
-  coffee_tsp = c(1),
-  cocoa_tsp = c(KingArthur_Bensdorp = .25),
-  Stanley14 = Stanley14(treatment = c(
-    'add hot water',
-    'add all powders, whisk smooth',
-    'add barista coconut'
-  ))
+  drymilk_Tbsp = 1,
+  drymilk_tsp = 1,
+  coffee_Tbsp = .5,
+  cocoa_tsp = c(KingArthur_Bensdorp = .25)#,
+  #Stanley14 = Stanley14(treatment = c(
+  #  'add hot water',
+  #  'add all powders, whisk smooth',
+  #  'add barista coconut'
+  #))
+  # now using owala 12oz
 ))
 
 
@@ -27,37 +25,13 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
 caffeCoconut <- \() new(
   Class = 'caffeCoconut', 
   alias_flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 180), # was 225
-  water80 = 260, # was 215
-  #date = as.Date('2025-01-28'), # was
-  review = 'try'
+  coconut = c(Freenow_coconutBarista = 115),
+  water95 = 325, # 596 - 272
+  date = as.Date('2026-09-02'), # was
+  review = 'been drinking for >1yr'
   )
 
 
-
-
-#' @rdname caffeCoconut-class
-#' @export
-caffeCoconut_FreeNow0sugar <- \() new(
-  Class = 'caffeCoconut', 
-  alias_flavor = 'FreeNow Zero-Sugar',
-  coconut = c(Freenow_coconutBarista_0sugar = 225),
-  water80 = 215,
-  date = as.Date('2025-01-24'),
-  cons = 'too sweet for me',
-  pros = c('almost tastes the same as commercial version!'))
-
-
-
-#' @rdname caffeCoconut-class
-#' @export
-caffeCoconut_Luckin <- \() new(
-  Class = 'caffeCoconut', 
-  alias_flavor = 'Luckin',
-  coconut = c(Luckin_coconutmilk = 225+25),
-  water80 = 215-25,
-  date = as.Date('2025-01-28'),
-  cons = c('too sweet', 'taste not enough fat'))
 
 
 

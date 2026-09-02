@@ -15,9 +15,6 @@ yuenyeungCoconut_summer()
 Yuen Yeung Latte and Coconut Latte
 }
 \examples{
-diagnose(
- caffeCoconut,
- caffeCoconut_Luckin,
- caffeCoconut_FreeNow0sugar 
-)
+yuenyeungCoconut()
+
 }

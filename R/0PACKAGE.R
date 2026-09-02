@@ -63,7 +63,7 @@ if (FALSE) {
       .08
     } else .035, 
     marinade = .04,
-    caffeCoconut = .04,
+    caffeCoconut = .02,
     caffeLatte_ = .04, 
     matchaLatte_ = .04, # perfect! 2024 late summer
     tiramisu_ = .045,
@@ -150,7 +150,8 @@ if (FALSE) {
   
   drymilk <- \(x) switch(
     class(x), 
-    caffeCoconut =, yuenyeungCoconut = .02, 
+    caffeCoconut = .015, 
+    yuenyeungCoconut = .02, 
     ricepaste = .025,
     riceMousse = {
       if (all(grepl('Rice$', names(x@flavor)))) .035 else .05
@@ -208,7 +209,7 @@ if (FALSE) {
     snowSkin = .015, 
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
-    caffeCoconut =, yuenyeungCoconut = .025,
+    caffeCoconut =, yuenyeungCoconut = .016,
     wheatBao = .028,
     matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
@@ -370,7 +371,7 @@ if (FALSE) {
   
   coffee <- \(x) switch(
     class(x), 
-    caffeCoconut =, yuenyeungCoconut = .0022,
+    caffeCoconut =, yuenyeungCoconut = .0065,
     mocaccino_ = .006, 
     tiramisu_ = .008,
     goatKefir = if (length(x@cocoa)) .009 else NA_real_, # forgot if this is tested or hypothetical

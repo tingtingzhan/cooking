@@ -4,23 +4,13 @@
 \name{caffeCoconut-class}
 \alias{caffeCoconut-class}
 \alias{caffeCoconut}
-\alias{caffeCoconut_FreeNow0sugar}
-\alias{caffeCoconut_Luckin}
 \title{Caffe Coconut}
 \usage{
 caffeCoconut()
-
-caffeCoconut_FreeNow0sugar()
-
-caffeCoconut_Luckin()
 }
 \description{
 Caffe Coconut
 }
 \examples{
-diagnose(
- caffeCoconut,
- caffeCoconut_Luckin,
- caffeCoconut_FreeNow0sugar 
-)
+caffeCoconut()
 }
