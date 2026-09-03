@@ -13,21 +13,18 @@ ws_justify(x)
 The function \code{\link[=ws_justify]{ws_justify()}} returns a \link[base]{character} \link[base]{vector}.
 }
 \description{
-Padded Whitespace for Left/Right Justification
-}
-\note{
-See the code of \link[base]{format.default}: the operation is determined
-by \link[base]{mode} of \code{x}.
+Padded whitespace for left/right justification.
 }
 \examples{
 ws_justify(c('a', 'abc', 'ab'))
 ws_justify(matrix(c('a', 'abc', 'ab', 'abcd'), nrow = 2L))
 
 (x = c('apple', 'tea\U1f375', '\U1f1fa\U1f1f8 and \U1f1e8\U1f1e6'))
-nchar_width(x)
 paste0(ws_justify(x), x) |> cat(sep = '\n')
-(x1 = stringi::stri_dup(x, times = 20L))
-nchar_width(x1)
+(x1 = stringi::stri_dup(x, times = 10L))
 paste0(ws_justify(x1), x1) |> cat(sep = '\n')
 
+}
+\seealso{
+\link[base]{format.default}
 }

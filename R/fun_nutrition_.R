@@ -13,7 +13,8 @@
 #' @export
 nutrition_ <- function(..., dots = list(...)) {
   
-  dots <- dots |> lapply(FUN = nutrition)
+  dots <- dots |> 
+    lapply(FUN = nutrition)
   
   ret <- dots |>
     lapply(FUN = \(v) {

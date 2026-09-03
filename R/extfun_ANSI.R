@@ -46,21 +46,18 @@ nchar_width <- \(x) {
 #' @title Print \link[base]{matrix} with ANSI Escape Sequences
 #' 
 #' @description
-#' Print \link[base]{matrix} with ANSI escape sequences in the body
-#' and/or \link[base]{dimnames}.
+#' Print \link[base]{matrix} with ANSI escape sequences in the body and/or \link[base]{dimnames}.
 #' 
 #' @param x \link[base]{character} \link[base]{matrix}
 #' 
 #' @returns
-#' The function [print_ANSI_matrix] does not have a returned value.
+#' The function [print_ANSI_matrix()] does not have a returned value.
 #' 
 #' @seealso `colorDF::colorDF`
 #' 
 #' @importFrom cli ansi_strip
 #' @export
 print_ANSI_matrix <- function(x) {
-  
-  # does not work well with 'nutrition_'
   
   if (!is.matrix(x) || !is.character(x)) stop('only dealing with \'character\' \'matrix\', for now')
   
@@ -91,9 +88,6 @@ print_ANSI_matrix <- function(x) {
   }
   
   rnm_prt <- if (length(rnm)) {
-    if (FALSE) {
-      paste0(rnm, ws_justify(rnm))
-    } # to check if [ws_justify] is correct
     paste0(rnm_ANSI, ws_justify(rnm))
   } # else NULL
   
@@ -113,11 +107,12 @@ print_ANSI_matrix <- function(x) {
 
 #' @title Padded Whitespace for Left/Right Justification
 #' 
+#' @description
+#' Padded whitespace for left/right justification.
+#' 
 #' @param x an R object of \link[base]{mode} \link[base]{character}
 #' 
-#' @note
-#' See the code of \link[base]{format.default}: the operation is determined
-#' by \link[base]{mode} of `x`.
+#' @seealso \link[base]{format.default}
 #' 
 #' @returns
 #' The function [ws_justify()] returns a \link[base]{character} \link[base]{vector}.
@@ -128,7 +123,7 @@ print_ANSI_matrix <- function(x) {
 #' 
 #' (x = c('apple', 'tea\U1f375', '\U1f1fa\U1f1f8 and \U1f1e8\U1f1e6'))
 #' paste0(ws_justify(x), x) |> cat(sep = '\n')
-#' (x1 = stringi::stri_dup(x, times = 20L))
+#' (x1 = stringi::stri_dup(x, times = 10L))
 #' paste0(ws_justify(x1), x1) |> cat(sep = '\n')
 #' 
 #' @importFrom stringi stri_dup

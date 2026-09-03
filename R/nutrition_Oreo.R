@@ -15,12 +15,12 @@ if (FALSE) {
 }
 
 Nabisco_waferOreo <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], amazon = 'B07H9V7Q8S',
+  Class = 'nutrition', call = match.call()[[1L]], 
+  amazon = 'B07H9V7Q8S', webstaurant = '565297100',
   brand = 'Nabisco', name = 'Oreo Wafers',
   servingGram = 31, 
   calorie = 140,
   fat = 4.5, sodium = .17, carbohydrate = 23, sugar = 9, protein = 2)
-# https://www.webstaurantstore.com/nabisco-23-1-lb-oreo-3-ice-cream-wafers/565297100.html
 
 # Nabisco_crumbOreo, amazon = 'B07HBSRYTN'
   
@@ -35,7 +35,7 @@ Oreo <- \() new(
 
 Oreo_thins <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  oreo = 'oreo-thins-original-cookies', # doesnt work right now
+  oreo = 'oreo-thins-original-cookies',
   name = 'Oreo Thins',
   wegmans = 25409833L, usd = 4.99/12,
   servingGram = 29, 
