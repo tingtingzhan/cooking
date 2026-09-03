@@ -423,6 +423,7 @@ show_endpoint <- function(x) {
 
 
 #' @rdname show_cooking
+#' @importFrom charwidth print_ANSI_matrix
 #' @export
 setMethod(f = show, signature = 'recipeDx', definition = \(object) {
   ret <- format.recipeDx(object)

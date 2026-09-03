@@ -43,6 +43,7 @@ diagnose <- \(...) {
 
 # @param dots a \link[base]{list} of \linkS4class{nutrition}s
 # @param which \link[base]{character} scalar
+#' @importFrom charwidth print_ANSI_matrix
 diagnose_ <- \(dots, which) {
   
   atr <- dots |>

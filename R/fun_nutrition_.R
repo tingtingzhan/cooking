@@ -57,6 +57,7 @@ nutrition_ <- function(..., dots = list(...)) {
   
 }
 
+#' @importFrom charwidth print_ANSI_matrix
 #' @export
 print.nutrition_ <- function(x, ...) {
   

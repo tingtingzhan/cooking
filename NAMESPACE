@@ -326,7 +326,6 @@ export(mocaccino_cheesecake)
 export(mocaccino_goatKefir)
 export(mod_)
 export(mungBean_cookie)
-export(nchar_width)
 export(niangaoNingbo)
 export(noodlelinda)
 export(noodlelinda_KingArthur)
@@ -353,7 +352,6 @@ export(pizzaDough)
 export(porkSpam)
 export(porkchop)
 export(porkmash)
-export(print_ANSI_matrix)
 export(pudding)
 export(pumpkinSpiceLatte)
 export(pumpkin_TangYuan)
@@ -436,7 +434,6 @@ export(wheatBao)
 export(whippedCreamCheese)
 export(whiteSwan_shrimpfill)
 export(wrapperlinda)
-export(ws_justify)
 export(xiaogaojie_adzukiBeanPaste1)
 export(xiaogaojie_adzukiBeanPaste2)
 export(xiaogaojie_cocoa_icecream)
@@ -574,17 +571,7 @@ exportMethods("/")
 exportMethods(show)
 import(cli)
 import(methods)
-importFrom(cli,
-  ansi_string,
-  ansi_strip
-)
+importFrom(charwidth,print_ANSI_matrix)
+importFrom(cli,ansi_string)
 importFrom(scales,label_number)
 importFrom(stats,median.default)
-importFrom(stringi,
-  stri_dup,
-  stri_enc_mark
-)
-importFrom(stringr,
-  boundary,
-  str_split
-)
