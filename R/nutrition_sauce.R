@@ -151,3 +151,39 @@ TraderJoes_BalsamicVinaigrette <- \() new(
   sodium = .055,
   carbohydrate = 6, sugar = 6, addedSugar = 4
 )
+
+
+TraderJoes_jalapenoSauce <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Jalapeno\U0001f336\ufe0f Sauce',
+  traderjoes = '060216',
+  usd = 3.49/10,
+  servingGram = 28, servingTbsp = 2,
+  calorie = 90,
+  fat = 10, 
+  sodium = .11,
+  carbohydrate = 2
+)
+
+TraderJoes_srirachaBBQ <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Sriracha & Roasted Garlic BBQ Sauce',
+  traderjoes = '053799',
+  usd = 3.49/16,
+  servingGram = 36, servingTbsp = 2,
+  calorie = 60,
+  sodium = .2,
+  carbohydrate = 14, sugar = 12, addedSugar = 11
+)
+
+TraderJoes_ThaiGinger <- \() new(
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Thai Sweet Ginger\U1fada Sauce',
+  traderjoes = '068663',
+  usd = 2.49/10,
+  servingGram = 30, servingTbsp = 2, # servingGram is guessed
+  calorie = 50,
+  fat = .5,
+  sodium = .48,
+  carbohydrate = 10, sugar = 8, addedSugar = 7
+)
