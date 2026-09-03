@@ -17,6 +17,8 @@ setClass(Class = 'extra', slots = c(
 
 
 
+#setOldClass('cli_ansi_string')
+
 #' @title \linkS4class{nutrition} Information
 #' 
 #' @description 
@@ -73,6 +75,7 @@ setClass(Class = 'extra', slots = c(
 #' @slot fourC \link[base]{character} scalar
 #' @slot frontiercoop \link[base]{character} scalar
 #' @slot ghirardelli \link[base]{character} scalar
+#' @slot greypoupon \link[base]{character} scalar
 #' @slot godiva \link[base]{character} scalar
 #' @slot haagendazs \link[base]{character} scalar
 #' @slot haitaiusa \link[base]{character} scalar
@@ -187,6 +190,7 @@ setClass(Class = 'extra', slots = c(
 setClass(Class = 'nutrition', slots = c(
   
   brand = 'character',
+  #brand = 'cli_ansi_string',
   
   alias = 'character',
   call = 'language',
@@ -238,6 +242,7 @@ setClass(Class = 'nutrition', slots = c(
   fourC = 'character',
   frontiercoop = 'character',
   ghirardelli = 'character',
+  greypoupon = 'character',
   godiva = 'character',
   haagendazs = 'character',
   haitaiusa = 'character',
@@ -346,7 +351,7 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
-
+#' @importFrom cli ansi_string
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
@@ -411,7 +416,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     ) |> c()
   }
   
-  if (!length(x@brand)) { # manufacturer
+  if (length(x@brand)) {
+    #x@brand <- x@brand |>
+    #  ansi_string()
+  } else { # manufacturer, when !length(x@brand)
     x@brand <- if (length(x@bachans)) {
       x@bachans |> 
         sprintf(fmt = 'https://bachans.com/products/%s') |>
@@ -491,6 +499,11 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       style_hyperlink(url = x@frontiercoop |> sprintf(fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s'), text = 'Frontier Co-op\U1f1fa\U1f1f8') |> c()
     } else if (length(x@ghirardelli)) {
       style_hyperlink(url = x@ghirardelli |> sprintf(fmt = 'https://www.ghirardelli.com/%s'), text = 'Ghirardelli\U1f1fa\U1f1f8') |> c()
+    } else if (length(x@greypoupon)) {
+      x@greypoupon |> 
+        sprintf(fmt = 'https://www.kraftheinz.com/grey-poupon/products/%s') |>
+        style_hyperlink(url = _, text = 'Grey Poupon\U1f1fa\U1f1f8') |> 
+        c()
     } else if (length(x@godiva)) {
       style_hyperlink(url = x@godiva |> sprintf(fmt = 'https://www.godiva.com/%s.html'), text = 'Godiva\U1f1e7\U1f1ea') |> c()
     } else if (length(x@haagendazs)) {

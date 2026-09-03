@@ -80,6 +80,7 @@ WegmansOrganic_coconutFlour <- \() new(
 #' @title Coconut Milk
 #' 
 #' @examples
+#' \dontrun{
 #' diagnose(
 #'  Kara_coconutcream,
 #'  ThaiKitchen_coconutcream,
@@ -97,8 +98,11 @@ WegmansOrganic_coconutFlour <- \() new(
 #'  SoDelicious_coconutmilk,
 #'  CalifiaFarms_coconutmilkwater
 #' )
+#' }
 #' @name coconutmilk
-#' @export
+NULL
+
+
 ThaiKitchen_coconutmilkLite <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
@@ -110,8 +114,6 @@ ThaiKitchen_coconutmilkLite <- \() new(
   fat = 5, sodium = .02, carbohydrate = 1, sugar = 1)
 
 
-#' @rdname coconutmilk
-#' @export
 ThaiKitchen_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/organic-coconut-milk',
@@ -122,8 +124,6 @@ ThaiKitchen_coconutmilk <- \() new(
   calorie = 120,
   fat = 12, sodium = .03, carbohydrate = 2, sugar = 1)
 
-#' @rdname coconutmilk
-#' @export
 ThaiKitchen_coconutcream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   thaikitchen = 'coconut-milk/coconut-cream',
@@ -135,8 +135,6 @@ ThaiKitchen_coconutcream <- \() new(
   fat = 6, carbohydrate = 1, sugar = 1, sodium = .01)
 
 
-#' @rdname coconutmilk
-#' @export
 Kara_coconutcream <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
@@ -153,8 +151,6 @@ Kara_coconutcream <- \() new(
 # coconutmilk fdc water 94.57%
 # fdc = 1097553L
 
-#' @rdname coconutmilk
-#' @export
 Silk_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(url = 'https://silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text = 'Silk\U1f1fa\U1f1f8')), 
@@ -165,8 +161,6 @@ Silk_coconutmilk <- \() new(
   calorie = 40, 
   fat = 4, sodium = .045, carbohydrate = 2)
 
-#' @rdname coconutmilk
-#' @export
 SoDelicious_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
@@ -187,12 +181,10 @@ SoDelicious_coconutmilk <- \() new(
     'almost no coconut flavor'
   ))
 
-#' @rdname coconutmilk
-#' @export
 Freenow_coconutBarista_0sugar <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
-  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
+  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/6.html')),
   yamibuy = '26796422', usd = 6.29/1e3*1e2,
   servingGram = 100, serving_ml = 100, # guess
   calorie = 70,
@@ -201,33 +193,27 @@ Freenow_coconutBarista_0sugar <- \() new(
   superior = 'Freenow_coconutBarista',
   review = 'too sweet (too much sugar alchohol)')
 
-#' @rdname coconutmilk
-#' @export
 Freenow_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
-  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'http://www.freenowmilk.com/col.jsp?id=103')),
+  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/5.html')),
   weee = '89394', usd = 5.49/980*240, 
   servingGram = 240, serving_ml = 240, # guess
   calorie = 110/30*240,
   water = 240 - 15 - 15 - 5,
   fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
-#' @rdname coconutmilk
-#' @export
 Luckin_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u751f\u6930\u6d46',
   brand = c(style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com')),
-  weee = '106361', usd = 4.49/3/600*100, # https://www.sayweee.com/zh/product/weee/106361
+  weee = '106361', usd = 4.49/3/600*100,
   servingGram = 100, serving_ml = 100, # guess
   calorie = 80,
   fat = 5, sodium = .110, carbohydrate = 6, addedSugar = 2, protein = 1,
   superior = 'Freenow_coconutBarista',
   review = 'too sweet')
 
-#' @rdname coconutmilk
-#' @export
 PacificFoods_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
@@ -237,8 +223,6 @@ PacificFoods_coconutBarista <- \() new(
   calorie = 90,
   fat = 5, sodium = .125, carbohydrate = 10, sugar = 9, addedSugar = 8, protein = 1)
 
-#' @rdname coconutmilk
-#' @export
 CalifiaFarms_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
@@ -248,8 +232,6 @@ CalifiaFarms_coconutBarista <- \() new(
   calorie = 80,
   fat = 5, sodium = .110, carbohydrate = 9, sugar = 7, addedSugar = 5, protein = 1)
 
-#' @rdname coconutmilk
-#' @export
 CalifiaFarms_coconutmilkwater <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
@@ -264,8 +246,6 @@ CalifiaFarms_coconutmilkwater <- \() new(
     'almost no coconut flavor'
   ))
 
-#' @rdname coconutmilk
-#' @export
 Dream_coconutBarista <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
@@ -275,8 +255,6 @@ Dream_coconutBarista <- \() new(
   calorie = 90,
   fat = 5, sodium = .140, carbohydrate = 10, addedSugar = 9, protein = 1)
 
-#' @rdname coconutmilk
-#' @export
 CoconutPalm_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
@@ -289,8 +267,6 @@ CoconutPalm_coconutmilk <- \() new(
   fat = 5, sodium = .03, carbohydrate = 17, addedSugar = 17, protein = 1)
 
 
-#' @rdname coconutmilk
-#' @export
 CalifiaFarms_coconutmilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',

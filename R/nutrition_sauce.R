@@ -53,6 +53,7 @@ Bachans_original <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   bachans = 'the-original-japanese-barbecue-sauce',
   name = 'Original Japanese Barbecue Sauce',
+  costco = '100778116',
   servingGram = 19, servingTbsp = 1, calorie = 35,
   sodium = .52, addedSugar = 7)
 
@@ -60,7 +61,7 @@ Bachans_original <- \() new(
 
 GreyPoupon_Dijon <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costco = '100381596',
-  brand = style_hyperlink(text = 'Grey Poupon\U1f1eb\U1f1f7', url = 'https://greypouponmustard.com/products/grey-poupon-french-dijon-mustard-215g') |> c(),
+  greypoupon = '00054400000245',
   name = 'Dijon Mustard',
   servingTsp = 1, servingGram = 5, sodium = .12)
 

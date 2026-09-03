@@ -1,17 +1,13 @@
 
 # matcha of my choice!
 
-#' @title Ippodo
-#' 
-#' @name ippodo
-#' @export
 Ippodo_ikuyo <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha175512', ippodojpn = 'matcha105033', ippodousa = 'ikuyo-100',
   name = 'Ikuyo', alias = '\u5e7e\u4e16\u306e\u6614',
   servingGram = 2, servingTbsp = 2/7, # actual 1Tbsp = 7g
   #servingTsp = 1, # packaging
-  usd = 50/100*2, jpy = 3300/100*2, # global site, shipping excluded
+  usd = 81/100*2, jpy = 6000/100*2, # global site, shipping excluded
   review = c('a cheaper sado-grade matcha I like; use in baking, for now'))
   #review = c(a = 'abc', b = 'abc'))
 
@@ -20,10 +16,6 @@ Ippodo_ikuyo <- \() new(
 # but it's not offered on www.ippodo-tea.co.jp
 # and it does not have a name ???
 
-#' @title Marukyu
-#' 
-#' @name marukyu
-#' @export
 Marukyu_tenju <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1111020c1', name = 'Tenju', alias = '\u5929\u6388',
@@ -56,25 +48,27 @@ Ippodo_sayakaThick <- \() new(
 
 Sencha_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = style_hyperlink(url = 'https://senchanaturals.com/collections/all-products-1/products/organic-emperors-matcha', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(),
+  brand = style_hyperlink(url = 'https://senchanaturals.com/collections/shop-all/products/emperors-matcha-4oz', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(),
   name = 'Emperor\'s Matcha\U1f375',
-  usd = 39.95/73.7*1.5, # 2.6oz package
+  usd = 54.95/120*1.5, # 120g package
   servingGram = 1.5, servingTsp = .5, # on package
   calorie = 5, carbohydrate = 1)
 
 Sencha_everyday_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
+  #brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
+  brand = 'Sencha Naturals\U1f1fa\U1f1f8', # no longer on official website, Sep 2026
   name = '\u62b9\u8336\u7c89 Matcha\U1f375 Powder',
   extra = new(Class = 'extra', water = 4/3), # tested on bao()
   costco = '100705701',
   # usd = 19.95/113*1.5, # official website, Feb 2024
-  usd = 49.99/(3*340)*1.5, # Costco, Feb 2024
+  usd = 54.99/(3*340)*1.5, # Costco, Feb 2024
   servingGram = 1.5, 
   #servingTsp = .5, # on package
   servingTsp = 1.5/7.5*3, # experiment: 1Tbsp = 7.5grams
   calorie = 5, carbohydrate = 1,
-  superior = 'Ippodo_ikuyo'
+  superior = 'Ippodo_ikuyo',
+  review = 'too bitter'
 )
 
 
@@ -91,8 +85,6 @@ maeda_matcha <- \() new(
   servingGram = 2, servingTsp = 1, # packaging, also accurate!!
   usd = 23.24/28*2)
 
-#' @rdname ippodo
-#' @export
 Ippodo_sayaka <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha173512', ippodojpn = 'matcha103644', ippodousa = 'sayaka-100g',
@@ -102,8 +94,6 @@ Ippodo_sayaka <- \() new(
   usd = 75/100*2, jpy = 6000/100*2,
   superior = 'Ippodo_ikuyo')
 
-#' @rdname ippodo
-#' @export
 Ippodo_seiun <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodoglobal = 'matcha102044', ippodojpn = 'matcha102044', ippodousa = 'seiun',
@@ -112,8 +102,6 @@ Ippodo_seiun <- \() new(
   usd = 45/40*2, jpy = 3000/40*2)
 
 
-#' @rdname marukyu
-#' @export
 Marukyu_kiwamiChoan <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1g36020c1', name = 'Kiwami Choan', alias = '\u6975\u9577\u5b89',
@@ -121,8 +109,6 @@ Marukyu_kiwamiChoan <- \() new(
   jpy = 4680/20*2)
 
 
-#' @rdname marukyu
-#' @export
 Marukyu_choan <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1121020c1', name = 'Choan', alias = '\u9577\u5b89',
@@ -130,8 +116,6 @@ Marukyu_choan <- \() new(
   jpy = 3180/20*2,
   superior = 'Marukyu_tenju')
 
-#' @rdname marukyu
-#' @export
 Marukyu_unkaku <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1141020c1', name = 'Unkaku', alias = '\u96f2\u9db4',
@@ -139,8 +123,6 @@ Marukyu_unkaku <- \() new(
   jpy = 1730/20*2,
   superior = 'Marukyu_tenju')
 
-#' @rdname marukyu
-#' @export
 Marukyu_eiju <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1131020c1', name = 'Eiju', alias = '\u6c38\u5bff',
@@ -148,8 +130,7 @@ Marukyu_eiju <- \() new(
   jpy = 2380/20*2,
   superior = 'Marukyu_tenju')
 
-#' @rdname marukyu
-#' @export
+
 Marukyu_kinrin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   marukyu = '1151020c1', name = 'Kinrin', alias = '\u91d1\u8f2a',

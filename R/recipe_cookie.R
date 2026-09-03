@@ -151,7 +151,7 @@ matcha_cookie <- \() new(
   #matcha = c(Ippodo_sayaka = 40), # 
   pastryFlour = 344, 
   sugar = 140, drymilk = 160,
-  pros = 'Lily Wu & Kuangyi Wen like the old recipe with Sencha_everyday_matcha',
+  pros = 'Lily Wu & Kuangyi Wen like the old recipe with Sencha_everyday_matcha', # https://www.costco.com/p/-/sencha-naturals-everyday-matcha-green-tea-powder-3-pack-225-lbs-total/100705701
   review = 'retry with ikuyo')
 
 

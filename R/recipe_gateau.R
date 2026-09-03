@@ -86,7 +86,7 @@ cocoa_gateau_FAIL <- \() new(
 #' @export
 matcha_gateau <- \() new(
   Class = 'gateau',
-  matcha_Tbsp = c(Sencha_everyday_matcha = 3),
+  matcha_Tbsp = 3,
   drymilk = 30,
   sugar = 47,
   review = 'try')

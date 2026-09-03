@@ -11,14 +11,15 @@
 #' 
 #' @importFrom stats median.default
 #' @export
-diagnose <- \(...) { # , dots = list(...)
+diagnose <- \(...) {
   
   # dots <- lapply(dots, FUN = nutrition) # mess up with call later
-  dots <- lapply(as.list(match.call())[-1L], FUN = \(x) {
-    # (x = as.list(match.call())[-1L][[1L]])
-    return(eval(call(name = 'nutrition', x)))
-    do.call(what = 'nutrition', args = list(x)) # seems equivalent
-  })
+  dots <- as.list(match.call())[-1L] |>
+    lapply(FUN = \(x) {
+      # (x = as.list(match.call())[-1L][[1L]])
+      return(eval(call(name = 'nutrition', x)))
+      do.call(what = 'nutrition', args = list(x)) # seems equivalent
+    })
   
   cat('\n')
   'Nutrition\n' |> bg_br_yellow() |> cat()
@@ -40,10 +41,9 @@ diagnose <- \(...) { # , dots = list(...)
   
 }
 
-
-diagnose_ <- function(dots, which) {
-  # @param dots a \link[base]{list} of \linkS4class{nutrition}s
-  # @param which \link[base]{character} scalar
+# @param dots a \link[base]{list} of \linkS4class{nutrition}s
+# @param which \link[base]{character} scalar
+diagnose_ <- \(dots, which) {
   
   atr <- dots |>
     lapply(FUN = attr, which = which, exact = TRUE)
