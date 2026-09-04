@@ -28,7 +28,7 @@ setClass(Class = 'extra', slots = c(
 #' 
 #' @slot name \link[base]{character} scalar, product name
 #' @slot alias \link[base]{character} scalar, product alias
-#' @slot call \link[base]{language}, function name to create this nutrition
+#' @slot call \link[base]{language}, the function name to create this nutrition
 #' @slot name_glue \link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse `cli:::glue_cmd`)
 #' 
 #' @slot suggestion \link[base]{list}
@@ -155,6 +155,7 @@ setClass(Class = 'extra', slots = c(
 #' 
 #' @slot usd \link[base]{numeric} scalar, price (in USD) \strong{per serving}
 #' @slot jpy \link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}
+#' @slot date `'Date'`
 #' @slot cost_ \link[base]{character} scalar, price (in USD) \strong{per serving}, converted from all currencies
 #' @slot calorie \link[base]{numeric} scalar, calories per serving
 #' @slot water \link[base]{numeric} scalar, water (in grams) per serving
@@ -332,6 +333,7 @@ setClass(Class = 'nutrition', slots = c(
   
   usd = 'numeric',
   jpy = 'numeric',
+  date = 'Date',
   cost_ = 'character',
   calorie = 'numeric',
   water = 'numeric',
@@ -344,7 +346,8 @@ setClass(Class = 'nutrition', slots = c(
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
   machine = \(x) NULL,
-  calorie = 0
+  calorie = 0,
+  date = as.Date(NA_character_)
 ))
 
 
@@ -352,6 +355,7 @@ setClass(Class = 'nutrition', slots = c(
 
 
 #' @importFrom cli ansi_string
+#' @importFrom quantmod getQuote
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
@@ -869,33 +873,32 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   }
   
   cost_ <- c(
-    'US$' = if (length(x@usd)) x@usd else NA_real_,
-    'JP\U1f4b4' = if (length(x@jpy)) x@jpy / 150.48 else NA_real_ # quantmod::getQuote('USDJPY=X')
+    'usd' = if (length(x@usd)) x@usd else NA_real_,
+    'JP\U1f4b4' = if (length(x@jpy)) {
+      x@jpy / getQuote('USDJPY=X')$Last 
+    } else NA_real_
   )
   cost_ <- cost_[!is.na(cost_)]
+  if (length(setdiff(names(cost_), 'usd'))) {
+    cost_source <- cost_ |> names() |> sprintf(fmt = '\u21a4%s') 
+    cost_source[names(cost_) == 'usd'] <- ''
+  } else cost_source <- ''
+  cost_txt0 <- sprintf(
+    fmt = 'US %s %s',
+    cost_ |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), 
+    cost_source |> col_cyan() |> style_bold()
+  )
   n_cost_ <- length(cost_)
   if (!n_cost_) {
     x@cost_ <- character()
   } else if (n_cost_ == 1L) {
-    if (names(cost_) == 'US$') {
-      x@cost_ <- paste('US', cost_ |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold())
-    } else {
-      x@cost_ <- paste('US', cost_ |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), sprintf(fmt = '(%s)', names(cost_)))
-      x@usd <- unname(cost_)
-    }
+    x@cost_ <- cost_txt0
+    x@usd <- unname(cost_)
   } else {
-    #cost_source <- sprintf(fmt = '(%s)', names(cost_))
-    #cost_source[cost_source == '(US$)'] <- ''
-    cost_source <- names(cost_)
-    cost_source[cost_source == 'US$'] <- ''
     cost_min <- which.min(cost_)
-    cost_txt0 <- paste('US', 
-                       cost_ |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), 
-                       cost_source |> col_br_red() |> style_bold())
     cost_txt0[cost_min] <- (cost_txt0[cost_min]) |> bg_br_yellow()
-    x@cost_ <- paste(cost_txt0, collapse = '\n')
+    x@cost_ <- cost_txt0
     x@usd <- unname(cost_[cost_min]) # to calculate price in 'recipe'
-    #x@jpy <- numeric() # other currency no use
   }
   
   return(x)
@@ -1036,7 +1039,19 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
     format_vol(x = obj@servingGram, nm = list(obj))
   ) |> cat()
              
-  sprintf(fmt = '%s\n', obj@cost_) |> cat()
+  if (is.na(obj@date)) {
+    #sprintf(fmt = '%s\n', obj@cost_) |> 
+    #  cat()
+    obj@cost_ |>
+      cat(sep = '\n')
+  } else {
+    obj@date |>
+      #as.character() |> # no need
+      make_ansi_style('grey70')() |>
+      sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', obj@cost_, . = _) |> 
+      cat(sep = '\n')
+  }
+  
   if (length(obj@calorie)) cat('Calories', obj@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   cat('\n')
   

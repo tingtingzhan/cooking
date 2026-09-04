@@ -16,7 +16,7 @@ Nutrition information.
 
 \item{\code{alias}}{\link[base]{character} scalar, product alias}
 
-\item{\code{call}}{\link[base]{language}, function name to create this nutrition}
+\item{\code{call}}{\link[base]{language}, the function name to create this nutrition}
 
 \item{\code{name_glue}}{\link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse \code{cli:::glue_cmd})}
 
@@ -243,6 +243,8 @@ Nutrition information.
 \item{\code{usd}}{\link[base]{numeric} scalar, price (in USD) \strong{per serving}}
 
 \item{\code{jpy}}{\link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}}
+
+\item{\code{date}}{\code{'Date'}}
 
 \item{\code{cost_}}{\link[base]{character} scalar, price (in USD) \strong{per serving}, converted from all currencies}
 
