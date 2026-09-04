@@ -69,7 +69,7 @@ porkmash <- \() new(
 
 
 
-tilapiamash <-function() new(
+tilapiamash <- \() new(
   Class = 'meatmash',
   seafood = c(tilapia = 780), pork = c(fat = 220),
   sugar_tsp = 4,

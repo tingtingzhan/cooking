@@ -69,7 +69,7 @@ setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
 ))
 
 
-JoyoungCJA9U_filling <- function(operation) JoyoungCJA9U(
+JoyoungCJA9U_filling <- \(operation) JoyoungCJA9U(
   treatment = c(
     'Cut (chilled) butter in mini chunks. Sprinkle on bottom of stir-frying pan; otherwise batter sticks and burns!',
     'Fold rest of ingredients. Pour into stir-frying pan, on top of sprinkled butter'

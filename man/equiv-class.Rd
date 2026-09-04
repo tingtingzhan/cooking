@@ -16,6 +16,6 @@
 
 \item{\code{margin}}{\link[base]{numeric} scalar, default 1.1}
 
-\item{\code{ignore}}{\link[base]{numeric} scalar, default \code{.Machine$double.eps}}
+\item{\code{tol}}{\link[base]{numeric} scalar, default \code{.Machine$double.eps}}
 }}
 

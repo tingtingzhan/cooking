@@ -11,20 +11,19 @@
 #' 
 #' @slot margin \link[base]{numeric} scalar, default 1.1
 #' 
-#' @slot ignore \link[base]{numeric} scalar, default `.Machine$double.eps`
+#' @slot tol \link[base]{numeric} scalar, default `.Machine$double.eps`
 #' 
-# @name equiv
 #' @name equiv-class
 #' @export
 setClass(Class = 'equiv', slots = c(
   actual = 'numeric',
   ideal = 'numeric',
   margin = 'numeric',
-  ignore = 'numeric'
+  tol = 'numeric'
 ), prototype = prototype(
   ideal = NA_real_,
   margin = 1.1,
-  ignore = .Machine$double.eps
+  tol = .Machine$double.eps
 ))
 
 
@@ -49,11 +48,11 @@ setClass(Class = 'equiv', slots = c(
 #' \url{https://en.wikipedia.org/wiki/Bioequiv}
 #' 
 #' @export
-format.equiv <- function(x, ...) {
+format.equiv <- \(x, ...) {
   if (!(n <- length(x@actual))) return(invisible()) # exception handling
   actual <- sum(x@actual)
   if (is.na(actual)) stop('Slot `@actual` cannot be missing')
-  if (abs(actual) < x@ignore) return(invisible()) # exception handling
+  if (abs(actual) < x@tol) return(invisible()) # exception handling
   
   if (actual < 0) return(invisible())
   # I do not have `@water` for all puree, yet
@@ -354,7 +353,7 @@ setClass(Class = 'uncooked', contains = 'recipeDx', prototype = prototype(
 
 
 #' @export
-format.recipeDx <- function(x, ...) {
+format.recipeDx <- \(x, ...) {
   slt <- names(which(getSlots(class(x)) == 'equiv'))
   equiv_slot <- slt |> lapply(FUN = slot, object = x) # all 'equiv' slots
   fmt_equiv <- equiv_slot |> lapply(FUN = format.equiv)
@@ -392,7 +391,7 @@ format.recipeDx <- function(x, ...) {
 
 
 
-show_endpoint <- function(x) {
+show_endpoint <- \(x) {
   x[x == 'addedWater'] <- '+water'
   x[x == 'addedSugar'] <- '+sugar'
   x[x == 'addedStarch'] <- '+starch'

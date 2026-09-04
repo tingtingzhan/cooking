@@ -13,7 +13,7 @@ setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
 
 #' @rdname yuenyeungCoconut-class
 #' @export
-yuenyeungCoconut <- function() new(
+yuenyeungCoconut <- \() new(
   Class = 'yuenyeungCoconut', 
   #alias_flavor = 'FreeNow',
   coconut = c(Freenow_coconutBarista = 180),
@@ -31,7 +31,7 @@ yuenyeungCoconut <- function() new(
 
 #' @rdname yuenyeungCoconut-class
 #' @export
-yuenyeungCoconut_summer <- function() new(
+yuenyeungCoconut_summer <- \() new(
   Class = 'yuenyeungCoconut', 
   #alias_flavor = 'FreeNow',
   # coconut = c(Freenow_coconutBarista = 560), # was 225*2.5
@@ -66,7 +66,7 @@ yuenyeungCoconut_summer <- function() new(
 
 
 
-yuenyeungCoconut_jelly <- function() new(
+yuenyeungCoconut_jelly <- \() new(
   Class = 'recipe',
   # same water quantity as yuenyeungCoconut_summer()
   # adding gelatin
@@ -93,7 +93,7 @@ yuenyeungCoconut_jelly <- function() new(
 
 
 
-yuenyeungLatte_try2 <- function() new(
+yuenyeungLatte_try2 <- \() new(
   Class = 'recipe',
   drymilk = c(Carnation = 30),
   heavyCream = 10,
@@ -104,7 +104,7 @@ yuenyeungLatte_try2 <- function() new(
   boilingWater = 400
 )
 
-yuenyeungLatte_try1 <- function() new(
+yuenyeungLatte_try1 <- \() new(
   Class = 'recipe',
   drymilk = c(Carnation = 30),
   heavyCream = 10,

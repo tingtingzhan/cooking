@@ -1,7 +1,7 @@
 
 # sponge cake
 
-function() new(
+\() new(
   Class = 'recipe', 
   pastryFlour = 90,
   sugar = 20, # originally 90g

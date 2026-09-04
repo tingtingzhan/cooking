@@ -22,7 +22,7 @@ setClass(Class = 'steamWheatGluten', contains = 'recipe', prototype = prototype(
 ))
 
 
-steamWheatGluten <- function() new(
+steamWheatGluten <- \() new(
   Class = 'steamWheatGluten', 
   water = 120,
   youtube = 'f3lUVR6hJ6Q'

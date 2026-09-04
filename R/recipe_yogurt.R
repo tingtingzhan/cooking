@@ -1,6 +1,6 @@
 
 
-maple_yogurt <- function() new(
+maple_yogurt <- \() new(
   Class = 'recipe',
   yogurt = c(Nancys = 150),
   syrup = c(Stonewall_maple = 10),
@@ -8,7 +8,7 @@ maple_yogurt <- function() new(
 )
 
 
-ryeWhisky_yogurt_fail <- function() new(
+ryeWhisky_yogurt_fail <- \() new(
   Class = 'recipe',
   yogurt = c(Nancys = 200),
   syrup = c(Runamok_ryeWhisky = 45),

@@ -22,7 +22,7 @@ if (FALSE) {
 
 
 
-youtiao <- function() new(
+youtiao <- \() new(
   Class = 'recipe',
   alias_class = '\u6cb9\u6761',
   flour = c(Wegmans_pastry = 250, KingArthur_bread = 250),
@@ -35,7 +35,7 @@ youtiao <- function() new(
   review = 'try'
 )
 
-xiaogaojie_youtiao <- function() new(
+xiaogaojie_youtiao <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u6761', 
   xiaogaojie = 'uRc3F6uwR3E',
   flour = 350,
@@ -46,7 +46,7 @@ xiaogaojie_youtiao <- function() new(
   oil_Tbsp = c(Wegmans_corn = 1)
 )
 
-mathstar_youtiao <- function() new(
+mathstar_youtiao <- \() new(
   Class = 'recipe',
   author = 'MathStar', alias_flavor = '\u6cb9\u6761',
   url = 'https://huaren.us/showtopic.html?topicid=3003916&fid=398',
@@ -60,7 +60,7 @@ mathstar_youtiao <- function() new(
 
 
 
-PinNuo_youtiao1 <- function() new(
+PinNuo_youtiao1 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67611', 
   pino = 'xoFcbox1VDE',
   flour = 500,
@@ -68,7 +68,7 @@ PinNuo_youtiao1 <- function() new(
   egg_pc = 1, butter = 30, water = 250)
 
 
-PinNuo_youtiao2 <- function() new(
+PinNuo_youtiao2 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67612', 
   pino = 'cD2mJYDaXU0',
   flour = 500,
@@ -80,7 +80,7 @@ PinNuo_youtiao2 <- function() new(
   water = 250)
 
 
-PinNuo_youtiao3 <- function() new(
+PinNuo_youtiao3 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67613', 
   pino = '8Af9_PiZx2Q',
   flour = 1000,
@@ -92,7 +92,7 @@ PinNuo_youtiao3 <- function() new(
   oil = c(Wegmans_corn = 60), 
   water = 480)
 
-PinNuo_youtiao4 <- function() new(
+PinNuo_youtiao4 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67614', 
   pino = 'KAUdFDRD8l0',
   flour = 1000,
@@ -101,7 +101,7 @@ PinNuo_youtiao4 <- function() new(
   oil = c(Wegmans_corn = 30), water = 500)
 
 
-PinNuo_youtiao5 <- function() new(
+PinNuo_youtiao5 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67615', 
   pino = 'bKZy7TGnMbE',
   flour = 500,
@@ -111,7 +111,7 @@ PinNuo_youtiao5 <- function() new(
   oil = c(Wegmans_corn = 20), 
   water = 260)
 
-PinNuo_youtiao6 <- function() new(
+PinNuo_youtiao6 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67616', 
   pino = 'YoEO04dWiz0',
   flour = 500,
@@ -122,7 +122,7 @@ PinNuo_youtiao6 <- function() new(
   oil = c(Wegmans_corn = 30), 
   water = 250)
 
-PinNuo_youtiao7 <- function() new(
+PinNuo_youtiao7 <- \() new(
   Class = 'recipe', alias_flavor = '\u6cb9\u67617', 
   pino = 'cv3JhX8NbNs',
   flour = 1000, # white sesame 60g

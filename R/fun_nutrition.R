@@ -6,14 +6,14 @@
 #' 
 #' @name nutrition
 #' @export
-nutrition <- function(x) UseMethod(generic = 'nutrition')
+nutrition <- \(x) UseMethod(generic = 'nutrition')
 
 
 
 #' @rdname nutrition
 #' @export nutrition.character
 #' @export
-nutrition.character <- function(x) {
+nutrition.character <- \(x) {
   if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
     print(x)
     stop('nutrition name must be len-1 character')
@@ -24,7 +24,7 @@ nutrition.character <- function(x) {
 #' @rdname nutrition
 #' @export nutrition.function
 #' @export
-nutrition.function <- function(x) {
+nutrition.function <- \(x) {
   
   cl <- match.call()
   if (is.symbol(cl$x)) {
@@ -44,7 +44,7 @@ nutrition.function <- function(x) {
 #' @rdname nutrition
 #' @export nutrition.recipe0
 #' @export
-nutrition.recipe0 <- function(x) {
+nutrition.recipe0 <- \(x) {
   
   atr0 <- attributes(x)[names(getSlots(x = 'recipe0'))] # [nutrition.recipe0] might be applied to \linkS4class{recipe}
   atr <- atr0[lengths(atr0, use.names = FALSE) > 0L]
@@ -112,7 +112,7 @@ nutrition.recipe0 <- function(x) {
 #' @rdname nutrition
 #' @export nutrition.recipe
 #' @export
-nutrition.recipe <- function(x) {
+nutrition.recipe <- \(x) {
   
   lost <- c('waterLost', 'fatLost', 'sugarLost')
   slt0 <- names(getSlots(x = 'recipe0'))
@@ -268,7 +268,7 @@ nutrition.recipe <- function(x) {
     carbohydrate = new(Class = 'equiv', actual = carbohydrate / total, ideal = devrecipe$carbohydrate(x)),
     fiber = new(Class = 'equiv', actual = fiber / total), #, ideal = devrecipe$carbohydrate(x)
     NaHCO3 = new(Class = 'equiv', actual = x@NaHCO3 / total), # , ideal = devrecipe$NaHCO3(x)
-    fat = new(Class = 'equiv', actual = fat / total, ideal = devrecipe$fat(x), margin = 1.2, ignore = .001),
+    fat = new(Class = 'equiv', actual = fat / total, ideal = devrecipe$fat(x), margin = 1.2, tol = .001),
     #cholesterol = new(Class = 'equiv', actual = cholesterol / total),
     bakingPowder = new(Class = 'equiv', actual = x@bakingPowder / total, ideal = devrecipe$bakingPowder(x)),
     protein = new(Class = 'equiv', actual = protein / total),
@@ -285,7 +285,7 @@ nutrition.recipe <- function(x) {
     sesameOil = new(Class = 'equiv', actual = x@sesameOil / total, ideal = devrecipe$sesameOil(x)),
     rattanPepperOil = new(Class = 'equiv', actual = x@rattanPepperOil / total, ideal = devrecipe$rattanPepperOil(x)),
     #cholesterol = new(Class = 'equiv', actual = cholesterol / total),
-    sodium = new(Class = 'equiv', actual = sodium / total, ideal = devrecipe$sodium(x), ignore = .0001),
+    sodium = new(Class = 'equiv', actual = sodium / total, ideal = devrecipe$sodium(x), tol = .0001),
     msg = new(Class = 'equiv', actual = x@msg / total),
     drymilk = new(Class = 'equiv', actual = drymilk / total, ideal = devrecipe$drymilk(x)),
     tea = new(Class = 'equiv', actual = x@tea / total), # , ideal = devrecipe$tea(x)
@@ -359,7 +359,7 @@ nutrition.recipe <- function(x) {
         puree = new(Class = 'equiv', actual = puree / flour),
         water = new(Class = 'equiv', actual = water / flour, ideal = devrecipe$addedWater2flour(x), margin = 1.01),
         addedStarch = new(Class = 'equiv', actual = starch / flour),
-        fat = new(Class = 'equiv', actual = fat / flour, ideal = devrecipe$fat2flour(x), margin = 1.05, ignore = .01),
+        fat = new(Class = 'equiv', actual = fat / flour, ideal = devrecipe$fat2flour(x), margin = 1.05, tol = .01),
         blackSesame = new(Class = 'equiv', actual = x@blackSesame / flour, ideal = devrecipe$blackSesame2flour(x)),
         eggYolk = new(Class = 'equiv', actual = x@eggYolk / flour, ideal = devrecipe$eggYolk2flour(x)),
         eggWhite = new(Class = 'equiv', actual = x@eggWhite / flour),
@@ -385,7 +385,7 @@ nutrition.recipe <- function(x) {
         gelatin = new(Class = 'equiv', actual = x@gelatin / pastryFlour),
         cornmeal = new(Class = 'equiv', actual = cornmeal / pastryFlour),
         addedStarch = new(Class = 'equiv', actual = starch / pastryFlour),
-        fat = new(Class = 'equiv', actual = fat / pastryFlour, ideal = devrecipe$fat2pastryflour(x), margin = 1.05, ignore = .01),
+        fat = new(Class = 'equiv', actual = fat / pastryFlour, ideal = devrecipe$fat2pastryflour(x), margin = 1.05, tol = .01),
         blackSesame = new(Class = 'equiv', actual = x@blackSesame / pastryFlour, ideal = devrecipe$blackSesame2pastryflour(x)),
         eggYolk = new(Class = 'equiv', actual = x@eggYolk / pastryFlour, ideal = devrecipe$eggYolk2pastryflour(x)),
         eggWhite = new(Class = 'equiv', actual = x@eggWhite / pastryFlour),
@@ -439,7 +439,7 @@ nutrition.recipe <- function(x) {
     water = new(Class = 'equiv', actual = water / glutenFreeFlour, ideal = devrecipe$addedWater2glutenFreeFlour(x), margin = 1.01),
     gelatin = new(Class = 'equiv', actual = x@gelatin / glutenFreeFlour),
     addedStarch = new(Class = 'equiv', actual = starch / glutenFreeFlour),
-    fat = new(Class = 'equiv', actual = fat / glutenFreeFlour, ideal = devrecipe$fat2glutenFreeFlour(x), margin = 1.05, ignore = .01),
+    fat = new(Class = 'equiv', actual = fat / glutenFreeFlour, ideal = devrecipe$fat2glutenFreeFlour(x), margin = 1.05, tol = .01),
     blackSesame = new(Class = 'equiv', actual = x@blackSesame / glutenFreeFlour, ideal = devrecipe$blackSesame2glutenFreeFlour(x)),
     eggYolk = new(Class = 'equiv', actual = x@eggYolk / glutenFreeFlour, ideal = devrecipe$eggYolk2glutenFreeFlour(x)),
     eggWhite = new(Class = 'equiv', actual = x@eggWhite / glutenFreeFlour),
@@ -462,7 +462,7 @@ nutrition.recipe <- function(x) {
     # rice = new(Class = 'equiv', actual = x@riceFlour / riceFlour, ideal = devrecipe$rice2riceflour(x)),
     glutinousRice = new(Class = 'equiv', actual = x@glutinousRiceFlour / riceFlour, ideal = devrecipe$glutinousRice2riceflour(x)),
     gelatin = new(Class = 'equiv', actual = x@gelatin / riceFlour),
-    fat = new(Class = 'equiv', actual = fat / riceFlour, ideal = devrecipe$fat2riceflour(x), ignore = .01),
+    fat = new(Class = 'equiv', actual = fat / riceFlour, ideal = devrecipe$fat2riceflour(x), tol = .01),
     blackSesame = new(Class = 'equiv', actual = x@blackSesame / riceFlour),
     #sugar = new(Class = 'equiv', actual = sugar / riceFlour),
     addedStarch = new(Class = 'equiv', actual = starch / riceFlour, ideal = devrecipe$starch2riceflour(x)),

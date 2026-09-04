@@ -910,13 +910,13 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 
 
 #' @export
-nutrition.default <- function(x) stop('exception handling')
+nutrition.default <- \(x) stop('exception handling')
 
 #' @export
 nutrition.nutrition <- identity
 
 
-gram_per_tsp <- function(x) {
+gram_per_tsp <- \(x) {
   if (!length(x)) return(double())
   
   x1 <- if (is.character(x)) {
@@ -936,7 +936,7 @@ gram_per_tsp <- function(x) {
 }
 
 
-format_pc <- function(object, name) {
+format_pc <- \(object, name) {
   ret <- slot(object, name = name) / eval(call(name))@servingGram
   ret |> 
     sprintf(fmt = '%.3gpcs') |> 
@@ -944,7 +944,7 @@ format_pc <- function(object, name) {
     style_bold()
 }
 
-getTealoose <- function(x) {
+getTealoose <- \(x) {
   # `x` is recipe@teabag, number of tea bags
   if (!length(x)) return(numeric())
   info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
@@ -953,7 +953,7 @@ getTealoose <- function(x) {
   }, pc = x, info = info_)
 }
 
-getTeabag <- function(x) {
+getTeabag <- \(x) {
   # `x` is recipe@tea, weight of loose tea
   if (!length(x)) return(numeric())
   info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
@@ -964,7 +964,7 @@ getTeabag <- function(x) {
 
 
 
-getGelatinLeaf <- function(x) {
+getGelatinLeaf <- \(x) {
   (x/2) |> sprintf(fmt = '%.1f leaves') |> col_br_blue()
 }
 
@@ -973,7 +973,7 @@ getGelatinLeaf <- function(x) {
 
 
 
-format_vol <- function(x, nm = names(x), tol = 1e-6) {
+format_vol <- \(x, nm = names(x), tol = 1e-6) {
   
   if (!length(x)) return(character())
   
@@ -1166,7 +1166,7 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
 
 
 
-format_ingredient_perc <- function(x, name) {
+format_ingredient_perc <- \(x, name) {
   # `x` is \linkS4class{nutrition}
   x_ <- slot(x, name = name)
   if (!length(x_) || (x_ == 0)) return(character())

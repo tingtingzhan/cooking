@@ -134,7 +134,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 })
 
 
-format_minute <- function(x) {
+format_minute <- \(x) {
   # `x` is \link[base]{numeric} \link[base]{vector}
   if (anyNA(x)) stop('do not allow missingness in [format_minute]')
   day <- x %/% (60*24)
@@ -224,7 +224,7 @@ JoyoungDJ06M <- \(...) new(
   ...)
 
 
-JoyoungDJ13U_soymilk <- function(
+JoyoungDJ13U_soymilk <- \(
     treatment = c(
       paste('Soak dry beans', col_br_blue('e.g., soybean, chickpea, mung bean, etc.'), 'overnight in fridge')
     ),
@@ -234,7 +234,7 @@ JoyoungDJ13U_soymilk <- function(
 ) JoyoungDJ13U(treatment = treatment, program = program, waterLost = waterLost, ...)
 
 
-JoyoungDJ06M_soymilk <- function(
+JoyoungDJ06M_soymilk <- \(
     treatment = c(
       paste0('Soak dry beans ', col_br_blue('e.g., soybean, chickpea, mung bean, etc.'), ' overnight in fridge')
     ),
@@ -244,7 +244,7 @@ JoyoungDJ06M_soymilk <- function(
 ) JoyoungDJ06M(treatment = treatment, program = program, waterLost = waterLost, ...)
 
 
-JoyoungDJ13U_cornjuice <- function(
+JoyoungDJ13U_cornjuice <- \(
   program = '\u7389\u7c73\u6c41\u7a0b\u5e8f Corn\U1f33d Juice program, 900ml water line',
   operation = c(
     'Do not use 1300ml water line, cannot push down blades',
@@ -254,7 +254,7 @@ JoyoungDJ13U_cornjuice <- function(
 ) JoyoungDJ13U(program = program, operation = operation, ...)
 
 
-JoyoungCJA9U <- function(
+JoyoungCJA9U <- \(
     program = '\u7206\u7092\u7a0b\u5e8f Stir Fry program',
     ...
 ) new(

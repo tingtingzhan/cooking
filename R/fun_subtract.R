@@ -15,11 +15,11 @@
 #' 
 #' @name subtract
 #' @export
-subtract <- function(object, ...) UseMethod(generic = 'subtract')
+subtract <- \(object, ...) UseMethod(generic = 'subtract')
 
 #' @rdname subtract
 #' @export
-subtract.function <- function(object, ...) {
+subtract.function <- \(object, ...) {
   subtract(object(), ...)
 }
 
@@ -27,7 +27,7 @@ subtract.function <- function(object, ...) {
 
 #' @rdname subtract
 #' @export
-subtract.recipe <- function(object, ...) {
+subtract.recipe <- \(object, ...) {
   
   obj <- object
   txt <- character()
@@ -65,7 +65,7 @@ subtract.recipe <- function(object, ...) {
 
 #' @rdname subtract
 #' @export
-subtract.nutrition <- function(object, ...) {
+subtract.nutrition <- \(object, ...) {
   
   obj <- object
   txt <- character()

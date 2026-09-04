@@ -32,7 +32,7 @@
 #' 
 #' mod_(x, e2 = 48, tol = 1e-6) # yeah!
 #' @export
-mod_ <- function(e1, e2, tol = .Machine$double.eps) {
+mod_ <- \(e1, e2, tol = .Machine$double.eps) {
   z <- e1 %/% e2
   e1. <- e1 %% e2
   id <- which(abs(e1. - e2) < tol) # takes care of NA

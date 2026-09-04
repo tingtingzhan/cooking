@@ -59,17 +59,17 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' except for that function [hotdrink.nutrition()] returns a \linkS4class{nutrition} object.
 #' 
 #' @export
-hotdrink <- function(x, ...) UseMethod(generic = 'hotdrink') 
+hotdrink <- \(x, ...) UseMethod(generic = 'hotdrink') 
 
 #' @rdname drink
 #' @export
-hotdrink.function <- function(x, ...) hotdrink(x = x(), ...)
+hotdrink.function <- \(x, ...) hotdrink(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 
 #' @rdname drink
 #' @export
-hotdrink.drinkmix <- function(
+hotdrink.drinkmix <- \(
     x, 
     water = 70,
     water90 = 560 - 70 - sum(x@pumpkin, x@liqueur, x@heavyCream), 
@@ -98,7 +98,7 @@ hotdrink.drinkmix <- function(
 #' @rdname drink
 #' @export hotdrink.nutrition
 #' @export
-hotdrink.nutrition <- function(x, water80 = stop('Find suggested hot water on packaging'), ...) {
+hotdrink.nutrition <- \(x, water80 = stop('Find suggested hot water on packaging'), ...) {
   x@cost_ <- character()
   x@usd <- sum(x@usd, Wegmans_water()@usd/Wegmans_water()@servingGram * water80)
   x@jpy <- numeric()
@@ -121,16 +121,16 @@ hotdrink.nutrition <- function(x, water80 = stop('Find suggested hot water on pa
 #' The function [frappe] returns a \linkS4class{drink} object.
 #' 
 #' @export
-frappe <- function(x, ...) UseMethod(generic = 'frappe')
+frappe <- \(x, ...) UseMethod(generic = 'frappe')
 
 #' @rdname drink
 #' @export
-frappe.function <- function(x, ...) frappe(x = x(), ...)
+frappe.function <- \(x, ...) frappe(x = x(), ...)
 # `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
 #' @export
-frappe.drinkmix <- function(
+frappe.drinkmix <- \(
     x, 
     ice = 560/2 - sum(x@pumpkin, x@liqueur, x@heavyCream)/2, # 1 US cup, Nutribullet can handle!!
     iceWater = ice,

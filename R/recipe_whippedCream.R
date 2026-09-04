@@ -83,11 +83,11 @@ setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
 
 #' @rdname whippedCream-class
 #' @export
-matcha_whippedCream <- function() new(Class = 'whippedCream', matcha_tsp = 1.5, sugar_tsp = 3.5)
+matcha_whippedCream <- \() new(Class = 'whippedCream', matcha_tsp = 1.5, sugar_tsp = 3.5)
 
 #' @rdname whippedCream-class
 #' @export
-cocoa_whippedCream <- function() new(
+cocoa_whippedCream <- \() new(
   Class = 'whippedCream', 
   cocoa_tsp = c(KingArthur_Bensdorp = 3), 
   sugar_tsp = 4.5)
@@ -172,14 +172,14 @@ setValidity(Class = 'ganache', method = \(object) {
 
 #' @rdname whippedCream-class
 #' @export
-matcha_frosting <- function() new(
+matcha_frosting <- \() new(
   Class = 'frosting', 
   sugar_tsp = 8, matcha_tsp = 3.5, 
   review = 'try')
 
 #' @rdname whippedCream-class
 #' @export
-matcha_ganache <- function() new(
+matcha_ganache <- \() new(
   Class = 'ganache', 
   # sugar = 30, matcha_tsp = 4, # too hard after chilled
   water = 15, sugar = 32, matcha_tsp = 4, # try
@@ -188,7 +188,7 @@ matcha_ganache <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-pumpkin_mascarponeFrosting <- function() new(
+pumpkin_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', 
   pumpkin = 100, 
   #sugar_tsp = 7.5, # was
@@ -199,12 +199,12 @@ pumpkin_mascarponeFrosting <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-pineapple_mascarponeFrosting <- function() new(Class = 'mascarponeFrosting', pineapple = 100, sugar_tsp = 6, pros = 'Effie\'s Signature!')
+pineapple_mascarponeFrosting <- \() new(Class = 'mascarponeFrosting', pineapple = 100, sugar_tsp = 6, pros = 'Effie\'s Signature!')
 
 
 #' @rdname whippedCream-class
 #' @export
-cocoa_frosting <- function() new(
+cocoa_frosting <- \() new(
   Class = 'frosting', 
   alias_flavor = 'keke', 
   sugar_tsp = 13, cocoa_Tbsp = c(KingArthur_Bensdorp = 3), review = 'try')
@@ -212,7 +212,7 @@ cocoa_frosting <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-tiramisuFrosting_Kahlua <- function() new(
+tiramisuFrosting_Kahlua <- \() new(
   Class = 'frosting',
   liqueur_tsp = c(Kahlua_coffee = 5.5),
   sugar_tsp = 4,
@@ -235,13 +235,13 @@ setClass(Class = 'mascarponeSpread', contains = 'mascarponeGanache', prototype =
 
 #' @rdname whippedCream-class
 #' @export
-cocoa_ganache <- function() new(
+cocoa_ganache <- \() new(
   Class = 'ganache',  
   sugar_tsp = 13, cocoa_tsp = c(KingArthur_Bensdorp = 7),
   review = 'try')
 
 
-coffee_ganache <- function() new(
+coffee_ganache <- \() new(
   Class = 'ganache',
   sugar_tsp = 7, coffee_Tbsp = 1,
   review = 'try')
@@ -249,14 +249,14 @@ coffee_ganache <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-durian_ganache <- function() new(
+durian_ganache <- \() new(
   Class = 'ganache', alias_flavor = '\u69b4\u83b2',
   durian = 300, 
   sugar = 10,
   review = 'try')
 
 
-coconut_mascarponeGanache <- function() new(
+coconut_mascarponeGanache <- \() new(
   Class = 'mascarponeGanache', 
   alias_flavor = '\u6930\u5b50\U1f965',
   coconut = c(Freenow_coconutBarista_0sugar = 150),
@@ -267,7 +267,7 @@ coconut_mascarponeGanache <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-tiramisuGanache_Kahlua <- function() new(
+tiramisuGanache_Kahlua <- \() new(
   Class = 'ganache',
   liqueur_Tbsp = c(Kahlua_coffee = 2),
   sugar_tsp = 4.5,
@@ -289,14 +289,14 @@ if (FALSE) {
 
 #' @rdname whippedCream-class
 #' @export
-tiramisuSpread_Kahlua <- function() new(
+tiramisuSpread_Kahlua <- \() new(
   Class = 'mascarponeSpread',
   liqueur_Tbsp = c(Kahlua_coffee = 5),
   review = c('try'))
 
 #' @rdname whippedCream-class
 #' @export
-tiramisuSpread_CafeGranita <- function() new(
+tiramisuSpread_CafeGranita <- \() new(
   Class = 'mascarponeSpread',
   liqueur_Tbsp = c(CafeGranita_coffee = 5),
   review = c('try'))
@@ -308,14 +308,14 @@ tiramisuSpread_CafeGranita <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-pineapple_ganache <- function() new(
+pineapple_ganache <- \() new(
   Class = 'mascarponeGanache', 
   pineapple = 190, sugar_tsp = 5, 
   pros = 'I love!!')
 
 #' @rdname whippedCream-class
 #' @export
-pumpkin_ganache <- function() new(
+pumpkin_ganache <- \() new(
   Class = 'mascarponeGanache',
   pumpkin = 325, sugar_tsp = 11,
   pros = 'Very forgiving: adding pumpkin puree almost do not change the texture!', 
@@ -336,7 +336,7 @@ pumpkin_ganache <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-tiramisu_nytimes <- function() new(
+tiramisu_nytimes <- \() new(
   Class = 'recipe', alias_flavor = 'Tiramisu', 
   eggYolk_pc = 4,
   sugar = 100, 
@@ -349,7 +349,7 @@ tiramisu_nytimes <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-foodandjourneys_mascarponeFrosting <- function() new(
+foodandjourneys_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', author = 'Food & Journeys',
   sugar_cup = c(Domino_10x = 1/3),
   # ▢ 1 vanilla bean, seeded
@@ -358,7 +358,7 @@ foodandjourneys_mascarponeFrosting <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-lifeloveandsugar_mascarponeFrosting <- function() new(
+lifeloveandsugar_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar',
   heavyCream_cup = 1.25,
   sugar_cup = c(Domino_10x = 3/4),
@@ -367,7 +367,7 @@ lifeloveandsugar_mascarponeFrosting <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
+lifeloveandsugar_cocoa_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar, Cocoa',
   heavyCream_cup = 1.25,
   sugar_cup = c(Domino_10x = 1/2),
@@ -377,7 +377,7 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- function() new(
 
 #' @rdname whippedCream-class
 #' @export
-Marcellina_mascarponeFrosting <- function() new(
+Marcellina_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', 
   alias_flavor = 'Marcellina in Cucina',
   heavyCream_cup = 1,
@@ -397,7 +397,7 @@ setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototyp
   
 #' @rdname whippedCream-class
 #' @export
-whippedCreamCheese <- function() new(
+whippedCreamCheese <- \() new(
   Class = 'whippedCreamCheese', 
   water = 40, # needs to experiment!!
   sugar = 12,

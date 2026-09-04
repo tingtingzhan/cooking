@@ -21,7 +21,7 @@ setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
 
 #' @rdname udon-class
 #' @export
-amanda_udon <- function() new(
+amanda_udon <- \() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', alias_flavor = 'Udon', 
   youtube = 'q0gNH9vxiYY',
   flour = 300,
@@ -30,7 +30,7 @@ amanda_udon <- function() new(
 
 #' @rdname udon-class
 #' @export
-JustOne_udon <- function() new(
+JustOne_udon <- \() new(
   Class = 'recipe', alias_flavor = 'Udon', 
   just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
   flour = 200, # 7 oz
@@ -42,7 +42,7 @@ JustOne_udon <- function() new(
 
 #' @rdname udon-class
 #' @export
-Leo_udon <- function() new(
+Leo_udon <- \() new(
   Class = 'recipe', author = 'Leo', alias_flavor = 'Udon', 
   youtube = 'wgj51q9Hlq8',
   flour = 500, # 17.6 oz

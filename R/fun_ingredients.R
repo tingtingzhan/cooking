@@ -66,7 +66,7 @@ sum_by_name <- \(...) {
 #' The function [ratio_by_name] returns a \link[base]{numeric} scalar.
 #' 
 #' @export
-ratio_by_name <- function(e1, e2) {
+ratio_by_name <- \(e1, e2) {
   .Deprecated(msg = 'needs a full re-write')
   if (!(n1 <- length(e1))) stop('exclude in parent function')
   if (!(n2 <- length(e2))) stop('exclude in parent function')

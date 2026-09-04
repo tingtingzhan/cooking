@@ -94,7 +94,7 @@ pumpkin_tortillaOlive <- \() new(Class = 'tortillaOlive', pumpkin = 520, review 
 
 #' @rdname tortilla-class
 #' @export
-tomato_tortillaOlive <- function() new(
+tomato_tortillaOlive <- \() new(
   Class = 'tortillaOlive', 
   tomato = 520,
   review = c('try'))
@@ -102,7 +102,7 @@ tomato_tortillaOlive <- function() new(
 
 #' @rdname tortilla-class
 #' @export
-pumpkin_tortillaLard <- function() new(
+pumpkin_tortillaLard <- \() new(
   Class = 'tortillaLard',
   pumpkin = 520,
   review = 'try')
@@ -110,14 +110,14 @@ pumpkin_tortillaLard <- function() new(
 
 #' @rdname tortilla-class
 #' @export
-tomato_tortillaLard <- function() new(
+tomato_tortillaLard <- \() new(
   Class = 'tortillaLard', 
   tomato = 520,
   review = c('try'))
 
 
 
-xiaogaojie_flatbread <- function() new(
+xiaogaojie_flatbread <- \() new(
   Class = 'recipe', alias_flavor = 'Flatbread',
   flour = 300,
   water = 150+15,

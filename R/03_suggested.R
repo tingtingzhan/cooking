@@ -26,12 +26,12 @@
 #' }
 #' @name suggested
 #' @export
-suggested <- function(object, ...) UseMethod(generic = 'suggested')
+suggested <- \(object, ...) UseMethod(generic = 'suggested')
 
 
 #' @rdname suggested
 #' @export
-suggested.function <- function(object, ...) {
+suggested.function <- \(object, ...) {
   #suggested(object(), ...)
   cl <- match.call()
   if (is.symbol(cl$object)) {
@@ -50,7 +50,7 @@ suggested.function <- function(object, ...) {
   
 #' @rdname suggested
 #' @export
-suggested.nutrition <- function(object, ...) {
+suggested.nutrition <- \(object, ...) {
   suggestion <- object@suggestion
   if (!length(suggestion)) return(invisible())
   flavor <- object@servingGram

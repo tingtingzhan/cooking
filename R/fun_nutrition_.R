@@ -11,7 +11,7 @@
 #' 
 #' @keywords internal
 #' @export
-nutrition_ <- function(..., dots = list(...)) {
+nutrition_ <- \(..., dots = list(...)) {
   
   dots <- dots |> 
     lapply(FUN = nutrition)
@@ -59,7 +59,7 @@ nutrition_ <- function(..., dots = list(...)) {
 
 #' @importFrom charwidth print_ANSI_matrix
 #' @export
-print.nutrition_ <- function(x, ...) {
+print.nutrition_ <- \(x, ...) {
   
   ret0 <- x
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL

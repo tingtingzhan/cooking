@@ -524,7 +524,7 @@ combineVol <- \(x, which, name1 = stop('no default!')) {
     'sourCream', 'yogurt', 'yogurtGreek',
     'syrup'
   )) {
-    add_suffix <- function(x0, which) {
+    add_suffix <- \(x0, which) {
       if (!length(names(x0))) return(x0)
       idx <- !endsWith(names(x0), suffix = paste0('_', which))
       names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
@@ -716,7 +716,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = \(.Object, ...) {
   x@teabag <- numeric()
   
   if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {
-    extraWater <- function(z) sum(z * vapply(names(z), FUN = \(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
+    extraWater <- \(z) sum(z * vapply(names(z), FUN = \(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
     x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@acai)
   }
   x <- x |> 
@@ -1042,7 +1042,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 setMethod(f = show, signature = 'recipe0', definition = \(object) print.recipe0(object))
 
 #' @export
-print.recipe0 <- function(x, ...) {
+print.recipe0 <- \(x, ...) {
   
   y <- nutrition(x = x) # dispatch to [nutrition.recipe0] or [nutrition.recipe]
   
