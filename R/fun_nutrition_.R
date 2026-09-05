@@ -57,7 +57,7 @@ nutrition_ <- \(..., dots = list(...)) {
   
 }
 
-#' @importFrom charwidth print_ANSI_matrix
+#' @importFrom charwidth cat_matrix
 #' @export
 print.nutrition_ <- \(x, ...) {
   
@@ -73,7 +73,7 @@ print.nutrition_ <- \(x, ...) {
     col_label_bin_(FUN = max)
   colnames(ret) <- ret |> colnames() |> show_endpoint()
   
-  ret |> print_ANSI_matrix()
+  ret |> cat_matrix()
   cat('\n')
   return(invisible(ret))
   

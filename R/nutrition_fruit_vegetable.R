@@ -90,7 +90,7 @@ Kirkland_peach <- \() new(
 mango <- \() new( 
   Class = 'nutrition', call = match.call()[[1L]], 
   fdc = 169910L, # water 83.5%
-  brand = 'Ultra Organics', name = '\u8292\u679c(\u6ce5) Mango\U1f96d',
+  brand = 'Ultra Organics', name = '\u8292\u679c Mango\U1f96d',
   costcoBiz = '100370260',
   servingGram = 140, 
   servingCup = 1, # puree density; confirm with experiment!!

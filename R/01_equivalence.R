@@ -422,7 +422,7 @@ show_endpoint <- \(x) {
 
 
 #' @rdname show_cooking
-#' @importFrom charwidth print_ANSI_matrix
+#' @importFrom charwidth cat_matrix
 #' @export
 setMethod(f = show, signature = 'recipeDx', definition = \(object) {
   ret <- format.recipeDx(object)
@@ -432,7 +432,7 @@ setMethod(f = show, signature = 'recipeDx', definition = \(object) {
     style_bold() |>
     bg_br_yellow() |>
     cat()
-  print_ANSI_matrix(ret)
+  cat_matrix(ret)
   cat('\n')
 })
 

@@ -43,7 +43,7 @@ diagnose <- \(...) {
 
 # @param dots a \link[base]{list} of \linkS4class{nutrition}s
 # @param which \link[base]{character} scalar
-#' @importFrom charwidth print_ANSI_matrix
+#' @importFrom charwidth cat_matrix
 diagnose_ <- \(dots, which) {
   
   atr <- dots |>
@@ -72,7 +72,7 @@ diagnose_ <- \(dots, which) {
   
   (new(Class = which)@per) |> sprintf(fmt = '\u214c %s\n') |> style_bold() |> bg_br_yellow() |> cat()
   y <- y3 |> col_label_bin_(FUN = median.default, na.rm = TRUE)
-  y |> print_ANSI_matrix()
+  y |> cat_matrix()
   cat('\n')
   return(invisible(y))
 }

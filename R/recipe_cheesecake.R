@@ -214,12 +214,16 @@ tiramisu_cheesecake <- \() new(
 #' @export
 pumpkin_cheesecake <- \() new(
   Class = 'cheesecake',
-  water = numeric(), 
+  water = numeric(), # remove default water!!
   starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
   pumpkin = 500, brownSugar = 150, 
   pumpkinSpice_tsp = 1.75,
   date = as.Date('2024-12-09'), 
   pros = c('perfect texture', 'perfect flavor'))
+
+
+mango_cheesecake <- \() 'try!!!'
+#https://www.costco.com/p/-/davids-cookies-mango-strawberry-cheesecake-2-count-28-slices-total/100496548?langId=-1
 
 
 tomato_cheesecake <- \() new(
