@@ -337,8 +337,6 @@ nutrition.recipe <- \(x) {
     
   } else if (sum(mix0_wheat_flour > 0) > 1L) {
     
-    #attr(ret, which = 'mixWheatFlour') <- mix0_wheat_flour
-    
     attr(ret, which = 'perMixFlr') <- new(
       Class = 'per', 
       per = 'Mixed Wheat Flour',

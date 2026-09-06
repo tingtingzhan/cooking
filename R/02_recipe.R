@@ -1252,16 +1252,15 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   if (length(y@calorie)) cat('Calories', y@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   cat('\n')
   
-  # need to write a [show] method for \linkS4class{mixWheatFlour}
-  attr_dx <- attributes(y)[c('perRiceFlr', 'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 'perMixFlr', 'perGlutenFreeFlr', 'perCornmeal', 'perCocoa', 'perTea', 'perCreamCheese')]
+  attr_dx <- attributes(y)[c(
+    'perRiceFlr', 'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 'perMixFlr', 
+    'perGlutenFreeFlr', 'perCornmeal', 
+    'perCocoa', 'perTea', 'perCreamCheese',
+    'perServingTexture', 'perServingFlavor'#, 'perRaw'
+  )]
   has_attr_dx <- (lengths(attr_dx) > 0L)
-  attr_dx[has_attr_dx] |> lapply(FUN = show)
-  #if (!any(has_attr_dx)) {
-  y |> attr(which = 'perServingTexture', exact = TRUE) |> show()
-  #} else attr_dx[has_attr_dx] |> lapply(FUN = show)
-  # y |> attr(which = 'perRaw', exact = TRUE) |> show()
-  y |> attr(which = 'perServingFlavor', exact = TRUE) |> show()
-  
+  attr_dx[has_attr_dx] |> 
+    lapply(FUN = show)
   
   if (length(object@portion)) {
     sprintf(

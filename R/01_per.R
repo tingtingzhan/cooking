@@ -1,5 +1,5 @@
 
-# after equiv.R
+# does not have to be after equiv.R :)
 
 
 #' @title \linkS4class{per}
@@ -10,7 +10,7 @@
 #' 
 #' @slot equiv a \link[base]{list} of \linkS4class{equiv} objects
 #' 
-#' @name per-class
+# @name per-class
 #' @export
 setClass(Class = 'per', slots = c(
   per = 'character',
