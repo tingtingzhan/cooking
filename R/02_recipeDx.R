@@ -13,59 +13,8 @@
 #' 
 #' @slot per \link[base]{character} scalar
 #' 
-#' @slot puree \linkS4class{equiv}
-#' @slot eggYolk \linkS4class{equiv}
-#' @slot eggWhite \linkS4class{equiv}
-#' @slot Na2CO3 \linkS4class{equiv}
-#' @slot NaHCO3 \linkS4class{equiv}
-#' @slot bakingPowder \linkS4class{equiv}
-#' @slot salt \linkS4class{equiv}
-#' @slot yeast \linkS4class{equiv}
+#' @slot puree,eggYolk,eggWhite,Na2CO3,NaHCO3,bakingPowder,salt,yeast,flour,breadFlour,pastryFlour,water,addedWater,carbohydrate,fiber,sugar,addedSugar,sodium,protein,drymilk,creamCheese,tea,matcha,beet,ginger,cumin,cilantro,garlic,onion,turmeric,cinnamon,paprika,whitePepper,blackPepper,curry,chiliMix,pumpkinSpice,blackSesame,coconut,cocoa,coffee,acai,fat,sesameOil,rattanPepperOil,cholesterol,addedStarch,gelatin,rice,glutinousRice,cornmeal \linkS4class{equiv} objects
 #' 
-#' @slot flour \linkS4class{equiv}
-#' @slot breadFlour \linkS4class{equiv}
-#' @slot pastryFlour \linkS4class{equiv}
-#' 
-#' @slot water \linkS4class{equiv}
-#' @slot addedWater \linkS4class{equiv}
-#' @slot carbohydrate \linkS4class{equiv}
-#' @slot fiber \linkS4class{equiv}
-#' @slot sugar \linkS4class{equiv}
-#' @slot addedSugar \linkS4class{equiv}
-#' @slot sodium \linkS4class{equiv}
-#' @slot protein \linkS4class{equiv}
-#' @slot drymilk \linkS4class{equiv}
-#' @slot creamCheese \linkS4class{equiv}
-#' @slot tea \linkS4class{equiv}
-#' @slot matcha \linkS4class{equiv}
-#' @slot beet \linkS4class{equiv}
-#' @slot ginger \linkS4class{equiv}
-#' @slot cumin \linkS4class{equiv}
-#' @slot cilantro \linkS4class{equiv}
-#' @slot garlic \linkS4class{equiv}
-#' @slot onion \linkS4class{equiv}
-#' @slot turmeric \linkS4class{equiv}
-#' @slot cinnamon \linkS4class{equiv}
-#' @slot paprika \linkS4class{equiv}
-#' @slot whitePepper \linkS4class{equiv}
-#' @slot blackPepper \linkS4class{equiv}
-#' @slot curry \linkS4class{equiv}
-#' @slot chiliMix \linkS4class{equiv}
-#' @slot pumpkinSpice \linkS4class{equiv}
-#' @slot blackSesame \linkS4class{equiv}
-#' @slot coconut \linkS4class{equiv}
-#' @slot cocoa \linkS4class{equiv}
-#' @slot coffee \linkS4class{equiv}
-#' @slot acai \linkS4class{equiv}
-#' @slot fat \linkS4class{equiv}
-#' @slot sesameOil \linkS4class{equiv}
-#' @slot rattanPepperOil \linkS4class{equiv}
-#' @slot cholesterol \linkS4class{equiv}
-#' @slot addedStarch \linkS4class{equiv}
-#' @slot gelatin \linkS4class{equiv}
-#' @slot rice \linkS4class{equiv}
-#' @slot glutinousRice \linkS4class{equiv}
-#' @slot cornmeal \linkS4class{equiv}
 #' 
 #' @name recipeDx-class
 #' @export
