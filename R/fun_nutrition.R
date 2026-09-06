@@ -205,9 +205,11 @@ nutrition.recipe <- \(x) {
     } # else do nothing
   }
   
-  attr(ret, which = 'uncooked') <- new(
+  attr(ret, which = 'perRaw') <- new(
     # focus on material, *not* on nutrition!!
-    Class = 'uncooked',
+    Class = 'per', 
+    per = 'Raw Material',
+    equiv = list(
     # `Base:Aerator` no longer matters :)
     #base <- sum(atr$gelatin, x@puree, x@water, x@water40, x@boilingWater, x@iceWater, x@dairy, x@flavor)
     #aerator <- sum(x@heavyCream, atr$eggWhite, x@sugar, x@brownSugar)
@@ -259,78 +261,88 @@ nutrition.recipe <- \(x) {
     addedStarch = new(Class = 'equiv', current = starch / total_raw),
     gelatin = new(Class = 'equiv', current = x@gelatin / total_raw)
     # 'Gelatin' = if (atr$gelatin > 0) sprintf(fmt = '%.1f%%', 1e2 * atr$gelatin / total_raw)
-  ) # else NULL
+  ))
   
-  attr(ret, which = 'cookedTexture') <- new(
-    Class = 'cookedTexture',
-    #water = new(Class = 'equiv', current = if (waterCooked / total > .8) NULL else waterCooked / total, target = devrecipe$water(x)),
-    water = new(Class = 'equiv', current = waterCooked / total, target = devrecipe$water(x)),
-    carbohydrate = new(Class = 'equiv', current = carbohydrate / total, target = devrecipe$carbohydrate(x)),
-    fiber = new(Class = 'equiv', current = fiber / total), #, target = devrecipe$carbohydrate(x)
-    NaHCO3 = new(Class = 'equiv', current = x@NaHCO3 / total), # , target = devrecipe$NaHCO3(x)
-    fat = new(Class = 'equiv', current = fat / total, target = devrecipe$fat(x), margin = 1.2, tol = .001),
-    #cholesterol = new(Class = 'equiv', current = cholesterol / total),
-    bakingPowder = new(Class = 'equiv', current = x@bakingPowder / total, target = devrecipe$bakingPowder(x)),
-    protein = new(Class = 'equiv', current = protein / total),
-    addedStarch = new(Class = 'equiv', current = starch / total, target = devrecipe$starch(x)),
-    gelatin = new(Class = 'equiv', current = x@gelatin / total)
-    # 'Gelatin' = if (atr$gelatin > 0) sprintf(fmt = '%.1f%%', 1e2 * atr$gelatin / total)
+  attr(ret, which = 'perServingTexture') <- new(
+    Class = 'per',
+    per = paste0('Serving; ', col_red('Texture Profile')),
+    equiv = list(
+      #water = new(Class = 'equiv', current = if (waterCooked / total > .8) NULL else waterCooked / total, target = devrecipe$water(x)),
+      water = new(Class = 'equiv', current = waterCooked / total, target = devrecipe$water(x)),
+      carbohydrate = new(Class = 'equiv', current = carbohydrate / total, target = devrecipe$carbohydrate(x)),
+      fiber = new(Class = 'equiv', current = fiber / total), #, target = devrecipe$carbohydrate(x)
+      NaHCO3 = new(Class = 'equiv', current = x@NaHCO3 / total), # , target = devrecipe$NaHCO3(x)
+      fat = new(Class = 'equiv', current = fat / total, target = devrecipe$fat(x), margin = 1.2, tol = .001),
+      #cholesterol = new(Class = 'equiv', current = cholesterol / total),
+      bakingPowder = new(Class = 'equiv', current = x@bakingPowder / total, target = devrecipe$bakingPowder(x)),
+      protein = new(Class = 'equiv', current = protein / total),
+      addedStarch = new(Class = 'equiv', current = starch / total, target = devrecipe$starch(x)),
+      gelatin = new(Class = 'equiv', current = x@gelatin / total)
+      # 'Gelatin' = if (atr$gelatin > 0) sprintf(fmt = '%.1f%%', 1e2 * atr$gelatin / total)
+    )
   )
   
-  attr(ret, which = 'cookedFlavor') <- new(
-    Class = 'cookedFlavor',
-    alcohol = new(Class = 'equiv', current = alcohol / total, target = devrecipe$alcohol(x)),
-    sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', current = sugar / total, target = devrecipe$sugar(x)) else new(Class = 'equiv'),
-    addedSugar = new(Class = 'equiv', current = addedSugar / total, target = devrecipe$addedSugar(x)),
-    sesameOil = new(Class = 'equiv', current = x@sesameOil / total, target = devrecipe$sesameOil(x)),
-    rattanPepperOil = new(Class = 'equiv', current = x@rattanPepperOil / total, target = devrecipe$rattanPepperOil(x)),
-    #cholesterol = new(Class = 'equiv', current = cholesterol / total),
-    sodium = new(Class = 'equiv', current = sodium / total, target = devrecipe$sodium(x), tol = .0001),
-    msg = new(Class = 'equiv', current = x@msg / total),
-    drymilk = new(Class = 'equiv', current = drymilk / total, target = devrecipe$drymilk(x)),
-    tea = new(Class = 'equiv', current = x@tea / total), # , target = devrecipe$tea(x)
-    creamCheese = new(Class = 'equiv', current = sum(x@creamCheese) / total, target = devrecipe$creamcheese(x)),
-    matcha = new(Class = 'equiv', current = x@matcha / total, target = devrecipe$matcha(x)),
-    beet = new(Class = 'equiv', current = x@beet / total, target = devrecipe$beet(x)),
-    ginger = new(Class = 'equiv', current = x@ginger / total, target = devrecipe$ginger(x)),
-    cumin = new(Class = 'equiv', current = x@cumin / total),
-    cilantro = new(Class = 'equiv', current = x@cilantro / total),
-    garlic = new(Class = 'equiv', current = x@garlic / total, target = devrecipe$garlic(x)),
-    onion = new(Class = 'equiv', current = x@onion / total), # , target = devrecipe$onion(x)
-    whitePepper = new(Class = 'equiv', current = x@whitePepper / total, target = devrecipe$whitePepper(x)),
-    blackPepper = new(Class = 'equiv', current = x@blackPepper / total), # , target = devrecipe$blackPepper(x)
-    turmeric = new(Class = 'equiv', current = x@turmeric / total), # , target = devrecipe$turmeric(x)
-    cinnamon = new(Class = 'equiv', current = x@cinnamon / total), # , target = devrecipe$cinnamon(x)
-    paprika = new(Class = 'equiv', current = x@paprika / total), # , target = devrecipe$paprika(x)
-    coriander = new(Class = 'equiv', current = x@coriander / total, target = devrecipe$coriander(x)),
-    chiliMix = new(Class = 'equiv', current = x@chiliMix / total),
-    pumpkinSpice = new(Class = 'equiv', current = x@pumpkinSpice / total, target = devrecipe$pumpkinSpice(x)),
-    curry = new(Class = 'equiv', current = x@curry / total),
-    blackSesame = new(Class = 'equiv', current = x@blackSesame / total, target = devrecipe$blackSesame(x)),
-    coconut = new(Class = 'equiv', current = x@coconut / total),
-    cocoa = new(Class = 'equiv', current = x@cocoa / total, target = devrecipe$cocoa(x)),
-    coffee = new(Class = 'equiv', current = x@coffee / total, target = devrecipe$coffee(x)),
-    acai = new(Class = 'equiv', current = x@acai / total, target = devrecipe$acai(x))
+  attr(ret, which = 'perServingFlavor') <- new(
+    Class = 'per',
+    per = paste0('Serving; ', col_red('Flavor Profile')),
+    equiv = list(
+      alcohol = new(Class = 'equiv', current = alcohol / total, target = devrecipe$alcohol(x)),
+      sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', current = sugar / total, target = devrecipe$sugar(x)) else new(Class = 'equiv'),
+      addedSugar = new(Class = 'equiv', current = addedSugar / total, target = devrecipe$addedSugar(x)),
+      sesameOil = new(Class = 'equiv', current = x@sesameOil / total, target = devrecipe$sesameOil(x)),
+      rattanPepperOil = new(Class = 'equiv', current = x@rattanPepperOil / total, target = devrecipe$rattanPepperOil(x)),
+      #cholesterol = new(Class = 'equiv', current = cholesterol / total),
+      sodium = new(Class = 'equiv', current = sodium / total, target = devrecipe$sodium(x), tol = .0001),
+      msg = new(Class = 'equiv', current = x@msg / total),
+      drymilk = new(Class = 'equiv', current = drymilk / total, target = devrecipe$drymilk(x)),
+      tea = new(Class = 'equiv', current = x@tea / total), # , target = devrecipe$tea(x)
+      creamCheese = new(Class = 'equiv', current = sum(x@creamCheese) / total, target = devrecipe$creamcheese(x)),
+      matcha = new(Class = 'equiv', current = x@matcha / total, target = devrecipe$matcha(x)),
+      beet = new(Class = 'equiv', current = x@beet / total, target = devrecipe$beet(x)),
+      ginger = new(Class = 'equiv', current = x@ginger / total, target = devrecipe$ginger(x)),
+      cumin = new(Class = 'equiv', current = x@cumin / total),
+      cilantro = new(Class = 'equiv', current = x@cilantro / total),
+      garlic = new(Class = 'equiv', current = x@garlic / total, target = devrecipe$garlic(x)),
+      onion = new(Class = 'equiv', current = x@onion / total), # , target = devrecipe$onion(x)
+      whitePepper = new(Class = 'equiv', current = x@whitePepper / total, target = devrecipe$whitePepper(x)),
+      blackPepper = new(Class = 'equiv', current = x@blackPepper / total), # , target = devrecipe$blackPepper(x)
+      turmeric = new(Class = 'equiv', current = x@turmeric / total), # , target = devrecipe$turmeric(x)
+      cinnamon = new(Class = 'equiv', current = x@cinnamon / total), # , target = devrecipe$cinnamon(x)
+      paprika = new(Class = 'equiv', current = x@paprika / total), # , target = devrecipe$paprika(x)
+      coriander = new(Class = 'equiv', current = x@coriander / total, target = devrecipe$coriander(x)),
+      chiliMix = new(Class = 'equiv', current = x@chiliMix / total),
+      pumpkinSpice = new(Class = 'equiv', current = x@pumpkinSpice / total, target = devrecipe$pumpkinSpice(x)),
+      curry = new(Class = 'equiv', current = x@curry / total),
+      blackSesame = new(Class = 'equiv', current = x@blackSesame / total, target = devrecipe$blackSesame(x)),
+      coconut = new(Class = 'equiv', current = x@coconut / total),
+      cocoa = new(Class = 'equiv', current = x@cocoa / total, target = devrecipe$cocoa(x)),
+      coffee = new(Class = 'equiv', current = x@coffee / total, target = devrecipe$coffee(x)),
+      acai = new(Class = 'equiv', current = x@acai / total, target = devrecipe$acai(x))
+    )
   )
   
   if (cornmeal) {
     
-    attr(ret, which = 'cornBaker') <- new(
-      Class = 'cornBaker',
-      # water = new(Class = 'equiv', current = water/cornmeal), # depends on `flour` as well
-      flour = new(Class = 'equiv', current = flour/cornmeal, target = devrecipe$flour2cornmeal(x)),
-      breadFlour = new(Class = 'equiv', current = breadFlour/cornmeal, target = devrecipe$breadflour2cornmeal(x)),
-      pastryFlour = new(Class = 'equiv', current = pastryFlour/cornmeal, target = devrecipe$pastryflour2cornmeal(x)),
-      eggYolk = new(Class = 'equiv', current = x@eggYolk/cornmeal),
-      eggWhite = new(Class = 'equiv', current = x@eggWhite/cornmeal)
-    )
+    attr(ret, which = 'perCornmeal') <- new(
+      Class = 'per', 
+      per = 'Cornmeal\U1f33d',
+      equiv = list(
+        # water = new(Class = 'equiv', current = water/cornmeal), # depends on `flour` as well
+        flour = new(Class = 'equiv', current = flour/cornmeal, target = devrecipe$flour2cornmeal(x)),
+        breadFlour = new(Class = 'equiv', current = breadFlour/cornmeal, target = devrecipe$breadflour2cornmeal(x)),
+        pastryFlour = new(Class = 'equiv', current = pastryFlour/cornmeal, target = devrecipe$pastryflour2cornmeal(x)),
+        eggYolk = new(Class = 'equiv', current = x@eggYolk/cornmeal),
+        eggWhite = new(Class = 'equiv', current = x@eggWhite/cornmeal)
+      ))
     
   } else if (sum(mix0_wheat_flour > 0) > 1L) {
     
     #attr(ret, which = 'mixWheatFlour') <- mix0_wheat_flour
     
-    attr(ret, which = 'mixBaker') <- new(
-      Class = 'mixBaker',
+    attr(ret, which = 'perMixFlr') <- new(
+      Class = 'per', 
+      per = 'Mixed Wheat Flour',
+      equiv = list(
       puree = new(Class = 'equiv', current = puree / mix_wheat_flour),
       water = new(Class = 'equiv', current = water / mix_wheat_flour, target = devrecipe$addedWater2wheatflourmix(x)),
       addedStarch = new(Class = 'equiv', current = starch / mix_wheat_flour),
@@ -349,13 +361,14 @@ nutrition.recipe <- \(x) {
       cocoa = new(Class = 'equiv', current = x@cocoa / mix_wheat_flour),
       acai = new(Class = 'equiv', current = x@acai / mix_wheat_flour),
       coffee = new(Class = 'equiv', current = x@coffee / mix_wheat_flour)
-    )
+    ))
     
   } else {
     
-    attr(ret, which = 'baker') <- if (flour && !inherits(x, what = 'cheesecake')) {
-      new(
-        Class = 'baker',
+    attr(ret, which = 'perAllPurposeFlr') <- if (flour && !inherits(x, what = 'cheesecake')) new(
+      Class = 'per', 
+      per = 'All-Purpose\U1f370\U1f35e Flour',
+      equiv = list(
         puree = new(Class = 'equiv', current = puree / flour),
         water = new(Class = 'equiv', current = water / flour, target = devrecipe$addedWater2flour(x), margin = 1.01),
         addedStarch = new(Class = 'equiv', current = starch / flour),
@@ -374,12 +387,13 @@ nutrition.recipe <- \(x) {
         cocoa = new(Class = 'equiv', current = x@cocoa / flour),
         acai = new(Class = 'equiv', current = x@acai / flour),
         coffee = new(Class = 'equiv', current = x@coffee / flour)
-      )
-    } #else NULL
+      ))
     
-    attr(ret, which = 'pastryBaker') <- if (pastryFlour) {
-      new(
-        Class = 'pastryBaker',
+    
+    attr(ret, which = 'perPastryFlr') <- if (pastryFlour) new(
+      Class = 'per', 
+      per = 'Pastry\U1f370 Flour',
+      equiv = list(
         puree = new(Class = 'equiv', current = puree / pastryFlour),
         water = new(Class = 'equiv', current = water / pastryFlour, target = devrecipe$addedWater2pastryflour(x), margin = 1.01),
         gelatin = new(Class = 'equiv', current = x@gelatin / pastryFlour),
@@ -401,12 +415,13 @@ nutrition.recipe <- \(x) {
         cocoa = new(Class = 'equiv', current = x@cocoa / pastryFlour),
         acai = new(Class = 'equiv', current = x@acai / pastryFlour, target = devrecipe$acai2pastryflour(x)),
         coffee = new(Class = 'equiv', current = x@coffee / pastryFlour)
-      ) #else new(Class = 'pastryBaker')
-    }
+      ))
     
-    attr(ret, which = 'breadBaker') <- if (breadFlour) {
-      new(
-        Class = 'breadBaker',
+    
+    attr(ret, which = 'perBreadFlr') <- if (breadFlour) new(
+      Class = 'per', 
+      per = 'Bread\U1f35e Flour',
+      equiv = list(
         puree = new(Class = 'equiv', current = puree / breadFlour),
         addedWater = new(Class = 'equiv', current = addedWater / breadFlour, target = devrecipe$addedWater2breadflour(x), margin = 1.01),
         gelatin = new(Class = 'equiv', current = x@gelatin / breadFlour),
@@ -428,13 +443,14 @@ nutrition.recipe <- \(x) {
         cocoa = new(Class = 'equiv', current = x@cocoa / breadFlour),
         acai = new(Class = 'equiv', current = x@acai / breadFlour),
         coffee = new(Class = 'equiv', current = x@coffee / breadFlour)
-      )
-    } #else NULL
+      ))
     
   }
   
-  attr(ret, which = 'glutenFreeBaker') <- if (glutenFreeFlour & !breadFlour & !pastryFlour & !flour) new(
-    Class = 'glutenFreeBaker',
+  attr(ret, which = 'perGlutenFreeFlr') <- if (glutenFreeFlour & !breadFlour & !pastryFlour & !flour) new(
+    Class = 'per', 
+    per = 'Gluten-Free Flour',
+    equiv = list(
     puree = new(Class = 'equiv', current = puree / glutenFreeFlour),
     water = new(Class = 'equiv', current = water / glutenFreeFlour, target = devrecipe$addedWater2glutenFreeFlour(x), margin = 1.01),
     gelatin = new(Class = 'equiv', current = x@gelatin / glutenFreeFlour),
@@ -454,50 +470,59 @@ nutrition.recipe <- \(x) {
     cocoa = new(Class = 'equiv', current = x@cocoa / glutenFreeFlour),
     acai = new(Class = 'equiv', current = x@acai / glutenFreeFlour),
     coffee = new(Class = 'equiv', current = x@coffee / glutenFreeFlour)
-  ) #else new(Class = 'glutenFreeBaker')
+  ))
   
-  attr(ret, which = 'riceBaker') <- if (riceFlour) new(
-    Class = 'riceBaker',
-    water = new(Class = 'equiv', current = water / riceFlour, target = devrecipe$addedWater2riceflour(x)),
-    # rice = new(Class = 'equiv', current = x@riceFlour / riceFlour, target = devrecipe$rice2riceflour(x)),
-    glutinousRice = new(Class = 'equiv', current = x@glutinousRiceFlour / riceFlour, target = devrecipe$glutinousRice2riceflour(x)),
-    gelatin = new(Class = 'equiv', current = x@gelatin / riceFlour),
-    fat = new(Class = 'equiv', current = fat / riceFlour, target = devrecipe$fat2riceflour(x), tol = .01),
-    blackSesame = new(Class = 'equiv', current = x@blackSesame / riceFlour),
-    #sugar = new(Class = 'equiv', current = sugar / riceFlour),
-    addedStarch = new(Class = 'equiv', current = starch / riceFlour, target = devrecipe$starch2riceflour(x)),
-    matcha = new(Class = 'equiv', current = x@matcha / riceFlour, target = devrecipe$matcha2riceflour(x)),
-    cocoa = new(Class = 'equiv', current = x@cocoa / riceFlour),
-    acai = new(Class = 'equiv', current = x@acai / riceFlour),
-    coffee = new(Class = 'equiv', current = x@coffee / riceFlour)
-  ) #else new(Class = 'riceBaker')
+  attr(ret, which = 'perRiceFlr') <- if (riceFlour) new(
+    Class = 'per', 
+    per = 'Glutinous+Rice\U1f33e Flour',
+    equiv = list(
+      water = new(Class = 'equiv', current = water / riceFlour, target = devrecipe$addedWater2riceflour(x)),
+      # rice = new(Class = 'equiv', current = x@riceFlour / riceFlour, target = devrecipe$rice2riceflour(x)),
+      glutinousRice = new(Class = 'equiv', current = x@glutinousRiceFlour / riceFlour, target = devrecipe$glutinousRice2riceflour(x)),
+      gelatin = new(Class = 'equiv', current = x@gelatin / riceFlour),
+      fat = new(Class = 'equiv', current = fat / riceFlour, target = devrecipe$fat2riceflour(x), tol = .01),
+      blackSesame = new(Class = 'equiv', current = x@blackSesame / riceFlour),
+      #sugar = new(Class = 'equiv', current = sugar / riceFlour),
+      addedStarch = new(Class = 'equiv', current = starch / riceFlour, target = devrecipe$starch2riceflour(x)),
+      matcha = new(Class = 'equiv', current = x@matcha / riceFlour, target = devrecipe$matcha2riceflour(x)),
+      cocoa = new(Class = 'equiv', current = x@cocoa / riceFlour),
+      acai = new(Class = 'equiv', current = x@acai / riceFlour),
+      coffee = new(Class = 'equiv', current = x@coffee / riceFlour)
+  ))
   
-  attr(ret, which = 'cocoaDx') <- if (length(x@cocoa) && !inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
-    Class = 'cocoaDx',
-    alcohol = new(Class = 'equiv', current = alcohol / x@cocoa, target = devrecipe$alcohol2cocoa(x)),
-    drymilk = new(Class = 'equiv', current = x@drymilk / x@cocoa, target = devrecipe$drymilk2cocoa(x)),
-    coconut = new(Class = 'equiv', current = x@coconut / x@cocoa),
-    sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', current = sugar / x@cocoa) else new(Class = 'equiv'),
-    addedSugar = new(Class = 'equiv', current = addedSugar / x@cocoa, target = devrecipe$addedSugar2cocoa(x)),
-    coffee = new(Class = 'equiv', current = x@coffee / x@cocoa, target = devrecipe$coffee2cocoa(x)),
-    tea = new(Class = 'equiv', current = x@tea / x@cocoa)
+  attr(ret, which = 'perCocoa') <- if (length(x@cocoa) && !inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
+    Class = 'per',
+    per = 'Alkalized Cocoa',
+    equiv = list(
+      alcohol = new(Class = 'equiv', current = alcohol / x@cocoa, target = devrecipe$alcohol2cocoa(x)),
+      drymilk = new(Class = 'equiv', current = x@drymilk / x@cocoa, target = devrecipe$drymilk2cocoa(x)),
+      coconut = new(Class = 'equiv', current = x@coconut / x@cocoa),
+      sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', current = sugar / x@cocoa) else new(Class = 'equiv'),
+      addedSugar = new(Class = 'equiv', current = addedSugar / x@cocoa, target = devrecipe$addedSugar2cocoa(x)),
+      coffee = new(Class = 'equiv', current = x@coffee / x@cocoa, target = devrecipe$coffee2cocoa(x)),
+      tea = new(Class = 'equiv', current = x@tea / x@cocoa)
+    )
   )
   
-  attr(ret, which = 'teaDx') <- if (length(x@tea)) new(
-    Class = 'teaDx',
-    drymilk = new(Class = 'equiv', current = x@drymilk / x@tea),
-    coffee = new(Class = 'equiv', current = x@coffee / x@tea),
-    cocoa = new(Class = 'equiv', current = x@cocoa / x@tea)
+
+  attr(ret, which = 'perTea') <- if (length(x@tea)) new(
+    Class = 'per', per = 'Tea\U1f343', equiv = list(
+      drymilk = new(Class = 'equiv', current = x@drymilk / x@tea),
+      coffee = new(Class = 'equiv', current = x@coffee / x@tea),
+      cocoa = new(Class = 'equiv', current = x@cocoa / x@tea)
+    )
   )
   
-  attr(ret, which = 'creamcheeseDx') <- if (length(x@creamCheese)) new(
-    Class = 'creamcheeseDx',
-    addedWater = new(Class = 'equiv', current = addedWater/sum(x@creamCheese), target = devrecipe$addedWater2creamcheese(x)),
-    fiber = new(Class = 'equiv', current = fiber/sum(x@creamCheese)), 
-    addedStarch = new(Class = 'equiv', current = starch/sum(x@creamCheese)), 
-    eggYolk = new(Class = 'equiv', current = x@eggYolk/sum(x@creamCheese)),
-    eggWhite = new(Class = 'equiv', current = x@eggWhite/sum(x@creamCheese))
-  )
+  attr(ret, which = 'perCreamCheese') <- if (length(x@creamCheese)) new(
+    Class = 'per', 
+    per = 'Cream Cheese',
+    equiv = list(
+      addedWater = new(Class = 'equiv', current = addedWater/sum(x@creamCheese), target = devrecipe$addedWater2creamcheese(x)),
+      fiber = new(Class = 'equiv', current = fiber/sum(x@creamCheese)), 
+      addedStarch = new(Class = 'equiv', current = starch/sum(x@creamCheese)), 
+      eggYolk = new(Class = 'equiv', current = x@eggYolk/sum(x@creamCheese)),
+      eggWhite = new(Class = 'equiv', current = x@eggWhite/sum(x@creamCheese))
+    ))
   
   attr(ret, which = 'info') <- info
   

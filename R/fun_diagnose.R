@@ -27,19 +27,22 @@ diagnose <- \(...) {
   
   names(dots) <- dots |>
     vapply(FUN = slot, name = 'name', FUN.VALUE = NA_character_)
-  diagnose_(dots, which = 'baker')
-  diagnose_(dots, which = 'pastryBaker')
-  diagnose_(dots, which = 'breadBaker')
-  diagnose_(dots, which = 'cornBaker')
-  diagnose_(dots, which = 'riceBaker')
-  diagnose_(dots, which = 'cocoaDx')
-  diagnose_(dots, which = 'teaDx')
-  diagnose_(dots, which = 'creamcheeseDx')
-  diagnose_(dots, which = 'uncooked')
+  diagnose_(dots, which = 'perAllPurposeFlr')
+  diagnose_(dots, which = 'perPastryFlr')
+  diagnose_(dots, which = 'perBreadFlr')
+  diagnose_(dots, which = 'perCornmeal')
+  diagnose_(dots, which = 'perRiceFlr')
+  diagnose_(dots, which = 'perCocoa')
+  diagnose_(dots, which = 'perTea')
+  diagnose_(dots, which = 'perCreamCheese')
+  diagnose_(dots, which = 'perRaw')
   
   return(invisible())
   
 }
+
+
+
 
 # @param dots a \link[base]{list} of \linkS4class{nutrition}s
 # @param which \link[base]{character} scalar
@@ -52,15 +55,13 @@ diagnose_ <- \(dots, which) {
   if (!length(atr)) return(invisible())
   
   y0 <- atr |>
-    lapply(FUN = \(a) {
-      snm <- names(which(getSlots(class(a)) == 'equiv'))
-      names(snm) <- snm
-      snm |>
-        lapply(FUN = \(j) {
-          j_current <- slot(a, name = j)@current
-          if (length(j_current) && (j_current > 0)) unname(j_current) else NA_real_
-        }) |> 
-        unlist(use.names = TRUE)
+    lapply(FUN = \(a) { # (a = atr[[1L]])
+      a@equiv |>
+        vapply(FUN = \(i) {
+          crt <- i@current
+          if (!length(crt)) return(NA_real_)
+          return(crt)
+        }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
     })
   if (all(!lengths(y0))) stop('wont happen')
   y1 <- do.call(rbind, args = y0)
@@ -70,8 +71,12 @@ diagnose_ <- \(dots, which) {
   if (!length(y3)) return(invisible())
   colnames(y3) <- show_endpoint(colnames(y3))
   
-  (new(Class = which)@per) |> sprintf(fmt = '\u214c %s\n') |> style_bold() |> bg_br_yellow() |> cat()
-  y <- y3 |> col_label_bin_(FUN = median.default, na.rm = TRUE)
+  atr[[1L]]@per |> 
+    sprintf(fmt = '\u214c %s\n') |> 
+    style_bold() |> bg_br_yellow() |> 
+    cat()
+  y <- y3 |> 
+    col_label_bin_(FUN = median.default, na.rm = TRUE)
   y |> cat_matrix()
   cat('\n')
   return(invisible(y))

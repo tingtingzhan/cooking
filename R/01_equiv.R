@@ -19,6 +19,7 @@ setClass(Class = 'equiv', slots = c(
   margin = 'numeric',
   tol = 'numeric'
 ), prototype = prototype(
+  current = NA_real_,
   target = NA_real_,
   margin = 1.1,
   tol = .Machine$double.eps
@@ -49,7 +50,7 @@ setClass(Class = 'equiv', slots = c(
 format.equiv <- \(x, ...) {
   if (!(n <- length(x@current))) return(invisible()) # exception handling
   current <- sum(x@current)
-  if (is.na(current)) stop('Slot `@current` cannot be missing')
+  if (is.na(current)) return(invisible())
   if (abs(current) < x@tol) return(invisible()) # exception handling
   
   if (current < 0) return(invisible())

@@ -169,7 +169,7 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
 
   hot <- hotdrink(object) # 2-cup hot water, or shaved ice
   nutri_ <- nutrition(hot)
-  flavor_ <- attr(nutri_, which = 'cookedFlavor', exact = TRUE)
+  flavor_ <- attr(nutri_, which = 'perServingFlavor', exact = TRUE)
   flavor_@per <- sprintf(
     fmt = '%s + %.0fg Water, US\U1f4b5 %.2f', 
     flavor_@per, 

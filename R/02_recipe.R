@@ -1253,14 +1253,15 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   cat('\n')
   
   # need to write a [show] method for \linkS4class{mixWheatFlour}
-  attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx', 'teaDx', 'creamcheeseDx')]
+  attr_dx <- attributes(y)[c('perRiceFlr', 'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 'perMixFlr', 'perGlutenFreeFlr', 'perCornmeal', 'perCocoa', 'perTea', 'perCreamCheese')]
   has_attr_dx <- (lengths(attr_dx) > 0L)
   attr_dx[has_attr_dx] |> lapply(FUN = show)
   #if (!any(has_attr_dx)) {
-  y |> attr(which = 'cookedTexture', exact = TRUE) |> show()
+  y |> attr(which = 'perServingTexture', exact = TRUE) |> show()
   #} else attr_dx[has_attr_dx] |> lapply(FUN = show)
-  # y |> attr(which = 'uncooked', exact = TRUE) |> show()
-  y |> attr(which = 'cookedFlavor', exact = TRUE) |> show()
+  # y |> attr(which = 'perRaw', exact = TRUE) |> show()
+  y |> attr(which = 'perServingFlavor', exact = TRUE) |> show()
+  
   
   if (length(object@portion)) {
     sprintf(
