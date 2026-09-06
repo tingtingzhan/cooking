@@ -58,7 +58,7 @@ format.per <- \(x, ...) {
 show_endpoint <- \(x) {
   x[x == 'addedWater'] <- 'water+'
   x[x == 'addedSugar'] <- 'sugar+'
-  x[x == 'addedStarch'] <- '+starch'
+  x[x == 'addedStarch'] <- 'starch+'
   # x[x == 'alcohol'] <- '\U1f943'
   x[x == 'carbohydrate'] <- 'carb' 
   x[x == 'NaHCO3'] <- 'NaHCO\u2083' 
