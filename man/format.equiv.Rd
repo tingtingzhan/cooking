@@ -15,8 +15,8 @@
 ..
 }
 \examples{
-format(new('equiv', actual = .6))
-format(new('equiv', actual = .6, ideal = 1))
+format(new('equiv', current = .6))
+format(new('equiv', current = .6, target = 1))
 
 }
 \references{

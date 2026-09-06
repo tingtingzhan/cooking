@@ -10,9 +10,9 @@
 \section{Slots}{
 
 \describe{
-\item{\code{actual}}{\link[base]{numeric} scalar}
+\item{\code{current}}{\link[base]{numeric} scalar (was actual)}
 
-\item{\code{ideal}}{\link[base]{numeric} scalar}
+\item{\code{target}}{\link[base]{numeric} scalar (was \code{ideal})}
 
 \item{\code{margin}}{\link[base]{numeric} scalar, default 1.1}
 

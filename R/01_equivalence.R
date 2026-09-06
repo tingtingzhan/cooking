@@ -5,9 +5,9 @@
 #' 
 #' @description ..
 #' 
-#' @slot actual \link[base]{numeric} scalar 
+#' @slot current \link[base]{numeric} scalar (was actual)
 #' 
-#' @slot ideal \link[base]{numeric} scalar
+#' @slot target \link[base]{numeric} scalar (was `ideal`)
 #' 
 #' @slot margin \link[base]{numeric} scalar, default 1.1
 #' 
@@ -16,12 +16,12 @@
 #' @name equiv-class
 #' @export
 setClass(Class = 'equiv', slots = c(
-  actual = 'numeric',
-  ideal = 'numeric',
+  current = 'numeric',
+  target = 'numeric',
   margin = 'numeric',
   tol = 'numeric'
 ), prototype = prototype(
-  ideal = NA_real_,
+  target = NA_real_,
   margin = 1.1,
   tol = .Machine$double.eps
 ))
@@ -41,27 +41,27 @@ setClass(Class = 'equiv', slots = c(
 #' @param ... ..
 #' 
 #' @examples 
-#' format(new('equiv', actual = .6))
-#' format(new('equiv', actual = .6, ideal = 1))
+#' format(new('equiv', current = .6))
+#' format(new('equiv', current = .6, target = 1))
 #' 
 #' @references 
 #' \url{https://en.wikipedia.org/wiki/Bioequiv}
 #' 
 #' @export
 format.equiv <- \(x, ...) {
-  if (!(n <- length(x@actual))) return(invisible()) # exception handling
-  actual <- sum(x@actual)
-  if (is.na(actual)) stop('Slot `@actual` cannot be missing')
-  if (abs(actual) < x@tol) return(invisible()) # exception handling
+  if (!(n <- length(x@current))) return(invisible()) # exception handling
+  current <- sum(x@current)
+  if (is.na(current)) stop('Slot `@current` cannot be missing')
+  if (abs(current) < x@tol) return(invisible()) # exception handling
   
-  if (actual < 0) return(invisible())
+  if (current < 0) return(invisible())
   # I do not have `@water` for all puree, yet
   
-  .label <- min(actual, x@ideal, na.rm = TRUE) |> .label_bin_()
+  .label <- min(current, x@target, na.rm = TRUE) |> .label_bin_()
   
-  actual <- .label(actual)
-  if (is.na(x@ideal)) return(c(Actual = actual, Ideal = '-'))
-  return(c(Actual = actual, Ideal = .label(x@ideal)))
+  current <- .label(current)
+  if (is.na(x@target)) return(c(Current = current, Target = '-'))
+  return(c(Current = current, Target = .label(x@target)))
 }
 
 
@@ -364,8 +364,8 @@ format.recipeDx <- \(x, ...) {
   names(ret0) <- show_endpoint(slt[id])
   
   relat <- vapply(equiv_slot[id], FUN = \(i) {
-    if (!length(i@ideal) || is.na(i@ideal)) return(NA_integer_)
-    .bincode(i@actual/i@ideal, breaks = c(0, 1/i@margin, i@margin, Inf))
+    if (!length(i@target) || is.na(i@target)) return(NA_integer_)
+    .bincode(i@current/i@target, breaks = c(0, 1/i@margin, i@margin, Inf))
   }, FUN.VALUE = NA_integer_)
   
   if (all(is.na(relat))) {
@@ -373,11 +373,11 @@ format.recipeDx <- \(x, ...) {
   } else {
     ret <- .mapply(dots = list(ret0, relat), MoreArgs = NULL, FUN = \(x, rel) {
       # i = 3L; x = ret0[[i]]; rel = relat[[i]]
-      x[1L] <- switch(as.character(rel), '1' = { # actual < ideal
+      x[1L] <- switch(as.character(rel), '1' = { # current < target
         (x[1L]) |> col_br_blue() |> style_bold()
-      }, 'NA' =, '2' = { # actual == ideal
+      }, 'NA' =, '2' = { # current == target
         (x[1L]) |> col_grey()
-      }, '3' = { # actual > ideal
+      }, '3' = { # current > target
         (x[1L]) |> col_br_red() |> style_bold()
       })
       return(x)

@@ -57,8 +57,8 @@ diagnose_ <- \(dots, which) {
       names(snm) <- snm
       snm |>
         lapply(FUN = \(j) {
-          j_actual <- slot(a, name = j)@actual
-          if (length(j_actual) && (j_actual > 0)) unname(j_actual) else NA_real_
+          j_current <- slot(a, name = j)@current
+          if (length(j_current) && (j_current > 0)) unname(j_current) else NA_real_
         }) |> 
         unlist(use.names = TRUE)
     })
