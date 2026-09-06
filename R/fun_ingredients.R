@@ -22,7 +22,7 @@
 sum_by_name <- \(...) {
   
   xs <- list(...)
-  xs <- xs[lengths(xs, use.names = FALSE) > 0L]
+  xs <- xs[lengths(xs) > 0L]
   if (!length(xs)) return(numeric())
   
   ns <- lengths(xs, use.names = FALSE)

@@ -47,7 +47,7 @@ nutrition.function <- \(x) {
 nutrition.recipe0 <- \(x) {
   
   atr0 <- attributes(x)[names(getSlots(x = 'recipe0'))] # [nutrition.recipe0] might be applied to \linkS4class{recipe}
-  atr <- atr0[lengths(atr0, use.names = FALSE) > 0L]
+  atr <- atr0[lengths(atr0) > 0L]
   
   grams <- unlist(unname(atr), use.names = TRUE)
   if (!length(grams)) stop('shouldnt happen!!!')

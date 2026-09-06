@@ -41,9 +41,9 @@ nutrition_ <- \(..., dots = list(...)) {
   ret <- cbind(ret, addedWater = addedWater_)
   
   #review <- dots |> lapply(FUN = slot, name = 'review')
-  #attr(ret, which = 'review') <- review[lengths(review, use.names = FALSE) > 0L]
+  #attr(ret, which = 'review') <- review[lengths(review) > 0L]
   #machine <- dots |> lapply(FUN = slot, name = 'machine')
-  #attr(ret, which = 'machine') <- machine[lengths(machine, use.names = FALSE) > 0L]
+  #attr(ret, which = 'machine') <- machine[lengths(machine) > 0L]
 
   nm <- dots |>
     vapply(FUN = \(i) c(i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')

@@ -50,7 +50,7 @@ setMethod(f = '+', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), defini
   names(slt0) <- slt0
   ret0 <- lapply(slt0, FUN = \(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
   
-  ret1 <- ret0[lengths(ret0, use.names = FALSE) > 0L]
+  ret1 <- ret0[lengths(ret0) > 0L]
   ret <- do.call(what = new, args = c(list(
     Class = 'recipe0'
   ), ret1))
@@ -82,7 +82,12 @@ setMethod(f = '/', signature = signature(e1 = 'recipe0', e2 = 'recipe0'), defini
   e2_ <- as(e2, Class = 'recipe0')
   
   # [ratio_by_name] needs a full re-write
-  rt <- unlist(.mapply(FUN = ratio_by_name, dots = list(e1 = attributes(e1_), e2 = attributes(e2_)), MoreArgs = NULL), use.names = FALSE)
+  rt <- .mapply(
+    FUN = ratio_by_name, 
+    dots = list(e1 = attributes(e1_), e2 = attributes(e2_)), 
+    MoreArgs = NULL
+  ) |>
+    unlist(use.names = FALSE)
   if (max(rt, na.rm = TRUE) - min(rt, na.rm = TRUE) > .Machine$double.eps) return(NA_real_)
   
   ret <- rt[1L]

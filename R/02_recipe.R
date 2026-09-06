@@ -465,7 +465,7 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
 setAs(from = 'recipe', to = 'recipe0', def = \(from) {
   slt0 <- names(getSlots(x = 'recipe0'))
   atr0 <- attributes(from)[slt0]
-  atr <- atr0[lengths(atr0, use.names = FALSE) > 0L]
+  atr <- atr0[lengths(atr0) > 0L]
   do.call(what = new, args = c(list(Class = 'recipe0'), atr))
 })
 
@@ -1254,7 +1254,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   
   # need to write a [show] method for \linkS4class{mixWheatFlour}
   attr_dx <- attributes(y)[c('riceBaker', 'baker', 'pastryBaker', 'breadBaker', 'mixBaker', 'glutenFreeBaker', 'cornBaker', 'cocoaDx', 'teaDx', 'creamcheeseDx')]
-  has_attr_dx <- (lengths(attr_dx, use.names = FALSE) > 0L)
+  has_attr_dx <- (lengths(attr_dx) > 0L)
   attr_dx[has_attr_dx] |> lapply(FUN = show)
   #if (!any(has_attr_dx)) {
   y |> attr(which = 'cookedTexture', exact = TRUE) |> show()
