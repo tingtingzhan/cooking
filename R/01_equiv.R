@@ -61,12 +61,6 @@ format.equiv <- \(x, ...) {
   
   current <- .label(current)
   
-  # old
-  #if (is.na(x@target)) return(c(Current = current, Target = '-'))
-  #return(c(Current = current, Target = .label(x@target)))
-  # end of old
-  
-  
   if (!length(x@target) || is.na(x@target)) {
     return(c(Current = current, Target = '-'))
   }

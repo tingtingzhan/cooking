@@ -136,7 +136,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 
 format_minute <- \(x) {
   # `x` is \link[base]{numeric} \link[base]{vector}
-  if (anyNA(x)) stop('do not allow missingness in [format_minute]')
+  if (anyNA(x)) stop('do not allow missingness')
   day <- x %/% (60*24)
   x_day <- x %% (60*24)
   hour <- x_day %/% 60
