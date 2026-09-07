@@ -89,4 +89,4 @@ WholeFoods_berryGelato <- \() new(
 
 # https://www.icecream.com/us/en/brands/haagen-dazs/about/faq
 #Q: Are there stabilizers in Häagen-Dazs® products?
-#A: In keeping with our philosophy of using only the purest ingredients, we only use eggs to stablize Häagen-Dazs® products that are made with dairy milk. All our eggs are completely pasteurized.
+#A: In keeping with our philosophy of using only the purest raw, we only use eggs to stablize Häagen-Dazs® products that are made with dairy milk. All our eggs are completely pasteurized.

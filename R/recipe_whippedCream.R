@@ -79,7 +79,7 @@ setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
 
 # do not make
 # blackSesame_whippedCream 
-# granular ingredients, I dont like
+# granular raw, I dont like
 
 #' @rdname whippedCream-class
 #' @export

@@ -4,7 +4,7 @@
 \alias{nutrition}
 \alias{nutrition.character}
 \alias{nutrition.function}
-\alias{nutrition.ingredients}
+\alias{nutrition.raw.}
 \alias{nutrition.recipe}
 \title{Get Nutrition}
 \usage{
@@ -14,7 +14,7 @@ nutrition(x)
 
 \method{nutrition}{`function`}(x)
 
-\method{nutrition}{ingredients}(x)
+\method{nutrition}{raw.}(x)
 
 \method{nutrition}{recipe}(x)
 }

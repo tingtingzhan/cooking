@@ -40,10 +40,11 @@ nutrition.function <- \(x) {
 
 
 #' @rdname nutrition
+#' @method nutrition raw.
 #' @export
-nutrition.ingredients <- \(x) {
+nutrition.raw. <- \(x) {
   
-  atr0 <- attributes(x)[names(getSlots(x = 'ingredients'))] # [nutrition.ingredients] might be applied to \linkS4class{recipe}
+  atr0 <- attributes(x)[names(getSlots(x = 'raw.'))] # [nutrition.raw] might be applied to \linkS4class{recipe}
   atr <- atr0[lengths(atr0) > 0L]
   
   grams <- unlist(unname(atr), use.names = TRUE)
@@ -111,7 +112,7 @@ nutrition.ingredients <- \(x) {
 nutrition.recipe <- \(x) {
   
   lost <- c('waterLost', 'fatLost', 'sugarLost')
-  slt0 <- names(getSlots(x = 'ingredients'))
+  slt0 <- names(getSlots(x = 'raw.'))
   ingredient <- names(which(lengths(attributes(x)[slt0]) > 0L))
   
   atr <- attributes(x)[ingredient]
