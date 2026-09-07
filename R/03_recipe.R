@@ -217,7 +217,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   for (yt in c('daatgo', 'dad1966', 'guga', 'happytears', 'laofangu', 'pino', 'shangshikitchen', 'xiaogaojie')) {
     if (length(yt. <- slot(x, name = yt))) {
       if (length(yt.) > 1L) stop('only allow len-1 @', yt)
-      x@author <- style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', yt.), text = switch(
+      x@author <- switch(
         yt, 
         daatgo = '\u8fbe\u54e5\u53a8\u623f',
         dad1966 = '\u8001\u7238\u7684\u98df\u5149',
@@ -226,7 +226,13 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         laofangu = '\u8001\u996d\u9aa8',
         pino = '\u54c1\u8bfa', # http://www.pinochina.com # temporarily down
         shangshikitchen = '\u5c1a\u98df\u53a8\u623f',
-        xiaogaojie = '\u5c0f\u9ad8\u59d0')) |> c()
+        xiaogaojie = '\u5c0f\u9ad8\u59d0'
+      ) |>
+        style_hyperlink(
+          url = sprintf(fmt = 'https://youtu.be/%s', yt.),
+          text = _
+        ) |> 
+        c()
       slot(x, name = yt) <- character()
     }
   }
@@ -487,9 +493,15 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   if (waterLost == 0) waterLost <- numeric()
 
   if (length(waterLost) || length(object@fatLost) || length(object@sugarLost)) {
-    waterLost |> sprintf(fmt = 'Water evaporated in cooking: %.0f grams\n') |> cat()
-    object@fatLost |> sprintf(fmt = 'Fat drained in cooking: %.0f grams\n') |> cat()
-    object@sugarLost |> sprintf(fmt = 'Sugar consumed in fermentation: %.1f grams\n') |> cat()
+    waterLost |> 
+      sprintf(fmt = 'Water evaporated in cooking: %.0f grams\n') |> 
+      cat()
+    object@fatLost |> 
+      sprintf(fmt = 'Fat drained in cooking: %.0f grams\n') |> 
+      cat()
+    object@sugarLost |> 
+      sprintf(fmt = 'Sugar consumed in fermentation: %.1f grams\n') |> 
+      cat()
     cat('\n')
   }
   

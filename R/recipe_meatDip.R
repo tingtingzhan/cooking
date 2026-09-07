@@ -16,7 +16,7 @@
 #' @name meatDip-class
 #' @export
 setClass(Class = 'meatDip', contains = 'recipe', prototype = prototype(
-  alias_class = 'Dipping Sauce for Meat'
+  alias_class = '\U0001f356 Dipping Sauce'
 ))
 
 #' @rdname meatDip-class
@@ -63,9 +63,9 @@ meatDip_ThaiSweetGinger <- \() new(
     TraderJoes_ThaiGinger = 1
   ),
   sauce_tsp = c(
-    Wegmans_Marsala = .5
+    Kadoya_sesameOil = .5
   ),
-  instruction = 'Microwave 15 seconds',
+  water_tsp = 1,
   date = as.Date('2026-09-07'),
-  review = 'too dry, too salty. try adding 1/2tsp of sesame oil after microwave'
+  review = 'very good!'
 )

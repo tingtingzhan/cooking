@@ -123,11 +123,17 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     sprintf(fmt = ' \u21ac %s\n') |> 
     cat(sep = '')
   
-  object@cooling |> sprintf(fmt = ' \u21ac %s\n') |> cat(sep = '')
+  object@cooling |> 
+    sprintf(fmt = ' \u21ac %s\n') |> 
+    cat(sep = '')
   
-  object@waterLost |> sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n') |> cat()
+  object@waterLost |> 
+    sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n') |> 
+    cat()
   
-  object@note |> sprintf(fmt = ' \u2756 %s\n') |> cat(sep = '')
+  object@note |> 
+    sprintf(fmt = ' \u2756 %s\n') |> 
+    cat(sep = '')
   
   cat('\n')
   
