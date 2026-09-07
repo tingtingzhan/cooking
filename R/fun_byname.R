@@ -1,7 +1,6 @@
 
 
-
-#' @title Summation of Ingredients
+#' @title Summation by Name
 #' 
 #' @description ..
 #' 
@@ -48,41 +47,5 @@ sum_by_name <- \(...) {
   
 }
 
-
-
-
-
-
-
-
-
-#' @title Ratio between Ingredients
-#' 
-#' @description ..
-#' 
-#' @param e1,e2 \strong{named} \link[base]{numeric} vectors
-#' 
-#' @return 
-#' The function [ratio_by_name] returns a \link[base]{numeric} scalar.
-#' 
-#' @export
-ratio_by_name <- \(e1, e2) {
-  .Deprecated(msg = 'needs a full re-write')
-  if (!(n1 <- length(e1))) stop('exclude in parent function')
-  if (!(n2 <- length(e2))) stop('exclude in parent function')
-  nm1 <- names(e1)
-  nm2 <- names(e2)
-  if ((n1 == 1L) && (n2 == 1L) && !length(nm1) && !length(nm2)) return(e1/e2)
-  
-  if (!length(nm1) || anyNA(nm1) || !all(nzchar(nm1)) ||
-      !length(nm2) || anyNA(nm2) || !all(nzchar(nm2))) stop('must both be fully named')
-  
-  if (!length(nm <- intersect(nm1, nm2))) return(NA_real_)
-  
-  ret <- e1[nm] / e2[nm]
-  if (anyNA(ret)) stop('should not happen')
-  if (max(ret) - min(ret) > .Machine$double.eps) return(NA_real_)
-  return(ret[1L])
-}
 
 

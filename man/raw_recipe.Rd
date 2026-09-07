@@ -7,7 +7,7 @@
 \alias{recipe-class}
 \title{Raw Ingredients and Recipe}
 \description{
-\linkS4class{raw} allows negative ingredients.
+\linkS4class{raw.} allows negative ingredients.
 }
 \section{Slots}{
 

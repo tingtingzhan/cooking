@@ -3,7 +3,7 @@
 #' @title Raw Ingredients and Recipe
 #' 
 #' @description 
-#' \linkS4class{raw} allows negative ingredients.
+#' \linkS4class{raw.} allows negative ingredients.
 #' 
 #' @slot homemade \link[base]{numeric} vector
 #' @slot flavor,flavor_tsp,flavor_Tbsp,flavor_cup \link[base]{numeric} vector, weight of one or more flavoring (in grams)
@@ -673,6 +673,74 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   return(x)
   
 })
+
+
+
+#' @title Multiplication of \linkS4class{raw.} Object(s)
+#' 
+#' @description ..
+#' 
+#' @param e1,e2 \linkS4class{raw.} object and \link[base]{numeric} scalar
+#' 
+#' @name S4arith_raw
+NULL
+
+#' @rdname S4arith_raw
+# @aliases *,raw.,numeric-method
+#' @export
+setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
+  e1 <- as(e1, Class = 'raw.', strict = TRUE)
+  if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
+  for (i in slotNames(e1)) {
+    slot(e1, name = i) <- slot(e1, name = i) * e2
+  }
+  return(e1)
+})
+
+#' @rdname S4arith_raw
+# @aliases *,numeric,raw.-method
+#' @export
+setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'raw.'), definition = \(e1, e2) e2 * e1)
+
+#' @rdname S4arith_raw
+# @aliases /,raw.,numeric-method
+#' @export
+setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
+
+
+
+#' @title Arithmetic of Two \linkS4class{raw.} Objects
+#' 
+#' @description ..
+#' 
+#' @param e1,e2 \linkS4class{raw.} and/or \linkS4class{recipe} objects
+#' 
+#' @name S4arith_2raw
+#' @aliases +,raw.,raw.-method
+#' @export
+setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition = \(e1, e2) {
+  
+  e1 <- as(e1, Class = 'raw.', strict = TRUE)
+  e2 <- as(e2, Class = 'raw.', strict = TRUE)
+  
+  slt0 <- names(getSlots(x = 'raw.'))
+  names(slt0) <- slt0
+  ret0 <- lapply(slt0, FUN = \(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
+  
+  ret1 <- ret0[lengths(ret0) > 0L]
+  ret <- do.call(what = new, args = c(list(
+    Class = 'raw.'
+  ), ret1))
+  return(ret)
+  
+})
+
+#' @rdname S4arith_2raw
+# @aliases -,raw.,raw.-method
+#' @export
+setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition = \(e1, e2) e1 + (-1) * e2)
+
+
 
 
 

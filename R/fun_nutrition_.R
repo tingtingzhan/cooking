@@ -39,11 +39,6 @@ nutrition_ <- \(..., dots = list(...)) {
   addedWater_ <- water_ <- ret[,'water']
   addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
   ret <- cbind(ret, addedWater = addedWater_)
-  
-  #review <- dots |> lapply(FUN = slot, name = 'review')
-  #attr(ret, which = 'review') <- review[lengths(review) > 0L]
-  #machine <- dots |> lapply(FUN = slot, name = 'machine')
-  #attr(ret, which = 'machine') <- machine[lengths(machine) > 0L]
 
   nm <- dots |>
     vapply(FUN = \(i) c(i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
