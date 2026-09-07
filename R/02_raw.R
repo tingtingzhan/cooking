@@ -151,10 +151,6 @@
 #' @slot shavedIce \link[base]{numeric} scalar, weight of shaved ice (in grams)
 #' @slot ice \link[base]{numeric} scalar, weight of ice (in grams)
 #' 
-#' @slot waterLost \link[base]{numeric} scalar, weight of water (in grams) lost in cooking process, **before dividing**
-#' @slot fatLost \link[base]{numeric} scalar, weight of oil (in grams) drained in cooking process
-#' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
-#' 
 #' @slot sauce,sauce_tsp,sauce_Tbsp,sauce_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more sauces
 #' @slot liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs
 #' 

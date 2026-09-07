@@ -60,6 +60,10 @@
 #' 
 #' @slot portion \link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)
 #' 
+#' @slot waterLost \link[base]{numeric} scalar, weight of water (in grams) lost in cooking process, **before dividing**
+#' @slot fatLost \link[base]{numeric} scalar, weight of oil (in grams) drained in cooking process
+#' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
+#' 
 #' @aliases recipe-class
 #' @export
 setClass(Class = 'recipe', contains = 'raw.', slots = c(

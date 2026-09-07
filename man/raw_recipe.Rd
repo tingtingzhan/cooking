@@ -254,12 +254,6 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{ice}}{\link[base]{numeric} scalar, weight of ice (in grams)}
 
-\item{\code{waterLost}}{\link[base]{numeric} scalar, weight of water (in grams) lost in cooking process, \strong{before dividing}}
-
-\item{\code{fatLost}}{\link[base]{numeric} scalar, weight of oil (in grams) drained in cooking process}
-
-\item{\code{sugarLost}}{\link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation}
-
 \item{\code{sauce,sauce_tsp,sauce_Tbsp,sauce_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more sauces}
 
 \item{\code{liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs}
@@ -379,6 +373,12 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 \item{\code{cons}}{\link[base]{character} scalar or \link[base]{vector}, cons}
 
 \item{\code{portion}}{\link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)}
+
+\item{\code{waterLost}}{\link[base]{numeric} scalar, weight of water (in grams) lost in cooking process, \strong{before dividing}}
+
+\item{\code{fatLost}}{\link[base]{numeric} scalar, weight of oil (in grams) drained in cooking process}
+
+\item{\code{sugarLost}}{\link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation}
 }}
 
 \references{
