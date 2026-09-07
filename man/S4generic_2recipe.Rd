@@ -2,16 +2,16 @@
 % Please edit documentation in R/fun_recipe.R
 \name{S4generic_2recipe}
 \alias{S4generic_2recipe}
-\alias{+,recipe0,recipe0-method}
-\alias{-,recipe0,recipe0-method}
+\alias{+,ingredients,ingredients-method}
+\alias{-,ingredients,ingredients-method}
 \title{Arithmetic of Two \linkS4class{recipe} Objects}
 \usage{
-\S4method{+}{recipe0,recipe0}(e1, e2)
+\S4method{+}{ingredients,ingredients}(e1, e2)
 
-\S4method{-}{recipe0,recipe0}(e1, e2)
+\S4method{-}{ingredients,ingredients}(e1, e2)
 }
 \arguments{
-\item{e1, e2}{\linkS4class{recipe0} and/or \linkS4class{recipe} objects}
+\item{e1, e2}{\linkS4class{ingredients} and/or \linkS4class{recipe} objects}
 }
 \description{
 ..

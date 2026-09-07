@@ -6,7 +6,7 @@
 \alias{show,per-method}
 \alias{show,tool-method}
 \alias{show,nutrition-method}
-\alias{show,recipe0-method}
+\alias{show,ingredients-method}
 \alias{show,recipe-method}
 \alias{show_cooking}
 \alias{show,drinkmix-method}
@@ -20,7 +20,7 @@
 
 \S4method{show}{nutrition}(object)
 
-\S4method{show}{recipe0}(object)
+\S4method{show}{ingredients}(object)
 
 \S4method{show}{recipe}(object)
 

@@ -1,12 +1,12 @@
 # '\u2318' 
 # c('\u058d', '\u058e')
 
-#' @title Recipe
+#' @title Ingredients & Recipe
 #' 
 #' @description 
-#' S4 class \linkS4class{recipe0} is the mathematical model, allowing negative ingredients.
+#' \linkS4class{ingredients} is the mathematical model, allowing negative ingredients.
 #' 
-#' S4 class \linkS4class{recipe} is the executable recipe.
+#' \linkS4class{recipe} is the executable recipe.
 #' 
 #' @slot alias \link[base]{character} scalar in Unicode, alias (e.g., in Chinese)
 #' @slot alias_class,alias_flavor \link[base]{character} scalar in Unicode, alias (e.g., in Chinese) of class and flavor
@@ -237,9 +237,9 @@
 #' @references
 #' \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
 #' 
-#' @name recipe0-class
+#' @name ingredients-class
 #' @export
-setClass(Class = 'recipe0', slots = c(
+setClass(Class = 'ingredients', slots = c(
   lemon_pc = 'numeric',
   lime_pc = 'numeric',
   avocado_pc = 'numeric',
@@ -394,10 +394,10 @@ setClass(Class = 'recipe0', slots = c(
 ))
 
 
-#' @rdname recipe0-class
+#' @rdname ingredients-class
 #' @aliases recipe-class
 #' @export
-setClass(Class = 'recipe', contains = 'recipe0', slots = c(
+setClass(Class = 'recipe', contains = 'ingredients', slots = c(
   
   alias = 'character',
   alias_class = 'character', 
@@ -462,11 +462,11 @@ setClass(Class = 'recipe', contains = 'recipe0', slots = c(
 
 
 
-setAs(from = 'recipe', to = 'recipe0', def = \(from) {
-  slt0 <- names(getSlots(x = 'recipe0'))
+setAs(from = 'recipe', to = 'ingredients', def = \(from) {
+  slt0 <- names(getSlots(x = 'ingredients'))
   atr0 <- attributes(from)[slt0]
   atr <- atr0[lengths(atr0) > 0L]
-  do.call(what = new, args = c(list(Class = 'recipe0'), atr))
+  do.call(what = new, args = c(list(Class = 'ingredients'), atr))
 })
 
 
@@ -503,7 +503,7 @@ addNameLen1 <- \(x, which, name1 = stop('no default!')) {
 }
 
 combineVol <- \(x, which, name1 = stop('no default!')) {
-  slt0 <- names(getSlots(x = 'recipe0'))
+  slt0 <- names(getSlots(x = 'ingredients'))
   ._tsp <- paste0(which, '_tsp')
   has_tsp <- ._tsp %in% slt0
   ._Tbsp <- paste0(which, '_Tbsp')
@@ -578,7 +578,7 @@ get_flavor_ <- \(x) {
 }
 
 
-setMethod(f = initialize, signature = 'recipe0', definition = \(.Object, ...) {
+setMethod(f = initialize, signature = 'ingredients', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
@@ -722,7 +722,7 @@ setMethod(f = initialize, signature = 'recipe0', definition = \(.Object, ...) {
   x <- x |> 
     addNameLen1(which = 'water_extra', name1 = 'Wegmans_water')
   
-  for (i in names(getSlots(x = 'recipe0'))) {
+  for (i in names(getSlots(x = 'ingredients'))) {
     ival <- slot(object = x, name = i)
     # generic method '+' will create 0's
     if (anyNA(ival)) stop(i)
@@ -745,7 +745,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   x <- callNextMethod(.Object, ...)
   
   # is this the correct way of doing things?????
-  x <- getMethod(f = 'initialize', signature = 'recipe0')(x)
+  x <- getMethod(f = 'initialize', signature = 'ingredients')(x)
   
   x@machine <- x@machine[lengths(x@machine) > 0L]
   
@@ -1039,12 +1039,12 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 #' @rdname show_cooking
 #' @export
-setMethod(f = show, signature = 'recipe0', definition = \(object) print.recipe0(object))
+setMethod(f = show, signature = 'ingredients', definition = \(object) print.ingredients(object))
 
 #' @export
-print.recipe0 <- \(x, ...) {
+print.ingredients <- \(x, ...) {
   
-  y <- nutrition(x = x) # dispatch to [nutrition.recipe0] or [nutrition.recipe]
+  y <- nutrition(x = x) # dispatch to [nutrition.ingredients] or [nutrition.recipe]
   
   if (length(y@name)) {
     y@name |> col_grey() |> style_bold() |> cat()
@@ -1224,7 +1224,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     cat('\n\n')
   }
   
-  print.recipe0(object)
+  print.ingredients(object)
   
   y <- nutrition.recipe(x = object) # still need
   

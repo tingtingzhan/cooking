@@ -11,7 +11,6 @@ nutrition <- \(x) UseMethod(generic = 'nutrition')
 
 
 #' @rdname nutrition
-#' @export nutrition.character
 #' @export
 nutrition.character <- \(x) {
   if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
@@ -22,7 +21,6 @@ nutrition.character <- \(x) {
 }
 
 #' @rdname nutrition
-#' @export nutrition.function
 #' @export
 nutrition.function <- \(x) {
   
@@ -42,11 +40,10 @@ nutrition.function <- \(x) {
 
 
 #' @rdname nutrition
-#' @export nutrition.recipe0
 #' @export
-nutrition.recipe0 <- \(x) {
+nutrition.ingredients <- \(x) {
   
-  atr0 <- attributes(x)[names(getSlots(x = 'recipe0'))] # [nutrition.recipe0] might be applied to \linkS4class{recipe}
+  atr0 <- attributes(x)[names(getSlots(x = 'ingredients'))] # [nutrition.ingredients] might be applied to \linkS4class{recipe}
   atr <- atr0[lengths(atr0) > 0L]
   
   grams <- unlist(unname(atr), use.names = TRUE)
@@ -110,12 +107,11 @@ nutrition.recipe0 <- \(x) {
 
 
 #' @rdname nutrition
-#' @export nutrition.recipe
 #' @export
 nutrition.recipe <- \(x) {
   
   lost <- c('waterLost', 'fatLost', 'sugarLost')
-  slt0 <- names(getSlots(x = 'recipe0'))
+  slt0 <- names(getSlots(x = 'ingredients'))
   ingredient <- names(which(lengths(attributes(x)[slt0]) > 0L))
   
   atr <- attributes(x)[ingredient]

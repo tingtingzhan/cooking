@@ -2,19 +2,19 @@
 % Please edit documentation in R/fun_recipe.R
 \name{S4generic_recipe}
 \alias{S4generic_recipe}
-\alias{*,recipe0,numeric-method}
-\alias{*,numeric,recipe0-method}
+\alias{*,ingredients,numeric-method}
+\alias{*,numeric,ingredients-method}
 \alias{/,recipe,numeric-method}
 \title{Multiplication and Ratio of \linkS4class{recipe} Object}
 \usage{
-\S4method{*}{recipe0,numeric}(e1, e2)
+\S4method{*}{ingredients,numeric}(e1, e2)
 
-\S4method{*}{numeric,recipe0}(e1, e2)
+\S4method{*}{numeric,ingredients}(e1, e2)
 
 \S4method{/}{recipe,numeric}(e1, e2)
 }
 \arguments{
-\item{e1}{\linkS4class{recipe} and/or \linkS4class{recipe0} object}
+\item{e1}{\linkS4class{recipe} and/or \linkS4class{ingredients} object}
 
 \item{e2}{\link[base]{numeric} scalar}
 }
