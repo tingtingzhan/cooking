@@ -1038,21 +1038,24 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
     (obj@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
     format_vol(x = obj@servingGram, nm = list(obj))
   ) |> cat()
-             
-  if (is.na(obj@date)) {
-    #sprintf(fmt = '%s\n', obj@cost_) |> 
-    #  cat()
-    obj@cost_ |>
-      cat(sep = '\n')
-  } else {
-    obj@date |>
-      #as.character() |> # no need
-      make_ansi_style('grey70')() |>
-      sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', obj@cost_, . = _) |> 
-      cat(sep = '\n')
+    
+  if (length(obj@cost_)) {
+    if (is.na(obj@date)) {
+      obj@cost_ |>
+        cat(sep = '\n')
+    } else {
+      obj@date |>
+        #as.character() |> # no need
+        make_ansi_style('grey70')() |>
+        sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', obj@cost_, . = _) |> 
+        cat(sep = '\n')
+    }
+  }         
+  
+  if (length(obj@calorie)) {
+    cat('Calories', obj@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   }
   
-  if (length(obj@calorie)) cat('Calories', obj@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   cat('\n')
   
   sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, format_ingredient_perc(obj, 'water')) |> cat()

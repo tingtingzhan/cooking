@@ -3,20 +3,20 @@
 \name{subtract}
 \alias{subtract}
 \alias{subtract.function}
-\alias{subtract.recipe}
+\alias{subtract.raw.}
 \alias{subtract.nutrition}
-\title{Subtract Ingredients From Recipe or Commercial Product}
+\title{Subtract Ingredients from \linkS4class{raw.} or \linkS4class{nutrition} Objects}
 \usage{
-subtract(object, ...)
+subtract(x, ...)
 
-\method{subtract}{`function`}(object, ...)
+\method{subtract}{`function`}(x, ...)
 
-\method{subtract}{recipe}(object, ...)
+\method{subtract}{raw.}(x, ...)
 
-\method{subtract}{nutrition}(object, ...)
+\method{subtract}{nutrition}(x, ...)
 }
 \arguments{
-\item{object}{\linkS4class{nutrition} object}
+\item{x}{see \strong{Usage}}
 
 \item{...}{ingredients to be subtracted}
 }
