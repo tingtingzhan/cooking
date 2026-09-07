@@ -8,7 +8,8 @@
 #' @examples
 #' diagnose(
 #'  meatDip_BalsamicVinaigrette,
-#'  meatDip_srirachaBBQ
+#'  meatDip_srirachaBBQ,
+#'  meatDip_ThaiSweetGinger
 #' )
 #' 
 #' 
@@ -49,4 +50,22 @@ meatDip_srirachaBBQ <- \() new(
   ),
   date = as.Date('2026-09-05'),
   review = 'perfect!!'
+)
+
+
+
+#' @rdname meatDip-class
+#' @export
+meatDip_ThaiSweetGinger <- \() new(
+  Class = 'meatDip', 
+  alias_flavor = 'Thai Sweet Ginger',
+  sauce_Tbsp = c(
+    TraderJoes_ThaiGinger = 1
+  ),
+  sauce_tsp = c(
+    Wegmans_Marsala = .5
+  ),
+  instruction = 'Microwave 15 seconds',
+  date = as.Date('2026-09-07'),
+  review = 'too dry, too salty. try adding 1/2tsp of sesame oil after microwave'
 )

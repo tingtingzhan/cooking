@@ -63,6 +63,8 @@ diagnose_ <- \(dots, which) {
   #y3 <- y2[rowMeans(is.na(y2)) != 1L, , drop = FALSE]
   y3 <- y2
   if (!length(y3)) return(invisible())
+  if (all(is.na(y3))) return(invisible())
+  if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
   colnames(y3) <- show_endpoint(colnames(y3))
   
   atr[[1L]]@per |> 
