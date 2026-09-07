@@ -5,9 +5,7 @@
 #' @description
 #' ..
 #' 
-#' @param ... objects convertible to \linkS4class{recipe} class
-#' 
-# @param dots a \link[base]{list} of objects convertible to \linkS4class{recipe} class
+#' @param ... objects convertible to \linkS4class{recipe}
 #' 
 #' @importFrom stats median.default
 #' @export
@@ -16,14 +14,14 @@ diagnose <- \(...) {
   # dots <- lapply(dots, FUN = nutrition) # mess up with call later
   dots <- as.list(match.call())[-1L] |>
     lapply(FUN = \(x) {
-      # (x = as.list(match.call())[-1L][[1L]])
       return(eval(call(name = 'nutrition', x)))
-      do.call(what = 'nutrition', args = list(x)) # seems equivalent
     })
   
   cat('\n')
   'Nutrition\n' |> bg_br_yellow() |> cat()
-  print.nutrition_(nutrition_(dots = dots))
+  dots |>
+    nutrition_(dots = _) |>
+    print.nutrition_()
   
   names(dots) <- dots |>
     vapply(FUN = slot, name = 'name', FUN.VALUE = NA_character_)
@@ -57,11 +55,7 @@ diagnose_ <- \(dots, which) {
   y0 <- atr |>
     lapply(FUN = \(a) { # (a = atr[[1L]])
       a@equiv |>
-        vapply(FUN = \(i) {
-          crt <- i@current
-          if (!length(crt)) return(NA_real_)
-          return(crt)
-        }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+        vapply(FUN = slot, name = 'current', FUN.VALUE = NA_real_, USE.NAMES = TRUE)
     })
   if (all(!lengths(y0))) stop('wont happen')
   y1 <- do.call(rbind, args = y0)

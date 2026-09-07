@@ -7,7 +7,7 @@
 diagnose(...)
 }
 \arguments{
-\item{...}{objects convertible to \linkS4class{recipe} class}
+\item{...}{objects convertible to \linkS4class{recipe}}
 }
 \description{
 ..

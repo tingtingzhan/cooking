@@ -27,7 +27,15 @@ setClass(Class = 'equiv', slots = c(
 
 
 
-
+setMethod(f = initialize, signature = 'equiv', definition = \(.Object, ...) {
+  
+  x <- callNextMethod(.Object, ...)
+  
+  if (!length(x@current)) x@current <- NA_real_
+  
+  return(x)
+  
+})
 
 
 
