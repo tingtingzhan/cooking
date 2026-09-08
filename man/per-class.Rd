@@ -19,6 +19,6 @@
 \describe{
 \item{\code{per}}{\link[base]{character} scalar}
 
-\item{\code{equiv}}{a \link[base]{list} of \linkS4class{equiv} objects}
+\item{\code{equiv}}{a \link[base]{list} of \link[equiv4]{equiv-class} objects}
 }}
 

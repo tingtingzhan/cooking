@@ -66,13 +66,13 @@ diagnose_ <- \(dots, which) {
   if (all(is.na(y3))) return(invisible())
   if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
   colnames(y3) <- show_endpoint(colnames(y3))
+  y <- y3 |> 
+    col_binlabel(FUN = median.default, na.rm = TRUE)
   
   atr[[1L]]@per |> 
     sprintf(fmt = '\u214c %s\n') |> 
     style_bold() |> bg_br_yellow() |> 
     cat()
-  y <- y3 |> 
-    col_label_bin_(FUN = median.default, na.rm = TRUE)
   y |> cat_matrix()
   cat('\n')
   return(invisible(y))

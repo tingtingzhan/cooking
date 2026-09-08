@@ -969,6 +969,21 @@ getGelatinLeaf <- \(x) {
 }
 
 
+
+# @param x \link[base]{numeric} \link[base]{matrix}
+#' @importFrom equiv4 binlabel
+col_binlabel <- \(x, FUN, ...) {
+  x |> 
+    apply(MARGIN = 2L, FUN = \(i) {
+      i |> 
+        binlabel(FUN(i, ...), accuracy = .1)() # cannot return a function, without `i`
+    }, simplify = FALSE) |>
+    do.call(what = cbind) # to make sure not getting a 'vector' :)
+}  
+
+
+
+
 #' @importFrom consec cmod
 fmt_vol <- \(x, nm = names(x)) {
   
@@ -1165,7 +1180,10 @@ format_ingredient_perc <- \(x, name) {
   x_ <- slot(x, name = name)
   if (!length(x_) || (x_ == 0)) return(character())
   pct <- x_ / x@servingGram
-  pct |> .label_bin_(pct)() |> make_ansi_style('olivedrab')() |> style_bold()
+  pct |> 
+    binlabel(pct, accuracy = .1)() |> 
+    make_ansi_style('olivedrab')() |> 
+    style_bold()
 }
 
 

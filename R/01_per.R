@@ -8,9 +8,10 @@
 #' 
 #' @slot per \link[base]{character} scalar
 #' 
-#' @slot equiv a \link[base]{list} of \linkS4class{equiv} objects
+#' @slot equiv a \link[base]{list} of \link[equiv4]{equiv-class} objects
 #' 
 # @name per-class
+#' @importClassesFrom equiv4 equiv
 #' @export
 setClass(Class = 'per', slots = c(
   per = 'character',
@@ -41,7 +42,7 @@ format.per <- \(x, ...) {
     names() |> 
     show_endpoint()
   fmt_equiv <- x@equiv |>
-    lapply(FUN = format.equiv) |>
+    lapply(FUN = format) |> # equiv4:::format.equiv
     setNames(nm = nm)
   
   o <- order(nm)
