@@ -39,8 +39,7 @@ setClass(Class = 'per', slots = c(
 format.per <- \(x, ...) {
   
   nm <- x@equiv |>
-    names() |> 
-    show_endpoint()
+    names()
   fmt_equiv <- x@equiv |>
     lapply(FUN = format) |> # equiv4:::format.equiv
     setNames(nm = nm)
@@ -55,33 +54,6 @@ format.per <- \(x, ...) {
   
 }
 
-
-show_endpoint <- \(x) {
-  x[x == 'addedWater'] <- 'water+'
-  x[x == 'addedSugar'] <- 'sugar+'
-  x[x == 'addedStarch'] <- 'starch+'
-  # x[x == 'alcohol'] <- '\U1f943'
-  x[x == 'carbohydrate'] <- 'carb' 
-  x[x == 'NaHCO3'] <- 'NaHCO\u2083' 
-  x[x == 'Na2CO3'] <- 'Na\u2082CO\u2083' 
-  x[x == 'cornmeal'] <- '\U1f33d'
-  x[x == 'glutinousRice'] <- 'glutRice'
-  x[x == 'eggYolk'] <- '\U0001f95ayolk'
-  x[x == 'eggWhite'] <- '\U0001f95awhite'
-  x[x == 'sodium'] <- 'Na\u207a'
-  x[x == 'bakingPowder'] <- 'bkPwd'
-  x[x == 'cholesterol'] <- 'cholr'
-  x[x == 'blackSesame'] <- 'sesame' |> col_br_white() |> bg_black()
-  x[x == 'whitePepper'] <- 'whitePp'
-  x[x == 'blackPepper'] <- 'blackPp'
-  x[x == 'pumpkinSpice'] <- '\U0001f383spice'
-  x[x == 'sesameOil'] <- 'ssmOil'
-  x[x == 'creamCheese'] <- 'creamChz'
-  x[x == 'rattanPepperOil'] <- 'ppcOil' |> col_br_white() |> bg_green()
-  x[x == 'pastryFlour'] <- '\U0001f370flour'
-  x[x == 'breadFlour'] <- '\U0001f35eflour'
-  return(x)
-}
 
 
 

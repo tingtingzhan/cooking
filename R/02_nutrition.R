@@ -1020,6 +1020,14 @@ fmt_vol <- \(x, nm = names(x)) {
 
 
 
+nutrition_slot_short <- \(x) {
+  x[x == 'addedSugar'] <- 'sugar+'
+  x[x == 'carbohydrate'] <- 'carb' 
+  x[x == 'sodium'] <- 'Na\u207a'
+  x[x == 'cholesterol'] <- 'cholr'
+  return(x)
+}
+
 
 
 

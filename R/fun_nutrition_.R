@@ -66,7 +66,8 @@ print.nutrition_ <- \(x, ...) {
   
   ret <- ret0[, colMeans(ret0 == 0) != 1] |> 
     col_binlabel(FUN = max)
-  colnames(ret) <- ret |> colnames() |> show_endpoint()
+  colnames(ret) <- colnames(ret) |>
+    nutrition_slot_short()
   
   ret |> cat_matrix()
   cat('\n')
