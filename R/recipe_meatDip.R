@@ -9,7 +9,8 @@
 #' diagnose(
 #'  BalsamicVinaigrette_meatDip,
 #'  srirachaBBQ_meatDip,
-#'  sweetGinger_meatDip
+#'  sweetGinger_meatDip,
+#'  jalapeno_meatDip
 #' )
 #' 
 #' 
@@ -69,3 +70,22 @@ sweetGinger_meatDip <- \() new(
   date = as.Date('2026-09-07'),
   review = 'very good!'
 )
+
+#' @rdname meatDip-class
+#' @export
+jalapeno_meatDip <- \() new(
+  Class = 'meatDip', 
+  alias_flavor = 'Jalapeno',
+  sauce_Tbsp = c(
+    TraderJoes_jalapenoSauce = .5,
+    mizkan_brownRiceVinegar = .5,
+    Kikkoman_soyLite = .5 # 1Tbsp too salty! try .5 next time
+  ),
+  sauce_tsp = c(
+    Kadoya_sesameOil = .5,
+    YaoMaZi_rattanPepperOil = .25
+  ),
+  date = as.Date('2026-09-07'),
+  review = 'very good!'
+)
+

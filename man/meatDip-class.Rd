@@ -6,6 +6,7 @@
 \alias{BalsamicVinaigrette_meatDip}
 \alias{srirachaBBQ_meatDip}
 \alias{sweetGinger_meatDip}
+\alias{jalapeno_meatDip}
 \title{\linkS4class{meatDip} Recipes}
 \usage{
 BalsamicVinaigrette_meatDip()
@@ -13,6 +14,8 @@ BalsamicVinaigrette_meatDip()
 srirachaBBQ_meatDip()
 
 sweetGinger_meatDip()
+
+jalapeno_meatDip()
 }
 \description{
 ..
@@ -21,7 +24,8 @@ sweetGinger_meatDip()
 diagnose(
  BalsamicVinaigrette_meatDip,
  srirachaBBQ_meatDip,
- sweetGinger_meatDip
+ sweetGinger_meatDip,
+ jalapeno_meatDip
 )
 
 

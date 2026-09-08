@@ -370,13 +370,13 @@ print.raw. <- \(x, ...) {
              x@riceFlour, x@glutinousRiceFlour,
              x@cornmeal,
              x@coconut)
-  if (length(flour)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, format_vol(flour)) |> lapply(FUN = cli_text) # one or more flour
+  if (length(flour)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, fmt_vol(flour)) |> lapply(FUN = cli_text) # one or more flour
   
-  if (length(x@starch)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, format_vol(x@starch)) |> lapply(FUN = cli_text) 
+  if (length(x@starch)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, fmt_vol(x@starch)) |> lapply(FUN = cli_text) 
   
   # commercial puree with volume info
   puree_vol <- c(x@pumpkin, x@pumpkinPieMix, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@yellowCorn, x@applesauce)
-  if (length(puree_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, format_vol(puree_vol)) |> lapply(FUN = cli_text)
+  if (length(puree_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, fmt_vol(puree_vol)) |> lapply(FUN = cli_text)
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
   puree_no_vol <- c(x@puree, x@darkCherry, x@strawberry, x@banana)
@@ -393,7 +393,7 @@ print.raw. <- \(x, ...) {
     #format_pc(x, name = 'fruit') # dont know how to use this yet
   ) |> lapply(FUN = cli_text) # one or more fruit_pc
   
-  # sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, format_vol(x@flavor)) |> lapply(FUN = cli_text) # one or more flavor
+  # sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, fmt_vol(x@flavor)) |> lapply(FUN = cli_text) # one or more flavor
   if (length(x@flavor)) sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor) |> lapply(FUN = cli_text) # one or more flavor
   # my `@flavor` slot is very complicated
   
@@ -411,13 +411,13 @@ print.raw. <- \(x, ...) {
     x@soybean
   )
   if (length(grain_bean_nut)) sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut) |> lapply(FUN = cli_text) # one or more grain
-  if (length(grain_bean_nut_vol_)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, format_vol(grain_bean_nut_vol_)) |> lapply(FUN = cli_text) # one or more grain
+  if (length(grain_bean_nut_vol_)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, fmt_vol(grain_bean_nut_vol_)) |> lapply(FUN = cli_text) # one or more grain
   
   fat_vol <- c(
     x@fat,
     x@lard, x@tallow
   )
-  if (length(fat_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, format_vol(fat_vol)) |> lapply(FUN = cli_text)
+  if (length(fat_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, fmt_vol(fat_vol)) |> lapply(FUN = cli_text)
   
   halfpound_brick <- c(
     x@creamCheese
@@ -441,7 +441,7 @@ print.raw. <- \(x, ...) {
     x@mascarpone, x@cottageCheese, x@yogurt, x@yogurtGreek, x@kefir, x@filmjolk,
     x@butter, x@ghee, x@evaporatedMilk, x@drymilk, x@milk, x@buttermilk, x@heavyCream, x@lightCream, x@sourCream
   )
-  if (length(dairy_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol)], dairy_vol, format_vol(dairy_vol)) |> lapply(FUN = cli_text)
+  if (length(dairy_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol)], dairy_vol, fmt_vol(dairy_vol)) |> lapply(FUN = cli_text)
   
   if (length(x@eggYolk)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, format_pc(x, 'eggYolk')) |> lapply(FUN = cli_text)
   if (length(x@eggWhite)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, format_pc(x, 'eggWhite')) |> lapply(FUN = cli_text)
@@ -456,7 +456,7 @@ print.raw. <- \(x, ...) {
   allSugar <- c(
     x@sugar, x@brownSugar
   )
-  if (length(allSugar)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, format_vol(allSugar)) |> lapply(FUN = cli_text)
+  if (length(allSugar)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(allSugar)], allSugar, fmt_vol(allSugar)) |> lapply(FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
@@ -481,29 +481,29 @@ print.raw. <- \(x, ...) {
     x@blackRice, x@brownRice,
     x@syrup
   )
-  if (length(has_vol_small)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, format_vol(has_vol_small)) |> lapply(FUN = cli_text)
-  if (length(has_vol_large)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, format_vol(has_vol_large)) |> lapply(FUN = cli_text)
+  if (length(has_vol_small)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, fmt_vol(has_vol_small)) |> lapply(FUN = cli_text)
+  if (length(has_vol_large)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, fmt_vol(has_vol_large)) |> lapply(FUN = cli_text)
   
   if (length(x@gelatin)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> cli_text()
   
   if (length(x@water)) {
     if (!length(x@water_extra)) {
-      sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, format_vol(x@water)) |> cli_text()
+      sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, fmt_vol(x@water)) |> cli_text()
     } else {
       water <- sum_by_name(x@water, x@water_extra)
-      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_extra) |> col_br_red(), format_vol(water)) |> cli_text()
+      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_extra) |> col_br_red(), fmt_vol(water)) |> cli_text()
     }
   }
   
-  if (length(x@water40)) sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, format_vol(x@water40)) |> cli_text()
-  if (length(x@water70)) sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, format_vol(x@water70)) |> cli_text()
-  if (length(x@water80)) sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, format_vol(x@water80)) |> cli_text()
-  if (length(x@water90)) sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, format_vol(x@water90)) |> cli_text()
-  if (length(x@water95)) sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, format_vol(x@water95)) |> cli_text()
-  if (length(x@boilingWater)) sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, format_vol(x@boilingWater)) |> cli_text()
-  if (length(x@iceWater)) sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, format_vol(x@iceWater)) |> cli_text()
-  if (length(x@carbonatedWater)) sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, format_vol(x@carbonatedWater)) |> cli_text()
-  if (length(x@shavedIce)) sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, format_vol(x@shavedIce)) |> cli_text()
+  if (length(x@water40)) sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, fmt_vol(x@water40)) |> cli_text()
+  if (length(x@water70)) sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, fmt_vol(x@water70)) |> cli_text()
+  if (length(x@water80)) sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, fmt_vol(x@water80)) |> cli_text()
+  if (length(x@water90)) sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, fmt_vol(x@water90)) |> cli_text()
+  if (length(x@water95)) sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, fmt_vol(x@water95)) |> cli_text()
+  if (length(x@boilingWater)) sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, fmt_vol(x@boilingWater)) |> cli_text()
+  if (length(x@iceWater)) sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, fmt_vol(x@iceWater)) |> cli_text()
+  if (length(x@carbonatedWater)) sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, fmt_vol(x@carbonatedWater)) |> cli_text()
+  if (length(x@shavedIce)) sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, fmt_vol(x@shavedIce)) |> cli_text()
   if (length(x@ice)) sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice) |> cli_text()
   
   cat('\n')

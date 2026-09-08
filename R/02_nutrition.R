@@ -969,51 +969,41 @@ getGelatinLeaf <- \(x) {
 }
 
 
-
-
-
-
-format_vol <- \(x, nm = names(x), tol = 1e-6) {
+#' @importFrom consec cmod
+fmt_vol <- \(x, nm = names(x)) {
   
   if (!length(x)) return(character())
   
-  cup <- (x/gram_per_tsp(nm)) |> mod_(e2 = 48, tol = tol) # number of 1cup (48tsp)
-  cup1 <- cup |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48*2/3, tol = tol) # 0 or 1; number of 2/3 cup
-  cup2 <- cup1 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48/2, tol = tol) # 0 or 1; number of 1/2 cup
-  cup3 <- cup2 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48/3, tol = tol) # 0 or 1; number of 1/3 cup
-  cup4 <- cup3 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 48/4, tol = tol) # 0 or 1; number of 1/4 cup
-  Tbsp <- cup4 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 3, tol = tol) # 0 or 1 or 2; number of Tbsp
-  tsp1a <- Tbsp |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 2, tol = tol) # 0 or 1, number of 2tsp
-  tsp1 <- tsp1a |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 1.5, tol = tol) # 0 or 1, number of 1.5 tsp
-  tsp2 <- tsp1 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = 1, tol = tol) # 0 or 1, number of 1tsp
-  tsp3 <- tsp2 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .5, tol = tol) # 0 or 1, number of 1/2tsp
-  tsp4 <- tsp3 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .25, tol = tol) # 0 or 1, number of 1/4tsp
-  tsp5 <- tsp4 |> attr(which = 'e1', exact = TRUE) |> mod_(e2 = .125, tol = tol) # 0 or 1, number of 1/8tsp
-
-  unlist(.mapply(FUN = \(...) {
-    z0 <- c(...)
-    z1 <- z0[!is.na(z0)]
-    if (!length(z1)) return('') # `z1` either all-NA, or none-NA
-    (z1[seq_len(min(3L, length(z1)))]) |> 
-      paste(collapse = ' ') |> 
-      col_br_blue() |> 
-      style_bold()
-  }, dots = list(
-    ifelse(cup, yes = sprintf(fmt = '%dCup', cup), no = NA_character_), 
-    ifelse(cup1, yes = '\u2154Cup', no = NA_character_), 
-    ifelse(cup2, yes = '\u00bdCup', no = NA_character_), 
-    ifelse(cup3, yes = '\u2153Cup', no = NA_character_), 
-    ifelse(cup4, yes = '\u00bcCup', no = NA_character_), 
-    ifelse(Tbsp, yes = sprintf(fmt = '%dTbsp', Tbsp), no = NA_character_),
-    ifelse(tsp1a, yes = '2tsp', no = NA_character_),
-    ifelse(tsp1, yes = '1\u00bdtsp', no = NA_character_),
-    ifelse(tsp2, yes = '1tsp', no = NA_character_),
-    ifelse(tsp3, yes = '\u00bdtsp', no = NA_character_),
-    ifelse(tsp4, yes = '\u00bctsp', no = NA_character_),
-    ifelse(tsp5, yes = '\u215btsp', no = NA_character_)
-  ), MoreArgs = NULL))
-  
+  (x/gram_per_tsp(nm)) |>
+    cmod(
+      e1 = _, 
+      e2 = c(
+        Cup = 48,
+        '\u2154Cup' = 48*2/3,
+        '\u00bdCup' = 48/2,
+        '\u2153Cup' = 48/3,
+        '\u00bcCup' = 48/4,
+        Tbsp = 3,
+        '2tsp' = 2,
+        '1\u00bdtsp' = 1.5,
+        '1tsp' = 1,
+        '\u00bdtsp' = .5,
+        '\u00bctsp' = 1/4,
+        '\u215btsp' = 1/8
+      ),
+      pattern_allow_multiple = '^[A-Za-z]',
+      n = 3L,
+      tol = 1e-6
+    ) |>
+    col_br_blue() |> 
+    style_bold()
 }
+  
+
+
+
+
+
 
 
 
@@ -1036,7 +1026,7 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
     fmt = 'Serving Size %s %s %s\n\n', 
     obj@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
     (obj@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
-    format_vol(x = obj@servingGram, nm = list(obj))
+    fmt_vol(x = obj@servingGram, nm = list(obj))
   ) |> cat()
     
   if (length(obj@cost_)) {

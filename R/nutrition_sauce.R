@@ -162,7 +162,8 @@ TraderJoes_jalapenoSauce <- \() new(
   calorie = 90,
   fat = 10, 
   sodium = .11,
-  carbohydrate = 2
+  carbohydrate = 2,
+  review = 'I do not like this chili profile'
 )
 
 TraderJoes_srirachaBBQ <- \() new(
