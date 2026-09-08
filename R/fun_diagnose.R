@@ -65,8 +65,6 @@ diagnose_ <- \(dots, which) {
   if (!length(y3)) return(invisible())
   if (all(is.na(y3))) return(invisible())
   if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
-  colnames(y3) <- colnames(y3) |>
-    nutrition_slot_short()
   y <- y3 |> 
     col_binlabel(FUN = median.default, na.rm = TRUE)
   
