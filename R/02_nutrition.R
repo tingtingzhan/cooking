@@ -1010,7 +1010,8 @@ fmt_vol <- \(x, nm = names(x)) {
 
 
 
-#' @rdname show_cooking
+#' @rdname nutrition-class
+#' @param object a \linkS4class{nutrition} object
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = \(object) {
   

@@ -3,7 +3,14 @@
 \docType{class}
 \name{per-class}
 \alias{per-class}
+\alias{show,per-method}
 \title{\linkS4class{per}}
+\usage{
+\S4method{show}{per}(object)
+}
+\arguments{
+\item{object}{a \linkS4class{per} object}
+}
 \description{
 ..
 }

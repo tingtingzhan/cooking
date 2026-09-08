@@ -78,7 +78,8 @@ setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
 
 
 
-#' @rdname show_cooking
+#' @rdname tool-class
+#' @param object a \linkS4class{tool} object
 #' @export
 setMethod(f = show, signature = 'tool', definition = \(object) {
   

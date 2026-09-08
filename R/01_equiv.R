@@ -144,7 +144,8 @@ col_label_bin_ <- \(x, FUN, ...) {
 
 
 
-#' @rdname show_cooking
+#' @rdname equiv-class
+#' @param object an \linkS4class{equiv} object
 #' @export
 setMethod(f = show, signature = 'equiv', definition = \(object) {
   object |> 

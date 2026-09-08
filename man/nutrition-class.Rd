@@ -3,7 +3,14 @@
 \docType{class}
 \name{nutrition-class}
 \alias{nutrition-class}
+\alias{show,nutrition-method}
 \title{\linkS4class{nutrition} Information}
+\usage{
+\S4method{show}{nutrition}(object)
+}
+\arguments{
+\item{object}{a \linkS4class{nutrition} object}
+}
 \description{
 Nutrition information.
 }

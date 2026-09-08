@@ -3,7 +3,14 @@
 \docType{class}
 \name{tool-class}
 \alias{tool-class}
+\alias{show,tool-method}
 \title{Kitchen \linkS4class{tool}s}
+\usage{
+\S4method{show}{tool}(object)
+}
+\arguments{
+\item{object}{a \linkS4class{tool} object}
+}
 \description{
 ..
 }

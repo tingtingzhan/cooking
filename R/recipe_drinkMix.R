@@ -162,7 +162,8 @@ frappe.drinkmix <- \(
 
 
 
-#' @rdname show_cooking
+#' @rdname drink
+#' @param object a \linkS4class{drinkmix} object
 #' @export
 setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   callNextMethod(object)

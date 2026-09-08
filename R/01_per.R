@@ -86,7 +86,8 @@ show_endpoint <- \(x) {
 
 
 
-#' @rdname show_cooking
+#' @rdname per-class
+#' @param object a \linkS4class{per} object
 #' @importFrom charwidth cat_matrix
 #' @export
 setMethod(f = show, signature = 'per', definition = \(object) {

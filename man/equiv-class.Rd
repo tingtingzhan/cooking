@@ -3,7 +3,14 @@
 \docType{class}
 \name{equiv-class}
 \alias{equiv-class}
+\alias{show,equiv-method}
 \title{\linkS4class{equiv}}
+\usage{
+\S4method{show}{equiv}(object)
+}
+\arguments{
+\item{object}{an \linkS4class{equiv} object}
+}
 \description{
 ..
 }

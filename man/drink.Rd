@@ -12,6 +12,7 @@
 \alias{frappe}
 \alias{frappe.function}
 \alias{frappe.drinkmix}
+\alias{show,drinkmix-method}
 \title{\linkS4class{drinkmix} Recipes}
 \usage{
 hotdrink(x, ...)
@@ -37,6 +38,8 @@ frappe(x, ...)
   iceWater = ice,
   ...
 )
+
+\S4method{show}{drinkmix}(object)
 }
 \arguments{
 \item{x}{\linkS4class{drinkmix} object}
@@ -46,6 +49,8 @@ frappe(x, ...)
 \item{water, water80, water90}{\link[base]{numeric} scalars, for \link{hotdrink}}
 
 \item{ice, iceWater}{\link[base]{numeric} scalars, for \link{frappe}}
+
+\item{object}{a \linkS4class{drinkmix} object}
 }
 \value{
 The function \code{\link[=hotdrink]{hotdrink()}} returns a \linkS4class{drink} object,

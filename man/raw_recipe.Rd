@@ -4,8 +4,18 @@
 \name{raw_recipe}
 \alias{raw_recipe}
 \alias{raw.-class}
+\alias{show,raw.-method}
 \alias{recipe-class}
+\alias{show,recipe-method}
 \title{Raw Ingredients and Recipe}
+\usage{
+\S4method{show}{raw.}(object)
+
+\S4method{show}{recipe}(object)
+}
+\arguments{
+\item{object}{a \linkS4class{raw.} or \linkS4class{recipe} object}
+}
 \description{
 \linkS4class{raw.} allows negative ingredients.
 }

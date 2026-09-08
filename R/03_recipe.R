@@ -473,7 +473,8 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 
-#' @rdname show_cooking
+#' @rdname raw_recipe
+# @param object a \linkS4class{recipe} object
 #' @export
 setMethod(f = show, signature = 'recipe', definition = \(object) {
   

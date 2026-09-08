@@ -336,7 +336,8 @@ setClass(Class = 'raw.', slots = c(
 
 
 
-#' @rdname show_cooking
+#' @rdname raw_recipe
+#' @param object a \linkS4class{raw.} or \linkS4class{recipe} object
 #' @export
 setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object))
 
