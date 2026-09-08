@@ -7,9 +7,9 @@
 #' 
 #' @examples
 #' diagnose(
-#'  meatDip_BalsamicVinaigrette,
-#'  meatDip_srirachaBBQ,
-#'  meatDip_ThaiSweetGinger
+#'  BalsamicVinaigrette_meatDip,
+#'  srirachaBBQ_meatDip,
+#'  sweetGinger_meatDip
 #' )
 #' 
 #' 
@@ -21,7 +21,7 @@ setClass(Class = 'meatDip', contains = 'recipe', prototype = prototype(
 
 #' @rdname meatDip-class
 #' @export
-meatDip_BalsamicVinaigrette <- \() new(
+BalsamicVinaigrette_meatDip <- \() new(
   Class = 'meatDip',
   alias_flavor = 'Balsamic Vinaigrette',
   sauce_Tbsp = c(
@@ -37,7 +37,7 @@ meatDip_BalsamicVinaigrette <- \() new(
 
 #' @rdname meatDip-class
 #' @export
-meatDip_srirachaBBQ <- \() new(
+srirachaBBQ_meatDip <- \() new(
   Class = 'meatDip', 
   alias_flavor = 'Sriracha BBQ',
   sauce_Tbsp = c(
@@ -56,7 +56,7 @@ meatDip_srirachaBBQ <- \() new(
 
 #' @rdname meatDip-class
 #' @export
-meatDip_ThaiSweetGinger <- \() new(
+sweetGinger_meatDip <- \() new(
   Class = 'meatDip', 
   alias_flavor = 'Thai Sweet Ginger',
   sauce_Tbsp = c(

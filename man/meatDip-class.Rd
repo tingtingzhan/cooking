@@ -3,25 +3,25 @@
 \docType{class}
 \name{meatDip-class}
 \alias{meatDip-class}
-\alias{meatDip_BalsamicVinaigrette}
-\alias{meatDip_srirachaBBQ}
-\alias{meatDip_ThaiSweetGinger}
+\alias{BalsamicVinaigrette_meatDip}
+\alias{srirachaBBQ_meatDip}
+\alias{sweetGinger_meatDip}
 \title{\linkS4class{meatDip} Recipes}
 \usage{
-meatDip_BalsamicVinaigrette()
+BalsamicVinaigrette_meatDip()
 
-meatDip_srirachaBBQ()
+srirachaBBQ_meatDip()
 
-meatDip_ThaiSweetGinger()
+sweetGinger_meatDip()
 }
 \description{
 ..
 }
 \examples{
 diagnose(
- meatDip_BalsamicVinaigrette,
- meatDip_srirachaBBQ,
- meatDip_ThaiSweetGinger
+ BalsamicVinaigrette_meatDip,
+ srirachaBBQ_meatDip,
+ sweetGinger_meatDip
 )
 
 
