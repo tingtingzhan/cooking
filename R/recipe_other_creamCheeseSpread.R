@@ -3,9 +3,9 @@
 #' 
 #' @examples
 #' diagnose(
-#'  pumpkin_creamCheeseSpread,
-#'  GoodLifeEats_pumpkin_creamCheeseSpread,
-#'  Lynn_pumpkin_creamCheeseSpread
+#'  pumpkin_creamCheeseSpread(),
+#'  GoodLifeEats_pumpkin_creamCheeseSpread(),
+#'  Lynn_pumpkin_creamCheeseSpread()
 #' )
 #' @keywords internal
 #' @name creamCheeseSpread_other

@@ -10,13 +10,13 @@
 #' crepe() / 2
 #' 
 #' diagnose(
-#'  jennyc819_crepe,
-#'  Carina_crepe,
-#'  Aya_crepe,
-#'  Daat_crepe,
-#'  crepe,
-#'  Natasha_crepe,
-#'  cyberchef_crepeFrench
+#'  jennyc819_crepe(),
+#'  Carina_crepe(),
+#'  Aya_crepe(),
+#'  Daat_crepe(),
+#'  crepe(),
+#'  Natasha_crepe(),
+#'  cyberchef_crepeFrench()
 #' )
 #' 
 #' 

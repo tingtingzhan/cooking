@@ -1,6 +1,6 @@
 
 
-#' @title diagnose
+#' @title Diagnose Multiple 
 #' 
 #' @description
 #' ..
@@ -10,17 +10,14 @@
 #' @export
 diagnose <- \(...) {
   
-  # dots <- lapply(dots, FUN = nutrition) # mess up with call later
-  dots <- as.list(match.call())[-1L] |>
-    lapply(FUN = \(x) {
-      return(eval(call(name = 'nutrition', x)))
-    })
+  dots <- list(...) |>
+    lapply(FUN = as, Class = 'nutrition')
   
   cat('\n')
   'Nutrition\n' |> bg_br_yellow() |> cat()
   dots |>
-    nutrition_(dots = _) |>
-    print.nutrition_()
+    summary_nutritionlist() |>
+    print() # print.summary_nutritionlist
   
   names(dots) <- dots |>
     vapply(FUN = slot, name = 'name', FUN.VALUE = NA_character_)

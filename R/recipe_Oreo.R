@@ -31,8 +31,8 @@ KingArthur_fauxReo <- \() new(
 
 if (FALSE) {
   diagnose(
-    fauxReo,
-    KingArthur_fauxReo,
-    Nabisco_waferOreo
+    fauxReo(),
+    KingArthur_fauxReo(),
+    Nabisco_waferOreo()
   )
 }

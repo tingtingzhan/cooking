@@ -12,9 +12,9 @@
 #' pumpkin_creamCheeseSpread()
 #' 
 #' diagnose(
-#'  pumpkin_creamCheeseSpread,
-#'  pumpkin_cheesecake,
-#'  pumpkin_creamCheeseDip
+#'  pumpkin_creamCheeseSpread(),
+#'  pumpkin_cheesecake(),
+#'  pumpkin_creamCheeseDip()
 #' ) # from dry to wet!
 #' @name creamCheeseSpread-class
 #' @export

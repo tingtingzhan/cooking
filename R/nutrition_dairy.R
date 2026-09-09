@@ -4,11 +4,11 @@
 #' @examples
 #' \dontrun{
 #' diagnose(
-#'  Nancys_creamCheese,
-#'  Philadelphia_creamCheese,
-#'  OrganicValley_creamCheese,
-#'  TraderJoes_creamCheese,
-#'  Tillamook_creamCheese
+#'  Nancys_creamCheese(),
+#'  Philadelphia_creamCheese(),
+#'  OrganicValley_creamCheese(),
+#'  TraderJoes_creamCheese(),
+#'  Tillamook_creamCheese()
 #' )
 #' }
 #' @keywords internal
@@ -224,7 +224,7 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
   calorie = 60,
   fat = 5, cholesterol = .02, sodium = .12, carbohydrate = 2, sugar = 2, protein = 3)
 
-# diagnose(Philadelphia_creamCheese, Philadelphia_creamCheeseSpread, PhiladelphiaNeufchatel_creamCheese, PhiladelphiaNeufchatel_creamCheeseSpread)
+# diagnose(Philadelphia_creamCheese(), Philadelphia_creamCheeseSpread(), PhiladelphiaNeufchatel_creamCheese(), PhiladelphiaNeufchatel_creamCheeseSpread())
 
 
 
@@ -535,9 +535,9 @@ LandOLakes_whippedHeavyCream <- \() new(
 
 if (FALSE) {
   diagnose(
-    LandOLakes_whippedHeavyCream,
-    Lucerne_heavyCream,
-    Wegmans_heavyCream
+    LandOLakes_whippedHeavyCream(),
+    Lucerne_heavyCream(),
+    Wegmans_heavyCream()
   )
 }
 
@@ -602,7 +602,7 @@ Meyenberg_goat_kefir <- \() new(
   fat = 8, cholesterol = .035, sodium = .12, carbohydrate = 10, sugar = 5, protein = 8)
 
 if (FALSE) {
-  diagnose(TraderJoes_goat_kefir, Meyenberg_goat_kefir)
+  diagnose(TraderJoes_goat_kefir(), Meyenberg_goat_kefir())
 }
 
 

@@ -1,12 +1,12 @@
 
 if (FALSE) {
   diagnose(
-    Edward_shreddedCoconut,
-    Edward_shreddedCoconutLite,
-    Edward_coconutFlour,
-    WegmansOrganic_coconutFlour,
-    AnthonysGoods_coconutFlour,
-    BobsRedMill_coconutFlour
+    Edward_shreddedCoconut(),
+    Edward_shreddedCoconutLite(),
+    Edward_coconutFlour(),
+    WegmansOrganic_coconutFlour(),
+    AnthonysGoods_coconutFlour(),
+    BobsRedMill_coconutFlour()
   )
   
 }
@@ -82,21 +82,21 @@ WegmansOrganic_coconutFlour <- \() new(
 #' @examples
 #' \dontrun{
 #' diagnose(
-#'  Kara_coconutcream,
-#'  ThaiKitchen_coconutcream,
-#'  ThaiKitchen_coconutmilk,
-#'  ThaiKitchen_coconutmilkLite,
-#'  Freenow_coconutBarista,
-#'  Freenow_coconutBarista_0sugar,
-#'  Luckin_coconutmilk,
-#'  CalifiaFarms_coconutmilk,
-#'  PacificFoods_coconutBarista,
-#'  CalifiaFarms_coconutBarista,
-#'  Dream_coconutBarista,
-#'  CoconutPalm_coconutmilk,
-#'  Silk_coconutmilk,
-#'  SoDelicious_coconutmilk,
-#'  CalifiaFarms_coconutmilkwater
+#'  Kara_coconutcream(),
+#'  ThaiKitchen_coconutcream(),
+#'  ThaiKitchen_coconutmilk(),
+#'  ThaiKitchen_coconutmilkLite(),
+#'  Freenow_coconutBarista(),
+#'  Freenow_coconutBarista_0sugar(),
+#'  Luckin_coconutmilk(),
+#'  CalifiaFarms_coconutmilk(),
+#'  PacificFoods_coconutBarista(),
+#'  CalifiaFarms_coconutBarista(),
+#'  Dream_coconutBarista(),
+#'  CoconutPalm_coconutmilk(),
+#'  Silk_coconutmilk(),
+#'  SoDelicious_coconutmilk(),
+#'  CalifiaFarms_coconutmilkwater()
 #' )
 #' }
 #' @name coconutmilk

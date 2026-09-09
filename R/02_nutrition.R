@@ -908,21 +908,18 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 
 
 
-
-#' @export
-nutrition.default <- \(x) stop('exception handling')
-
-#' @export
-nutrition.nutrition <- identity
-
-
 gram_per_tsp <- \(x) {
   if (!length(x)) return(double())
   
   x1 <- if (is.character(x)) {
     if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
     names(x) <- x
-    x |> lapply(FUN = \(i) nutrition(eval(call(i))))
+    x |> 
+      lapply(FUN = \(i) {
+        call(name = i) |>
+          eval() |>
+          as(Class = 'nutrition')
+      })
   } else x
   
   if (!is.recursive(x1) || !all(vapply(x1, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) 

@@ -7,10 +7,10 @@
 #' 
 #' @examples
 #' diagnose(
-#'  BalsamicVinaigrette_meatDip,
-#'  srirachaBBQ_meatDip,
-#'  sweetGinger_meatDip,
-#'  jalapeno_meatDip
+#'  BalsamicVinaigrette_meatDip(),
+#'  srirachaBBQ_meatDip(),
+#'  sweetGinger_meatDip(),
+#'  jalapeno_meatDip()
 #' )
 #' 
 #' 

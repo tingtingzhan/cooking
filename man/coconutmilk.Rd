@@ -9,21 +9,21 @@ Coconut Milk
 \examples{
 \dontrun{
 diagnose(
- Kara_coconutcream,
- ThaiKitchen_coconutcream,
- ThaiKitchen_coconutmilk,
- ThaiKitchen_coconutmilkLite,
- Freenow_coconutBarista,
- Freenow_coconutBarista_0sugar,
- Luckin_coconutmilk,
- CalifiaFarms_coconutmilk,
- PacificFoods_coconutBarista,
- CalifiaFarms_coconutBarista,
- Dream_coconutBarista,
- CoconutPalm_coconutmilk,
- Silk_coconutmilk,
- SoDelicious_coconutmilk,
- CalifiaFarms_coconutmilkwater
+ Kara_coconutcream(),
+ ThaiKitchen_coconutcream(),
+ ThaiKitchen_coconutmilk(),
+ ThaiKitchen_coconutmilkLite(),
+ Freenow_coconutBarista(),
+ Freenow_coconutBarista_0sugar(),
+ Luckin_coconutmilk(),
+ CalifiaFarms_coconutmilk(),
+ PacificFoods_coconutBarista(),
+ CalifiaFarms_coconutBarista(),
+ Dream_coconutBarista(),
+ CoconutPalm_coconutmilk(),
+ Silk_coconutmilk(),
+ SoDelicious_coconutmilk(),
+ CalifiaFarms_coconutmilkwater()
 )
 }
 }

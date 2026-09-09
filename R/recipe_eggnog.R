@@ -10,7 +10,7 @@
 #' eggnog()
 #' 
 #' diagnose(
-#'  eggnog,
+#'  eggnog(),
 #'  subtract(JeanPierre_eggnog, sugar = 25),
 #'  subtract(PreppyKitchen_eggnog, sugar = 130)
 #' )

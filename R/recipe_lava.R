@@ -11,15 +11,15 @@
 #' coconut_lava()
 #' 
 #' diagnose(
-#'   sesame_lava,
-#'   Daat_sesamelava,
-#'   xiaogaojie_sesamelava,
-#'   FancyNotes_sesamelava,
-#'   xiaomin_sesamelava
+#'   sesame_lava(),
+#'   Daat_sesamelava(),
+#'   xiaogaojie_sesamelava(),
+#'   FancyNotes_sesamelava(),
+#'   xiaomin_sesamelava()
 #' )
 #' 
 #' diagnose(
-#'   sesame_lava,
+#'   sesame_lava(),
 #'   subtract(Daat_sesamelava, sugar = 107),
 #'   subtract(xiaogaojie_sesamelava, sugar = 60),
 #'   # subtract(FancyNotes_sesamelava, sugar = 40, invertSugar = 7), 
@@ -49,7 +49,8 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
 sesame_lava <- \() new(
   Class = 'lava',
   blackSesame = 400,
-  flavor = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice!
+  #flavor = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice! (no longer support this use)
+  flavor = c(Kirkland_mixedNutButter = 100), # nice!
   #sugar = 140, # sugar 9.8%
   sugar = 130, # sugar 9.2
   note = c(

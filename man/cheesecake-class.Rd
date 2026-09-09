@@ -121,7 +121,7 @@ Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 
 \dontrun{
 diagnose(
- pumpkin_cheesecake,
+ pumpkin_cheesecake(),
  subtract(Junior_pumpkin_cheesecake, sugar = 170),
  subtract(Natasha_pumpkin_cheesecake, brownSugar = 230),
  subtract(PreppyKitchen_pumpkin_cheesecake, sugar = 140),

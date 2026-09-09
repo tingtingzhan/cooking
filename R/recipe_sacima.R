@@ -11,9 +11,9 @@
 #' new(Class = 'sacima')
 #' 
 #' diagnose(
-#'  xiaogaojie_sacima,
-#'  Dad_sacima,
-#'  shangshi_sacima)
+#'  xiaogaojie_sacima(),
+#'  Dad_sacima(),
+#'  shangshi_sacima())
 #' 
 #' @name sacima-class
 #' @export

@@ -1,16 +1,16 @@
 
 if (FALSE) {
   diagnose(
-    youtiao,
-    mathstar_youtiao,
-    xiaogaojie_youtiao,
-    PinNuo_youtiao1,
-    PinNuo_youtiao2,
-    PinNuo_youtiao3,
-    PinNuo_youtiao4,
-    PinNuo_youtiao5,
-    PinNuo_youtiao6,
-    PinNuo_youtiao7
+    youtiao(),
+    mathstar_youtiao(),
+    xiaogaojie_youtiao(),
+    PinNuo_youtiao1(),
+    PinNuo_youtiao2(),
+    PinNuo_youtiao3(),
+    PinNuo_youtiao4(),
+    PinNuo_youtiao5(),
+    PinNuo_youtiao6(),
+    PinNuo_youtiao7()
   )
   
 }

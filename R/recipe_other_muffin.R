@@ -107,6 +107,6 @@ Sallys_pumpkin_muffin <- \() new(
 )
 
 if (FALSE) {
-  diagnose(Sallys_pumpkin_muffin, Sallys_pumpkin_cake)
+  diagnose(Sallys_pumpkin_muffin(), Sallys_pumpkin_cake())
 }
 

@@ -8,8 +8,8 @@
 #' pudding()
 #' 
 #' diagnose(
-#'  pudding,
-#'  shangshi_pudding
+#'  pudding(),
+#'  shangshi_pudding()
 #' )
 #' 
 #' @name pudding-class

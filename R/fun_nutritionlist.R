@@ -1,22 +1,14 @@
 
 
-#' @title nutrition_
-#' 
-#' @description
-#' ..
-#' 
-#' @param ... objects convertible to \linkS4class{nutrition} class
-#' 
-#' @param dots a \link[base]{list} of objects convertible to \linkS4class{nutrition} class
-#' 
-#' @keywords internal
-#' @export
-nutrition_ <- \(..., dots = list(...)) {
+
+# @param x a \link[base]{list} of \linkS4class{nutrition} objects
+#nutrition_ <- \(..., dots = list(...)) {
+summary_nutritionlist <- \(x) {
   
-  dots <- dots |> 
-    lapply(FUN = nutrition)
+  x <- x |> 
+    lapply(FUN = as, Class = 'nutrition')
   
-  ret <- dots |>
+  ret <- x |> 
     lapply(FUN = \(v) {
       c(
         calorie = sum(v@calorie),
@@ -40,21 +32,21 @@ nutrition_ <- \(..., dots = list(...)) {
   addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
   ret <- cbind(ret, addedWater = addedWater_)
 
-  nm <- dots |>
+  nm <- x |>
     vapply(FUN = \(i) c(i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
-  nm_glue <- dots |>
+  nm_glue <- x |>
     vapply(FUN = \(i) c(i@name_glue, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
   
   rownames(ret) <- nm # *not* `nm_glue`
   attr(ret, which = 'glue') <- nm_glue
-  class(ret) <- 'nutrition_'
+  class(ret) <- 'summary_nutritionlist'
   return(ret)
   
 }
 
 #' @importFrom charwidth cat_matrix
 #' @export
-print.nutrition_ <- \(x, ...) {
+print.summary_nutritionlist <- \(x, ...) {
   
   ret0 <- x
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL

@@ -7,13 +7,11 @@
 #' 
 #' @examples
 #' diagnose(
-#'  SoupedUp_niangaoNingbo,
-#'  niangaoNingbo,
-#'  Jenny_niangaoNingbo,
-#'  LuLu_niangaoNingbo
+#'  SoupedUp_niangaoNingbo(),
+#'  niangaoNingbo(),
+#'  Jenny_niangaoNingbo(),
+#'  LuLu_niangaoNingbo()
 #' )
-#' 
-#' 
 #' 
 #' @name niangaoNingbo-class
 #' @export

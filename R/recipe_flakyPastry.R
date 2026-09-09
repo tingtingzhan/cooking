@@ -10,33 +10,33 @@
 #' 
 #' @examples 
 #' diagnose(
-#'  Dad_yolkPastry_waterDough,
-#'  Dad_oxTongue1_waterDough, 
-#'  Dad_oxTongue2_waterDough,
-#'  Dad_blackSesamePastry_waterDough, 
-#'  Dad_pepperPastry_waterDough,
-#'  laofangu_durianSu_waterDough,
-#'  Dad_flowerPastry_waterDough, 
-#'  shangshi_oxTongue_waterDough,
-#'  laofangu_magnolia_waterDough,
-#'  PinNuo_oxTongue_waterDough,
-#'  Dad_sweetPastry_waterDough
+#'  Dad_yolkPastry_waterDough(),
+#'  Dad_oxTongue1_waterDough(), 
+#'  Dad_oxTongue2_waterDough(),
+#'  Dad_blackSesamePastry_waterDough(), 
+#'  Dad_pepperPastry_waterDough(),
+#'  laofangu_durianSu_waterDough(),
+#'  Dad_flowerPastry_waterDough(), 
+#'  shangshi_oxTongue_waterDough(),
+#'  laofangu_magnolia_waterDough(),
+#'  PinNuo_oxTongue_waterDough(),
+#'  Dad_sweetPastry_waterDough()
 #' )
 #' 
 #' diagnose(
-#'  shangshi_oxTongue_shortDough,
-#'  Dad_flowerPastry_shortDough,
-#'  Dad_oxTongue1_shortDough,
-#'  Dad_yolkPastry_shortDough,
-#'  laofangu_magnolia_shortDough,
-#'  Dad_sweetPastry_shortDough,
-#'  Dad_pepperPastry_shortDough,
-#'  laofangu_durianSu_shortDough
+#'  shangshi_oxTongue_shortDough(),
+#'  Dad_flowerPastry_shortDough(),
+#'  Dad_oxTongue1_shortDough(),
+#'  Dad_yolkPastry_shortDough(),
+#'  laofangu_magnolia_shortDough(),
+#'  Dad_sweetPastry_shortDough(),
+#'  Dad_pepperPastry_shortDough(),
+#'  laofangu_durianSu_shortDough()
 #' )
 #' 
 #' diagnose(
-#'  Dad_blackSesamePastry_largeYouSu,
-#'  PinNuo_largeYouSu
+#'  Dad_blackSesamePastry_largeYouSu(),
+#'  PinNuo_largeYouSu()
 #' )
 #' 
 #' @references

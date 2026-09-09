@@ -22,7 +22,7 @@ Pocky_double_matcha <- \() new(
 
 if (FALSE) {
   diagnose(
-    Pocky_matcha,
-    Pocky_double_matcha
+    Pocky_matcha(),
+    Pocky_double_matcha()
   )
 }

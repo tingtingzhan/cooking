@@ -8,9 +8,9 @@
 #' 
 #' @examples
 #' diagnose(
-#'  Leo_udon,
-#'  JustOne_udon,
-#'  amanda_udon)
+#'  Leo_udon(),
+#'  JustOne_udon(),
+#'  amanda_udon())
 #' @name udon-class
 #' @export
 setClass(Class = 'udon', contains = 'recipe', prototype = prototype(

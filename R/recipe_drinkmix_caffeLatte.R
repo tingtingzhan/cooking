@@ -9,8 +9,8 @@
 #' \dontrun{
 #' diagnose(
 #'  hotdrink(caffeLatte),
-#'  Starbucks_caffeLatte,
-#'  Starbucks_coffeeFrappuccino_bottle
+#'  Starbucks_caffeLatte(),
+#'  Starbucks_coffeeFrappuccino_bottle()
 #' ) # compare hot/frappe drink
 #' }
 #' @name caffeLatte-class

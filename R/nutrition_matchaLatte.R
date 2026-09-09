@@ -3,16 +3,16 @@
 #' 
 #' @examples
 #' diagnose(
-#'  matchaLatte,
-#'  Ippodo_uji_shimizu,
-#'  Starbucks_matchaLatteMix,
-#'  TraderJoes_matchaLatte
+#'  matchaLatte(),
+#'  Ippodo_uji_shimizu(),
+#'  Starbucks_matchaLatteMix(),
+#'  TraderJoes_matchaLatte()
 #' ) # compare dry powder
 #' 
 #' diagnose(
 #'  hotdrink(matchaLatte),
-#'  Ippodo_sayakaLatte,
-#'  Starbucks_matchaLatte,
+#'  Ippodo_sayakaLatte(),
+#'  Starbucks_matchaLatte(),
 #'  suggested(Starbucks_matchaLatteMix),
 #'  suggested(Ippodo_uji_shimizu),
 #'  suggested(ItoEn_sweet_matcha)
@@ -20,7 +20,7 @@
 #' 
 #' diagnose(
 #'  frappe(matchaLatte),
-#'  Starbucks_matchaFrappuccino
+#'  Starbucks_matchaFrappuccino()
 #' ) # compare frappe
 #' @name matchaLatte_other
 #' @keywords internal 

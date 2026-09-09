@@ -345,7 +345,9 @@ setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object
 #' @export
 print.raw. <- \(x, ...) {
   
-  y <- nutrition(x = x) # dispatch to [nutrition.raw] or [nutrition.recipe]
+  #y <- nutrition(x = x) # dispatch to [nutrition.raw] or [nutrition.recipe]
+  y <- x |>
+    as(Class = 'nutrition')
   
   if (length(y@name)) {
     y@name |> col_grey() |> style_bold() |> cat()
@@ -686,7 +688,8 @@ NULL
 # @aliases *,raw.,numeric-method
 #' @export
 setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
-  e1 <- as(e1, Class = 'raw.', strict = TRUE)
+  e1 <- e1 |>
+    as(Class = 'raw.', strict = TRUE)
   if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
   for (i in slotNames(e1)) {
     slot(e1, name = i) <- slot(e1, name = i) * e2

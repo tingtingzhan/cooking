@@ -487,7 +487,8 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   
   print.raw.(object)
   
-  y <- nutrition.recipe(x = object) # still need
+  y <- object |>
+    as(Class = 'nutrition')
   
   tool_slot <- names(which(getSlots('recipe') == 'tool'))
   waterLost <- sum(object@waterLost, lapply(tool_slot, FUN = \(i) slot(object, name = i)@waterLost) |> unlist(use.names = FALSE))

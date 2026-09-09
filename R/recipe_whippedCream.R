@@ -42,7 +42,7 @@
 #'  sugar_tsp = 10.5, matcha_tsp = 4, 
 #'  pros = 'Effie\'s Signature!'),
 #'  
-#'  matcha_whippedCream,
+#'  matcha_whippedCream(),
 #'  
 #'  new(Class = 'recipe', alias_class = 'Mascarpone\u5976\u6cb9\u971c',
 #'  mascarpone = 453/2, water = 110, 
@@ -50,8 +50,8 @@
 #'  pros = 'Xu Chang, Gloria', 
 #'  cons = 'Scott Keith says this is bitter'),
 #'  
-#'  matcha_frosting,
-#'  matcha_ganache
+#'  matcha_frosting(),
+#'  matcha_ganache()
 #' )
 #' 
 #' cocoa_whippedCream()
@@ -60,10 +60,10 @@
 #' tiramisuFrosting_Kahlua()
 #' 
 #' diagnose(
-#'  foodandjourneys_mascarponeFrosting,
-#'  lifeloveandsugar_mascarponeFrosting,
-#'  lifeloveandsugar_cocoa_mascarponeFrosting,
-#'  Marcellina_mascarponeFrosting
+#'  foodandjourneys_mascarponeFrosting(),
+#'  lifeloveandsugar_mascarponeFrosting(),
+#'  lifeloveandsugar_cocoa_mascarponeFrosting(),
+#'  Marcellina_mascarponeFrosting()
 #' )
 #' 
 #' @name whippedCream-class

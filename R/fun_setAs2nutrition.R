@@ -1,48 +1,8 @@
 
 
-#' @title Get Nutrition
-#' 
-#' @param x ..
-#' 
-#' @name nutrition
-#' @export
-nutrition <- \(x) UseMethod(generic = 'nutrition')
-
-
-
-#' @rdname nutrition
-#' @export
-nutrition.character <- \(x) {
-  if (length(x) != 1L || is.na(x) || !all(nzchar(x))) {
-    print(x)
-    stop('nutrition name must be len-1 character')
-  }
-  return(eval(call(name = 'nutrition', x = parse(text = x)[[1L]])))
-}
-
-#' @rdname nutrition
-#' @export
-nutrition.function <- \(x) {
+setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
-  cl <- match.call()
-  if (is.symbol(cl$x)) {
-    # to pass correct call to [nutrition.recipe]
-    cl[[1L]] <- quote(nutrition)
-    cl$x <- as.call(list(cl$x)) # wow!
-    return(eval(cl))
-  } 
-  
-  # will not pass correct call to [nutrition.recipe]
-  # when used in lapply(., FUN = nutrition)
-  # .. when `cl$x` will be `X[[i]]`
-  return(nutrition(x())) 
-}
-
-
-#' @rdname nutrition
-#' @method nutrition raw.
-#' @export
-nutrition.raw. <- \(x) {
+  x <- from; from <- NULL
   
   atr0 <- attributes(x)[names(getSlots(x = 'raw.'))] # [nutrition.raw] might be applied to \linkS4class{recipe}
   atr <- atr0[lengths(atr0) > 0L]
@@ -52,9 +12,12 @@ nutrition.raw. <- \(x) {
   grams_nm <- names(grams)
   names(grams_nm) <- grams_nm
   
-  nutri <- lapply(grams_nm, FUN = nutrition.character)
+  nutri <- lapply(grams_nm, FUN = \(x) {
+    call(name = x) |> eval() |> as(Class = 'nutrition')
+  })
   
-  info <- nutrition_(dots = nutri)
+  info <- nutri |>
+    summary_nutritionlist()
   # print(info) # debug
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
@@ -90,26 +53,27 @@ nutrition.raw. <- \(x) {
     water = if (water) water else numeric()
   )
   
-  cl <- match.call()
-  x. <- as.list(cl$x) # `cl$x`, e.g. `quote(soymilk())`
-  if (length(x.) == 1L) {
-    if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
-    x_ <- as.character(x.[[1L]])
-    if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
-      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
-    } # else do nothing
-  }
+  if (FALSE) {
+    cl <- match.call()
+    x. <- as.list(cl$x) # `cl$x`, e.g. `quote(soymilk())`
+    if (length(x.) == 1L) {
+      if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
+      x_ <- as.character(x.[[1L]])
+      if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
+        ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
+      } # else do nothing
+    }
+  } # 2026-09-08 evening. Consider remove in future
   
   attr(ret, which = 'info') <- info
   return(ret)
+})
+
+
+
+setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
-}
-
-
-
-#' @rdname nutrition
-#' @export
-nutrition.recipe <- \(x) {
+  x <- from; from <- NULL
   
   lost <- c('waterLost', 'fatLost', 'sugarLost')
   slt0 <- names(getSlots(x = 'raw.'))
@@ -132,9 +96,13 @@ nutrition.recipe <- \(x) {
   grams_nm <- names(grams)
   names(grams_nm) <- grams_nm
   
-  nutri <- lapply(grams_nm, FUN = nutrition.character)
+  nutri <- lapply(grams_nm, FUN = \(x) {
+    call(name = x) |> eval() |> as(Class = 'nutrition')
+  })
   
-  info <- nutrition_(dots = nutri)
+  
+  info <- nutri |>
+    summary_nutritionlist()
   # print(info) # debug
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
@@ -192,15 +160,17 @@ nutrition.recipe <- \(x) {
     water = if (waterCooked) waterCooked else numeric()
   )
   
-  cl <- match.call()
-  x. <- as.list(cl$x) # `cl$x`, e.g. `quote(soymilk())`
-  if (length(x.) == 1L) {
-    if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
-    x_ <- as.character(x.[[1L]])
-    if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
-      ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
-    } # else do nothing
-  }
+  if (FALSE) {
+    cl <- match.call()
+    x. <- as.list(cl$x) # `cl$x`, e.g. `quote(soymilk())`
+    if (length(x.) == 1L) {
+      if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
+      x_ <- as.character(x.[[1L]])
+      if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
+        ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
+      } # else do nothing
+    }
+  } # 2026-09-08 evening. Consider remove in future
   
   attr(ret, which = 'perRaw') <- new(
     # focus on material, *not* on nutrition!!
@@ -505,7 +475,7 @@ nutrition.recipe <- \(x) {
   #attr(ret, which = 'machine') <- machine[names(machine) == class(x)]
   
   return(ret)
-}
-
+  
+})
 
 

@@ -4,12 +4,12 @@
 
 if (FALSE) {
   diagnose(
-    Daat_soupBao,
-    xiaogaojie_soupBao,
-    PinNuo_soupBao,
-    shangshi_soupBao,
-    amanda_soupBao
-    # whiteSwan_soupBao, # not correct??
+    Daat_soupBao(),
+    xiaogaojie_soupBao(),
+    PinNuo_soupBao(),
+    shangshi_soupBao(),
+    amanda_soupBao()
+    # whiteSwan_soupBao(), # not correct??
   )
   
 }
