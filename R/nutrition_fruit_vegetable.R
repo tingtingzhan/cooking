@@ -230,7 +230,6 @@ Wegmans_peanutButter <- \() new(
 Wegmans_beet <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 137496L,
   name = '\u751c\u83dc\u7c89 Beet Root Powder',
-  extra = new(Class = 'extra', water = .6), # tested with bao()
   usd = 10.99/227*9.6,
   servingGram = 9.6, 
   # servingTbsp = 1, # packaging
@@ -243,8 +242,9 @@ Wegmans_acai <- \() new(
   name = '\u5df4\u897f\u8393\u7c89 A\u00e7a\u00ed Powder',
   usd = 16.79/113*3,
   servingGram = 3, 
-  servingTsp = 2, # packaging
-  extra = new(Class = 'extra', water = 5/38.2)) # tested on bao(): 8.5tbsp needs 5g water extra
+  servingTsp = 2 # packaging
+) 
+
 
 Navitas_acai <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],

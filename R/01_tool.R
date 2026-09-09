@@ -53,6 +53,8 @@ setClass(Class = 'tool', slots = c(
 ))
 
 
+
+
 setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
@@ -75,6 +77,7 @@ setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
   return(x)
   
 })
+
 
 
 
@@ -140,6 +143,8 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 })
 
 
+
+
 #' @importFrom consec cmod
 fmt_min <- \(x) {
     
@@ -197,9 +202,6 @@ RobamCT763 <- \(...) new(
   Class = 'tool', 
   name = style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763') |> c(),
   ...)
-
-
-
 
 PhilipsHD9867 <- \(...) new(
   Class = 'tool', 

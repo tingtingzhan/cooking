@@ -7,7 +7,7 @@
 \alias{pumpkin_bao}
 \alias{matcha_bao}
 \alias{beet_bao}
-\alias{cocoa_bao_Navitas}
+\alias{cocoa_bao}
 \alias{pineapple_bao}
 \alias{pear_bao}
 \alias{peach_bao_DelMonte}
@@ -24,7 +24,7 @@ matcha_bao()
 
 beet_bao()
 
-cocoa_bao_Navitas()
+cocoa_bao()
 
 pineapple_bao()
 
@@ -57,7 +57,7 @@ pumpkin_bao()
 pineapple_bao()
 matcha_bao()
 beet_bao()
-cocoa_bao_Navitas()
+cocoa_bao()
 acai_bao()
 
 diagnose(
@@ -66,7 +66,7 @@ diagnose(
  pineapple_bao(),
  beet_bao(),
  matcha_bao(),
- cocoa_bao_Navitas(),
+ cocoa_bao(),
  acai_bao()
 )
 

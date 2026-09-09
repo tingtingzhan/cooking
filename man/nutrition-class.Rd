@@ -29,8 +29,6 @@ Nutrition information.
 
 \item{\code{suggestion}}{\link[base]{list}}
 
-\item{\code{extra}}{\linkS4class{extra} object}
-
 \item{\code{url}}{\link[base]{character} scalar, link to manufacturer webpage}
 
 \item{\code{fdc}}{\link[base]{integer} scalar, USDA FoodData Central (FDC) ID}

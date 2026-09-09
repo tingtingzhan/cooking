@@ -1,22 +1,5 @@
 
 
-#' @title \linkS4class{extra}
-#' 
-#' @description
-#' Extra water, etc. required to hydrate flavoring powder in a dough
-#' 
-#' @slot water \link[base]{numeric} scalar
-#' 
-#' @name extra-class
-#' @export
-setClass(Class = 'extra', slots = c(
-  water = 'numeric'
-), prototype = prototype(
-  water = 0
-))
-
-
-
 #setOldClass('cli_ansi_string')
 
 #' @title \linkS4class{nutrition} Information
@@ -32,8 +15,6 @@ setClass(Class = 'extra', slots = c(
 #' @slot name_glue \link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse `cli:::glue_cmd`)
 #' 
 #' @slot suggestion \link[base]{list}
-#' 
-#' @slot extra \linkS4class{extra} object
 #' 
 #' @slot url \link[base]{character} scalar, link to manufacturer webpage
 #' @slot fdc \link[base]{integer} scalar, USDA FoodData Central (FDC) ID
@@ -199,8 +180,6 @@ setClass(Class = 'nutrition', slots = c(
   name_glue = 'character',
   
   suggestion = 'list',
-  
-  extra = 'extra',
   
   url = 'character',
   fdc = 'integer',

@@ -37,7 +37,6 @@ Sencha_everyday_matcha <- \() new(
   #brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
   brand = 'Sencha Naturals\U1f1fa\U1f1f8', # no longer on official website, Sep 2026
   name = '\u62b9\u8336\u7c89 Matcha\U1f375 Powder',
-  extra = new(Class = 'extra', water = 4/3), # tested on bao()
   usd = 54.99/(3*340)*1.5, costco = '100705701', date = as.Date('2026-09-02'),
   servingGram = 1.5, 
   #servingTsp = .5, # on package

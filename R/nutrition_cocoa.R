@@ -24,7 +24,6 @@ Navitas_cacao <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], navitas = 'cacao-powder',
   # bought at Costco once, but didn't see any more
   name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
-  extra = new(Class = 'extra', water = 1), # tested with bao()
   usd = 7/680*6, # price not sure
   servingGram = 6, 
   #servingTbsp = 1, # on package 

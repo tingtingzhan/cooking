@@ -242,7 +242,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{water,water_tsp,water_Tbsp,water_cup}}{\link[base]{numeric} scalar, weight of water (in grams)}
 
-\item{\code{water_extra}}{\link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough}
+\item{\code{water_ext}}{\link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough}
 
 \item{\code{water40}}{\link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams)}
 

@@ -18,15 +18,6 @@ setClass(Class = 'per', slots = c(
 
 
 
-# According to 
-# https://www.kingarthurbaking.com/pro/formulas
-# Baker's percentage of water is
-# added-water : flour
-# water in flour is *not* included!!!
-
-
-
-
 #' @importFrom stats setNames
 #' @export
 format.per <- \(x, ...) {
@@ -58,8 +49,7 @@ setMethod(f = show, signature = 'per', definition = \(object) {
   if (!length(ret)) return(invisible())
   object@per |> 
     sprintf(fmt = '\u214c %s\n') |> 
-    style_bold() |>
-    bg_br_yellow() |>
+    bg_br_yellow() |> style_bold() |>
     cat()
   cat_matrix(ret)
   cat('\n')

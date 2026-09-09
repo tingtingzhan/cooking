@@ -1,5 +1,13 @@
 
 
+# According to 
+# https://www.kingarthurbaking.com/pro/formulas
+# Baker's percentage of water is
+# added-water : flour
+# water in flour is *not* included!!!
+
+
+
 #' @title Raw Ingredients and Recipe
 #' 
 #' @description 
@@ -139,7 +147,7 @@
 #' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
 #' 
 #' @slot water,water_tsp,water_Tbsp,water_cup \link[base]{numeric} scalar, weight of water (in grams)
-#' @slot water_extra \link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough
+#' @slot water_ext \link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough
 #' @slot water40 \link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams) 
 #' @slot water70 \link[base]{numeric} scalar, weight of hot (70C-75C) water (in grams) 
 #' @slot water80,water80_tsp,water80_Tbsp,water80_cup \link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams) 
@@ -314,7 +322,7 @@ setClass(Class = 'raw.', slots = c(
   vegetable = 'numeric',
   
   water = 'numeric', water_tsp = 'numeric', water_Tbsp = 'numeric', water_cup = 'numeric',
-  water_extra = 'numeric',
+  water_ext = 'numeric',
   iceWater = 'numeric',
   carbonatedWater = 'numeric',
   shavedIce = 'numeric',
@@ -490,11 +498,11 @@ print.raw. <- \(x, ...) {
   if (length(x@gelatin)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> cli_text()
   
   if (length(x@water)) {
-    if (!length(x@water_extra)) {
+    if (!length(x@water_ext)) {
       sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, fmt_vol(x@water)) |> cli_text()
     } else {
-      water <- sum_by_name(x@water, x@water_extra)
-      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_extra) |> col_br_red(), fmt_vol(water)) |> cli_text()
+      water <- sum_by_name(x@water, x@water_ext)
+      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_ext) |> col_br_red(), fmt_vol(water)) |> cli_text()
     }
   }
   
@@ -552,7 +560,8 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addNameLen1(which = 'water70', name1 = 'Wegmans_water') |>
     combineVol(which = 'water80', name1 = 'Wegmans_water') |>
     addNameLen1(which = 'water90', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'water95', name1 = 'Wegmans_water') |>
+    addNameLen1(which = 'water95', name1 = 'Wegmans_water') |> 
+    addNameLen1(which = 'water_ext', name1 = 'Wegmans_water') |>
     addNameLen1(which = 'boilingWater', name1 = 'Wegmans_water') |>
     addNameLen1(which = 'applesauce', name1 = 'Motts_applesauce') |>
     addNameLen1(which = 'banana', name1 = 'banana') |>
@@ -654,13 +663,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   
   x@tea <- sum_by_name(getTealoose(x@teabag), x@tea)
   x@teabag <- numeric()
-  
-  if (!length(x@water_extra) && inherits(x, what = c('bread', 'bao', 'pastalinda'))) {
-    extraWater <- \(z) sum(z * vapply(names(z), FUN = \(nm) eval(call(name = nm))@extra@water, FUN.VALUE = NA_real_))
-    x@water_extra <- extraWater(x@matcha) + extraWater(x@beet) + extraWater(x@cocoa) + extraWater(x@acai)
-  }
-  x <- x |> 
-    addNameLen1(which = 'water_extra', name1 = 'Wegmans_water')
   
   for (i in names(getSlots(x = 'raw.'))) {
     ival <- slot(object = x, name = i)
