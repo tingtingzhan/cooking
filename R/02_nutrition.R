@@ -1003,7 +1003,6 @@ fmt_vol <- \(x, nm = names(x)) {
         '\u00bctsp' = 1/4,
         '\u215btsp' = 1/8
       ),
-      pattern_allow_multiple = '^[A-Za-z]',
       n = 3L,
       tol = 1e-6
     ) |>
