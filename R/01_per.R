@@ -70,7 +70,8 @@ setMethod(f = show, signature = 'per', definition = \(object) {
 # @param x a \link[base]{list} of \linkS4class{per} objects
 #' @importFrom charwidth cat_matrix
 #' @importFrom stats median.default
-print_perlist <- \(x, ...) {
+#' @export
+print.perlist <- \(x, ...) {
   
   x <- x[lengths(x) > 0L]
   if (!length(x)) return(invisible())

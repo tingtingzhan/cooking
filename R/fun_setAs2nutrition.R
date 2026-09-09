@@ -17,7 +17,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   })
   
   info <- nutri |>
-    summary_nutritionlist()
+    summary.nutritionlist()
   # print(info) # debug
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
@@ -102,7 +102,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   
   info <- nutri |>
-    summary_nutritionlist()
+    summary.nutritionlist()
   # print(info) # debug
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']

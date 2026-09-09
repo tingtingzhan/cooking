@@ -1,8 +1,53 @@
 
+#' @title Diagnose Multiple \linkS4class{nutrition} Objects
+#' 
+#' @description
+#' ..
+#' 
+#' @param ... objects convertible to \linkS4class{nutrition}
+#' 
+#' @export
+diagnose <- \(...) {
+  
+  dots <- list(...) |>
+    lapply(FUN = as, Class = 'nutrition')
+  
+  cat('\n')
+  'Nutrition\n' |> bg_br_yellow() |> cat()
+  dots |>
+    summary.nutritionlist() |>
+    print() # print.summary.nutritionlist
+  
+  names(dots) <- dots |>
+    vapply(FUN = slot, name = 'name', FUN.VALUE = NA_character_)
+  
+  for (which in c(
+    'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
+    'perCornmeal', 'perRiceFlr', 
+    'perCocoa', 'perTea', 'perCreamCheese', 'perRaw'
+  )) {
+    dots |>
+      lapply(FUN = attr, which = which, exact = TRUE) |>
+      print.perlist()
+  }
+  
+  return(invisible())
+  
+}
+
+
+
+
+
+
+
+
 
 # @param x a \link[base]{list} of \linkS4class{nutrition} objects
-#nutrition_ <- \(..., dots = list(...)) {
-summary_nutritionlist <- \(x) {
+#' @export
+summary.nutritionlist <- \(object, ...) {
+  
+  x <- object; object <- NULL
   
   x <- x |> 
     lapply(FUN = as, Class = 'nutrition')
@@ -38,14 +83,15 @@ summary_nutritionlist <- \(x) {
   
   rownames(ret) <- nm # *not* `nm_glue`
   attr(ret, which = 'glue') <- nm_glue
-  class(ret) <- 'summary_nutritionlist'
+  class(ret) <- 'summary.nutritionlist'
   return(ret)
   
 }
 
 #' @importFrom charwidth cat_matrix
+#' @method print summary.nutritionlist
 #' @export
-print.summary_nutritionlist <- \(x, ...) {
+print.summary.nutritionlist <- \(x, ...) {
   
   ret0 <- x
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
@@ -73,46 +119,6 @@ nutrition_slot_short <- \(x) {
   x[x == 'sodium'] <- 'Na\u207a'
   x[x == 'cholesterol'] <- 'cholr'
   return(x)
-}
-
-
-
-
-
-#' @title Diagnose Multiple \linkS4class{nutrition} Objects
-#' 
-#' @description
-#' ..
-#' 
-#' @param ... objects convertible to \linkS4class{nutrition}
-#' 
-#' @export
-diagnose <- \(...) {
-  
-  dots <- list(...) |>
-    lapply(FUN = as, Class = 'nutrition')
-  
-  cat('\n')
-  'Nutrition\n' |> bg_br_yellow() |> cat()
-  dots |>
-    summary_nutritionlist() |>
-    print() # print.summary_nutritionlist
-  
-  names(dots) <- dots |>
-    vapply(FUN = slot, name = 'name', FUN.VALUE = NA_character_)
-  
-  for (which in c(
-    'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
-    'perCornmeal', 'perRiceFlr', 
-    'perCocoa', 'perTea', 'perCreamCheese', 'perRaw'
-  )) {
-    dots |>
-      lapply(FUN = attr, which = which, exact = TRUE) |>
-      print_perlist()
-  }
-  
-  return(invisible())
-  
 }
 
 
