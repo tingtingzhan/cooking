@@ -13,7 +13,7 @@
 Domino_10x <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch
-  name = 'Sugar, Confectioners', alias = '10x\u7cd6\u7c89',
+  name = 'Sugar\U0001f36c, Confectioners', alias = '10x\u7cd6\u7c89',
   bjs = 'domino-confectioners-sugar-4-lbs/3000000000000139695', usd = 5.29/(4*454)*30, # 2023-11-11
   wegmans = 54235L,
   servingGram = 30, 
@@ -47,7 +47,7 @@ US_10x <- \() new(
   costco = '100436353',
   costcoBiz = '11830701',
   brand = style_hyperlink(text = 'U.S.\U1f1fa\U1f1f8', url = 'https://unitedsugarpr.com/product-category/powdered-sugar/') |> c(),
-  name = 'Sugar, Confectioners', alias = '10x\u7cd6\u7c89',
+  name = 'Sugar\U0001f36c, Confectioners', alias = '10x\u7cd6\u7c89',
   usd = 4.99/3180*30,
   servingGram = 30,
   #servingCup = 1/4, # packaging

@@ -76,16 +76,15 @@ sweetGinger_meatDip <- \() new(
 jalapeno_meatDip <- \() new(
   Class = 'meatDip', 
   alias_flavor = 'Jalapeno',
-  sauce_Tbsp = c(
-    TraderJoes_jalapenoSauce = .5,
-    mizkan_brownRiceVinegar = .5,
-    Kikkoman_soyLite = .5 # 1Tbsp too salty! try .5 next time
-  ),
   sauce_tsp = c(
+    TraderJoes_jalapenoSauce = 1.5,
+    mizkan_brownRiceVinegar = 1.5,
+    Kikkoman_soyLite = 1.5,
     Kadoya_sesameOil = .5,
     YaoMaZi_rattanPepperOil = .25
   ),
+  sugar_tsp = 1.5,
   date = as.Date('2026-09-07'),
-  review = 'very good!'
+  review = 'okay, not great. Add sugar and try again'
 )
 

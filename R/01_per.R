@@ -1,6 +1,4 @@
 
-# does not have to be after equiv.R :)
-
 
 #' @title \linkS4class{per}
 #' 
@@ -29,11 +27,6 @@ setClass(Class = 'per', slots = c(
 
 
 
-
-
-
-
-
 #' @importFrom stats setNames
 #' @export
 format.per <- \(x, ...) {
@@ -56,9 +49,6 @@ format.per <- \(x, ...) {
 
 
 
-
-
-
 #' @rdname per-class
 #' @param object a \linkS4class{per} object
 #' @importFrom charwidth cat_matrix
@@ -74,6 +64,41 @@ setMethod(f = show, signature = 'per', definition = \(object) {
   cat_matrix(ret)
   cat('\n')
 })
+
+
+
+# @param x a \link[base]{list} of \linkS4class{per} objects
+#' @importFrom charwidth cat_matrix
+#' @importFrom stats median.default
+print_perlist <- \(x, ...) {
+  
+  x <- x[lengths(x) > 0L]
+  if (!length(x)) return(invisible())
+  
+  y0 <- x |>
+    lapply(FUN = \(i) { # (i = x[[1L]])
+      i@equiv |>
+        vapply(FUN = slot, name = 'current', FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+    })
+  if (all(!lengths(y0))) stop('wont happen')
+  y1 <- do.call(rbind, args = y0)
+  y2 <- y1[, colMeans(is.na(y1)) != 1L, drop = FALSE]
+  #y3 <- y2[rowMeans(is.na(y2)) != 1L, , drop = FALSE]
+  y3 <- y2
+  if (!length(y3)) return(invisible())
+  if (all(is.na(y3))) return(invisible())
+  if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
+  y <- y3 |> 
+    col_binlabel(FUN = median.default, na.rm = TRUE)
+  
+  x[[1L]]@per |> 
+    sprintf(fmt = '\u214c %s\n') |> 
+    style_bold() |> bg_br_yellow() |> 
+    cat()
+  y |> cat_matrix()
+  cat('\n')
+  return(invisible(y))
+}
 
 
 
