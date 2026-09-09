@@ -1152,7 +1152,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
   if (length(obj@url)) cat(obj@url, sep = '\n')
   
-  if (length(suggested_ <- suggested(object))) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
+  suggested_ <- object |> as(Class = 'recipe')
+  if (length(suggested_)) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
   
   cat('\n')
   

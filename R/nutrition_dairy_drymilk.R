@@ -1,5 +1,19 @@
 
-
+if (FALSE) {
+  diagnose(
+    Carnation_drymilk() |> as('recipe'),
+    GreatValue_drymilk() |> as('recipe'),
+    MembersMark_drymilk() |> as('recipe'),
+    BobsRedMill_drymilk() |> as('recipe'),
+    Nido_drymilk() |> as('recipe'),
+    Horizon_whole_drymilk() |> as('recipe')
+  )
+  
+  diagnose(
+    Meyenberg_goat_drymilk() |> as('recipe'),
+    Meyenberg_goatWhole_drymilk() |> as('recipe')
+  )
+}
 
 
 Meyenberg_goat_drymilk <- \() new(

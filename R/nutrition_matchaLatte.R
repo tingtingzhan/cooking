@@ -13,9 +13,9 @@
 #'  hotdrink(matchaLatte),
 #'  Ippodo_sayakaLatte(),
 #'  Starbucks_matchaLatte(),
-#'  suggested(Starbucks_matchaLatteMix),
-#'  suggested(Ippodo_uji_shimizu),
-#'  suggested(ItoEn_sweet_matcha)
+#'  Starbucks_matchaLatteMix() |> as('recipe'),
+#'  Ippodo_uji_shimizu() |> as('recipe'),
+#'  ItoEn_sweet_matcha() |> as('recipe')
 #' ) # compare hot drink
 #' 
 #' diagnose(

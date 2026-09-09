@@ -24,7 +24,6 @@ subtract.function <- \(x, ...) {
 }
 
 
-
 #' @rdname subtract
 #' @method subtract raw.
 #' @export
