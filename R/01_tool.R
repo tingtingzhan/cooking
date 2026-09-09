@@ -105,11 +105,10 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   if (length(object@minute)) {
     min_ <- object@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
-    # paste(' \u23f0', format_minute(min_), names(min_)) |> cat(sep = '\n')
     sprintf(
       fmt = ' \U1f321%s \U1f321%s \u23f0%s %s', 
-      txt_fahrenheit, txt_celsius, 
-      min_ |> format_minute() |> col_red() |> style_bold(), 
+      txt_fahrenheit, txt_celsius,
+      min_ |> fmt_min() |> col_red() |> style_bold(),
       min_ |> names() |> bg_br_yellow()
     ) |> cat(sep = '\n')
   } else sprintf(
@@ -141,24 +140,21 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 })
 
 
-format_minute <- \(x) {
-  # `x` is \link[base]{numeric} \link[base]{vector}
-  if (anyNA(x)) stop('do not allow missingness')
-  day <- x %/% (60*24)
-  x_day <- x %% (60*24)
-  hour <- x_day %/% 60
-  min_ <- x %% 60
-  unlist(.mapply(FUN = \(...) {
-    z0 <- c(...)
-    z <- z0[!is.na(z0)]
-    if (!length(z)) return('')
-    paste(z, collapse = ' ')
-  }, dots = list(
-    ifelse(day > 0, yes = sprintf(fmt = '%dd', day), no = NA_character_), 
-    ifelse(hour > 0, yes = sprintf(fmt = '%dhr', hour), no = NA_character_), 
-    ifelse(min_ > 0, yes = sprintf(fmt = '%dmin', min_), no = NA_character_)
-  ), MoreArgs = NULL))
+#' @importFrom consec cmod
+fmt_min <- \(x) {
+    
+  if (!length(x)) return(character())
+  
+  x |>
+    cmod(
+      e1 = _, 
+      e2 = c(d = 60*24, hr = 60, min = 1),
+      n = 3L,
+      tol = 1e-6
+    )
+
 }
+
 
 
 thermometer <- \(...) new(
