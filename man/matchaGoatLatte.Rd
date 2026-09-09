@@ -15,8 +15,8 @@ matchaGoatLatte()
 matchaGoatLatte()
 
 diagnose(
- matchaLatte,
- matchaGoatLatte
+ matchaLatte(),
+ matchaGoatLatte()
 ) # compare dry powder
 
 diagnose(

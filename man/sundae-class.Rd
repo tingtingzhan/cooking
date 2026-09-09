@@ -42,9 +42,14 @@ Do not use too much water!! I get frost bite!!
 #Bourbon_icecream() # future
 
 matcha_sundae() * 2
+\dontrun{
 diagnose(
- subtract(nutrition(cooking23s_icecream), sugar = 32),
- subtract(nutrition(SweetDumpling_matcha_icecream()), sugar = 63),
+ cooking23s_icecream() |>
+  as('nutrition') |>
+  subtract(sugar = 32),
+ SweetDumpling_matcha_icecream() |>
+  as('nutrition') |>
+  subtract(sugar = 63),
  subtract(xiaogaojie_icecream, sugar = 57),
  subtract(cuisinart_icecream, sugar = 95),
  subtract(emma_froyo, sugar = 84),
@@ -52,7 +57,7 @@ diagnose(
  subtract(Bassetts_matcha, sugar = 11.7),
  subtract(maeda_matcha_icecream, sugar = 9.55),
  subtract(Yumna_icecream, sugar = 58),
- matcha_sundae,
+ matcha_sundae(),
  
  new(Class = 'recipe', alias_class = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
  mascarpone = 453/2, water = 320, 
@@ -60,17 +65,16 @@ diagnose(
  pros = c('Nice! Tiny little oily'))
 )
 
-
 diagnose(
  subtract(Bassetts_coffee, sugar = 12.7),
  subtract(HaagenDazs_coffee, sugar = 16),
- coffee_sundae
+ coffee_sundae()
 )
 
 diagnose(
  subtract(Bassetts_pumpkin, sugar = 11),
- pumpkin_sundae
+ pumpkin_sundae()
 )
-
+}
 
 }

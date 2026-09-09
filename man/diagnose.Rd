@@ -2,7 +2,7 @@
 % Please edit documentation in R/fun_diagnose.R
 \name{diagnose}
 \alias{diagnose}
-\title{diagnose}
+\title{Diagnose Multiple}
 \usage{
 diagnose(...)
 }

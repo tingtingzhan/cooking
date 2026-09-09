@@ -15,9 +15,9 @@ Other People's Cream Cheese Spread
 }
 \examples{
 diagnose(
- pumpkin_creamCheeseSpread,
- GoodLifeEats_pumpkin_creamCheeseSpread,
- Lynn_pumpkin_creamCheeseSpread
+ pumpkin_creamCheeseSpread(),
+ GoodLifeEats_pumpkin_creamCheeseSpread(),
+ Lynn_pumpkin_creamCheeseSpread()
 )
 }
 \keyword{internal}

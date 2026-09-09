@@ -31,15 +31,15 @@ sesame_lava()
 coconut_lava()
 
 diagnose(
-  sesame_lava,
-  Daat_sesamelava,
-  xiaogaojie_sesamelava,
-  FancyNotes_sesamelava,
-  xiaomin_sesamelava
+  sesame_lava(),
+  Daat_sesamelava(),
+  xiaogaojie_sesamelava(),
+  FancyNotes_sesamelava(),
+  xiaomin_sesamelava()
 )
 
 diagnose(
-  sesame_lava,
+  sesame_lava(),
   subtract(Daat_sesamelava, sugar = 107),
   subtract(xiaogaojie_sesamelava, sugar = 60),
   # subtract(FancyNotes_sesamelava, sugar = 40, invertSugar = 7), 

@@ -35,18 +35,18 @@ matcha_gateau()
 pumpkin_gateau()
 
 diagnose(
- cocoa_gateau,
+ cocoa_gateau(),
  subtract(AddaPinch_chocolate_cake, sugar = 300),
  subtract(PreppyKitchen_chocolate_cake, sugar = 300)
 )
 
 diagnose(
- matcha_gateau,
+ matcha_gateau(),
  subtract(DessertFor2_matcha_cake, sugar = 150)
 )
 
 diagnose(
- pumpkin_gateau,
+ pumpkin_gateau(),
  subtract(Sallys_pumpkin_cake, sugar = 100, brownSugar = 90)
 )
 

@@ -27,8 +27,8 @@ Non-deep-fry \linkS4class{sacima} recipe.
 new(Class = 'sacima')
 
 diagnose(
- xiaogaojie_sacima,
- Dad_sacima,
- shangshi_sacima)
+ xiaogaojie_sacima(),
+ Dad_sacima(),
+ shangshi_sacima())
 
 }

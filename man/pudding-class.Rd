@@ -18,8 +18,8 @@ shangshi_pudding()
 pudding()
 
 diagnose(
- pudding,
- shangshi_pudding
+ pudding(),
+ shangshi_pudding()
 )
 
 }

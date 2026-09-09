@@ -9,11 +9,11 @@ Dairy Products
 \examples{
 \dontrun{
 diagnose(
- Nancys_creamCheese,
- Philadelphia_creamCheese,
- OrganicValley_creamCheese,
- TraderJoes_creamCheese,
- Tillamook_creamCheese
+ Nancys_creamCheese(),
+ Philadelphia_creamCheese(),
+ OrganicValley_creamCheese(),
+ TraderJoes_creamCheese(),
+ Tillamook_creamCheese()
 )
 }
 }

@@ -27,15 +27,15 @@ whiteSwan_shrimpfill()
 }
 \examples{
 diagnose(
-  shrimpfillCantonese,
-  shrimpball,
-  shrimpmash
+  shrimpfillCantonese(),
+  shrimpball(),
+  shrimpmash()
 )
 
 diagnose(
- shrimpfillCantonese,
- whiteSwan_shrimpfill,
- Daat_shrimpfill,
+ shrimpfillCantonese(),
+ whiteSwan_shrimpfill(),
+ Daat_shrimpfill(),
  subtract(Daat_shrimpfill, vegetable = c(bambooShoot = 90))
 )
 

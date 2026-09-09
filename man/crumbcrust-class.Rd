@@ -28,12 +28,22 @@ Although it still tastes wonderful!
 blackSesame_crumbcrust()
 
 diagnose(
- blackSesame_crumbcrust,
- subtract(nutrition(PreppyKitchen_grahamCrust2), sugar = 35),
- subtract(nutrition(PreppyKitchen_grahamCrust1), sugar = 23),
- subtract(nutrition(PreppyKitchen_grahamCrust4), sugar = 32),
- subtract(nutrition(PreppyKitchen_grahamCrust3), sugar = 21),
- subtract(nutrition(PreppyKitchen_grahamCrust5), sugar = 28),
+ blackSesame_crumbcrust(),
+ PreppyKitchen_grahamCrust2() |>
+  as('nutrition') |>
+  subtract(sugar = 35),
+ PreppyKitchen_grahamCrust1() |>
+  as('nutrition') |>
+  subtract(sugar = 23),
+ PreppyKitchen_grahamCrust4() |>
+  as('nutrition') |>
+  subtract(sugar = 32),
+ PreppyKitchen_grahamCrust3() |>
+  as('nutrition') |>
+  subtract(sugar = 21),
+ PreppyKitchen_grahamCrust5() |>
+  as('nutrition') |>
+  subtract(sugar = 28),
  subtract(MiDel_grahamCrust, sugar = 5.8),
  subtract(Keebler_grahamCrust, sugar = 4.1),
  subtract(WholeFoods365_grahamCrust, sugar = 4)

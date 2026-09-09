@@ -81,42 +81,42 @@ Mocaccino, Commercial or Other People's Recipe
 }
 \examples{
 diagnose(
- mocaccino,
- Rebecca_mocha,
- Pillsbury_mocha,
- EarlaTaylor_cocoa,
- Mels_cocoa,
- AmandaRettke_cocoa,
- bargainmums_mocha
+ mocaccino(),
+ Rebecca_mocha(),
+ Pillsbury_mocha(),
+ EarlaTaylor_cocoa(),
+ Mels_cocoa(),
+ AmandaRettke_cocoa(),
+ bargainmums_mocha()
 ) # compare powder recipes
 
 diagnose(
- mocaccino,
- Maxwell_mochaSuisse,
- WilliamsSonoma_mocha,
- Ghirardelli_mochaFrappe,
- Godiva_milkCocoa,
- Godiva_cocoa,
- KingArthur_milkChocolate,
- Nestle_skimCocoa,
- Nestle_richChocolate,
- Nestle_cocoSupreme,
- SwissMiss_simplyCocoaMilk,
- SwissMiss_milkCocoa,
- Starbucks_cocoa,
- StarbucksKcup_cocoa,
- Starbucks_mochaMix
+ mocaccino(),
+ Maxwell_mochaSuisse(),
+ WilliamsSonoma_mocha(),
+ Ghirardelli_mochaFrappe(),
+ Godiva_milkCocoa(),
+ Godiva_cocoa(),
+ KingArthur_milkChocolate(),
+ Nestle_skimCocoa(),
+ Nestle_richChocolate(),
+ Nestle_cocoSupreme(),
+ SwissMiss_simplyCocoaMilk(),
+ SwissMiss_milkCocoa(),
+ Starbucks_cocoa(),
+ StarbucksKcup_cocoa(),
+ Starbucks_mochaMix()
 ) # compare commercial powders
 
 diagnose(
  hotdrink(mocaccino),
- Starbucks_mocha
+ Starbucks_mocha()
 ) # compare hot drink
 
 diagnose(
  frappe(mocaccino),
- Starbucks_mochaFrappuccino,
- Starbucks_mochaFrappuccino_bottle
+ Starbucks_mochaFrappuccino(),
+ Starbucks_mochaFrappuccino_bottle()
 ) # compare frappe
 }
 \keyword{internal}

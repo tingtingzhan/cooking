@@ -19,7 +19,7 @@ Leo_udon()
 }
 \examples{
 diagnose(
- Leo_udon,
- JustOne_udon,
- amanda_udon)
+ Leo_udon(),
+ JustOne_udon(),
+ amanda_udon())
 }

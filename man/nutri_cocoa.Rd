@@ -9,12 +9,12 @@ Cocoa Powder
 \examples{
 \dontrun{
 diagnose(
- KingArthur_blackCocoa,
- KingArthur_Burgundy,
- KingArthur_Bensdorp, 
- Ghirardelli_sunrise,
- Ghirardelli_majestic,
- Navitas_cacao
+ KingArthur_blackCocoa(),
+ KingArthur_Burgundy(),
+ KingArthur_Bensdorp(), 
+ Ghirardelli_sunrise(),
+ Ghirardelli_majestic(),
+ Navitas_cacao()
 )
 }
 }
