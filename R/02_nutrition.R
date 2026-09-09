@@ -355,7 +355,7 @@ setClass(Class = 'nutrition', slots = c(
 
 
 #' @importFrom cli ansi_string
-#' @importFrom quantmod getQuote
+# @importFrom quantmod getQuote
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
@@ -875,7 +875,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   cost_ <- c(
     'usd' = if (length(x@usd)) x@usd else NA_real_,
     'JP\U1f4b4' = if (length(x@jpy)) {
-      #x@jpy / getQuote('USDJPY=X')$Last # may cause devtools::check() error
+      #x@jpy / quantmod::getQuote('USDJPY=X')$Last # may cause devtools::check() error
       x@jpy / 153.507
     } else NA_real_
   )

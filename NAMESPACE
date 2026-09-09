@@ -551,7 +551,6 @@ importFrom(charwidth,cat_matrix)
 importFrom(cli,ansi_string)
 importFrom(consec,cmod)
 importFrom(equiv4,binlabel)
-importFrom(quantmod,getQuote)
 importFrom(stats,
   median.default,
   setNames
