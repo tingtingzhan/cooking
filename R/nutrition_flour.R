@@ -16,7 +16,8 @@ Wegmans_pastry <- \() new(
 
 Wegmans_bread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = '\u9ad8\u7b4b\u9762\u7c89 Bread\U1f35e Flour', # Enriched Unbleached
+  name = 'Bread\U1f35e Flour', # Enriched Unbleached
+  alias = '\u9ad8\u7b4b\u9762\u7c89',
   wegmans = 24587L, usd = 3.69/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging

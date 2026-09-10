@@ -349,6 +349,10 @@ setClass(Class = 'raw.', slots = c(
 #' @export
 setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object))
 
+
+
+
+
 #' @method print raw.
 #' @export
 print.raw. <- \(x, ...) {
@@ -431,7 +435,7 @@ print.raw. <- \(x, ...) {
   if (length(fat_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, fmt_vol(fat_vol)) |> lapply(FUN = cli_text)
   
   halfpound_brick <- c(
-    x@creamCheese
+    x@butter, x@creamCheese
   )
   if (length(halfpound_brick)) sprintf(
     fmt = '%s %.0f grams %s\n', 
@@ -450,7 +454,7 @@ print.raw. <- \(x, ...) {
   dairy_vol <- c(# dairy with volume info
     x@cheese, 
     x@mascarpone, x@cottageCheese, x@yogurt, x@yogurtGreek, x@kefir, x@filmjolk,
-    x@butter, x@ghee, x@evaporatedMilk, x@drymilk, x@milk, x@buttermilk, x@heavyCream, x@lightCream, x@sourCream
+    x@ghee, x@evaporatedMilk, x@drymilk, x@milk, x@buttermilk, x@heavyCream, x@lightCream, x@sourCream
   )
   if (length(dairy_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(dairy_vol)], dairy_vol, fmt_vol(dairy_vol)) |> lapply(FUN = cli_text)
   
@@ -539,123 +543,123 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   x@eggWhite_pc <- x@eggYolk_pc <- x@egg_pc <- numeric()
   
   x <- x |> 
-    combineVol(which = 'flour', name1 = 'KingArthur_allPurpose') |>
-    addNameLen1(which = 'pastryFlour', name1 = 'Wegmans_pastry') |>
-    addNameLen1(which = 'breadFlour', name1 = 'Wegmans_bread') |> # 2024-04-02 # Wegmans_bread() has *much* higher water absorbency, and much cheaper than KingArthur_bread()
-    addNameLen1(which = 'wholeWheatFlour', name1 = 'Wegmans_whiteWheat') |>
-    addNameLen1(which = 'glutenFreeFlour', name1 = 'KingArthur_M4M') |>
-    addNameLen1(which = 'wheatGluten', name1 = 'BobsRedMill_wheatGluten') |>
-    combineVol(which = 'cornmeal', name1 = 'Albertsons_yellowCorn') |>
-    addNameLen1(which = 'coconut') |> # , name1 = 'WegmansOrganic_coconutFlour' # compare with other brands?
-    addNameLen1(which = 'riceFlour', name1 = 'Erawan_riceFlour') |>
-    addNameLen1(which = 'glutinousRiceFlour', name1 = 'Erawan_glutinousRiceFlour') |>
-    addNameLen1(which = 'blackRice', name1 = 'HaiTai_blackRice') |>
-    addNameLen1(which = 'brownRice', name1 = 'Nishiki_brownRice') |>
-    combineVol(which = 'water', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'iceWater', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'carbonatedWater', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'shavedIce', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'ice', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'water40', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'water70', name1 = 'Wegmans_water') |>
-    combineVol(which = 'water80', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'water90', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'water95', name1 = 'Wegmans_water') |> 
-    addNameLen1(which = 'water_ext', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'boilingWater', name1 = 'Wegmans_water') |>
-    addNameLen1(which = 'applesauce', name1 = 'Motts_applesauce') |>
-    addNameLen1(which = 'banana', name1 = 'banana') |>
-    addNameLen1(which = 'darkCherry', name1 = 'HappyVillage_darkCherry') |>
-    addNameLen1(which = 'durian', name1 = 'LuckyTaro_durian') |>
-    addNameLen1(which = 'mandarine', name1 = 'DelMonte_mandarine') |>
-    addNameLen1(which = 'mango', name1 = 'mango') |>
-    addNameLen1(which = 'pear', name1 = 'DelMonte_pear') |>
-    addNameLen1(which = 'pineapple', name1 = 'Dole_pineapple') |>
-    combineVol(which = 'pumpkin', name1 = 'Libbys_pumpkin') |>
-    addNameLen1(which = 'pumpkinPieMix', name1 = 'Libbys_pumpkinPieMix') |>
-    addNameLen1(which = 'strawberry', name1 = 'Kirkland_strawberry') |>
-    addNameLen1(which = 'tomato', name1 = 'WegmansOrganic_tomato') |>
-    addNameLen1(which = 'yellowCorn', name1 = 'Kirkland_yellowCorn') |>
-    addNameLen1(which = 'blackSesame', name1 = 'Greenmax_blackSesame') |>
-    combineVol(which = 'flavor') |>
-    combineVol(which = 'sesameOil', name1 = 'Kadoya_sesameOil') |>
-    combineVol(which = 'rattanPepperOil', name1 = 'YouJia_rattanPepperOil') |>
-    combineVol(which = 'fat') |>
-    combineVol(which = 'lard', name1 = 'Epic_lard') |>
-    combineVol(which = 'tallow', name1 = 'Epic_tallow') |>
+    combnVol(which = 'flour', nm = 'KingArthur_allPurpose') |>
+    addname1(which = 'pastryFlour', nm = 'Wegmans_pastry') |>
+    addname1(which = 'breadFlour', nm = 'Wegmans_bread') |> # 2024-04-02 # Wegmans_bread() has *much* higher water absorbency, and much cheaper than KingArthur_bread()
+    addname1(which = 'wholeWheatFlour', nm = 'Wegmans_whiteWheat') |>
+    addname1(which = 'glutenFreeFlour', nm = 'KingArthur_M4M') |>
+    addname1(which = 'wheatGluten', nm = 'BobsRedMill_wheatGluten') |>
+    combnVol(which = 'cornmeal', nm = 'Albertsons_yellowCorn') |>
+    addname1(which = 'coconut') |> # , nm = 'WegmansOrganic_coconutFlour' # compare with other brands?
+    addname1(which = 'riceFlour', nm = 'Erawan_riceFlour') |>
+    addname1(which = 'glutinousRiceFlour', nm = 'Erawan_glutinousRiceFlour') |>
+    addname1(which = 'blackRice', nm = 'HaiTai_blackRice') |>
+    addname1(which = 'brownRice', nm = 'Nishiki_brownRice') |>
+    combnVol(which = 'water', nm = 'Wegmans_water') |>
+    addname1(which = 'iceWater', nm = 'Wegmans_water') |>
+    addname1(which = 'carbonatedWater', nm = 'Wegmans_water') |>
+    addname1(which = 'shavedIce', nm = 'Wegmans_water') |>
+    addname1(which = 'ice', nm = 'Wegmans_water') |>
+    addname1(which = 'water40', nm = 'Wegmans_water') |>
+    addname1(which = 'water70', nm = 'Wegmans_water') |>
+    combnVol(which = 'water80', nm = 'Wegmans_water') |>
+    addname1(which = 'water90', nm = 'Wegmans_water') |>
+    addname1(which = 'water95', nm = 'Wegmans_water') |> 
+    addname1(which = 'water_ext', nm = 'Wegmans_water') |>
+    addname1(which = 'boilingWater', nm = 'Wegmans_water') |>
+    addname1(which = 'applesauce', nm = 'Motts_applesauce') |>
+    addname1(which = 'banana', nm = 'banana') |>
+    addname1(which = 'darkCherry', nm = 'HappyVillage_darkCherry') |>
+    addname1(which = 'durian', nm = 'LuckyTaro_durian') |>
+    addname1(which = 'mandarine', nm = 'DelMonte_mandarine') |>
+    addname1(which = 'mango', nm = 'mango') |>
+    addname1(which = 'pear', nm = 'DelMonte_pear') |>
+    addname1(which = 'pineapple', nm = 'Dole_pineapple') |>
+    combnVol(which = 'pumpkin', nm = 'Libbys_pumpkin') |>
+    addname1(which = 'pumpkinPieMix', nm = 'Libbys_pumpkinPieMix') |>
+    addname1(which = 'strawberry', nm = 'Kirkland_strawberry') |>
+    addname1(which = 'tomato', nm = 'WegmansOrganic_tomato') |>
+    addname1(which = 'yellowCorn', nm = 'Kirkland_yellowCorn') |>
+    addname1(which = 'blackSesame', nm = 'Greenmax_blackSesame') |>
+    combnVol(which = 'flavor') |>
+    combnVol(which = 'sesameOil', nm = 'Kadoya_sesameOil') |>
+    combnVol(which = 'rattanPepperOil', nm = 'YouJia_rattanPepperOil') |>
+    combnVol(which = 'fat') |>
+    combnVol(which = 'lard', nm = 'Epic_lard') |>
+    combnVol(which = 'tallow', nm = 'Epic_tallow') |>
     # no accurate density info available yet
-    combineVol(which = 'ginger', name1 = 'SimplyOrganic_ginger') |>
-    combineVol(which = 'garlic', name1 = 'McCormick_garlic_powder') |>
-    combineVol(which = 'onion', name1 = 'McCormick_onion_powder') |>
-    combineVol(which = 'coriander', name1 = 'SimplyOrganic_coriander') |>
-    combineVol(which = 'cumin', name1 = 'SimplyOrganic_cumin') |>
-    combineVol(which = 'cilantro', name1 = 'McCormick_cilantro') |>
-    combineVol(which = 'spiceItalian', name1 = 'SimplyOrganic_Italian') |>
-    combineVol(which = 'clove', name1 = 'SimplyOrganic_clove') |>
-    combineVol(which = 'cinnamon', name1 = 'SimplyOrganic_cinnamonCeylon') |>
-    combineVol(which = 'whitePepper', name1 = 'McCormick_whitePepper') |>
-    combineVol(which = 'blackPepper', name1 = 'McCormick_blackPepper') |>
-    combineVol(which = 'turmeric', name1 = 'McCormick_turmeric') |>
-    combineVol(which = 'paprika', name1 = 'Chinata_paprika') |>
-    combineVol(which = 'spice5', name1 = 'SimplyOrganic_5spice') |>
-    combineVol(which = 'pumpkinSpice', name1 = 'SimplyOrganic_pumpkinSpice') |>
-    combineVol(which = 'spice') |>
-    combineVol(which = 'chiliMix') |>
-    combineVol(which = 'curry') |>
+    combnVol(which = 'ginger', nm = 'SimplyOrganic_ginger') |>
+    combnVol(which = 'garlic', nm = 'McCormick_garlic_powder') |>
+    combnVol(which = 'onion', nm = 'McCormick_onion_powder') |>
+    combnVol(which = 'coriander', nm = 'SimplyOrganic_coriander') |>
+    combnVol(which = 'cumin', nm = 'SimplyOrganic_cumin') |>
+    combnVol(which = 'cilantro', nm = 'McCormick_cilantro') |>
+    combnVol(which = 'spiceItalian', nm = 'SimplyOrganic_Italian') |>
+    combnVol(which = 'clove', nm = 'SimplyOrganic_clove') |>
+    combnVol(which = 'cinnamon', nm = 'SimplyOrganic_cinnamonCeylon') |>
+    combnVol(which = 'whitePepper', nm = 'McCormick_whitePepper') |>
+    combnVol(which = 'blackPepper', nm = 'McCormick_blackPepper') |>
+    combnVol(which = 'turmeric', nm = 'McCormick_turmeric') |>
+    combnVol(which = 'paprika', nm = 'Chinata_paprika') |>
+    combnVol(which = 'spice5', nm = 'SimplyOrganic_5spice') |>
+    combnVol(which = 'pumpkinSpice', nm = 'SimplyOrganic_pumpkinSpice') |>
+    combnVol(which = 'spice') |>
+    combnVol(which = 'chiliMix') |>
+    combnVol(which = 'curry') |>
     # with density info
-    combineVol(which = 'sugar', name1 = 'US_10x') |>
-    combineVol(which = 'brownSugar', name1 = 'Domino_darkBrown') |>
-    combineVol(which = 'syrup') |>
-    combineVol(which = 'salt', name1 = 'Morton_salt') |>
-    combineVol(which = 'msg', name1 = 'Ajinomoto_msg') |>
-    combineVol(which = 'NaHCO3', name1 = 'ArmHammer_NaHCO3') |>
-    combineVol(which = 'Na2CO3', name1 = 'Na2CO3') |>
-    combineVol(which = 'bakingPowder', name1 = 'TraderJoes_bakingPowder') |>
-    combineVol(which = 'yeast', name1 = 'Fleischmanns_instant') |>
-    combineVol(which = 'matcha', name1 = 'Ippodo_ikuyo') |>
-    combineVol(which = 'cocoa', name1 = 'KingArthur_Bensdorp') |>
-    combineVol(which = 'coffee', name1 = 'NescafeGold_blonde') |> 
-    combineVol(which = 'beet', name1 = 'Wegmans_beet') |>
-    combineVol(which = 'acai', name1 = 'Wegmans_acai') |>
-    combineVol(which = 'creamTartar', name1 = 'McCormick_creamTartar') |>
-    combineVol(which = 'vanilla', name1 = 'NielsenMassey_Madagascar') |>
-    combineVol(which = 'starch') |>
-    combineVol(which = 'oil') |>
-    combineVol(which = 'sauce') |>
-    combineVol(which = 'liqueur') |>
-    combineVol(which = 'butter', name1 = 'Kerrygold') |>
-    combineVol(which = 'ghee', name1 = 'WegmansOrganic') |>
-    combineVol(which = 'cheese') |>
-    combineVol(which = 'mascarpone', name1 = 'BelGioioso') |>
-    combineVol(which = 'cottageCheese', name1 = 'Daisy') |>
-    combineVol(which = 'yogurtGreek', name1 = 'FageTotal0') |>
-    combineVol(which = 'yogurt', name1 = 'Nancys') |> # taste best!!
-    combineVol(which = 'kefir', name1 = 'GreenValley') |>
-    combineVol(which = 'filmjolk', name1 = 'Siggis') |>
-    combineVol(which = 'condensedMilk', name1 = 'Carnation') |>
-    combineVol(which = 'evaporatedMilk', name1 = 'Carnation') |>
-    combineVol(which = 'creamCheese', name1 = 'Nancys') |>
-    combineVol(which = 'drymilk', name1 = 'Carnation') |>
-    combineVol(which = 'milk', name1 = 'WegmansOrganic_whole_milk') |>
-    combineVol(which = 'buttermilk', name1 = 'OakFarms_buttermilk') |>
-    combineVol(which = 'heavyCream', name1 = 'Wegmans') |>
-    combineVol(which = 'lightCream', name1 = 'Lucerne') |>
-    combineVol(which = 'sourCream', name1 = 'Daisy') |>
+    combnVol(which = 'sugar', nm = 'US_10x') |>
+    combnVol(which = 'brownSugar', nm = 'Domino_darkBrown') |>
+    combnVol(which = 'syrup') |>
+    combnVol(which = 'salt', nm = 'Morton_salt') |>
+    combnVol(which = 'msg', nm = 'Ajinomoto_msg') |>
+    combnVol(which = 'NaHCO3', nm = 'ArmHammer_NaHCO3') |>
+    combnVol(which = 'Na2CO3', nm = 'Na2CO3') |>
+    combnVol(which = 'bakingPowder', nm = 'TraderJoes_bakingPowder') |>
+    combnVol(which = 'yeast', nm = 'Fleischmanns_instant') |>
+    combnVol(which = 'matcha', nm = 'Ippodo_ikuyo') |>
+    combnVol(which = 'cocoa', nm = 'KingArthur_Bensdorp') |>
+    combnVol(which = 'coffee', nm = 'NescafeGold_blonde') |> 
+    combnVol(which = 'beet', nm = 'Wegmans_beet') |>
+    combnVol(which = 'acai', nm = 'Wegmans_acai') |>
+    combnVol(which = 'creamTartar', nm = 'McCormick_creamTartar') |>
+    combnVol(which = 'vanilla', nm = 'NielsenMassey_Madagascar') |>
+    combnVol(which = 'starch') |>
+    combnVol(which = 'oil') |>
+    combnVol(which = 'sauce') |>
+    combnVol(which = 'liqueur') |>
+    combnVol(which = 'butter', nm = 'Kerrygold') |>
+    combnVol(which = 'ghee', nm = 'WegmansOrganic') |>
+    combnVol(which = 'cheese') |>
+    combnVol(which = 'mascarpone', nm = 'BelGioioso') |>
+    combnVol(which = 'cottageCheese', nm = 'Daisy') |>
+    combnVol(which = 'yogurtGreek', nm = 'FageTotal0') |>
+    combnVol(which = 'yogurt', nm = 'Nancys') |> # taste best!!
+    combnVol(which = 'kefir', nm = 'GreenValley') |>
+    combnVol(which = 'filmjolk', nm = 'Siggis') |>
+    combnVol(which = 'condensedMilk', nm = 'Carnation') |>
+    combnVol(which = 'evaporatedMilk', nm = 'Carnation') |>
+    combnVol(which = 'creamCheese', nm = 'Nancys') |>
+    combnVol(which = 'drymilk', nm = 'Carnation') |>
+    combnVol(which = 'milk', nm = 'WegmansOrganic_whole_milk') |>
+    combnVol(which = 'buttermilk', nm = 'OakFarms_buttermilk') |>
+    combnVol(which = 'heavyCream', nm = 'Wegmans') |>
+    combnVol(which = 'lightCream', nm = 'Lucerne') |>
+    combnVol(which = 'sourCream', nm = 'Daisy') |>
     meatName(animal = 'pork') |>
     meatName(animal = 'beef') |>
     meatName(animal = 'lamb') |>
     meatName(animal = 'chicken') |>
-    addNameLen1(which = 'shrimp', name1 = 'Kirkland_shrimp_31_40') |>
-    addNameLen1(which = 'soybean', name1 = 'Laura_soybean') |>
-    addNameLen1(which = 'chickpea', name1 = 'Palouse_chickpea') |>
-    addNameLen1(which = 'adzukibean', name1 = 'HaiTai_adzuki') |>
-    addNameLen1(which = 'mungbean', name1 = 'HaiTai_mung') |>
-    addNameLen1(which = 'redKidneyBean', name1 = 'redKidneyBean') |>
-    addNameLen1(which = 'cashew', name1 = 'Kirkland_cashew_organic') |>
-    addNameLen1(which = 'nut')
+    addname1(which = 'shrimp', nm = 'Kirkland_shrimp_31_40') |>
+    addname1(which = 'soybean', nm = 'Laura_soybean') |>
+    addname1(which = 'chickpea', nm = 'Palouse_chickpea') |>
+    addname1(which = 'adzukibean', nm = 'HaiTai_adzuki') |>
+    addname1(which = 'mungbean', nm = 'HaiTai_mung') |>
+    addname1(which = 'redKidneyBean', nm = 'redKidneyBean') |>
+    addname1(which = 'cashew', nm = 'Kirkland_cashew_organic') |>
+    addname1(which = 'nut')
   
   x@fruit_pc <- sum_by_name( # is this correct???
-    addNameLen1(x, which = 'fruit_pc')@fruit_pc, 
+    addname1(x, which = 'fruit_pc')@fruit_pc, 
     c(avocado = avocado()@pieceWeight * x@avocado_pc),
     c(lemonJuice = lemonJuice()@pieceWeight * x@lemon_pc),
     c(limeJuice = limeJuice()@pieceWeight * x@lime_pc))
@@ -677,6 +681,10 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 
 
 
+
+
+
+
 #' @title Multiplication of \linkS4class{raw.} Object(s)
 #' 
 #' @description ..
@@ -684,10 +692,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 #' @param e1,e2 \linkS4class{raw.} object and \link[base]{numeric} scalar
 #' 
 #' @name S4arith_raw
-NULL
-
-#' @rdname S4arith_raw
-# @aliases *,raw.,numeric-method
+#' @aliases *,raw.,numeric-method
 #' @export
 setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
   e1 <- e1 |>
@@ -708,6 +713,8 @@ setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'raw.'), definitio
 # @aliases /,raw.,numeric-method
 #' @export
 setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
+
+
 
 
 
@@ -746,93 +753,3 @@ setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
 
 
 
-check_gelatin <- \(x) {
-  if (n_leaf <- length(x@gelatin_leaf)) {
-    if (n_leaf > 1L) stop('only use Gold gelatin leaves')
-    if (is.na(x@gelatin_leaf) || (x@gelatin_leaf <= 0)) stop('number of gelatin sheets must be all >0')
-    x@gelatin <- sum(x@gelatin, x@gelatin_leaf * 2)
-    x@gelatin_leaf <- numeric()
-  }
-  if (n <- length(x@gelatin)) {
-    if (n != 1L) stop('only use Gold gelatin')
-    names(x@gelatin) <- 'Champion_gold_gelatin'
-  }
-  return(x)
-}
-
-
-# add name to len-1 vector
-addNameLen1 <- \(x, which, name1 = stop('no default!')) {
-  nx <- length(slot(x, name = which))
-  if (!nx) return(x) # exception
-  if (nx == 1L) {
-    nm <- names(slot(x, name = which))
-    if (!length(nm) || is.na(nm) || !nzchar(nm)) names(slot(x, name = which)) <- name1
-  }
-  nm <- names(slot(x, name = which))
-  if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('ill name')
-  return(x)
-}
-
-
-combineVol <- \(x, which, name1 = stop('no default!')) {
-  slt0 <- names(getSlots(x = 'raw.'))
-  ._tsp <- paste0(which, '_tsp')
-  has_tsp <- ._tsp %in% slt0
-  ._Tbsp <- paste0(which, '_Tbsp')
-  has_Tbsp <- ._Tbsp %in% slt0
-  ._cup <- paste0(which, '_cup')
-  has_cup <- ._cup %in% slt0
-  ._brick <- paste0(which, '_brick')
-  has_brick <- ._brick %in% slt0
-  x_gram <- slot(addNameLen1(x, which = which, name1 = name1), name = which)
-  x_tsp <- if (has_tsp) slot(addNameLen1(x, which = ._tsp, name1 = name1), name = ._tsp) # else NULL
-  x_Tbsp <- if (has_Tbsp) slot(addNameLen1(x, which = ._Tbsp, name1 = name1), name = ._Tbsp) # else NULL
-  x_cup <- if (has_cup) slot(addNameLen1(x, which = ._cup, name1 = name1), name = ._cup) # else NULL
-  x_brick <- if (has_brick) slot(addNameLen1(x, which = ._brick, name1 = name1), name = ._brick) # else NULL
-  if (which %in% c(
-    'starch', 'oil', 
-    'butter', 'cheese', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 
-    'filmjolk', 'ghee', 'heavyCream', 'kefir', 'lightCream', 'mascarpone', 'milk',
-    'sourCream', 'yogurt', 'yogurtGreek',
-    'syrup'
-  )) {
-    add_suffix <- \(x0, which) {
-      if (!length(names(x0))) return(x0)
-      idx <- !endsWith(names(x0), suffix = paste0('_', which))
-      names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
-      return(x0)
-    }
-    x_gram <- add_suffix(x_gram, which = which)
-    if (has_tsp) x_tsp <- add_suffix(x_tsp, which = which)
-    if (has_Tbsp) x_Tbsp <- add_suffix(x_Tbsp, which = which)
-    if (has_cup) x_cup <- add_suffix(x_cup, which = which)
-    if (has_brick) x_brick <- add_suffix(x_brick, which = which)
-  }
-  
-  slot(x, name = which) <- sum_by_name(
-    x_gram, 
-    if (has_tsp) gram_per_tsp(names(x_tsp)) * x_tsp, 
-    if (has_Tbsp) gram_per_tsp(names(x_Tbsp)) * (3 * x_Tbsp), # parenthesis needed!! otherwise floating issue!!!
-    if (has_cup) gram_per_tsp(names(x_cup)) * (48 * x_cup),
-    if (has_brick) 226.796 * x_brick
-  )
-  
-  if (has_tsp) slot(x, name = ._tsp) <- numeric()
-  if (has_Tbsp) slot(x, name = ._Tbsp) <- numeric() 
-  if (has_cup) slot(x, name = ._cup) <- numeric() 
-  if (has_brick) slot(x, name = ._brick) <- numeric()
-  return(x)
-}
-
-
-
-
-meatName <- \(x, animal = stop('')) {
-  if (!length(slot(x, name = animal))) return(x)
-  nm <- names(slot(x, name = animal))
-  if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('incomplete meat name')
-  idx <- !startsWith(nm, prefix = paste0(animal, '_'))
-  names(slot(x, name = animal))[idx] <- paste0(animal, '_', nm[idx])
-  return(x)
-}

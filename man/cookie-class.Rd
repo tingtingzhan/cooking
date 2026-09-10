@@ -11,7 +11,7 @@
 \alias{lemon_cookie}
 \alias{matcha_cookie}
 \alias{blackSesame_cookie2022}
-\alias{Harney_UvaHighlands_cookie}
+\alias{Harney_Uva_cookie}
 \alias{Harney_PuErh_cookie}
 \alias{Harney_LapSangSouChong_cookie}
 \alias{Ceylon_cookie}
@@ -35,7 +35,7 @@ matcha_cookie()
 
 blackSesame_cookie2022()
 
-Harney_UvaHighlands_cookie()
+Harney_Uva_cookie()
 
 Harney_PuErh_cookie()
 
@@ -61,7 +61,7 @@ blackSesame_cookie2022()
 # blackSesame_cookie2022() * .4 + Bourbon_cheesecake_Crown() # syrup not good, but idea great!!
 blackSesame_cookie2022() * .4 + ryeWhisky_cheesecake()
 
-Harney_UvaHighlands_cookie()
+Harney_Uva_cookie()
 Assam_cookie()
 Harney_PuErh_cookie()
 cocoa_cookie()

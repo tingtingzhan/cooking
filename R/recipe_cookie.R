@@ -15,7 +15,7 @@
 #' # blackSesame_cookie2022() * .4 + Bourbon_cheesecake_Crown() # syrup not good, but idea great!!
 #' blackSesame_cookie2022() * .4 + ryeWhisky_cheesecake()
 #' 
-#' Harney_UvaHighlands_cookie()
+#' Harney_Uva_cookie()
 #' Assam_cookie()
 #' Harney_PuErh_cookie()
 #' cocoa_cookie()
@@ -174,7 +174,7 @@ blackSesame_cookie2022 <- \() new(
 
 #' @rdname cookie-class
 #' @export
-Harney_UvaHighlands_cookie <- \() new(
+Harney_Uva_cookie <- \() new(
   Class = 'cookie', 
   Assam_cookie(), 
   tea = c(Harney_UvaHighlands = 52), 
