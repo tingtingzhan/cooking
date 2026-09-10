@@ -78,11 +78,10 @@
 #' @slot krusteaz \link[base]{character} scalar
 #' @slot landolakes \link[base]{character} scalar
 #' @slot leaperrins \link[base]{character} scalar
-#' @slot lkkhk \link[base]{character} scalar
-#' @slot lkkusa \link[base]{character} scalar
+#' @slot lkkhk,lkkusa \link[base]{character} scalars
 #' @slot maeda \link[base]{character} scalar
 #' @slot marukyu \link[base]{character} scalar
-#' @slot mccormick,mccormickculinary,oldbay,grillmates \link[base]{character} scalar
+#' @slot mccormick,mccormickculinary,oldbay,grillmates \link[base]{character} scalars
 #' @slot meyenberg \link[base]{character} scalar
 #' @slot mizkanjpn,mizkanusa \link[base]{character} scalars
 #' @slot nancysyogurt \link[base]{character} scalar

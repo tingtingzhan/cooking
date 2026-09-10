@@ -149,15 +149,13 @@ Nutrition information.
 
 \item{\code{leaperrins}}{\link[base]{character} scalar}
 
-\item{\code{lkkhk}}{\link[base]{character} scalar}
-
-\item{\code{lkkusa}}{\link[base]{character} scalar}
+\item{\code{lkkhk,lkkusa}}{\link[base]{character} scalars}
 
 \item{\code{maeda}}{\link[base]{character} scalar}
 
 \item{\code{marukyu}}{\link[base]{character} scalar}
 
-\item{\code{mccormick,mccormickculinary,oldbay,grillmates}}{\link[base]{character} scalar}
+\item{\code{mccormick,mccormickculinary,oldbay,grillmates}}{\link[base]{character} scalars}
 
 \item{\code{meyenberg}}{\link[base]{character} scalar}
 
