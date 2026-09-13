@@ -123,3 +123,116 @@ check_gelatin <- \(x) {
 
 
 
+
+getTealoose <- \(x) {
+  # `x` is recipe@teabag, number of tea bags
+  if (!length(x)) return(numeric())
+  info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
+  mapply(FUN = \(info, pc) {
+    info@servingGram * pc
+  }, pc = x, info = info_)
+}
+
+getTeabag <- \(x) {
+  # `x` is recipe@tea, weight of loose tea
+  if (!length(x)) return(numeric())
+  info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
+  mapply(FUN = \(info, wt) {
+    wt / info@servingGram
+  }, wt = x, info = info_)
+}
+
+
+
+getGelatinLeaf <- \(x) {
+  (x/2) |> sprintf(fmt = '%.1f leaves') |> col_br_blue()
+}
+
+
+
+# @param x \link[base]{numeric} \link[base]{matrix}
+#' @importFrom equiv4 binlabel
+col_binlabel <- \(x, FUN, ...) {
+  x |> 
+    apply(MARGIN = 2L, FUN = \(i) {
+      i |> 
+        binlabel(FUN(i, ...), accuracy = .1)() # cannot return a function, without `i`
+    }, simplify = FALSE) |>
+    do.call(what = cbind) # to make sure not getting a 'vector' :)
+}  
+
+
+#' @importFrom consec cmod
+fmt_min <- \(x) {
+  
+  if (!length(x)) return(character())
+  
+  x |>
+    cmod(
+      e1 = _, 
+      e2 = c(d = 60*24, hr = 60, min = 1),
+      n = 3L,
+      tol = 1e-6
+    )
+  
+}
+
+
+#' @importFrom consec cmod
+fmt_vol <- \(x, nm = names(x)) {
+  
+  if (!length(x)) return(character())
+  
+  (x/gram_per_tsp(nm)) |>
+    cmod(
+      e1 = _, 
+      e2 = c(
+        Cup = 48,
+        '\u2154Cup' = 48*2/3,
+        '\u00bdCup' = 48/2,
+        '\u2153Cup' = 48/3,
+        '\u00bcCup' = 48/4,
+        Tbsp = 3,
+        '2tsp' = 2,
+        '1\u00bdtsp' = 1.5,
+        '1tsp' = 1,
+        '\u00bdtsp' = .5,
+        '\u00bctsp' = 1/4,
+        '\u215btsp' = 1/8
+      ),
+      n = 3L,
+      tol = 1e-6
+    ) |>
+    col_br_blue() |> 
+    style_bold()
+}
+
+
+
+fmt_perc <- \(x, name) {
+  # `x` is \linkS4class{nutrition}
+  x_ <- slot(x, name = name)
+  if (!length(x_) || (x_ == 0)) return(character())
+  pct <- x_ / x@servingGram
+  pct |> 
+    binlabel(pct, accuracy = .1)() |> 
+    make_ansi_style('olivedrab')() |> 
+    style_bold()
+}
+
+
+
+
+add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
+  x_store <- slot(x, name = store)
+  if (!length(x_store)) return(x)
+  store_url <- sprintf(fmt = fmt, x_store)
+  if (!length(x@brand)) {
+    if (is.na(store_brand)) stop('must have `store_brand`')
+    x@brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
+  } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
+  slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
+  return(x)
+}
+
+

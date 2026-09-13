@@ -10,6 +10,7 @@ Kikkoman_soyLite <- \() new(
   water = 15 * .712,
   sodium = .59, carbohydrate = 1, protein = 1)
 
+
 Kikkoman_soy <- \() new(
   Class = 'nutrition', 
   kikkomanusa = 'soy-sauce',

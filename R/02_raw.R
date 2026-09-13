@@ -535,7 +535,10 @@ print.raw. <- \(x, ...) {
   if (length(has_vol_small)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol_small)], has_vol_small, fmt_vol(has_vol_small)) |> lapply(FUN = cli_text)
   if (length(has_vol_large)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(has_vol_large)], has_vol_large, fmt_vol(has_vol_large)) |> lapply(FUN = cli_text)
   
-  if (length(x@gelatin)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> cli_text()
+  if (length(x@gelatin)) {
+    sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> 
+    cli_text()
+  }
   
   if (length(x@water)) {
     if (!length(x@water_ext)) {

@@ -145,20 +145,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 
 
 
-#' @importFrom consec cmod
-fmt_min <- \(x) {
-    
-  if (!length(x)) return(character())
-  
-  x |>
-    cmod(
-      e1 = _, 
-      e2 = c(d = 60*24, hr = 60, min = 1),
-      n = 3L,
-      tol = 1e-6
-    )
 
-}
 
 
 

@@ -70,6 +70,11 @@ Ceylon_cookie()
 coffee_cookie()
 lemon_cookie()
 
+diagnose(
+ ginger_cookie(),
+ cooking:::YokuMoku_cigare()
+)
+
 new('cookie', flour = c(Wegmans_bread = 200, DaoXiangCun_corn = 374), sugar = 110)
 
 

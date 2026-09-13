@@ -924,80 +924,6 @@ format_pc <- \(object, name) {
     style_bold()
 }
 
-getTealoose <- \(x) {
-  # `x` is recipe@teabag, number of tea bags
-  if (!length(x)) return(numeric())
-  info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
-  mapply(FUN = \(info, pc) {
-    info@servingGram * pc
-  }, pc = x, info = info_)
-}
-
-getTeabag <- \(x) {
-  # `x` is recipe@tea, weight of loose tea
-  if (!length(x)) return(numeric())
-  info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
-  mapply(FUN = \(info, wt) {
-    wt / info@servingGram
-  }, wt = x, info = info_)
-}
-
-
-
-getGelatinLeaf <- \(x) {
-  (x/2) |> sprintf(fmt = '%.1f leaves') |> col_br_blue()
-}
-
-
-
-# @param x \link[base]{numeric} \link[base]{matrix}
-#' @importFrom equiv4 binlabel
-col_binlabel <- \(x, FUN, ...) {
-  x |> 
-    apply(MARGIN = 2L, FUN = \(i) {
-      i |> 
-        binlabel(FUN(i, ...), accuracy = .1)() # cannot return a function, without `i`
-    }, simplify = FALSE) |>
-    do.call(what = cbind) # to make sure not getting a 'vector' :)
-}  
-
-
-
-
-#' @importFrom consec cmod
-fmt_vol <- \(x, nm = names(x)) {
-  
-  if (!length(x)) return(character())
-  
-  (x/gram_per_tsp(nm)) |>
-    cmod(
-      e1 = _, 
-      e2 = c(
-        Cup = 48,
-        '\u2154Cup' = 48*2/3,
-        '\u00bdCup' = 48/2,
-        '\u2153Cup' = 48/3,
-        '\u00bcCup' = 48/4,
-        Tbsp = 3,
-        '2tsp' = 2,
-        '1\u00bdtsp' = 1.5,
-        '1tsp' = 1,
-        '\u00bdtsp' = .5,
-        '\u00bctsp' = 1/4,
-        '\u215btsp' = 1/8
-      ),
-      n = 3L,
-      tol = 1e-6
-    ) |>
-    col_br_blue() |> 
-    style_bold()
-}
-  
-
-
-
-
-
 
 
 
@@ -1046,26 +972,26 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
   cat('\n')
   
-  sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, format_ingredient_perc(obj, 'water')) |> cat()
-  sprintf(fmt = 'Fat: %.4g grams %s\n', obj@fat, format_ingredient_perc(obj, 'fat')) |> cat()
+  sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, fmt_perc(obj, 'water')) |> cat()
+  sprintf(fmt = 'Fat: %.4g grams %s\n', obj@fat, fmt_perc(obj, 'fat')) |> cat()
   
   if (length(obj@cholesterol)) {
     if (obj@cholesterol > 1) {
-      sprintf(fmt = 'Cholesterol: %.3g grams %s\n', obj@cholesterol, format_ingredient_perc(obj, 'cholesterol')) |> cat()
-    } else sprintf(fmt = 'Cholesterol: %.3g milligrams %s\n', 1e3 * obj@cholesterol, format_ingredient_perc(obj, 'cholesterol')) |> cat()
+      sprintf(fmt = 'Cholesterol: %.3g grams %s\n', obj@cholesterol, fmt_perc(obj, 'cholesterol')) |> cat()
+    } else sprintf(fmt = 'Cholesterol: %.3g milligrams %s\n', 1e3 * obj@cholesterol, fmt_perc(obj, 'cholesterol')) |> cat()
   }
   
   if (length(obj@sodium)) {
     if (obj@sodium > 1) {
-      sprintf(fmt = 'Sodium: %.3g grams %s\n', obj@sodium, format_ingredient_perc(obj, 'sodium')) |> cat()
-    } else sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * obj@sodium, format_ingredient_perc(obj, 'sodium')) |> cat()
+      sprintf(fmt = 'Sodium: %.3g grams %s\n', obj@sodium, fmt_perc(obj, 'sodium')) |> cat()
+    } else sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * obj@sodium, fmt_perc(obj, 'sodium')) |> cat()
   }
-  sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', obj@carbohydrate, format_ingredient_perc(obj, 'carbohydrate')) |> cat()
-  sprintf(fmt = ' \u21ac Dietary Fiber: %.4g grams %s\n', obj@fiber, format_ingredient_perc(obj, 'fiber')) |> cat()
-  sprintf(fmt = ' \u21ac Sugar: %.4g grams %s\n', obj@sugar, format_ingredient_perc(obj, 'sugar')) |> cat()
-  sprintf(fmt = ' \u21ac Added Sugar: %.4g grams %s\n', obj@addedSugar, format_ingredient_perc(obj, 'addedSugar')) |> cat()
-  sprintf(fmt = 'Alcohol: %.4g grams %s\n', obj@alcohol, format_ingredient_perc(obj, 'alcohol')) |> cat()
-  sprintf(fmt = 'Protein: %.3g grams %s\n', obj@protein, format_ingredient_perc(obj, 'protein')) |> cat()
+  sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', obj@carbohydrate, fmt_perc(obj, 'carbohydrate')) |> cat()
+  sprintf(fmt = ' \u21ac Dietary Fiber: %.4g grams %s\n', obj@fiber, fmt_perc(obj, 'fiber')) |> cat()
+  sprintf(fmt = ' \u21ac Sugar: %.4g grams %s\n', obj@sugar, fmt_perc(obj, 'sugar')) |> cat()
+  sprintf(fmt = ' \u21ac Added Sugar: %.4g grams %s\n', obj@addedSugar, fmt_perc(obj, 'addedSugar')) |> cat()
+  sprintf(fmt = 'Alcohol: %.4g grams %s\n', obj@alcohol, fmt_perc(obj, 'alcohol')) |> cat()
+  sprintf(fmt = 'Protein: %.3g grams %s\n', obj@protein, fmt_perc(obj, 'protein')) |> cat()
   
   # cat(c(rep('\u058e', times = 25), '\n\n'), sep = '')
   cat('\n')
@@ -1158,22 +1084,6 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
 
 
 
-format_ingredient_perc <- \(x, name) {
-  # `x` is \linkS4class{nutrition}
-  x_ <- slot(x, name = name)
-  if (!length(x_) || (x_ == 0)) return(character())
-  pct <- x_ / x@servingGram
-  pct |> 
-    binlabel(pct, accuracy = .1)() |> 
-    make_ansi_style('olivedrab')() |> 
-    style_bold()
-}
-
-
-
-
-
-
 
 
 #' @title Multiplication and Ratio of \linkS4class{nutrition} Object
@@ -1203,34 +1113,5 @@ setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), defi
 
 
 
-# @title Summation of \linkS4class{nutrition} Objects
-# 
-# @description ..
-# 
-# @param e1,e2 \linkS4class{nutrition} object
-# 
-# @export
-#setMethod(f = '+', signature = signature(e1 = 'nutrition', e2 = 'nutrition'), definition = \(e1, e2) {
-#  .Defunct(msg = 'never used')
-#  numeric_slots <- setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))
-#  ret <- e1
-#  for (i in numeric_slots) {
-#    slot(ret, name = i) <- sum(slot(e1, name = i), slot(e2, name = i))
-#  }
-#  return(ret)
-#})
 
 
-
-
-add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
-  x_store <- slot(x, name = store)
-  if (!length(x_store)) return(x)
-  store_url <- sprintf(fmt = fmt, x_store)
-  if (!length(x@brand)) {
-    if (is.na(store_brand)) stop('must have `store_brand`')
-    x@brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
-  } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
-  slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
-  return(x)
-}
