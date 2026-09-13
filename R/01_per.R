@@ -42,7 +42,8 @@ format.per <- \(x, ...) {
 
 #' @rdname per-class
 #' @param object a \linkS4class{per} object
-#' @importFrom charwidth cat_matrix
+#' @importFrom charwidth row_fmt_matrix
+# @importFrom cli cli_verbatim
 #' @export
 setMethod(f = show, signature = 'per', definition = \(object) {
   ret <- format.per(object)
@@ -51,14 +52,17 @@ setMethod(f = show, signature = 'per', definition = \(object) {
     sprintf(fmt = '\u214c %s\n') |> 
     bg_br_yellow() |> style_bold() |>
     cat()
-  cat_matrix(ret)
+  ret |>
+    row_fmt_matrix() |>
+    lapply(FUN = cat, sep = '\n')
+    #lapply(FUN = cli_verbatim) # alternative
   cat('\n')
 })
 
 
 
 # @param x a \link[base]{list} of \linkS4class{per} objects
-#' @importFrom charwidth cat_matrix
+#' @importFrom charwidth row_fmt_matrix
 #' @importFrom stats median.default
 #' @export
 print.perlist <- \(x, ...) {
@@ -86,7 +90,9 @@ print.perlist <- \(x, ...) {
     sprintf(fmt = '\u214c %s\n') |> 
     style_bold() |> bg_br_yellow() |> 
     cat()
-  y |> cat_matrix()
+  y |> 
+    row_fmt_matrix() |>
+    lapply(FUN = cat, sep = '\n')
   cat('\n')
   return(invisible(y))
 }

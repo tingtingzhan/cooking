@@ -43,16 +43,17 @@ srirachaBBQ_meatDip <- \() new(
   alias_flavor = 'Sriracha BBQ',
   sauce_Tbsp = c(
     TraderJoes_srirachaBBQ = 1,
-    Kikkoman_soyLite = 1/2,
-    mizkan_brownRiceVinegar = 1/2 # a little too thick; add rice vinegar next time
+    Kikkoman_soyLite = 1/2
+    #mizkan_brownRiceVinegar = 1/2 # slightly too sour
   ),
   sauce_tsp = c(
+    mizkan_brownRiceVinegar = 1, # should be perfect
     Kadoya_sesameOil = 1/2,
     YaoMaZi_rattanPepperOil = 1/4
   ),
   date = as.Date('2026-09-12'),
   
-  review = 'a little too thick; add rice vinegar next time'
+  review = 'reduce vinegar'
 )
 
 

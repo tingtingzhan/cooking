@@ -84,7 +84,7 @@ summary.nutritionlist <- \(object, ...) {
   
 }
 
-#' @importFrom charwidth cat_matrix
+#' @importFrom charwidth row_fmt_matrix
 #' @method print summary.nutritionlist
 #' @export
 print.summary.nutritionlist <- \(x, ...) {
@@ -102,7 +102,9 @@ print.summary.nutritionlist <- \(x, ...) {
   colnames(ret) <- colnames(ret) |>
     nutrition_slot_short()
   
-  ret |> cat_matrix()
+  ret |> 
+    row_fmt_matrix() |>
+    lapply(FUN = cat, sep = '\n')
   cat('\n')
   return(invisible(ret))
   
