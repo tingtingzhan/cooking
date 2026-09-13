@@ -275,6 +275,7 @@ if (FALSE) {
     porkfill = .003, # yes!
     beefchop = .0035,
     #caffeLatte = .0033,
+    meatDip = .011,
     marinade = .011,
     tomyumStew = .02,
     flavoredButter = .015,

@@ -85,25 +85,33 @@ Stonewall_blackRaspberry <- \() new(
 
 
 Stonewall_lemonHerbAioli <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], stonewall = 111310L,
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Lemon Herb Aioli',
+  stonewall = 111310L,
   servingGram = 15, fat = 10, sodium = .105, review = 'I like it.')
 
 
 
 Stonewall_basilPestoAioli <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], stonewall = 111314L,
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Basil Pesto Aioli',
+  stonewall = 111314L,
   servingGram = 13, fat = 9, sodium = .085, review = 'Not crazy about it')
 
 
 
 Stonewall_srirachaAioli <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], stonewall = 111317L,
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Sriracha Aioli',
+  stonewall = 111317L,
   servingGram = 14, fat = 8, sodium = .08, review = 'love it!!')
 
 
 
 Stonewall_horseradishCreamSauce <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], stonewall = 551900L,
+  Class = 'nutrition', call = match.call()[[1L]], 
+  name = 'Horseradish Cream Sauce',
+  stonewall = 551900L,
   servingGram = 31, fat = 4.5, sodium = .11, sugar = 2, protein = 1, review = 'love it!!')
 
 

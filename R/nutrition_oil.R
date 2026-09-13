@@ -56,7 +56,7 @@ Kadoya_sesameOil <- \() new(
     style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html') |> c(),
     style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html') |> c()
   ),
-  name = '\u829d\u9ebb\u6cb9 Sesame Oil',
+  name = 'Sesame Oil', alias = '\u829d\u9ebb\u6cb9',
   wegmans = 27984L, usd = .82/2, # 1fl oz = 2tbsp
   servingGram = 14, servingTbsp = 1, 
   calorie = 130,

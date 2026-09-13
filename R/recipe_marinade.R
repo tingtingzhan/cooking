@@ -38,4 +38,8 @@ tomyum_marinade <- \() new(
     Siam_tomyum = 100,
     LeeKumKee_5spiceMarinade = 150
   ),
-  review = 'to finalized what I have been doing')#, #date = as.Date('2024-06-22'))
+  review = 'to finalized what I have been doing (for pork hocks)')#, #date = as.Date('2024-06-22'))
+
+
+
+

@@ -2,15 +2,15 @@
 
 MgCl2 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = '\u76d0\u5364 Magnesium Chloride MgCl\u2082',
+  name = 'Magnesium Chloride MgCl\u2082', alias = '\u76d0\u5364',
   pubchem = 'Magnesium-chloride-_MgCl2',
   servingGram = 1)
   
 
 Ohsawa_nigari <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = c(style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5')), 
-  name = '\u82e6\u6c41/\u6ef7\u6c41 Nigari',
+  brand = style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5') |> c(), 
+  name = 'Nigari', alias = '\u82e6\u6c41/\u6ef7\u6c41',
   amazon = 'B0019L8KUG',
   usd = 8.79/454*6,
   servingGram = 6,
@@ -20,7 +20,7 @@ Ohsawa_nigari <- \() new(
 # different size of salt rock has different density!!!
 Morton_salt <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/')),
+  brand = style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/') |> c(),
   name = 'Salt\U1f9c2', alias = '\u76d0',
   # packaging!
   #servingTsp = 1/4, servingGram = 1.5, sodium = 23/(23+35.5) * 1.5 # packaging!
@@ -43,8 +43,8 @@ Ajinomoto_msg <- \() new(
 
 ArmHammer_NaHCO3 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  brand = c(style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8')),
-  name = '\u5c0f\u82cf\u6253 Baking Soda, NaHCO\u2083',
+  brand = style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8') |> c(),
+  name = 'Baking Soda, NaHCO\u2083', alias = '\u5c0f\u82cf\u6253',
   pubchem = '516892',
   servingGram = .6, 
   servingTsp = 1/8, # packaging

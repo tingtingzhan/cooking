@@ -26,14 +26,14 @@ BalsamicVinaigrette_meatDip <- \() new(
   Class = 'meatDip',
   alias_flavor = 'Balsamic Vinaigrette',
   sauce_Tbsp = c(
-    TraderJoes_BalsamicVinaigrette = 2,
-    Kikkoman_soyLite = 1
+    TraderJoes_BalsamicVinaigrette = 1,
+    Kikkoman_soyLite = 1/2
   ),
   sauce_tsp = c(
-    Kadoya_sesameOil = 1,
-    YaoMaZi_rattanPepperOil = 1/2
+    Kadoya_sesameOil = 1/2,
+    YaoMaZi_rattanPepperOil = 1/4
   ),
-  review = '2026 Summer love.  need to confirm next time'
+  review = '2026 Summer love. try next time and confirm!!'
 )
 
 #' @rdname meatDip-class
@@ -42,15 +42,17 @@ srirachaBBQ_meatDip <- \() new(
   Class = 'meatDip', 
   alias_flavor = 'Sriracha BBQ',
   sauce_Tbsp = c(
-    TraderJoes_srirachaBBQ = .5,
-    mizkan_brownRiceVinegar = .5
+    TraderJoes_srirachaBBQ = 1,
+    Kikkoman_soyLite = 1/2,
+    mizkan_brownRiceVinegar = 1/2 # a little too thick; add rice vinegar next time
   ),
   sauce_tsp = c(
-    Kadoya_sesameOil = .5,
-    YaoMaZi_rattanPepperOil = .25
+    Kadoya_sesameOil = 1/2,
+    YaoMaZi_rattanPepperOil = 1/4
   ),
-  date = as.Date('2026-09-05'),
-  review = 'perfect!!'
+  date = as.Date('2026-09-12'),
+  
+  review = 'a little too thick; add rice vinegar next time'
 )
 
 

@@ -3,7 +3,7 @@
 Kikkoman_soyLite <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   kikkomanusa = 'less-sodium-soy-sauce',
-  name = '\u6e1b\u5869\u91a4\u6cb9 Soy Sauce, Less Sodium',
+  name = 'Soy Sauce, Less Sodium', alias = '\u6e1b\u5869\u91a4\u6cb9',
   fdc = 174277L,
   walmart = '161737082', usd = 7.28/1200*15,
   servingGram = 15, servingTbsp = 1, 
@@ -24,7 +24,8 @@ Kikkoman_soy <- \() new(
 mizkan_brownRiceVinegar <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   mizkanjpn = '01007',
-  name = '\u7d14\u7384\u7c73\u9ed2\u9162 Brown Rice Vinegar',
+  name = 'Brown Rice Vinegar',
+  alias = '\u7d14\u7384\u7c73\u9ed2\u9162',
   amazon = 'B000FQNWBS', usd = 18.59/500*15,
   servingGram = 15, servingTbsp = 1
 )
