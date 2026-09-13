@@ -22,7 +22,7 @@ SavannaOrchards_cashewAlmondPecanPistachio <- \() new(
 Greenmax_blackSesame <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', url = 'https://www.greenmax.com.tw/product_view.php?id=62772') |> c(),
-  name = '\u9ed1\u829d\u9ebb\u7c89 Black Sesame Powder',
+  alias = '\u9ed1\u829d\u9ebb\u7c89', name = 'Black Sesame Powder',
   usd = 5.99/400*40,
   servingGram = 40, 
   calorie = 240,
@@ -38,25 +38,25 @@ Jbasket_whiteSesame <- \() new(
 
 peanut <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 172430L,
-  name = '\u82b1\u751f Peanut\U1f95c',
+  alias = '\u82b1\u751f', name = 'Peanut\U1f95c',
   calorie = 567,
   servingGram = 100, water = 6, protein = 25.8, fat = 49.2, sugar = 4.72, sodium = .018)
 
 pecan <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170182L,
-  name = '\u80e1\u6843 Pecan',
+  alias = '\u80e1\u6843', name = 'Pecan',
   servingGram = 100, water = 3.52, protein = 9.17, fat = 72, sugar = 3.97)
 
 
 Kirkland_cashew <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costco = '4000043019',
-  name = '\u8170\u679c Cashews', # unsalted
+  alias = '\u8170\u679c', name = 'Cashews', # unsalted
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, fat = 14, sugar = 2, protein = 5)
 
 Kirkland_cashew_organic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costco = '4000064056',
-  name = '\u8170\u679c Organic Cashews', # unsalted unroasted
+  alias = '\u8170\u679c', name = 'Organic Cashews', # unsalted unroasted
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, 
   calorie = 150,

@@ -93,7 +93,7 @@ beef_brisket_flat <- \() new(
     173128L#, # choice
     #168666L # all grades
   ), 
-  name = '\u725b\u80f8\u8169 Beef\U1f402 Brisket, Flat Cut, \u215binch Fat',
+  alias = '\u725b\u80f8\u8169', name = 'Beef\U1f402 Brisket, Flat Cut, \u215binch Fat',
   costcoBiz = '100076487', usd = 5/454*100, # Costco
   servingGram = 100, 
   calorie = 278,
@@ -101,7 +101,7 @@ beef_brisket_flat <- \() new(
 
 beef_brisket_flat_lean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170613L,
-  name = '\u725b\u80f8\u8169(\u7626) Beef\U1f402 Brisket, Flat Cut, Lean',
+  alias = '\u725b\u80f8\u8169(\u7626)', name = 'Beef\U1f402 Brisket, Flat Cut, Lean',
   costcoBiz = '100076487', usd = 5/454*100, # Costco
   servingGram = 100, 
   calorie = 213,
@@ -109,7 +109,7 @@ beef_brisket_flat_lean <- \() new(
 
 beef_brisket_lean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 168607L, # brisket, whole, separable lean only, all grades, raw
-  name = '\u725b\u80f8\u8169(\u7626) Beef\U1f402 Brisket, Separable Lean',
+  alias = '\u725b\u80f8\u8169(\u7626)', name = 'Beef\U1f402 Brisket, Separable Lean',
   costcoBiz = '100076487', usd = 5/454*100, # Costco
   servingGram = 100, 
   calorie = 157,
@@ -119,7 +119,7 @@ beef_brisket_lean <- \() new(
 
 beef_chuck <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170783L,
-  name = '\u725b\u524d\u80a9\u80db Beef\U1f402 Chuck Short Ribs',
+  alias = '\u725b\u524d\u80a9\u80db', name = 'Beef\U1f402 Chuck Short Ribs',
   usd = 14/454*100, #brand = 'Kirkland\U1f1fa\U1f1f8', # costco
   servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081,
   review = c(spam = 'Beef chuck has too much fat and connective tissue for spam'))
@@ -146,12 +146,12 @@ beef_rib_Angus <- \() new(
 
 beef_eyeRound <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 171762L,
-  name = '\u725b\u540e\u817f\u773c\u8089 Beef\U1f402 Eye Round',
+  alias = '\u725b\u540e\u817f\u773c\u8089', name = 'Beef\U1f402 Eye Round',
   servingGram = 100, water = 73.4, fat = 3.04, protein = 23.4, sodium = .053)
 
 beef_tendon <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'www.fatsecret.com/calories-nutrition/generic/beef-tendon',
-  name = '\u725b\u7b4b Beef\U1f402 Tendon',
+  alias = '\u725b\u7b4b Beef\U1f402', name = 'Tendon',
   servingGram = 100, fat = .62, cholesterol = .079, sodium = .053, protein = 34.6)
 
 
@@ -164,13 +164,13 @@ beef_stew <- \() new(
 
 lamb_leg <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174311L,
-  name = '\u7f8a\u817f(\u53bb\u8102\u80aa) Lamb\U1f411 Leg',
+  alias = '\u7f8a\u817f(\u53bb\u8102\u80aa)', name = 'Lamb\U1f411 Leg',
   servingGram = 100, water = 64.3, fat = 17.1, protein = 17.9, sodium = .056,
   review = c(spam = 'Must fully remove fat cap from lamb leg, otherwise lamb fat will separate'))
 
 lamb_loinchop <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1098346L,
-  name = '\u7f8a\u810a\u9aa8(\u7626\u8089) Lamb\U1f411 Loin Chop',
+  alias = '\u7f8a\u810a\u9aa8(\u7626\u8089)', name = 'Lamb\U1f411 Loin Chop',
   usd = 5.99/(.85*454)*100, # Costco
   servingGram = 100, water = 60.48, fat = 9.65, protein = 29.74, sodium = .406)
 

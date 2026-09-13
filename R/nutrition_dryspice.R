@@ -9,21 +9,21 @@ McCormick_creamTartar <- \() new(
 
 McCormick_chive <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'chives-freeze-dried',
-  name = '\u51bb\u5e72\u97ed\u83dc Chives, Freeze Dried',
+  alias = '\u51bb\u5e72\u97ed\u83dc', name = 'Chives, Freeze Dried',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
 McCormick_blackPepper <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'black-pepper-pure-ground',
-  name = '\u9ed1\u80e1\u6912\u7c89 Black Pepper, Ground',
+  alias = '\u9ed1\u80e1\u6912\u7c89', name = 'Black Pepper, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
 McCormick_turmeric <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'turmeric',
-  name = '\u59dc\u9ec4\u7c89 Turmeric, Ground',
+  alias = '\u59dc\u9ec4\u7c89', name = 'Turmeric, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
@@ -39,7 +39,7 @@ McCormick_parsley <- \() new(
   
 McCormick_garlic_powder <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'garlic-powder',
-  name = '\u849c\u7c89 Garlic\U1f9c4 Powder', 
+  alias = '\u849c\u7c89', name = 'Garlic\U1f9c4 Powder', 
   amazon = 'B008OGCEHO', usd = 11.87/595*4.5, # 21oz = 595g
   servingGram = 9, # no nutrition info available
   servingTbsp = 1 # actual experiment 3tbsp = 28g
@@ -47,7 +47,7 @@ McCormick_garlic_powder <- \() new(
 
 McCormick_onion_powder <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'onion-powder',
-  name = '\u6d0b\u8471\u7c89 Onion\U1f9c5 Powder',
+  alias = '\u6d0b\u8471\u7c89', name = 'Onion\U1f9c5 Powder',
   amazon = 'B008OGCPSM', usd = 17.90/566*4.5, # 1.25lb = 566g
   servingGram = 4.5, # ???
   servingTbsp = 3 # ???
@@ -55,7 +55,7 @@ McCormick_onion_powder <- \() new(
 
 McCormick_cilantro <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'cilantro-freeze-dried',
-  name = '\u51bb\u5e72\u82ab\u837d Cilantro, Freeze Dried',
+  alias = '\u51bb\u5e72\u82ab\u837d', name = 'Cilantro, Freeze Dried',
   amazon = 'B00B0424FE', usd = 13.89/35,
   servingGram = 1,
   servingTbsp = 1 #??
@@ -64,7 +64,7 @@ McCormick_cilantro <- \() new(
 
 McCormick_cumin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'cumin-ground',
-  name = '\u5b5c\u7136\u7c89 Cumin, Ground',
+  alias = '\u5b5c\u7136\u7c89', name = 'Cumin, Ground',
   amazon = 'B008OGCCLC', usd = 12.75/396*1,
   servingGram = 1,
   servingTbsp = 1 #??
@@ -72,7 +72,7 @@ McCormick_cumin <- \() new(
 
 McCormick_oldBay <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], oldbay = 'old-bay-seasoning',
-  name = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599 Old Bay',
+  alias = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599', name = 'Old Bay',
   servingGram = .6, servingTsp = 1/4, sodium = .14,
   contain = c('salt', 'celery seed', 'red pepper', 'black pepper', 'paprika'))
 
@@ -88,7 +88,7 @@ McCormick_5spice <- \() new(
 
 McCormick_ginger <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], mccormickculinary = 'ginger-ground',
-  name = '\u59dc\u7c89 Ginger\U1fada, Ground',
+  alias = '\u59dc\u7c89', name = 'Ginger\U1fada, Ground',
   servingGram = 1,
   servingTbsp = 1 #??
 )
@@ -149,7 +149,7 @@ McCormick_rum <- \() new(
 
 SpiceIslands_cumin <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = 'Spice Islands\U1f1fa\U1f1f8', name = '\u5b5c\u7136\u7c89 Cumin Seed',
+  brand = 'Spice Islands\U1f1fa\U1f1f8', alias = '\u5b5c\u7136\u7c89', name = 'Cumin Seed',
   url = 'https://spiceislands.com/product/ground-cumin-seed/',
   # sold at Costco, 425g
   #servingGram = .7, servingTsp = 1, # label
@@ -303,7 +303,7 @@ SimplyOrganic_garlic <- \() new(
 Chinata_paprika <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://www.lachinatausa.com/index.php/buy-our-smoked-paprika-powder/tin-70-gr-d-o-sweet.html')),
-  name = '\u7ea2\u751c\u6912\u7c89 Sweet Smoked Paprika\U1f336', 
+  alias = '\u7ea2\u751c\u6912\u7c89', name = 'Sweet Smoked Paprika\U1f336', 
   servingGram = 15, servingTbsp = 2
   # https://www.aqua-calc.com/calculate/food-volume-to-weight
   # https://www.traditionaloven.com/foods/exchange/tbsp/g-gram/spice-paprika.html

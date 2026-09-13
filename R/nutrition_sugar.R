@@ -36,7 +36,7 @@ Domino_granulated <- \() new(
 Domino_golden <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   domino = 'golden-sugar',
-  name = '\u7c97\u7802\u7cd6 Golden Sugar',
+  name = 'Golden Sugar', alias = '\u7c97\u7802\u7cd6',
   wegmans = 26095611L, usd = 1.48/454*8,
   servingGram = 8, servingTsp = 2, # packaging
   calorie = 30,
@@ -58,7 +58,7 @@ US_10x <- \() new(
 
 Wegmans_darkBrown <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 23179103L,
-  name = '\u7ea2\u7cd6 Dark Brown Sugar',
+  name = 'Dark Brown Sugar', alias = '\u7ea2\u7cd6',
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)

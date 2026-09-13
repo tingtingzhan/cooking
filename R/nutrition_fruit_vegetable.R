@@ -44,7 +44,7 @@ Kirkland_plum <- \() new(
 
 Kirkland_mixedVeggies <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = '\u51b7\u51bb\u6742\u852c Mixed Vegetables\U1f955\U1fadb\U1f33d',
+  alias = '\u51b7\u51bb\u6742\u852c', name = 'Mixed Vegetables\U1f955\U1fadb\U1f33d',
   costcoBiz = '100351236',
   servingGram = 90, fat = .5, sodium = .02, sugar = 4, protein = 2)
 
@@ -63,14 +63,14 @@ Kirkland_strawberry <- \() new(
     '100273803' # frequently seen in store
     # '11273181' # rarely seen in store
   ),
-  name = '\u8349\u8393 Strawberry\U1f353',
+  alias = '\u8349\u8393', name = 'Strawberry\U1f353',
   servingGram = 140, servingCup = 1, 
   calorie = 50, 
   carbohydrate = 13, sugar = 6)
 
 Kirkland_yellowCorn <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'https://costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
-  brand = 'Kirkland\U1f1fa\U1f1f8', name = '\u51b7\u51bb\u751c\u7389\u7c73 Frozen Yellow Corn\U1f33d',
+  brand = 'Kirkland\U1f1fa\U1f1f8', alias = '\u51b7\u51bb\u751c\u7389\u7c73', name = 'Frozen Yellow Corn\U1f33d',
   servingGram = 90, 
   #servingCup = 2/3, # packaging
   servingCup = 90/128,# actual experiment 1cup = 128g
@@ -90,7 +90,7 @@ Kirkland_peach <- \() new(
 mango <- \() new( 
   Class = 'nutrition', call = match.call()[[1L]], 
   fdc = 169910L, # water 83.5%
-  brand = 'Ultra Organics', name = '\u8292\u679c Mango\U1f96d',
+  brand = 'Ultra Organics', alias = '\u8292\u679c', name = 'Mango\U1f96d',
   costcoBiz = '100370260',
   servingGram = 140, 
   servingCup = 1, # puree density; confirm with experiment!!
@@ -105,14 +105,14 @@ mango <- \() new(
 HappyVillage_strawberry <- \() new( # frozen; sold at Costco
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = 'Happy Village', 
-  name = '\u8349\u8393 Strawberry\U1f353',
+  alias = '\u8349\u8393', name = 'Strawberry\U1f353',
   url = 'www.instacart.com/products/25833270-happy-village-frozen-organic-strawberries-4-lb',
   servingGram = 140, servingCup = 1, 
   calorie = 50, sugar = 6, protein = 1)
 
 HappyVillage_darkCherry <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], costcoBiz = '100313436',
-  brand = 'Happy Village', name = '\u751c\u6a31\u6843 Dark Cherry\U1f352',
+  brand = 'Happy Village', alias = '\u751c\u6a31\u6843', name = 'Dark Cherry\U1f352',
   servingGram = 140, servingCup = 1,
   calorie = 90,
   water = 140*240/310, # tested with bao()
@@ -229,7 +229,7 @@ Wegmans_peanutButter <- \() new(
 
 Wegmans_beet <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 137496L,
-  name = '\u751c\u83dc\u7c89 Beet Root Powder',
+  alias = '\u751c\u83dc\u7c89', name = 'Beet Root Powder',
   usd = 10.99/227*9.6,
   servingGram = 9.6, 
   # servingTbsp = 1, # packaging
@@ -239,7 +239,7 @@ Wegmans_beet <- \() new(
 
 Wegmans_acai <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmansorganic = 138189L,
-  name = '\u5df4\u897f\u8393\u7c89 A\u00e7a\u00ed Powder',
+  alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
   usd = 16.79/113*3,
   servingGram = 3, 
   servingTsp = 2 # packaging
@@ -249,7 +249,7 @@ Wegmans_acai <- \() new(
 Navitas_acai <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   navitas = 'acai-powder',
-  name = '\u5df4\u897f\u8393\u7c89 A\u00e7a\u00ed Powder',
+  alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
   usd = 39.99*(1-.2)/227*3, # subscribe discount
   servingGram = 3,
   servingTsp = 1.5, # packaging
@@ -294,33 +294,33 @@ kabochaSquash <- \() new(
 
 avocado <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 171705L,
-  name = '\u725b\u6cb9\u679c Avocado\U1f951',
+  alias = '\u725b\u6cb9\u679c', name = 'Avocado\U1f951',
   servingGram = 100, pieceWeight = 140,
   calorie = 160,
   water = 73.2, protein = 2, fat = 14.7, sugar = .66, sodium = .007)
 
 lemon <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1102594L,
-  name = '\u67e0\u6aac Lemon\U1f34b',
+  alias = '\u67e0\u6aac', name = 'Lemon\U1f34b',
   servingGram = 100, water = 88.98, protein = 1.1, fat = .3, sugar = 2.5, sodium = .002)
 
 lemonJuice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 167747L,
-  name = '\u67e0\u6aac\u6c41 Lemon\U1f34b Juice',
+  alias = '\u67e0\u6aac\u6c41', name = 'Lemon\U1f34b Juice',
   servingGram = 100, pieceWeight = 48,
   water = 92.3, protein = 0.35, fat = 0.24, sugar = 2.52, sodium = .001)
 
 
 lime <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 168155L,
-  name = '\u9752\u67e0 Lime\U1f34b\u200d\U1f7e9',
+  alias = '\u9752\u67e0', name = 'Lime\U1f34b\u200d\U1f7e9',
   servingGram = 100, 
   calorie = 30,
   water = 88.3, protein = .7, fat = .2, sugar = 1.69, sodium = .002)
 
 limeJuice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 2344679L,
-  name = '\u9752\u67e0\u6c41 Lime\U1f34b\u200d\U1f7e9 Juice',
+  alias = '\u9752\u67e0\u6c41', name = 'Lime\U1f34b\u200d\U1f7e9 Juice',
   servingGram = 100, pieceWeight = 44,
   calorie = 25,
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
@@ -419,7 +419,7 @@ Laura_soybean <- \() new(
 
 Soymerica_soybean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  name = '\u9ec4\u8c46 Soy Bean', 
+  alias = '\u9ec4\u8c46', name = 'Soy Bean', 
   brand = 'Soymerica\U1f1fa\U1f1f8', amazon = 'B0763GC8SB', usd = 24.99/(7*453.6)*(100-8.54),
   fdc = 174270L,
   servingGram = 100 - 8.54, 
@@ -432,7 +432,7 @@ Soymerica_soybean <- \() new(
 
 Palouse_chickpea <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 173756L,
-  name = '\u9e70\u5634\u8c46 Chickpea', brand = 'Palouse\U1f1fa\U1f1f8',
+  alias = '\u9e70\u5634\u8c46', name = 'Chickpea', brand = 'Palouse\U1f1fa\U1f1f8',
   url = 'www.palousebrand.com/products/garbanzo-beans-5-lb?variant=40131929407541',
   amazon = 'B001PEWJWC', usd = 18.95/(5*453.6)*(100-7.68),
   servingGram = 100 - 7.68, 
@@ -450,7 +450,7 @@ HaiTai_mung <- \() new(
 
 HaiTai_adzuki <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 543753L,
-  name = '\u7ea2\u8c46 Adzuki Bean', 
+  alias = '\u7ea2\u8c46', name = 'Adzuki Bean', 
   haitaiusa = 'red-bean-\ud325-4-lb',
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
   usd = 8.99/907*45, yamibuy = '25775203',
@@ -460,7 +460,7 @@ HaiTai_adzuki <- \() new(
 
 redKidneyBean <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 173744L,
-  name = '\u7ea2\u82b8\u8c46 Red Kidney Bean\U1fad8', 
+  alias = '\u7ea2\u82b8\u8c46', name = 'Red Kidney Bean\U1fad8', 
   brand = c(style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/')),
   amazon = 'B079S8D2YP', usd = 8.86/(4*454)*42,
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
@@ -479,7 +479,7 @@ OsmanthusFragrans <- \() new(
 
 banana <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 1102653L,
-  name = '\u9999\u8549 Banana\U1f34c', wegmans = 35418L,
+  alias = '\u9999\u8549', name = 'Banana\U1f34c', wegmans = 35418L,
   servingGram = 100,
   calorie = 89, # kcal
   water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)
@@ -487,7 +487,7 @@ banana <- \() new(
 
 carrot <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 170393L,
-  name = '\u751f\u80e1\u841d\u535c Carrot\U1f955',
+  alias = '\u751f\u80e1\u841d\u535c', name = 'Carrot\U1f955',
   servingGram = 100, 
   calorie = 41,
   water = 88.3, protein = .93, fat = .24, carbohydrate = 9.58, sugar = 4.74, sodium = .069)
@@ -495,7 +495,7 @@ carrot <- \() new(
 
 walnut <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 2346394L,
-  name = '\u751f\u6838\u6843 Walnut',
+  alias = '\u751f\u6838\u6843', name = 'Walnut',
   servingGram = 100,
   calorie = 730,
   water = 3.14, protein = 14.6, fat = 69.7, carbohydrate = 10.9, sodium = .0025)

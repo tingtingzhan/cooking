@@ -192,7 +192,7 @@ Philadelphia_creamCheeseSpread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   philadelphia = '00021000000142',
   kraftheinzawayfromhome = '10021000614063',
-  name = '\u5976\u6cb9\u5976\u916a\u62b9\u6599 Cream Cheese Spread',
+  alias = '\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Cream Cheese Spread',
   contain = c('guar gum'),
   servingGram = 31, servingTbsp = 2,
   calorie = 80,
@@ -218,7 +218,7 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   philadelphia = '00021000000289',
   kraftheinzawayfromhome = '10021000726704',
-  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a\u62b9\u6599 Neufcha\u0302tel Cream Cheese Spread',
+  alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Neufcha\u0302tel Cream Cheese Spread',
   contain = c('carob bean gum', 'guar gum', 'natamycin'),
   servingGram = 31, servingTbsp = 2,
   calorie = 60,
@@ -230,7 +230,7 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
 
 LucerneNeufchatel_creamCheese <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], acme = 137100657L,
-  brand = 'Lucerne', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
+  brand = 'Lucerne', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
@@ -239,7 +239,7 @@ LucerneNeufchatel_creamCheese <- \() new(
 GreatValueNeufchatel_creamCheese <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   walmart = '10452358', usd = 1.48/8,
-  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
+  alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
@@ -259,7 +259,7 @@ Tillamook_creamCheese <- \() new(
 OrganicValleyNeufchatel_creamCheese <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   organicvalley = 'cream-cheese/neufchatel/neufchatel-8-oz-bar',
-  name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Neufcha\u0302tel Cheese',
+  alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   wegmans = 182L, usd = 4.59/8,
   serving_oz = 1, servingTbsp = 2,
   calorie = 70,
@@ -296,7 +296,7 @@ TraderJoes_creamCheese <- \() new(
 
 TraderJoesLight_creamCheese <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  brand = 'Trader Joe\'s', name = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a Light Cream Cheese',
+  brand = 'Trader Joe\'s', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Light Cream Cheese',
   contain = c('whey proteins', 'xanthan gum', 'locust bean gum', 'guar gum', 'microbial rennet'),
   serving_oz = 1, 
   fat = 9, sodium = .095, sugar = 1)

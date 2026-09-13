@@ -29,7 +29,7 @@ yellowtailSashimi <- \() new(
 
 tilapia <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 175176L,
-  name = '\u7f57\u975e\u9c7c Tilapia\U1f41f',
+  name = 'Tilapia\U1f41f', alias = '\u7f57\u975e\u9c7c',
   servingGram = 100, water = 78.1, fat = 1.7, protein = 20.1, sodium = .052)
 
 Kirkland_shrimp_31_40 <- \() new(
@@ -72,7 +72,7 @@ Kirkland_shrimpArgentine <- \() new(
 
 cuttlefish <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], fdc = 174215L,
-  name = '\u58a8\u9c7c Cuttlefish\U1f991',
+  alias = '\u58a8\u9c7c', name = 'Cuttlefish\U1f991',
   servingGram = 100, 
   water = 80.6, protein = 16.2, fat = 0.7, sodium = .372, cholesterol = .112)
 
@@ -81,7 +81,7 @@ salmonAtlantic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   fdc = 175167L,
   # fdc = 175138L, fdc = 1098960L, # what is this??
-  name = '\u5927\u897f\u6d0b\u9c91 Atlantic Salmon',
+  alias = '\u5927\u897f\u6d0b\u9c91', name = 'Atlantic Salmon',
   usd = 11.99/454*100, # Costco Feb 2024
   calorie = 208,
   servingGram = 100, water = 64.9, fat = 13.4, protein = 20.4, sodium = .059, cholesterol = .055)
@@ -90,7 +90,7 @@ salmonAtlantic <- \() new(
 Sanford_mussel <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   sanford = 'greenshell-mussel-1',
-  name = '\u9752\u53e3\u8d1d Greenshell Mussels',
+  alias = '\u9752\u53e3\u8d1d', name = 'Greenshell Mussels',
   # packaging
   servingGram = 85,
   calorie = 94, fat = 2.3, cholesterol = .047, sodium = .507,
@@ -99,7 +99,7 @@ Sanford_mussel <- \() new(
 Clearwater_surfClam <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   clearwater = 'clams/arctic-surf-clams',
-  name = '\u5317\u6781\u8d1d Arctic Surf Clams',
+  alias = '\u5317\u6781\u8d1d', name = 'Arctic Surf Clams',
   # packaging
   servingGram = 110, 
   calorie = 100,
@@ -108,7 +108,7 @@ Clearwater_surfClam <- \() new(
 Clearwater_cockleClam <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   clearwater = 'clams/cockle-clams',
-  name = '\u5317\u6781\u767d\u7389\u8d1d Cockle Clams',
+  alias = '\u5317\u6781\u767d\u7389\u8d1d', name = 'Cockle Clams',
   # website
   servingGram = 100, 
   calorie = 90,

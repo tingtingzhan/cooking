@@ -26,7 +26,7 @@ Wegmans_bread <- \() new(
 
 Wegmans_whiteWheat <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 35705L,
-  name = '\u767d\u5168\u9ea6\u9762\u7c89 White Whole Wheat Flour',
+  alias = '\u767d\u5168\u9ea6\u9762\u7c89', name = 'White Whole Wheat Flour',
   usd = 3.49/2270*28,
   servingGram = 28, 
   servingCup = 1/4, # packaging
@@ -35,7 +35,7 @@ Wegmans_whiteWheat <- \() new(
 
 Wegmans_wheat <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 54401L,
-  name = '\u5168\u9ea6\u9762\u7c89 Whole Wheat Flour',
+  alias = '\u5168\u9ea6\u9762\u7c89', name = 'Whole Wheat Flour',
   usd = 3.49/2270*28,
   servingGram = 28, 
   servingCup = 1/4, # packaging
@@ -130,7 +130,7 @@ KingArthur_allPurpose <- \() new(
 
 KingArthur_allPurpose_organic <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308006L, 
-  name = '\u4e2d\u7b4b\u9762\u7c89 All-Purpose Flour, Organic',
+  alias = '\u4e2d\u7b4b\u9762\u7c89', name = 'All-Purpose Flour, Organic',
   usd = 10.95/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging

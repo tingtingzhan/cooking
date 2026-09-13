@@ -13,7 +13,7 @@ Kikkoman_soyLite <- \() new(
 Kikkoman_soy <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   kikkomanusa = 'soy-sauce',
-  name = '\u9171\u6cb9 Soy Sauce',
+  alias = '\u9171\u6cb9', name = 'Soy Sauce',
   fdc = 174277L,
   walmart = '10307429', usd = 7.27/1200*15,
   servingGram = 15, servingTbsp = 1, 
@@ -70,7 +70,7 @@ GreyPoupon_Dijon <- \() new(
 Heinz_whiteVinegar <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   heinz = '00013000008525',
-  name = '\u767d\u918b White Vinegar, 5% Acidity',
+  name = 'White Vinegar, 5% Acidity', alias = '\u767d\u918b',
   servingTbsp = 1, servingGram = 14.4) 
 
 

@@ -2,7 +2,7 @@
 
 CountryTime_Lemonade <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  name = '\u67e0\u6aac\u996e\u6599\u901f\u6eb6\u7c89 Lemonade Mix',
+  alias = '\u67e0\u6aac\u996e\u6599\u901f\u6eb6\u7c89', name = 'Lemonade Mix',
   countrytime = '00043000951170', 
   costco = '100381589',
   servingGram = 26, 

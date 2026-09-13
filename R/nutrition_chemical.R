@@ -52,7 +52,7 @@ ArmHammer_NaHCO3 <- \() new(
 
 Na2CO3 <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], # presume no volumn change when baking
-  name = '\u78b1\u9762 Soda Ash Na\u2082CO\u2083',
+  name = 'Soda Ash Na\u2082CO\u2083', alias = '\u78b1\u9762',
   pubchem = '10340',
   # 2 NaHCO3 = Na2CO3 + H2O + CO2
   # weight on left: 2 * (23+1+12+16*3)

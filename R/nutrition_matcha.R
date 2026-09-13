@@ -36,7 +36,7 @@ Sencha_everyday_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   #brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
   brand = 'Sencha Naturals\U1f1fa\U1f1f8', # no longer on official website, Sep 2026
-  name = '\u62b9\u8336\u7c89 Matcha\U1f375 Powder',
+  alias = '\u62b9\u8336\u7c89', name = 'Matcha\U1f375 Powder',
   usd = 54.99/(3*340)*1.5, costco = '100705701', date = as.Date('2026-09-02'),
   servingGram = 1.5, 
   #servingTsp = .5, # on package
@@ -56,7 +56,7 @@ ItoEn_matcha <- \() new(
 maeda_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Ceremonial Matcha\U1f375',
-  maeda = 'maeda-en-ceremonial-matcha', jfc = '18422',
+  maeda = 'ceremonial-matcha', jfc = '18422',
   servingGram = 2, servingTsp = 1, # packaging, also accurate!!
   usd = 23.24/28*2)
 

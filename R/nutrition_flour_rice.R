@@ -23,7 +23,7 @@ Erawan_glutinousRiceFlour <- \() new(
 
 KingArthur_M4M <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 200725L,
-  name = '\u6742\u7cae\u7c89 No-Gluten Measure4Measure', # 
+  alias = '\u6742\u7cae\u7c89', name = 'No-Gluten Measure4Measure', # 
   usd = 10.95/(3*454) * 31,
   servingGram = 31, 
   servingTbsp = 4, # packaging

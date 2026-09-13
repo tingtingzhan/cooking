@@ -88,7 +88,7 @@ LeeKumKee_premium_oyster <- \() new(
 
 LeeKumKee_oyster <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], lkkusa = 'panda-brand-oyster-flavored-sauce',
-  name = '\u718a\u8c93\u724c\u9bae\u5473\u8814\u6cb9 Panda\u00ae Oyster Sauce',
+  name = 'Panda\u00ae Oyster\U0001f9aa Sauce', alias = '\u718a\u8c93\u724c\u9bae\u5473\u8814\u6cb9',
   webstaurant = '999LKK0074', # source of nutrition info
   servingGram = 19, # my guess
   servingTbsp = 1,

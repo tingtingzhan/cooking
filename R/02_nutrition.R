@@ -586,7 +586,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         c()
     } else if (length(x@maeda)) {
       x@maeda |> 
-        sprintf(fmt = 'https://maeda-en.com/collections/matcha-powder/products/%s') |>
+        sprintf(fmt = 'https://maeda-en.com/products/%s') |>
         style_hyperlink(url = _, text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5') |>
         c()
     } else if (length(x@marukyu)) {

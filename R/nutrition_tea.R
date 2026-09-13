@@ -60,7 +60,7 @@ Harney_EarlGreySupreme <- \() new(
 
 Harney_LapSangSouChong <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], harney = 'lapsang-souchong',
-  name = '\u7acb\u5c71\u5c0f\u79cd Lap Sang Sou Chong',
+  alias = '\u7acb\u5c71\u5c0f\u79cd', name = 'Lap Sang Sou Chong',
   servingGram = 454, usd = 28, # 2023-11-09
   machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Quite an acquired taste.')

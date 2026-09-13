@@ -14,7 +14,7 @@ Quaker_oat <- \() new(
 HaiTai_blackRice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   haitaiusa = 'black-rice-\ud751\ubbf8-2lbs', 
-  name = '\u9ed1\u7c73 Black Rice',
+  alias = '\u9ed1\u7c73', name = 'Black Rice',
   servingGram = 45, servingCup = 1/4, 
   calorie = 160, usd = 6.99/910*45,
   fat = 2, carbohydrate = 33, sugar = 1, protein = 3)
@@ -22,7 +22,7 @@ HaiTai_blackRice <- \() new(
 
 Nishiki_brownRice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
-  nishiki = '69969', name = '\u7384\u7c73 Premium Brown Rice',
+  nishiki = '69969', alias = '\u7384\u7c73', name = 'Premium Brown Rice',
   wegmans = 10902L, amazon = 'B006SFAS6C',
   servingGram = 45, servingCup = 1/4, # packaging, actual 47.5g
   usd = 2.40/454*45, # Wegmans, 2024 Fall
@@ -33,7 +33,7 @@ Nishiki_brownRice <- \() new(
 Dynasty_brownRice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Dynasty\U1f1fa\U1f1f8', 
-  name = '\u6cf0\u570b\u9999\u7cd9\u7c73 Brown Rice, Jasmine',
+  alias = '\u6cf0\u570b\u9999\u7cd9\u7c73', name = 'Brown Rice, Jasmine',
   jfc = '15682',
   wegmans = 42848L,
   usd = 3.99/907*45,
@@ -44,7 +44,7 @@ Dynasty_brownRice <- \() new(
 Botan_rice <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = 'Botan\u5bcc\u8d35\u82b1',
-  name = '\u52a0\u5dde\u4e2d\u7c92\u7c73Calrose Rice',
+  alias = '\u52a0\u5dde\u4e2d\u7c92\u7c73', name = 'Calrose Rice',
   jfc = '01714',
   wegmans = 143657L,
   usd = 9.49/2270*45,

@@ -15,7 +15,7 @@ if (FALSE) {
 Edward_shreddedCoconutLite <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut')),
-  name = '\u51cf\u8102\u6930\u84c9 Shredded Coconut\U1f965, Less Fat',
+  name = 'Shredded Coconut\U1f965, Less Fat', alias = '\u51cf\u8102\u6930\u84c9',
   usd = 3.89/250*16,
   servingGram = 16, 
   servingTbsp = 4, # packaging
@@ -28,7 +28,7 @@ Edward_shreddedCoconutLite <- \() new(
 Edward_shreddedCoconut <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut')),
-  name = '\u6930\u84c9 Shredded Coconut\U1f965',
+  alias = '\u6930\u84c9', name = 'Shredded Coconut\U1f965',
   usd = 3.89/227*15,
   servingGram = 15, 
   servingTbsp = 2.5, # packaging
@@ -39,7 +39,7 @@ Edward_shreddedCoconut <- \() new(
 Edward_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour')),
-  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
+  alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   usd = 5.99/454*14,
   servingGram = 14, 
   servingTbsp = 2, # packaging
@@ -48,7 +48,7 @@ Edward_coconutFlour <- \() new(
 
 BobsRedMill_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'organic-coconut-flour',
-  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
+  alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   servingGram = 14, 
   servingTbsp = 2, # packaging
   calorie = 60,
@@ -58,7 +58,7 @@ AnthonysGoods_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
   brand = 'Anthony\'s Goods', 
-  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
+  alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   usd = 18.99/1810*14,
   servingGram = 14,
   servingTbsp = 2, # packaging
@@ -69,7 +69,7 @@ AnthonysGoods_coconutFlour <- \() new(
 WegmansOrganic_coconutFlour <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   wegmansorganic = 253623L, usd = 3.79/454*14,
-  name = '\u6930\u8089\u7c89 Coconut\U1f965 Flour',
+  name = 'Coconut\U1f965 Flour', alias = '\u6930\u8089\u7c89',
   servingGram = 14, 
   #servingTbsp = 2, # packaging
   servingTbsp = 14/(66*2) * 16, # actual experiment: 66g = 1/2 cup

@@ -13,7 +13,6 @@ DaoXiangCun_corn <- \() new(
 #' @export
 Albertsons_yellowCorn <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
-  #name = '\u9ec4\u7389\u7c73\u9762 Yellow Cornmeal\U1f33d',
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
   acme = 117010060L, usd = 4.29/2270*30,
   servingGram = 30, 
@@ -61,7 +60,7 @@ Quaker_yellowCorn <- \() new(
 #' @export
 Quaker_whiteCorn <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
-  name = '\u9ec4\u7389\u7c73\u9762 White Cornmeal\U1f33d',
+  alias = '\u9ec4\u7389\u7c73\u9762', name = 'White Cornmeal\U1f33d',
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
   fat = .5, carbohydrate = 21, protein = 2)

@@ -37,7 +37,7 @@ Kerrygold_salted_butter <- \() new(
 Plugra_butter <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = c(style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/')),
-  name = '\u9ec4\u6cb9 European Butter\U1f9c8',
+  alias = '\u9ec4\u6cb9', name = 'European Butter\U1f9c8',
   acme = 960051793L, usd = 2.99/16,
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 100,

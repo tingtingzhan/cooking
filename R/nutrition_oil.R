@@ -3,25 +3,25 @@
 Mazola_corn_oil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Mazola', url = 'https://www.mazola.com/products/mazolareg-corn-oil/') |> c(),
-  name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
+  alias = '\u7389\u7c73\u6cb9', name = 'Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
 
 Wegmans_corn_oil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 42111L,
-  name = '\u7389\u7c73\u6cb9 Corn\U1f33d Oil',
+  alias = '\u7389\u7c73\u6cb9', name = 'Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 Wegmans_avocado_oil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 155325L,
-  name = '\u9cc4\u68a8\u6cb9 Avocado\U1f951 Oil',
+  alias = '\u9cc4\u68a8\u6cb9', name = 'Avocado\U1f951 Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
 Wegmans_basting_oil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 262361L,
-  name = '\u9999\u6599\u6a44\u6984\u6cb9 Basting Oil',
+  alias = '\u9999\u6599\u6a44\u6984\u6cb9', name = 'Basting Oil',
   # Pure Olive Oil, Dried Thyme, Dried Parsley, Organic Natural Garlic Flavor.
   usd = 8.49/250*15,
   servingGram = 14, servingTbsp = 1,
@@ -31,14 +31,14 @@ Wegmans_basting_oil <- \() new(
 
 Wegmans_vegetable_oil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 5904L,
-  name = '\u690d\u7269\u6cb9 Vegetable Oil',
+  alias = '\u690d\u7269\u6cb9', name = 'Vegetable Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
 Wesson_soy_oil <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   wesson = 'vegetable-oil',
-  name = '\u5927\u8c46\u6cb9 Soybean Oil',
+  alias = '\u5927\u8c46\u6cb9', name = 'Soybean Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
