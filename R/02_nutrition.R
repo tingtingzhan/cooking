@@ -409,32 +409,32 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     x@brand <- if (length(x@bachans)) {
       x@bachans |> 
         sprintf(fmt = 'https://bachans.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Bachan\'s\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Bachan\'s\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@baileys)) {
       x@baileys |> 
         sprintf(fmt = 'https://www.baileys.com/en/products/baileys-%s') |>
-        style_hyperlink(url = _, text = 'Baileys\U1f1ee\U1f1ea') |> 
+        style_hyperlink(text = 'Baileys\U1f1ee\U1f1ea') |> 
         c()
     } else if (length(x@bassetts)) {
       x@bassetts |> 
         sprintf(fmt = 'https://www.bassettsicecream.com/_files/ugd/%s.pdf') |>
-        style_hyperlink(url = _, text = 'Bassetts\U1f368\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Bassetts\U1f368\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@belgioioso)) {
       x@belgioioso |> 
         sprintf(fmt = 'https://www.belgioioso.com/products/%s') |>
-        style_hyperlink(url = _, text = 'BelGioioso\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'BelGioioso\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@bobsredmill)) {
       x@bobsredmill |> 
         sprintf(fmt = 'https://www.bobsredmill.com/%s.html') |>
-        style_hyperlink(url = _, text = 'Bob\'s Red Mill\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Bob\'s Red Mill\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@bouchard)) {
       x@bouchard |> 
         sprintf(fmt = 'https://bouchardchocolate.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Bouchard\U1f1e7\U1f1ea') |> 
+        style_hyperlink(text = 'Bouchard\U1f1e7\U1f1ea') |> 
         c()
     } else if (length(x@cheesecakefactoryfreezer)) {
       if (!length(x@cheesecakefactorybakery)) x@cheesecakefactorybakery <- x@cheesecakefactoryfreezer
@@ -445,37 +445,37 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@clearwater)) {
       x@clearwater |> 
         sprintf(fmt = 'https://www.clearwater.ca/en/seafood-industry/%s') |>
-        style_hyperlink(url = _, text = 'Clearwater\U1f1e8\U1f1e6') |> 
+        style_hyperlink(text = 'Clearwater\U1f1e8\U1f1e6') |> 
         c()
     } else if (length(x@countrytime)) {
       x@countrytime |> 
         sprintf(fmt = 'https://www.kraftheinz.com/country-time/products/%s') |>
-        style_hyperlink(url = _, text = 'Country Time\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Country Time\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@daisybrand)) {
       x@daisybrand |> 
         sprintf(fmt = 'https://www.daisybrand.com/%s') |>
-        style_hyperlink(url = _, text = 'Daisy\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Daisy\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@delmonte)) {
       x@delmonte |> 
         sprintf(fmt = 'https://www.delmonte.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Del Monte\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Del Monte\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@dolesunshine)) {
       x@dolesunshine |> 
         sprintf(fmt = 'https://www.dolesunshine.com/us/en/products/%s') |>
-        style_hyperlink(url = _, text = 'Dole\U1f33a') |> 
+        style_hyperlink(text = 'Dole\U1f33a') |> 
         c()
     } else if (length(x@domino)) {
       x@domino |> 
         sprintf(fmt = 'https://www.dominosugar.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Domino\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Domino\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@epicprovisions)) {
       x@epicprovisions |> 
         sprintf(fmt = 'https://epicprovisions.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Epic\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Epic\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@fleischmannsyeast)) {
       style_hyperlink(url = x@fleischmannsyeast |> sprintf(fmt = 'https://www.fleischmannsyeast.com/product-page/#%d'), text = 'Fleischmann\'s\U1f1fa\U1f1f8') |> c()
@@ -488,7 +488,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@greypoupon)) {
       x@greypoupon |> 
         sprintf(fmt = 'https://www.kraftheinz.com/grey-poupon/products/%s') |>
-        style_hyperlink(url = _, text = 'Grey Poupon\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Grey Poupon\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@godiva)) {
       style_hyperlink(url = x@godiva |> sprintf(fmt = 'https://www.godiva.com/%s.html'), text = 'Godiva\U1f1e7\U1f1ea') |> c()
@@ -503,17 +503,17 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@heinz)) {
       x@heinz |> 
         sprintf(fmt = 'https://www.heinz.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Heinz\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Heinz\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@hellmanns)) {
       x@hellmanns |> 
         sprintf(fmt = 'https://www.hellmanns.com/us/en/p/%s') |>
-        style_hyperlink(url = _, text = 'Hellmann\'s\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Hellmann\'s\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@horizon)) {
       x@horizon |> 
         sprintf(fmt = 'https://horizon.com/organic-dairy-products/%s') |>
-        style_hyperlink(url = _, text = 'Horizon\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Horizon\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@ippodoglobal) & length(x@ippodousa)) {
       x@url <- c(x@url, style_hyperlink(url = x@ippodousa |> sprintf(fmt = 'https://ippodotea.com/products/%s'), text = '\U1f6d2 US Shop'))
@@ -523,14 +523,14 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@itoen)) {
       x@itoen |> 
         sprintf(fmt = 'https://itoen.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5') |> 
+        style_hyperlink(text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5') |> 
         c()
     } else if (length(x@jayone)) {
       style_hyperlink(url = x@jayone |> sprintf(fmt = 'https://www.jayonefoods.com/product/%s'), text = 'JayOne\U1f1f0\U1f1f7') |> c()
     } else if (length(x@juniorscheesecake)) {
       x@juniorscheesecake |> 
         sprintf(fmt = 'https://www.juniorscheesecake.com/all-items/%s') |>
-        style_hyperlink(url = _, text = 'Junior\'s\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Junior\'s\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@justtea)) {
       style_hyperlink(url = x@justtea |> sprintf(fmt = 'https://shop.wegmans.com/product/%s'), text = 'Just Tea\U1f1fa\U1f1f8') |> c()
@@ -544,7 +544,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@kikkomanusa)) {
       x@kikkomanusa |> 
         sprintf(fmt = 'https://kikkomanusa.com/foodservice/products/%s') |>
-        style_hyperlink(url = _, text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5') |> 
+        style_hyperlink(text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5') |> 
         c()
     } else if (length(x@kingarthur)) {
       x@kingarthur |> 
@@ -552,46 +552,46 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           #fmt = 'https://shop.kingarthurbaking.com/items/%d'
           fmt = 'https://www.kingarthurbaking.com/search?query=%d'
         ) |>
-        style_hyperlink(url = _, text = 'King Arthur\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'King Arthur\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@kingarthurpro)) {
       'https://www.kingarthurbaking.com/pro/products' |>
-        style_hyperlink(url = _, text = 'King Arthur\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'King Arthur\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@philadelphia)) {
       x@philadelphia |> 
         sprintf(fmt = 'https://www.kraftheinz.com/philadelphia/products/%s') |>
-        style_hyperlink(url = _, text = 'Philadelphia\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Philadelphia\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@krusteaz)) {
       x@krusteaz |> 
         sprintf(fmt = 'https://www.krusteaz.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Krusteaz\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Krusteaz\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@landolakes)) {
       x@landolakes |> 
         sprintf(fmt = 'https://www.landolakes.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Land O Lakes\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Land O Lakes\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@leaperrins)) {
       x@leaperrins |> 
         sprintf(fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s') |>
-        style_hyperlink(url = _, text = 'Lea & Perrins\U1f1ec\U1f1e7') |> 
+        style_hyperlink(text = 'Lea & Perrins\U1f1ec\U1f1e7') |> 
         c()
     } else if (length(x@lkkhk)) {
       x@lkkhk |> 
         sprintf(fmt = 'https://hk.lkk.com/zh-hk/foodservices/products/%s') |>
-        style_hyperlink(url = _, text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
+        style_hyperlink(text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
         c()
     } else if (length(x@lkkusa)) {
       x@lkkusa |> 
         sprintf(fmt = 'https://usa.lkk.com/zh-hk/products/%s') |>
-        style_hyperlink(url = _, text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
+        style_hyperlink(text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
         c()
     } else if (length(x@maeda)) {
       x@maeda |> 
         sprintf(fmt = 'https://maeda-en.com/products/%s') |>
-        style_hyperlink(url = _, text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5') |>
+        style_hyperlink(text = 'maeda-en\u524d\u7530\u5712\U1f1ef\U1f1f5') |>
         c()
     } else if (length(x@marukyu)) {
       x@url <- c(x@url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
@@ -602,203 +602,203 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@mccormick)) {
       x@mccormick |> 
         sprintf(fmt = 'https://www.mccormick.com/%s') |>
-        style_hyperlink(url = _, text = 'McCormick\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'McCormick\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@mccormickculinary)) {
       x@mccormickculinary |>
         sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/mccormick-culinary/%s') |>
-        style_hyperlink(url = _, text = 'McCormick\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'McCormick\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@oldbay)) {
       x@oldbay |>
         sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/old-bay/%s') |>
-        style_hyperlink(url = _, text = 'McCormick\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'McCormick\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@grillmates)) {
       x@grillmates |>
         sprintf(fmt = 'https://www.mccormickforchefs.com/en-us/products/grill-mates/%s') |>
-        style_hyperlink(url = _, text = 'McCormick\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'McCormick\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@meyenberg)) {
       x@meyenberg |>
         sprintf(fmt = 'https://www.meyenberg.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Meyenberg\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Meyenberg\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@mizkanjpn)) {
       x@mizkanjpn |>
         sprintf(fmt = 'https://www.mizkan.co.jp/product/group/?gid=%s') |>
-        style_hyperlink(url = _, text = 'mizkan\u30df\u30c4\u30ab\u30f3\U1f1ef\U1f1f5') |>
+        style_hyperlink(text = 'mizkan\u30df\u30c4\u30ab\u30f3\U1f1ef\U1f1f5') |>
         c()
     } else if (length(x@nancysyogurt)) {
       x@nancysyogurt |>
         sprintf(fmt = 'https://nancysyogurt.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Nancy\'s\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Nancy\'s\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@navitas)) {
       x@navitas |>
         sprintf(fmt = 'https://navitasorganics.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Navitas\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Navitas\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@nescafeGold)) {
       x@nescafeGold |>
         sprintf(fmt = 'https://www.nescafe.com/us/products/%s') |>
-        style_hyperlink(url = _, text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed') |>
+        style_hyperlink(text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed') |>
         c()
     } else if (length(x@nestle)) {
       x@nestle |>
         sprintf(fmt = 'https://www.nestleprofessional.us/search?search=%s') |>
-        style_hyperlink(url = _, text = 'Nestl\u00e9\U1f1e8\U1f1ed') |>
+        style_hyperlink(text = 'Nestl\u00e9\U1f1e8\U1f1ed') |>
         c()
     } else if (length(x@nido)) {
       x@nido |>
         sprintf(fmt = 'https://www.goodnes.com/nido/products/nido-%s') |>
-        style_hyperlink(url = _, text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed') |>
+        style_hyperlink(text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed') |>
         c()
     } else if (length(x@nielsenmassey)) {
       x@nielsenmassey |>
         sprintf(fmt = 'https://nielsenmassey.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Nielsen-Massey\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Nielsen-Massey\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@nishiki)) {
       x@nishiki |>
         sprintf(fmt = 'https://www.jfc.com/product/item/%s') |>
-        style_hyperlink(url = _, text = 'Nishiki\u9326\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Nishiki\u9326\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@oreo)) {
       x@oreo |> 
         sprintf(fmt = 'https://www.oreo.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Nabisco\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Nabisco\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@organicvalley)) {
       x@organicvalley |>
         sprintf(fmt = 'https://www.organicvalley.coop/products/%s') |>
-        style_hyperlink(url = _, text = 'Organic Valley\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Organic Valley\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@paromi)) {
       x@paromi |>
         sprintf(fmt = 'https://paromi.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Paromi\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Paromi\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@quakeroats)) {
       x@quakeroats |>
         sprintf(fmt = 'https://www.quakeroats.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Quaker\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Quaker\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@raos)) {
       x@raos |>
         sprintf(fmt = 'https://www.raos.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Rao\'s\U1f1fa\U1f1f8') |>
+        style_hyperlink(text = 'Rao\'s\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@runamok)) {
       runamok_ <- x@runamok |> 
         sprintf(fmt = 'https://runamokmaple.com/shop/product/%s') |>
-        style_hyperlink(url = _, text = 'Runamok\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Runamok\U1f1fa\U1f1f8') |> 
         c()
       if (length(x@whistlepigwhiskey)) {
         x@whistlepigwhiskey |> 
           sprintf(fmt = 'https://shop.whistlepigwhiskey.com/products/%s') |>
-          style_hyperlink(url = _, text = 'Whistlepig\U1f1fa\U1f1f8') |>
+          style_hyperlink(text = 'Whistlepig\U1f1fa\U1f1f8') |>
           paste(runamok_, . = _, sep = '-')
       } else runamok_
     } else if (length(x@sanford)) {
       x@sanford |> 
         sprintf(fmt = 'https://www.sanford.co.nz/our-seafood/our-products/%s') |>
-        style_hyperlink(url = _, text = 'Sanford\U1f1f3\U1f1ff') |> 
+        style_hyperlink(text = 'Sanford\U1f1f3\U1f1ff') |> 
         c()
     } else if (length(x@siggis)) {
       x@siggis |> 
         sprintf(fmt = 'https://siggis.com/product/%s') |>
-        style_hyperlink(url = _, text = 'Siggi\'s\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Siggi\'s\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@simplyorganic)) {
       x@simplyorganic |>
         sprintf(fmt = 'https://www.simplyorganic.com/products/simply-organic-%s') |>
-        style_hyperlink(url = _, text = 'Simply Organic\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Simply Organic\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@sodastream)) {
       x@sodastream |>
         sprintf(fmt = 'https://sodastream.com/products/%s') |>
-        style_hyperlink(url = _, text = 'SodaStream\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'SodaStream\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@starbucks)) {
       x@starbucks |> 
         sprintf(fmt = 'https://athome.starbucks.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Starbucks\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Starbucks\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@starbucks_hot)) {
       x@starbucks_hot |> 
         sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/hot/nutrition') |>
-        style_hyperlink(url = _, text = 'Starbucks\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Starbucks\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@starbucks_iced)) {
       x@starbucks_iced |> 
         sprintf(fmt = 'https://www.starbucks.com/menu/product/%s/iced/nutrition') |>
-        style_hyperlink(url = _, text = 'Starbucks\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Starbucks\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@stassentea)) {
       x@stassentea |> 
         sprintf(fmt = 'https://www.stassentea.com/shop-now/%s') |>
-        style_hyperlink(url = _, text = 'Stassen\U1f1f1\U1f1f0') |> 
+        style_hyperlink(text = 'Stassen\U1f1f1\U1f1f0') |> 
         c()
     } else if (length(x@stonewall)) {
       x@stonewall |> 
         sprintf(fmt = 'https://www.stonewallkitchen.com/%d.html') |>
-        style_hyperlink(url = _, text = 'Stonewall Kitchen\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Stonewall Kitchen\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@stonyfield)) {
       x@stonyfield |> 
         sprintf(fmt = 'https://www.stonyfield.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Stonyfield\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Stonyfield\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@swiftmeats)) {
       x@swiftmeats |> 
         sprintf(fmt = 'https://swiftmeats.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Swift\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Swift\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@swissmiss)) {
       x@swissmiss |> 
         sprintf(fmt = 'https://www.swissmiss.com/%s') |>
-        style_hyperlink(url = _, text = 'Swiss Miss\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Swiss Miss\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@thaikitchen)) {
       x@thaikitchen |> 
         sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s') |> 
-        style_hyperlink(url = _, text = 'Thai Kitchen\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Thai Kitchen\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@traderjoes)) {
       x@traderjoes |> 
         sprintf(fmt = 'https://www.traderjoes.com/home/products/pdp/%s') |>
-        style_hyperlink(url = _, text = 'Trader Joe\'s\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Trader Joe\'s\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@tsemporium)) {
       x@tsemporium |> 
         sprintf(fmt = 'https://www.tsemporium.com/en_us/xproduct/index/index/s/%s') |>
-        style_hyperlink(url = _, text = 'Tak Shing Hong\u5fb7\u6210\u884c\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Tak Shing Hong\u5fb7\u6210\u884c\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@twinings)) {
       x@twinings |> 
         sprintf(fmt = 'https://twiningsusa.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Twinings\U1f1ec\U1f1e7') |> 
+        style_hyperlink(text = 'Twinings\U1f1ec\U1f1e7') |> 
         c()
     } else if (length(x@wesson)) {
       x@wesson |> 
         sprintf(fmt = 'https://www.purewesson.com/products/%s') |> 
-        style_hyperlink(url = _, text = 'Wesson\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Wesson\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@yaomazi)) {
       x@yaomazi |> 
         sprintf(fmt = 'https://www.yaomazi.com/%s') |>
-        style_hyperlink(url = _, text = '\u5e7a\u9ebb\u5b50\U1f1e8\U1f1f3') |> 
+        style_hyperlink(text = '\u5e7a\u9ebb\u5b50\U1f1e8\U1f1f3') |> 
         c()
     } else if (length(x@yogi)) {
       x@yogi |> 
         sprintf(fmt = 'https://www.yogi-life.com/en-US/product/%s') |>
-        style_hyperlink(url = _, text = 'Yogi\U1f1fa\U1f1f8') |> 
+        style_hyperlink(text = 'Yogi\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@youjia)) {
       x@youjia |> 
         sprintf(fmt = 'https://youjiaflavors.com/products/%s') |>
-        style_hyperlink(url = _, text = '\u53cb\u52a0\U1f1e8\U1f1f3') |> 
+        style_hyperlink(text = '\u53cb\u52a0\U1f1e8\U1f1f3') |> 
         c()
     } else character()
   } # manufacturer
