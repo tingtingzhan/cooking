@@ -357,7 +357,6 @@ setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object
 #' @export
 print.raw. <- \(x, ...) {
   
-  #y <- nutrition(x = x) # dispatch to [nutrition.raw] or [nutrition.recipe]
   y <- x |>
     as(Class = 'nutrition')
   
@@ -370,14 +369,15 @@ print.raw. <- \(x, ...) {
   
   nm_ <- y |>
     attr(which = 'info', exact = TRUE) |>
-    attr(which = 'glue', exact = TRUE)
+    rownames()
   
   meat_seafood <- c(
     x@shrimp,
     x@seafood,
     x@pork, x@beef, x@lamb, x@chicken, # meat
     NULL)
-  sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood) |> lapply(FUN = cli_text)
+  sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood) |> 
+    lapply(FUN = cli_text)
   
   flour <- c(x@flour, x@pastryFlour, x@breadFlour, x@wholeWheatFlour,
              x@glutenFreeFlour, 
@@ -385,36 +385,58 @@ print.raw. <- \(x, ...) {
              x@riceFlour, x@glutinousRiceFlour,
              x@cornmeal,
              x@coconut)
-  if (length(flour)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, fmt_vol(flour)) |> lapply(FUN = cli_text) # one or more flour
+  if (length(flour)) {
+    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, fmt_vol(flour)) |> 
+      lapply(FUN = cli_text) # one or more flour
+  }
   
-  if (length(x@starch)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, fmt_vol(x@starch)) |> lapply(FUN = cli_text) 
+  if (length(x@starch)) {
+    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, fmt_vol(x@starch)) |> 
+      lapply(FUN = cli_text) 
+  }
   
   # commercial puree with volume info
   puree_vol <- c(x@pumpkin, x@pumpkinPieMix, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@yellowCorn, x@applesauce)
-  if (length(puree_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, fmt_vol(puree_vol)) |> lapply(FUN = cli_text)
+  if (length(puree_vol)) {
+    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(puree_vol)], puree_vol, fmt_vol(puree_vol)) |> 
+      lapply(FUN = cli_text)
+  }
   
   # puree (from Nutribullet or Joyoung soymilk maker) without volume info
   puree_no_vol <- c(x@puree, x@darkCherry, x@strawberry, x@banana)
-  if (length(puree_no_vol)) sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol) |> lapply(FUN = cli_text)
+  if (length(puree_no_vol)) {
+    sprintf(fmt = '%s %.0f grams\n', nm_[names(puree_no_vol)], puree_no_vol) |> 
+      lapply(FUN = cli_text)
+  }
   
   fruit <- c(x@fruit, x@durian)
-  if (length(fruit)) sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit) |> lapply(FUN = cli_text) # one or more fruit_pc
-  if (length(x@fruit_pc)) sprintf(
-    fmt = '%s %.0f grams %s\n', 
-    nm_[names(x@fruit_pc)], 
-    x@fruit_pc,
-    (x@fruit_pc / vapply(names(x@fruit_pc), FUN = \(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)) |>
-      sprintf(fmt = '%.1fpcs') |> col_br_magenta() |> style_bold()
-    #format_pc(x, name = 'fruit') # dont know how to use this yet
-  ) |> lapply(FUN = cli_text) # one or more fruit_pc
+  if (length(fruit)) {
+    sprintf(fmt = '%s %.0f grams\n', nm_[names(fruit)], fruit) |> 
+      lapply(FUN = cli_text)
+  }
+  if (length(x@fruit_pc)) {
+    sprintf(
+      fmt = '%s %.0f grams %s\n', 
+      nm_[names(x@fruit_pc)], 
+      x@fruit_pc,
+      (x@fruit_pc / vapply(names(x@fruit_pc), FUN = \(i) eval(call(i))@pieceWeight, FUN.VALUE = NA_real_)) |>
+        sprintf(fmt = '%.1fpcs') |> col_br_magenta() |> style_bold()
+      #format_pc(x, name = 'fruit') # dont know how to use this yet
+    ) |> 
+      lapply(FUN = cli_text)
+  }
   
   # sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, fmt_vol(x@flavor)) |> lapply(FUN = cli_text) # one or more flavor
-  if (length(x@flavor)) sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor) |> lapply(FUN = cli_text) # one or more flavor
+  if (length(x@flavor)) {
+    sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor) |> 
+      lapply(FUN = cli_text)
   # my `@flavor` slot is very complicated
+  }
   
-  mapply(FUN = \(glue, gram) {
-    sprintf(fmt = '%s %.0f grams', glue, gram) |> cli_text() # no returned value
-  }, glue = nm_[names(x@homemade)], gram = x@homemade)
+  mapply(FUN = \(nm, gram) {
+    sprintf(fmt = '%s %.0f grams', nm, gram) |> 
+      cli_text() # no returned value
+  }, nm = nm_[names(x@homemade)], gram = x@homemade)
   # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
   
   grain_bean_nut <- c(
@@ -425,24 +447,38 @@ print.raw. <- \(x, ...) {
     x@grain,
     x@soybean
   )
-  if (length(grain_bean_nut)) sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut) |> lapply(FUN = cli_text) # one or more grain
-  if (length(grain_bean_nut_vol_)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, fmt_vol(grain_bean_nut_vol_)) |> lapply(FUN = cli_text) # one or more grain
+  if (length(grain_bean_nut)) {
+    sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut) |> 
+      lapply(FUN = cli_text)
+  }
+  if (length(grain_bean_nut_vol_)) {
+    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, fmt_vol(grain_bean_nut_vol_)) |> 
+      lapply(FUN = cli_text)
+  }
   
   fat_vol <- c(
     x@fat,
     x@lard, x@tallow
   )
-  if (length(fat_vol)) sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, fmt_vol(fat_vol)) |> lapply(FUN = cli_text)
+  if (length(fat_vol)) {
+    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, fmt_vol(fat_vol)) |> 
+      lapply(FUN = cli_text)
+  }
   
   halfpound_brick <- c(
     x@butter, x@creamCheese
   )
-  if (length(halfpound_brick)) sprintf(
-    fmt = '%s %.0f grams %s\n', 
-    nm_[names(halfpound_brick)], 
-    halfpound_brick, 
-    (halfpound_brick/226.796) |> sprintf(fmt = '%.2gbrick') |> col_br_blue() |> style_bold()
-  ) |> lapply(FUN = cli_text)
+  if (length(halfpound_brick)) {
+    sprintf(
+      fmt = '%s %.0f grams %s\n', 
+      nm_[names(halfpound_brick)], 
+      halfpound_brick, 
+      (halfpound_brick/226.796) |> 
+        sprintf(fmt = '%.2gbrick') |> 
+        col_br_blue() |> style_bold()
+    ) |> 
+      lapply(FUN = cli_text)
+  }
   
   other <- c(
     x@vegetable,

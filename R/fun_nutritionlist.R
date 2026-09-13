@@ -78,11 +78,7 @@ summary.nutritionlist <- \(object, ...) {
 
   nm <- x |>
     vapply(FUN = \(i) c(i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
-  nm_glue <- x |>
-    vapply(FUN = \(i) c(i@name_glue, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
-  
-  rownames(ret) <- nm # *not* `nm_glue`
-  attr(ret, which = 'glue') <- nm_glue
+  rownames(ret) <- nm
   class(ret) <- 'summary.nutritionlist'
   return(ret)
   

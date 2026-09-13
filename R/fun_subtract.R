@@ -99,7 +99,6 @@ subtract.nutrition <- \(x, ...) {
   
   tmp <- paste0('-', paste0(unique.default(txt), collapse = '/')) |> col_grey() |> bg_br_green()
   x@name <- paste(x@name, tmp)
-  x@name_glue <- paste(x@name_glue, tmp)
   
   x@calorie <- numeric() # ideally I should be able to calculate this Haha
   
@@ -107,7 +106,7 @@ subtract.nutrition <- \(x, ...) {
   x@usd <- x@jpy <- numeric() # etc.
   
   slt <- getSlots('nutrition')
-  for (inm in setdiff(names(slt)[which(slt == 'character')], c('name', 'name_glue', 'brand'))) {
+  for (inm in setdiff(names(slt)[which(slt == 'character')], c('name', 'brand'))) {
     slot(x, name = inm) <- character()
   }
   for (inm in names(slt)[which(slt == 'integer')]) {

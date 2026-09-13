@@ -12,7 +12,6 @@
 #' @slot name \link[base]{character} scalar, product name
 #' @slot alias \link[base]{character} scalar, product alias
 #' @slot call \link[base]{language}, the function name to create this nutrition
-#' @slot name_glue \link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse `cli:::glue_cmd`)
 #' 
 #' @slot suggestion \link[base]{list}
 #' 
@@ -176,7 +175,6 @@ setClass(Class = 'nutrition', slots = c(
   alias = 'character',
   call = 'language',
   name = 'character',
-  name_glue = 'character',
   
   suggestion = 'list',
   
@@ -369,14 +367,13 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         # do nothing
       } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
         x@call <- x@call[[3L]]
-      } else stop('then?')
-      #x@call <- quote(`<UNDEFINED>`) # no need
-      x@name_glue <- paste(
-        sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call)) |> col_orchid4(), 
+      } else stop(x@call)
+      x@name <- paste(
+        sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call)) |> 
+          col_orchid4(), 
         x@name)
-      x@name <- paste(col_orchid4(x@alias), x@name) # after `@name_glue <-` :)
       x@alias <- character()
-    } else x@name_glue <- x@name
+    }
     
   }
   
@@ -1010,7 +1007,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   obj <- object
   
   cat('\n')
-  paste(c(obj@name_glue, obj@brand), collapse = ' ') |> cli_text()
+  paste(c(obj@name, obj@brand), collapse = ' ') |> 
+    cli_text()
   cat('\n')
   
   #cat('Nutrition Facts\n\n')

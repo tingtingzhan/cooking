@@ -17,7 +17,7 @@
 #' @name meatDip-class
 #' @export
 setClass(Class = 'meatDip', contains = 'recipe', prototype = prototype(
-  alias_class = '\U0001f356 Dipping Sauce'
+  alias_class = '\U0001f356\U0001f963'
 ))
 
 #' @rdname meatDip-class

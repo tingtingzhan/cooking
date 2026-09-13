@@ -25,8 +25,6 @@ Nutrition information.
 
 \item{\code{call}}{\link[base]{language}, the function name to create this nutrition}
 
-\item{\code{name_glue}}{\link[base]{character} scalar, to be passed to function \link[cli]{cli_text} (workhorse \code{cli:::glue_cmd})}
-
 \item{\code{suggestion}}{\link[base]{list}}
 
 \item{\code{url}}{\link[base]{character} scalar, link to manufacturer webpage}

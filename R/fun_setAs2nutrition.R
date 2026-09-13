@@ -60,7 +60,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
       if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
       x_ <- as.character(x.[[1L]])
       if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
-        ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
+        ret@name <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
       } # else do nothing
     }
   } # 2026-09-08 evening. Consider remove in future
@@ -167,7 +167,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       if (!is.symbol(x.[[1L]])) stop('shouldnt happen')
       x_ <- as.character(x.[[1L]])
       if (!identical(x_, 'x')) { # from [nutrition.function] in ?base::lapply
-        ret@name_glue <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
+        ret@name <- sprintf(fmt = '%s \U1f3fa{.run [%s](cooking::%s())}', x@alias, x_ |> col_yellow() |> style_bold(), x_)
       } # else do nothing
     }
   } # 2026-09-08 evening. Consider remove in future
