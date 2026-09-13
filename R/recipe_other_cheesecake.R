@@ -1,26 +1,19 @@
 
-#' @title Other Peoples Cheesecake
-#' 
-#' @description
-#' ..
-#' 
+#' @rdname raw_recipe
 #' 
 #' @examples
 #' diagnose(
 #'  cheesecake(),
-#'  subtract(PreppyKitchen_cheesecake, sugar = 125),
-#'  subtract(Junior_original, sugar = 12),
-#'  subtract(Junior_cookbook, sugar = 230),
-#'  subtract(CheesecakeFactory_original, sugar = 18)
+#'  subtract(cooking:::PreppyKitchen_cheesecake, sugar = 125),
+#'  subtract(cooking:::Junior_original, sugar = 12),
+#'  subtract(cooking:::Junior_cookbook, sugar = 230),
+#'  subtract(cooking:::CheesecakeFactory_original, sugar = 18)
 #' )
-#' @keywords internal
-#' @name cheesecake_other
-NULL
+#' 
 
 
 
-#' @rdname cheesecake_other
-#' @export
+
 Junior_cappuccino_cheesecake <- \() new(
   Class = 'recipe', 
   alias_flavor = 'Cappuccino Cheesecake',
@@ -36,8 +29,6 @@ Junior_cappuccino_cheesecake <- \() new(
   juniorscheesecakecookbook = 42L)
 
 
-#' @rdname cheesecake_other
-#' @export
 PreppyKitchen_cheesecake <- \() new(
   Class = 'recipe', alias_flavor = 'Cheesecake',
   creamCheese_brick = c(Philadelphia = 3),
@@ -51,8 +42,6 @@ PreppyKitchen_cheesecake <- \() new(
 
 
 
-#' @rdname cheesecake_other
-#' @export
 Junior_original <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 81705L, usd = 13.89/5,
   juniorscheesecake = 'original-ny-plain-cheesecake',
@@ -63,8 +52,7 @@ Junior_original <- \() new(
   fat = 33, cholesterol = .135, sodium = .38, carbohydrate = 30, sugar = 24, addedSugar = 22, protein = 7)
 
 
-#' @rdname cheesecake_other
-#' @export
+
 Junior_cookbook <- \() new(
   Class = 'recipe', 
   juniorscheesecakecookbook = 34L,
@@ -78,8 +66,7 @@ Junior_cookbook <- \() new(
   youtube = 'dUtq2hETohc' # see 1:00, brand of heavy cream
 )
 
-#' @rdname cheesecake_other
-#' @export
+
 CheesecakeFactory_original <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   name = 'Original',
@@ -89,8 +76,6 @@ CheesecakeFactory_original <- \() new(
   fat = 24, cholesterol = .105, sodium = .33, sugar = 28, addedSugar = 27, protein = 6)
 
 
-#' @rdname cheesecake_other
-#' @export
 Junior_strawberrySwirl <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 23187893L,
   brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
@@ -100,8 +85,6 @@ Junior_strawberrySwirl <- \() new(
 
 
 
-#' @rdname cheesecake_other
-#' @export
 PreppyKitchen_chocolate_cheesecake <- \() new(
   Class = 'recipe', alias_flavor = 'Cheesecake',
   # 1/4 cup coffee hot ???

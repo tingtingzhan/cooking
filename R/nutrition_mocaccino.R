@@ -1,48 +1,48 @@
 
-#' @title Mocaccino, Commercial or Other People's Recipe
+#' @rdname nutrition-class
 #' 
 #' @examples
 #' diagnose(
 #'  mocaccino(),
-#'  Rebecca_mocha(),
-#'  Pillsbury_mocha(),
-#'  EarlaTaylor_cocoa(),
-#'  Mels_cocoa(),
-#'  AmandaRettke_cocoa(),
-#'  bargainmums_mocha()
+#'  cooking:::Rebecca_mocha(),
+#'  cooking:::Pillsbury_mocha(),
+#'  cooking:::EarlaTaylor_cocoa(),
+#'  cooking:::Mels_cocoa(),
+#'  cooking:::AmandaRettke_cocoa(),
+#'  cooking:::bargainmums_mocha()
 #' ) # compare powder recipes
 #' 
 #' diagnose(
 #'  mocaccino(),
-#'  Maxwell_mochaSuisse(),
-#'  WilliamsSonoma_mocha(),
-#'  Ghirardelli_mochaFrappe(),
-#'  Godiva_milkCocoa(),
-#'  Godiva_cocoa(),
-#'  KingArthur_milkChocolate(),
-#'  Nestle_skimCocoa(),
-#'  Nestle_richChocolate(),
-#'  Nestle_cocoSupreme(),
-#'  SwissMiss_simplyCocoaMilk(),
-#'  SwissMiss_milkCocoa(),
-#'  Starbucks_cocoa(),
-#'  StarbucksKcup_cocoa(),
-#'  Starbucks_mochaMix()
+#'  cooking:::Maxwell_mochaSuisse(),
+#'  cooking:::WilliamsSonoma_mocha(),
+#'  cooking:::Ghirardelli_mochaFrappe(),
+#'  cooking:::Godiva_milkCocoa(),
+#'  cooking:::Godiva_cocoa(),
+#'  cooking:::KingArthur_milkChocolate(),
+#'  cooking:::Nestle_skimCocoa(),
+#'  cooking:::Nestle_richChocolate(),
+#'  cooking:::Nestle_cocoSupreme(),
+#'  cooking:::SwissMiss_simplyCocoaMilk(),
+#'  cooking:::SwissMiss_milkCocoa(),
+#'  cooking:::Starbucks_cocoa(),
+#'  cooking:::StarbucksKcup_cocoa(),
+#'  cooking:::Starbucks_mochaMix()
 #' ) # compare commercial powders
 #' 
 #' diagnose(
 #'  hotdrink(mocaccino),
-#'  Starbucks_mocha()
+#'  cooking:::Starbucks_mocha()
 #' ) # compare hot drink
 #' 
 #' diagnose(
 #'  frappe(mocaccino),
-#'  Starbucks_mochaFrappuccino(),
-#'  Starbucks_mochaFrappuccino_bottle()
+#'  cooking:::Starbucks_mochaFrappuccino(),
+#'  cooking:::Starbucks_mochaFrappuccino_bottle()
 #' ) # compare frappe
-#' @name mocaccino_other
-#' @keywords internal 
-#' @export
+
+
+
 WilliamsSonoma_mocha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/') |> c(),
@@ -52,8 +52,8 @@ WilliamsSonoma_mocha <- \() new(
   calorie = 220,
   fat = 14, cholesterol = .005, carbohydrate = 24, addedSugar = 20, protein = 2)
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Starbucks_mocha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 408L,
   name = 'Caff\u00e8 Mocha',
@@ -63,8 +63,8 @@ Starbucks_mocha <- \() new(
   fat = 15, cholesterol = .045, sodium = .150, carbohydrate = 43, sugar = 35, protein = 14)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Starbucks_mochaFrappuccino <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 426L,
   name = 'Mocha Frappuccino',
@@ -73,8 +73,8 @@ Starbucks_mochaFrappuccino <- \() new(
   # Caffeine 100 mg*
   fat = 15, cholesterol = .045, sodium = .220, carbohydrate = 54, sugar = 51, protein = 5)
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Starbucks_mochaFrappuccino_bottle <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   name = 'Mocha Frappuccino',
@@ -85,8 +85,8 @@ Starbucks_mochaFrappuccino_bottle <- \() new(
   fat = 4.5, cholesterol = .02, sodium = .14, carbohydrate = 47, sugar = 45, protein = 9)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Maxwell_mochaSuisse <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432') |> c(),
@@ -96,8 +96,8 @@ Maxwell_mochaSuisse <- \() new(
   calorie = 60,
   fat = 4, sodium = .05, carbohydrate = 5, protein = 1)
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Ghirardelli_mochaFrappe <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   amazon = 'B00D6Q9E3E',
@@ -111,8 +111,8 @@ Ghirardelli_mochaFrappe <- \() new(
   carbohydrate = 83.241, sugar = 66.780, addedSugar = 64.207, protein = 5.282)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Starbucks_mochaMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], amazon = 'B004WYLFG8', # discontinued
   brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Mocha Mix',
@@ -124,8 +124,8 @@ Starbucks_mochaMix <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Pillsbury_mocha <- \() new(
   Class = 'recipe', author = 'Pillsbury', alias_flavor = 'Mocha Mix',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
@@ -136,8 +136,8 @@ Pillsbury_mocha <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Rebecca_mocha <- \() new(
   Class = 'recipe', author = 'Rebecca', alias_flavor = 'Mocha Mix',
   allrecipes = '23828/hot-mocha-drink-mix/',
@@ -149,8 +149,8 @@ Rebecca_mocha <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 bargainmums_mocha <- \() new(
   Class = 'recipe', author = 'Bargain Mums', alias_flavor = 'Mocha Mix',
   coffee = 30, 
@@ -160,8 +160,8 @@ bargainmums_mocha <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Starbucks_cocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   sams = 'P03020738', usd = 8.48/567*28,
@@ -171,8 +171,8 @@ Starbucks_cocoa <- \() new(
   calorie = 100,
   fat = 2.5, carbohydrate = 22, sugar = 17, addedSugar = 16, protein = 2)
 
-#' @rdname mocaccino_other
-#' @export
+
+
 SwissMiss_milkCocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   swissmiss = 'classics/milk-chocolate',
@@ -182,8 +182,8 @@ SwissMiss_milkCocoa <- \() new(
   fat = 2.5, sodium = .17, carbohydrate = 34, sugar = 28, addedSugar = 23, protein = 1)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Godiva_milkCocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   godiva = '16024', name = 'Milk Chocolate Hot Cocoa',
@@ -192,8 +192,8 @@ Godiva_milkCocoa <- \() new(
   fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
   suggestion = list(milk_cup = 1))
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Godiva_cocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   godiva = '16022', name = 'Dark Chocolate Hot Cocoa',
@@ -205,8 +205,8 @@ Godiva_cocoa <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 SwissMiss_simplyCocoaMilk <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   swissmiss = 'simply-cocoa/simply-cocoa-milk-chocolate',
@@ -220,8 +220,8 @@ SwissMiss_simplyCocoaMilk <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Nestle_richChocolate <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
   brand = 'Nestl\u00e9\U1f1e8\U1f1ed', name = 'Rich Chocolate',
@@ -233,8 +233,8 @@ Nestle_richChocolate <- \() new(
     water80_cup = 6/8
   ))
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Nestle_skimCocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], nestle = '12240821',
   name = 'Skim Hot Cocoa',
@@ -246,8 +246,8 @@ Nestle_skimCocoa <- \() new(
     water80_cup = 6/8
   ))
 
-#' @rdname mocaccino_other
-#' @export
+
+
 KingArthur_milkChocolate <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], kingarthur = 212571L,
   name = 'Milk Hot Chocolate',
@@ -257,16 +257,16 @@ KingArthur_milkChocolate <- \() new(
   fat = 1, sodium = .1, carbohydrate = 22, sugar = 21, addedSugar = 17, protein = 3)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Nestle_cocoSupreme <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], nestle = '11002829',
   name = 'Coco Supreme',
   servingGram = 33, fat = 2, sodium = .23, carbohydrate = 27, sugar = 24, addedSugar = 20, protein = 1)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Starbucks_mochaSauce <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   walmart = '903031815', usd = 8.43/12, # out of stock
@@ -277,8 +277,8 @@ Starbucks_mochaSauce <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 EarlaTaylor_cocoa <- \() new(
   Class = 'recipe', author = 'Earla Taylor', alias_flavor = 'Cocoa Mix',
   allrecipes = '9335/hot-cocoa-mix/',
@@ -288,8 +288,8 @@ EarlaTaylor_cocoa <- \() new(
   spice_cup = c(Nestle_coffeeMate = 1.75))
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 Mels_cocoa <- \() new(
   Class = 'recipe', author = 'Mel\'s', alias_flavor = 'Cocoa Mix',
   url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
@@ -300,8 +300,8 @@ Mels_cocoa <- \() new(
   salt_tsp = 1/4)
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 AmandaRettke_cocoa <- \() new(
   Class = 'recipe', author = 'Amanda Rettke', alias_flavor = 'Cocoa Mix',
   url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
@@ -314,8 +314,8 @@ AmandaRettke_cocoa <- \() new(
 
 
 
-#' @rdname mocaccino_other
-#' @export
+
+
 StarbucksKcup_cocoa <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks = 'classic-hot-cocoa',
   name = 'Hot Cocoa, K-cup',

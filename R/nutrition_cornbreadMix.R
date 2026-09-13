@@ -1,9 +1,5 @@
 
-#' @title Other Cornbread Mix
-#' 
-#' @name cornbreadMix_other
-#' @keywords internal
-#' @export
+
 TraderJoes_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   traderjoes = '032809', usd = 2.99/9,
@@ -17,8 +13,10 @@ TraderJoes_cornbreadMix <- \() new(
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
   ), 'think this is too sweet'))
 
-#' @rdname cornbreadMix_other
-#' @export
+
+
+
+
 WholeFoods365_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b07d7bdyh6',
   name = 'Cornbread Mix', 
@@ -33,8 +31,6 @@ WholeFoods365_cornbreadMix <- \() new(
 
 
 
-#' @rdname cornbreadMix_other
-#' @export
 Krusteaz_southern_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], krusteaz = 'baking-mixes/southern-cornbread-muffin',
   name = 'Southern Cornbread Mix', usd = 19.68/4/12,
@@ -43,8 +39,7 @@ Krusteaz_southern_cornbreadMix <- \() new(
   review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
   
 
-#' @rdname cornbreadMix_other
-#' @export
+
 BobsRedMill_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'cornbread-muffin-mix',
   name = 'Cornbread Mix',
@@ -54,8 +49,7 @@ BobsRedMill_cornbreadMix <- \() new(
   review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
 
 
-#' @rdname cornbreadMix_other
-#' @export
+
 Stonewall_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], stonewall = 552594L, usd = 7.95/12,
   name = 'Cornbread Mix',
@@ -68,8 +62,7 @@ Stonewall_cornbreadMix <- \() new(
   ), 'loves it'))
 
 
-#' @rdname cornbreadMix_other
-#' @export
+
 Jiffy_cornMuffinMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/')),
@@ -84,8 +77,7 @@ Jiffy_cornMuffinMix <- \() new(
   ), 'says it\'s just okay'))
 
 
-#' @rdname cornbreadMix_other
-#' @export
+
 Fleischmanns_cornbreadMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   brand = c(style_hyperlink(text = 'Fleischmann\'s\U1f1fa\U1f1f8', url = 'https://www.simplyhomemade.com/products')),

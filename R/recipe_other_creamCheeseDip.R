@@ -1,20 +1,16 @@
 
 
 
-#' @title Other Peoples Cream Cheese Dip Recipes
+#' @rdname raw_recipe
 #' 
 #' @examples
 #' diagnose(
-#'  subtract(pumpkin_creamCheeseDip_bakethat, sugar = 135),
-#'  subtract(pumpkin_creamCheeseDip_Julie, sugar = 180)
+#'  subtract(cooking:::pumpkin_creamCheeseDip_bakethat, sugar = 135),
+#'  subtract(cooking:::pumpkin_creamCheeseDip_Julie, sugar = 180)
 #' )
-#' @keywords internal
-#' @name creamCheeseDip_other
-NULL
 
 
-#' @rdname creamCheeseDip_other
-#' @export
+
 pumpkin_creamCheeseDip_bakethat <- \() new(
   Class = 'recipe',
   author = 'Bake That!',
@@ -28,8 +24,6 @@ pumpkin_creamCheeseDip_bakethat <- \() new(
 )
 
 
-#' @rdname creamCheeseDip_other
-#' @export
 pumpkin_creamCheeseDip_Julie <- \() new(
   Class = 'recipe',
   julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),

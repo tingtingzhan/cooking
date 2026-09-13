@@ -1,19 +1,15 @@
 
-#' @title Dairy Products
+#' @rdname nutrition-class
 #' 
 #' @examples
-#' \dontrun{
 #' diagnose(
-#'  Nancys_creamCheese(),
-#'  Philadelphia_creamCheese(),
-#'  OrganicValley_creamCheese(),
-#'  TraderJoes_creamCheese(),
-#'  Tillamook_creamCheese()
+#'  cooking:::Nancys_creamCheese(),
+#'  cooking:::Philadelphia_creamCheese(),
+#'  cooking:::OrganicValley_creamCheese(),
+#'  cooking:::TraderJoes_creamCheese(),
+#'  cooking:::Tillamook_creamCheese()
 #' )
-#' }
-#' @keywords internal
-#' @name nutri_dairy
-NULL
+#' 
 
 
 

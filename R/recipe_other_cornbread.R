@@ -1,9 +1,6 @@
 
-#' @title Other Cornbread Recipes
-#' 
-#' @name cornbread_other
-#' @keywords internal
-#' @export
+
+
 Wegmans_cornbread_recipe <- \() new(
   Class = 'recipe', wegmans = '3044',
   alias_flavor = 'Cornbread',
@@ -19,8 +16,7 @@ Wegmans_cornbread_recipe <- \() new(
   oil_cup = c(Wegmans_avocado_oil = 1/2)
 )
 
-#' @rdname cornbread_other
-#' @export
+
 Wegmans_cornbread <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], wegmans = 268359L,
   name = 'Cornbread', usd = 9.00/9,
@@ -31,8 +27,6 @@ Wegmans_cornbread <- \() new(
 
 
 
-#' @rdname cornbread_other
-#' @export
 BethanyWeathersby_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'Bethany Weathersby',
   butter_cup = 1/2,
@@ -46,8 +40,7 @@ BethanyWeathersby_cornbread <- \() new(
   allrecipes = '76594/grandmothers-buttermilk-cornbread/')
 
 
-#' @rdname cornbread_other
-#' @export
+
 bluegirl_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread', author = 'bluegirl',
   flour_cup = 1,
@@ -60,8 +53,7 @@ bluegirl_cornbread <- \() new(
   egg_pc = 1,
   allrecipes = '17891/golden-sweet-cornbread/')
 
-#' @rdname cornbread_other
-#' @export
+
 PreppyKitchen_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
   cornmeal = c(Quaker_yellowCorn = 255), # 1.5 cup is not 255g
@@ -77,8 +69,6 @@ PreppyKitchen_cornbread <- \() new(
     'vQM-SFKSqcg' = 'cornbread-recipe' # youtube = '16YfyByvLZg' same recipe!
   ))
 
-#' @rdname cornbread_other
-#' @export
 Quaker_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
   quakeroats = 'golden-cornbread',
@@ -91,8 +81,6 @@ Quaker_cornbread <- \() new(
   egg_pc = 1)
 
 
-#' @rdname cornbread_other
-#' @export
 JoshuaWeissman_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread', 
   butter_cup = 1/2,
@@ -111,9 +99,6 @@ JoshuaWeissman_cornbread <- \() new(
 
 
 
-
-#' @rdname cornbread_other
-#' @export
 Jiffy_cornMuffin <- \() new(
   Class = 'recipe',
   alias_flavor = 'Corn Muffin', 
@@ -124,8 +109,7 @@ Jiffy_cornMuffin <- \() new(
   milk_cup = 1/3)
 
 
-#' @rdname cornbread_other
-#' @export
+
 WholeFoods365_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
@@ -136,8 +120,8 @@ WholeFoods365_cornbread <- \() new(
   oil_cup = c(Wegmans_vegetable_oil = .5))
 
 
-#' @rdname cornbread_other
-#' @export
+
+
 Stonewall_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
@@ -147,8 +131,8 @@ Stonewall_cornbread <- \() new(
   milk_cup = 1,
   oil_cup = c(Wegmans_vegetable_oil = 1/3))
 
-#' @rdname cornbread_other
-#' @export
+
+
 TraderJoes_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
@@ -160,8 +144,7 @@ TraderJoes_cornbread <- \() new(
   oil_cup = c(Wegmans_vegetable_oil = 1/2))
 
 
-#' @rdname cornbread_other
-#' @export
+
 Krusteaz_southern_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
@@ -173,8 +156,7 @@ Krusteaz_southern_cornbread <- \() new(
 
 # check out those fancier recipes https://www.krusteaz.com/recipes/cornbread/
 
-#' @rdname cornbread_other
-#' @export
+
 Albertsons_cornbread <- \() new(
   Class = 'recipe', alias_flavor = 'Cornbread',
   acme = 117010060L,
@@ -188,8 +170,7 @@ Albertsons_cornbread <- \() new(
   egg_pc = 2)
 
 
-#' @rdname cornbread_other
-#' @export
+
 BobsRedMill_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',
@@ -199,8 +180,7 @@ BobsRedMill_cornbread <- \() new(
   egg_pc = 2,
   oil_cup = c(Wegmans_vegetable_oil = 1/2))
 
-#' @rdname cornbread_other
-#' @export
+
 Fleischmanns_cornbread <- \() new(
   Class = 'recipe',
   alias_flavor = 'Cornbread',

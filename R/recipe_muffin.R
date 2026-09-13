@@ -13,46 +13,46 @@
 #' 
 #' diagnose(
 #'  cornbreadMix(),
-#'  subtract(TraderJoes_cornbreadMix, sugar = 10.2),
-#'  subtract(WholeFoods365_cornbreadMix, sugar = 4),
-#'  subtract(Krusteaz_southern_cornbreadMix, sugar = .5),
-#'  BobsRedMill_cornbreadMix(),
-#'  subtract(Stonewall_cornbreadMix, sugar = 8.1),
-#'  subtract(Jiffy_cornMuffinMix, sugar = 5.5),
-#'  subtract(Fleischmanns_cornbreadMix, sugar = 5.1)
+#'  subtract(cooking:::TraderJoes_cornbreadMix, sugar = 10.2),
+#'  subtract(cooking:::WholeFoods365_cornbreadMix, sugar = 4),
+#'  subtract(cooking:::Krusteaz_southern_cornbreadMix, sugar = .5),
+#'  cooking:::BobsRedMill_cornbreadMix(),
+#'  subtract(cooking:::Stonewall_cornbreadMix, sugar = 8.1),
+#'  subtract(cooking:::Jiffy_cornMuffinMix, sugar = 5.5),
+#'  subtract(cooking:::Fleischmanns_cornbreadMix, sugar = 5.1)
 #' )
 #' 
 #' diagnose(
 #'  cornbread(),
-#'  subtract(PreppyKitchen_cornbread, sugar = 17),
-#'  subtract(BethanyWeathersby_cornbread, sugar = 105),
-#'  subtract(bluegirl_cornbread, sugar = 108),
-#'  subtract(JoshuaWeissman_cornbread, sugar = 64, brownSugar = 23),
-#'  Jiffy_cornMuffin() |>
+#'  subtract(cooking:::PreppyKitchen_cornbread, sugar = 17),
+#'  subtract(cooking:::BethanyWeathersby_cornbread, sugar = 105),
+#'  subtract(cooking:::bluegirl_cornbread, sugar = 108),
+#'  subtract(cooking:::JoshuaWeissman_cornbread, sugar = 64, brownSugar = 23),
+#'  cooking:::Jiffy_cornMuffin() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 32),
-#'  subtract(Wegmans_cornbread_recipe, sugar = 88),
-#'  subtract(Wegmans_cornbread, sugar = 10.5),
-#'  WholeFoods365_cornbread() |>
+#'  subtract(cooking:::Wegmans_cornbread_recipe, sugar = 88),
+#'  subtract(cooking:::Wegmans_cornbread, sugar = 10.5),
+#'  cooking:::WholeFoods365_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 64),
-#'  Stonewall_cornbread() |>
+#'  cooking:::Stonewall_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 117),
-#'  TraderJoes_cornbread() |>
+#'  cooking:::TraderJoes_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 108),
-#'  Krusteaz_southern_cornbread() |>
+#'  cooking:::Krusteaz_southern_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 23),
-#'  BobsRedMill_cornbread() |>
+#'  cooking:::BobsRedMill_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 7),
-#'  subtract(Albertsons_cornbread, sugar = 25),
-#'  Fleischmanns_cornbread() |>
+#'  subtract(cooking:::Albertsons_cornbread, sugar = 25),
+#'  cooking:::Fleischmanns_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 100),
-#'  Quaker_cornbread()
+#'  cooking:::Quaker_cornbread()
 #' )
 #' @name muffin-class
 #' @export

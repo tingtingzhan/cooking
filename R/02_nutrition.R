@@ -336,6 +336,12 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   
   x <- callNextMethod(.Object, ...)
   
+  if (is.symbol(x@call)) {
+    # do nothing
+  } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
+    x@call <- x@call[[3L]]
+  } else stop(x@call)
+  
   if (length(x@AbV)) {
     if (!length(x@alcohol)) x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
     x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
@@ -363,11 +369,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     }
     
     if (length(x@alias)) {
-      if (is.symbol(x@call)) {
-        # do nothing
-      } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
-        x@call <- x@call[[3L]]
-      } else stop(x@call)
       x@name <- paste(
         sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call)) |> 
           col_orchid4(), 

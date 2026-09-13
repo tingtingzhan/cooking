@@ -1,15 +1,15 @@
 
-#' @title Other People's Cream Cheese Spread
+#' @rdname raw_recipe
 #' 
 #' @examples
 #' diagnose(
 #'  pumpkin_creamCheeseSpread(),
-#'  GoodLifeEats_pumpkin_creamCheeseSpread(),
-#'  Lynn_pumpkin_creamCheeseSpread()
+#'  cooking:::GoodLifeEats_pumpkin_creamCheeseSpread(),
+#'  cooking:::Lynn_pumpkin_creamCheeseSpread()
 #' )
-#' @keywords internal
-#' @name creamCheeseSpread_other
-#' @export
+
+
+
 GoodLifeEats_pumpkin_creamCheeseSpread <- \() new(
   Class = 'recipe',
   alias_class = 'Spread\U1f96f', # 'Cream Cheese Spread',
@@ -22,8 +22,6 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() new(
 )
 
 
-#' @rdname creamCheeseSpread_other
-#' @export
 Lynn_pumpkin_creamCheeseSpread <- \() new(
   Class = 'recipe',
   alias_class = 'Spread\U1f96f', # 'Cream Cheese Spread',

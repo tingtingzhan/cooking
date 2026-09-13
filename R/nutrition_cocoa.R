@@ -1,22 +1,18 @@
 
 # https://www.barry-callebaut.com/en/manufacturers/product-filter?topic_groups%5B0%5D=6&categories_level_1%5B0%5D=4&categories_level_2%5B0%5D=6&brands%5B0%5D=201
 
-#' @title Cocoa Powder
+#' @rdname nutrition-class
 #' 
 #' @examples
-#' \dontrun{
 #' diagnose(
-#'  KingArthur_blackCocoa(),
-#'  KingArthur_Burgundy(),
-#'  KingArthur_Bensdorp(), 
-#'  Ghirardelli_sunrise(),
-#'  Ghirardelli_majestic(),
-#'  Navitas_cacao()
+#'  cooking:::KingArthur_blackCocoa(),
+#'  cooking:::KingArthur_Burgundy(),
+#'  cooking:::KingArthur_Bensdorp(), 
+#'  cooking:::Ghirardelli_sunrise(),
+#'  cooking:::Ghirardelli_majestic(),
+#'  cooking:::Navitas_cacao()
 #' )
-#' }
-#' @keywords internal
-#' @name nutri_cocoa
-NULL
+#' 
 
 
 

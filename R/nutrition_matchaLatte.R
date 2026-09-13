@@ -1,37 +1,37 @@
 
-#' @title Matcha Latte, Commercial or Other People's Recipe
+#' @rdname nutrition-class
 #' 
 #' @examples
 #' diagnose(
 #'  matchaLatte(),
-#'  Ippodo_uji_shimizu(),
-#'  Starbucks_matchaLatteMix(),
-#'  TraderJoes_matchaLatte()
+#'  cooking:::Ippodo_uji_shimizu(),
+#'  cooking:::Starbucks_matchaLatteMix(),
+#'  cooking:::TraderJoes_matchaLatte()
 #' ) # compare dry powder
 #' 
 #' diagnose(
 #'  hotdrink(matchaLatte),
-#'  Ippodo_sayakaLatte(),
-#'  Starbucks_matchaLatte(),
-#'  Starbucks_matchaLatteMix() |> as('recipe'),
-#'  Ippodo_uji_shimizu() |> as('recipe'),
-#'  ItoEn_sweet_matcha() |> as('recipe')
+#'  cooking:::Ippodo_sayakaLatte(),
+#'  cooking:::Starbucks_matchaLatte(),
+#'  cooking:::Starbucks_matchaLatteMix() |> as('recipe'),
+#'  cooking:::Ippodo_uji_shimizu() |> as('recipe'),
+#'  cooking:::ItoEn_sweet_matcha() |> as('recipe')
 #' ) # compare hot drink
 #' 
 #' diagnose(
 #'  frappe(matchaLatte),
-#'  Starbucks_matchaFrappuccino()
+#'  cooking:::Starbucks_matchaFrappuccino()
 #' ) # compare frappe
-#' @name matchaLatte_other
-#' @keywords internal 
-#' @export
+
+
+
+
 TraderJoes_matchaLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], traderjoes = '052512',
   name = 'Matcha\U1f375 Latte Mix',
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
-#' @rdname matchaLatte_other
-#' @export
+
 Starbucks_matchaLatte <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 468L,
   name = 'Matcha\U1f375 Latte',
@@ -40,8 +40,7 @@ Starbucks_matchaLatte <- \() new(
   calorie = 240,
   fat = 7, cholesterol = .025, sodium = .16, sugar = 32, protein = 12)
 
-#' @rdname matchaLatte_other
-#' @export
+
 Starbucks_matchaFrappuccino <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 439L,
   name = 'Matcha\U1f375 Frappuccino',
@@ -50,8 +49,7 @@ Starbucks_matchaFrappuccino <- \() new(
   calorie = 420,
   fat = 16, cholesterol = .050, sodium = .240, carbohydrate = 62, sugar = 61, protein = 6)
 
-#' @rdname matchaLatte_other
-#' @export
+
 Starbucks_matchaLatteMix <- \() new(
   Class = 'nutrition', call = match.call()[[1L]], 
   brand = 'Starbucks\U1f1fa\U1f1f8', 
@@ -64,10 +62,6 @@ Starbucks_matchaLatteMix <- \() new(
 
 
 
-
-
-#' @rdname matchaLatte_other
-#' @export
 Ippodo_sayakaLatte <- \() new(
   Class = 'recipe',
   alias_flavor = 'Sayaka Latte', 
@@ -77,8 +71,6 @@ Ippodo_sayakaLatte <- \() new(
 
 
 
-#' @rdname matchaLatte_other
-#' @export
 Ippodo_uji_shimizu <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   ippodousa = 'uji-shimizu-sticks', ippodoglobal = 'matcha642402',
@@ -89,8 +81,7 @@ Ippodo_uji_shimizu <- \() new(
   carbohydrate = 15, addedSugar = 14, 
   suggestion = list(water80 = 150))
 
-#' @rdname matchaLatte_other
-#' @export
+
 ItoEn_sweet_matcha <- \() new(
   Class = 'nutrition', call = match.call()[[1L]],
   itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
