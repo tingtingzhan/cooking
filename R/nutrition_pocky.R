@@ -1,7 +1,7 @@
 
 
 Pocky_matcha <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = style_hyperlink(text = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', url = 'https://www.pocky.com/products/') |> c(),
   name = 'Matcha Pocky',
   servingGram = 40,
@@ -9,7 +9,7 @@ Pocky_matcha <- \() new(
   fat = 9, sodium = .08, sugar = 13, addedSugar = 11, protein = 3)
 
 Pocky_double_matcha <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', name = 'Double Rich Matcha Pocky',
   # url = 'https://www.pocky.com/products/', #  cannot find online
   servingGram = 29,

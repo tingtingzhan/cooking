@@ -1,12 +1,12 @@
 
 
 chicken_thigh <- \() new(# meat and skin
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 172385L,
+  Class = 'nutrition',  fdc = 172385L,
   name = '(\u53bb\u76ae)\u9e21\u817f\u8089 Chicken Thigh',
   servingGram = 100, water = 66.5, fat = 16.6, protein = 16.5, sodium = .081)
 
 chicken_breast <- \() new(# skinless, boneless
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 171077L,
+  Class = 'nutrition',  fdc = 171077L,
   name = 'Chicken Breast',
   servingGram = 100, water = 73.9, fat = 2.62, protein = 22.5, sodium = .045)
 
@@ -14,7 +14,7 @@ chicken_breast <- \() new(# skinless, boneless
 
 
 duck_whole <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Duck\U1f986, whole', 
   brand = style_hyperlink(text = 'Maple Leaf Farms\U1f1fa\U1f1f8', url = 'https://shopmapleleaffarms.com/collections/duck-catalog') |> c(),
   serving_lb = 3.5,

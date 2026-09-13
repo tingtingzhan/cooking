@@ -1,6 +1,6 @@
 
 Starbucks_caffeLatte <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 407L,
+  Class = 'nutrition',  starbucks_hot = 407L,
   name = 'Caff\u00e8 Latte',
   servingGram = 470, serving_floz = 16,
   #caffeine 150 mg*
@@ -9,7 +9,7 @@ Starbucks_caffeLatte <- \() new(
 
 
 Starbucks_coffeeFrappuccino_bottle <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   name = 'Coffee Frappuccino',
   brand = 'Starbucks (Bottled)',
   walmart = '14532479', target = 'A-12959301',

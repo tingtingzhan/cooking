@@ -55,7 +55,7 @@ PreppyKitchen_pumpkin_cheesecake <- \() new(
 
 
 Wegmans_pumpkin_cheesecake <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 18074L,
+  Class = 'nutrition',  wegmans = 18074L,
   name = 'Pumpkin\U1f383 Cheesecake',
   usd = .62/28.3495 * 130, # 0.62/oz
   servingGram = 130,
@@ -67,7 +67,7 @@ Wegmans_pumpkin_cheesecake <- \() new(
 
 
 CheesecakeFactory_pumpkin <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Pumpkin\U1f383',
   cheesecakefactoryfreezer = 'pumpkin-cheesecake',
   bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 

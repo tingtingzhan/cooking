@@ -13,7 +13,7 @@ if (FALSE) {
 
 
 Edward_shreddedCoconutLite <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut')),
   name = 'Shredded Coconut\U1f965, Less Fat', alias = '\u51cf\u8102\u6930\u84c9',
   usd = 3.89/250*16,
@@ -26,7 +26,7 @@ Edward_shreddedCoconutLite <- \() new(
 
 
 Edward_shreddedCoconut <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut')),
   alias = '\u6930\u84c9', name = 'Shredded Coconut\U1f965',
   usd = 3.89/227*15,
@@ -37,7 +37,7 @@ Edward_shreddedCoconut <- \() new(
   superior = 'WegmansOrganic_coconutFlour')
 
 Edward_coconutFlour <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour')),
   alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   usd = 5.99/454*14,
@@ -47,7 +47,7 @@ Edward_coconutFlour <- \() new(
   fat = 2, sodium = .005, carbohydrate = 9, sugar = 1, protein = 2)
 
 BobsRedMill_coconutFlour <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'organic-coconut-flour',
+  Class = 'nutrition',  bobsredmill = 'organic-coconut-flour',
   alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   servingGram = 14, 
   servingTbsp = 2, # packaging
@@ -55,7 +55,7 @@ BobsRedMill_coconutFlour <- \() new(
   fat = 1.5, sodium = .01, carbohydrate = 9, sugar = 3, protein = 3)
 
 AnthonysGoods_coconutFlour <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
   brand = 'Anthony\'s Goods', 
   alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
@@ -67,7 +67,7 @@ AnthonysGoods_coconutFlour <- \() new(
 
 
 WegmansOrganic_coconutFlour <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   wegmansorganic = 253623L, usd = 3.79/454*14,
   name = 'Coconut\U1f965 Flour', alias = '\u6930\u8089\u7c89',
   servingGram = 14, 
@@ -104,7 +104,7 @@ NULL
 
 
 ThaiKitchen_coconutmilkLite <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
   name = 'Coconut\U1f965 Milk, Lite', alias = '\u4f4e\u8102\u6930\u6d46',
   walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
@@ -115,7 +115,7 @@ ThaiKitchen_coconutmilkLite <- \() new(
 
 
 ThaiKitchen_coconutmilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   thaikitchen = 'coconut-milk/organic-coconut-milk',
   name = 'Coconut\U1f965 Milk', alias = '\u6930\u6d46',
   costco = '100452749', usd = (12.99/6)/403*80, # price retrieved 2024-09-02
@@ -125,7 +125,7 @@ ThaiKitchen_coconutmilk <- \() new(
   fat = 12, sodium = .03, carbohydrate = 2, sugar = 1)
 
 ThaiKitchen_coconutcream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   thaikitchen = 'coconut-milk/coconut-cream',
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
   wegmans = 47180L, usd = 4.49/403*80,
@@ -136,7 +136,7 @@ ThaiKitchen_coconutcream <- \() new(
 
 
 Kara_coconutcream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
   brand = c(style_hyperlink(text = 'Kara\U1f1ee\U1f1e9', url = 'https://kara-coconut.com/cn/product/uht-coconut-cream/')),
   usd = 1.89/200*15, # https://www.yamibuy.com/zh/p/kara-coconut-cream-200ml/1020034401 # out of stock right now
@@ -152,7 +152,7 @@ Kara_coconutcream <- \() new(
 # fdc = 1097553L
 
 Silk_coconutmilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(url = 'https://silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text = 'Silk\U1f1fa\U1f1f8')), 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   target = 'A-15423909', usd = 4.99/8,
@@ -162,7 +162,7 @@ Silk_coconutmilk <- \() new(
   fat = 4, sodium = .045, carbohydrate = 2)
 
 SoDelicious_coconutmilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'So Delicious\U1f1fa\U1f1f8', url = c(
     # 'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
@@ -182,7 +182,7 @@ SoDelicious_coconutmilk <- \() new(
   ))
 
 Freenow_coconutBarista_0sugar <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/6.html')),
   yamibuy = '26796422', usd = 6.29/1e3*1e2,
@@ -194,7 +194,7 @@ Freenow_coconutBarista_0sugar <- \() new(
   review = 'too sweet (too much sugar alchohol)')
 
 Freenow_coconutBarista <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/5.html')),
   weee = '89394', usd = 5.49/980*240, 
@@ -204,7 +204,7 @@ Freenow_coconutBarista <- \() new(
   fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
 Luckin_coconutmilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u751f\u6930\u6d46',
   brand = c(style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com')),
   weee = '106361', usd = 4.49/3/600*100,
@@ -215,7 +215,7 @@ Luckin_coconutmilk <- \() new(
   review = 'too sweet')
 
 PacificFoods_coconutBarista <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/')),
   webstaurant = '110PFBARCCNT', usd = 42.49/12/32*8,
@@ -224,7 +224,7 @@ PacificFoods_coconutBarista <- \() new(
   fat = 5, sodium = .125, carbohydrate = 10, sugar = 9, addedSugar = 8, protein = 1)
 
 CalifiaFarms_coconutBarista <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/coconut-barista-blend/')),
   wholefoods = 'b0c6hdj3d5', usd = 5.29/32*8,
@@ -233,7 +233,7 @@ CalifiaFarms_coconutBarista <- \() new(
   fat = 5, sodium = .110, carbohydrate = 9, sugar = 7, addedSugar = 5, protein = 1)
 
 CalifiaFarms_coconutmilkwater <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/go-coconuts-coconutmilk/')),
   wegmans = 28942L, usd = 4.29/48*8,
@@ -247,7 +247,7 @@ CalifiaFarms_coconutmilkwater <- \() new(
   ))
 
 Dream_coconutBarista <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Dream\U1f1fa\U1f1f8', url = 'https://dreamplantbased.com/products/barista-blend-products/coconutmilk-barista/')),
   # While not available at Retail, these exceptional products are utilized at select coffee shops.
@@ -256,7 +256,7 @@ Dream_coconutBarista <- \() new(
   fat = 5, sodium = .140, carbohydrate = 10, addedSugar = 9, protein = 1)
 
 CoconutPalm_coconutmilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = c(
     'http://www.yeshu.com/guoyan/liucheng.html'
@@ -268,7 +268,7 @@ CoconutPalm_coconutmilk <- \() new(
 
 
 CalifiaFarms_coconutmilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/organic-coconutmilk/')),
   target = 'A-92783096', usd = 4.99/48*8,

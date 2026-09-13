@@ -15,7 +15,7 @@
 
 
 FageTotal0_yogurtGreek <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0')),
   name = 'Nonfat Greek Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
   servingGram = 170, # sold at Costco, 3lb, 1360g
@@ -28,7 +28,7 @@ FageTotal0_yogurtGreek <- \() new(
 
 
 MembersMark_yogurtGreek <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   sams = 'prod23131577', usd = 4.38/1130*170, # sold at Sams, 2.5lb
   name = 'Nonfat Greek Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
   servingGram = 170, 
@@ -40,7 +40,7 @@ MembersMark_yogurtGreek <- \() new(
 
 
 SimpleTruth_yogurt <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   url = 'https://www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
   brand = 'Simple Truth Organic', 
   name = 'Low-Fat Yogurt', alias = '\u4f4e\u8102\u9178\u5976',
@@ -53,7 +53,7 @@ SimpleTruth_yogurt <- \() new(
 
 
 Stonyfield_yogurt <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   stonyfield = 'nonfat-yogurt-plain-32-oz',
   name = 'Nonfat Yogurt', alias = '\u8131\u8102\u9178\u5976',
   wegmans = 33829L, usd = 4.99/907*170,
@@ -65,7 +65,7 @@ Stonyfield_yogurt <- \() new(
 
 
 Nancys_yogurt <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   nancysyogurt = 'organic-100-grass-fed-yogurt',
   name = 'Organic 100% Grass-Fed Yogurt', alias = '\u9178\u5976',
   wegmans = 224506L, usd = 5.99/680*170,
@@ -78,7 +78,7 @@ Nancys_yogurt <- \() new(
 
 
 UpstateFarms_buttermilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 237692L,
+  Class = 'nutrition',  wegmans = 237692L,
   brand = 'Upstate Farms', name = 'Whole Buttermilk', alias = '\u916a\u6d46',
   # https://www.upstatefarms.com/products # no whole version!!
   servingGram = 240, servingCup = 1,
@@ -90,7 +90,7 @@ UpstateFarms_buttermilk <- \() new(
 
 
 NatureByNature_buttermilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Nature By Nature')), 
   name = 'Low-Fat Buttermilk', alias = '\u4f4e\u8102\u916a\u6d46',
   servingGram = 240, servingCup = 1,
@@ -102,7 +102,7 @@ NatureByNature_buttermilk <- \() new(
 
 
 OakFarms_buttermilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = c(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
   name = 'Bulgarian\U1f1e7\U1f1ec Buttermilk', alias = '\u916a\u6d46',
   servingGram = 240, servingCup = 1,
@@ -116,7 +116,7 @@ OakFarms_buttermilk <- \() new(
 
 
 Carnation_evaporatedMilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], nestle = '11002753',
+  Class = 'nutrition',  nestle = '11002753',
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
   name = 'Evaporated Milk', alias = '\u6de1\u5976',
   walmart = '10291864', usd = 1.72/12,
@@ -130,7 +130,7 @@ Carnation_evaporatedMilk <- \() new(
 
 
 CarnationFatFree_evaporatedMilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
   name = 'Fat Free Evaporated Milk', alias = '\u8131\u8102\u6de1\u5976',
@@ -144,7 +144,7 @@ CarnationFatFree_evaporatedMilk <- \() new(
 
 
 Carnation_condensedMilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
+  Class = 'nutrition',  url = 'https://www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
   usd = 2.99/10,
@@ -163,7 +163,7 @@ Carnation_condensedMilk <- \() new(
 
 
 Wegmans_goat_cheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   wegmans = 44383L, usd = 8.49/8,
   name = 'Goat\U1f410 Cheese, Mild', alias = '\u7f8a\u5976\u916a',
   serving_oz = 1,
@@ -173,7 +173,7 @@ Wegmans_goat_cheese <- \() new(
 
 
 Philadelphia_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   kraftheinzawayfromhome = '10021000616005',
   philadelphia = '00021000612239',
   name = 'Cream Cheese',
@@ -185,7 +185,7 @@ Philadelphia_creamCheese <- \() new(
 
 
 Philadelphia_creamCheeseSpread <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   philadelphia = '00021000000142',
   kraftheinzawayfromhome = '10021000614063',
   alias = '\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Cream Cheese Spread',
@@ -198,7 +198,7 @@ Philadelphia_creamCheeseSpread <- \() new(
 
 
 PhiladelphiaNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   kraftheinzawayfromhome = '10021000616401',
   philadelphia = '00021000612475',
   name = 'Neufcha\u0302tel Cream Cheese', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a',
@@ -211,7 +211,7 @@ PhiladelphiaNeufchatel_creamCheese <- \() new(
 
 
 PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   philadelphia = '00021000000289',
   kraftheinzawayfromhome = '10021000726704',
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Neufcha\u0302tel Cream Cheese Spread',
@@ -225,7 +225,7 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
 
 
 LucerneNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], acme = 137100657L,
+  Class = 'nutrition',  acme = 137100657L,
   brand = 'Lucerne', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
@@ -233,7 +233,7 @@ LucerneNeufchatel_creamCheese <- \() new(
 
 
 GreatValueNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   walmart = '10452358', usd = 1.48/8,
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
@@ -243,7 +243,7 @@ GreatValueNeufchatel_creamCheese <- \() new(
 
 
 Tillamook_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese')),
   name = 'Cream Cheese',
   servingTbsp = 2, serving_oz = 1,
@@ -253,7 +253,7 @@ Tillamook_creamCheese <- \() new(
 
 
 OrganicValleyNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   organicvalley = 'cream-cheese/neufchatel/neufchatel-8-oz-bar',
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   wegmans = 182L, usd = 4.59/8,
@@ -265,7 +265,7 @@ OrganicValleyNeufchatel_creamCheese <- \() new(
 
 
 OrganicValley_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
   name = 'Cream Cheese',
   wegmans = 11914L, usd = 4.59/8,
@@ -278,7 +278,7 @@ OrganicValley_creamCheese <- \() new(
 
 
 TraderJoes_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   traderjoes = '012491',
   name = 'Cream Cheese',
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
@@ -291,7 +291,7 @@ TraderJoes_creamCheese <- \() new(
 
 
 TraderJoesLight_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Trader Joe\'s', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Light Cream Cheese',
   contain = c('whey proteins', 'xanthan gum', 'locust bean gum', 'guar gum', 'microbial rennet'),
   serving_oz = 1, 
@@ -302,7 +302,7 @@ TraderJoesLight_creamCheese <- \() new(
 
 
 WholeFoods365_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b074h6qz3j',
+  Class = 'nutrition',  wholefoods = 'b074h6qz3j',
   name = 'Cream Cheese', 
   contain = 'locust bean gum',
   serving_oz = 1, servingTbsp = 2, 
@@ -314,7 +314,7 @@ WholeFoods365_creamCheese <- \() new(
 
 
 Nancys_creamCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   nancysyogurt = 'organic-natural-cream-cheese',
   wegmans = 260929L, usd = 4.59/227*30, # in store price cheaper than online, 2023-11-11
   name = 'Organic Cultured Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
@@ -326,7 +326,7 @@ Nancys_creamCheese <- \() new(
 
 
 Daisy_sourCream <- \() new( # no filler
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   daisybrand = 'sour-cream',
   name = 'Sour Cream', alias = '\u9178\u5976\u6cb9',
   servingGram = 30, servingTbsp = 2,
@@ -339,7 +339,7 @@ Daisy_sourCream <- \() new( # no filler
 
 
 DaisyLight_sourCream <- \() new( # no filler
-  Class = 'nutrition', call = match.call()[[1L]], daisybrand = 'sour-cream',
+  Class = 'nutrition',  daisybrand = 'sour-cream',
   name = 'Light Sour Cream',
   servingGram = 30, servingTbsp = 2,
   calorie = 35,
@@ -354,7 +354,7 @@ DaisyLight_sourCream <- \() new( # no filler
 
 
 Daisy_cottageCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], daisybrand = 'cottage-cheese',
+  Class = 'nutrition',  daisybrand = 'cottage-cheese',
   name = 'Cottage Cheese',
   walmart = '15716748', usd = 3.78/680*113,
   wegmans = 265495L,
@@ -366,7 +366,7 @@ Daisy_cottageCheese <- \() new(
 
 
 DaisyLite_cottageCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], daisybrand = 'cottage-cheese',
+  Class = 'nutrition',  daisybrand = 'cottage-cheese',
   name = 'Low Fat Cottage Cheese',
   walmart = '15716747', usd = 3.78/680*113,
   wegmans = 265512L,
@@ -378,7 +378,7 @@ DaisyLite_cottageCheese <- \() new(
 
 
 Lucerne_cottageCheese <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = 'Lucerne', name = 'Cottage Cheese',
   acme = 960109551L, usd = 4.19/680*113,
   serving_oz = 4, servingCup = 1/2,
@@ -390,7 +390,7 @@ Lucerne_cottageCheese <- \() new(
 
 
 TraderJoesLight_sourCream <- \() new( # no filler
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Trader Joe\'s', name = 'Light Sour Cream',
   servingGram = 30, servingTbsp = 2,
   fat = 2.5, sodium = .03, sugar = 2, protein = 2)
@@ -403,7 +403,7 @@ TraderJoesLight_sourCream <- \() new( # no filler
 
 
 Wegmans_whole_milk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 171265L,
+  Class = 'nutrition',  fdc = 171265L,
   wegmans = 26105632L, usd = 3.19/16, # 1 gal
   name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
@@ -414,7 +414,7 @@ Wegmans_whole_milk <- \() new(
 
 
 WegmansOrganic_2perc_milk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 2483143L,
+  Class = 'nutrition',  fdc = 2483143L,
   wegmansorganic = 12983L, usd = 6.99/16, # 1 gal
   name = '2% Reduced Fat Milk', alias = '\u534a\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
@@ -428,7 +428,7 @@ WegmansOrganic_2perc_milk <- \() new(
 
 
 WegmansOrganic_whole_milk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 171265L, 
+  Class = 'nutrition',  fdc = 171265L, 
   wegmansorganic = 9975L, usd = 6.99/16, # 1 gal
   name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
@@ -439,7 +439,7 @@ WegmansOrganic_whole_milk <- \() new(
 
 
 Horizon_wholeDHA_milk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   name = 'Organic Whole Milk with DHA Omega-3', alias = '\u5168\u8102\u725b\u5976',
   horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
   servingGram = 250, servingCup = 1,
@@ -450,7 +450,7 @@ Horizon_wholeDHA_milk <- \() new(
 
 
 Wawa_2perc_milk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
+  Class = 'nutrition',  wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
   name = '2% Reduced Fat Milk',
   servingGram = 240, servingCup = 1,
   usd = 2.75/8,
@@ -462,7 +462,7 @@ Wawa_2perc_milk <- \() new(
 # fdc = 170859L
 
 Byrne_heavyCream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = 'https://www.byrnedairy.com/creams-near-ny-state/')),
   name = 'Heavy Cream 40%', alias = '\u91cd\u5976\u6cb9',
   # nutrition from https://www.fooducate.com/product/Byrne-Dairy-Heavy-Whipping-Cream/61EE9DAB-F8E3-1A30-4818-B69A923F5C70
@@ -474,7 +474,7 @@ Byrne_heavyCream <- \() new(
 
 
 Wegmans_heavyCream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   wegmans = 
     # 21152L, # discontinued?
     # 220504L # discontinued
@@ -491,7 +491,7 @@ Wegmans_heavyCream <- \() new(
 
 
 WholeFoods365_heavyCream <- \() new( # no filler
-  Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b07qf6f984',
+  Class = 'nutrition',  wholefoods = 'b07qf6f984',
   name = 'Heavy Cream', 
   servingGram = 15, servingTbsp = 1,
   calorie = 50,
@@ -500,7 +500,7 @@ WholeFoods365_heavyCream <- \() new( # no filler
 
 
 TraderJoes_heavyCream <- \() new( # 
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Trader Joe\'s', name = 'Heavy Cream', 
   # the version labelled as 'organic' contains gellan gum
   # the version without 'organic' contains no filler
@@ -511,7 +511,7 @@ TraderJoes_heavyCream <- \() new( #
 
 
 NatureByNature_heavyCream <- \() new( # no filler, sold at Giant
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Nature By Nature')), 
   name = 'Heavy Cream',
   servingGram = 15, servingTbsp = 1,
@@ -522,7 +522,7 @@ NatureByNature_heavyCream <- \() new( # no filler, sold at Giant
 
 
 LandOLakes_whippedHeavyCream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   landolakes = 'whipping-cream-and-half-half/aerosol-whipped-cream',
   name = 'Whipped Heavy Cream', alias = '\u6253\u53d1\u91cd\u5976\u6cb9',
   costcoBiz = '100284038',
@@ -550,7 +550,7 @@ if (FALSE) {
 
 
 Lucerne_lightCream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Light Cream',
   lucerne = 960044744L, usd = 3.19/32,
   servingGram = 15, servingTbsp = 1,
@@ -562,7 +562,7 @@ Lucerne_lightCream <- \() new(
 
 
 Lucerne_heavyCream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Heavy Cream',
   fdc = 170859L,
   lucerne = 136150034L, usd = 3.19/32, # disappeared?
@@ -577,7 +577,7 @@ Lucerne_heavyCream <- \() new(
 
 
 TraderJoes_goat_kefir <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Trader Joe\'s', 
   name = 'Goat\U1f410 Milk Kefir', alias = '\u7f8a\u5976\u9152',
   usd = 5.69/32*8,
@@ -588,7 +588,7 @@ TraderJoes_goat_kefir <- \() new(
 
 
 Meyenberg_goat_kefir <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], meyenberg = 'goatyogurt-1-1',
+  Class = 'nutrition',  meyenberg = 'goatyogurt-1-1',
   name = 'Goat\U1f410 Kefir', alias = '\u7f8a\u5976\u9152',
   wegmans = 4937L, usd = 8.99/32*8, 
   # https://redwoodhill.com/redwood-hill-to-become-meyenberg
@@ -605,7 +605,7 @@ if (FALSE) {
 
 
 GreenValley_kefir <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = c(style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir')),
   name = 'Lowfat Kefir', alias = '\u4f4e\u8102\u725b\u5976\u9152',
   wegmans = 227007L, usd = 6.99/32*8,
@@ -618,7 +618,7 @@ GreenValley_kefir <- \() new(
 
 
 Siggis_filmjolk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   siggis = 'plain-drinkable-nonfat-yogurt',
   name = 'Swedish\U1f1f8\U1f1ea Filmj\u00f6lk',
   wegmans = 39729L, usd = 4.99/32*6,

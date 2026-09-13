@@ -36,7 +36,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   usd <- tmp['usd']
   
   ret <- new(
-    Class = 'nutrition', call = match.call()[[1L]], 
+    Class = 'nutrition',  
     name = character(),
     servingGram = sum(unlist(atr, use.names = FALSE)),
     usd = unname(usd), # `recipe` already dealt with currency conversion
@@ -141,7 +141,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   devrecipe <- getOption('devrecipe') 
   
   ret <- new(
-    Class = 'nutrition', call = match.call()[[1L]], 
+    Class = 'nutrition',  
     name = x@alias,
     #review = x@review,
     servingGram = total, # after sutracting everything lost!!

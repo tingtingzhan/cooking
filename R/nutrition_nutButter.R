@@ -1,13 +1,13 @@
 
 Kirkland_almondButter <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], costco = '100333875',
+  Class = 'nutrition',  costco = '100333875',
   name = 'Almond Butter',
   servingGram = 32, servingTbsp = 2,
   calorie = 210,
   fat = 17, sugar = 1, protein = 6)
 
 Kirkland_mixedNutButter <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], costcoBiz = '100354714',
+  Class = 'nutrition',  costcoBiz = '100354714',
   alias = '\u4ec0\u9526\u679c\u4ec1\u9171', name = 'Mixed Nut Butter',
   servingGram = 32, servingTbsp = 2,
   calorie = 200,

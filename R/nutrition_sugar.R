@@ -11,7 +11,7 @@
 
 
 Domino_10x <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch
   name = 'Sugar\U0001f36c, Confectioners', alias = '10x\u7cd6\u7c89',
   bjs = 'domino-confectioners-sugar-4-lbs/3000000000000139695', usd = 5.29/(4*454)*30, # 2023-11-11
@@ -24,7 +24,7 @@ Domino_10x <- \() new(
   carbohydrate = 30, addedSugar = 29)
 
 Domino_granulated <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   domino = 'granulated-sugar',# Ingredients: cane sugar, 
   name = 'Granulated Sugar', alias = '\u767d\u7802\u7cd6',
   walmart = '219588515', usd = 5.92/1590*8,
@@ -34,7 +34,7 @@ Domino_granulated <- \() new(
   carbohydrate = 8, addedSugar = 8)
 
 Domino_golden <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   domino = 'golden-sugar',
   name = 'Golden Sugar', alias = '\u7c97\u7802\u7cd6',
   wegmans = 26095611L, usd = 1.48/454*8,
@@ -43,7 +43,7 @@ Domino_golden <- \() new(
   carbohydrate = 8, sugar = 8)
 
 US_10x <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   costco = '100436353',
   costcoBiz = '11830701',
   brand = style_hyperlink(text = 'U.S.\U1f1fa\U1f1f8', url = 'https://unitedsugarpr.com/product-category/powdered-sugar/') |> c(),
@@ -57,14 +57,14 @@ US_10x <- \() new(
 
 
 Wegmans_darkBrown <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 23179103L,
+  Class = 'nutrition',  wegmans = 23179103L,
   name = 'Dark Brown Sugar', alias = '\u7ea2\u7cd6',
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)
 
 Domino_darkBrown <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], domino = 'dark-brown-sugar',
+  Class = 'nutrition',  domino = 'dark-brown-sugar',
   name = 'Dark Brown Sugar', alias = '\u7ea2\u7cd6',
   walmart = '10291798', usd = 3.12/(2*454)*8,
   wegmans = 26106291L,
@@ -73,7 +73,7 @@ Domino_darkBrown <- \() new(
   carbohydrate = 8, addedSugar = 8)
 
 Domino_lightBrown <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], domino = 'light-brown-sugar',
+  Class = 'nutrition',  domino = 'light-brown-sugar',
   name = 'Light Brown Sugar', alias = '\u7ea2\u7cd6',
   walmart = '35690427', usd = 5.54/1.81*8, # 4lb
   wegmans = 26106288L,

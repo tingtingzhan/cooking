@@ -5,7 +5,7 @@
 
 
 NescafeGold_blonde <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   nescafeGold = 'gold-espresso-blonde-instant-coffee-35-oz-jar',
   walmart = '5066099259',
   costco = '4000376082',
@@ -19,7 +19,7 @@ NescafeGold_blonde <- \() new(
 
 
 NescafeGold_intense <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   nescafeGold = 'gold-espresso-intense-instant-coffee-35-oz-jar',
   walmart = '5066099258',
   name = 'Intense, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
@@ -31,7 +31,7 @@ NescafeGold_intense <- \() new(
 
 
 NescafeGold_decaf <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   nescafeGold = 'gold-decaf-espresso-instant-coffee',
   walmart = '12273958388',
   name = 'Decaf, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',

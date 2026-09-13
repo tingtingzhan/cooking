@@ -2,7 +2,7 @@
 
 
 DaoXiangCun_corn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = '\u7a3b\u9999\u6751', name = 'Cornmeal\U1f33d \u7389\u7c73\u9762',
   servingGram = 50, servingCup = 1/2, # volume not accurate!!!
   fat = 1.5)
@@ -12,7 +12,7 @@ DaoXiangCun_corn <- \() new(
 #' @name cornmeal
 #' @export
 Albertsons_yellowCorn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
   acme = 117010060L, usd = 4.29/2270*30,
   servingGram = 30, 
@@ -24,7 +24,7 @@ Albertsons_yellowCorn <- \() new(
 #' @rdname cornmeal
 #' @export
 IndianHead_whiteCorn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'White Cornmeal\U1f33d',  
   wegmans = 19868L, usd = 1.79/907*30,
@@ -36,7 +36,7 @@ IndianHead_whiteCorn <- \() new(
 #' @rdname cornmeal
 #' @export
 IndianHead_yellowCorn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'Yellow Cornmeal\U1f33d',
   wegmans = 19981L, usd = 1.79/907*30,
@@ -49,7 +49,7 @@ IndianHead_yellowCorn <- \() new(
 #' @rdname cornmeal
 #' @export
 Quaker_yellowCorn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
+  Class = 'nutrition',  quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
   wegmans = 16686L, usd = 2.99/680*27,
   servingGram = 27, servingTbsp = 3, 
@@ -59,7 +59,7 @@ Quaker_yellowCorn <- \() new(
 #' @rdname cornmeal
 #' @export
 Quaker_whiteCorn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
+  Class = 'nutrition',  quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
   alias = '\u9ec4\u7389\u7c73\u9762', name = 'White Cornmeal\U1f33d',
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
@@ -67,7 +67,7 @@ Quaker_whiteCorn <- \() new(
 
 
 Wegmans_creamCorn <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   wegmans = 16741L, usd = .69/418*125,
   name = 'Cream Style Corn\U1f33d',
   servingGram = 125, servingCup = 1/2,

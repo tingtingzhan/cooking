@@ -44,7 +44,7 @@
 
 
 WilliamsSonoma_mocha <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/') |> c(),
   name = 'Mocha Hot Chocolate',
   servingGram = 41, servingTbsp = 5, 
@@ -55,7 +55,7 @@ WilliamsSonoma_mocha <- \() new(
 
 
 Starbucks_mocha <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], starbucks_hot = 408L,
+  Class = 'nutrition',  starbucks_hot = 408L,
   name = 'Caff\u00e8 Mocha',
   servingGram = 470, serving_floz = 16,
   #caffeine 175 mg*
@@ -66,7 +66,7 @@ Starbucks_mocha <- \() new(
 
 
 Starbucks_mochaFrappuccino <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], starbucks_iced = 426L,
+  Class = 'nutrition',  starbucks_iced = 426L,
   name = 'Mocha Frappuccino',
   servingGram = 470, serving_floz = 16,
   calorie = 370,
@@ -76,7 +76,7 @@ Starbucks_mochaFrappuccino <- \() new(
 
 
 Starbucks_mochaFrappuccino_bottle <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   name = 'Mocha Frappuccino',
   brand = 'Starbucks (Bottled)',
   walmart = '14532482', costcoBiz = '100228968', target = 'A-81793567',
@@ -88,7 +88,7 @@ Starbucks_mochaFrappuccino_bottle <- \() new(
 
 
 Maxwell_mochaSuisse <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   brand = style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432') |> c(),
   name = 'Suisse Mocha',
   target = 'A-12959531', usd = 3.59/117*11,
@@ -99,7 +99,7 @@ Maxwell_mochaSuisse <- \() new(
 
 
 Ghirardelli_mochaFrappe <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   amazon = 'B00D6Q9E3E',
   webstaurant = '40866211',
   ghirardelli = 'iced-blended-beverages-information',
@@ -114,7 +114,7 @@ Ghirardelli_mochaFrappe <- \() new(
 
 
 Starbucks_mochaMix <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], amazon = 'B004WYLFG8', # discontinued
+  Class = 'nutrition',  amazon = 'B004WYLFG8', # discontinued
   brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Mocha Mix',
   # bottle 396g
   servingGram = 10, servingTbsp = 1,
@@ -163,7 +163,7 @@ bargainmums_mocha <- \() new(
 
 
 Starbucks_cocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   sams = 'P03020738', usd = 8.48/567*28,
   costco = '100071096',
   brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa, Tin',
@@ -174,7 +174,7 @@ Starbucks_cocoa <- \() new(
 
 
 SwissMiss_milkCocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   swissmiss = 'classics/milk-chocolate',
   name = 'Milk Chocolate',
   servingGram = 39, 
@@ -185,7 +185,7 @@ SwissMiss_milkCocoa <- \() new(
 
 
 Godiva_milkCocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   godiva = '16024', name = 'Milk Chocolate Hot Cocoa',
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
@@ -195,7 +195,7 @@ Godiva_milkCocoa <- \() new(
 
 
 Godiva_cocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   godiva = '16022', name = 'Dark Chocolate Hot Cocoa',
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
@@ -208,7 +208,7 @@ Godiva_cocoa <- \() new(
 
 
 SwissMiss_simplyCocoaMilk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   swissmiss = 'simply-cocoa/simply-cocoa-milk-chocolate',
   name = 'Simply Cocoa Milk Chocolate',
   servingGram = 24, 
@@ -223,7 +223,7 @@ SwissMiss_simplyCocoaMilk <- \() new(
 
 
 Nestle_richChocolate <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], url = 'https://www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
+  Class = 'nutrition',  url = 'https://www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
   brand = 'Nestl\u00e9\U1f1e8\U1f1ed', name = 'Rich Chocolate',
   servingGram = 20, 
   calorie = 80,
@@ -236,7 +236,7 @@ Nestle_richChocolate <- \() new(
 
 
 Nestle_skimCocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], nestle = '12240821',
+  Class = 'nutrition',  nestle = '12240821',
   name = 'Skim Hot Cocoa',
   servingGram = 8, 
   calorie = 25,
@@ -249,7 +249,7 @@ Nestle_skimCocoa <- \() new(
 
 
 KingArthur_milkChocolate <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 212571L,
+  Class = 'nutrition',  kingarthur = 212571L,
   name = 'Milk Hot Chocolate',
   usd = 12.95/510*28,
   servingGram = 28, servingTbsp = 4,
@@ -260,7 +260,7 @@ KingArthur_milkChocolate <- \() new(
 
 
 Nestle_cocoSupreme <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], nestle = '11002829',
+  Class = 'nutrition',  nestle = '11002829',
   name = 'Coco Supreme',
   servingGram = 33, fat = 2, sodium = .23, carbohydrate = 27, sugar = 24, addedSugar = 20, protein = 1)
 
@@ -268,7 +268,7 @@ Nestle_cocoSupreme <- \() new(
 
 
 Starbucks_mochaSauce <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   walmart = '903031815', usd = 8.43/12, # out of stock
   brand = 'Starbucks', name = 'Mocha Sauce',
   servingGram = 30, serving_floz = 1, # servingTbsp = 2, # 12floz
@@ -317,7 +317,7 @@ AmandaRettke_cocoa <- \() new(
 
 
 StarbucksKcup_cocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], starbucks = 'classic-hot-cocoa',
+  Class = 'nutrition',  starbucks = 'classic-hot-cocoa',
   name = 'Hot Cocoa, K-cup',
   servingGram = 21, 
   calorie = 90,

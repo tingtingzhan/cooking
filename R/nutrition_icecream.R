@@ -1,7 +1,7 @@
 
 
 maeda_matcha_icecream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   maeda = 'green-tea-cup',
   alias = '\u62b9\u8336\U1f375\U1f368', name = 'Matcha Ice Cream',
   servingCup = 2/3, servingGram = 90,
@@ -9,7 +9,7 @@ maeda_matcha_icecream <- \() new(
 
 
 maeda_adzukiBean_icecream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   maeda = 'azuki-cup',
   alias = '\u7ea2\u8c46\U1f368', name = 'Azuki Ice Cream',
   servingCup = 2/3, servingGram = 94,
@@ -18,7 +18,7 @@ maeda_adzukiBean_icecream <- \() new(
 
 
 maeda_blackSesame_icecream <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   maeda = 'black-sesame-copy', 
   alias = '\u9ed1\u829d\u9ebb\U1f368', name = 'Black Sesame Ice Cream',
   servingCup = 2/3, servingGram = 90,
@@ -27,7 +27,7 @@ maeda_blackSesame_icecream <- \() new(
 
 
 HaagenDazs_matcha <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   alias = '\u62b9\u8336\U1f375', name = 'Matcha Ice Cream',
   haagendazs = 'green-tea',
   servingCup = 2/3, servingGram = 128,
@@ -35,14 +35,14 @@ HaagenDazs_matcha <- \() new(
 
 
 HaagenDazs_pistachio <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Pistachio Ice Cream', haagendazs = 'pistachio',
   servingCup = 2/3, servingGram = 131,
   fat = 23, cholesterol = .09, sodium = .1, sugar = 23, addedSugar = 19, protein = 7)
 
 
 HaagenDazs_coffee <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   alias = '\u5496\u5561', name = 'Coffee Ice Cream',
   haagendazs = 'coffee',
   servingCup = 2/3, servingGram = 128,
@@ -51,7 +51,7 @@ HaagenDazs_coffee <- \() new(
 
 
 Bassetts_coffee <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   bassetts = '0e1be7_e571839fafff4f22833ede48fa3c99f1',
   alias = '\u5496\u5561', name = 'Coffee',
   servingCup = 2/3, servingGram = 102,
@@ -60,7 +60,7 @@ Bassetts_coffee <- \() new(
 
 
 Bassetts_matcha <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   alias = '\u62b9\u8336\U1f375', name = 'Matcha Ice Cream',
   bassetts = '0e1be7_c899e8de8e894370b2d5e557af518ad6',
   servingCup = 2/3, servingGram = 102,
@@ -69,7 +69,7 @@ Bassetts_matcha <- \() new(
 
 
 Bassetts_pumpkin <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   alias = '\u5357\u74dc\U1f383', name = 'Pumpkin Ice Cream',
   bassetts = '0e1be7_028f7e40097b416cb7b5999b2145cbae',
   servingCup = 1/2, servingGram = 77,
@@ -77,7 +77,7 @@ Bassetts_pumpkin <- \() new(
   fat = 11, cholesterol = .045, sodium = .065, sugar = 18, protein = 3)
 
 WholeFoods_berryGelato <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wholefoods = 'b07yhcpnpv',
+  Class = 'nutrition',  wholefoods = 'b07yhcpnpv',
   name = 'Sweet Wild Berry Italian Gelato',
   servingGram = 100, servingCup = 2/3,
   calorie = 210,

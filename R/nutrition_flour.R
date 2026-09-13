@@ -4,7 +4,7 @@
 
 
 Wegmans_pastry <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   name = 'Pastry\U1f370 Flour',
   alias = '\u4f4e\u7b4b\u9762\u7c89',
   wegmans = 24706L, usd = 3.69/2270*30,
@@ -15,7 +15,7 @@ Wegmans_pastry <- \() new(
 
 
 Wegmans_bread <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Bread\U1f35e Flour', # Enriched Unbleached
   alias = '\u9ad8\u7b4b\u9762\u7c89',
   wegmans = 24587L, usd = 3.69/2270*30,
@@ -25,7 +25,7 @@ Wegmans_bread <- \() new(
   carbohydrate = 23, protein = 3)
 
 Wegmans_whiteWheat <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 35705L,
+  Class = 'nutrition',  wegmans = 35705L,
   alias = '\u767d\u5168\u9ea6\u9762\u7c89', name = 'White Whole Wheat Flour',
   usd = 3.49/2270*28,
   servingGram = 28, 
@@ -34,7 +34,7 @@ Wegmans_whiteWheat <- \() new(
   fat = .5, carbohydrate = 20, protein = 4)
 
 Wegmans_wheat <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 54401L,
+  Class = 'nutrition',  wegmans = 54401L,
   alias = '\u5168\u9ea6\u9762\u7c89', name = 'Whole Wheat Flour',
   usd = 3.49/2270*28,
   servingGram = 28, 
@@ -54,7 +54,7 @@ Wegmans_wheat <- \() new(
 # https://shop.kingarthurbaking.com/items/100-organic-whole-wheat-flour # 13.8% protein content
 
 KingArthur_whiteWheat <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 305555L,
+  Class = 'nutrition',  kingarthur = 305555L,
   name = 'White Whole Wheat Flour', alias = '12.2%\u767d\u5168\u9ea6\u9762\u7c89',
   # https://shop.kingarthurbaking.com/items/stone-ground-white-whole-wheat-flour # 12.2% protein content
   usd = 6.95/2270*30,
@@ -64,7 +64,7 @@ KingArthur_whiteWheat <- \() new(
   fat = 1, carbohydrate = 22, protein = 30*.122)
 
 KingArthur_whiteWheat_organic <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308102L,
+  Class = 'nutrition',  kingarthur = 308102L,
   name = 'White Whole Wheat Flour, Organic', alias = '12.2%\u767d\u5168\u9ea6\u9762\u7c89',
   usd = 10.95/2270*30,
   servingGram = 28, 
@@ -74,7 +74,7 @@ KingArthur_whiteWheat_organic <- \() new(
 
 
 KingArthur_bread_organic <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308104L, 
+  Class = 'nutrition',  kingarthur = 308104L, 
   name = 'Bread\U1f35e Flour, Organic', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 10.95/2270*30,
   servingGram = 30, 
@@ -83,7 +83,7 @@ KingArthur_bread_organic <- \() new(
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
 KingArthur_bread <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 304105L, 
+  Class = 'nutrition',  kingarthur = 304105L, 
   name = 'Bread\U1f35e Flour', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
   servingGram = 30, 
@@ -93,7 +93,7 @@ KingArthur_bread <- \() new(
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
 KingArthur_highGluten <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 100185L, 
+  Class = 'nutrition',  kingarthur = 100185L, 
   name = 'High-Gluten Flour', alias = '14.2%\u9ad8\u7b4b\u9762\u7c89',
   usd = 12.95/1360*30,
   servingGram = 30, servingCup = 1/4, 
@@ -101,7 +101,7 @@ KingArthur_highGluten <- \() new(
   carbohydrate = 21, protein = 30*.142) # 14.2% gluten-forming protein
 
 KingArthur_Lancelot <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], webstaurant = '104NFL5100S',
+  Class = 'nutrition',  webstaurant = '104NFL5100S',
   kingarthurpro = 13050L,
   name = 'Sir Lancelot', alias = '14%\u9ad8\u7b4b\u9762\u7c89',
   usd = 28.49/(50*454)*100,
@@ -110,7 +110,7 @@ KingArthur_Lancelot <- \() new(
   fat = .98, carbohydrate = 70.5, fiber = 2.7, sugar = .27, protein = 14, water = 14)
 
 KingArthur_Galahad <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], webstaurant = '104NFL5110S',
+  Class = 'nutrition',  webstaurant = '104NFL5110S',
   kingarthurpro = 12050L,
   name = 'Sir Galahad', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 25.14/(50*454)*100,
@@ -120,7 +120,7 @@ KingArthur_Galahad <- \() new(
 
 
 KingArthur_allPurpose <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 301050L, 
+  Class = 'nutrition',  kingarthur = 301050L, 
   name = 'All-Purpose Flour', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
   servingGram = 30, 
@@ -129,7 +129,7 @@ KingArthur_allPurpose <- \() new(
   carbohydrate = 23, protein = 30*.117) # 11.7% protein content
 
 KingArthur_allPurpose_organic <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 308006L, 
+  Class = 'nutrition',  kingarthur = 308006L, 
   alias = '\u4e2d\u7b4b\u9762\u7c89', name = 'All-Purpose Flour, Organic',
   usd = 10.95/2270*30,
   servingGram = 30, 
@@ -140,7 +140,7 @@ KingArthur_allPurpose_organic <- \() new(
 
 
 KingArthur_cake <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   kingarthur = 300004L, 
   name = 'Cake\U1f370 Flour', alias = '10%\u4f4e\u7b4b\u9762\u7c89',
   servingGram = 32, servingCup = 1/4, 
@@ -149,7 +149,7 @@ KingArthur_cake <- \() new(
 
 
 KingArthur_pastry <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 100184L, 
+  Class = 'nutrition',  kingarthur = 100184L, 
   name = 'Pastry\U1f370 Flour', alias = '8%\u4f4e\u7b4b\u9762\u7c89',
   usd = 12.95/1360*26,
   servingGram = 26, servingCup = 1/4, 
@@ -159,7 +159,7 @@ KingArthur_pastry <- \() new(
 
 
 KingArthur_selfRising <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 301330L, 
+  Class = 'nutrition',  kingarthur = 301330L, 
   name = 'Self-Rising Flour, Unbleached',
   usd = 6.95/2270*30,
   servingGram = 30, 
@@ -180,7 +180,7 @@ KingArthur_selfRising_homemade <- \() new(
 
 
 BobsRedMill_wheatGluten <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], bobsredmill = 'vital-wheat-gluten',
+  Class = 'nutrition',  bobsredmill = 'vital-wheat-gluten',
   name = 'Wheat Gluten Flour', alias = '\u9762\u7b4b\u7c89',
   wegmans = 219620L, usd = 7.79/567*30,
   servingGram = 30, 

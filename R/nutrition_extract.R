@@ -12,14 +12,14 @@ setClass(Class = 'vanilla', contains = 'nutrition', prototype = prototype(
 
 
 NielsenMassey_vanilla <- \() new(
-  Class = 'vanilla', call = match.call()[[1L]],
+  Class = 'vanilla', 
   nielsenmassey = 'pure-vanilla-extract',
   name = 'Vanilla')
 
 
 
 NielsenMassey_Madagascar <- \() new(
-  Class = 'vanilla', call = match.call()[[1L]], 
+  Class = 'vanilla',  
   nielsenmassey = 'madagascar-bourbon-pure-vanilla-extract',
   name = 'Madagascar\U0001f1f2\U0001f1ec Bourbon Vanilla',
   costco = '100854905')
@@ -27,19 +27,19 @@ NielsenMassey_Madagascar <- \() new(
 
 
 NielsenMassey_Indonesian <- \() new(
-  Class = 'vanilla', call = match.call()[[1L]], 
+  Class = 'vanilla',  
   nielsenmassey = 'indonesian-pure-vanilla-extract',
   name = 'Indonesian\U0001f1ee\U0001f1e9 Bourbon Vanilla')
 
 
 NielsenMassey_Tahitian <- \() new(
-  Class = 'vanilla', call = match.call()[[1L]], 
+  Class = 'vanilla',  
   nielsenmassey = 'tahitian-pure-vanilla-extract',
   name = 'Tahitian\U0001f1f5\U0001f1eb Bourbon Vanilla')
 
 
 NielsenMassey_Ugandan <- \() new(
-  Class = 'vanilla', call = match.call()[[1L]], 
+  Class = 'vanilla',  
   nielsenmassey = 'ugandan-pure-vanilla-extract',
   name = 'Ugandan\U0001f1fa\U0001f1ec Bourbon Vanilla')
 

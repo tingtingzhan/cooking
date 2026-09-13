@@ -1,7 +1,7 @@
 
 
 eggYolk <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Egg\U1f95a Yolk, Large', alias = '\u9e21\u86cb\u9ec4',
   wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
   servingGram = 17.3, 
@@ -11,7 +11,7 @@ eggYolk <- \() new(
 )
 
 eggWhite <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Egg\U1f95a White, Large', alias = '\u9e21\u86cb\u6e05',
   wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
   servingGram = 34.7, 
@@ -22,7 +22,7 @@ eggWhite <- \() new(
 
 
 pork_belly <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 167812L,
+  Class = 'nutrition',  fdc = 167812L,
   name = 'Pork\U1f416 Belly', alias = '\u732a\u4e94\u82b1(\u7626)',
   costcoBiz = '100174353', usd = 3.99/454*100, # Costco, Jan 2024
   servingGram = 100, 
@@ -30,20 +30,20 @@ pork_belly <- \() new(
   water = 36.7, fat = 53, protein = 9.34, sodium = .032)
 
 pork_fatbelly <- \() new( # my guess :)
-  Class = 'nutrition', call = match.call()[[1L]], #url = 'www.healthline.com/nutrition/pork-belly-nutrition#nutrients',
+  Class = 'nutrition',  #url = 'www.healthline.com/nutrition/pork-belly-nutrition#nutrients',
   name = 'Pork\U1f416 Fat Belly', alias = '\u732a\u4e94\u82b1(\u80a5)',
   costcoBiz = '100174353', usd = 3.99/454*100, # Costco, Jan 2024
   servingGram = 100, water = 36.7, fat = 60, protein = 3, sodium = .032)
 
 pork_fat <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], url = 'nutrientoptimiser.com/nutritional-value-pork-fresh-separable-fat-raw/',
+  Class = 'nutrition',  url = 'nutrientoptimiser.com/nutritional-value-pork-fresh-separable-fat-raw/',
   name = 'Pork\U1f416 Fat', alias = '\u732a\u80a5\u8089',
   costcoBiz = '100174353', servingGram = 100, 
   calorie = 628,
   water = 23, fat = 66, cholesterol = .072, sodium = .047, protein = 9)
 
 pork_tenderloin <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   swiftmeats = 'pork-tenderloin', 
   name = 'Pork\U1f416 Tenderloin', alias = '\u732a\u5c0f\u91cc\u810a',
   #wegmans = 760L, usd = 2.69 / 454 * 100,
@@ -54,7 +54,7 @@ pork_tenderloin <- \() new(
   fat = 4, cholesterol = .075, protein = 23, sodium = .060)
 
 pork_butt <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   swiftmeats = 'pork-butt',
   name = 'Pork\U1f416 Shoulder Butt', alias = '\u6885\u82b1\u8089',
   servingGram = 112,
@@ -64,7 +64,7 @@ pork_butt <- \() new(
   fdc = 167850L, water = 112*.55)
 
 pork_trotter <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   name = 'Pork\U1f416 Trotter',
   servingGram = 500,
   InstantPot = InstantPot(
@@ -78,7 +78,7 @@ pork_trotter <- \() new(
 
 
 beef_heel <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = #c(style_hyperlink(text = 
     'Swift\U1f1fa\U1f1f8', 
   name = 'Beef\U1f402 Round Heel Muscle', alias = '\u725b\u8171',
@@ -89,7 +89,7 @@ beef_heel <- \() new(
   fat = 4, cholesterol = .040, sodium = .065, protein = 22)
 
 beef_brisket_flat <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = c(
+  Class = 'nutrition',  fdc = c(
     173128L#, # choice
     #168666L # all grades
   ), 
@@ -100,7 +100,7 @@ beef_brisket_flat <- \() new(
   water = 59.1, protein = 17.9, fat = 22.2, sodium = .059, cholesterol = .092)
 
 beef_brisket_flat_lean <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 170613L,
+  Class = 'nutrition',  fdc = 170613L,
   alias = '\u725b\u80f8\u8169(\u7626)', name = 'Beef\U1f402 Brisket, Flat Cut, Lean',
   costcoBiz = '100076487', usd = 5/454*100, # Costco
   servingGram = 100, 
@@ -108,7 +108,7 @@ beef_brisket_flat_lean <- \() new(
   water = 58.9, protein = 32.9, fat = 8.01, sodium = .054, cholesterol = .092)
 
 beef_brisket_lean <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 168607L, # brisket, whole, separable lean only, all grades, raw
+  Class = 'nutrition',  fdc = 168607L, # brisket, whole, separable lean only, all grades, raw
   alias = '\u725b\u80f8\u8169(\u7626)', name = 'Beef\U1f402 Brisket, Separable Lean',
   costcoBiz = '100076487', usd = 5/454*100, # Costco
   servingGram = 100, 
@@ -118,14 +118,14 @@ beef_brisket_lean <- \() new(
 
 
 beef_chuck <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 170783L,
+  Class = 'nutrition',  fdc = 170783L,
   alias = '\u725b\u524d\u80a9\u80db', name = 'Beef\U1f402 Chuck Short Ribs',
   usd = 14/454*100, #brand = 'Kirkland\U1f1fa\U1f1f8', # costco
   servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081,
   review = c(spam = 'Beef chuck has too much fat and connective tissue for spam'))
 
 beef_rib <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 170783L, wegmans = 42139L,
+  Class = 'nutrition',  fdc = 170783L, wegmans = 42139L,
   name = 'Beef\U1f402 Boneless Short Ribs',
   usd = 15.49/454*100,
   calorie = 175,
@@ -137,7 +137,7 @@ beef_rib <- \() new(
 
 
 beef_rib_Angus <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 170783L, wegmans = 2874L,
+  Class = 'nutrition',  fdc = 170783L, wegmans = 2874L,
   name = 'Angus Beef\U1f402 Boneless Short Ribs',
   usd = 15.99/454*100,
   calorie = 175,
@@ -145,31 +145,31 @@ beef_rib_Angus <- \() new(
 
 
 beef_eyeRound <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 171762L,
+  Class = 'nutrition',  fdc = 171762L,
   alias = '\u725b\u540e\u817f\u773c\u8089', name = 'Beef\U1f402 Eye Round',
   servingGram = 100, water = 73.4, fat = 3.04, protein = 23.4, sodium = .053)
 
 beef_tendon <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], url = 'www.fatsecret.com/calories-nutrition/generic/beef-tendon',
+  Class = 'nutrition',  url = 'www.fatsecret.com/calories-nutrition/generic/beef-tendon',
   alias = '\u725b\u7b4b Beef\U1f402', name = 'Tendon',
   servingGram = 100, fat = .62, cholesterol = .079, sodium = .053, protein = 34.6)
 
 
 beef_stew <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 171204L,
+  Class = 'nutrition',  fdc = 171204L,
   name = '(\u7096)\u725b\u8089 Beef\U1f402 for Stew', 
   usd = 4.99/454*100, # Costco, Feb 2024
   servingGram = 100,
   water = 61, protein = 32.3, fat = 6.34, sodium = .068, cholesterol = .102)
 
 lamb_leg <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 174311L,
+  Class = 'nutrition',  fdc = 174311L,
   alias = '\u7f8a\u817f(\u53bb\u8102\u80aa)', name = 'Lamb\U1f411 Leg',
   servingGram = 100, water = 64.3, fat = 17.1, protein = 17.9, sodium = .056,
   review = c(spam = 'Must fully remove fat cap from lamb leg, otherwise lamb fat will separate'))
 
 lamb_loinchop <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], fdc = 1098346L,
+  Class = 'nutrition',  fdc = 1098346L,
   alias = '\u7f8a\u810a\u9aa8(\u7626\u8089)', name = 'Lamb\U1f411 Loin Chop',
   usd = 5.99/(.85*454)*100, # Costco
   servingGram = 100, water = 60.48, fat = 9.65, protein = 29.74, sodium = .406)

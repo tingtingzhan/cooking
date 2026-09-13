@@ -5,7 +5,7 @@
 # Stassen; headquarter in Sri Lanka.
 
 Stassen_Ceylon <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   stassentea = '100-etb-stassen-pure-ceylon-black-tea',
   name = 'Ceylon Black Tea',
   servingGram = 2, # **must** be per-bag!  # servingBag = 1, 
@@ -21,7 +21,7 @@ Stassen_Ceylon <- \() new(
 #' @name harney
 #' @export
 Harney_UvaHighlands <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'uva-highlands', 
+  Class = 'nutrition',  harney = 'uva-highlands', 
   name = 'Uva Highlands',
   servingGram = 454, usd = 20, # 2023-11-09
   superior = 'Harney_Assam')
@@ -29,37 +29,37 @@ Harney_UvaHighlands <- \() new(
 #' @rdname harney
 #' @export
 Harney_Assam <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'organic-assam',
+  Class = 'nutrition',  harney = 'organic-assam',
   name = 'Organic Assam',
   servingGram = 454, usd = 27, # 2023-11-09
   machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Good base black tea.')
 
 Harney_PuErh <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'pu-erh',
+  Class = 'nutrition',  harney = 'pu-erh',
   name = 'Pu-Erh',
   servingGram = 454, usd = 26, # 2023-11-09
   machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Very distinct and delightful aroma when raw.')
 
 Harney_decafCeylon <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'decaf-ceylon',
+  Class = 'nutrition',  harney = 'decaf-ceylon',
   name = 'Decaf Ceylon',
   servingGram = 454, usd = 32) # 2023-11-09
 
 Harney_decafEarlGrey <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'decaf-earl-grey',
+  Class = 'nutrition',  harney = 'decaf-earl-grey',
   name = 'Decaf Earl Grey',
   servingGram = 454, usd = 29) # 2023-11-09
 
 Harney_EarlGreySupreme <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'earl-grey-supreme', 
+  Class = 'nutrition',  harney = 'earl-grey-supreme', 
   name = 'Earl Grey Supreme',
   servingGram = 454, usd = 31, # 2023-11-09
   review = 'bergamont too weak, tea too strong')
 
 Harney_LapSangSouChong <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], harney = 'lapsang-souchong',
+  Class = 'nutrition',  harney = 'lapsang-souchong',
   alias = '\u7acb\u5c71\u5c0f\u79cd', name = 'Lap Sang Sou Chong',
   servingGram = 454, usd = 28, # 2023-11-09
   machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
@@ -69,18 +69,18 @@ Harney_LapSangSouChong <- \() new(
 # Twinings
 
 Twinings_EarlGrey <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey', 
+  Class = 'nutrition',  twinings = 'earl-grey', 
   name = 'Earl Grey', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
   wegmans = 24150L, usd = 12.99/100, # 100pcs 2g-bag, Oct 2024
   servingGram = 2)
 
 Twinings_EarlGrey_loose <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey-loose-tea',
+  Class = 'nutrition',  twinings = 'earl-grey-loose-tea',
   name = 'Earl Grey, Loose', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
   servingGram = 200, usd = 11.99) # 2023-11-09
 
 Twinings_strongEarlGrey <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey-strong',
+  Class = 'nutrition',  twinings = 'earl-grey-strong',
   name = 'Earl Grey, Extra Strong', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
   wegmans = 13354L,
   webstaurant = '110TWNG13541',
@@ -88,13 +88,13 @@ Twinings_strongEarlGrey <- \() new(
   review = 'I love!!')
 
 Twinings_decafEarlGrey <- \() new( # no value pack, no loose leaf
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'earl-grey-decaf',
+  Class = 'nutrition',  twinings = 'earl-grey-decaf',
   name = 'Earl Grey Decaf',
   wegmans = 47200L,
   servingGram = 35/20, usd = 4.99/20) # 20pcs of 1.75g-bag, 2023-11-09
 
 Twinings_LadyGrey <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'lady-grey',
+  Class = 'nutrition',  twinings = 'lady-grey',
   name = 'Lady Grey',
   wegmans = 31226L,
   walmart = '15556242',
@@ -102,7 +102,7 @@ Twinings_LadyGrey <- \() new(
   review = 'Great for soytea!')
   
 Twinings_ultraChai <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'ultra-spice-chai',
+  Class = 'nutrition',  twinings = 'ultra-spice-chai',
   name = 'Ultra Spice Chai',
   wegmans = 49238L,
   webstaurant = '110TWNG07516',
@@ -111,20 +111,20 @@ Twinings_ultraChai <- \() new(
   review = 'I love!! Great potential for many recipes!!')
 
 Twinings_Darjeeling <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'darjeeling',
+  Class = 'nutrition',  twinings = 'darjeeling',
   name = 'Darjeeling', alias = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982',
   wegmans = 30993L,
   servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
   review = 'lacks a signature flavor')
   
 Twinings_Ceylon <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'ceylon-pure-black',
+  Class = 'nutrition',  twinings = 'ceylon-pure-black',
   name = 'Ceylon Orange Pekoe',
   webstaurant = '110TWNG05324',
   servingGram = 2, usd = 4.99/20)
 
 Twinings_EnglishBreakfast <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], twinings = 'english-breakfast',
+  Class = 'nutrition',  twinings = 'english-breakfast',
   name = 'English Breakfast', alias = '\u62fc\u914d\u7ea2\u8336',
   #webstaurant = '110TWNG05324',
   servingGram = 2, usd = 4.99/20)
@@ -132,14 +132,14 @@ Twinings_EnglishBreakfast <- \() new(
 # Paromi
 
 Paromi_EarlGrey <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], paromi = 'earl-grey-tea-bags', 
+  Class = 'nutrition',  paromi = 'earl-grey-tea-bags', 
   name = 'Earl Grey',
   servingGram = 3, usd = 31/15, # website
   # no longer at Wegmans
   review = 'Too spicy, do not buy')
 
 Paromi_cinnamonChai <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], paromi = 'cinnamon-chai-tea-bags', 
+  Class = 'nutrition',  paromi = 'cinnamon-chai-tea-bags', 
   name = 'Cinnamon Chai Rooibos',
   servingGram = 3, usd = 12/15) # website
   # no longer at Wegmans
@@ -147,7 +147,7 @@ Paromi_cinnamonChai <- \() new(
 
 
 Yogi_licorice <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   yogi = 'egyptian-licorice-076950415164',
   name = 'Egyptian Licorice',
   wegmans = 31614L,
@@ -159,7 +159,7 @@ Yogi_licorice <- \() new(
 # Wegman's Just Tea
 
 JustTea_EarlGrey <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], justtea = '229018',
+  Class = 'nutrition',  justtea = '229018',
   name = 'Earl Grey',
   servingGram = 2, usd = 9.49/100,
   superior = 'Twinings_EarlGrey',

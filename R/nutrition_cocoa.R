@@ -17,7 +17,8 @@
 
 
 Navitas_cacao <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], navitas = 'cacao-powder',
+  Class = 'nutrition',
+  navitas = 'cacao-powder',
   # bought at Costco once, but didn't see any more
   name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
   usd = 7/680*6, # price not sure
@@ -31,7 +32,7 @@ Navitas_cacao <- \() new(
 
 
 KingArthur_blackCocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211821L, 
+  Class = 'nutrition',  kingarthur = 211821L, 
   name = 'Black Cocoa', alias = '\u9ed1\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
@@ -46,7 +47,7 @@ KingArthur_blackCocoa <- \() new(
 
 
 KingArthur_Bensdorp <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211698L,
+  Class = 'nutrition',  kingarthur = 211698L,
   name = 'Bensdorp Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*6, # 2023-11-12
   servingGram = 6, 
@@ -58,7 +59,7 @@ KingArthur_Bensdorp <- \() new(
 
 
 KingArthur_Burgundy <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], kingarthur = 211822L,
+  Class = 'nutrition',  kingarthur = 211822L,
   name = 'Burgundy Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
@@ -72,7 +73,7 @@ KingArthur_Burgundy <- \() new(
 
 
 Ghirardelli_cocoa <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   ghirardelli = 'premium-baking-cocoa-100-unsweetened-cocoa-powder-6-bags-61703cs',
   name = 'Ground Cocoa',
   usd = 39.95/(6*227)*6, 
@@ -84,7 +85,7 @@ Ghirardelli_cocoa <- \() new(
 
 
 Ghirardelli_bittersweet <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   ghirardelli = '60-cacao-bittersweet-chocolate-premium-baking-chips-12-bags-61274cs',
   name = 'Bittersweet, Chips, 60% Cacao', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
   webstaurant = '40842319', usd = 248.49/(35*454)*100,
@@ -96,7 +97,7 @@ Ghirardelli_bittersweet <- \() new(
 
 
 Ghirardelli_semisweet_bar <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   ghirardelli = 'semi-sweet-chocolate-baking-bar-case-of-12',
   name = 'Semi-Sweet\U1f36b', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
   usd = 42.95/12/8,
@@ -107,7 +108,7 @@ Ghirardelli_semisweet_bar <- \() new(
 
 
 Ghirardelli_semisweet_chip <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   ghirardelli = 'semisweet-chocolate-premium-baking-chips-chocolate-chips-for-baking-12-bags-64015cs',
   name = 'Semi-Sweet, Chips', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
   webstaurant = '40842246', usd = 196.49/(35*454)*100,
@@ -119,7 +120,7 @@ Ghirardelli_semisweet_chip <- \() new(
 
 
 Ghirardelli_sunrise <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   name = 'Sunrise, 15-17%\U1f9c8', alias = '\u53ef\u53ef\u7c89',
   ghirardelli = 'cocoa-powders-information',
   servingGram = 100, servingTbsp = 100/6, # packaging
@@ -130,7 +131,7 @@ Ghirardelli_sunrise <- \() new(
 
 
 Ghirardelli_majestic <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   ghirardelli = 'cocoa-powders-information', alias = '\u53ef\u53ef\u7c89',
   name = 'Majestic, 20-22%\U1f9c8',
   webstaurant = c('40869096', '40862100'), usd = 212.99/(25*454)*100,
@@ -141,7 +142,7 @@ Ghirardelli_majestic <- \() new(
 
 
 Ghirardelli_superior <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   ghirardelli = 'cocoa-powders-information',
   name = 'Superior, 10-12%\U1f9c8', alias = '\u53ef\u53ef\u7c89',
   servingGram = 100, servingTbsp = 100/6, # packaging

@@ -335,6 +335,12 @@ setClass(Class = 'nutrition', slots = c(
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
+
+  # `-3` frame is determined by S4 ?methods::initialize (dont ask me why..)
+  x@call <- match.call(
+    definition = sys.function(-3), 
+    call = sys.call(-3)
+  )[[1L]]
   
   if (is.symbol(x@call)) {
     # do nothing

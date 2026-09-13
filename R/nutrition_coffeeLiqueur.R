@@ -29,7 +29,7 @@ setClass(Class = 'coffeeLiqueur', contains = 'nutrition', prototype = prototype(
 #' @rdname coffeeLiqueur-class
 #' @export
 Kahlua_coffee <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]], 
+  Class = 'coffeeLiqueur',  
   kahlua = 'original-coffee-liqueur',
   name = 'Rum & Coffee Liqueur',
   totalwine = '1804750', usd = 23.99/750*74, # 750ml
@@ -43,7 +43,7 @@ Kahlua_coffee <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Kahlua_especial <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]], 
+  Class = 'coffeeLiqueur',  
   kahlua = 'kahlua-especial',
   name = 'Especial Rum & Coffee Liqueur',
   totalwine = '94488750', usd = 23.99/750*44, # 750ml
@@ -57,7 +57,7 @@ Kahlua_especial <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 CafeGranita_coffee <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]], 
+  Class = 'coffeeLiqueur',  
   #url = 
   brand = 'Cafe Granita\U1f1fa\U1f1f8', 
   # bottled by the Cafe Granita Brand Company, Princeton, MN
@@ -70,7 +70,7 @@ CafeGranita_coffee <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 FratelliVincenzi_espresso <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/') |> c(),
   name = 'Espresso Liqueur',
   totalwine = '348072750', usd = 21.99/750*44,
@@ -81,7 +81,7 @@ FratelliVincenzi_espresso <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Kikisi_coffee <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = 'Kikisi\U1f1f2\U1f1fd',
   name = 'Coffee Liqueur',
   totalwine = '243193750', usd = 18.99/750*44,
@@ -92,7 +92,7 @@ Kikisi_coffee <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 CaffeBorghetti <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti')),
   name = 'di Vero Caff\u00e8 Espresso Liqueur',
   totalwine = '130512750', usd = 33.99/750*44,
@@ -103,7 +103,7 @@ CaffeBorghetti <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Grind_espresso <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html')),
   name = 'Espresso Shot',
   totalwine = '159626750', usd = 18.49/750*44,
@@ -116,7 +116,7 @@ Grind_espresso <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Sabroso_coffee <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = 'Sabroso\U1f1f2\U1f1fd',
   name = 'Licor de Caf\u00e9',
   totalwine = '704750', usd = 9.99/750*44,
@@ -128,7 +128,7 @@ Sabroso_coffee <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Patron_XO <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html')),
   name = 'XO Cafe',
   totalwine = '96430750', usd = 43.99/750*44,
@@ -139,7 +139,7 @@ Patron_XO <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Padrino_coffee <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   # https://www.tequilapadrino.com/products # cannot find
   brand = 'El Padrino\U1f1f2\U1f1fd',
   name = 'Caf\u00e9',
@@ -150,7 +150,7 @@ Padrino_coffee <- \() new(
 #' @rdname coffeeLiqueur-class
 #' @export
 Amigos3_mocha <- \() new(
-  Class = 'coffeeLiqueur', call = match.call()[[1L]],
+  Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/')),
   name = 'Cafe Mocha',
   totalwine = '244117750', usd = 28.99/750*44,

@@ -1,13 +1,13 @@
 
 Raos_marinara <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], raos = 'marinara-sauce',
+  Class = 'nutrition',  raos = 'marinara-sauce',
   name = 'Marinara Sauce\U1f96b',
   servingGram = 125, servingCup = 1/2, 
   calorie = 100,
   fat = 7, sodium = .42, sugar = 4, protein = 2)
 
 Raos_tomatoBasil <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], raos = 'tomato-basil-sauce',
+  Class = 'nutrition',  raos = 'tomato-basil-sauce',
   name = 'Tomato Basil Sauce\U1f96b',
   servingGram = 125, servingCup = 1/2, 
   calorie = 80,
@@ -15,14 +15,14 @@ Raos_tomatoBasil <- \() new(
 
 
 Raos_arrabbiata <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], raos = 'arrabbiata-sauce',
+  Class = 'nutrition',  raos = 'arrabbiata-sauce',
   name = 'Spicy Arrabbiata Sauce\U1f96b',
   servingGram = 125, servingCup = 1/2, 
   calorie = 100,
   fat = 7, sodium = .42, sugar = 4, protein = 2)
 
 Raos_sensitive <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], raos = 'sensitive-marinara-sauce',
+  Class = 'nutrition',  raos = 'sensitive-marinara-sauce',
   name = 'Sensitive Marinara Sauce\U1f96b',
   # No onions or garlic
   servingGram = 125, servingCup = 1/2, 
@@ -31,7 +31,7 @@ Raos_sensitive <- \() new(
 
 
 Raos_pizza <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], raos = 'pizza-sauce',
+  Class = 'nutrition',  raos = 'pizza-sauce',
   name = 'Pizza Sauce\U1f96b',
   servingGram = 60, servingCup = 1/4, 
   calorie = 40,
@@ -39,7 +39,7 @@ Raos_pizza <- \() new(
 
 
 Raos_margherita <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], raos = 'margherita-pizza-sauce',
+  Class = 'nutrition',  raos = 'margherita-pizza-sauce',
   name = 'Margherita Pizza Sauce\U1f96b',
   servingGram = 60, servingCup = 1/4, 
   calorie = 40,

@@ -1,6 +1,6 @@
 
 Quaker_oat <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   quakeroats = 'hot-cereals/old-fashioned-oats',
   name = 'Old Fashioned Oats', alias = '\u719f\u538b\u71d5\u9ea6',
   costco = '100381521', usd = 11.99/(10*453.6)*40,
@@ -12,7 +12,7 @@ Quaker_oat <- \() new(
 
 
 HaiTai_blackRice <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   haitaiusa = 'black-rice-\ud751\ubbf8-2lbs', 
   alias = '\u9ed1\u7c73', name = 'Black Rice',
   servingGram = 45, servingCup = 1/4, 
@@ -21,7 +21,7 @@ HaiTai_blackRice <- \() new(
 
 
 Nishiki_brownRice <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], 
+  Class = 'nutrition',  
   nishiki = '69969', alias = '\u7384\u7c73', name = 'Premium Brown Rice',
   wegmans = 10902L, amazon = 'B006SFAS6C',
   servingGram = 45, servingCup = 1/4, # packaging, actual 47.5g
@@ -31,7 +31,7 @@ Nishiki_brownRice <- \() new(
 
 
 Dynasty_brownRice <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Dynasty\U1f1fa\U1f1f8', 
   alias = '\u6cf0\u570b\u9999\u7cd9\u7c73', name = 'Brown Rice, Jasmine',
   jfc = '15682',
@@ -42,7 +42,7 @@ Dynasty_brownRice <- \() new(
   carbohydrate = 37, protein = 2)
 
 Botan_rice <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = 'Botan\u5bcc\u8d35\u82b1',
   alias = '\u52a0\u5dde\u4e2d\u7c92\u7c73', name = 'Calrose Rice',
   jfc = '01714',

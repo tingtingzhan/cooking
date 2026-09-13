@@ -18,7 +18,7 @@ Wegmans_cornbread_recipe <- \() new(
 
 
 Wegmans_cornbread <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]], wegmans = 268359L,
+  Class = 'nutrition',  wegmans = 268359L,
   name = 'Cornbread', usd = 9.00/9,
   servingGram = 57, calorie = 240,
   fat = 10, cholesterol = .045, sodium = .2,

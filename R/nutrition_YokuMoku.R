@@ -1,6 +1,6 @@
 
 YokuMoku_cigare <- \() new(
-  Class = 'nutrition', call = match.call()[[1L]],
+  Class = 'nutrition', 
   brand = style_hyperlink(text = 'Yoku Moku\U1f1ef\U1f1f5', url = 'https://yokumoku.com/product/') |> c(),
   name = 'Cigare',
   servingGram = 31,
