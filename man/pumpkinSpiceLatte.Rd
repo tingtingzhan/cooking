@@ -13,13 +13,13 @@ Pumpkin Spice Latte Mix
 }
 \examples{
 pumpkinSpiceLatte()
-\dontrun{
+
 diagnose(
  hotdrink(pumpkinSpiceLatte()),
- Starbucks_pumpkinSpiceLatte,
- Starbucks_pumpkinSpiceFrappuccino
+ cooking:::Starbucks_pumpkinSpiceLatte(),
+ cooking:::Starbucks_pumpkinSpiceFrappuccino()
 )
-}
+
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Pumpkin_Spice_Latte}

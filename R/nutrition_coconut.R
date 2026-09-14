@@ -80,25 +80,24 @@ WegmansOrganic_coconutFlour <- \() new(
 #' @title Coconut Milk
 #' 
 #' @examples
-#' \dontrun{
 #' diagnose(
-#'  Kara_coconutcream(),
-#'  ThaiKitchen_coconutcream(),
-#'  ThaiKitchen_coconutmilk(),
-#'  ThaiKitchen_coconutmilkLite(),
-#'  Freenow_coconutBarista(),
-#'  Freenow_coconutBarista_0sugar(),
-#'  Luckin_coconutmilk(),
-#'  CalifiaFarms_coconutmilk(),
-#'  PacificFoods_coconutBarista(),
-#'  CalifiaFarms_coconutBarista(),
-#'  Dream_coconutBarista(),
-#'  CoconutPalm_coconutmilk(),
-#'  Silk_coconutmilk(),
-#'  SoDelicious_coconutmilk(),
-#'  CalifiaFarms_coconutmilkwater()
+#'  cooking:::Kara_coconutcream(),
+#'  cooking:::ThaiKitchen_coconutcream(),
+#'  cooking:::ThaiKitchen_coconutmilk(),
+#'  cooking:::ThaiKitchen_coconutmilkLite(),
+#'  cooking:::Freenow_coconutBarista(),
+#'  cooking:::Freenow_coconutBarista_0sugar(),
+#'  cooking:::Luckin_coconutmilk(),
+#'  cooking:::CalifiaFarms_coconutmilk(),
+#'  cooking:::PacificFoods_coconutBarista(),
+#'  cooking:::CalifiaFarms_coconutBarista(),
+#'  cooking:::Dream_coconutBarista(),
+#'  cooking:::CoconutPalm_coconutmilk(),
+#'  cooking:::Silk_coconutmilk(),
+#'  cooking:::SoDelicious_coconutmilk(),
+#'  cooking:::CalifiaFarms_coconutmilkwater()
 #' )
-#' }
+#' 
 #' @name coconutmilk
 NULL
 

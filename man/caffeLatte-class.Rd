@@ -13,11 +13,11 @@ caffeLatte()
 }
 \examples{
 caffeLatte()
-\dontrun{
+
 diagnose(
  hotdrink(caffeLatte),
- Starbucks_caffeLatte(),
- Starbucks_coffeeFrappuccino_bottle()
+ cooking:::Starbucks_caffeLatte(),
+ cooking:::Starbucks_coffeeFrappuccino_bottle()
 ) # compare hot/frappe drink
-}
+
 }

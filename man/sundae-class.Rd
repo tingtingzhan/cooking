@@ -42,21 +42,21 @@ Do not use too much water!! I get frost bite!!
 #Bourbon_icecream() # future
 
 matcha_sundae() * 2
-\dontrun{
+
 diagnose(
- cooking23s_icecream() |>
+ cooking:::cooking23s_icecream() |>
   as('nutrition') |>
   subtract(sugar = 32),
- SweetDumpling_matcha_icecream() |>
+ cooking:::SweetDumpling_matcha_icecream() |>
   as('nutrition') |>
   subtract(sugar = 63),
- subtract(xiaogaojie_icecream, sugar = 57),
- subtract(cuisinart_icecream, sugar = 95),
- subtract(emma_froyo, sugar = 84),
- subtract(HaagenDazs_matcha, sugar = 15),
- subtract(Bassetts_matcha, sugar = 11.7),
- subtract(maeda_matcha_icecream, sugar = 9.55),
- subtract(Yumna_icecream, sugar = 58),
+ subtract(cooking:::xiaogaojie_icecream, sugar = 57),
+ subtract(cooking:::cuisinart_icecream, sugar = 95),
+ subtract(cooking:::emma_froyo, sugar = 84),
+ subtract(cooking:::HaagenDazs_matcha, sugar = 15),
+ subtract(cooking:::Bassetts_matcha, sugar = 11.7),
+ subtract(cooking:::maeda_matcha_icecream, sugar = 9.55),
+ subtract(cooking:::Yumna_icecream, sugar = 58),
  matcha_sundae(),
  
  new(Class = 'recipe', alias_class = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
@@ -66,15 +66,15 @@ diagnose(
 )
 
 diagnose(
- subtract(Bassetts_coffee, sugar = 12.7),
- subtract(HaagenDazs_coffee, sugar = 16),
+ subtract(cooking:::Bassetts_coffee, sugar = 12.7),
+ subtract(cooking:::HaagenDazs_coffee, sugar = 16),
  coffee_sundae()
 )
 
 diagnose(
- subtract(Bassetts_pumpkin, sugar = 11),
+ subtract(cooking:::Bassetts_pumpkin, sugar = 11),
  pumpkin_sundae()
 )
-}
+
 
 }

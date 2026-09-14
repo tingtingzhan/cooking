@@ -1,33 +1,31 @@
 
 
-#' @title Coffee Liqueur
+#' @rdname nutrition-class
 #' 
 #' @examples
-#' \dontrun{
 #' diagnose(
-#'   Baileys_tiramisu(),
-#'   Baileys_espresso(),
-#'   Kahlua_coffee(),
-#'   Kahlua_especial(),
-#'   CafeGranita_coffee(),
-#'   FratelliVincenzi_espresso(),
-#'   Kikisi_coffee(),
-#'   CaffeBorghetti(),
-#'   Grind_espresso(),
-#'   Sabroso_coffee(),
-#'   Patron_XO(),
-#'   Padrino_coffee(),
-#'   Amigos3_mocha()
+#'   cooking:::Baileys_tiramisu(),
+#'   cooking:::Baileys_espresso(),
+#'   cooking:::Kahlua_coffee(),
+#'   cooking:::Kahlua_especial(),
+#'   cooking:::CafeGranita_coffee(),
+#'   cooking:::FratelliVincenzi_espresso(),
+#'   cooking:::Kikisi_coffee(),
+#'   cooking:::CaffeBorghetti(),
+#'   cooking:::Grind_espresso(),
+#'   cooking:::Sabroso_coffee(),
+#'   cooking:::Patron_XO(),
+#'   cooking:::Padrino_coffee(),
+#'   cooking:::Amigos3_mocha()
 #' )
-#' }
-#' @name coffeeLiqueur-class
-#' @export
+
+
+
 setClass(Class = 'coffeeLiqueur', contains = 'nutrition', prototype = prototype(
   alias = '\u5496\u5561\u9152'
 ))
 
-#' @rdname coffeeLiqueur-class
-#' @export
+
 Kahlua_coffee <- \() new(
   Class = 'coffeeLiqueur',  
   kahlua = 'original-coffee-liqueur',
@@ -40,8 +38,6 @@ Kahlua_coffee <- \() new(
   carbohydrate = 29.7, sugar = 29.7)
 
 
-#' @rdname coffeeLiqueur-class
-#' @export
 Kahlua_especial <- \() new(
   Class = 'coffeeLiqueur',  
   kahlua = 'kahlua-especial',
@@ -54,8 +50,7 @@ Kahlua_especial <- \() new(
   carbohydrate = 14.4, sugar = 14.4)
 
 
-#' @rdname coffeeLiqueur-class
-#' @export
+
 CafeGranita_coffee <- \() new(
   Class = 'coffeeLiqueur',  
   #url = 
@@ -67,8 +62,7 @@ CafeGranita_coffee <- \() new(
   AbV = .21
 )
 
-#' @rdname coffeeLiqueur-class
-#' @export
+
 FratelliVincenzi_espresso <- \() new(
   Class = 'coffeeLiqueur', 
   brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/') |> c(),
@@ -78,8 +72,7 @@ FratelliVincenzi_espresso <- \() new(
   AbV = .3
 )
 
-#' @rdname coffeeLiqueur-class
-#' @export
+
 Kikisi_coffee <- \() new(
   Class = 'coffeeLiqueur', 
   brand = 'Kikisi\U1f1f2\U1f1fd',
@@ -89,8 +82,7 @@ Kikisi_coffee <- \() new(
   AbV = .2
 )
 
-#' @rdname coffeeLiqueur-class
-#' @export
+
 CaffeBorghetti <- \() new(
   Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti')),
@@ -100,8 +92,6 @@ CaffeBorghetti <- \() new(
   AbV = .25
 )
 
-#' @rdname coffeeLiqueur-class
-#' @export
 Grind_espresso <- \() new(
   Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html')),
@@ -113,8 +103,6 @@ Grind_espresso <- \() new(
 
 
 
-#' @rdname coffeeLiqueur-class
-#' @export
 Sabroso_coffee <- \() new(
   Class = 'coffeeLiqueur', 
   brand = 'Sabroso\U1f1f2\U1f1fd',
@@ -125,8 +113,6 @@ Sabroso_coffee <- \() new(
 )
 
 
-#' @rdname coffeeLiqueur-class
-#' @export
 Patron_XO <- \() new(
   Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html')),
@@ -136,8 +122,6 @@ Patron_XO <- \() new(
   AbV = .35)
 
 
-#' @rdname coffeeLiqueur-class
-#' @export
 Padrino_coffee <- \() new(
   Class = 'coffeeLiqueur', 
   # https://www.tequilapadrino.com/products # cannot find
@@ -147,8 +131,7 @@ Padrino_coffee <- \() new(
   servingGram = 44, servingTsp = 9,
   AbV = .35)
 
-#' @rdname coffeeLiqueur-class
-#' @export
+
 Amigos3_mocha <- \() new(
   Class = 'coffeeLiqueur', 
   brand = c(style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/')),
