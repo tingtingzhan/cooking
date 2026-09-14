@@ -109,3 +109,38 @@ setMethod(f = '%in%', signature = c(x = 'spice', table = 'raw.'), definition = \
   
 })
 
+
+
+#' @title `S4` subset
+#' 
+#' @param x,i see **Usage**
+#' 
+#' @name S4subset
+#' @aliases [,recipe,nutrition-method
+#' @export
+setMethod(f = '[', signature = c(x = 'recipe', i = 'nutrition'), definition = \(x, i) {
+  
+  .Defunct(msg = 'great, but not used currently')
+  inm <- i@call |>
+    as.character()
+  if (inm %in% names(x@spice)) {
+    return(x@spice[inm])
+  } else stop('next?')
+  
+})
+
+
+#' @rdname S4subset
+#' @aliases [,recipe,character-method
+#' @export
+setMethod(f = '[', signature = c(x = 'recipe', i = 'character'), definition = \(x, i) {
+  
+  id <- grepl(pattern = i, x = names(x@spice))
+  if (any(id)) return(sum(x@spice[id]))
+  
+  # look in more places
+  
+  return(numeric())
+
+})
+

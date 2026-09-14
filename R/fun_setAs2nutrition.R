@@ -204,19 +204,19 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       puree = new(Class = 'equiv', current = puree / total_raw), 
       matcha = new(Class = 'equiv', current = x@matcha / total_raw),
       beet = new(Class = 'equiv', current = x@beet / total_raw),
-      ginger = new(Class = 'equiv', current = x@spice['SimplyOrganic_ginger'] / total_raw),
-      # cumin = new(Class = 'equiv', current = x@cumin / total_raw),
-      # cilantro = new(Class = 'equiv', current = x@cilantro / total_raw),
-      garlic = new(Class = 'equiv', current = x@spice['McCormick_garlic'] / total_raw),
-      # onion = new(Class = 'equiv', current = x@onion / total_raw),
-      # whitePp = new(Class = 'equiv', current = x@whitePepper / total_raw),
-      # blackPp = new(Class = 'equiv', current = x@blackPepper / total_raw),
-      # turmeric = new(Class = 'equiv', current = x@turmeric / total_raw),
-      # cinnamon = new(Class = 'equiv', current = x@cinnamon / total_raw),
-      # paprika = new(Class = 'equiv', current = x@paprika / total_raw),
-      # coriander = new(Class = 'equiv', current = x@coriander / total_raw),
+      ginger = new(Class = 'equiv', current = x['_ginger$'] / total_raw),
+      cumin = new(Class = 'equiv', current = x['_cumin$'] / total_raw),
+      cilantro = new(Class = 'equiv', current = x['_cilantro$'] / total_raw),
+      garlic = new(Class = 'equiv', current = x['_garlic$'] / total_raw),
+      onion = new(Class = 'equiv', current = x['_onion$'] / total_raw),
+      whitePp = new(Class = 'equiv', current = x['_whitePepper$'] / total_raw),
+      blackPp = new(Class = 'equiv', current = x['_blackPepper$'] / total_raw),
+      turmeric = new(Class = 'equiv', current = x['_turmeric$'] / total_raw),
+      cinnamon = new(Class = 'equiv', current = x['_cinnamon$'] / total_raw),
+      paprika = new(Class = 'equiv', current = x['_paprika$'] / total_raw),
+      coriander = new(Class = 'equiv', current = x['_coriander$'] / total_raw),
       # chiliMix = new(Class = 'equiv', current = x@chiliMix / total_raw),
-      '\U0001f383spice' = new(Class = 'equiv', current = x@spice['SimplyOrganic_pumpkinSpice'] / total_raw),
+      '\U0001f383spice' = new(Class = 'equiv', current = x['_pumpkinSpice$'] / total_raw),
       #curry = new(Class = 'equiv', current = x@curry / total_raw),
       sesame = new(Class = 'equiv', current = x@blackSesame / total_raw),
       coconut = new(Class = 'equiv', current = x@coconut / total_raw),
@@ -260,19 +260,19 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       creamChz = new(Class = 'equiv', current = sum(x@creamCheese) / total, target = devrecipe$creamcheese(x)),
       matcha = new(Class = 'equiv', current = x@matcha / total, target = devrecipe$matcha(x)),
       beet = new(Class = 'equiv', current = x@beet / total, target = devrecipe$beet(x)),
-      ginger = new(Class = 'equiv', current = x@spice['SimplyOrganic_ginger'] / total, target = devrecipe$ginger.(x)),
-      # cumin = new(Class = 'equiv', current = x@cumin / total),
-      # cilantro = new(Class = 'equiv', current = x@cilantro / total),
-      garlic = new(Class = 'equiv', current = x@spice['McCormick_garlic'] / total, target = devrecipe$garlic(x)),
-      # onion = new(Class = 'equiv', current = x@onion / total), # , target = devrecipe$onion(x)
-      # whitePp = new(Class = 'equiv', current = x@whitePepper / total, target = devrecipe$whitePepper(x)),
-      # blackPp = new(Class = 'equiv', current = x@blackPepper / total), # , target = devrecipe$blackPepper(x)
-      # turmeric = new(Class = 'equiv', current = x@turmeric / total), # , target = devrecipe$turmeric(x)
-      # cinnamon = new(Class = 'equiv', current = x@cinnamon / total), # , target = devrecipe$cinnamon(x)
-      # paprika = new(Class = 'equiv', current = x@paprika / total), # , target = devrecipe$paprika(x)
-      # coriander = new(Class = 'equiv', current = x@coriander / total, target = devrecipe$coriander(x)),
+      ginger = new(Class = 'equiv', current = x['_ginger$'] / total, target = devrecipe$ginger.(x)),
+      cumin = new(Class = 'equiv', current = x['_cumin$'] / total),
+      cilantro = new(Class = 'equiv', current = x['_cilantro$'] / total),
+      garlic = new(Class = 'equiv', current = x['_garlic$'] / total, target = devrecipe$garlic(x)),
+      onion = new(Class = 'equiv', current = x['_onion$'] / total), # , target = devrecipe$onion(x)
+      whitePp = new(Class = 'equiv', current = x['_whitePepper$'] / total, target = devrecipe$whitePepper(x)),
+      blackPp = new(Class = 'equiv', current = x['_blackPepper$'] / total), # , target = devrecipe$blackPepper(x)
+      turmeric = new(Class = 'equiv', current = x['_turmeric$'] / total), # , target = devrecipe$turmeric(x)
+      cinnamon = new(Class = 'equiv', current = x['_cinnamon$'] / total), # , target = devrecipe$cinnamon(x)
+      paprika = new(Class = 'equiv', current = x['_paprika$'] / total), # , target = devrecipe$paprika(x)
+      coriander = new(Class = 'equiv', current = x['_coriander$'] / total, target = devrecipe$coriander(x)),
       # chiliMix = new(Class = 'equiv', current = x@chiliMix / total),
-      '\U0001f383spice' = new(Class = 'equiv', current = x@spice['SimplyOrganic_pumpkinSpice'] / total, target = devrecipe$pumpkinSpice(x)),
+      '\U0001f383spice' = new(Class = 'equiv', current = x['_pumpkinSpice$'] / total, target = devrecipe$pumpkinSpice(x)),
       #curry = new(Class = 'equiv', current = x@curry / total),
       sesame = new(Class = 'equiv', current = x@blackSesame / total, target = devrecipe$blackSesame(x)),
       coconut = new(Class = 'equiv', current = x@coconut / total),
