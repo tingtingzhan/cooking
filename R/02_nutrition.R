@@ -1068,32 +1068,6 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
 
 
 
-#' @title Multiplication and Ratio of \linkS4class{nutrition} Object
-#' 
-#' @description ..
-#' 
-#' @param e1 \linkS4class{nutrition} object
-#' 
-#' @param e2 \link[base]{numeric} scalar
-#' 
-#' @name S4generic_nutrition
-#' @aliases *,nutrition,numeric-method
-#' @export
-setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) {
-  if (length(e2) != 1L || anyNA(e2) || (e2 <= 0)) stop('illegal `e2`')
-  for (i in setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))) {
-    slot(e1, name = i) <- slot(e1, name = i) * e2
-  }
-  return(e1)
-})
-
-
-#' @rdname S4generic_nutrition
-#' @aliases /,nutrition,numeric-method
-#' @export
-setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
-
-
 
 
 

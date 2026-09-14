@@ -193,17 +193,11 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{matcha,matcha_tsp,matcha_Tbsp,matcha_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder}
 
-\item{\code{whitePepper,whitePepper_tsp,whitePepper_Tbsp,whitePepper_cup}}{..}
-
-\item{\code{blackPepper,blackPepper_tsp,blackPepper_Tbsp,blackPepper_cup}}{..}
-
 \item{\code{spice,spice_tsp,spice_Tbsp,spice_cup}}{named \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of compound spices}
 
 \item{\code{beet,beet_tsp,beet_Tbsp,beet_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic beet root powder}
 
 \item{\code{acai,acai_tsp,acai_Tbsp,acai_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic acai root powder}
-
-\item{\code{creamTartar,creamTartar_tsp,creamTartar_Tbsp,creamTartar_cup}}{..}
 
 \item{\code{coffee,coffee_tsp,coffee_Tbsp,coffee_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of \code{superior = 'NescafeGold_blonde'}}
 
