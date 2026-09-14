@@ -37,7 +37,7 @@ McCormick_parsley <- \() new(
 )
   
   
-McCormick_garlic_powder <- \() new(
+McCormick_garlic <- \() new(
   Class = 'nutrition',  mccormickculinary = 'garlic-powder',
   alias = '\u849c\u7c89', name = 'Garlic\U1f9c4 Powder', 
   amazon = 'B008OGCEHO', usd = 11.87/595*4.5, # 21oz = 595g
@@ -45,7 +45,7 @@ McCormick_garlic_powder <- \() new(
   servingTbsp = 1 # actual experiment 3tbsp = 28g
 )
 
-McCormick_onion_powder <- \() new(
+McCormick_onion <- \() new(
   Class = 'nutrition',  mccormickculinary = 'onion-powder',
   alias = '\u6d0b\u8471\u7c89', name = 'Onion\U1f9c5 Powder',
   amazon = 'B008OGCPSM', usd = 17.90/566*4.5, # 1.25lb = 566g
@@ -163,7 +163,7 @@ Kirkland_noSaltSeasoning <- \() new(
   usd = 9.99/411*9,
   servingGram = 9, servingTbsp = 1, # actual
   contain = c(
-    'onion', 'garlic', 'carrot', 'black pepper', 'red bell pepper', 'tomato granules', 'orange peel', 'parsley', 'bay leaves', 'thyme', 'basil', 'celery', 'lemon peel', 'oregano', 'mustard seed', 'cumin', 'marjoram', 'coriander', 'cayenne pepper', 'citric acid', 'rosemary'
+    'onion', 'garlic', 'carrot', 'black pepper', 'red bell pepper', 'tomato granules', 'orange zest', 'parsley', 'bay leaf', 'thyme', 'basil', 'celery', 'lemon zest', 'oregano', 'mustard seed', 'cumin', 'marjoram', 'coriander', 'cayenne pepper', 'citric acid', 'rosemary'
   ))
 
 
@@ -243,18 +243,22 @@ SimplyOrganic_pumpkinSpice <- \() new(
 
 
 SimplyOrganic_5spice <- \() new(
-  Class = 'nutrition',  simplyorganic = 'five-spice-powder-2-01-oz',
+  Class = 'nutrition', simplyorganic = 'five-spice-powder-2-01-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
-  wegmans = 202649L, usd = 5.99, # 2024-12-06
+  wegmans = 202649L, 
+  usd = 8.49, date = as.Date('2026-09-14'),
   servingGram = 57, 
   servingTbsp = 10,
   contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
 
+
 SimplyOrganic_ginger <- \() new(
-  Class = 'nutrition',  simplyorganic = 'ginger-root-ground-1-64-oz',
+  Class = 'nutrition', simplyorganic = 'ginger-root-ground-1-64-oz',
   name = 'Ginger\U1fada Root, Ground', alias = '\u59dc\u7c89',
-  servingGram = 46, usd = 6.79,  # 2023-11-09
+  wegmans = 791544L,
+  servingGram = 46, usd = 7.09, date = as.Date('2026-09-14'),
   servingTbsp = 10)
+
 
 SimplyOrganic_dill <- \() new(
   Class = 'nutrition',  simplyorganic = 'dill-weed-0-81-oz',
@@ -268,6 +272,7 @@ SimplyOrganic_clove <- \() new(
   name = 'Cloves', alias = '\u4e01\u9999',
   servingGram = 80, usd = 8.99, # 2023-11-09
   servingTbsp = 10)
+
 
 SimplyOrganic_cinnamonCeylon <- \() new(
   Class = 'nutrition',  simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
@@ -302,7 +307,8 @@ SimplyOrganic_garlic <- \() new(
 
 Chinata_paprika <- \() new(
   Class = 'nutrition', 
-  brand = c(style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://www.lachinatausa.com/index.php/buy-our-smoked-paprika-powder/tin-70-gr-d-o-sweet.html')),
+  brand = style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://lachinatausa.com/la-chinata-smoked-paprika-powder-70g-tin') |> 
+    c(),
   alias = '\u7ea2\u751c\u6912\u7c89', name = 'Sweet Smoked Paprika\U1f336', 
   servingGram = 15, servingTbsp = 2
   # https://www.aqua-calc.com/calculate/food-volume-to-weight

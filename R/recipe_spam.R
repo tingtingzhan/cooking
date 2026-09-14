@@ -28,9 +28,11 @@
 #' @export
 setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
   alias_class = '\u8089\u7cd5',
-  ginger_tsp = .5,
-  coriander_tsp = .25, 
-  whitePepper_tsp = .5,
+  spice_tsp = c(
+    McCormick_whitePepper = .5,
+    SimplyOrganic_ginger = .5,
+    SimplyOrganic_coriander = .25
+  ), 
   starch = c(sweetPotato = 40),
   sauce_tsp = c(LeaPerrins_Worcestershire = 3),
   egg_pc = 4, 
@@ -79,7 +81,7 @@ shrimpSpam <- \() new(
 #' @export
 shrimpLambSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e\u7f8a',
-  cumin_tsp = .25,
+  spice_tsp = c(SimplyOrganic_cumin = .25),
   pork = c(fatbelly = 100), lamb = c(leg = 100), shrimp = 200,
   review = c('Taste nice! try again with regular water'))
 
@@ -97,7 +99,7 @@ chickenBreastSpam <- \() new(
 #' @export
 beefSpam <- \() new(
   Class = 'spam', alias_flavor = '\u725b',
-  cumin_tsp = .25,
+  spice_tsp = c(SimplyOrganic_cumin = .25),
   pork = c(belly = 320), beef = c(chuck = 80), 
   review = c('Nice with beef chuck or chuck short ribs at Costco',
              'But this is expensive!!'))
@@ -106,7 +108,7 @@ beefSpam <- \() new(
 #' @export
 shrimpBeefSpam <- \() new(
   Class = 'spam', alias_flavor = '\u867e\u725b',
-  cumin_tsp = .25,
+  spice_tsp = c(SimplyOrganic_cumin = .25),
   # pork = c(fatbelly = 100), beef = c(leanchuck = 200), shrimp = 200, # texture not good
   pork = c(fatbelly = 100), beef = c(chuck = 100), shrimp = 200,
   review = c('retry beef_chuck at Costco',

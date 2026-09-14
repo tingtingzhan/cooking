@@ -42,8 +42,11 @@ porkfill <- \() new(
   Class = 'porkfill',
   pork = c(tenderloin = 500, belly = 500), # tiny too fat
   rattanPepperOil_tsp = 1, sesameOil_Tbsp = 1,
-  whitePepper_tsp = 1, ginger_tsp = 1, 
-  coriander_tsp = 1/4, # 1/2 a tiny tiny too strong
+  spice_tsp = c(
+    McCormick_whitePepper = 1,  
+    SimplyOrganic_ginger = 1,
+    SimplyOrganic_coriander = 1/4
+  ), # 1/2 a tiny tiny too strong
   sauce = c(
     
     LeeKumKee_5spiceMarinade = 70 # really nice already!!
@@ -101,11 +104,13 @@ xiaogaojie_lambfill <- \() new(
   lamb = c(leg = 250),
   shrimp = 400,
   sauce_Tbsp = c(Kikkoman_soy = 1),
-  whitePepper_tsp = 1/4,
   #葱白 50克
-  ginger = 2, 
+  spice = c(SimplyOrganic_ginger = 2), 
   salt_tsp = 1, 
-  spice5_tsp = 1/8,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/4,
+    SimplyOrganic_5spice = 1/8
+  ),
   #花椒粉_tsp = 1/8,
   eggWhite_pc = 1,
   sesameOil_tsp = 1
@@ -124,8 +129,10 @@ salmonfill <- \() new(
     Kikkoman_soyLite = 40
   ),
   spice_Tbsp = c(FrontierCoop_harissa = 1), # 2Tbsp too much
-  ginger_tsp = 1/4,
-  whitePepper_tsp = 1/2,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1/4
+  ),
   sesameOil_Tbsp = 1,
   rattanPepperOil_tsp = 1/2,
   review = c(

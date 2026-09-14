@@ -158,8 +158,10 @@ Sallys_pumpkin_cake <- \() new(
   bakingPowder_tsp = 2,
   NaHCO3_tsp = 1,
   salt_tsp = 1, 
-  cinnamon_tsp = 1.5,
-  pumpkinSpice_tsp = 2,
+  spice_tsp = c(
+    SimplyOrganic_cinnamonCeylon = 1.5,
+    SimplyOrganic_pumpkinSpice = 2
+  ),
   oil = c(Wegmans_vegetable = 240), # 1 cup (240ml) canola or vegetable oil*
   egg_pc = 4,
   brownSugar = 200,

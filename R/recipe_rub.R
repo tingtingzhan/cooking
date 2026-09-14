@@ -65,8 +65,8 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
 cuminMontreal_rub <- \() new(
   Class = 'rub',
   alias_flavor = 'Cumin+Montreal',
-  cumin_tsp = 1,
   spice_tsp = c(
+    SimplyOrganic_cumin = 1,
     McCormick_MontrealSteak = 1.5,
     #Kirkland_noSaltSeasoning = 2 # for previous 'sousvide'
     Kirkland_noSaltSeasoning = .5
@@ -86,8 +86,8 @@ cuminMontreal_rub <- \() new(
 Montreal_rub <- \() new( # inspired by Guga
   Class = 'rub',
   brownSugar_tsp = .5,
-  cinnamon_tsp = 1/8,
   spice_tsp = c(
+    SimplyOrganic_cinnamonCeylon = 1/8,
     McCormick_MontrealSteak = 2,
     #Kirkland_noSaltSeasoning = 3 # for previous 'sousvide'
     Kirkland_noSaltSeasoning = .5
@@ -110,7 +110,7 @@ if (FALSE) {
     alias = 'Duck Paste',
     msg = 6*50,
     sugar = c(Domino_granulated = 500+2*50),
-    garlic = c(garlic = 2.5*500),
+    spice = c(McCormick_garlic = 2.5*500),
     sauce = c(
       LeeKumKee_ChuHou = 4*500,
       LeeKumKee_hoisin = 2*500,
@@ -170,7 +170,7 @@ Southwest_rub <- \() new(
   Class = 'rub', 
   salt_tsp = 2.75,
   spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
-  chiliMix_tsp = c(SimplyOrganic_Southwest = 2), # try
+  spice_tsp = c(SimplyOrganic_Southwest = 2), # try
   pros = 'try')
 
 #' @rdname rub-class
@@ -179,8 +179,10 @@ harissa_rub <- \() new(
   Class = 'rub',
   #salt_tsp = .75, # for previuos 'sousvide', I wrote `pros = 'not bad!'`
   salt_tsp = 2.75, # 
-  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
-  chiliMix_Tbsp = c(FrontierCoop_harissa = 1),
+  spice_Tbsp = c(
+    FrontierCoop_harissa = 1,
+    Kirkland_noSaltSeasoning = 1
+  ),
   review = 'try!')
 
 
@@ -192,8 +194,10 @@ harissa_rub <- \() new(
 vindaloo_rub <- \() new(
   Class = 'rub',
   salt_tsp = 2.75,
-  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
-  curry_Tbsp = c(FrontierCoop_vindaloo = 1),
+  spice_Tbsp = c(
+    FrontierCoop_vindaloo = 1,
+    Kirkland_noSaltSeasoning = 1
+  ),
   date = as.Date('2024-12-20'),
   pros = 'perfect sodium level!'
 )
@@ -206,12 +210,14 @@ Guga_rub <- \() new(
   Class = 'recipe', guga = 'omXFw_JnP4E',
   salt_cup = 1/4,
   brownSugar_cup = 1/4,
-  paprika_cup = 1/4,
-  garlic_Tbsp = 1,
-  onion_Tbsp = 1,
-  blackPepper_Tbsp = 1,
-  turmeric_Tbsp = 1,
-  cinnamon_tsp = 1)
+  spice_cup = c(Chinata_paprika = 1/4),
+  spice_Tbsp = c(
+    McCormick_blackPepper = 1,
+    McCormick_garlic = 1,
+    McCormick_onion = 1,
+    McCormick_turmeric = 1
+  ),
+  spice_tsp = c(SimplyOrganic_cinnamonCeylon = 1))
 
 
 # Guga has more: https://www.youtube.com/watch?v=lF2uz5Nz02E

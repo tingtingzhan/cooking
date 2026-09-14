@@ -230,7 +230,7 @@ ginger_cookie <- \() new(
   Class = 'cookie', 
   note = 'Do NOT use bread flour.',
   review = 'Gloria & Mike\'s true love',
-  ginger = 16, 
+  spice = c(SimplyOrganic_ginger = 16), 
   pastryFlour = 370, sugar = 140, 
   drymilk = 158)
 

@@ -217,7 +217,7 @@ pumpkin_cheesecake <- \() new(
   water = numeric(), # remove default water!!
   starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
   pumpkin = 500, brownSugar = 150, 
-  pumpkinSpice_tsp = 1.75,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.75),
   date = as.Date('2024-12-09'), 
   pros = c('perfect texture', 'perfect flavor'))
 
@@ -281,7 +281,7 @@ mocaccino_cheesecake <- \() new(
 #' @export
 ginger_cheesecake <- \() new(
   Class = 'cheesecake',
-  ginger = 15,
+  spice = c(SimplyOrganic_ginger = 15),
   sugar = 110,
   review = 'try'
 )

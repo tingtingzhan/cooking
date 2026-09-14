@@ -10,7 +10,7 @@ xiaogaojie_pasteisdenata1 <- \() new(
   water = 185,
   sugar = 200,
   #cinnamon stick 1
-  #Lemon peel 2
+  #Lemon zest 2
   pastryFlour = 25,
   starch = c(Wegmans_corn = 17),
   milk = 250,

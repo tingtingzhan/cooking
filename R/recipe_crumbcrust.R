@@ -181,7 +181,8 @@ ginger_crumbcrust <- \() new(
   butter_brick = 1,
   sugar = 7.5,
   #iceWater = 50, # 60g-90g,
-  ginger = 10, sugar = 80,
+  spice = c(SimplyOrganic_ginger = 10), 
+  sugar = 80,
   review = 'try'
 )
 

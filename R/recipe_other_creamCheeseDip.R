@@ -18,8 +18,8 @@ pumpkin_creamCheeseDip_bakethat <- \() new(
   sugar_cup = c(Domino_10x = 1.5),
   pumpkin = 425, # 15 oz
   vanilla_tsp = 1,
-  pumpkinSpice_Tbsp = 1/2,
-  cinnamon_tsp = 1/2,
+  spice_Tbsp = c(SimplyOrganic_pumpkinSpice = 1/2),
+  spice_tsp = c(SimplyOrganic_cinnamonCeylon = 1/2),
   youtube = 'G87HfZjdDwI'
 )
 
@@ -30,6 +30,8 @@ pumpkin_creamCheeseDip_Julie <- \() new(
   creamCheese_brick = 2,
   pumpkin = 425, # 15 oz
   sugar_cup = c(Domino_10x = 2),
-  cinnamon_tsp = 2,
-  ginger_tsp = 1
+  spice_tsp = c(
+    SimplyOrganic_ginger = 1,
+    SimplyOrganic_cinnamonCeylon = 2
+  )
 )

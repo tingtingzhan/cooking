@@ -6,9 +6,11 @@ if (FALSE) {
       pumpkin = 425.243, # 1 (15 ounce) can
       #condensedMilk = 397, # original
       evaporatedMilk = 360, sugar = 60,
-      ginger = 1, # .5 teaspoon
-      cinnamon = 2.6, # 1 teaspoon
-      clove = .5, # 1/4 teaspoon ground cloves
+      spice_tsp = c(
+        SimplyOrganic_ginger = .5,
+        SimplyOrganic_cinnamonCeylon = 1,
+        SimplyOrganic_clove = 1/4
+      ),
       salt_tsp = .125, # .5 # original
       egg_pc = 2,
       allrecipes = '22755/libbys-famous-pumpkin-pie/'

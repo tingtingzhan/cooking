@@ -113,28 +113,10 @@
 #' 
 #' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
 #' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
-#' @slot ginger,ginger_tsp,ginger_Tbsp,ginger_cup \link[base]{numeric} scalar, weight (in grams) and volume of Simply Organic ginger powder
-#' @slot garlic,garlic_tsp,garlic_Tbsp,garlic_cup \link[base]{numeric} scalar, weight of garlic powder (in grams)
-#' @slot onion,onion_tsp,onion_Tbsp,onion_cup \link[base]{numeric} scalar, weight of onion powder (in grams)
-#' @slot coriander,coriander_tsp,coriander_Tbsp,coriander_cup ..
-#' @slot cumin,cumin_tsp,cumin_Tbsp,cumin_cup ..
-#' @slot cilantro,cilantro_tsp,cilantro_Tbsp,cilantro_cup ..
-#' @slot spiceItalian,spiceItalian_tsp,spiceItalian_Tbsp,spiceItalian_cup ..
-#' @slot clove,clove_tsp,clove_Tbsp,clove_cup ..
-#' @slot cinnamon,cinnamon_tsp,cinnamon_Tbsp,cinnamon_cup ..
-#' @slot whitePepper,whitePepper_tsp,whitePepper_Tbsp,whitePepper_cup ..
-#' @slot blackPepper,blackPepper_tsp,blackPepper_Tbsp,blackPepper_cup ..
-#' @slot turmeric,turmeric_tsp,turmeric_Tbsp,turmeric_cup ..
-#' @slot paprika,paprika_tsp,paprika_Tbsp,paprika_cup ..
-#' @slot spice5,spice5_tsp,spice5_Tbsp,spice5_cup ..
-#' @slot pumpkinSpice,pumpkinSpice_tsp,pumpkinSpice_Tbsp,pumpkinSpice_cup ..
 #' @slot spice,spice_tsp,spice_Tbsp,spice_cup named \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of compound spices
-#' @slot chiliMix,chiliMix_tsp,chiliMix_Tbsp,chiliMix_cup ..
-#' @slot curry,curry_tsp,curry_Tbsp,curry_cup ..
 #' 
 #' @slot beet,beet_tsp,beet_Tbsp,beet_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic beet root powder
 #' @slot acai,acai_tsp,acai_Tbsp,acai_cup \link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic acai root powder
-#' @slot creamTartar,creamTartar_tsp,creamTartar_Tbsp,creamTartar_cup ..
 #' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of `superior = 'NescafeGold_blonde'`
 #' 
 #' @slot pork \link[base]{numeric} vector, weight of one or more cuts of pork (in grams)
@@ -290,27 +272,9 @@ setClass(Class = 'raw.', slots = c(
   matcha = 'numeric', matcha_tsp = 'numeric', matcha_Tbsp = 'numeric', matcha_cup = 'numeric', 
   beet = 'numeric', beet_tsp = 'numeric', beet_Tbsp = 'numeric', beet_cup = 'numeric',
   acai = 'numeric', acai_tsp = 'numeric', acai_Tbsp = 'numeric', acai_cup = 'numeric',
-  creamTartar = 'numeric', creamTartar_tsp = 'numeric', creamTartar_Tbsp = 'numeric', creamTartar_cup = 'numeric',
   blackSesame = 'numeric',
   coconut = 'numeric',
-  ginger = 'numeric', ginger_tsp = 'numeric', ginger_Tbsp = 'numeric', ginger_cup = 'numeric',
-  garlic = 'numeric', garlic_tsp = 'numeric', garlic_Tbsp = 'numeric', garlic_cup = 'numeric',
-  onion = 'numeric', onion_tsp = 'numeric', onion_Tbsp = 'numeric', onion_cup = 'numeric',
-  coriander = 'numeric', coriander_tsp = 'numeric', coriander_Tbsp = 'numeric', coriander_cup = 'numeric',
-  cumin = 'numeric', cumin_tsp = 'numeric', cumin_Tbsp = 'numeric', cumin_cup = 'numeric',
-  cilantro = 'numeric', cilantro_tsp = 'numeric', cilantro_Tbsp = 'numeric', cilantro_cup = 'numeric',
-  spiceItalian = 'numeric', spiceItalian_tsp = 'numeric', spiceItalian_Tbsp = 'numeric', spiceItalian_cup = 'numeric',
-  clove = 'numeric', clove_tsp = 'numeric', clove_Tbsp = 'numeric', clove_cup = 'numeric',
-  cinnamon = 'numeric', cinnamon_tsp = 'numeric', cinnamon_Tbsp = 'numeric', cinnamon_cup = 'numeric',
-  whitePepper = 'numeric', whitePepper_tsp = 'numeric', whitePepper_Tbsp = 'numeric', whitePepper_cup = 'numeric',
-  blackPepper = 'numeric', blackPepper_tsp = 'numeric', blackPepper_Tbsp = 'numeric', blackPepper_cup = 'numeric',
-  turmeric = 'numeric', turmeric_tsp = 'numeric', turmeric_Tbsp = 'numeric', turmeric_cup = 'numeric',
-  paprika = 'numeric', paprika_tsp = 'numeric', paprika_Tbsp = 'numeric', paprika_cup = 'numeric',
-  spice5 = 'numeric', spice5_tsp = 'numeric', spice5_Tbsp = 'numeric', spice5_cup = 'numeric',
-  pumpkinSpice = 'numeric', pumpkinSpice_tsp = 'numeric', pumpkinSpice_Tbsp = 'numeric', pumpkinSpice_cup = 'numeric',
   spice = 'numeric', spice_tsp = 'numeric', spice_Tbsp = 'numeric', spice_cup = 'numeric',
-  chiliMix = 'numeric', chiliMix_tsp = 'numeric', chiliMix_Tbsp = 'numeric', chiliMix_cup = 'numeric',
-  curry = 'numeric', curry_tsp = 'numeric', curry_Tbsp = 'numeric', curry_cup = 'numeric',
   
   pork = 'numeric',
   beef = 'numeric',
@@ -517,11 +481,8 @@ print.raw. <- \(x, ...) {
   
   # ingredients with volumn info
   has_vol_small <- c(
-    x@ginger, x@garlic, x@onion, x@coriander, x@cumin, x@cilantro, x@clove, x@cinnamon, x@whitePepper, x@blackPepper, x@turmeric, x@paprika,
-    x@spiceItalian, x@spice5, x@pumpkinSpice,
-    x@chiliMix,
-    x@spice, x@curry,
-    x@matcha, x@coffee, x@cocoa, x@beet, x@acai, x@creamTartar, x@vanilla,
+    x@spice,
+    x@matcha, x@coffee, x@cocoa, x@beet, x@acai, x@vanilla,
     x@salt, x@msg, x@NaHCO3, x@Na2CO3, x@bakingPowder,
     x@sesameOil, x@rattanPepperOil,
     x@yeast,
@@ -627,24 +588,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     combnVol(which = 'lard', nm = 'Epic_lard') |>
     combnVol(which = 'tallow', nm = 'Epic_tallow') |>
     # no accurate density info available yet
-    combnVol(which = 'ginger', nm = 'SimplyOrganic_ginger') |>
-    combnVol(which = 'garlic', nm = 'McCormick_garlic_powder') |>
-    combnVol(which = 'onion', nm = 'McCormick_onion_powder') |>
-    combnVol(which = 'coriander', nm = 'SimplyOrganic_coriander') |>
-    combnVol(which = 'cumin', nm = 'SimplyOrganic_cumin') |>
-    combnVol(which = 'cilantro', nm = 'McCormick_cilantro') |>
-    combnVol(which = 'spiceItalian', nm = 'SimplyOrganic_Italian') |>
-    combnVol(which = 'clove', nm = 'SimplyOrganic_clove') |>
-    combnVol(which = 'cinnamon', nm = 'SimplyOrganic_cinnamonCeylon') |>
-    combnVol(which = 'whitePepper', nm = 'McCormick_whitePepper') |>
-    combnVol(which = 'blackPepper', nm = 'McCormick_blackPepper') |>
-    combnVol(which = 'turmeric', nm = 'McCormick_turmeric') |>
-    combnVol(which = 'paprika', nm = 'Chinata_paprika') |>
-    combnVol(which = 'spice5', nm = 'SimplyOrganic_5spice') |>
-    combnVol(which = 'pumpkinSpice', nm = 'SimplyOrganic_pumpkinSpice') |>
     combnVol(which = 'spice') |>
-    combnVol(which = 'chiliMix') |>
-    combnVol(which = 'curry') |>
     # with density info
     combnVol(which = 'sugar', nm = 'US_10x') |>
     combnVol(which = 'brownSugar', nm = 'Domino_darkBrown') |>
@@ -660,7 +604,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     combnVol(which = 'coffee', nm = 'NescafeGold_blonde') |> 
     combnVol(which = 'beet', nm = 'Wegmans_beet') |>
     combnVol(which = 'acai', nm = 'Wegmans_acai') |>
-    combnVol(which = 'creamTartar', nm = 'McCormick_creamTartar') |>
     combnVol(which = 'vanilla', nm = 'NielsenMassey_Madagascar') |>
     combnVol(which = 'starch') |>
     combnVol(which = 'oil') |>

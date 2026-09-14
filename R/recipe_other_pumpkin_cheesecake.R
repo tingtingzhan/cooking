@@ -13,7 +13,7 @@ Natasha_pumpkin_cheesecake <- \() new(
   sourCream_cup = 1/4,
   salt_tsp = 1/4,
   vanilla_Tbsp = 1,
-  pumpkinSpice_tsp = 2)
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 2))
 
 
 
@@ -28,7 +28,7 @@ Junior_pumpkin_cheesecake <- \() new(
   egg_pc = 2,
   heavyCream_cup = 3/4,
   pumpkin_cup = 1,
-  pumpkinSpice_tsp = 1,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1),
   juniorscheesecakecookbook = 45L
 )
 
@@ -47,7 +47,7 @@ PreppyKitchen_pumpkin_cheesecake <- \() new(
   sourCream_cup = 1/2,
   vanilla_tsp = 2,
   flour_Tbsp = 2,
-  pumpkinSpice_tsp = 1.5,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
   preppykitchen = c('JwmhZP9vRWM' = 'pumpkin-swirl-cheesecake'))
 
 

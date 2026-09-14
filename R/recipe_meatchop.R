@@ -35,11 +35,13 @@ setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
   # 500g meat
   # difficult to quantify `fatLost` and `waterLost` in stir frying
   salt_tsp = 1/2,
-  whitePepper_tsp = 1/2,
-  ginger_tsp = 1/2,
-  coriander_tsp = 1/4,
-  paprika_tsp = 1/2, # from my porkmash()
-  spice5_tsp = 1/4, # from my porkmash()
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1/2,
+    SimplyOrganic_coriander = 1/4,
+    Chinata_paprika = 1/2, # from my porkmash()
+    SimplyOrganic_5spice = 1/4 # from my porkmash()
+  ),
   sesameOil_Tbsp = 1, # from my porkmash()
   rattanPepperOil_tsp = 2
 ))

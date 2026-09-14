@@ -30,10 +30,6 @@ if (FALSE) {
 
 .onLoad <- \(libname, pkgname) {
   
-  Sys.setenv('_R_CHECK_SYSTEM_CLOCK_' = 0)
-  # https://stackoverflow.com/questions/63613301/r-cmd-check-note-unable-to-verify-current-time
-  # to disable "checking for future file timestamps" in R Check
-  
   # `x` is \linkS4class{recipe}
   
   fn. <- \(x) NA_real_
@@ -126,7 +122,7 @@ if (FALSE) {
     } else .13,
     cookie = if (length(x@blackSesame)) {
       .145
-    } else if (length(x@matcha) || length(x@ginger)) {
+    } else if (length(x@matcha) || (ginger() %in% x)) {
       .22 
     } else .2,
     tomyumStew = .16,
@@ -398,7 +394,7 @@ if (FALSE) {
     caffeLatte =, caffeLatte_ = 1.3,
     NA_real_)
   
-  ginger <- \(x) switch(
+  ginger. <- \(x) switch(
     class(x), 
     meatmash =, meatball = .0004, 
     shrimpfillCantonese = .0007,
@@ -753,7 +749,7 @@ if (FALSE) {
     'blackSesame',
     'cocoa',
     'coffee', 'coffee2cocoa',
-    'ginger',
+    'ginger.',
     'garlic',
     'whitePepper',
     'coriander',

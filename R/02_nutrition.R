@@ -11,7 +11,7 @@
 #' 
 #' @slot name \link[base]{character} scalar, product name
 #' @slot alias \link[base]{character} scalar, product alias
-#' @slot call \link[base]{language}, the function name to create this nutrition
+#' @slot call \link[base]{language}, the function name to create this \linkS4class{nutrition}
 #' 
 #' @slot suggestion \link[base]{list}
 #' 
@@ -335,12 +335,14 @@ setClass(Class = 'nutrition', slots = c(
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
-
-  # `-3` frame is determined by ?methods::new and ?methods::initialize (dont ask me why..)
-  x@call <- match.call(
-    definition = sys.function(-3), 
-    call = sys.call(-3)
-  )[[1L]]
+  
+  if (identical(x@call, quote(`<UNDEFINED>`))) {
+    # `-3` frame is determined by ?methods::new and ?methods::initialize (dont ask me why..)
+    x@call <- match.call(
+      definition = sys.function(-3), 
+      call = sys.call(-3)
+    )[[1L]]
+  }
   
   if (is.symbol(x@call)) {
     # do nothing
@@ -1015,53 +1017,33 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
     cat('\n')
   }
   
-  if (length(contain <- obj@contain)) {
-    contain_chn <- character(length = length(contain))
-    contain_chn[tolower(contain) == 'erythritol'] <- '\u8d64\u85d3\u7cd6\u9187'
-    contain_chn[tolower(contain) == 'anise'] <- '\u8334\u82b9'
-    contain_chn[tolower(contain) == 'basil'] <- '\u7f57\u52d2'
-    contain_chn[tolower(contain) == 'bay leaves'] <- '\u6708\u6842\u53f6'
-    contain_chn[tolower(contain) == 'black pepper'] <- '\u9ed1\u80e1\u6912'
-    contain_chn[tolower(contain) == 'caraway'] <- '\u9999\u82b9\u7c7d'
-    contain_chn[tolower(contain) == 'cardamom'] <- '\u5c0f\u8c46\u853b'
-    contain_chn[tolower(contain) == 'carrot'] <- '\u80e1\u841d\u535c\U1f955'
-    contain_chn[tolower(contain) == 'cinnamon'] <- '\u6842\u76ae'
-    contain_chn[tolower(contain) == 'citric acid'] <- '\u67e0\u6aac\u9178'
-    contain_chn[tolower(contain) == 'clove'] <- '\u4e01\u9999'
-    contain_chn[tolower(contain) == 'coriander'] <- '\u82ab\u837d\u7c7d'
-    contain_chn[tolower(contain) == 'cumin'] <- '\u5b5c\u7136'
-    contain_chn[tolower(contain) == 'garlic'] <- '\u849c\U1f9c4'
-    contain_chn[tolower(contain) == 'ginger'] <- '\u59dc\U1fada'
-    contain_chn[tolower(contain) %in% c('fennel', 'fennel seed')] <- '\u5c0f\u8334\u9999'
-    contain_chn[tolower(contain) == 'fenugreek'] <- '\u80e1\u82a6\u5df4'
-    contain_chn[tolower(contain) == 'lavender flowers'] <- '\u85b0\u8863\u8349'
-    contain_chn[tolower(contain) == 'lemon peel'] <- '\u67e0\u6aac\U0001f34b\u76ae'
-    contain_chn[tolower(contain) == 'marjoram'] <- '\u58a8\u89d2\u5170'
-    contain_chn[tolower(contain) == 'nutmeg'] <- '\u8089\u8c46\u853b'
-    contain_chn[tolower(contain) == 'onion'] <- '\u6d0b\u8471\U1f9c5'
-    contain_chn[tolower(contain) == 'orange peel'] <- '\u9648\U1f34a\u76ae'
-    contain_chn[tolower(contain) == 'oregano'] <- '\u725b\u81f3'
-    contain_chn[tolower(contain) == 'paprika'] <- '\u7ea2\u751c\u6912\u7c89'
-    contain_chn[tolower(contain) == 'parsley'] <- '\u6b27\u82b9'
-    contain_chn[tolower(contain) == 'red bell pepper'] <- '\u7ea2\u751c\u6912'
-    contain_chn[tolower(contain) == 'rosemary'] <- '\u8ff7\u8fed\u9999'
-    contain_chn[tolower(contain) == 'sage'] <- '\u9f20\u5c3e\u8349'
-    contain_chn[tolower(contain) == 'sunflower oil'] <- '\u8475\u82b1\u7c7d\U1f33b\u6cb9'
-    contain_chn[tolower(contain) == 'star anise'] <- '\u516b\u89d2'
-    contain_chn[tolower(contain) == 'thyme'] <- '\u767e\u91cc\u9999'
-    contain_chn[tolower(contain) %in% c('tomato', 'tomato granules', 'tomato concentrate')] <- '\u897f\u7ea2\u67ff\U0001f345'
-    contain_chn[tolower(contain) == 'turmeric'] <- '\u59dc\u9ec4'
-    contain_chn[tolower(contain) == 'white pepper'] <- '\u767d\u80e1\u6912'
-    contain_chn[tolower(contain) == 'yellow mustard'] <- '\u82a5\u672b'
-    paste0(col_blue(contain_chn), col_br_magenta(contain), collapse = ' ') |> sprintf(fmt = 'Contains %s\n\n') |> cat()
+  if (length(obj@contain)) {
+    obj@contain |>
+      tolower() |>
+      vapply(FUN = \(i) {
+        call(name = i) |>
+          eval() |>
+          format() # [format.spice], etc.
+      }, FUN.VALUE = '') |>
+      paste(collapse = ' ') |> 
+      sprintf(fmt = 'Contains %s\n\n') |> 
+      cat()
   }
 
-  if (length(obj@fdc)) paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central')) |> cat(sep = '\n')
-  if (length(obj@pubchem)) paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem')) |> cat(sep = '\n')
+  if (length(obj@fdc)) {
+    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central')) |> 
+    cat(sep = '\n')
+  }
+  
+  if (length(obj@pubchem)) {
+    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem')) |> 
+    cat(sep = '\n')
+  }
   
   if (length(obj@url)) cat(obj@url, sep = '\n')
   
-  suggested_ <- object |> as(Class = 'recipe')
+  suggested_ <- object |> 
+    as(Class = 'recipe')
   if (length(suggested_)) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
   
   cat('\n')

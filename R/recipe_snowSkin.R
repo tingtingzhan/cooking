@@ -104,7 +104,7 @@ coffee_snowSkin <- \() new(
 #' @export
 ginger_snowSkin <- \() new(
   Class = 'snowSkin',
-  ginger_tsp = 1/4,
+  spice_tsp = c(SimplyOrganic_ginger = 1/4),
   review = 'try')
 
 

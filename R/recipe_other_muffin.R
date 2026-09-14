@@ -95,9 +95,11 @@ Sallys_pumpkin_muffin <- \() new(
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
   flour_cup = 1.75,
   NaHCO3_tsp = 1,
-  cinnamon_tsp = 1.5,
-  pumpkinSpice_tsp = 1.5,
-  ginger_tsp = 1/4,
+  spice_tsp = c(
+    SimplyOrganic_ginger = 1/4,
+    SimplyOrganic_cinnamonCeylon = 1.5,
+    SimplyOrganic_pumpkinSpice = 1.5
+  ),
   salt_tsp = 1/2,
   oil_cup = c(Wegmans_vegetable = 1/2),
   sugar_cup = c(Domino_granulated = 1/2, Domino_darkBrown = 1/2),

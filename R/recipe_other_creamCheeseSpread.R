@@ -16,7 +16,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() new(
   author = 'Good Life Eats',
   creamCheese_brick = 1,
   pumpkin_cup = 2/3,
-  pumpkinSpice_tsp = 1.5,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
   brownSugar_Tbsp = 2,
   url = 'https://www.goodlifeeats.com/whipped-pumpkin-cream-cheese-and-8-ways-to-use-leftover-pumpkin/'
 )
@@ -28,6 +28,6 @@ Lynn_pumpkin_creamCheeseSpread <- \() new(
   author = 'Lynn',
   creamCheese_brick = 1,
   pumpkin_cup = 1/2,
-  pumpkinSpice_tsp = 1,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1),
   youtube = 'OxmE0JeiWLo'
 )

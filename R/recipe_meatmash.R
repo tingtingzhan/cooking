@@ -56,11 +56,13 @@ porkmash <- \() new(
     LeeKumKee_5spiceMarinade = 3,
     LeaPerrins_Worcestershire = 3
   ), 
-  garlic_tsp = 1/8,
-  ginger_tsp = 1/4 + 1/8,
-  whitePepper_tsp = 1/2,
-  coriander_tsp = 1/4,
-  paprika_tsp = 1/2,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1/4 + 1/8,
+    McCormick_garlic = 1/8,
+    SimplyOrganic_coriander = 1/4,
+    Chinata_paprika = 1/2
+  ),
   sesameOil_Tbsp = 1,
   rattanPepperOil_tsp = 1, # 3tsp too much
   review = 'retry!'
@@ -73,8 +75,10 @@ tilapiamash <- \() new(
   Class = 'meatmash',
   seafood = c(tilapia = 780), pork = c(fat = 220),
   sugar_tsp = 4,
-  ginger_tsp = 1/4,
-  whitePepper_tsp = 1/2,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1/4
+  ),
   salt_tsp = 1.25,
   starch_Tbsp = c(Wegmans_corn = 3),
   water = 300,
@@ -91,8 +95,10 @@ shrimpmash <- \() new( # Super nice!!
   # shrimp = 730, pork = c(belly = 270), # lean pork meat does not taste well
   shrimp = 780, pork = c(fat = 220), # should be really perfect!!
   sugar_tsp = 4,
-  ginger_tsp = 1/4,
-  whitePepper_tsp = 1/2, # maybe too strong..
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2, # maybe too strong..
+    SimplyOrganic_ginger = 1/4
+  ),
   salt_tsp = .5, # perfect saltiness!
   starch_Tbsp = c(Wegmans_corn = 3),
   water = 300,

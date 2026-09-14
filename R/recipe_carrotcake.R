@@ -17,6 +17,6 @@ AmishHeritage_carrotcake <- \() new(
   flour_cup = 2, 
   bakingPowder_tsp = 2,
   NaHCO3_tsp = 1.5,
-  salt_tsp = 1
-  #2 tsp. ground cinnamon
+  salt_tsp = 1,
+  spice_tsp = c(SimplyOrganic_cinnamonCeylon = 2)
 )

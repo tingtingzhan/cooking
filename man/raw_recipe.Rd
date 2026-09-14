@@ -193,41 +193,11 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{matcha,matcha_tsp,matcha_Tbsp,matcha_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder}
 
-\item{\code{ginger,ginger_tsp,ginger_Tbsp,ginger_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Simply Organic ginger powder}
-
-\item{\code{garlic,garlic_tsp,garlic_Tbsp,garlic_cup}}{\link[base]{numeric} scalar, weight of garlic powder (in grams)}
-
-\item{\code{onion,onion_tsp,onion_Tbsp,onion_cup}}{\link[base]{numeric} scalar, weight of onion powder (in grams)}
-
-\item{\code{coriander,coriander_tsp,coriander_Tbsp,coriander_cup}}{..}
-
-\item{\code{cumin,cumin_tsp,cumin_Tbsp,cumin_cup}}{..}
-
-\item{\code{cilantro,cilantro_tsp,cilantro_Tbsp,cilantro_cup}}{..}
-
-\item{\code{spiceItalian,spiceItalian_tsp,spiceItalian_Tbsp,spiceItalian_cup}}{..}
-
-\item{\code{clove,clove_tsp,clove_Tbsp,clove_cup}}{..}
-
-\item{\code{cinnamon,cinnamon_tsp,cinnamon_Tbsp,cinnamon_cup}}{..}
-
 \item{\code{whitePepper,whitePepper_tsp,whitePepper_Tbsp,whitePepper_cup}}{..}
 
 \item{\code{blackPepper,blackPepper_tsp,blackPepper_Tbsp,blackPepper_cup}}{..}
 
-\item{\code{turmeric,turmeric_tsp,turmeric_Tbsp,turmeric_cup}}{..}
-
-\item{\code{paprika,paprika_tsp,paprika_Tbsp,paprika_cup}}{..}
-
-\item{\code{spice5,spice5_tsp,spice5_Tbsp,spice5_cup}}{..}
-
-\item{\code{pumpkinSpice,pumpkinSpice_tsp,pumpkinSpice_Tbsp,pumpkinSpice_cup}}{..}
-
 \item{\code{spice,spice_tsp,spice_Tbsp,spice_cup}}{named \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of compound spices}
-
-\item{\code{chiliMix,chiliMix_tsp,chiliMix_Tbsp,chiliMix_cup}}{..}
-
-\item{\code{curry,curry_tsp,curry_Tbsp,curry_cup}}{..}
 
 \item{\code{beet,beet_tsp,beet_Tbsp,beet_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Wegmans Organic beet root powder}
 

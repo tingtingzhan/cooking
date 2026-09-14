@@ -65,8 +65,10 @@ setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototy
   sesameOil_tsp = 3,
   
   # add next time!!
-  ginger_tsp = 1,
-  whitePepper_tsp = 1/2,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1
+  ),
   # cilantro_cup = 1/2, # forgot to buy this!!
   # end of add next time!!
   

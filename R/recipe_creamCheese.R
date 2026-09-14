@@ -54,7 +54,7 @@ pumpkin_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', 
   #pumpkin = 122, brownSugar = 16, # was; too watery
   pumpkin = 100, brownSugar = 23, # 2024 Dec
-  pumpkinSpice_tsp = 1/4+1/8, # added 2024 Dec 
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/4+1/8), # added 2024 Dec 
   review = 'retry with higher sugar and pumpkin spice',
   pros = 'Effie\'s Signature'
 )
@@ -66,7 +66,7 @@ pumpkin_creamCheeseDip <- \() new(
   Class = 'creamCheeseDip', 
   pumpkin = 300,
   brownSugar = 37,
-  pumpkinSpice_tsp = 1/2 + 1/8,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2 + 1/8),
   review = 'try'
 )
 

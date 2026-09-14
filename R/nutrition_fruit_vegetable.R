@@ -273,9 +273,9 @@ celeriac <- \() new(
   name = 'Celery',
   servingGram = 100, water = 88, protein = 1.5, fat = .3, sodium = .1)
 
-parsley <- \() new(
+parsleyFresh <- \() new(
   Class = 'nutrition',  fdc = 170416L, 
-  name = 'Parsley',
+  name = 'Parsley, Fresh',
   servingGram = 100, water = 87.7, protein = 2.97, fat = .79, sodium = .056)
 
 FlavorFarmer_whitePeach <- \() new(

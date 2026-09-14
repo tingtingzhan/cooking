@@ -43,11 +43,12 @@ setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = pro
   sesameOil_tsp = 3,
   sugar_tsp = 3,
   
-  # ginger_tsp = 1/4,
-  ginger_tsp = 1/2, # new
-  
-  #whitePepper_tsp = 1/2,
-  whitePepper_tsp = 1/2 + 1/4, #new
+  spice_tsp = c(
+    #McCormick_whitePepper = 1/2,
+    McCormick_whitePepper = 1/2 + 1/4, #new
+    #SimplyOrganic_ginger = 1/4
+    SimplyOrganic_ginger = 1/2 # new
+  ), 
   
   portion = meatfill_portion(), 
   note = meatfill_note()
@@ -67,8 +68,10 @@ shrimpfillCantonese_Argentine <- \() new(
   starch_tsp = c(Wegmans_corn = 7),
   sesameOil_tsp = 3,
   sugar_tsp = 3,
-  ginger_tsp = 1/4,
-  whitePepper_tsp = 1/2,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1/4
+  ),
   pros = 'I love', cons = 'Too expensive')
 
 shrimpfillCantonese_OLD <- \() new(
@@ -78,8 +81,10 @@ shrimpfillCantonese_OLD <- \() new(
   starch_tsp = c(Wegmans_corn = 7),
   sesameOil_tsp = 3,
   sugar_tsp = 3,
-  ginger_tsp = 1/4,
-  whitePepper_tsp = 1/2,
+  spice_tsp = c(
+    McCormick_whitePepper = 1/2,
+    SimplyOrganic_ginger = 1/4
+  ),
   cons = 'Not salty enough')
 
 
@@ -92,8 +97,10 @@ setClass(Class = 'shrimpfillMaine', contains = 'shrimpfill', prototype = prototy
   # 8oz (227g) lobster + 3Tbsp (42.5) butter # https://drivemehungry.com/connecticut-lobster-roll-warm-lobster-roll/#recipe
   # 1lb (454g) lobster + 6Tbsp butter + 3Tbsp dill #https://www.howsweeteats.com/2021/06/buttery-lobster-rolls/
   # chives toxic to dogs!!
-  garlic_tsp = 1, # my guess
-  paprika_tsp = 3,
+  spice_tsp = c(
+    McCormick_garlic = 1, # my guess
+    Chinata_paprika = 3
+  ),
   spice_Tbsp = c(
     SimplyOrganic_dill = 2, # 780/454*3 = 5.15 fresh dill
     McCormick_chive = 4#, # 780/454*(1/4)*16 = 6.87 fresh chive
@@ -126,7 +133,7 @@ setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = p
   #garlic_tsp = 1, # still too strong!!
   # !!! remove garlic completely! Wegman's basting oil contains garlic flavor
   
-  whitePepper_tsp = 1/4,
+  spice_tsp = c(McCormick_whitePepper = 1/4),
   flavor = c(
     CountryTime_Lemonade = 10
   ),
@@ -153,7 +160,7 @@ setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = proto
   starch_Tbsp = c(Wegmans_corn = 2),
   oil = c(Wegmans_basting = 200),
   # garlic_tsp = 1, # try without
-  whitePepper_tsp = 1/8, # 
+  spice_tsp = c(McCormick_whitePepper = 1/8),
   flavor = c(
     CountryTime_Lemonade = 8
   ),
@@ -219,7 +226,8 @@ Daat_shrimpfill <- \() new(
   vegetable = c(bambooShoot = 90),
   starch = c(Wegmans_corn = 13),
   salt = 12, msg = 22,
-  sugar = 28, sesameOil = 12, whitePepper_tsp = 1/4)
+  sugar = 28, sesameOil = 12, 
+  spice_tsp = c(McCormick_whitePepper = 1/4))
 
 #' @rdname shrimpfillCantonese-class
 #' @export
@@ -227,6 +235,7 @@ whiteSwan_shrimpfill <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
   shrimp = 250, pork = c(fat = 50), lard = 35,
   salt = 3, msg = 2,
-  sugar = 3, sesameOil = 3.5, whitePepper_tsp = 1/8)
+  sugar = 3, sesameOil = 3.5, 
+  spice_tsp = c(McCormick_whitePepper = 1/8))
 
 

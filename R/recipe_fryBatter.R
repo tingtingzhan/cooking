@@ -19,7 +19,7 @@ if (FALSE) {
       bakingPowder_tsp = .75,
       salt_tsp = .125,
       NaHCO3_tsp = .25,
-      paprika_tsp = .25,
+      spice_tsp = c(Chinata_paprika = .25),
       sauce_tsp = c(Heinz_whiteVinegar = .5),
       # 白醋 2g  /  1/4 teaspoon
       youtube = '_-JdGn3EWZQ'

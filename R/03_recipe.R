@@ -411,7 +411,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u725b\u8089'
     } else if (length(x@pork)) {
       '\u732a\u8089'
-    } else if (length(x@ginger)) {
+    } else if (ginger() %in% x) {
       '\u59dc\u9999\U1fada'
     } else if (length(x@liqueur)) {
       get_flavor_(names(x@liqueur))
@@ -421,10 +421,10 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       } else character()
     } else if (length(x@syrup)) {
       x@syrup |> names() |> get_flavor_()
-    } else if (length(x@curry)) {
-      get_flavor_(names(x@curry))
-    } else if (length(x@chiliMix)) {
-      get_flavor_(names(x@chiliMix))
+    #} else if (length(x@curry)) {
+    #  get_flavor_(names(x@curry))
+    #} else if (length(x@chiliMix)) {
+    #  get_flavor_(names(x@chiliMix))
     } else if (length(x@tea)) {
       x@tea |> names() |> get_flavor_()
     } else if (length(x@spice)) {

@@ -229,7 +229,7 @@ PinNuo_oxTongue_waterDough <- \() new(
 PinNuo_largeYouSu <- \() new(
   Class = 'recipe', alias_flavor = 'large you-su',
   flour = 100,
-  spice5 = 3,
+  spice = c(SimplyOrganic_5spice = 3),
   salt = 10, oil = c(Wegmans_vegetable = 120),
   pino = 'SbeWX67yd14')
 

@@ -50,7 +50,9 @@ JeanPierre_eggnog <- \() new(
   heavyCream_cup = 1,
   egg_pc = 6,
   sugar_cup = c(Domino_granulated = 2/3),
-  cinnamon_tsp = 1/4,
+  spice_tsp = c(
+    SimplyOrganic_cinnamonCeylon = 1/4
+  ),
   # nutmeg_tsp = 1/4, # not written yet
   salt_tsp = 1/8, # 1 pinch of Salt
   vanilla_Tbsp = 1, # Tahitian Vanilla

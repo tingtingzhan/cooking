@@ -190,7 +190,7 @@ pineapple_bread <- \() new(
 #' @export
 ginger_bread <- \() new(
   Class = 'bread', bread(), 
-  ginger_tsp = 2, drymilk = 32, sugar = 70, 
+  spice_tsp = c(SimplyOrganic_ginger = 2), drymilk = 32, sugar = 70, 
   review = 'try')
 
 

@@ -50,7 +50,7 @@ ViewRoad_pumpkin_tortilla <- \() new(
   pumpkin_cup = 1/3,
   butter_cup = 1/4, # butter vegetable shortening 
   salt_tsp = 1/4,
-  pumpkinSpice_tsp = 1.5,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
   sugar = 12,
   vanilla_tsp = 1,
   water_cup = 1/3)

@@ -29,7 +29,7 @@ pumpkinSpiceLatte <- \() new(
   coffee_Tbsp = c(1.5),
   brownSugar_Tbsp = 1,
   pumpkin = 70,
-  pumpkinSpice_tsp = 1/4,
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/4),
   date = as.Date('2024-12-04'),
   pros = 'I love!!')
 

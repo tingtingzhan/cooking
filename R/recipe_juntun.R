@@ -67,9 +67,11 @@ juntun_filling <- \() new(
   alias = '\u519b\u5c6f\u9505\u76d4\u9985',
   #pork = c(belly = 550), # too fat!!
   pork = c(belly = 250, tenderloin = 300),
-  whitePepper_tsp = .5,
-  ginger_tsp = .5,
-  coriander_tsp = 1/4,
+  spice_tsp = c(
+    McCormick_whitePepper = .5,
+    SimplyOrganic_ginger = .5,
+    SimplyOrganic_coriander = 1/4
+  ),
   rattanPepperOil_Tbsp = 1, # perfect numbness!!
   salt_tsp = .5,
   instruction = c(

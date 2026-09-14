@@ -112,7 +112,7 @@ pumpkin_custardFilling <- \() new(
   #brownSugar = 50, # too sweet
   brownSugar = 40, # try
   butter = 55,
-  # pumpkinSpice_tsp = 1/2+1/4, # I dont need :)
+  # spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2+1/4), # I dont need :)
   JoyoungCJA9U = JoyoungCJA9U_filling(operation = '15min + 2min30sec'),
   pros = 'I love!')
 

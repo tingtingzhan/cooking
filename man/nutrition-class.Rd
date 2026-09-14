@@ -36,7 +36,7 @@ Nutrition information.
 
 \item{\code{alias}}{\link[base]{character} scalar, product alias}
 
-\item{\code{call}}{\link[base]{language}, the function name to create this nutrition}
+\item{\code{call}}{\link[base]{language}, the function name to create this \linkS4class{nutrition}}
 
 \item{\code{suggestion}}{\link[base]{list}}
 

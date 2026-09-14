@@ -193,7 +193,7 @@ pumpkin_mascarponeFrosting <- \() new(
   pumpkin = 100, 
   #sugar_tsp = 7.5, # was
   brownSugar = 22, # new
-  pumpkinSpice_tsp = 1/4+1/8, # new
+  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/4+1/8), # new
   review = 'retry',
   pros = 'Effie\'s Signature!')
 

@@ -28,8 +28,11 @@ shrimpball <- \() new(
   sugar_tsp = 2,
   starch = c(Wegmans_corn = 12),
   sesameOil_tsp = 1.5,
-  ginger_tsp = 1/8,
-  whitePepper_tsp = 1/4)
+  spice_tsp = c(
+    McCormick_whitePepper = 1/4,
+    SimplyOrganic_ginger = 1/8
+  )
+)
 
 
 shrimpball_Argentine <- \() new(
@@ -45,7 +48,7 @@ beefball <- \() new(
   NaHCO3_tsp = 4/16, # 1 Chinese soup spoon 
   iceWater = 400/16, # looks like
   salt_tsp = .5,
-  garlic = 130/16,
+  spice = c(McCormick_garlic = 130/16),
   starch_tsp = c(Wegmans_corn = 2.5),
   tallow = 3*500/16)
 
@@ -60,7 +63,7 @@ GaaDai_beefball <- \() new(
   iceWater = 400, # looks like
   salt = 120,
   msg = 50,
-  garlic = 130,
+  spice = c(McCormick_garlic = 130),
   starch = c(Wegmans_corn = 100),
   tallow = 3*500)
 
@@ -79,7 +82,7 @@ Daat_cuttlefishball <- \() new(
   sugar = 13,
   starch = c(Wegmans_corn = 20),
   sesameOil = 5,
-  whitePepper_tsp = 1/4)
+  spice_tsp = c(McCormick_whitePepper = 1/4))
 
 
 
