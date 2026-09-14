@@ -33,8 +33,10 @@ BalsamicVinaigrette_meatDip <- \() new(
     Kadoya_sesameOil = 1/2,
     YaoMaZi_rattanPepperOil = 1/4
   ),
-  review = '2026 Summer love. try next time and confirm!!'
+  review = '2026 Summer love. try next time (after TraderJoes_BalsamicVinaigrette comes back in stock) and confirm!!'
 )
+
+
 
 #' @rdname meatDip-class
 #' @export
@@ -44,16 +46,14 @@ srirachaBBQ_meatDip <- \() new(
   sauce_Tbsp = c(
     TraderJoes_srirachaBBQ = 1,
     Kikkoman_soyLite = 1/2
-    #mizkan_brownRiceVinegar = 1/2 # slightly too sour
   ),
   sauce_tsp = c(
-    mizkan_brownRiceVinegar = 1, # should be perfect
+    mizkan_brownRiceVinegar = 1,
     Kadoya_sesameOil = 1/2,
     YaoMaZi_rattanPepperOil = 1/4
   ),
-  date = as.Date('2026-09-12'),
-  
-  review = 'reduce vinegar'
+  date = as.Date('2026-09-14'),
+  review = 'perfect!!'
 )
 
 
