@@ -16,10 +16,10 @@
 #' @export
 setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
   alias_class = '\u7c73\u7cca',
-  JoyoungDJ13U = JoyoungDJ13U(
+  tool = list(JoyoungDJ13U(
     program = '\u7c73\u7cca\u7a0b\u5e8f Rice Paste program, 900ml water line',
     waterLost = 20
-  )
+  ))
 ))
 
 

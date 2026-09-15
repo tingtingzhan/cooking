@@ -96,7 +96,7 @@ pineapple_custardFilling <- \() new(
   pineapple = 560, waterLost = 347, # confirmed
   butter = 25,
   note = c('One (1) recipe calls for one 20oz can'),
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = '15min + 6min'),
+  tool = list(JoyoungCJA9U_filling(operation = '15min + 6min')),
   pros = c('Effie\'s Signature!',
              'Smells super nice while cooking'),
   cons = 'Slightly too sour if served hot')
@@ -113,7 +113,7 @@ pumpkin_custardFilling <- \() new(
   brownSugar = 40, # try
   butter = 55,
   # spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2+1/4), # I dont need :)
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = '15min + 2min30sec'),
+  tool = list(JoyoungCJA9U_filling(operation = '15min + 2min30sec')),
   pros = 'I love!')
 
 
@@ -126,7 +126,7 @@ apple_custardFilling <- \() new(
   applesauce = 800, waterLost = 525, 
   # butter = 50, # no burn even without manual stirring
   butter = 40, # 1st stir 11min, very slight burn
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = '15min + 15min, one stir at 7min'),
+  tool = list(JoyoungCJA9U_filling(operation = '15min + 15min, one stir at 7min')),
   pros = 'I love!')
 
 
@@ -139,7 +139,7 @@ tomato_custardFilling <- \() new(
   sugar = 60, 
   butter = 50, # burns, no stir. next time stir (as planned)
   note = c('One (1) recipe calls for one 29oz can'),
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = '15min + 15min, one stir at 7min'),
+  tool = list(JoyoungCJA9U_filling(operation = '15min + 15min, one stir at 7min')),
   review = c(
     'Effie\'s Signature!'
     # '2023-11-01: Burns (no stir)! because I did not sprinkle butter?'
@@ -155,8 +155,8 @@ darkCherry_custardFilling <- \() new(
   # waterLost = 460, # 15 + 14
   waterLost = 500, # 15 + 15, stir every 6min. to confirm!
   butter = 45,
-  # JoyoungCJA9U = JoyoungCJA9U_filling(operation = c('15min + 14min')), # burns, and not dry enough
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = c('15min + 15min, stir every 6 min')),
+  # tool = list(JoyoungCJA9U_filling(operation = c('15min + 14min'))), # burns, and not dry enough
+  tool = list(JoyoungCJA9U_filling(operation = c('15min + 15min, stir every 6 min'))),
   review = c(
     'Very nice even with burned bits',
     'Try next time with more frequent stir'
@@ -169,7 +169,7 @@ blueberry_custardFilling <- \() new(
   Class = 'custardFilling', alias_flavor = '\u84dd\u8393\U1fad0',
   # puree = c(Kirkland_blueberry = 585), waterLost = 345, butter = 23, # stick and burn
   puree = c(Kirkland_blueberry = 800), waterLost = 500, sugar = 20, butter = 50, # TRY!!
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = c('15min + 15min')),
+  tool = list(JoyoungCJA9U_filling(operation = c('15min + 15min'))),
   review = 'retry')
 
 
@@ -242,7 +242,7 @@ coconut_custardFilling <- \() new(
   sugar = 35, 
   drymilk = 10, butter = 5,
   water = 120, waterLost = 45,
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = c('2min30sec')),
+  tool = list(JoyoungCJA9U_filling(operation = c('2min30sec'))),
   review = 'try again!')
 
 coconut_custardFilling_OLD <- \() new(
@@ -250,7 +250,7 @@ coconut_custardFilling_OLD <- \() new(
   coconut = c(Edward_shreddedCoconutLite = 40), 
   sugar = 40, drymilk = numeric(), butter = 23, # before 2023-10-30
   water = 120, waterLost = 45,
-  JoyoungCJA9U = JoyoungCJA9U_filling(operation = c('2min30sec')),
+  tool = list(JoyoungCJA9U_filling(operation = c('2min30sec'))),
   review = 'Nice (before 2023-10-30)!')
 
 

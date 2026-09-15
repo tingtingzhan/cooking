@@ -19,12 +19,12 @@
 setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
   alias_class = '\u6ed1',
   # 1000g meat, 780g super lean, 220g pork belly
-  KSM8990 = KSM8990(
+  tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
     attachment = 'Paddle attachment',
     minute = 3
-  ),
+  )),
   note = c(
     'Do not add salt, if served with salty gravy!',
     '2.5\u2030 sodium in meat batter osmoses enough salt into the soup!'

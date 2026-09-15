@@ -22,9 +22,9 @@ setClass(Class = 'cornjuice', contains = 'recipe', prototype = prototype(
 cornjuice <- \() new(
   Class = 'cornjuice', alias_flavor = '',
   yellowCorn = 367, water = 560,
-  JoyoungDJ13U = JoyoungDJ13U_cornjuice(
+  tool = list(JoyoungDJ13U_cornjuice(
     waterLost = 90  # confirmed!!
-  )) # Perfect thickness for making pastry
+  ))) # Perfect thickness for making pastry
 
 #' @rdname cornjuice-class
 #' @export
@@ -32,8 +32,8 @@ cornVeggiePaste <- \() new(
   Class = 'cornjuice', alias_flavor = '\u852c\u83dc\U1f955\U1fadb',
   yellowCorn = 246,
   puree = c(Kirkland_mixedVeggies = 123), water = 560,
-  JoyoungDJ13U = JoyoungDJ13U_cornjuice(
+  tool = list(JoyoungDJ13U_cornjuice(
     waterLost = 90  # to confirm
-  ),
+  )),
   note = c('2 cups of frozen corn + 1 cup of diced fresh carrots (Nutribullet)'),
   review = 'Good to drink directly')

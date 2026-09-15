@@ -150,20 +150,7 @@
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
 #' 
-#' @slot waterBath \linkS4class{tool}
-#' @slot KSM8990 \linkS4class{tool}, Kitchen Aid commercial stand mixer KSM8990, 8 quart
-#' @slot KSM3316X \linkS4class{tool}, Kitchen Aid stand mixer KSM3316X, 3.5 quart
-#' @slot KSMICM \linkS4class{tool}, Kitchen Aid ice cream maker KSMICM
-#' @slot CuisinartICE70 \linkS4class{tool}, Cuisinart ice cream maker ICE70
-#' @slot SanyoECJS35S \linkS4class{tool}, Sanyo Rice Cooker ECJ-S35S
-#' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
-#' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
-#' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
-#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40,StanleyJar36 \linkS4class{tool}
-#' @slot PhilipsHD9867 \linkS4class{tool}
-#' @slot Staub_vertRoaster \linkS4class{tool}
-#' @slot RobamCT763 \linkS4class{tool}
-#' @slot InstantPot \linkS4class{tool}
+#' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 
 #' @name nutrition-class  
 #' @export
@@ -282,20 +269,8 @@ setClass(Class = 'nutrition', slots = c(
   
   machine = 'function', # should be deprecated
   
-  waterBath = 'tool',
-  KSM8990 = 'tool',
-  KSM3316X = 'tool',
-  KSMICM = 'tool',
-  CuisinartICE70 = 'tool',
-  SanyoECJS35S = 'tool',
-  JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
-  JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool', StanleyJar36 = 'tool',
-  PhilipsHD9867 = 'tool',
-  Staub_vertRoaster = 'tool',
-  RobamCT763 = 'tool',
-  InstantPot = 'tool',
-
+  tool = 'list',
+  
   review = 'character',
   superior = 'character',
   contain = 'character',
@@ -893,41 +868,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 
 
 
-gram_per_tsp <- \(x) {
-  if (!length(x)) return(double())
-  
-  x1 <- if (is.character(x)) {
-    if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
-    names(x) <- x
-    x |> 
-      lapply(FUN = \(i) {
-        call(name = i) |>
-          eval() |>
-          as(Class = 'nutrition')
-      })
-  } else x
-  
-  if (!is.recursive(x1) || !all(vapply(x1, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) 
-    stop('input cannot be converted to `nutrition`')
-  
-  x1 |> 
-    vapply(FUN = \(i) {
-      if (!length(i@servingTsp)) return(NA_real_) #stop(ix@name, ' does not have volume info')
-      i@servingGram / i@servingTsp
-    }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
-}
-
-
-format_pc <- \(object, name) {
-  ret <- slot(object, name = name) / eval(call(name))@servingGram
-  ret |> 
-    sprintf(fmt = '%.3gpcs') |> 
-    col_br_blue() |> 
-    style_bold()
-}
-
-
-
 
 
 
@@ -935,7 +875,7 @@ format_pc <- \(object, name) {
 
 
 #' @rdname nutrition-class
-#' @param object a \linkS4class{nutrition} object
+#' @param object see **Usage**
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
@@ -1048,19 +988,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
   cat('\n')
   
-  show(object@waterBath)
-  show(object@KSM8990)
-  show(object@KSM3316X)
-  show(object@KSMICM)
-  show(object@CuisinartICE70)
-  show(object@JoyoungDJ13U)
-  show(object@JoyoungDJ06M)
-  show(object@JoyoungCJA9U)
-  show(object@nutribullet20); show(object@nutribullet24); show(object@Stanley20); show(object@Stanley14)
-  show(object@PhilipsHD9867)
-  show(object@Staub_vertRoaster)
-  show(object@RobamCT763)
-  show(object@InstantPot)
+  object@tool |>
+    print.toollist()
 
 })
 

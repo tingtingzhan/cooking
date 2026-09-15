@@ -6,7 +6,7 @@
 setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
   alias_class = '\u5364\u6c41',
   water = 1200,
-  InstantPot = InstantPot(
+  tool = list(InstantPot(
     treatment = 'Meat parboiled, 1.6kg to 1.8kg',
     program = 'Sous Vide (no bag)',
     fahrenheit = 203, 
@@ -14,7 +14,7 @@ setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
       'beef round heel muscle\U1f389' = 2*60
     ),
     cooling = 'Soak overnight'
-  )
+  ))
 ))
 
 

@@ -86,14 +86,14 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
     'Divide, rest and roll using Pastalinda', 
     'Manually roll with a pin to thin the edges'
   ),
-  RobamCT763 = RobamCT763(
+  tool = list(RobamCT763(
     treatment = 'Add boiling water in basin. Ferment ~40min',
     program = 'Steam', fahrenheit = 210, minute = 15,
     note = c(
       'Do NOT steam at Tier 3 if wheat flour is used.  Bao surface may have tiny cracks',
       'Steam Bake, 300\u00b0F/15min, if dough is accidentally too wet'
     )
-  )
+  ))
 ))
 
 

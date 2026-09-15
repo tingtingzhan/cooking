@@ -20,7 +20,7 @@ soymilk <- \() new(
   soybean = 22, # 1/2 Joyoung small cup
   glutinousRiceFlour = c(Erawan_glutinousRiceFlour = 5),
   water = 590 - 22 - 5, # confirmed!!
-  JoyoungDJ06M = JoyoungDJ06M_soymilk(), 
+  tool = list(JoyoungDJ06M_soymilk()), 
   pros = 'perfect thickness!',
   date = as.Date('2024-11-29'))
 
@@ -30,7 +30,7 @@ soymilk_DJ13U <- \() new(
   Class = 'soymilk',
   soybean = 45, # 1 Joyoung small cup
   water = 1300 - 45, # confirmed!!
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(),
+  tool = list(JoyoungDJ13U_soymilk()),
   review = 'soymilk without thickener, as my smoothie base',
   date = as.Date('2024-09-15'))
 
@@ -44,14 +44,14 @@ chickpeaMilk <- \() new(
   chickpea = 45/2, # 1/2 Joyoung small cup
   water = 1300 - 45 - 22.5, 
   cons = 'I dont like this taste',
-  JoyoungDJ13U = JoyoungDJ13U_soymilk())
+  tool = list(JoyoungDJ13U_soymilk()))
 
 cashewMilk <- \() new(
   Class = 'soymilk',
   soybean = 45, # 1 Joyoung small cup
   cashew = 80, # confirmed!
   water = 1300-45-80, # confirmed!
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(),
+  tool = list(JoyoungDJ13U_soymilk()),
   cons = 'too fat..')
 
 
@@ -60,7 +60,7 @@ mungMilk_thick <- \() new(
   mungbean = 130, # soaked mung bean (skin removed): 213
   soybean = 45,
   water = 1330 - 130 - 45,
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(waterLost = 25)) # (4169+30) - 4176
+  tool = list(JoyoungDJ13U_soymilk(waterLost = 25))) # (4169+30) - 4176
 
 
 

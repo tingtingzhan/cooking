@@ -11,11 +11,11 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   drymilk_tsp = 1,
   coffee_Tbsp = .5,
   cocoa_tsp = c(KingArthur_Bensdorp = .25)#,
-  #Stanley14 = Stanley14(treatment = c(
+  #tool = list(Stanley14(treatment = c(
   #  'add hot water',
   #  'add all powders, whisk smooth',
   #  'add barista coconut'
-  #))
+  #)))
   # now using owala 12oz
 ))
 

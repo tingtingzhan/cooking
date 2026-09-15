@@ -41,7 +41,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   ),
   youtube = 'L7a1d4dj1rs', 
   
-  RobamCT763 = RobamCT763(
+  tool = list(RobamCT763(
     treatment = c(
       'Whisk everything, except butter and flavoring',
       'Cover with plastic wrap'
@@ -53,7 +53,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
     program = 'Steam',
     fahrenheit = 210, 
     minute = 14 # tested!
-  )
+  ))
   
 ))
 

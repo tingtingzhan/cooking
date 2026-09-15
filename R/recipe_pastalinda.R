@@ -31,7 +31,7 @@
 setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
   breadFlour = c(Wegmans_bread = 500), 
   salt_tsp = 1/4, Na2CO3_tsp = 1/4,
-  KSM8990 = KSM8990(
+  tool = list(KSM8990(
     program = 'Level 2. Stop immediately after dough forms', 
     treatment = c(
       'Whisk together all dry powder, then add water/puree'
@@ -43,7 +43,7 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
       'Roll chilled-and-rested dough directly',
       'Store unused dough in fridge \u22642 days, or in freezer for \u22646 months'
     )
-  )
+  ))
 ))
 
 

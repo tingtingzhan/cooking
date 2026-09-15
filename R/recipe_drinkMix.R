@@ -78,13 +78,13 @@ hotdrink.drinkmix <- \(
   x@water <- water
   x@water90 <- water90
   x@alias <- character(); x@alias_class <- '' # '\u70ed\u996e'
-  x@Stanley20 <- Stanley20(treatment = c(
+  x@tool <- list(Stanley20(treatment = c(
     'add room-temperature water',
     paste('add powders,', col_red('sweep cup bottom with a square scoop,'), 'whisk until smooth'),
     'add hot water, whisk until froth',
     paste(col_green('optional'), 'add liqueur', col_red('which curdles dry milk')),
     paste(col_green('optional'), 'add tea bags, soak (covered) for 1hr+')
-  ))
+  )))
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {
     'drink' # undefined 'drinkmix'
@@ -139,11 +139,11 @@ frappe.drinkmix <- \(
   x@ice <- ice
   x@iceWater <- if (length(x@milk)) numeric() else iceWater
   x@alias <- character(); x@alias_class <- 'Frapp\u00e9'
-  x@nutribullet24 <- nutribullet24(treatment = c(
+  x@tool <- list(nutribullet24(treatment = c(
     'put in ice cubes \u21d2 powders \u21d2 non-alcoholic liquid',
     'blend',
     'add alcohol last'
-  ))
+  )))
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {
     'drink' # undefined 'drinkmix'
@@ -163,7 +163,7 @@ frappe.drinkmix <- \(
 
 
 #' @rdname drink
-#' @param object a \linkS4class{drinkmix} object
+#' @param object see **Usage**
 #' @export
 setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   callNextMethod(object)

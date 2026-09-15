@@ -62,7 +62,7 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
     'Staub deep skillet, 8.5in' = 1000,
     'Cupcake 2.75in' = 60
   ),
-  RobamCT763 = RobamCT763(
+  tool = list(RobamCT763(
     #treatment = c(
     #  'Preheat Staub deep skillet, 8.5in, for 10min'
     # crust on top is nice!
@@ -77,7 +77,7 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
       'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
     )#,
     #cooling = paste(col_green('optional'), 'flip cast iron skillet to release. Cool on a rack')
-  )
+  ))
 ))
 
 

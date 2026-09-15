@@ -9,7 +9,7 @@
 \S4method{show}{spice}(object)
 }
 \arguments{
-\item{object}{a \linkS4class{spice} object}
+\item{object}{see \strong{Usage}}
 }
 \description{
 \linkS4class{spice}

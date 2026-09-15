@@ -33,18 +33,19 @@ adzukiBeanPaste <- \() new(
   Class = 'beanPaste',
   adzukibean = 200, water = 1330 - 200, # confirmed
   butter = 53, brownSugar = 67,
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(
-    treatment = 'dried bean + water, no soaking needed',
-    waterLost = 40 # to confirm
-  ),
-  JoyoungCJA9U = JoyoungCJA9U( 
-    treatment = 'hot, fresh bean mud + butter',
-    operation = c(
-      '15min+5min, stir occasionally', # to confirm
-      'fold brown sugar into hot, cooked paste'
+  tool = list(
+    JoyoungDJ13U_soymilk(
+      treatment = 'dried bean + water, no soaking needed',
+      waterLost = 40 # to confirm
     ),
-    waterLost = 430 # to confirm
-  )
+    JoyoungCJA9U( 
+      treatment = 'hot, fresh bean mud + butter',
+      operation = c(
+        '15min+5min, stir occasionally', # to confirm
+        'fold brown sugar into hot, cooked paste'
+      ),
+      waterLost = 430 # to confirm
+    ))
 )
 
 
@@ -55,26 +56,27 @@ redKidneyBeanPaste <- \() new(
   Class = 'beanPaste',
   redKidneyBean = 200, water = 1325-200, # confirmed
   butter = 60, brownSugar = 85,
-  JoyoungDJ13U = JoyoungDJ13U_soymilk(
-    treatment = 'dried bean + water, no soaking needed',
-    waterLost = 40 # 4201g - 4163g, confirmed!!
-  ),
-  JoyoungCJA9U = JoyoungCJA9U( 
-    treatment = c('hot, fresh bean mud + butter'),
-    operation = c(
-      '15min+5min, stir occasionally', # confirmed!
-      'fold brown sugar into hot, cooked paste'
+  tool = list(
+    JoyoungDJ13U_soymilk(
+      treatment = 'dried bean + water, no soaking needed',
+      waterLost = 40 # 4201g - 4163g, confirmed!!
     ),
+    JoyoungCJA9U( 
+      treatment = c('hot, fresh bean mud + butter'),
+      operation = c(
+        '15min+5min, stir occasionally', # confirmed!
+        'fold brown sugar into hot, cooked paste'
+      ),
     waterLost = 430 # 2342g - 1910g, confirmed!
-  ),
+  )),
   pros = 'works')
 
 
 
 #setClass(Class = 'beanMud', contains = 'recipe', prototype = prototype(
 #  alias_class = '\u8c46\u6ce5',
-#  JoyoungDJ13U = JoyoungDJ13U(operation = '900ml water line')
-#))
+#  tool = list(JoyoungDJ13U(operation = '900ml water line')
+#)))
 
 #adzukiBeanMud <- \() new(
 #  Class = 'beanMud', alias_flavor = '\u7ea2',
@@ -85,14 +87,14 @@ redKidneyBeanPaste <- \() new(
 #  homemade = c(adzukiBeanMud = 600), waterLost = 300, # confirmed!!
 #  brownSugar = 30,
 #  butter = 24,
-#  JoyoungCJA9U = JoyoungCJA9U(
+#  tool = list(JoyoungCJA9U(
 #    treatment = 'bean mud + oil',
 #    program = 'Stir Fry \u7206\u7092',
 #    operation = c(
 #      '15min, stir every 1-2min',
 #      'Fold brown sugar into hot, cooked paste'
 #    )
-#  )) # I love!!!
+#  ))) # I love!!!
 
 
 

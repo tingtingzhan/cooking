@@ -22,11 +22,11 @@ yuenyeungCoconut <- \() new(
   coffee_tsp = c(1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   teabag = c(Twinings_EnglishBreakfast = 2),
-  Stanley14 = Stanley14(treatment = c(
+  tool = list(Stanley14(treatment = c(
     'add teabags and boiling water',
     'add all powders, whisk smooth',
     'add barista coconut'
-  )),
+  ))),
   date = as.Date('2025-07-13'))
 
 #' @rdname yuenyeungCoconut-class
@@ -44,13 +44,13 @@ yuenyeungCoconut_summer <- \() new(
   coffee_tsp = 2.5,
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
   teabag = c(Twinings_EnglishBreakfast = 4), # only x2, not x2.5 !!!
-  Stanley40 = Stanley40(treatment = c(
+  tool = list(Stanley40(treatment = c(
     'add teabags, instant coffee and cocoa powder',
     'add boiling water. Cover and soak for 1hr',
     'add dry milk, shake in circle',
     'add barista coconut',
     'add ice-rings'
-  )),
+  ))),
   date = as.Date('2025-05-01'))
 
 
@@ -78,13 +78,13 @@ yuenyeungCoconut_jelly <- \() new(
   coffee_tsp = c(2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
   teabag = c(Twinings_EnglishBreakfast = 4),
-  StanleyJar36 = StanleyJar36(treatment = c(
+  tool = list(StanleyJar36(treatment = c(
     'Cut gelatin leaf into small pieces',
     'Soak teabags (and powder) in hot water inside, loosely covered, for 1hr',
     'After temp reducing to 80C, add gelatin pieces, soak again, and stir well',
     'put in fridge over night, see if this works..',
     'maybe this is not the correct tool..'
-  ))
+  )))
 )
 
 

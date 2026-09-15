@@ -24,7 +24,7 @@ TraderJoes_matchaLatte()
 WilliamsSonoma_mocha()
 }
 \arguments{
-\item{object}{a \linkS4class{nutrition} object}
+\item{object}{see \strong{Usage}}
 }
 \description{
 Nutrition information.
@@ -290,33 +290,7 @@ Nutrition information.
 
 \item{\code{alcohol}}{\link[base]{numeric} scalar, alcohol (in grams) per serving}
 
-\item{\code{waterBath}}{\linkS4class{tool}}
-
-\item{\code{KSM8990}}{\linkS4class{tool}, Kitchen Aid commercial stand mixer KSM8990, 8 quart}
-
-\item{\code{KSM3316X}}{\linkS4class{tool}, Kitchen Aid stand mixer KSM3316X, 3.5 quart}
-
-\item{\code{KSMICM}}{\linkS4class{tool}, Kitchen Aid ice cream maker KSMICM}
-
-\item{\code{CuisinartICE70}}{\linkS4class{tool}, Cuisinart ice cream maker ICE70}
-
-\item{\code{SanyoECJS35S}}{\linkS4class{tool}, Sanyo Rice Cooker ECJ-S35S}
-
-\item{\code{JoyoungDJ13U}}{\linkS4class{tool}, Joyoung soymilk maker DJ13U-P10}
-
-\item{\code{JoyoungDJ06M}}{\linkS4class{tool}, Joyoung mini soymilk maker DJ06M}
-
-\item{\code{JoyoungCJA9U}}{\linkS4class{tool}, Joyoung stir-fry machine CJ-A9U}
-
-\item{\code{nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40,StanleyJar36}}{\linkS4class{tool}}
-
-\item{\code{PhilipsHD9867}}{\linkS4class{tool}}
-
-\item{\code{Staub_vertRoaster}}{\linkS4class{tool}}
-
-\item{\code{RobamCT763}}{\linkS4class{tool}}
-
-\item{\code{InstantPot}}{\linkS4class{tool}}
+\item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
 }}
 
 \examples{

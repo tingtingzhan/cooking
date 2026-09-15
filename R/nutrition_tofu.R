@@ -8,7 +8,7 @@ tofu <- \() new(
   ),
   iceWater = 33,
   waterLost = 100, # in coagulation
-  JoyoungDJ13U = JoyoungDJ13U(
+  tool = list(JoyoungDJ13U(
     treatment = c(
       'Soak dry soybeans + room-temperature water'
     ),
@@ -19,8 +19,7 @@ tofu <- \() new(
     waterLost = (135 + 1200 - 1262) 
     # machine has some clean-water-spill this time (no soaking)
     # next time try soak the beans!
-    
-  ),
+  )),
   review = 'FAILED!! does not coagulate..  do not know why'
 )
 

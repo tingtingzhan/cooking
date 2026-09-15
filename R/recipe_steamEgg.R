@@ -20,7 +20,7 @@ setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
   drymilk = 12,
   water = 100,
   heavyCream = 20,
-  RobamCT763 = RobamCT763(program = 'Steam', fahrenheit = 210, minute = 10)
+  tool = list(RobamCT763(program = 'Steam', fahrenheit = 210, minute = 10))
 ))
 
 

@@ -4,12 +4,12 @@
 setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
   alias_class = '\u867e\U1f990\u8089\u9985',
   shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
-  KSM8990 = KSM8990(
+  tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
     attachment = 'Paddle attachment',
     minute = 3
-  )  
+  ))  
 ))
 
 #' @title Shrimp Filling Recipes

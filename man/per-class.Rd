@@ -9,7 +9,7 @@
 \S4method{show}{per}(object)
 }
 \arguments{
-\item{object}{a \linkS4class{per} object}
+\item{object}{see \strong{Usage}}
 }
 \description{
 ..

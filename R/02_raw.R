@@ -309,7 +309,7 @@ setClass(Class = 'raw.', slots = c(
 
 
 #' @rdname raw_recipe
-#' @param object a \linkS4class{raw.} or \linkS4class{recipe} object
+#' @param object see **Usage**
 #' @export
 setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object))
 

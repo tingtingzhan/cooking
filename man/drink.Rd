@@ -50,7 +50,7 @@ frappe(x, ...)
 
 \item{ice, iceWater}{\link[base]{numeric} scalars, for \link{frappe}}
 
-\item{object}{a \linkS4class{drinkmix} object}
+\item{object}{see \strong{Usage}}
 }
 \value{
 The function \code{\link[=hotdrink]{hotdrink()}} returns a \linkS4class{drink} object,

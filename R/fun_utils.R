@@ -292,5 +292,59 @@ add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
 
 
 
+get_flavor_ <- \(x) {
+  # `x` is base::character base::vector
+  x |>
+    lapply(FUN = \(i) eval(call(i))) |>
+    vapply(FUN = \(i) {
+      if (inherits(i, 'nutrition')) {
+        i@name
+      } else if (inherits(i, what = 'recipe')) {
+        #i@alias_flavor
+        i@alias |> 
+          gsub(pattern = 'Evaporated', replacement = '') |> 
+          trimws()
+      } else stop('what happens?')
+    }, FUN.VALUE = '') |>
+    paste(collapse = ' + ')
+}
+
+
+
+
+gram_per_tsp <- \(x) {
+  if (!length(x)) return(double())
+  
+  x1 <- if (is.character(x)) {
+    if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
+    names(x) <- x
+    x |> 
+      lapply(FUN = \(i) {
+        call(name = i) |>
+          eval() |>
+          as(Class = 'nutrition')
+      })
+  } else x
+  
+  if (!is.recursive(x1) || !all(vapply(x1, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) 
+    stop('input cannot be converted to `nutrition`')
+  
+  x1 |> 
+    vapply(FUN = \(i) {
+      if (!length(i@servingTsp)) return(NA_real_) #stop(ix@name, ' does not have volume info')
+      i@servingGram / i@servingTsp
+    }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+}
+
+
+format_pc <- \(object, name) {
+  ret <- slot(object, name = name) / eval(call(name))@servingGram
+  ret |> 
+    sprintf(fmt = '%.3gpcs') |> 
+    col_br_blue() |> 
+    style_bold()
+}
+
+
 
 

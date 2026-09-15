@@ -105,7 +105,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
     'restore all ingredients to room temperature',
     paste('slow whisk everything', col_cyan('including eggs')) # see how Junior does it https://youtu.be/dUtq2hETohc
   ),
-  RobamCT763 = RobamCT763(
+  tool = list(RobamCT763(
     treatment = '1-inch boiling-water bath',
     cooling = 'Cool down in boiling water bath with oven door open',
     program = 'Steam Bake (Steam-&-Baking Tray)',
@@ -115,7 +115,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
       'Emile Henry 9in, crustless' = 22, # 25min minor cracks
       'Emile Henry 9in, cookie crust' = 22 # 20min center not completely set
     )
-  )
+  ))
   
 ))
 

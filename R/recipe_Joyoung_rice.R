@@ -10,12 +10,12 @@
 #' @export
 setClass(Class = 'brownrice', contains = 'recipe', prototype = prototype(
   alias_class = '\u7cd9\u7c73\u996d', alias_flavor = '',
-  JoyoungDJ13U = JoyoungDJ13U(
+  tool = list(JoyoungDJ13U(
     program = '\u852c\u83dc\u7ca5\u7a0b\u5e8f Porridge program, 900ml water line', 
     note = 'makes 3 to 3.5 cups of rice',
     cooling = 'unplug from power, let stand for 2hr+'
     # waterLost = ? # confirm next time!
-  )
+  ))
 ))
 
 # @rdname brownrice-class

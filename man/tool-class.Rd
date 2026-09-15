@@ -9,7 +9,7 @@
 \S4method{show}{tool}(object)
 }
 \arguments{
-\item{object}{a \linkS4class{tool} object}
+\item{object}{see \strong{Usage}}
 }
 \description{
 ..

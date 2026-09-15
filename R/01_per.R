@@ -41,7 +41,7 @@ format.per <- \(x, ...) {
 
 
 #' @rdname per-class
-#' @param object a \linkS4class{per} object
+#' @param object see **Usage**
 #' @importFrom charwidth row_fmt_matrix
 # @importFrom cli cli_verbatim
 #' @export

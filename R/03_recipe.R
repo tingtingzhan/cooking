@@ -36,22 +36,8 @@
 #' 
 #' @slot machine \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used
 #' 
-#' @slot waterBath \linkS4class{tool}
-#' @slot KSM8990 \linkS4class{tool}, Kitchen Aid commercial stand mixer KSM8990, 8 quart
-#' @slot KSM3316X \linkS4class{tool}, Kitchen Aid stand mixer KSM3316X, 3.5 quart
-#' @slot KSMICM \linkS4class{tool}, Kitchen Aid ice cream maker KSMICM
-#' @slot CuisinartICE70 \linkS4class{tool}, Cuisinart ice cream maker ICE70
-#' @slot SanyoECJS35S \linkS4class{tool}, Sanyo Rice Cooker ECJ-S35S
-#' @slot JoyoungDJ13U \linkS4class{tool}, Joyoung soymilk maker DJ13U-P10
-#' @slot JoyoungDJ06M \linkS4class{tool}, Joyoung mini soymilk maker DJ06M
-#' @slot JoyoungCJA9U \linkS4class{tool}, Joyoung stir-fry machine CJ-A9U
-#' @slot nutribullet20,nutribullet24,Stanley14,Stanley20,Stanley40,StanleyJar36 \linkS4class{tool}
-#' @slot PhilipsHD9867 \linkS4class{tool}
-#' @slot Staub_vertRoaster \linkS4class{tool}
-#' @slot RobamCT763 \linkS4class{tool}
-#' @slot InstantPot \linkS4class{tool}
+#' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 
-
 #' @slot note \link[base]{character} scalar or \link[base]{vector}, additional note to chef
 #' @slot instruction \link[base]{character} scalar or \link[base]{vector},
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, people's comments
@@ -101,19 +87,8 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   #doi = 'character',
   
   machine = 'list',
-  waterBath = 'tool',
-  KSM8990 = 'tool',
-  KSM3316X = 'tool',
-  KSMICM = 'tool',
-  CuisinartICE70 = 'tool',
-  SanyoECJS35S = 'tool',
-  JoyoungDJ13U = 'tool', JoyoungDJ06M = 'tool',
-  JoyoungCJA9U = 'tool',
-  nutribullet20 = 'tool', nutribullet24 = 'tool', Stanley14 = 'tool', Stanley20 = 'tool', Stanley40 = 'tool', StanleyJar36 = 'tool',
-  PhilipsHD9867 = 'tool',
-  Staub_vertRoaster = 'tool',
-  RobamCT763 = 'tool',
-  InstantPot = 'tool',
+  
+  tool = 'list',
   
   note = 'character',
   instruction = 'character',
@@ -128,40 +103,6 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 ), prototype = prototype(
   date = as.Date.numeric(numeric()) # must!!
 ))
-
-
-
-setAs(from = 'recipe', to = 'raw.', def = \(from) {
-  slt0 <- names(getSlots(x = 'raw.'))
-  atr0 <- attributes(from)[slt0]
-  atr <- atr0[lengths(atr0) > 0L]
-  do.call(what = new, args = c(list(Class = 'raw.'), atr))
-})
-
-
-
-
-
-
-
-
-
-
-
-
-get_flavor_ <- \(x) {
-  x |>
-    lapply(FUN = \(i) eval(call(i))) |>
-    vapply(FUN = \(i) {
-      if (inherits(i, 'nutrition')) {
-        i@name
-      } else if (inherits(i, what = 'recipe')) {
-        #i@alias_flavor
-        i@alias |> gsub(pattern = 'Evaporated', replacement = '') |> trimws()
-      } else stop('what happens?')
-    }, FUN.VALUE = '') |>
-    paste(collapse = ' + ')
-}
 
 
 
@@ -474,7 +415,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 #' @rdname raw_recipe
-# @param object a \linkS4class{recipe} object
 #' @export
 setMethod(f = show, signature = 'recipe', definition = \(object) {
   
@@ -552,20 +492,8 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     cat('\n')
   }
   
-  show(object@waterBath)
-  show(object@KSM8990)
-  show(object@KSM3316X)
-  show(object@KSMICM)
-  show(object@CuisinartICE70)
-  show(object@JoyoungDJ13U)
-  show(object@JoyoungDJ06M)
-  show(object@JoyoungCJA9U)
-  show(object@nutribullet20); show(object@nutribullet24); 
-  show(object@Stanley14); show(object@Stanley20); show(object@Stanley40); show(object@StanleyJar36)
-  show(object@PhilipsHD9867)
-  show(object@Staub_vertRoaster)
-  show(object@RobamCT763)
-  show(object@InstantPot)
+  object@tool |>
+    print.toollist()
   
   if (length(object@machine)) {
     cat('Machine:\n')

@@ -26,32 +26,34 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
     'New York strip steak\U1f969' = 10 # to confirm!!!
   ),
   
-  InstantPot = InstantPot(
-    name2 = Staub_deepSkillet()@name,
-    program = '\u4f4e\u6e29\u6c34\u6d74\u7a0b\u5e8f Sous Vide program',
-    fahrenheit = c(140),
-    minute = c('New York strip steak\U1f969, 1-1.5inch' = 60),
-    cooling = c(
-      'let stand 10min in bag', 
-      'pat dry',
-      'pan-sear fat cap'
-    )
-  ),
-  
-  Staub_vertRoaster = Staub_vertRoaster(
-    treatment = c(
-      'scald trussed poultry skin using boiling water',
-      'pat dry; season inside',
-      'stand on vertical roaster, brush coating on skin'
+  tool = list(
+    InstantPot(
+      name2 = Staub_deepSkillet()@name,
+      program = '\u4f4e\u6e29\u6c34\u6d74\u7a0b\u5e8f Sous Vide program',
+      fahrenheit = c(140),
+      minute = c('New York strip steak\U1f969, 1-1.5inch' = 60),
+      cooling = c(
+        'let stand 10min in bag', 
+        'pat dry',
+        'pan-sear fat cap'
+      )
     ),
-    fahrenheit = 350,
-    minute = c('whole duck\U1f986, 3-3.5lb' = 90),
-    cooling = 'let stand 30min+ before carving'
-  ),
-  
-  PhilipsHD9867 = PhilipsHD9867(
-    fahrenheit = 350,
-    minute = c('half duck\U1f986, 3-3.5lb, skin face up' = 35)
+    
+    Staub_vertRoaster(
+      treatment = c(
+        'scald trussed poultry skin using boiling water',
+        'pat dry; season inside',
+        'stand on vertical roaster, brush coating on skin'
+      ),
+      fahrenheit = 350,
+      minute = c('whole duck\U1f986, 3-3.5lb' = 90),
+      cooling = 'let stand 30min+ before carving'
+    ),
+    
+    PhilipsHD9867(
+      fahrenheit = 350,
+      minute = c('half duck\U1f986, 3-3.5lb, skin face up' = 35)
+    )
   )
 
 ))

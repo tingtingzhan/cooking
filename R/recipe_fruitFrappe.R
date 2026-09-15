@@ -3,7 +3,7 @@
 
 setClass(Class = 'fruitFrappe', contains = 'recipe', prototype = prototype(
   alias_class = '\u6c34\u679c\u5976\u6614',
-  nutribullet20 = nutribullet20()
+  tool = list(nutribullet20())
 ))
 
 # what I am actually having

@@ -84,7 +84,8 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
     'Robam CT763: Steam bake, 250\u00b0F/30min, if not specified otherwise',
     'Finish top with extra butter at any temperature (silicone brush is hot)'
   ),
-  KSM8990 = KSM8990(
+  
+  tool = list(KSM8990(
     program = 'Level 2',
     operation = c(
       'Rest everything, except butter, overnight',
@@ -92,7 +93,7 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
       'Knead until smooth. Add room-temperature butter',
       'Stop kneading once all butter absorbed'
     )
-  ),
+  )),
   machine = list(
     # 'Bread Pizza; Emile Henry Medium Rectangular (3.2 qt) TRY!!!' = c(
     #  'Divide half (1/2) recipe into ten (10) short strips',

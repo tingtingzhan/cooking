@@ -25,7 +25,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
   #starch_Tbsp = c(Wegmans_corn = 5), # for 2.5% sodium
   starch_Tbsp = c(Wegmans_corn = 5.5), # for 3.6% sodium
   
-  KSM8990 = KSM8990(
+  tool = list(KSM8990(
     treatment = c(
       'Cut meat into 1inch cubes. Soak in water overnight in fridge',
       'Drain and squeeze dry',
@@ -34,7 +34,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
     program = 'Level 4',
     attachment = 'Paddle attachment',
     minute = 3
-  ),
+  )),
   
   
   portion = c(

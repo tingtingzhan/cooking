@@ -67,12 +67,12 @@ pork_trotter <- \() new(
   Class = 'nutrition', 
   name = 'Pork\U1f416 Trotter',
   servingGram = 500,
-  InstantPot = InstantPot(
+  tool = list(InstantPot(
     program = 'Pressure Cook, High',
     fahrenheit = 240,
     minute = c('pork\U1f416 trotter' = 25), # confirmed!!!
     cooling = 'natural release'
-  )
+  ))
 )
 
 

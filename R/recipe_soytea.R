@@ -18,10 +18,10 @@ setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   alias_class = '\u8c46\u6d46\u8336',
   homemade = c(soymilk = 600),
   brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
-  Stanley20 = Stanley20(treatment = c(
+  tool = list(Stanley20(treatment = c(
     'must use freshly brewed soy milk',
     'soak (covered) for 1hr+'
-  ))
+  )))
 ))
 
 #' @rdname soytea-class

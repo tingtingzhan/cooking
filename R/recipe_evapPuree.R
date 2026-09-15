@@ -19,14 +19,14 @@ setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
 pineapple_evap <- \() new(
   Class = 'evap',
   pineapple = c(Dole_pineapple = 2070 - 933),
-  JoyoungCJA9U = JoyoungCJA9U(
+  tool = list(JoyoungCJA9U(
     minute = 20, # confirmed! violently bubbling; must not extend!
     cooling = c(
       'covered, until bubbling quiets down',
       'disassemble machine as early as possible; syrup may stuck'
     ),
     waterLost = 387 # confirmed
-  ),
+  )),
   note = '2x 567g Dole cans'
 )
 
