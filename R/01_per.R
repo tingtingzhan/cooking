@@ -54,8 +54,8 @@ setMethod(f = show, signature = 'per', definition = \(object) {
     cat()
   ret |>
     row_fmt_matrix() |>
-    lapply(FUN = cat, sep = '\n')
-    #lapply(FUN = cli_verbatim) # alternative
+    cat(sep = '\n')
+    # cli_verbatim() # sep by '\n' by default
   cat('\n')
 })
 
@@ -64,6 +64,7 @@ setMethod(f = show, signature = 'per', definition = \(object) {
 # @param x a \link[base]{list} of \linkS4class{per} objects
 #' @importFrom charwidth row_fmt_matrix
 #' @importFrom stats median.default
+# @importFrom cli cli_verbatim
 #' @export
 print.perlist <- \(x, ...) {
   
@@ -92,7 +93,8 @@ print.perlist <- \(x, ...) {
     cat()
   y |> 
     row_fmt_matrix() |>
-    lapply(FUN = cat, sep = '\n')
+    cat(sep = '\n')
+  # cli_verbatim() # sep by '\n' by default
   cat('\n')
   return(invisible(y))
 }

@@ -85,6 +85,7 @@ summary.nutritionlist <- \(object, ...) {
 }
 
 #' @importFrom charwidth row_fmt_matrix
+# @importFrom cli cli_verbatim
 #' @method print summary.nutritionlist
 #' @export
 print.summary.nutritionlist <- \(x, ...) {
@@ -104,7 +105,8 @@ print.summary.nutritionlist <- \(x, ...) {
   
   ret |> 
     row_fmt_matrix() |>
-    lapply(FUN = cat, sep = '\n')
+    cat(sep = '\n')
+    # cli_verbatim() # sep by '\n' by default
   cat('\n')
   return(invisible(ret))
   
