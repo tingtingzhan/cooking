@@ -183,9 +183,11 @@ blueberry_custardFilling <- \() new(
 mango_custardFilling <- \() new(
   Class = 'custardFilling',
   mango = 530, waterLost = 265, butter = 40, # confirmed
-  machine = list(Nutribullet = 'Thaw a full large cup', 
-              'Joyoung CJ-A9U' = 'Stir Fry, 4min-4min-3min-3min-3min, manually stir between sessions'),
-  # did 6min-5min-3min-3min. Cooked well, but burnt a little bit from the 1st session
+  machine = list(Nutribullet = 'Thaw a full large cup'),
+  tool = list(JoyoungCJA9U(
+    minute = 17,
+    #waterLost = 100 # to confirmed
+  )),
   note = c('Mango puree sticks and burns like crazy..'),
   review = c(
     'RETRY with new trick of butter',
@@ -204,7 +206,10 @@ yellowPeach_custardFilling <- \() new(
   puree = c(Kirkland_peach = 525), waterLost = 315, # confirmed!
   butter = 23,
   note = 'One (1) recipe calls for a full jar, after discarding syrup (contains added sugar)',
-  machine = list('Joyoung CJ-A9U' = 'Stir Fry, 15min'),
+  tool = list(JoyoungCJA9U(
+    minute = 15,
+    #waterLost = 100 # to confirmed
+  )),
   review = 'Lacks a signatrue flavor.  Try without discarding syrup!!!')
 
 
@@ -215,7 +220,10 @@ date_custardFilling <- \() new(
   flavor = c(SunnyFruit_date = 100), water = 150, waterLost = 85, # confirmed!
   butter = 23,
   note = 'Soak grinded date in water for 4hr+',
-  machine = list('Joyoung CJ-A9U' = 'Stir Fry, 3min'),
+  tool = list(JoyoungCJA9U(
+    minute = 3,
+    #waterLost = 100 # to confirmed
+  )),
   pros = 'Effie\'s Signature')
 
 
@@ -228,7 +236,10 @@ fig_custardFilling <- \() new(
   flavor = c(SunnyFruit_fig = 120), water = 200, waterLost = 125, # try
   butter = 23,
   note = 'Soak grinded fig in water for 4hr+',
-  machine = list('Joyoung CJ-A9U' = 'Stir Fry, 3min'),
+  tool = list(JoyoungCJA9U(
+    minute = 3,
+    #waterLost = 100 # to confirmed
+  )),
   review = 'try')
 
 
@@ -269,7 +280,10 @@ blackSesame_custardFilling <- \() new(
   # drymilk = 50, sugar = 40, butter = 23, # before 2023-12-02
   drymilk = 17, sugar = 40, butter = 10, # try
   water = 240, waterLost = 160, 
-  machine = list('Joyoung CJ-A9U' = 'Stir Fry, 12min'),
+  tool = list(JoyoungCJA9U(
+    minute = 12,
+    #waterLost = 100 # to confirmed
+  )),
   # note = c('Reduce sugar to 30g if eat directly'), # note before 2023-12-02
   review = 'Effie\'s Signature (before 2023-12-02)')
 

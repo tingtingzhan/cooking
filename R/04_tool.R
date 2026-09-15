@@ -97,12 +97,18 @@ JoyoungDJ13U_cornjuice <- \(
 
 JoyoungCJA9U <- \(
   program = '\u7206\u7092\u7a0b\u5e8f Stir Fry program',
+  operation = 'manually stir frequently',
   ...
 ) new(
   Class = 'tool',
   name = style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html') |> c(), 
   alias = '\u7092\u83dc\u673a',
-  program = program,
+  program = program, 
+  operation = operation,
+  cooling = c(
+    'covered, until bubbling quiets down',
+    'disassemble machine as early as possible; syrup may stuck'
+  ),
   ...)
 
 nutribullet20 <- \(...) new(

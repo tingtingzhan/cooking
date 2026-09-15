@@ -86,55 +86,66 @@ setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
 #' @export
 setMethod(f = show, signature = 'tool', definition = \(object) {
   
-  if (identical(object, new(Class = 'tool'))) return(invisible())
-    
-  object@name |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
-  object@name2 |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
+  x <- object; object <- NULL
   
-  if (length(object@recipe_pc)) {
-    object@recipe_pc |> sprintf(fmt = ' \u2726 Makes x%.1f recipes at a time\n') |> cat()
+  if (identical(x, new(Class = 'tool'))) return(invisible())
+    
+  x@name |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
+  x@name2 |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
+  
+  if (length(x@recipe_pc)) {
+    x@recipe_pc |> sprintf(fmt = ' \u2726 Makes \u00d7%.1f recipes at a time\n') |> cat()
   }
   
-  # object@recipe_weight
+  # x@recipe_weight
   # stopifnot(identical(' ', '\u0020'))
-  object@treatment |> sprintf(fmt = ' \u21ac %s\n') |> cat(sep = '')
+  x@treatment |> sprintf(fmt = ' \u21ac %s\n') |> cat(sep = '')
   
-  object@program |> sprintf(fmt = ' \u2726 %s\n') |> cat()
-  object@attachment |> sprintf(fmt = ' \U1f6e0 %s\n') |> cat()
+  x@program |> sprintf(fmt = ' \u2726 %s\n') |> cat()
+  x@attachment |> sprintf(fmt = ' \U1f6e0 %s\n') |> cat()
   
-  txt_fahrenheit <- object@fahrenheit |> sprintf(fmt = '%.0f\u00b0F') |> col_blue()
-  txt_celsius <- ((object@fahrenheit - 32) * 5/9) |> sprintf(fmt = '%.0f\u00b0C') |> col_magenta()
+  txt_fahrenheit <- if (length(x@fahrenheit)) {
+    x@fahrenheit |> 
+      sprintf(fmt = '\U1f321%.0f\u00b0F') |> col_blue()
+  } else ''
+  txt_celsius <- if (length(x@fahrenheit)) {
+    ((x@fahrenheit - 32) * 5/9) |> 
+      sprintf(fmt = '\U1f321%.0f\u00b0C') |> col_magenta()
+  } else ''
   
-  if (length(object@minute)) {
-    min_ <- object@minute
+  if (length(x@minute)) {
+    min_ <- x@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
     sprintf(
-      fmt = ' \U1f321%s \U1f321%s \u23f0%s %s', 
+      fmt = ' %s %s \u23f0%s %s', 
       txt_fahrenheit, txt_celsius,
       min_ |> fmt_min() |> col_red() |> style_bold(),
       min_ |> names() |> bg_br_yellow()
-    ) |> cat(sep = '\n')
+    ) |> 
+      gsub(pattern = '^ *|(?<= ) | *$', replacement = ' ', perl = TRUE) |>
+      cat(sep = '\n')
   } else sprintf(
-    fmt = ' \U1f321%s \U1f321%s', 
-    txt_fahrenheit, 
-    txt_celsius
-  ) |> paste(collapse = '\n') |> cat()
+    fmt = ' %s %s', 
+    txt_fahrenheit, txt_celsius
+  ) |> 
+    gsub(pattern = '^ *|(?<= ) | *$', replacement = ' ', perl = TRUE) |>
+    cat(sep = '\n')
   
-  object@operation |>
+  x@operation |>
     gsub(pattern = '\n', replacement = '') |>
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
     sprintf(fmt = ' \u21ac %s\n') |> 
     cat(sep = '')
   
-  object@cooling |> 
+  x@cooling |> 
     sprintf(fmt = ' \u21ac %s\n') |> 
     cat(sep = '')
   
-  object@waterLost |> 
+  x@waterLost |> 
     sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n') |> 
     cat()
   
-  object@note |> 
+  x@note |> 
     sprintf(fmt = ' \u2756 %s\n') |> 
     cat(sep = '')
   

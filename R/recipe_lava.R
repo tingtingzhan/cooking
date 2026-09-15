@@ -153,8 +153,11 @@ pineapple_lava <- \() new(
   gelatin_leaf = 4,
   waterLost = 135,
   note = 'Chill before wrapping.',
-  machine = list(Nutribullet = 'One (1) recipe calls for a full can', 
-                 'Joyoung CJ-A9U' = 'Stir Fry, 8min'),
+  machine = list(Nutribullet = 'One (1) recipe calls for a full can'),
+  tool = list(JoyoungCJA9U(
+    minute = 8,
+    #waterLost = 100 # to confirmed
+  )),
   review = c('Need to use gelatin=6', 'Too sour when hot, don\'t make in future.'))
 
 

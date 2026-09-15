@@ -40,10 +40,7 @@ adzukiBeanPaste <- \() new(
     ),
     JoyoungCJA9U( 
       treatment = 'hot, fresh bean mud + butter',
-      operation = c(
-        '15min+5min, stir occasionally', # to confirm
-        'fold brown sugar into hot, cooked paste'
-      ),
+      minute = 20, # to confirm
       waterLost = 430 # to confirm
     ))
 )
