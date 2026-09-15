@@ -30,7 +30,7 @@
 #' @name lava-class
 #' @export
 setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
-  alias_class = '\u6d41\u5fc3\u9985',
+  class2 = '\u6d41\u5fc3\u9985',
   water = 80,
   water80 = 640,
   glutinousRiceFlour = 32,
@@ -49,8 +49,8 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
 sesame_lava <- \() new(
   Class = 'lava',
   blackSesame = 400,
-  #flavor = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice! (no longer support this use)
-  flavor = c(Kirkland_mixedNutButter = 100), # nice!
+  #misc = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice! (no longer support this use)
+  misc = c(Kirkland_mixedNutButter = 100), # nice!
   #sugar = 140, # sugar 9.8%
   sugar = 130, # sugar 9.2
   note = c(
@@ -88,7 +88,7 @@ coconut_lava_OLD <- \() new(
 #' @rdname lava-class
 #' @export
 Daat_sesamelava <- \() new(
-  Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   daatgo = 'FvS_W_qnlxc',
   blackSesame = 160+20,
   # 黑芝麻酱  Black sesame paste 20g ???
@@ -104,7 +104,7 @@ Daat_sesamelava <- \() new(
 #' @rdname lava-class
 #' @export
 xiaomin_sesamelava <- \() new(
-  Class = 'recipe', author = '\u5c0f\u654f', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  Class = 'recipe', author = '\u5c0f\u654f', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   youtube = 'uCbXXVp4h40',
   blackSesame = 120,
   sugar = 40,
@@ -115,7 +115,7 @@ xiaomin_sesamelava <- \() new(
 #' @rdname lava-class
 #' @export
 FancyNotes_sesamelava <- \() new(
-  Class = 'recipe', author = '\u4e54\u4e54\u5988', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  Class = 'recipe', author = '\u4e54\u4e54\u5988', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   blackSesame = 150,
   sugar = 40, 
   homemade = c(invertSugar = 50), butter = 80,
@@ -124,7 +124,7 @@ FancyNotes_sesamelava <- \() new(
 #' @rdname lava-class
 #' @export
 xiaogaojie_sesamelava <- \() new(
-  Class = 'recipe', alias_flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   xiaogaojie = 't-pop_dGsgc',
   blackSesame = 80,
   nut = c(pecan = 30),
@@ -135,7 +135,7 @@ xiaogaojie_sesamelava <- \() new(
 
 
 daat_yolklava <- \() new(
-  Class = 'recipe', alias_flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
+  Class = 'recipe', flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
   eggYolk_pc = 12, # salted duck egg yolk 12pc, 144g
   butter = 180,
   sugar = 220,
@@ -162,6 +162,6 @@ pineapple_lava <- \() new(
 
 
 #date_lava <- \() new(
-#  Class = 'lava', alias_flavor = '\u7ea2\u67a3',
-#  flavor = c(SunnyFruit_date = 80), )
+#  Class = 'lava', flavor = '\u7ea2\u67a3',
+#  misc = c(SunnyFruit_date = 80), )
 

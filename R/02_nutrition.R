@@ -1,7 +1,5 @@
 
 
-#setOldClass('cli_ansi_string')
-
 #' @title \linkS4class{nutrition} Information
 #' 
 #' @description 
@@ -10,7 +8,7 @@
 #' @slot brand \link[base]{character} scalar, manufacture brand
 #' 
 #' @slot name \link[base]{character} scalar, product name
-#' @slot alias \link[base]{character} scalar, product alias
+#' @slot alias \link[base]{character} scalar with Unicode symbols, product alias
 #' @slot call \link[base]{language}, the function name to create this \linkS4class{nutrition}
 #' 
 #' @slot suggestion \link[base]{list}
@@ -156,7 +154,6 @@
 setClass(Class = 'nutrition', slots = c(
   
   brand = 'character',
-  #brand = 'cli_ansi_string',
   
   alias = 'character',
   call = 'language',
@@ -336,20 +333,19 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     x@sodium <- x@salt / (35.453+22.990)*22.990
     x@salt <- numeric()
   }
+
+  if (length(x@name) && !length(x@alias)) {
+    x@alias <- switch(tolower(x@name), 'cream cheese' = {
+      '\u5976\u6cb9\u5976\u916a'
+    }, 'ghee' = {
+      '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924'
+    }, 'heavy cream' = {
+      '\u91cd\u5976\u6cb9'
+    }, character())
+  }
   
   # name
   if (length(x@name)) {
-    
-    if (!length(x@alias)) {
-      x@alias <- switch(tolower(x@name), 'cream cheese' = {
-        '\u5976\u6cb9\u5976\u916a'
-      }, 'ghee' = {
-        '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924'
-      }, 'heavy cream' = {
-        '\u91cd\u5976\u6cb9'
-      }, character())
-    }
-    
     if (length(x@alias)) {
       x@name <- paste(
         sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call)) |> 
@@ -357,7 +353,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         x@name)
       x@alias <- character()
     }
-    
   }
   
   # serving weight

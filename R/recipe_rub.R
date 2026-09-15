@@ -19,7 +19,7 @@
 #' @name rub-class
 #' @export
 setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
-  alias_class = '\u814c\u6599', # \u7a7a\u6c14\u70b8\u9505
+  class2 = '\u814c\u6599', # \u7a7a\u6c14\u70b8\u9505
   
   portion = c(
     'whole duck\U1f986, 3-3.5lb, inside rub' = 18,
@@ -66,7 +66,7 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
 #' @export
 cuminMontreal_rub <- \() new(
   Class = 'rub',
-  alias_flavor = 'Cumin+Montreal',
+  flavor = 'Cumin+Montreal',
   spice_tsp = c(
     SimplyOrganic_cumin = 1,
     McCormick_MontrealSteak = 1.5,
@@ -226,7 +226,7 @@ Guga_rub <- \() new(
 
 kalbi_rub <- \() new( # confirm next time!
   Class = 'recipe',
-  alias_flavor = '\u97e9\u5f0f\u725b\u4ed4\u9aa8',
+  flavor = '\u97e9\u5f0f\u725b\u4ed4\u9aa8',
   sauce_Tbsp = c(
     LeeKumKee_blackPepper = 3*2,
     #LeeKumKee_coconutCurry = 1

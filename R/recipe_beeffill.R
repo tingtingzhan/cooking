@@ -17,7 +17,7 @@
 #' @name beeffill-class
 #' @export
 setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
-  alias_class = '\u725b\U1f402\u8089\u9985',
+  class2 = '\u725b\U1f402\u8089\u9985',
   # 1kg beef, with only a little fat
   beef = c(brisket_flat = 350, brisket_flat_lean = 650), # fat tastes enough
   
@@ -55,7 +55,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
 #' @aliases beeffillLeeKumKee-class
 #' @export
 setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototype(
-  alias_flavor = '\u674e\u9526\u8bb0\u4e94\u9999\u9ed1\u6912',
+  flavor = '\u674e\u9526\u8bb0\u4e94\u9999\u9ed1\u6912',
   
   #beef = c(brisket_flat = 850), pork = c(fat = 150), 
   # dog no diarrhea, but a little too fat for me

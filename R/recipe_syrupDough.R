@@ -24,7 +24,7 @@ setClass(Class = 'syrupDough', contains = 'recipe')
 #' @export
 CantoneseMooncakeShell <- \() new(
   Class = 'syrupDough',
-  alias_flavor = 'Cantonese Mooncake Shell',
+  flavor = 'Cantonese Mooncake Shell',
   pastryFlour = 150, 
   homemade = c(invertSugar = 75),
   water = 10, butter = 30,

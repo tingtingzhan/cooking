@@ -35,7 +35,7 @@ setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
 
 
 ViewRoad_tortilla <- \() new(
-  Class = 'recipe', author = 'View on the Road', alias_flavor = 'Tortilla',
+  Class = 'recipe', author = 'View on the Road', flavor = 'Tortilla',
   youtube = 'fA68XXQJN4Y', 
   flour = 2.5 * 120,
   salt_tsp = 1,
@@ -44,7 +44,7 @@ ViewRoad_tortilla <- \() new(
 
 
 ViewRoad_pumpkin_tortilla <- \() new(
-  Class = 'recipe', author = 'View on the Road', alias_flavor = 'Pumpkin Tortilla',
+  Class = 'recipe', author = 'View on the Road', flavor = 'Pumpkin Tortilla',
   youtube = 'hPMc1a19CsU', 
   flour_cup = 1.25,
   pumpkin_cup = 1/3,
@@ -62,7 +62,7 @@ ViewRoad_pumpkin_tortilla <- \() new(
 #' @aliases tortillaOlive-class
 #' @export
 setClass(Class = 'tortillaOlive', contains = 'tortilla', prototype = prototype(
-  alias_class = 'Tortilla(\u6a44\u6984\u6cb9,\u54b8)',
+  class2 = 'Tortilla(\u6a44\u6984\u6cb9,\u54b8)',
   oil = c(Wegmans_olive = 30)
 ))
 
@@ -71,7 +71,7 @@ setClass(Class = 'tortillaOlive', contains = 'tortilla', prototype = prototype(
 #' @aliases tortillaLard-class
 #' @export
 setClass(Class = 'tortillaLard', contains = 'tortilla', prototype = prototype(
-  alias_class = 'Tortilla(\u732a\u6cb9,\u751c)',
+  class2 = 'Tortilla(\u732a\u6cb9,\u751c)',
   lard = 30, # 1 cup, 228g
   sugar = 50
 ))
@@ -118,7 +118,7 @@ tomato_tortillaLard <- \() new(
 
 
 xiaogaojie_flatbread <- \() new(
-  Class = 'recipe', alias_flavor = 'Flatbread',
+  Class = 'recipe', flavor = 'Flatbread',
   flour = 300,
   water = 150+15,
   yeast_tsp = 1/4,

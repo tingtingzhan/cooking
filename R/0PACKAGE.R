@@ -148,7 +148,7 @@ if (FALSE) {
     yuenyeungCoconut = .02, 
     ricepaste = .025,
     riceMousse = {
-      if (all(grepl('Rice$', names(x@flavor)))) .035 else .05
+      if (all(grepl('Rice$', names(x@misc)))) .035 else .05
     }, 
     stickyTortilla = .03,
     bread = .035, # perfect with match, coffee
@@ -713,7 +713,7 @@ if (FALSE) {
   gelatin2water <- \(x) switch(
     class(x), 
     #riceMousse = {
-    #if (grepl('coconutmilk', names(obj@flavor)) |> any()) .01 else .02
+    #if (grepl('coconutmilk', names(obj@misc)) |> any()) .01 else .02
     #},
     mousse = .036,
     NA_real_)

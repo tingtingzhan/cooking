@@ -34,7 +34,7 @@
 #' @name gateau-class
 #' @export
 setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
-  alias_class = 'Ga\u0302teau', # 'G\u00e2teau' # ??
+  class2 = 'Ga\u0302teau', # 'G\u00e2teau' # ??
   pastryFlour = 120, #flour = 120,
   heavyCream = 150,
   egg_pc = 1,
@@ -58,7 +58,7 @@ cocoa_gateau <- \() new(
 
 cocoa_gateau_FAIL <- \() new(
   Class = 'recipe',
-  alias_class = 'Ga\u0302teau', # 'G\u00e2teau' # ??
+  class2 = 'Ga\u0302teau', # 'G\u00e2teau' # ??
   
   breadFlour = 120, #flour = 120,
   # cannot use bread flour!  Contains too much water haha
@@ -109,7 +109,7 @@ pumpkin_gateau <- \() new(
 #' @rdname gateau-class
 #' @export
 AddaPinch_chocolate_cake <- \() new(
-  Class = 'recipe', author = 'Add-A-Pinch', alias_flavor = 'Chocolate Cake',
+  Class = 'recipe', author = 'Add-A-Pinch', flavor = 'Chocolate Cake',
   url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   flour = 240, sugar = 396,
   cocoa = 63, coffee = 2.3,
@@ -124,7 +124,7 @@ AddaPinch_chocolate_cake <- \() new(
 #' @rdname gateau-class
 #' @export
 PreppyKitchen_chocolate_cake <- \() new(
-  Class = 'recipe', alias_flavor = 'Chocolate Cake',
+  Class = 'recipe', flavor = 'Chocolate Cake',
   flour = 240, sugar = 400,
   cocoa = 50,
   bakingPowder_tsp = 1.5, NaHCO3_tsp = 1.5, salt_tsp = 1/4, # ½ teaspoon kosher salt
@@ -138,7 +138,7 @@ PreppyKitchen_chocolate_cake <- \() new(
 #' @rdname gateau-class
 #' @export
 DessertFor2_matcha_cake <- \() new(
-  Class = 'recipe', author = 'DessertFor2', alias_flavor = 'Matcha Cake',
+  Class = 'recipe', author = 'DessertFor2', flavor = 'Matcha Cake',
   butter = 99,
   sugar = 200,
   egg_pc = 2,
@@ -153,7 +153,7 @@ DessertFor2_matcha_cake <- \() new(
 #' @rdname gateau-class
 #' @export
 Sallys_pumpkin_cake <- \() new(
-  Class = 'recipe', author = 'Sally\'s', alias_flavor = 'Pumpkin Cake',
+  Class = 'recipe', author = 'Sally\'s', flavor = 'Pumpkin Cake',
   flour = 250,
   bakingPowder_tsp = 2,
   NaHCO3_tsp = 1,

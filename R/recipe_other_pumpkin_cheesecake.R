@@ -4,7 +4,7 @@
 Natasha_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
   natashaskitchen = 'pumpkin-cheesecake-recipe',
-  alias_class = 'Cheesecake',
+  class2 = 'Cheesecake',
   creamCheese_brick = c(Philadelphia = 3),
   brownSugar = c(Domino_lightBrown = 288), # 1 1/2 cups packed light brown sugar
   pumpkinPieMix = 425, # 15 oz; original. contains 20.7% sugar 
@@ -37,7 +37,7 @@ Junior_pumpkin_cheesecake <- \() new(
 
 PreppyKitchen_pumpkin_cheesecake <- \() new(
   Class = 'recipe', 
-  alias_class = 'Cheesecake',
+  class2 = 'Cheesecake',
   creamCheese_brick = c(Philadelphia = 3),
   sugar = 150,
   brownSugar = 115,
@@ -80,7 +80,7 @@ CheesecakeFactory_pumpkin <- \() new(
 
 BrianLagerstrom_burntBasque <- \() new(
   Class = 'recipe',
-  alias_flavor = 'Burnt Basque Cheesecake',
+  flavor = 'Burnt Basque Cheesecake',
   author = 'Brian Lagerstrom', youtube = 'eW-nF1xEFSA',
   creamCheese = c(Philadelphia = 800),
   cheese = c(Wegmans_goat = 225),

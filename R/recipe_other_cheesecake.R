@@ -16,7 +16,7 @@
 
 Junior_cappuccino_cheesecake <- \() new(
   Class = 'recipe', 
-  alias_flavor = 'Cappuccino Cheesecake',
+  flavor = 'Cappuccino Cheesecake',
   creamCheese_brick = c(Philadelphia = 4),
   coffee_Tbsp = 1,
   boilingWater = 15,
@@ -30,7 +30,7 @@ Junior_cappuccino_cheesecake <- \() new(
 
 
 PreppyKitchen_cheesecake <- \() new(
-  Class = 'recipe', alias_flavor = 'Cheesecake',
+  Class = 'recipe', flavor = 'Cheesecake',
   creamCheese_brick = c(Philadelphia = 3),
   sugar = 200,
   salt_tsp = 1/4,
@@ -56,7 +56,7 @@ Junior_original <- \() new(
 Junior_cookbook <- \() new(
   Class = 'recipe', 
   juniorscheesecakecookbook = 34L,
-  alias_flavor = 'Original',
+  flavor = 'Original',
   creamCheese_brick = c(Philadelphia = 4),
   sugar_cup = c(Domino_granulated = 1+2/3), 
   starch_cup = c(Wegmans_corn = 1/4),
@@ -86,7 +86,7 @@ Junior_strawberrySwirl <- \() new(
 
 
 PreppyKitchen_chocolate_cheesecake <- \() new(
-  Class = 'recipe', alias_flavor = 'Cheesecake',
+  Class = 'recipe', flavor = 'Cheesecake',
   # 1/4 cup coffee hot ???
   # 1 cup bittersweet chocolate ???
   # 3/4 cup semisweet chocolate ???

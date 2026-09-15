@@ -57,7 +57,7 @@
 #' @name muffin-class
 #' @export
 setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
-  alias_class = 'Muffin\U1f9c1',
+  class2 = 'Muffin\U1f9c1',
   portion = c(
     'Staub deep skillet, 8.5in' = 1000,
     'Cupcake 2.75in' = 60

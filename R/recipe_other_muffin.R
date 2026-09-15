@@ -35,7 +35,7 @@ muffin_tmp <- \() new(
 #' @rdname muffin_other
 #' @export
 Brody_muffin <- \() new(
-  Class = 'recipe', author = 'Brody', alias_flavor = 'Muffin', 
+  Class = 'recipe', author = 'Brody', flavor = 'Muffin', 
   sugar = 300,
   egg_pc = 2,
   oil = c(Wegmans_vegetable = 224), # 1 cup, original
@@ -50,7 +50,7 @@ Brody_muffin <- \() new(
 #' @rdname muffin_other
 #' @export
 Introvert_muffin <- \() new(
-  Class = 'recipe', author = 'Introvert', alias_flavor = 'Muffin', 
+  Class = 'recipe', author = 'Introvert', flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   flour_cup = 2,
   sugar = 100,
@@ -64,7 +64,7 @@ Introvert_muffin <- \() new(
 #' @rdname muffin_other
 #' @export
 CulinaryHill_muffin <- \() new(
-  Class = 'recipe', author = 'Culinary Hill', alias_flavor = 'Muffin', 
+  Class = 'recipe', author = 'Culinary Hill', flavor = 'Muffin', 
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = 240,
   sugar = 200,
@@ -79,7 +79,7 @@ CulinaryHill_muffin <- \() new(
 #' @rdname muffin_other
 #' @export
 Lori_muffin <- \() new(
-  Class = 'recipe', author = 'Lori', alias_flavor = 'Muffin', allrecipes = '6874/best-ever-muffins/',
+  Class = 'recipe', author = 'Lori', flavor = 'Muffin', allrecipes = '6874/best-ever-muffins/',
   flour = 240, 
   bakingPowder_Tbsp = 1,
   salt_tsp = 1/2,
@@ -91,7 +91,7 @@ Lori_muffin <- \() new(
 
 
 Sallys_pumpkin_muffin <- \() new(
-  Class = 'recipe', author = 'Sally\'s', alias_flavor = 'Pumpkin Muffin',
+  Class = 'recipe', author = 'Sally\'s', flavor = 'Pumpkin Muffin',
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
   flour_cup = 1.75,
   NaHCO3_tsp = 1,

@@ -57,7 +57,7 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
 #' @aliases wrapperlinda-class
 #' @export
 setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
-  alias_class = '\u6c64\u9762\U1f35c \u6c34\u997a\U1f95f\u6284\u624b\u76ae',
+  class2 = '\u6c64\u9762\U1f35c \u6c34\u997a\U1f95f\u6284\u624b\u76ae',
   portion = c(
     '\u6284\u624b\u76ae wonton; 6x thru Thickness-2' = 5, # tried and nice.  Weigh to confirm
     
@@ -119,7 +119,7 @@ pumpkin_wrapperlinda <- \() new(
 #' @name noodlelinda-class
 #' @export
 setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
-  alias_class = '\u5e7c\u9762\U1f35d',
+  class2 = '\u5e7c\u9762\U1f35d',
   portion = c(
     '\u9762\u6761\U1f35d\U1f35c noodle' = 100
   )#,

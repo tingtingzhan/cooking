@@ -18,7 +18,7 @@
 #' @name rice-class
 #' @export
 setClass(Class = 'rice', contains = 'recipe', prototype = prototype(
-  alias_class = '\u7c73\u996d', alias_flavor = '',
+  class2 = '\u7c73\u996d', flavor = '',
   tool = list(SanyoECJS35S(
     program = '\u852c\u83dc\u7ca5\u7a0b\u5e8f Wite/Mixed program, 3-cup water line', 
     cooling = 'unplug from power, let stand for 2hr+'

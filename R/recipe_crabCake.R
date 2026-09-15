@@ -10,7 +10,7 @@
 #' @name crabCake-class
 #' @export
 setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
-  alias_class = 'Crab Cake'
+  class2 = 'Crab Cake'
 ))
 
 #' @rdname crabCake-class

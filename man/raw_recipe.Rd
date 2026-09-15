@@ -35,7 +35,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 \describe{
 \item{\code{homemade}}{\link[base]{numeric} vector}
 
-\item{\code{flavor,flavor_tsp,flavor_Tbsp,flavor_cup}}{\link[base]{numeric} vector, weight of one or more flavoring (in grams)}
+\item{\code{misc,misc_tsp,misc_Tbsp,misc_cup}}{\link[base]{numeric} vector, weight of one or more miscellaneous ingredients (in grams)}
 
 \item{\code{puree}}{\link[base]{numeric} vector, weight of one or more puree (in grams)}
 
@@ -263,9 +263,11 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{avocado_pc}}{\link[base]{numeric} scalar, number of fresh avocado (each contains 140 grams of pulp)}
 
-\item{\code{alias}}{\link[base]{character} scalar in Unicode, alias (e.g., in Chinese)}
+\item{\code{alias}}{\link[base]{character} scalar with Unicode symbols}
 
-\item{\code{alias_class,alias_flavor}}{\link[base]{character} scalar in Unicode, alias (e.g., in Chinese) of class and flavor}
+\item{\code{class2}}{\link[base]{character} scalar with Unicode symbols, alias of class}
+
+\item{\code{flavor}}{\link[base]{character} scalar with Unicode symbols}
 
 \item{\code{author}}{\link[base]{character} scalar}
 

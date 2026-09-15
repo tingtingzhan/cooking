@@ -170,7 +170,7 @@ KingArthur_selfRising <- \() new(
 
 KingArthur_selfRising_homemade <- \() new(
   Class = 'recipe', 
-  alias_flavor = 'Homemade Self-Rising Flour',
+  flavor = 'Homemade Self-Rising Flour',
   author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',
   flour_cup = 1,

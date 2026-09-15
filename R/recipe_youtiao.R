@@ -24,7 +24,7 @@ if (FALSE) {
 
 youtiao <- \() new(
   Class = 'recipe',
-  alias_class = '\u6cb9\u6761',
+  class2 = '\u6cb9\u6761',
   flour = c(Wegmans_pastry = 250, KingArthur_bread = 250),
   egg_pc = 1,
   oil = c(Wegmans_corn = 20),
@@ -36,7 +36,7 @@ youtiao <- \() new(
 )
 
 xiaogaojie_youtiao <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u6761', 
+  Class = 'recipe', flavor = '\u6cb9\u6761', 
   xiaogaojie = 'uRc3F6uwR3E',
   flour = 350,
   milk = 250,
@@ -48,7 +48,7 @@ xiaogaojie_youtiao <- \() new(
 
 mathstar_youtiao <- \() new(
   Class = 'recipe',
-  author = 'MathStar', alias_flavor = '\u6cb9\u6761',
+  author = 'MathStar', flavor = '\u6cb9\u6761',
   url = 'https://huaren.us/showtopic.html?topicid=3003916&fid=398',
   flour = 500,
   bakingPowder = 12, yeast = 6,
@@ -61,7 +61,7 @@ mathstar_youtiao <- \() new(
 
 
 PinNuo_youtiao1 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67611', 
+  Class = 'recipe', flavor = '\u6cb9\u67611', 
   pino = 'xoFcbox1VDE',
   flour = 500,
   bakingPowder = 6, NaHCO3 = 3, salt = 5, sugar = 5,
@@ -69,7 +69,7 @@ PinNuo_youtiao1 <- \() new(
 
 
 PinNuo_youtiao2 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67612', 
+  Class = 'recipe', flavor = '\u6cb9\u67612', 
   pino = 'cD2mJYDaXU0',
   flour = 500,
   # NaHCO3 = 3, #su-cui-ji = 6, # primary component NaHCO3
@@ -81,7 +81,7 @@ PinNuo_youtiao2 <- \() new(
 
 
 PinNuo_youtiao3 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67613', 
+  Class = 'recipe', flavor = '\u6cb9\u67613', 
   pino = '8Af9_PiZx2Q',
   flour = 1000,
   bakingPowder = 10, 
@@ -93,7 +93,7 @@ PinNuo_youtiao3 <- \() new(
   water = 480)
 
 PinNuo_youtiao4 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67614', 
+  Class = 'recipe', flavor = '\u6cb9\u67614', 
   pino = 'KAUdFDRD8l0',
   flour = 1000,
   yeast = 10, NaHCO3 = 5, salt = 10, sugar = 8,
@@ -102,7 +102,7 @@ PinNuo_youtiao4 <- \() new(
 
 
 PinNuo_youtiao5 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67615', 
+  Class = 'recipe', flavor = '\u6cb9\u67615', 
   pino = 'bKZy7TGnMbE',
   flour = 500,
   bakingPowder = 3, salt = 3, sugar = 3,
@@ -112,7 +112,7 @@ PinNuo_youtiao5 <- \() new(
   water = 260)
 
 PinNuo_youtiao6 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67616', 
+  Class = 'recipe', flavor = '\u6cb9\u67616', 
   pino = 'YoEO04dWiz0',
   flour = 500,
   bakingPowder = 8, 
@@ -123,7 +123,7 @@ PinNuo_youtiao6 <- \() new(
   water = 250)
 
 PinNuo_youtiao7 <- \() new(
-  Class = 'recipe', alias_flavor = '\u6cb9\u67617', 
+  Class = 'recipe', flavor = '\u6cb9\u67617', 
   pino = 'cv3JhX8NbNs',
   flour = 1000, # white sesame 60g
   bakingPowder = 15, 

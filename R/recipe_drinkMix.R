@@ -13,7 +13,7 @@
 #' @aliases drinkmix-class
 #' @export
 setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
-  alias_class = 'Mix' # '\u901f\u6eb6\u7c89'
+  class2 = 'Mix' # '\u901f\u6eb6\u7c89'
 ))
 
 setValidity(Class = 'drinkmix', method = \(object) {
@@ -77,7 +77,7 @@ hotdrink.drinkmix <- \(
 ) {
   x@water <- water
   x@water90 <- water90
-  x@alias <- character(); x@alias_class <- '' # '\u70ed\u996e'
+  x@alias <- character(); x@class2 <- '' # '\u70ed\u996e'
   x@tool <- list(Stanley20(treatment = c(
     'add room-temperature water',
     paste('add powders,', col_red('sweep cup bottom with a square scoop,'), 'whisk until smooth'),
@@ -138,7 +138,7 @@ frappe.drinkmix <- \(
 ) {
   x@ice <- ice
   x@iceWater <- if (length(x@milk)) numeric() else iceWater
-  x@alias <- character(); x@alias_class <- 'Frapp\u00e9'
+  x@alias <- character(); x@class2 <- 'Frapp\u00e9'
   x@tool <- list(nutribullet24(treatment = c(
     'put in ice cubes \u21d2 powders \u21d2 non-alcoholic liquid',
     'blend',
@@ -171,13 +171,13 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   hot <- hotdrink(object) # 2-cup hot water, or shaved ice
   #nutri_ <- nutrition(hot)
   nutri_ <- hot |> as(Class = 'nutrition')
-  flavor_ <- attr(nutri_, which = 'perServingFlavor', exact = TRUE)
-  flavor_@per <- sprintf(
+  servingFlv <- attr(nutri_, which = 'perServingFlavor', exact = TRUE)
+  servingFlv@per <- sprintf(
     fmt = '%s + %.0fg Water, US\U1f4b5 %.2f', 
-    flavor_@per, 
+    servingFlv@per, 
     sum(hot@water, hot@water80, hot@water90, hot@water95),
     nutri_@usd)
-  print(flavor_)
+  print(servingFlv)
 })
 
 
@@ -188,7 +188,7 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
 # @rdname drink
 # @export
 #lemonade <- \() new(
-#  Class = 'recipe', alias_flavor = 
+#  Class = 'recipe', flavor = 
 # ### that lemonade mix ???  into an iceDrink
 #)
 

@@ -78,11 +78,11 @@ diagnose(
 new('cookie', flour = c(Wegmans_bread = 200, DaoXiangCun_corn = 374), sugar = 110)
 
 
-new('cookie', flavor = c(SunnyFruit_date = 200), pastryFlour = 360, 
+new('cookie', misc = c(SunnyFruit_date = 200), pastryFlour = 360, 
   drymilk = 124)
-new('cookie', flavor = c(SunnyFruit_date = 324), pastryFlour = 360)
+new('cookie', misc = c(SunnyFruit_date = 324), pastryFlour = 360)
 
-new('cookie', flavor = c(Kirkland_plum = 270), pastryFlour = 360, 
+new('cookie', misc = c(Kirkland_plum = 270), pastryFlour = 360, 
   drymilk = 54)
 
 }

@@ -18,7 +18,7 @@
 #' @aliases pumpkinSpiceLatteMix-class
 #' @export
 setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prototype(
-  alias_flavor = 'Pumpkin\U1f383 Spice Latte'
+  flavor = 'Pumpkin\U1f383 Spice Latte'
 ))
 
 #' @rdname pumpkinSpiceLatte

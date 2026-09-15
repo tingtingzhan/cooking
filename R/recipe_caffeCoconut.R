@@ -6,7 +6,7 @@
 #' @name caffeCoconut-class
 #' @export
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
-  alias_class = '\u751f\u6930\u62ff\u94c1',
+  class2 = '\u751f\u6930\u62ff\u94c1',
   drymilk_Tbsp = 1,
   drymilk_tsp = 1,
   coffee_Tbsp = .5,
@@ -24,7 +24,7 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
 #' @export
 caffeCoconut <- \() new(
   Class = 'caffeCoconut', 
-  alias_flavor = 'FreeNow',
+  flavor = 'FreeNow',
   coconut = c(Freenow_coconutBarista = 115),
   water95 = 325, # 596 - 272
   date = as.Date('2026-09-02'), # was

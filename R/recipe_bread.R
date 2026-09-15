@@ -43,7 +43,7 @@
 #' @name bread-class
 #' @export
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
-  alias_class = 'Bread\U1f35e', # '\u9762\u5305',
+  class2 = 'Bread\U1f35e', # '\u9762\u5305',
   breadFlour = c(KingArthur_bread = 500), 
   #eggYolk_pc = 1, # was. too difficult to store the egg white
   egg_pc = 1,

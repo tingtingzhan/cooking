@@ -33,7 +33,7 @@ caffeLatte <- \() new(
 
 caffeGoatLatte_blonde <- \() new(
   Class = 'recipe', 
-  alias_flavor = 'Caff\u00e8 Goat Latte',
+  flavor = 'Caff\u00e8 Goat Latte',
   drymilk = c(Meyenberg_goatWhole_drymilk = 25*2),
   coffee_tsp = c(4.5*2), 
   pros = 'I love')

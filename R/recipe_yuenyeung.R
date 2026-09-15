@@ -7,7 +7,7 @@
 #' @name yuenyeungCoconut-class
 #' @export
 setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
-  #alias_class = '\u751f\u6930\u9e33\u9e2f'
+  #class2 = '\u751f\u6930\u9e33\u9e2f'
 ))
 
 
@@ -15,7 +15,7 @@ setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
 #' @export
 yuenyeungCoconut <- \() new(
   Class = 'yuenyeungCoconut', 
-  #alias_flavor = 'FreeNow',
+  #flavor = 'FreeNow',
   coconut = c(Freenow_coconutBarista = 180),
   boilingWater = 255,
   drymilk = c(Carnation = 10),
@@ -33,7 +33,7 @@ yuenyeungCoconut <- \() new(
 #' @export
 yuenyeungCoconut_summer <- \() new(
   Class = 'yuenyeungCoconut', 
-  #alias_flavor = 'FreeNow',
+  #flavor = 'FreeNow',
   # coconut = c(Freenow_coconutBarista = 560), # was 225*2.5
   coconut = c(Freenow_coconutBarista = 450), # try 180*2.5
   #total water = 210*2.5, # was

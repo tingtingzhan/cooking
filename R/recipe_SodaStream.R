@@ -5,7 +5,7 @@
 #' @name SodaStream-class
 #' @export
 setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
-  alias_class = 'SodaStream\u6c7d\u6c34',
+  class2 = 'SodaStream\u6c7d\u6c34',
   iceWater = 450
 ))
 
@@ -22,6 +22,6 @@ lemonSoda <- \() new(Class = 'SodaStream', lemon_pc = 1, review = 'try')
 
 lemonadeSoda <- \() new(
   Class = 'SodaStream',
-  flavor_Tbsp = c(CountryTime_Lemonade = 1),
+  misc_Tbsp = c(CountryTime_Lemonade = 1),
   pros = c('Acidity just right', 'Not sweet at all')
 )

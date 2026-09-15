@@ -176,7 +176,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     # focus on material, *not* on nutrition!!
     Class = 'per', per = 'Raw Material', equiv = list(
       # `Base:Aerator` no longer matters :)
-      #base <- sum(atr$gelatin, x@puree, x@water, x@water40, x@boilingWater, x@iceWater, x@dairy, x@flavor)
+      #base <- sum(atr$gelatin, x@puree, x@water, x@water40, x@boilingWater, x@iceWater, x@dairy, x@misc)
       #aerator <- sum(x@heavyCream, atr$eggWhite, x@sugar, x@brownSugar)
       #sprintf(fmt = '%.2f', base / aerator)
       # 'Gelatin:Water' = if ((gelatin <- sum(atr$gelatin)) & water) {
@@ -187,7 +187,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       #  new(Class = 'equiv', current = x@selfRisingFlour / flour, target)
       #},
       # 'Acid:SelfRising' = if (length(x@selfRisingFlour)) {
-      #  acid_weight <- x@flavor['CountryTime_Lemonade']
+      #  acid_weight <- x@misc['CountryTime_Lemonade']
       #  acid_rate <- c(CountryTime_Lemonade = 1 - CountryTime_Lemonade()@sugar/CountryTime_Lemonade()@servingGram)
       #  acid <- sum(acid_weight * acid_rate, na.rm = TRUE)
       #  target <- switch(class(x), pancake =, pancakeMix = .0077)

@@ -2,7 +2,7 @@
 
 
 setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
-  alias_class = '\u867e\U1f990\u8089\u9985',
+  class2 = '\u867e\U1f990\u8089\u9985',
   shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
   tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
@@ -34,7 +34,7 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 #' @name shrimpfillCantonese-class
 #' @export
 setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = prototype(
-  alias_flavor = '\u5e7f\u5e9c\u65e9\u8336\u98ce\u5473',
+  flavor = '\u5e7f\u5e9c\u65e9\u8336\u98ce\u5473',
   
   pork = c(fat = 200),
   
@@ -90,7 +90,7 @@ shrimpfillCantonese_OLD <- \() new(
 
 
 setClass(Class = 'shrimpfillMaine', contains = 'shrimpfill', prototype = prototype(
-  alias_flavor = 'Maine\u9f99\u867e\u5377\u98ce\u5473', 
+  flavor = 'Maine\u9f99\u867e\u5377\u98ce\u5473', 
   starch_Tbsp = c(Wegmans_corn = 2),
   #butter = 150, # 780/227*42.5 = 146
   butter_cup = 1/2, # 115g all butter stays in bao!
@@ -122,7 +122,7 @@ shrimpfillMaine <- \() new(
 #' @aliases shrimpfill_garlicHerb-class
 #' @export
 setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = prototype(
-  alias_flavor = 'Wegmans\u849c\u9999\u98ce\u5473', 
+  flavor = 'Wegmans\u849c\u9999\u98ce\u5473', 
   
   #starch_tsp = c(Wegmans_corn = 7), # old experiment
   starch_tsp = c(Wegmans_corn = 6), # 
@@ -134,7 +134,7 @@ setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = p
   # !!! remove garlic completely! Wegman's basting oil contains garlic flavor
   
   spice_tsp = c(McCormick_whitePepper = 1/4),
-  flavor = c(
+  misc = c(
     CountryTime_Lemonade = 10
   ),
   portion = meatfill_portion(), 
@@ -156,12 +156,12 @@ shrimpfill_garlicHerb <- \() new(Class = 'shrimpfill_garlicHerb', review = 'try 
 #' @aliases shrimpfill_oldBay-class
 #' @export
 setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = prototype(
-  alias_flavor = 'Wegmans Old Bay\u98ce\u5473',
+  flavor = 'Wegmans Old Bay\u98ce\u5473',
   starch_Tbsp = c(Wegmans_corn = 2),
   oil = c(Wegmans_basting = 200),
   # garlic_tsp = 1, # try without
   spice_tsp = c(McCormick_whitePepper = 1/8),
-  flavor = c(
+  misc = c(
     CountryTime_Lemonade = 8
   ),
   spice_Tbsp = c(
@@ -220,7 +220,7 @@ Wegmans_garlicShrimp <- \() new(
 #' @rdname shrimpfillCantonese-class
 #' @export
 Daat_shrimpfill <- \() new(
-  Class = 'recipe', alias_flavor = '\u867e\U1f990\u997a\u9985', 
+  Class = 'recipe', flavor = '\u867e\U1f990\u997a\u9985', 
   daatgo = 'SYLIYqVV2N4',
   shrimp = 600, lard = 30, pork = c(fat = 120),
   vegetable = c(bambooShoot = 90),
@@ -232,7 +232,7 @@ Daat_shrimpfill <- \() new(
 #' @rdname shrimpfillCantonese-class
 #' @export
 whiteSwan_shrimpfill <- \() new(
-  Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', alias_flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
+  Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
   shrimp = 250, pork = c(fat = 50), lard = 35,
   salt = 3, msg = 2,
   sugar = 3, sesameOil = 3.5, 

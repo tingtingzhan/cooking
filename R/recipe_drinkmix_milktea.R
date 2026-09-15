@@ -14,7 +14,7 @@
 #' @name milktea-class
 #' @export
 setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
-  alias_class = '\u5976\u8336',
+  class2 = '\u5976\u8336',
   drymilk = 40, 
   brownSugar_tsp = 2 # 1tsp too bland; 1Tbsp too sweet
 ))
@@ -25,7 +25,7 @@ setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
 #' @export
 EarlGrey_milktea <- \() new(
   Class = 'milktea', 
-  alias_flavor = 'Earl Grey', 
+  flavor = 'Earl Grey', 
   teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), 
   review = 'try')
 

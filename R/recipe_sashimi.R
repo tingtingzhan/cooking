@@ -10,7 +10,7 @@ sashimi1 <- \() new(
     mizkan_brownRiceVinegar = 7
   ),
   spice_tsp = c(McCormick_whitePepper = 1/8), # add next time!
-  flavor = c(Jbasket_whiteSesame = 10),
+  misc = c(Jbasket_whiteSesame = 10),
   seafood = c(
     #salmonSashimi = 150, # great! did not use up all sauce
     salmonSashimi = 160,

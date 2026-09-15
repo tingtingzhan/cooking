@@ -18,7 +18,7 @@
 #' @export
 invertSugar <- \() new(
   Class = 'recipe', 
-  alias_flavor = '\u8f6c\u5316\u7cd6\u6d46 Invert Sugar Syrup',
+  flavor = '\u8f6c\u5316\u7cd6\u6d46 Invert Sugar Syrup',
   sugar = 600, boilingWater = 300, lemon_pc = 1, # waterLost = ?? # weigh and confirm
   water = 60, NaHCO3_tsp = 1/4,
   xiaogaojie = 'ijG7Yn96B-g',

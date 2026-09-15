@@ -1,7 +1,7 @@
 
 
 setClass(Class = 'liangpi', contains = 'recipe', prototype = prototype(
-  alias_class = '\u51c9\u76ae',
+  class2 = '\u51c9\u76ae',
   pastryFlour = c(Wegmans_pastry = 350),
   starch = c(ManSang_wheat = 150),
   water = 800
@@ -15,7 +15,7 @@ liangpi <- \() new(
 
 
 PinNuo_liangPi <- \() new(
-  Class = 'recipe', alias_flavor = '\u51c9\u76ae', 
+  Class = 'recipe', flavor = '\u51c9\u76ae', 
   pino = 'FrpmqMfZ7CM',
   flour = 350,
   starch = c(ManSang_wheat = 150),
@@ -26,7 +26,7 @@ PinNuo_liangPi <- \() new(
 
 ricePi <- \() new(
   Class = 'recipe',
-  alias_class = '\u7c73\u76ae',
+  class2 = '\u7c73\u76ae',
   youtube = 'cditsCOMQ4I', # 1kg dry rice + 500g boiling water
   riceFlour = 454,
   water = 300, # experiment! Look at PinNuo's rice paste texture!!
@@ -36,8 +36,8 @@ ricePi <- \() new(
 
 mianjin <- \() new(
   Class = 'recipe',
-  alias_class = '\u591a\u6751\u9ec4\u6559\u716e', alias_flavor = '\u9762\u7b4b', youtube = 'rgmp-ulEeMk',
-  flavor = c(BobsRedMill_wheatGluten = 100),
+  class2 = '\u591a\u6751\u9ec4\u6559\u716e', flavor = '\u9762\u7b4b', youtube = 'rgmp-ulEeMk',
+  misc = c(BobsRedMill_wheatGluten = 100),
   water = 150,
   yeast = 2
 )

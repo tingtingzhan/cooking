@@ -11,7 +11,7 @@
 #' @name starchDough-class
 #' @export
 setClass(Class = 'starchDough', contains = 'recipe', prototype = prototype(
-  alias_class = 'Starch Dough'
+  class2 = 'Starch Dough'
 ))
 
 

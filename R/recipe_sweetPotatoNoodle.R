@@ -5,7 +5,7 @@
 #' @name soaked-class
 #' @export
 setClass(Class = 'soaked', contains = 'recipe', prototype = prototype(
-  alias_class = '\u6ce1\u53d1'
+  class2 = '\u6ce1\u53d1'
 ))
 
 
@@ -13,8 +13,8 @@ setClass(Class = 'soaked', contains = 'recipe', prototype = prototype(
 #' @export
 sweetPotatoNoodle_soaked <- \() new(
   Class = 'soaked',
-  alias_flavor = '\u7ea2\u85af\u7c89', 
-  flavor = c(JayOne_sweetPotato = 300), # weighed
+  flavor = '\u7ea2\u85af\u7c89', 
+  misc = c(JayOne_sweetPotato = 300), # weighed
   boilingWater = 1060 - 300#, # confirmed!!
   #instruction (legacy) = c(
   #  'prepare 1.2x boiling water',

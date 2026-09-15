@@ -36,7 +36,7 @@ Nutrition information.
 
 \item{\code{name}}{\link[base]{character} scalar, product name}
 
-\item{\code{alias}}{\link[base]{character} scalar, product alias}
+\item{\code{alias}}{\link[base]{character} scalar with Unicode symbols, product alias}
 
 \item{\code{call}}{\link[base]{language}, the function name to create this \linkS4class{nutrition}}
 

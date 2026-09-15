@@ -127,7 +127,7 @@ Starbucks_mochaMix <- \() new(
 
 
 Pillsbury_mocha <- \() new(
-  Class = 'recipe', author = 'Pillsbury', alias_flavor = 'Mocha Mix',
+  Class = 'recipe', author = 'Pillsbury', flavor = 'Mocha Mix',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   spice_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5, # didnt say confectioners or granulated
@@ -139,7 +139,7 @@ Pillsbury_mocha <- \() new(
 
 
 Rebecca_mocha <- \() new(
-  Class = 'recipe', author = 'Rebecca', alias_flavor = 'Mocha Mix',
+  Class = 'recipe', author = 'Rebecca', flavor = 'Mocha Mix',
   allrecipes = '23828/hot-mocha-drink-mix/',
   sugar_cup = c(Domino_granulated = 1),
   drymilk_cup = 1,
@@ -152,7 +152,7 @@ Rebecca_mocha <- \() new(
 
 
 bargainmums_mocha <- \() new(
-  Class = 'recipe', author = 'Bargain Mums', alias_flavor = 'Mocha Mix',
+  Class = 'recipe', author = 'Bargain Mums', flavor = 'Mocha Mix',
   coffee = 30, 
   cocoa = c(KingArthur_Bensdorp = 50), 
   sugar = 100, drymilk = 110, vanilla_tsp = 1,
@@ -280,7 +280,7 @@ Starbucks_mochaSauce <- \() new(
 
 
 EarlaTaylor_cocoa <- \() new(
-  Class = 'recipe', author = 'Earla Taylor', alias_flavor = 'Cocoa Mix',
+  Class = 'recipe', author = 'Earla Taylor', flavor = 'Cocoa Mix',
   allrecipes = '9335/hot-cocoa-mix/',
   drymilk_cup = 10,
   sugar_cup = c(Domino_10x = 4.75),
@@ -291,19 +291,19 @@ EarlaTaylor_cocoa <- \() new(
 
 
 Mels_cocoa <- \() new(
-  Class = 'recipe', author = 'Mel\'s', alias_flavor = 'Cocoa Mix',
+  Class = 'recipe', author = 'Mel\'s', flavor = 'Cocoa Mix',
   url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
   drymilk = 405,
   sugar = 228,
   cocoa = c(KingArthur_Bensdorp = 128),
-  flavor = c(Ghirardelli_whiteChocolate = 255),
+  misc = c(Ghirardelli_whiteChocolate = 255),
   salt_tsp = 1/4)
 
 
 
 
 AmandaRettke_cocoa <- \() new(
-  Class = 'recipe', author = 'Amanda Rettke', alias_flavor = 'Cocoa Mix',
+  Class = 'recipe', author = 'Amanda Rettke', flavor = 'Cocoa Mix',
   url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
   sugar = 250,
   cocoa = c(KingArthur_Bensdorp = 118),

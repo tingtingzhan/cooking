@@ -32,17 +32,17 @@
 #' new('cookie', flour = c(Wegmans_bread = 200, DaoXiangCun_corn = 374), sugar = 110)
 #'
 #' 
-#' new('cookie', flavor = c(SunnyFruit_date = 200), pastryFlour = 360, 
+#' new('cookie', misc = c(SunnyFruit_date = 200), pastryFlour = 360, 
 #'   drymilk = 124)
-#' new('cookie', flavor = c(SunnyFruit_date = 324), pastryFlour = 360)
+#' new('cookie', misc = c(SunnyFruit_date = 324), pastryFlour = 360)
 #' 
-#' new('cookie', flavor = c(Kirkland_plum = 270), pastryFlour = 360, 
+#' new('cookie', misc = c(Kirkland_plum = 270), pastryFlour = 360, 
 #'   drymilk = 54)
 #'
 #' @name cookie-class
 #' @export
 setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
-  alias_class = '\u997c\u5e72',
+  class2 = '\u997c\u5e72',
   butter_brick = 1,
   eggYolk_pc = 9,
   portion = c(
@@ -78,7 +78,7 @@ Assam_cookie <- \() new(
 
 
 PreppyKitchen_cookie <- \() new(
-  Class = 'recipe', author = 'Preppy Kitchen', alias_flavor = 'Butter Cookie',
+  Class = 'recipe', author = 'Preppy Kitchen', flavor = 'Butter Cookie',
   flour = c(Wegmans_bread = 120, Wegmans_pastry = 120),
   butter_brick = 1,
   sugar = 70,
@@ -136,7 +136,8 @@ coffee_cookie <- \() new(
 #' @rdname cookie-class
 #' @export
 lemon_cookie <- \() new(
-  Class = 'cookie', flavor = c(CountryTime_Lemonade = 150), 
+  Class = 'cookie', 
+  misc = c(CountryTime_Lemonade = 150), 
   flour = c(Wegmans_bread = 200, Wegmans_pastry = 164), 
   drymilk = 160,
   review = 'a little bit too sour.'

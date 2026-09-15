@@ -17,14 +17,14 @@
 #' @name meatDip-class
 #' @export
 setClass(Class = 'meatDip', contains = 'recipe', prototype = prototype(
-  alias_class = '\U0001f356\U0001f963'
+  class2 = '\U0001f356\U0001f963'
 ))
 
 #' @rdname meatDip-class
 #' @export
 BalsamicVinaigrette_meatDip <- \() new(
   Class = 'meatDip',
-  alias_flavor = 'Balsamic Vinaigrette',
+  flavor = 'Balsamic Vinaigrette',
   sauce_Tbsp = c(
     TraderJoes_BalsamicVinaigrette = 1,
     Kikkoman_soyLite = 1/2
@@ -42,7 +42,7 @@ BalsamicVinaigrette_meatDip <- \() new(
 #' @export
 srirachaBBQ_meatDip <- \() new(
   Class = 'meatDip', 
-  alias_flavor = 'Sriracha BBQ',
+  flavor = 'Sriracha BBQ',
   sauce_Tbsp = c(
     TraderJoes_srirachaBBQ = 1,
     Kikkoman_soyLite = 1/2
@@ -62,7 +62,7 @@ srirachaBBQ_meatDip <- \() new(
 #' @export
 sweetGinger_meatDip <- \() new(
   Class = 'meatDip', 
-  alias_flavor = 'Thai Sweet Ginger',
+  flavor = 'Thai Sweet Ginger',
   sauce_Tbsp = c(
     TraderJoes_ThaiGinger = 1
   ),
@@ -78,7 +78,7 @@ sweetGinger_meatDip <- \() new(
 #' @export
 jalapeno_meatDip <- \() new(
   Class = 'meatDip', 
-  alias_flavor = 'Jalapeno',
+  flavor = 'Jalapeno',
   sauce_tsp = c(
     TraderJoes_jalapenoSauce = 1.5,
     mizkan_brownRiceVinegar = 1.5,

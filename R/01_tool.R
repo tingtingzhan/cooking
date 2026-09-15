@@ -69,11 +69,6 @@ setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
     x@staub <- character()
   }
   
-  if (length(x@alias)) {
-    x@name <- paste(x@alias, x@name)
-    x@alias <- character()
-  }
-
   return(x)
   
 })
@@ -90,7 +85,12 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   if (identical(x, new(Class = 'tool'))) return(invisible())
     
-  x@name |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
+  paste(x@alias, x@name) |>
+    trimws() |>
+    sprintf(fmt = '\u2756 %s \u2756\n') |>
+    make_ansi_style('royalblue')() |> 
+    cat()
+  
   x@name2 |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
   
   if (length(x@recipe_pc)) {

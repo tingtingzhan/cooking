@@ -15,7 +15,7 @@
 #' @name pudding-class
 #' @export
 setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
-  alias_class = '\u725b\u5976\u84b8\u86cb',
+  class2 = '\u725b\u5976\u84b8\u86cb',
   egg_pc = 1,
   drymilk = 12,
   water = 100,
@@ -41,7 +41,7 @@ steamEgg_OLD <- \() new(
 #' @rdname pudding-class
 #' @export
 shangshi_pudding <- \() new(
-  Class = 'recipe', alias_flavor = 'pudding', 
+  Class = 'recipe', flavor = 'pudding', 
   shangshikitchen = 'Nqz-K0TDL5s',
   # 4 croissants 可颂面包
   milk = 720, # 3 cups 
@@ -82,7 +82,7 @@ chicken_steamEggWhite <- \() new(
   Class = 'steamEggWhite',
   eggWhite_pc = 6,
   water = 100,
-  flavor = c(LeeKumKee_chickenBouillon = 1.5),
+  misc = c(LeeKumKee_chickenBouillon = 1.5),
   review = 'try'
 )
 
@@ -92,6 +92,6 @@ chicken_steamEggWhite_old <- \() new(
   Class = 'steamEggWhite',
   eggWhite_pc = 6,
   water = 150,
-  flavor = c(LeeKumKee_chickenBouillon = 5),
+  misc = c(LeeKumKee_chickenBouillon = 5),
   review = 'too salty, too much water'
 )

@@ -24,7 +24,7 @@
 #' @name snowSkin-class
 #' @export
 setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
-  alias_class = '\u51b0\u76ae', 
+  class2 = '\u51b0\u76ae', 
   glutinousRiceFlour = 50, riceFlour = 50, 
   starch = c(ManSang_wheat = 25),
   water = 185,

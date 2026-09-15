@@ -19,7 +19,7 @@
 #' @name juntun-class
 #' @export
 setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
-  alias_class = '\u519b\u5c6f\u9505\u76d4\u76ae',
+  class2 = '\u519b\u5c6f\u9505\u76d4\u76ae',
   pastryFlour = 500,
   sugar_tsp = 4, yeast_tsp = 2, # maybe not too much fermentation..
 

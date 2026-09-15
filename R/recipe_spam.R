@@ -27,7 +27,7 @@
 #' @name spam-class
 #' @export
 setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
-  alias_class = '\u8089\u7cd5',
+  class2 = '\u8089\u7cd5',
   spice_tsp = c(
     McCormick_whitePepper = .5,
     SimplyOrganic_ginger = .5,
@@ -60,7 +60,7 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
 #' @rdname spam-class
 #' @export
 tilapiaSpam <- \() new(
-  Class = 'spam', alias_flavor = '\u7f57\u975e\u9c7c',
+  Class = 'spam', flavor = '\u7f57\u975e\u9c7c',
   pork = c(fatbelly = 180), seafood = c(tilapia = 220), pros = 'Effie\'s Signature')
 
 #' @rdname spam-class
@@ -74,13 +74,13 @@ porkSpam <- \() new(
 #' @rdname spam-class
 #' @export
 shrimpSpam <- \() new(
-  Class = 'spam', alias_flavor = '\u867e',
+  Class = 'spam', flavor = '\u867e',
   pork = c(fatbelly = 180), shrimp = 220, pros = 'Effie\'s Signature')
 
 #' @rdname spam-class
 #' @export
 shrimpLambSpam <- \() new(
-  Class = 'spam', alias_flavor = '\u867e\u7f8a',
+  Class = 'spam', flavor = '\u867e\u7f8a',
   spice_tsp = c(SimplyOrganic_cumin = .25),
   pork = c(fatbelly = 100), lamb = c(leg = 100), shrimp = 200,
   review = c('Taste nice! try again with regular water'))
@@ -89,7 +89,7 @@ shrimpLambSpam <- \() new(
 #' @rdname spam-class
 #' @export
 chickenBreastSpam <- \() new(
-  Class = 'spam', alias_flavor = '\u9e21',
+  Class = 'spam', flavor = '\u9e21',
   pork = c(fatbelly = 100), chicken = c(breast = 300), pros = 'Effie\'s Signature')
 
 
@@ -98,7 +98,7 @@ chickenBreastSpam <- \() new(
 #' @rdname spam-class
 #' @export
 beefSpam <- \() new(
-  Class = 'spam', alias_flavor = '\u725b',
+  Class = 'spam', flavor = '\u725b',
   spice_tsp = c(SimplyOrganic_cumin = .25),
   pork = c(belly = 320), beef = c(chuck = 80), 
   review = c('Nice with beef chuck or chuck short ribs at Costco',
@@ -107,7 +107,7 @@ beefSpam <- \() new(
 #' @rdname spam-class
 #' @export
 shrimpBeefSpam <- \() new(
-  Class = 'spam', alias_flavor = '\u867e\u725b',
+  Class = 'spam', flavor = '\u867e\u725b',
   spice_tsp = c(SimplyOrganic_cumin = .25),
   # pork = c(fatbelly = 100), beef = c(leanchuck = 200), shrimp = 200, # texture not good
   pork = c(fatbelly = 100), beef = c(chuck = 100), shrimp = 200,

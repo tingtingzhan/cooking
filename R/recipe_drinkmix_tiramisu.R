@@ -4,7 +4,7 @@
 #' @name tiramisuMix-class
 #' @export
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
-  #alias_class = '\u901f\u6eb6\u7c89',
+  #class2 = '\u901f\u6eb6\u7c89',
   drymilk = c(Carnation = 40),
   coffee_tsp = c(2.5*2),
   cocoa_tsp = c(KingArthur_Bensdorp = .375*2)

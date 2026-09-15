@@ -107,14 +107,14 @@ such as black sesame seeds.
 }
 \examples{
 diagnose(
- new(Class = 'recipe', alias_class = 'Mascarpone\u88f1\u82b1', 
+ new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
  mascarpone = 453/2, water = 70, 
  sugar_tsp = 10.5, matcha_tsp = 4, 
  pros = 'Effie\'s Signature!'),
  
  matcha_whippedCream(),
  
- new(Class = 'recipe', alias_class = 'Mascarpone\u5976\u6cb9\u971c',
+ new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
  mascarpone = 453/2, water = 110, 
  sugar_tsp = 11.5, matcha_tsp = 4.5, 
  pros = 'Xu Chang, Gloria', 

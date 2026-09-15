@@ -37,14 +37,14 @@
 #' 
 #' @examples
 #' diagnose(
-#'  new(Class = 'recipe', alias_class = 'Mascarpone\u88f1\u82b1', 
+#'  new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
 #'  mascarpone = 453/2, water = 70, 
 #'  sugar_tsp = 10.5, matcha_tsp = 4, 
 #'  pros = 'Effie\'s Signature!'),
 #'  
 #'  matcha_whippedCream(),
 #'  
-#'  new(Class = 'recipe', alias_class = 'Mascarpone\u5976\u6cb9\u971c',
+#'  new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
 #'  mascarpone = 453/2, water = 110, 
 #'  sugar_tsp = 11.5, matcha_tsp = 4.5, 
 #'  pros = 'Xu Chang, Gloria', 
@@ -69,7 +69,7 @@
 #' @name whippedCream-class
 #' @export
 setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
-  alias_class = '\u6253\u53d1\u91cd\u5976\u6cb9',
+  class2 = '\u6253\u53d1\u91cd\u5976\u6cb9',
   heavyCream = 100,
   # instruction (legacy) = c(
   #  'KitchenAid stand mixer: mix and whisk until stiff'
@@ -106,7 +106,7 @@ cocoa_whippedCream <- \() new(
 #' @aliases mascarponeFrosting-class
 #' @export
 setClass(Class = 'mascarponeFrosting', contains = 'recipe', prototype = prototype(
-  alias_class = 'Mascarpone\u88f1\u82b1',
+  class2 = 'Mascarpone\u88f1\u82b1',
   mascarpone = 453/2, # 1 cup mascarpone cheese
   #instruction (legacy) = c(
   #  'KitchenAid stand mixer: mix and whisk until stiff'
@@ -124,7 +124,7 @@ setValidity(Class = 'mascarponeFrosting', method = \(object) {
 #' @aliases frosting-class
 #' @export
 setClass(Class = 'frosting', contains = 'recipe', prototype = prototype(
-  alias_class = '\u79d8\u5236\u88f1\u82b1',
+  class2 = '\u79d8\u5236\u88f1\u82b1',
   mascarpone = 453/4, yogurt = 80 # not tried yet
 ))
 
@@ -139,7 +139,7 @@ setValidity(Class = 'frosting', method = \(object) {
 #' @aliases mascarponeGanache-class
 #' @export
 setClass(Class = 'mascarponeGanache', contains = 'recipe', prototype = prototype(
-  alias_class = 'Mascarpone\u5976\u6cb9\u971c',
+  class2 = 'Mascarpone\u5976\u6cb9\u971c',
   mascarpone = 453/2, # 1 cup mascarpone cheese
   portion = c('mille cre\u0302pe cake 11in' = 1000)#,
   #instruction (legacy) = c(
@@ -156,7 +156,7 @@ setValidity(Class = 'mascarponeGanache', method = \(object) {
 #' @aliases ganache-class
 #' @export
 setClass(Class = 'ganache', contains = 'recipe', prototype = prototype(
-  alias_class = '\u79d8\u5236\u5976\u6cb9\u971c',
+  class2 = '\u79d8\u5236\u5976\u6cb9\u971c',
   mascarpone = 453/4, yogurt = 120, # cannot further increase yogurt!! flavor of yogurt very strong already!!
   portion = c('mille cre\u0302pe cake 11in' = 1000)
 ))
@@ -206,7 +206,7 @@ pineapple_mascarponeFrosting <- \() new(Class = 'mascarponeFrosting', pineapple 
 #' @export
 cocoa_frosting <- \() new(
   Class = 'frosting', 
-  alias_flavor = 'keke', 
+  flavor = 'keke', 
   sugar_tsp = 13, cocoa_Tbsp = c(KingArthur_Bensdorp = 3), review = 'try')
 
 
@@ -227,7 +227,7 @@ tiramisuFrosting_Kahlua <- \() new(
 #' @aliases mascarponeSpread-class
 #' @export
 setClass(Class = 'mascarponeSpread', contains = 'mascarponeGanache', prototype = prototype(
-  alias_class = 'Mascarpone\u5939\u5fc3',
+  class2 = 'Mascarpone\u5939\u5fc3',
   portion = numeric()
 ))
 
@@ -250,7 +250,7 @@ coffee_ganache <- \() new(
 #' @rdname whippedCream-class
 #' @export
 durian_ganache <- \() new(
-  Class = 'ganache', alias_flavor = '\u69b4\u83b2',
+  Class = 'ganache', flavor = '\u69b4\u83b2',
   durian = 300, 
   sugar = 10,
   review = 'try')
@@ -258,7 +258,7 @@ durian_ganache <- \() new(
 
 coconut_mascarponeGanache <- \() new(
   Class = 'mascarponeGanache', 
-  alias_flavor = '\u6930\u5b50\U1f965',
+  flavor = '\u6930\u5b50\U1f965',
   coconut = c(Freenow_coconutBarista_0sugar = 150),
   review = 'try'
 )
@@ -277,7 +277,7 @@ tiramisuGanache_Kahlua <- \() new(
 if (FALSE) {
   new(
     Class = 'recipe', 
-    alias_class = 'Mascarpone\u5976\u6cb9\u971c',
+    class2 = 'Mascarpone\u5976\u6cb9\u971c',
     mascarpone = 453/2,
     liqueur_Tbsp = c(Kahlua_coffee = 2),
     water = 47,
@@ -337,7 +337,7 @@ pumpkin_ganache <- \() new(
 #' @rdname whippedCream-class
 #' @export
 tiramisu_nytimes <- \() new(
-  Class = 'recipe', alias_flavor = 'Tiramisu', 
+  Class = 'recipe', flavor = 'Tiramisu', 
   eggYolk_pc = 4,
   sugar = 100, 
   heavyCream = 180,
@@ -359,7 +359,7 @@ foodandjourneys_mascarponeFrosting <- \() new(
 #' @rdname whippedCream-class
 #' @export
 lifeloveandsugar_mascarponeFrosting <- \() new(
-  Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar',
+  Class = 'mascarponeFrosting', flavor = 'Life Love & Sugar',
   heavyCream_cup = 1.25,
   sugar_cup = c(Domino_10x = 3/4),
   vanilla_tsp = 1,
@@ -368,7 +368,7 @@ lifeloveandsugar_mascarponeFrosting <- \() new(
 #' @rdname whippedCream-class
 #' @export
 lifeloveandsugar_cocoa_mascarponeFrosting <- \() new(
-  Class = 'mascarponeFrosting', alias_flavor = 'Life Love & Sugar, Cocoa',
+  Class = 'mascarponeFrosting', flavor = 'Life Love & Sugar, Cocoa',
   heavyCream_cup = 1.25,
   sugar_cup = c(Domino_10x = 1/2),
   cocoa_cup = 1/4,
@@ -379,7 +379,7 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- \() new(
 #' @export
 Marcellina_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', 
-  alias_flavor = 'Marcellina in Cucina',
+  flavor = 'Marcellina in Cucina',
   heavyCream_cup = 1,
   sugar_cup = c(Domino_10x = 1/4),
   vanilla_tsp = 2,
@@ -391,7 +391,7 @@ Marcellina_mascarponeFrosting <- \() new(
 #' @aliases whippedCreamCheese-class
 #' @export
 setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototype(
-  alias_class = '\u6253\u53d1Cream Cheese',
+  class2 = '\u6253\u53d1Cream Cheese',
   creamCheese_brick = c(Nancys = 1)
 ))  
   

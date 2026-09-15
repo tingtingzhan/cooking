@@ -10,7 +10,7 @@
 #' @name soymilk-class
 #' @export
 setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
-  alias_class = '\u9c9c\u69a8\u8c46\u6d46'
+  class2 = '\u9c9c\u69a8\u8c46\u6d46'
 ))
 
 #' @rdname soymilk-class

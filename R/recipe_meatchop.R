@@ -13,7 +13,7 @@
 #' @name meatchop-class
 #' @export
 setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
-  alias_class = '\u7092\u81ca\u5b50',
+  class2 = '\u7092\u81ca\u5b50',
   portion = c(
     'lasagna, Emile Henry Oval Individual' = 100 # ??
   )#,

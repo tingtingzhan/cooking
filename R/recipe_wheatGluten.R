@@ -8,7 +8,7 @@
 #' @name steamWheatGluten-class
 #' @export
 setClass(Class = 'steamWheatGluten', contains = 'recipe', prototype = prototype(
-  alias_class = '\u84b8\u9762\u7b4b',
+  class2 = '\u84b8\u9762\u7b4b',
   wheatGluten = 120,
   yeast_tsp = 1,
   sugar_tsp = 1#,

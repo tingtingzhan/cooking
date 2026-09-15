@@ -8,7 +8,7 @@
 #' @name meatball-class
 #' @export
 setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
-  alias_class = '\u4e38'#,
+  class2 = '\u4e38'#,
   #instruction (legacy) = c(
   #  'Food processor, finely blend lean meat/seafood',
   #  'Fast paddle lean meat/seafood for 3min',
@@ -72,7 +72,7 @@ GaaDai_beefball <- \() new(
 #' @export
 Daat_cuttlefishball <- \() new(
   Class = 'meatball', 
-  alias_flavor = '\u8fbe\u54e5\u53a8\u623f \u58a8\u9c7c',
+  flavor = '\u8fbe\u54e5\u53a8\u623f \u58a8\u9c7c',
   youtube = 'fLL-DPhSc_E',
   seafood = c(cuttlefish = 250),
   shrimp = 250,
@@ -98,7 +98,7 @@ Daat_cuttlefishball <- \() new(
 #' @name fishball-class
 #' @export
 setClass(Class = 'fishball', contains = 'recipe', prototype = prototype(
-  alias_class = '\u9c7c\u4e38'
+  class2 = '\u9c7c\u4e38'
 ))
 
 

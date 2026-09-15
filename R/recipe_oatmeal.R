@@ -11,7 +11,7 @@
 #' @name oatmeal-class
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
-  alias_class = 'Microwave Oatmeal',
+  class2 = 'Microwave Oatmeal',
   grain = c(Quaker_oat = 40)#,
   #instruction (legacy) = c(
   #  'must soak overnight',

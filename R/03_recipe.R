@@ -3,8 +3,9 @@
 
 #' @rdname raw_recipe
 #' 
-#' @slot alias \link[base]{character} scalar in Unicode, alias (e.g., in Chinese)
-#' @slot alias_class,alias_flavor \link[base]{character} scalar in Unicode, alias (e.g., in Chinese) of class and flavor
+#' @slot alias \link[base]{character} scalar with Unicode symbols
+#' @slot class2 \link[base]{character} scalar with Unicode symbols, alias of class
+#' @slot flavor \link[base]{character} scalar with Unicode symbols
 #' @slot author \link[base]{character} scalar
 #' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 
@@ -53,8 +54,8 @@
 setClass(Class = 'recipe', contains = 'raw.', slots = c(
   
   alias = 'character',
-  alias_class = 'character', 
-  alias_flavor = 'character',
+  class2 = 'character', 
+  flavor = 'character',
   author = 'character',
   tool = 'list',
   date = 'Date',
@@ -266,14 +267,14 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   author <- if (length(x@author)) x@author |> col_green() |> c() # else NULL
   
-  x@alias_class <- if (!length(x@alias_class)) {
+  x@class2 <- if (!length(x@class2)) {
     if (length(author)) author else character()
   } else {
-    if (length(author)) paste(x@alias_class, author) else x@alias_class
+    if (length(author)) paste(x@class2, author) else x@class2
   }
   
-  if (!length(x@alias_flavor)) {
-    x@alias_flavor <- if (length(x@coffee)) {
+  if (!length(x@flavor)) {
+    x@flavor <- if (length(x@coffee)) {
       if (length(x@liqueur)) {
         'Tiramisu\u0300'
       } else if (length(x@cocoa)) {
@@ -382,12 +383,8 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   }
   
   if (!length(x@alias)) {
-    x@alias <- if (length(x@alias_class) & length(x@alias_flavor)) {
-      paste(x@alias_flavor, x@alias_class) |> trimws()
-    } else if (length(x@alias_class) & !length(x@alias_flavor)) {
-      x@alias_class
-    } else if (!length(x@alias_class) & length(x@alias_flavor)) {
-      x@alias_flavor
+    x@alias <- if (length(x@flavor) || length(x@class2)) {
+      paste(x@flavor, x@class2) |> trimws()
     } else x@alias 
   } # else do nothing
   

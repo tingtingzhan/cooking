@@ -15,7 +15,7 @@
 #' @name froyo-class
 #' @export
 setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
-  alias_class = 'Froyo',
+  class2 = 'Froyo',
   yogurt = c(Nancys = 680*2), # 2x jar
   iceWater = 200#, # to confirm
   #instruction (legacy) = c(
@@ -41,7 +41,7 @@ setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
 #' @rdname froyo-class
 #' @export
 Bourbon_froyo <- \() new(
-  Class = 'froyo', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46',
+  Class = 'froyo', flavor = 'Bourbon\u67ab\u7cd6\u6d46',
   syrup = c(Stonewall_Bourbon = 70), # 9% sugar content
   review = c('try')
 )
@@ -81,7 +81,7 @@ matcha_froyo <- \() new(
 #' @rdname froyo-class
 #' @export
 emma_froyo <- \() new(
-  Class = 'recipe', author = 'Emma\'s Goodies', alias_flavor = 'Froyo\U1f368',
+  Class = 'recipe', author = 'Emma\'s Goodies', flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',
   heavyCream_cup = 1.75,
   yogurtGreek = 170, 

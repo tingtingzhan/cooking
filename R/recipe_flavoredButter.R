@@ -13,14 +13,14 @@
 #' @name flavoredButter-class
 #' @export
 setClass(Class = 'flavoredButter', contains = 'recipe', prototype = prototype(
-  alias_class = '\u98ce\u5473\u9ec4\u6cb9',
+  class2 = '\u98ce\u5473\u9ec4\u6cb9',
   butter_brick = 1
 ))
 
 #' @rdname flavoredButter-class
 #' @export
-oldBay_butter <- \() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay = 2), pros = 'Nice for seafood!')
+oldBay_butter <- \() new(Class = 'flavoredButter', flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay = 2), pros = 'Nice for seafood!')
 
 #' @rdname flavoredButter-class
 #' @export
-oldBay_butter_lowSodium <- \() new(Class = 'flavoredButter', alias_flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay_lowSodium = 3), review = 'try')
+oldBay_butter_lowSodium <- \() new(Class = 'flavoredButter', flavor = 'Old Bay', spice_Tbsp = c(McCormick_oldBay_lowSodium = 3), review = 'try')

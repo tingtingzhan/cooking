@@ -15,7 +15,7 @@ fauxReo <- \() new(
 
 
 KingArthur_fauxReo <- \() new(
-  Class = 'recipe', alias_flavor = 'Faux-Reos',
+  Class = 'recipe', flavor = 'Faux-Reos',
   portion = c(cookie = 26),
   sugar = 223,
   butter = 170,

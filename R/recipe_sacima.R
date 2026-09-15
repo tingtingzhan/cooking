@@ -18,7 +18,7 @@
 #' @name sacima-class
 #' @export
 setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
-  alias_class = '\u8428\u5176\u9a6c',
+  class2 = '\u8428\u5176\u9a6c',
   # pastryFlour = 200, eggYolk = 2, eggWhite = 2, yeast_tsp = .5, # has potential!!
   pastryFlour = 190, eggYolk = 2, eggWhite = 2, yeast_tsp = 1.5,
   butter = 306*5/164,
@@ -42,7 +42,7 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
 #' @rdname sacima-class
 #' @export
 maple_sacima <- \() new(
-  Class = 'sacima', alias_flavor = '\u84dd\u8393\u7cd6\u6d46',
+  Class = 'sacima', flavor = '\u84dd\u8393\u7cd6\u6d46',
   # syrup = c(Stonewall_maple = 77*306/164), # sugar 25%, not bad!
   syrup = c(Stonewall_maple = 100),
   review = 'try again')
@@ -76,14 +76,14 @@ sacima <- \() new(
 #' @rdname sacima-class
 #' @export
 shangshi_sacima <- \() new(
-  Class = 'recipe', alias_flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
+  Class = 'recipe', flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
   flour = 240,
   egg_pc = 3)
 
 #' @rdname sacima-class
 #' @export
 xiaogaojie_sacima <- \() new(
-  Class = 'recipe', alias_flavor = 'sacima', 
+  Class = 'recipe', flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
   flour = 200,
   NaHCO3_tsp = 1/8,
@@ -93,7 +93,7 @@ xiaogaojie_sacima <- \() new(
 #' @rdname sacima-class
 #' @export
 Dad_sacima <- \() new(
-  Class = 'recipe', alias_flavor = 'sacima', 
+  Class = 'recipe', flavor = 'sacima', 
   dad1966 = 'ZK4ZoCewr0E',
   flour = 270,
   egg_pc = 3,

@@ -18,7 +18,7 @@ meatfill_note <- \() c(
 )
 
 #setClass(Class = 'meatfill', contains = 'recipe', prototype = prototype(
-#  alias_class = '\u9985'
+#  class2 = '\u9985'
 #))
 
 
@@ -64,7 +64,7 @@ porkfill <- \() new(
 
 
 Jenny_chickenfill <- \() new(
-  Class = 'recipe', author = 'Jenny', alias_flavor = '\u9e21\u817f\u8089\u9985',
+  Class = 'recipe', author = 'Jenny', flavor = '\u9e21\u817f\u8089\u9985',
   chicken = c(thigh = 500),
   shrimp = 300,
   #Rice wine 2Tbsp  / Vin de riz 2Tbsp
@@ -98,7 +98,7 @@ setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
 #' @rdname lambfill-class
 #' @export
 xiaogaojie_lambfill <- \() new(
-  Class = 'recipe', alias_flavor = '\u867e\u7f8a\u8089\u9985', 
+  Class = 'recipe', flavor = '\u867e\u7f8a\u8089\u9985', 
   xiaogaojie = 'M6DD504lDac',
   portion = c(Baozi = 30),
   lamb = c(leg = 250),

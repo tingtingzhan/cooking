@@ -15,7 +15,7 @@
 #' @name soytea-class
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
-  alias_class = '\u8c46\u6d46\u8336',
+  class2 = '\u8c46\u6d46\u8336',
   homemade = c(soymilk = 600),
   brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
   tool = list(Stanley20(treatment = c(
@@ -26,7 +26,7 @@ setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
 
 #' @rdname soytea-class
 #' @export
-EarlGrey_soytea <- \() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), alias_flavor = 'Earl Grey', date = as.Date('2024-09-15'), pros = 'super flavorful!')
+EarlGrey_soytea <- \() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), flavor = 'Earl Grey', date = as.Date('2024-09-15'), pros = 'super flavorful!')
 
 #' @rdname soytea-class
 #' @export

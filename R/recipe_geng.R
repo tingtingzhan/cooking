@@ -16,7 +16,7 @@
 #' @name cornGeng-class
 #' @export
 setClass(Class = 'cornGeng', contains = 'recipe', prototype = prototype(
-  alias_class = '(\u6d77\u9c9c\U1f990\U1f991)\u7389\u7c73\U1f33d\u7fb9\U1f963',
+  class2 = '(\u6d77\u9c9c\U1f990\U1f991)\u7389\u7c73\U1f33d\u7fb9\U1f963',
   homemade = c(cornjuice = 300), boilingWater = 200,
   egg_pc = 1#,
   #instruction (legacy) = c(
@@ -43,7 +43,7 @@ cornGeng <- \() new(Class = 'cornGeng', pros = 'I love!')
 #' @name geng-class
 #' @export
 setClass(Class = 'geng', contains = 'recipe', prototype = prototype(
-  alias_class = '(\u6d77\u9c9c\U1f99e\U1f990\U1f991\U1f980)\u7fb9\U1f963',
+  class2 = '(\u6d77\u9c9c\U1f99e\U1f990\U1f991\U1f980)\u7fb9\U1f963',
   
   boilingWater = 600, 
   water = 15, starch_tsp = c(Wegmans_corn = 1.5), 

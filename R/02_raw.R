@@ -14,7 +14,7 @@
 #' \linkS4class{raw.} allows negative ingredients.
 #' 
 #' @slot homemade \link[base]{numeric} vector
-#' @slot flavor,flavor_tsp,flavor_Tbsp,flavor_cup \link[base]{numeric} vector, weight of one or more flavoring (in grams)
+#' @slot misc,misc_tsp,misc_Tbsp,misc_cup \link[base]{numeric} vector, weight of one or more miscellaneous ingredients (in grams)
 #' 
 #' @slot puree \link[base]{numeric} vector, weight of one or more puree (in grams)
 #' @slot fruit \link[base]{numeric} vector, weight of fresh fruit, diced (in grams)
@@ -175,7 +175,7 @@ setClass(Class = 'raw.', slots = c(
   
   homemade = 'numeric',
   
-  flavor = 'numeric', flavor_tsp = 'numeric', flavor_Tbsp = 'numeric', flavor_cup = 'numeric',
+  misc = 'numeric', misc_tsp = 'numeric', misc_Tbsp = 'numeric', misc_cup = 'numeric',
   puree = 'numeric',
   
   fruit = 'numeric', 
@@ -390,11 +390,11 @@ print.raw. <- \(x, ...) {
       lapply(FUN = cli_text)
   }
   
-  # sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flavor)], x@flavor, fmt_vol(x@flavor)) |> lapply(FUN = cli_text) # one or more flavor
-  if (length(x@flavor)) {
-    sprintf(fmt = '%s %.0f grams\n', nm_[names(x@flavor)], x@flavor) |> 
+  # sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@misc)], x@misc, fmt_vol(x@misc)) |> lapply(FUN = cli_text) # one or more flavor
+  if (length(x@misc)) {
+    sprintf(fmt = '%s %.0f grams\n', nm_[names(x@misc)], x@misc) |> 
       lapply(FUN = cli_text)
-  # my `@flavor` slot is very complicated
+  # my `@misc` slot is very complicated
   }
   
   mapply(FUN = \(nm, gram) {
@@ -581,7 +581,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addname1(which = 'tomato', nm = 'WegmansOrganic_tomato') |>
     addname1(which = 'yellowCorn', nm = 'Kirkland_yellowCorn') |>
     addname1(which = 'blackSesame', nm = 'Greenmax_blackSesame') |>
-    combnVol(which = 'flavor') |>
+    combnVol(which = 'misc') |>
     combnVol(which = 'sesameOil', nm = 'Kadoya_sesameOil') |>
     combnVol(which = 'rattanPepperOil', nm = 'YouJia_rattanPepperOil') |>
     combnVol(which = 'fat') |>

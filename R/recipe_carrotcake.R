@@ -2,7 +2,7 @@
 
 AmishHeritage_carrotcake <- \() new(
   Class = 'recipe',
-  author = 'Amish Heritage', alias_flavor = 'Carrot Cake',
+  author = 'Amish Heritage', flavor = 'Carrot Cake',
   url = 'https://amish-heritage.org/carrot-cake-with-pineapple-and-pecans-amish-recipe/',
   sugar_cup = c(Domino_granulated = 1),
   brownSugar_cup = c(Domino_darkBrown = 1),

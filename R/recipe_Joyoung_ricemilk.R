@@ -15,7 +15,7 @@
 #' @name ricemilk-class
 #' @export
 setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
-  alias_class = '\u7c73\u7cca',
+  class2 = '\u7c73\u7cca',
   tool = list(JoyoungDJ13U(
     program = '\u7c73\u7cca\u7a0b\u5e8f Rice Paste program, 900ml water line',
     waterLost = 20
@@ -39,7 +39,7 @@ brown_ricemilk <- \() new(
 
 
 setClass(Class = 'ricepaste', contains = 'recipe', prototype = prototype(
-  alias_class = '\u5976\u9999\u7c73\u7cca',
+  class2 = '\u5976\u9999\u7c73\u7cca',
   # for 600g 'ricemilk'
   #drymilk = c(Carnation = 15), # 2.5%, a little too much
   drymilk_tsp = c(Carnation = 5),

@@ -9,7 +9,7 @@
 #' @aliases matchaLatteMix-class
 #' @export
 setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
-  alias_class = 'Latte Mix', # 'Latte\u901f\u6eb6\u7c89',
+  class2 = 'Latte Mix', # 'Latte\u901f\u6eb6\u7c89',
   drymilk = c(Carnation = 32, Nido_drymilk = 8),
   sugar_tsp = 1*2
 ))
@@ -65,7 +65,7 @@ ikuyoLatte <- \() new(
 #' @aliases matchaGoatLatteMix-class
 #' @export
 setClass(Class = 'matchaGoatLatteMix', contains = 'drinkmix', prototype = prototype(
-  alias_class = '\u7f8a\u5976Latte\u901f\u6eb6\u7c89',
+  class2 = '\u7f8a\u5976Latte\u901f\u6eb6\u7c89',
   drymilk = c(Meyenberg_goat_drymilk = 10*2, Meyenberg_goatWhole_drymilk = 10*2)
 ))
 

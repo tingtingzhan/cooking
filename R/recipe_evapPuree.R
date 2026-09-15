@@ -9,8 +9,8 @@
 #' @name evap-class
 #' @export
 setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
-  #alias_class = '\u679c\u6ce5'
-  alias_class = 'Evaporated'
+  #class2 = '\u679c\u6ce5'
+  class2 = 'Evaporated'
 ))
 
 

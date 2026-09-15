@@ -300,7 +300,7 @@ get_flavor_ <- \(x) {
       if (inherits(i, 'nutrition')) {
         i@name
       } else if (inherits(i, what = 'recipe')) {
-        #i@alias_flavor
+        #i@flavor
         i@alias |> 
           gsub(pattern = 'Evaporated', replacement = '') |> 
           trimws()

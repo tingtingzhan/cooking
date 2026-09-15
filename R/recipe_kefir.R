@@ -12,7 +12,7 @@
 #' @name kefir-class
 #' @export
 setClass(Class = 'kefir', contains = 'recipe', prototype = prototype(
-  alias_class = 'Kefir',
+  class2 = 'Kefir',
   kefir = c(GreenValley = 200)
 ))
 
@@ -38,7 +38,7 @@ blueberry_kefir <- \() new(Class = 'kefir', syrup = c(Stonewall_blueberry = 15),
 #' @aliases goatKefir-class
 #' @export
 setClass(Class = 'goatKefir', contains = 'recipe', prototype = prototype(
-  alias_class = '\u7f8a\u5976Kefir',
+  class2 = '\u7f8a\u5976Kefir',
   kefir = c(Meyenberg_goat = 200)
 ))
 
@@ -80,7 +80,7 @@ figWalnut_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnu
 # @name filmjolk-class
 # @export
 #setClass(Class = 'filmjolk', contains = 'recipe', prototype = prototype(
-#  alias_class = 'Filmj\u00f6lk',
+#  class2 = 'Filmj\u00f6lk',
 #  filmjolk = c(Siggis = 200)
 #))
 

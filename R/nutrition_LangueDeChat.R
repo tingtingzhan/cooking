@@ -18,7 +18,7 @@
 #' @name LangueDeChat-class
 #' @export
 setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
-  alias_class = 'Langue de Chat'
+  class2 = 'Langue de Chat'
 ))
 
 
@@ -29,7 +29,7 @@ setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
 #' @rdname LangueDeChat-class
 #' @export
 cookingTree_LangueDeChat <- \() new(
-  Class = 'recipe', author = 'CookingTree', alias_flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
+  Class = 'recipe', author = 'CookingTree', flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
   butter = 90,
   sugar = 85,
   egg_pc = 2,
@@ -39,7 +39,7 @@ cookingTree_LangueDeChat <- \() new(
 #' @rdname LangueDeChat-class
 #' @export
 cookingTree_cocoa_LangueDeChat <- \() new(
-  Class = 'recipe', author = 'CookingTree', alias_flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
+  Class = 'recipe', author = 'CookingTree', flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
   butter = 45,
   sugar = 45,
   egg_pc = 1,
@@ -52,7 +52,7 @@ cookingTree_cocoa_LangueDeChat <- \() new(
 #' @rdname LangueDeChat-class
 #' @export
 Ying_LangueDeChat <- \() new(
-  Class = 'recipe', author = 'Ying', alias_flavor = 'Langue De Chat', youtube = '2tlPfiBA9i0',
+  Class = 'recipe', author = 'Ying', flavor = 'Langue De Chat', youtube = '2tlPfiBA9i0',
   butter = 25,
   sugar = 15,
   egg_pc = 15/(17.3 + 34.7),
@@ -65,7 +65,7 @@ Ying_LangueDeChat <- \() new(
 #' @rdname LangueDeChat-class
 #' @export
 Jadore_LangueDeChat <- \() new(
-  Class = 'recipe', author = 'J\'adore', alias_flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
+  Class = 'recipe', author = 'J\'adore', flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
   butter = 43,
   sugar = 34,
   eggWhite = 30,
@@ -77,7 +77,7 @@ Jadore_LangueDeChat <- \() new(
 #' @rdname LangueDeChat-class
 #' @export
 Giallozafferano_LangueDeChat <- \() new(
-  Class = 'recipe', author = 'Giallozafferano', alias_flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',
+  Class = 'recipe', author = 'Giallozafferano', flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',
   butter = 50,
   sugar = 60,
   eggWhite = 50,

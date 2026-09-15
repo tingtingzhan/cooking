@@ -9,7 +9,7 @@
 #' @name brownrice-class
 #' @export
 setClass(Class = 'brownrice', contains = 'recipe', prototype = prototype(
-  alias_class = '\u7cd9\u7c73\u996d', alias_flavor = '',
+  class2 = '\u7cd9\u7c73\u996d', flavor = '',
   tool = list(JoyoungDJ13U(
     program = '\u852c\u83dc\u7ca5\u7a0b\u5e8f Porridge program, 900ml water line', 
     note = 'makes 3 to 3.5 cups of rice',

@@ -44,7 +44,7 @@
 #'  subtract(cooking:::Yumna_icecream, sugar = 58),
 #'  matcha_sundae(),
 #'  
-#'  new(Class = 'recipe', alias_class = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
+#'  new(Class = 'recipe', class2 = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
 #'  mascarpone = 453/2, water = 320, 
 #'  drymilk = 40, matcha_tsp = 10, sugar_Tbsp = 4, 
 #'  pros = c('Nice! Tiny little oily'))
@@ -65,7 +65,7 @@
 #' @name sundae-class
 #' @export
 setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
-  alias_class = 'Sundae\U1f366',
+  class2 = 'Sundae\U1f366',
   # all dairy product add up to ~453/2 grams (1 cup)
   
   mascarpone = 453/4, 
@@ -120,7 +120,7 @@ coffee_sundae <- \() new(
 #' @aliases mascarponeSundae-class
 #' @export
 setClass(Class = 'mascarponeSundae', contains = 'recipe', prototype = prototype(
-  alias_class = 'Sundae\U1f366',
+  class2 = 'Sundae\U1f366',
   mascarpone = 453/4
 ))
 
@@ -145,7 +145,7 @@ if (FALSE) {
 
   
   cocoa_icecream <- \() new(
-    Class = 'recipe', alias_class = '\u51b0\u6dc7\uf9f5\U1f368',
+    Class = 'recipe', class2 = '\u51b0\u6dc7\uf9f5\U1f368',
     heavyCream = 480,
     eggYolk_pc = 6,
     drymilk = 52, 
@@ -160,8 +160,8 @@ if (FALSE) {
   
   
   Bourbon_icecream <- \() new(
-    Class = 'recipe', alias_flavor = 'Bourbon \u67ab\u7cd6', 
-    alias_class = '\u51b0\u6dc7\uf9f5\U1f368',
+    Class = 'recipe', flavor = 'Bourbon \u67ab\u7cd6', 
+    class2 = '\u51b0\u6dc7\uf9f5\U1f368',
     heavyCream = 480,
     eggYolk_pc = 6,
     drymilk = 52, 
@@ -193,7 +193,7 @@ if (FALSE) {
 #' @name icecream
 #' @export
 xiaogaojie_icecream <- \() new(
-  Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
+  Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'IQ-t8eSSD3Y',
   eggYolk_pc = 6,
   heavyCream = 500,
@@ -205,7 +205,7 @@ xiaogaojie_icecream <- \() new(
 #' @rdname icecream
 #' @export
 happytears_icecream <- \() new(
-  Class = 'recipe', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
+  Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   eggYolk_pc = 5,
   sugar = 150,
   coconut = c(Kara_coconutcream = 500),
@@ -217,7 +217,7 @@ happytears_icecream <- \() new(
 #' @rdname icecream
 #' @export
 xiaogaojie_cocoa_icecream <- \() new(
-  Class = 'recipe', alias_flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
+  Class = 'recipe', flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'YNzGZMLWY_Q',
   heavyCream = 350,
   eggYolk_pc = 3,
@@ -232,7 +232,7 @@ xiaogaojie_cocoa_icecream <- \() new(
 #' @rdname icecream
 #' @export
 SweetDumpling_matcha_icecream <- \() new(
-  Class = 'recipe', author = '\u7cd6\u997a\u5b50', alias_flavor = '\u62b9\u8336\U1f375\u51b0\u6dc7\uf9f5\U1f368',
+  Class = 'recipe', author = '\u7cd6\u997a\u5b50', flavor = '\u62b9\u8336\U1f375\u51b0\u6dc7\uf9f5\U1f368',
   heavyCream = 250,
   condensedMilk = 170,
   milk = 50,
@@ -241,7 +241,7 @@ SweetDumpling_matcha_icecream <- \() new(
 #' @rdname icecream
 #' @export
 cuisinart_icecream <- \() new(
-  Class = 'recipe', author = 'Cuisinart', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
+  Class = 'recipe', author = 'Cuisinart', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
   milk_cup = 1,
   sugar = 150, # ¾ cup granulated sugar 
@@ -252,7 +252,7 @@ cuisinart_icecream <- \() new(
 #' @rdname icecream
 #' @export
 cooking23s_icecream <- \() new(
-  Class = 'recipe', author = 'cooking23s', alias_flavor = '\u51b0\u6dc7\uf9f5\U1f368',
+  Class = 'recipe', author = 'cooking23s', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://cooking23s.blogspot.com/2021/05/ice-cream.html',
   condensedMilk = 100,
   heavyCream = 200,
@@ -262,7 +262,7 @@ cooking23s_icecream <- \() new(
 #' @rdname icecream
 #' @export
 Yumna_icecream <- \() new(
-  Class = 'recipe', author = 'Yumna', alias_flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
+  Class = 'recipe', author = 'Yumna', flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
   cottageCheese = 425, # 15 oz,
   sugar = 80 # 1/4 cup of honey weighs 85 grams

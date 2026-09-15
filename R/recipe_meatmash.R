@@ -17,7 +17,7 @@
 #' @name meatmash-class
 #' @export
 setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
-  alias_class = '\u6ed1',
+  class2 = '\u6ed1',
   # 1000g meat, 780g super lean, 220g pork belly
   tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',

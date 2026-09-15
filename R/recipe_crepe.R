@@ -23,7 +23,7 @@
 #' @name crepe-class
 #' @export
 setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
-  alias_class = 'Cre\u0302pe',
+  class2 = 'Cre\u0302pe',
   breadFlour = 100, # using bread flour is still not strong enough
   egg_pc = 2,
   drymilk = c(Carnation = 11.5),
@@ -52,7 +52,7 @@ crepe <- \() new(Class = 'crepe', review = 'try')
 #' @rdname crepe-class
 #' @export
 jennyc819_crepe <- \() new(
-  Class = 'recipe', author = 'jennyc819', alias_flavor = 'Crepe',
+  Class = 'recipe', author = 'jennyc819', flavor = 'Crepe',
   allrecipes = '16383/basic-crepes/',
   flour_cup = 1,
   egg_pc = 2,
@@ -65,7 +65,7 @@ jennyc819_crepe <- \() new(
 #' @rdname crepe-class
 #' @export
 cyberchef_crepeFrench <- \() new(
-  Class = 'recipe', author = 'cyberchef', alias_flavor = 'French Crepe',
+  Class = 'recipe', author = 'cyberchef', flavor = 'French Crepe',
   allrecipes = '20931/french-crepes/',
   flour_cup = 1,
   egg_pc = 3, # yes
@@ -79,7 +79,7 @@ cyberchef_crepeFrench <- \() new(
 #' @rdname crepe-class
 #' @export
 Carina_crepe <- \() new(
-  Class = 'recipe', author = 'Carina', alias_flavor = 'Crepe',
+  Class = 'recipe', author = 'Carina', flavor = 'Crepe',
   youtube = 'bX6ghyT6Ig0',
   flour_cup = 1,
   egg_pc = 2,
@@ -92,7 +92,7 @@ Carina_crepe <- \() new(
 #' @rdname crepe-class
 #' @export
 Aya_crepe <- \() new(
-  Class = 'recipe', author = 'Aya', alias_flavor = 'Crepe',
+  Class = 'recipe', author = 'Aya', flavor = 'Crepe',
   youtube = 'FfGjDceNRVo',
   flour = 150, 
   sugar = 50, 
@@ -108,7 +108,7 @@ Aya_crepe <- \() new(
 Natasha_crepe <- \() new(
   Class = 'recipe', 
   natashaskitchen = c('uA4KRfE_MNM' = 'easy-crepe-recipe'), 
-  alias_flavor = 'Crepe',
+  flavor = 'Crepe',
   water = 118.3,  # ½ cup lukewarm water
   milk_cup = 1,
   egg_pc = 4,
@@ -121,7 +121,7 @@ Natasha_crepe <- \() new(
 #' @rdname crepe-class
 #' @export
 Daat_crepe <- \() new(
-  Class = 'recipe', alias_flavor = 'crepe',
+  Class = 'recipe', flavor = 'crepe',
   flour = 230,
   egg_pc = 3,
   milk = 300, # in grams in original recipe

@@ -14,7 +14,7 @@
 #' @name udon-class
 #' @export
 setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
-  alias_class = '\u9942\u98e9\u3046\u3069\u3093',
+  class2 = '\u9942\u98e9\u3046\u3069\u3093',
   note = 'Melt salt in water.  Knead the dough by stepping on it'
 ))
 
@@ -22,7 +22,7 @@ setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
 #' @rdname udon-class
 #' @export
 amanda_udon <- \() new(
-  Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', alias_flavor = 'Udon', 
+  Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', flavor = 'Udon', 
   youtube = 'q0gNH9vxiYY',
   flour = 300,
   water = 130, salt = 15)
@@ -31,7 +31,7 @@ amanda_udon <- \() new(
 #' @rdname udon-class
 #' @export
 JustOne_udon <- \() new(
-  Class = 'recipe', alias_flavor = 'Udon', 
+  Class = 'recipe', flavor = 'Udon', 
   just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
   flour = 200, # 7 oz
   water = 90, # 6tbsp, 89g
@@ -43,7 +43,7 @@ JustOne_udon <- \() new(
 #' @rdname udon-class
 #' @export
 Leo_udon <- \() new(
-  Class = 'recipe', author = 'Leo', alias_flavor = 'Udon', 
+  Class = 'recipe', author = 'Leo', flavor = 'Udon', 
   youtube = 'wgj51q9Hlq8',
   flour = 500, # 17.6 oz
   salt = 23, # 0.8 oz

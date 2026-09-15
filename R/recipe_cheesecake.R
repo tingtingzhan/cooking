@@ -85,8 +85,8 @@
 #' @name cheesecake-class
 #' @export
 setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
-  #alias_class = '\u91cd\u4e73\u916a\u86cb\u7cd5',
-  alias_class = 'NY Cheesecake',
+  #class2 = '\u91cd\u4e73\u916a\u86cb\u7cd5',
+  class2 = 'NY Cheesecake',
   creamCheese_brick = c(
     #PhiladelphiaNeufchatel = 4 # fat 15.5%, sodium 3.2-per-mille
     Nancys = 1, PhiladelphiaNeufchatel = 3 # fat 17.8%, sodium 2.6-per-mille
@@ -177,7 +177,7 @@ rum_cheesecake <- \() new(
 #' @rdname cheesecake-class
 #' @export
 appleBrandy_cheesecake <- \() new(
-  Class = 'cheesecake', #alias_flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
+  Class = 'cheesecake', #flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
   syrup = c(Runamok_appleBrandy = 160), review = 'try')
 
 #' @rdname cheesecake-class
@@ -312,7 +312,7 @@ Kahlua_cheesecake <- \() new(
 #' @rdname cheesecake-class
 #' @export
 Bourbon_cheesecake_Stonewall <- \() new(
-  Class = 'cheesecake', alias_flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',
+  Class = 'cheesecake', flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',
   syrup = c(Stonewall_Bourbon = 160),
   review = 'try')
 

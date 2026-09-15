@@ -41,7 +41,7 @@
 #' @name crumbcrust-class
 #' @export
 setClass(Class = 'crumbcrust', contains = 'recipe', prototype = prototype(
-  alias_class = 'Crumb Crust',
+  class2 = 'Crumb Crust',
   #instruction (legacy) = c(
   #  'food processor',
   #  'Philips pasta maker'
@@ -77,7 +77,7 @@ crumbcrust <- \() new(Class = 'crumbcrust')
 
 
 # 170 not 2-cups ..
-#flavor = c(HoneyMaid_graham = 170), # 2 cups
+#misc = c(HoneyMaid_graham = 170), # 2 cups
 #butter_cup = 1/2,
 # sugar = 50, # original
 #url = 'https://preppykitchen.com/graham-cracker-crust' # cannot find youtube link
@@ -90,40 +90,40 @@ crumbcrust <- \() new(Class = 'crumbcrust')
 #' @name grahamCrust
 #' @export
 PreppyKitchen_grahamCrust1 <- \() new(
-  Class = 'recipe', alias_flavor = 'Graham Crust',
-  flavor = c(HoneyMaid_graham = 180), # 1.5 cups
+  Class = 'recipe', flavor = 'Graham Crust',
+  misc = c(HoneyMaid_graham = 180), # 1.5 cups
   butter_cup = 1/4,
   preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
 
 #' @rdname grahamCrust
 #' @export
 PreppyKitchen_grahamCrust2 <- \() new(
-  Class = 'recipe', alias_flavor = 'Graham Crust',
-  flavor = c(Nabisco_graham = 270), # 2.25 cups
+  Class = 'recipe', flavor = 'Graham Crust',
+  misc = c(Nabisco_graham = 270), # 2.25 cups
   butter_Tbsp = 5,
   preppykitchen = c('BSsv6sBD6ow' = 'strawberry-cheesecake'))
 
 #' @rdname grahamCrust
 #' @export
 PreppyKitchen_grahamCrust3 <- \() new(
-  Class = 'recipe', alias_flavor = 'Graham Crust',
-  flavor = c(HoneyMaid_graham = 180), # 1.5 cups
+  Class = 'recipe', flavor = 'Graham Crust',
+  misc = c(HoneyMaid_graham = 180), # 1.5 cups
   butter_Tbsp = 5,
   preppykitchen = c('beDAwNsKZUA' = 'blueberry-cheesecake'))
 
 #' @rdname grahamCrust
 #' @export
 PreppyKitchen_grahamCrust4 <- \() new(
-  Class = 'recipe', alias_flavor = 'Graham Crust',
-  flavor = c(Nabisco_graham = 270), # 2.25 cups
+  Class = 'recipe', flavor = 'Graham Crust',
+  misc = c(Nabisco_graham = 270), # 2.25 cups
   butter_Tbsp = 6,
   preppykitchen = c('x8ezFPOBtfo' = 'lemon-cheesecake'))
 
 #' @rdname grahamCrust
 #' @export
 PreppyKitchen_grahamCrust5 <- \() new(
-  Class = 'recipe', alias_flavor = 'Graham Crust',
-  flavor = c(Nabisco_graham = 260), # 2 cups (should be 240g based on his other recipes)
+  Class = 'recipe', flavor = 'Graham Crust',
+  misc = c(Nabisco_graham = 260), # 2 cups (should be 240g based on his other recipes)
   butter_cup = 1/2,
   preppykitchen = c('V5YqfJSjYXE' = 'no-bake-cheesecake'))
 

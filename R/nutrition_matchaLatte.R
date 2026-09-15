@@ -64,7 +64,7 @@ Starbucks_matchaLatteMix <- \() new(
 
 Ippodo_sayakaLatte <- \() new(
   Class = 'recipe',
-  alias_flavor = 'Sayaka Latte', 
+  flavor = 'Sayaka Latte', 
   ippodotea = 'sayaka-100g',
   matcha = c(Ippodo_sayaka = 3), # matcha 1.5%
   water80 = 100, milk = 96)

@@ -18,7 +18,7 @@
 #' @name eggnog-class
 #' @export
 setClass(Class = 'eggnog', contains = 'recipe', prototype = prototype(
-  alias_class = '\u86cb\u5976\u9152'
+  class2 = '\u86cb\u5976\u9152'
 ))
 
 #' @rdname eggnog-class
@@ -45,7 +45,7 @@ eggnog <- \() new(
 #' @export
 JeanPierre_eggnog <- \() new(
   Class = 'recipe',
-  author = 'Chef Jean-Pierre', alias_flavor = 'Eggnog',
+  author = 'Chef Jean-Pierre', flavor = 'Eggnog',
   milk_cup = 2,
   heavyCream_cup = 1,
   egg_pc = 6,
@@ -66,7 +66,7 @@ JeanPierre_eggnog <- \() new(
 #' @rdname eggnog-class
 #' @export
 PreppyKitchen_eggnog <- \() new(
-  Class = 'recipe', alias_flavor = 'Eggnog',
+  Class = 'recipe', flavor = 'Eggnog',
   egg_pc = 6,
   sugar = 200, # 1 cup granulated sugar (200g)
   milk_cup = 1.5, # 1 to 2 cups whole milk (240-480ml)

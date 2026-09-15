@@ -15,7 +15,7 @@
 #' @name beanPaste-class
 #' @export
 setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
-  alias_class = '\u8c46\u6c99(66%)',
+  class2 = '\u8c46\u6c99(66%)',
   portion = c(
     # \linkS4class{beanPaste} is eaten hot
     # 'mochi 10g wrapper \u9ebb\u85af10g\u76ae' = 5, 
@@ -71,16 +71,16 @@ redKidneyBeanPaste <- \() new(
 
 
 #setClass(Class = 'beanMud', contains = 'recipe', prototype = prototype(
-#  alias_class = '\u8c46\u6ce5',
+#  class2 = '\u8c46\u6ce5',
 #  tool = list(JoyoungDJ13U(operation = '900ml water line')
 #)))
 
 #adzukiBeanMud <- \() new(
-#  Class = 'beanMud', alias_flavor = '\u7ea2',
+#  Class = 'beanMud', flavor = '\u7ea2',
 #  adzukibean = 130, water = 815, waterLost = 65)
 
 #adzukiBeanPaste_OLD <- \() new(
-#  Class = 'beanPaste', alias_flavor = '\u7ea2',
+#  Class = 'beanPaste', flavor = '\u7ea2',
 #  homemade = c(adzukiBeanMud = 600), waterLost = 300, # confirmed!!
 #  brownSugar = 30,
 #  butter = 24,
@@ -99,7 +99,7 @@ redKidneyBeanPaste <- \() new(
 #' @rdname beanPaste-class
 #' @export
 xiaogaojie_adzukiBeanPaste1 <- \() new(
-  Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c991',
+  Class = 'recipe', flavor = '\u7ea2\u8c46\u6c991',
   adzukibean = 500,
   water = 350, # actual water absorbed
   oil = c(Wegmans_corn = 12),
@@ -114,7 +114,7 @@ xiaogaojie_adzukiBeanPaste1 <- \() new(
 #' @rdname beanPaste-class
 #' @export
 xiaogaojie_adzukiBeanPaste2 <- \() new(
-  Class = 'recipe', alias_flavor = '\u7ea2\u8c46\u6c992',
+  Class = 'recipe', flavor = '\u7ea2\u8c46\u6c992',
   xiaogaojie = 'Jsqhb8i4ntU',
   adzukibean = 200,
   water = 700, 

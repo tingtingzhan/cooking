@@ -6,7 +6,7 @@
 
 
 xiaogaojie_pasteisdenata1 <- \() new(
-  Class = 'recipe', alias_flavor = 'pasteisdenata1',
+  Class = 'recipe', flavor = 'pasteisdenata1',
   water = 185,
   sugar = 200,
   #cinnamon stick 1
@@ -18,7 +18,7 @@ xiaogaojie_pasteisdenata1 <- \() new(
   xiaogaojie = '-83188U6O8w')
 
 xiaogaojie_pasteisdenata2 <- \() new(
-  Class = 'recipe', alias_flavor = 'pasteisdenata2',
+  Class = 'recipe', flavor = 'pasteisdenata2',
   milk = 180,
   heavyCream = 200,
   sugar = 60, 

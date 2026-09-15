@@ -12,7 +12,7 @@
 #' @name starchjelly-class
 #' @export
 setClass(Class = 'starchjelly', contains = 'recipe', prototype = prototype(
-  alias_class = '\u51c9\u7c89'
+  class2 = '\u51c9\u7c89'
 ))
 
 
@@ -20,7 +20,7 @@ setClass(Class = 'starchjelly', contains = 'recipe', prototype = prototype(
 #' @rdname starchjelly-class
 #' @export
 xiaogaojie_mungjelly <- \() new(
-  Class = 'recipe', alias_flavor = '\u7eff\u8c46\u51c9\u7c89',
+  Class = 'recipe', flavor = '\u7eff\u8c46\u51c9\u7c89',
   starch = c(mung = 135),
   water = 250,
   water40 = 1000,

@@ -19,8 +19,8 @@
 #' @name creamCheeseSpread-class
 #' @export
 setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype(
-  #alias_class = '\u5976\u6cb9\u5976\u916a\u62b9\u6599',
-  alias_class = 'Cream Cheese\U1f96f', # 'Cream Cheese Spread\U1f96f',
+  #class2 = '\u5976\u6cb9\u5976\u916a\u62b9\u6599',
+  class2 = 'Cream Cheese\U1f96f', # 'Cream Cheese Spread\U1f96f',
   creamCheese_brick = c(Nancys = 1),
   portion = c(
     'bagel\U1f96f' = 40
@@ -37,8 +37,8 @@ setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype
 #' @aliases creamCheeseDip-class
 #' @export
 setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
-  # alias_class = '\u5976\u6cb9\u5976\u916a\u8638\u6599',
-  alias_class = 'Cream Cheese\U1fad5', # 'Cream Cheese Dip\U1fad5',
+  # class2 = '\u5976\u6cb9\u5976\u916a\u8638\u6599',
+  class2 = 'Cream Cheese\U1fad5', # 'Cream Cheese Dip\U1fad5',
   creamCheese_brick = c(Nancys = 1)#,
   #instruction (legacy) = c(
   #  'Whip everything (chilled). Careful not to splash',
@@ -77,18 +77,20 @@ pumpkin_creamCheeseDip <- \() new(
 
 date_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', 
-  flavor = c(SunnyFruit_date = 50),
+  misc = c(SunnyFruit_date = 50),
   water = 50,
   review = 'retry')
 
 
 plum_creamCheeseSpread <- \() new(
-  Class = 'creamCheeseSpread', flavor = c(Kirkland_plum_dried = 75), 
+  Class = 'creamCheeseSpread', 
+  misc = c(Kirkland_plum_dried = 75), 
   water = 50, 
   review = 'try') # try!
 
 fig_creamCheeseSpread <- \() new(
-  Class = 'creamCheeseSpread', flavor = c(SunnyFruit_fig = 65), 
+  Class = 'creamCheeseSpread', 
+  misc = c(SunnyFruit_fig = 65), 
   water = 50, review = 'try') # try!
 
 

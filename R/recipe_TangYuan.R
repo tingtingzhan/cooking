@@ -18,7 +18,7 @@
 #' @name TangYuan-class
 #' @export
 setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
-  alias_class = '\u6c64\u5706\u76ae',
+  class2 = '\u6c64\u5706\u76ae',
   glutinousRiceFlour = 100, 
   butter = 3,
   portion = 5,
@@ -50,8 +50,8 @@ mango_TangYuan <- \() new(Class = 'TangYuan', mango = 100, pros = 'I love!')
 #' @rdname TangYuan-class
 #' @export
 date_TangYuan <- \() new(
-  Class = 'TangYuan', alias_flavor = '\u7ea2\u67a3',
-  flavor = c(SunnyFruit_date = 93), water = 107,
+  Class = 'TangYuan', flavor = '\u7ea2\u67a3',
+  misc = c(SunnyFruit_date = 93), water = 107,
   note = 'Soak ground date in water for 4hr+',
   pros = 'Effie\'s Signature')
 
