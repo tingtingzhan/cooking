@@ -11,14 +11,14 @@ setClass(Class = 'steamWheatGluten', contains = 'recipe', prototype = prototype(
   alias_class = '\u84b8\u9762\u7b4b',
   wheatGluten = 120,
   yeast_tsp = 1,
-  sugar_tsp = 1,
-  instruction = c(
-    'MUST whisk together dry powder',
-    'Ferment until double size',
-    'Steam 20min',
-    'Slice',
-    'Stew with other meat and vegetable for 30-40min'
-  )
+  sugar_tsp = 1#,
+  # instruction (legacy) = c(
+  #  'MUST whisk together dry powder',
+  #  'Ferment until double size',
+  #  'Steam 20min',
+  #  'Slice',
+  #  'Stew with other meat and vegetable for 30-40min'
+  #)
 ))
 
 

@@ -34,14 +34,14 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   water = 80,
   water80 = 640,
   glutinousRiceFlour = 32,
-  gelatin_leaf = 12,
-  instruction = c(
-    'Make a slurry of glutinous rice flour and room-temperature water',
-    'Add hot water, gelatin leaves, sugar',
-    'Cook to 80\u00b0C/180\u00b0F. Stir gently to dissolve gelatin leaves',
-    'Remove from heat. Whisk in dry flavor',
-    'Chill overnight'
-  )
+  gelatin_leaf = 12#,
+  #instruction (legacy) = c(
+  #  'Make a slurry of glutinous rice flour and room-temperature water',
+  #  'Add hot water, gelatin leaves, sugar',
+  #  'Cook to 80\u00b0C/180\u00b0F. Stir gently to dissolve gelatin leaves',
+  #  'Remove from heat. Whisk in dry flavor',
+  #  'Chill overnight'
+  #)
 ))
 
 #' @rdname lava-class
@@ -153,7 +153,7 @@ pineapple_lava <- \() new(
   gelatin_leaf = 4,
   waterLost = 135,
   note = 'Chill before wrapping.',
-  machine = list(Nutribullet = 'One (1) recipe calls for a full can'),
+  # machine (legacy) = list(Nutribullet = 'One (1) recipe calls for a full can'),
   tool = list(JoyoungCJA9U(
     minute = 8,
     #waterLost = 100 # to confirmed

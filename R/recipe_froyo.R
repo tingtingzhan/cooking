@@ -17,10 +17,10 @@
 setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
   alias_class = 'Froyo',
   yogurt = c(Nancys = 680*2), # 2x jar
-  iceWater = 200, # to confirm
-  instruction = c(
-    'Mix everything with a spatula',
-    'Turn on the ice cream makers.  Add batter through chute')
+  iceWater = 200#, # to confirm
+  #instruction (legacy) = c(
+  #  'Mix everything with a spatula',
+  #  'Turn on the ice cream makers.  Add batter through chute')
 ))
 
 

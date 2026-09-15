@@ -42,10 +42,10 @@
 #' @export
 setClass(Class = 'crumbcrust', contains = 'recipe', prototype = prototype(
   alias_class = 'Crumb Crust',
-  instruction = c(
-    'food processor',
-    'Philips pasta maker'
-  ),
+  #instruction (legacy) = c(
+  #  'food processor',
+  #  'Philips pasta maker'
+  #),
   portion = c(
     # do NOT need pie weight!!
     

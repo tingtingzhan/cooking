@@ -12,12 +12,12 @@
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
   alias_class = 'Microwave Oatmeal',
-  grain = c(Quaker_oat = 40),
-  instruction = c(
-    'must soak overnight',
-    'microwave 2min (with chilled mug)',
-    '(optional) serve with an ice cube'
-  )
+  grain = c(Quaker_oat = 40)#,
+  #instruction (legacy) = c(
+  #  'must soak overnight',
+  #  'microwave 2min (with chilled mug)',
+  #  '(optional) serve with an ice cube'
+  #)
 ))
 
 
@@ -50,11 +50,11 @@ soymilk_oatmeal <- \() new(
 oatmeal_InstantPot <- \() new(
   Class = 'oatmeal', 
   grain = c(Quaker_oat = 75), water = 300,
-  instruction = c(
-    'Instant Pot, 2min, natural release',
-    'Scrape the bottom as soon as opening',
-    'Mix with evaporated milk, coconut milk, jam, etc.'
-  ),
+  #instruction (legacy) = c(
+  #  'Instant Pot, 2min, natural release',
+  #  'Scrape the bottom as soon as opening',
+  #  'Mix with evaporated milk, coconut milk, jam, etc.'
+  #),
   review = c(
     # 'If using mechanical pressure cooker, must rinse thoroughly and use minimum heat, otherwise oat dust will clog the vent!!',
     # 'Cook fresh, do not cook in batch'

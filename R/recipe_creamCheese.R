@@ -24,12 +24,12 @@ setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype
   creamCheese_brick = c(Nancys = 1),
   portion = c(
     'bagel\U1f96f' = 40
-  ),
-  instruction = c(
-    'Soak dried fruit in water, overnight in fridge',
-    'Whip everything (chilled). Careful not to splash',
-    'Do not freeze'
-  )
+  )#,
+  #instruction (legacy) = c(
+  #  'Soak dried fruit in water, overnight in fridge',
+  #  'Whip everything (chilled). Careful not to splash',
+  #  'Do not freeze'
+  #)
 ))
 
 
@@ -39,11 +39,11 @@ setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype
 setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
   # alias_class = '\u5976\u6cb9\u5976\u916a\u8638\u6599',
   alias_class = 'Cream Cheese\U1fad5', # 'Cream Cheese Dip\U1fad5',
-  creamCheese_brick = c(Nancys = 1),
-  instruction = c(
-    'Whip everything (chilled). Careful not to splash',
-    'Do not freeze'
-  )
+  creamCheese_brick = c(Nancys = 1)#,
+  #instruction (legacy) = c(
+  #  'Whip everything (chilled). Careful not to splash',
+  #  'Do not freeze'
+  #)
 ))
 
 

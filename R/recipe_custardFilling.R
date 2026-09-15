@@ -183,7 +183,7 @@ blueberry_custardFilling <- \() new(
 mango_custardFilling <- \() new(
   Class = 'custardFilling',
   mango = 530, waterLost = 265, butter = 40, # confirmed
-  machine = list(Nutribullet = 'Thaw a full large cup'),
+  # machine (legacy) = list(Nutribullet = 'Thaw a full large cup'),
   tool = list(JoyoungCJA9U(
     minute = 17,
     #waterLost = 100 # to confirmed

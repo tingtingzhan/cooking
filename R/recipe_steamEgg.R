@@ -68,7 +68,9 @@ shangshi_pudding <- \() new(
 setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
   eggWhite_pc = 6,
   water = 100,
-  instruction = 'Robam CT763, Steam, 210\u00b0F/20min',
+  tool = list(RobamCT763(
+    program = 'Steam', fahrenheit = 210, minute = 20
+  )),
   youtube = 'ngoFu0XNv24'
 ))
 

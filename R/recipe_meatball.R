@@ -8,13 +8,13 @@
 #' @name meatball-class
 #' @export
 setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
-  alias_class = '\u4e38',
-  instruction = c(
-    'Food processor, finely blend lean meat/seafood',
-    'Fast paddle lean meat/seafood for 3min',
-    'Food processor, finely blend fat',
-    'Add fat and oil to stand mixer, fast paddle for 30sec'
-  )
+  alias_class = '\u4e38'#,
+  #instruction (legacy) = c(
+  #  'Food processor, finely blend lean meat/seafood',
+  #  'Fast paddle lean meat/seafood for 3min',
+  #  'Food processor, finely blend fat',
+  #  'Add fat and oil to stand mixer, fast paddle for 30sec'
+  #)
 ))
 
 

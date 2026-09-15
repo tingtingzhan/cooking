@@ -269,6 +269,8 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{author}}{\link[base]{character} scalar}
 
+\item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
+
 \item{\code{date}}{\link[base]{Date} scalar}
 
 \item{\code{url}}{\link[base]{character} scalar or \link[base]{vector}, URL of original recipe}
@@ -317,13 +319,7 @@ see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-co
 
 \item{\code{youtube}}{\link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe}
 
-\item{\code{machine}}{\link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used}
-
-\item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
-
 \item{\code{note}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
-
-\item{\code{instruction}}{\link[base]{character} scalar or \link[base]{vector},}
 
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, people's comments}
 

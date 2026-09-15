@@ -15,12 +15,12 @@ sweetPotatoNoodle_soaked <- \() new(
   Class = 'soaked',
   alias_flavor = '\u7ea2\u85af\u7c89', 
   flavor = c(JayOne_sweetPotato = 300), # weighed
-  boilingWater = 1060 - 300, # confirmed!!
-  instruction = c(
-    'prepare 1.2x boiling water',
-    'remove from heat as long as noodle softens',
-    'cool down on countertop, then chill over night'
-  )
+  boilingWater = 1060 - 300#, # confirmed!!
+  #instruction (legacy) = c(
+  #  'prepare 1.2x boiling water',
+  #  'remove from heat as long as noodle softens',
+  #  'cool down on countertop, then chill over night'
+  #)
 )
 
 

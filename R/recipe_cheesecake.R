@@ -101,10 +101,10 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
     'cupcake' = 70, # can be filled higher than \linkS4class{muffin}
     'Emile Henry 9in, crustless' = 1400 
   ),
-  instruction = c(
-    'restore all ingredients to room temperature',
-    paste('slow whisk everything', col_cyan('including eggs')) # see how Junior does it https://youtu.be/dUtq2hETohc
-  ),
+  #instruction (legacy) = c(
+  #  'restore all ingredients to room temperature',
+  #  paste('slow whisk everything', col_cyan('including eggs')) # see how Junior does it https://youtu.be/dUtq2hETohc
+  #),
   tool = list(RobamCT763(
     treatment = '1-inch boiling-water bath',
     cooling = 'Cool down in boiling water bath with oven door open',

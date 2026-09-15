@@ -37,17 +37,17 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
   sauce_tsp = c(LeaPerrins_Worcestershire = 3),
   egg_pc = 4, 
   water = 100, 
-  machine = list(
-    'Nutribullet Food Processor' = c(
-      'Cut meat into 1-inch cubes',
-      'Add everything except for egg yolk',
-      'High for 30sec. Transfer to flat container, rest in fridge 1hr+'
-    ),
-    'Robam CT763' = c(
-      'Steam 250\u00b0F/17 min',
-      'Pour and level whisked egg yolk and steam for another 3 min'
-    )
-  ),
+  # machine (legacy) = list(
+  #  'Nutribullet Food Processor' = c(
+  #    'Cut meat into 1-inch cubes',
+  #    'Add everything except for egg yolk',
+  #    'High for 30sec. Transfer to flat container, rest in fridge 1hr+'
+  #  )
+  #),
+  tool = list(RobamCT763(
+    program = 'Steam', fahrenheit = 250, minute = 17,
+    cooling = 'Pour and level whisked egg yolk and steam for another 3 min'
+  )),
   note = c('One (1) recipe fits in 7-cup food processor',
            'Do NOT reduce water! Water is expelled during steaming if batter is too dry.')
 ))

@@ -16,15 +16,15 @@ setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
   alias_class = '\u7092\u81ca\u5b50',
   portion = c(
     'lasagna, Emile Henry Oval Individual' = 100 # ??
-  ),
+  )#,
   # 500g meat
-  instruction = c(
-    'Meat chopper, not grinder',
-    'Paddle in all dry seasoning',
-    'Saute. **Drained oil**',
-    paste(col_green('optional'), 'add sauce, briefly saute'),
-    'Serve with noodle or lasagna'
-  )
+  #instruction (legacy) = c(
+  #  'Meat chopper, not grinder',
+  #  'Paddle in all dry seasoning',
+  #  'Saute. **Drained oil**',
+  #  paste(col_green('optional'), 'add sauce, briefly saute'),
+  #  'Serve with noodle or lasagna'
+  #)
 ))
 
 

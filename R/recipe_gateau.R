@@ -40,10 +40,10 @@ setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
   egg_pc = 1,
   bakingPowder_tsp = .5,
   water = 110, # try
-  waterLost = 50, # re-confirm!!
-  instruction = c(
-    'Steam bake, 275F/50+15min, Trudeau loaf pan' # testing
-  )
+  waterLost = 50#, # re-confirm!!
+  #instruction (legacy) = c(
+  #  'Steam bake, 275F/50+15min, Trudeau loaf pan' # testing
+  #)
 ))
 
 
@@ -69,9 +69,9 @@ cocoa_gateau_FAIL <- \() new(
   water = 165, # still very dry # boilingWater?
   # waterLost = 35, # 50 min
   waterLost = 50, # 65min, need to reconfirm!! (I ate a piece already!) 
-  instruction = c(
-    'Steam bake, 275F/50+15min, Trudeau loaf pan' # testing
-  ),
+  #instruction (legacy) = c(
+  #  'Steam bake, 275F/50+15min, Trudeau loaf pan' # testing
+  #),
   
   cocoa = c(Navitas_cacao = 30), # 5% cocoa overall, already quite good
   #cocoa_tsp = c(Navitas_cacao = 24), # 8.3%, next try

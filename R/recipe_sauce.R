@@ -19,12 +19,12 @@ meatTenderizer <- \() new(
     'Must rinse off NaHCO3 thoroughly to avoid subsequent saponification with hot oil',
     'Many sauces contain corn starch already'
   ),
-  instruction = c(
-    'Disolve NaHCO3 in water',
-    'Soak sliced meat for 15min',
-    'Rinse thoroughly and squeeze dry',
-    'Marinade with (corn starch and) favorite sauce'
-  ),
+  #instruction (legacy) = c(
+  #  'Disolve NaHCO3 in water',
+  #  'Soak sliced meat for 15min',
+  #  'Rinse thoroughly and squeeze dry',
+  #  'Marinade with (corn starch and) favorite sauce'
+  #),
   youtube = 'Etf9zxVjhKM',
   review = c('Cut against grain: lamb leg, beef chuck short ribs, beef chuck',
              'Cut along grain: beef flank',

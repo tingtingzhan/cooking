@@ -71,9 +71,9 @@
 setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
   alias_class = '\u6253\u53d1\u91cd\u5976\u6cb9',
   heavyCream = 100,
-  instruction = c(
-    'KitchenAid stand mixer: mix and whisk until stiff'
-  ),
+  # instruction (legacy) = c(
+  #  'KitchenAid stand mixer: mix and whisk until stiff'
+  #),
   review = 'Greasy. I don\'t like'
 ))
 
@@ -108,9 +108,9 @@ cocoa_whippedCream <- \() new(
 setClass(Class = 'mascarponeFrosting', contains = 'recipe', prototype = prototype(
   alias_class = 'Mascarpone\u88f1\u82b1',
   mascarpone = 453/2, # 1 cup mascarpone cheese
-  instruction = c(
-    'KitchenAid stand mixer: mix and whisk until stiff'
-  ),
+  #instruction (legacy) = c(
+  #  'KitchenAid stand mixer: mix and whisk until stiff'
+  #),
   note = 'For piping'
 ))
 
@@ -141,10 +141,10 @@ setValidity(Class = 'frosting', method = \(object) {
 setClass(Class = 'mascarponeGanache', contains = 'recipe', prototype = prototype(
   alias_class = 'Mascarpone\u5976\u6cb9\u971c',
   mascarpone = 453/2, # 1 cup mascarpone cheese
-  portion = c('mille cre\u0302pe cake 11in' = 1000),
-  instruction = c(
-    'KitchenAid stand mixer: mix and whisk until soft peak'
-  )
+  portion = c('mille cre\u0302pe cake 11in' = 1000)#,
+  #instruction (legacy) = c(
+  #  'KitchenAid stand mixer: mix and whisk until soft peak'
+  #)
 ))
 
 

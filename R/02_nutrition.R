@@ -115,7 +115,6 @@
 #' @slot youjia \link[base]{character} scalar
 #' 
 #' 
-# @slot machine \link[base]{character} scalar or \link[base]{vector}, machine(s) used
 #' @slot machine \link[base]{function}
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef

@@ -31,11 +31,11 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   drymilk = c(Carnation = 15),
   butter = 6,
   portion = c(mochi = 5, 'mooncake 30g' = 15, 'potsticker' = 20),
-  instruction = c(
-    'Transfer steamed dough to *plastic* bowl, e.g., OXO Good Grips batter bowl',
-    'Wear plastic gloves. Knead in (chilled) butter while still hot',
-    paste(col_green('optional'), 'knead in dry flavoring. Exceptions are ginger, etc.')
-  ),
+  #instruction (legacy) = c(
+  #  'Transfer steamed dough to *plastic* bowl, e.g., OXO Good Grips batter bowl',
+  #  'Wear plastic gloves. Knead in (chilled) butter while still hot',
+  #  paste(col_green('optional'), 'knead in dry flavoring. Exceptions are ginger, etc.')
+  #),
   note = c(
     'Must knead in plastic bowl; sticks to glass or ceramic bowl'
   ),

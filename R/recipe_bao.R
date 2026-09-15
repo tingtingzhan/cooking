@@ -67,8 +67,7 @@ sweetBao_portion <- \() c(
 #' @name bao-class
 #' @export
 setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
-  alias_class = '\u5305\u5b50\u9992\u5934', 
-  #key = '\U1f370 48%;3%',
+  alias_class = '\u5305\u5b50\u9992\u5934',
   pastryFlour = c(Wegmans_pastry = 500), 
   yeast_tsp = 1.5,
   bakingPowder_tsp = 1,
@@ -76,16 +75,16 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   
   portion = c(mantou_portion(), savoryBao_portion(), sweetBao_portion()), 
 
-  instruction = c(
-    paste0('Manually whisk all powders together ', col_red('to protect baking powder/soda and yeast from direct contact with water')),
-    paste(col_green('optional'), 'blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
-    'Add water or puree. Manually whisk until mini-doughs form', 
-    'And lard. Knead at Level 2',
-    'Wrap and rest on countertop for 15min. Must rest overnight if whole wheat flour and/or puree is used, then restore to room temperature',
-    'Knead at Level 2 until smooth (~5min)',
-    'Divide, rest and roll using Pastalinda', 
-    'Manually roll with a pin to thin the edges'
-  ),
+  #instruction (legacy)  = c(
+  #  paste0('Manually whisk all powders together ', col_red('to protect baking powder/soda and yeast from direct contact with water')),
+  #  paste(col_green('optional'), 'blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
+  #  'Add water or puree. Manually whisk until mini-doughs form', 
+  #  'And lard. Knead at Level 2',
+  #  'Wrap and rest on countertop for 15min. Must rest overnight if whole wheat flour and/or puree is used, then restore to room temperature',
+  #  'Knead at Level 2 until smooth (~5min)',
+  #  'Divide, rest and roll using Pastalinda', 
+  #  'Manually roll with a pin to thin the edges'
+  #),
   tool = list(RobamCT763(
     treatment = 'Add boiling water in basin. Ferment ~40min',
     program = 'Steam', fahrenheit = 210, minute = 15,
@@ -294,7 +293,6 @@ tomato_bao <- \() new(
 #' @export
 setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
   alias_flavor = '\u5168\u9ea6',
-  #key = '(King Arthur/Wegmans)50%;4.5%',
   breadFlour = c(KingArthur_bread = 300), pastryFlour = numeric(),
   wholeWheatFlour = c(Wegmans_whiteWheat = 200),
   lard = 19,

@@ -18,19 +18,19 @@
 setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_bread = 625), # 5 cup
   salt_tsp = 1/2,
-  instruction = c(
-    'Roll-Stack-Roll, separated by ample corn starch'
-  ),
+  #instruction (legacy) = c(
+  #  'Roll-Stack-Roll, separated by ample corn starch'
+  #),
   note = c(
     'Too soft for stack-&-cook (youtube _edTKRGk38Y, t0sYquhXIFg)'
   ),
-  portion = 75, # 80g too big for 10in; 60g not easy to align in roll-stack-roll
-  machine = list(
-    'Le Creuset Crepe Pan 11in/28cm + KitchenAid downdraft stove top' = c(
-      'No oil on pan',
-      'Halfway between Medium to High, not too hot for hand+spatula'
-    )
-  )
+  portion = 75 # 80g too big for 10in; 60g not easy to align in roll-stack-roll
+  # machine (legacy) = list(
+  #  'Le Creuset Crepe Pan 11in/28cm + KitchenAid downdraft stove top' = c(
+  #    'No oil on pan',
+  #    'Halfway between Medium to High, not too hot for hand+spatula'
+  #  )
+  #)
 ))
 
 

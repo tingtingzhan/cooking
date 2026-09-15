@@ -78,33 +78,28 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
     'Hokkaido toast shaping is not as good as braiding!' 
   ),
   
-  instruction = c(
-    'Brush ceramic and cast aluminum (no need for silicone) baking dish with extra butter (melted)',
-    'Ferment next to heat vent, ~1hr, covered',
-    'Robam CT763: Steam bake, 250\u00b0F/30min, if not specified otherwise',
-    'Finish top with extra butter at any temperature (silicone brush is hot)'
-  ),
+  # instruction (legacy) = c(
+  #  'Brush ceramic and cast aluminum (no need for silicone) baking dish with extra butter (melted)',
+  #  'Ferment next to heat vent, ~1hr, covered',
+  #  'Finish top with extra butter at any temperature (silicone brush is hot)'
+  #),
   
-  tool = list(KSM8990(
-    program = 'Level 2',
-    operation = c(
-      'Rest everything, except butter, overnight',
-      'MUST restore to room temperature',
-      'Knead until smooth. Add room-temperature butter',
-      'Stop kneading once all butter absorbed'
+  tool = list(
+    KSM8990(
+      program = 'Level 2',
+      operation = c(
+        'Rest everything, except butter, overnight',
+        'MUST restore to room temperature',
+        'Knead until smooth. Add room-temperature butter',
+        'Stop kneading once all butter absorbed'
+      )
+    ),
+    
+    RobamCT763(
+      program = 'Steam Bake', 
+      fahrenheit = 250, minute = 30
     )
-  )),
-  machine = list(
-    # 'Bread Pizza; Emile Henry Medium Rectangular (3.2 qt) TRY!!!' = c(
-    #  'Divide half (1/2) recipe into ten (10) short strips',
-    #  'Robam CT763: Steam bake, 250\u00b0F/25min',
-    #  'Brush top with remaining butter and egg wash from another two (2) whole eggs',
-    #  'Robam CT763: Steam bake, 250\u00b0F/2min',
-    #  'Brush top with tomato sauce, shredded mozzarella, cooked seafood, etc.',
-    #  'Robam CT763: Steam bake, 400\u00b0F/3min (until golden brown)' # 350F not enough, will not brown
-    #)
-  )
-))
+)))
 
 #' @rdname bread-class
 #' @export

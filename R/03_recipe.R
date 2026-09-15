@@ -6,7 +6,8 @@
 #' @slot alias \link[base]{character} scalar in Unicode, alias (e.g., in Chinese)
 #' @slot alias_class,alias_flavor \link[base]{character} scalar in Unicode, alias (e.g., in Chinese) of class and flavor
 #' @slot author \link[base]{character} scalar
-# @slot key \link[base]{character} scalar, key diagnosis
+#' @slot tool \link[base]{list} of \linkS4class{tool}s
+#' 
 #' @slot date \link[base]{Date} scalar
 #' 
 #' @slot url \link[base]{character} scalar or \link[base]{vector}, URL of original recipe
@@ -34,12 +35,9 @@
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 # @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
-#' @slot machine \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used
-#' 
-#' @slot tool \link[base]{list} of \linkS4class{tool}s
+# @slot machine (legacy) \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used.  To be superceeded by slot `tool`
 #' 
 #' @slot note \link[base]{character} scalar or \link[base]{vector}, additional note to chef
-#' @slot instruction \link[base]{character} scalar or \link[base]{vector},
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, people's comments
 #' @slot pros \link[base]{character} scalar or \link[base]{vector}, pros
 #' @slot cons \link[base]{character} scalar or \link[base]{vector}, cons
@@ -58,7 +56,7 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   alias_class = 'character', 
   alias_flavor = 'character',
   author = 'character',
-  #key = 'character',
+  tool = 'list',
   date = 'Date',
   
   url = 'character',
@@ -86,12 +84,7 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   youtube = 'character',
   #doi = 'character',
   
-  machine = 'list',
-  
-  tool = 'list',
-  
   note = 'character',
-  instruction = 'character',
   review = 'character',
   pros = 'character', cons = 'character',
   portion = 'numeric',
@@ -117,8 +110,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   # is this the correct way of doing things?????
   x <- getMethod(f = 'initialize', signature = 'raw.')(x)
-  
-  x@machine <- x@machine[lengths(x@machine) > 0L]
   
   if (length(x@yeast) && !length(x@sugarLost)) {
     x@sugarLost <- if (inherits(x, what = 'bao')) {
@@ -400,11 +391,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     } else x@alias 
   } # else do nothing
   
-  #if (length(x@key)) {
-  #  x@alias <- paste0(x@alias, x@key |> col_br_white() |> bg_br_magenta())
-  #  x@key <- character()
-  #}
-  
   return(x)
 })
 
@@ -482,31 +468,10 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     cat('\n')
   } # else NULL
   
-  if (length(object@instruction)) {
-    cat('Instructions:\n')
-    object@instruction |> 
-      gsub(pattern = '\n', replacement = ' ', ) |>
-      gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |> 
-      sprintf(fmt = '\u21ac %s\n') |> 
-      cat(sep = '')
-    cat('\n')
-  }
-  
   object@tool |>
     print.toollist()
   
-  if (length(object@machine)) {
-    cat('Machine:\n')
-    sprintf(
-      fmt = '\n\u2726%s\u2726%s\n', 
-      names(object@machine), 
-      object@machine |> vapply(FUN = \(i) paste0('\n   ', paste(i, collapse = '\n   ')), FUN.VALUE = '')
-    ) |> cat(sep = '')
-    cat('\n')
-  }
-  
   if (length(object@note)) {
-    #cat('Note:\n')
     object@note |> sprintf(fmt = '\u2756 %s') |> cat(sep = '\n')
     cat('\n')
   }

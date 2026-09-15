@@ -18,10 +18,10 @@ setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
   sugar = 7.5,
   # salt_tsp = 1/4,
   iceWater = 50, # 60g-90g,
-  instruction = c(
-    'food processor',
-    'Philips pasta maker'
-  ),
+  #instruction (legacy) = c(
+  #  'food processor',
+  #  'Philips pasta maker'
+  #),
   portion = c(
     # do NOT need pie weight!!
     

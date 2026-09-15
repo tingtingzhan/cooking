@@ -43,16 +43,16 @@ setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
   drymilk = c(Carnation = 23),
   heavyCream = 85,
   water = 240,
-  waterLost = 200, 
+  waterLost = 200#, 
   # I can consistently achieve 170g water-lost using ladle
   # now I am good with rateau. 
   # will confirm waterLost when I have a chance
-  instruction = c(
-    'Sift powder. Sift batter',
-    'Cool crepe pan under running water down to below 100\u00b0C',
-    'KitchenAid downdraft range: side 1, Low; side 2, turn off range',
-    'Use rateau instead of ladle!'
-  )
+  #instruction (legacy) = c(
+  #  'Sift powder. Sift batter',
+  #  'Cool crepe pan under running water down to below 100\u00b0C',
+  #  'KitchenAid downdraft range: side 1, Low; side 2, turn off range',
+  #  'Use rateau instead of ladle!'
+  #)
 ))
 
 setValidity(Class = 'millecrepe', method = \(object) {

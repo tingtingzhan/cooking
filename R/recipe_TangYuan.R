@@ -22,7 +22,7 @@ setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
   glutinousRiceFlour = 100, 
   butter = 3,
   portion = 5,
-  instruction = 'Boil 7% of the dough (1min after floats up)',
+  # instruction (legacy) = 'Boil 7% of the dough (1min after floats up)',
   note = 'Do not use powdered flavoring and/or coloring, will be cooked into the soup'
 ))
 

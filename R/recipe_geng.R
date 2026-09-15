@@ -18,13 +18,13 @@
 setClass(Class = 'cornGeng', contains = 'recipe', prototype = prototype(
   alias_class = '(\u6d77\u9c9c\U1f990\U1f991)\u7389\u7c73\U1f33d\u7fb9\U1f963',
   homemade = c(cornjuice = 300), boilingWater = 200,
-  egg_pc = 1,
-  instruction = c(
-    'Bring corn milk and boiling water to a boil',
-    paste0('Remove from heat. Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() ', col_red('otherwise brings temperature too low'), '. Cover for 5min'),
-    'Add beaten egg slowly. Keep stirring',
-    paste(col_green('optional'), 'add dried seaweed. Cover and soak for 2min')
-  )
+  egg_pc = 1#,
+  #instruction (legacy) = c(
+  #  'Bring corn milk and boiling water to a boil',
+  #  paste0('Remove from heat. Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() ', col_red('otherwise brings temperature too low'), '. Cover for 5min'),
+  #  'Add beaten egg slowly. Keep stirring',
+  #  paste(col_green('optional'), 'add dried seaweed. Cover and soak for 2min')
+  #)
 ))
 
 #' @rdname cornGeng-class
@@ -47,17 +47,17 @@ setClass(Class = 'geng', contains = 'recipe', prototype = prototype(
   
   boilingWater = 600, 
   water = 15, starch_tsp = c(Wegmans_corn = 1.5), 
-  egg_pc = 1,
+  egg_pc = 1#,
   
-  instruction = c(
-    'Make a slurry of corn starch and room-temperature water',
-    paste(col_green('optional'), 'add sauce and seasoning to boiling water'),
-    'Turn to low heat. Add slurry. Stir until thickens',
-    paste0('Remove from heat. Add a beaten egg ', col_red('to bring temperature down to ~90C for seafood'), '. Let sit for 5sec ', col_red('to have bigger egg flakes'), ', then stir gently'),
-    paste0('Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() ', col_red('otherwise brings temperature too low'), '. Cover for 5min'),
-    # tried 7pcs 31-40ct shrimp, very good
-    paste(col_green('optional'), 'add dried seaweed. Cover and soak for 2min')
-  )
+  #instruction (legacy) = c(
+  #  'Make a slurry of corn starch and room-temperature water',
+  #  paste(col_green('optional'), 'add sauce and seasoning to boiling water'),
+  #  'Turn to low heat. Add slurry. Stir until thickens',
+  #  paste0('Remove from heat. Add a beaten egg ', col_red('to bring temperature down to ~90C for seafood'), '. Let sit for 5sec ', col_red('to have bigger egg flakes'), ', then stir gently'),
+  #  paste0('Add no more than 100 grams(?) of fully-thawed seafood, meatball(), meatmash(), meatfill(), or niangaoNingbo() ', col_red('otherwise brings temperature too low'), '. Cover for 5min'),
+  #  # tried 7pcs 31-40ct shrimp, very good
+  #  paste(col_green('optional'), 'add dried seaweed. Cover and soak for 2min')
+  #)
 ))
 
 #youtube = c('\u5218\u7238\u7238' = 'dBXeW0vyiNc')

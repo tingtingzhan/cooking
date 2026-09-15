@@ -22,16 +22,16 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
   # pastryFlour = 200, eggYolk = 2, eggWhite = 2, yeast_tsp = .5, # has potential!!
   pastryFlour = 190, eggYolk = 2, eggWhite = 2, yeast_tsp = 1.5,
   butter = 306*5/164,
-  instruction = c(
-    'Manually knead pastry flour, egg and yeast',
-    # 'Pastalinda; Thickness 7, 3 cm long, 2.5 mm cut',
-    'Pastalinda; Thickness 6, 2 cm long. Manually cut to 3mm',
-    'Butter rice cooker bowl',
-    # 'In rice cooker bowl, layer noodle, syrup (and nuts, dried fruit, etc)',
-    'Coat noodle pieces with sugar syrup, in rice cooker bowl',
-    'Ferment for 30min',
-    'Choose Bread program (90min)'
-  ),
+  #instruction (legacy) = c(
+  #  'Manually knead pastry flour, egg and yeast',
+  #  # 'Pastalinda; Thickness 7, 3 cm long, 2.5 mm cut',
+  #  'Pastalinda; Thickness 6, 2 cm long. Manually cut to 3mm',
+  #  'Butter rice cooker bowl',
+  #  # 'In rice cooker bowl, layer noodle, syrup (and nuts, dried fruit, etc)',
+  #  'Coat noodle pieces with sugar syrup, in rice cooker bowl',
+  #  'Ferment for 30min',
+  #  'Choose Bread program (90min)'
+  #),
   url = 'v.douyin.com/idoJXYAX/'
 ))
 
@@ -57,10 +57,8 @@ sacima <- \() new(
   #bakingPowder_tsp = 1/8,
   #homemade = c(invertSugar = 50),
   condensedMilk = 80,
+  tool = list(PhilipsHD9867(fahrenheit = 350, minute = 6)),
   review = 'try'
-  #machine = list(
-  #  # 'Air Fryer' = '350F, 6min.  Try and confirm'
-  #),
   #url = c(
   #  'www.hongbeibang.com/recipe/13806412'
   #),

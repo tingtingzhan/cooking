@@ -58,7 +58,6 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
 #' @export
 setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
   alias_class = '\u6c64\u9762\U1f35c \u6c34\u997a\U1f95f\u6284\u624b\u76ae',
-  #key = '\U1f35e 57%',
   portion = c(
     '\u6284\u624b\u76ae wonton; 6x thru Thickness-2' = 5, # tried and nice.  Weigh to confirm
     
@@ -123,15 +122,15 @@ setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
   alias_class = '\u5e7c\u9762\U1f35d',
   portion = c(
     '\u9762\u6761\U1f35d\U1f35c noodle' = 100
-  ),
-  instruction = c(
-    '\u51c9\u9762\U1f35d Dry noodle: 
-    Pastalinda-9, 2.5mm cut.
-    Soak cooked noodle in cold water for 30sec. Drain.
-    Mix with dressing',
-    '\u6c64\u9762\U1f35c Noodle soup: 
-    2-sheet through Pastalinda-7.5, 2.5mm cut'
-  )
+  )#,
+  #instruction (legacy) = c(
+  #  '\u51c9\u9762\U1f35d Dry noodle: 
+  #  Pastalinda-9, 2.5mm cut.
+  #  Soak cooked noodle in cold water for 30sec. Drain.
+  #  Mix with dressing',
+  #  '\u6c64\u9762\U1f35c Noodle soup: 
+  #  2-sheet through Pastalinda-7.5, 2.5mm cut'
+  #)
 ))
 
 
@@ -207,18 +206,6 @@ if (FALSE) {
       'Chop pork tenderloin or chicken breast',
       'Stir fry with one of Lee-Kum-Kee sauces',
       'Fried ground meat (hot). Lasagna. Shredded mozzarella. Repeat thrice'
-    ),
-    RobamCT763 = new(
-      Class = 'oven', 
-      name = 'Robam CT763',
-      # 'Robam CT763. Steam, 210\u00b0F/10min. Bake 300\u00b0F/8min' # today
-      # 'Robam CT763. Steam, 210\u00b0F/5min. Bake 300\u00b0F/8min' # wait
-      # 'Robam CT763: Steam bake, 300\u00b0F/10min' # next time
-      program = 'Steam Bake',
-      fahrenheit = 300, 
-      minute = c(
-        7
-      )
     )
   )
 }

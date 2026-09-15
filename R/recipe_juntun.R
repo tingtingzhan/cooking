@@ -26,14 +26,14 @@ setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
   # do NOT use butter in dough next time!
   # pan sear in oil is a must!!!
   
-  portion = c('juntun-guokui' = 85),
-  instruction = c(
-    # 'Rest, without butter, in fridge overnight. Knead in butter on day-2',
-    'Wrap and rest overnight in fridge',
-    # 'Pan sear, without oil, 1/3 from Medium to High',
-    'Pan sear, with vegetable oil, 1/3 from Medium to High',
-    'Philips Air Fryer, four (4) guo-kui, 375F, 6min+4min'
-  )
+  portion = c('juntun-guokui' = 85)#,
+  #instruction (legacy) = c(
+  #  # 'Rest, without butter, in fridge overnight. Knead in butter on day-2',
+  #  'Wrap and rest overnight in fridge',
+  #  # 'Pan sear, without oil, 1/3 from Medium to High',
+  #  'Pan sear, with vegetable oil, 1/3 from Medium to High',
+  #  'Philips Air Fryer, four (4) guo-kui, 375F, 6min+4min'
+  #)
 ))
 
 
@@ -74,9 +74,9 @@ juntun_filling <- \() new(
   ),
   rattanPepperOil_Tbsp = 1, # perfect numbness!!
   salt_tsp = .5,
-  instruction = c(
-    'Use KitchenAid meat grinder, not meat chopper!'
-  ),
+  #instruction (legacy) = c(
+  #  'Use KitchenAid meat grinder, not meat chopper!'
+  #),
   review = 'try again!!',
   youtube = 'cohQ56AqXkg'
 )

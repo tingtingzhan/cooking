@@ -109,11 +109,11 @@ cornbread <- \() new(
   water95 = 320, # good for muffin; yet to experiment for skillet
   # waterLost = 45, # forget this, for now
   
-  instruction = c(
-    'mix cornmeal and hot water. Let dough sit for 5min',
-    'mix in other ingredients'#,
-    # paste(col_green('optional'), 'transfer to sizzling hot skillet (with cooking spray)')
-  ),
+  #instruction (legacy) = c(
+  #  'mix cornmeal and hot water. Let dough sit for 5min',
+  #  'mix in other ingredients'#,
+  #  # paste(col_green('optional'), 'transfer to sizzling hot skillet (with cooking spray)')
+  #),
   date = as.Date('2024-12-01'),
   pros = c(
     paste('must use', 'pastry flour' |> col_br_magenta() |> style_bold()),
