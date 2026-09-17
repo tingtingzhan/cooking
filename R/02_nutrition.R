@@ -17,7 +17,7 @@
 #' @slot fdc \link[base]{integer} scalar, USDA FoodData Central (FDC) ID
 #' @slot pubchem \link[base]{character} scalar
 #' 
-#' @slot acme \link[base]{integer} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)
+#' @slot acme \link[base]{character} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)
 #' @slot amazon \link[base]{character} scalar, amazon ID
 #' @slot bjs \link[base]{character} scalar, BJ's ID
 #' @slot costco,costcoBiz \link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}
@@ -31,7 +31,7 @@
 #' @slot wawa \link[base]{character} scalar
 #' @slot webstaurant \link[base]{character} scalar
 #' @slot weee \link[base]{character} scalar
-#' @slot wegmans,wegmansorganic \link[base]{integer} scalar, Wegmans Food Markets ID
+#' @slot wegmans \link[base]{character} scalar, Wegmans Food Markets ID
 #' @slot wholefoods \link[base]{character} scalar, Wholel Foods ID
 #' @slot yamibuy \link[base]{character} scalar
 #' 
@@ -165,7 +165,7 @@ setClass(Class = 'nutrition', slots = c(
   fdc = 'integer',
   pubchem = 'character',
   
-  acme = 'integer',
+  acme = 'character',
   amazon = 'character',
   bjs = 'character',
   costco = 'character', costcoBiz = 'character',
@@ -180,7 +180,7 @@ setClass(Class = 'nutrition', slots = c(
   wawa = 'character',
   webstaurant = 'character',
   weee = 'character',
-  wegmans = 'integer', wegmansorganic = 'integer',
+  wegmans = 'character',
   wholefoods = 'character',
   yamibuy = 'character',
   
@@ -578,7 +578,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         c()
     } else if (length(x@meyenberg)) {
       x@meyenberg |>
-        sprintf(fmt = 'https://www.meyenberg.com/products/%s') |>
+        sprintf(fmt = 'https://www.meyenberg.com/usa/en/products/%s') |>
         style_hyperlink(text = 'Meyenberg\U1f1fa\U1f1f8') |>
         c()
     } else if (length(x@mizkanjpn)) {
@@ -778,7 +778,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_store_url_(store = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant') |>
     add_store_url_(store = 'weee', fmt = 'https://www.sayweee.com/zh/product/weee/%s', store_brand = NA_character_, store_name = 'Weee!') |>
     add_store_url_(store = 'wegmans', fmt = 'https://www.wegmans.com/shop/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8', store_name = 'Wegmans') |>
-    add_store_url_(store = 'wegmansorganic', fmt = 'https://www.wegmans.com/shop/product/%s/', store_brand = 'Wegmans Organic\U1f1fa\U1f1f8') |>
     add_store_url_(store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8', store_name = 'Whole Foods\U1f1fa\U1f1f8') |>
     add_store_url_(store = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   

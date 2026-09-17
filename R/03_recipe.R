@@ -12,7 +12,6 @@
 #' @slot date \link[base]{Date} scalar
 #' 
 #' @slot url \link[base]{character} scalar or \link[base]{vector}, URL of original recipe
-#' @slot acme \link[base]{integer} scalar
 #' @slot allrecipes \link[base]{character} scalar
 #' @slot daatgo \link[base]{character} scalar
 #' @slot dad1966 \link[base]{character} scalar
@@ -62,7 +61,6 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   
   url = 'character',
   allrecipes = 'character',
-  acme = 'integer',
   daatgo = 'character',
   dad1966 = 'character',
   guga = 'character',
@@ -139,12 +137,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       x@url <- x@url[-1L]
     }
   } # before `if (!length(x@author))` !!!
-  
-  if (length(x@acme)) {
-    if (length(x@acme) > 1L) stop('only allow len-1 @acme')
-    x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', x@acme), text = 'Albertsons\U1f1fa\U1f1f8') |> c()
-    x@acme <- integer()
-  }
   
   # youtubers
   for (yt in c('daatgo', 'dad1966', 'guga', 'happytears', 'laofangu', 'pino', 'shangshikitchen', 'xiaogaojie')) {
@@ -261,7 +253,10 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   if (length(x@wegmans)) {
     if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
-    x@author <- style_hyperlink(url = sprintf(fmt = 'https://shop.wegmans.com/recipes/%s', x@wegmans), text = 'Wegmans\U1f1fa\U1f1f8') |> c()
+    x@author <- x@wegmans |>
+      sprintf(fmt = 'https://shop.wegmans.com/recipes/%s') |> 
+      style_hyperlink(url = _, text = 'Wegmans\U1f1fa\U1f1f8') |> 
+      c()
     x@wegmans <- character()
   }
   
@@ -479,24 +474,24 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   #  cat('\n')
   #}
   
-  #if (length(machine <- attr(y, which = 'machine', exact = TRUE))) {
-  #  cat('Machine on Ingredients:\n')
-  #  machine |> sprintf(fmt = '\u2726 %s') |> cat(sep = '\n')
-  #  cat('\n')
-  #}
-  
   if (length(object@review)) {
-    object@review |> sprintf(fmt = '\U1f4dd %s') |> lapply(FUN = cli_text)
+    object@review |> 
+      sprintf(fmt = '\U1f4dd %s') |> 
+      lapply(FUN = cli_text)
     cat('\n')
   }
   
   if (length(object@pros)) {
-    object@pros |> sprintf(fmt = '\U1f389 %s') |> cat(sep = '\n')
+    object@pros |> 
+      sprintf(fmt = '\U1f389 %s') |> 
+      cat(sep = '\n')
     cat('\n')
   }
   
   if (length(object@cons)) {
-    object@cons |> sprintf(fmt = '\U1f940 %s') |> cat(sep = '\n')
+    object@cons |> 
+      sprintf(fmt = '\U1f940 %s') |> 
+      cat(sep = '\n')
     cat('\n')
   }
   

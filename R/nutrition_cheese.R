@@ -5,7 +5,8 @@
 
 
 Wegmans_CambozolaBlueTorte <- \() new(
-  Class = 'nutrition',  wegmans = 53941L,
+  Class = 'nutrition', 
+  # wegmans = ??, # not on website right now
   name = 'Cambozola Blue Caramel Torte Cheese',
   serving_oz = 1, fat = 11, sodium = .125, sugar = 2, protein = 3,
   review = 'Super nice! Not too salty, not too sweet.  Try to assemble using my invert-sugar-syrup, mixed nuts (from Costco)')
@@ -13,7 +14,8 @@ Wegmans_CambozolaBlueTorte <- \() new(
 
 
 Wegmans_Cambozola <- \() new(
-  Class = 'nutrition',  wegmans = 8603L,
+  Class = 'nutrition', 
+  # wegmans = ??, # not on website right now
   name = 'Cambozola Blue Triple Cr\u00e8me Cheese',
   serving_oz = 1, fat = 12, sodium = .19, protein = 4)
 
@@ -21,8 +23,9 @@ Wegmans_Cambozola <- \() new(
 
 
 Wegmans_mildBrie <- \() new(
-  Class = 'nutrition',  wegmans = 38341L, usd = 21.89/16,
+  Class = 'nutrition',  
   name = 'Cave-Ripened Mild Brie Cheese, Milky',
+  wegmans = '201731', usd = 21.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
   calorie = 100,
   fat = 9, cholesterol = .030, sodium = .16, protein = 4,
@@ -33,8 +36,9 @@ Wegmans_mildBrie <- \() new(
 
 
 Wegmans_mildTripleCreme <- \() new(
-  Class = 'nutrition',  wegmans = 873L, usd = 27.59/16,
+  Class = 'nutrition',  
   name = 'Cave-Ripened Mild Triple Cr\u00e8me Cheese',
+  wegmans = '108112', usd = 26.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
   calorie = 110,
   fat = 11, cholesterol = .040, sodium = .22, protein = 3,
@@ -42,8 +46,9 @@ Wegmans_mildTripleCreme <- \() new(
 
 
 Wegmans_mildBonVivant <- \() new( # try again?
-  Class = 'nutrition',  wegmans = 226424L, usd = 24.19/16,
+  Class = 'nutrition',
   name = 'Mild Bon Vivant',
+  wegmans = '840554', usd = 23.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
   calorie = 100,
   fat = 9, cholesterol = .030, sodium = .16, protein = 5)
@@ -52,8 +57,9 @@ Wegmans_mildBonVivant <- \() new( # try again?
 
 
 Wegmans_mildCremeuxDeBourgogne <- \() new( # try again?
-  Class = 'nutrition',  wegmans = 227321L, usd = 2.14,
+  Class = 'nutrition',  
   name = 'Mild Cremeux de Bourgogne Soft Ripened Cheese',
+  wegmans = '51985', usd = 2.00, date = as.Date('2026-09-17'),
   serving_oz = 1, 
   calorie = 110,
   fat = 11, cholesterol = .035, sodium = .12, protein = 3)
@@ -62,8 +68,9 @@ Wegmans_mildCremeuxDeBourgogne <- \() new( # try again?
 
 
 Wegmans_LangaLaTur <- \() new(
-  Class = 'nutrition',  wegmans = 25755L, usd = 32.19/16,
+  Class = 'nutrition',
   name = 'Caseificio dell\'Alta Langa La Tur Cheese',
+  wegmans = '416528', usd = 28.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
   calorie = 80,
   fat = 7, cholesterol = .03, sodium = .11, protein = 4)
@@ -73,8 +80,9 @@ Wegmans_LangaLaTur <- \() new(
 
 
 Wegmans_mildGoatBrie <- \() new(
-  Class = 'nutrition',  wegmans = 222234L, usd = 1.64,
+  Class = 'nutrition',  
   name = 'Mild Goat\U1f410 Brie Cheese',
+  wegmans = '50306', usd = 1.43, date = as.Date('2026-09-17'),
   servingGram = 30, 
   calorie = 90,
   fat = 7, cholesterol = .025, sodium = .13, protein = 6,
@@ -84,7 +92,7 @@ Wegmans_mildGoatBrie <- \() new(
 BelGioioso_mascarpone <- \() new(
   Class = 'nutrition',  
   belgioioso = 'mascarpone', name = 'Mascarpone',
-  wegmans = 11544L, usd = .65,
+  wegmans = '870051', usd = 0.56, date = as.Date('2026-09-17'),
   fdc = 1726641L, # this brand!!
   # package is 1 pound 453g, 2 cups
   serving_oz = 1, servingTbsp = 2,
@@ -93,7 +101,7 @@ BelGioioso_mascarpone <- \() new(
 
 BelGioioso_ricotta <- \() new(
   Class = 'nutrition',  
-  wegmans = 265931L, usd = 7.49/907*55,
+  wegmans = '894048', usd = 9.49/907*55, date = as.Date('2026-09-17'),
   belgioioso = 'ricotta-con-latte', name = 'Ricotta con Latte',
   fdc = 2288192L, # this brand!!
   # https://www.ams.usda.gov/sites/default/files/media/ricottachees.pdf
@@ -105,20 +113,35 @@ BelGioioso_ricotta <- \() new(
 
 
 Friendship_farmer <- \() new(
-  Class = 'nutrition',  wegmans = 9715L,
+  Class = 'nutrition',
   brand = 'Friendship Dairies', name = 'Farmer Cheese, No Salt Added',
+  wegmans = '23257', usd = .53, date = as.Date('2026-09-17'),
   # https://www.friendshipdairies.com/en/products/farmer-cheese # has salt!!
   servingGram = 30, fat = 2.5, sodium = .01, protein = 4)
 
 
 Wegmans_Castelbelo <- \() new( 
-  Class = 'nutrition',  wegmans = 25571L,
+  Class = 'nutrition',
+  # wegmans = ???, # not on website right now
   name = 'Caseificio dell\'Alta Langa Castelbelo Cheese',
   serving_oz = 1, fat = 8, sodium = .14, protein = 5,
   review = 'Much much less salty than Wegmans_mildBrie(), otherwise very similar.  Like it!')
 
+
+Wegmans_goat_cheese <- \() new(
+  Class = 'nutrition', 
+  wegmans = '45825', usd = .75, date = as.Date('2026-09-17'),
+  name = 'Goat\U1f410 Cheese, Mild', alias = '\u7f8a\u5976\u916a',
+  serving_oz = 1,
+  calorie = 80,
+  fat = 6, cholesterol = .025, sodium = .06, carbohydrate = 1, sugar = 1, protein = 5)
+
+
+
+
 Wegmans_cranberryGoat <- \() new(
-  Class = 'nutrition',  wegmans = 261050L,
+  Class = 'nutrition',
+  # wegmans = ???, # not on website right now
   name = 'Goat\U1f410 Cheese with Cranberries',
   serving_oz = 1, fat = 5, 
   sodium = .16, # website says `sodium = .86`, must be wrong
@@ -134,7 +157,7 @@ NaturalKosher_mozzarella <- \() new(
 
 Wegmans_mozzarella_skim <- \() new(
   Class = 'nutrition',  
-  wegmans = 19182L,
+  wegmans = '33447',
   name = 'Shredded Mozzarella, Part-Skim',
   servingGram = 28, 
   servingCup = 1/4, # packaging
@@ -146,11 +169,10 @@ Wegmans_mozzarella_skim <- \() new(
 
 Wegmans_mozzarella_whole <- \() new(
   Class = 'nutrition',  
-  wegmans = 53074L,
+  wegmans = '33429', usd = .25, date = as.Date('2026-09-17'),
   name = 'Shredded Mozzarella, Whole Milk',
   servingGram = 28, 
   servingCup = 1/4, # packaging
-  usd = 7.49/32, # packaging
   calorie = 90,
   fat = 7, cholesterol = .025, sodium = .190, 
   carbohydrate = 1, protein = 6)

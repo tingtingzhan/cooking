@@ -38,7 +38,7 @@ Plugra_butter <- \() new(
   Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/')),
   alias = '\u9ec4\u6cb9', name = 'European Butter\U1f9c8',
-  acme = 960051793L, usd = 2.99/16,
+  acme = '960051793', usd = 2.99/16, date = as.Date('2026-09-11'),
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 100,
   fat = 11, cholesterol = .030,
@@ -63,7 +63,7 @@ Lucerne_European_butter <- \() new(
   Class = 'nutrition', 
   brand = 'Lucerne', 
   name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
-  acme = 960493010L, usd = 2.99/16,
+  acme = '960493010', usd = 3.29/16, date = as.Date('2026-09-17'),
   serving_oz = 8/16, servingTbsp = 1,
   calorie = 100,
   fat = 226.796/16*.82, # on package 12g
@@ -73,7 +73,7 @@ Lucerne_European_butter <- \() new(
 
 Minerva_Amish_butter <- \() new(
   Class = 'nutrition', 
-  # wegmans = 43730L, # this is the salted version
+  # wegmans = '638816', # this is the salted version
   brand = c(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
   name = 'Amish Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
@@ -101,9 +101,9 @@ LandOLakes_butter <- \() new(
 
 
 WegmansOrganic_ghee <- \() new(
-  Class = 'nutrition',  wegmansorganic = 258519L,
+  Class = 'nutrition',  
   name = 'Ghee', alias = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
-  usd = 7.99/213*15,
+  wegmans = '61329', usd = 8.99/213*15,
   servingGram = 15, servingTbsp = 1, 
   calorie = 130, fat = 15)
 

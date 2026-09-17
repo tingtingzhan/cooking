@@ -42,17 +42,6 @@ PreppyKitchen_cheesecake <- \() new(
 
 
 
-Junior_original <- \() new(
-  Class = 'nutrition',  wegmans = 81705L, usd = 13.89/5,
-  juniorscheesecake = 'original-ny-plain-cheesecake',
-  # watch this carefully!!! https://www.youtube.com/watch?v=hktm2mvQKc0
-  name = 'Original Cheesecake',
-  servingGram = 136, 
-  calorie = 460,
-  fat = 33, cholesterol = .135, sodium = .38, carbohydrate = 30, sugar = 24, addedSugar = 22, protein = 7)
-
-
-
 Junior_cookbook <- \() new(
   Class = 'recipe', 
   juniorscheesecakecookbook = 34L,
@@ -74,12 +63,6 @@ CheesecakeFactory_original <- \() new(
   target = 'A-15382641', usd = 18.39/964*120,
   servingGram = 120, 
   fat = 24, cholesterol = .105, sodium = .33, sugar = 28, addedSugar = 27, protein = 6)
-
-
-Junior_strawberrySwirl <- \() new(
-  Class = 'nutrition',  wegmans = 23187893L,
-  brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
-  servingGram = 136, fat = 28, cholesterol = .11, sodium = .33, sugar = 29, protein = 6)
 
 
 

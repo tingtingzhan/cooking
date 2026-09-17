@@ -8,14 +8,14 @@ BobsRedMill_tapioca_starch <- \() new(
 BobsRedMill_potato_starch <- \() new( # very coarse!  I don't like!!
   Class = 'nutrition',  bobsredmill = 'potato-starch',
   name = 'Potato\U1f954 Starch',
-  wegmans = 7551L, usd = 5.19/623*12, # 2023-11-13
+  # wegmans = 7551L, usd = 5.19/623*12, # 2023-11-13
   servingGram = 12, servingTbsp = 12)
 
 
 
 Wegmans_corn_starch <- \() new(
   Class = 'nutrition',  
-  wegmans = 8127L, usd = 1.79/454*8, # 2023-11-11
+  # wegmans = 8127L, usd = 1.79/454*8, # 2023-11-11
   name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
   servingGram = 8, 
   # servingTbsp = 1 # packaging
@@ -28,7 +28,7 @@ Argo_corn_starch <- \() new(
   Class = 'nutrition', 
   brand = style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://www.argostarch.com/products.html') |> c(),
   name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
-  wegmans = 34585L, usd = 2.49/454*8,
+  # wegmans = 34585L, usd = 2.49/454*8,
   servingGram = 8, 
   # servingTbsp = 1 # packaging
   servingTbsp = 8/10, # expected experiment 1tbsp = 10g (based on Wegmans corn starch)

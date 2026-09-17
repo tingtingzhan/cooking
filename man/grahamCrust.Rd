@@ -7,9 +7,6 @@
 \alias{PreppyKitchen_grahamCrust3}
 \alias{PreppyKitchen_grahamCrust4}
 \alias{PreppyKitchen_grahamCrust5}
-\alias{Keebler_grahamCrust}
-\alias{WholeFoods365_grahamCrust}
-\alias{MiDel_grahamCrust}
 \title{Other People's Graham Crust}
 \usage{
 PreppyKitchen_grahamCrust1()
@@ -21,12 +18,6 @@ PreppyKitchen_grahamCrust3()
 PreppyKitchen_grahamCrust4()
 
 PreppyKitchen_grahamCrust5()
-
-Keebler_grahamCrust()
-
-WholeFoods365_grahamCrust()
-
-MiDel_grahamCrust()
 }
 \description{
 ..

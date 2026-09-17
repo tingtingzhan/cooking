@@ -30,7 +30,8 @@ Greenmax_blackSesame <- \() new(
 
 
 Jbasket_whiteSesame <- \() new(
-  Class = 'nutrition',  wegmans = 54348L,
+  Class = 'nutrition',  
+  wegmans = '155989', usd = 7.99/323, date = as.Date('2026-09-17'),
   jfc = '40444',
   brand = 'J-Basket', name = 'Roasted White Sesame Seed', alias = '\u719f\u767d\u829d\u9ebb',
   servingGram = .7, servingTsp = 1/4 # packaging

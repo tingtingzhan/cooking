@@ -3,7 +3,7 @@
 salmonSashimi <- \() new(
   Class = 'nutrition',  
   name = 'Alpine King Salmon, Sashimi', alias = '\u9bad \u523a\u8eab',
-  wegmans = 260546L, usd = 43/454*100,
+  # wegmans = 260546L, usd = 43/454*100,
   servingGram = 113, 
   water = 113-24-1-21 - 2,
   calorie = 290, fat = 24, cholesterol = .065, sodium = .050, sugar = 1, protein = 21)
@@ -12,7 +12,7 @@ salmonSashimi <- \() new(
 ahiTunaSashimi <- \() new(
   Class = 'nutrition', 
   name = 'Ahi(Bigeye) Tuna, Sashimi', alias = '\u9baa \u523a\u8eab',
-  wegmans = 30372L, usd = 43/454*100,
+  # wegmans = 30372L, usd = 43/454*100,
   servingGram = 113,
   water = 113-2-27 - 2,
   calorie = 130, fat = 2, cholesterol = .045, sodium = .070, protein = 27)
@@ -20,7 +20,7 @@ ahiTunaSashimi <- \() new(
 yellowtailSashimi <- \() new(
   Class = 'nutrition', 
   name = 'Yellowtail, Sashimi', alias = '\u9c24 \u523a\u8eab',
-  wegmans = 260467L, usd = 43/454*100,
+  # wegmans = 260467L, usd = 43/454*100,
   servingGram = 113,
   water = 113-6-26 - 2,
   calorie = 160, fat = 6, cholesterol = .060, sodium = .045, protein = 26)

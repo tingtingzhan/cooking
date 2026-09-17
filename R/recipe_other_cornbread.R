@@ -17,14 +17,6 @@ Wegmans_cornbread_recipe <- \() new(
 )
 
 
-Wegmans_cornbread <- \() new(
-  Class = 'nutrition',  wegmans = 268359L,
-  name = 'Cornbread', usd = 9.00/9,
-  servingGram = 57, calorie = 240,
-  fat = 10, cholesterol = .045, sodium = .2,
-  carbohydrate = 33, addedSugar = 13, protein = 4)
-
-
 
 
 BethanyWeathersby_cornbread <- \() new(
@@ -156,18 +148,6 @@ Krusteaz_southern_cornbread <- \() new(
 
 # check out those fancier recipes https://www.krusteaz.com/recipes/cornbread/
 
-
-Albertsons_cornbread <- \() new(
-  Class = 'recipe', flavor = 'Cornbread',
-  acme = 117010060L,
-  butter_cup = 1/4,
-  cornmeal_cup = c(Albertsons_yellowCorn = 1),
-  flour_cup = 1,
-  bakingPowder_tsp = 4,
-  sugar_cup = c(Domino_granulated = 1/4),
-  salt_tsp = 1,
-  milk_cup = 1,
-  egg_pc = 2)
 
 
 

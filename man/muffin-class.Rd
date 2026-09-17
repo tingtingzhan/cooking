@@ -55,7 +55,6 @@ diagnose(
  cooking:::BobsRedMill_cornbread() |>
   as('nutrition') |>
   subtract(sugar = 7),
- subtract(cooking:::Albertsons_cornbread, sugar = 25),
  cooking:::Fleischmanns_cornbread() |>
   as('nutrition') |>
   subtract(sugar = 100),

@@ -3,7 +3,7 @@
 eggYolk <- \() new(
   Class = 'nutrition',  
   name = 'Egg\U1f95a Yolk, Large', alias = '\u9e21\u86cb\u9ec4',
-  wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
+  # wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
   servingGram = 17.3, 
   fdc = 172184L, # servingGram = 100, # fdc numbers are per 100g
   calorie = 322/100*17.3,
@@ -13,7 +13,7 @@ eggYolk <- \() new(
 eggWhite <- \() new(
   Class = 'nutrition',  
   name = 'Egg\U1f95a White, Large', alias = '\u9e21\u86cb\u6e05',
-  wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
+  # wegmans = 3464L, usd = 2.29/18, # in store price cheaper than online
   servingGram = 34.7, 
   fdc = 172183L, # servingGram = 100, # fdc numbers are per 100g
   calorie = 52/100*34.7,
@@ -46,7 +46,7 @@ pork_tenderloin <- \() new(
   Class = 'nutrition',  
   swiftmeats = 'pork-tenderloin', 
   name = 'Pork\U1f416 Tenderloin', alias = '\u732a\u5c0f\u91cc\u810a',
-  #wegmans = 760L, usd = 2.69 / 454 * 100,
+  # wegmans = 760L, usd = 2.69 / 454 * 100,
   fdc = 168249L, water = 112*.76, # fdc data
   costcoBiz = '100082095', usd = 2 / 454 * 112,
   servingGram = 112, 
@@ -125,7 +125,8 @@ beef_chuck <- \() new(
   review = c(spam = 'Beef chuck has too much fat and connective tissue for spam'))
 
 beef_rib <- \() new(
-  Class = 'nutrition',  fdc = 170783L, wegmans = 42139L,
+  Class = 'nutrition', fdc = 170783L, 
+  # wegmans = 42139L,
   name = 'Beef\U1f402 Boneless Short Ribs',
   usd = 15.49/454*100,
   calorie = 175,
@@ -137,7 +138,8 @@ beef_rib <- \() new(
 
 
 beef_rib_Angus <- \() new(
-  Class = 'nutrition',  fdc = 170783L, wegmans = 2874L,
+  Class = 'nutrition', fdc = 170783L, 
+  # wegmans = 2874L,
   name = 'Angus Beef\U1f402 Boneless Short Ribs',
   usd = 15.99/454*100,
   calorie = 175,

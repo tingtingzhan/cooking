@@ -28,7 +28,7 @@ Nabisco_waferOreo <- \() new(
 Oreo <- \() new(
   Class = 'nutrition',  
   oreo = 'oreo-cookie', name = 'Oreo',
-  wegmans = 270225L, usd = 4.99/15,
+  wegmans = '902920', usd = 4.49/15, date = as.Date('2026-09-17'),
   servingGram = 34, 
   calorie = 160,
   fat = 7, sodium = .13, carbohydrate = 25, fiber = 1, sugar = 14, addedSugar = 13, protein = 1)
@@ -37,7 +37,7 @@ Oreo_thins <- \() new(
   Class = 'nutrition',  
   oreo = 'oreo-thins-original-cookies',
   name = 'Oreo Thins',
-  wegmans = 25409833L, usd = 4.99/12,
+  wegmans = '927296', usd = 4.99/12, date = as.Date('2026-09-17'),
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 12, addedSugar = 12, protein = 1)
@@ -46,7 +46,8 @@ Oreo_thins_tiramisu <- \() new(
   Class = 'nutrition',  
   oreo = 'tiramisu',
   name = 'Oreo Thins, Tiramisu',
-  wegmans = 25431888L, usd = 4.99/12,
+  # not on Wegmans website right now
+  acme = '970587618', usd = 5.49/12, date = as.Date('2026-09-17'),
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 11, addedSugar = 11, protein = 1,
@@ -56,7 +57,7 @@ Oreo_thins_lemon <- \() new(
   Class = 'nutrition',  
   oreo = 'oreo-thins-lemon-cookies',
   name = 'Oreo Thins, Lemon\U1f34b',
-  # wegmans = ??, usd = 4.99/13,
+  wegmans = '927299', usd = 4.99/13, date = as.Date('2026-09-17'),
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, sugar = 11, addedSugar = 11, protein = 1,
@@ -67,7 +68,7 @@ Oreo_thins_mint <- \() new(
   Class = 'nutrition',  
   oreo = 'oreo-thins-mint-cookies',
   name = 'Oreo Thins, Mint',
-  wegmans = 25409822L, usd = 4.99/12,
+  wegmans = '927292', usd = 4.99/12, date = as.Date('2026-09-17'),
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 12, addedSugar = 12, protein = 1,

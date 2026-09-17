@@ -14,7 +14,7 @@ DaoXiangCun_corn <- \() new(
 Albertsons_yellowCorn <- \() new(
   Class = 'nutrition', 
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
-  acme = 117010060L, usd = 4.29/2270*30,
+  acme = '117010060', usd = 4.49/2270*30, date = as.Date('2026-09-17'),
   servingGram = 30, 
   # servingCup = 1/4, # packaging
   servingCup = 30/150, # actual experiment, 1cup = 150g, 2024-10-29
@@ -27,7 +27,7 @@ IndianHead_whiteCorn <- \() new(
   Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'White Cornmeal\U1f33d',  
-  wegmans = 19868L, usd = 1.79/907*30,
+  wegmans = '344427', usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, protein = 2, 
@@ -39,7 +39,7 @@ IndianHead_yellowCorn <- \() new(
   Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'Yellow Cornmeal\U1f33d',
-  wegmans = 19981L, usd = 1.79/907*30,
+  wegmans = '346429', usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = .5, protein = 2, 
@@ -51,7 +51,7 @@ IndianHead_yellowCorn <- \() new(
 Quaker_yellowCorn <- \() new(
   Class = 'nutrition',  quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
-  wegmans = 16686L, usd = 2.99/680*27,
+  wegmans = '25374', usd = 2.99/680*27,
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
   carbohydrate = 21, protein = 2)
@@ -68,7 +68,7 @@ Quaker_whiteCorn <- \() new(
 
 Wegmans_creamCorn <- \() new(
   Class = 'nutrition', 
-  wegmans = 16741L, usd = .69/418*125,
+  wegmans = '42375', usd = .75/418*125,
   name = 'Cream Style Corn\U1f33d',
   servingGram = 125, servingCup = 1/2,
   calorie = 80,

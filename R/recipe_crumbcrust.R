@@ -32,9 +32,9 @@
 #'  PreppyKitchen_grahamCrust5() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 28),
-#'  subtract(MiDel_grahamCrust, sugar = 5.8),
-#'  subtract(Keebler_grahamCrust, sugar = 4.1),
-#'  subtract(WholeFoods365_grahamCrust, sugar = 4)
+#'  subtract(cooking:::MiDel_grahamCrust, sugar = 5.8),
+#'  subtract(cooking:::Keebler_grahamCrust, sugar = 4.1),
+#'  subtract(cooking:::WholeFoods365_grahamCrust, sugar = 4)
 #' )
 #' 
 #' 
@@ -127,48 +127,8 @@ PreppyKitchen_grahamCrust5 <- \() new(
   butter_cup = 1/2,
   preppykitchen = c('V5YqfJSjYXE' = 'no-bake-cheesecake'))
 
-#' @rdname grahamCrust
-#' @export
-Keebler_grahamCrust <- \() new(
-  Class = 'nutrition', 
-  brand = 'Keebler', name = 'Graham Crust',
-  url = 'https://www.keebler.com/en/sweet-treat/pie-crusts/graham/ready-crust-graham-cracker',
-  wegmans = 260909L, usd = 2.99/170*21,
-  servingGram = 21, fat = 5, sodium = .115, sugar = 6, addedSugar = 5, protein = 1)
 
 
-#' @rdname grahamCrust
-#' @export
-WholeFoods365_grahamCrust <- \() new(
-  Class = 'nutrition',  wholefoods = 'b08ly5bys5',
-  name = 'Graham Crust',
-  servingGram = 21, 
-  calorie = 110,
-  fat = 6, sodium = .045, addedSugar = 6)
-
-
-#' @rdname grahamCrust
-#' @export
-MiDel_grahamCrust <- \() new(
-  Class = 'nutrition', 
-  brand = style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel') |> c(), 
-  name = 'Graham Crust',
-  servingGram = 25, 
-  calorie = 120,
-  fat = 5, sodium = .14, addedSugar = 8, protein = 1)
-
-
-MiDel_chocolateCrust <- \() new(
-  Class = 'nutrition',  
-  url = 'https://midelcookies.com/products/chocolate-snap-pie-crust/',
-  servingGram = 25, fat = 4.5, sodium = .07, sugar = 9, protein = 1)
-
-
-DiamondNuts_chocolateCrust <- \() new(
-  Class = 'nutrition',  url = 'https://shop.diamondnuts.com/collections/nut-pie-crusts/products/6-oz-ready-to-use-chocolate-nut-pie-crust',
-  wegmans = 25249000L,
-  servingGram = 21, fat = 7, sodium = .08, sugar = 4, protein = 2)
-# https://shop.diamondnuts.com/collections/nut-pie-crusts
 
 
 

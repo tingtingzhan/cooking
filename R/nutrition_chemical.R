@@ -66,7 +66,7 @@ Na2CO3 <- \() new(
 Wegmans_bakingPowder <- \() new(
   Class = 'nutrition',  
   name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
-  wegmans = 23397L, usd = 1.99/383,
+  wegmans = '45049', usd = 2.49/383,
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   servingTsp = 1/8, servingGram = 230/383, sodium = .05)
 
@@ -85,7 +85,7 @@ TraderJoes_bakingPowder <- \() new(
 Wegmans_water <- \() new(
   Class = 'nutrition',  
   name = 'Purified Water',
-  wegmans = 259520L, usd = 1.29, # 2023-11-09
+  wegmans = '54080', usd = 1.49, date = as.Date('2026-09-17'),
   servingGram = 3785.41, servingCup = 16, # one gallon 
   water = 3785.41)
 

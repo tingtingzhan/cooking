@@ -136,8 +136,9 @@ LuckyTaro_durian <- \() new(
 
 
 Wegmans_pineapple <- \() new(
-  Class = 'nutrition',  wegmans = 10230L,
+  Class = 'nutrition',
   name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
+  wegmans = '34266',
   servingGram = 122, servingCup = 1/2, 
   calorie = 70,
   carbohydrate = 16, sugar = 13, 
@@ -145,7 +146,7 @@ Wegmans_pineapple <- \() new(
 
 Libbys_pineapple <- \() new(
   Class = 'nutrition',  
-  wegmans = 20294L,
+  wegmans = '186434',
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
   name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
   servingGram = 122, servingCup = 1/2, 
@@ -159,7 +160,7 @@ Dole_pineapple <- \() new(
   name = 'Pineapple\U1f34d in 100% Juice', alias = '\u83e0\u841d\u7f50\u5934',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
-  wegmans = 53679L,
+  wegmans = '561977',
   servingGram = 122, servingCup = 1/2,
   calorie = 80,
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
@@ -220,17 +221,19 @@ Bruces_yam <- \() new(
 
 
 Wegmans_peanutButter <- \() new(
-  Class = 'nutrition',  wegmans = 26774L,
-  name = 'Peanut\U1f95c Butter',
+  Class = 'nutrition',
+  name = 'Peanut\U1f95c Butter, Creamy',
+  wegmans = '32450',
   servingTbsp = 2, servingGram = 32, 
-  calorie = 190,
-  fat = 16, carbohydrate = 7, sugar = 2, protein = 8)
+  calorie = 180,
+  fat = 15, sodium = .125,
+  carbohydrate = 8, sugar = 4, addedSugar = 2, protein = 7)
 
 
 Wegmans_beet <- \() new(
-  Class = 'nutrition',  wegmansorganic = 137496L,
+  Class = 'nutrition',  
   alias = '\u751c\u83dc\u7c89', name = 'Beet Root Powder',
-  usd = 10.99/227*9.6,
+  wegmans = '60476', usd = 10.99/227*9.6,
   servingGram = 9.6, 
   # servingTbsp = 1, # packaging
   servingTbsp = 9.6/(37/4), # actual experiment: 1/4 cup = 37g
@@ -238,9 +241,9 @@ Wegmans_beet <- \() new(
 
 
 Wegmans_acai <- \() new(
-  Class = 'nutrition',  wegmansorganic = 138189L,
+  Class = 'nutrition',  
   alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
-  usd = 16.79/113*3,
+  wegmans = '60465', usd = 16.99/113*3,
   servingGram = 3, 
   servingTsp = 2 # packaging
 ) 
@@ -368,8 +371,9 @@ Libbys_pumpkinPieMix <- \() new(
 
 
 Wegmans_tomato <- \() new(
-  Class = 'nutrition',  wegmans = 109068L,
+  Class = 'nutrition',  
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
+  wegmans = '45406',
   servingGram = 63, servingCup = 1/4,
   sodium = .02, sugar = 3, protein = 1, 
   superior = 'WegmansOrganic_tomato')
@@ -377,8 +381,8 @@ Wegmans_tomato <- \() new(
 
 WegmansOrganic_tomato <- \() new(
   Class = 'nutrition',  
-  wegmansorganic = 19227L, usd = 2.89/822*63, # instore should be cheaper
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
+  wegmans = '45416', usd = 2.89/822*63,
   servingGram = 63, servingCup = 1/4, 
   calorie = 25,
   sodium = .02, carbohydrate = 6, sugar = 3, protein = 1, 
@@ -390,7 +394,7 @@ Motts_applesauce <- \() new(
   brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
-  wegmans = 2450L, usd = 3.99/1300*123,
+  wegmans = '534880', usd = 3.99/1300*123,
   # nutrition facts on bottle label (sold at Costco, Wegmans, etc), not from merchandise website
   servingGram = 123, servingCup = 1/2, 
   calorie = 50,
@@ -479,7 +483,8 @@ OsmanthusFragrans <- \() new(
 
 banana <- \() new(
   Class = 'nutrition',  fdc = 1102653L,
-  alias = '\u9999\u8549', name = 'Banana\U1f34c', wegmans = 35418L,
+  alias = '\u9999\u8549', name = 'Banana\U1f34c', 
+  wegmans = '92685',
   servingGram = 100,
   calorie = 89, # kcal
   water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)

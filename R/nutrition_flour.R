@@ -7,7 +7,7 @@ Wegmans_pastry <- \() new(
   Class = 'nutrition', 
   name = 'Pastry\U1f370 Flour',
   alias = '\u4f4e\u7b4b\u9762\u7c89',
-  wegmans = 24706L, usd = 3.69/2270*30,
+  wegmans = '46510', usd = 3.69/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging
   calorie = 100,
@@ -18,25 +18,25 @@ Wegmans_bread <- \() new(
   Class = 'nutrition',  
   name = 'Bread\U1f35e Flour', # Enriched Unbleached
   alias = '\u9ad8\u7b4b\u9762\u7c89',
-  wegmans = 24587L, usd = 3.69/2270*30,
+  wegmans = '46509', usd = 3.69/2270*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging
   calorie = 100,
   carbohydrate = 23, protein = 3)
 
 Wegmans_whiteWheat <- \() new(
-  Class = 'nutrition',  wegmans = 35705L,
+  Class = 'nutrition',  
   alias = '\u767d\u5168\u9ea6\u9762\u7c89', name = 'White Whole Wheat Flour',
-  usd = 3.49/2270*28,
+  wegmans = '26690', usd = 3.49/2270*28,
   servingGram = 28, 
   servingCup = 1/4, # packaging
   calorie = 90,
   fat = .5, carbohydrate = 20, protein = 4)
 
 Wegmans_wheat <- \() new(
-  Class = 'nutrition',  wegmans = 54401L,
+  Class = 'nutrition',  
   alias = '\u5168\u9ea6\u9762\u7c89', name = 'Whole Wheat Flour',
-  usd = 3.49/2270*28,
+  wegmans = '107099', usd = 3.49/2270*28,
   servingGram = 28, 
   servingCup = 1/4, # packaging
   calorie = 90,
@@ -182,7 +182,7 @@ KingArthur_selfRising_homemade <- \() new(
 BobsRedMill_wheatGluten <- \() new(
   Class = 'nutrition',  bobsredmill = 'vital-wheat-gluten',
   name = 'Wheat Gluten Flour', alias = '\u9762\u7b4b\u7c89',
-  wegmans = 219620L, usd = 7.79/567*30,
+  wegmans = '826808', usd = 7.79/567*30,
   servingGram = 30, 
   servingCup = 1/4, # packaging
   fat = 1, sodium = .02, carbohydrate = 4, protein = 23)

@@ -71,7 +71,7 @@ Harney_LapSangSouChong <- \() new(
 Twinings_EarlGrey <- \() new(
   Class = 'nutrition',  twinings = 'earl-grey', 
   name = 'Earl Grey', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
-  wegmans = 24150L, usd = 12.99/100, # 100pcs 2g-bag, Oct 2024
+  # wegmans = 24150L, usd = 12.99/100, # 100pcs 2g-bag, Oct 2024
   servingGram = 2)
 
 Twinings_EarlGrey_loose <- \() new(
@@ -82,7 +82,7 @@ Twinings_EarlGrey_loose <- \() new(
 Twinings_strongEarlGrey <- \() new(
   Class = 'nutrition',  twinings = 'earl-grey-strong',
   name = 'Earl Grey, Extra Strong', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
-  wegmans = 13354L,
+  # wegmans = 13354L,
   webstaurant = '110TWNG13541',
   servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-16
   review = 'I love!!')
@@ -90,13 +90,13 @@ Twinings_strongEarlGrey <- \() new(
 Twinings_decafEarlGrey <- \() new( # no value pack, no loose leaf
   Class = 'nutrition',  twinings = 'earl-grey-decaf',
   name = 'Earl Grey Decaf',
-  wegmans = 47200L,
+  # wegmans = 47200L,
   servingGram = 35/20, usd = 4.99/20) # 20pcs of 1.75g-bag, 2023-11-09
 
 Twinings_LadyGrey <- \() new(
   Class = 'nutrition',  twinings = 'lady-grey',
   name = 'Lady Grey',
-  wegmans = 31226L,
+  # wegmans = 31226L,
   walmart = '15556242',
   servingGram = 2, usd = 15.99/100, # 100pcs of 2g-bag, 2023-11-09
   review = 'Great for soytea!')
@@ -104,7 +104,7 @@ Twinings_LadyGrey <- \() new(
 Twinings_ultraChai <- \() new(
   Class = 'nutrition',  twinings = 'ultra-spice-chai',
   name = 'Ultra Spice Chai',
-  wegmans = 49238L,
+  # wegmans = 49238L,
   webstaurant = '110TWNG07516',
   walmart = '29884542',
   servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-13
@@ -113,7 +113,7 @@ Twinings_ultraChai <- \() new(
 Twinings_Darjeeling <- \() new(
   Class = 'nutrition',  twinings = 'darjeeling',
   name = 'Darjeeling', alias = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982',
-  wegmans = 30993L,
+  # wegmans = 30993L,
   servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
   review = 'lacks a signature flavor')
   
@@ -150,7 +150,7 @@ Yogi_licorice <- \() new(
   Class = 'nutrition', 
   yogi = 'egyptian-licorice-076950415164',
   name = 'Egyptian Licorice',
-  wegmans = 31614L,
+  # wegmans = 31614L,
   walmart = '26965528',
   servingGram = 36/16, usd = 6.99/16)
 

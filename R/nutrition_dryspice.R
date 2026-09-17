@@ -245,8 +245,7 @@ SimplyOrganic_pumpkinSpice <- \() new(
 SimplyOrganic_5spice <- \() new(
   Class = 'nutrition', simplyorganic = 'five-spice-powder-2-01-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
-  wegmans = 202649L, 
-  usd = 8.49, date = as.Date('2026-09-14'),
+  # wegmans = '202649', usd = 8.49, date = as.Date('2026-09-14'), # no longer available?
   servingGram = 57, 
   servingTbsp = 10,
   contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
@@ -255,7 +254,7 @@ SimplyOrganic_5spice <- \() new(
 SimplyOrganic_ginger <- \() new(
   Class = 'nutrition', simplyorganic = 'ginger-root-ground-1-64-oz',
   name = 'Ginger\U1fada Root, Ground', alias = '\u59dc\u7c89',
-  wegmans = 791544L,
+  wegmans = '791544',
   servingGram = 46, usd = 7.09, date = as.Date('2026-09-14'),
   servingTbsp = 10)
 
@@ -263,6 +262,7 @@ SimplyOrganic_ginger <- \() new(
 SimplyOrganic_dill <- \() new(
   Class = 'nutrition',  simplyorganic = 'dill-weed-0-81-oz',
   name = 'Dill Weed', alias = '\u83b3\u841d\u8349',
+  # not at Wegmans?
   servingGram = 23, usd = 6.79,  # 2023-11-09
   servingTbsp = 10)
 
@@ -270,26 +270,30 @@ SimplyOrganic_dill <- \() new(
 SimplyOrganic_clove <- \() new(
   Class = 'nutrition',  simplyorganic = 'cloves-ground-2-82-oz',
   name = 'Cloves', alias = '\u4e01\u9999',
-  servingGram = 80, usd = 8.99, # 2023-11-09
+  wegmans = '791605',
+  servingGram = 80, usd = 6.49, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
 
 SimplyOrganic_cinnamonCeylon <- \() new(
   Class = 'nutrition',  simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
   name = 'Ceylon Cinnamon', alias = '\u8089\u6842\u7c89',
-  servingGram = 59, usd = 10.89, # 2023-11-09
+  wegmans = '791633',
+  servingGram = 59, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
 
 SimplyOrganic_cumin <- \() new(
   Class = 'nutrition',  simplyorganic = 'cumin-seed-ground-2-31-oz',
   name = 'Cumin Seed, Ground', alias = '\u5b5c\u7136\u7c89',
-  servingGram = 65, usd = 6.79, # 2023-11-09
+  wegmans = '791542',
+  servingGram = 65, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
 SimplyOrganic_coriander <- \() new(
   Class = 'nutrition',  simplyorganic = 'coriander-seed-ground-2-29-oz',
   name = 'Coriander Seed', alias = '\u82ab\u837d\u7c7d\u7c89',
+  wegmans = '791590',
   servingGram = 65, usd = 6.29,  # 2023-11-09
   servingTbsp = 10)
 
@@ -297,6 +301,7 @@ SimplyOrganic_coriander <- \() new(
 SimplyOrganic_garlic <- \() new(
   Class = 'nutrition',  simplyorganic = 'garlic-powder-3-64-oz',
   name = 'Garlic\U1f9c4', alias = '\u849c\u7c89',
+  wegmans = '791543',
   servingGram = 103, usd = 8.99, # Jan 2024
   servingTbsp = 10)
 

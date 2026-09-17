@@ -10,8 +10,8 @@
 #' @param ... ingredients to be subtracted
 #' 
 #' @examples
-#' subtract(Keebler_grahamCrust, sugar = 3)
-#' subtract(Keebler_grahamCrust, sugar = 5.5)
+#' subtract(cooking:::Keebler_grahamCrust, sugar = 3)
+#' subtract(cooking:::Keebler_grahamCrust, sugar = 5.5)
 #' 
 #' @name subtract
 #' @export

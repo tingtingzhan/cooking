@@ -48,7 +48,7 @@ Nutrition information.
 
 \item{\code{pubchem}}{\link[base]{character} scalar}
 
-\item{\code{acme}}{\link[base]{integer} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)}
+\item{\code{acme}}{\link[base]{character} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)}
 
 \item{\code{amazon}}{\link[base]{character} scalar, amazon ID}
 
@@ -76,7 +76,7 @@ Nutrition information.
 
 \item{\code{weee}}{\link[base]{character} scalar}
 
-\item{\code{wegmans,wegmansorganic}}{\link[base]{integer} scalar, Wegmans Food Markets ID}
+\item{\code{wegmans}}{\link[base]{character} scalar, Wegmans Food Markets ID}
 
 \item{\code{wholefoods}}{\link[base]{character} scalar, Wholel Foods ID}
 
@@ -323,8 +323,22 @@ diagnose(
  cooking:::Philadelphia_creamCheese(),
  cooking:::OrganicValley_creamCheese(),
  cooking:::TraderJoes_creamCheese(),
- cooking:::Tillamook_creamCheese()
-)
+ cooking:::Tillamook_creamCheese())
+
+diagnose(
+ cooking:::Philadelphia_creamCheese(), 
+ cooking:::Philadelphia_creamCheeseSpread(), 
+ cooking:::PhiladelphiaNeufchatel_creamCheese(), 
+ cooking:::PhiladelphiaNeufchatel_creamCheeseSpread())
+
+diagnose(
+ cooking:::LandOLakes_whippedHeavyCream(),
+ cooking:::Lucerne_heavyCream(),
+ cooking:::Wegmans_heavyCream())
+ 
+diagnose(
+ cooking:::TraderJoes_goat_kefir(), 
+ cooking:::Meyenberg_goat_kefir())
 
 diagnose(
  matchaLatte(),

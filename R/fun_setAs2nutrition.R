@@ -4,7 +4,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   x <- from; from <- NULL
   
-  atr0 <- attributes(x)[names(getSlots(x = 'raw.'))] # [nutrition.raw] might be applied to \linkS4class{recipe}
+  atr0 <- attributes(x)[names(getSlots(x = 'raw.'))]
   atr <- atr0[lengths(atr0) > 0L]
   
   grams <- unlist(unname(atr), use.names = TRUE)

@@ -54,28 +54,6 @@ PreppyKitchen_pumpkin_cheesecake <- \() new(
 
 
 
-Wegmans_pumpkin_cheesecake <- \() new(
-  Class = 'nutrition',  wegmans = 18074L,
-  name = 'Pumpkin\U1f383 Cheesecake',
-  usd = .62/28.3495 * 130, # 0.62/oz
-  servingGram = 130,
-  calorie = 460,
-  fat = 29, cholesterol = .115, sodium = .33,
-  carbohydrate = 47, sugar = 27, addedSugar = 18, protein = 6)
-
-
-
-
-CheesecakeFactory_pumpkin <- \() new(
-  Class = 'nutrition',  
-  name = 'Pumpkin\U1f383',
-  cheesecakefactoryfreezer = 'pumpkin-cheesecake',
-  bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
-  usd = 16.99/6, # 6 serving's per container
-  servingGram = 123, 
-  fat = 25, cholesterol = .105, sodium = .26, sugar = 25, addedSugar = 23, protein = 5)
-
-
 
 
 BrianLagerstrom_burntBasque <- \() new(

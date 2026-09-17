@@ -44,9 +44,9 @@ diagnose(
  PreppyKitchen_grahamCrust5() |>
   as('nutrition') |>
   subtract(sugar = 28),
- subtract(MiDel_grahamCrust, sugar = 5.8),
- subtract(Keebler_grahamCrust, sugar = 4.1),
- subtract(WholeFoods365_grahamCrust, sugar = 4)
+ subtract(cooking:::MiDel_grahamCrust, sugar = 5.8),
+ subtract(cooking:::Keebler_grahamCrust, sugar = 4.1),
+ subtract(cooking:::WholeFoods365_grahamCrust, sugar = 4)
 )
 
 

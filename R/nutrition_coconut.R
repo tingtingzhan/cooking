@@ -68,7 +68,7 @@ AnthonysGoods_coconutFlour <- \() new(
 
 WegmansOrganic_coconutFlour <- \() new(
   Class = 'nutrition',  
-  wegmansorganic = 253623L, usd = 3.79/454*14,
+  wegmans = '52175', usd = 3.79/454*14,
   name = 'Coconut\U1f965 Flour', alias = '\u6930\u8089\u7c89',
   servingGram = 14, 
   #servingTbsp = 2, # packaging
@@ -127,7 +127,7 @@ ThaiKitchen_coconutcream <- \() new(
   Class = 'nutrition',  
   thaikitchen = 'coconut-milk/coconut-cream',
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
-  wegmans = 47180L, usd = 4.49/403*80,
+  wegmans = '617872', usd = 5.99/403*80,
   # fullweight = ??, emptyweight = ??, 
   servingGram = 30, serving_ml = 30, # guessed weight
   calorie = 60,
@@ -167,7 +167,7 @@ SoDelicious_coconutmilk <- \() new(
     # 'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
     'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
   ))),
-  wegmans = 44959L, usd = 3.99/64*8, # need to chill
+  wegmans = '356837', usd = 5.29/64*8, # need to chill
   # walmart = '667624971', # usd = 2.68/4, # shelf-stable
   # costco = '100449940', usd = 12.99/6/4, # shelf-stable 32 oz, 6-Count
   servingGram = 240, servingCup = 1, 
@@ -235,7 +235,7 @@ CalifiaFarms_coconutmilkwater <- \() new(
   Class = 'nutrition',  
   name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/go-coconuts-coconutmilk/')),
-  wegmans = 28942L, usd = 4.29/48*8,
+  wegmans = '978006', usd = 4.29/48*8,
   servingGram = 240, servingCup = 1,
   calorie = 45,
   fat = 4, sodium = .140, carbohydrate = 2, sugar = 1,

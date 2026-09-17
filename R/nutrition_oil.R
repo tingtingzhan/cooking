@@ -9,18 +9,21 @@ Mazola_corn_oil <- \() new(
 
 
 Wegmans_corn_oil <- \() new(
-  Class = 'nutrition',  wegmans = 42111L,
+  Class = 'nutrition',  
+  # wegmans = 42111L,
   alias = '\u7389\u7c73\u6cb9', name = 'Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 Wegmans_avocado_oil <- \() new(
-  Class = 'nutrition',  wegmans = 155325L,
+  Class = 'nutrition',  
+  # wegmans = 155325L,
   alias = '\u9cc4\u68a8\u6cb9', name = 'Avocado\U1f951 Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
 
 Wegmans_basting_oil <- \() new(
-  Class = 'nutrition',  wegmans = 262361L,
+  Class = 'nutrition',  
+  # wegmans = 262361L,
   alias = '\u9999\u6599\u6a44\u6984\u6cb9', name = 'Basting Oil',
   # Pure Olive Oil, Dried Thyme, Dried Parsley, Organic Natural Garlic Flavor.
   usd = 8.49/250*15,
@@ -30,7 +33,8 @@ Wegmans_basting_oil <- \() new(
 
 
 Wegmans_vegetable_oil <- \() new(
-  Class = 'nutrition',  wegmans = 5904L,
+  Class = 'nutrition',  
+  # wegmans = 5904L,
   alias = '\u690d\u7269\u6cb9', name = 'Vegetable Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
@@ -44,7 +48,8 @@ Wesson_soy_oil <- \() new(
 
 
 Wegmans_olive_oil <- \() new(
-  Class = 'nutrition',  wegmans = 15183L, # usd = 10.99/??
+  Class = 'nutrition',  
+  # wegmans = 15183L, # usd = 10.99/??
   name = 'Mediterranean Blend Extra Virgin Olive Oil',
   servingGram = 15, servingTbsp = 1, fat = 14)
 
@@ -57,7 +62,7 @@ Kadoya_sesameOil <- \() new(
     style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html') |> c()
   ),
   name = 'Sesame Oil', alias = '\u829d\u9ebb\u6cb9',
-  wegmans = 27984L, usd = .82/2, # 1fl oz = 2tbsp
+  # wegmans = 27984L, usd = .82/2, # 1fl oz = 2tbsp
   servingGram = 14, servingTbsp = 1, 
   calorie = 130,
   fat = 14)

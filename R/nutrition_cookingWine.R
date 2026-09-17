@@ -2,7 +2,7 @@
 
 Wegmans_Marsala <- \() new(
   Class = 'nutrition', 
-  wegmans = 270922L, usd = 3.29/375*30,
+  wegmans = '59666', usd = 3.29/375*30,
   name = 'Marsala Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 35,
@@ -14,7 +14,7 @@ Wegmans_Marsala <- \() new(
 
 Wegmans_Sherry <- \() new(
   Class = 'nutrition', 
-  wegmans = 270943L, usd = 3.29/375*30,
+  wegmans = '59668', usd = 3.29/375*30,
   name = 'Sherry Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 35,
@@ -25,7 +25,7 @@ Wegmans_Sherry <- \() new(
 
 Wegmans_redCookingWine <- \() new(
   Class = 'nutrition', 
-  wegmans = 270926L, usd = 3.29/375*30,
+  wegmans = '59669', usd = 3.29/375*30,
   name = 'Red Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 20,
@@ -34,7 +34,7 @@ Wegmans_redCookingWine <- \() new(
 
 Wegmans_whiteCookingWine <- \() new(
   Class = 'nutrition', 
-  wegmans = 270899L, usd = 3.29/375*30,
+  wegmans = '59665', usd = 3.29/375*30,
   name = 'White Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
   calorie = 35,
