@@ -102,7 +102,7 @@ LandOLakes_butter <- \() new(
 
 WegmansOrganic_ghee <- \() new(
   Class = 'nutrition',  wegmansorganic = 258519L,
-  name = 'Ghee', 
+  name = 'Ghee', alias = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
   usd = 7.99/213*15,
   servingGram = 15, servingTbsp = 1, 
   calorie = 130, fat = 15)
@@ -110,7 +110,8 @@ WegmansOrganic_ghee <- \() new(
 
 Nanak_ghee <- \() new(
   Class = 'nutrition',  costco = '100444109',
-  name = 'Ghee', brand = c(style_hyperlink(text = 'Nanak\U1f1fa\U1f1f8', url = 'https://nanakfoods.com/products/ghee')),
+  name = 'Ghee', alias = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
+  nanak = 'ghee',
   usd = 24.99/1587.57*14,
   servingGram = 14, servingTbsp = 1, 
   calorie = 120, fat = 14) 

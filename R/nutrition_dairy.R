@@ -176,7 +176,7 @@ Philadelphia_creamCheese <- \() new(
   Class = 'nutrition', 
   kraftheinzawayfromhome = '10021000616005',
   philadelphia = '00021000612239',
-  name = 'Cream Cheese',
+  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   contain = c('carob bean gum'), # same as 'locust bean gum'
   serving_oz = 1, servingTbsp = 2,
   calorie = 100,
@@ -245,7 +245,7 @@ GreatValueNeufchatel_creamCheese <- \() new(
 Tillamook_creamCheese <- \() new(
   Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese')),
-  name = 'Cream Cheese',
+  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   servingTbsp = 2, serving_oz = 1,
   calorie = 100,
   fat	= 10, cholesterol	= .03, sodium = .105, carbohydrate = 2, sugar = 2, protein = 2)
@@ -267,7 +267,7 @@ OrganicValleyNeufchatel_creamCheese <- \() new(
 OrganicValley_creamCheese <- \() new(
   Class = 'nutrition',  
   organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
-  name = 'Cream Cheese',
+  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   wegmans = 11914L, usd = 4.59/8,
   serving_oz = 1, servingTbsp = 2,
   calorie = 110,
@@ -280,7 +280,7 @@ OrganicValley_creamCheese <- \() new(
 TraderJoes_creamCheese <- \() new(
   Class = 'nutrition', 
   traderjoes = '012491',
-  name = 'Cream Cheese',
+  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   serving_oz = 1, servingTbsp = 2, 
   calorie = 90,
@@ -303,7 +303,7 @@ TraderJoesLight_creamCheese <- \() new(
 
 WholeFoods365_creamCheese <- \() new(
   Class = 'nutrition',  wholefoods = 'b074h6qz3j',
-  name = 'Cream Cheese', 
+  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   contain = 'locust bean gum',
   serving_oz = 1, servingTbsp = 2, 
   calorie = 100,
@@ -480,7 +480,7 @@ Wegmans_heavyCream <- \() new(
     # 220504L # discontinued
     149508L,
   fdc = 170859L,
-  name = 'Heavy Cream',
+  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   servingGram = 15, 
   servingTbsp = 1, # packaging
   usd = 6.29/64, # 1floz = 2Tbsp; 32floz in total
@@ -492,7 +492,7 @@ Wegmans_heavyCream <- \() new(
 
 WholeFoods365_heavyCream <- \() new( # no filler
   Class = 'nutrition',  wholefoods = 'b07qf6f984',
-  name = 'Heavy Cream', 
+  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   servingGram = 15, servingTbsp = 1,
   calorie = 50,
   fat = 6, cholesterol = .015, water = 15 * .577)
@@ -501,7 +501,7 @@ WholeFoods365_heavyCream <- \() new( # no filler
 
 TraderJoes_heavyCream <- \() new( # 
   Class = 'nutrition', 
-  brand = 'Trader Joe\'s', name = 'Heavy Cream', 
+  brand = 'Trader Joe\'s', name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   # the version labelled as 'organic' contains gellan gum
   # the version without 'organic' contains no filler
   servingGram = 15, servingTbsp = 1,
@@ -513,7 +513,7 @@ TraderJoes_heavyCream <- \() new( #
 NatureByNature_heavyCream <- \() new( # no filler, sold at Giant
   Class = 'nutrition',  
   brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Nature By Nature')), 
-  name = 'Heavy Cream',
+  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   servingGram = 15, servingTbsp = 1,
   calorie = 60,
   fat = 6, cholesterol = .015, water = 15 * .577)
@@ -563,7 +563,7 @@ Lucerne_lightCream <- \() new(
 
 Lucerne_heavyCream <- \() new(
   Class = 'nutrition',  
-  name = 'Heavy Cream',
+  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   fdc = 170859L,
   lucerne = 136150034L, usd = 3.19/32, # disappeared?
   servingGram = 240/16, servingTbsp = 1, # actual experiment: 1 cup = 240g
@@ -631,5 +631,22 @@ Siggis_filmjolk <- \() new(
   review = 'too sour')
 
 
+Nanak_mango_rasmalai <- \() new(
+  Class = 'nutrition',
+  name = 'Mango\U0001f96d Rasmalai', alias = '\u8292\u679c \u5976\u8c46\u8150',
+  nanak = 'mango-rasmalai',
+  servingGram = 70, #servingTbsp = 1, 
+  calorie = 170, 
+  fat = 7, cholesterol = .025, sodium = .035,
+  carbohydrate = 18, sugar = 13, addedSugar = 6, protein = 9) 
+
+Nanak_mango_lassi <- \() new(
+  Class = 'nutrition',
+  name = 'Mango\U0001f96d Lassi', alias = '\u8292\u679c \u5370\u5ea6\u9178\u5976',
+  nanak = 'mango-lassi',
+  servingGram = 250, servingCup = 1, # weight guessed
+  calorie = 140, 
+  cholesterol = .005, sodium = .065,
+  carbohydrate = 29, sugar = 28, addedSugar = 22, protein = 5) 
 
 

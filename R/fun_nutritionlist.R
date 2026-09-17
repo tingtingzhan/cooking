@@ -77,7 +77,7 @@ summary.nutritionlist <- \(object, ...) {
   ret <- cbind(ret, addedWater = addedWater_)
 
   nm <- x |>
-    vapply(FUN = \(i) c(i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
+    vapply(FUN = \(i) c(i@alias, i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
   rownames(ret) <- nm
   class(ret) <- 'summary.nutritionlist'
   return(ret)

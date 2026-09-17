@@ -76,6 +76,7 @@
 #' @slot landolakes \link[base]{character} scalar
 #' @slot leaperrins \link[base]{character} scalar
 #' @slot lkkhk,lkkusa \link[base]{character} scalars
+#' @slot nanak \link[base]{character} scalar
 #' @slot maeda \link[base]{character} scalar
 #' @slot marukyu \link[base]{character} scalar
 #' @slot mccormick,mccormickculinary,oldbay,grillmates \link[base]{character} scalars
@@ -142,7 +143,6 @@
 #' @slot fat \link[base]{numeric} scalar, fat (in grams) per serving
 #' @slot cholesterol \link[base]{numeric} scalar, cholesterol (in grams) per serving
 #' @slot sodium \link[base]{numeric} scalar, sodium (in grams) per serving
-#' @slot salt \link[base]{numeric} scalar, salt (in grams) per serving
 #' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
@@ -223,8 +223,8 @@ setClass(Class = 'nutrition', slots = c(
   krusteaz = 'character',
   landolakes = 'character',
   leaperrins = 'character',
-  lkkhk = 'character',
-  lkkusa = 'character',
+  lkkhk = 'character', lkkusa = 'character',
+  nanak = 'character',
   maeda = 'character',
   marukyu = 'character',
   mccormick = 'character', mccormickculinary = 'character', oldbay = 'character', grillmates = 'character',
@@ -288,7 +288,7 @@ setClass(Class = 'nutrition', slots = c(
   fiber = 'numeric', sugar = 'numeric', addedSugar = 'numeric',
   fat = 'numeric',
   cholesterol = 'numeric',
-  sodium = 'numeric', salt = 'numeric',
+  sodium = 'numeric',
   protein = 'numeric',
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
@@ -327,33 +327,14 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     x@AbV <- numeric()
   }
   
-  # salt
-  if (length(x@salt)) {
-    if (length(x@sodium)) stop('should not have both @salt and @sodium')
-    x@sodium <- x@salt / (35.453+22.990)*22.990
-    x@salt <- numeric()
-  }
-
-  if (length(x@name) && !length(x@alias)) {
-    x@alias <- switch(tolower(x@name), 'cream cheese' = {
-      '\u5976\u6cb9\u5976\u916a'
-    }, 'ghee' = {
-      '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924'
-    }, 'heavy cream' = {
-      '\u91cd\u5976\u6cb9'
-    }, character())
+  # alias
+  if (length(x@alias)) {
+    x@alias <- x@alias |>
+      sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(x@call)) |> 
+      col_orchid4() |>
+      c()
   }
   
-  # name
-  if (length(x@name)) {
-    if (length(x@alias)) {
-      x@name <- paste(
-        sprintf(fmt = '{.run [%s](cooking::%s())}', x@alias, as.character(x@call)) |> 
-          col_orchid4(), 
-        x@name)
-      x@alias <- character()
-    }
-  }
   
   # serving weight
   if (length(x@serving_oz)) {
@@ -558,6 +539,11 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       x@lkkusa |> 
         sprintf(fmt = 'https://usa.lkk.com/zh-hk/products/%s') |>
         style_hyperlink(text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
+        c()
+    } else if (length(x@nanak)) {
+      x@nanak |> 
+        sprintf(fmt = 'https://nanakfoods.com/products/%s') |>
+        style_hyperlink(text = 'Nanak\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@maeda)) {
       x@maeda |> 
@@ -876,7 +862,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   obj <- object
   
   cat('\n')
-  paste(c(obj@name, obj@brand), collapse = ' ') |> 
+  c(obj@alias, obj@name, obj@brand) |>
+    paste(collapse = ' ') |> 
     cli_text()
   cat('\n')
   

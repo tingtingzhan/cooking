@@ -164,6 +164,8 @@ Nutrition information.
 
 \item{\code{lkkhk,lkkusa}}{\link[base]{character} scalars}
 
+\item{\code{nanak}}{\link[base]{character} scalar}
+
 \item{\code{maeda}}{\link[base]{character} scalar}
 
 \item{\code{marukyu}}{\link[base]{character} scalar}
@@ -281,8 +283,6 @@ Nutrition information.
 \item{\code{cholesterol}}{\link[base]{numeric} scalar, cholesterol (in grams) per serving}
 
 \item{\code{sodium}}{\link[base]{numeric} scalar, sodium (in grams) per serving}
-
-\item{\code{salt}}{\link[base]{numeric} scalar, salt (in grams) per serving}
 
 \item{\code{protein}}{\link[base]{numeric} scalar, protein (in grams) per serving}
 

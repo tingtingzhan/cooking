@@ -14,7 +14,9 @@ Baileys_espresso <- \() new(
   AbV = .17, 
   alcohol = 13.5,
   calorie = 313,
-  fat = 14, salt = .2, carbohydrate = 22, sugar = 19, protein = 3
+  fat = 14, 
+  # salt = .2, # not sure this is salt or sodium
+  carbohydrate = 22, sugar = 19, protein = 3
 )
 
 
@@ -29,7 +31,9 @@ Baileys_chocolatLuxe <- \() new(
   AbV = .157,
   alcohol = 12.5,
   calorie = 342,
-  fat = 15, salt = .3, carbohydrate = 27.2, sugar = 23, protein = 3)
+  fat = 15, 
+  # salt = .3, # not sure this is salt or sodium 
+  carbohydrate = 27.2, sugar = 23, protein = 3)
 
 
 
@@ -45,7 +49,9 @@ Baileys_chocolate <- \() new(
   AbV = .157,
   alcohol = 12.5,
   calorie = 339,
-  fat = 15, salt = .27, carbohydrate = 26, sugar = 22, protein = 3.2)
+  fat = 15, 
+  # salt = .27, # not sure this is salt or sodium
+  carbohydrate = 26, sugar = 22, protein = 3.2)
 
 
 
@@ -59,7 +65,8 @@ Baileys_colada <- \() new(
   servingGram = 100,
   serving_ml = 100,
   AbV = .17,
-  calorie = 313, salt = .2,
+  calorie = 313, 
+  # salt = .2,  # not sure this is salt or sodium
   protein = 3, carbohydrate = 21, sugar = 18, fat = 14, alcohol = 13.5)
 
 
@@ -74,7 +81,8 @@ Baileys_tiramisu <- \() new(
   serving_ml = 100,
   AbV = .17,
   calorie = 315,
-  protein = 3, salt = .2,
+  protein = 3, 
+  # salt = .2, # not sure this is salt or sodium
   carbohydrate = 22, sugar = 19, fat = 14
 )
 
@@ -89,7 +97,8 @@ Baileys_smores <- \() new(
   totalwine = '351020750', usd = 27.99/750*100,
   AbV = .17,
   calorie = 314,
-  protein = 3, salt = .3,
+  protein = 3, 
+  # salt = .3, # not sure this is salt or sodium
   carbohydrate = 21.6, # sugar = ??, fat = ?? # website left out
   alcohol = 12.5
 )
@@ -106,7 +115,8 @@ Baileys_pumpkinSpice <- \() new(
   #totalwine = NA_character_, # not carried in totalwine
   AbV = .17,
   calorie = 312,
-  protein = 3, salt = .2,
+  protein = 3, 
+  # salt = .2,  # not sure this is salt or sodium
   fat = 14, carbohydrate = 21, sugar = 18, 
   alcohol = 13.5
 )
@@ -123,7 +133,8 @@ Baileys_strawberry <- \() new(
   totalwine = '193107750', usd = 25.99/750*100,
   AbV = .17,
   calorie = 313,
-  protein = 3, salt = .2,
+  protein = 3, 
+  # salt = .2,  # not sure this is salt or sodium
   fat = 14, carbohydrate = 21, sugar = 18, 
   alcohol = 13.5)
 
