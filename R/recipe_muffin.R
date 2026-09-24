@@ -11,7 +11,7 @@
 #' cornbreadMix()
 #' cornbread()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  cornbreadMix(),
 #'  subtract(cooking:::TraderJoes_cornbreadMix, sugar = 10.2),
 #'  subtract(cooking:::WholeFoods365_cornbreadMix, sugar = 4),
@@ -22,12 +22,12 @@
 #'  subtract(cooking:::Fleischmanns_cornbreadMix, sugar = 5.1)
 #' )
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  cornbread(),
 #'  subtract(cooking:::PreppyKitchen_cornbread, sugar = 17),
 #'  subtract(cooking:::BethanyWeathersby_cornbread, sugar = 105),
 #'  subtract(cooking:::bluegirl_cornbread, sugar = 108),
-#'  subtract(cooking:::JoshuaWeissman_cornbread, sugar = 64, brownSugar = 23),
+#'  subtract(cooking:::JoshuaWeissman_cornbread, sugar = c(23, 64)),
 #'  cooking:::Jiffy_cornMuffin() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 32),
@@ -84,11 +84,11 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
 #' @export
 cornbreadMix <- \() new(
   Class = 'recipe', alias = 'Cornbread Mix',
-  pastryFlour = c(Wegmans_pastry = 50), # breadFlour does **not** work!!!
-  cornmeal = c(Albertsons_yellowCorn = 320),
+  flour = c(Wegmans_pastryFlr = 50), # breadFlour does **not** work!!!
+  grain = c(Albertsons_yellow_cornmeal = 320),
   sugar = 45,
-  bakingPowder_tsp = 1, # best, so far
-  note = 'Do NOT pre-mix. Need to soak cornmeal alone in boiling water!'
+  bakingPowder_tsp = 1#, # best, so far
+  # note (legacy) = 'Do NOT pre-mix. Need to soak cornmeal alone in boiling water!'
 )
 
 
@@ -98,15 +98,14 @@ cornbread <- \() new(
   Class = 'muffin', alias = 'Cornbread\U1f33d', 
   
   #cornbreadMix(), # will overwrite `@portion`!!
-  pastryFlour = c(Wegmans_pastry = 50), # breadFlour does **not** work!!!
-  cornmeal = c(Albertsons_yellowCorn = 320),
+  flour = c(Wegmans_pastryFlr = 50), # breadFlour does **not** work!!!
+  grain = c(Albertsons_yellow_cornmeal = 320),
   sugar = 45,
   bakingPowder_tsp = 1, # best, so far
   
   egg_pc = 2,
-  heavyCream = c(Lucerne = 175), 
+  dairy = c(Lucerne_heavyCream = 175), 
   water95 = 320, # good for muffin; yet to experiment for skillet
-  # waterLost = 45, # forget this, for now
   
   #instruction (legacy) = c(
   #  'mix cornmeal and hot water. Let dough sit for 5min',

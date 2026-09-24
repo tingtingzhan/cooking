@@ -128,7 +128,7 @@
 #' @slot serving_floz \link[base]{numeric} scalar, serving size in fluid ounce
 #' @slot serving_ml \link[base]{numeric} scalar, serving size in milli litre
 #' 
-#' @slot pieceWeight \link[base]{numeric} scalar, weight in grams per piece
+#' @slot pieceGram \link[base]{numeric} scalar, weight in grams per piece
 #' 
 #' @slot usd \link[base]{numeric} scalar, price (in USD) \strong{per serving}
 #' @slot jpy \link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}
@@ -276,7 +276,7 @@ setClass(Class = 'nutrition', slots = c(
   #servingBag = 'numeric',
   serving_floz = 'numeric',
   serving_ml = 'numeric',
-  pieceWeight = 'numeric',
+  pieceGram = 'numeric',
   
   usd = 'numeric',
   jpy = 'numeric',
@@ -858,10 +858,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
-  obj <- object
+  x <- object; object <- NULL
   
   cat('\n')
-  c(obj@alias, obj@name, obj@brand) |>
+  c(x@alias, x@name, x@brand) |>
     paste(collapse = ' ') |> 
     cli_text()
   cat('\n')
@@ -870,75 +870,75 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
 
   sprintf(
     fmt = 'Serving Size %s %s %s\n\n', 
-    obj@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
-    (obj@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
-    fmt_vol(x = obj@servingGram, nm = list(obj))
+    x@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
+    (x@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
+    fmt_vol(x = x@servingGram, nm = list(x))
   ) |> cat()
     
-  if (length(obj@cost_)) {
-    if (is.na(obj@date)) {
-      obj@cost_ |>
+  if (length(x@cost_)) {
+    if (is.na(x@date)) {
+      x@cost_ |>
         cat(sep = '\n')
     } else {
-      obj@date |>
+      x@date |>
         #as.character() |> # no need
         make_ansi_style('grey70')() |>
-        sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', obj@cost_, . = _) |> 
+        sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', x@cost_, . = _) |> 
         cat(sep = '\n')
     }
   }         
   
-  if (length(obj@calorie)) {
-    cat('Calories', obj@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
+  if (length(x@calorie)) {
+    cat('Calories', x@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   }
   
   cat('\n')
   
-  sprintf(fmt = 'Water: %.4g grams %s\n', obj@water, fmt_perc(obj, 'water')) |> cat()
-  sprintf(fmt = 'Fat: %.4g grams %s\n', obj@fat, fmt_perc(obj, 'fat')) |> cat()
+  sprintf(fmt = 'Water: %.4g grams %s\n', x@water, fmt_perc(x, 'water')) |> cat()
+  sprintf(fmt = 'Fat: %.4g grams %s\n', x@fat, fmt_perc(x, 'fat')) |> cat()
   
-  if (length(obj@cholesterol)) {
-    if (obj@cholesterol > 1) {
-      sprintf(fmt = 'Cholesterol: %.3g grams %s\n', obj@cholesterol, fmt_perc(obj, 'cholesterol')) |> cat()
-    } else sprintf(fmt = 'Cholesterol: %.3g milligrams %s\n', 1e3 * obj@cholesterol, fmt_perc(obj, 'cholesterol')) |> cat()
+  if (length(x@cholesterol)) {
+    if (x@cholesterol > 1) {
+      sprintf(fmt = 'Cholesterol: %.3g grams %s\n', x@cholesterol, fmt_perc(x, 'cholesterol')) |> cat()
+    } else sprintf(fmt = 'Cholesterol: %.3g milligrams %s\n', 1e3 * x@cholesterol, fmt_perc(x, 'cholesterol')) |> cat()
   }
   
-  if (length(obj@sodium)) {
-    if (obj@sodium > 1) {
-      sprintf(fmt = 'Sodium: %.3g grams %s\n', obj@sodium, fmt_perc(obj, 'sodium')) |> cat()
-    } else sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * obj@sodium, fmt_perc(obj, 'sodium')) |> cat()
+  if (length(x@sodium)) {
+    if (x@sodium > 1) {
+      sprintf(fmt = 'Sodium: %.3g grams %s\n', x@sodium, fmt_perc(x, 'sodium')) |> cat()
+    } else sprintf(fmt = 'Sodium: %.3g milligrams %s\n', 1e3 * x@sodium, fmt_perc(x, 'sodium')) |> cat()
   }
-  sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', obj@carbohydrate, fmt_perc(obj, 'carbohydrate')) |> cat()
-  sprintf(fmt = ' \u21ac Dietary Fiber: %.4g grams %s\n', obj@fiber, fmt_perc(obj, 'fiber')) |> cat()
-  sprintf(fmt = ' \u21ac Sugar: %.4g grams %s\n', obj@sugar, fmt_perc(obj, 'sugar')) |> cat()
-  sprintf(fmt = ' \u21ac Added Sugar: %.4g grams %s\n', obj@addedSugar, fmt_perc(obj, 'addedSugar')) |> cat()
-  sprintf(fmt = 'Alcohol: %.4g grams %s\n', obj@alcohol, fmt_perc(obj, 'alcohol')) |> cat()
-  sprintf(fmt = 'Protein: %.3g grams %s\n', obj@protein, fmt_perc(obj, 'protein')) |> cat()
+  sprintf(fmt = 'Total Carbohydrate: %.4g grams %s\n', x@carbohydrate, fmt_perc(x, 'carbohydrate')) |> cat()
+  sprintf(fmt = ' \u21ac Dietary Fiber: %.4g grams %s\n', x@fiber, fmt_perc(x, 'fiber')) |> cat()
+  sprintf(fmt = ' \u21ac Sugar: %.4g grams %s\n', x@sugar, fmt_perc(x, 'sugar')) |> cat()
+  sprintf(fmt = ' \u21ac Added Sugar: %.4g grams %s\n', x@addedSugar, fmt_perc(x, 'addedSugar')) |> cat()
+  sprintf(fmt = 'Alcohol: %.4g grams %s\n', x@alcohol, fmt_perc(x, 'alcohol')) |> cat()
+  sprintf(fmt = 'Protein: %.3g grams %s\n', x@protein, fmt_perc(x, 'protein')) |> cat()
   
   # cat(c(rep('\u058e', times = 25), '\n\n'), sep = '')
   cat('\n')
   
-  #if (length(obj@machine)) {
+  #if (length(x@machine)) {
   #  cat('\nMachine:\n')
-  #  sprintf(fmt = '%s: %s\n', names(obj@machine), obj@machine) |> cat(sep = '')
+  #  sprintf(fmt = '%s: %s\n', names(x@machine), x@machine) |> cat(sep = '')
   #}
   
-  if (length(obj@superior)) {
+  if (length(x@superior)) {
     cli_text('\u274c I prefer ', sprintf(
       fmt = '{.run [%s](cooking::%s())}', 
-      obj@superior |> make_ansi_style('sienna')() |> style_bold(),
-      obj@superior
+      x@superior |> make_ansi_style('sienna')() |> style_bold(),
+      x@superior
     ) |> paste(collapse = ', '))
     cat('\n')
   } 
   
-  if (nrv <- length(obj@review)) {
-    obj@review |> sprintf(fmt = '\U1f4dd %s\n') |> cat(sep = '')
+  if (nrv <- length(x@review)) {
+    x@review |> sprintf(fmt = '\U1f4dd %s\n') |> cat(sep = '')
     cat('\n')
   }
   
-  if (length(obj@contain)) {
-    obj@contain |>
+  if (length(x@contain)) {
+    x@contain |>
       tolower() |>
       vapply(FUN = \(i) {
         call(name = i) |>
@@ -950,25 +950,25 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
       cat()
   }
 
-  if (length(obj@fdc)) {
-    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', obj@fdc), text = 'FoodData Central')) |> 
+  if (length(x@fdc)) {
+    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', x@fdc), text = 'FoodData Central')) |> 
     cat(sep = '\n')
   }
   
-  if (length(obj@pubchem)) {
-    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', obj@pubchem), text = 'PubChem')) |> 
+  if (length(x@pubchem)) {
+    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', x@pubchem), text = 'PubChem')) |> 
     cat(sep = '\n')
   }
   
-  if (length(obj@url)) cat(obj@url, sep = '\n')
+  if (length(x@url)) cat(x@url, sep = '\n')
   
-  suggested_ <- object |> 
+  suggested_ <- x |> 
     as(Class = 'recipe')
   if (length(suggested_)) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
   
   cat('\n')
   
-  object@tool |>
+  x@tool |>
     print.toollist()
 
 })

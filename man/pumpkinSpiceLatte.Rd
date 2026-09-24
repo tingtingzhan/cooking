@@ -14,7 +14,7 @@ Pumpkin Spice Latte Mix
 \examples{
 pumpkinSpiceLatte()
 
-diagnose(
+nutritionlist(
  hotdrink(pumpkinSpiceLatte()),
  cooking:::Starbucks_pumpkinSpiceLatte(),
  cooking:::Starbucks_pumpkinSpiceFrappuccino()

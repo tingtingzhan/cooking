@@ -32,14 +32,14 @@ setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
 adzukiBeanPaste <- \() new(
   Class = 'beanPaste',
   adzukibean = 200, water = 1330 - 200, # confirmed
-  butter = 53, brownSugar = 67,
+  dairy = c(Kerrygold_butter = 53), 
+  sugar = c(Domino_darkBrown = 67),
   tool = list(
     JoyoungDJ13U_soymilk(
       treatment = 'dried bean + water, no soaking needed',
       waterLost = 40 # to confirm
     ),
-    JoyoungCJA9U( 
-      treatment = 'hot, fresh bean mud + butter',
+    JoyoungCJA9U_filling( 
       minute = 20, # to confirm
       waterLost = 430 # to confirm
     ))
@@ -52,19 +52,16 @@ adzukiBeanPaste <- \() new(
 redKidneyBeanPaste <- \() new(
   Class = 'beanPaste',
   redKidneyBean = 200, water = 1325-200, # confirmed
-  butter = 60, brownSugar = 85,
+  dairy = c(Kerrygold_butter = 60), 
+  sugar = c(Domino_darkBrown = 85),
   tool = list(
     JoyoungDJ13U_soymilk(
       treatment = 'dried bean + water, no soaking needed',
       waterLost = 40 # 4201g - 4163g, confirmed!!
     ),
-    JoyoungCJA9U( 
-      treatment = c('hot, fresh bean mud + butter'),
-      operation = c(
-        '15min+5min, stir occasionally', # confirmed!
-        'fold brown sugar into hot, cooked paste'
-      ),
-    waterLost = 430 # 2342g - 1910g, confirmed!
+    JoyoungCJA9U_filling( 
+      minute = 20, # confirmed!
+      waterLost = 430 # 2342g - 1910g, confirmed!
   )),
   pros = 'works')
 
@@ -82,14 +79,10 @@ redKidneyBeanPaste <- \() new(
 #adzukiBeanPaste_OLD <- \() new(
 #  Class = 'beanPaste', flavor = '\u7ea2',
 #  homemade = c(adzukiBeanMud = 600), waterLost = 300, # confirmed!!
-#  brownSugar = 30,
-#  butter = 24,
-#  tool = list(JoyoungCJA9U(
-#    treatment = 'bean mud + oil',
-#    program = 'Stir Fry \u7206\u7092',
-#    operation = c(
-#      '15min, stir every 1-2min',
-#      'Fold brown sugar into hot, cooked paste'
+#  sugar = c(Domino_darkBrown = 30),
+#  dairy = c(Kerrygold_butter = 24),
+#  tool = list(JoyoungCJA9U_filling(
+#    minute = 15
 #    )
 #  ))) # I love!!!
 
@@ -102,8 +95,8 @@ xiaogaojie_adzukiBeanPaste1 <- \() new(
   Class = 'recipe', flavor = '\u7ea2\u8c46\u6c991',
   adzukibean = 500,
   water = 350, # actual water absorbed
-  oil = c(Wegmans_corn = 12),
-  brownSugar = 75,
+  oil = c(Wegmans_corn_oil = 12),
+  sugar = c(Domino_darkBrown = 75),
   homemade = c(invertSugar = 80),
   #糖（调整量）24克  2 大勺
   salt_tsp = 1/4,
@@ -118,10 +111,10 @@ xiaogaojie_adzukiBeanPaste2 <- \() new(
   xiaogaojie = 'Jsqhb8i4ntU',
   adzukibean = 200,
   water = 700, 
-  waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
+  #waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
   Na2CO3_tsp = 1/8,
-  oil = c(Wegmans_corn = 120),
-  brownSugar = 100)
+  oil = c(Wegmans_corn_oil = 120),
+  sugar = c(Domino_darkBrown = 100))
 
 
 #mungBeanPaste 

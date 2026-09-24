@@ -8,6 +8,6 @@
 Guacamole
 }
 \examples{
-srirachaBBQ_meatDip() |> as('guacamole')
+srirachaBBQ_meatDip() |> as('guacamole') # not that great
 
 }

@@ -1,5 +1,7 @@
 
-#' @title Diagnose Multiple \linkS4class{nutrition} Objects
+
+
+#' @title \link[base]{list} of \linkS4class{nutrition}s
 #' 
 #' @description
 #' ..
@@ -7,26 +9,41 @@
 #' @param ... objects convertible to \linkS4class{nutrition}
 #' 
 #' @export
-diagnose <- \(...) {
+nutritionlist <- \(...) {
   
-  dots <- list(...) |>
+  z <- list(...) |>
     lapply(FUN = as, Class = 'nutrition')
+  
+  if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
+    stop()
+  } 
+  
+  names(z) <- z |>
+    vapply(FUN = \(i) {
+      c(i@alias, i@name, i@brand) |> 
+        paste(collapse = ' ')
+    }, FUN.VALUE = '')
+
+  class(z) <- c('nutritionlist', 'listof', 'list') 
+  return(z)
+}
+  
+
+#' @export
+print.nutritionlist <- \(x, ...) {
   
   cat('\n')
   'Nutrition\n' |> bg_br_yellow() |> cat()
-  dots |>
+  x |>
     summary.nutritionlist() |>
     print() # print.summary.nutritionlist
-  
-  names(dots) <- dots |>
-    vapply(FUN = slot, name = 'name', FUN.VALUE = NA_character_)
   
   for (which in c(
     'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
     'perCornmeal', 'perRiceFlr', 
     'perCocoa', 'perTea', 'perCreamCheese', 'perRaw'
   )) {
-    dots |>
+    x |>
       lapply(FUN = attr, which = which, exact = TRUE) |>
       print.perlist()
   }
@@ -54,9 +71,10 @@ summary.nutritionlist <- \(object, ...) {
   
   ret <- x |> 
     lapply(FUN = \(v) {
+      # sum(numeric()) returns 0
       c(
         calorie = sum(v@calorie),
-        water = sum(v@water), # sum(numeric()) returns 0
+        water = sum(v@water),
         carbohydrate = sum(v@carbohydrate),
         fiber = sum(v@fiber),
         sugar = sum(v@sugar), 
@@ -76,9 +94,6 @@ summary.nutritionlist <- \(object, ...) {
   addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
   ret <- cbind(ret, addedWater = addedWater_)
 
-  nm <- x |>
-    vapply(FUN = \(i) c(i@alias, i@name, i@brand) |> paste(collapse = ' '), FUN.VALUE = '')
-  rownames(ret) <- nm
   class(ret) <- 'summary.nutritionlist'
   return(ret)
   

@@ -9,7 +9,6 @@
 \alias{AddaPinch_chocolate_cake}
 \alias{PreppyKitchen_chocolate_cake}
 \alias{DessertFor2_matcha_cake}
-\alias{Sallys_pumpkin_cake}
 \title{\linkS4class{gateau} Recipes}
 \usage{
 cocoa_gateau()
@@ -23,8 +22,6 @@ AddaPinch_chocolate_cake()
 PreppyKitchen_chocolate_cake()
 
 DessertFor2_matcha_cake()
-
-Sallys_pumpkin_cake()
 }
 \description{
 ..
@@ -34,20 +31,20 @@ cocoa_gateau()
 matcha_gateau()
 pumpkin_gateau()
 
-diagnose(
+nutritionlist(
  cocoa_gateau(),
  subtract(AddaPinch_chocolate_cake, sugar = 300),
  subtract(PreppyKitchen_chocolate_cake, sugar = 300)
 )
 
-diagnose(
+nutritionlist(
  matcha_gateau(),
  subtract(DessertFor2_matcha_cake, sugar = 150)
 )
 
-diagnose(
+nutritionlist(
  pumpkin_gateau(),
- subtract(Sallys_pumpkin_cake, sugar = 100, brownSugar = 90)
+ subtract(cooking:::Sallys_pumpkin_cake, sugar = c(90, 100))
 )
 
 

@@ -106,16 +106,18 @@ Do not use granular ingredients for either one of these recipes,
 such as black sesame seeds.
 }
 \examples{
-diagnose(
+nutritionlist(
  new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
- mascarpone = 453/2, water = 70, 
+ dairy_cup = c(BelGioioso_mascarpone = 1),
+ water = 70, 
  sugar_tsp = 10.5, matcha_tsp = 4, 
  pros = 'Effie\'s Signature!'),
  
  matcha_whippedCream(),
  
  new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
- mascarpone = 453/2, water = 110, 
+ dairy_cup = c(BelGioioso_mascarpone = 1),
+ water = 110, 
  sugar_tsp = 11.5, matcha_tsp = 4.5, 
  pros = 'Xu Chang, Gloria', 
  cons = 'Scott Keith says this is bitter'),
@@ -129,7 +131,7 @@ cocoa_whippedCream()
 pumpkin_mascarponeFrosting()
 tiramisuFrosting_Kahlua()
 
-diagnose(
+nutritionlist(
  foodandjourneys_mascarponeFrosting(),
  lifeloveandsugar_mascarponeFrosting(),
  lifeloveandsugar_cocoa_mascarponeFrosting(),

@@ -83,7 +83,7 @@ Dad_oxTongue2_waterDough()
 \linkS4class{largeYouSu} is a paste.
 }
 \examples{
-diagnose(
+nutritionlist(
  Dad_yolkPastry_waterDough(),
  Dad_oxTongue1_waterDough(), 
  Dad_oxTongue2_waterDough(),
@@ -97,7 +97,7 @@ diagnose(
  Dad_sweetPastry_waterDough()
 )
 
-diagnose(
+nutritionlist(
  shangshi_oxTongue_shortDough(),
  Dad_flowerPastry_shortDough(),
  Dad_oxTongue1_shortDough(),
@@ -108,7 +108,7 @@ diagnose(
  laofangu_durianSu_shortDough()
 )
 
-diagnose(
+nutritionlist(
  Dad_blackSesamePastry_largeYouSu(),
  PinNuo_largeYouSu()
 )

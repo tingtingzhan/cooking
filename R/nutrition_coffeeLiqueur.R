@@ -3,7 +3,7 @@
 #' @rdname nutrition-class
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'   cooking:::Baileys_tiramisu(),
 #'   cooking:::Baileys_espresso(),
 #'   cooking:::Kahlua_coffee(),

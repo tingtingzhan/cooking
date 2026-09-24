@@ -40,10 +40,10 @@ if (FALSE) {
     crumbcrust = if (length(x@blackSesame)) .11 else .01, 
     ricepaste = .015,
     soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
-    bao =, wheatBao = if (length(x@matcha) || length(x@beet) || length(x@cocoa)) {
+    bao =, wheatBao = if (length(x@matcha) || length(x['_beet_pulv$']) || length(x@cocoa)) {
       .04 
     } else .03, # any lower, not delicious!
-    snowSkin = if (length(x@beet)) .03 else .023,
+    snowSkin = if (length(x['_beet_pulv$'])) .03 else .023,
     porkfill = .023,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 
     yuenyeungCoconut = .035,
@@ -53,7 +53,7 @@ if (FALSE) {
       .095
     } else if (length(x@liqueur)) {
       .14 
-    } else if (length(x@beet)) {
+    } else if (length(x['_beet_pulv$'])) {
       .08
     } else .035, 
     marinade = .04,
@@ -66,9 +66,9 @@ if (FALSE) {
     stickyRice =, riceCake =, riceMousse = .05, 
     #tortillaLard = .06,
     cocoa_ = .055,
-    muffin = if (length(x@cornmeal)) {
+    muffin = if (length(x['_cornmeal$'])) {
       .055 # tastes better than .05
-    } else if (length(x@pumpkin)) {
+    } else if (length(x['_pumpkin$'])) {
       .08
     } else NA_real_,
     pumpkinSpiceLatte_ = .06,
@@ -77,7 +77,7 @@ if (FALSE) {
       .095
     } else if (length(x@coffee)) {
       .07
-    } else if (length(x@pumpkin)) {
+    } else if (length(x['_pumpkin$'])) {
       .09
     } else if (length(x@cocoa)) {
       NA_real_
@@ -88,9 +88,9 @@ if (FALSE) {
       .075 
     } else if (length(x@cocoa)) {
       .09
-    } else if (length(x@pineapple)) {
+    } else if (length(x['_pineapple$'])) {
       .08
-    } else if (length(x@pumpkin)) {
+    } else if (length(x['_pumpkin$'])) {
       .07 # was .065, a little bland
     } else NA_real_,
     kefir =, goatKefir = .075,
@@ -109,13 +109,13 @@ if (FALSE) {
     bread = if (length(x@matcha) || length(x@cocoa)) {
       .075 # great on @matcha 
     } else .045,
-    cheesecake = if (length(x@pumpkin)) .12 else .1,
+    cheesecake = if (length(x['_pumpkin$'])) .12 else .1,
     # froyo = NA_real_, # Greek yogurt flavor too strong to cover
-    custardFilling = if (length(x@pumpkin)) {
+    custardFilling = if (length(x['_pumpkin$'])) {
       .13 
-    } else if (length(x@applesauce)) {
+    } else if (length(x['_applesauce$'])) {
       .155
-    } else if (length(x@pineapple)) {
+    } else if (length(x['_pineapple$'])) {
       .165 
     } else .13,
     cookie = if (length(x@blackSesame)) {
@@ -180,7 +180,7 @@ if (FALSE) {
   
   creamcheese <- \(x) switch(
     class(x),
-    cheesecake = if (length(x@pumpkin)) {
+    cheesecake = if (length(x['_pumpkin$'])) {
       .5 
     } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
       .55
@@ -224,7 +224,7 @@ if (FALSE) {
     shrimpfillCantonese = .14, 
     shrimpfill_garlicHerb = .15, 
     mousse = .15,
-    cheesecake = if (length(x@pumpkin)) {
+    cheesecake = if (length(x['_pumpkin$'])) {
       .14 
     } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
       .145
@@ -240,7 +240,7 @@ if (FALSE) {
       .36
     } else if (length(x@water)) {
       .3
-    } else if (length(x@pumpkin)) {
+    } else if (length(x['_pumpkin$'])) {
       .195
     } else .25,
     whippedCream = .295,
@@ -294,19 +294,19 @@ if (FALSE) {
   
   matcha2flour <- fn.
   
-  matcha2pastryflour <- \(x) switch(
+  matcha2pastryFlr <- \(x) switch(
     class(x),
     bao = .045,
     millecrepe = .1,
     NA_real_)
   
-  matcha2breadflour <- \(x) switch(
+  matcha2breadFlr <- \(x) switch(
     class(x),
     wrapperlinda = .035,
     bread = .07,
     NA_real_)
   
-  matcha2glutenFreeFlour <- fn.
+  matcha2gluten0Flr <- fn.
   
   matcha2wheatflourmix <- fn.
   
@@ -324,18 +324,18 @@ if (FALSE) {
   
   beet2flour <- fn.
   
-  beet2pastryflour <- \(x) switch(
+  beet2pastryFlr <- \(x) switch(
     class(x),
     bao = .068,
     millecrepe = .12,
     NA_real_)
   
-  beet2breadflour <- \(x) switch(
+  beet2breadFlr <- \(x) switch(
     class(x),
     bread = .075,
     NA_real_)
   
-  beet2glutenFreeFlour <- fn.
+  beet2gluten0Flr <- fn.
   
   beet2wheatflourmix <- fn.
   
@@ -441,12 +441,12 @@ if (FALSE) {
     cookie = .08,
     NA_real_)
   
-  acai2pastryflour <- \(x) switch(
+  acai2pastryFlr <- \(x) switch(
     class(x),
     bao = .075,
     NA_real_)
   
-  acai2breadflour <- \(x) switch(
+  acai2breadFlr <- \(x) switch(
     class(x),
     NA_real_)
   
@@ -454,7 +454,7 @@ if (FALSE) {
     class(x),
     NA_real_)
   
-  acai2flour <- acai2glutenFreeFlour <- acai2wheatflourmix <- fn.
+  acai2flour <- acai2gluten0Flr <- acai2wheatflourmix <- fn.
   
   starch <- \(x) switch(
     class(x), 
@@ -464,7 +464,7 @@ if (FALSE) {
     meatball = .03,
     cheesecake = .035, 
     beeffillLeeKumKee = .04, 
-    custardFilling = if (length(x@pumpkin)) .05 else NA_real_,
+    custardFilling = if (length(x['_pumpkin$'])) .05 else NA_real_,
     starchjelly = .1, 
     stickyTortilla = .1,
     NA_real_)
@@ -476,7 +476,7 @@ if (FALSE) {
       .19 # liqueur flavor will also have `x@water`, so this `if` must be ahead of `@water`
     } else if (length(x@water)) {
       .29
-    } else if (length(x@pumpkin)) {
+    } else if (length(x['_pumpkin$'])) {
       .42
     } else .34, # from other puree such as `pineapple`
     whippedCream = .50,
@@ -511,21 +511,21 @@ if (FALSE) {
     #tortillaLard =, tortillaOlive = .6,
     NA_real_)
   
-  addedWater2pastryflour <- \(x) switch(
+  addedWater2pastryFlr <- \(x) switch(
     class(x), 
     bao = .48,
     juntun = .56, # ?? do I really need this?
     millecrepe = 3.7,
     NA_real_)
   
-  addedWater2breadflour <- \(x) switch(
+  addedWater2breadFlr <- \(x) switch(
     class(x), 
     wrapperlinda = .57,
-    noodlelinda = if (grepl(pattern = '^KingArthur_', names(x@breadFlour)) |> any()) .45 else .6,
+    noodlelinda = if (length(x['^KingArthur_breadFlr$'])) .45 else .6,
     bread = .63,
     NA_real_)
   
-  addedWater2glutenFreeFlour <- fn.
+  addedWater2gluten0Flr <- fn.
   
   addedWater2wheatflourmix <- \(x) switch(
     class(x),
@@ -540,7 +540,7 @@ if (FALSE) {
   
   addedWater2creamcheese <- \(x) switch(
     class(x),
-    cheesecake = if (length(x@pumpkin)) {
+    cheesecake = if (length(x['_pumpkin$'])) {
       .6 
     } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
       .5
@@ -554,19 +554,19 @@ if (FALSE) {
     cookie = .77,
     NA_real_)
   
-  fat2pastryflour <- \(x) switch(
+  fat2pastryFlr <- \(x) switch(
     class(x), 
     bao = .03,
     millecrepe = .375,
     NA_real_)
   
-  fat2breadflour <- \(x) switch(
+  fat2breadFlr <- \(x) switch(
     class(x), 
     bao = .03,
     bread = if (length(x@cocoa)) .08 else .075,
     NA_real_)
   
-  fat2glutenFreeFlour <- fn.
+  fat2gluten0Flr <- fn.
   
   fat2wheatflourmix <- \(x) switch(
     class(x),
@@ -579,9 +579,9 @@ if (FALSE) {
     snowSkin = .05,
     NA_real_)
   
-  flour2cornmeal <- pastryflour2cornmeal <- breadflour2cornmeal <- glutenFreeFlour2cornmeal <- wheatflourmix2cornmeal <- riceflour2cornmeal <- fn.
+  flour2cornmeal <- pastryFlr2cornmeal <- breadFlr2cornmeal <- gluten0Flr2cornmeal <- wheatflourmix2cornmeal <- riceflour2cornmeal <- fn.
   
-  starch2flour <- starch2pastryflour <- starch2breadflour <- starch2glutenFreeFlour <- starch2wheatflourmix <- fn.
+  starch2flour <- starch2pastryFlr <- starch2breadFlr <- starch2gluten0Flr <- starch2wheatflourmix <- fn.
   
   starch2riceflour <- \(x) switch(
     class(x),
@@ -589,14 +589,14 @@ if (FALSE) {
     snowSkin = .25,
     NA_real_)
   
-  rice2flour <- rice2pastryflour <- rice2breadflour <- rice2glutenFreeFlour <- rice2wheatflourmix <- fn.
+  rice2flour <- rice2pastryFlr <- rice2breadFlr <- rice2gluten0Flr <- rice2wheatflourmix <- fn.
   
   rice2riceflour <- \(x) switch(
     class(x),
     snowSkin = .5,
     NA_real_)
   
-  glutinousRice2flour <- glutinousRice2pastryflour <- glutinousRice2breadflour <- glutinousRice2glutenFreeFlour <- glutinousRice2wheatflourmix <- fn.
+  glutinousRice2flour <- glutinousRice2pastryFlr <- glutinousRice2breadFlr <- glutinousRice2gluten0Flr <- glutinousRice2wheatflourmix <- fn.
   
   glutinousRice2riceflour <- \(x) switch(
     class(x),
@@ -608,29 +608,29 @@ if (FALSE) {
     #tortillaOlive = .005,
     NA_real_)
   
-  salt2breadflour <- \(x) switch(
+  salt2breadFlr <- \(x) switch(
     class(x),
     bread =, noodlelinda =, wrapperlinda = .003,
     NA_real_)
   
-  salt2pastryflour <- salt2wheatflourmix <- salt2glutenFreeFlour <- salt2riceflour <- fn.
+  salt2pastryFlr <- salt2wheatflourmix <- salt2gluten0Flr <- salt2riceflour <- fn.
   
   eggYolk2flour <- \(x) switch(
     class(x),
     cookie = if (length(x@blackSesame)) .43 else .52,
     NA_real_)
   
-  eggYolk2pastryflour <- \(x) switch(
+  eggYolk2pastryFlr <- \(x) switch(
     class(x),
     millecrepe = .345,
     NA_real_)
   
-  eggYolk2breadflour <- \(x) switch(
+  eggYolk2breadFlr <- \(x) switch(
     class(x),
     bread = .035,
     NA_real_)
   
-  eggYolk2glutenFreeFlour <- eggYolk2wheatflourmix <- eggYolk2riceflour <- fn.
+  eggYolk2gluten0Flr <- eggYolk2wheatflourmix <- eggYolk2riceflour <- fn.
   
   blackSesame2flour <- \(x) switch(
     class(x),
@@ -638,24 +638,24 @@ if (FALSE) {
     cookie = .375,
     NA_real_) 
   
-  blackSesame2pastryflour <- fn.
+  blackSesame2pastryFlr <- fn.
   
-  blackSesame2breadflour <- fn.
+  blackSesame2breadFlr <- fn.
   
-  blackSesame2glutenFreeFlour <- blackSesame2wheatflourmix <- fn.
+  blackSesame2gluten0Flr <- blackSesame2wheatflourmix <- fn.
   
   blackSesame2riceflour <- fn.
   
   Na2CO3_2flour <- fn.
   
-  Na2CO3_2pastryflour <- fn.
+  Na2CO3_2pastryFlr <- fn.
   
-  Na2CO3_2breadflour <- \(x) switch(
+  Na2CO3_2breadFlr <- \(x) switch(
     class(x), 
     noodlelinda =, wrapperlinda = .0015,
     NA_real_)
   
-  Na2CO3_2glutenFreeFlour <- Na2CO3_2wheatflourmix <- fn.
+  Na2CO3_2gluten0Flr <- Na2CO3_2wheatflourmix <- fn.
   
   Na2CO3_2riceflour <- fn.
   
@@ -668,18 +668,18 @@ if (FALSE) {
   
   bakingPowder2flour <- fn.
   
-  bakingPowder2pastryflour <- \(x) switch(
+  bakingPowder2pastryFlr <- \(x) switch(
     class(x), 
     bao = .0095,
     NA_real_)
   
-  bakingPowder2breadflour <- \(x) switch(
+  bakingPowder2breadFlr <- \(x) switch(
     class(x),
     bao = .0095,
     gateau = .02,
     NA_real_)
   
-  bakingPowder2glutenFreeFlour <- fn.
+  bakingPowder2gluten0Flr <- fn.
   
   bakingPowder2wheatflourmix <- \(x) switch(
     class(x), 
@@ -690,18 +690,18 @@ if (FALSE) {
   
   yeast2flour <- fn.
   
-  yeast2pastryflour <- \(x) switch(
+  yeast2pastryFlr <- \(x) switch(
     class(x),
     bao = .0095, 
     NA_real_)
   
-  yeast2breadflour <- \(x) switch(
+  yeast2breadFlr <- \(x) switch(
     class(x), 
     bao = .0095, 
     bread = .02,
     NA_real_)
   
-  yeast2glutenFreeFlour <- fn.
+  yeast2gluten0Flr <- fn.
   
   yeast2wheatflourmix <- \(x) switch(
     class(x), 
@@ -713,7 +713,7 @@ if (FALSE) {
   gelatin2water <- \(x) switch(
     class(x), 
     #riceMousse = {
-    #if (grepl('coconutmilk', names(obj@misc)) |> any()) .01 else .02
+    #if (grepl('coconutmilk', names(x@misc)) |> any()) .01 else .02
     #},
     mousse = .036,
     NA_real_)
@@ -762,12 +762,12 @@ if (FALSE) {
                   'starch', 
                   'glutinousRice', # 'rice', 
                   'yeast', 'bakingPowder', 'Na2CO3_'), 
-            Y = c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), 
+            Y = c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatflourmix', 'riceflour'), 
             FUN = paste, sep = '2')),
     
     'addedWater2creamcheese',
     
-    paste0(c('flour', 'pastryflour', 'breadflour', 'glutenFreeFlour', 'wheatflourmix', 'riceflour'), '2cornmeal'),
+    paste0(c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatflourmix', 'riceflour'), '2cornmeal'),
     
     'gelatin2water',
     NULL

@@ -2,25 +2,25 @@
 #' @rdname nutrition-class
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::Nancys_creamCheese(),
 #'  cooking:::Philadelphia_creamCheese(),
 #'  cooking:::OrganicValley_creamCheese(),
 #'  cooking:::TraderJoes_creamCheese(),
 #'  cooking:::Tillamook_creamCheese())
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::Philadelphia_creamCheese(), 
 #'  cooking:::Philadelphia_creamCheeseSpread(), 
 #'  cooking:::PhiladelphiaNeufchatel_creamCheese(), 
 #'  cooking:::PhiladelphiaNeufchatel_creamCheeseSpread())
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::LandOLakes_whippedHeavyCream(),
 #'  cooking:::Lucerne_heavyCream(),
 #'  cooking:::Wegmans_heavyCream())
 #'  
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::TraderJoes_goat_kefir(), 
 #'  cooking:::Meyenberg_goat_kefir())
 #' 
@@ -138,7 +138,7 @@ OakFarms_buttermilk <- \() new(
 
 
 
-Carnation_evaporatedMilk <- \() new(
+Carnation_evapMilk <- \() new(
   Class = 'nutrition',  nestle = '11002753',
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
   name = 'Evaporated Milk', alias = '\u6de1\u5976',
@@ -152,7 +152,7 @@ Carnation_evaporatedMilk <- \() new(
 
 
 
-CarnationFatFree_evaporatedMilk <- \() new(
+CarnationFatFree_evapMilk <- \() new(
   Class = 'nutrition',  
   walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
@@ -166,7 +166,7 @@ CarnationFatFree_evaporatedMilk <- \() new(
 
 
 
-Carnation_condensedMilk <- \() new(
+Carnation_condensMilk <- \() new(
   Class = 'nutrition',  url = 'https://www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
   brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
@@ -219,7 +219,7 @@ PhiladelphiaNeufchatel_creamCheese <- \() new(
   name = 'Neufcha\u0302tel Cream Cheese', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a',
   walmart = '36647454', usd = 4.98/16, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
-  serving_oz = 1, 
+  serving_oz = 1, servingTbsp = 2,
   calorie = 70,
   fat = 6, cholesterol = .02, sodium = .125, carbohydrate = 2, sugar = 1, protein = 2)
 
@@ -350,12 +350,9 @@ Daisy_sourCream <- \() new( # no filler
   fdc = 171257L, water = 30*.731,
   fat = 5, cholesterol = .02, sodium = .015, sugar = 1, protein = 1)
 
-
-
-
-
 DaisyLight_sourCream <- \() new( # no filler
-  Class = 'nutrition',  daisybrand = 'sour-cream',
+  Class = 'nutrition',  
+  daisybrand = 'sour-cream',
   name = 'Light Sour Cream',
   servingGram = 30, servingTbsp = 2,
   calorie = 35,
@@ -363,15 +360,21 @@ DaisyLight_sourCream <- \() new( # no filler
   fat = 2.5, cholesterol = .01, sodium = .015, sugar = 1, protein = 2,
   review = 'Do not buy. This is a mixture of cultured cream and skim milk')
 
-
+#WegmansOrganic_sourCream <- \() new(
+#  Class = 'nutrition',
+#  wegmans = '63577',
+#  name = 'Sour Cream'#,
+#  # no nutrition info!!!
+#)
 
 
 
 
 
 Daisy_cottageCheese <- \() new(
-  Class = 'nutrition',  daisybrand = 'cottage-cheese',
+  Class = 'nutrition',
   name = 'Cottage Cheese, 4% Milkfat',
+  daisybrand = 'cottage-cheese',
   walmart = '15716748', usd = 4.97/680*113,
   wegmans = '894345',
   serving_oz = 4, servingCup = 1/2,
@@ -382,8 +385,9 @@ Daisy_cottageCheese <- \() new(
 
 
 DaisyLite_cottageCheese <- \() new(
-  Class = 'nutrition',  daisybrand = 'cottage-cheese',
+  Class = 'nutrition',
   name = 'Cottage Cheese, 2% Milkfat',
+  daisybrand = 'cottage-cheese',
   walmart = '15716747', usd = 4.97/680*113,
   wegmans = '894518',
   serving_oz = 4, servingCup = 1/2,
@@ -479,7 +483,9 @@ Wawa_2perc_milk <- \() new(
 
 Byrne_heavyCream <- \() new(
   Class = 'nutrition',  
-  brand = c(style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = 'https://www.byrnedairy.com/creams-near-ny-state/')),
+  brand = 'https://www.byrnedairy.com/creams-near-ny-state/' |> 
+    style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = _) |> 
+    c(),
   name = 'Heavy Cream 40%', alias = '\u91cd\u5976\u6cb9',
   # nutrition from https://www.fooducate.com/product/Byrne-Dairy-Heavy-Whipping-Cream/61EE9DAB-F8E3-1A30-4818-B69A923F5C70
   servingGram = 15, servingTbsp = 1,

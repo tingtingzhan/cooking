@@ -12,13 +12,21 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   grams_nm <- names(grams)
   names(grams_nm) <- grams_nm
   
-  nutri <- lapply(grams_nm, FUN = \(x) {
-    call(name = x) |> eval() |> as(Class = 'nutrition')
-  })
+  nutri <- grams_nm |> 
+    lapply(FUN = \(x) {
+      call(name = x) |> eval()
+    }) |>
+    do.call(what = nutritionlist, args = _)
   
   info <- nutri |>
     summary.nutritionlist()
+  names(rownames(info)) <- grams_nm # programming trick!! (for [print.raw.])
+  # not needed here, but I may future consolidate 
+  # setAs(from = 'raw.', to = 'nutrition')
+  # setAs(from = 'recipe', to = 'nutrition'
   # print(info) # debug
+  
+  
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
   carbohydrate <- tmp['carbohydrate']
@@ -71,11 +79,21 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
 
 
 
+setClass(Class = 'cooked', contains = 'raw.')
+
+setAs(from = 'recipe', to = 'cooked', def = \(from) {
+  # the first part of 
+  # setAs(from = 'recipe', to = 'nutrition')
+  # should be here!!
+  # to account for @waterLost, etc.
+})
+
+
 setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   x <- from; from <- NULL
   
-  lost <- c('waterLost', 'fatLost', 'sugarLost')
+  lost <- c('sugarLost')
   slt0 <- names(getSlots(x = 'raw.'))
   ingredient <- names(which(lengths(attributes(x)[slt0]) > 0L))
   
@@ -84,7 +102,10 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   total_raw <- sum(unlist(atr, use.names = FALSE))
   
   tool_slot <- names(which(getSlots('recipe') == 'tool'))
-  waterLost <- sum(x@waterLost, lapply(tool_slot, FUN = \(i) slot(x, name = i)@waterLost) |> unlist(use.names = FALSE))
+  waterLost <- tool_slot |>
+    lapply(FUN = \(i) slot(x, name = i)@waterLost) |> 
+    unlist(use.names = FALSE) |>
+    sum()
   total_lost <- sum(
     waterLost,
     unlist(attributes(x)[setdiff(lost, 'waterLost')], use.names = FALSE)
@@ -96,13 +117,16 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   grams_nm <- names(grams)
   names(grams_nm) <- grams_nm
   
-  nutri <- lapply(grams_nm, FUN = \(x) {
-    call(name = x) |> eval() |> as(Class = 'nutrition')
-  })
-  
+  nutri <- grams_nm |> 
+    lapply(FUN = \(x) {
+      call(name = x) |> eval()
+    }) |>
+    do.call(what = nutritionlist, args = _)
   
   info <- nutri |>
     summary.nutritionlist()
+  names(rownames(info)) <- grams_nm # programming trick!! (for [print.raw.])
+  
   # print(info) # debug
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
@@ -111,7 +135,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   sugar <- tmp['sugar'] - sum(x@sugarLost)
   addedSugar <- max(0, tmp['addedSugar'] - sum(x@sugarLost))
   sodium <- tmp['sodium']
-  fat <- tmp['fat'] - sum(x@fatLost)
+  fat <- tmp['fat']
   cholesterol <- tmp['cholesterol']
   protein <- tmp['protein']
   alcohol <- tmp['alcohol']
@@ -121,22 +145,21 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   usd <- tmp['usd']
   
   flour <- sum(x@flour)
-  pastryFlour <- sum(x@pastryFlour)
-  breadFlour <- sum(x@breadFlour)
-  wholeWheatFlour <- sum(x@wholeWheatFlour)
-  mix0_wheat_flour <- c(flour = flour, pastry = pastryFlour, bread = breadFlour, wheat = wholeWheatFlour)
+  pastryFlr <- sum(x['_pastryFlr$'])
+  breadFlr <- sum(x['_breadFlr$'])
+  wheatFlr <- sum(x['_wheatFlr$'])
+  mix0_wheat_flour <- c(flour = flour, pastry = pastryFlr, bread = breadFlr, wheat = wheatFlr)
   mix_wheat_flour <- sum(mix0_wheat_flour)
   
-  glutenFreeFlour <- sum(x@glutenFreeFlour)
+  gluten0Flr <- sum(x['_gluten0Flr$'])
   wheatGluten <- sum(x@wheatGluten)
-  cornmeal <- sum(x@cornmeal)
+  cornmeal <- sum(x['_cornmeal$'])
   coconut <- sum(x@coconut)
   
-  riceFlour <- sum(x@riceFlour, x@glutinousRiceFlour)
+  riceFlr <- sum(x['_riceFlr$'], x['_glutinousRiceFlr$'])
   
-  puree <- sum(x@puree, x@pumpkin, x@pumpkinPieMix, x@strawberry, x@pineapple, x@pear, x@mandarine, x@mango, x@tomato, x@darkCherry, x@yellowCorn, x@durian, x@applesauce, x@banana)
+  puree <- sum(x@puree)
   starch <- sum(x@starch)
-  drymilk <- sum(x@drymilk)
   
   devrecipe <- getOption('devrecipe') 
   
@@ -177,7 +200,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     Class = 'per', per = 'Raw Material', equiv = list(
       # `Base:Aerator` no longer matters :)
       #base <- sum(atr$gelatin, x@puree, x@water, x@water40, x@boilingWater, x@iceWater, x@dairy, x@misc)
-      #aerator <- sum(x@heavyCream, atr$eggWhite, x@sugar, x@brownSugar)
+      #aerator <- sum(x['_heavyCream$'], atr$eggWhite, x@sugar)
       #sprintf(fmt = '%.2f', base / aerator)
       # 'Gelatin:Water' = if ((gelatin <- sum(atr$gelatin)) & water) {
       #  new(Class = 'equiv', current = gelatin / water, target = devrecipe$gelatin2water(x))
@@ -193,17 +216,17 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       #  target <- switch(class(x), pancake =, pancakeMix = .0077)
       #  new(Class = 'equiv', current = acid / x@selfRisingFlour, target, margin = 1.01)
       #},
-      ssmOil = new(Class = 'equiv', current = x@sesameOil / total_raw),
-      rattanPpOil = new(Class = 'equiv', current = x@rattanPepperOil / total_raw),
+      ssmOil = new(Class = 'equiv', current = x['_sesame_oil'] / total_raw),
+      rattanPpOil = new(Class = 'equiv', current = x['_rattanPepper_oil$'] / total_raw),
       bkPwd = new(Class = 'equiv', current = x@bakingPowder / total_raw),
       'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / total_raw),
       msg = new(Class = 'equiv', current = x@msg / total_raw),
-      drymilk = new(Class = 'equiv', current = drymilk / total_raw),
+      drymilk = new(Class = 'equiv', current = sum(x['_drymilk$']) / total_raw),
       tea = new(Class = 'equiv', current = x@tea / total_raw),
-      creamChz = new(Class = 'equiv', current = sum(x@creamCheese) / total_raw),
+      creamChz = new(Class = 'equiv', current = sum(x['_creamCheese$']) / total_raw),
       puree = new(Class = 'equiv', current = puree / total_raw), 
       matcha = new(Class = 'equiv', current = x@matcha / total_raw),
-      beet = new(Class = 'equiv', current = x@beet / total_raw),
+      beet = new(Class = 'equiv', current = x['_beet_pulv$'] / total_raw),
       ginger = new(Class = 'equiv', current = x['_ginger$'] / total_raw),
       cumin = new(Class = 'equiv', current = x['_cumin$'] / total_raw),
       cilantro = new(Class = 'equiv', current = x['_cilantro$'] / total_raw),
@@ -222,7 +245,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       coconut = new(Class = 'equiv', current = x@coconut / total_raw),
       cocoa = new(Class = 'equiv', current = x@cocoa / total_raw),
       coffee = new(Class = 'equiv', current = x@coffee / total_raw),
-      acai = new(Class = 'equiv', current = x@acai / total_raw),
+      acai = new(Class = 'equiv', current = x['_acai_pulv$'] / total_raw),
       'starch+' = new(Class = 'equiv', current = starch / total_raw),
       gelatin = new(Class = 'equiv', current = x@gelatin / total_raw)
       # 'Gelatin' = if (atr$gelatin > 0) sprintf(fmt = '%.1f%%', 1e2 * atr$gelatin / total_raw)
@@ -250,16 +273,16 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       alcohol = new(Class = 'equiv', current = alcohol / total, target = devrecipe$alcohol(x)),
       sugar = if (TRUE || (sugar > addedSugar)) new(Class = 'equiv', current = sugar / total, target = devrecipe$sugar(x)) else new(Class = 'equiv'),
       'sugar+' = new(Class = 'equiv', current = addedSugar / total, target = devrecipe$addedSugar(x)),
-      ssmOil = new(Class = 'equiv', current = x@sesameOil / total, target = devrecipe$sesameOil(x)),
-      rattanPpOil = new(Class = 'equiv', current = x@rattanPepperOil / total, target = devrecipe$rattanPepperOil(x)),
+      ssmOil = new(Class = 'equiv', current = x['_sesame_oil'] / total, target = devrecipe$sesameOil(x)),
+      rattanPpOil = new(Class = 'equiv', current = x['_rattanPepper_oil$'] / total, target = devrecipe$rattanPepperOil(x)),
       #cholr = new(Class = 'equiv', current = cholesterol / total),
       'Na\u207a' = new(Class = 'equiv', current = sodium / total, target = devrecipe$sodium(x), tol = .0001),
       msg = new(Class = 'equiv', current = x@msg / total),
-      drymilk = new(Class = 'equiv', current = drymilk / total, target = devrecipe$drymilk(x)),
+      drymilk = new(Class = 'equiv', current = sum(x['_drymilk$']) / total, target = devrecipe$drymilk(x)),
       tea = new(Class = 'equiv', current = x@tea / total), # , target = devrecipe$tea(x)
-      creamChz = new(Class = 'equiv', current = sum(x@creamCheese) / total, target = devrecipe$creamcheese(x)),
+      creamChz = new(Class = 'equiv', current = sum(x['_creamCheese$']) / total, target = devrecipe$creamcheese(x)),
       matcha = new(Class = 'equiv', current = x@matcha / total, target = devrecipe$matcha(x)),
-      beet = new(Class = 'equiv', current = x@beet / total, target = devrecipe$beet(x)),
+      beet = new(Class = 'equiv', current = x['_beet_pulv$'] / total, target = devrecipe$beet(x)),
       ginger = new(Class = 'equiv', current = x['_ginger$'] / total, target = devrecipe$ginger.(x)),
       cumin = new(Class = 'equiv', current = x['_cumin$'] / total),
       cilantro = new(Class = 'equiv', current = x['_cilantro$'] / total),
@@ -278,7 +301,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       coconut = new(Class = 'equiv', current = x@coconut / total),
       cocoa = new(Class = 'equiv', current = x@cocoa / total, target = devrecipe$cocoa(x)),
       coffee = new(Class = 'equiv', current = x@coffee / total, target = devrecipe$coffee(x)),
-      acai = new(Class = 'equiv', current = x@acai / total, target = devrecipe$acai(x))
+      acai = new(Class = 'equiv', current = x['_acai_pulv$'] / total, target = devrecipe$acai(x))
     )
   )
   
@@ -288,8 +311,8 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       Class = 'per', per = 'Cornmeal\U1f33d', equiv = list(
         # water = new(Class = 'equiv', current = water/cornmeal), # depends on `flour` as well
         flour = new(Class = 'equiv', current = flour/cornmeal, target = devrecipe$flour2cornmeal(x)),
-        '\U0001f35eflour' = new(Class = 'equiv', current = breadFlour/cornmeal, target = devrecipe$breadflour2cornmeal(x)),
-        '\U0001f370flour' = new(Class = 'equiv', current = pastryFlour/cornmeal, target = devrecipe$pastryflour2cornmeal(x)),
+        '\U0001f35eflour' = new(Class = 'equiv', current = breadFlr/cornmeal, target = devrecipe$breadFlr2cornmeal(x)),
+        '\U0001f370flour' = new(Class = 'equiv', current = pastryFlr/cornmeal, target = devrecipe$pastryFlr2cornmeal(x)),
         '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk/cornmeal),
         '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite/cornmeal)
       ))
@@ -314,7 +337,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
         yeast = new(Class = 'equiv', current = sum(x@yeast) / mix_wheat_flour, target = devrecipe$yeast2wheatflourmix(x)),
         matcha = new(Class = 'equiv', current = x@matcha / mix_wheat_flour),
         cocoa = new(Class = 'equiv', current = x@cocoa / mix_wheat_flour),
-        acai = new(Class = 'equiv', current = x@acai / mix_wheat_flour),
+        acai = new(Class = 'equiv', current = x['_acai_pulv$'] / mix_wheat_flour),
         coffee = new(Class = 'equiv', current = x@coffee / mix_wheat_flour)
       ))
     
@@ -338,107 +361,106 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
         yeast = new(Class = 'equiv', current = sum(x@yeast) / flour, target = devrecipe$yeast2flour(x), margin = 1.1),
         matcha = new(Class = 'equiv', current = x@matcha / flour),
         cocoa = new(Class = 'equiv', current = x@cocoa / flour),
-        acai = new(Class = 'equiv', current = x@acai / flour),
+        acai = new(Class = 'equiv', current = x['_acai_pulv$'] / flour),
         coffee = new(Class = 'equiv', current = x@coffee / flour)
       ))
     
     
-    attr(ret, which = 'perPastryFlr') <- if (pastryFlour) new(
+    attr(ret, which = 'perPastryFlr') <- if (pastryFlr) new(
       Class = 'per', per = 'Pastry\U1f370 Flour', equiv = list(
-        puree = new(Class = 'equiv', current = puree / pastryFlour),
-        water = new(Class = 'equiv', current = water / pastryFlour, target = devrecipe$addedWater2pastryflour(x), margin = 1.01),
-        gelatin = new(Class = 'equiv', current = x@gelatin / pastryFlour),
-        '\U1f33d' = new(Class = 'equiv', current = cornmeal / pastryFlour),
-        'starch+' = new(Class = 'equiv', current = starch / pastryFlour),
-        fat = new(Class = 'equiv', current = fat / pastryFlour, target = devrecipe$fat2pastryflour(x), margin = 1.05, tol = .01),
-        sesame = new(Class = 'equiv', current = x@blackSesame / pastryFlour, target = devrecipe$blackSesame2pastryflour(x)),
-        '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / pastryFlour, target = devrecipe$eggYolk2pastryflour(x)),
-        '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite / pastryFlour),
-        'Na\u2082CO\u2083' = new(Class = 'equiv', current = x@Na2CO3 / pastryFlour, target = devrecipe$Na2CO3_2pastryflour(x)),
-        'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / pastryFlour),
-        bkPwd = new(Class = 'equiv', current = x@bakingPowder / pastryFlour, target = devrecipe$bakingPowder2pastryflour(x)),
-        salt = new(Class = 'equiv', current = x@salt / pastryFlour, target = devrecipe$salt2pastryflour(x)),
-        #sugar = new(Class = 'equiv', current = sugar / pastryFlour),
-        # 'sugar+' = new(Class = 'equiv', current = addedSugar / pastryFlour),
-        yeast = new(Class = 'equiv', current = sum(x@yeast) / pastryFlour, target = devrecipe$yeast2pastryflour(x), margin = 1.1),
-        matcha = new(Class = 'equiv', current = x@matcha / pastryFlour, target = devrecipe$matcha2pastryflour(x)),
-        beet = new(Class = 'equiv', current = x@beet / pastryFlour, target = devrecipe$beet2pastryflour(x)),
-        cocoa = new(Class = 'equiv', current = x@cocoa / pastryFlour),
-        acai = new(Class = 'equiv', current = x@acai / pastryFlour, target = devrecipe$acai2pastryflour(x)),
-        coffee = new(Class = 'equiv', current = x@coffee / pastryFlour)
+        puree = new(Class = 'equiv', current = puree / pastryFlr),
+        water = new(Class = 'equiv', current = water / pastryFlr, target = devrecipe$addedWater2pastryFlr(x), margin = 1.01),
+        gelatin = new(Class = 'equiv', current = x@gelatin / pastryFlr),
+        '\U1f33d' = new(Class = 'equiv', current = cornmeal / pastryFlr),
+        'starch+' = new(Class = 'equiv', current = starch / pastryFlr),
+        fat = new(Class = 'equiv', current = fat / pastryFlr, target = devrecipe$fat2pastryFlr(x), margin = 1.05, tol = .01),
+        sesame = new(Class = 'equiv', current = x@blackSesame / pastryFlr, target = devrecipe$blackSesame2pastryFlr(x)),
+        '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / pastryFlr, target = devrecipe$eggYolk2pastryFlr(x)),
+        '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite / pastryFlr),
+        'Na\u2082CO\u2083' = new(Class = 'equiv', current = x@Na2CO3 / pastryFlr, target = devrecipe$Na2CO3_2pastryFlr(x)),
+        'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / pastryFlr),
+        bkPwd = new(Class = 'equiv', current = x@bakingPowder / pastryFlr, target = devrecipe$bakingPowder2pastryFlr(x)),
+        salt = new(Class = 'equiv', current = x@salt / pastryFlr, target = devrecipe$salt2pastryFlr(x)),
+        #sugar = new(Class = 'equiv', current = sugar / pastryFlr),
+        # 'sugar+' = new(Class = 'equiv', current = addedSugar / pastryFlr),
+        yeast = new(Class = 'equiv', current = sum(x@yeast) / pastryFlr, target = devrecipe$yeast2pastryFlr(x), margin = 1.1),
+        matcha = new(Class = 'equiv', current = x@matcha / pastryFlr, target = devrecipe$matcha2pastryFlr(x)),
+        beet = new(Class = 'equiv', current = x['_beet_pulv$'] / pastryFlr, target = devrecipe$beet2pastryFlr(x)),
+        cocoa = new(Class = 'equiv', current = x@cocoa / pastryFlr),
+        acai = new(Class = 'equiv', current = x['_acai_pulv$'] / pastryFlr, target = devrecipe$acai2pastryFlr(x)),
+        coffee = new(Class = 'equiv', current = x@coffee / pastryFlr)
       ))
     
     
-    attr(ret, which = 'perBreadFlr') <- if (breadFlour) new(
+    attr(ret, which = 'perBreadFlr') <- if (breadFlr) new(
       Class = 'per', per = 'Bread\U1f35e Flour', equiv = list(
-        puree = new(Class = 'equiv', current = puree / breadFlour),
-        'water+' = new(Class = 'equiv', current = addedWater / breadFlour, target = devrecipe$addedWater2breadflour(x), margin = 1.01),
-        gelatin = new(Class = 'equiv', current = x@gelatin / breadFlour),
-        'starch+' = new(Class = 'equiv', current = starch / breadFlour),
-        fat = new(Class = 'equiv', current = fat / breadFlour, target = devrecipe$fat2breadflour(x), margin = 1.05),
-        sesame = new(Class = 'equiv', current = x@blackSesame / breadFlour, target = devrecipe$blackSesame2breadflour(x)),
-        # '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / breadFlour, target = devrecipe$eggYolk2breadflour(x)),
-        '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / breadFlour, target = devrecipe$eggYolk2breadflour(x)),
-        '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite / breadFlour),
-        'Na\u2082CO\u2083' = new(Class = 'equiv', current = x@Na2CO3 / breadFlour, target = devrecipe$Na2CO3_2breadflour(x)),
-        'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / breadFlour),
-        bkPwd = new(Class = 'equiv', current = x@bakingPowder / breadFlour, target = devrecipe$bakingPowder2breadflour(x)),
-        salt = new(Class = 'equiv', current = x@salt / breadFlour, target = devrecipe$salt2breadflour(x)),
-        #sugar = new(Class = 'equiv', current = sugar / breadFlour),
-        # 'sugar+' = new(Class = 'equiv', current = addedSugar / breadFlour),
-        yeast = new(Class = 'equiv', current = sum(x@yeast) / breadFlour, target = devrecipe$yeast2breadflour(x), margin = 1.1),
-        matcha = new(Class = 'equiv', current = x@matcha / breadFlour, target = devrecipe$matcha2breadflour(x)),
-        beet = new(Class = 'equiv', current = x@beet / breadFlour, target = devrecipe$beet2breadflour(x)),
-        cocoa = new(Class = 'equiv', current = x@cocoa / breadFlour),
-        acai = new(Class = 'equiv', current = x@acai / breadFlour),
-        coffee = new(Class = 'equiv', current = x@coffee / breadFlour)
+        puree = new(Class = 'equiv', current = puree / breadFlr),
+        'water+' = new(Class = 'equiv', current = addedWater / breadFlr, target = devrecipe$addedWater2breadFlr(x), margin = 1.01),
+        gelatin = new(Class = 'equiv', current = x@gelatin / breadFlr),
+        'starch+' = new(Class = 'equiv', current = starch / breadFlr),
+        fat = new(Class = 'equiv', current = fat / breadFlr, target = devrecipe$fat2breadFlr(x), margin = 1.05),
+        sesame = new(Class = 'equiv', current = x@blackSesame / breadFlr, target = devrecipe$blackSesame2breadFlr(x)),
+        # '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / breadFlr, target = devrecipe$eggYolk2breadFlr(x)),
+        '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / breadFlr, target = devrecipe$eggYolk2breadFlr(x)),
+        '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite / breadFlr),
+        'Na\u2082CO\u2083' = new(Class = 'equiv', current = x@Na2CO3 / breadFlr, target = devrecipe$Na2CO3_2breadFlr(x)),
+        'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / breadFlr),
+        bkPwd = new(Class = 'equiv', current = x@bakingPowder / breadFlr, target = devrecipe$bakingPowder2breadFlr(x)),
+        salt = new(Class = 'equiv', current = x@salt / breadFlr, target = devrecipe$salt2breadFlr(x)),
+        #sugar = new(Class = 'equiv', current = sugar / breadFlr),
+        # 'sugar+' = new(Class = 'equiv', current = addedSugar / breadFlr),
+        yeast = new(Class = 'equiv', current = sum(x@yeast) / breadFlr, target = devrecipe$yeast2breadFlr(x), margin = 1.1),
+        matcha = new(Class = 'equiv', current = x@matcha / breadFlr, target = devrecipe$matcha2breadFlr(x)),
+        beet = new(Class = 'equiv', current = x['_beet_pulv$'] / breadFlr, target = devrecipe$beet2breadFlr(x)),
+        cocoa = new(Class = 'equiv', current = x@cocoa / breadFlr),
+        acai = new(Class = 'equiv', current = x['_acai_pulv$'] / breadFlr),
+        coffee = new(Class = 'equiv', current = x@coffee / breadFlr)
       ))
     
   }
   
-  attr(ret, which = 'perGlutenFreeFlr') <- if (glutenFreeFlour & !breadFlour & !pastryFlour & !flour) new(
+  attr(ret, which = 'perGlutenFreeFlr') <- if (gluten0Flr & !breadFlr & !pastryFlr & !flour) new(
     Class = 'per', per = 'Gluten-Free Flour', equiv = list(
-      puree = new(Class = 'equiv', current = puree / glutenFreeFlour),
-      water = new(Class = 'equiv', current = water / glutenFreeFlour, target = devrecipe$addedWater2glutenFreeFlour(x), margin = 1.01),
-      gelatin = new(Class = 'equiv', current = x@gelatin / glutenFreeFlour),
-      'starch+' = new(Class = 'equiv', current = starch / glutenFreeFlour),
-      fat = new(Class = 'equiv', current = fat / glutenFreeFlour, target = devrecipe$fat2glutenFreeFlour(x), margin = 1.05, tol = .01),
-      sesame = new(Class = 'equiv', current = x@blackSesame / glutenFreeFlour, target = devrecipe$blackSesame2glutenFreeFlour(x)),
-      '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / glutenFreeFlour, target = devrecipe$eggYolk2glutenFreeFlour(x)),
-      '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite / glutenFreeFlour),
-      'Na\u2082CO\u2083' = new(Class = 'equiv', current = x@Na2CO3 / glutenFreeFlour, target = devrecipe$Na2CO3_2glutenFreeFlour(x)),
-      'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / glutenFreeFlour),
-      bkPwd = new(Class = 'equiv', current = x@bakingPowder / glutenFreeFlour, target = devrecipe$bakingPowder2glutenFreeFlour(x)),
-      salt = new(Class = 'equiv', current = x@salt / glutenFreeFlour, target = devrecipe$salt2glutenFreeFlour(x)),
-      #sugar = new(Class = 'equiv', current = sugar / glutenFreeFlour),
-      # 'sugar+' = new(Class = 'equiv', current = addedSugar / glutenFreeFlour),
-      yeast = new(Class = 'equiv', current = sum(x@yeast) / glutenFreeFlour, target = devrecipe$yeast2glutenFreeFlour(x), margin = 1.1),
-      matcha = new(Class = 'equiv', current = x@matcha / glutenFreeFlour),
-      cocoa = new(Class = 'equiv', current = x@cocoa / glutenFreeFlour),
-      acai = new(Class = 'equiv', current = x@acai / glutenFreeFlour),
-      coffee = new(Class = 'equiv', current = x@coffee / glutenFreeFlour)
+      puree = new(Class = 'equiv', current = puree / gluten0Flr),
+      water = new(Class = 'equiv', current = water / gluten0Flr, target = devrecipe$addedWater2gluten0Flr(x), margin = 1.01),
+      gelatin = new(Class = 'equiv', current = x@gelatin / gluten0Flr),
+      'starch+' = new(Class = 'equiv', current = starch / gluten0Flr),
+      fat = new(Class = 'equiv', current = fat / gluten0Flr, target = devrecipe$fat2gluten0Flr(x), margin = 1.05, tol = .01),
+      sesame = new(Class = 'equiv', current = x@blackSesame / gluten0Flr, target = devrecipe$blackSesame2gluten0Flr(x)),
+      '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk / gluten0Flr, target = devrecipe$eggYolk2gluten0Flr(x)),
+      '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite / gluten0Flr),
+      'Na\u2082CO\u2083' = new(Class = 'equiv', current = x@Na2CO3 / gluten0Flr, target = devrecipe$Na2CO3_2gluten0Flr(x)),
+      'NaHCO\u2083' = new(Class = 'equiv', current = x@NaHCO3 / gluten0Flr),
+      bkPwd = new(Class = 'equiv', current = x@bakingPowder / gluten0Flr, target = devrecipe$bakingPowder2gluten0Flr(x)),
+      salt = new(Class = 'equiv', current = x@salt / gluten0Flr, target = devrecipe$salt2gluten0Flr(x)),
+      #sugar = new(Class = 'equiv', current = sugar / gluten0Flr),
+      # 'sugar+' = new(Class = 'equiv', current = addedSugar / gluten0Flr),
+      yeast = new(Class = 'equiv', current = sum(x@yeast) / gluten0Flr, target = devrecipe$yeast2gluten0Flr(x), margin = 1.1),
+      matcha = new(Class = 'equiv', current = x@matcha / gluten0Flr),
+      cocoa = new(Class = 'equiv', current = x@cocoa / gluten0Flr),
+      acai = new(Class = 'equiv', current = x['_acai_pulv$'] / gluten0Flr),
+      coffee = new(Class = 'equiv', current = x@coffee / gluten0Flr)
     ))
   
-  attr(ret, which = 'perRiceFlr') <- if (riceFlour) new(
+  attr(ret, which = 'perRiceFlr') <- if (riceFlr) new(
     Class = 'per', per = 'Glutinous+Rice\U1f33e Flour', equiv = list(
-      water = new(Class = 'equiv', current = water / riceFlour, target = devrecipe$addedWater2riceflour(x)),
-      # rice = new(Class = 'equiv', current = x@riceFlour / riceFlour, target = devrecipe$rice2riceflour(x)),
-      glutRice = new(Class = 'equiv', current = x@glutinousRiceFlour / riceFlour, target = devrecipe$glutinousRice2riceflour(x)),
-      gelatin = new(Class = 'equiv', current = x@gelatin / riceFlour),
-      fat = new(Class = 'equiv', current = fat / riceFlour, target = devrecipe$fat2riceflour(x), tol = .01),
-      sesame = new(Class = 'equiv', current = x@blackSesame / riceFlour),
-      #sugar = new(Class = 'equiv', current = sugar / riceFlour),
-      'starch+' = new(Class = 'equiv', current = starch / riceFlour, target = devrecipe$starch2riceflour(x)),
-      matcha = new(Class = 'equiv', current = x@matcha / riceFlour, target = devrecipe$matcha2riceflour(x)),
-      cocoa = new(Class = 'equiv', current = x@cocoa / riceFlour),
-      acai = new(Class = 'equiv', current = x@acai / riceFlour),
-      coffee = new(Class = 'equiv', current = x@coffee / riceFlour)
+      water = new(Class = 'equiv', current = water / riceFlr, target = devrecipe$addedWater2riceflour(x)),
+      glutRice = new(Class = 'equiv', current = x['_glutinousRiceFlr$'] / riceFlr, target = devrecipe$glutinousRice2riceflour(x)),
+      gelatin = new(Class = 'equiv', current = x@gelatin / riceFlr),
+      fat = new(Class = 'equiv', current = fat / riceFlr, target = devrecipe$fat2riceflour(x), tol = .01),
+      sesame = new(Class = 'equiv', current = x@blackSesame / riceFlr),
+      #sugar = new(Class = 'equiv', current = sugar / riceFlr),
+      'starch+' = new(Class = 'equiv', current = starch / riceFlr, target = devrecipe$starch2riceflour(x)),
+      matcha = new(Class = 'equiv', current = x@matcha / riceFlr, target = devrecipe$matcha2riceflour(x)),
+      cocoa = new(Class = 'equiv', current = x@cocoa / riceFlr),
+      acai = new(Class = 'equiv', current = x['_acai_pulv$'] / riceFlr),
+      coffee = new(Class = 'equiv', current = x@coffee / riceFlr)
     ))
   
   attr(ret, which = 'perCocoa') <- if (length(x@cocoa) && !inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
     Class = 'per', per = 'Alkalized Cocoa', equiv = list(
       alcohol = new(Class = 'equiv', current = alcohol / x@cocoa, target = devrecipe$alcohol2cocoa(x)),
-      drymilk = new(Class = 'equiv', current = x@drymilk / x@cocoa, target = devrecipe$drymilk2cocoa(x)),
+      drymilk = new(Class = 'equiv', current = sum(x['_drymilk$']) / x@cocoa, target = devrecipe$drymilk2cocoa(x)),
       coconut = new(Class = 'equiv', current = x@coconut / x@cocoa),
       sugar = if (TRUE | (sugar > addedSugar)) new(Class = 'equiv', current = sugar / x@cocoa) else new(Class = 'equiv'),
       'sugar+' = new(Class = 'equiv', current = addedSugar / x@cocoa, target = devrecipe$addedSugar2cocoa(x)),
@@ -450,19 +472,19 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   attr(ret, which = 'perTea') <- if (length(x@tea)) new(
     Class = 'per', per = 'Tea\U1f343', equiv = list(
-      drymilk = new(Class = 'equiv', current = x@drymilk / x@tea),
+      drymilk = new(Class = 'equiv', current = sum(x['_drymilk$']) / x@tea),
       coffee = new(Class = 'equiv', current = x@coffee / x@tea),
       cocoa = new(Class = 'equiv', current = x@cocoa / x@tea)
     )
   )
   
-  attr(ret, which = 'perCreamCheese') <- if (length(x@creamCheese)) new(
+  attr(ret, which = 'perCreamCheese') <- if (length(x['_creamCheese$'])) new(
     Class = 'per', per = 'Cream Cheese', equiv = list(
-      'water+' = new(Class = 'equiv', current = addedWater/sum(x@creamCheese), target = devrecipe$addedWater2creamcheese(x)),
-      fiber = new(Class = 'equiv', current = fiber/sum(x@creamCheese)), 
-      'starch+' = new(Class = 'equiv', current = starch/sum(x@creamCheese)), 
-      '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk/sum(x@creamCheese)),
-      '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite/sum(x@creamCheese))
+      'water+' = new(Class = 'equiv', current = addedWater/sum(x['_creamCheese$']), target = devrecipe$addedWater2creamcheese(x)),
+      fiber = new(Class = 'equiv', current = fiber/sum(x['_creamCheese$'])), 
+      'starch+' = new(Class = 'equiv', current = starch/sum(x['_creamCheese$'])), 
+      '\U0001f95ayolk' = new(Class = 'equiv', current = x@eggYolk/sum(x['_creamCheese$'])),
+      '\U0001f95awhite' = new(Class = 'equiv', current = x@eggWhite/sum(x['_creamCheese$']))
     ))
   
   attr(ret, which = 'info') <- info
@@ -478,4 +500,12 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
 })
 
+
+
+setOldClass(Classes = 'perlist') # `'perlist'` is S3
+setAs(from = 'recipe', to = 'perlist', def = \(from) {
+  # a large part of 
+  # setAs(from = 'recipe', to = 'nutrition')
+  # should be here!!!!
+})
 

@@ -2,8 +2,8 @@
 
 setClass(Class = 'liangpi', contains = 'recipe', prototype = prototype(
   class2 = '\u51c9\u76ae',
-  pastryFlour = c(Wegmans_pastry = 350),
-  starch = c(ManSang_wheat = 150),
+  flour = c(Wegmans_pastryFlr = 350),
+  starch = c(ManSang_wheat_starch = 150),
   water = 800
 ))
 
@@ -17,8 +17,8 @@ liangpi <- \() new(
 PinNuo_liangPi <- \() new(
   Class = 'recipe', flavor = '\u51c9\u76ae', 
   pino = 'FrpmqMfZ7CM',
-  flour = 350,
-  starch = c(ManSang_wheat = 150),
+  flour = c(KingArthur_allPurposeFlr = 350),
+  starch = c(ManSang_wheat_starch = 150),
   water = 800)
 
 # liangpi sauce
@@ -28,7 +28,7 @@ ricePi <- \() new(
   Class = 'recipe',
   class2 = '\u7c73\u76ae',
   youtube = 'cditsCOMQ4I', # 1kg dry rice + 500g boiling water
-  riceFlour = 454,
+  flour = c(Erawan_riceFlr = 454),
   water = 300, # experiment! Look at PinNuo's rice paste texture!!
   boilingWater = 454/2
 )

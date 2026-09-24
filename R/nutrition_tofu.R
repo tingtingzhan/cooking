@@ -7,7 +7,7 @@ tofu <- \() new(
     Heinz_whiteVinegar = 7
   ),
   iceWater = 33,
-  waterLost = 100, # in coagulation
+  # waterLost = 100, # in coagulation (??)
   tool = list(JoyoungDJ13U(
     treatment = c(
       'Soak dry soybeans + room-temperature water'

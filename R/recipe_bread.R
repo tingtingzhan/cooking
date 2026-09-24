@@ -44,14 +44,12 @@
 #' @export
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   class2 = 'Bread\U1f35e', # '\u9762\u5305',
-  breadFlour = c(KingArthur_bread = 500), 
+  flour = c(KingArthur_breadFlr = 500), 
   #eggYolk_pc = 1, # was. too difficult to store the egg white
   egg_pc = 1,
   yeast_Tbsp = 1,
   salt_tsp = 1/4,
-  butter = 40,
-  
-  waterLost = 50, # confirmed with beet_bread() (water = 300, 2023-01-05)
+  dairy = c(Kerrygold_butter = 40),
   
   portion = c(
     'Philips cupcake; 250\u00b0F/17min' = 35,
@@ -72,11 +70,11 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
     
   ),
   
-  note = c(
-    'Trudeau loaf pan (7.5x3.75, 8.5x4.5)',
-    'Emile Henry loaf pan (8x4, 9x5)',
-    'Hokkaido toast shaping is not as good as braiding!' 
-  ),
+  #note (legacy) = c(
+  #  'Trudeau loaf pan (7.5x3.75, 8.5x4.5)',
+  #  'Emile Henry loaf pan (8x4, 9x5)',
+  #  'Hokkaido toast shaping is not as good as braiding!' 
+  #),
   
   # instruction (legacy) = c(
   #  'Brush ceramic and cast aluminum (no need for silicone) baking dish with extra butter (melted)',
@@ -97,7 +95,9 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
     
     RobamCT763(
       program = 'Steam Bake', 
-      fahrenheit = 250, minute = 30
+      fahrenheit = 250, 
+      minute = 30,
+      waterLost = 50 # confirmed with beet_bread() (water = 300, 2023-01-05)
     )
 )))
 
@@ -106,21 +106,23 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
 bread <- \() new(
   Class = 'bread', 
   water = 300,  
-  drymilk = 30, 
+  dairy = c(Carnation_drymilk = 30), 
   sugar = 40) # theoretical model
 
 #' @rdname bread-class
 #' @export
 beet_bread <- \() new(
   Class = 'bread', bread(), 
-  beet_Tbsp = 4, drymilk = 31, sugar = 35, 
+  misc_Tbsp = c(Wegmans_beet_pulv = 4), 
+  dairy = c(Carnation_drymilk = 31), sugar = 35, 
   review = 'retry with extra water for beet!!')
 
 #' @rdname bread-class
 #' @export
 matcha_bread <- \() new(
   Class = 'bread', bread(), 
-  matcha_tsp = 14, drymilk = 35, sugar = 73, 
+  matcha_tsp = 14, 
+  dairy = c(Carnation_drymilk = 35), sugar = 73, 
   # 47g extra water, according to bao() model, why it's too wet??
   # --- King Arthur bread flour has less water absorbancy than Wegmans' bread flour!!!!!
   # or it's me lost the judgement of `too wet`??
@@ -133,7 +135,9 @@ matcha_bread <- \() new(
 #' @export
 pumpkin_bread <- \() new(
   Class = 'bread', 
-  pumpkin = 350, drymilk = 34, brownSugar = 25, 
+  puree = c(Libbys_pumpkin = 350), 
+  dairy = c(Carnation_drymilk = 34), 
+  sugar = c(Domino_darkBrown = 25), 
   review = 'try')
 
 
@@ -144,7 +148,7 @@ cocoa_bread <- \() new(
   Class = 'bread', bread(),
   #cocoa_tsp = 16, # 4%
   cocoa_tsp = c(KingArthur_Bensdorp = 20), # 5%, as in bao(), tastes nice!
-  drymilk = 33, sugar = 40, 
+  dairy = c(Carnation_drymilk = 33), sugar = 40, 
   review = 're-try with dutch cocoa') # more water, less dry milk
 
 
@@ -155,7 +159,9 @@ cocoa_bread <- \() new(
 #' @rdname bread-class
 #' @export
 tomato_bread <- \() new(
-  Class = 'bread', tomato = 400, drymilk = 33, sugar = 40, 
+  Class = 'bread', 
+  puree = c(WegmansOrganic_tomato = 400), 
+  dairy = c(Carnation_drymilk = 33), sugar = 40, 
   review = 'try')
 
 
@@ -163,7 +169,8 @@ tomato_bread <- \() new(
 #' @export
 coffee_bread <- \() new(
   Class = 'bread', bread(), 
-  coffee_tsp = 11, drymilk = 30, sugar = 40, 
+  coffee_tsp = 11, 
+  dairy = c(Carnation_drymilk = 30), sugar = 40, 
   water80 = 100, water = 200,
   pros = 'Ethanol from fermentation, tastes like tiramisu!')
 
@@ -178,7 +185,9 @@ rootBeer_bread <- \() new(
 #' @rdname bread-class
 #' @export
 pineapple_bread <- \() new(
-  Class = 'bread', pineapple = 337, drymilk = 32, 
+  Class = 'bread', 
+  puree = c(Dole_pineapple = 337), 
+  dairy = c(Carnation_drymilk = 32), 
   review = 'try')
 
 
@@ -186,18 +195,19 @@ pineapple_bread <- \() new(
 #' @export
 ginger_bread <- \() new(
   Class = 'bread', bread(), 
-  spice_tsp = c(SimplyOrganic_ginger = 2), drymilk = 32, sugar = 70, 
+  spice_tsp = c(SimplyOrganic_ginger = 2), 
+  dairy = c(Carnation_drymilk = 32), sugar = 70, 
   review = 'try')
 
 
 # old recipes: per 180g Libby's pumpkin puree
 
-#  applesauce = 165, # 177g slightly too wet
+#  puree = c(Motts_applesauce = 165), # 177g slightly too wet
 #  puree = c(UltraOrganics_mango = 195), # 200g a little too wet (but probably the best wetness for Japannese toast). 185g too dry.
 #  puree = c(Kirkland_blueberry = 175) # review = c('Effie\'s Signature'))
-#  strawberry = 175 #  review = c('Effie\'s Signature'))
+#  puree = c(Kirkland_strawberry = 175) #  review = c('Effie\'s Signature'))
 #  puree = c(Kirkland_peach = 175) # review = c('Nice!'))
-#  fruit = c(FlavorFarmer_whitePeach = 160), sugar = 20, review = c('Nice!'))
+#  puree = c(FlavorFarmer_whitePeach = 160), sugar = 20, review = c('Nice!'))
 #  330g flour, acai = 40, review = 'Effie\'s Signature')
 
 

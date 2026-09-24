@@ -7,7 +7,7 @@
 #' @examples
 #' caffeLatte()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  hotdrink(caffeLatte),
 #'  cooking:::Starbucks_caffeLatte(),
 #'  cooking:::Starbucks_coffeeFrappuccino_bottle()
@@ -16,7 +16,7 @@
 #' @name caffeLatte-class
 #' @export
 setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
-  drymilk = c(Carnation = 40),
+  dairy = c(Carnation_drymilk = 40),
   coffee_tsp = c(4*2), # perfect, do not add more!
   cocoa_tsp = c(KingArthur_Bensdorp = 1*2),
   sugar_tsp = 1

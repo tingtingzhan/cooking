@@ -2,7 +2,7 @@
 #' @rdname raw_recipe
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  cheesecake(),
 #'  subtract(cooking:::PreppyKitchen_cheesecake, sugar = 125),
 #'  subtract(cooking:::Junior_original, sugar = 12),
@@ -17,26 +17,26 @@
 Junior_cappuccino_cheesecake <- \() new(
   Class = 'recipe', 
   flavor = 'Cappuccino Cheesecake',
-  creamCheese_brick = c(Philadelphia = 4),
+  dairy_brick = c(Philadelphia_creamCheese = 4),
   coffee_Tbsp = 1,
   boilingWater = 15,
   sugar_cup = c(Domino_granulated = 1+2/3),
-  starch_cup = c(Wegmans_corn = 1/3),
+  starch_cup = c(Wegmans_corn_starch = 1/3),
   vanilla_Tbsp = 1,
   egg_pc = 2/3.25*4, # 2 extra-large eggs  https://en.wikipedia.org/wiki/Chicken_egg_sizes
-  heavyCream_cup = 3/4,
+  dairy_cup = c(Wegmans_heavyCream = 3/4),
   cocoa_Tbsp = 1,
   juniorscheesecakecookbook = 42L)
 
 
 PreppyKitchen_cheesecake <- \() new(
   Class = 'recipe', flavor = 'Cheesecake',
-  creamCheese_brick = c(Philadelphia = 3),
+  dairy_brick = c(Philadelphia_creamCheese = 3),
   sugar = 200,
   salt_tsp = 1/4,
   vanilla_tsp = 2,
   egg_pc = 3,
-  sourCream_cup = 1/2,
+  dairy_cup = c(Daisy_sourCream = 1/2),
   preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
 
 
@@ -46,12 +46,12 @@ Junior_cookbook <- \() new(
   Class = 'recipe', 
   juniorscheesecakecookbook = 34L,
   flavor = 'Original',
-  creamCheese_brick = c(Philadelphia = 4),
+  dairy_brick = c(Philadelphia_creamCheese = 4),
   sugar_cup = c(Domino_granulated = 1+2/3), 
-  starch_cup = c(Wegmans_corn = 1/4),
+  starch_cup = c(Wegmans_corn_starch = 1/4),
   vanilla_Tbsp = 1,
   egg_pc = 2,
-  heavyCream_cup = c(Byrne = 3/4),
+  dairy_cup = c(Byrne_heavyCream = 3/4),
   youtube = 'dUtq2hETohc' # see 1:00, brand of heavy cream
 )
 
@@ -74,12 +74,12 @@ PreppyKitchen_chocolate_cheesecake <- \() new(
   # 1 cup bittersweet chocolate ???
   # 3/4 cup semisweet chocolate ???
   # 1 pinch salt ???
-  creamCheese_brick = c(Philadelphia = 3),
-  flour_Tbsp = 3,
+  dairy_brick = c(Philadelphia_creamCheese = 3),
+  flour_Tbsp = c(KingArthur_allPurposeFlr = 3),
   sugar = 200,
   vanilla_Tbsp = 1,
   egg_pc = 4,
-  sourCream_cup = 1/4,
+  dairy_cup = c(Daisy_sourCream = 1/4),
   preppykitchen = c('b5Hpv2FE22Q' = 'chocolate-cheesecake'))
 
 

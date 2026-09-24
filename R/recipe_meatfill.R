@@ -41,7 +41,8 @@ setClass(Class = 'porkfill', contains = 'recipe', prototype = prototype(
 porkfill <- \() new(
   Class = 'porkfill',
   pork = c(tenderloin = 500, belly = 500), # tiny too fat
-  rattanPepperOil_tsp = 1, sesameOil_Tbsp = 1,
+  oil_tsp = c(YaoMaZi_rattanPepper_oil = 1), 
+  oil_Tbsp = c(Kadoya_sesame_oil = 1),
   spice_tsp = c(
     McCormick_whitePepper = 1,  
     SimplyOrganic_ginger = 1,
@@ -56,7 +57,7 @@ porkfill <- \() new(
     #LeaPerrins_Worcestershire = 30
     
   ),
-  starch_Tbsp = c(Wegmans_corn = 2.5),
+  starch_Tbsp = c(Wegmans_corn_starch = 2.5),
   water = 100,
   review = 'perfect!!')
 
@@ -77,9 +78,9 @@ Jenny_chickenfill <- \() new(
   ),
   salt_tsp = 1/2,
   #Chicken broth 3Tbsp / Bouillon de poulet 3Tbsp
-  starch_Tbsp = c(Wegmans_corn = 1),
+  starch_Tbsp = c(Wegmans_corn_starch = 1),
   egg_pc = 1,
-  sesameOil_tsp = 2*3
+  oil_tsp = c(Kadoya_sesame_oil = 2*3)
 )
 
 
@@ -113,7 +114,7 @@ xiaogaojie_lambfill <- \() new(
   ),
   #花椒粉_tsp = 1/8,
   eggWhite_pc = 1,
-  sesameOil_tsp = 1
+  oil_tsp = c(Kadoya_sesame_oil = 1)
 )
 
 
@@ -123,7 +124,7 @@ xiaogaojie_lambfill <- \() new(
 salmonfill <- \() new(
   Class = 'recipe',
   seafood = c(salmonAtlantic = 1000),
-  starch_Tbsp = c(Wegmans_corn = 2),
+  starch_Tbsp = c(Wegmans_corn_starch = 2),
   sauce = c(
     mizkan_brownRiceVinegar = 40,
     Kikkoman_soyLite = 40
@@ -133,8 +134,8 @@ salmonfill <- \() new(
     McCormick_whitePepper = 1/2,
     SimplyOrganic_ginger = 1/4
   ),
-  sesameOil_Tbsp = 1,
-  rattanPepperOil_tsp = 1/2,
+  oil_Tbsp = c(Kadoya_sesame_oil = 1),
+  oil_tsp = c(YaoMaZi_rattanPepper_oil = 1/2),
   review = c(
     'Not enough gelatin. Texture not right',
     'Effie loves though!'

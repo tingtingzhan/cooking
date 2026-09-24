@@ -5,7 +5,7 @@
 #' @export
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
   #class2 = '\u901f\u6eb6\u7c89',
-  drymilk = c(Carnation = 40),
+  dairy = c(Carnation_drymilk = 40),
   coffee_tsp = c(2.5*2),
   cocoa_tsp = c(KingArthur_Bensdorp = .375*2)
 ))
@@ -31,7 +31,7 @@ tiramisuMix_Baileys <- \() new(
 tiramisuMix_Kahlua <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Kahlua_coffee = 20), 
-  heavyCream = 10,
+  dairy = c(Wegmans_heavyCream = 10),
   review = 'try')
 
 
@@ -40,7 +40,7 @@ tiramisuMix_Kahlua <- \() new(
 tiramisuMix_FratelliVincenzi <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(FratelliVincenzi_espresso = 17), 
-  heavyCream = 10,
+  dairy = c(Wegmans_heavyCream = 10),
   sugar_tsp = 2,
   review = 'try')
 
@@ -49,7 +49,7 @@ tiramisuMix_FratelliVincenzi <- \() new(
 tiramisuMix_CaffeBorghetti <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(CaffeBorghetti = 20), 
-  heavyCream = 10,
+  dairy = c(Wegmans_heavyCream = 10),
   sugar_tsp = 2,
   review = 'try')
 
@@ -58,7 +58,7 @@ tiramisuMix_CaffeBorghetti <- \() new(
 tiramisuMix_Grind <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Grind_espresso = 17), 
-  heavyCream = 10,
+  dairy = c(Wegmans_heavyCream = 10),
   sugar_tsp = 2,
   pros = 'Old base: I love!!', date = as.Date('2024-05-18'))
 
@@ -67,7 +67,7 @@ tiramisuMix_Grind <- \() new(
 tiramisuMix_Sabroso <- \() new(
   Class = 'tiramisuMix', 
   liqueur = c(Sabroso_coffee = 20),
-  heavyCream = 10,
+  dairy = c(Wegmans_heavyCream = 10),
   sugar_tsp = 2,
   pros = 'Old base: I like', date = as.Date('2024-05-18'))
 
@@ -76,7 +76,7 @@ tiramisuMix_Sabroso <- \() new(
 tiramisuMix_CafeGranita <- \() new(
   Class = 'tiramisuMix',
   liqueur = c(CafeGranita_coffee = 23),
-  heavyCream = 12,
+  dairy = c(Wegmans_heavyCream = 12),
   sugar_tsp = 2,
   review = 'try')
 
@@ -84,7 +84,7 @@ tiramisuMix_CafeGranita <- \() new(
 tiramisuMix_Kikisi <- \() new(
   Class = 'tiramisuMix',
   liqueur = c(Kikisi_coffee = 25),
-  heavyCream = 12,
+  dairy = c(Wegmans_heavyCream = 12),
   sugar_tsp = 2,
   review = 'try'
 )

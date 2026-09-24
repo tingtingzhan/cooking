@@ -21,7 +21,7 @@ Lori_muffin()
 }
 \examples{
 #muffin()
-diagnose(
+nutritionlist(
  subtract(Brody_muffin, sugar = 237),
  subtract(Introvert_muffin, sugar = 50),
  subtract(CulinaryHill_muffin, sugar = 155),

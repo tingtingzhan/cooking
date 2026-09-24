@@ -33,7 +33,7 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
     SimplyOrganic_ginger = .5,
     SimplyOrganic_coriander = .25
   ), 
-  starch = c(sweetPotato = 40),
+  starch = c(sweetPotato_starch = 40),
   sauce_tsp = c(LeaPerrins_Worcestershire = 3),
   egg_pc = 4, 
   water = 100, 
@@ -47,9 +47,11 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
   tool = list(RobamCT763(
     program = 'Steam', fahrenheit = 250, minute = 17,
     cooling = 'Pour and level whisked egg yolk and steam for another 3 min'
-  )),
-  note = c('One (1) recipe fits in 7-cup food processor',
-           'Do NOT reduce water! Water is expelled during steaming if batter is too dry.')
+  ))#,
+  #note (legacy) = c(
+  #  'One (1) recipe fits in 7-cup food processor',
+  #  'Do NOT reduce water! Water is expelled during steaming if batter is too dry.'
+  #)
 ))
 
 

@@ -8,7 +8,7 @@
 #' @export
 setClass(Class = 'crepeTientsin', contains = 'recipe', prototype = prototype(
   class2 = '\u714e\u997c\u9983\u5b50',
-  breadFlour = 150,
+  flour = c(Wegmans_breadFlr = 150),
   mungbean = 100,
   water = 400))
 

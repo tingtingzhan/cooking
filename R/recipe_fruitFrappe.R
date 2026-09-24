@@ -9,8 +9,10 @@ setClass(Class = 'fruitFrappe', contains = 'recipe', prototype = prototype(
 # what I am actually having
 strawberry_frappe <- \() new(
   Class = 'fruitFrappe',
-  strawberry = c(Kirkland_strawberry = 200), # to confirm
-  banana = 75, # to confirm
+  puree = c(
+    Kirkland_strawberry = 200, # to confirm
+    banana = 75 # to confirm
+  ),
   homemade = c(soymilk = 225), # to confirm
   review = 'to confirm'
 )
@@ -18,10 +20,10 @@ strawberry_frappe <- \() new(
 
 strawberry_frappe0 <- \() new(
   Class = 'fruitFrappe',
-  strawberry = c(Kirkland_strawberry = 275), # yes, cannot pack any tighter!!
+  puree = c(Kirkland_strawberry = 275), # yes, cannot pack any tighter!!
   iceWater = 225, # yes, need that much..
-  #drymilk = c(Carnation = 25, Nido_drymilk = 15)
-  drymilk = 30, # before I go to Walmart again..
+  #dairy = c(Carnation_drymilk = 25, Nido_drymilk = 15)
+  dairy = c(Carnation_drymilk = 30), # before I go to Walmart again..
   cons = c(
     'needs Vitamix to break strawberry seeds',
     'real strawberry quite sour. must add sugar'

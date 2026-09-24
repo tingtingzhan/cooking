@@ -16,7 +16,7 @@
 #' @export
 setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
   class2 = 'Froyo',
-  yogurt = c(Nancys = 680*2), # 2x jar
+  dairy = c(Nancys_yogurt = 680*2), # 2x jar
   iceWater = 200#, # to confirm
   #instruction (legacy) = c(
   #  'Mix everything with a spatula',
@@ -42,7 +42,7 @@ setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
 #' @export
 Bourbon_froyo <- \() new(
   Class = 'froyo', flavor = 'Bourbon\u67ab\u7cd6\u6d46',
-  syrup = c(Stonewall_Bourbon = 70), # 9% sugar content
+  syrup = c(Stonewall_Bourbon_syrup = 70), # 9% sugar content
   review = c('try')
 )
 
@@ -55,8 +55,8 @@ Bourbon_froyo <- \() new(
 #' @export
 pumpkin_froyo <- \() new(
   Class = 'froyo',
-  pumpkin = 400,
-  brownSugar = 55,
+  puree = c(Libbys_pumpkin = 400),
+  sugar = c(Domino_darkBrown = 55),
   review = c('try again; enough pumpkin flavor?'))
 
 
@@ -83,7 +83,7 @@ matcha_froyo <- \() new(
 emma_froyo <- \() new(
   Class = 'recipe', author = 'Emma\'s Goodies', flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',
-  heavyCream_cup = 1.75,
-  yogurtGreek = 170, 
+  dairy_cup = c(Wegmans_heavyCream = 1.75),
+  dairy = c(FageTotal0_yogurtGreek = 170), 
   sugar = 130)
 

@@ -75,11 +75,11 @@
 #' # I don't like!!
 #' Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  pumpkin_cheesecake(),
 #'  subtract(cooking:::Junior_pumpkin_cheesecake, sugar = 170),
-#'  subtract(cooking:::Natasha_pumpkin_cheesecake, brownSugar = 230),
-#'  subtract(cooking:::PreppyKitchen_pumpkin_cheesecake, sugar = 140),
+#'  subtract(cooking:::Natasha_pumpkin_cheesecake, sugar = 230),
+#'  subtract(cooking:::PreppyKitchen_pumpkin_cheesecake, sugar = c(140, 0)),
 #'  subtract(cooking:::CheesecakeFactory_pumpkin, sugar = 12)
 #' )
 #' @name cheesecake-class
@@ -87,14 +87,14 @@
 setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
   #class2 = '\u91cd\u4e73\u916a\u86cb\u7cd5',
   class2 = 'NY Cheesecake',
-  creamCheese_brick = c(
-    #PhiladelphiaNeufchatel = 4 # fat 15.5%, sodium 3.2-per-mille
-    Nancys = 1, PhiladelphiaNeufchatel = 3 # fat 17.8%, sodium 2.6-per-mille
-    #Nancys = 2, PhiladelphiaNeufchatel = 2 # fat 20.2%, sodium 2-per-mille
-    #Nancys = 4 # fat 25%, sodium 1.1-per-mille
-    #Philadelphia = 4 # fat 22.7%, sodium 2.8-per-mille
+  dairy_brick = c(
+    #PhiladelphiaNeufchatel_creamCheese = 4 # fat 15.5%, sodium 3.2-per-mille
+    Nancys_creamCheese = 1, PhiladelphiaNeufchatel_creamCheese = 3 # fat 17.8%, sodium 2.6-per-mille
+    #Nancys_creamCheese = 2, PhiladelphiaNeufchatel_creamCheese = 2 # fat 20.2%, sodium 2-per-mille
+    #Nancys_creamCheese = 4 # fat 25%, sodium 1.1-per-mille
+    #Philadelphia_creamCheese = 4 # fat 22.7%, sodium 2.8-per-mille
   ),
-  starch_cup = c(Wegmans_corn = 1/4),
+  starch_cup = c(Wegmans_corn_starch = 1/4),
   egg_pc = 2,
   water = 100, 
   portion = c(
@@ -133,20 +133,20 @@ cheesecake <- \() new(
 #' @export
 blueberry_cheesecake <- \() new(
   Class = 'cheesecake',
-  syrup = c(Stonewall_blueberry = 250), 
+  syrup = c(Stonewall_blueberry_syrup = 250), 
   cons = 'color not pretty') # tested 100% Nancy's
 
 #' @rdname cheesecake-class
 #' @export
 maple_cheesecake <- \() new(
   Class = 'cheesecake',
-  syrup = c(Stonewall_maple = 160), pros = 'Effie\'s Signature') # tested 100% Nancy's
+  syrup = c(Stonewall_maple_syrup = 160), pros = 'Effie\'s Signature') # tested 100% Nancy's
 
 #' @rdname cheesecake-class
 #' @export
 raspberry_cheesecake <- \() new(
   Class = 'cheesecake',
-  syrup = c(Stonewall_raspberry = 250),
+  syrup = c(Stonewall_raspberry_syrup = 250),
   pros = c('Effie loves (100% Neufchatel)',
            'Do not reduce raspberry syrup (do not want to lose raspberry flavor)'))
 
@@ -154,8 +154,8 @@ raspberry_cheesecake <- \() new(
 #' @export
 ryeWhisky_cheesecake <- \() new(
   Class = 'cheesecake',
-  starch = c(Argo_corn = 50), starch_cup = numeric(),
-  syrup = c(Runamok_ryeWhisky = 180), 
+  starch = c(Argo_corn_starch = 50), starch_cup = numeric(),
+  syrup = c(Runamok_ryeWhisky_syrup = 180), 
   water = 200,
   #date = as.Date('2023-12-01'),
   pros = 'try again')
@@ -164,7 +164,7 @@ ryeWhisky_cheesecake <- \() new(
 
 ryeWhisky_cheesecake_LowWater <- \() new(
   Class = 'cheesecake',
-  syrup = c(Runamok_ryeWhisky = 160), 
+  syrup = c(Runamok_ryeWhisky_syrup = 160), 
   date = as.Date('2023-12-01'),
   pros = 'Xu Chang (100% Neufchatel)')
 
@@ -172,19 +172,19 @@ ryeWhisky_cheesecake_LowWater <- \() new(
 #' @export
 rum_cheesecake <- \() new(
   Class = 'cheesecake',
-  syrup = c(Runamok_rum = 150), review = 'try')
+  syrup = c(Runamok_rum_syrup = 150), review = 'try')
 
 #' @rdname cheesecake-class
 #' @export
 appleBrandy_cheesecake <- \() new(
   Class = 'cheesecake', #flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
-  syrup = c(Runamok_appleBrandy = 160), review = 'try')
+  syrup = c(Runamok_appleBrandy_syrup = 160), review = 'try')
 
 #' @rdname cheesecake-class
 #' @export
 Bourbon_cheesecake_Crown <- \() new(
   Class = 'cheesecake',
-  syrup = c(Crown_Bourbon = 200), # do NOT reduce syrup!
+  syrup = c(Crown_Bourbon_syrup = 200), # do NOT reduce syrup!
   water = 90, 
   # 22min too wet!! added 15min
   review = 'try 30min')
@@ -213,8 +213,8 @@ tiramisu_cheesecake <- \() new(
 pumpkin_cheesecake <- \() new(
   Class = 'cheesecake',
   water = numeric(), # remove default water!!
-  starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
-  pumpkin = 500, brownSugar = 150, 
+  starch_tsp = c(Argo_corn_starch = 17), starch_cup = numeric(),
+  puree = c(Libbys_pumpkin = 500), sugar = c(Domino_darkBrown = 150), 
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.75),
   date = as.Date('2024-12-09'), 
   pros = c('perfect texture', 'perfect flavor'))
@@ -227,8 +227,8 @@ mango_cheesecake <- \() 'try!!!'
 tomato_cheesecake <- \() new(
   Class = 'cheesecake',
   water = numeric(), 
-  starch_tsp = c(Argo_corn = 17), starch_cup = numeric(),
-  tomato = 500, sugar = 150, 
+  starch_tsp = c(Argo_corn_starch = 17), starch_cup = numeric(),
+  puree = c(WegmansOrganic_tomato = 500), sugar = 150, 
   review = 'try!!')
 
 
@@ -238,7 +238,7 @@ tomato_cheesecake <- \() new(
 pineapple_cheesecake <- \() new(
   Class = 'cheesecake',
   water = numeric(),
-  starch_cup = c(Wegmans_corn = 1/3),
+  starch_cup = c(Wegmans_corn_starch = 1/3),
   homemade = c(pineapple_evap = 500), 
   sugar = 35,
   date = as.Date('2024-12-15'),
@@ -313,6 +313,6 @@ Kahlua_cheesecake <- \() new(
 #' @export
 Bourbon_cheesecake_Stonewall <- \() new(
   Class = 'cheesecake', flavor = 'Bourbon\u67ab\u7cd6\u6d46(Stonewall)',
-  syrup = c(Stonewall_Bourbon = 160),
+  syrup = c(Stonewall_Bourbon_syrup = 160),
   review = 'try')
 

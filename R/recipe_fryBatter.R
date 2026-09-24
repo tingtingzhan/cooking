@@ -2,9 +2,9 @@
 
 if (FALSE) {
   new(Class = 'recipe', 
-      pastryFlour = 20,
-      starch = c(Wegmans_corn = 20, sweetPotato = 20),
-      riceFlour = 10,
+      flour = c(Erawan_riceFlr = 10,
+                Wegmans_pastryFlr = 20),
+      starch = c(Wegmans_corn_starch = 20, sweetPotato_starch = 20),
       NaHCO3 = 1,
       # cui zha fen = 10,
       youtube = '5N_22fvaK9Q'
@@ -12,10 +12,10 @@ if (FALSE) {
   
   
   new(Class = 'recipe',
-      # pastryFlour = 150,
-      #starch = c(Wegmans_corn = 75),
-      pastryFlour = 75,
-      starch = c(Wegmans_corn = 75, sweetPotato = 75),
+      # flour = c(Wegmans_pastryFlr = 150),
+      #starch = c(Wegmans_corn_starch = 75),
+      flour = c(Wegmans_pastryFlr = 75),
+      starch = c(Wegmans_corn_starch = 75, sweetPotato_starch = 75),
       bakingPowder_tsp = .75,
       salt_tsp = .125,
       NaHCO3_tsp = .25,
@@ -28,8 +28,8 @@ if (FALSE) {
   
   new(Class = 'recipe', 
       eggWhite = 3.5,
-      pastryFlour = 10,
-      starch = c(Wegmans_corn = 20, sweetPotato = 20),
+      flour = c(Wegmans_pastryFlr = 10),
+      starch = c(Wegmans_corn_starch = 20, sweetPotato_starch = 20),
       youtube = '-fShmay74zA',
       url = 'https://zhuanlan.zhihu.com/p/19826307')
   

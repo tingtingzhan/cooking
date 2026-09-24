@@ -22,7 +22,7 @@ setClass(Class = 'rice', contains = 'recipe', prototype = prototype(
   tool = list(SanyoECJS35S(
     program = '\u852c\u83dc\u7ca5\u7a0b\u5e8f Wite/Mixed program, 3-cup water line', 
     cooling = 'unplug from power, let stand for 2hr+'
-    # waterLost = ? # confirm next time!
+    # waterLost = ? # to confirm
   ))
 ))
 
@@ -30,7 +30,7 @@ setClass(Class = 'rice', contains = 'recipe', prototype = prototype(
 # @export
 rice_Botan <- \() new(
   Class = 'rice', 
-  brownRice = c(Botan_rice = 95*3.75),
+  grain = c(Botan_rice = 95*3.75),
   water = 700, # to confirmed!!
   # whole bowl: ??
   #pros = 'perfect wetness, brown rice fluffy and soft',

@@ -1,4 +1,10 @@
 
+
+# stopifnot(identical(' ', '\u0020'))
+
+
+
+
 #' @title Kitchen \linkS4class{tool}s
 #' 
 #' @description ..
@@ -6,8 +12,6 @@
 #' @slot name,name2 \link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool
 #' 
 #' @slot recipe_pc \link[base]{numeric} scalar, how many times of recipe
-#' 
-#' @slot recipe_weight \link[base]{numeric} scalar, weight of recipe (in grams)
 #' 
 #' @slot treatment \link[base]{character} scalar, pre-treatment
 #' 
@@ -37,7 +41,6 @@ setClass(Class = 'tool', slots = c(
   name = 'character', alias = 'character',
   name2 = 'character',
   recipe_pc = 'numeric',
-  recipe_weight = 'numeric',
   treatment = 'character',
   program = 'character',
   operation = 'character',
@@ -60,12 +63,18 @@ setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
   x <- callNextMethod(.Object, ...)
   
   if (length(x@kitchenaid)) {
-    x@name <- style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html', x@kitchenaid)) |> c()
+    x@name <- x@kitchenaid |>
+      sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html') |>
+      style_hyperlink(text = paste('Kitchen Aid', x@name), url = _) |> 
+      c()
     x@kitchenaid <- character()
   }
   
   if (length(x@staub)) {
-    x@name <- style_hyperlink(text = x@name, url = sprintf(fmt = 'https://www.zwilling.com/us/%s.html', x@staub)) |> c()
+    x@name <- x@staub |>
+      sprintf(fmt = 'https://www.zwilling.com/us/%s.html') |>
+      style_hyperlink(text = paste('Staub', x@name), url = _) |> 
+      c()
     x@staub <- character()
   }
   
@@ -85,32 +94,43 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   if (identical(x, new(Class = 'tool'))) return(invisible())
     
-  paste(x@alias, x@name) |>
-    trimws() |>
+  c(x@alias, x@name) |>
+    paste(collapse = ' ') |>
     sprintf(fmt = '\u2756 %s \u2756\n') |>
     make_ansi_style('royalblue')() |> 
     cat()
   
-  x@name2 |> sprintf(fmt = '\u2756 %s \u2756\n') |> make_ansi_style('royalblue')() |> cat()
+  x@name2 |> 
+    sprintf(fmt = '\u2756 %s \u2756\n') |> 
+    make_ansi_style('royalblue')() |> 
+    cat()
   
   if (length(x@recipe_pc)) {
-    x@recipe_pc |> sprintf(fmt = ' \u2726 Makes \u00d7%.1f recipes at a time\n') |> cat()
+    x@recipe_pc |> 
+      sprintf(fmt = ' \u2726 Makes \u00d7%.1f recipes at a time\n') |> 
+      cat()
   }
   
-  # x@recipe_weight
-  # stopifnot(identical(' ', '\u0020'))
-  x@treatment |> sprintf(fmt = ' \u21ac %s\n') |> cat(sep = '')
+  x@treatment |> 
+    sprintf(fmt = ' \u21ac %s\n') |> 
+    cat(sep = '')
   
-  x@program |> sprintf(fmt = ' \u2726 %s\n') |> cat()
-  x@attachment |> sprintf(fmt = ' \U1f6e0 %s\n') |> cat()
+  x@program |> 
+    sprintf(fmt = ' \u2726 %s\n') |> 
+    cat()
+  x@attachment |> 
+    sprintf(fmt = ' \U1f6e0 %s\n') |> 
+    cat()
   
   txt_fahrenheit <- if (length(x@fahrenheit)) {
     x@fahrenheit |> 
-      sprintf(fmt = '\U1f321%.0f\u00b0F') |> col_blue()
+      sprintf(fmt = '\U1f321%.0f\u00b0F') |> 
+      col_blue()
   } else ''
   txt_celsius <- if (length(x@fahrenheit)) {
     ((x@fahrenheit - 32) * 5/9) |> 
-      sprintf(fmt = '\U1f321%.0f\u00b0C') |> col_magenta()
+      sprintf(fmt = '\U1f321%.0f\u00b0C') |>
+      col_magenta()
   } else ''
   
   if (length(x@minute)) {

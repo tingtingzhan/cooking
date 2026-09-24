@@ -16,7 +16,7 @@ duck_coat <- \() new(
   Class = 'skinCoat',
   alias = 'Duck Skin Coating',
   
-  syrup = c(TraderJoes_date = 9), # confirmed
+  syrup = c(TraderJoes_date_syrup = 9), # confirmed
   liqueur = c(Wegmans_Marsala = 6), # confirmed
   
   date = as.Date('2025-02-15'),

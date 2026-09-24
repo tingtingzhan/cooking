@@ -1,4 +1,18 @@
 
+if (FALSE) {
+  nutritionlist(
+    LeeKumKee_satay(),
+    LeeKumKee_coconutCurry(),
+    LeeKumKee_chickenBouillon()
+  )
+  
+  # new function
+  sort_by.nutritionlist <- \(x, y, ...) {
+    # i.e., sort by sodium percentage
+  }
+}
+
+
 LeeKumKee_chickenBouillon <- \() new(
   Class = 'nutrition',  lkkusa = 'premium-bouillon-powder-flavored-with-chicken-no-msg-added',
   name = 'Chicken Bouillon', alias = '\u7279\u7d1a\u8abf\u5473\u96de\u7c89',

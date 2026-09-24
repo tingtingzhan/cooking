@@ -11,7 +11,7 @@
 #' pumpkin_creamCheeseDip()
 #' pumpkin_creamCheeseSpread()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  pumpkin_creamCheeseSpread(),
 #'  pumpkin_cheesecake(),
 #'  pumpkin_creamCheeseDip()
@@ -21,7 +21,7 @@
 setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype(
   #class2 = '\u5976\u6cb9\u5976\u916a\u62b9\u6599',
   class2 = 'Cream Cheese\U1f96f', # 'Cream Cheese Spread\U1f96f',
-  creamCheese_brick = c(Nancys = 1),
+  dairy_brick = c(Nancys_creamCheese = 1),
   portion = c(
     'bagel\U1f96f' = 40
   )#,
@@ -39,7 +39,7 @@ setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype
 setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
   # class2 = '\u5976\u6cb9\u5976\u916a\u8638\u6599',
   class2 = 'Cream Cheese\U1fad5', # 'Cream Cheese Dip\U1fad5',
-  creamCheese_brick = c(Nancys = 1)#,
+  dairy_brick = c(Nancys_creamCheese = 1)#,
   #instruction (legacy) = c(
   #  'Whip everything (chilled). Careful not to splash',
   #  'Do not freeze'
@@ -52,8 +52,8 @@ setClass(Class = 'creamCheeseDip', contains = 'recipe', prototype = prototype(
 #' @export
 pumpkin_creamCheeseSpread <- \() new(
   Class = 'creamCheeseSpread', 
-  #pumpkin = 122, brownSugar = 16, # was; too watery
-  pumpkin = 100, brownSugar = 23, # 2024 Dec
+  #puree = c(Libbys_pumpkin = 122), sugar = c(Domino_darkBrown = 16), # was; too watery
+  puree = c(Libbys_pumpkin = 100), sugar = c(Domino_darkBrown = 23), # 2024 Dec
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/4+1/8), # added 2024 Dec 
   review = 'retry with higher sugar and pumpkin spice',
   pros = 'Effie\'s Signature'
@@ -64,8 +64,8 @@ pumpkin_creamCheeseSpread <- \() new(
 #' @export
 pumpkin_creamCheeseDip <- \() new(
   Class = 'creamCheeseDip', 
-  pumpkin = 300,
-  brownSugar = 37,
+  puree = c(Libbys_pumpkin = 300),
+  sugar = c(Domino_darkBrown = 37),
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2 + 1/8),
   review = 'try'
 )

@@ -26,13 +26,13 @@ whiteSwan_shrimpfill()
 ..
 }
 \examples{
-diagnose(
+nutritionlist(
   shrimpfillCantonese(),
   shrimpball(),
   shrimpmash()
 )
 
-diagnose(
+nutritionlist(
  shrimpfillCantonese(),
  whiteSwan_shrimpfill(),
  Daat_shrimpfill(),

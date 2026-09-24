@@ -16,14 +16,14 @@
 #' @name tortilla-class
 #' @export
 setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
-  flour = c(Wegmans_bread = 625), # 5 cup
+  flour = c(Wegmans_breadFlr = 625), # 5 cup
   salt_tsp = 1/2,
   #instruction (legacy) = c(
   #  'Roll-Stack-Roll, separated by ample corn starch'
   #),
-  note = c(
-    'Too soft for stack-&-cook (youtube _edTKRGk38Y, t0sYquhXIFg)'
-  ),
+  #note (legacy) = c(
+  #  'Too soft for stack-&-cook (youtube _edTKRGk38Y, t0sYquhXIFg)'
+  #),
   portion = 75 # 80g too big for 10in; 60g not easy to align in roll-stack-roll
   # machine (legacy) = list(
   #  'Le Creuset Crepe Pan 11in/28cm + KitchenAid downdraft stove top' = c(
@@ -37,7 +37,7 @@ setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
 ViewRoad_tortilla <- \() new(
   Class = 'recipe', author = 'View on the Road', flavor = 'Tortilla',
   youtube = 'fA68XXQJN4Y', 
-  flour = 2.5 * 120,
+  flour = c(KingArthur_allPurposeFlr = 2.5 * 120),
   salt_tsp = 1,
   lard_cup = c(Morrell_lard = 1/2),
   water_cup = 1)
@@ -46,9 +46,9 @@ ViewRoad_tortilla <- \() new(
 ViewRoad_pumpkin_tortilla <- \() new(
   Class = 'recipe', author = 'View on the Road', flavor = 'Pumpkin Tortilla',
   youtube = 'hPMc1a19CsU', 
-  flour_cup = 1.25,
-  pumpkin_cup = 1/3,
-  butter_cup = 1/4, # butter vegetable shortening 
+  flour_cup = c(KingArthur_allPurposeFlr = 1.25),
+  puree_cup = c(Libbys_pumpkin = 1/3),
+  dairy_cup = c(Kerrygold_butter = 1/4), # butter vegetable shortening 
   salt_tsp = 1/4,
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
   sugar = 12,
@@ -63,7 +63,7 @@ ViewRoad_pumpkin_tortilla <- \() new(
 #' @export
 setClass(Class = 'tortillaOlive', contains = 'tortilla', prototype = prototype(
   class2 = 'Tortilla(\u6a44\u6984\u6cb9,\u54b8)',
-  oil = c(Wegmans_olive = 30)
+  oil = c(Wegmans_olive_oil = 30)
 ))
 
 
@@ -90,13 +90,16 @@ tortillaLard <- \() new(
 
 #' @rdname tortilla-class
 #' @export
-pumpkin_tortillaOlive <- \() new(Class = 'tortillaOlive', pumpkin = 520, review = 'not completely satisfied')
+pumpkin_tortillaOlive <- \() new(
+  Class = 'tortillaOlive', 
+  puree = c(Libbys_pumpkin = 520), 
+  review = 'not completely satisfied')
 
 #' @rdname tortilla-class
 #' @export
 tomato_tortillaOlive <- \() new(
   Class = 'tortillaOlive', 
-  tomato = 520,
+  puree = c(WegmansOrganic_tomato = 520),
   review = c('try'))
 
 
@@ -104,7 +107,7 @@ tomato_tortillaOlive <- \() new(
 #' @export
 pumpkin_tortillaLard <- \() new(
   Class = 'tortillaLard',
-  pumpkin = 520,
+  puree = c(Libbys_pumpkin = 520),
   review = 'try')
 
 
@@ -112,17 +115,17 @@ pumpkin_tortillaLard <- \() new(
 #' @export
 tomato_tortillaLard <- \() new(
   Class = 'tortillaLard', 
-  tomato = 520,
+  puree = c(WegmansOrganic_tomato = 520),
   review = c('try'))
 
 
 
 xiaogaojie_flatbread <- \() new(
   Class = 'recipe', flavor = 'Flatbread',
-  flour = 300,
+  flour = c(KingArthur_allPurposeFlr = 300),
   water = 150+15,
   yeast_tsp = 1/4,
-  butter = 40,
+  dairy = c(Kerrygold_butter = 40),
   salt_tsp = 1/4,
   xiaogaojie = '_edTKRGk38Y')
 

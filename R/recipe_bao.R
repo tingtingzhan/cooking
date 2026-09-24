@@ -53,7 +53,7 @@ sweetBao_portion <- \() c(
 #' cocoa_bao()
 #' acai_bao()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  bao(),
 #'  pumpkin_bao(),
 #'  pineapple_bao(),
@@ -68,7 +68,7 @@ sweetBao_portion <- \() c(
 #' @export
 setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   class2 = '\u5305\u5b50\u9992\u5934',
-  pastryFlour = c(Wegmans_pastry = 500), 
+  flour = c(Wegmans_pastryFlr = 500), 
   yeast_tsp = 1.5,
   bakingPowder_tsp = 1,
   lard = 15,
@@ -103,12 +103,14 @@ bao <- \() new(Class = 'bao', water = 240, sugar_Tbsp = 3)
 
 bao_heavyCream <- \() new(
   Class = 'bao', 
-  heavyCream = 45, lard = numeric(),
+  dairy = c(Wegmans_heavyCream = 45), 
+  lard = numeric(),
   water = 214, sugar_Tbsp = 3, pros = character())
 
 bao_butter <- \() new(
   Class = 'bao', 
-  lard = numeric(), butter = 18,
+  lard = numeric(), 
+  dairy = c(Kerrygold_butter = 18),
   water = 237, sugar_Tbsp = 3, 
   pros = character())
 
@@ -120,8 +122,9 @@ bao_butter <- \() new(
 #' @export
 pumpkin_bao <- \() new(
   Class = 'bao', 
-  breadFlour = c(KingArthur_bread = 200), pastryFlour = c(Wegmans_pastry = 300),
-  pumpkin = 285, # 260*.4+300*.6, 
+  flour = c(KingArthur_breadFlr = 200,
+            Wegmans_pastryFlr = 300),
+  puree = c(Libbys_pumpkin = 285), # 260*.4+300*.6, 
   sugar_Tbsp = 2,
   review = 'try!!'
   #date = as.Date('2024-09-28')
@@ -129,7 +132,8 @@ pumpkin_bao <- \() new(
 
 .pumpkin_bread_bao <- \() new(
   Class = 'bao', 
-  pumpkin = 260, breadFlour = c(KingArthur_bread = 500), pastryFlour = numeric(),
+  puree = c(Libbys_pumpkin = 260), 
+  flour = c(KingArthur_breadFlr = 500),
   sugar_Tbsp = 2,
   pros = 'a little on the wet side, but generally perfect wetness',
   cons = 'severely shrinks; bread flour cannot be used for bao?',
@@ -137,7 +141,7 @@ pumpkin_bao <- \() new(
 
 .pumpkin_pastry_bao <- \() new(
   Class = 'bao', 
-  pumpkin = 300, # 500g Wegmans\'s patry flour
+  puree = c(Libbys_pumpkin = 300), # 500g Wegmans\'s patry flour
   sugar_Tbsp = 2,
   pros = 'perfect wetness', 
   cons = 'not enough support',
@@ -161,7 +165,8 @@ matcha_bao <- \() new(
 #' @rdname bao-class
 #' @export
 beet_bao <- \() new(
-  Class = 'bao', bao(), beet_tsp = 11, 
+  Class = 'bao', bao(), 
+  misc_tsp = c(Wegmans_beet_pulv = 11), 
   water_ext = 5, # to confirm!!!
   #sugar_Tbsp = 4, # previous data
   sugar_Tbsp = 1, # try next time
@@ -185,8 +190,8 @@ cocoa_bao <- \() new(
 #' @export
 pineapple_bao <- \() new(
   Class = 'bao', 
-  #pineapple = 270, 
-  pineapple = 250, # retry
+  #puree = c(Dole_pineapple = 270), 
+  puree = c(Dole_pineapple = 250), # retry
   review = 're-experiment!  pineapple = 270g too wet')
 
 
@@ -194,8 +199,8 @@ pineapple_bao <- \() new(
 #' @export
 pear_bao <- \() new(
   Class = 'bao', 
-  #pear = 255, # 250 too dry; 260 a tiny little too wet but manageable
-  pear = 250, # retry
+  #puree = c(DelMonte_pear = 255), # 250 too dry; 260 a tiny little too wet but manageable
+  puree = c(DelMonte_pear = 250), # retry
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
@@ -212,14 +217,16 @@ peach_bao_DelMonte <- \() new(
 #' @export
 mandarine_bao <- \() new(
   Class = 'bao', 
-  mandarine = 245, sugar_Tbsp = 1,
+  puree = c(DelMonte_mandarine = 245), sugar_Tbsp = 1,
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
 #' @rdname bao-class
 #' @export
 acai_bao <- \() new(
-  Class = 'bao', bao(), acai_Tbsp = 8.5, sugar_Tbsp = 2,
+  Class = 'bao', bao(), 
+  misc_Tbsp = c(Wegmans_acai_pulv = 8.5), 
+  sugar_Tbsp = 2,
   water_ext = 5,
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
@@ -228,19 +235,20 @@ acai_bao <- \() new(
 
 darkCherry_bao <- \() new(
   Class = 'bao', 
-  darkCherry = 310, 
+  puree = c(HappyVillage_darkCherry = 310), 
   portion = c(mantou_portion(), savoryBao_portion()), 
   cons = 'Not good!! Dough too dry, skin kneaded out.  Maybe Vitamix')
 
 
 apple_bao <- \() new(
-  Class = 'bao', applesauce = 250,
+  Class = 'bao', 
+  puree = c(Motts_applesauce = 250),
   review = 'try'
 )
 
 mango_bao <- \() new(
   Class = 'bao', 
-  mango = 270, 
+  puree = c(UltraOrganics_mango = 270), 
   review = c('try in the summer'))
 
 
@@ -248,7 +256,7 @@ mango_bao <- \() new(
 #' @export
 tomato_bao <- \() new(
   Class = 'bao', 
-  tomato = 300, sugar = 10,
+  puree = c(WegmansOrganic_tomato = 300), sugar = 10,
   review = 'try')
 
 
@@ -293,8 +301,9 @@ tomato_bao <- \() new(
 #' @export
 setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
   flavor = '\u5168\u9ea6',
-  breadFlour = c(KingArthur_bread = 300), pastryFlour = numeric(),
-  wholeWheatFlour = c(Wegmans_whiteWheat = 200),
+  flour = c(
+    KingArthur_breadFlr = 300,
+    Wegmans_white_wheatFlr = 200),
   lard = 19,
   sugar_Tbsp = 3, 
   water = 250 # 255g, starting to get too wet!!
@@ -315,8 +324,8 @@ wheatBao <- \() new(
 
 wheatBao_tmp <- \() new(
   Class = 'wheatBao', 
-  breadFlour = c(KingArthur_bread = 208),
-  pastryFlour = c(Wegmans_pastry = 92),
+  flour = c(KingArthur_breadFlr = 208,
+            Wegmans_pastryFlr = 92),
   water = 248,
   pros = 'perfect wetness (bread flour ran out)')
 
@@ -332,8 +341,8 @@ wheatBao_duckFat <- \() new(
 lowGlutenBao_FAIL <- \() new(
   Class = 'bao',
   flavor = '\u6742\u7cae\u7c89',
-  glutenFreeFlour = c(KingArthur_M4M = 150),
-  pastryFlour = c(Wegmans_pastry = 350),
+  flour = c(KingArthur_gluten0Flr = 150, 
+            Wegmans_pastryFlr = 350),
   lard = 16.5,
   sugar_Tbsp = 3, 
   water = 210+10,
@@ -346,7 +355,7 @@ coconutBao_FAIL <- \() new(
   Class = 'bao', 
   class2 = '\u6930\u8089\u7c89\u5305\u5b50\u9992\u5934',
   coconut = c(WegmansOrganic_coconutFlour = 125),
-  breadFlour = c(KingArthur_bread = 375), pastryFlour = numeric(),
+  flour = c(KingArthur_breadFlr = 375),
   lard = numeric(),
   sugar_Tbsp = 2, 
   water = 240+20+50+20,

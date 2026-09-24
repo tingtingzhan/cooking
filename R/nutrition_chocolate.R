@@ -1,28 +1,27 @@
 
 
-#' @title Guittard Chocolate Bars
+#' @rdname nutrition-class
 #' 
-#' @description
-#' ..
-#' 
-#' @note
-#' only 'case' page!!  ingredients more accurate!
+# @note
+# only 'case' page!!  ingredients more accurate!
 #' 
 #' @examples
-#' diagnose(
-#'  Guittard_bittersweet63(),
-#'  Guittard_eclipse50(),
-#'  Guittard_solitaire54(),
-#'  Guittard_vanilla54(),
-#'  Guittard_solitaire52(),
-#'  Guittard_heritage39(),
-#'  Guittard_Dutch34milk(),
-#'  Guittard_31milk(),
-#'  Guittard_heritage32milk(),
-#'  Guittard_highSierra28white()
+#' nutritionlist(
+#'  cooking:::Guittard_bittersweet63(),
+#'  cooking:::Guittard_eclipse50(),
+#'  cooking:::Guittard_solitaire54(),
+#'  cooking:::Guittard_vanilla54(),
+#'  cooking:::Guittard_solitaire52(),
+#'  cooking:::Guittard_heritage39(),
+#'  cooking:::Guittard_Dutch34milk(),
+#'  cooking:::Guittard_31milk(),
+#'  cooking:::Guittard_heritage32milk(),
+#'  cooking:::Guittard_highSierra28white()
 #' )
-#' @name Guittard
-#' @export
+#' 
+
+
+
 Guittard_31milk <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = '31% Milk',
@@ -33,8 +32,7 @@ Guittard_31milk <- \() new(
   calorie = 540,
   water = .7, fat = 32, cholesterol = .02, sodium = .065, sugar = 53, protein = 7)
  
-#' @rdname Guittard
-#' @export
+
 Guittard_Dutch34milk <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Old Dutch 34% Milk',
@@ -44,8 +42,7 @@ Guittard_Dutch34milk <- \() new(
   calorie = 521.2,
   water = .7, fat = 31.2, cholesterol = .015, sodium = .073, sugar = 52.8, addedSugar = 45.5, protein = 6.7)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_bittersweet63 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = '63% Bittersweet',
@@ -55,8 +52,7 @@ Guittard_bittersweet63 <- \() new(
   calorie = 475,
   water = .7, fat = 35, cholesterol = .0066, sodium = .047, sugar = 34.3, addedSugar = 33.9, protein = 7.3)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_heritage39 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Molding Heritage 39%',
@@ -66,8 +62,7 @@ Guittard_heritage39 <- \() new(
   calorie = 549.1,
   water = .7, fat = 33.9, cholesterol = .0197, sodium = .066, sugar = 52.4, addedSugar = 45, protein = 7.1)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_heritage32milk <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Heritage 32% Milk',
@@ -77,8 +72,7 @@ Guittard_heritage32milk <- \() new(
   calorie = 541.86,
   water = .7, fat = 32.4, cholesterol = .0202, sodium = .067, sugar = 53.6, addedSugar = 46, protein = 7.2)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_vanilla54 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'French Vanilla 54% Dark',
@@ -88,8 +82,7 @@ Guittard_vanilla54 <- \() new(
   calorie = 487.1,
   water = .7, fat = 32.9, cholesterol = numeric(), sodium = .035, sugar = 44.9, addedSugar = 44.6, protein = 5.1)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_highSierra28white <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'High Sierra 28% White',
@@ -100,8 +93,7 @@ Guittard_highSierra28white <- \() new(
   calorie = 540,
   water = .7, fat = 32, cholesterol = .015, sodium = .1, sugar = 59, protein = 6)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_eclipse50 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Eclipse 50% Dark',
@@ -111,8 +103,7 @@ Guittard_eclipse50 <- \() new(
   calorie = 499.4,
   water = .7, fat = 34.3, cholesterol = .0051, sodium = .059, sugar = 43.3, addedSugar = 43, protein = 5.3)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_lustrous55 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Lustrous 55% Dark',
@@ -123,8 +114,7 @@ Guittard_lustrous55 <- \() new(
   calorie = 540,
   water = .7, fat = 32, cholesterol = .005, sodium = .050, sugar = 43, protein = 8)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_solitaire54 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Molding Solitaire 54% Dark',
@@ -134,8 +124,7 @@ Guittard_solitaire54 <- \() new(
   calorie = 512.6,
   water = .7, fat = 36.3, cholesterol = numeric(), sodium = .025, sugar = 43.7, addedSugar = 43.4, protein = 4.4)
 
-#' @rdname Guittard
-#' @export
+
 Guittard_solitaire52 <- \() new(
   Class = 'nutrition', 
   brand = 'Guittard\U1f1fa\U1f1f8', name = 'Solitaire 52% Dark',

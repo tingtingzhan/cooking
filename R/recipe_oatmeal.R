@@ -37,7 +37,7 @@ coconut_oatmeal <- \() new(
 soymilk_oatmeal <- \() new(
   Class = 'oatmeal',
   homemade = c(soymilk_DJ13U = 140),
-  syrup = c(Runamok_ryeWhisky = 5),
+  syrup = c(Runamok_ryeWhisky_syrup = 5),
   date = as.Date('2025-07-06'),
   review = 'nice!'
 )

@@ -5,7 +5,7 @@
 #' @examples
 #' pumpkinSpiceLatte()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  hotdrink(pumpkinSpiceLatte()),
 #'  cooking:::Starbucks_pumpkinSpiceLatte(),
 #'  cooking:::Starbucks_pumpkinSpiceFrappuccino()
@@ -25,10 +25,10 @@ setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prot
 #' @export
 pumpkinSpiceLatte <- \() new(
   Class = 'pumpkinSpiceLatteMix',
-  drymilk = c(Carnation = 40),
+  dairy = c(Carnation_drymilk = 40),
   coffee_Tbsp = c(1.5),
-  brownSugar_Tbsp = 1,
-  pumpkin = 70,
+  sugar_Tbsp = c(Domino_darkBrown = 1),
+  puree = c(Libbys_pumpkin = 70),
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/4),
   date = as.Date('2024-12-04'),
   pros = 'I love!!')

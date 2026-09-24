@@ -10,7 +10,7 @@
 #' @export
 setClass(Class = 'matchaLatteMix', contains = 'drinkmix', prototype = prototype(
   class2 = 'Latte Mix', # 'Latte\u901f\u6eb6\u7c89',
-  drymilk = c(Carnation = 32, Nido_drymilk = 8),
+  dairy = c(Carnation_drymilk = 32, Nido_drymilk = 8),
   sugar_tsp = 1*2
 ))
 
@@ -52,12 +52,12 @@ ikuyoLatte <- \() new(
 #' @examples
 #' matchaGoatLatte()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  matchaLatte(),
 #'  matchaGoatLatte()
 #' ) # compare dry powder
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  hotdrink(matchaLatte),
 #'  hotdrink(matchaGoatLatte)
 #' ) # compare hot drink
@@ -81,7 +81,17 @@ ikuyoGoatLatte <- \() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_ik
 
 sayakaGoatLatte <- \() new(Class = 'matchaGoatLatteMix', matcha_tsp = c(Ippodo_sayaka = 2.5*2), sugar_tsp = 4*2, pros = 'okay')
 
-matchaLatte_maeda <- \() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(maeda_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
+matchaLatte_maeda <- \() new(
+  Class = 'matchaLatteMix', 
+  dairy = c(Carnation_drymilk = 25*2), 
+  matcha_Tbsp = c(maeda_matcha = 1*2), 
+  sugar_tsp = 1.5*2, 
+  pros = 'okay')
 
-matchaLatte_ito <- \() new(Class = 'matchaLatteMix', drymilk = c(Carnation = 25*2), matcha_Tbsp = c(ItoEn_matcha = 1*2), sugar_tsp = 1.5*2, pros = 'okay')
+matchaLatte_ito <- \() new(
+  Class = 'matchaLatteMix', 
+  dairy = c(Carnation_drymilk = 25*2), 
+  matcha_Tbsp = c(ItoEn_matcha = 1*2), 
+  sugar_tsp = 1.5*2, 
+  pros = 'okay')
 

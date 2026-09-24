@@ -6,7 +6,7 @@
 #' ..
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  subtract(Giallozafferano_LangueDeChat, sugar = 45),
 #'  subtract(Ying_LangueDeChat, sugar = 7.5),
 #'  subtract(Jadore_LangueDeChat, sugar = 22),
@@ -30,22 +30,23 @@ setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
 #' @export
 cookingTree_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
-  butter = 90,
+  dairy = c(Kerrygold_butter = 90),
   sugar = 85,
   egg_pc = 2,
   vanilla_tsp = .5, # 2g Vanilla extract  
-  flour = 110)
+  flour = c(KingArthur_allPurposeFlr = 110))
 
 #' @rdname LangueDeChat-class
 #' @export
 cookingTree_cocoa_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
-  butter = 45,
   sugar = 45,
   egg_pc = 1,
   vanilla_tsp = .25, #1g Vanilla extract 
-  heavyCream = 20,
-  flour = 50,
+  dairy = c(
+    Kerrygold_butter = 45,
+    Wegmans_heavyCream = 20),
+  flour = c(KingArthur_allPurposeFlr = 50),
   cocoa = 7)
 
 
@@ -53,12 +54,12 @@ cookingTree_cocoa_LangueDeChat <- \() new(
 #' @export
 Ying_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Ying', flavor = 'Langue De Chat', youtube = '2tlPfiBA9i0',
-  butter = 25,
   sugar = 15,
   egg_pc = 15/(17.3 + 34.7),
-  heavyCream = 10,
+  dairy = c(Kerrygold_butter = 25,
+            Wegmans_heavyCream = 10),
   vanilla_tsp = 1/8,
-  flour = 25)
+  flour = c(KingArthur_allPurposeFlr = 25))
 
 
 
@@ -66,22 +67,22 @@ Ying_LangueDeChat <- \() new(
 #' @export
 Jadore_LangueDeChat <- \() new(
   Class = 'recipe', author = 'J\'adore', flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
-  butter = 43,
   sugar = 34,
   eggWhite = 30,
-  pastryFlour = 32,
-  flour = c(BobsRedMill_almondFlour = 5),
+  flour = c(Wegmans_pastryFlr = 32,
+            BobsRedMill_almondFlour = 5),
   vanilla_tsp = 1/4,
-  heavyCream = 13) 
+  dairy = c(Kerrygold_butter = 43,
+            Wegmans_heavyCream = 13))
 
 #' @rdname LangueDeChat-class
 #' @export
 Giallozafferano_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Giallozafferano', flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',
-  butter = 50,
+  dairy = c(Kerrygold_butter = 50),
   sugar = 60,
   eggWhite = 50,
-  flour = 50)
+  flour = c(KingArthur_allPurposeFlr = 50))
 
 
 

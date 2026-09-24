@@ -7,15 +7,15 @@
 #' @description ..
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  Leo_udon(),
 #'  JustOne_udon(),
 #'  amanda_udon())
 #' @name udon-class
 #' @export
 setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
-  class2 = '\u9942\u98e9\u3046\u3069\u3093',
-  note = 'Melt salt in water.  Knead the dough by stepping on it'
+  class2 = '\u9942\u98e9\u3046\u3069\u3093'#,
+  #note (legacy) = 'Melt salt in water.  Knead the dough by stepping on it'
 ))
 
 
@@ -24,7 +24,7 @@ setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
 amanda_udon <- \() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', flavor = 'Udon', 
   youtube = 'q0gNH9vxiYY',
-  flour = 300,
+  flour = c(KingArthur_allPurposeFlr = 300),
   water = 130, salt = 15)
 
 
@@ -33,7 +33,7 @@ amanda_udon <- \() new(
 JustOne_udon <- \() new(
   Class = 'recipe', flavor = 'Udon', 
   just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
-  flour = 200, # 7 oz
+  flour = c(KingArthur_allPurposeFlr = 200), # 7 oz
   water = 90, # 6tbsp, 89g
   salt = 10) # 0.35 oz
   
@@ -45,7 +45,7 @@ JustOne_udon <- \() new(
 Leo_udon <- \() new(
   Class = 'recipe', author = 'Leo', flavor = 'Udon', 
   youtube = 'wgj51q9Hlq8',
-  flour = 500, # 17.6 oz
+  flour = c(KingArthur_allPurposeFlr = 500), # 17.6 oz
   salt = 23, # 0.8 oz
   water = 205 # 7.2 oz
   # Leo said https://youtu.be/wgj51q9Hlq8?feature=shared&t=60

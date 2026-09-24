@@ -18,7 +18,7 @@ Muffin, or batter bread recipes.
 cornbreadMix()
 cornbread()
 
-diagnose(
+nutritionlist(
  cornbreadMix(),
  subtract(cooking:::TraderJoes_cornbreadMix, sugar = 10.2),
  subtract(cooking:::WholeFoods365_cornbreadMix, sugar = 4),
@@ -29,12 +29,12 @@ diagnose(
  subtract(cooking:::Fleischmanns_cornbreadMix, sugar = 5.1)
 )
 
-diagnose(
+nutritionlist(
  cornbread(),
  subtract(cooking:::PreppyKitchen_cornbread, sugar = 17),
  subtract(cooking:::BethanyWeathersby_cornbread, sugar = 105),
  subtract(cooking:::bluegirl_cornbread, sugar = 108),
- subtract(cooking:::JoshuaWeissman_cornbread, sugar = 64, brownSugar = 23),
+ subtract(cooking:::JoshuaWeissman_cornbread, sugar = c(23, 64)),
  cooking:::Jiffy_cornMuffin() |>
   as('nutrition') |>
   subtract(sugar = 32),

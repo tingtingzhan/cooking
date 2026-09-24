@@ -7,11 +7,8 @@ DaoXiangCun_corn <- \() new(
   servingGram = 50, servingCup = 1/2, # volume not accurate!!!
   fat = 1.5)
 
-#' @title Corn Meal
-#' 
-#' @name cornmeal
-#' @export
-Albertsons_yellowCorn <- \() new(
+
+Albertsons_yellow_cornmeal <- \() new(
   Class = 'nutrition', 
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
   acme = '117010060', usd = 4.49/2270*30, date = as.Date('2026-09-17'),
@@ -21,9 +18,8 @@ Albertsons_yellowCorn <- \() new(
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = 1, protein = 2)
 
-#' @rdname cornmeal
-#' @export
-IndianHead_whiteCorn <- \() new(
+
+IndianHead_white_cornmeal <- \() new(
   Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'White Cornmeal\U1f33d',  
@@ -33,9 +29,8 @@ IndianHead_whiteCorn <- \() new(
   fat = 1, protein = 2, 
   review = 'Extremely coarse, do not buy!')
 
-#' @rdname cornmeal
-#' @export
-IndianHead_yellowCorn <- \() new(
+
+IndianHead_yellow_cornmeal <- \() new(
   Class = 'nutrition',  
   brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
   name = 'Yellow Cornmeal\U1f33d',
@@ -43,22 +38,21 @@ IndianHead_yellowCorn <- \() new(
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = .5, protein = 2, 
-  superior = 'Albertsons_yellowCorn',
+  superior = 'Albertsons_yellow_cornmeal',
   review = 'Extremely coarse')
 
-#' @rdname cornmeal
-#' @export
-Quaker_yellowCorn <- \() new(
-  Class = 'nutrition',  quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
+
+Quaker_yellow_cornmeal <- \() new(
+  Class = 'nutrition',  
+  quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
   name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
   wegmans = '25374', usd = 2.99/680*27,
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
   carbohydrate = 21, protein = 2)
 
-#' @rdname cornmeal
-#' @export
-Quaker_whiteCorn <- \() new(
+
+Quaker_white_cornmeal <- \() new(
   Class = 'nutrition',  quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
   alias = '\u9ec4\u7389\u7c73\u9762', name = 'White Cornmeal\U1f33d',
   servingGram = 27, servingTbsp = 3, 

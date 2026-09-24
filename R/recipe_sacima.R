@@ -10,7 +10,7 @@
 #' @examples
 #' new(Class = 'sacima')
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  xiaogaojie_sacima(),
 #'  Dad_sacima(),
 #'  shangshi_sacima())
@@ -19,9 +19,9 @@
 #' @export
 setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
   class2 = '\u8428\u5176\u9a6c',
-  # pastryFlour = 200, eggYolk = 2, eggWhite = 2, yeast_tsp = .5, # has potential!!
-  pastryFlour = 190, eggYolk = 2, eggWhite = 2, yeast_tsp = 1.5,
-  butter = 306*5/164,
+  # flour = c(Wegmans_pastryFlr = 200), eggYolk = 2, eggWhite = 2, yeast_tsp = .5, # has potential!!
+  flour = c(Wegmans_pastryFlr = 190), eggYolk = 2, eggWhite = 2, yeast_tsp = 1.5,
+  dairy = c(Kerrygold_butter = 306*5/164),
   #instruction (legacy) = c(
   #  'Manually knead pastry flour, egg and yeast',
   #  # 'Pastalinda; Thickness 7, 3 cm long, 2.5 mm cut',
@@ -43,8 +43,8 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
 #' @export
 maple_sacima <- \() new(
   Class = 'sacima', flavor = '\u84dd\u8393\u7cd6\u6d46',
-  # syrup = c(Stonewall_maple = 77*306/164), # sugar 25%, not bad!
-  syrup = c(Stonewall_maple = 100),
+  # syrup = c(Stonewall_maple_syrup = 77*306/164), # sugar 25%, not bad!
+  syrup = c(Stonewall_maple_syrup = 100),
   review = 'try again')
 
 
@@ -56,7 +56,7 @@ sacima <- \() new(
   Class = 'sacima',
   #bakingPowder_tsp = 1/8,
   #homemade = c(invertSugar = 50),
-  condensedMilk = 80,
+  dairy = c(Carnation_condensMilk = 80),
   tool = list(PhilipsHD9867(fahrenheit = 350, minute = 6)),
   review = 'try'
   #url = c(
@@ -77,7 +77,7 @@ sacima <- \() new(
 #' @export
 shangshi_sacima <- \() new(
   Class = 'recipe', flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
-  flour = 240,
+  flour = c(KingArthur_allPurposeFlr = 240),
   egg_pc = 3)
 
 #' @rdname sacima-class
@@ -85,7 +85,7 @@ shangshi_sacima <- \() new(
 xiaogaojie_sacima <- \() new(
   Class = 'recipe', flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
-  flour = 200,
+  flour = c(KingArthur_allPurposeFlr = 200),
   NaHCO3_tsp = 1/8,
   water = 15,
   egg_pc = 2)
@@ -95,7 +95,7 @@ xiaogaojie_sacima <- \() new(
 Dad_sacima <- \() new(
   Class = 'recipe', flavor = 'sacima', 
   dad1966 = 'ZK4ZoCewr0E',
-  flour = 270,
+  flour = c(KingArthur_allPurposeFlr = 270),
   egg_pc = 3,
   NaHCO3 = 1)
 

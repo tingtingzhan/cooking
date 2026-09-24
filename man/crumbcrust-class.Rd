@@ -27,7 +27,7 @@ Although it still tastes wonderful!
 \examples{
 blackSesame_crumbcrust()
 
-diagnose(
+nutritionlist(
  blackSesame_crumbcrust(),
  PreppyKitchen_grahamCrust2() |>
   as('nutrition') |>

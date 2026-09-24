@@ -15,8 +15,8 @@
 #' @export
 setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
   class2 = '\u5976\u8336',
-  drymilk = 40, 
-  brownSugar_tsp = 2 # 1tsp too bland; 1Tbsp too sweet
+  dairy = c(Carnation_drymilk = 40), 
+  sugar_tsp = c(Domino_darkBrown = 2) # 1tsp too bland; 1Tbsp too sweet
 ))
 
 

@@ -17,7 +17,7 @@
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   class2 = '\u8c46\u6d46\u8336',
   homemade = c(soymilk = 600),
-  brownSugar_Tbsp = 1, # perfect sweetness!!! 2024 Fall
+  sugar_Tbsp = c(Domino_darkBrown = 1), # perfect sweetness!!! 2024 Fall
   tool = list(Stanley20(treatment = c(
     'must use freshly brewed soy milk',
     'soak (covered) for 1hr+'

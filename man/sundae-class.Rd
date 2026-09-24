@@ -43,7 +43,7 @@ Do not use too much water!! I get frost bite!!
 
 matcha_sundae() * 2
 
-diagnose(
+nutritionlist(
  cooking:::cooking23s_icecream() |>
   as('nutrition') |>
   subtract(sugar = 32),
@@ -60,18 +60,19 @@ diagnose(
  matcha_sundae(),
  
  new(Class = 'recipe', class2 = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
- mascarpone = 453/2, water = 320, 
- drymilk = 40, matcha_tsp = 10, sugar_Tbsp = 4, 
+ dairy_cup = c(BelGioioso_mascarpone = 1),
+ water = 320, 
+ dairy = c(Carnation_drymilk = 40), matcha_tsp = 10, sugar_Tbsp = 4, 
  pros = c('Nice! Tiny little oily'))
 )
 
-diagnose(
+nutritionlist(
  subtract(cooking:::Bassetts_coffee, sugar = 12.7),
  subtract(cooking:::HaagenDazs_coffee, sugar = 16),
  coffee_sundae()
 )
 
-diagnose(
+nutritionlist(
  subtract(cooking:::Bassetts_pumpkin, sugar = 11),
  pumpkin_sundae()
 )

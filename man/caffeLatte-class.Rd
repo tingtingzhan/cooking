@@ -14,7 +14,7 @@ caffeLatte()
 \examples{
 caffeLatte()
 
-diagnose(
+nutritionlist(
  hotdrink(caffeLatte),
  cooking:::Starbucks_caffeLatte(),
  cooking:::Starbucks_coffeeFrappuccino_bottle()

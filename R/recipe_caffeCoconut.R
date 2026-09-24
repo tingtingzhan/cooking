@@ -7,8 +7,8 @@
 #' @export
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   class2 = '\u751f\u6930\u62ff\u94c1',
-  drymilk_Tbsp = 1,
-  drymilk_tsp = 1,
+  dairy_Tbsp = c(Carnation_drymilk = 1),
+  dairy_tsp = c(Carnation_drymilk = 1),
   coffee_Tbsp = .5,
   cocoa_tsp = c(KingArthur_Bensdorp = .25)#,
   #tool = list(Stanley14(treatment = c(

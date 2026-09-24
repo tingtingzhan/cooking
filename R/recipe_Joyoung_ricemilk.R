@@ -26,23 +26,23 @@ setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
 #' @rdname ricemilk-class
 #' @export
 black_ricemilk <- \() new(
-  Class = 'ricemilk', alias = '\u9ed1\u7c73\u7cca',
-  blackRice = 105, water = 845,
+  Class = 'ricemilk',
+  grain = c(HaiTai_blackRice = 105), water = 845,
   pros = 'such distinct and delicate smell!')
 
 #' @rdname ricemilk-class
 #' @export
 brown_ricemilk <- \() new(
-  Class = 'ricemilk', alias = '\u7cd9\u7c73\u7cca',
-  brownRice = 97,
+  Class = 'ricemilk',
+  grain = c(Nishiki_brownRice = 97),
   water = 845, review = 'to confirm')
 
 
 setClass(Class = 'ricepaste', contains = 'recipe', prototype = prototype(
   class2 = '\u5976\u9999\u7c73\u7cca',
   # for 600g 'ricemilk'
-  #drymilk = c(Carnation = 15), # 2.5%, a little too much
-  drymilk_tsp = c(Carnation = 5),
+  #dairy = c(Carnation_drymilk = 15), # 2.5%, a little too much
+  dairy_tsp = c(Carnation_drymilk = 5),
   portion = c(
     'Ciroa mug' = 610,
     'Starbucks mug' = 305

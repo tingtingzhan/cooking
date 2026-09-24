@@ -10,7 +10,7 @@
 #' sesame_lava()
 #' coconut_lava()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'   sesame_lava(),
 #'   Daat_sesamelava(),
 #'   xiaogaojie_sesamelava(),
@@ -18,7 +18,7 @@
 #'   xiaomin_sesamelava()
 #' )
 #' 
-#' diagnose(
+#' nutritionlist(
 #'   sesame_lava(),
 #'   subtract(Daat_sesamelava, sugar = 107),
 #'   subtract(xiaogaojie_sesamelava, sugar = 60),
@@ -33,7 +33,7 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   class2 = '\u6d41\u5fc3\u9985',
   water = 80,
   water80 = 640,
-  glutinousRiceFlour = 32,
+  flour = c(Erawan_glutinousRiceFlr = 32),
   gelatin_leaf = 12#,
   #instruction (legacy) = c(
   #  'Make a slurry of glutinous rice flour and room-temperature water',
@@ -53,10 +53,10 @@ sesame_lava <- \() new(
   misc = c(Kirkland_mixedNutButter = 100), # nice!
   #sugar = 140, # sugar 9.8%
   sugar = 130, # sugar 9.2
-  note = c(
-    'A full jar of black sesame powder',
-    'Use 3qt sauce pan'
-  ),
+  #note (legacy) = c(
+  #  'A full jar of black sesame powder',
+  #  'Use 3qt sauce pan'
+  #),
   pros = c(
     'bao filling',
     'eat directly, hot or chilled'
@@ -96,8 +96,8 @@ Daat_sesamelava <- \() new(
   sugar = 180,
   nut = c(peanut = 20), #花生酱  Peanut Butter               20g
   lard = 20,
-  glutinousRiceFlour = 20,
-  evaporatedMilk = 50,
+  flour = c(Erawan_glutinousRiceFlr = 20),
+  dairy = c(Carnation_evapMilk = 50),
   gelatin = 15,
   portion = c(bao = 28))
 
@@ -118,7 +118,8 @@ FancyNotes_sesamelava <- \() new(
   Class = 'recipe', author = '\u4e54\u4e54\u5988', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   blackSesame = 150,
   sugar = 40, 
-  homemade = c(invertSugar = 50), butter = 80,
+  homemade = c(invertSugar = 50), 
+  dairy = c(Kerrygold_butter = 80),
   youtube = 'PC3YOs77lgE') 
 
 #' @rdname lava-class
@@ -129,7 +130,7 @@ xiaogaojie_sesamelava <- \() new(
   blackSesame = 80,
   nut = c(pecan = 30),
   sugar = 80,
-  butter = 60,
+  dairy = c(Kerrygold_butter = 60),
   water = 30)
 
 
@@ -137,10 +138,10 @@ xiaogaojie_sesamelava <- \() new(
 daat_yolklava <- \() new(
   Class = 'recipe', flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
   eggYolk_pc = 12, # salted duck egg yolk 12pc, 144g
-  butter = 180,
+  dairy = c(Kerrygold_butter = 180),
   sugar = 220,
   # custardPowder = 35, # https://www.birdscustard.co.uk
-  starch = c(Wegmans_corn = 35),
+  starch = c(Wegmans_corn_starch = 35),
   gelatin = 12,
   water = 90,
   daatgo = '1h6YFS2KGA0')
@@ -149,12 +150,10 @@ daat_yolklava <- \() new(
 # not a good idea
 pineapple_lava <- \() new(
   Class = 'recipe', 
-  pineapple = 585, 
+  puree = c(Dole_pineapple = 585), 
   gelatin_leaf = 4,
-  waterLost = 135,
-  note = 'Chill before wrapping.',
   # machine (legacy) = list(Nutribullet = 'One (1) recipe calls for a full can'),
-  tool = list(JoyoungCJA9U(
+  tool = list(JoyoungCJA9U_filling(
     minute = 8,
     #waterLost = 100 # to confirmed
   )),

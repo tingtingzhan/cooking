@@ -26,8 +26,8 @@ shrimpball <- \() new(
   #shrimp = 540, lard = 60,
   salt_tsp = 1/8,
   sugar_tsp = 2,
-  starch = c(Wegmans_corn = 12),
-  sesameOil_tsp = 1.5,
+  starch = c(Wegmans_corn_starch = 12),
+  oil_tsp = c(Kadoya_sesame_oil = 1.5),
   spice_tsp = c(
     McCormick_whitePepper = 1/4,
     SimplyOrganic_ginger = 1/8
@@ -49,8 +49,8 @@ beefball <- \() new(
   iceWater = 400/16, # looks like
   salt_tsp = .5,
   spice = c(McCormick_garlic = 130/16),
-  starch_tsp = c(Wegmans_corn = 2.5),
-  tallow = 3*500/16)
+  starch_tsp = c(Wegmans_corn_starch = 2.5),
+  fat = c(Epic_tallow = 3*500/16))
 
 
 #' @rdname meatball-class
@@ -64,8 +64,8 @@ GaaDai_beefball <- \() new(
   salt = 120,
   msg = 50,
   spice = c(McCormick_garlic = 130),
-  starch = c(Wegmans_corn = 100),
-  tallow = 3*500)
+  starch = c(Wegmans_corn_starch = 100),
+  fat = c(Epic_tallow = 3*500))
 
 
 #' @rdname meatball-class
@@ -80,8 +80,8 @@ Daat_cuttlefishball <- \() new(
   salt = 8,
   msg = 9,
   sugar = 13,
-  starch = c(Wegmans_corn = 20),
-  sesameOil = 5,
+  starch = c(Wegmans_corn_starch = 20),
+  oil = c(Kadoya_sesame_oil = 5),
   spice_tsp = c(McCormick_whitePepper = 1/4))
 
 

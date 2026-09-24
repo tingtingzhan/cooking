@@ -21,7 +21,7 @@ jalapeno_meatDip()
 ..
 }
 \examples{
-diagnose(
+nutritionlist(
  BalsamicVinaigrette_meatDip(),
  srirachaBBQ_meatDip(),
  sweetGinger_meatDip(),

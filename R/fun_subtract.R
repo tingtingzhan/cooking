@@ -34,7 +34,7 @@ subtract.raw. <- \(x, ...) {
   
   args <- list(...)
   arg_nm <- names(args)
-  if (!length(arg_nm) || anyNA(arg_nm) || !all(nzchar(arg_nm))) stop('ingredients to be subtracted must be fully named')
+  if (!length(arg_nm) || anyNA(arg_nm) || !all(nzchar(arg_nm))) stop('ingredients to be subtracted must be named')
   
   for (i in seq_along(args)) {
     
@@ -42,22 +42,52 @@ subtract.raw. <- \(x, ...) {
     txt <- c(txt, inm)
     
     ival <- args[[i]]
-    if (!is.numeric(ival) || length(ival) != 1L || is.na(ival)) arg_nm[i] |> sprintf(fmt = 'illegal `%s`') |> stop()
-    # `ival <= 0` allowed, 'adding' an ingredient
+    if (!is.numeric(ival) || anyNA(ival)) {
+      arg_nm[i] |> 
+        sprintf(fmt = 'illegal `%s`') |> 
+        stop()
+      # `ival <= 0` allowed, 'adding' an ingredient
+    }
     
-    if (inm %notin% slotNames(x)) sprintf(fmt = '`%s` is not a supported ingredient', inm) |> stop()
+    if (inm %notin% slotNames(x)) {
+      inm |>
+        sprintf(fmt = '`%s` is not supported') |> 
+        stop()
+    }
+    
     old <- slot(x, name = inm)
     n_old <- length(old)
-    if (!n_old) sprintf(fmt = 'orginal recipe does not contain `@%s`', inm) |> stop()
-    if (n_old > 1L) sprintf(fmt = 'orginal recipe contains multiple brands of `@%s`', inm) |> stop()
-    if (ival > old) sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> stop()
-    new <- old - ival # \link[base]{names} preserved
-    slot(x, name = inm) <- if (new > 0) new else numeric()
+    
+    if (!n_old) {
+      inm |>
+        sprintf(fmt = 'orginal recipe does not contain `@%s`') |> 
+        stop()
+    }
+    
+    if (n_old != length(ival)) {
+      inm |>
+        sprintf(fmt = 'length mismatch of `%s` in orginal recipe and subtract') |> 
+        stop()
+    }
+    
+    if (any(ival > old)) {
+      sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> 
+      stop()
+    }
+    
+    z <- old - ival # `names(old)` preserved
+    if (any(id <- (abs(z) < .Machine$double.eps))) {
+      z <- z[!id]
+    }
+    slot(x, name = inm) <- z
     
   }
 
-  txt[txt == 'brownSugar'] <- 'sugar'
-  x@alias <- paste(x@alias, paste0('-', paste0(unique.default(txt), collapse = '/')) |> col_grey() |> bg_br_green())
+  x@alias <- paste(
+    x@alias, 
+    paste0('-', paste0(unique.default(txt), collapse = '/')) |> 
+      col_grey() |> 
+      bg_br_green())
   
   return(x)
   

@@ -17,7 +17,7 @@ shangshi_pudding()
 \examples{
 pudding()
 
-diagnose(
+nutritionlist(
  pudding(),
  shangshi_pudding()
 )

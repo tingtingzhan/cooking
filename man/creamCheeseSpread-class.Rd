@@ -21,7 +21,7 @@ pumpkin_creamCheeseDip()
 pumpkin_creamCheeseDip()
 pumpkin_creamCheeseSpread()
 
-diagnose(
+nutritionlist(
  pumpkin_creamCheeseSpread(),
  pumpkin_cheesecake(),
  pumpkin_creamCheeseDip()

@@ -20,7 +20,7 @@
 #' @export
 setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
   class2 = '\u519b\u5c6f\u9505\u76d4\u76ae',
-  pastryFlour = 500,
+  flour = c(Wegmans_pastryFlr = 500),
   sugar_tsp = 4, yeast_tsp = 2, # maybe not too much fermentation..
 
   # do NOT use butter in dough next time!
@@ -72,7 +72,7 @@ juntun_filling <- \() new(
     SimplyOrganic_ginger = .5,
     SimplyOrganic_coriander = 1/4
   ),
-  rattanPepperOil_Tbsp = 1, # perfect numbness!!
+  oil_Tbsp = c(YaoMaZi_rattanPepper_oil = 1), # perfect numbness!!
   salt_tsp = .5,
   #instruction (legacy) = c(
   #  'Use KitchenAid meat grinder, not meat chopper!'

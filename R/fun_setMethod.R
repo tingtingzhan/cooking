@@ -76,7 +76,7 @@ setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
 #' @export
 setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) {
   if (length(e2) != 1L || anyNA(e2) || (e2 <= 0)) stop('illegal `e2`')
-  for (i in setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceWeight'))) {
+  for (i in setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceGram'))) {
     slot(e1, name = i) <- slot(e1, name = i) * e2
   }
   return(e1)
@@ -105,7 +105,7 @@ setMethod(f = '%in%', signature = c(x = 'spice', table = 'raw.'), definition = \
     as.character() |>
     sprintf(fmt = '_%s$')
   
-  length(table@spice) && grepl(pattern = ptn, x = names(table@spice))
+  length(table@spice) && any(grepl(pattern = ptn, x = names(table@spice)))
   
 })
 
@@ -135,11 +135,16 @@ setMethod(f = '[', signature = c(x = 'recipe', i = 'nutrition'), definition = \(
 #' @export
 setMethod(f = '[', signature = c(x = 'recipe', i = 'character'), definition = \(x, i) {
   
-  id <- grepl(pattern = i, x = names(x@spice))
-  if (any(id)) return(sum(x@spice[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@spice)))) return(sum(x@spice[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@oil)))) return(sum(x@oil[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@puree)))) return(sum(x@puree[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@dairy)))) return(sum(x@dairy[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@grain)))) return(sum(x@grain[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@flour)))) return(sum(x@flour[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(sum(x@misc[id]))
   
   # look in more places
-  
+
   return(numeric())
 
 })

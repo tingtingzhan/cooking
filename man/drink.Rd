@@ -22,7 +22,7 @@ hotdrink(x, ...)
 \method{hotdrink}{drinkmix}(
   x,
   water = 70,
-  water90 = 560 - 70 - sum(x@pumpkin, x@liqueur, x@heavyCream),
+  water90 = 560 - 70 - sum(x["_pumpkin$"], x@liqueur, x["_heavyCream$"]),
   ...
 )
 
@@ -34,7 +34,7 @@ frappe(x, ...)
 
 \method{frappe}{drinkmix}(
   x,
-  ice = 560/2 - sum(x@pumpkin, x@liqueur, x@heavyCream)/2,
+  ice = 560/2 - sum(x["_pumpkin$"], x@liqueur, x["_heavyCream$"])/2,
   iceWater = ice,
   ...
 )

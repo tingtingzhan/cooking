@@ -30,7 +30,7 @@ xiaogaojie_sesamelava()
 sesame_lava()
 coconut_lava()
 
-diagnose(
+nutritionlist(
   sesame_lava(),
   Daat_sesamelava(),
   xiaogaojie_sesamelava(),
@@ -38,7 +38,7 @@ diagnose(
   xiaomin_sesamelava()
 )
 
-diagnose(
+nutritionlist(
   sesame_lava(),
   subtract(Daat_sesamelava, sugar = 107),
   subtract(xiaogaojie_sesamelava, sugar = 60),

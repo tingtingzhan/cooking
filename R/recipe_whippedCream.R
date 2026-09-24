@@ -36,16 +36,18 @@
 #' such as black sesame seeds.
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
-#'  mascarpone = 453/2, water = 70, 
+#'  dairy_cup = c(BelGioioso_mascarpone = 1),
+#'  water = 70, 
 #'  sugar_tsp = 10.5, matcha_tsp = 4, 
 #'  pros = 'Effie\'s Signature!'),
 #'  
 #'  matcha_whippedCream(),
 #'  
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
-#'  mascarpone = 453/2, water = 110, 
+#'  dairy_cup = c(BelGioioso_mascarpone = 1),
+#'  water = 110, 
 #'  sugar_tsp = 11.5, matcha_tsp = 4.5, 
 #'  pros = 'Xu Chang, Gloria', 
 #'  cons = 'Scott Keith says this is bitter'),
@@ -59,7 +61,7 @@
 #' pumpkin_mascarponeFrosting()
 #' tiramisuFrosting_Kahlua()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  foodandjourneys_mascarponeFrosting(),
 #'  lifeloveandsugar_mascarponeFrosting(),
 #'  lifeloveandsugar_cocoa_mascarponeFrosting(),
@@ -70,7 +72,7 @@
 #' @export
 setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
   class2 = '\u6253\u53d1\u91cd\u5976\u6cb9',
-  heavyCream = 100,
+  dairy = c(Wegmans_heavyCream = 100),
   # instruction (legacy) = c(
   #  'KitchenAid stand mixer: mix and whisk until stiff'
   #),
@@ -107,11 +109,11 @@ cocoa_whippedCream <- \() new(
 #' @export
 setClass(Class = 'mascarponeFrosting', contains = 'recipe', prototype = prototype(
   class2 = 'Mascarpone\u88f1\u82b1',
-  mascarpone = 453/2, # 1 cup mascarpone cheese
+  dairy_cup = c(BelGioioso_mascarpone = 1)#,
   #instruction (legacy) = c(
   #  'KitchenAid stand mixer: mix and whisk until stiff'
   #),
-  note = 'For piping'
+  # note (legacy) = 'For piping'
 ))
 
 setValidity(Class = 'mascarponeFrosting', method = \(object) {
@@ -125,12 +127,13 @@ setValidity(Class = 'mascarponeFrosting', method = \(object) {
 #' @export
 setClass(Class = 'frosting', contains = 'recipe', prototype = prototype(
   class2 = '\u79d8\u5236\u88f1\u82b1',
-  mascarpone = 453/4, yogurt = 80 # not tried yet
+  dairy_cup = c(BelGioioso_mascarpone = .5),
+  dairy = c(Nancys_yogurt = 80) # not tried yet
 ))
 
 setValidity(Class = 'frosting', method = \(object) {
   if (length(object@water)) stop('do not add water in `frosting`')
-  if (length(object@pumpkin) || length(object@pineapple) || length(object@puree)) {
+  if (length(object@puree)) {
     stop('frosting with mascarpone+yogurt base already contains a lot of water. Cannot use puree. Use powder instead')
   }
 })
@@ -140,7 +143,7 @@ setValidity(Class = 'frosting', method = \(object) {
 #' @export
 setClass(Class = 'mascarponeGanache', contains = 'recipe', prototype = prototype(
   class2 = 'Mascarpone\u5976\u6cb9\u971c',
-  mascarpone = 453/2, # 1 cup mascarpone cheese
+  dairy_cup = c(BelGioioso_mascarpone = 1),
   portion = c('mille cre\u0302pe cake 11in' = 1000)#,
   #instruction (legacy) = c(
   #  'KitchenAid stand mixer: mix and whisk until soft peak'
@@ -157,17 +160,13 @@ setValidity(Class = 'mascarponeGanache', method = \(object) {
 #' @export
 setClass(Class = 'ganache', contains = 'recipe', prototype = prototype(
   class2 = '\u79d8\u5236\u5976\u6cb9\u971c',
-  mascarpone = 453/4, yogurt = 120, # cannot further increase yogurt!! flavor of yogurt very strong already!!
+  dairy_cup = c(BelGioioso_mascarpone = .5),
+  dairy = c(Nancys_yogurt = 120), # cannot further increase yogurt!! flavor of yogurt very strong already!!
   portion = c('mille cre\u0302pe cake 11in' = 1000)
 ))
 
 
-setValidity(Class = 'ganache', method = \(object) {
-  # if (length(object@water)) stop('do not add water in `ganache`') # will add a little little now
-  if (length(object@pumpkin) || length(object@pineapple) || length(object@puree)) {
-    stop('ganache with mascarpone+yogurt base already contains a lot of water. Cannot use puree. Use powder instead')
-  }
-})
+
 
 
 #' @rdname whippedCream-class
@@ -190,16 +189,20 @@ matcha_ganache <- \() new(
 #' @export
 pumpkin_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', 
-  pumpkin = 100, 
+  puree = c(Libbys_pumpkin = 100), 
   #sugar_tsp = 7.5, # was
-  brownSugar = 22, # new
+  sugar = c(Domino_darkBrown = 22), # new
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/4+1/8), # new
   review = 'retry',
   pros = 'Effie\'s Signature!')
 
 #' @rdname whippedCream-class
 #' @export
-pineapple_mascarponeFrosting <- \() new(Class = 'mascarponeFrosting', pineapple = 100, sugar_tsp = 6, pros = 'Effie\'s Signature!')
+pineapple_mascarponeFrosting <- \() new(
+  Class = 'mascarponeFrosting', 
+  puree = c(Dole_pineapple = 100), 
+  sugar_tsp = 6, 
+  pros = 'Effie\'s Signature!')
 
 
 #' @rdname whippedCream-class
@@ -251,7 +254,7 @@ coffee_ganache <- \() new(
 #' @export
 durian_ganache <- \() new(
   Class = 'ganache', flavor = '\u69b4\u83b2',
-  durian = 300, 
+  puree = c(LuckyTaro_durian = 300), 
   sugar = 10,
   review = 'try')
 
@@ -278,7 +281,7 @@ if (FALSE) {
   new(
     Class = 'recipe', 
     class2 = 'Mascarpone\u5976\u6cb9\u971c',
-    mascarpone = 453/2,
+    dairy_cup = c(BelGioioso_mascarpone = 1),
     liqueur_Tbsp = c(Kahlua_coffee = 2),
     water = 47,
     sugar_tsp = 4.5,
@@ -310,19 +313,16 @@ tiramisuSpread_CafeGranita <- \() new(
 #' @export
 pineapple_ganache <- \() new(
   Class = 'mascarponeGanache', 
-  pineapple = 190, sugar_tsp = 5, 
+  puree = c(Dole_pineapple = 190), sugar_tsp = 5, 
   pros = 'I love!!')
 
 #' @rdname whippedCream-class
 #' @export
 pumpkin_ganache <- \() new(
   Class = 'mascarponeGanache',
-  pumpkin = 325, sugar_tsp = 11,
+  puree = c(Libbys_pumpkin = 325), sugar_tsp = 11,
   pros = 'Very forgiving: adding pumpkin puree almost do not change the texture!', 
-  cons = 'No longer holds air well though',
-  note = c(
-    'Do not further increase pumpkin puree'
-  ))
+  cons = 'No longer holds air well though; do not further increase pumpkin puree')
 
 
 
@@ -340,8 +340,8 @@ tiramisu_nytimes <- \() new(
   Class = 'recipe', flavor = 'Tiramisu', 
   eggYolk_pc = 4,
   sugar = 100, 
-  heavyCream = 180,
-  mascarpone = 453/2,
+  dairy = c(Wegmans_heavyCream = 180),
+  dairy_cup = c(BelGioioso_mascarpone = 1),
   nytimes = '1018684')
 
 
@@ -353,14 +353,14 @@ foodandjourneys_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', author = 'Food & Journeys',
   sugar_cup = c(Domino_10x = 1/3),
   # ▢ 1 vanilla bean, seeded
-  lightCream_cup = 1,
+  dairy_cup = c(Lucerne_lightCream = 1),
   url = 'https://foodandjourneys.net/how-to-make-mascarpone-cream/')
 
 #' @rdname whippedCream-class
 #' @export
 lifeloveandsugar_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', flavor = 'Life Love & Sugar',
-  heavyCream_cup = 1.25,
+  dairy_cup = c(Wegmans_heavyCream = 1.25),
   sugar_cup = c(Domino_10x = 3/4),
   vanilla_tsp = 1,
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
@@ -369,7 +369,7 @@ lifeloveandsugar_mascarponeFrosting <- \() new(
 #' @export
 lifeloveandsugar_cocoa_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', flavor = 'Life Love & Sugar, Cocoa',
-  heavyCream_cup = 1.25,
+  dairy_cup = c(Wegmans_heavyCream = 1.25),
   sugar_cup = c(Domino_10x = 1/2),
   cocoa_cup = 1/4,
   vanilla_tsp = 1,
@@ -380,7 +380,7 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- \() new(
 Marcellina_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', 
   flavor = 'Marcellina in Cucina',
-  heavyCream_cup = 1,
+  dairy_cup = c(Wegmans_heavyCream = 1),
   sugar_cup = c(Domino_10x = 1/4),
   vanilla_tsp = 2,
   url = 'https://www.marcellinaincucina.com/mascarpone-cream/')
@@ -392,7 +392,7 @@ Marcellina_mascarponeFrosting <- \() new(
 #' @export
 setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototype(
   class2 = '\u6253\u53d1Cream Cheese',
-  creamCheese_brick = c(Nancys = 1)
+  dairy_brick = c(Nancys_creamCheese = 1)
 ))  
   
 #' @rdname whippedCream-class

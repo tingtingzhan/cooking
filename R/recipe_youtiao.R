@@ -1,6 +1,6 @@
 
 if (FALSE) {
-  diagnose(
+  nutritionlist(
     youtiao(),
     mathstar_youtiao(),
     xiaogaojie_youtiao(),
@@ -25,9 +25,9 @@ if (FALSE) {
 youtiao <- \() new(
   Class = 'recipe',
   class2 = '\u6cb9\u6761',
-  flour = c(Wegmans_pastry = 250, KingArthur_bread = 250),
+  flour = c(Wegmans_pastryFlr = 250, KingArthur_breadFlr = 250),
   egg_pc = 1,
-  oil = c(Wegmans_corn = 20),
+  oil = c(Wegmans_corn_oil = 20),
   sugar = 10,
   NaHCO3 = 3,
   bakingPowder = 8,
@@ -38,23 +38,23 @@ youtiao <- \() new(
 xiaogaojie_youtiao <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u6761', 
   xiaogaojie = 'uRc3F6uwR3E',
-  flour = 350,
-  milk = 250,
+  flour = c(KingArthur_allPurposeFlr = 350),
+  dairy = c(WegmansOrganic_whole_milk = 250),
   bakingPowder = 10,
   NaHCO3_tsp = 1/2,
   salt_tsp = 1,
-  oil_Tbsp = c(Wegmans_corn = 1)
+  oil_Tbsp = c(Wegmans_corn_starch = 1)
 )
 
 mathstar_youtiao <- \() new(
   Class = 'recipe',
   author = 'MathStar', flavor = '\u6cb9\u6761',
   url = 'https://huaren.us/showtopic.html?topicid=3003916&fid=398',
-  flour = 500,
+  flour = c(KingArthur_allPurposeFlr = 500),
   bakingPowder = 12, yeast = 6,
   NaHCO3 = 3,
   salt = 6,
-  oil = c(Wegmans_corn = 30), 
+  oil = c(Wegmans_corn_oil = 30), 
   egg_pc = 1,
   water = 280)
 
@@ -63,72 +63,73 @@ mathstar_youtiao <- \() new(
 PinNuo_youtiao1 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67611', 
   pino = 'xoFcbox1VDE',
-  flour = 500,
+  flour = c(KingArthur_allPurposeFlr = 500),
   bakingPowder = 6, NaHCO3 = 3, salt = 5, sugar = 5,
-  egg_pc = 1, butter = 30, water = 250)
+  egg_pc = 1, 
+  dairy = c(Kerrygold_butter = 30), water = 250)
 
 
 PinNuo_youtiao2 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67612', 
   pino = 'cD2mJYDaXU0',
-  flour = 500,
+  flour = c(KingArthur_allPurposeFlr = 500),
   # NaHCO3 = 3, #su-cui-ji = 6, # primary component NaHCO3
   NaHCO3 = (3+6),
   salt = 5,
   sugar = 5,
-  oil = c(Wegmans_corn = 40), 
+  oil = c(Wegmans_corn_oil = 40), 
   water = 250)
 
 
 PinNuo_youtiao3 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67613', 
   pino = '8Af9_PiZx2Q',
-  flour = 1000,
+  flour = c(KingArthur_allPurposeFlr = 1000),
   bakingPowder = 10, 
   # youtiao puffing mix = 10
   salt = 8, 
   sugar = 8,
   egg_pc = 2, 
-  oil = c(Wegmans_corn = 60), 
+  oil = c(Wegmans_corn_oil = 60), 
   water = 480)
 
 PinNuo_youtiao4 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67614', 
   pino = 'KAUdFDRD8l0',
-  flour = 1000,
+  flour = c(KingArthur_allPurposeFlr = 1000),
   yeast = 10, NaHCO3 = 5, salt = 10, sugar = 8,
   egg_pc = 2, 
-  oil = c(Wegmans_corn = 30), water = 500)
+  oil = c(Wegmans_corn_oil = 30), water = 500)
 
 
 PinNuo_youtiao5 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67615', 
   pino = 'bKZy7TGnMbE',
-  flour = 500,
+  flour = c(KingArthur_allPurposeFlr = 500),
   bakingPowder = 3, salt = 3, sugar = 3,
   # youtiao puffing mix = 5
   egg_pc = 1, 
-  oil = c(Wegmans_corn = 20), 
+  oil = c(Wegmans_corn_oil = 20), 
   water = 260)
 
 PinNuo_youtiao6 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67616', 
   pino = 'YoEO04dWiz0',
-  flour = 500,
+  flour = c(KingArthur_allPurposeFlr = 500),
   bakingPowder = 8, 
   # youtiao su-cui mix = 5
   salt = 5, sugar = 5,
   egg_pc = 1, 
-  oil = c(Wegmans_corn = 30), 
+  oil = c(Wegmans_corn_oil = 30), 
   water = 250)
 
 PinNuo_youtiao7 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67617', 
   pino = 'cv3JhX8NbNs',
-  flour = 1000, # white sesame 60g
+  flour = c(KingArthur_allPurposeFlr = 1000), # white sesame 60g
   bakingPowder = 15, 
   sugar = 10, salt = 10, 
   # youtiao su-cui mix = 8
   egg_pc = 2, 
-  oil = c(Wegmans_corn = 60), 
+  oil = c(Wegmans_corn_oil = 60), 
   water = 500)

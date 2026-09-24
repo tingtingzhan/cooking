@@ -18,7 +18,7 @@ setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
 soymilk <- \() new(
   Class = 'soymilk',
   soybean = 22, # 1/2 Joyoung small cup
-  glutinousRiceFlour = c(Erawan_glutinousRiceFlour = 5),
+  flour = c(Erawan_glutinousRiceFlr = 5),
   water = 590 - 22 - 5, # confirmed!!
   tool = list(JoyoungDJ06M_soymilk()), 
   pros = 'perfect thickness!',
@@ -60,7 +60,9 @@ mungMilk_thick <- \() new(
   mungbean = 130, # soaked mung bean (skin removed): 213
   soybean = 45,
   water = 1330 - 130 - 45,
-  tool = list(JoyoungDJ13U_soymilk(waterLost = 25))) # (4169+30) - 4176
+  tool = list(JoyoungDJ13U_soymilk(
+    waterLost = 25  # (4169+30) - 4176
+  )))
 
 
 
@@ -70,11 +72,10 @@ mungMilk_thick <- \() new(
 corn_soymilk <- \() new(
   Class = 'soymilk', 
   soybean = 100, # weigh and confirm
-  yellowCorn = c(Kirkland_yellowCorn = 100), # weigh and confirm
-  # haven't seen [Kirkland_yellowCorn] at Costco for a while
+  puree = c(Kirkland_yellowCorn = 100), # weigh and confirm
   water = 1100, # weigh and confirm
-  note = c('One (1) measure cup of soy bean',
-           'One (1) US cup of frozen corn'),
+  #note (legacy) = c('One (1) measure cup of soy bean',
+  #         'One (1) US cup of frozen corn'),
   review = 'Super nice to drink!')
 
 veggie_soymilk <- \() new(

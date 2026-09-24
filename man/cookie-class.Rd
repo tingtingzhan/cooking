@@ -70,19 +70,19 @@ Ceylon_cookie()
 coffee_cookie()
 lemon_cookie()
 
-diagnose(
+nutritionlist(
  ginger_cookie(),
  cooking:::YokuMoku_cigare()
 )
 
-new('cookie', flour = c(Wegmans_bread = 200, DaoXiangCun_corn = 374), sugar = 110)
+new('cookie', flour = c(Wegmans_breadFlr = 200, DaoXiangCun_corn = 374), sugar = 110)
 
 
-new('cookie', misc = c(SunnyFruit_date = 200), pastryFlour = 360, 
-  drymilk = 124)
-new('cookie', misc = c(SunnyFruit_date = 324), pastryFlour = 360)
+new('cookie', misc = c(SunnyFruit_date = 200), flour = c(Wegmans_pastryFlr = 360), 
+  dairy = c(Carnation_drymilk = 124))
+new('cookie', misc = c(SunnyFruit_date = 324), flour = c(Wegmans_pastryFlr = 360))
 
-new('cookie', misc = c(Kirkland_plum = 270), pastryFlour = 360, 
-  drymilk = 54)
+new('cookie', misc = c(Kirkland_plum = 270), flour = c(Wegmans_pastryFlr = 360), 
+  dairy = c(Carnation_drymilk = 54))
 
 }

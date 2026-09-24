@@ -13,19 +13,19 @@
 #' 
 #' 
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  millecrepe(),
 #'  xiaogaojie_millecrepe(),
 #'  iwen_mango_millecrepe(),
 #'  lisa_mango_millecrepe())
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  cocoa_millecrepe(),
 #'  iwen_cocoa_millecrepe(),
 #'  qiong_cocoa_millecrepe(),
 #'  qiong_tiramisu_millecrepe())
 #'  
-#' diagnose(
+#' nutritionlist(
 #'  amanda_matcha_millecrepe(),
 #'  oreomachi_matcha_millecrepe(), 
 #'  matcha_millecrepe(),
@@ -38,15 +38,15 @@
 setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
   class2 = 'Mille Cre\u0302pe',
   portion = c('mille cre\u0302pe cake 11in' = 1100),
-  pastryFlour = 100,
+  flour = c(Wegmans_pastryFlr = 100),
   egg_pc = 2,
-  drymilk = c(Carnation = 23),
-  heavyCream = 85,
-  water = 240,
-  waterLost = 200#, 
+  dairy = c(
+    Wegmans_heavyCream = 85,
+    Carnation_drymilk = 23
+  ),
+  water = 240#,
   # I can consistently achieve 170g water-lost using ladle
   # now I am good with rateau. 
-  # will confirm waterLost when I have a chance
   #instruction (legacy) = c(
   #  'Sift powder. Sift batter',
   #  'Cool crepe pan under running water down to below 100\u00b0C',
@@ -82,7 +82,7 @@ matcha_millecrepe <- \() new(
 #' @export
 beet_millecrepe <- \() new(
   Class = 'millecrepe',
-  beet_tsp = 4,
+  misc_tsp = c(Wegmans_beet_pulv = 4),
   sugar_Tbsp = 2, 
   pros = c('Xu Chang'))
 
@@ -91,7 +91,7 @@ beet_millecrepe <- \() new(
 cocoa_millecrepe <- \() new(
   Class = 'millecrepe',
   cocoa_tsp = c(KingArthur_Bensdorp = 9.5), 
-  # heavyCream = 70, cocoa_Tbsp = 3, sugar_Tbsp = 2, # not enough sugar
+  # dairy = c(Wegmans_heavyCream = 70), cocoa_Tbsp = 3, sugar_Tbsp = 2, # not enough sugar
   sugar_tsp = 10.5, # try
   review = 'try again with dutch cocoa, natural cocoa already pretty good')
 
@@ -110,11 +110,11 @@ Kahlua_millecrepe_FAIL <- \() new(
 #' @export
 xiaogaojie_millecrepe <- \() new(
   Class = 'recipe', flavor = 'millecrepe',
-  milk = 300, # in grams in original recipe
-  pastryFlour = 100,
+  dairy = c(Kerrygold_butter = 25,
+            WegmansOrganic_whole_milk = 300), # in grams in original recipe
+  flour = c(Wegmans_pastryFlr = 100),
   sugar = 12, 
   egg_pc = 2,
-  butter = 25,
   xiaogaojie = 'uZ626SU5T2I')
 
 #' @rdname millecrepe-class
@@ -123,10 +123,10 @@ iwen_mango_millecrepe <- \() new(
   Class = 'recipe', author = 'iwen', flavor = 'mango millecrepe',
   egg_pc = 6,
   sugar = 75,
-  pastryFlour = 300,
+  flour = c(Wegmans_pastryFlr = 300),
   salt_tsp = 1/2,
-  milk = 750, # in grams in original recipe
-  butter = 100,
+  dairy = c(Kerrygold_butter = 100,
+            WegmansOrganic_whole_milk = 750), # in grams in original recipe
   youtube = 'tIOzt4XWy7k')
   
 
@@ -137,11 +137,11 @@ iwen_cocoa_millecrepe <- \() new(
   egg_pc = 6,
   sugar = 75,
   cocoa = 23,
-  flour = 240,
+  flour = c(KingArthur_allPurposeFlr = 240),
   salt_tsp = 1/2,
-  milk = 750, # in grams in original recipe
-  butter = 105,
-  starch = c(Wegmans_corn = 37.5),
+  dairy = c(Kerrygold_butter = 105,
+            WegmansOrganic_whole_milk = 750), # in grams in original recipe
+  starch = c(Wegmans_corn_starch = 37.5),
   youtube = 'Z7WcSVGa6R4')
 
 
@@ -150,24 +150,24 @@ iwen_cocoa_millecrepe <- \() new(
 qiong_cocoa_millecrepe <- \() new(
   Class = 'recipe', author = '\u5927\u743c', flavor = '\u53ef\u53ef\u5343\u5c42', youtube = 'i8Ii4BZBkmg',
   egg_pc = 2,
-  butter = 40,
   cocoa = 10,
-  milk = 400, # in grams in original recipe
+  dairy = c(Kerrygold_butter = 40,
+            WegmansOrganic_whole_milk = 400), # in grams in original recipe
   sugar = 50,
-  pastryFlour = 80)
+  flour = c(Wegmans_pastryFlr = 80))
 
 #' @rdname millecrepe-class
 #' @export
 qiong_tiramisu_millecrepe <- \() new(
   Class = 'recipe', author = '\u5927\u743c', flavor = 'tiramisu\u0300 millecrepe', youtube = 'xiVfrjTwaHw',
   egg_pc = 2, #
-  butter = 30, #
   cocoa = 8, #
-  milk = 410, # in grams in original recipe
+  dairy = c(Kerrygold_butter = 30, #
+            WegmansOrganic_whole_milk = 410), # in grams in original recipe
   # 15ml  Coffee Rum    1tbsp
   sugar = 50, #
   coffee = 6.6, #
-  pastryFlour = 80) #
+  flour = c(Wegmans_pastryFlr = 80)) #
 
 
 
@@ -177,39 +177,39 @@ qiong_tiramisu_millecrepe <- \() new(
 #' @export
 amanda_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', flavor = '\u62b9\u8336\u5343\u5c42',
-  milk = 650,
-  pastryFlour = 240,
+  dairy = c(Kerrygold_butter = 50,
+            WegmansOrganic_whole_milk = 650),
+  flour = c(Wegmans_pastryFlr = 240),
   sugar = 90,
   egg_pc = 4,
   matcha_tsp = 4,
-  butter = 50,
   youtube = 'Caopoyr53TY')
 
 #' @rdname millecrepe-class
 #' @export
 sweetTaste_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u4e00\u5c0f\u70b9', flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'mU8rOo8_WrM',
-  pastryFlour = 80,
-  starch = c(Wegmans_corn = 15),
+  flour = c(Wegmans_pastryFlr = 80),
+  starch = c(Wegmans_corn_starch = 15),
   matcha = 5,
   egg_pc = 2,
   sugar = 30,
-  oil = c(Wegmans_vegetable = 15),
-  milk = 250 # in grams in original recipe
+  oil = c(Wegmans_vegetable_oil = 15),
+  dairy = c(WegmansOrganic_whole_milk = 250) # in grams in original recipe
 )
 
 #' @rdname millecrepe-class
 #' @export
 oreomachi_matcha_millecrepe <- \() new(
   Class = 'recipe', author = 'oreomachi', flavor = '\u62b9\u8336\u5343\u5c42', youtube = '2WESa5wNK0o',
-  milk = 360,
-  heavyCream = 140,
+  dairy = c(Kerrygold_butter = 52,
+            WegmansOrganic_whole_milk = 360,
+            Wegmans_heavyCream = 140),
   sugar = 80,
-  butter = 52,
   egg_pc = 4,
-  pastryFlour = 160,
+  flour = c(Wegmans_pastryFlr = 160),
   matcha = 6,
-  oil = c(Wegmans_vegetable = 40)
+  oil = c(Wegmans_vegetable_oil = 40)
   # Honey 40g ???
 )
 
@@ -218,12 +218,12 @@ oreomachi_matcha_millecrepe <- \() new(
 lisa_matcha_millecrepe <- \() new(
   Class = 'recipe', author = '\u8428\u59d0', flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'lP0p7qh3E1I',
   egg_pc = 2,
-  butter = 30,
   matcha = 8,
-  heavyCream = 65,
   sugar = 35,
-  milk = 340,
-  pastryFlour = 90
+  dairy = c(Kerrygold_butter = 30,
+            Wegmans_heavyCream = 65,
+            WegmansOrganic_whole_milk = 340),
+  flour = c(Wegmans_pastryFlr = 90)
 )
 
 #' @rdname millecrepe-class
@@ -231,10 +231,10 @@ lisa_matcha_millecrepe <- \() new(
 lisa_mango_millecrepe <- \() new(
   Class = 'recipe', author = '\u8428\u59d0', flavor = 'mango millecrepe', youtube = '_Pz6_nKaebw',
   egg_pc = 2, 
-  butter = 20,
   sugar = 30, 
-  milk = 280, 
-  pastryFlour = 70 
+  dairy = c(Kerrygold_butter = 20,
+            WegmansOrganic_whole_milk = 280), 
+  flour = c(Wegmans_pastryFlr = 70) 
 )
 
 #' @rdname millecrepe-class
@@ -243,11 +243,11 @@ JustOne_matcha_millecrepe <- \() new(
   Class = 'recipe', 
   flavor = '\u62b9\u8336\u5343\u5c42', 
   just1cookbook = c('vfUu0eedUYI' = 'matcha-mille-crepe-cake'),
-  milk_cup = 1.75,
+  dairy_cup = c(Wegmans_whole_milk = 1.75),
   sugar = 12.5*3, # 3 Tbsp granulated sugar
   egg_pc = 3,
-  butter = 25,
-  pastryFlour = 138,
+  dairy = c(Kerrygold_butter = 25),
+  flour = c(Wegmans_pastryFlr = 138),
   matcha_Tbsp = 2,
   bakingPowder_tsp = .5)
 

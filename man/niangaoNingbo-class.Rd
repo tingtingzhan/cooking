@@ -21,7 +21,7 @@ LuLu_niangaoNingbo()
 ..
 }
 \examples{
-diagnose(
+nutritionlist(
  SoupedUp_niangaoNingbo(),
  niangaoNingbo(),
  Jenny_niangaoNingbo(),

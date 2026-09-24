@@ -16,22 +16,22 @@ InstantPot <- \(...) new(
 
 KSMICM <- \(...) new(
   Class = 'tool', 
-  name = 'Kitchen Aid Ice Cream Attachment KSMICM', kitchenaid = 'ksmicm',
+  name = 'Ice Cream Attachment KSMICM', kitchenaid = 'ksmicm',
   ...)
 
 KSM8990 <- \(...) new(
   Class = 'tool', 
-  name = 'Kitchen Aid Stand Mixer KSM8990, 8 Quart', kitchenaid = 'ksmc895ob',
+  name = 'Stand Mixer KSM8990, 8 Quart', kitchenaid = 'ksmc895ob',
   ...)
 
 KSM3316X <- \(...) new(
   Class = 'tool', 
-  name = 'Kitchen Aid Stand Mixer KSM3316X, 3.5 Quart', kitchenaid = 'ksm3316xer',
+  name = 'Stand Mixer KSM3316X, 3.5 Quart', kitchenaid = 'ksm3316xer',
   ...)
 
 KSEG950ESS <- \(...) new(
   Class = 'tool',
-  name = 'Kitchen Aid Downdraft Range KSEG950ESS', kitchenaid = 'kseg950ess', alias = '\u70e4\u7bb1',
+  name = 'Downdraft Range KSEG950ESS', kitchenaid = 'kseg950ess', alias = '\u70e4\u7bb1',
   ...)
 
 RobamCT763 <- \(...) new(
@@ -97,19 +97,39 @@ JoyoungDJ13U_cornjuice <- \(
 
 JoyoungCJA9U <- \(
   program = '\u7206\u7092\u7a0b\u5e8f Stir Fry program',
-  operation = 'manually stir frequently',
   ...
 ) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html') |> c(), 
+  name = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html' |>
+    style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = _) |> 
+    c(), 
   alias = '\u7092\u83dc\u673a',
   program = program, 
-  operation = operation,
-  cooling = c(
-    'covered, until bubbling quiets down',
-    'disassemble machine as early as possible; syrup may stuck'
-  ),
   ...)
+
+
+JoyoungCJA9U_filling <- \(
+  treatment = c(
+    'Cut (chilled) butter in mini chunks. Sprinkle on bottom of stir-frying pan; otherwise batter sticks and burns!',
+    'Mix well the rest of ingredients (except sugar). Pour into stir-frying pan, on top of sprinkled butter'
+  ),
+  operation = 'manually stir frequently',
+  cooling = c(
+    'fold added sugar into hot, cooked paste',
+    '(re-)covered, until bubbling quiets down',
+    'disassemble machine as early as possible; sugar syrup may stick'
+  ),
+  ...
+  ) {
+  JoyoungCJA9U(
+    treatment = treatment,
+    operation = operation,
+    cooling = cooling,
+    ...
+  )
+}
+
+
 
 nutribullet20 <- \(...) new(
   Class = 'tool',
@@ -145,13 +165,13 @@ StanleyJar36 <- \(...) new(
 
 Staub_vertRoaster <- \(...) new(
   Class = 'tool',
-  name = 'Staub Vertical Chicken Roaster', staub = '1200023', alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
+  name = 'Vertical Chicken Roaster', staub = '1200023', alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
   name2 = KSEG950ESS()@name,
   ...)
 
 Staub_deepSkillet <- \(...) new(
   Class = 'tool',
-  name = 'Staub Deep Skillet, 8.5 inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
+  name = 'Deep Skillet, 8.5 inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
   ...
 )
 

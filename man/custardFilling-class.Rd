@@ -3,7 +3,6 @@
 \docType{class}
 \name{custardFilling-class}
 \alias{custardFilling-class}
-\alias{custardFilling}
 \alias{pineapple_custardFilling}
 \alias{pumpkin_custardFilling}
 \alias{apple_custardFilling}
@@ -18,8 +17,6 @@
 \alias{blackSesame_custardFilling}
 \title{\linkS4class{custardFilling} Recipes}
 \usage{
-custardFilling()
-
 pineapple_custardFilling()
 
 pumpkin_custardFilling()

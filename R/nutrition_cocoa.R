@@ -4,7 +4,7 @@
 #' @rdname nutrition-class
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::KingArthur_blackCocoa(),
 #'  cooking:::KingArthur_Burgundy(),
 #'  cooking:::KingArthur_Bensdorp(), 

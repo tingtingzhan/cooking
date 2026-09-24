@@ -2,7 +2,7 @@
 #' @rdname nutrition-class
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  mocaccino(),
 #'  cooking:::Rebecca_mocha(),
 #'  cooking:::Pillsbury_mocha(),
@@ -12,7 +12,7 @@
 #'  cooking:::bargainmums_mocha()
 #' ) # compare powder recipes
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  mocaccino(),
 #'  cooking:::Maxwell_mochaSuisse(),
 #'  cooking:::WilliamsSonoma_mocha(),
@@ -30,12 +30,12 @@
 #'  cooking:::Starbucks_mochaMix()
 #' ) # compare commercial powders
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  hotdrink(mocaccino),
 #'  cooking:::Starbucks_mocha()
 #' ) # compare hot drink
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  frappe(mocaccino),
 #'  cooking:::Starbucks_mochaFrappuccino(),
 #'  cooking:::Starbucks_mochaFrappuccino_bottle()
@@ -129,7 +129,7 @@ Starbucks_mochaMix <- \() new(
 Pillsbury_mocha <- \() new(
   Class = 'recipe', author = 'Pillsbury', flavor = 'Mocha Mix',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
-  spice_cup = c(Nestle_coffeeMate = 2.25),
+  misc_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5, # didnt say confectioners or granulated
   coffee_cup = c(3/4),
   cocoa_cup = 3/4)
@@ -142,8 +142,8 @@ Rebecca_mocha <- \() new(
   Class = 'recipe', author = 'Rebecca', flavor = 'Mocha Mix',
   allrecipes = '23828/hot-mocha-drink-mix/',
   sugar_cup = c(Domino_granulated = 1),
-  drymilk_cup = 1,
-  spice_cup = c(Nestle_coffeeMate = 1),
+  dairy_cup = c(Carnation_drymilk = 1),
+  misc_cup = c(Nestle_coffeeMate = 1),
   cocoa_cup = c(KingArthur_Bensdorp = 1/2),
   coffee_cup = 1/4)
 
@@ -155,7 +155,8 @@ bargainmums_mocha <- \() new(
   Class = 'recipe', author = 'Bargain Mums', flavor = 'Mocha Mix',
   coffee = 30, 
   cocoa = c(KingArthur_Bensdorp = 50), 
-  sugar = 100, drymilk = 110, vanilla_tsp = 1,
+  sugar = 100, 
+  dairy = c(Carnation_drymilk = 110), vanilla_tsp = 1,
   url = 'https://bargainmums.com.au/homemade-mocha-mix')
 
 
@@ -190,7 +191,7 @@ Godiva_milkCocoa <- \() new(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
-  suggestion = list(milk_cup = 1))
+  suggestion = list(dairy_cup = c(Wegmans_whole_milk = 1)))
 
 
 
@@ -200,7 +201,7 @@ Godiva_cocoa <- \() new(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3,
-  suggestion = list(milk_cup = 1))
+  suggestion = list(dairy_cup = c(Wegmans_whole_milk = 1)))
 
 
 
@@ -215,7 +216,7 @@ SwissMiss_simplyCocoaMilk <- \() new(
   calorie = 100,
   sodium = .15, carbohydrate = 22, addedSugar = 20, protein = 1,
   suggestion = list(
-    milk_cup = c(WegmansOrganic_2perc = 1)
+    dairy_cup = c(WegmansOrganic_2perc_milk = 1)
   ))
 
 
@@ -282,10 +283,10 @@ Starbucks_mochaSauce <- \() new(
 EarlaTaylor_cocoa <- \() new(
   Class = 'recipe', author = 'Earla Taylor', flavor = 'Cocoa Mix',
   allrecipes = '9335/hot-cocoa-mix/',
-  drymilk_cup = 10,
+  dairy_cup = c(Carnation_drymilk = 10),
   sugar_cup = c(Domino_10x = 4.75),
   cocoa_cup = c(KingArthur_Burgundy = 1.75),
-  spice_cup = c(Nestle_coffeeMate = 1.75))
+  misc_cup = c(Nestle_coffeeMate = 1.75))
 
 
 
@@ -293,7 +294,7 @@ EarlaTaylor_cocoa <- \() new(
 Mels_cocoa <- \() new(
   Class = 'recipe', author = 'Mel\'s', flavor = 'Cocoa Mix',
   url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
-  drymilk = 405,
+  dairy = c(Carnation_drymilk = 405),
   sugar = 228,
   cocoa = c(KingArthur_Bensdorp = 128),
   misc = c(Ghirardelli_whiteChocolate = 255),
@@ -307,8 +308,8 @@ AmandaRettke_cocoa <- \() new(
   url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
   sugar = 250,
   cocoa = c(KingArthur_Bensdorp = 118),
-  drymilk = 170,
-  starch_tsp = c(Wegmans_corn = 2),
+  dairy = c(Carnation_drymilk = 170),
+  starch_tsp = c(Wegmans_corn_starch = 2),
   salt_tsp = 1/2 # 1 teaspoon kosher salt
 )
 

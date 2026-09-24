@@ -4,9 +4,11 @@ AmishHeritage_carrotcake <- \() new(
   Class = 'recipe',
   author = 'Amish Heritage', flavor = 'Carrot Cake',
   url = 'https://amish-heritage.org/carrot-cake-with-pineapple-and-pecans-amish-recipe/',
-  sugar_cup = c(Domino_granulated = 1),
-  brownSugar_cup = c(Domino_darkBrown = 1),
-  oil_cup = c(Wegmans_vegetable = 1.5),
+  sugar_cup = c(
+    Domino_granulated = 1,
+    Domino_darkBrown = 1
+  ),
+  oil_cup = c(Wegmans_vegetable_oil = 1.5),
   egg_pc = 4,
   fruit = c(carrot = 300, 
             pecan = 50, walnut = 50,
@@ -14,7 +16,7 @@ AmishHeritage_carrotcake <- \() new(
   # 2.5 cup shredded carrots
   # 1 cup crushed pineapple, drained
   # ¾ c. chopped pecans or walnuts (optional)
-  flour_cup = 2, 
+  flour_cup = c(KingArthur_allPurposeFlr = 2), 
   bakingPowder_tsp = 2,
   NaHCO3_tsp = 1.5,
   salt_tsp = 1,

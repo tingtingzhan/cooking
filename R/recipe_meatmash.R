@@ -22,13 +22,13 @@ setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
   tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
-    attachment = 'Paddle attachment',
+    attachment = 'Paddle',
     minute = 3
   )),
-  note = c(
-    'Do not add salt, if served with salty gravy!',
-    '2.5\u2030 sodium in meat batter osmoses enough salt into the soup!'
-  ),
+  #note (legacy) = c(
+  #  'Do not add salt, if served with salty gravy!',
+  #  '2.5\u2030 sodium in meat batter osmoses enough salt into the soup!'
+  #),
   portion = c(
     'meat-mash dispenser \u706b\u9505\u867e\u6ed1\u6a21\u5177' = 60
   )
@@ -46,7 +46,7 @@ porkmash <- \() new(
   # eggWhite_pc = 8, # water 8*34.7*.876 = 240
   # salt_tsp = 1.5, water = 200, # tenderloin 1000g
   
-  starch_Tbsp = c(Wegmans_corn = 3),
+  starch_Tbsp = c(Wegmans_corn_starch = 3),
   
   water = 370, # theoretical value 433 = 200*.75+(8*34.7*.876)+40, # add water gradually
   
@@ -63,8 +63,8 @@ porkmash <- \() new(
     SimplyOrganic_coriander = 1/4,
     Chinata_paprika = 1/2
   ),
-  sesameOil_Tbsp = 1,
-  rattanPepperOil_tsp = 1, # 3tsp too much
+  oil_Tbsp = c(Kadoya_sesame_oil = 1),
+  oil_tsp = c(YaoMaZi_rattanPepper_oil = 1), # 3tsp too much
   review = 'retry!'
 )
 
@@ -80,9 +80,9 @@ tilapiamash <- \() new(
     SimplyOrganic_ginger = 1/4
   ),
   salt_tsp = 1.25,
-  starch_Tbsp = c(Wegmans_corn = 3),
+  starch_Tbsp = c(Wegmans_corn_starch = 3),
   water = 300,
-  sesameOil_Tbsp = 1,
+  oil_Tbsp = c(Kadoya_sesame_oil = 1),
   review = 'try?'
 )
 
@@ -100,9 +100,9 @@ shrimpmash <- \() new( # Super nice!!
     SimplyOrganic_ginger = 1/4
   ),
   salt_tsp = .5, # perfect saltiness!
-  starch_Tbsp = c(Wegmans_corn = 3),
+  starch_Tbsp = c(Wegmans_corn_starch = 3),
   water = 300,
-  sesameOil_Tbsp = 1,
+  oil_Tbsp = c(Kadoya_sesame_oil = 1),
   pros = 'I love')
 
 

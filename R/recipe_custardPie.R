@@ -3,9 +3,10 @@
 if (FALSE) {
   
   new(Class = 'recipe', 
-      pumpkin = 425.243, # 1 (15 ounce) can
-      #condensedMilk = 397, # original
-      evaporatedMilk = 360, sugar = 60,
+      puree = c(Libbys_pumpkin = 425.243), # 1 (15 ounce) can
+      #dairy = c(Carnation_condensMilk = 397), # original
+      dairy = c(Carnation_evapMilk = 360), 
+      sugar = 60,
       spice_tsp = c(
         SimplyOrganic_ginger = .5,
         SimplyOrganic_cinnamonCeylon = 1,
@@ -22,8 +23,8 @@ if (FALSE) {
       sugar = 60, # original 150, # 3/4 cup sugar
       # salt_tsp = 1/4, # I remove
       # vanilla_tsp = 1,
-      heavyCream_cup = 1,
-      milk_cup = 1.5, 
+      dairy_cup = c(Wegmans_heavyCream = 1,
+                    Wegmans_whole_milk = 1.5), 
       # 1/4 teaspoon nutmeg # I remove
       url = 'https://www.smalltownwoman.com/old-fashioned-silky-creamy-custard-pie/'
   )

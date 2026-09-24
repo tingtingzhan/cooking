@@ -33,7 +33,6 @@ setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
 #' @export
 setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
   # 500g meat
-  # difficult to quantify `fatLost` and `waterLost` in stir frying
   salt_tsp = 1/2,
   spice_tsp = c(
     McCormick_whitePepper = 1/2,
@@ -42,8 +41,8 @@ setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
     Chinata_paprika = 1/2, # from my porkmash()
     SimplyOrganic_5spice = 1/4 # from my porkmash()
   ),
-  sesameOil_Tbsp = 1, # from my porkmash()
-  rattanPepperOil_tsp = 2
+  oil_Tbsp = c(Kadoya_sesame_oil = 1), # from my porkmash()
+  oil_tsp = c(YaoMaZi_rattanPepper_oil = 2)
 ))
 
 #' @rdname meatchop-class
@@ -68,10 +67,14 @@ setClass(Class = 'beefchop', contains = 'meatchop', prototype = prototype(
 beefchop_stew <- \() new(
   Class = 'beefchop',
   beef = c(stew = 1190),
-  waterLost = 270,
-  oil_tsp = c(Wegmans_vegetable = 4),
-  rattanPepperOil = 1.75, 
-  sesameOil_tsp = 1.5,
+  tool = list(KSEG950ESS(
+    waterLost = 270
+  )),
+  oil_tsp = c(
+    Wegmans_vegetable_oil = 4,
+    YaoMaZi_rattanPepper_oil = 1.75,
+    Kadoya_sesame_oil = 1.5
+  ),
   sauce = c(
     LeeKumKee_5spiceMarinade = 30,
     LeeKumKee_blackPepper = 35

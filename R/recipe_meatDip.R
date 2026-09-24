@@ -6,7 +6,7 @@
 #' ..
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  BalsamicVinaigrette_meatDip(),
 #'  srirachaBBQ_meatDip(),
 #'  sweetGinger_meatDip(),
@@ -30,8 +30,8 @@ BalsamicVinaigrette_meatDip <- \() new(
     Kikkoman_soyLite = 1/2
   ),
   sauce_tsp = c(
-    Kadoya_sesameOil = 1/2,
-    YaoMaZi_rattanPepperOil = 1/4
+    Kadoya_sesame_oil = 1/2,
+    YaoMaZi_rattanPepper_oil = 1/4
   ),
   review = '2026 Summer love. try next time (after TraderJoes_BalsamicVinaigrette comes back in stock) and confirm!!'
 )
@@ -48,9 +48,11 @@ srirachaBBQ_meatDip <- \() new(
     Kikkoman_soyLite = 1/2
   ),
   sauce_tsp = c(
-    mizkan_brownRiceVinegar = 1,
-    Kadoya_sesameOil = 1/2,
-    YaoMaZi_rattanPepperOil = 1/4
+    mizkan_brownRiceVinegar = 1
+  ),
+  oil_tsp = c(
+    Kadoya_sesame_oil = 1/2,
+    YaoMaZi_rattanPepper_oil = 1/4
   ),
   date = as.Date('2026-09-14'),
   review = 'perfect!!'
@@ -67,7 +69,7 @@ sweetGinger_meatDip <- \() new(
     TraderJoes_ThaiGinger = 1
   ),
   sauce_tsp = c(
-    Kadoya_sesameOil = .5
+    Kadoya_sesame_oil = .5
   ),
   water_tsp = 1,
   date = as.Date('2026-09-07'),
@@ -83,8 +85,8 @@ jalapeno_meatDip <- \() new(
     TraderJoes_jalapenoSauce = 1.5,
     mizkan_brownRiceVinegar = 1.5,
     Kikkoman_soyLite = 1.5,
-    Kadoya_sesameOil = .5,
-    YaoMaZi_rattanPepperOil = .25
+    Kadoya_sesame_oil = .5,
+    YaoMaZi_rattanPepper_oil = .25
   ),
   sugar_tsp = 1.5,
   date = as.Date('2026-09-07'),

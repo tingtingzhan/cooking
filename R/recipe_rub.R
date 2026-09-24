@@ -87,7 +87,7 @@ cuminMontreal_rub <- \() new(
 #' @export
 Montreal_rub <- \() new( # inspired by Guga
   Class = 'rub',
-  brownSugar_tsp = .5,
+  sugar_tsp = c(Domino_darkBrown = .5),
   spice_tsp = c(
     SimplyOrganic_cinnamonCeylon = 1/8,
     McCormick_MontrealSteak = 2,
@@ -131,7 +131,7 @@ if (FALSE) {
     sugar = c(Domino_granulated = 10*500),
     salt = 5*500,
     msg = 1*500,
-    rattanPepperOil = 3*50, # cannot find szechuan peppercorn powder
+    oil = c(YaoMaZi_rattanPepper_oil = 3*50), # cannot find szechuan peppercorn powder
     spice = c(
       SimplyOrganic_5spice = 3*50,
       McCormick_whitePepper = 3*50,
@@ -211,7 +211,7 @@ vindaloo_rub <- \() new(
 Guga_rub <- \() new(
   Class = 'recipe', guga = 'omXFw_JnP4E',
   salt_cup = 1/4,
-  brownSugar_cup = 1/4,
+  sugar_cup = c(Domino_darkBrown = 1/4),
   spice_cup = c(Chinata_paprika = 1/4),
   spice_Tbsp = c(
     McCormick_blackPepper = 1,

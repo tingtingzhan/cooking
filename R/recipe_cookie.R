@@ -24,26 +24,26 @@
 #' coffee_cookie()
 #' lemon_cookie()
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  ginger_cookie(),
 #'  cooking:::YokuMoku_cigare()
 #' )
 #' 
-#' new('cookie', flour = c(Wegmans_bread = 200, DaoXiangCun_corn = 374), sugar = 110)
+#' new('cookie', flour = c(Wegmans_breadFlr = 200, DaoXiangCun_corn = 374), sugar = 110)
 #'
 #' 
-#' new('cookie', misc = c(SunnyFruit_date = 200), pastryFlour = 360, 
-#'   drymilk = 124)
-#' new('cookie', misc = c(SunnyFruit_date = 324), pastryFlour = 360)
+#' new('cookie', misc = c(SunnyFruit_date = 200), flour = c(Wegmans_pastryFlr = 360), 
+#'   dairy = c(Carnation_drymilk = 124))
+#' new('cookie', misc = c(SunnyFruit_date = 324), flour = c(Wegmans_pastryFlr = 360))
 #' 
-#' new('cookie', misc = c(Kirkland_plum = 270), pastryFlour = 360, 
-#'   drymilk = 54)
+#' new('cookie', misc = c(Kirkland_plum = 270), flour = c(Wegmans_pastryFlr = 360), 
+#'   dairy = c(Carnation_drymilk = 54))
 #'
 #' @name cookie-class
 #' @export
 setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
   class2 = '\u997c\u5e72',
-  butter_brick = 1,
+  dairy_brick = c(Kerrygold_butter = 1),
   eggYolk_pc = 9,
   portion = c(
     # do NOT need pie weight!!
@@ -70,17 +70,18 @@ Assam_cookie <- \() new(
     'Gloria wants slightly more sugar'
   ),
   tea = c(Harney_Assam = 52), 
-  flour = c(Wegmans_bread = 150, Wegmans_pastry = 150),
-  sugar = 126, drymilk = 146,
-  waterLost = 1007*.05 # yet to experiment and confirm
+  flour = c(Wegmans_breadFlr = 150, Wegmans_pastryFlr = 150),
+  sugar = 126, 
+  dairy = c(Carnation_drymilk = 146)#,
+  #waterLost = 1007*.05 # yet to experiment and confirm
 )
 
 
 
 PreppyKitchen_cookie <- \() new(
   Class = 'recipe', author = 'Preppy Kitchen', flavor = 'Butter Cookie',
-  flour = c(Wegmans_bread = 120, Wegmans_pastry = 120),
-  butter_brick = 1,
+  flour = c(Wegmans_breadFlr = 120, Wegmans_pastryFlr = 120),
+  dairy_brick = c(Kerrygold_butter = 1),
   sugar = 70,
   eggYolk_pc = 2
 )
@@ -93,9 +94,9 @@ PreppyKitchen_cookie <- \() new(
 #' @export
 cocoa_cookie <- \() new(
   Class = 'cookie',
-  sugar = 130, drymilk = 150, 
+  sugar = 130, dairy = c(Carnation_drymilk = 150), 
   cocoa = c(KingArthur_Bensdorp = 64),
-  flour = c(Wegmans_bread = 330),
+  flour = c(Wegmans_breadFlr = 330),
   review = 'try')
 
 
@@ -106,11 +107,12 @@ cocoa_cookie <- \() new(
 adzukiBean_cookie <- \() new( 
   # raw taste too strong. try cook powdered adzukiBean in butter
   Class = 'cookie',
-  note = 'Simmer butter and powdered bean over stove',
+  # note (to remove; use food processor) = 'Simmer butter and powdered bean over stove',
   adzukibean = 240,
-  # flour = c(Wegmans_bread = 220), # dont need to be this strong
-  flour = c(Wegmans_bread = 100+60), # try.   Cooked adzukiBean+butter needs less flour
-  sugar = 124, drymilk = 100,
+  # flour = c(Wegmans_breadFlr = 220), # dont need to be this strong
+  flour = c(Wegmans_breadFlr = 100+60), # try.   Cooked adzukiBean+butter needs less flour
+  sugar = 124, 
+  dairy = c(Carnation_drymilk = 100),
   review = 'try'
 )
 
@@ -128,7 +130,8 @@ mungBean_cookie <- \() new(Class = 'cookie', adzukiBean_cookie(),
 #' @export
 coffee_cookie <- \() new(
   Class = 'cookie', coffee = 40, 
-  pastryFlour = 384, sugar = 100, drymilk = 160,
+  flour = c(Wegmans_pastryFlr = 384), sugar = 100, 
+  dairy = c(Carnation_drymilk = 160),
   review = 'try')
 
 
@@ -138,8 +141,8 @@ coffee_cookie <- \() new(
 lemon_cookie <- \() new(
   Class = 'cookie', 
   misc = c(CountryTime_Lemonade = 150), 
-  flour = c(Wegmans_bread = 200, Wegmans_pastry = 164), 
-  drymilk = 160,
+  flour = c(Wegmans_breadFlr = 200, Wegmans_pastryFlr = 164), 
+  dairy = c(Carnation_drymilk = 160),
   review = 'a little bit too sour.'
 ) 
 
@@ -152,11 +155,10 @@ lemon_cookie <- \() new(
 #' @export
 matcha_cookie <- \() new(
   Class = 'cookie', 
-  note = 'Water bath to melt butter only',
   matcha = c(Ippodo_ikuyo = 40), # not too much more expensive!!
   #matcha = c(Ippodo_sayaka = 40), # 
-  pastryFlour = 344, 
-  sugar = 140, drymilk = 160,
+  flour = c(Wegmans_pastryFlr = 344), 
+  sugar = 140, dairy = c(Carnation_drymilk = 160),
   pros = 'Lily Wu & Kuangyi Wen like the old recipe with Sencha_everyday_matcha', # https://www.costco.com/p/-/sencha-naturals-everyday-matcha-green-tea-powder-3-pack-225-lbs-total/100705701
   review = 'retry with ikuyo')
 
@@ -165,11 +167,11 @@ matcha_cookie <- \() new(
 #' @export
 blackSesame_cookie2022 <- \() new(
   Class = 'cookie',
-  breadFlour = c(Wegmans_bread = 400),
+  flour = c(Wegmans_breadFlr = 400),
   blackSesame = 150,
   eggYolk_pc = 10, 
-  sugar = 117, drymilk = 90, 
-  waterLost = 1157*.05,
+  sugar = 117, dairy = c(Carnation_drymilk = 90), 
+  #waterLost = 1157*.05,
   review = c(
     'Kuang-yi, Jun Yan, Qingyan Ma love very much!',
     '2023 Nov: I think this recipe has too much dry milk!!'
@@ -204,9 +206,9 @@ Harney_PuErh_cookie <- \() new(
 Harney_LapSangSouChong_cookie <- \() new(
   Class = 'cookie', 
   tea = c(Harney_LapSangSouChong = 20), 
-  # pastryFlour = 380, 
-  flour = c(Wegmans_bread = 160, Wegmans_pastry = 200), # try
-  sugar = 140, drymilk = 144,
+  # flour = c(Wegmans_pastryFlr = 380), 
+  flour = c(Wegmans_breadFlr = 160, Wegmans_pastryFlr = 200), # try
+  sugar = 140, dairy = c(Carnation_drymilk = 144),
   review = 'Brody says very good (all pastry flour)'
 ) 
   
@@ -217,11 +219,11 @@ Harney_LapSangSouChong_cookie <- \() new(
 #' @export
 Ceylon_cookie <- \() new(
   Class = 'cookie', 
-  note = 'Blade grinder; Water bath',
+  # note (legacy) = 'Blade grinder',
   review = 'I like very much',
   tea = c(Stassen_Ceylon = 52), 
-  pastryFlour = 340, 
-  sugar = 146, drymilk = 146)
+  flour = c(Wegmans_pastryFlr = 340), 
+  sugar = 146, dairy = c(Carnation_drymilk = 146))
 
 
 
@@ -229,31 +231,30 @@ Ceylon_cookie <- \() new(
 #' @export
 ginger_cookie <- \() new(
   Class = 'cookie', 
-  note = 'Do NOT use bread flour.',
   review = 'Gloria & Mike\'s true love',
   spice = c(SimplyOrganic_ginger = 16), 
-  pastryFlour = 370, sugar = 140, 
-  drymilk = 158)
+  flour = c(Wegmans_pastryFlr = 370), sugar = 140, 
+  dairy = c(Carnation_drymilk = 158))
 
 
 #' @rdname cookie-class
 #' @export
 EarlGrey_cookie2022_Twinings <- \() new(
   Class = 'cookie',
-  note = 'Blade grinder',
+  # note (legacy) = 'Blade grinder',
   review = 'Mike loves it. Gloria says cannot stop.  Do NOT try to reduce sugar or dry milk!!',
   tea = c(Twinings_EarlGrey = 48), 
-  pastryFlour = 360, 
-  sugar = 136, drymilk = 140)
+  flour = c(Wegmans_pastryFlr = 360), 
+  sugar = 136, dairy = c(Carnation_drymilk = 140))
 
 EarlGrey_cookie_Twinings <- \() new(
   Class = 'cookie',
-  note = 'Blade grinder',
+  # note (legacy) = 'Blade grinder',
   review = 'new experiment.  I want to reduce drymilk a little',
   eggYolk_pc = 5, water = 35,
   tea = c(Twinings_EarlGrey = 48), 
-  pastryFlour = 360, 
-  sugar = 100, drymilk = 100)
+  flour = c(Wegmans_pastryFlr = 360), 
+  sugar = 100, dairy = c(Carnation_drymilk = 100))
 
 
 
@@ -261,11 +262,11 @@ EarlGrey_cookie_Twinings <- \() new(
 
 PreppyKitchen_thumbprintCookie <- \() new(
   Class = 'recipe',
-  butter_brick = 1,
+  dairy_brick = c(Kerrygold_butter = 1),
   sugar = 150,
   eggYolk_pc = 2,
   vanilla_tsp = 1,
-  flour = 360,
+  flour = c(KingArthur_allPurposeFlr = 360),
   preppykitchen = c('vdR7Wx9PptY' = 'thumbprint-cookies'))
 
 

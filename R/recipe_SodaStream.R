@@ -12,11 +12,17 @@ setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
 
 #' @rdname SodaStream-class
 #' @export
-limeSoda <- \() new(Class = 'SodaStream', lime_pc = 1.5, pros = 'I love!')
+limeSoda <- \() new(
+  Class = 'SodaStream', 
+  fruit_pc = c(lime = 1.5), 
+  pros = 'I love!')
 
 #' @rdname SodaStream-class
 #' @export
-lemonSoda <- \() new(Class = 'SodaStream', lemon_pc = 1, review = 'try')
+lemonSoda <- \() new(
+  Class = 'SodaStream', 
+  fruit_pc = c(lemon = 1), 
+  review = 'try')
 
 
 

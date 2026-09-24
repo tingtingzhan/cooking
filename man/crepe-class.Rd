@@ -33,7 +33,7 @@ Daat_crepe()
 
 crepe() / 2
 
-diagnose(
+nutritionlist(
  jennyc819_crepe(),
  Carina_crepe(),
  Aya_crepe(),

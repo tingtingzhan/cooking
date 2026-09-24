@@ -22,8 +22,8 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
   beef = c(brisket_flat = 350, brisket_flat_lean = 650), # fat tastes enough
   
   water = 200, 
-  #starch_Tbsp = c(Wegmans_corn = 5), # for 2.5% sodium
-  starch_Tbsp = c(Wegmans_corn = 5.5), # for 3.6% sodium
+  #starch_Tbsp = c(Wegmans_corn_starch = 5), # for 2.5% sodium
+  starch_Tbsp = c(Wegmans_corn_starch = 5.5), # for 3.6% sodium
   
   tool = list(KSM8990(
     treatment = c(
@@ -32,7 +32,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
       'Meat chopper, not grinder'
     ),
     program = 'Level 4',
-    attachment = 'Paddle attachment',
+    attachment = 'Paddle',
     minute = 3
   )),
   
@@ -42,11 +42,11 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
     '\u997a\u5b50 gyoza' = 15,
     # '35g bao wrapper \u5305\u5b5035g\u76ae' = 20, # I can do nicely
     '\u5927\u5305\u5b50 50g bao wrapper\U1f389' = 40 # super successful!!
-  ), 
-  note = c(
-    'Extra can be made into meatmash()',
-    'Must use beef cut with lots of connective tissue, such as brisket (default, cheapest). Not beef-for-stew'
-  )
+  )#, 
+  #note (legacy) = c(
+  #  'Extra can be made into meatmash()',
+  #  'Must use beef cut with lots of connective tissue, such as brisket (default, cheapest). Not beef-for-stew'
+  #)
 ))
   
 
@@ -61,8 +61,8 @@ setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototy
   # dog no diarrhea, but a little too fat for me
   # also, 100g water a little too dry!!!
   
-  rattanPepperOil = 2, 
-  sesameOil_tsp = 3,
+  oil = c(YaoMaZi_rattanPepper_oil = 2),
+  oil_tsp = c(Kadoya_sesame_oil = 3),
   
   # add next time!!
   spice_tsp = c(

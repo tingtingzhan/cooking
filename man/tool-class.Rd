@@ -21,8 +21,6 @@
 
 \item{\code{recipe_pc}}{\link[base]{numeric} scalar, how many times of recipe}
 
-\item{\code{recipe_weight}}{\link[base]{numeric} scalar, weight of recipe (in grams)}
-
 \item{\code{treatment}}{\link[base]{character} scalar, pre-treatment}
 
 \item{\code{program}}{\link[base]{character} scalar, program}

@@ -18,7 +18,7 @@ yuenyeungCoconut <- \() new(
   #flavor = 'FreeNow',
   coconut = c(Freenow_coconutBarista = 180),
   boilingWater = 255,
-  drymilk = c(Carnation = 10),
+  dairy = c(Carnation_drymilk = 10),
   coffee_tsp = c(1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   teabag = c(Twinings_EnglishBreakfast = 2),
@@ -40,7 +40,7 @@ yuenyeungCoconut_summer <- \() new(
   #total water = 255*2.5, # try
   boilingWater = 310,
   ice = 330,
-  drymilk = c(Carnation = 25),
+  dairy = c(Carnation_drymilk = 25),
   coffee_tsp = 2.5,
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
   teabag = c(Twinings_EnglishBreakfast = 4), # only x2, not x2.5 !!!
@@ -74,7 +74,7 @@ yuenyeungCoconut_jelly <- \() new(
   coconut = c(Freenow_coconutBarista = 400),
   water95 = 530,
   gelatin_leaf = 8,
-  drymilk = c(Carnation = 25),
+  dairy = c(Carnation_drymilk = 25),
   coffee_tsp = c(2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
   teabag = c(Twinings_EnglishBreakfast = 4),
@@ -95,9 +95,9 @@ yuenyeungCoconut_jelly <- \() new(
 
 yuenyeungLatte_try2 <- \() new(
   Class = 'recipe',
-  drymilk = c(Carnation = 30),
-  heavyCream = 10,
-  brownSugar = 5,
+  dairy = c(Wegmans_heavyCream = 10,
+            Carnation_drymilk = 30),
+  sugar = c(Domino_darkBrown = 5),
   coffee_tsp = c(1.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .5),
   teabag = c(Twinings_EnglishBreakfast = 3),
@@ -106,9 +106,9 @@ yuenyeungLatte_try2 <- \() new(
 
 yuenyeungLatte_try1 <- \() new(
   Class = 'recipe',
-  drymilk = c(Carnation = 30),
-  heavyCream = 10,
-  brownSugar = 5,
+  dairy = c(Wegmans_heavyCream = 10,
+            Carnation_drymilk = 30),
+  sugar = c(Domino_darkBrown = 5),
   coffee_tsp = c(1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   teabag = c(Twinings_EnglishBreakfast = 2),

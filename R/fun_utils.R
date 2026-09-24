@@ -109,26 +109,6 @@ combnVol <- \(x, which, ...) {
   x_brick <- if (has_brick) addname1(x, which = ._brick, ...) |>
     slot(name = ._brick) # else NULL
   
-  if (which %in% c(
-    'starch', 'oil', 
-    'butter', 'cheese', 'condensedMilk', 'cottageCheese', 'creamCheese', 'drymilk', 'evaporatedMilk', 
-    'filmjolk', 'ghee', 'heavyCream', 'kefir', 'lightCream', 'mascarpone', 'milk',
-    'sourCream', 'yogurt', 'yogurtGreek',
-    'syrup'
-  )) {
-    add_suffix <- \(x0, which) {
-      if (!length(names(x0))) return(x0)
-      idx <- !endsWith(names(x0), suffix = paste0('_', which))
-      names(x0)[idx] <- paste0(names(x0)[idx], '_', which)
-      return(x0)
-    }
-    x_gram <- add_suffix(x_gram, which = which)
-    if (has_tsp) x_tsp <- add_suffix(x_tsp, which = which)
-    if (has_Tbsp) x_Tbsp <- add_suffix(x_Tbsp, which = which)
-    if (has_cup) x_cup <- add_suffix(x_cup, which = which)
-    if (has_brick) x_brick <- add_suffix(x_brick, which = which)
-  }
-  
   slot(x, name = which) <- sum_by_name(
     x_gram, 
     if (has_tsp) gram_per_tsp(names(x_tsp)) * x_tsp, 
@@ -225,7 +205,7 @@ fmt_min <- \(x) {
   x |>
     cmod(
       e1 = _, 
-      e2 = c(d = 60*24, hr = 60, min = 1),
+      e2 = c(d = 60*24, hr = 60, min = 1, sec = 1/60),
       n = 3L,
       tol = 1e-6
     )
@@ -236,28 +216,20 @@ fmt_min <- \(x) {
 #' @importFrom consec cmod
 fmt_vol <- \(x, nm = names(x)) {
   
-  if (!length(x)) return(character())
+  nx <- length(x)
+  if (!nx) return(character())
+
+  x1 <- x / gram_per_tsp(nm)
   
-  (x/gram_per_tsp(nm)) |>
-    cmod(
-      e1 = _, 
-      e2 = c(
-        Cup = 48,
-        '\u2154Cup' = 48*2/3,
-        '\u00bdCup' = 48/2,
-        '\u2153Cup' = 48/3,
-        '\u00bcCup' = 48/4,
-        Tbsp = 3,
-        '2tsp' = 2,
-        '1\u00bdtsp' = 1.5,
-        '1tsp' = 1,
-        '\u00bdtsp' = .5,
-        '\u00bctsp' = 1/4,
-        '\u215btsp' = 1/8
-      ),
-      n = 3L,
-      tol = 1e-6
-    ) |>
+  id <- grepl(pattern = '_butter$|_creamCheese$', x = nm)
+  
+  z <- character(length = nx)
+  z[id] <- x1[id] |>
+    cmod(e1 = _, e2 = consec::teaspoon2, n = 3L, tol = 1e-6)
+  z[!id] <- x1[!id] |>
+    cmod(e1 = _, e2 = consec::teaspoon, n = 3L, tol = 1e-6) 
+  
+  z |>
     col_br_blue() |> 
     style_bold()
 }
@@ -337,7 +309,7 @@ gram_per_tsp <- \(x) {
 }
 
 
-format_pc <- \(object, name) {
+fmt_pc <- \(object, name) {
   ret <- slot(object, name = name) / eval(call(name))@servingGram
   ret |> 
     sprintf(fmt = '%.3gpcs') |> 

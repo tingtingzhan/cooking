@@ -72,7 +72,7 @@ hotdrink.function <- \(x, ...) hotdrink(x = x(), ...)
 hotdrink.drinkmix <- \(
     x, 
     water = 70,
-    water90 = 560 - 70 - sum(x@pumpkin, x@liqueur, x@heavyCream), 
+    water90 = 560 - 70 - sum(x['_pumpkin$'], x@liqueur, x['_heavyCream$']), 
     ...
 ) {
   x@water <- water
@@ -132,12 +132,12 @@ frappe.function <- \(x, ...) frappe(x = x(), ...)
 #' @export
 frappe.drinkmix <- \(
     x, 
-    ice = 560/2 - sum(x@pumpkin, x@liqueur, x@heavyCream)/2, # 1 US cup, Nutribullet can handle!!
+    ice = 560/2 - sum(x['_pumpkin$'], x@liqueur, x['_heavyCream$'])/2, # 1 US cup, Nutribullet can handle!!
     iceWater = ice,
     ...
 ) {
   x@ice <- ice
-  x@iceWater <- if (length(x@milk)) numeric() else iceWater
+  x@iceWater <- if (length(x['_milk$'])) numeric() else iceWater
   x@alias <- character(); x@class2 <- 'Frapp\u00e9'
   x@tool <- list(nutribullet24(treatment = c(
     'put in ice cubes \u21d2 powders \u21d2 non-alcoholic liquid',

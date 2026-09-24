@@ -7,7 +7,7 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
   tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
-    attachment = 'Paddle attachment',
+    attachment = 'Paddle',
     minute = 3
   ))  
 ))
@@ -18,13 +18,13 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 #' ..
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'   shrimpfillCantonese(),
 #'   shrimpball(),
 #'   shrimpmash()
 #' )
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  shrimpfillCantonese(),
 #'  whiteSwan_shrimpfill(),
 #'  Daat_shrimpfill(),
@@ -38,9 +38,9 @@ setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = pro
   
   pork = c(fat = 200),
   
-  starch_tsp = c(Wegmans_corn = 7),
+  starch_tsp = c(Wegmans_corn_starch = 7),
   spice = c(LeeKumKee_chickenBouillon = 5), # adding
-  sesameOil_tsp = 3,
+  oil_tsp = c(Kadoya_sesame_oil = 3),
   sugar_tsp = 3,
   
   spice_tsp = c(
@@ -50,8 +50,8 @@ setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = pro
     SimplyOrganic_ginger = 1/2 # new
   ), 
   
-  portion = meatfill_portion(), 
-  note = meatfill_note()
+  portion = meatfill_portion()#, 
+  #note (legacy) = meatfill_note()
 ))
 
 #' @rdname shrimpfillCantonese-class
@@ -65,8 +65,8 @@ shrimpfillCantonese_Argentine <- \() new(
   shrimp = c(Kirkland_shrimpArgentine = 850), 
   salt_tsp = 1/4, 
   pork = c(fat = 200),
-  starch_tsp = c(Wegmans_corn = 7),
-  sesameOil_tsp = 3,
+  starch_tsp = c(Wegmans_corn_starch = 7),
+  oil_tsp = c(Kadoya_sesame_oil = 3),
   sugar_tsp = 3,
   spice_tsp = c(
     McCormick_whitePepper = 1/2,
@@ -78,8 +78,8 @@ shrimpfillCantonese_OLD <- \() new(
   Class = 'recipe', 
   shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
   pork = c(fat = 200),
-  starch_tsp = c(Wegmans_corn = 7),
-  sesameOil_tsp = 3,
+  starch_tsp = c(Wegmans_corn_starch = 7),
+  oil_tsp = c(Kadoya_sesame_oil = 3),
   sugar_tsp = 3,
   spice_tsp = c(
     McCormick_whitePepper = 1/2,
@@ -91,9 +91,9 @@ shrimpfillCantonese_OLD <- \() new(
 
 setClass(Class = 'shrimpfillMaine', contains = 'shrimpfill', prototype = prototype(
   flavor = 'Maine\u9f99\u867e\u5377\u98ce\u5473', 
-  starch_Tbsp = c(Wegmans_corn = 2),
+  starch_Tbsp = c(Wegmans_corn_starch = 2),
   #butter = 150, # 780/227*42.5 = 146
-  butter_cup = 1/2, # 115g all butter stays in bao!
+  dairy_cup = c(Kerrygold_butter = 1/2), # 115g all butter stays in bao!
   # 8oz (227g) lobster + 3Tbsp (42.5) butter # https://drivemehungry.com/connecticut-lobster-roll-warm-lobster-roll/#recipe
   # 1lb (454g) lobster + 6Tbsp butter + 3Tbsp dill #https://www.howsweeteats.com/2021/06/buttery-lobster-rolls/
   # chives toxic to dogs!!
@@ -106,8 +106,8 @@ setClass(Class = 'shrimpfillMaine', contains = 'shrimpfill', prototype = prototy
     McCormick_chive = 4#, # 780/454*(1/4)*16 = 6.87 fresh chive
     #FrontierCoop_harissa = .5
   ),
-  portion = meatfill_portion(), 
-  note = meatfill_note()
+  portion = meatfill_portion()#, 
+  # note (legacy) = meatfill_note()
 ))
 
 
@@ -124,11 +124,11 @@ shrimpfillMaine <- \() new(
 setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = prototype(
   flavor = 'Wegmans\u849c\u9999\u98ce\u5473', 
   
-  #starch_tsp = c(Wegmans_corn = 7), # old experiment
-  starch_tsp = c(Wegmans_corn = 6), # 
+  #starch_tsp = c(Wegmans_corn_starch = 7), # old experiment
+  starch_tsp = c(Wegmans_corn_starch = 6), # 
   
   #salt_tsp = 1/8, # wait, no
-  oil = c(Wegmans_basting = 150),
+  oil = c(Wegmans_basting_oil = 150),
   
   #garlic_tsp = 1, # still too strong!!
   # !!! remove garlic completely! Wegman's basting oil contains garlic flavor
@@ -137,11 +137,11 @@ setClass(Class = 'shrimpfill_garlicHerb', contains = 'shrimpfill', prototype = p
   misc = c(
     CountryTime_Lemonade = 10
   ),
-  portion = meatfill_portion(), 
-  note = c(
-    'To copy Wegmans_garlicShrimp()',
-    meatfill_note()
-  )
+  portion = meatfill_portion()#, 
+  # note (legacy) = c(
+  #  'To copy Wegmans_garlicShrimp()',
+  #  meatfill_note()
+  #)
 ))
 
 shrimpfill_garlicHerb <- \() new(Class = 'shrimpfill_garlicHerb', review = 'try next')
@@ -157,8 +157,8 @@ shrimpfill_garlicHerb <- \() new(Class = 'shrimpfill_garlicHerb', review = 'try 
 #' @export
 setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = prototype(
   flavor = 'Wegmans Old Bay\u98ce\u5473',
-  starch_Tbsp = c(Wegmans_corn = 2),
-  oil = c(Wegmans_basting = 200),
+  starch_Tbsp = c(Wegmans_corn_starch = 2),
+  oil = c(Wegmans_basting_oil = 200),
   # garlic_tsp = 1, # try without
   spice_tsp = c(McCormick_whitePepper = 1/8),
   misc = c(
@@ -167,11 +167,11 @@ setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = proto
   spice_Tbsp = c(
     McCormick_oldBay_lowSodium = 1.5
   ),
-  portion = meatfill_portion(), 
-  note = c(
-    'To copy Wegmans_oldBayShrimp()',
-    meatfill_note()
-  )
+  portion = meatfill_portion()#, 
+  #note (legacy) = c(
+  #  'To copy Wegmans_oldBayShrimp()',
+  #  meatfill_note()
+  #)
 ))
 
 #' @rdname shrimpfillCantonese-class
@@ -197,9 +197,10 @@ Daat_shrimpfill <- \() new(
   daatgo = 'SYLIYqVV2N4',
   shrimp = 600, lard = 30, pork = c(fat = 120),
   vegetable = c(bambooShoot = 90),
-  starch = c(Wegmans_corn = 13),
+  starch = c(Wegmans_corn_starch = 13),
   salt = 12, msg = 22,
-  sugar = 28, sesameOil = 12, 
+  sugar = 28, 
+  oil = c(Kadoya_sesame_oil = 12), 
   spice_tsp = c(McCormick_whitePepper = 1/4))
 
 #' @rdname shrimpfillCantonese-class
@@ -208,7 +209,8 @@ whiteSwan_shrimpfill <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
   shrimp = 250, pork = c(fat = 50), lard = 35,
   salt = 3, msg = 2,
-  sugar = 3, sesameOil = 3.5, 
+  sugar = 3, 
+  oil = c(Kadoya_sesame_oil = 3.5), 
   spice_tsp = c(McCormick_whitePepper = 1/8))
 
 

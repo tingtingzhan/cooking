@@ -1,6 +1,6 @@
 
 if (FALSE) {
-  diagnose(
+  nutritionlist(
     Edward_shreddedCoconut(),
     Edward_shreddedCoconutLite(),
     Edward_coconutFlour(),
@@ -77,10 +77,10 @@ WegmansOrganic_coconutFlour <- \() new(
   fat = 2, sodium = .01, carbohydrate = 8, sugar = 1, protein = 2)
 
 
-#' @title Coconut Milk
+#' @rdname nutrition-class
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::Kara_coconutcream(),
 #'  cooking:::ThaiKitchen_coconutcream(),
 #'  cooking:::ThaiKitchen_coconutmilk(),
@@ -98,8 +98,6 @@ WegmansOrganic_coconutFlour <- \() new(
 #'  cooking:::CalifiaFarms_coconutmilkwater()
 #' )
 #' 
-#' @name coconutmilk
-NULL
 
 
 ThaiKitchen_coconutmilkLite <- \() new(

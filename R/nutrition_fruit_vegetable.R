@@ -75,7 +75,7 @@ Kirkland_yellowCorn <- \() new(
   #servingCup = 2/3, # packaging
   servingCup = 90/128,# actual experiment 1cup = 128g
   fat = 1.5, sugar = 7, protein = 3)
-
+# haven't seen [Kirkland_yellowCorn] at Costco for a while
 
 
 Kirkland_peach <- \() new(
@@ -87,7 +87,7 @@ Kirkland_peach <- \() new(
   })
 
 
-mango <- \() new( 
+UltraOrganics_mango <- \() new( 
   Class = 'nutrition',  
   fdc = 169910L, # water 83.5%
   brand = 'Ultra Organics', alias = '\u8292\u679c', name = 'Mango\U1f96d',
@@ -126,9 +126,23 @@ LuckyTaro_durian <- \() new(
   # servingGram = mean.default(c(955)) - 642, # subtract seed
   # Nutrition label: 1/2 tray, 200g 
   # fat = .4*2, sodium = .023*2, sugar = 19.6*2, protein = 1.2*2,
-  
   servingGram = 200, usd = 25/2, # vague memory
-  fat = .4, sodium = .023, sugar = 19.6, protein = 1.2,
+  fat = .4, sodium = .023, 
+  carbohydrate = 44, sugar = 19.6, protein = 1.2,
+  review = 'I have severe bad reaction to real durian')
+
+
+NobleHarvest_durian <- \() new(
+  Class = 'nutrition',  
+  costcoBiz = '4201011357',
+  brand = 'Noble Harvest', name = 'Durian',
+  # nutrition, per container
+  servingGram = 400, servingCup = 3, 
+  calorie = 650,
+  usd = 25, # suppose?
+  fat = 14, sodium = .01, 
+  carbohydrate = 130,
+  sugar = 64, protein = 11,
   review = 'I have severe bad reaction to real durian')
 
 
@@ -230,7 +244,7 @@ Wegmans_peanutButter <- \() new(
   carbohydrate = 8, sugar = 4, addedSugar = 2, protein = 7)
 
 
-Wegmans_beet <- \() new(
+Wegmans_beet_pulv <- \() new(
   Class = 'nutrition',  
   alias = '\u751c\u83dc\u7c89', name = 'Beet Root Powder',
   wegmans = '60476', usd = 10.99/227*9.6,
@@ -240,7 +254,7 @@ Wegmans_beet <- \() new(
   sodium = .06, sugar = 2, protein = 1)
 
 
-Wegmans_acai <- \() new(
+Wegmans_acai_pulv <- \() new(
   Class = 'nutrition',  
   alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
   wegmans = '60465', usd = 16.99/113*3,
@@ -249,7 +263,7 @@ Wegmans_acai <- \() new(
 ) 
 
 
-Navitas_acai <- \() new(
+Navitas_acai_pulv <- \() new(
   Class = 'nutrition', 
   navitas = 'acai-powder',
   alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
@@ -284,7 +298,7 @@ parsleyFresh <- \() new(
 FlavorFarmer_whitePeach <- \() new(
   Class = 'nutrition',  fdc = 1102677L,
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
-  servingGram = 100, pieceWeight = 130,
+  servingGram = 100, pieceGram = 130,
   water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
   review = 'Fresh white peach sold at Costco in summer',
   machine = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
@@ -298,33 +312,33 @@ kabochaSquash <- \() new(
 avocado <- \() new(
   Class = 'nutrition',  fdc = 171705L,
   alias = '\u725b\u6cb9\u679c', name = 'Avocado\U1f951',
-  servingGram = 100, pieceWeight = 140,
+  servingGram = 100, pieceGram = 140,
   calorie = 160,
   water = 73.2, protein = 2, fat = 14.7, sugar = .66, sodium = .007)
 
-lemon <- \() new(
-  Class = 'nutrition',  fdc = 1102594L,
-  alias = '\u67e0\u6aac', name = 'Lemon\U1f34b',
-  servingGram = 100, water = 88.98, protein = 1.1, fat = .3, sugar = 2.5, sodium = .002)
+# lemon <- \() new( # whole lemon
+#  Class = 'nutrition', fdc = 1102594L,
+#  alias = '\u67e0\u6aac', name = 'Lemon\U1f34b',
+#  servingGram = 100, water = 88.98, protein = 1.1, # fat = .3, sugar = 2.5, sodium = .002)
 
-lemonJuice <- \() new(
-  Class = 'nutrition',  fdc = 167747L,
+lemon <- \() new( # lemon juice
+  Class = 'nutrition', fdc = 167747L,
   alias = '\u67e0\u6aac\u6c41', name = 'Lemon\U1f34b Juice',
-  servingGram = 100, pieceWeight = 48,
+  servingGram = 100, pieceGram = 48,
   water = 92.3, protein = 0.35, fat = 0.24, sugar = 2.52, sodium = .001)
 
 
-lime <- \() new(
-  Class = 'nutrition',  fdc = 168155L,
-  alias = '\u9752\u67e0', name = 'Lime\U1f34b\u200d\U1f7e9',
-  servingGram = 100, 
-  calorie = 30,
-  water = 88.3, protein = .7, fat = .2, sugar = 1.69, sodium = .002)
+# lime <- \() new( # whole lime
+#  Class = 'nutrition', fdc = 168155L,
+#  alias = '\u9752\u67e0', name = 'Lime\U1f34b\u200d\U1f7e9',
+#  servingGram = 100, 
+#  calorie = 30,
+#  water = 88.3, protein = .7, fat = .2, sugar = 1.69, sodium = .002)
 
-limeJuice <- \() new(
+lime <- \() new( # lime juice
   Class = 'nutrition',  fdc = 2344679L,
   alias = '\u9752\u67e0\u6c41', name = 'Lime\U1f34b\u200d\U1f7e9 Juice',
-  servingGram = 100, pieceWeight = 44,
+  servingGram = 100, pieceGram = 44,
   calorie = 25,
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
 

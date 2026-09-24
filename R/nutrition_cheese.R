@@ -167,6 +167,16 @@ Wegmans_mozzarella_skim <- \() new(
   carbohydrate = 2, sugar = 1, protein = 6,
   review = 'Not that great. Do not buy again')
 
+if (FALSE) {
+  nutritionlist(
+    cooking:::Philadelphia_creamCheeseSpread(),
+    cooking:::PhiladelphiaNeufchatel_creamCheeseSpread(),
+    cooking:::Wegmans_mozzarella_whole(),
+    cooking:::Wegmans_mozzarella_skim(),
+    cooking:::KraftNatural_mozzarella_fatFree()
+  )
+}
+
 Wegmans_mozzarella_whole <- \() new(
   Class = 'nutrition',  
   wegmans = '33429', usd = .25, date = as.Date('2026-09-17'),
@@ -176,3 +186,19 @@ Wegmans_mozzarella_whole <- \() new(
   calorie = 90,
   fat = 7, cholesterol = .025, sodium = .190, 
   carbohydrate = 1, protein = 6)
+
+
+KraftNatural_mozzarella_fatFree <- \() new(
+  Class = 'nutrition',
+  brand = 'https://kraftnaturalcheese.com/product/shredded-cheese/mozzarella-fat-free/' |>
+    style_hyperlink(url = _, text = 'Kraft Natural Cheese') |>
+    c(),
+  name = 'Shredded Mozzarella, Fat Free',
+  servingGram = 28, servingCup = 1/4,
+  calorie = 45,
+  cholesterol = .005,
+  sodium = .28,
+  carbohydrate = 2,
+  protein = 9
+)
+# 

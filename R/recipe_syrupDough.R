@@ -25,9 +25,10 @@ setClass(Class = 'syrupDough', contains = 'recipe')
 CantoneseMooncakeShell <- \() new(
   Class = 'syrupDough',
   flavor = 'Cantonese Mooncake Shell',
-  pastryFlour = 150, 
+  flour = c(Wegmans_pastryFlr = 150), 
   homemade = c(invertSugar = 75),
-  water = 10, butter = 30,
+  water = 10, 
+  dairy = c(Kerrygold_butter = 30),
   xiaogaojie = 'rtL8TVynNyg',
   review = 'do NOT reduce invert sugar syrup!  But really sweet...'
 )

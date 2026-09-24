@@ -47,7 +47,7 @@
 #' @export
 setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
   class2 = '\u5976\u9ec4\u9985',
-  starch = c(ManSang_wheat = 35),
+  starch = c(ManSang_wheat_starch = 35),
   egg_pc = 3,
   portion = c(
     'mochi 10g wrapper \u9ebb\u85af10g\u76ae' = 5, 
@@ -55,36 +55,13 @@ setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
     'potsticker' = 25,
     'bao 50g wrapper \u5305\u5b5050g\u76ae' = 40
   ),
-  #JoyoungCJA9U = JoyoungCJA9U(
-  #  treatment = c(
-  #    'Cut (chilled) butter in mini chunks. Sprinkle on bottom of stir-frying pan; otherwise batter sticks and burns!',
-  #    'Fold rest of ingredients. Pour into stir-frying pan, on top of sprinkled butter'
-  #  ),
-  #  program = 'Stir Fry \u7206\u7092'
+  #note (legacy) = c(
+  #  'Wheat starch \u21d4 sweet potato flour, potato starch, tapioca flour'
   #),
-  note = c(
-    'Wheat starch \u21d4 sweet potato flour, potato starch, tapioca flour'
-  ),
   youtube = 'L7a1d4dj1rs'
 ))
 
 
-JoyoungCJA9U_filling <- \(operation) JoyoungCJA9U(
-  treatment = c(
-    'Cut (chilled) butter in mini chunks. Sprinkle on bottom of stir-frying pan; otherwise batter sticks and burns!',
-    'Fold rest of ingredients. Pour into stir-frying pan, on top of sprinkled butter'
-  ),
-  operation = operation
-)
-
-
-#' @rdname custardFilling-class
-#' @export
-custardFilling <- \() new(
-  Class = 'custardFilling', 
-  water = 120, waterLost = 55,
-  drymilk = 15, sugar = 37, butter = 20,
-  review = 'a hypothetical model')
 
 
 
@@ -93,10 +70,15 @@ custardFilling <- \() new(
 #' @export
 pineapple_custardFilling <- \() new(
   Class = 'custardFilling',
-  pineapple = 560, waterLost = 347, # confirmed
-  butter = 25,
-  note = c('One (1) recipe calls for one 20oz can'),
-  tool = list(JoyoungCJA9U_filling(operation = '15min + 6min')),
+  puree = c(Dole_pineapple = 560), 
+  dairy = c(Kerrygold_butter = 25),
+  tool = list(
+    JoyoungCJA9U_filling(
+      minute = 21,
+      waterLost = 347, # confirmed
+      note = c('One (1) recipe calls for one 20oz can')
+    )
+  ),
   pros = c('Effie\'s Signature!',
              'Smells super nice while cooking'),
   cons = 'Slightly too sour if served hot')
@@ -106,14 +88,19 @@ pineapple_custardFilling <- \() new(
 #' @export
 pumpkin_custardFilling <- \() new(
   Class = 'custardFilling',
-  pumpkin = 600, waterLost = 250, # confirmed on 2023-11-04
-  # drymilk = 50, # now I no longer like drymilk that much..
-  drymilk = 30, 
-  #brownSugar = 50, # too sweet
-  brownSugar = 40, # try
-  butter = 55,
+  puree = c(Libbys_pumpkin = 600), 
+  # dairy = c(Carnation_drymilk = 50), # now I no longer like drymilk that much..
+  dairy = c(Kerrygold_butter = 55,
+            Carnation_drymilk = 30), 
+  #sugar = c(Domino_darkBrown = 50), # too sweet
+  sugar = c(Domino_darkBrown = 40), # try
   # spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2+1/4), # I dont need :)
-  tool = list(JoyoungCJA9U_filling(operation = '15min + 2min30sec')),
+  tool = list(
+    JoyoungCJA9U_filling(
+      minute = 17.5,
+      waterLost = 250 # confirmed on 2023-11-04
+    )
+  ),
   pros = 'I love!')
 
 
@@ -123,10 +110,13 @@ pumpkin_custardFilling <- \() new(
 #' @export
 apple_custardFilling <- \() new(
   Class = 'custardFilling',
-  applesauce = 800, waterLost = 525, 
-  # butter = 50, # no burn even without manual stirring
-  butter = 40, # 1st stir 11min, very slight burn
-  tool = list(JoyoungCJA9U_filling(operation = '15min + 15min, one stir at 7min')),
+  puree = c(Motts_applesauce = 800), 
+  # dairy = c(Kerrygold_butter = 50), # no burn even without manual stirring
+  dairy = c(Kerrygold_butter = 40), # 1st stir 11min, very slight burn
+  tool = list(JoyoungCJA9U_filling(
+    minute = 30,
+    waterLost = 525
+  )),
   pros = 'I love!')
 
 
@@ -135,11 +125,16 @@ apple_custardFilling <- \() new(
 #' @export
 tomato_custardFilling <- \() new(
   Class = 'custardFilling',
-  tomato = 820, waterLost = 500, # confirmed on 2023-11-01
+  puree = c(WegmansOrganic_tomato = 820), 
   sugar = 60, 
-  butter = 50, # burns, no stir. next time stir (as planned)
-  note = c('One (1) recipe calls for one 29oz can'),
-  tool = list(JoyoungCJA9U_filling(operation = '15min + 15min, one stir at 7min')),
+  dairy = c(Kerrygold_butter = 50), # burns, no stir. next time stir (as planned)
+  tool = list(
+    JoyoungCJA9U_filling(
+      minute = 30,
+      waterLost = 500, # confirmed on 2023-11-01
+      note = c('One (1) recipe calls for one 29oz can')
+    )
+  ),
   review = c(
     'Effie\'s Signature!'
     # '2023-11-01: Burns (no stir)! because I did not sprinkle butter?'
@@ -152,11 +147,12 @@ tomato_custardFilling <- \() new(
 darkCherry_custardFilling <- \() new(
   Class = 'custardFilling', flavor = '\u751c\u6a31\u6843\U1f352',
   puree = c(HappyVillage_darkCherry = 800), 
-  # waterLost = 460, # 15 + 14
-  waterLost = 500, # 15 + 15, stir every 6min. to confirm!
-  butter = 45,
-  # tool = list(JoyoungCJA9U_filling(operation = c('15min + 14min'))), # burns, and not dry enough
-  tool = list(JoyoungCJA9U_filling(operation = c('15min + 15min, stir every 6 min'))),
+  dairy = c(Kerrygold_butter = 45),
+  tool = list(JoyoungCJA9U_filling(
+    minute = 30, # 29min not dry enough
+    # waterLost = 460, # 15 + 14
+    waterLost = 500 # 15 + 15, stir every 6min. to confirm!
+  )),
   review = c(
     'Very nice even with burned bits',
     'Try next time with more frequent stir'
@@ -167,9 +163,14 @@ darkCherry_custardFilling <- \() new(
 #' @export
 blueberry_custardFilling <- \() new(
   Class = 'custardFilling', flavor = '\u84dd\u8393\U1fad0',
-  # puree = c(Kirkland_blueberry = 585), waterLost = 345, butter = 23, # stick and burn
-  puree = c(Kirkland_blueberry = 800), waterLost = 500, sugar = 20, butter = 50, # TRY!!
-  tool = list(JoyoungCJA9U_filling(operation = c('15min + 15min'))),
+  # puree = c(Kirkland_blueberry = 585), waterLost = 345, dairy = c(Kerrygold_butter = 23), # stick and burn
+  puree = c(Kirkland_blueberry = 800), 
+  sugar = 20, 
+  dairy = c(Kerrygold_butter = 50), # TRY!!
+  tool = list(JoyoungCJA9U_filling(
+    minute = 30,
+    waterLost = 500 # to confirm
+  )),
   review = 'retry')
 
 
@@ -182,13 +183,14 @@ blueberry_custardFilling <- \() new(
 #' @export
 mango_custardFilling <- \() new(
   Class = 'custardFilling',
-  mango = 530, waterLost = 265, butter = 40, # confirmed
+  puree = c(UltraOrganics_mango = 530), 
+  dairy = c(Kerrygold_butter = 40), # confirmed
   # machine (legacy) = list(Nutribullet = 'Thaw a full large cup'),
-  tool = list(JoyoungCJA9U(
+  tool = list(JoyoungCJA9U_filling(
     minute = 17,
-    #waterLost = 100 # to confirmed
+    waterLost = 265, 
+    note = c('Mango puree sticks and burns like crazy..')
   )),
-  note = c('Mango puree sticks and burns like crazy..'),
   review = c(
     'RETRY with new trick of butter',
     'Lacks a signatrue flavor'
@@ -203,12 +205,12 @@ mango_custardFilling <- \() new(
 #' @export
 yellowPeach_custardFilling <- \() new(
   Class = 'custardFilling', flavor = '\u9ec4\u6843\U1f351',
-  puree = c(Kirkland_peach = 525), waterLost = 315, # confirmed!
-  butter = 23,
-  note = 'One (1) recipe calls for a full jar, after discarding syrup (contains added sugar)',
-  tool = list(JoyoungCJA9U(
+  puree = c(Kirkland_peach = 525),
+  dairy = c(Kerrygold_butter = 23),
+  tool = list(JoyoungCJA9U_filling(
     minute = 15,
-    #waterLost = 100 # to confirmed
+    waterLost = 315, # confirmed!
+    note = 'One (1) recipe calls for a full jar, after discarding syrup (contains added sugar)'
   )),
   review = 'Lacks a signatrue flavor.  Try without discarding syrup!!!')
 
@@ -218,12 +220,12 @@ yellowPeach_custardFilling <- \() new(
 date_custardFilling <- \() new(
   Class = 'custardFilling', flavor = '\u7ea2\u67a3',
   misc = c(SunnyFruit_date = 100), 
-  water = 150, waterLost = 85, # confirmed!
-  butter = 23,
-  note = 'Soak grinded date in water for 4hr+',
-  tool = list(JoyoungCJA9U(
+  water = 150, 
+  dairy = c(Kerrygold_butter = 23),
+  tool = list(JoyoungCJA9U_filling(
     minute = 3,
-    #waterLost = 100 # to confirmed
+    waterLost = 85, # confirmed!
+    note = 'Soak grinded date in water for 4hr+'
   )),
   pros = 'Effie\'s Signature')
 
@@ -235,12 +237,12 @@ date_custardFilling <- \() new(
 fig_custardFilling <- \() new(
   Class = 'custardFilling', flavor = '\u65e0\u82b1\u679c',
   misc = c(SunnyFruit_fig = 120), 
-  water = 200, waterLost = 125, # try
-  butter = 23,
-  note = 'Soak grinded fig in water for 4hr+',
-  tool = list(JoyoungCJA9U(
+  water = 200, 
+  dairy = c(Kerrygold_butter = 23),
+  tool = list(JoyoungCJA9U_filling(
     minute = 3,
-    #waterLost = 100 # to confirmed
+    #waterLost = 125, # to confirm
+    note = 'Soak grinded fig in water for 4hr+'
   )),
   review = 'try')
 
@@ -253,18 +255,15 @@ coconut_custardFilling <- \() new(
   coconut = c(WegmansOrganic_coconutFlour = 40),
   starch = numeric(),
   sugar = 35, 
-  drymilk = 10, butter = 5,
-  water = 120, waterLost = 45,
-  tool = list(JoyoungCJA9U_filling(operation = c('2min30sec'))),
+  dairy = c(Kerrygold_butter = 5,
+            Carnation_drymilk = 10), 
+  water = 120, 
+  tool = list(JoyoungCJA9U_filling(
+    minute = 2.5,
+    waterLost = 45
+  )),
   review = 'try again!')
 
-coconut_custardFilling_OLD <- \() new(
-  Class = 'custardFilling', flavor = '\u6930\u84c9\U1f965',
-  coconut = c(Edward_shreddedCoconutLite = 40), 
-  sugar = 40, drymilk = numeric(), butter = 23, # before 2023-10-30
-  water = 120, waterLost = 45,
-  tool = list(JoyoungCJA9U_filling(operation = c('2min30sec'))),
-  review = 'Nice (before 2023-10-30)!')
 
 
 
@@ -279,12 +278,14 @@ coconut_custardFilling_OLD <- \() new(
 blackSesame_custardFilling <- \() new(
   Class = 'custardFilling',
   blackSesame = 50, 
-  # drymilk = 50, sugar = 40, butter = 23, # before 2023-12-02
-  drymilk = 17, sugar = 40, butter = 10, # try
-  water = 240, waterLost = 160, 
-  tool = list(JoyoungCJA9U(
+  # dairy = c(Kerrygold_butter = 23, Carnation_drymilk = 50), sugar = 40, # before 2023-12-02
+  dairy = c(Kerrygold_butter = 10, # try
+            Carnation_drymilk = 17), 
+  sugar = 40, 
+  water = 240, 
+  tool = list(JoyoungCJA9U_filling(
     minute = 12,
-    #waterLost = 100 # to confirmed
+    #waterLost = 160 # to confirmed
   )),
   # note = c('Reduce sugar to 30g if eat directly'), # note before 2023-12-02
   review = 'Effie\'s Signature (before 2023-12-02)')

@@ -2,14 +2,14 @@
 #' @rdname nutrition-class
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  matchaLatte(),
 #'  cooking:::Ippodo_uji_shimizu(),
 #'  cooking:::Starbucks_matchaLatteMix(),
 #'  cooking:::TraderJoes_matchaLatte()
 #' ) # compare dry powder
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  hotdrink(matchaLatte),
 #'  cooking:::Ippodo_sayakaLatte(),
 #'  cooking:::Starbucks_matchaLatte(),
@@ -18,10 +18,11 @@
 #'  cooking:::ItoEn_sweet_matcha() |> as('recipe')
 #' ) # compare hot drink
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  frappe(matchaLatte),
 #'  cooking:::Starbucks_matchaFrappuccino()
 #' ) # compare frappe
+#' 
 
 
 
@@ -67,7 +68,8 @@ Ippodo_sayakaLatte <- \() new(
   flavor = 'Sayaka Latte', 
   ippodotea = 'sayaka-100g',
   matcha = c(Ippodo_sayaka = 3), # matcha 1.5%
-  water80 = 100, milk = 96)
+  water80 = 100, 
+  dairy = c(WegmansOrganic_whole_milk = 96))
 
 
 

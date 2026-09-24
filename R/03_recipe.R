@@ -37,15 +37,13 @@
 #' 
 # @slot machine (legacy) \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used.  To be superceeded by slot `tool`
 #' 
-#' @slot note \link[base]{character} scalar or \link[base]{vector}, additional note to chef
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, people's comments
 #' @slot pros \link[base]{character} scalar or \link[base]{vector}, pros
 #' @slot cons \link[base]{character} scalar or \link[base]{vector}, cons
 #' 
 #' @slot portion \link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)
 #' 
-#' @slot waterLost \link[base]{numeric} scalar, weight of water (in grams) lost in cooking process, **before dividing**
-#' @slot fatLost \link[base]{numeric} scalar, weight of oil (in grams) drained in cooking process
+# difficult to quantify `fatLost` vs `waterLost`
 #' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
 #' 
 #' @aliases recipe-class
@@ -83,14 +81,11 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   youtube = 'character',
   #doi = 'character',
   
-  note = 'character',
   review = 'character',
   pros = 'character', cons = 'character',
   portion = 'numeric',
   
-  waterLost = 'numeric',
-  sugarLost = 'numeric',
-  fatLost = 'numeric'
+  sugarLost = 'numeric'
   
 ), prototype = prototype(
   date = as.Date.numeric(numeric()) # must!!
@@ -285,19 +280,19 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         } else stop('more syrup?')
       } else 'Caff\u00e8'
      
-    } else if (length(x@acai)) {
+    } else if (length(x['_acai_pulv$'])) {
       '\u5df4\u897f\u8393'
     } else if (length(x@adzukibean)) {
       '\u7ea2\u8c46'
-    } else if (length(x@applesauce)) {
+    } else if (length(x['_applesauce$'])) {
       '\u82f9\u679c\U1f34e'
-    } else if (length(x@beet)) {
+    } else if (length(x['_beet_pulv$'])) {
       '\u751c\u83dc'
-    } else if (length(x@blackRice)) {
+    } else if (length(x['_blackRice$'])) {
       '\u9ed1\u7c73'
     } else if (length(x@blackSesame)) {
       '\u9ed1\u829d\u9ebb'
-    } else if (length(x@brownRice)) {
+    } else if (length(x['_brownRice$'])) {
       '\u7cd9\u7c73'
     } else if (length(x@cashew)) {
       '\u8170\u679c'
@@ -307,31 +302,31 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
     } else if (length(x@coconut)) {
       '\u6930\u84c9\U1f965'
-    } else if (length(x@darkCherry)) {
+    } else if (length(x['_darkCherry$'])) {
       '\u751c\u6a31\u6843\U1f352'
-    } else if (length(x@mandarine)) {
+    } else if (length(x['_mandarine$'])) {
       '\u6a58\u5b50\U1f34a'
-    } else if (length(x@mango)) {
+    } else if (length(x['_mango$'])) {
       '\u8292\u679c\U1f96d'
     } else if (length(x@matcha)) {
       '\u62b9\u8336\U1f375'
     } else if (length(x@mungbean)) {
       '\u7eff\u8c46'
-    } else if (length(x@pear)) {
+    } else if (length(x['_pear$'])) {
       '\u68a8\U1f350'
-    } else if (length(x@pineapple)) {
+    } else if (length(x['_pineapple$'])) {
       # '\u83e0\u841d\U1f34d'
       'Pineapple\U1f34d'
-    } else if (length(x@pumpkin) || length(x@pumpkinPieMix)) {
+    } else if (length(x['_pumpkin$']) || length(x['_pumpkinPieMix$'])) {
       # '\u5357\u74dc\U1f383'
       'Pumpkin\U1f383'
     } else if (length(x@redKidneyBean)) {
       '\u7ea2\u82b8\u8c46'
-    } else if (length(x@strawberry)) {
+    } else if (length(x['_strawberry$'])) {
       '\u8349\u8393\U1f353'
-    } else if (length(x@tomato)) {
+    } else if (length(x['_tomato$'])) {
       '\u897f\u7ea2\u67ff\U1f345'
-    } else if (length(x@yellowCorn)) {
+    } else if (length(x['_yellowCorn$'])) {
       '\u7389\u7c73\U1f33d'
     } else if (length(x@shrimp)) {
       '\u867e\U1f990'
@@ -379,7 +374,8 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   if (!length(x@alias)) {
     x@alias <- if (length(x@flavor) || length(x@class2)) {
-      paste(x@flavor, x@class2) |> trimws()
+      c(x@flavor, x@class2) |> 
+        paste(collapse = ' ')
     } else x@alias 
   } # else do nothing
   
@@ -396,40 +392,31 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 #' @export
 setMethod(f = show, signature = 'recipe', definition = \(object) {
   
+  x <- object; object <- NULL
+  
   cat('\n')
   
-  if (length(object@date)) {
-    object@date |> format.Date(format = '%A, %B %e, %Y') |> col_green() |> cat()
-    cat('\n\n')
-  }
+  x@date |> # len0-compatible
+    format.Date(format = '%A, %B %e, %Y\n\n') |> 
+    gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
+    col_green() |> style_bold() |> cat()
   
-  print.raw.(object)
+  print.raw.(x)
   
-  y <- object |>
+  y <- x |>
     as(Class = 'nutrition')
-  
-  tool_slot <- names(which(getSlots('recipe') == 'tool'))
-  waterLost <- sum(object@waterLost, lapply(tool_slot, FUN = \(i) slot(object, name = i)@waterLost) |> unlist(use.names = FALSE))
-  if (waterLost == 0) waterLost <- numeric()
-
-  if (length(waterLost) || length(object@fatLost) || length(object@sugarLost)) {
-    waterLost |> 
-      sprintf(fmt = 'Water evaporated in cooking: %.0f grams\n') |> 
-      cat()
-    object@fatLost |> 
-      sprintf(fmt = 'Fat drained in cooking: %.0f grams\n') |> 
-      cat()
-    object@sugarLost |> 
-      sprintf(fmt = 'Sugar consumed in fermentation: %.1f grams\n') |> 
-      cat()
-    cat('\n')
-  }
   
   cat(
     'Total', 
-    y@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(),
-    if (inherits(object, what = c('caffeCoconut', 'yuenyeungCoconut'))) {
-      (y@servingGram/29.5735) |> sprintf(fmt = '%.1f fl oz') |> make_ansi_style('seagreen')() |> style_bold() # use water density
+    y@servingGram |> 
+      sprintf(fmt = '%.4g grams') |> 
+      make_ansi_style('purple')() |> 
+      style_bold(),
+    if (inherits(x, what = c('caffeCoconut', 'yuenyeungCoconut'))) { # use water density
+      y@servingGram |>
+        cmod(e2 = consec::floz, n = 2L, tol = 1e-6) |>
+        make_ansi_style('seagreen')() |> 
+        style_bold()
     },
     '\n\n'
   )
@@ -438,35 +425,30 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   if (length(y@calorie)) cat('Calories', y@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
   cat('\n')
   
-  attr_dx <- attributes(y)[c(
-    'perRiceFlr', 'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 'perMixFlr', 
-    'perGlutenFreeFlr', 'perCornmeal', 
-    'perCocoa', 'perTea', 'perCreamCheese',
-    'perServingTexture', 'perServingFlavor'#, 'perRaw'
-  )]
+  attr_dx <- attributes(y)[paste0('per', c(
+    'RiceFlr', 'AllPurposeFlr', 'PastryFlr', 'BreadFlr', 'MixFlr', 
+    'GlutenFreeFlr', 'Cornmeal', 
+    'Cocoa', 'Tea', 'CreamCheese',
+    'ServingTexture', 'ServingFlavor'#, 'Raw'
+  ))]
   has_attr_dx <- (lengths(attr_dx) > 0L)
   attr_dx[has_attr_dx] |> 
     lapply(FUN = show)
   
-  if (length(object@portion)) {
+  if (length(x@portion)) {
     sprintf(
       fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
-      y@servingGram/object@portion, 
-      object@portion, 
-      (y@usd / y@servingGram * object@portion) |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(),
-      if (length(y@calorie)) (y@calorie / y@servingGram * object@portion) |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold() else '',
-      object@portion |> names() |> col_magenta() |> style_bold()
+      y@servingGram/x@portion, 
+      x@portion, 
+      (y@usd / y@servingGram * x@portion) |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(),
+      if (length(y@calorie)) (y@calorie / y@servingGram * x@portion) |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold() else '',
+      x@portion |> names() |> col_magenta() |> style_bold()
     ) |> cat(sep = '\n')
     cat('\n')
   } # else NULL
   
-  object@tool |>
+  x@tool |>
     print.toollist()
-  
-  if (length(object@note)) {
-    object@note |> sprintf(fmt = '\u2756 %s') |> cat(sep = '\n')
-    cat('\n')
-  }
   
   #if (length(review <- attr(y, which = 'review', exact = TRUE))) {
   #  cat('Reviews on Ingredients:\n')
@@ -474,37 +456,37 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   #  cat('\n')
   #}
   
-  if (length(object@review)) {
-    object@review |> 
+  if (length(x@review)) {
+    x@review |> 
       sprintf(fmt = '\U1f4dd %s') |> 
       lapply(FUN = cli_text)
     cat('\n')
   }
   
-  if (length(object@pros)) {
-    object@pros |> 
+  if (length(x@pros)) {
+    x@pros |> 
       sprintf(fmt = '\U1f389 %s') |> 
       cat(sep = '\n')
     cat('\n')
   }
   
-  if (length(object@cons)) {
-    object@cons |> 
+  if (length(x@cons)) {
+    x@cons |> 
       sprintf(fmt = '\U1f940 %s') |> 
       cat(sep = '\n')
     cat('\n')
   }
   
-  #if (length(object@url) || length(object@youtube) || length(object@doi)) {
-  if (length(object@url) || length(object@youtube)) {
+  #if (length(x@url) || length(x@youtube) || length(x@doi)) {
+  if (length(x@url) || length(x@youtube)) {
     
     cat('\U1f4d6 Reference:\n')
-    if (length(object@url)) cat('', object@url, sep = '\n') # len0 compatible
-    if (n_ytb <- length(object@youtube)) {
+    if (length(x@url)) cat('', x@url, sep = '\n') # len0 compatible
+    if (n_ytb <- length(x@youtube)) {
       if (n_ytb != 1L) stop('only allow scalar @youtube')
-      cat(' \U1f4f9', style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', object@youtube), text = object@youtube), '\n')
+      cat(' \U1f4f9', style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube), text = x@youtube), '\n')
     }
-    #if (length(object@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', object@doi), text_ = names(object@doi)), sep = '\n')
+    #if (length(x@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', x@doi), text_ = names(x@doi)), sep = '\n')
     cat('\n')
     
   }

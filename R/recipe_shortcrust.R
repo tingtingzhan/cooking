@@ -12,9 +12,9 @@
 #' @export
 setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
   class2 = 'Shortcrust',
-  # pastryFlour = 360, # original
-  pastryFlour = 370, # to have 50% fat:flour
-  butter_brick = 1,
+  # flour = c(Wegmans_pastryFlr = 360), # original
+  flour = c(Wegmans_pastryFlr = 370), # to have 50% fat:flour
+  dairy_brick = c(Kerrygold_butter = 1),
   sugar = 7.5,
   # salt_tsp = 1/4,
   iceWater = 50, # 60g-90g,

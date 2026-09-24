@@ -18,12 +18,12 @@ setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
 #' @export
 pineapple_evap <- \() new(
   Class = 'evap',
-  pineapple = c(Dole_pineapple = 2070 - 933),
-  tool = list(JoyoungCJA9U(
+  puree = c(Dole_pineapple = 2070 - 933),
+  tool = list(JoyoungCJA9U_filling(
     minute = 20, # confirmed! violently bubbling; must not extend!
-    waterLost = 387 # confirmed
-  )),
-  note = '2x 567g Dole cans'
+    waterLost = 387, # confirmed
+    note = '2x 567g Dole cans'
+  ))
 )
 
 # pot: 933g

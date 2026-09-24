@@ -55,7 +55,7 @@ Wegmans_olive_oil <- \() new(
 
 
 
-Kadoya_sesameOil <- \() new(
+Kadoya_sesame_oil <- \() new(
   Class = 'nutrition',  
   brand = paste0(
     style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html') |> c(),
@@ -68,14 +68,14 @@ Kadoya_sesameOil <- \() new(
   fat = 14)
 
 
-YouJia_rattanPepperOil <- \() new(
+YouJia_rattanPepper_oil <- \() new(
   Class = 'nutrition', 
   youjia = 'green-pepper-oil-210ml-1',
   name = 'Rattan Pepper Oil', alias = '\u85e4\u6912\u6cb9',
   usd = 4.99/250*15,
   servingGram = 14, servingTbsp = 1, fat = 14)
 
-YaoMaZi_rattanPepperOil <- \() new(
+YaoMaZi_rattanPepper_oil <- \() new(
   Class = 'nutrition', 
   yaomazi = 'news-productshow-id-153',
   name = 'Rattan Pepper Oil', alias = '\u85e4\u6912\u6cb9',

@@ -4,7 +4,7 @@
 # https://www.youtube.com/watch?v=b_hDOHmF9nE
 
 if (FALSE) {
-  diagnose(
+  nutritionlist(
     Nabisco_waferOreo(),
     Oreo(),
     Oreo_thins(),

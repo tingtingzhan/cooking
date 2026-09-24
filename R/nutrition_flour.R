@@ -3,7 +3,7 @@
 # https://shop.wegmans.com/product/277/wegmans-all-purpose-unbleached-flour
 
 
-Wegmans_pastry <- \() new(
+Wegmans_pastryFlr <- \() new(
   Class = 'nutrition', 
   name = 'Pastry\U1f370 Flour',
   alias = '\u4f4e\u7b4b\u9762\u7c89',
@@ -14,7 +14,7 @@ Wegmans_pastry <- \() new(
   carbohydrate = 23, protein = 30*.08)
 
 
-Wegmans_bread <- \() new(
+Wegmans_breadFlr <- \() new(
   Class = 'nutrition',  
   name = 'Bread\U1f35e Flour', # Enriched Unbleached
   alias = '\u9ad8\u7b4b\u9762\u7c89',
@@ -23,8 +23,11 @@ Wegmans_bread <- \() new(
   servingCup = 1/4, # packaging
   calorie = 100,
   carbohydrate = 23, protein = 3)
+# Wegmans_breadFlr() has *much* higher water absorbency, and much cheaper than KingArthur_breadFlr()
 
-Wegmans_whiteWheat <- \() new(
+
+
+Wegmans_white_wheatFlr <- \() new(
   Class = 'nutrition',  
   alias = '\u767d\u5168\u9ea6\u9762\u7c89', name = 'White Whole Wheat Flour',
   wegmans = '26690', usd = 3.49/2270*28,
@@ -33,7 +36,7 @@ Wegmans_whiteWheat <- \() new(
   calorie = 90,
   fat = .5, carbohydrate = 20, protein = 4)
 
-Wegmans_wheat <- \() new(
+Wegmans_wheatFlr <- \() new(
   Class = 'nutrition',  
   alias = '\u5168\u9ea6\u9762\u7c89', name = 'Whole Wheat Flour',
   wegmans = '107099', usd = 3.49/2270*28,
@@ -41,7 +44,7 @@ Wegmans_wheat <- \() new(
   servingCup = 1/4, # packaging
   calorie = 90,
   fat = .5, carbohydrate = 20, protein = 4,
-  superior = 'Wegmans_whiteWheat')
+  superior = 'Wegmans_white_wheatFlr')
   #review = 'color Too dark')
 
 
@@ -73,7 +76,7 @@ KingArthur_whiteWheat_organic <- \() new(
   carbohydrate = 21, protein = 28*.122)
 
 
-KingArthur_bread_organic <- \() new(
+KingArthur_organic_breadFlr <- \() new(
   Class = 'nutrition',  kingarthur = 308104L, 
   name = 'Bread\U1f35e Flour, Organic', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 10.95/2270*30,
@@ -82,7 +85,7 @@ KingArthur_bread_organic <- \() new(
   calorie = 110,
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
-KingArthur_bread <- \() new(
+KingArthur_breadFlr <- \() new(
   Class = 'nutrition',  kingarthur = 304105L, 
   name = 'Bread\U1f35e Flour', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
@@ -105,7 +108,7 @@ KingArthur_Lancelot <- \() new(
   kingarthurpro = 13050L,
   name = 'Sir Lancelot', alias = '14%\u9ad8\u7b4b\u9762\u7c89',
   usd = 28.49/(50*454)*100,
-  servingGram = 100, servingCup = (100/30)*(1/4), # using [KingArthur_bread] info
+  servingGram = 100, servingCup = (100/30)*(1/4), # using [KingArthur_breadFlr] info
   calorie = 364, 
   fat = .98, carbohydrate = 70.5, fiber = 2.7, sugar = .27, protein = 14, water = 14)
 
@@ -119,7 +122,7 @@ KingArthur_Galahad <- \() new(
   fat = .98, carbohydrate = 72.82, fiber = 2.7, sugar = .27, protein = 11.7, water = 14)
 
 
-KingArthur_allPurpose <- \() new(
+KingArthur_allPurposeFlr <- \() new(
   Class = 'nutrition',  kingarthur = 301050L, 
   name = 'All-Purpose Flour', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
@@ -128,7 +131,7 @@ KingArthur_allPurpose <- \() new(
   calorie = 110,
   carbohydrate = 23, protein = 30*.117) # 11.7% protein content
 
-KingArthur_allPurpose_organic <- \() new(
+KingArthur_allPurposeFlr_organic <- \() new(
   Class = 'nutrition',  kingarthur = 308006L, 
   alias = '\u4e2d\u7b4b\u9762\u7c89', name = 'All-Purpose Flour, Organic',
   usd = 10.95/2270*30,
@@ -173,7 +176,7 @@ KingArthur_selfRising_homemade <- \() new(
   flavor = 'Homemade Self-Rising Flour',
   author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',
-  flour_cup = 1,
+  flour_cup = c(KingArthur_allPurposeFlr = 1),
   bakingPowder_tsp = 1.5,
   salt_tsp = 1/4)
 

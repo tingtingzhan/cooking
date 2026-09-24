@@ -28,7 +28,7 @@
 #' 
 #' matcha_sundae() * 2
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  cooking:::cooking23s_icecream() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 32),
@@ -45,18 +45,19 @@
 #'  matcha_sundae(),
 #'  
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
-#'  mascarpone = 453/2, water = 320, 
-#'  drymilk = 40, matcha_tsp = 10, sugar_Tbsp = 4, 
+#'  dairy_cup = c(BelGioioso_mascarpone = 1),
+#'  water = 320, 
+#'  dairy = c(Carnation_drymilk = 40), matcha_tsp = 10, sugar_Tbsp = 4, 
 #'  pros = c('Nice! Tiny little oily'))
 #' )
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  subtract(cooking:::Bassetts_coffee, sugar = 12.7),
 #'  subtract(cooking:::HaagenDazs_coffee, sugar = 16),
 #'  coffee_sundae()
 #' )
 #' 
-#' diagnose(
+#' nutritionlist(
 #'  subtract(cooking:::Bassetts_pumpkin, sugar = 11),
 #'  pumpkin_sundae()
 #' )
@@ -68,12 +69,12 @@ setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
   class2 = 'Sundae\U1f366',
   # all dairy product add up to ~453/2 grams (1 cup)
   
-  mascarpone = 453/4, 
-  yogurt = 100,
+  dairy_cup = c(BelGioioso_mascarpone = .5),
+  dairy = c(Nancys_yogurt = 100),
   water = 220 # experimented! Confirm again next time 
   # taste if yogurt flavor is detectable
 
-  #cottageCheese = 113 
+  #dairy = c(Daisy_cottageCheese = 113) 
   # test mascarpone+yogurt first!!
   # need food processor for cottage cheese
   
@@ -84,7 +85,7 @@ setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
 #' @export
 matcha_sundae <- \() new(
   Class = 'sundae',
-  drymilk = 40, matcha_tsp = 8, sugar_Tbsp = 3,
+  dairy = c(Carnation_drymilk = 40), matcha_tsp = 8, sugar_Tbsp = 3,
   pros = 'I love')
 
 
@@ -94,14 +95,15 @@ matcha_sundae <- \() new(
 
 corn_sundae <- \() new(
   Class = 'sundae',
-  homemade = c(cornjuice = 400), water = numeric(), yogurt = numeric(),
+  homemade = c(cornjuice = 400), water = numeric(),
   review = 'try')
 
 #' @rdname sundae-class
 #' @export
 pumpkin_sundae <- \() new(
   Class = 'mascarponeSundae', 
-  pumpkin = 350, drymilk = 40, 
+  puree = c(Libbys_pumpkin = 350), 
+  dairy = c(Carnation_drymilk = 40), 
   sugar_tsp = 7, 
   review = c('try'))
 
@@ -109,7 +111,7 @@ pumpkin_sundae <- \() new(
 #' @export
 coffee_sundae <- \() new(
   Class = 'sundae',
-  drymilk = 37, coffee_Tbsp = 2, sugar_tsp = 5, # based on my coffee_gelatoOLD()
+  dairy = c(Carnation_drymilk = 37), coffee_Tbsp = 2, sugar_tsp = 5, # based on my coffee_gelatoOLD()
   review = 'try')
 
 
@@ -121,7 +123,7 @@ coffee_sundae <- \() new(
 #' @export
 setClass(Class = 'mascarponeSundae', contains = 'recipe', prototype = prototype(
   class2 = 'Sundae\U1f366',
-  mascarpone = 453/4
+  dairy_cup = c(BelGioioso_mascarpone = .5)
 ))
 
 setValidity(Class = 'mascarponeSundae', method = \(object) {
@@ -135,7 +137,7 @@ setValidity(Class = 'mascarponeSundae', method = \(object) {
 #' @export
 pineapple_sundae <- \() new(
   Class = 'mascarponeSundae', 
-  pineapple = 210,
+  puree = c(Dole_pineapple = 210),
   review = c('try!!'))
 
 
@@ -146,9 +148,11 @@ if (FALSE) {
   
   cocoa_icecream <- \() new(
     Class = 'recipe', class2 = '\u51b0\u6dc7\uf9f5\U1f368',
-    heavyCream = 480,
     eggYolk_pc = 6,
-    drymilk = 52, 
+    dairy = c(
+      Wegmans_heavyCream = 480,
+      Carnation_drymilk = 52
+    ), 
     water = 220, # 250*.881
     cocoa = c(KingArthur_Bensdorp = 30 * 1.07), 
     sugar = 36 * 1.07, 
@@ -162,11 +166,11 @@ if (FALSE) {
   Bourbon_icecream <- \() new(
     Class = 'recipe', flavor = 'Bourbon \u67ab\u7cd6', 
     class2 = '\u51b0\u6dc7\uf9f5\U1f368',
-    heavyCream = 480,
     eggYolk_pc = 6,
-    drymilk = 52, 
+    dairy = c(Wegmans_heavyCream = 480,
+              Carnation_drymilk = 52), 
     water = 220, # 250*.881
-    syrup = c(Stonewall_Bourbon = 50 * 1.07), 
+    syrup = c(Stonewall_Bourbon_syrup = 50 * 1.07), 
     review = c(
       'perfect sweetness for old prototype',
       'retry for new prototypd'
@@ -186,7 +190,7 @@ if (FALSE) {
 #' ..
 #' 
 #' @examples
-#' diagnose(
+#' nutritionlist(
 #'  subtract(xiaogaojie_icecream, sugar = 57),
 #'  subtract(happytears_icecream, sugar = 80)
 #' )
@@ -196,8 +200,8 @@ xiaogaojie_icecream <- \() new(
   Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'IQ-t8eSSD3Y',
   eggYolk_pc = 6,
-  heavyCream = 500,
-  milk = 250,
+  dairy = c(Wegmans_heavyCream = 500,
+            WegmansOrganic_whole_milk = 250),
   sugar = 120
   # Vanilla paste：8g, 1/2 teaspoons
 )
@@ -209,7 +213,7 @@ happytears_icecream <- \() new(
   eggYolk_pc = 5,
   sugar = 150,
   coconut = c(Kara_coconutcream = 500),
-  heavyCream = 250,
+  dairy = c(Wegmans_heavyCream = 250),
   happytears = 'UDVHsBR7s3Y')
 
 
@@ -219,9 +223,9 @@ happytears_icecream <- \() new(
 xiaogaojie_cocoa_icecream <- \() new(
   Class = 'recipe', flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'YNzGZMLWY_Q',
-  heavyCream = 350,
   eggYolk_pc = 3,
-  milk = 250, 
+  dairy = c(Wegmans_heavyCream = 350,
+            WegmansOrganic_whole_milk = 250), 
   sugar = 60,
   flavor = c(Guittard_lustrous55 = 200), # semi-sweet chocolate：200g
   coffee_tsp = 1) # 5g 1 tablespoon
@@ -233,9 +237,11 @@ xiaogaojie_cocoa_icecream <- \() new(
 #' @export
 SweetDumpling_matcha_icecream <- \() new(
   Class = 'recipe', author = '\u7cd6\u997a\u5b50', flavor = '\u62b9\u8336\U1f375\u51b0\u6dc7\uf9f5\U1f368',
-  heavyCream = 250,
-  condensedMilk = 170,
-  milk = 50,
+  dairy = c(
+    Wegmans_heavyCream = 250,
+    WegmansOrganic_whole_milk = 50,
+    Carnation_condensMilk = 170
+  ),
   matcha = 15)
 
 #' @rdname icecream
@@ -243,9 +249,10 @@ SweetDumpling_matcha_icecream <- \() new(
 cuisinart_icecream <- \() new(
   Class = 'recipe', author = 'Cuisinart', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
-  milk_cup = 1,
+  dairy_cup = c(
+    Wegmans_heavyCream = 2,
+    Wegmans_whole_milk = 1),
   sugar = 150, # ¾ cup granulated sugar 
-  heavyCream = 500, # 2 cups heavy cream 
   vanilla_tsp = 1)
 
 
@@ -254,9 +261,11 @@ cuisinart_icecream <- \() new(
 cooking23s_icecream <- \() new(
   Class = 'recipe', author = 'cooking23s', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://cooking23s.blogspot.com/2021/05/ice-cream.html',
-  condensedMilk = 100,
-  heavyCream = 200,
-  milk = 50)
+  dairy = c(
+    Carnation_condensMilk = 100,
+    Wegmans_heavyCream = 200,
+    WegmansOrganic_whole_milk = 50
+  ))
 
 
 #' @rdname icecream
@@ -264,7 +273,7 @@ cooking23s_icecream <- \() new(
 Yumna_icecream <- \() new(
   Class = 'recipe', author = 'Yumna', flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
-  cottageCheese = 425, # 15 oz,
+  dairy = c(Daisy_cottageCheese = 425), # 15 oz,
   sugar = 80 # 1/4 cup of honey weighs 85 grams
 )
 

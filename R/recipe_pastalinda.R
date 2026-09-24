@@ -29,7 +29,7 @@
 #' @name pastalinda-class
 #' @export
 setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
-  breadFlour = c(Wegmans_bread = 500), 
+  flour = c(Wegmans_breadFlr = 500), 
   salt_tsp = 1/4, Na2CO3_tsp = 1/4,
   tool = list(KSM8990(
     program = 'Level 2. Stop immediately after dough forms', 
@@ -85,7 +85,7 @@ wrapperlinda <- \() new(
 #' @export
 pumpkin_wrapperlinda <- \() new(
   Class = 'wrapperlinda', 
-  pumpkin = 380, # Wegmans bread flour
+  puree = c(Libbys_pumpkin = 380), # Wegmans bread flour
   review = c(
     'feels nice!!',
     'make shrimp gyoza and wonton next time!'
@@ -146,15 +146,17 @@ noodlelinda <- \() new(
 #' @rdname noodlelinda-class
 #' @export
 noodlelinda_KingArthur <- \() new(
-  Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500), 
+  Class = 'noodlelinda', 
+  flour = c(KingArthur_breadFlr = 500), 
   water = 225, # 220g too dry, 225g just right
   date = as.Date('2024-06-02'), pros = 'perfect wetness for KitchenAid KSM8990 and Pastalinda')
 
 #' @rdname noodlelinda-class
 #' @export
 pumpkin_noodlelinda_KingArthur <- \() new(
-  Class = 'noodlelinda', breadFlour = c(KingArthur_bread = 500),
-  pumpkin = 270, # try with fresh can
+  Class = 'noodlelinda', 
+  flour = c(KingArthur_breadFlr = 500),
+  puree = c(Libbys_pumpkin = 270), # try with fresh can
   date = as.Date('2024-06-25'), pros = '280g for opened can'
   )
 
@@ -164,7 +166,7 @@ pumpkin_noodlelinda_KingArthur <- \() new(
 #' @export
 pumpkin_noodlelinda <- \() new(
   Class = 'noodlelinda', 
-  pumpkin = 400,
+  puree = c(Libbys_pumpkin = 400),
   review = 'retry to confirm')
 
 
@@ -172,7 +174,7 @@ pumpkin_noodlelinda <- \() new(
 #' @export
 tomato_noodlelinda <- \() new(
   Class = 'noodlelinda', 
-  tomato = 400, 
+  puree = c(WegmansOrganic_tomato = 400), 
   review = 'try')
 
 #' @rdname noodlelinda-class

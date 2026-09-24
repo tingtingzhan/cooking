@@ -1,6 +1,6 @@
 
 if (FALSE) {
-  diagnose(
+  nutritionlist(
     Carnation_drymilk() |> as('recipe'),
     GreatValue_drymilk() |> as('recipe'),
     MembersMark_drymilk() |> as('recipe'),
@@ -9,7 +9,7 @@ if (FALSE) {
     Horizon_whole_drymilk() |> as('recipe')
   )
   
-  diagnose(
+  nutritionlist(
     Meyenberg_goat_drymilk() |> as('recipe'),
     Meyenberg_goatWhole_drymilk() |> as('recipe')
   )

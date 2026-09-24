@@ -18,7 +18,7 @@ Leo_udon()
 ..
 }
 \examples{
-diagnose(
+nutritionlist(
  Leo_udon(),
  JustOne_udon(),
  amanda_udon())
