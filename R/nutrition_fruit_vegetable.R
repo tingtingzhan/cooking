@@ -298,7 +298,7 @@ parsleyFresh <- \() new(
 FlavorFarmer_whitePeach <- \() new(
   Class = 'nutrition',  fdc = 1102677L,
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
-  servingGram = 100, pieceGram = 130,
+  servingGram = 100, pieceGram = 130, piece_fmt = '%.1g\U1f351',
   water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
   review = 'Fresh white peach sold at Costco in summer',
   machine = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
@@ -313,7 +313,7 @@ avocado <- \() new(
   Class = 'nutrition',  fdc = 171705L,
   alias = '\u725b\u6cb9\u679c', name = 'Avocado\U1f951',
   servingGram = 100, 
-  pieceGram = 150, # pulp only
+  pieceGram = 150, piece_fmt = '%.1g\U1f951', # pulp only
   # actual weight:
   # with skin and kernel: 220g
   calorie = 160,
@@ -341,7 +341,7 @@ lemon <- \() new( # lemon juice
 lime <- \() new( # lime juice
   Class = 'nutrition',  fdc = 2344679L,
   alias = '\u9752\u67e0\u6c41', name = 'Lime\U1f34b\u200d\U1f7e9 Juice',
-  servingGram = 100, pieceGram = 44,
+  servingGram = 100, pieceGram = 44, piece_fmt = '%.1g\U1f34b\u200d\U1f7e9',
   calorie = 25,
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
 

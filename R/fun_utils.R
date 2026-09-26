@@ -102,6 +102,9 @@ combnPc <- \(x, which, ...) {
 }
 
 
+
+
+
 combnVol <- \(x, which, ...) {
   
   slt0 <- names(getSlots(x = 'raw.'))
@@ -178,23 +181,6 @@ check_gelatin <- \(x) {
 
 
 
-getTealoose <- \(x) {
-  # `x` is recipe@teabag, number of tea bags
-  if (!length(x)) return(numeric())
-  info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
-  mapply(FUN = \(info, pc) {
-    info@servingGram * pc
-  }, pc = x, info = info_)
-}
-
-getTeabag <- \(x) {
-  # `x` is recipe@tea, weight of loose tea
-  if (!length(x)) return(numeric())
-  info_ <- x |> names() |> lapply(FUN = \(i) eval(call(i)))
-  mapply(FUN = \(info, wt) {
-    wt / info@servingGram
-  }, wt = x, info = info_)
-}
 
 
 
@@ -332,24 +318,32 @@ gram_per_tsp <- \(x) {
 
 
 
+
 fmt_pc <- \(x) {
   
-  # x is `x@fruit`
+  # x is `raw.@fruit`, for example
   
   if (!length(x)) return(invisible())
     
   id_pc <- names(x) |>
     vapply(FUN = exists, where = asNamespace('cooking'), inherits = FALSE, FUN.VALUE = NA)
   
-  pieceGram <- names(x)[id_pc] |>
-    vapply(FUN = \(i) {
-      eval(call(name = i))@pieceGram
-    }, FUN.VALUE = NA_real_)
+  v_pc <- names(x)[id_pc] |>
+    lapply(FUN = \(i) {
+      eval(call(name = i))
+    })
   
+  pieceGram <- v_pc |> 
+    vapply(FUN = slot, name = 'pieceGram', FUN.VALUE = NA_real_)
+    
+  fmt <- v_pc |>
+    vapply(FUN = slot, name = 'piece_fmt', FUN.VALUE = '')
+    
   z <- character(length = length(x))
   z[id_pc] <- (x[id_pc] / pieceGram) |>
-    sprintf(fmt = '%.1gpcs') |> 
-    col_br_magenta() |> style_bold()
+    sprintf(fmt = fmt) |> # `fmt` can be vectorized!!
+    col_br_magenta() |> 
+    style_bold()
   return(z)
   
 }

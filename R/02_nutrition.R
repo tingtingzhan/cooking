@@ -130,6 +130,7 @@
 #' @slot serving_ml \link[base]{numeric} scalar, serving size in milli litre
 #' 
 #' @slot pieceGram \link[base]{numeric} scalar, weight in grams per piece
+#' @slot piece_fmt \link[base]{character} scalar
 #' 
 #' @slot usd \link[base]{numeric} scalar, price (in USD) \strong{per serving}
 #' @slot jpy \link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}
@@ -278,7 +279,7 @@ setClass(Class = 'nutrition', slots = c(
   #servingBag = 'numeric',
   serving_floz = 'numeric',
   serving_ml = 'numeric',
-  pieceGram = 'numeric',
+  pieceGram = 'numeric', piece_fmt = 'character',
   
   usd = 'numeric',
   jpy = 'numeric',
@@ -294,6 +295,7 @@ setClass(Class = 'nutrition', slots = c(
   protein = 'numeric',
   alcohol = 'numeric', AbV = 'numeric'
 ), prototype = prototype(
+  piece_fmt = '%.1gpcs',
   machine = \(x) NULL,
   calorie = 0,
   date = as.Date(NA_character_)

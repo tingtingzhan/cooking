@@ -269,6 +269,8 @@ Nutrition information.
 
 \item{\code{pieceGram}}{\link[base]{numeric} scalar, weight in grams per piece}
 
+\item{\code{piece_fmt}}{\link[base]{character} scalar}
+
 \item{\code{usd}}{\link[base]{numeric} scalar, price (in USD) \strong{per serving}}
 
 \item{\code{jpy}}{\link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}}

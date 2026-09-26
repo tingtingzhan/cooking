@@ -30,7 +30,7 @@
 #' @slot egg,egg_pc \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' 
 #' 
-#' @slot teabag \link[base]{numeric} scalars, number of tea bags
+#' @slot tea_pc \link[base]{numeric} scalars, number of tea bags
 #' @slot tea \link[base]{numeric} scalars, weight of loose tea in grams
 #' 
 #' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} \link[base]{vector}, weight of King Arthur all purpose flour (in grams)
@@ -133,7 +133,7 @@ setClass(Class = 'raw.', slots = c(
   
   egg = 'numeric', egg_pc = 'numeric', 
   
-  tea = 'numeric', teabag = 'numeric', 
+  tea = 'numeric', tea_pc = 'numeric', 
   
   dairy = 'numeric', dairy_tsp = 'numeric', dairy_Tbsp = 'numeric', dairy_cup = 'numeric', dairy_brick = 'numeric',
   
@@ -289,7 +289,10 @@ print.raw. <- \(x, ...) {
   other <- c(
     x@vegetable
   )
-  if (length(other)) sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other) |> lapply(FUN = cli_text)
+  if (length(other)) {
+    sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other) |> 
+      lapply(FUN = cli_text)
+  }
   
   sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@dairy)], x@dairy, fmt_vol(x@dairy)) |>
     lapply(FUN = cli_text)
@@ -300,19 +303,11 @@ print.raw. <- \(x, ...) {
   sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@fruit)], x@fruit, fmt_pc(x@fruit)) |> 
     lapply(FUN = cli_text)
   
-  
-  
-  if (length(x@tea)) sprintf(
-    fmt = '%s %.1f grams %s\n', 
-    nm_[names(x@tea)], 
-    x@tea,
-    x@tea |> getTeabag() |> sprintf(fmt = '%.2gbag') |> col_br_magenta() |> style_bold()
-  ) |> lapply(FUN = cli_text)
-  
-  if (length(x@sugar)) {
-    sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@sugar)], x@sugar, fmt_vol(x@sugar)) |> 
+  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@tea)], x@tea, fmt_pc(x@tea)) |> 
     lapply(FUN = cli_text)
-  }
+  
+  sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@sugar)], x@sugar, fmt_vol(x@sugar)) |> 
+    lapply(FUN = cli_text)
   
   # ingredients without volumn info
   no_vol_ <- c(
@@ -377,6 +372,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   x <- x |> 
     combnPc(which = 'egg') |>
     combnPc(which = 'fruit') |>
+    combnPc(which = 'tea') |>
     combnVol(which = 'flour') |>
     combnVol(which = 'water', nm = 'Wegmans_water') |>
     addname1(which = 'iceWater', nm = 'Wegmans_water') |>
@@ -427,9 +423,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addname1(which = 'redKidneyBean', nm = 'redKidneyBean') |>
     addname1(which = 'cashew', nm = 'Kirkland_cashew_organic') |>
     addname1(which = 'nut')
-  
-  x@tea <- sum_by_name(getTealoose(x@teabag), x@tea)
-  x@teabag <- numeric()
   
   for (i in names(getSlots(x = 'raw.'))) {
     ival <- slot(object = x, name = i)

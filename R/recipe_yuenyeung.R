@@ -21,9 +21,9 @@ yuenyeungCoconut <- \() new(
   dairy = c(Carnation_drymilk = 10),
   coffee_tsp = c(1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
-  teabag = c(Twinings_EnglishBreakfast = 2),
+  tea_pc = c(Twinings_EnglishBreakfast = 2),
   tool = list(Stanley14(treatment = c(
-    'add teabags and boiling water',
+    'add tea bags and boiling water',
     'add all powders, whisk smooth',
     'add barista coconut'
   ))),
@@ -43,9 +43,9 @@ yuenyeungCoconut_summer <- \() new(
   dairy = c(Carnation_drymilk = 25),
   coffee_tsp = 2.5,
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
-  teabag = c(Twinings_EnglishBreakfast = 4), # only x2, not x2.5 !!!
+  tea_pc = c(Twinings_EnglishBreakfast = 4), # only x2, not x2.5 !!!
   tool = list(Stanley40(treatment = c(
-    'add teabags, instant coffee and cocoa powder',
+    'add tea bags, instant coffee and cocoa powder',
     'add boiling water. Cover and soak for 1hr',
     'add dry milk, shake in circle',
     'add barista coconut',
@@ -77,10 +77,10 @@ yuenyeungCoconut_jelly <- \() new(
   dairy = c(Carnation_drymilk = 25),
   coffee_tsp = c(2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
-  teabag = c(Twinings_EnglishBreakfast = 4),
+  tea_pc = c(Twinings_EnglishBreakfast = 4),
   tool = list(StanleyJar36(treatment = c(
     'Cut gelatin leaf into small pieces',
-    'Soak teabags (and powder) in hot water inside, loosely covered, for 1hr',
+    'Soak tea bags (and powder) in hot water inside, loosely covered, for 1hr',
     'After temp reducing to 80C, add gelatin pieces, soak again, and stir well',
     'put in fridge over night, see if this works..',
     'maybe this is not the correct tool..'
@@ -100,7 +100,7 @@ yuenyeungLatte_try2 <- \() new(
   sugar = c(Domino_darkBrown = 5),
   coffee_tsp = c(1.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .5),
-  teabag = c(Twinings_EnglishBreakfast = 3),
+  tea_pc = c(Twinings_EnglishBreakfast = 3),
   boilingWater = 400
 )
 
@@ -111,7 +111,7 @@ yuenyeungLatte_try1 <- \() new(
   sugar = c(Domino_darkBrown = 5),
   coffee_tsp = c(1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
-  teabag = c(Twinings_EnglishBreakfast = 2),
+  tea_pc = c(Twinings_EnglishBreakfast = 2),
   boilingWater = 400,
   cons = c('add flavor')
 )

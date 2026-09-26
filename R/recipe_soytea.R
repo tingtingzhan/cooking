@@ -26,14 +26,14 @@ setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
 
 #' @rdname soytea-class
 #' @export
-EarlGrey_soytea <- \() new(Class = 'soytea', teabag = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), flavor = 'Earl Grey', date = as.Date('2024-09-15'), pros = 'super flavorful!')
+EarlGrey_soytea <- \() new(Class = 'soytea', tea_pc = c(Twinings_strongEarlGrey = 1, Twinings_EarlGrey = 3), flavor = 'Earl Grey', date = as.Date('2024-09-15'), pros = 'super flavorful!')
 
 #' @rdname soytea-class
 #' @export
-chai_soytea <- \() new(Class = 'soytea', teabag = c(Twinings_ultraChai = 4), date = as.Date('2024-09-15'), pros = 'super flavorful!')
+chai_soytea <- \() new(Class = 'soytea', tea_pc = c(Twinings_ultraChai = 4), date = as.Date('2024-09-15'), pros = 'super flavorful!')
 
 #' @rdname soytea-class
 #' @export
-Ceylon_soytea <- \() new(Class = 'soytea', teabag = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'not bad!')
+Ceylon_soytea <- \() new(Class = 'soytea', tea_pc = c(Stassen_Ceylon = 4), date = as.Date('2024-09-15'), pros = 'not bad!')
 
 
