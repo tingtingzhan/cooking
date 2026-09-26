@@ -39,7 +39,7 @@ ViewRoad_tortilla <- \() new(
   youtube = 'fA68XXQJN4Y', 
   flour = c(KingArthur_allPurposeFlr = 2.5 * 120),
   salt_tsp = 1,
-  lard_cup = c(Morrell_lard = 1/2),
+  fat_cup = c(Morrell_lard = 1/2),
   water_cup = 1)
 
 
@@ -72,7 +72,7 @@ setClass(Class = 'tortillaOlive', contains = 'tortilla', prototype = prototype(
 #' @export
 setClass(Class = 'tortillaLard', contains = 'tortilla', prototype = prototype(
   class2 = 'Tortilla(\u732a\u6cb9,\u751c)',
-  lard = 30, # 1 cup, 228g
+  fat_cup = c(Epic_lard = 1),
   sugar = 50
 ))
 

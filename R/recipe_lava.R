@@ -86,7 +86,7 @@ Daat_sesamelava <- \() new(
   water = 450,
   sugar = 180,
   nut = c(peanut = 20), #花生酱  Peanut Butter               20g
-  lard = 20,
+  fat = c(Epic_lard = 20),
   flour = c(Erawan_glutinousRiceFlr = 20),
   dairy = c(Carnation_evapMilk = 50),
   gelatin = c(Champion_gold_gelatin = 15),
@@ -100,7 +100,7 @@ xiaomin_sesamelava <- \() new(
   blackSesame = 120,
   sugar = 40,
   nut = c(peanut = 30),
-  lard = 40,
+  fat = c(Epic_lard = 40),
   water = 20)
 
 #' @rdname lava-class

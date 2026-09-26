@@ -25,7 +25,6 @@
 #' 
 #' @slot oil,oil_tsp,oil_Tbsp,oil_cup \link[base]{numeric} scalar, weight (in grams) and volume of liquid oil
 #' @slot fat,fat_tsp,fat_Tbsp,fat_cup \link[base]{numeric} scalar, weight (in grams) and volume of solid fat
-#' @slot lard,lard_tsp,lard_Tbsp,lard_cup \link[base]{numeric} scalar, weight (in grams) and volume of Epic pork lard
 #' 
 #' @slot egg,egg_pc \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' 
@@ -115,7 +114,6 @@ setClass(Class = 'raw.', slots = c(
   oil = 'numeric', oil_tsp = 'numeric', oil_Tbsp = 'numeric', oil_cup = 'numeric', 
   
   fat = 'numeric', fat_tsp = 'numeric', fat_Tbsp = 'numeric', fat_cup = 'numeric',
-  lard = 'numeric', lard_tsp = 'numeric', lard_Tbsp = 'numeric', lard_cup = 'numeric',
   
   egg = 'numeric', egg_pc = 'numeric', 
   
@@ -262,14 +260,8 @@ print.raw. <- \(x, ...) {
       lapply(FUN = cli_text)
   }
   
-  fat_vol <- c(
-    x@fat,
-    x@lard
-  )
-  if (length(fat_vol)) {
-    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(fat_vol)], fat_vol, fmt_vol(fat_vol)) |> 
-      lapply(FUN = cli_text)
-  }
+  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@fat)], x@fat, fmt_vol(x@fat)) |> 
+    lapply(FUN = cli_text)
   
   other <- c(
     x@vegetable
@@ -369,8 +361,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addname1(which = 'blackSesame', nm = 'Greenmax_blackSesame') |>
     combnVol(which = 'misc') |>
     combnVol(which = 'fat') |>
-    combnVol(which = 'lard', nm = 'Epic_lard') |>
-    # no accurate density info available yet
     combnVol(which = 'spice') |>
     # with density info
     combnVol(which = 'sugar', nm = 'US_10x') |>

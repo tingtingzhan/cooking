@@ -71,7 +71,7 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_pastryFlr = 500), 
   yeast_tsp = 1.5,
   bakingPowder_tsp = 1,
-  lard = 15,
+  fat = c(Epic_lard = 15),
   
   portion = c(mantou_portion(), savoryBao_portion(), sweetBao_portion()), 
 
@@ -104,12 +104,12 @@ bao <- \() new(Class = 'bao', water = 240, sugar_Tbsp = 3)
 bao_heavyCream <- \() new(
   Class = 'bao', 
   dairy = c(Wegmans_heavyCream = 45), 
-  lard = numeric(),
+  fat = numeric(),
   water = 214, sugar_Tbsp = 3, pros = character())
 
 bao_butter <- \() new(
   Class = 'bao', 
-  lard = numeric(), 
+  fat = numeric(), 
   dairy = c(Kerrygold_butter = 18),
   water = 237, sugar_Tbsp = 3, 
   pros = character())
@@ -304,7 +304,7 @@ setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
   flour = c(
     KingArthur_breadFlr = 300,
     Wegmans_white_wheatFlr = 200),
-  lard = 19,
+  fat = c(Epic_lard = 19),
   sugar_Tbsp = 3, 
   water = 250 # 255g, starting to get too wet!!
 ))
@@ -332,7 +332,7 @@ wheatBao_tmp <- \() new(
 
 wheatBao_duckFat <- \() new(
   Class = 'wheatBao', wheatBao(),
-  lard = numeric(), fat = c(Epic_duck = 19),
+  fat = c(Epic_duck = 19),
   cons = 'Not as white as using pork lard', 
   pros = character())
 
@@ -343,7 +343,7 @@ lowGlutenBao_FAIL <- \() new(
   flavor = '\u6742\u7cae\u7c89',
   flour = c(KingArthur_gluten0Flr = 150, 
             Wegmans_pastryFlr = 350),
-  lard = 16.5,
+  fat = c(Epic_lard = 16.5),
   sugar_Tbsp = 3, 
   water = 210+10,
   cons = 'too much gluten-free flour!!!'
@@ -356,7 +356,7 @@ coconutBao_FAIL <- \() new(
   class2 = '\u6930\u8089\u7c89\u5305\u5b50\u9992\u5934',
   misc = c(WegmansOrganic_coconutFlr = 125),
   flour = c(KingArthur_breadFlr = 375),
-  lard = numeric(),
+  fat = numeric(),
   sugar_Tbsp = 2, 
   water = 240+20+50+20,
   pros = c(

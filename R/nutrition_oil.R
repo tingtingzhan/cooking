@@ -91,13 +91,13 @@ Epic_lard <- \() new(
   name = 'Pork\U1f416 Lard', alias = '\u732a\u6cb9',
   servingGram = 14, 
   servingTbsp = 1, # packaging
-  usd = 13.89/312*14,
+  usd = 13.89/312*14, date = as.Date('2026-09-26'),
   calorie = 130,
   fat = 14)
 
 Morrell_lard <- \() new(
   Class = 'nutrition', 
-  walmart = '13439653', usd = 2.32/454*13,
+  walmart = '13439653', usd = 13.40/454*13, date = as.Date('2026-09-26'),
   brand = 'John Morrell\U1f1fa\U1f1f8', 
   name = 'Lard', alias = '\u732a\u6cb9',
   servingGram = 13, servingTbsp = 1, # packaging

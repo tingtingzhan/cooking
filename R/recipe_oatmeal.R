@@ -2,7 +2,11 @@
 
 #' @title \linkS4class{oatmeal} Recipes
 #' 
-#' @description ..
+#' @description
+#' Oatmeal by microwave.
+#' 
+#' @note
+#' Do not use Instant Pot; too mushy.
 #' 
 #' @examples 
 #' coconut_oatmeal()
@@ -11,7 +15,7 @@
 #' @name oatmeal-class
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
-  class2 = 'Microwave Oatmeal',
+  class2 = 'Oatmeal',
   grain = c(Quaker_oat = 40),
   tool = list(SamsungME21R706BAT(
     treatment = c('Soak in fridge overnight'),
@@ -56,28 +60,5 @@ soymilk_oatmeal <- \() new(
   date = as.Date('2025-07-06'),
   review = 'nice!'
 )
-
-
-
-
-
-
-oatmeal_InstantPot <- \() new(
-  Class = 'oatmeal', 
-  grain = c(Quaker_oat = 75), water = 300,
-  #instruction (legacy) = c(
-  #  'Instant Pot, 2min, natural release',
-  #  'Scrape the bottom as soon as opening',
-  #  'Mix with evaporated milk, coconut milk, jam, etc.'
-  #),
-  review = c(
-    # 'If using mechanical pressure cooker, must rinse thoroughly and use minimum heat, otherwise oat dust will clog the vent!!',
-    # 'Cook fresh, do not cook in batch'
-    'too mushy!!!'
-  )
-)
-
-
-
 
 

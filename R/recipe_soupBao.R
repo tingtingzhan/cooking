@@ -21,7 +21,7 @@ Daat_soupBao <- \() new(
   flour = c(KingArthur_allPurposeFlr = 300),
   salt = 3,
   water40 = 175,
-  lard = 10)
+  fat = c(Epic_lard = 10))
 
 xiaogaojie_soupBao <- \() new(
   Class = 'recipe', flavor = '\u704c\u6c64\u5305',

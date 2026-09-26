@@ -56,7 +56,9 @@ setClass(Class = 'waterDough', contains = 'recipe', prototype = prototype(
 
 waterDough <- \() new(
   Class = 'waterDough',
-  flour = c(Wegmans_pastryFlr = 400), lard = 50, water = 150,
+  flour = c(Wegmans_pastryFlr = 400), 
+  fat = c(Epic_lard = 50), 
+  water = 150,
   review = 'try'
 )
 
@@ -77,7 +79,8 @@ setClass(Class = 'shortDough', contains = 'recipe', prototype = prototype(
 #' @export
 shortDough_lard <- \() new(
   Class = 'shortDough', 
-  flour = c(Wegmans_pastryFlr = 200), lard = 80,
+  flour = c(Wegmans_pastryFlr = 200), 
+  fat = c(Epic_lard = 80),
   review = 'try'
 )
 
@@ -181,7 +184,8 @@ Dad_blackSesamePastry_waterDough <- \() new(
   Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u9165\u997c(\u6c34)', 
   dad1966 = 'n_J9ly98Tvw',
   flour = c(KingArthur_allPurposeFlr = 300), 
-  sugar = 30, water = 160, lard = 50,
+  sugar = 30, water = 160, 
+  fat = c(Epic_lard = 50),
   portion = c('\u5927\u5305\u9165' = 36))
 
 
@@ -247,14 +251,16 @@ PinNuo_largeYouSu <- \() new(
 laofangu_magnolia_waterDough <- \() new(
   Class = 'recipe', flavor = '\u7389\u5170\u82b1(\u6c34)', 
   laofangu = 'h39opPVlGKo',
-  flour = c(KingArthur_allPurposeFlr = 125), lard = 30, water = 80)
+  flour = c(KingArthur_allPurposeFlr = 125), 
+  fat = c(Epic_lard = 30), water = 80)
 
 #' @rdname flakyPastry
 #' @export
 laofangu_magnolia_shortDough <- \() new(
   Class = 'recipe', flavor = '\u7389\u5170\u82b1', 
   laofangu = 'h39opPVlGKo',
-  flour = c(Wegmans_pastryFlr = 125), lard = 65)
+  flour = c(Wegmans_pastryFlr = 125), 
+  fat = c(Epic_lard = 65))
 
 #' @rdname flakyPastry
 #' @export
@@ -279,7 +285,9 @@ Dad_pepperPastry_shortDough <- \() new(
 laofangu_durianSu_waterDough <- \() new(
   Class = 'recipe', flavor = '\u69b4\u83b2\u9165(\u6c34)', 
   laofangu = 'p7CExuQQWiA',
-  flour = c(Wegmans_pastryFlr = 250), sugar = 25, lard = 25,
+  flour = c(Wegmans_pastryFlr = 250), 
+  sugar = 25, 
+  fat = c(Epic_lard = 25),
   egg_pc = 1, water = 100)
 
 
@@ -311,6 +319,8 @@ Dad_sweetPastry_shortDough <- \() new(
 #' @export
 Dad_oxTongue2_waterDough <- \() new(
   Class = 'recipe', flavor = '\u725b\u820c\u997c2(\u6c34)',
-  flour = c(KingArthur_allPurposeFlr = 200), water = 100, lard = 60,
+  flour = c(KingArthur_allPurposeFlr = 200), 
+  water = 100, 
+  fat = c(Epic_lard = 60),
   dad1966 = 'XLj7W76UFbs')
 

@@ -368,7 +368,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         })
       },
       shortDough =, waterDough = {
-        if (length(x@lard)) {
+        if (length(x['_lard$'])) {
           '\u732a\u6cb9'
         }
       }, character())

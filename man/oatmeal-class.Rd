@@ -12,7 +12,10 @@ coconut_oatmeal()
 soymilk_oatmeal()
 }
 \description{
-..
+Oatmeal by microwave.
+}
+\note{
+Do not use Instant Pot; too mushy.
 }
 \examples{
 coconut_oatmeal()

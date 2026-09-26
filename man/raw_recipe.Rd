@@ -49,8 +49,6 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{fat,fat_tsp,fat_Tbsp,fat_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of solid fat}
 
-\item{\code{lard,lard_tsp,lard_Tbsp,lard_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Epic pork lard}
-
 \item{\code{egg,egg_pc}}{\link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
 
 \item{\code{tea,tea_pc}}{\link[base]{numeric} \link[base]{vector}s, weight of loose tea in grams and number of tea bags, respectively}
@@ -236,7 +234,4 @@ nutritionlist(
  cooking:::GoodLifeEats_pumpkin_creamCheeseSpread(),
  cooking:::Lynn_pumpkin_creamCheeseSpread()
 )
-}
-\references{
-\url{https://dessertisans.com/insight/how-to-convert-gelatin/}
 }

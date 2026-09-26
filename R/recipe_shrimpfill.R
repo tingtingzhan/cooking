@@ -195,7 +195,8 @@ shrimpfill_oldBay <- \() new(
 Daat_shrimpfill <- \() new(
   Class = 'recipe', flavor = '\u867e\U1f990\u997a\u9985', 
   daatgo = 'SYLIYqVV2N4',
-  shrimp = 600, lard = 30, pork = c(fat = 120),
+  shrimp = 600, 
+  fat = c(Epic_lard = 30), pork = c(fat = 120),
   vegetable = c(bambooShoot = 90),
   starch = c(Wegmans_corn_starch = 13),
   salt = 12, msg = 22,
@@ -207,7 +208,8 @@ Daat_shrimpfill <- \() new(
 #' @export
 whiteSwan_shrimpfill <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
-  shrimp = 250, pork = c(fat = 50), lard = 35,
+  shrimp = 250, 
+  pork = c(fat = 50), fat = c(Epic_lard = 35),
   salt = 3, msg = 2,
   sugar = 3, 
   oil = c(Kadoya_sesame_oil = 3.5), 

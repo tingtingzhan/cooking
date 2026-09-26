@@ -14,7 +14,7 @@
 \alias{FageTotal0_yogurtGreek}
 \alias{TraderJoes_matchaLatte}
 \alias{WilliamsSonoma_mocha}
-\title{\linkS4class{nutrition} Information}
+\title{\linkS4class{nutrition}}
 \usage{
 \S4method{show}{nutrition}(object)
 

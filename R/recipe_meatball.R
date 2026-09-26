@@ -23,7 +23,7 @@ setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
 shrimpball <- \() new(
   Class = 'meatball', 
   shrimp = 500, pork = c(fat = 100),
-  #shrimp = 540, lard = 60,
+  #shrimp = 540, fat = c(Epic_lard = 60),
   salt_tsp = 1/8,
   sugar_tsp = 2,
   starch = c(Wegmans_corn_starch = 12),

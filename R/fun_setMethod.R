@@ -141,8 +141,9 @@ setMethod(f = '[', signature = c(x = 'recipe', i = 'character'), definition = \(
   if (any(id <- grepl(pattern = i, x = names(x@dairy)))) return(sum(x@dairy[id]))
   if (any(id <- grepl(pattern = i, x = names(x@grain)))) return(sum(x@grain[id]))
   if (any(id <- grepl(pattern = i, x = names(x@flour)))) return(sum(x@flour[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(sum(x@misc[id]))
   if (any(id <- grepl(pattern = i, x = names(x@egg)))) return(sum(x@egg[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@fat)))) return(sum(x@fat[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(sum(x@misc[id]))
   
   # look in more places
 

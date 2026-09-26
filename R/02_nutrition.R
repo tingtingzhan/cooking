@@ -1,6 +1,6 @@
 
 
-#' @title \linkS4class{nutrition} Information
+#' @title \linkS4class{nutrition}
 #' 
 #' @description 
 #' Nutrition information.
