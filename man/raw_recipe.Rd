@@ -53,9 +53,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{egg,egg_pc}}{\link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
 
-\item{\code{tea_pc}}{\link[base]{numeric} scalars, number of tea bags}
-
-\item{\code{tea}}{\link[base]{numeric} scalars, weight of loose tea in grams}
+\item{\code{tea,tea_pc}}{\link[base]{numeric} \link[base]{vector}s, weight of loose tea in grams and number of tea bags, respectively}
 
 \item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} \link[base]{vector}, weight of King Arthur all purpose flour (in grams)}
 
