@@ -73,7 +73,7 @@ yuenyeungCoconut_jelly <- \() new(
   # reducing coconut to fit Stanley JAR + SPORK | 36 OZ
   beverage = c(Freenow_coconutBar = 400),
   water95 = 530,
-  gelatin_leaf = 8,
+  gelatin_pc = c(Champion_gold_gelatin = 8),
   dairy = c(Carnation_drymilk = 25),
   coffee_tsp = c(2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),

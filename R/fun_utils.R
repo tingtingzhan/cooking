@@ -162,34 +162,6 @@ meatName <- \(x, animal = stop('')) {
 
 
 
-
-
-check_gelatin <- \(x) {
-  if (n_leaf <- length(x@gelatin_leaf)) {
-    if (n_leaf > 1L) stop('only use Gold gelatin leaves')
-    if (is.na(x@gelatin_leaf) || (x@gelatin_leaf <= 0)) stop('number of gelatin sheets must be all >0')
-    x@gelatin <- sum(x@gelatin, x@gelatin_leaf * 2)
-    x@gelatin_leaf <- numeric()
-  }
-  if (n <- length(x@gelatin)) {
-    if (n != 1L) stop('only use Gold gelatin')
-    names(x@gelatin) <- 'Champion_gold_gelatin'
-  }
-  return(x)
-}
-
-
-
-
-
-
-
-getGelatinLeaf <- \(x) {
-  (x/2) |> sprintf(fmt = '%.1f leaves') |> col_br_blue()
-}
-
-
-
 # @param x \link[base]{numeric} \link[base]{matrix}
 #' @importFrom equiv4 binlabel
 col_binlabel <- \(x, FUN, ...) {

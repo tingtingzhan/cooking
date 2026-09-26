@@ -34,7 +34,7 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   water = 80,
   water80 = 640,
   flour = c(Erawan_glutinousRiceFlr = 32),
-  gelatin_leaf = 12#,
+  gelatin_pc = c(Champion_gold_gelatin = 12)#,
   #instruction (legacy) = c(
   #  'Make a slurry of glutinous rice flour and room-temperature water',
   #  'Add hot water, gelatin leaves, sugar',
@@ -89,7 +89,7 @@ Daat_sesamelava <- \() new(
   lard = 20,
   flour = c(Erawan_glutinousRiceFlr = 20),
   dairy = c(Carnation_evapMilk = 50),
-  gelatin = 15,
+  gelatin = c(Champion_gold_gelatin = 15),
   portion = c(bao = 28))
 
 #' @rdname lava-class
@@ -133,7 +133,7 @@ daat_yolklava <- \() new(
   sugar = 220,
   # custardPowder = 35, # https://www.birdscustard.co.uk
   starch = c(Wegmans_corn_starch = 35),
-  gelatin = 12,
+  gelatin = c(Champion_gold_gelatin = 12),
   water = 90,
   daatgo = '1h6YFS2KGA0')
 
@@ -142,7 +142,7 @@ daat_yolklava <- \() new(
 pineapple_lava <- \() new(
   Class = 'recipe', 
   puree = c(Dole_pineapple = 585), 
-  gelatin_leaf = 4,
+  gelatin_pc = c(Champion_gold_gelatin = 4),
   # machine (legacy) = list(Nutribullet = 'One (1) recipe calls for a full can'),
   tool = list(JoyoungCJA9U_filling(
     minute = 8,

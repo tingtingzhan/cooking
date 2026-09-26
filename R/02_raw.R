@@ -96,19 +96,7 @@
 #' 
 #' @slot yeast,yeast_tsp,yeast_Tbsp,yeast_cup \link[base]{numeric} scalar, weight (in grams) and volume of yeast
 #' 
-#' @slot gelatin ..
-#' @slot gelatin_leaf \link[base]{numeric} scalar, number of gold gelatin leaves,
-#' see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
-#' \describe{
-#' \item{`'titanium'`}{leaves have a bloom strength of 100 and weigh 5 grams.}
-#' \item{`'bronze'`}{leaves have a bloom strength of 125 and weigh 3.3 grams.}
-#' \item{`'silver'`}{leaves have a bloom strength of 160 and weigh 2.5 grams.}
-#' \item{`'gold'`}{leaves have a bloom strength of 200 and weigh 2 grams.}
-#' \item{`'platinum'`}{leaves have a bloom strength of 250 and weigh 1.7 grams.}
-#' }
-#' 
-#' @references
-#' \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
+#' @slot gelatin,gelatin_pc \link[base]{numeric} \link[base]{vector}s
 #' 
 #' @name raw_recipe
 #' @aliases raw.-class
@@ -189,8 +177,7 @@ setClass(Class = 'raw.', slots = c(
   
   liqueur = 'numeric', liqueur_tsp = 'numeric', liqueur_Tbsp = 'numeric', liqueur_cup = 'numeric',
   
-  gelatin = 'numeric',
-  gelatin_leaf = 'numeric'
+  gelatin = 'numeric', gelatin_pc = 'numeric'
 ))
 
 
@@ -304,6 +291,9 @@ print.raw. <- \(x, ...) {
   sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@tea)], x@tea, fmt_pc(x@tea)) |> 
     lapply(FUN = cli_text)
   
+  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@gelatin)], x@gelatin, fmt_pc(x@gelatin)) |> 
+    lapply(FUN = cli_text)
+  
   sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@sugar)], x@sugar, fmt_vol(x@sugar)) |> 
     lapply(FUN = cli_text)
   
@@ -324,11 +314,6 @@ print.raw. <- \(x, ...) {
     x@syrup
   )
   if (length(has_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol)], has_vol, fmt_vol(has_vol)) |> lapply(FUN = cli_text)
-  
-  if (length(x@gelatin)) {
-    sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@gelatin)], x@gelatin, getGelatinLeaf(x@gelatin)) |> 
-    cli_text()
-  }
   
   if (length(x@water)) {
     if (!length(x@water_ext)) {
@@ -363,11 +348,8 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
-  # processing 'numeric'
-  
-  x <- check_gelatin(x)
-  
   x <- x |> 
+    combnPc(which = 'gelatin') |>
     combnPc(which = 'egg') |>
     combnPc(which = 'fruit') |>
     combnPc(which = 'tea') |>

@@ -149,17 +149,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{yeast,yeast_tsp,yeast_Tbsp,yeast_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of yeast}
 
-\item{\code{gelatin}}{..}
-
-\item{\code{gelatin_leaf}}{\link[base]{numeric} scalar, number of gold gelatin leaves,
-see more about gelatin leaves at \url{https://dessertisans.com/insight/how-to-convert-gelatin/}
-\describe{
-\item{\code{'titanium'}}{leaves have a bloom strength of 100 and weigh 5 grams.}
-\item{\code{'bronze'}}{leaves have a bloom strength of 125 and weigh 3.3 grams.}
-\item{\code{'silver'}}{leaves have a bloom strength of 160 and weigh 2.5 grams.}
-\item{\code{'gold'}}{leaves have a bloom strength of 200 and weigh 2 grams.}
-\item{\code{'platinum'}}{leaves have a bloom strength of 250 and weigh 1.7 grams.}
-}}
+\item{\code{gelatin,gelatin_pc}}{\link[base]{numeric} \link[base]{vector}s}
 
 \item{\code{alias}}{\link[base]{character} scalar with Unicode symbols}
 
