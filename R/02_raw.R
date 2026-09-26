@@ -27,16 +27,14 @@
 #' @slot fat,fat_tsp,fat_Tbsp,fat_cup \link[base]{numeric} scalar, weight (in grams) and volume of solid fat
 #' @slot lard,lard_tsp,lard_Tbsp,lard_cup \link[base]{numeric} scalar, weight (in grams) and volume of Epic pork lard
 #' 
-#' @slot egg_pc,eggYolk_pc,eggWhite_pc \link[base]{numeric} scalars, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
-#' @slot eggYolk,eggWhite \link[base]{numeric} scalars, weight of egg yolks and whites (in grams)
+#' @slot egg,egg_pc \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' 
 #' 
 #' @slot teabag \link[base]{numeric} scalars, number of tea bags
 #' @slot tea \link[base]{numeric} scalars, weight of loose tea in grams
 #' 
-#' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)
-#' @slot wheatGluten \link[base]{numeric} scalar, weight of wheat gluten (in grams)
-#' @slot coconut \link[base]{numeric} scalar, weight (in grams) of coconut flour or shredded coconut
+#' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} \link[base]{vector}, weight of King Arthur all purpose flour (in grams)
+#' @slot beverage,beverage_tsp,beverage_Tbsp,beverage_cup \link[base]{numeric} \link[base]{vector}
 #' 
 #' @slot starch,starch_tsp,starch_Tbsp,starch_cup \link[base]{numeric} scalar or \link[base]{vector}, named weight (in grams) and volume of various starch
 #' 
@@ -133,10 +131,9 @@ setClass(Class = 'raw.', slots = c(
   fat = 'numeric', fat_tsp = 'numeric', fat_Tbsp = 'numeric', fat_cup = 'numeric',
   lard = 'numeric', lard_tsp = 'numeric', lard_Tbsp = 'numeric', lard_cup = 'numeric',
   
-  eggYolk = 'numeric', eggWhite = 'numeric',   
-  egg_pc = 'numeric', eggYolk_pc = 'numeric', eggWhite_pc = 'numeric',
+  egg = 'numeric', egg_pc = 'numeric', 
   
-  teabag = 'numeric', tea = 'numeric',
+  tea = 'numeric', teabag = 'numeric', 
   
   dairy = 'numeric', dairy_tsp = 'numeric', dairy_Tbsp = 'numeric', dairy_cup = 'numeric', dairy_brick = 'numeric',
   
@@ -151,10 +148,8 @@ setClass(Class = 'raw.', slots = c(
   bakingPowder = 'numeric', bakingPowder_tsp = 'numeric', bakingPowder_Tbsp = 'numeric', bakingPowder_cup = 'numeric',
   
   flour = 'numeric', flour_tsp = 'numeric', flour_Tbsp = 'numeric', flour_cup = 'numeric',
-  wheatGluten = 'numeric',
-  
-  starch = 'numeric', 
-  starch_tsp = 'numeric', starch_Tbsp = 'numeric', starch_cup = 'numeric',
+  starch = 'numeric', starch_tsp = 'numeric', starch_Tbsp = 'numeric', starch_cup = 'numeric',
+  beverage = 'numeric', beverage_tsp = 'numeric', beverage_Tbsp = 'numeric', beverage_cup = 'numeric', 
   
   grain = 'numeric', grain_tsp = 'numeric', grain_Tbsp = 'numeric', grain_cup = 'numeric',
   soybean = 'numeric',
@@ -170,7 +165,6 @@ setClass(Class = 'raw.', slots = c(
   coffee = 'numeric', coffee_tsp = 'numeric', coffee_Tbsp = 'numeric', coffee_cup = 'numeric',
   matcha = 'numeric', matcha_tsp = 'numeric', matcha_Tbsp = 'numeric', matcha_cup = 'numeric', 
   blackSesame = 'numeric',
-  coconut = 'numeric',
   spice = 'numeric', spice_tsp = 'numeric', spice_Tbsp = 'numeric', spice_cup = 'numeric',
   
   pork = 'numeric',
@@ -240,37 +234,22 @@ print.raw. <- \(x, ...) {
   sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood) |> 
     lapply(FUN = cli_text)
   
-  flour <- c(x@flour, 
-             x@wheatGluten, 
-             x@coconut)
-  if (length(flour)) {
-    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(flour)], flour, fmt_vol(flour)) |> 
-      lapply(FUN = cli_text) # one or more flour
-  }
+  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flour)], x@flour, fmt_vol(x@flour)) |> 
+    lapply(FUN = cli_text)
   
   if (length(x@starch)) {
     sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, fmt_vol(x@starch)) |> 
       lapply(FUN = cli_text) 
   }
   
+  if (length(x@beverage)) {
+    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@beverage)], x@beverage, fmt_vol(x@beverage)) |> 
+      lapply(FUN = cli_text) 
+  }
+  
   
   sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@puree)], x@puree, fmt_vol(x@puree)) |> 
     lapply(FUN = cli_text)
-  
-  if (length(x@fruit)) {
-    id_pc <- names(x@fruit) |>
-      vapply(FUN = exists, where = asNamespace('cooking'), inherits = FALSE, FUN.VALUE = NA)
-    pieceGram <- names(x@fruit)[id_pc] |>
-      vapply(FUN = \(i) {
-        eval(call(name = i))@pieceGram
-      }, FUN.VALUE = NA_real_)
-    pc <- character(length = length(x@fruit))
-    pc[id_pc] <- (x@fruit[id_pc] / pieceGram) |>
-      sprintf(fmt = '%.1gpcs') |> 
-      col_br_magenta() |> style_bold()
-    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@fruit)], x@fruit, pc) |> 
-      lapply(FUN = cli_text)
-  }
   
   sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@misc)], x@misc, fmt_vol(x@misc)) |> 
     lapply(FUN = cli_text)
@@ -315,8 +294,13 @@ print.raw. <- \(x, ...) {
   sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@dairy)], x@dairy, fmt_vol(x@dairy)) |>
     lapply(FUN = cli_text)
   
-  if (length(x@eggYolk)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggYolk)], x@eggYolk, fmt_pc(x, 'eggYolk')) |> lapply(FUN = cli_text)
-  if (length(x@eggWhite)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@eggWhite)], x@eggWhite, fmt_pc(x, 'eggWhite')) |> lapply(FUN = cli_text)
+  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@egg)], x@egg, fmt_pc(x@egg)) |> 
+    lapply(FUN = cli_text)
+  
+  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@fruit)], x@fruit, fmt_pc(x@fruit)) |> 
+    lapply(FUN = cli_text)
+  
+  
   
   if (length(x@tea)) sprintf(
     fmt = '%s %.1f grams %s\n', 
@@ -390,14 +374,10 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   
   x <- check_gelatin(x)
   
-  x@eggWhite <- c(eggWhite = sum(eggWhite()@servingGram * sum(x@eggWhite_pc, x@egg_pc), x@eggWhite))
-  x@eggYolk <- c(eggYolk = sum(eggYolk()@servingGram * sum(x@eggYolk_pc, x@egg_pc), x@eggYolk))
-  x@eggWhite_pc <- x@eggYolk_pc <- x@egg_pc <- numeric()
-  
   x <- x |> 
-    combnVol(which = 'flour') |> # , nm = 'KingArthur_allPurposeFlr'
-    addname1(which = 'wheatGluten', nm = 'BobsRedMill_wheatGluten') |>
-    addname1(which = 'coconut') |> # , nm = 'WegmansOrganic_coconutFlour' # compare with other brands?
+    combnPc(which = 'egg') |>
+    combnPc(which = 'fruit') |>
+    combnVol(which = 'flour') |>
     combnVol(which = 'water', nm = 'Wegmans_water') |>
     addname1(which = 'iceWater', nm = 'Wegmans_water') |>
     addname1(which = 'carbonatedWater', nm = 'Wegmans_water') |>
@@ -447,16 +427,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addname1(which = 'redKidneyBean', nm = 'redKidneyBean') |>
     addname1(which = 'cashew', nm = 'Kirkland_cashew_organic') |>
     addname1(which = 'nut')
-  
-  if (length(x@fruit_pc)) {
-    pieceGram <- names(x@fruit_pc) |>
-      vapply(FUN = \(i) {
-        eval(call(name = i))@pieceGram
-      }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
-    x@fruit <- sum_by_name(x@fruit, x@fruit_pc * pieceGram)
-    x@fruit_pc <- numeric()
-  } # else do nothing
-  
   
   x@tea <- sum_by_name(getTealoose(x@teabag), x@tea)
   x@teabag <- numeric()

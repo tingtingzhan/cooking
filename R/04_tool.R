@@ -1,3 +1,9 @@
+SamsungME21R706BAT <- \(...) new(
+  Class = 'tool',
+  name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1 Ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa') |> c(),
+  ...)
+
+
 thermometer <- \(...) new(
   Class = 'tool', 
   name = style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer') |> c(), 

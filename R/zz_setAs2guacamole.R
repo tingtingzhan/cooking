@@ -10,7 +10,6 @@ setAs(from = 'meatDip', to = 'guacamole', def = \(from) {
   }
   
   x@oil <- numeric() # avocado contains a lot of oil
-  x@class2 <- '\U0001f951\U0001f963'
   x@review <- character()
   new(Class = 'guacamole', x)
 })

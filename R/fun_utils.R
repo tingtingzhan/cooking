@@ -81,6 +81,25 @@ addname1 <- \(x, which, ...) {
 }
 
 
+combnPc <- \(x, which, ...) {
+  pc <- paste0(which, '_pc')
+  v_pc <- slot(x, name = pc)
+  if (!length(v_pc)) return(x)
+  
+  pieceGram <- names(v_pc) |>
+    vapply(FUN = \(i) {
+      eval(call(name = i))@pieceGram
+    }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+  
+  slot(x, name = which) <- sum_by_name(
+    slot(x, name = which), 
+    v_pc * pieceGram
+  )
+  
+  slot(x, name = pc) <- numeric()
+  
+  return(x)
+}
 
 
 combnVol <- \(x, which, ...) {
@@ -309,14 +328,30 @@ gram_per_tsp <- \(x) {
 }
 
 
-fmt_pc <- \(object, name) {
-  ret <- slot(object, name = name) / eval(call(name))@servingGram
-  ret |> 
-    sprintf(fmt = '%.3gpcs') |> 
-    col_br_blue() |> 
-    style_bold()
+
+
+
+
+fmt_pc <- \(x) {
+  
+  # x is `x@fruit`
+  
+  if (!length(x)) return(invisible())
+    
+  id_pc <- names(x) |>
+    vapply(FUN = exists, where = asNamespace('cooking'), inherits = FALSE, FUN.VALUE = NA)
+  
+  pieceGram <- names(x)[id_pc] |>
+    vapply(FUN = \(i) {
+      eval(call(name = i))@pieceGram
+    }, FUN.VALUE = NA_real_)
+  
+  z <- character(length = length(x))
+  z[id_pc] <- (x[id_pc] / pieceGram) |>
+    sprintf(fmt = '%.1gpcs') |> 
+    col_br_magenta() |> style_bold()
+  return(z)
+  
 }
-
-
 
 

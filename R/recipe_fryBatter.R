@@ -27,7 +27,7 @@ if (FALSE) {
   
   
   new(Class = 'recipe', 
-      eggWhite = 3.5,
+      egg = c(eggWhite = 3.5),
       flour = c(Wegmans_pastryFlr = 10),
       starch = c(Wegmans_corn_starch = 20, sweetPotato_starch = 20),
       youtube = '-fShmay74zA',

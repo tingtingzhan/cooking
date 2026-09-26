@@ -48,6 +48,7 @@
 #' @slot delmonte \link[base]{character} scalar
 #' @slot dolesunshine \link[base]{character} scalar
 #' @slot domino \link[base]{character} scalar
+#' @slot edwardandsons \link[base]{character} scalar
 #' @slot epicprovisions \link[base]{character} scalar
 #' @slot fleischmannsyeast \link[base]{integer} scalar
 #' @slot fourC \link[base]{character} scalar
@@ -197,6 +198,7 @@ setClass(Class = 'nutrition', slots = c(
   delmonte = 'character',
   dolesunshine = 'character',
   domino = 'character',
+  edwardandsons = 'character',
   epicprovisions = 'character',
   fleischmannsyeast = 'integer',
   fourC = 'character',
@@ -423,6 +425,11 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       x@domino |> 
         sprintf(fmt = 'https://www.dominosugar.com/products/%s') |>
         style_hyperlink(text = 'Domino\U1f1fa\U1f1f8') |> 
+        c()
+    } else if (length(x@edwardandsons)) {
+      x@edwardandsons |> 
+        sprintf(fmt = 'https://store.edwardandsons.com/collections/%s') |>
+        style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@epicprovisions)) {
       x@epicprovisions |> 
@@ -719,7 +726,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         c()
     } else if (length(x@thaikitchen)) {
       x@thaikitchen |> 
-        sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s') |> 
+        #sprintf(fmt = 'https://www.mccormick.com/thai-kitchen/products/%s') |> 
+        sprintf(fmt = 'https://www.mccormick.com/collections/thai-kitchen/products/%s') |>
         style_hyperlink(text = 'Thai Kitchen\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@traderjoes)) {

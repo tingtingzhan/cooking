@@ -1,44 +1,47 @@
 
-if (FALSE) {
-  nutritionlist(
-    Edward_shreddedCoconut(),
-    Edward_shreddedCoconutLite(),
-    Edward_coconutFlour(),
-    WegmansOrganic_coconutFlour(),
-    AnthonysGoods_coconutFlour(),
-    BobsRedMill_coconutFlour()
-  )
-  
-}
+#' @rdname nutrition-class
+#' 
+#' @examples
+#' nutritionlist(
+#'  cooking:::Edward_coconutShrd(),
+#'  cooking:::Edward_lite_coconutShrd(),
+#'  cooking:::Edward_coconutFlr(),
+#'  cooking:::WegmansOrganic_coconutFlr(),
+#'  cooking:::AnthonysGoods_coconutFlr(),
+#'  cooking:::BobsRedMill_coconutFlr()
+#' )
+#' 
 
 
-Edward_shreddedCoconutLite <- \() new(
-  Class = 'nutrition',  
-  brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut')),
+Edward_lite_coconutShrd <- \() new(
+  Class = 'nutrition',
+  edwardandsons = 'lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut',
   name = 'Shredded Coconut\U1f965, Less Fat', alias = '\u51cf\u8102\u6930\u84c9',
   usd = 3.89/250*16,
   servingGram = 16, 
   servingTbsp = 4, # packaging
   calorie = 90,
   fat = 7, sodium = .005, carbohydrate = 7, sugar = 1, protein = 1,
-  superior = 'WegmansOrganic_coconutFlour'
-  )
+  superior = 'WegmansOrganic_coconutFlr',
+  review = 'Too coarse, do not buy!'
+)
 
 
-Edward_shreddedCoconut <- \() new(
+Edward_coconutShrd <- \() new(
   Class = 'nutrition',  
-  brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/organic-shredded-coconut')),
+  edwardandsons = 'lets-do-organic/products/organic-shredded-coconut',
   alias = '\u6930\u84c9', name = 'Shredded Coconut\U1f965',
   usd = 3.89/227*15,
   servingGram = 15, 
   servingTbsp = 2.5, # packaging
   calorie = 100,
   fat = 10, sodium = .005, carbohydrate = 4, sugar = 1, protein = 1,
-  superior = 'WegmansOrganic_coconutFlour')
+  superior = 'WegmansOrganic_coconutFlr',
+  review = 'Too coarse, do not buy!')
 
-Edward_coconutFlour <- \() new(
+Edward_coconutFlr <- \() new(
   Class = 'nutrition',  
-  brand = c(style_hyperlink(text = 'Edward & Sons\U1f1fa\U1f1f8', url = 'https://store.edwardandsons.com/collections/lets-do-organic/products/lets-do-organic-coconut-flour')),
+  edwardandsons = 'lets-do-organic/products/lets-do-organic-coconut-flour',
   alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   usd = 5.99/454*14,
   servingGram = 14, 
@@ -46,7 +49,7 @@ Edward_coconutFlour <- \() new(
   calorie = 60,
   fat = 2, sodium = .005, carbohydrate = 9, sugar = 1, protein = 2)
 
-BobsRedMill_coconutFlour <- \() new(
+BobsRedMill_coconutFlr <- \() new(
   Class = 'nutrition',  bobsredmill = 'organic-coconut-flour',
   alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
   servingGram = 14, 
@@ -54,7 +57,7 @@ BobsRedMill_coconutFlour <- \() new(
   calorie = 60,
   fat = 1.5, sodium = .01, carbohydrate = 9, sugar = 3, protein = 3)
 
-AnthonysGoods_coconutFlour <- \() new(
+AnthonysGoods_coconutFlr <- \() new(
   Class = 'nutrition',  
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
   brand = 'Anthony\'s Goods', 
@@ -66,7 +69,7 @@ AnthonysGoods_coconutFlour <- \() new(
   fat = 2, sodium = .01, carbohydrate = 8, sugar = 2, protein = 2)
 
 
-WegmansOrganic_coconutFlour <- \() new(
+WegmansOrganic_coconutFlr <- \() new(
   Class = 'nutrition',  
   wegmans = '52175', usd = 3.79/454*14,
   name = 'Coconut\U1f965 Flour', alias = '\u6930\u8089\u7c89',
@@ -85,13 +88,13 @@ WegmansOrganic_coconutFlour <- \() new(
 #'  cooking:::ThaiKitchen_coconutcream(),
 #'  cooking:::ThaiKitchen_coconutmilk(),
 #'  cooking:::ThaiKitchen_coconutmilkLite(),
-#'  cooking:::Freenow_coconutBarista(),
-#'  cooking:::Freenow_coconutBarista_0sugar(),
+#'  cooking:::Freenow_coconutBar(),
+#'  cooking:::Freenow_0sugar_coconutBar(),
 #'  cooking:::Luckin_coconutmilk(),
 #'  cooking:::CalifiaFarms_coconutmilk(),
-#'  cooking:::PacificFoods_coconutBarista(),
-#'  cooking:::CalifiaFarms_coconutBarista(),
-#'  cooking:::Dream_coconutBarista(),
+#'  cooking:::PacificFoods_coconutBar(),
+#'  cooking:::CalifiaFarms_coconutBar(),
+#'  cooking:::Dream_coconutBar(),
 #'  cooking:::CoconutPalm_coconutmilk(),
 #'  cooking:::Silk_coconutmilk(),
 #'  cooking:::SoDelicious_coconutmilk(),
@@ -102,7 +105,7 @@ WegmansOrganic_coconutFlour <- \() new(
 
 ThaiKitchen_coconutmilkLite <- \() new(
   Class = 'nutrition',  
-  thaikitchen = 'coconut-milk/organic-lite-coconut-milk',
+  thaikitchen = 'thai-kitchen-lite-coconut-milk-25-36-fl-oz',
   name = 'Coconut\U1f965 Milk, Lite', alias = '\u4f4e\u8102\u6930\u6d46',
   walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
   # fullweight = 475, emptyweight = 59,
@@ -113,7 +116,7 @@ ThaiKitchen_coconutmilkLite <- \() new(
 
 ThaiKitchen_coconutmilk <- \() new(
   Class = 'nutrition',  
-  thaikitchen = 'coconut-milk/organic-coconut-milk',
+  thaikitchen = 'thai-kitchen-coconut-milk-25-36-fl-oz',
   name = 'Coconut\U1f965 Milk', alias = '\u6930\u6d46',
   costco = '100452749', usd = (12.99/6)/403*80, # price retrieved 2024-09-02
   # fullweight = ??, emptyweight = ??, 
@@ -123,7 +126,7 @@ ThaiKitchen_coconutmilk <- \() new(
 
 ThaiKitchen_coconutcream <- \() new(
   Class = 'nutrition',  
-  thaikitchen = 'coconut-milk/coconut-cream',
+  thaikitchen = 'thai-kitchen-unsweetened-coconut-cream-6-pack',
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
   wegmans = '617872', usd = 5.99/403*80,
   # fullweight = ??, emptyweight = ??, 
@@ -172,13 +175,13 @@ SoDelicious_coconutmilk <- \() new(
   water = 240*.9457,
   calorie = 45,
   fat = 4, sodium = .01,
-  superior = 'Freenow_coconutBarista',
+  superior = 'Freenow_coconutBar',
   review = c(
     'too much thickener',
     'almost no coconut flavor'
   ))
 
-Freenow_coconutBarista_0sugar <- \() new(
+Freenow_0sugar_coconutBar <- \() new(
   Class = 'nutrition',  
   name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/6.html')),
@@ -187,10 +190,10 @@ Freenow_coconutBarista_0sugar <- \() new(
   calorie = 70,
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
   contain = c('erythritol'),
-  superior = 'Freenow_coconutBarista',
+  superior = 'Freenow_coconutBar',
   review = 'too sweet (too much sugar alchohol)')
 
-Freenow_coconutBarista <- \() new(
+Freenow_coconutBar <- \() new(
   Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
   brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/5.html')),
@@ -208,10 +211,10 @@ Luckin_coconutmilk <- \() new(
   servingGram = 100, serving_ml = 100, # guess
   calorie = 80,
   fat = 5, sodium = .110, carbohydrate = 6, addedSugar = 2, protein = 1,
-  superior = 'Freenow_coconutBarista',
+  superior = 'Freenow_coconutBar',
   review = 'too sweet')
 
-PacificFoods_coconutBarista <- \() new(
+PacificFoods_coconutBar <- \() new(
   Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/')),
@@ -220,7 +223,7 @@ PacificFoods_coconutBarista <- \() new(
   calorie = 90,
   fat = 5, sodium = .125, carbohydrate = 10, sugar = 9, addedSugar = 8, protein = 1)
 
-CalifiaFarms_coconutBarista <- \() new(
+CalifiaFarms_coconutBar <- \() new(
   Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/coconut-barista-blend/')),
@@ -237,13 +240,13 @@ CalifiaFarms_coconutmilkwater <- \() new(
   servingGram = 240, servingCup = 1,
   calorie = 45,
   fat = 4, sodium = .140, carbohydrate = 2, sugar = 1,
-  superior = 'Freenow_coconutBarista',
+  superior = 'Freenow_coconutBar',
   review = c(
     'too much thickener',
     'almost no coconut flavor'
   ))
 
-Dream_coconutBarista <- \() new(
+Dream_coconutBar <- \() new(
   Class = 'nutrition',  
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Dream\U1f1fa\U1f1f8', url = 'https://dreamplantbased.com/products/barista-blend-products/coconutmilk-barista/')),

@@ -12,12 +12,13 @@
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
   class2 = 'Microwave Oatmeal',
-  grain = c(Quaker_oat = 40)#,
-  #instruction (legacy) = c(
-  #  'must soak overnight',
-  #  'microwave 2min (with chilled mug)',
-  #  '(optional) serve with an ice cube'
-  #)
+  grain = c(Quaker_oat = 40),
+  tool = list(SamsungME21R706BAT(
+    treatment = c('Soak in fridge overnight'),
+    program = 'Microwave (with chilled mug)',
+    minute = 2,
+    note = '(optional) serve with an ice cube'
+  ))
 ))
 
 
@@ -26,11 +27,25 @@ setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
 #' @export
 coconut_oatmeal <- \() new(
   Class = 'oatmeal',
-  coconut = c(Freenow_coconutBarista = 60),
+  beverage = c(Freenow_coconutBar = 40),
+  water = 100,
+  # date = as.Date('2026-09-26'),
+  review = 'to try')
+
+coconut_oatmeal_OLD <- \() new(
+  Class = 'oatmeal',
+  beverage = c(Freenow_coconutBar = 60),
   water = 80,
   date = as.Date('2025-07-06'),
-  review = 'nice!'
-)
+  review = 'a little too sweet')
+
+if (FALSE) {
+  nutritionlist(
+    coconut_oatmeal(),
+    coconut_oatmeal_OLD()
+  )
+}
+
 
 #' @rdname oatmeal-class
 #' @export

@@ -8,6 +8,7 @@
 \alias{show,nutrition-method}
 \alias{Guittard_31milk}
 \alias{Navitas_cacao}
+\alias{Edward_lite_coconutShrd}
 \alias{ThaiKitchen_coconutmilkLite}
 \alias{coffeeLiqueur-class}
 \alias{FageTotal0_yogurtGreek}
@@ -20,6 +21,8 @@
 Guittard_31milk()
 
 Navitas_cacao()
+
+Edward_lite_coconutShrd()
 
 ThaiKitchen_coconutmilkLite()
 
@@ -113,6 +116,8 @@ Nutrition information.
 \item{\code{dolesunshine}}{\link[base]{character} scalar}
 
 \item{\code{domino}}{\link[base]{character} scalar}
+
+\item{\code{edwardandsons}}{\link[base]{character} scalar}
 
 \item{\code{epicprovisions}}{\link[base]{character} scalar}
 
@@ -323,17 +328,26 @@ nutritionlist(
 )
 
 nutritionlist(
+ cooking:::Edward_coconutShrd(),
+ cooking:::Edward_lite_coconutShrd(),
+ cooking:::Edward_coconutFlr(),
+ cooking:::WegmansOrganic_coconutFlr(),
+ cooking:::AnthonysGoods_coconutFlr(),
+ cooking:::BobsRedMill_coconutFlr()
+)
+
+nutritionlist(
  cooking:::Kara_coconutcream(),
  cooking:::ThaiKitchen_coconutcream(),
  cooking:::ThaiKitchen_coconutmilk(),
  cooking:::ThaiKitchen_coconutmilkLite(),
- cooking:::Freenow_coconutBarista(),
- cooking:::Freenow_coconutBarista_0sugar(),
+ cooking:::Freenow_coconutBar(),
+ cooking:::Freenow_0sugar_coconutBar(),
  cooking:::Luckin_coconutmilk(),
  cooking:::CalifiaFarms_coconutmilk(),
- cooking:::PacificFoods_coconutBarista(),
- cooking:::CalifiaFarms_coconutBarista(),
- cooking:::Dream_coconutBarista(),
+ cooking:::PacificFoods_coconutBar(),
+ cooking:::CalifiaFarms_coconutBar(),
+ cooking:::Dream_coconutBar(),
  cooking:::CoconutPalm_coconutmilk(),
  cooking:::Silk_coconutmilk(),
  cooking:::SoDelicious_coconutmilk(),

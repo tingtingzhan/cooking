@@ -252,7 +252,7 @@ fig_custardFilling <- \() new(
 #' @export
 coconut_custardFilling <- \() new(
   Class = 'custardFilling', flavor = '\u6930\u84c9\U1f965',
-  coconut = c(WegmansOrganic_coconutFlour = 40),
+  misc = c(WegmansOrganic_coconutFlr = 40),
   starch = numeric(),
   sugar = 35, 
   dairy = c(Kerrygold_butter = 5,

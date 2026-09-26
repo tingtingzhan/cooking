@@ -27,7 +27,7 @@ IndianHead_white_cornmeal <- \() new(
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, protein = 2, 
-  review = 'Extremely coarse, do not buy!')
+  review = 'Too coarse, do not buy!')
 
 
 IndianHead_yellow_cornmeal <- \() new(

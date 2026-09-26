@@ -14,7 +14,7 @@ xiaogaojie_pasteisdenata1 <- \() new(
   flour = c(Wegmans_pastryFlr = 25),
   starch = c(Wegmans_corn_starch = 17),
   dairy = c(WegmansOrganic_whole_milk = 250),
-  eggYolk_pc = 5,
+  egg_pc = c(eggYolk = 5),
   xiaogaojie = '-83188U6O8w')
 
 xiaogaojie_pasteisdenata2 <- \() new(
@@ -24,8 +24,7 @@ xiaogaojie_pasteisdenata2 <- \() new(
     WegmansOrganic_whole_milk = 180
   ),
   sugar = 60, 
-  eggYolk_pc = 4,
-  eggWhite_pc = 1,
+  egg_pc = c(eggYolk = 4, eggWhite = 1),
   xiaogaojie = '-83188U6O8w')
 
 Leites_pasteisdenata <- \() new(
@@ -37,7 +36,7 @@ Leites_pasteisdenata <- \() new(
   # 1 cinnamon stick
   water_cup = 2/3,
   vanilla_tsp = 1/2,
-  eggYolk_pc = 6,
+  egg_pc = c(eggYolk = 6),
   url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
 
 
@@ -49,7 +48,7 @@ TastingTable_pasteisdenata <- \() new(
   # 1 cinnamon stick
   dairy_cup = c(Wegmans_whole_milk = (1 + 6/16)),
   flour_cup = c(KingArthur_allPurposeFlr = 1/2),
-  eggYolk_pc = 6,
+  egg_pc = c(eggYolk = 6),
   url = 'https://www.tastingtable.com/686035/portuguese-egg-tart-recipe-pastry/'
 )
 

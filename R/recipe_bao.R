@@ -354,7 +354,7 @@ lowGlutenBao_FAIL <- \() new(
 coconutBao_FAIL <- \() new(
   Class = 'bao', 
   class2 = '\u6930\u8089\u7c89\u5305\u5b50\u9992\u5934',
-  coconut = c(WegmansOrganic_coconutFlour = 125),
+  misc = c(WegmansOrganic_coconutFlr = 125),
   flour = c(KingArthur_breadFlr = 375),
   lard = numeric(),
   sugar_Tbsp = 2, 

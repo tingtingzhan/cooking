@@ -115,19 +115,23 @@ DukesLight_mayonnaise <- \() new(
 
 ThaiKitchen_greenCurry <- \() new(
   Class = 'nutrition',  
-  thaikitchen = 'sauces-and-pastes/green-curry-paste',
+  thaikitchen = 'thai-kitchen-r-gluten-free-green-curry-paste-4-oz',
   name = 'Green Curry Paste',
+  usd = 6.49/19, date = as.Date('2026-09-25'),
   servingGram = 6, servingTsp = 1, 
   calorie = 5,
   carbohydrate = 1, sodium = .14, review = 'Love!')
 
 ThaiKitchen_redCurry <- \() new(
   Class = 'nutrition',  
-  thaikitchen = 'sauces-and-pastes/red-curry-paste',
+  thaikitchen = 'thai-kitchen-r-gluten-free-red-curry-paste-4-oz',
   name = 'Red Curry Paste',
-  servingGram = 5, servingTsp = 1,
-  calorie = 5,
-  carbohydrate = 1, sodium = .095, review = 'Love!')
+  usd = 6.49/5, date = as.Date('2026-09-25'),
+  serving_oz = 4/5, servingCup = 1/3,
+  calorie = 120, 
+  fat = 12, 
+  carbohydrate = 2, sodium = .03, protein = 1, 
+  review = 'Love!')
 
 
 

@@ -59,5 +59,5 @@ whiteSwan_soupBao <- \() new(
   flour = c(KingArthur_allPurposeFlr = 250),
   boilingWater = 160,
   water = 160,
-  eggWhite_pc = 1,
+  egg_pc = c(eggWhite = 1),
   oil = c(Wegmans_corn_oil = 3))

@@ -3,11 +3,17 @@
 \docType{class}
 \name{guacamole-class}
 \alias{guacamole-class}
+\alias{ginger_guacamole}
 \title{Guacamole}
+\usage{
+ginger_guacamole()
+}
 \description{
 Guacamole
 }
 \examples{
-srirachaBBQ_meatDip() |> as('guacamole') # not that great
+srirachaBBQ_meatDip() |> as('guacamole') # not that great, smoked flavor too heavy
+
+ginger_guacamole()
 
 }

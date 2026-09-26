@@ -44,7 +44,7 @@
 setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
   class2 = '\u997c\u5e72',
   dairy_brick = c(Kerrygold_butter = 1),
-  eggYolk_pc = 9,
+  egg_pc = c(eggYolk = 9),
   portion = c(
     # do NOT need pie weight!!
     
@@ -83,7 +83,7 @@ PreppyKitchen_cookie <- \() new(
   flour = c(Wegmans_breadFlr = 120, Wegmans_pastryFlr = 120),
   dairy_brick = c(Kerrygold_butter = 1),
   sugar = 70,
-  eggYolk_pc = 2
+  egg_pc = c(eggYolk = 2)
 )
 
 
@@ -169,7 +169,7 @@ blackSesame_cookie2022 <- \() new(
   Class = 'cookie',
   flour = c(Wegmans_breadFlr = 400),
   blackSesame = 150,
-  eggYolk_pc = 10, 
+  egg_pc = c(eggYolk = 10), 
   sugar = 117, dairy = c(Carnation_drymilk = 90), 
   #waterLost = 1157*.05,
   review = c(
@@ -251,7 +251,7 @@ EarlGrey_cookie_Twinings <- \() new(
   Class = 'cookie',
   # note (legacy) = 'Blade grinder',
   review = 'new experiment.  I want to reduce drymilk a little',
-  eggYolk_pc = 5, water = 35,
+  egg_pc = c(eggYolk = 5), water = 35,
   tea = c(Twinings_EarlGrey = 48), 
   flour = c(Wegmans_pastryFlr = 360), 
   sugar = 100, dairy = c(Carnation_drymilk = 100))
@@ -264,7 +264,7 @@ PreppyKitchen_thumbprintCookie <- \() new(
   Class = 'recipe',
   dairy_brick = c(Kerrygold_butter = 1),
   sugar = 150,
-  eggYolk_pc = 2,
+  egg_pc = c(eggYolk = 2),
   vanilla_tsp = 1,
   flour = c(KingArthur_allPurposeFlr = 360),
   preppykitchen = c('vdR7Wx9PptY' = 'thumbprint-cookies'))

@@ -262,7 +262,7 @@ durian_ganache <- \() new(
 coconut_mascarponeGanache <- \() new(
   Class = 'mascarponeGanache', 
   flavor = '\u6930\u5b50\U1f965',
-  coconut = c(Freenow_coconutBarista_0sugar = 150),
+  beverage = c(Freenow_coconutBar = 50),
   review = 'try'
 )
 
@@ -338,7 +338,7 @@ pumpkin_ganache <- \() new(
 #' @export
 tiramisu_nytimes <- \() new(
   Class = 'recipe', flavor = 'Tiramisu', 
-  eggYolk_pc = 4,
+  egg_pc = c(eggYolk = 4),
   sugar = 100, 
   dairy = c(Wegmans_heavyCream = 180),
   dairy_cup = c(BelGioioso_mascarpone = 1),

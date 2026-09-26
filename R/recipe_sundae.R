@@ -148,7 +148,7 @@ if (FALSE) {
   
   cocoa_icecream <- \() new(
     Class = 'recipe', class2 = '\u51b0\u6dc7\uf9f5\U1f368',
-    eggYolk_pc = 6,
+    egg_pc = c(eggYolk = 6),
     dairy = c(
       Wegmans_heavyCream = 480,
       Carnation_drymilk = 52
@@ -166,7 +166,7 @@ if (FALSE) {
   Bourbon_icecream <- \() new(
     Class = 'recipe', flavor = 'Bourbon \u67ab\u7cd6', 
     class2 = '\u51b0\u6dc7\uf9f5\U1f368',
-    eggYolk_pc = 6,
+    egg_pc = c(eggYolk = 6),
     dairy = c(Wegmans_heavyCream = 480,
               Carnation_drymilk = 52), 
     water = 220, # 250*.881
@@ -199,7 +199,7 @@ if (FALSE) {
 xiaogaojie_icecream <- \() new(
   Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'IQ-t8eSSD3Y',
-  eggYolk_pc = 6,
+  egg_pc = c(eggYolk = 6),
   dairy = c(Wegmans_heavyCream = 500,
             WegmansOrganic_whole_milk = 250),
   sugar = 120
@@ -210,9 +210,9 @@ xiaogaojie_icecream <- \() new(
 #' @export
 happytears_icecream <- \() new(
   Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
-  eggYolk_pc = 5,
+  egg_pc = c(eggYolk = 5),
   sugar = 150,
-  coconut = c(Kara_coconutcream = 500),
+  beverage = c(Kara_coconutcream = 500),
   dairy = c(Wegmans_heavyCream = 250),
   happytears = 'UDVHsBR7s3Y')
 
@@ -223,7 +223,7 @@ happytears_icecream <- \() new(
 xiaogaojie_cocoa_icecream <- \() new(
   Class = 'recipe', flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'YNzGZMLWY_Q',
-  eggYolk_pc = 3,
+  egg_pc = c(eggYolk = 3),
   dairy = c(Wegmans_heavyCream = 350,
             WegmansOrganic_whole_milk = 250), 
   sugar = 60,

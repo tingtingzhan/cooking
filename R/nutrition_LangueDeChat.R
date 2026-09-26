@@ -32,7 +32,7 @@ cookingTree_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
   dairy = c(Kerrygold_butter = 90),
   sugar = 85,
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2),
   vanilla_tsp = .5, # 2g Vanilla extract  
   flour = c(KingArthur_allPurposeFlr = 110))
 
@@ -41,7 +41,7 @@ cookingTree_LangueDeChat <- \() new(
 cookingTree_cocoa_LangueDeChat <- \() new(
   Class = 'recipe', author = 'CookingTree', flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
   sugar = 45,
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1),
   vanilla_tsp = .25, #1g Vanilla extract 
   dairy = c(
     Kerrygold_butter = 45,
@@ -68,7 +68,7 @@ Ying_LangueDeChat <- \() new(
 Jadore_LangueDeChat <- \() new(
   Class = 'recipe', author = 'J\'adore', flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
   sugar = 34,
-  eggWhite = 30,
+  egg = c(eggWhite = 30),
   flour = c(Wegmans_pastryFlr = 32,
             BobsRedMill_almondFlour = 5),
   vanilla_tsp = 1/4,
@@ -81,7 +81,7 @@ Giallozafferano_LangueDeChat <- \() new(
   Class = 'recipe', author = 'Giallozafferano', flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',
   dairy = c(Kerrygold_butter = 50),
   sugar = 60,
-  eggWhite = 50,
+  egg = c(eggWhite = 50),
   flour = c(KingArthur_allPurposeFlr = 50))
 
 

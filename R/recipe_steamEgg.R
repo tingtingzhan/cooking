@@ -66,7 +66,7 @@ shangshi_pudding <- \() new(
 #' @name steamEggWhite-class
 #' @export
 setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
-  eggWhite_pc = 6,
+  egg_pc = c(eggWhite = 6),
   water = 100,
   tool = list(RobamCT763(
     program = 'Steam', fahrenheit = 210, minute = 20
@@ -80,7 +80,7 @@ setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
 #' @export
 chicken_steamEggWhite <- \() new(
   Class = 'steamEggWhite',
-  eggWhite_pc = 6,
+  egg_pc = c(eggWhite = 6),
   water = 100,
   misc = c(LeeKumKee_chickenBouillon = 1.5),
   review = 'try'
@@ -90,7 +90,7 @@ chicken_steamEggWhite <- \() new(
 
 chicken_steamEggWhite_old <- \() new(
   Class = 'steamEggWhite',
-  eggWhite_pc = 6,
+  egg_pc = c(eggWhite = 6),
   water = 150,
   misc = c(LeeKumKee_chickenBouillon = 5),
   review = 'too salty, too much water'

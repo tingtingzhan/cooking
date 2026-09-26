@@ -269,8 +269,10 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         'Tiramisu\u0300'
       } else if (length(x@cocoa)) {
         if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
-        if (length(x@tea) && length(x@coconut)) {
+        if (length(x@tea) && length(x['_coconutBar'])) {
           '\u751f\u6930\u9e33\u9e2f'
+        } else if (length(x['_coconutBar'])) {
+          '\u751f\u6930'
         } else if (x@cocoa / x@coffee < 1) {
           'Caff\u00e8' 
         } else 'Caff\u00e8 Mocha'
@@ -300,7 +302,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u9e70\u5634\u8c46'
     } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
       '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
-    } else if (length(x@coconut)) {
+    } else if (length(x['_coconutFlr$'])) {
       '\u6930\u84c9\U1f965'
     } else if (length(x['_darkCherry$'])) {
       '\u751c\u6a31\u6843\U1f352'

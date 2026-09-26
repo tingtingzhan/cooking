@@ -51,19 +51,15 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{lard,lard_tsp,lard_Tbsp,lard_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Epic pork lard}
 
-\item{\code{egg_pc,eggYolk_pc,eggWhite_pc}}{\link[base]{numeric} scalars, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
-
-\item{\code{eggYolk,eggWhite}}{\link[base]{numeric} scalars, weight of egg yolks and whites (in grams)}
+\item{\code{egg,egg_pc}}{\link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
 
 \item{\code{teabag}}{\link[base]{numeric} scalars, number of tea bags}
 
 \item{\code{tea}}{\link[base]{numeric} scalars, weight of loose tea in grams}
 
-\item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} scalar, weight of King Arthur all purpose flour (in grams)}
+\item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} \link[base]{vector}, weight of King Arthur all purpose flour (in grams)}
 
-\item{\code{wheatGluten}}{\link[base]{numeric} scalar, weight of wheat gluten (in grams)}
-
-\item{\code{coconut}}{\link[base]{numeric} scalar, weight (in grams) of coconut flour or shredded coconut}
+\item{\code{beverage,beverage_tsp,beverage_Tbsp,beverage_cup}}{\link[base]{numeric} \link[base]{vector}}
 
 \item{\code{starch,starch_tsp,starch_Tbsp,starch_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, named weight (in grams) and volume of various starch}
 

@@ -67,20 +67,11 @@ sesame_lava <- \() new(
 #' @export
 coconut_lava <- \() new(
   Class = 'lava',
-  coconut = c(WegmansOrganic_coconutFlour = 150),
+  misc = c(WegmansOrganic_coconutFlr = 150),
   sugar = 70,
   review = c(
     'retry',
     'Coconut has tremendous water obsorbancy'
-  ))
-
-
-coconut_lava_OLD <- \() new(
-  Class = 'lava',
-  coconut = c(Edward_shreddedCoconutLite = 200),
-  sugar = 100,
-  cons = c(
-    'shredded coconut too coarse'
   ))
 
 
@@ -137,7 +128,7 @@ xiaogaojie_sesamelava <- \() new(
 
 daat_yolklava <- \() new(
   Class = 'recipe', flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
-  eggYolk_pc = 12, # salted duck egg yolk 12pc, 144g
+  egg_pc = c(eggYolk = 12), # salted duck egg yolk 12pc, 144g
   dairy = c(Kerrygold_butter = 180),
   sugar = 220,
   # custardPowder = 35, # https://www.birdscustard.co.uk

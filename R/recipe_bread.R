@@ -45,8 +45,8 @@
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   class2 = 'Bread\U1f35e', # '\u9762\u5305',
   flour = c(KingArthur_breadFlr = 500), 
-  #eggYolk_pc = 1, # was. too difficult to store the egg white
-  egg_pc = 1,
+  #egg_pc = c(eggYolk = 1), # was. too difficult to store the egg white
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   yeast_Tbsp = 1,
   salt_tsp = 1/4,
   dairy = c(Kerrygold_butter = 40),

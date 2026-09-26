@@ -62,6 +62,7 @@ if (FALSE) {
     matchaLatte_ = .04, # perfect! 2024 late summer
     tiramisu_ = .045,
     mocaccino_ = .045,
+    guacamole = .045,
     milktea_ = .05,
     stickyRice =, riceCake =, riceMousse = .05, 
     #tortillaLard = .06,
@@ -229,7 +230,7 @@ if (FALSE) {
     } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
       .145
     } else .18, # 3:1 mixed cheese
-    lava = if (length(x@blackSesame)) .17 else if (length(x@coconut)) .08 else NA_real_,
+    lava = if (length(x@blackSesame)) .17 else if (length(x['_coconutFlr$'])) .08 else NA_real_,
     cookie = if (length(x@blackSesame)) {
       .28
     } else .25, 
@@ -256,6 +257,7 @@ if (FALSE) {
     thinCrust = .0015, 
     matchaGoatLatteMix = .0017,
     shrimpfill_garlicHerb = .002,
+    guacamole = .0024,
     meatmash =, meatball = .0025, # some salt cooks into soup
     shrimpfillCantonese = .003,
     mocaccino = .002,
@@ -480,7 +482,7 @@ if (FALSE) {
       .42
     } else .34, # from other puree such as `pineapple`
     whippedCream = .50,
-    lava = if (length(x@blackSesame)) .50 else if (length(x@coconut)) .67 else NA_real_,
+    lava = if (length(x@blackSesame)) .50 else if (length(x['_coconutFlr$'])) .67 else NA_real_,
     porkfill = .55,
     sundae = if (length(x@matcha)) {
       .6
@@ -713,7 +715,7 @@ if (FALSE) {
   gelatin2water <- \(x) switch(
     class(x), 
     #riceMousse = {
-    #if (grepl('coconutmilk', names(x@misc)) |> any()) .01 else .02
+    #if (length(x['_coconutmilk$'])) .01 else .02
     #},
     mousse = .036,
     NA_real_)

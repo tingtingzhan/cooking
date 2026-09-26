@@ -25,9 +25,9 @@ setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
 caffeCoconut <- \() new(
   Class = 'caffeCoconut', 
   flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 115),
+  beverage = c(Freenow_coconutBar = 115),
   water95 = 325, # 596 - 272
-  date = as.Date('2026-09-02'), # was
+  date = as.Date('2026-09-02'),
   review = 'been drinking for >1yr'
   )
 

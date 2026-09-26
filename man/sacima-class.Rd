@@ -24,8 +24,6 @@ Dad_sacima()
 Non-deep-fry \linkS4class{sacima} recipe.
 }
 \examples{
-new(Class = 'sacima')
-
 nutritionlist(
  xiaogaojie_sacima(),
  Dad_sacima(),

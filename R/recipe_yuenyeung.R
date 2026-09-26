@@ -16,7 +16,7 @@ setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
 yuenyeungCoconut <- \() new(
   Class = 'yuenyeungCoconut', 
   #flavor = 'FreeNow',
-  coconut = c(Freenow_coconutBarista = 180),
+  beverage = c(Freenow_coconutBar = 180),
   boilingWater = 255,
   dairy = c(Carnation_drymilk = 10),
   coffee_tsp = c(1),
@@ -34,8 +34,8 @@ yuenyeungCoconut <- \() new(
 yuenyeungCoconut_summer <- \() new(
   Class = 'yuenyeungCoconut', 
   #flavor = 'FreeNow',
-  # coconut = c(Freenow_coconutBarista = 560), # was 225*2.5
-  coconut = c(Freenow_coconutBarista = 450), # try 180*2.5
+  # beverage = c(Freenow_coconutBar = 560), # was 225*2.5
+  beverage = c(Freenow_coconutBar = 450), # try 180*2.5
   #total water = 210*2.5, # was
   #total water = 255*2.5, # try
   boilingWater = 310,
@@ -71,7 +71,7 @@ yuenyeungCoconut_jelly <- \() new(
   # same water quantity as yuenyeungCoconut_summer()
   # adding gelatin
   # reducing coconut to fit Stanley JAR + SPORK | 36 OZ
-  coconut = c(Freenow_coconutBarista = 400),
+  beverage = c(Freenow_coconutBar = 400),
   water95 = 530,
   gelatin_leaf = 8,
   dairy = c(Carnation_drymilk = 25),

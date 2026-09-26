@@ -113,7 +113,7 @@ xiaogaojie_lambfill <- \() new(
     SimplyOrganic_5spice = 1/8
   ),
   #花椒粉_tsp = 1/8,
-  eggWhite_pc = 1,
+  egg_pc = c(eggWhite = 1),
   oil_tsp = c(Kadoya_sesame_oil = 1)
 )
 

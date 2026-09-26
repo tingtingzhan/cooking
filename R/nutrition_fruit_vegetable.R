@@ -312,7 +312,10 @@ kabochaSquash <- \() new(
 avocado <- \() new(
   Class = 'nutrition',  fdc = 171705L,
   alias = '\u725b\u6cb9\u679c', name = 'Avocado\U1f951',
-  servingGram = 100, pieceGram = 140,
+  servingGram = 100, 
+  pieceGram = 150, # pulp only
+  # actual weight:
+  # with skin and kernel: 220g
   calorie = 160,
   water = 73.2, protein = 2, fat = 14.7, sugar = .66, sodium = .007)
 

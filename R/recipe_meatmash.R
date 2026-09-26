@@ -43,7 +43,7 @@ porkmash <- \() new(
   pork = c(tenderloin = 700, belly = 300), # all-pork meatmash needs higher fat
   
   # without starch
-  # eggWhite_pc = 8, # water 8*34.7*.876 = 240
+  # egg_pc = c(eggWhite = 8), # water 8*34.7*.876 = 240
   # salt_tsp = 1.5, water = 200, # tenderloin 1000g
   
   starch_Tbsp = c(Wegmans_corn_starch = 3),

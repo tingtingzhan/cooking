@@ -8,8 +8,6 @@
 #' Non-deep-fry \linkS4class{sacima} recipe.
 #' 
 #' @examples
-#' new(Class = 'sacima')
-#' 
 #' nutritionlist(
 #'  xiaogaojie_sacima(),
 #'  Dad_sacima(),
@@ -18,10 +16,7 @@
 #' @name sacima-class
 #' @export
 setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
-  class2 = '\u8428\u5176\u9a6c',
-  # flour = c(Wegmans_pastryFlr = 200), eggYolk = 2, eggWhite = 2, yeast_tsp = .5, # has potential!!
-  flour = c(Wegmans_pastryFlr = 190), eggYolk = 2, eggWhite = 2, yeast_tsp = 1.5,
-  dairy = c(Kerrygold_butter = 306*5/164),
+  class2 = '\u8428\u5176\u9a6c'
   #instruction (legacy) = c(
   #  'Manually knead pastry flour, egg and yeast',
   #  # 'Pastalinda; Thickness 7, 3 cm long, 2.5 mm cut',
@@ -31,8 +26,7 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
   #  'Coat noodle pieces with sugar syrup, in rice cooker bowl',
   #  'Ferment for 30min',
   #  'Choose Bread program (90min)'
-  #),
-  url = 'v.douyin.com/idoJXYAX/'
+  #)
 ))
 
 # air fryer does not work for this dough ..
@@ -67,9 +61,6 @@ sacima <- \() new(
     #Eggs 3(60 grams each) 0:24,
     #All-purpose flour 270 grams 0:38,
     #Baking powder 2 grams 0:44,
-    
-    
-  
 )
 
 
