@@ -506,7 +506,7 @@ if (FALSE) {
     class(x),
     NA_real_)
   
-  addedWater2flour <- \(x) switch(
+  water2flour <- \(x) switch(
     class(x), 
     cookie = if (length(x@blackSesame)) .17 else .22, 
     crumbcrust = if (length(x@blackSesame)) .28 else .23, # try first with \linkS4class{cookie} info
@@ -514,34 +514,34 @@ if (FALSE) {
     #tortillaLard =, tortillaOlive = .6,
     NA_real_)
   
-  addedWater2pastryFlr <- \(x) switch(
+  water2pastryFlr <- \(x) switch(
     class(x), 
     bao = .48,
     juntun = .56, # ?? do I really need this?
     millecrepe = 3.7,
     NA_real_)
   
-  addedWater2breadFlr <- \(x) switch(
+  water2breadFlr <- \(x) switch(
     class(x), 
     wrapperlinda = .57,
     noodlelinda = if (length(x['^KingArthur_breadFlr$'])) .45 else .6,
     bread = .63,
     NA_real_)
   
-  addedWater2gluten0Flr <- fn.
+  water2gluten0Flr <- fn.
   
-  addedWater2wheatflourmix <- \(x) switch(
+  water2wheatflourmix <- \(x) switch(
     class(x),
     wheatBao = .5,
     NA_real_)
   
-  addedWater2riceflour <- \(x) switch(
+  water2riceflour <- \(x) switch(
     class(x),
     stickyTortilla = 1.6,
     snowSkin = 1.86,
     NA_real_)
   
-  addedWater2creamcheese <- \(x) switch(
+  water2creamcheese <- \(x) switch(
     class(x),
     cheesecake = if (length(x['_pumpkin$'])) {
       .6 
@@ -760,15 +760,16 @@ if (FALSE) {
     'sesameOil',
     'rattanPepperOil',
     
-    c(outer(X = c('addedWater', 'fat', 'salt', 'eggYolk', 
+    c(outer(X = c('fat', 'salt', 'eggYolk', 
                   'matcha', 'beet', 'acai', 'blackSesame', 
                   'starch', 
+                  'water',
                   'glutinousRice', # 'rice', 
                   'yeast', 'bakingPowder', 'Na2CO3_'), 
             Y = c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatflourmix', 'riceflour'), 
             FUN = paste, sep = '2')),
     
-    'addedWater2creamcheese',
+    'water2creamcheese',
     
     paste0(c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatflourmix', 'riceflour'), '2cornmeal'),
     

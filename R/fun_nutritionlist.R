@@ -35,7 +35,7 @@ print.nutritionlist <- \(x, ...) {
   'Nutrition\n' |> bg_br_yellow() |> cat()
   x |>
     summary.nutritionlist() |>
-    print() # print.summary.nutritionlist
+    print()
   
   for (which in c(
     'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
@@ -56,48 +56,22 @@ print.nutritionlist <- \(x, ...) {
 
 
 
-
-
-
-# @param x a \link[base]{list} of \linkS4class{nutrition} objects
 #' @export
 summary.nutritionlist <- \(object, ...) {
   
-  x <- object; object <- NULL
+  ret <- object |> 
+    lapply(FUN = as, Class = 'nutrition') |> # make double sure
+    lapply(FUN = as.double.nutrition) |>
+    do.call(what = rbind, args = _) # matrix
   
-  x <- x |> 
-    lapply(FUN = as, Class = 'nutrition')
-  
-  ret <- x |> 
-    lapply(FUN = \(v) {
-      # sum(numeric()) returns 0
-      c(
-        calorie = sum(v@calorie),
-        water = sum(v@water),
-        carbohydrate = sum(v@carbohydrate),
-        fiber = sum(v@fiber),
-        sugar = sum(v@sugar), 
-        addedSugar = sum(v@addedSugar), 
-        fat = sum(v@fat), 
-        cholesterol = sum(v@cholesterol),
-        sodium = sum(v@sodium),
-        protein = sum(v@protein),
-        alcohol = sum(v@alcohol),
-        usd = sum(v@usd)
-      ) / v@servingGram
-    }) |>
-    do.call(what = rbind) # matrix
-  
-  if ('water' %notin% colnames(ret)) stop('should never happen')
-  addedWater_ <- water_ <- ret[,'water']
-  addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
-  ret <- cbind(ret, addedWater = addedWater_)
-
   class(ret) <- c('summary.nutritionlist', class(ret)) |>
     unique.default()
   return(ret)
   
 }
+
+
+
 
 #' @importFrom charwidth row_fmt_matrix
 # @importFrom cli cli_verbatim
@@ -109,8 +83,7 @@ print.summary.nutritionlist <- \(x, ...) {
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
   
   ret0 <- ret0[, colnames(ret0) %notin% c(
-    'calorie', 'usd', # meaningless (i.e., calorie/servingGram)
-    'addedWater'
+    'calorie', 'usd'
   )]
   
   ret <- ret0[, colMeans(ret0 == 0) != 1] |> 

@@ -1020,6 +1020,25 @@ labels.nutrition <- \(object, ...) {
 }
 
 
-
+# named as [as.numeric.nutrition], then the generic [base::as.numeric] does *not* work!!
+#' @method as.double nutrition
+#' @export
+as.double.nutrition <- \(x, ...) {
+  c(
+    # sum(numeric()) returns 0
+    calorie = sum(x@calorie),
+    water = sum(x@water),
+    carbohydrate = sum(x@carbohydrate),
+    fiber = sum(x@fiber),
+    sugar = sum(x@sugar), 
+    addedSugar = sum(x@addedSugar), 
+    fat = sum(x@fat), 
+    cholesterol = sum(x@cholesterol),
+    sodium = sum(x@sodium),
+    protein = sum(x@protein),
+    alcohol = sum(x@alcohol),
+    usd = sum(x@usd)
+  ) / x@servingGram
+}
 
 

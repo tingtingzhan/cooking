@@ -337,10 +337,10 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 })
 
 
-
-#' @method as.numeric raw.
+# named as [as.numeric.raw.], then the generic [base::as.numeric] does *not* work!!
+#' @method as.double raw.
 #' @export
-as.numeric.raw. <- \(x, ...) {
+as.double.raw. <- \(x, ...) {
   z <- attributes(x)[names(getSlots(x = 'raw.'))] |>
     unname() |>
     unlist(use.names = TRUE) # no need to remove len-0 element :)
