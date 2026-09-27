@@ -2,15 +2,13 @@
 
 setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
-  x <- from; from <- NULL
-  
-  grams <- x |> 
+  grams <- from |> 
     as.numeric.raw.()
   
   info <- grams |>
     names() |> 
-    lapply(FUN = \(x) {
-      eval(call(name = x))
+    lapply(FUN = \(i) {
+      eval(call(name = i))
     }) |>
     do.call(what = nutritionlist, args = _) |>
     summary.nutritionlist()
@@ -47,18 +45,17 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   x <- from; from <- NULL
   
-  grams <- x |>
-    as.numeric.raw.()
-  total_raw <- sum(grams)
+  ret <- x |>
+    as(Class = 'raw.') |>
+    as(Class = 'nutrition')
+  
+  total_raw <- ret@servingGram # will be used later
   
   waterLost <- x@tool |>
     lapply(FUN = \(i) i@waterLost) |> 
     unlist(use.names = FALSE) |>
     sum()
   
-  ret <- x |>
-    as(Class = 'raw.') |>
-    as(Class = 'nutrition')
   ret@name <- x@alias
   ret@servingGram <- total_raw - waterLost - sum(x@sugarLost)
   ret@sugar <- ret@sugar - sum(x@sugarLost)
