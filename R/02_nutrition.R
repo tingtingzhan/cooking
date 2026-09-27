@@ -249,9 +249,7 @@ setClass(Class = 'nutrition', slots = c(
   siggis = 'character',
   simplyorganic = 'character', # has SKU number, do not know how to use
   sodastream = 'character',
-  starbucks = 'character',
-  starbucks_hot = 'integer',
-  starbucks_iced = 'integer',
+  starbucks = 'character', starbucks_hot = 'integer', starbucks_iced = 'integer',
   stassentea = 'character',
   stonewall = 'integer',
   stonyfield = 'character',
@@ -478,8 +476,14 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         c()
     } else if (length(x@ippodoglobal) & length(x@ippodousa)) {
       x@url <- c(x@url, style_hyperlink(url = x@ippodousa |> sprintf(fmt = 'https://ippodotea.com/products/%s'), text = '\U1f6d2 US Shop'))
-      jpn_ <- style_hyperlink(url = x@ippodojpn |> sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s'), text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> c()
-      global_ <- style_hyperlink(url = x@ippodoglobal |> sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s'), text = 'Ippodo\U1f375') |> c()
+      jpn_ <- x@ippodojpn |> 
+        sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s') |>
+        style_hyperlink(url = _, text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> 
+        c()
+      global_ <- x@ippodoglobal |> 
+        sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s') |>
+        style_hyperlink(url = _, text = 'Ippodo\U1f375') |> 
+        c()
       paste(global_, jpn_)
     } else if (length(x@itoen)) {
       x@itoen |> 
@@ -487,18 +491,30 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         style_hyperlink(text = 'Ito-En\u4f0a\u85e4\u5712\U1f1ef\U1f1f5') |> 
         c()
     } else if (length(x@jayone)) {
-      style_hyperlink(url = x@jayone |> sprintf(fmt = 'https://www.jayonefoods.com/product/%s'), text = 'JayOne\U1f1f0\U1f1f7') |> c()
+      x@jayone |> 
+        sprintf(fmt = 'https://www.jayonefoods.com/product/%s') |>
+        style_hyperlink(url = _, text = 'JayOne\U1f1f0\U1f1f7') |> 
+        c()
     } else if (length(x@juniorscheesecake)) {
       x@juniorscheesecake |> 
         sprintf(fmt = 'https://www.juniorscheesecake.com/all-items/%s') |>
         style_hyperlink(text = 'Junior\'s\U1f1fa\U1f1f8') |> 
         c()
     } else if (length(x@justtea)) {
-      style_hyperlink(url = x@justtea |> sprintf(fmt = 'https://shop.wegmans.com/product/%s'), text = 'Just Tea\U1f1fa\U1f1f8') |> c()
+      x@justtea |> 
+        sprintf(fmt = 'https://shop.wegmans.com/product/%s') |>
+        style_hyperlink(url = _, text = 'Just Tea\U1f1fa\U1f1f8') |> 
+        c()
     } else if (length(x@kahlua)) {
-      style_hyperlink(url = x@kahlua |> sprintf(fmt = 'https://www.kahlua.com/en-us/products/%s'), text = 'Kahlu\u0301a\U1f1f2\U1f1fd') |> c()
+      x@kahlua |> 
+        sprintf(fmt = 'https://www.kahlua.com/en-us/products/%s') |>
+        style_hyperlink(url = _, text = 'Kahlu\u0301a\U1f1f2\U1f1fd') |> 
+        c()
     } else if (length(x@kerrygold)) {
-      kg_ <- style_hyperlink(url = x@kerrygold |> sprintf(fmt = 'https://kerrygold.com/products/%s'), text = 'Kerrygold\U1f1ee\U1f1ea') |> c()
+      kg_ <- x@kerrygold |> 
+        sprintf(fmt = 'https://kerrygold.com/products/%s') |>
+        style_hyperlink(url = _, text = 'Kerrygold\U1f1ee\U1f1ea') |> 
+        c()
       if (length(x@kerrygoldusa)) {
         paste0(kg_, style_hyperlink(url = x@kerrygoldusa |> sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s'), text = '\U1f1fa\U1f1f8'))
       } else kg_

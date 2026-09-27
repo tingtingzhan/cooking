@@ -4,28 +4,23 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   x <- from; from <- NULL
   
-  atr0 <- attributes(x)[names(getSlots(x = 'raw.'))]
-  atr <- atr0[lengths(atr0) > 0L]
-  
-  grams <- unlist(unname(atr), use.names = TRUE)
+  grams <- attributes(x)[names(getSlots(x = 'raw.'))] |>
+    unname() |>
+    unlist(use.names = TRUE) # no need to remove len-0 element :)
   if (!length(grams)) stop('shouldnt happen!!!')
-  grams_nm <- names(grams)
-  names(grams_nm) <- grams_nm
   
-  nutri <- grams_nm |> 
+  info <- grams |>
+    names() |> 
     lapply(FUN = \(x) {
       eval(call(name = x))
     }) |>
-    do.call(what = nutritionlist, args = _)
-  
-  info <- nutri |>
+    do.call(what = nutritionlist, args = _) |>
     summary.nutritionlist()
-  names(rownames(info)) <- grams_nm # programming trick!! (for [print.raw.])
+  
   # not needed here, but I may future consolidate 
   # setAs(from = 'raw.', to = 'nutrition')
   # setAs(from = 'recipe', to = 'nutrition'
   # print(info) # debug
-  
   
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
   calorie <- tmp['calorie']
@@ -46,7 +41,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   ret <- new(
     Class = 'nutrition',  
     name = character(),
-    servingGram = sum(unlist(atr, use.names = FALSE)),
+    servingGram = sum(grams),
     usd = unname(usd), # `recipe` already dealt with currency conversion
     calorie = if (calorie) calorie else numeric(),
     carbohydrate = if (carbohydrate) carbohydrate else numeric(),
@@ -73,7 +68,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
     }
   } # 2026-09-08 evening. Consider remove in future
   
-  attr(ret, which = 'info') <- info
+  #attr(ret, which = 'info') <- info
   return(ret)
 })
 
@@ -87,6 +82,10 @@ setAs(from = 'recipe', to = 'cooked', def = \(from) {
   # should be here!!
   # to account for @waterLost, etc.
 })
+
+
+
+
 
 
 setAs(from = 'recipe', to = 'nutrition', def = \(from) {
@@ -114,18 +113,14 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   grams <- unlist(unname(atr))
   if (!length(grams)) stop('shouldnt happen!!!')
-  grams_nm <- names(grams)
-  names(grams_nm) <- grams_nm
   
-  nutri <- grams_nm |> 
+  info <- grams |>
+    names() |> 
     lapply(FUN = \(x) {
       eval(call(name = x))
     }) |>
-    do.call(what = nutritionlist, args = _)
-  
-  info <- nutri |>
+    do.call(what = nutritionlist, args = _) |>
     summary.nutritionlist()
-  names(rownames(info)) <- grams_nm # programming trick!! (for [print.raw.])
   
   # print(info) # debug
   tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
@@ -488,7 +483,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       '\U0001f95awhite' = new(Class = 'equiv', current = x['^eggWhite$']/sum(x['_creamCheese$']))
     ))
   
-  attr(ret, which = 'info') <- info
+  #attr(ret, which = 'info') <- info
   
   #review <- attr(info, which = 'review')
   #attr(ret, which = 'review') <- review[names(review) == class(x)]

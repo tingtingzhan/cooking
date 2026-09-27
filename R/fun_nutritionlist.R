@@ -93,7 +93,8 @@ summary.nutritionlist <- \(object, ...) {
   addedWater_[water_ < .2] <- 0 # King Arthur commercial flour has water 14% 
   ret <- cbind(ret, addedWater = addedWater_)
 
-  class(ret) <- 'summary.nutritionlist'
+  class(ret) <- c('summary.nutritionlist', class(ret)) |>
+    unique.default()
   return(ret)
   
 }
