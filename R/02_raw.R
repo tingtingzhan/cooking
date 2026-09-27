@@ -337,3 +337,16 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 })
 
 
+
+#' @method as.numeric raw.
+#' @export
+as.numeric.raw. <- \(x, ...) {
+  z <- attributes(x)[names(getSlots(x = 'raw.'))] |>
+    unname() |>
+    unlist(use.names = TRUE) # no need to remove len-0 element :)
+  if (!length(z)) stop('shouldnt happen!!!')
+  return(z)
+}
+
+  
+
