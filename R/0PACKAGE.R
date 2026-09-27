@@ -39,6 +39,7 @@ if (FALSE) {
     meatmash =, meatball =, shrimpfillCantonese = .008,
     crumbcrust = if (length(x@blackSesame)) .11 else .01, 
     ricepaste = .015,
+    oatmeal = .018,
     soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
     bao =, wheatBao = if (length(x@matcha) || length(x['_beet_pulv$']) || length(x@cocoa)) {
       .04 

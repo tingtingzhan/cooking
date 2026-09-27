@@ -326,10 +326,10 @@ fmt_pc <- \(x) {
 prt_raw_vol <- \(x) {
   
   nm <- x |> 
-    names() |> # .Primitive
+    names() |>
     vapply(FUN = \(i) {
       eval(call(name = i)) |>
-        names.nutrition()
+        labels() # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
     }, FUN.VALUE = '')
   
   sprintf(fmt = '%s %.0f grams %s\n', nm, x, fmt_vol(x)) |> 
@@ -341,10 +341,10 @@ prt_raw_vol <- \(x) {
 prt_raw_pc <- \(x) {
   
   nm <- x |> 
-    names() |> # .Primitive
+    names() |>
     vapply(FUN = \(i) {
       eval(call(name = i)) |>
-        names.nutrition()
+        labels() # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
     }, FUN.VALUE = '')
   
   sprintf(fmt = '%s %.0f grams %s\n', nm, x, fmt_pc(x)) |> 

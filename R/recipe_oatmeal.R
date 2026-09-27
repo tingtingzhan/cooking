@@ -33,22 +33,11 @@ coconut_oatmeal <- \() new(
   Class = 'oatmeal',
   beverage = c(Freenow_coconutBar = 40),
   water = 100,
-  # date = as.Date('2026-09-26'),
-  review = 'to try')
+  date = as.Date('2026-09-27'),
+  review = 'perfect sweetness!!')
 
-coconut_oatmeal_OLD <- \() new(
-  Class = 'oatmeal',
-  beverage = c(Freenow_coconutBar = 60),
-  water = 80,
-  date = as.Date('2025-07-06'),
-  review = 'a little too sweet')
 
-if (FALSE) {
-  nutritionlist(
-    coconut_oatmeal(),
-    coconut_oatmeal_OLD()
-  )
-}
+
 
 
 #' @rdname oatmeal-class
@@ -58,7 +47,7 @@ soymilk_oatmeal <- \() new(
   homemade = c(soymilk_DJ13U = 140),
   syrup = c(Runamok_ryeWhisky_syrup = 5),
   date = as.Date('2025-07-06'),
-  review = 'nice!'
+  review = 'nice!  Note on Sep 2026: probably need to reduce sugar'
 )
 
 

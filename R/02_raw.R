@@ -179,31 +179,23 @@ setClass(Class = 'raw.', slots = c(
 setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object))
 
 
+#' @method labels raw.
+#' @export
+labels.raw. <- \(object, ...) character()
+
 
 #' @method print raw.
 #' @export
 print.raw. <- \(x, ...) {
   
-  y <- x |>
-    as(Class = 'nutrition')
-  
-  if (length(y@name)) {
-    y@name |> col_grey() |> style_bold() |> cat()
+  x |> 
+    labels() |> # [labels.raw.] or [labels.recipe]
+    col_grey() |> style_bold() |> 
     cat('\n')
-  }
   
   cat('\n')
   
-  nm_ <- y |>
-    attr(which = 'info', exact = TRUE) |>
-    rownames()
-  
-  # prt_raw_vol(x@homemade) # does not work yet; future work.
-  mapply(FUN = \(nm, gram) {
-    sprintf(fmt = '%s %.0f grams', nm, gram) |> 
-      cli_text() # no returned value
-  }, nm = nm_[names(x@homemade)], gram = x@homemade)
-  # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
+  prt_raw_vol(x@homemade)
   
   prt_raw_vol(x@shrimp)
   prt_raw_vol(x@seafood)
@@ -237,23 +229,20 @@ print.raw. <- \(x, ...) {
   prt_raw_vol(x@matcha)
   prt_raw_vol(x@coffee)
   prt_raw_vol(x@cocoa)
-  
+  prt_raw_vol(x@vanilla)
+  prt_raw_vol(x@syrup)
   prt_raw_vol(x@yeast)
+  prt_raw_vol(x@salt)
+  prt_raw_vol(x@msg)
+  prt_raw_vol(x@NaHCO3)
+  prt_raw_vol(x@Na2CO3)
+  prt_raw_vol(x@bakingPowder)
   
   prt_raw_pc(x@egg)
   prt_raw_pc(x@gelatin)
   prt_raw_pc(x@tea)
   
   prt_raw_vol(x@misc)
-  
-  
-  
-  has_vol <- c(
-    x@vanilla,
-    x@salt, x@msg, x@NaHCO3, x@Na2CO3, x@bakingPowder,
-    x@syrup
-  )
-  if (length(has_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol)], has_vol, fmt_vol(has_vol)) |> lapply(FUN = cli_text)
   
   if (length(x@water)) {
     if (!length(x@water_ext)) {

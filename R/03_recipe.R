@@ -386,8 +386,8 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 
-
-
+#' @export
+labels.recipe <- \(object, ...) object@alias
 
 
 #' @rdname raw_recipe

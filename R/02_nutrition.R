@@ -871,8 +871,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   x <- object; object <- NULL
   
   cat('\n')
-  c(x@alias, x@name, x@brand) |>
-    paste(collapse = ' ') |> 
+  x |>
+    labels.nutrition() |>
     cli_text()
   cat('\n')
   
@@ -986,8 +986,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
 
 
 #' @export
-names.nutrition <- \(x) {
-  c(x@alias, x@name, x@brand) |> 
+labels.nutrition <- \(object, ...) {
+  c(object@alias, object@name, object@brand) |> # len-0 compatible!!
     paste(collapse = ' ')
 }
 

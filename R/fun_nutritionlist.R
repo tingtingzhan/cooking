@@ -17,21 +17,16 @@ nutritionlist <- \(...) {
   if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
     stop()
   } 
+
+  names(z) <- z |>
+    vapply(FUN = labels.nutrition, FUN.VALUE = '')
   
   class(z) <- c('nutritionlist', 'listof', 'list') 
-  
-  names(z) <- names(z) # dispatch to [names.nutritionlist]
   return(z)
 }
 
 
 
-#' @export
-names.nutritionlist <- function(x) {
-  x |>
-    vapply(FUN = names.nutrition, FUN.VALUE = '')
-}
-  
 
 #' @export
 print.nutritionlist <- \(x, ...) {
