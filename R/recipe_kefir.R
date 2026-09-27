@@ -22,7 +22,7 @@ raspberry_kefir <- \() new(Class = 'kefir', syrup = c(Stonewall_raspberry_syrup 
 
 #' @rdname kefir-class
 #' @export
-ryeWhisky_kefir <- \() new(Class = 'kefir', syrup = c(Runamok_ryeWhisky_syrup = 10), pros = 'I love!', date = as.Date('2024-05-12'))
+ryeWhisky_kefir <- \() new(Class = 'kefir', syrup = c(Runamok_ryeWhisky = 10), pros = 'I love!', date = as.Date('2024-05-12'))
 
 #' @rdname kefir-class
 #' @export
@@ -44,7 +44,7 @@ setClass(Class = 'goatKefir', contains = 'recipe', prototype = prototype(
 
 #' @rdname kefir-class
 #' @export
-ryeWhisky_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Runamok_ryeWhisky_syrup = 21), pros = 'Effie', date = as.Date('2024-04-02'))
+ryeWhisky_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Runamok_ryeWhisky = 21), pros = 'Effie', date = as.Date('2024-04-02'))
 
 
 
@@ -94,7 +94,7 @@ figWalnut_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnu
 # @export
 #ryeWhisky_filmjolk <- \() new(
 #  Class = 'filmjolk',
-#  syrup = c(Runamok_ryeWhisky_syrup = 14),
+#  syrup = c(Runamok_ryeWhisky = 14),
 #  pros = 'Effie loves!',
 #  date = as.Date('2024-04-14'))
 

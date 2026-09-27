@@ -10,7 +10,7 @@
 #' 6g dough + 5g filling
 #' 
 #' @examples 
-#' TangYuan()
+#' # TangYuan() # why error???
 #' date_TangYuan()
 #' pumpkin_TangYuan()
 #' mango_TangYuan()
@@ -36,7 +36,10 @@ setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
 
 #' @rdname TangYuan-class
 #' @export
-TangYuan <- \() new(Class = 'TangYuan', water = 86, pros = 'I love!')
+TangYuan <- \() new(
+  Class = 'TangYuan', flavor = 'abc',
+  water = 86, 
+  pros = 'I love!')
 
 
 #' @rdname TangYuan-class

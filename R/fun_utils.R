@@ -244,7 +244,7 @@ add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
 get_flavor_ <- \(x) {
   # `x` is base::character base::vector
   x |>
-    lapply(FUN = \(i) eval(call(i))) |>
+    lapply(FUN = \(i) eval(call(name = i))) |>
     vapply(FUN = \(i) {
       if (inherits(i, 'nutrition')) {
         i@name

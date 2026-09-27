@@ -155,7 +155,7 @@ raspberry_cheesecake <- \() new(
 ryeWhisky_cheesecake <- \() new(
   Class = 'cheesecake',
   starch = c(Argo_corn_starch = 50), starch_cup = numeric(),
-  syrup = c(Runamok_ryeWhisky_syrup = 180), 
+  syrup = c(Runamok_ryeWhisky = 180), 
   water = 200,
   #date = as.Date('2023-12-01'),
   pros = 'try again')
@@ -164,7 +164,7 @@ ryeWhisky_cheesecake <- \() new(
 
 ryeWhisky_cheesecake_LowWater <- \() new(
   Class = 'cheesecake',
-  syrup = c(Runamok_ryeWhisky_syrup = 160), 
+  syrup = c(Runamok_ryeWhisky = 160), 
   date = as.Date('2023-12-01'),
   pros = 'Xu Chang (100% Neufchatel)')
 
@@ -172,13 +172,13 @@ ryeWhisky_cheesecake_LowWater <- \() new(
 #' @export
 rum_cheesecake <- \() new(
   Class = 'cheesecake',
-  syrup = c(Runamok_rum_syrup = 150), review = 'try')
+  syrup = c(Runamok_rum = 150), review = 'try')
 
 #' @rdname cheesecake-class
 #' @export
 appleBrandy_cheesecake <- \() new(
   Class = 'cheesecake', #flavor = 'Apple Brandy\u67ab\u7cd6\u6d46',
-  syrup = c(Runamok_appleBrandy_syrup = 160), review = 'try')
+  syrup = c(Runamok_appleBrandy = 160), review = 'try')
 
 #' @rdname cheesecake-class
 #' @export

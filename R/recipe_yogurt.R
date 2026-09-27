@@ -11,7 +11,7 @@ maple_yogurt <- \() new(
 ryeWhisky_yogurt_fail <- \() new(
   Class = 'recipe',
   dairy = c(Nancys_yogurt = 200),
-  syrup = c(Runamok_ryeWhisky_syrup = 45),
+  syrup = c(Runamok_ryeWhisky = 45),
   review = 'too sweet, not enough liquer flavor'
 )
 

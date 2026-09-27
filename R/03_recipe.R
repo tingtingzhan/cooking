@@ -262,13 +262,14 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   } else {
     if (length(author)) paste(x@class2, author) else x@class2
   }
+
   
   if (!length(x@flavor)) {
     x@flavor <- if (length(x@coffee)) {
       if (length(x@liqueur)) {
         'Tiramisu\u0300'
       } else if (length(x@cocoa)) {
-        if (grepl('blackcocoa', x = tolower(names(x@cocoa)))) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
+        if (length(x['_blackcocoa$'])) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
         if (length(x@tea) && length(x['_coconutBar'])) {
           '\u751f\u6930\u9e33\u9e2f'
         } else if (length(x['_coconutBar'])) {
@@ -277,7 +278,8 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
           'Caff\u00e8' 
         } else 'Caff\u00e8 Mocha'
       } else if (length(x@syrup)) {
-        if (names(x@syrup) |> grepl(pattern = 'ryeWhisky') |> any()) {
+        #if (names(x@syrup) |> grepl(pattern = 'ryeWhisky') |> any()) {
+        if (length(x['_ryeWhisky$'])) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
       } else 'Caff\u00e8'
@@ -372,6 +374,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
           '\u732a\u6cb9'
         }
       }, character())
+    
   }
   
   if (!length(x@alias)) {
