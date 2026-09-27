@@ -284,7 +284,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
      
     } else if (length(x['_acai_pulv$'])) {
       '\u5df4\u897f\u8393'
-    } else if (length(x@adzukibean)) {
+    } else if (length(x['_adzukibean$'])) {
       '\u7ea2\u8c46'
     } else if (length(x['_applesauce$'])) {
       '\u82f9\u679c\U1f34e'
@@ -296,9 +296,9 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u9ed1\u829d\u9ebb'
     } else if (length(x['_brownRice$'])) {
       '\u7cd9\u7c73'
-    } else if (length(x@cashew)) {
+    } else if (length(x['_cashew$'])) {
       '\u8170\u679c'
-    } else if (length(x@chickpea)) {
+    } else if (length(x['_chickpea$'])) {
       '\u9e70\u5634\u8c46'
     } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
       '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
@@ -312,7 +312,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u8292\u679c\U1f96d'
     } else if (length(x@matcha)) {
       '\u62b9\u8336\U1f375'
-    } else if (length(x@mungbean)) {
+    } else if (length(x['_mungbean$'])) {
       '\u7eff\u8c46'
     } else if (length(x['_pear$'])) {
       '\u68a8\U1f350'
@@ -322,7 +322,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     } else if (length(x['_pumpkin$']) || length(x['_pumpkinPieMix$'])) {
       # '\u5357\u74dc\U1f383'
       'Pumpkin\U1f383'
-    } else if (length(x@redKidneyBean)) {
+    } else if (length(x['_redkidneybean$'])) {
       '\u7ea2\u82b8\u8c46'
     } else if (length(x['_strawberry$'])) {
       '\u8349\u8393\U1f353'

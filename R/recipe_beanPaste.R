@@ -31,7 +31,7 @@ setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
 #' @export
 adzukiBeanPaste <- \() new(
   Class = 'beanPaste',
-  adzukibean = 200, water = 1330 - 200, # confirmed
+  bean = c(HaiTai_adzukibean = 200), water = 1330 - 200, # confirmed
   dairy = c(Kerrygold_butter = 53), 
   sugar = c(Domino_darkBrown = 67),
   tool = list(
@@ -51,7 +51,7 @@ adzukiBeanPaste <- \() new(
 #' @export
 redKidneyBeanPaste <- \() new(
   Class = 'beanPaste',
-  redKidneyBean = 200, water = 1325-200, # confirmed
+  bean = c(Iberia_redkidneybean = 200), water = 1325-200, # confirmed
   dairy = c(Kerrygold_butter = 60), 
   sugar = c(Domino_darkBrown = 85),
   tool = list(
@@ -74,7 +74,7 @@ redKidneyBeanPaste <- \() new(
 
 #adzukiBeanMud <- \() new(
 #  Class = 'beanMud', flavor = '\u7ea2',
-#  adzukibean = 130, water = 815, waterLost = 65)
+#  bean = c(HaiTai_adzukibean = 130), water = 815, waterLost = 65)
 
 #adzukiBeanPaste_OLD <- \() new(
 #  Class = 'beanPaste', flavor = '\u7ea2',
@@ -93,7 +93,7 @@ redKidneyBeanPaste <- \() new(
 #' @export
 xiaogaojie_adzukiBeanPaste1 <- \() new(
   Class = 'recipe', flavor = '\u7ea2\u8c46\u6c991',
-  adzukibean = 500,
+  bean = c(HaiTai_adzukibean = 500),
   water = 350, # actual water absorbed
   oil = c(Wegmans_corn_oil = 12),
   sugar = c(Domino_darkBrown = 75),
@@ -109,7 +109,7 @@ xiaogaojie_adzukiBeanPaste1 <- \() new(
 xiaogaojie_adzukiBeanPaste2 <- \() new(
   Class = 'recipe', flavor = '\u7ea2\u8c46\u6c992',
   xiaogaojie = 'Jsqhb8i4ntU',
-  adzukibean = 200,
+  bean = c(HaiTai_adzukibean = 200),
   water = 700, 
   #waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
   Na2CO3_tsp = 1/8,

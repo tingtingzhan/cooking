@@ -61,17 +61,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{grain,grain_tsp,grain_Tbsp,grain_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, named weight of various grains}
 
-\item{\code{soybean}}{\link[base]{numeric} scalar, weight of dry soy beans (in grams)}
-
-\item{\code{chickpea}}{\link[base]{numeric} scalar, weight of dry chickpea (in grams)}
-
-\item{\code{adzukibean}}{\link[base]{numeric} scalar, weight of dry adzuki (red) bean (in grams)}
-
-\item{\code{mungbean}}{\link[base]{numeric} scalar, weight of dry mung (green) beans (in grams)}
-
-\item{\code{redKidneyBean}}{..}
-
-\item{\code{cashew}}{\link[base]{numeric} scalar, weight of unsalted unroasted cashew (in grams)}
+\item{\code{bean}}{\link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)}
 
 \item{\code{nut}}{\link[base]{numeric} scalar, weight of various dry nuts (in grams)}
 

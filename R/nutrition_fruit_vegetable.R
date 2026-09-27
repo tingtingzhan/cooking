@@ -459,9 +459,9 @@ Palouse_chickpea <- \() new(
   servingGram = 100 - 7.68, 
   protein = 20.5, fat = 6.04, carbohydrate = 30, sugar = 10.7, sodium = .024)
 
-HaiTai_mung <- \() new(
+HaiTai_mungbean <- \() new(
   Class = 'nutrition',  fdc = 174256L,
-  name = '(\u5e26\u76ae)\u7eff\u8c46 Mung Bean', 
+  name = 'Mung Bean', alias = '(\u5e26\u76ae)\u7eff\u8c46',
   haitaiusa = 'mung-bean-\ub179\ub450',
   usd = 5.99/910*38, yamibuy = '25775187',
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
@@ -469,9 +469,9 @@ HaiTai_mung <- \() new(
   #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
   review = 'Must use peeled mung bean for dessert!')
 
-HaiTai_adzuki <- \() new(
+HaiTai_adzukibean <- \() new(
   Class = 'nutrition',  fdc = 543753L,
-  alias = '\u7ea2\u8c46', name = 'Adzuki Bean', 
+  name = 'Adzuki Bean', alias = '\u7ea2\u8c46', 
   haitaiusa = 'red-bean-\ud325-4-lb',
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
   usd = 8.99/907*45, yamibuy = '25775203',
@@ -479,10 +479,11 @@ HaiTai_adzuki <- \() new(
   #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
 )
 
-redKidneyBean <- \() new(
+Iberia_redkidneybean <- \() new(
   Class = 'nutrition',  fdc = 173744L,
   alias = '\u7ea2\u82b8\u8c46', name = 'Red Kidney Bean\U1fad8', 
-  brand = c(style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/')),
+  brand = style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/') |>
+    c(),
   amazon = 'B079S8D2YP', usd = 8.86/(4*454)*42,
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
   servingGram = 42, servingCup = 1/4, sodium = .005, carbohydrate = 26, sugar = 1, protein = 9)

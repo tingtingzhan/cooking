@@ -3,8 +3,10 @@
 sashimi1 <- \() new(
   Class = 'recipe',
   # oil = c(Kadoya_sesame_oil = 13), # maybe a little too overwhelming
-  oil = c(Kadoya_sesame_oil = 10), # try next time
-  oil = c(YaoMaZi_rattanPepper_oil = 2),
+  oil = c(
+    Kadoya_sesame_oil = 10, # try next time
+    YaoMaZi_rattanPepper_oil = 2
+  ),
   sauce = c(
     Kikkoman_soyLite = 13,
     mizkan_brownRiceVinegar = 7

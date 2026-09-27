@@ -32,7 +32,7 @@ tilapia <- \() new(
   name = 'Tilapia\U1f41f', alias = '\u7f57\u975e\u9c7c',
   servingGram = 100, water = 78.1, fat = 1.7, protein = 20.1, sodium = .052)
 
-Kirkland_shrimp_31_40 <- \() new(
+Kirkland_shrimp_c31 <- \() new(
   Class = 'nutrition',  
   #fdc = 475625L,
   #fdc = 175180L, cooked

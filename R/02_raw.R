@@ -37,12 +37,8 @@
 #' 
 #' @slot grain,grain_tsp,grain_Tbsp,grain_cup \link[base]{numeric} scalar or \link[base]{vector}, named weight of various grains
 #' 
-#' @slot soybean \link[base]{numeric} scalar, weight of dry soy beans (in grams)
-#' @slot chickpea \link[base]{numeric} scalar, weight of dry chickpea (in grams)
-#' @slot adzukibean \link[base]{numeric} scalar, weight of dry adzuki (red) bean (in grams)
-#' @slot mungbean \link[base]{numeric} scalar, weight of dry mung (green) beans (in grams)
-#' @slot redKidneyBean ..
-#' @slot cashew \link[base]{numeric} scalar, weight of unsalted unroasted cashew (in grams)
+#' @slot bean \link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)
+#' 
 #' @slot nut \link[base]{numeric} scalar, weight of various dry nuts (in grams)
 #' 
 #' @slot sugar,sugar_tsp,sugar_Tbsp,sugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar 
@@ -136,12 +132,7 @@ setClass(Class = 'raw.', slots = c(
   beverage = 'numeric', beverage_tsp = 'numeric', beverage_Tbsp = 'numeric', beverage_cup = 'numeric', 
   
   grain = 'numeric', grain_tsp = 'numeric', grain_Tbsp = 'numeric', grain_cup = 'numeric',
-  soybean = 'numeric',
-  chickpea = 'numeric',
-  adzukibean = 'numeric',
-  mungbean = 'numeric',
-  redKidneyBean = 'numeric',
-  cashew = 'numeric',
+  bean = 'numeric',
   nut = 'numeric',
   
   vanilla = 'numeric', vanilla_tsp = 'numeric', vanilla_Tbsp = 'numeric', vanilla_cup = 'numeric',
@@ -189,8 +180,6 @@ setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object
 
 
 
-
-
 #' @method print raw.
 #' @export
 print.raw. <- \(x, ...) {
@@ -209,100 +198,59 @@ print.raw. <- \(x, ...) {
     attr(which = 'info', exact = TRUE) |>
     rownames()
   
-  meat_seafood <- c(
-    x@shrimp,
-    x@seafood,
-    x@pork, x@beef, x@lamb, x@chicken, # meat
-    NULL)
-  sprintf(fmt = '%s %.0f grams\n', nm_[names(meat_seafood)], meat_seafood) |> 
-    lapply(FUN = cli_text)
-  
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@flour)], x@flour, fmt_vol(x@flour)) |> 
-    lapply(FUN = cli_text)
-  
-  if (length(x@starch)) {
-    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@starch)], x@starch, fmt_vol(x@starch)) |> 
-      lapply(FUN = cli_text) 
-  }
-  
-  if (length(x@beverage)) {
-    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@beverage)], x@beverage, fmt_vol(x@beverage)) |> 
-      lapply(FUN = cli_text) 
-  }
-  
-  
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@puree)], x@puree, fmt_vol(x@puree)) |> 
-    lapply(FUN = cli_text)
-  
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@misc)], x@misc, fmt_vol(x@misc)) |> 
-    lapply(FUN = cli_text)
-  
+  # prt_raw_vol(x@homemade) # does not work yet; future work.
   mapply(FUN = \(nm, gram) {
     sprintf(fmt = '%s %.0f grams', nm, gram) |> 
       cli_text() # no returned value
   }, nm = nm_[names(x@homemade)], gram = x@homemade)
   # can**not** ?cli::cli_text a \link[base]{vector}; # 'Newlines are *not* preserved'
   
-  grain_bean_nut <- c(
-    x@chickpea, x@adzukibean, x@mungbean, x@redKidneyBean,
-    x@cashew, x@nut
-  )
-  grain_bean_nut_vol_ <- c(
-    x@grain,
-    x@soybean
-  )
-  if (length(grain_bean_nut)) {
-    sprintf(fmt = '%s %.0f grams\n', nm_[names(grain_bean_nut)], grain_bean_nut) |> 
-      lapply(FUN = cli_text)
-  }
-  if (length(grain_bean_nut_vol_)) {
-    sprintf(fmt = '%s %.0f grams %s\n', nm_[names(grain_bean_nut_vol_)], grain_bean_nut_vol_, fmt_vol(grain_bean_nut_vol_)) |> 
-      lapply(FUN = cli_text)
-  }
+  prt_raw_vol(x@shrimp)
+  prt_raw_vol(x@seafood)
+  prt_raw_vol(x@pork)
+  prt_raw_vol(x@beef)
+  prt_raw_vol(x@lamb)
+  prt_raw_vol(x@chicken)
   
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@fat)], x@fat, fmt_vol(x@fat)) |> 
-    lapply(FUN = cli_text)
+  prt_raw_vol(x@flour)
+  prt_raw_vol(x@starch)
+  prt_raw_vol(x@sugar)
   
-  other <- c(
-    x@vegetable
-  )
-  if (length(other)) {
-    sprintf(fmt = '%s %.0f grams\n', nm_[names(other)], other) |> 
-      lapply(FUN = cli_text)
-  }
+  prt_raw_vol(x@beverage)
+  prt_raw_vol(x@puree)
+  prt_raw_pc(x@fruit)
   
-  sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@dairy)], x@dairy, fmt_vol(x@dairy)) |>
-    lapply(FUN = cli_text)
+  prt_raw_vol(x@sauce)
+  prt_raw_vol(x@oil)
+  prt_raw_vol(x@liqueur)
+   
+  prt_raw_vol(x@nut)
+  prt_raw_vol(x@blackSesame) # to consolidate with @nut ?
+  prt_raw_vol(x@grain)
+  prt_raw_vol(x@bean)
   
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@egg)], x@egg, fmt_pc(x@egg)) |> 
-    lapply(FUN = cli_text)
+  prt_raw_vol(x@fat)
+  prt_raw_vol(x@dairy)
+  prt_raw_vol(x@vegetable)
   
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@fruit)], x@fruit, fmt_pc(x@fruit)) |> 
-    lapply(FUN = cli_text)
+  prt_raw_vol(x@spice)
+  prt_raw_vol(x@matcha)
+  prt_raw_vol(x@coffee)
+  prt_raw_vol(x@cocoa)
   
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@tea)], x@tea, fmt_pc(x@tea)) |> 
-    lapply(FUN = cli_text)
+  prt_raw_vol(x@yeast)
   
-  sprintf(fmt = '%s %.0f grams %s\n', nm_[names(x@gelatin)], x@gelatin, fmt_pc(x@gelatin)) |> 
-    lapply(FUN = cli_text)
+  prt_raw_pc(x@egg)
+  prt_raw_pc(x@gelatin)
+  prt_raw_pc(x@tea)
   
-  sprintf(fmt = '%s %.1f grams %s\n', nm_[names(x@sugar)], x@sugar, fmt_vol(x@sugar)) |> 
-    lapply(FUN = cli_text)
+  prt_raw_vol(x@misc)
   
-  # ingredients without volumn info
-  no_vol_ <- c(
-    x@blackSesame
-  )
-  if (length(no_vol_)) sprintf(fmt = '%s %.0f grams\n', nm_[names(no_vol_)], no_vol_) |> lapply(FUN = cli_text)
   
-  # ingredients with volumn info
+  
   has_vol <- c(
-    x@spice,
-    x@matcha, x@coffee, x@cocoa, 
     x@vanilla,
     x@salt, x@msg, x@NaHCO3, x@Na2CO3, x@bakingPowder,
-    x@yeast,
-    x@sauce, x@liqueur, x@oil, 
     x@syrup
   )
   if (length(has_vol)) sprintf(fmt = '%s %.1f grams %s\n', nm_[names(has_vol)], has_vol, fmt_vol(has_vol)) |> lapply(FUN = cli_text)
@@ -385,13 +333,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     meatName(animal = 'beef') |>
     meatName(animal = 'lamb') |>
     meatName(animal = 'chicken') |>
-    addname1(which = 'shrimp', nm = 'Kirkland_shrimp_31_40') |>
-    addname1(which = 'soybean', nm = 'Laura_soybean') |>
-    addname1(which = 'chickpea', nm = 'Palouse_chickpea') |>
-    addname1(which = 'adzukibean', nm = 'HaiTai_adzuki') |>
-    addname1(which = 'mungbean', nm = 'HaiTai_mung') |>
-    addname1(which = 'redKidneyBean', nm = 'redKidneyBean') |>
-    addname1(which = 'cashew', nm = 'Kirkland_cashew_organic') |>
+    addname1(which = 'shrimp', nm = 'Kirkland_shrimp_c31') |>
     addname1(which = 'nut')
   
   for (i in names(getSlots(x = 'raw.'))) {
@@ -404,10 +346,5 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   return(x)
   
 })
-
-
-
-
-
 
 

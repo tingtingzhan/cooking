@@ -191,7 +191,7 @@ if (FALSE) {
   carbohydrate <- \(x) switch(
     class(x),
     soymilk = .007,
-    beanPaste = if (length(x@redKidneyBean)) .125 else .15,
+    beanPaste = if (length(x['_redkidneybean$'])) .125 else .15,
     NA_real_)
   
   fat <- \(x) switch(
@@ -487,7 +487,7 @@ if (FALSE) {
     sundae = if (length(x@matcha)) {
       .6
     } else NA_real_,
-    beanPaste = if (length(x@redKidneyBean)) .66 else .6,
+    beanPaste = if (length(x['_redkidneybean$'])) .66 else .6,
     shrimpfillCantonese =, shrimpfill_garlicHerb = .6, 
     beeffillLeeKumKee = .6,
     meatmash = if (length(x@shrimp)) .7 else NA_real_,

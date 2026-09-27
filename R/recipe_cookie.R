@@ -108,7 +108,7 @@ adzukiBean_cookie <- \() new(
   # raw taste too strong. try cook powdered adzukiBean in butter
   Class = 'cookie',
   # note (to remove; use food processor) = 'Simmer butter and powdered bean over stove',
-  adzukibean = 240,
+  bean = c(HaiTai_adzukibean = 240),
   # flour = c(Wegmans_breadFlr = 220), # dont need to be this strong
   flour = c(Wegmans_breadFlr = 100+60), # try.   Cooked adzukiBean+butter needs less flour
   sugar = 124, 
@@ -121,7 +121,7 @@ adzukiBean_cookie <- \() new(
 #' @export
 mungBean_cookie <- \() new(Class = 'cookie', adzukiBean_cookie(),
   url = 'https://m.fx361.com/news/2018/0324/3299096.html',
-  mungbean = 240)
+  bean = c(HaiTai_mungbean = 240))
 
 
 

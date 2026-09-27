@@ -985,6 +985,11 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
 
 
 
+#' @export
+names.nutrition <- \(x) {
+  c(x@alias, x@name, x@brand) |> 
+    paste(collapse = ' ')
+}
 
 
 

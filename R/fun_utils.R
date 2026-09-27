@@ -321,3 +321,35 @@ fmt_pc <- \(x) {
 }
 
 
+
+
+prt_raw_vol <- \(x) {
+  
+  nm <- x |> 
+    names() |> # .Primitive
+    vapply(FUN = \(i) {
+      eval(call(name = i)) |>
+        names.nutrition()
+    }, FUN.VALUE = '')
+  
+  sprintf(fmt = '%s %.0f grams %s\n', nm, x, fmt_vol(x)) |> 
+    lapply(FUN = cli_text)
+  
+}
+
+
+prt_raw_pc <- \(x) {
+  
+  nm <- x |> 
+    names() |> # .Primitive
+    vapply(FUN = \(i) {
+      eval(call(name = i)) |>
+        names.nutrition()
+    }, FUN.VALUE = '')
+  
+  sprintf(fmt = '%s %.0f grams %s\n', nm, x, fmt_pc(x)) |> 
+    lapply(FUN = cli_text)
+  
+}
+
+

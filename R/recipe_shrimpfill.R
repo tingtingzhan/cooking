@@ -3,7 +3,7 @@
 
 setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
   class2 = '\u867e\U1f990\u8089\u9985',
-  shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
+  shrimp = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
   tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
@@ -76,7 +76,7 @@ shrimpfillCantonese_Argentine <- \() new(
 
 shrimpfillCantonese_OLD <- \() new(
   Class = 'recipe', 
-  shrimp = c(Kirkland_shrimp_31_40 = 850), # drained from 2lb package
+  shrimp = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
   pork = c(fat = 200),
   starch_tsp = c(Wegmans_corn_starch = 7),
   oil_tsp = c(Kadoya_sesame_oil = 3),

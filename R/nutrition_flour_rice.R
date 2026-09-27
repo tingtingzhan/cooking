@@ -13,7 +13,8 @@ Erawan_riceFlr <- \() new(
 
 Erawan_glutinousRiceFlr <- \() new(
   Class = 'nutrition', 
-  brand = c(style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours')),
+  brand = style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours') |>
+    c(),
   name = 'Glutinous Rice\U1f33e Flour', alias = '\u6c34\u78e8\u7cef\u7c73\u7c89',
   servingGram = 30, 
   calorie = 110,

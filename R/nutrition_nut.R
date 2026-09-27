@@ -55,7 +55,7 @@ Kirkland_cashew <- \() new(
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, fat = 14, sugar = 2, protein = 5)
 
-Kirkland_cashew_organic <- \() new(
+Kirkland_organic_cashew <- \() new(
   Class = 'nutrition',  costco = '4000064056',
   alias = '\u8170\u679c', name = 'Organic Cashews', # unsalted unroasted
   usd = 14.99/(2.5*454)*28,

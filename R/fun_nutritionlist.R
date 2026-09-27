@@ -18,14 +18,18 @@ nutritionlist <- \(...) {
     stop()
   } 
   
-  names(z) <- z |>
-    vapply(FUN = \(i) {
-      c(i@alias, i@name, i@brand) |> 
-        paste(collapse = ' ')
-    }, FUN.VALUE = '')
-
   class(z) <- c('nutritionlist', 'listof', 'list') 
+  
+  names(z) <- names(z) # dispatch to [names.nutritionlist]
   return(z)
+}
+
+
+
+#' @export
+names.nutritionlist <- function(x) {
+  x |>
+    vapply(FUN = names.nutrition, FUN.VALUE = '')
 }
   
 

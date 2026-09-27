@@ -14,7 +14,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   nutri <- grams_nm |> 
     lapply(FUN = \(x) {
-      call(name = x) |> eval()
+      eval(call(name = x))
     }) |>
     do.call(what = nutritionlist, args = _)
   
@@ -119,7 +119,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   nutri <- grams_nm |> 
     lapply(FUN = \(x) {
-      call(name = x) |> eval()
+      eval(call(name = x))
     }) |>
     do.call(what = nutritionlist, args = _)
   

@@ -17,7 +17,7 @@ setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
 #' @export
 soymilk <- \() new(
   Class = 'soymilk',
-  soybean = 22, # 1/2 Joyoung small cup
+  bean = c(Laura_soybean = 22), # 1/2 Joyoung small cup
   flour = c(Erawan_glutinousRiceFlr = 5),
   water = 590 - 22 - 5, # confirmed!!
   tool = list(JoyoungDJ06M_soymilk()), 
@@ -28,7 +28,7 @@ soymilk <- \() new(
 #' @export
 soymilk_DJ13U <- \() new(
   Class = 'soymilk',
-  soybean = 45, # 1 Joyoung small cup
+  bean = c(Laura_soybean = 45), # 1 Joyoung small cup
   water = 1300 - 45, # confirmed!!
   tool = list(JoyoungDJ13U_soymilk()),
   review = 'soymilk without thickener, as my smoothie base',
@@ -40,16 +40,18 @@ soymilk_DJ13U <- \() new(
 
 chickpeaMilk <- \() new(
   Class = 'soymilk',
-  soybean = 45, # 1 Joyoung small cup
-  chickpea = 45/2, # 1/2 Joyoung small cup
+  bean = c(
+    Laura_soybean = 45, # 1 Joyoung small cup
+    Palouse_chickpea = 45/2 # 1/2 Joyoung small cup
+  ),
   water = 1300 - 45 - 22.5, 
   cons = 'I dont like this taste',
   tool = list(JoyoungDJ13U_soymilk()))
 
 cashewMilk <- \() new(
   Class = 'soymilk',
-  soybean = 45, # 1 Joyoung small cup
-  cashew = 80, # confirmed!
+  bean = c(Laura_soybean = 45), # 1 Joyoung small cup
+  nut = c(Kirkland_organic_cashew = 80), # confirmed!
   water = 1300-45-80, # confirmed!
   tool = list(JoyoungDJ13U_soymilk()),
   cons = 'too fat..')
@@ -57,8 +59,10 @@ cashewMilk <- \() new(
 
 mungMilk_thick <- \() new(
   Class = 'soymilk',
-  mungbean = 130, # soaked mung bean (skin removed): 213
-  soybean = 45,
+  bean = c(
+    Laura_soybean = 45,
+    HaiTai_mungbean = 130 # soaked mung bean (skin removed): 213
+  ),
   water = 1330 - 130 - 45,
   tool = list(JoyoungDJ13U_soymilk(
     waterLost = 25  # (4169+30) - 4176
@@ -71,7 +75,7 @@ mungMilk_thick <- \() new(
 
 corn_soymilk <- \() new(
   Class = 'soymilk', 
-  soybean = 100, # weigh and confirm
+  bean = c(Laura_soybean = 100), # weigh and confirm
   puree = c(Kirkland_yellowCorn = 100), # weigh and confirm
   water = 1100, # weigh and confirm
   #note (legacy) = c('One (1) measure cup of soy bean',
@@ -80,7 +84,7 @@ corn_soymilk <- \() new(
 
 veggie_soymilk <- \() new(
   Class = 'soymilk', alias = '\u852c\u83dc\u8c46\u6d46',
-  soybean = 100, # weigh and confirm
+  bean = c(Laura_soybean = 100), # weigh and confirm
   puree = c(Kirkland_mixedVeggies = 123), # weigh and confirm
   water = 1100, # weigh and confirm
   pros = 'Nice!')
