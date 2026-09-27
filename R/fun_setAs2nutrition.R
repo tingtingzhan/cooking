@@ -15,24 +15,24 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
     do.call(what = nutritionlist, args = _) |>
     summary.nutritionlist()
   
-  tmp <- (t.default(grams) %*% info)[1, , drop = TRUE]
+  z <- crossprod(grams, info)[1, , drop = TRUE]
   
   new(
     Class = 'nutrition',  
     name = character(),
     servingGram = sum(grams),
-    usd = unname(tmp['usd']),
-    calorie = tmp['calorie'],
-    carbohydrate = tmp['carbohydrate'],
-    fiber = tmp['fiber'],
-    sugar = tmp['sugar'],
-    addedSugar = max(0, tmp['addedSugar']),
-    alcohol = tmp['alcohol'],
-    sodium = tmp['sodium'],
-    fat = tmp['fat'],
-    cholesterol = tmp['cholesterol'],
-    protein = tmp['protein'],
-    water = tmp['water']
+    usd = unname(z['usd']),
+    calorie = z['calorie'],
+    carbohydrate = z['carbohydrate'],
+    fiber = z['fiber'],
+    sugar = z['sugar'],
+    addedSugar = max(0, z['addedSugar']),
+    alcohol = z['alcohol'],
+    sodium = z['sodium'],
+    fat = z['fat'],
+    cholesterol = z['cholesterol'],
+    protein = z['protein'],
+    water = z['water']
   )
   
 })
@@ -64,6 +64,9 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   ret@sugar <- ret@sugar - sum(x@sugarLost)
   ret@addedSugar <- max(0, ret@addedSugar - sum(x@sugarLost))
   ret@water <- ret@water - waterLost
+  
+  # next: return here!!!
+  
   
   flour <- sum(x@flour)
   pastryFlr <- sum(x['_pastryFlr$'])
@@ -284,7 +287,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     attr(ret, which = 'perBreadFlr') <- if (breadFlr) new(
       Class = 'per', per = 'Bread\U1f35e Flour', equiv = list(
         puree = new(Class = 'equiv', current = puree / breadFlr),
-        # 'water+' = new(Class = 'equiv', current = tmp['addedWater'] / breadFlr, target = devrecipe$addedWater2breadFlr(x), margin = 1.01),
+        # 'water+' = new(Class = 'equiv', current = z['addedWater'] / breadFlr, target = devrecipe$addedWater2breadFlr(x), margin = 1.01),
         gelatin = new(Class = 'equiv', current = x@gelatin / breadFlr),
         'starch+' = new(Class = 'equiv', current = sum(starch) / breadFlr),
         fat = new(Class = 'equiv', current = ret@fat / breadFlr, target = devrecipe$fat2breadFlr(x), margin = 1.05),
@@ -370,21 +373,12 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   attr(ret, which = 'perCreamCheese') <- if (length(x['_creamCheese$'])) new(
     Class = 'per', per = 'Cream Cheese', equiv = list(
-      # 'water+' = new(Class = 'equiv', current = tmp['addedWater']/sum(x['_creamCheese$']), target = devrecipe$addedWater2creamcheese(x)),
+      # 'water+' = new(Class = 'equiv', current = z['addedWater']/sum(x['_creamCheese$']), target = devrecipe$addedWater2creamcheese(x)),
       fiber = new(Class = 'equiv', current = ret@fiber/sum(x['_creamCheese$'])), 
       'starch+' = new(Class = 'equiv', current = starch/sum(x['_creamCheese$'])), 
       '\U0001f95ayolk' = new(Class = 'equiv', current = x['^eggYolk$']/sum(x['_creamCheese$'])),
       '\U0001f95awhite' = new(Class = 'equiv', current = x['^eggWhite$']/sum(x['_creamCheese$']))
     ))
-  
-  #attr(ret, which = 'info') <- info
-  
-  #review <- attr(info, which = 'review')
-  #attr(ret, which = 'review') <- review[names(review) == class(x)]
-  
-  #machine <- attr(info, which = 'machine')
-  #attr(ret, which = 'machine') <- lapply(machine, FUN = \(ifun) ifun(class(x))) |> unlist(use.names = FALSE)
-  #attr(ret, which = 'machine') <- machine[names(machine) == class(x)]
   
   return(ret)
   
