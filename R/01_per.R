@@ -6,56 +6,35 @@
 #' 
 #' @slot per \link[base]{character} scalar
 #' 
-#' @slot equiv a \link[base]{list} of \link[equiv4]{equiv-class} objects
+#' @slot equiv \link[equiv4]{equiv-class} object
 #' 
 # @name per-class
 #' @importClassesFrom equiv4 equiv
 #' @export
 setClass(Class = 'per', slots = c(
   per = 'character',
-  equiv = 'list'
+  # equiv = 'list' # was
+  equiv = 'equiv'
 ))
 
-
-
-#' @importFrom stats setNames
-#' @export
-format.per <- \(x, ...) {
-  
-  nm <- x@equiv |>
-    names()
-  fmt_equiv <- x@equiv |>
-    lapply(FUN = format) |> # equiv4:::format.equiv
-    setNames(nm = nm)
-  
-  o <- order(nm)
-  ret <- fmt_equiv[o] |>
-    do.call(what = cbind, args = _)
-  if (all(ret[2L,] == '-')) {
-    ret <- ret[1L, , drop = FALSE]
-  } # else do nothing
-  return(ret)
-  
-}
 
 
 
 #' @rdname per-class
 #' @param object see **Usage**
-#' @importFrom charwidth row_fmt_matrix
-# @importFrom cli cli_verbatim
 #' @export
 setMethod(f = show, signature = 'per', definition = \(object) {
-  ret <- format.per(object)
-  if (!length(ret)) return(invisible())
+  
+  fmt <- object@equiv |>
+    format() # equiv4:::format.equiv
+  if (!length(fmt)) return(invisible())
+  
   object@per |> 
     sprintf(fmt = '\u214c %s\n') |> 
     bg_br_yellow() |> style_bold() |>
     cat()
-  ret |>
-    row_fmt_matrix() |>
-    cat(sep = '\n')
-    # cli_verbatim() # sep by '\n' by default
+  object@equiv |>
+    show()
   cat('\n')
 })
 
@@ -73,8 +52,7 @@ print.perlist <- \(x, ...) {
   
   y0 <- x |>
     lapply(FUN = \(i) { # (i = x[[1L]])
-      i@equiv |>
-        vapply(FUN = slot, name = 'current', FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+      i@equiv@current
     })
   if (all(!lengths(y0))) stop('wont happen')
   y1 <- do.call(rbind, args = y0)

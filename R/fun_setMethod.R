@@ -116,9 +116,9 @@ setMethod(f = '%in%', signature = c(x = 'spice', table = 'raw.'), definition = \
 #' @param x,i see **Usage**
 #' 
 #' @name S4subset
-#' @aliases [,recipe,nutrition-method
+#' @aliases [,raw.,nutrition-method
 #' @export
-setMethod(f = '[', signature = c(x = 'recipe', i = 'nutrition'), definition = \(x, i) {
+setMethod(f = '[', signature = c(x = 'raw.', i = 'nutrition'), definition = \(x, i) {
   
   .Defunct(msg = 'great, but not used currently')
   inm <- i@call |>
@@ -131,9 +131,9 @@ setMethod(f = '[', signature = c(x = 'recipe', i = 'nutrition'), definition = \(
 
 
 #' @rdname S4subset
-#' @aliases [,recipe,character-method
+#' @aliases [,raw.,character-method
 #' @export
-setMethod(f = '[', signature = c(x = 'recipe', i = 'character'), definition = \(x, i) {
+setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x, i) {
   
   if (any(id <- grepl(pattern = i, x = names(x@spice)))) return(sum(x@spice[id]))
   if (any(id <- grepl(pattern = i, x = names(x@oil)))) return(sum(x@oil[id]))

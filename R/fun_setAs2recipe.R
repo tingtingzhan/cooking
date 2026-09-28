@@ -1,4 +1,5 @@
 
+#' @importFrom stats setNames
 setAs(from = 'nutrition', to = 'recipe', def = \(from) {
   
   x <- from; from <- NULL

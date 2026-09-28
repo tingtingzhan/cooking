@@ -2,7 +2,6 @@
 
 S3method(as.double,nutrition)
 S3method(as.double,raw.)
-S3method(format,per)
 S3method(format,spice)
 S3method(frappe,"function")
 S3method(frappe,drinkmix)

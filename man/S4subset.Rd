@@ -2,13 +2,13 @@
 % Please edit documentation in R/fun_setMethod.R
 \name{S4subset}
 \alias{S4subset}
-\alias{[,recipe,nutrition-method}
-\alias{[,recipe,character-method}
+\alias{[,raw.,nutrition-method}
+\alias{[,raw.,character-method}
 \title{\code{S4} subset}
 \usage{
-\S4method{[}{recipe,nutrition}(x, i)
+\S4method{[}{raw.,nutrition}(x, i)
 
-\S4method{[}{recipe,character}(x, i)
+\S4method{[}{raw.,character}(x, i)
 }
 \arguments{
 \item{x, i}{see \strong{Usage}}

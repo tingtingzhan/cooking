@@ -23,6 +23,7 @@ nutritionlist <- \(...) {
   
   class(z) <- c('nutritionlist', 'listof', 'list') 
   return(z)
+  
 }
 
 
@@ -35,7 +36,7 @@ print.nutritionlist <- \(x, ...) {
   'Nutrition\n' |> bg_br_yellow() |> cat()
   x |>
     summary.nutritionlist() |>
-    print()
+    print.summary.nutritionlist()
   
   for (which in c(
     'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
@@ -46,6 +47,9 @@ print.nutritionlist <- \(x, ...) {
       lapply(FUN = attr, which = which, exact = TRUE) |>
       print.perlist()
   }
+  
+  # new per-raw!!!
+  
   
   return(invisible())
   
