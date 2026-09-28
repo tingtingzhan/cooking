@@ -65,10 +65,13 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   # next: return here!!!
   
-  mix0_wheat_flour <- c(flour = sum(x['_allPurposeFlr$']), pastry = sum(x['_pastryFlr$']), bread = sum(x['_breadFlr$']), wheat = sum(x['_wheatFlr$']))
-  mix_wheat_flour <- sum(mix0_wheat_flour)
+  mixWheatFlr <- c(
+    sum(x['_allPurposeFlr$']), 
+    sum(x['_pastryFlr$']), 
+    sum(x['_breadFlr$']), 
+    sum(x['_wheatFlr$'])
+  )
 
-  
   devrecipe <- getOption('devrecipe')
   
   # attr(ret, which = 'perRaw') # now in setAs(from = 'raw.', to = 'per')
@@ -131,22 +134,20 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     ) / ret@servingGram) 
   )
   
-  if (sum(x['_cornmeal$'])) {
-    
-    attr(ret, which = 'perCornmeal') <- new(
-      Class = 'per', 
-      per = 'Cornmeal\U1f33d', 
-      equiv = new(Class = 'equiv', current = c(
-        water = x@water |> sum(), # depends on `flour` as well
-        flour = x['_allPurposeFlr$'] |> sum(), #target = devrecipe$flour2cornmeal(x)),
-        '\U0001f35eflour' = x['_breadFlr$'] |> sum(), #target = devrecipe$breadFlr2cornmeal(x)),
-        '\U0001f370flour' = x['_pastryFlr$'] |> sum(), #target = devrecipe$pastryFlr2cornmeal(x)),
-        '\U0001f95ayolk' = x['^eggYolk$'] |> sum(),
-        '\U0001f95awhite' = x['^eggWhite$'] |> sum()
-        ) / sum(x['_cornmeal$']))
-      )
-    
-  } else if (sum(mix0_wheat_flour > 0) > 1L) {
+  attr(ret, which = 'perCornmeal') <- new(
+    Class = 'per', 
+    per = 'Cornmeal\U1f33d', 
+    equiv = new(Class = 'equiv', current = c(
+      water = x@water |> sum(), # depends on `flour` as well
+      flour = x['_allPurposeFlr$'] |> sum(), #target = devrecipe$flour2cornmeal(x)),
+      '\U0001f35eflour' = x['_breadFlr$'] |> sum(), #target = devrecipe$breadFlr2cornmeal(x)),
+      '\U0001f370flour' = x['_pastryFlr$'] |> sum(), #target = devrecipe$pastryFlr2cornmeal(x)),
+      '\U0001f95ayolk' = x['^eggYolk$'] |> sum(),
+      '\U0001f95awhite' = x['^eggWhite$'] |> sum()
+    ) / sum(x['_cornmeal$']))
+  ) 
+  
+  if (sum(mixWheatFlr > 0) > 1L) {
     
     attr(ret, which = 'perMixFlr') <- new(
       Class = 'per', 
@@ -170,12 +171,12 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
         cocoa = x@cocoa |> sum(),
         acai = x['_acai_pulv$'] |> sum(),
         coffee = x@coffee |> sum()
-      ) / mix_wheat_flour)
+      ) / sum(mixWheatFlr))
     )
     
   } else {
     
-    attr(ret, which = 'perAllPurposeFlr') <- if (sum(x['_allPurposeFlr$']) && !inherits(x, what = 'cheesecake')) new(
+    attr(ret, which = 'perAllPurposeFlr') <- if (!inherits(x, what = 'cheesecake')) new(
       Class = 'per', 
       per = 'All-Purpose\U1f370\U1f35e Flour', 
       equiv = new(Class = 'equiv', current = c(
@@ -201,7 +202,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       ))
     
     
-    attr(ret, which = 'perPastryFlr') <- if (sum(x['_pastryFlr$'])) new(
+    attr(ret, which = 'perPastryFlr') <- new(
       Class = 'per', 
       per = 'Pastry\U1f370 Flour', 
       equiv = new(Class = 'equiv', current = c(
@@ -230,7 +231,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       ))
     
     
-    attr(ret, which = 'perBreadFlr') <- if (sum(x['_breadFlr$'])) new(
+    attr(ret, which = 'perBreadFlr') <- new(
       Class = 'per', 
       per = 'Bread\U1f35e Flour', 
       equiv = new(Class = 'equiv', current = c(
@@ -258,7 +259,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     
   }
   
-  attr(ret, which = 'perGlutenFreeFlr') <- if (sum(x['_gluten0Flr$']) & !sum(x['_breadFlr$']) & !sum(x['_pastryFlr$']) & !sum(x['_allPurposeFlr$'])) new(
+  attr(ret, which = 'perGlutenFreeFlr') <- if (!sum(x['_breadFlr$']) & !sum(x['_pastryFlr$']) & !sum(x['_allPurposeFlr$'])) new(
     Class = 'per', 
     per = 'Gluten-Free Flour', 
     equiv = new(Class = 'equiv', current = c(
@@ -284,7 +285,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     ) / sum(x['_gluten0Flr$'])
     ))
   
-  attr(ret, which = 'perRiceFlr') <- if (sum(x['_riceFlr$|_glutinousRiceFlr$'])) new(
+  attr(ret, which = 'perRiceFlr') <- new(
     Class = 'per', 
     per = 'Glutinous+Rice\U1f33e Flour', 
     equiv = new(Class = 'equiv', current = c(
@@ -302,7 +303,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     ) / sum(x['_riceFlr$|_glutinousRiceFlr$'])
   ))
   
-  attr(ret, which = 'perCocoa') <- if (length(x@cocoa) && !inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
+  attr(ret, which = 'perCocoa') <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
     Class = 'per', 
     per = 'Alkalized Cocoa', 
     equiv = new(Class = 'equiv', current = c(
@@ -318,7 +319,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     ))
   
   
-  attr(ret, which = 'perTea') <- if (length(x@tea)) new(
+  attr(ret, which = 'perTea') <- new(
     Class = 'per', 
     per = 'Tea\U1f343', 
     equiv = new(Class = 'equiv', current = c(
@@ -328,7 +329,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     ) / x@tea
     ))
   
-  attr(ret, which = 'perCreamCheese') <- if (length(x['_creamCheese$'])) new(
+  attr(ret, which = 'perCreamCheese') <- new(
     Class = 'per', 
     per = 'Cream Cheese', 
     equiv = new(Class = 'equiv', current = c(
