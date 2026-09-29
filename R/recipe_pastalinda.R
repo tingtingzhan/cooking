@@ -157,8 +157,7 @@ pumpkin_noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', 
   flour = c(KingArthur_breadFlr = 500),
   puree = c(Libbys_pumpkin = 270), # try with fresh can
-  date = as.Date('2024-06-25'), pros = '280g for opened can'
-  )
+  date = as.Date('2024-06-25'))
 
 
 
