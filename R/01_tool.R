@@ -115,8 +115,11 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     sprintf(fmt = ' \u21ac %s\n') |> 
     cat(sep = '')
   
-  x@program |> 
-    sprintf(fmt = ' \u2726 %s\n') |> 
+  sprintf(
+    fmt = ' \u2726 %s %s\n',
+    x@program,
+    (names(x@program) %||% '') |> bg_br_yellow()
+  ) |> 
     cat(sep = '')
   
   x@attachment |> 

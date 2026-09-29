@@ -54,6 +54,11 @@ setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
 #' # wrapper recipes
 #' wrapperlinda()
 #' pumpkin_wrapperlinda()
+#' 
+#' nutritionlist(
+#'  pumpkin_wrapperlinda(),
+#'  pumpkin_noodlelinda()
+#' )
 #' @aliases wrapperlinda-class
 #' @export
 setClass(Class = 'wrapperlinda', contains = 'pastalinda', prototype = prototype(
@@ -121,12 +126,11 @@ pumpkin_wrapperlinda <- \() new(
 setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
   class2 = '\u5e7c\u9762\U1f35d',
   portion = c(
-    '\u9762\u6761\U1f35d\U1f35c noodle' = 200
+    '\u51c9\u9762\U1f35d noodle' = 200
   ),
   tool = list(Pastalinda260(
     treatment = 'Roll chilled-and-rested dough directly',
-    program = c('Thickness 8', 'Cut 0.1inch/2.5mm'),
-    cooling = '(optional) Soak cooked noodle in cold water for 30sec'
+    program = c('\u51c9\u9762\U1f35d noodle' = 'Thickness 8; Cut 2.5mm')
   ))
 ))
 
@@ -154,7 +158,8 @@ pumpkin_noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', 
   flour = c(KingArthur_breadFlr = 500),
   puree = c(Libbys_pumpkin = 270),
-  date = as.Date('2024-06-25'))
+  date = as.Date('2024-06-25'),
+  pros = 'perfect wetness')
 
 
 

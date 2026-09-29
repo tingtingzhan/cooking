@@ -421,7 +421,8 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     'RiceFlr', 'AllPurposeFlr', 'PastryFlr', 'BreadFlr', 'MixFlr', 
     'GlutenFreeFlr', 'Cornmeal', 
     'Cocoa', 'Tea', 'CreamCheese',
-    'ServingTexture', 'ServingFlavor'#, 'Raw'
+    # 'ServingTexture', 'ServingFlavor'#, 'Raw'
+    'Serving'
   ))]
   has_attr_dx <- (lengths(attr_dx) > 0L)
   attr_dx[has_attr_dx] |> 

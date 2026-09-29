@@ -127,8 +127,8 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     coffee = x@coffee |> sum(), 
     
     flour = x['_allPurposeFlr$'] |> sum(),
-    '\U0001f35eflour' = x['_breadFlr$'] |> sum(), 
-    '\U0001f370flour' = x['_pastryFlr$'] |> sum(), 
+    '\U0001f35eflr' = x['_breadFlr$'] |> sum(), 
+    '\U0001f370flr' = x['_pastryFlr$'] |> sum(), 
     '\U0001f95ayolk' = x['^eggYolk$'] |> sum(),
     '\U0001f95awhite' = x['^eggWhite$'] |> sum(),
     '\U1f33d' = x['_cornmeal$'] |> sum(),
@@ -139,22 +139,27 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   
   # attr(nutri, which = 'perRaw') # now in setAs(from = 'raw.', to = 'per')
   
-  attr(nutri, which = 'perServingTexture') <- new(
+  #attr(nutri, which = 'perServingTexture') <- new(
+  #  Class = 'per', 
+  #  per = paste0('Serving; ', col_red('Texture Profile')), 
+  #  equiv = new(Class = 'equiv', current = z / nutri@servingGram, target = c(
+  #    water = devrecipe$water(x),
+  #    #carb = devrecipe$carbohydrate(x),
+  #    fat = devrecipe$fat(x), 
+  #    bkPwd = devrecipe$bakingPowder(x),
+  #    'starch+' = devrecipe$starch(x)
+  #  )))
+  
+  
+  attr(nutri, which = 'perServing') <- new(
     Class = 'per', 
-    per = paste0('Serving; ', col_red('Texture Profile')), 
+    per = 'Serving', 
     equiv = new(Class = 'equiv', current = z / nutri@servingGram, target = c(
       water = devrecipe$water(x),
       #carb = devrecipe$carbohydrate(x),
       fat = devrecipe$fat(x), 
       bkPwd = devrecipe$bakingPowder(x),
-      'starch+' = devrecipe$starch(x)
-    )))
-  
-  
-  attr(nutri, which = 'perServingFlavor') <- new(
-    Class = 'per', 
-    per = paste0('Serving; ', col_red('Flavor Profile')), 
-    equiv = new(Class = 'equiv', current = z / nutri@servingGram, target = c(
+      'starch+' = devrecipe$starch(x),
       alcohol = devrecipe$alcohol(x),
       sugar = devrecipe$sugar(x), 
       'sugar+' = devrecipe$addedSugar(x),
@@ -181,8 +186,8 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     per = 'Cornmeal\U1f33d', 
     equiv = new(Class = 'equiv', current = z / sum(x['_cornmeal$']), target = c(
       flour = devrecipe$flour2cornmeal(x),
-      '\U0001f35eflour' = devrecipe$breadFlr2cornmeal(x),
-      '\U0001f370flour' = devrecipe$pastryFlr2cornmeal(x)
+      '\U0001f35eflr' = devrecipe$breadFlr2cornmeal(x),
+      '\U0001f370flr' = devrecipe$pastryFlr2cornmeal(x)
     ))) 
   
   if (sum(mixWheatFlr > 0) > 1L) {

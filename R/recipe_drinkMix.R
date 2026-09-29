@@ -171,13 +171,13 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   hot <- hotdrink(object) # 2-cup hot water, or shaved ice
   #nutri_ <- nutrition(hot)
   nutri_ <- hot |> as(Class = 'nutrition')
-  servingFlv <- attr(nutri_, which = 'perServingFlavor', exact = TRUE)
-  servingFlv@per <- sprintf(
+  z <- attr(nutri_, which = 'perServing', exact = TRUE)
+  z@per <- sprintf(
     fmt = '%s + %.0fg Water, US\U1f4b5 %.2f', 
-    servingFlv@per, 
+    z@per, 
     sum(hot@water, hot@water80, hot@water90, hot@water95),
     nutri_@usd)
-  print(servingFlv)
+  print(z)
 })
 
 

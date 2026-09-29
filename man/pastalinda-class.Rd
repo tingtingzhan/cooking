@@ -29,4 +29,9 @@ Maximum wheat:bread flour 2:3.
 # wrapper recipes
 wrapperlinda()
 pumpkin_wrapperlinda()
+
+nutritionlist(
+ pumpkin_wrapperlinda(),
+ pumpkin_noodlelinda()
+)
 }
