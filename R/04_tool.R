@@ -1,3 +1,13 @@
+
+Pastalinda260 <- \(...) new(
+  Class = 'tool',
+  name = 'https://www.pastalindausa.com/collections/pasta-maker-classic-260' |>
+    style_hyperlink(text = 'Pasta Maker Classic 260', url = _) |>
+    c(),
+  ...
+)
+
+
 SamsungME21R706BAT <- \(...) new(
   Class = 'tool',
   name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1 Ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa') |> c(),

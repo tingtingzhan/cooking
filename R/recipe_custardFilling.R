@@ -28,12 +28,10 @@
 #' pumpkin_custardFilling()
 #' apple_custardFilling()
 #' 
-#' 
-#' 
 #' # need to retry
 #' coconut_custardFilling()
 #' 
-#' yellowPeach_custardFilling()
+#' # yellowPeach_custardFilling() # why printing bug??
 #' date_custardFilling()
 #' 
 #' # vegetable filling with added sugar
@@ -48,7 +46,7 @@
 setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
   class2 = '\u5976\u9ec4\u9985',
   starch = c(ManSang_wheat_starch = 35),
-  egg_pc = 3,
+  egg_pc = c(eggYolk = 3, eggWhite = 3),
   portion = c(
     'mochi 10g wrapper \u9ebb\u85af10g\u76ae' = 5, 
     'mooncake 15g wrapper in 30g mold \u6708\u997c30g\u6a21\u5177' = 15,
@@ -204,7 +202,8 @@ mango_custardFilling <- \() new(
 #' @rdname custardFilling-class
 #' @export
 yellowPeach_custardFilling <- \() new(
-  Class = 'custardFilling', flavor = '\u9ec4\u6843\U1f351',
+  Class = 'custardFilling', 
+  flavor = '\u9ec4\u6843\U1f351',
   puree = c(Kirkland_peach = 525),
   dairy = c(Kerrygold_butter = 23),
   tool = list(JoyoungCJA9U_filling(
@@ -212,7 +211,8 @@ yellowPeach_custardFilling <- \() new(
     waterLost = 315, # confirmed!
     note = 'One (1) recipe calls for a full jar, after discarding syrup (contains added sugar)'
   )),
-  review = 'Lacks a signatrue flavor.  Try without discarding syrup!!!')
+  review = 'Lacks a signatrue flavor.  Try without discarding syrup!!!'
+  )
 
 
 #' @rdname custardFilling-class

@@ -189,11 +189,12 @@ if (FALSE) {
     } else .7,
     NA_real_)
   
-  carbohydrate <- \(x) switch(
-    class(x),
-    soymilk = .007,
-    beanPaste = if (length(x['_redkidneybean$'])) .125 else .15,
-    NA_real_)
+  #carbohydrate <- \(x) switch(
+  # # !!!! replace with `fiber`!
+  #  class(x),
+  #  soymilk = .007,
+  #  beanPaste = if (length(x['_redkidneybean$'])) .125 else .15,
+  #  NA_real_)
   
   fat <- \(x) switch(
     class(x), 
@@ -734,7 +735,7 @@ if (FALSE) {
     NA_real_)
   
   options(devrecipe = mget(c(
-    'carbohydrate',
+    # 'carbohydrate', # replace with `fiber` !!!
     'sugar', 
     'addedSugar', 'addedSugar2cocoa',
     'drymilk', 'drymilk2cocoa',

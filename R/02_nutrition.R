@@ -901,18 +901,22 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   cat('\n')
   x |>
     labels.nutrition() |>
-    cli_text()
-  cat('\n')
+    col_grey() |> style_bold() |> 
+    cat('\n\n')
   
   #cat('Nutrition Facts\n\n')
 
   sprintf(
-    fmt = 'Serving Size %s %s %s\n\n', 
+    fmt = 'Serving Size %s %s %s\nWater Equivalency %s\n\n', 
     x@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
     (x@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
-    fmt_vol(x = x@servingGram, nm = list(x))
+    fmt_vol(x = x@servingGram, nm = list(x)),
+    x@servingGram |>
+      cmod(e2 = consec::floz, n = 2L, tol = 1e-6) |>
+      make_ansi_style('seagreen')() |> 
+      style_bold()
   ) |> cat()
-    
+  
   if (length(x@cost_)) {
     if (is.na(x@date)) {
       x@cost_ |>
@@ -932,8 +936,11 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
   cat('\n')
   
-  sprintf(fmt = 'Water: %.4g grams %s\n', x@water, fmt_perc(x, 'water')) |> cat()
-  sprintf(fmt = 'Fat: %.4g grams %s\n', x@fat, fmt_perc(x, 'fat')) |> cat()
+  sprintf(fmt = 'Water: %.4g grams %s\n', x@water, fmt_perc(x, 'water')) |> 
+    cat()
+  
+  sprintf(fmt = 'Fat: %.4g grams %s\n', x@fat, fmt_perc(x, 'fat')) |> 
+    cat()
   
   if (length(x@cholesterol)) {
     if (x@cholesterol > 1) {
@@ -1020,25 +1027,33 @@ labels.nutrition <- \(object, ...) {
 }
 
 
-# named as [as.numeric.nutrition], then the generic [base::as.numeric] does *not* work!!
 #' @method as.double nutrition
 #' @export
-as.double.nutrition <- \(x, ...) {
-  c(
+as.double.nutrition <- \(
+  x, 
+  incl_calorie = FALSE, 
+  incl_usd = FALSE,
+  incl_carbohydrate = TRUE,
+  rel = TRUE,
+  ...
+) {
+  z <- c(
     # sum(numeric()) returns 0
-    calorie = sum(x@calorie),
-    water = sum(x@water),
-    carbohydrate = sum(x@carbohydrate),
-    fiber = sum(x@fiber),
-    sugar = sum(x@sugar), 
-    addedSugar = sum(x@addedSugar), 
-    fat = sum(x@fat), 
-    cholesterol = sum(x@cholesterol),
-    sodium = sum(x@sodium),
-    protein = sum(x@protein),
-    alcohol = sum(x@alcohol),
-    usd = sum(x@usd)
-  ) / x@servingGram
+    calorie = if (incl_calorie) x@calorie |> sum(),
+    usd = if (incl_usd) x@usd |> sum(),
+    water = x@water |> sum(),
+    carbohydrate = if (incl_carbohydrate) x@carbohydrate |> sum(), # `fiber` and `sugar` matters more
+    fiber = x@fiber |> sum(),
+    sugar = x@sugar |> sum(), 
+    addedSugar = x@addedSugar |> sum(), 
+    fat = x@fat |> sum(), 
+    cholesterol = x@cholesterol |> sum(),
+    sodium = x@sodium |> sum(),
+    protein = x@protein |> sum(),
+    alcohol = x@alcohol |> sum()
+  )
+  if (!rel) return(z)
+  return(z / x@servingGram)
 }
 
 

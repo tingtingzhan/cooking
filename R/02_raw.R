@@ -191,10 +191,8 @@ print.raw. <- \(x, ...) {
   x |> 
     labels() |> # [labels.raw.] or [labels.recipe]
     col_grey() |> style_bold() |> 
-    cat('\n')
-  
-  cat('\n')
-  
+    cat('\n\n')
+
   prt_raw_vol(x@homemade)
   
   prt_raw_vol(x@shrimp)
@@ -337,7 +335,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 })
 
 
-# named as [as.numeric.raw.], then the generic [base::as.numeric] does *not* work!!
 #' @method as.double raw.
 #' @export
 as.double.raw. <- \(x, ...) {

@@ -117,10 +117,11 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   x@program |> 
     sprintf(fmt = ' \u2726 %s\n') |> 
-    cat()
+    cat(sep = '')
+  
   x@attachment |> 
     sprintf(fmt = ' \U1f6e0 %s\n') |> 
-    cat()
+    cat(sep = '')
   
   txt_fahrenheit <- if (length(x@fahrenheit)) {
     x@fahrenheit |> 
@@ -137,19 +138,19 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     min_ <- x@minute
     if (is.null(names(min_))) names(min_) <- character(length = length(min_))
     sprintf(
-      fmt = ' %s %s \u23f0%s %s', 
+      fmt = ' %s %s \u23f0%s %s\n', 
       txt_fahrenheit, txt_celsius,
       min_ |> fmt_min() |> col_red() |> style_bold(),
       min_ |> names() |> bg_br_yellow()
     ) |> 
       gsub(pattern = '^ *|(?<= ) | *$', replacement = ' ', perl = TRUE) |>
-      cat(sep = '\n')
+      cat(sep = '')
   } else sprintf(
-    fmt = ' %s %s', 
+    fmt = ' %s %s\n', 
     txt_fahrenheit, txt_celsius
   ) |> 
     gsub(pattern = '^ *|(?<= ) | *$', replacement = ' ', perl = TRUE) |>
-    cat(sep = '\n')
+    cat(sep = '')
   
   x@operation |>
     gsub(pattern = '\n', replacement = '') |>
@@ -163,7 +164,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   x@waterLost |> 
     sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n') |> 
-    cat()
+    cat(sep = '')
   
   x@note |> 
     sprintf(fmt = ' \u2756 %s\n') |> 

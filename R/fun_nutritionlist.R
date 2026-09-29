@@ -35,7 +35,7 @@ print.nutritionlist <- \(x, ...) {
   cat('\n')
   'Nutrition\n' |> bg_br_yellow() |> cat()
   x |>
-    summary.nutritionlist() |>
+    summary.nutritionlist(...) |>
     print.summary.nutritionlist()
   
   for (which in c(
@@ -65,7 +65,7 @@ summary.nutritionlist <- \(object, ...) {
   
   ret <- object |> 
     lapply(FUN = as, Class = 'nutrition') |> # make double sure
-    lapply(FUN = as.double.nutrition) |>
+    lapply(FUN = as.double.nutrition, ...) |>
     do.call(what = rbind, args = _) # matrix
   
   class(ret) <- c('summary.nutritionlist', class(ret)) |>
@@ -86,9 +86,9 @@ print.summary.nutritionlist <- \(x, ...) {
   ret0 <- x
   attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
   
-  ret0 <- ret0[, colnames(ret0) %notin% c(
-    'calorie', 'usd'
-  )]
+  #ret0 <- ret0[, colnames(ret0) %notin% c(
+  #  'calorie', 'usd'
+  #)]
   
   ret <- ret0[, colMeans(ret0 == 0) != 1] |> 
     col_binlabel(FUN = max)

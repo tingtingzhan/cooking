@@ -413,25 +413,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   
   y <- x |>
     as(Class = 'nutrition')
-  
-  cat(
-    'Total', 
-    y@servingGram |> 
-      sprintf(fmt = '%.4g grams') |> 
-      make_ansi_style('purple')() |> 
-      style_bold(),
-    if (inherits(x, what = c('caffeCoconut', 'yuenyeungCoconut'))) { # use water density
-      y@servingGram |>
-        cmod(e2 = consec::floz, n = 2L, tol = 1e-6) |>
-        make_ansi_style('seagreen')() |> 
-        style_bold()
-    },
-    '\n\n'
-  )
-  
-  cat('US', y@usd |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), '\n')
-  if (length(y@calorie)) cat('Calories', y@calorie |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold(), '\n')
-  cat('\n')
+  show(y)
   
   attr_dx <- attributes(y)[paste0('per', c(
     'RiceFlr', 'AllPurposeFlr', 'PastryFlr', 'BreadFlr', 'MixFlr', 

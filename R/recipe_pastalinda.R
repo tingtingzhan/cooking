@@ -121,16 +121,13 @@ pumpkin_wrapperlinda <- \() new(
 setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
   class2 = '\u5e7c\u9762\U1f35d',
   portion = c(
-    '\u9762\u6761\U1f35d\U1f35c noodle' = 100
-  )#,
-  #instruction (legacy) = c(
-  #  '\u51c9\u9762\U1f35d Dry noodle: 
-  #  Pastalinda-9, 2.5mm cut.
-  #  Soak cooked noodle in cold water for 30sec. Drain.
-  #  Mix with dressing',
-  #  '\u6c64\u9762\U1f35c Noodle soup: 
-  #  2-sheet through Pastalinda-7.5, 2.5mm cut'
-  #)
+    '\u9762\u6761\U1f35d\U1f35c noodle' = 200
+  ),
+  tool = list(Pastalinda260(
+    treatment = 'Roll chilled-and-rested dough directly',
+    program = c('Thickness 8', '0.1inch/2.5mm cut'),
+    cooling = '(optional) Soak cooked noodle in cold water for 30sec'
+  ))
 ))
 
 
@@ -156,7 +153,7 @@ noodlelinda_KingArthur <- \() new(
 pumpkin_noodlelinda_KingArthur <- \() new(
   Class = 'noodlelinda', 
   flour = c(KingArthur_breadFlr = 500),
-  puree = c(Libbys_pumpkin = 270), # try with fresh can
+  puree = c(Libbys_pumpkin = 270),
   date = as.Date('2024-06-25'))
 
 
