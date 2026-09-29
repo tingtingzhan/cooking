@@ -123,40 +123,38 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     sprintf(fmt = ' \U1f6e0 %s\n') |> 
     cat(sep = '')
   
-  txt_fahrenheit <- if (length(x@fahrenheit)) {
-    x@fahrenheit |> 
-      sprintf(fmt = '\U1f321%.0f\u00b0F') |> 
-      col_blue()
-  } else ''
-  txt_celsius <- if (length(x@fahrenheit)) {
-    ((x@fahrenheit - 32) * 5/9) |> 
-      sprintf(fmt = '\U1f321%.0f\u00b0C') |>
-      col_magenta()
-  } else ''
-  
-  if (length(x@minute)) {
-    min_ <- x@minute
-    if (is.null(names(min_))) names(min_) <- character(length = length(min_))
-    sprintf(
-      fmt = ' %s %s \u23f0%s %s\n', 
-      txt_fahrenheit, txt_celsius,
-      min_ |> fmt_min() |> col_red() |> style_bold(),
-      min_ |> names() |> bg_br_yellow()
-    ) |> 
-      gsub(pattern = '^ *|(?<= ) | *$', replacement = ' ', perl = TRUE) |>
-      cat(sep = '')
-  } else sprintf(
-    fmt = ' %s %s\n', 
-    txt_fahrenheit, txt_celsius
+  temperature <- sprintf(
+    fmt = '\U1f321%.0f\u00b0F %.0f\u00b0C',
+    x@fahrenheit,
+    (x@fahrenheit - 32) * 5/9 # celsius
   ) |> 
-    gsub(pattern = '^ *|(?<= ) | *$', replacement = ' ', perl = TRUE) |>
-    cat(sep = '')
+    col_blue() |> style_bold()
+  
+  minute <- sprintf(
+    fmt = '\u23f0%s %s', 
+    x@minute |> fmt_min() |> col_red() |> style_bold(),
+    (names(x@minute) %||% '') |> bg_br_yellow()
+  ) |>
+    trimws()
+  
+  if (length(minute) && length(temperature)) {
+    sprintf(fmt = ' %s %s', temperature, minute) |> 
+      cat(sep = '\n')
+  } else if (length(minute)) {
+    sprintf(fmt = ' %s', minute) |> 
+      cat(sep = '\n')
+  } else if (length(temperature)) {
+    sprintf(fmt = ' %s', temperature) |> 
+      cat(sep = '\n')
+  } # else do nothing
   
   x@operation |>
     gsub(pattern = '\n', replacement = '') |>
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
     sprintf(fmt = ' \u21ac %s\n') |> 
     cat(sep = '')
+  
+  #cat('\n')
   
   x@cooling |> 
     sprintf(fmt = ' \u21ac %s\n') |> 

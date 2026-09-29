@@ -413,7 +413,9 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   
   y <- x |>
     as(Class = 'nutrition')
-  show(y)
+  
+  y |>
+    print.nutrition(print_label = FALSE)
   
   attr_dx <- attributes(y)[paste0('per', c(
     'RiceFlr', 'AllPurposeFlr', 'PastryFlr', 'BreadFlr', 'MixFlr', 

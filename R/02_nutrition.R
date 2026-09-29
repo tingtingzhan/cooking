@@ -894,18 +894,20 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 #' @rdname nutrition-class
 #' @param object see **Usage**
 #' @export
-setMethod(f = show, signature = 'nutrition', definition = \(object) {
-  
-  x <- object; object <- NULL
+setMethod(f = show, signature = 'nutrition', definition = \(object) print.nutrition(object))
+
+
+#' @export
+print.nutrition <- \(x, print_label = TRUE, ...) {
   
   cat('\n')
-  x |>
+  if (print_label) x |>
     labels.nutrition() |>
     col_grey() |> style_bold() |> 
     cat('\n\n')
   
   #cat('Nutrition Facts\n\n')
-
+  
   sprintf(
     fmt = 'Serving Size %s %s %s\nWater Equivalency %s\n\n', 
     x@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
@@ -994,15 +996,15 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
       sprintf(fmt = 'Contains %s\n\n') |> 
       cat()
   }
-
+  
   if (length(x@fdc)) {
     paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', x@fdc), text = 'FoodData Central')) |> 
-    cat(sep = '\n')
+      cat(sep = '\n')
   }
   
   if (length(x@pubchem)) {
     paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', x@pubchem), text = 'PubChem')) |> 
-    cat(sep = '\n')
+      cat(sep = '\n')
   }
   
   if (length(x@url)) cat(x@url, sep = '\n')
@@ -1015,8 +1017,8 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) {
   
   x@tool |>
     print.toollist()
-
-})
+  
+}
 
 
 

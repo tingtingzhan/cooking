@@ -125,7 +125,7 @@ setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
   ),
   tool = list(Pastalinda260(
     treatment = 'Roll chilled-and-rested dough directly',
-    program = c('Thickness 8', '0.1inch/2.5mm cut'),
+    program = c('Thickness 8', 'Cut 0.1inch/2.5mm'),
     cooling = '(optional) Soak cooked noodle in cold water for 30sec'
   ))
 ))
