@@ -131,11 +131,11 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     '\U0001f35eflr' = x['_breadFlr$'] |> sum(), 
     '\U0001f370flr' = x['_pastryFlr$'] |> sum(), 
     '\U0001f95ayolk' = x['^eggYolk$'] |> sum(),
-    '\U0001f95awhite' = x['^eggWhite$'] |> sum(),
+    # '\U0001f95awhite' = x['^eggWhite$'] |> sum(), # waterLost after cooking!!
     '\U1f33d' = x['_cornmeal$'] |> sum(),
-    glutRice = x['_glutinousRiceFlr$'] |> sum(), 
+    glutRice = x['_glutinousRiceFlr$'] |> sum()#, 
     
-    puree = x@puree |> sum()
+    #puree = x@puree |> sum() # waterLost after cooking!!
   )
   
   # attr(nutri, which = 'perRaw') # now in setAs(from = 'raw.', to = 'per')

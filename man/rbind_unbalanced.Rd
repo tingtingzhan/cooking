@@ -14,7 +14,5 @@ Row-Bind Unbalanced Vectors
 }
 \examples{
 rbind_unbalanced(c(a = 1, b = 2), c(a = 11, c = 13))
-
 rbind_unbalanced(A = c(a = 1, b = 2), B = c(a = 11, c = 13))
-
 }

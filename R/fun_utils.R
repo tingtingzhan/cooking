@@ -6,9 +6,7 @@
 #' 
 #' @examples
 #' rbind_unbalanced(c(a = 1, b = 2), c(a = 11, c = 13))
-#' 
 #' rbind_unbalanced(A = c(a = 1, b = 2), B = c(a = 11, c = 13))
-#' 
 #' @export
 rbind_unbalanced <- \(...) {
   
@@ -233,17 +231,8 @@ col_binlabel <- \(x, FUN, ...) {
 
 #' @importFrom consec cmod
 fmt_min <- \(x) {
-  
-  if (!length(x)) return(character())
-  
   x |>
-    cmod(
-      e1 = _, 
-      e2 = c(d = 60*24, hr = 60, min = 1, sec = 1/60),
-      n = 3L,
-      tol = 1e-6
-    )
-  
+    cmod(e2 = c(d = 60*24, hr = 60, min = 1, sec = 1/60), n = 3L)
 }
 
 

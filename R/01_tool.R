@@ -141,13 +141,13 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     trimws()
   
   if (length(minute) && length(temperature)) {
-    sprintf(fmt = ' %s %s', temperature, minute) |> 
+    sprintf(fmt = '   %s %s', temperature, minute) |> 
       cat(sep = '\n')
   } else if (length(minute)) {
-    sprintf(fmt = ' %s', minute) |> 
+    sprintf(fmt = '   %s', minute) |> 
       cat(sep = '\n')
   } else if (length(temperature)) {
-    sprintf(fmt = ' %s', temperature) |> 
+    sprintf(fmt = '   %s', temperature) |> 
       cat(sep = '\n')
   } # else do nothing
   
@@ -164,7 +164,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     cat(sep = '')
   
   x@waterLost |> 
-    sprintf(fmt = ' \u2756 water evaporated: %.0f grams\n') |> 
+    sprintf(fmt = ' \u2668 water evaporated: %.0f grams\n') |> 
     cat(sep = '')
   
   x@note |> 

@@ -87,19 +87,16 @@ pineapple_custardFilling <- \() new(
 pumpkin_custardFilling <- \() new(
   Class = 'custardFilling',
   puree = c(Libbys_pumpkin = 600), 
-  # dairy = c(Carnation_drymilk = 50), # now I no longer like drymilk that much..
-  dairy = c(Kerrygold_butter = 55,
-            Carnation_drymilk = 30), 
-  #sugar = c(Domino_darkBrown = 50), # too sweet
-  sugar = c(Domino_darkBrown = 40), # try
+  dairy = c(Carnation_drymilk = 30),
+  dairy_brick = c(Kerrygold_butter = 1/4),
+  sugar = c(Domino_darkBrown = 40),
   # spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2+1/4), # I dont need :)
-  tool = list(
-    JoyoungCJA9U_filling(
-      minute = 17.5,
-      waterLost = 250 # confirmed on 2023-11-04
-    )
-  ),
-  pros = 'I love!')
+  tool = list(JoyoungCJA9U_filling(
+    minute = 17.5,
+    waterLost = 257 # confirmed on 2026-09-29
+  )),
+  date = as.Date('2026-09-29'),
+  pros = 'perfect flavor!')
 
 
 

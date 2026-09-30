@@ -114,7 +114,7 @@ if (FALSE) {
     cheesecake = if (length(x['_pumpkin$'])) .12 else .1,
     # froyo = NA_real_, # Greek yogurt flavor too strong to cover
     custardFilling = if (length(x['_pumpkin$'])) {
-      .13 
+      .12
     } else if (length(x['_applesauce$'])) {
       .155
     } else if (length(x['_pineapple$'])) {
@@ -219,7 +219,7 @@ if (FALSE) {
     mocaccino = .077,
     muffin = .08, 
     millecrepe = if (length(x@liqueur)) .075 else .1, 
-    custardFilling = .09,
+    custardFilling = .095,
     sundae = .11,
     beeffillLeeKumKee = .11,
     meatmash = .12,
