@@ -50,13 +50,12 @@ print.perlist <- \(x, ...) {
   x <- x[lengths(x) > 0L]
   if (!length(x)) return(invisible())
   
-  y0 <- x |>
-    lapply(FUN = \(i) { # (i = x[[1L]])
-      i@equiv@current
-    })
-  if (all(!lengths(y0))) return(invisible())
+  y1 <- x |>
+    lapply(FUN = \(i) i@equiv@current) |>
+    do.call(what = rbind_unbalanced, args = _)
+
+  if (!length(y1)) return(invisible())
   
-  y1 <- do.call(rbind, args = y0)
   y2 <- y1[, colMeans(is.na(y1)) != 1L, drop = FALSE]
   #y3 <- y2[rowMeans(is.na(y2)) != 1L, , drop = FALSE]
   y3 <- y2

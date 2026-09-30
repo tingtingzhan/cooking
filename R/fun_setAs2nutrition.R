@@ -11,7 +11,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
       eval(call(name = i))
     }) |>
     do.call(what = nutritionlist, args = _) |>
-    summary.nutritionlist(incl_usd = TRUE, incl_calorie = TRUE, rel = TRUE)
+    as.matrix.nutritionlist(incl_usd = TRUE, incl_calorie = TRUE, rel = TRUE)
   
   z <- crossprod(grams, info)[1, , drop = TRUE]
   
@@ -82,6 +82,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     fiber = nutri@fiber, fat = nutri@fat, 
     #cholr = nutri@cholesterol,
     'Na\u207a' = nutri@sodium, # this rename is a headache..
+    #sodium = nutri@sodium,
     sugar = nutri@sugar, 'sugar+' = nutri@addedSugar, # rename again
     protein = nutri@protein,
     alcohol = nutri@alcohol, 
@@ -166,6 +167,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       ssmOil = devrecipe$sesameOil(x),
       rattanPpOil = devrecipe$rattanPepperOil(x),
       'Na\u207a' = devrecipe$sodium(x),
+      #sodium = devrecipe$sodium(x),
       drymilk = devrecipe$drymilk(x),
       creamChz = devrecipe$creamcheese(x),
       matcha = devrecipe$matcha(x),

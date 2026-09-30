@@ -35,8 +35,8 @@ print.nutritionlist <- \(x, ...) {
   cat('\n')
   'Nutrition\n' |> bg_br_yellow() |> cat()
   x |>
-    summary.nutritionlist(...) |>
-    print.summary.nutritionlist()
+    as.matrix.nutritionlist(...) |>
+    print.nutritionMatrix()
   
   for (which in c(
     'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
@@ -59,16 +59,16 @@ print.nutritionlist <- \(x, ...) {
 
 
 
-
+#' @method as.matrix nutritionlist
 #' @export
-summary.nutritionlist <- \(object, ...) {
+as.matrix.nutritionlist <- \(x, ...) {
   
-  ret <- object |> 
+  ret <- x |> 
     lapply(FUN = as, Class = 'nutrition') |> # make double sure
     lapply(FUN = as.double.nutrition, ...) |>
     do.call(what = rbind, args = _) # matrix
   
-  class(ret) <- c('summary.nutritionlist', class(ret)) |>
+  class(ret) <- c('nutritionMatrix', class(ret)) |>
     unique.default()
   return(ret)
   
@@ -79,12 +79,12 @@ summary.nutritionlist <- \(object, ...) {
 
 #' @importFrom charwidth row_fmt_matrix
 # @importFrom cli cli_verbatim
-#' @method print summary.nutritionlist
+# @method print nutritionMatrix
 #' @export
-print.summary.nutritionlist <- \(x, ...) {
+print.nutritionMatrix <- \(x, ...) {
   
   ret0 <- x
-  attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
+  #attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
   
   #ret0 <- ret0[, colnames(ret0) %notin% c(
   #  'calorie', 'usd'
