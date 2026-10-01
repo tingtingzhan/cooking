@@ -24,6 +24,11 @@
 #' Also great for Tang Yuan filling.
 #' 
 #' @examples 
+#' nutritionlist(
+#'  cooking:::xiaogaojie_custardFilling(),
+#'  pumpkin_custardFilling()
+#' )
+#' 
 #' pineapple_custardFilling()
 #' pumpkin_custardFilling()
 #' apple_custardFilling()
@@ -52,14 +57,29 @@ setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
     'mooncake 15g wrapper in 30g mold \u6708\u997c30g\u6a21\u5177' = 15,
     'potsticker' = 25,
     'bao 50g wrapper \u5305\u5b5050g\u76ae' = 40
-  ),
+  )
   #note (legacy) = c(
   #  'Wheat starch \u21d4 sweet potato flour, potato starch, tapioca flour'
-  #),
-  youtube = 'L7a1d4dj1rs'
+  #)
 ))
 
 
+
+xiaogaojie_custardFilling <- \() new(
+  Class = 'recipe', flavor = '\u5976\u9ec4\u9985',
+  dairy = c(
+    Carnation_whole_drymilk = 60,
+    Wegmans_whole_milk = 120,
+    Kerrygold_butter = 50
+  ),
+  starch = c(ManSang_wheat_starch = 35),
+  egg_pc = c(eggYolk = 3, eggWhite = 3),
+  sugar = c(Domino_10x = 60),
+  tool = list(KSEG950ESS(
+    waterLost = 10 # cannot meet final water content 65% ??!!
+  )),
+  xiaogaojie = 'L7a1d4dj1rs'
+)
 
 
 
@@ -76,8 +96,7 @@ pineapple_custardFilling <- \() new(
       waterLost = 347 # confirmed
     )
   ),
-  pros = c('Effie\'s Signature!',
-             'Smells super nice while cooking'),
+  pros = c('Effie\'s Signature!', 'Smells super nice while cooking'),
   cons = 'Slightly too sour if served hot')
   
 

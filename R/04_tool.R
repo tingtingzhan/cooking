@@ -129,7 +129,7 @@ JoyoungCJA9U_filling <- \(
     'Cut (chilled) butter in mini chunks. Sprinkle on bottom of stir-frying pan; otherwise batter sticks and burns!',
     'Mix well the rest of ingredients (except sugar). Pour into stir-frying pan, on top of sprinkled butter'
   ),
-  operation = 'manually stir frequently',
+  operation = '(optional) manually stir frequently for high sugar-content ingredient!',
   cooling = c(
     'fold added sugar into hot, cooked paste',
     '(re-)covered, until bubbling quiets down',
