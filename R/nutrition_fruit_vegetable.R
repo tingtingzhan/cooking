@@ -371,7 +371,8 @@ Libbys_pumpkin <- \() new(
   # BJ's no longer have this at Christmas # 2023-12-24
   # Groupon's Sam's Club member is super cheap ($15) at Christmas! # 2023-12-24
   # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall
-  servingGram = 122, servingCup = 1/2, pieceGram = 822, piece_fmt = '%.1g\U1f96b',
+  servingGram = 122, servingCup = 1/2, 
+  piece_fmt = '%.1g\U1f96b', pieceGram = 850, # label says 822 
   calorie = 45,
   fat = .5, sodium = .005, carbohydrate = 10, fiber = 5, sugar = 5, protein = 1, 
   fdc = 168450L,

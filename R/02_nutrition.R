@@ -972,11 +972,13 @@ print.nutrition <- \(x, print_label = TRUE, ...) {
   #}
   
   if (length(x@superior)) {
-    cli_text('\u274c I prefer ', sprintf(
+    c('\u274c I prefer ', sprintf(
       fmt = '{.run [%s](cooking::%s())}', 
       x@superior |> make_ansi_style('sienna')() |> style_bold(),
       x@superior
-    ) |> paste(collapse = ', '))
+    ) |> paste(collapse = ', ')) |>
+      format_inline() |>
+      cat()
     cat('\n')
   } 
   

@@ -371,6 +371,8 @@ fmt_pc <- \(x) {
 
 prt_vol <- \(x) {
   
+  if (!length(x)) return(invisible())
+  
   nm <- x |> 
     names()
   
@@ -390,8 +392,9 @@ prt_vol <- \(x) {
   label <- ingredient |>
     vapply(FUN = labels, FUN.VALUE = '') # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
     
-  sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |> 
-    lapply(FUN = cli_text)
+  sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |>
+    format_inline() |>
+    cat()
   
 }
 

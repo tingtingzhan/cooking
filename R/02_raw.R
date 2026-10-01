@@ -244,23 +244,68 @@ print.raw. <- \(x, ...) {
   
   if (length(x@water)) {
     if (!length(x@water_ext)) {
-      sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, fmt_vol(x@water)) |> cli_text()
+      sprintf(fmt = '%s Water %.0f grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), x@water, fmt_vol(x@water)) |> 
+        format_inline() |>
+        cat()
     } else {
       water <- sum_by_name(x@water, x@water_ext)
-      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_ext) |> col_br_red(), fmt_vol(water)) |> cli_text()
+      sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_ext) |> col_br_red(), fmt_vol(water)) |> 
+        format_inline() |>
+        cat()
     }
   }
   
-  if (length(x@water40)) sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, fmt_vol(x@water40)) |> cli_text()
-  if (length(x@water70)) sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, fmt_vol(x@water70)) |> cli_text()
-  if (length(x@water80)) sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, fmt_vol(x@water80)) |> cli_text()
-  if (length(x@water90)) sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, fmt_vol(x@water90)) |> cli_text()
-  if (length(x@water95)) sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, fmt_vol(x@water95)) |> cli_text()
-  if (length(x@boilingWater)) sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, fmt_vol(x@boilingWater)) |> cli_text()
-  if (length(x@iceWater)) sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, fmt_vol(x@iceWater)) |> cli_text()
-  if (length(x@carbonatedWater)) sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, fmt_vol(x@carbonatedWater)) |> cli_text()
-  if (length(x@shavedIce)) sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, fmt_vol(x@shavedIce)) |> cli_text()
-  if (length(x@ice)) sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice) |> cli_text()
+  if (length(x@water40)) {
+    sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, fmt_vol(x@water40)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@water70)) {
+    sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, fmt_vol(x@water70)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@water80)) {
+    sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, fmt_vol(x@water80)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@water90)) {
+    sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, fmt_vol(x@water90)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@water95)) {
+    sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, fmt_vol(x@water95)) |> 
+      format_inline() |>
+      cat()
+  }
+  
+  if (length(x@boilingWater)) {
+    sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, fmt_vol(x@boilingWater)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@iceWater)) {
+    sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, fmt_vol(x@iceWater)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@carbonatedWater)) {
+    sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, fmt_vol(x@carbonatedWater)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@shavedIce)) {
+    sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, fmt_vol(x@shavedIce)) |> 
+      format_inline() |>
+      cat()
+  }
+  if (length(x@ice)) {
+    sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice) |> 
+      format_inline() |>
+      cat()
+  }
   
   cat('\n')
   

@@ -452,7 +452,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   if (length(x@review)) {
     x@review |> 
       sprintf(fmt = '\U1f4dd %s') |> 
-      lapply(FUN = cli_text)
+      cat(sep = '\n')
     cat('\n')
   }
   
