@@ -175,7 +175,7 @@ Dole_pineapple <- \() new(
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
   wegmans = '561977',
-  servingGram = 122, servingCup = 1/2,
+  servingGram = 122, servingCup = 1/2, pieceGram = 567, piece_fmt = '%.1g\U1f96b',
   calorie = 80,
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
   carbohydrate = 18, fiber = 1, sugar = 15, protein = 1)
@@ -413,9 +413,10 @@ Motts_applesauce <- \() new(
   brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
-  wegmans = '534880', usd = 3.99/1300*123,
+  wegmans = '534880', #usd = 2.99/680*123,
+  costco = '100449967', usd = 7.99/(1300*3)*123, date = as.Date('2026-10-01'),
   # nutrition facts on bottle label (sold at Costco, Wegmans, etc), not from merchandise website
-  servingGram = 123, servingCup = 1/2, 
+  servingGram = 123, servingCup = 1/2, pieceGram = 1300, piece_fmt = '%.1g\U1f96b', 
   calorie = 50,
   water = 123-14-1, # 123*.8822#, # matches
   carbohydrate = 14, sugar = 12)

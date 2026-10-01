@@ -31,7 +31,7 @@
 #' # need to retry
 #' coconut_custardFilling()
 #' 
-#' # yellowPeach_custardFilling() # why printing bug??
+#' yellowPeach_custardFilling()
 #' date_custardFilling()
 #' 
 #' # vegetable filling with added sugar
@@ -68,13 +68,12 @@ setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
 #' @export
 pineapple_custardFilling <- \() new(
   Class = 'custardFilling',
-  puree = c(Dole_pineapple = 560), 
+  puree_pc = c(Dole_pineapple = 1), 
   dairy = c(Kerrygold_butter = 25),
   tool = list(
     JoyoungCJA9U_filling(
       minute = 21,
-      waterLost = 347, # confirmed
-      note = c('One (1) recipe calls for one 20oz can')
+      waterLost = 347 # confirmed
     )
   ),
   pros = c('Effie\'s Signature!',
@@ -136,7 +135,6 @@ apple_custardFilling <- \() new(
 #' @export
 tomato_custardFilling <- \() new(
   Class = 'custardFilling',
-  #puree = c(WegmansOrganic_tomato = 820), 
   puree_pc = c(WegmansOrganic_tomato = 1),
   sugar = 60, 
   dairy = c(Kerrygold_butter = 50), # burns, no stir. next time stir (as planned)
