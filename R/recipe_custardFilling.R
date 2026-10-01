@@ -86,18 +86,34 @@ pineapple_custardFilling <- \() new(
 #' @export
 pumpkin_custardFilling <- \() new(
   Class = 'custardFilling',
+  starch = c(Argo_corn_starch = 35),
   puree = c(Libbys_pumpkin = 600), 
   dairy = c(Carnation_drymilk = 30),
   dairy_brick = c(Kerrygold_butter = 1/4),
   sugar = c(Domino_darkBrown = 40),
   # spice_tsp = c(SimplyOrganic_pumpkinSpice = 1/2+1/4), # I dont need :)
   tool = list(JoyoungCJA9U_filling(
-    minute = 17.5,
+    minute = c('1x' = 17.5),
     waterLost = 257 # confirmed on 2026-09-29
   )),
   date = as.Date('2026-09-29'),
   pros = 'perfect flavor!')
 
+
+pumpkin_custardFilling_fullcan <- \() new(
+  Class = 'custardFilling',
+  starch = c(Argo_corn_starch = 50),
+  egg_pc = c(eggYolk = 4, eggWhite = 4),
+  puree_pc = c(Libbys_pumpkin = 1),
+  dairy = c(Carnation_drymilk = 40),
+  dairy_brick = c(Kerrygold_butter = 1/4), # do not change
+  sugar = c(Domino_darkBrown = 55),
+  tool = list(JoyoungCJA9U_filling(
+    minute = c('1x' = 17.5),
+    waterLost = 350 # to confirm
+  )),
+  # date = as.Date('2026-09-29'),
+  pros = 'try')
 
 
 
@@ -120,14 +136,14 @@ apple_custardFilling <- \() new(
 #' @export
 tomato_custardFilling <- \() new(
   Class = 'custardFilling',
-  puree = c(WegmansOrganic_tomato = 820), 
+  #puree = c(WegmansOrganic_tomato = 820), 
+  puree_pc = c(WegmansOrganic_tomato = 1),
   sugar = 60, 
   dairy = c(Kerrygold_butter = 50), # burns, no stir. next time stir (as planned)
   tool = list(
     JoyoungCJA9U_filling(
       minute = 30,
-      waterLost = 500, # confirmed on 2023-11-01
-      note = c('One (1) recipe calls for one 29oz can')
+      waterLost = 500 # confirmed on 2023-11-01
     )
   ),
   review = c(

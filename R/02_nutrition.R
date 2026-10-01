@@ -903,6 +903,7 @@ print.nutrition <- \(x, print_label = TRUE, ...) {
   cat('\n')
   if (print_label) x |>
     labels.nutrition() |>
+    format_inline() |>
     col_grey() |> style_bold() |> 
     cat('\n\n')
   

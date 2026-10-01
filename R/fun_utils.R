@@ -369,33 +369,31 @@ fmt_pc <- \(x) {
 
 
 
-prt_raw_vol <- \(x) {
+prt_vol <- \(x) {
   
   nm <- x |> 
-    names() |>
-    vapply(FUN = \(i) {
-      eval(call(name = i)) |>
-        labels() # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
-    }, FUN.VALUE = '')
+    names()
   
-  sprintf(fmt = '%s %.0f grams %s\n', nm, x, fmt_vol(x)) |> 
+  ingredient <- nm |>
+    lapply(FUN = \(i) eval(call(name = i)))
+    
+  id <- ingredient |>
+    vapply(FUN = \(i) {
+      if (!inherits(i, what = 'nutrition')) return(FALSE) # could be @homemade \linkS4class{recipe}
+      length(i@pieceGram) > 0L
+    }, FUN.VALUE = NA)
+  
+  z <- character(length = length(x))
+  z[id] <- fmt_pc(x[id])
+  z[!id] <- fmt_vol(x[!id])
+  
+  label <- ingredient |>
+    vapply(FUN = labels, FUN.VALUE = '') # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
+    
+  sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |> 
     lapply(FUN = cli_text)
   
 }
 
-
-prt_raw_pc <- \(x) {
-  
-  nm <- x |> 
-    names() |>
-    vapply(FUN = \(i) {
-      eval(call(name = i)) |>
-        labels() # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
-    }, FUN.VALUE = '')
-  
-  sprintf(fmt = '%s %.0f grams %s\n', nm, x, fmt_pc(x)) |> 
-    lapply(FUN = cli_text)
-  
-}
 
 

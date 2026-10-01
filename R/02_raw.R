@@ -16,7 +16,7 @@
 #' @slot homemade \link[base]{numeric} vector
 #' @slot misc,misc_tsp,misc_Tbsp,misc_cup \link[base]{numeric} vector, weight of one or more miscellaneous ingredients (in grams)
 #' 
-#' @slot puree,puree_tsp,puree_Tbsp,puree_cup \link[base]{numeric} vector, weight of one or more puree (in grams)
+#' @slot puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc \link[base]{numeric} vector, weight of one or more puree (in grams)
 #' 
 #' @slot fruit \link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)
 #' @slot fruit_pc \link[base]{numeric} vector, number of fresh fruit pulp or juice
@@ -102,7 +102,7 @@ setClass(Class = 'raw.', slots = c(
   homemade = 'numeric',
   
   misc = 'numeric', misc_tsp = 'numeric', misc_Tbsp = 'numeric', misc_cup = 'numeric',
-  puree = 'numeric', puree_tsp = 'numeric', puree_Tbsp = 'numeric', puree_cup = 'numeric',
+  puree = 'numeric', puree_tsp = 'numeric', puree_Tbsp = 'numeric', puree_cup = 'numeric', puree_pc = 'numeric',
   
   fruit = 'numeric', 
   fruit_pc = 'numeric',
@@ -193,54 +193,54 @@ print.raw. <- \(x, ...) {
     col_grey() |> style_bold() |> 
     cat('\n\n')
 
-  prt_raw_vol(x@homemade)
+  prt_vol(x@homemade)
   
-  prt_raw_vol(x@shrimp)
-  prt_raw_vol(x@seafood)
-  prt_raw_vol(x@pork)
-  prt_raw_vol(x@beef)
-  prt_raw_vol(x@lamb)
-  prt_raw_vol(x@chicken)
+  prt_vol(x@shrimp)
+  prt_vol(x@seafood)
+  prt_vol(x@pork)
+  prt_vol(x@beef)
+  prt_vol(x@lamb)
+  prt_vol(x@chicken)
   
-  prt_raw_vol(x@flour)
-  prt_raw_vol(x@starch)
-  prt_raw_vol(x@sugar)
+  prt_vol(x@flour)
+  prt_vol(x@starch)
+  prt_vol(x@sugar)
   
-  prt_raw_vol(x@beverage)
-  prt_raw_vol(x@puree)
-  prt_raw_pc(x@fruit)
+  prt_vol(x@beverage)
+  prt_vol(x@puree)
+  prt_vol(x@fruit)
   
-  prt_raw_vol(x@sauce)
-  prt_raw_vol(x@oil)
-  prt_raw_vol(x@liqueur)
+  prt_vol(x@sauce)
+  prt_vol(x@oil)
+  prt_vol(x@liqueur)
    
-  prt_raw_vol(x@nut)
-  prt_raw_vol(x@blackSesame) # to consolidate with @nut ?
-  prt_raw_vol(x@grain)
-  prt_raw_vol(x@bean)
+  prt_vol(x@nut)
+  prt_vol(x@blackSesame) # to consolidate with @nut ?
+  prt_vol(x@grain)
+  prt_vol(x@bean)
   
-  prt_raw_vol(x@fat)
-  prt_raw_vol(x@dairy)
-  prt_raw_vol(x@vegetable)
+  prt_vol(x@fat)
+  prt_vol(x@dairy)
+  prt_vol(x@vegetable)
   
-  prt_raw_vol(x@spice)
-  prt_raw_vol(x@matcha)
-  prt_raw_vol(x@coffee)
-  prt_raw_vol(x@cocoa)
-  prt_raw_vol(x@vanilla)
-  prt_raw_vol(x@syrup)
-  prt_raw_vol(x@yeast)
-  prt_raw_vol(x@salt)
-  prt_raw_vol(x@msg)
-  prt_raw_vol(x@NaHCO3)
-  prt_raw_vol(x@Na2CO3)
-  prt_raw_vol(x@bakingPowder)
+  prt_vol(x@spice)
+  prt_vol(x@matcha)
+  prt_vol(x@coffee)
+  prt_vol(x@cocoa)
+  prt_vol(x@vanilla)
+  prt_vol(x@syrup)
+  prt_vol(x@yeast)
+  prt_vol(x@salt)
+  prt_vol(x@msg)
+  prt_vol(x@NaHCO3)
+  prt_vol(x@Na2CO3)
+  prt_vol(x@bakingPowder)
   
-  prt_raw_pc(x@egg)
-  prt_raw_pc(x@gelatin)
-  prt_raw_pc(x@tea)
+  prt_vol(x@egg)
+  prt_vol(x@gelatin)
+  prt_vol(x@tea)
   
-  prt_raw_vol(x@misc)
+  prt_vol(x@misc)
   
   if (length(x@water)) {
     if (!length(x@water_ext)) {
@@ -279,6 +279,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     combnPc(which = 'gelatin') |>
     combnPc(which = 'egg') |>
     combnPc(which = 'fruit') |>
+    combnPc(which = 'puree') |>
     combnPc(which = 'tea') |>
     combnVol(which = 'flour') |>
     combnVol(which = 'water', nm = 'Wegmans_water') |>

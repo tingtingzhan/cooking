@@ -362,14 +362,16 @@ watermelon <- \() new(
 
 Libbys_pumpkin <- \() new(
   Class = 'nutrition',  
-  brand = c(style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans')),
+  brand = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans' |> 
+    style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = ) |>
+    c(),
   name = 'Pumpkin\U1f383 Puree', alias = '\u5357\u74dc\u6ce5',
   #usd = 8.98/(3*822)*122, sams = '162878', # 2023 early Fall, regular price
   usd = 3.91/(3*822)*122, sams = '162878', # 2023-12-24, clearance?
   # BJ's no longer have this at Christmas # 2023-12-24
   # Groupon's Sam's Club member is super cheap ($15) at Christmas! # 2023-12-24
   # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall
-  servingGram = 122, servingCup = 1/2,
+  servingGram = 122, servingCup = 1/2, pieceGram = 822, piece_fmt = '%.1g\U1f96b',
   calorie = 45,
   fat = .5, sodium = .005, carbohydrate = 10, fiber = 5, sugar = 5, protein = 1, 
   fdc = 168450L,
@@ -400,7 +402,7 @@ WegmansOrganic_tomato <- \() new(
   Class = 'nutrition',  
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   wegmans = '45416', usd = 2.89/822*63,
-  servingGram = 63, servingCup = 1/4, 
+  servingGram = 63, servingCup = 1/4, pieceGram = 822, piece_fmt = '%.1g\U1f96b', 
   calorie = 25,
   sodium = .02, carbohydrate = 6, sugar = 3, protein = 1, 
   water = 63 * 300/400)

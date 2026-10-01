@@ -37,7 +37,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{misc,misc_tsp,misc_Tbsp,misc_cup}}{\link[base]{numeric} vector, weight of one or more miscellaneous ingredients (in grams)}
 
-\item{\code{puree,puree_tsp,puree_Tbsp,puree_cup}}{\link[base]{numeric} vector, weight of one or more puree (in grams)}
+\item{\code{puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc}}{\link[base]{numeric} vector, weight of one or more puree (in grams)}
 
 \item{\code{fruit}}{\link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)}
 
