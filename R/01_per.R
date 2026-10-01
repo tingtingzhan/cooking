@@ -33,8 +33,15 @@ setMethod(f = show, signature = 'per', definition = \(object) {
     sprintf(fmt = '\u214c %s\n') |> 
     bg_br_yellow() |> style_bold() |>
     cat()
-  object@equiv |>
-    show()
+  
+  #object@equiv |>
+  #  show()
+  colnames(fmt) <- colnames(fmt) |>
+    nutri_short()
+  fmt |>
+    row_fmt_matrix() |>
+    cat(sep = '\n')
+  
   cat('\n')
 })
 

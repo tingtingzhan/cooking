@@ -1036,6 +1036,7 @@ as.double.nutrition <- \(
   x, 
   incl_calorie = FALSE, 
   incl_usd = FALSE,
+  incl_water = TRUE,
   incl_carbohydrate = TRUE,
   rel = TRUE,
   ...
@@ -1044,7 +1045,7 @@ as.double.nutrition <- \(
     # sum(numeric()) returns 0
     calorie = if (incl_calorie) x@calorie |> sum(),
     usd = if (incl_usd) x@usd |> sum(),
-    water = x@water |> sum(),
+    water = if (incl_water) x@water |> sum(),
     carbohydrate = if (incl_carbohydrate) x@carbohydrate |> sum(), # `fiber` and `sugar` matters more
     fiber = x@fiber |> sum(),
     sugar = x@sugar |> sum(), 

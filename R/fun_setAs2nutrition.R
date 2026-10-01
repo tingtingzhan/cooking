@@ -3,7 +3,7 @@
 setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   grams <- from |> 
-    as.double.raw.()
+    as.double.raw.(detail = TRUE, rel = FALSE)
   
   info <- grams |>
     names() |> 
@@ -73,101 +73,38 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   )
 
   devrecipe <- getOption('devrecipe')
-  
+
   z <- c(
-    #nutri |>
-    #  as.double.nutrition(incl_calorie = FALSE, incl_usd = FALSE, incl_carbohydrate = FALSE, rel = FALSE),
-    water = x@water |> sum(), 
-    #carb = nutri@carbohydrate, # not important here
-    fiber = nutri@fiber, fat = nutri@fat, 
-    #cholr = nutri@cholesterol,
-    'Na\u207a' = nutri@sodium, # this rename is a headache..
-    #sodium = nutri@sodium,
-    sugar = nutri@sugar, 'sugar+' = nutri@addedSugar, # rename again
-    protein = nutri@protein,
-    alcohol = nutri@alcohol, 
-    'NaHCO\u2083' = x@NaHCO3 |> sum(), 
-    'Na\u2082CO\u2083' = x@Na2CO3 |> sum(), 
-    salt = x@salt |> sum(), # e.g., salt-2-flour, salt-2-yeast
-    bkPwd = x@bakingPowder |> sum(), 
-    yeast = x@yeast |> sum(),
-    'starch+' = x@starch |> sum(), 
-    gelatin = x@gelatin |> sum(),
-    ssmOil = x['_sesame_oil$'] |> sum(), 
-    rattanPpOil = x['_rattanPepper_oil$'] |> sum(),
-    msg = x@msg |> sum(),
-    tea = x@tea |> sum(), 
-    
-    acai = x['_acai_pulv$'] |> sum(),
-    beet = x['_beet_pulv$'] |> sum(),
-    matcha = x@matcha |> sum(), 
-    
-    blackPp = x['_blackPepper$'] |> sum(), 
-    cilantro = x['_cilantro$'] |> sum(),
-    cinnamon = x['_cinnamon$'] |> sum(),
-    coriander = x['_coriander$'] |> sum(),
-    cumin = x['_cumin$'] |> sum(),
-    garlic = x['_garlic$'] |> sum(), 
-    ginger = x['_ginger$'] |> sum(), 
-    onion = x['_onion$'] |> sum(), 
-    paprika = x['_paprika$'] |> sum(),
-    '\U0001f383spice' = x['_pumpkinSpice$'] |> sum(),
-    sesame = x@blackSesame |> sum(), 
-    turmeric = x['_turmeric$'] |> sum(), 
-    whitePp = x['_whitePepper$'] |> sum(), 
-    
-    #chiliMix = x@chiliMix |> sum(),
-    #curry = x@curry |> sum(),
-    
-    coconutBar = x['_coconutBar$'] |> sum(),
-    coconutFlr = x['_coconutFlr$'] |> sum(),
-    
-    drymilk = x['_drymilk$'] |> sum(),
-    creamChz = x['_creamCheese$'] |> sum(),
-    cocoa = x@cocoa |> sum(),
-    coffee = x@coffee |> sum(), 
-    
-    flour = x['_allPurposeFlr$'] |> sum(),
-    '\U0001f35eflr' = x['_breadFlr$'] |> sum(), 
-    '\U0001f370flr' = x['_pastryFlr$'] |> sum(), 
-    '\U0001f95ayolk' = x['^eggYolk$'] |> sum(),
-    # '\U0001f95awhite' = x['^eggWhite$'] |> sum(), # waterLost after cooking!!
-    '\U1f33d' = x['_cornmeal$'] |> sum(),
-    glutRice = x['_glutinousRiceFlr$'] |> sum()#, 
-    
-    #puree = x@puree |> sum() # waterLost after cooking!!
+    nutri |>
+      as.double.nutrition(
+        incl_calorie = FALSE, 
+        incl_usd = FALSE, 
+        incl_water = FALSE, # **not** nutri@water
+        incl_carbohydrate = FALSE, 
+        rel = FALSE
+      ),
+    x |>
+      as(Class = 'raw.') |>
+      as.double.raw.(detail = FALSE, rel = FALSE)
   )
   
   # attr(nutri, which = 'perRaw') # now in setAs(from = 'raw.', to = 'per')
-  
-  #attr(nutri, which = 'perServingTexture') <- new(
-  #  Class = 'per', 
-  #  per = paste0('Serving; ', col_red('Texture Profile')), 
-  #  equiv = new(Class = 'equiv', current = z / nutri@servingGram, target = c(
-  #    water = devrecipe$water(x),
-  #    #carb = devrecipe$carbohydrate(x),
-  #    fat = devrecipe$fat(x), 
-  #    bkPwd = devrecipe$bakingPowder(x),
-  #    'starch+' = devrecipe$starch(x)
-  #  )))
-  
   
   attr(nutri, which = 'perServing') <- new(
     Class = 'per', 
     per = 'Serving', 
     equiv = new(Class = 'equiv', current = z / nutri@servingGram, target = c(
-      water = devrecipe$water(x),
-      #carb = devrecipe$carbohydrate(x),
+      water = devrecipe$water(x), # um, this is wrong; raw-water / cooked-total
+      #carbohydrate = devrecipe$carbohydrate(x),
       fat = devrecipe$fat(x), 
-      bkPwd = devrecipe$bakingPowder(x),
-      'starch+' = devrecipe$starch(x),
+      bakingPowder = devrecipe$bakingPowder(x),
+      starch = devrecipe$starch(x),
       alcohol = devrecipe$alcohol(x),
       sugar = devrecipe$sugar(x), 
-      'sugar+' = devrecipe$addedSugar(x),
+      addedSugar = devrecipe$addedSugar(x),
       ssmOil = devrecipe$sesameOil(x),
       rattanPpOil = devrecipe$rattanPepperOil(x),
-      'Na\u207a' = devrecipe$sodium(x),
-      #sodium = devrecipe$sodium(x),
+      sodium = devrecipe$sodium(x),
       drymilk = devrecipe$drymilk(x),
       creamChz = devrecipe$creamcheese(x),
       matcha = devrecipe$matcha(x),
@@ -176,7 +113,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       garlic = devrecipe$garlic(x),
       whitePp = devrecipe$whitePepper(x),
       coriander = devrecipe$coriander(x),
-      '\U0001f383spice' = devrecipe$pumpkinSpice(x),
+      pumpkinSpice = devrecipe$pumpkinSpice(x),
       sesame = devrecipe$blackSesame(x),
       cocoa = devrecipe$cocoa(x),
       coffee = devrecipe$coffee(x),
@@ -188,8 +125,8 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     per = 'Cornmeal\U1f33d', 
     equiv = new(Class = 'equiv', current = z / sum(x['_cornmeal$']), target = c(
       flour = devrecipe$flour2cornmeal(x),
-      '\U0001f35eflr' = devrecipe$breadFlr2cornmeal(x),
-      '\U0001f370flr' = devrecipe$pastryFlr2cornmeal(x)
+      breadFlr = devrecipe$breadFlr2cornmeal(x),
+      pastryFlr = devrecipe$pastryFlr2cornmeal(x)
     ))) 
   
   if (sum(mixWheatFlr > 0) > 1L) {
@@ -200,7 +137,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       equiv = new(Class = 'equiv', current = z / sum(mixWheatFlr), target = c(
         water = devrecipe$water2wheatflourmix(x),
         fat = devrecipe$fat2wheatflourmix(x),
-        bkPwd = devrecipe$bakingPowder2wheatflourmix(x),
+        bakingPowder = devrecipe$bakingPowder2wheatflourmix(x),
         yeast = devrecipe$yeast2wheatflourmix(x)
       )))
     
@@ -213,9 +150,9 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
         water = devrecipe$water2flour(x),
         fat = devrecipe$fat2flour(x),
         sesame = devrecipe$blackSesame2flour(x),
-        '\U0001f95ayolk' = devrecipe$eggYolk2flour(x),
-        'Na\u2082CO\u2083' = devrecipe$Na2CO3_2flour(x),
-        bkPwd = devrecipe$bakingPowder2flour(x),
+        eggYolk = devrecipe$eggYolk2flour(x),
+        Na2CO3 = devrecipe$Na2CO3_2flour(x),
+        bakingPowder = devrecipe$bakingPowder2flour(x),
         salt = devrecipe$salt2flour(x),
         yeast = devrecipe$yeast2flour(x)
       )))
@@ -228,9 +165,9 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
         water = devrecipe$water2pastryFlr(x),
         fat = devrecipe$fat2pastryFlr(x),
         sesame = devrecipe$blackSesame2pastryFlr(x),
-        '\U0001f95ayolk' = devrecipe$eggYolk2pastryFlr(x),
-        'Na\u2082CO\u2083' = devrecipe$Na2CO3_2pastryFlr(x),
-        bkPwd = devrecipe$bakingPowder2pastryFlr(x),
+        eggYolk = devrecipe$eggYolk2pastryFlr(x),
+        Na2CO3 = devrecipe$Na2CO3_2pastryFlr(x),
+        bakingPowder = devrecipe$bakingPowder2pastryFlr(x),
         salt = devrecipe$salt2pastryFlr(x),
         yeast = devrecipe$yeast2pastryFlr(x),
         matcha = devrecipe$matcha2pastryFlr(x),
@@ -245,9 +182,9 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       equiv = new(Class = 'equiv', current = z / sum(x['_breadFlr$']), target = c(
         fat = devrecipe$fat2breadFlr(x),
         sesame = devrecipe$blackSesame2breadFlr(x),
-        '\U0001f95ayolk' = devrecipe$eggYolk2breadFlr(x),
-        'Na\u2082CO\u2083' = devrecipe$Na2CO3_2breadFlr(x),
-        bkPwd = devrecipe$bakingPowder2breadFlr(x),
+        eggYolk = devrecipe$eggYolk2breadFlr(x),
+        Na2CO3 = devrecipe$Na2CO3_2breadFlr(x),
+        bakingPowder = devrecipe$bakingPowder2breadFlr(x),
         salt = devrecipe$salt2breadFlr(x),
         yeast = devrecipe$yeast2breadFlr(x),
         matcha = devrecipe$matcha2breadFlr(x),
@@ -263,9 +200,9 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       water = devrecipe$water2gluten0Flr(x),
       fat = devrecipe$fat2gluten0Flr(x),
       sesame = devrecipe$blackSesame2gluten0Flr(x),
-      '\U0001f95ayolk' = devrecipe$eggYolk2gluten0Flr(x),
-      'Na\u2082CO\u2083' = devrecipe$Na2CO3_2gluten0Flr(x),
-      bkPwd = devrecipe$bakingPowder2gluten0Flr(x),
+      eggYolk = devrecipe$eggYolk2gluten0Flr(x),
+      Na2CO3 = devrecipe$Na2CO3_2gluten0Flr(x),
+      bakingPowder = devrecipe$bakingPowder2gluten0Flr(x),
       salt = devrecipe$salt2gluten0Flr(x),
       yeast = devrecipe$yeast2gluten0Flr(x)
     )))
@@ -277,7 +214,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
       water = devrecipe$water2riceflour(x),
       glutRice = devrecipe$glutinousRice2riceflour(x),
       fat = devrecipe$fat2riceflour(x),
-      'starch+' = devrecipe$starch2riceflour(x),
+      starch = devrecipe$starch2riceflour(x),
       matcha = devrecipe$matcha2riceflour(x)
     )))
   
@@ -287,7 +224,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     equiv = new(Class = 'equiv', current = z / x@cocoa, target = c(
       alcohol = devrecipe$alcohol2cocoa(x),
       drymilk = devrecipe$drymilk2cocoa(x),
-      'sugar+' = devrecipe$addedSugar2cocoa(x),
+      addedSugar = devrecipe$addedSugar2cocoa(x),
       coffee = devrecipe$coffee2cocoa(x)
     )))
   

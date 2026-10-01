@@ -93,7 +93,7 @@ print.nutritionMatrix <- \(x, ...) {
   ret <- ret0[, colMeans(ret0 == 0) != 1] |> 
     col_binlabel(FUN = max)
   colnames(ret) <- colnames(ret) |>
-    nutrition_slot_short()
+    nutri_short()
   
   ret |> 
     row_fmt_matrix() |>
@@ -105,11 +105,21 @@ print.nutritionMatrix <- \(x, ...) {
 }
 
 
-nutrition_slot_short <- \(x) {
-  x[x == 'addedSugar'] <- 'sugar+'
+nutri_short <- \(x) {
+  x[x == 'addedSugar'] <- '+sugar'
+  x[x == 'starch'] <- '+starch'
   x[x == 'carbohydrate'] <- 'carb' 
   x[x == 'sodium'] <- 'Na\u207a'
   x[x == 'cholesterol'] <- 'cholr'
+  x[x == 'Na2CO3'] <- 'Na\u2082CO\u2083'
+  x[x == 'NaHCO3'] <- 'NaHCO\u2083'
+  x[x == 'bakingPowder'] <- 'bkPwd'
+  x[x == 'pumpkinSpice'] <- '\U0001f383spice'
+  x[x == 'breadFlr'] <- '\U0001f35eflr'
+  x[x == 'pastryFlr'] <- '\U0001f370flr'
+  x[x == 'eggYolk'] <- '\U0001f95ayolk'
+  x[x == 'eggWhite'] <- '\U0001f95awhite'
+  x[x == 'cornmeal'] <- '\U1f33d'
   return(x)
 }
 

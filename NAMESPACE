@@ -466,5 +466,6 @@ importFrom(consec,cmod)
 importFrom(equiv4,binlabel)
 importFrom(stats,
   median.default,
+  na.omit,
   setNames
 )

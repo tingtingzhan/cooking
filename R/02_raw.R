@@ -336,13 +336,68 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 })
 
 
+#' @importFrom stats na.omit
 #' @method as.double raw.
 #' @export
-as.double.raw. <- \(x, ...) {
-  z <- attributes(x)[names(getSlots(x = 'raw.'))] |>
+as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
+  
+  # detailed ingredients
+  ingredient <- attributes(x)[names(getSlots(x = 'raw.'))] |>
     unname() |>
-    unlist(use.names = TRUE) # no need to remove len-0 element :)
+    unlist(use.names = TRUE) # no need to remove len-0 element
+  
+  z <- if (detail) {
+    ingredient
+  } else {
+    c(
+      c(
+        'water',
+        'NaHCO3', 'Na2CO3', 'bakingPowder', 
+        'salt', # e.g., salt-2-flour, salt-2-yeast
+        'msg', 'yeast',
+        'starch', 'gelatin',
+        'tea', 'matcha', 'cocoa', 'coffee'
+        # 'chiliMix', 'curry' # deprecated slot
+        # 'puree', # waterLost after cooking!  only meaningful for \linkS4class{.raw}, not \linkS4class{recipe}
+      ) |>
+        vapply(FUN = \(i) {
+          v <- slot(x, name = i)
+          if (!length(v)) return(NA_real_)
+          return(sum(v))
+        }, FUN.VALUE = NA_real_, USE.NAMES = TRUE) |>
+        na.omit(),
+      ssmOil = x['_sesame_oil$'] |> sum(),
+      rattanPpOil = x['_rattanPepper_oil$'] |> sum(),
+      drymilk = x['_drymilk$'] |> sum(),
+      creamChz = x['_creamCheese$'] |> sum(),
+      beet = x['_beet_pulv$'] |> sum(),
+      acai = x['_acai_pulv$'] |> sum(),
+      ginger = x['_ginger$'] |> sum(),
+      cumin = x['_cumin$'] |> sum(),
+      cilantro = x['_cilantro$'] |> sum(),
+      garlic = x['_garlic$'] |> sum(),
+      onion = x['_onion$'] |> sum(),
+      whitePp = x['_whitePepper$'] |> sum(),
+      blackPp = x['_blackPepper$'] |> sum(),
+      turmeric = x['_turmeric$'] |> sum(),
+      cinnamon = x['_cinnamon$'] |> sum(),
+      paprika = x['_paprika$'] |> sum(),
+      coriander = x['_coriander$'] |> sum(),
+      pumpkinSpice = x['_pumpkinSpice$'] |> sum(),
+      sesame = x@blackSesame |> sum(),
+      coconutFlr = x['_coconutFlr$'] |> sum(),
+      coconutBar = x['_coconutBar$'] |> sum(),
+      flour = x['_allPurposeFlr$'] |> sum(),
+      breadFlr = x['_breadFlr$'] |> sum(),
+      pastryFlr = x['_pastryFlr$'] |> sum(),
+      cornmeal = x['_cornmeal$'] |> sum(),
+      glutRice = x['_glutinousRiceFlr$'] |> sum(),
+      eggYolk = x['^eggYolk$'] |> sum()#,
+      # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterLost after cooking!!
+    )
+  }
   if (!length(z)) stop('shouldnt happen!!!')
+  if (rel) return(z / sum(ingredient))
   return(z)
 }
 
