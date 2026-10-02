@@ -11,15 +11,25 @@
 #' @export
 nutritionlist <- \(...) {
   
-  z <- list(...) |>
+  x <- list(...)
+  
+  z <- x |>
     lapply(FUN = as, Class = 'nutrition')
+  
+  sumx <- x |>
+    lapply(FUN = summary)
+  # [summary.nutrition]
+  # [summary.raw.]
+  # [summary.recipe]
   
   if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
     stop()
   } 
 
-  names(z) <- z |>
+  nm <- z |>
     vapply(FUN = labels.nutrition, FUN.VALUE = '')
+  names(z) <- names(sumx) <- nm
+  attr(z, which = 'sumx') <- sumx # think of a better way to pass this info to downstream functions?
   
   class(z) <- c('nutritionlist', 'listof', 'list') 
   return(z)
@@ -44,7 +54,8 @@ print.nutritionlist <- \(x, ...) {
     'perCocoa', 'perTea', 'perCreamCheese', 'perRaw'
   )) {
     x |>
-      lapply(FUN = attr, which = which, exact = TRUE) |>
+      attr(which = 'sumx') |>
+      lapply(FUN = '[[', which = which, exact = TRUE) |>
       print.perlist()
   }
   

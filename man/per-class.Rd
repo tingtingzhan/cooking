@@ -4,12 +4,15 @@
 \name{per-class}
 \alias{per-class}
 \alias{show,per-method}
+\alias{length,per-method}
 \title{\linkS4class{per}}
 \usage{
 \S4method{show}{per}(object)
+
+\S4method{length}{per}(x)
 }
 \arguments{
-\item{object}{see \strong{Usage}}
+\item{object, x}{see \strong{Usage}}
 }
 \description{
 ..

@@ -61,6 +61,11 @@ which is a little too oily for me.
 Also great for Tang Yuan filling.
 }
 \examples{
+nutritionlist(
+ cooking:::xiaogaojie_custardFilling(),
+ pumpkin_custardFilling()
+)
+
 pineapple_custardFilling()
 pumpkin_custardFilling()
 apple_custardFilling()

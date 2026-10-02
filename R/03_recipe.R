@@ -417,37 +417,8 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   y |>
     print.nutrition(print_label = FALSE)
   
-  attr_dx <- attributes(y)[paste0('per', c(
-    'RiceFlr', 'AllPurposeFlr', 'PastryFlr', 'BreadFlr', 'MixFlr', 
-    'GlutenFreeFlr', 'Cornmeal', 
-    'Cocoa', 'Tea', 'CreamCheese',
-    # 'ServingTexture', 'ServingFlavor'#, 'Raw'
-    'Serving'
-  ))]
-  has_attr_dx <- (lengths(attr_dx) > 0L)
-  attr_dx[has_attr_dx] |> 
-    lapply(FUN = show)
-  
-  if (length(x@portion)) {
-    sprintf(
-      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
-      y@servingGram/x@portion, 
-      x@portion, 
-      (y@usd / y@servingGram * x@portion) |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(),
-      if (length(y@calorie)) (y@calorie / y@servingGram * x@portion) |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold() else '',
-      x@portion |> names() |> col_magenta() |> style_bold()
-    ) |> cat(sep = '\n')
-    cat('\n')
-  } # else NULL
-  
   x@tool |>
     print.toollist()
-  
-  #if (length(review <- attr(y, which = 'review', exact = TRUE))) {
-  #  cat('Reviews on Ingredients:\n')
-  #  review |> sprintf(fmt = '\u26a0 %s') |> cat(sep = '\n')
-  #  cat('\n')
-  #}
   
   if (length(x@review)) {
     x@review |> 
@@ -470,7 +441,6 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     cat('\n')
   }
   
-  #if (length(x@url) || length(x@youtube) || length(x@doi)) {
   if (length(x@url) || length(x@youtube)) {
     
     cat('\U1f4d6 Reference:\n')

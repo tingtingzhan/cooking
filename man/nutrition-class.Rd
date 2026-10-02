@@ -303,6 +303,8 @@ Nutrition information.
 
 \item{\code{alcohol}}{\link[base]{numeric} scalar, alcohol (in grams) per serving}
 
+\item{\code{portion}}{see \linkS4class{recipe}}
+
 \item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
 }}
 

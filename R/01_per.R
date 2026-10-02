@@ -21,7 +21,7 @@ setClass(Class = 'per', slots = c(
 
 
 #' @rdname per-class
-#' @param object see **Usage**
+#' @param object,x see **Usage**
 #' @export
 setMethod(f = show, signature = 'per', definition = \(object) {
   
@@ -44,6 +44,17 @@ setMethod(f = show, signature = 'per', definition = \(object) {
   
   cat('\n')
 })
+
+
+
+#' @rdname per-class
+#' @export
+setMethod(f = length, signature = 'per', definition = \(x) {
+  x@equiv |>
+    length()
+})
+
+
 
 
 
@@ -71,6 +82,8 @@ print.perlist <- \(x, ...) {
   if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
   y <- y3 |> 
     col_binlabel(FUN = median.default, na.rm = TRUE)
+  colnames(y) <- colnames(y) |>
+    nutri_short()
   
   x[[1L]]@per |> 
     sprintf(fmt = '\u214c %s\n') |> 
@@ -83,6 +96,8 @@ print.perlist <- \(x, ...) {
   cat('\n')
   return(invisible(y))
 }
+
+
 
 
 

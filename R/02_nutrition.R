@@ -148,6 +148,7 @@
 #' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
 #' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
+#' @slot portion see \linkS4class{recipe}
 #' 
 #' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 
@@ -291,7 +292,8 @@ setClass(Class = 'nutrition', slots = c(
   cholesterol = 'numeric',
   sodium = 'numeric',
   protein = 'numeric',
-  alcohol = 'numeric', AbV = 'numeric'
+  alcohol = 'numeric', AbV = 'numeric',
+  portion = 'numeric'
 ), prototype = prototype(
   piece_fmt = '%.1gpcs',
   machine = \(x) NULL,
@@ -965,6 +967,21 @@ print.nutrition <- \(x, print_label = TRUE, ...) {
   
   # cat(c(rep('\u058e', times = 25), '\n\n'), sep = '')
   cat('\n')
+  
+  
+  if (length(x@portion)) {
+    sprintf(
+      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
+      x@servingGram / x@portion, 
+      x@portion, 
+      (x@usd / x@servingGram * x@portion) |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(),
+      if (length(x@calorie)) (x@calorie / x@servingGram * x@portion) |> sprintf(fmt = '\U1f525%.0f') |> col_br_red() |> style_bold() else '',
+      x@portion |> names() |> col_magenta() |> style_bold()
+    ) |> cat(sep = '\n')
+    cat('\n')
+  } # else NULL
+  
+  
   
   #if (length(x@machine)) {
   #  cat('\nMachine:\n')

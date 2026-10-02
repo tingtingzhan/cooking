@@ -169,9 +169,9 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   callNextMethod(object)
 
   hot <- hotdrink(object) # 2-cup hot water, or shaved ice
-  #nutri_ <- nutrition(hot)
-  nutri_ <- hot |> as(Class = 'nutrition')
-  z <- attr(nutri_, which = 'perServing', exact = TRUE)
+  nutri_ <- hot |> 
+    as(Class = 'nutrition')
+  z <- summary.recipe(hot)$perServing
   z@per <- sprintf(
     fmt = '%s + %.0fg Water, US\U1f4b5 %.2f', 
     z@per, 
