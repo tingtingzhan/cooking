@@ -446,27 +446,18 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     x@brand <- if (length(x@cheesecakefactoryfreezer)) {
       if (!length(x@cheesecakefactorybakery)) x@cheesecakefactorybakery <- x@cheesecakefactoryfreezer
       paste(
-        style_hyperlink(url = x@cheesecakefactoryfreezer |> sprintf(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s'), text = 'Cheesecake') |> c(),
-        style_hyperlink(url = x@cheesecakefactorybakery |> sprintf(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s'), text = 'Factory\U1f1fa\U1f1f8') |> c()
+        brand_url(x, name = 'cheesecakefactoryfreezer', fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', text = 'Cheesecake'),
+        brand_url(x, name = 'cheesecakefactorybakery', fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', text = 'Factory\U1f1fa\U1f1f8')
       )
     } else if (length(x@ippodoglobal) & length(x@ippodousa)) {
-      x@url <- c(x@url, style_hyperlink(url = x@ippodousa |> sprintf(fmt = 'https://ippodotea.com/products/%s'), text = '\U1f6d2 US Shop'))
-      jpn_ <- x@ippodojpn |> 
-        sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s') |>
-        style_hyperlink(url = _, text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> 
-        c()
-      global_ <- x@ippodoglobal |> 
-        sprintf(fmt = 'https://global.ippodo-tea.co.jp/products/%s') |>
-        style_hyperlink(url = _, text = 'Ippodo\U1f375') |> 
-        c()
+      x@url <- c(x@url, brand_url(x, name = 'ippodousa', fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop'))
+      jpn_ <- brand_url(x, name = 'ippodojpn', fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
+      global_ <- brand_url(x, name = 'ippodoglobal', fmt = 'https://global.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375')
       paste(global_, jpn_)
     } else if (length(x@kerrygold)) {
-      kg_ <- x@kerrygold |> 
-        sprintf(fmt = 'https://kerrygold.com/products/%s') |>
-        style_hyperlink(url = _, text = 'Kerrygold\U1f1ee\U1f1ea') |> 
-        c()
+      kg_ <- brand_url(x, name = 'kerrygold', fmt = 'https://kerrygold.com/products/%s', text = 'Kerrygold\U1f1ee\U1f1ea')
       if (length(x@kerrygoldusa)) {
-        paste0(kg_, style_hyperlink(url = x@kerrygoldusa |> sprintf(fmt = 'https://www.kerrygoldusa.com/products/%s'), text = '\U1f1fa\U1f1f8'))
+        paste0(kg_, brand_url(x, name = 'kerrygoldusa', fmt = 'https://www.kerrygoldusa.com/products/%s', text = '\U1f1fa\U1f1f8'))
       } else kg_
     } else if (length(x@kingarthurpro)) {
       'https://www.kingarthurbaking.com/pro/products' |>
@@ -475,18 +466,13 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     } else if (length(x@marukyu)) {
       x@url <- c(x@url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
       paste(
-        style_hyperlink(url = x@marukyu |> sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s'), text = 'Marukyu Koyamaen\U1f375') |> c(),
-        style_hyperlink(url = x@marukyu |> sprintf(fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s'), text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5') |> c()
+        brand_url(x, name = 'marukyu', fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', text = 'Marukyu Koyamaen\U1f375'),
+        brand_url(x, name = 'marukyu', fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5')
       )
     } else if (length(x@runamok)) {
-      runamok_ <- x@runamok |> 
-        sprintf(fmt = 'https://runamokmaple.com/shop/product/%s') |>
-        style_hyperlink(text = 'Runamok\U1f1fa\U1f1f8') |> 
-        c()
+      runamok_ <- brand_url(x, name = 'runamok', fmt = 'https://runamokmaple.com/shop/product/%s', text = 'Runamok\U1f1fa\U1f1f8')
       if (length(x@whistlepigwhiskey)) {
-        x@whistlepigwhiskey |> 
-          sprintf(fmt = 'https://shop.whistlepigwhiskey.com/products/%s') |>
-          style_hyperlink(text = 'Whistlepig\U1f1fa\U1f1f8') |>
+        brand_url(x, name = 'whistlepigwhiskey', fmt = 'https://shop.whistlepigwhiskey.com/products/%s', text = 'Whistlepig\U1f1fa\U1f1f8') |>
           paste(runamok_, . = _, sep = '-')
       } else runamok_
     } else character()

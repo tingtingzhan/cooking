@@ -291,10 +291,20 @@ add_brand_url <- \(x, name, fmt, text) {
   x@brand <- v |> 
     sprintf(fmt = fmt) |>
     style_hyperlink(text = text) |> 
-    c()
+    c() # i.e., [brand_url]
   slot(x, name = name) <- switch(storage.mode(v), integer = integer(), double = double(), character = character())
   return(x)
 }
+
+
+brand_url <- \(x, name, fmt, text) {
+  x |>
+    slot(name = name) |> 
+    sprintf(fmt = fmt) |>
+    style_hyperlink(text = text) |> 
+    c()
+}
+
 
 
 get_flavor_ <- \(x) {
