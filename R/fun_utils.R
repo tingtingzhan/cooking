@@ -288,7 +288,7 @@ add_brand_url <- \(x, name, fmt, text) {
     sprintf(fmt = fmt) |>
     style_hyperlink(text = text) |> 
     c()
-  slot(x, name = name) <- character()
+  slot(x, name = name) <- switch(storage.mode(v), integer = integer(), double = double(), character = character())
   return(x)
 }
 
