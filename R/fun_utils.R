@@ -149,13 +149,6 @@ combnPc <- \(x, which, ...) {
 }
 
 
-zero2len0 <- \(x) {
-  if ((length(x) == 1L) && abs(x) < .Machine$double.eps) {
-    return(numeric()) 
-  }
-  return(x)
-}
-
 
 
 

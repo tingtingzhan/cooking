@@ -37,7 +37,7 @@ if (FALSE) {
     spam = .006,
     shrimpfill_garlicHerb = .009,
     meatmash =, meatball =, shrimpfillCantonese = .008,
-    crumbcrust = if (length(x@blackSesame)) .11 else .01, 
+    crumbcrust = if (length(x['_blackSesame$'])) .11 else .01, 
     ricepaste = .015,
     oatmeal = .018,
     soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
@@ -120,7 +120,7 @@ if (FALSE) {
     } else if (length(x['_pineapple$'])) {
       .165 
     } else .13,
-    cookie = if (length(x@blackSesame)) {
+    cookie = if (length(x['_blackSesame$'])) {
       .145
     } else if (length(x@matcha) || (ginger() %in% x)) {
       .22 
@@ -169,7 +169,7 @@ if (FALSE) {
     cocoa_ =, 
     pumpkinSpiceLatte_ = .065,
     tiramisu_ = .065,
-    cookie = if (length(x@blackSesame)) {
+    cookie = if (length(x['_blackSesame$'])) {
       .08
     } else .15,
     stickyRice =, riceCake = .1, # need to re-think!!
@@ -232,13 +232,13 @@ if (FALSE) {
     } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
       .145
     } else .18, # 3:1 mixed cheese
-    lava = if (length(x@blackSesame)) .17 else if (length(x['_coconutFlr$'])) .08 else NA_real_,
-    cookie = if (length(x@blackSesame)) {
+    lava = if (length(x['_blackSesame$'])) .17 else if (length(x['_coconutFlr$'])) .08 else NA_real_,
+    cookie = if (length(x['_blackSesame$'])) {
       .28
     } else .25, 
     # cheesecake = .24, # 100% Nancy's full fat, low sodium cream cheese
     porkfill = .25,
-    crumbcrust = if (length(x@blackSesame)) .23 else .28,
+    crumbcrust = if (length(x['_blackSesame$'])) .23 else .28,
     mascarponeGanache = if (length(x@liqueur)) {
       .36
     } else if (length(x@water)) {
@@ -484,7 +484,7 @@ if (FALSE) {
       .42
     } else .34, # from other puree such as `pineapple`
     whippedCream = .50,
-    lava = if (length(x@blackSesame)) .50 else if (length(x['_coconutFlr$'])) .67 else NA_real_,
+    lava = if (length(x['_blackSesame$'])) .50 else if (length(x['_coconutFlr$'])) .67 else NA_real_,
     porkfill = .55,
     sundae = if (length(x@matcha)) {
       .6
@@ -509,8 +509,8 @@ if (FALSE) {
   
   water2flour <- \(x) switch(
     class(x), 
-    cookie = if (length(x@blackSesame)) .17 else .22, 
-    crumbcrust = if (length(x@blackSesame)) .28 else .23, # try first with \linkS4class{cookie} info
+    cookie = if (length(x['_blackSesame$'])) .17 else .22, 
+    crumbcrust = if (length(x['_blackSesame$'])) .28 else .23, # try first with \linkS4class{cookie} info
     #pancake =, snowSkin = .35, 
     #tortillaLard =, tortillaOlive = .6,
     NA_real_)
@@ -621,7 +621,7 @@ if (FALSE) {
   
   eggYolk2flour <- \(x) switch(
     class(x),
-    cookie = if (length(x@blackSesame)) .43 else .52,
+    cookie = if (length(x['_blackSesame$'])) .43 else .52,
     NA_real_)
   
   eggYolk2pastryFlr <- \(x) switch(

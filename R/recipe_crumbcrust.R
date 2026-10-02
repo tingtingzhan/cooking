@@ -149,7 +149,7 @@ ginger_crumbcrust <- \() new(
 blackSesame_crumbcrust_OLD <- \() new(
   Class = 'crumbcrust', 
   flour = c(Wegmans_breadFlr = 390), 
-  blackSesame = 110, 
+  seed = c(Greenmax_blackSesame = 110), 
   dairy = c(Kerrygold_butter = 170), water = 65, sugar = 100,
   cons = 'Black sesame flavor too weak, when used as cookie or cheesecake crust',
   pros = 'texture not bad as cookie') 
@@ -160,7 +160,7 @@ blackSesame_crumbcrust_OLD <- \() new(
 blackSesame_crumbcrust <- \() new(
   Class = 'crumbcrust',
   flour = c(Wegmans_breadFlr = 250), 
-  blackSesame = 250, 
+  seed = c(Greenmax_blackSesame = 250), 
   #butter = 100, 
   water = 25, sugar = 70,
   review = 'try')

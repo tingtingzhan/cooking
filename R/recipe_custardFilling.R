@@ -291,7 +291,7 @@ coconut_custardFilling <- \() new(
 #' @export
 blackSesame_custardFilling <- \() new(
   Class = 'custardFilling',
-  blackSesame = 50, 
+  seed = c(Greenmax_blackSesame = 50), 
   # dairy = c(Kerrygold_butter = 23, Carnation_drymilk = 50), sugar = 40, # before 2023-12-02
   dairy = c(Kerrygold_butter = 10, # try
             Carnation_drymilk = 17), 

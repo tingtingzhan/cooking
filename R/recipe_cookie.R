@@ -168,7 +168,7 @@ matcha_cookie <- \() new(
 blackSesame_cookie2022 <- \() new(
   Class = 'cookie',
   flour = c(Wegmans_breadFlr = 400),
-  blackSesame = 150,
+  seed = c(Greenmax_blackSesame = 150),
   egg_pc = c(eggYolk = 10), 
   sugar = 117, dairy = c(Carnation_drymilk = 90), 
   #waterLost = 1157*.05,

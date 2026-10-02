@@ -294,7 +294,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u751c\u83dc'
     } else if (length(x['_blackRice$'])) {
       '\u9ed1\u7c73'
-    } else if (length(x@blackSesame)) {
+    } else if (length(x['_blackSesame$'])) {
       '\u9ed1\u829d\u9ebb'
     } else if (length(x['_brownRice$'])) {
       '\u7cd9\u7c73'

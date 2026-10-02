@@ -40,6 +40,8 @@
 #' @slot bean \link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)
 #' 
 #' @slot nut \link[base]{numeric} scalar, weight of various dry nuts (in grams)
+#' @slot seed \link[base]{numeric} scalar, weight of various dry seed (in grams)
+#' 
 #' 
 #' @slot sugar,sugar_tsp,sugar_Tbsp,sugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar 
 #' 
@@ -56,7 +58,7 @@
 #' @slot msg,msg_tsp,msg_Tbsp,msg_cup \link[base]{numeric} scalar, weight (in grams) and volume of monosodium glutamate (MSG)
 #' @slot vanilla,vanilla_tsp,vanilla_Tbsp,vanilla_cup \link[base]{numeric} scalar, weight (in grams) and volume of vanilla extract
 #' 
-#' @slot blackSesame \link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed
+# @slot blackSesame \link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed
 #' 
 #' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
 #' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
@@ -134,12 +136,13 @@ setClass(Class = 'raw.', slots = c(
   grain = 'numeric', grain_tsp = 'numeric', grain_Tbsp = 'numeric', grain_cup = 'numeric',
   bean = 'numeric',
   nut = 'numeric',
+  seed = 'numeric',
   
   vanilla = 'numeric', vanilla_tsp = 'numeric', vanilla_Tbsp = 'numeric', vanilla_cup = 'numeric',
   cocoa = 'numeric', cocoa_tsp = 'numeric', cocoa_Tbsp = 'numeric', cocoa_cup = 'numeric',
   coffee = 'numeric', coffee_tsp = 'numeric', coffee_Tbsp = 'numeric', coffee_cup = 'numeric',
   matcha = 'numeric', matcha_tsp = 'numeric', matcha_Tbsp = 'numeric', matcha_cup = 'numeric', 
-  blackSesame = 'numeric',
+  #blackSesame = 'numeric',
   spice = 'numeric', spice_tsp = 'numeric', spice_Tbsp = 'numeric', spice_cup = 'numeric',
   
   pork = 'numeric',
@@ -215,7 +218,7 @@ print.raw. <- \(x, ...) {
   prt_vol(x@liqueur)
    
   prt_vol(x@nut)
-  prt_vol(x@blackSesame) # to consolidate with @nut ?
+  prt_vol(x@seed)
   prt_vol(x@grain)
   prt_vol(x@bean)
   
@@ -339,7 +342,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addname1(which = 'water95', nm = 'Wegmans_water') |> 
     addname1(which = 'water_ext', nm = 'Wegmans_water') |>
     addname1(which = 'boilingWater', nm = 'Wegmans_water') |>
-    addname1(which = 'blackSesame', nm = 'Greenmax_blackSesame') |>
+    #addname1(which = 'blackSesame', nm = 'Greenmax_blackSesame') |>
     combnVol(which = 'misc') |>
     combnVol(which = 'fat') |>
     combnVol(which = 'spice') |>
@@ -367,7 +370,8 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     meatName(animal = 'lamb') |>
     meatName(animal = 'chicken') |>
     addname1(which = 'shrimp', nm = 'Kirkland_shrimp_c31') |>
-    addname1(which = 'nut')
+    combnVol(which = 'nut') |>
+    combnVol(which = 'seed')
   
   for (i in names(getSlots(x = 'raw.'))) {
     ival <- slot(object = x, name = i)
@@ -429,7 +433,7 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
       paprika = x['_paprika$'] |> sum(),
       coriander = x['_coriander$'] |> sum(),
       pumpkinSpice = x['_pumpkinSpice$'] |> sum(),
-      sesame = x@blackSesame |> sum(),
+      sesame = x['_blackSesame$'] |> sum(),
       coconutFlr = x['_coconutFlr$'] |> sum(),
       coconutBar = x['_coconutBar$'] |> sum(),
       flour = x['_allPurposeFlr$'] |> sum(),

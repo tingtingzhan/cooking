@@ -65,6 +65,8 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{nut}}{\link[base]{numeric} scalar, weight of various dry nuts (in grams)}
 
+\item{\code{seed}}{\link[base]{numeric} scalar, weight of various dry seed (in grams)}
+
 \item{\code{sugar,sugar_tsp,sugar_Tbsp,sugar_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar}
 
 \item{\code{syrup,syrup_tsp,syrup_Tbsp,syrup_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various (maple) syrup}
@@ -82,8 +84,6 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 \item{\code{msg,msg_tsp,msg_Tbsp,msg_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of monosodium glutamate (MSG)}
 
 \item{\code{vanilla,vanilla_tsp,vanilla_Tbsp,vanilla_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of vanilla extract}
-
-\item{\code{blackSesame}}{\link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed}
 
 \item{\code{cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder}
 

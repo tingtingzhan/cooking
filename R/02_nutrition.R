@@ -325,18 +325,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     x@call <- x@call[[3L]]
   } else stop(x@call)
   
-  x@calorie <- x@calorie |> zero2len0()
-  x@carbohydrate <- x@carbohydrate |> zero2len0()
-  x@fiber <- x@fiber |> zero2len0()
-  x@sugar <- x@sugar |> zero2len0()
-  x@addedSugar <- x@addedSugar |> zero2len0()
-  x@alcohol <- x@alcohol |> zero2len0()
-  x@sodium <- x@sodium |> zero2len0()
-  x@fat <- x@fat |> zero2len0()
-  x@cholesterol <- x@cholesterol |> zero2len0()
-  x@protein <- x@protein |> zero2len0()
-  x@water <- x@water |> zero2len0()
-  
   if (length(x@AbV)) {
     if (!length(x@alcohol)) x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
     x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
@@ -843,7 +831,9 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   
   for (i in names(which(getSlots('nutrition') == 'numeric'))) {
     iv <- slot(x, name = i)
-    if (length(iv) && all(iv == 0)) slot(x, name = i) <- numeric() # else do nothing
+    if (length(iv) && all(abs(iv) < .Machine$double.eps)) {
+      slot(x, name = i) <- numeric() 
+    } # else do nothing
   }
   
   if (!length(x@sugar) && length(x@addedSugar)) {

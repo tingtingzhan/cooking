@@ -48,7 +48,7 @@ setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
 #' @export
 sesame_lava <- \() new(
   Class = 'lava',
-  blackSesame = 400,
+  seed = c(Greenmax_blackSesame = 400),
   #misc = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice! (no longer support this use)
   misc = c(Kirkland_mixedNutButter = 100), # nice!
   #sugar = 140, # sugar 9.8%
@@ -81,7 +81,7 @@ coconut_lava <- \() new(
 Daat_sesamelava <- \() new(
   Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   daatgo = 'FvS_W_qnlxc',
-  blackSesame = 160+20,
+  seed = c(Greenmax_blackSesame = 160+20),
   # 黑芝麻酱  Black sesame paste 20g ???
   water = 450,
   sugar = 180,
@@ -97,7 +97,7 @@ Daat_sesamelava <- \() new(
 xiaomin_sesamelava <- \() new(
   Class = 'recipe', author = '\u5c0f\u654f', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   youtube = 'uCbXXVp4h40',
-  blackSesame = 120,
+  seed = c(Greenmax_blackSesame = 120),
   sugar = 40,
   nut = c(peanut = 30),
   fat = c(Epic_lard = 40),
@@ -107,7 +107,7 @@ xiaomin_sesamelava <- \() new(
 #' @export
 FancyNotes_sesamelava <- \() new(
   Class = 'recipe', author = '\u4e54\u4e54\u5988', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
-  blackSesame = 150,
+  seed = c(Greenmax_blackSesame = 150),
   sugar = 40, 
   homemade = c(invertSugar = 50), 
   dairy = c(Kerrygold_butter = 80),
@@ -118,7 +118,7 @@ FancyNotes_sesamelava <- \() new(
 xiaogaojie_sesamelava <- \() new(
   Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   xiaogaojie = 't-pop_dGsgc',
-  blackSesame = 80,
+  seed = c(Greenmax_blackSesame = 80),
   nut = c(pecan = 30),
   sugar = 80,
   dairy = c(Kerrygold_butter = 60),
