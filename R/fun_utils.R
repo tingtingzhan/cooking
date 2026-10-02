@@ -266,15 +266,15 @@ fmt_perc <- \(x, name) {
 
 
 
-add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
-  x_store <- slot(x, name = store)
+add_store_url_ <- \(x, name, fmt, store_brand, store_name = store_brand) {
+  x_store <- slot(x, name = name)
   if (!length(x_store)) return(x)
   store_url <- sprintf(fmt = fmt, x_store)
   if (!length(x@brand)) {
     if (is.na(store_brand)) stop('must have `store_brand`')
     x@brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
   } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
-  slot(x, name = store) <- vector(mode = typeof(x_store), length = 0L)
+  slot(x, name = name) <- vector(mode = typeof(x_store), length = 0L)
   return(x)
 }
 
@@ -283,7 +283,11 @@ add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
 add_brand_url <- \(x, name, fmt, text) {
   v <- slot(x, name = name)
   if (!length(v)) return(x)
-  if (length(x@brand)) stop('`@brand` already exists!')
+  if (length(x@brand)) {
+    print(x@brand)
+    print(v)
+    stop('`@brand` already exists!')
+  }
   x@brand <- v |> 
     sprintf(fmt = fmt) |>
     style_hyperlink(text = text) |> 

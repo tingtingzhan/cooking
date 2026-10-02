@@ -85,7 +85,7 @@
 #' @slot mizkanjpn,mizkanusa \link[base]{character} scalars
 #' @slot nancysyogurt \link[base]{character} scalar
 #' @slot navitas \link[base]{character} scalar
-#' @slot nescafeGold,nestle,nido \link[base]{character} scalars
+#' @slot nescafeGold,nestle,nido,carnationbaking \link[base]{character} scalars
 #' @slot nielsenmassey \link[base]{character} scalar
 #' @slot nishiki \link[base]{character} scalar
 #' @slot oreo \link[base]{character} scalar
@@ -236,7 +236,7 @@ setClass(Class = 'nutrition', slots = c(
   mizkanjpn = 'character', mizkanusa = 'character',
   nancysyogurt = 'character',
   navitas = 'character',
-  nescafeGold = 'character', nestle = 'character', nido = 'character',
+  nescafeGold = 'character', nestle = 'character', nido = 'character', carnationbaking = 'character',
   nielsenmassey = 'character',
   nishiki = 'character',
   oreo = 'character',
@@ -365,6 +365,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_brand_url(name = 'belgioioso', fmt = 'https://www.belgioioso.com/products/%s', text = 'BelGioioso\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'bobsredmill', fmt = 'https://www.bobsredmill.com/%s.html', text = 'Bob\'s Red Mill\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'bouchard', fmt = 'https://bouchardchocolate.com/products/%s', text = 'Bouchard\U1f1e7\U1f1ea') |>
+    add_brand_url(name = 'carnationbaking', fmt = 'https://www.verybestbaking.com/carnation/products/%s', text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'clearwater', fmt = 'https://www.clearwater.ca/en/seafood-industry/%s', text = 'Clearwater\U1f1e8\U1f1e6') |> 
     add_brand_url(name = 'countrytime', fmt = 'https://www.kraftheinz.com/country-time/products/%s', text = 'Country Time\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'daisybrand', fmt = 'https://www.daisybrand.com/%s', text = 'Daisy\U1f1fa\U1f1f8') |> 
@@ -492,28 +493,31 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   } # non-standard brands
   
   x <- x |>
-    add_store_url_(store = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
-    add_store_url_(store = 'amazon', fmt = 'https://www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon') |>
-    add_store_url_(store = 'bjs', fmt = 'https://www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') |> # Wellsley Farms and Berkley Jensen
-    add_store_url_(store = 'costco', fmt = 'https://www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
-    add_store_url_(store = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
+    add_store_url_(name = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
+    add_store_url_(name = 'amazon', fmt = 'https://www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon') |>
+    add_store_url_(name = 'bjs', fmt = 'https://www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') |> # Wellsley Farms and Berkley Jensen
+    add_store_url_(name = 'costco', fmt = 'https://www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
+    add_store_url_(name = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
     #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
-    add_store_url_(store = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.') |>
-    add_store_url_(store = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz Away From Home\U1f1fa\U1f1f8') |>
-    add_store_url_(store = 'lucerne', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Lucerne\U1f1fa\U1f1f8') |>
-    add_store_url_(store = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club') |>
-    add_store_url_(store = 'target', fmt = 'https://www.target.com/p/-/%s', store_brand = NA_character_, store_name = 'Target') |>
-    add_store_url_(store = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine') |>
-    add_store_url_(store = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart') |>
-    add_store_url_(store = 'wawa', fmt = 'https://order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8') |>
-    add_store_url_(store = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant') |>
-    add_store_url_(store = 'weee', fmt = 'https://www.sayweee.com/zh/product/weee/%s', store_brand = NA_character_, store_name = 'Weee!') |>
-    add_store_url_(store = 'wegmans', fmt = 'https://www.wegmans.com/shop/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8', store_name = 'Wegmans') |>
-    add_store_url_(store = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8', store_name = 'Whole Foods\U1f1fa\U1f1f8') |>
-    add_store_url_(store = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
+    add_store_url_(name = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.') |>
+    add_store_url_(name = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz Away From Home\U1f1fa\U1f1f8') |>
+    add_store_url_(name = 'lucerne', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Lucerne\U1f1fa\U1f1f8') |>
+    add_store_url_(name = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club') |>
+    add_store_url_(name = 'target', fmt = 'https://www.target.com/p/-/%s', store_brand = NA_character_, store_name = 'Target') |>
+    add_store_url_(name = 'totalwine', fmt = 'https://www.totalwine.com/p/%s', store_brand = NA_character_, store_name = 'Total Wine') |>
+    add_store_url_(name = 'walmart', fmt = 'https://www.walmart.com/ip/%s', store_brand = 'Great Value\U1f1fa\U1f1f8', store_name = 'Walmart') |>
+    add_store_url_(name = 'wawa', fmt = 'https://order.wawa.com/web/product/%s', store_brand = 'Wawa\U1f1fa\U1f1f8') |>
+    add_store_url_(name = 'webstaurant', fmt = 'https://www.webstaurantstore.com/product/%s.html', store_brand = NA_character_, store_name = 'Webstaurant') |>
+    add_store_url_(name = 'weee', fmt = 'https://www.sayweee.com/zh/product/weee/%s', store_brand = NA_character_, store_name = 'Weee!') |>
+    add_store_url_(name = 'wegmans', fmt = 'https://www.wegmans.com/shop/product/%s/', store_brand = 'Wegmans\U1f1fa\U1f1f8', store_name = 'Wegmans') |>
+    add_store_url_(name = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8', store_name = 'Whole Foods\U1f1fa\U1f1f8') |>
+    add_store_url_(name = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
   if (length(x@brand)) {
-    x@brand <- x@brand |> make_ansi_style('sienna')() |> style_bold() |> c()
+    x@brand <- x@brand |> 
+      make_ansi_style('sienna')() |> 
+      style_bold() |> 
+      c()
   }
   
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))

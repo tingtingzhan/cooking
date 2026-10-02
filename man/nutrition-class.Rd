@@ -191,7 +191,7 @@ Nutrition information.
 
 \item{\code{navitas}}{\link[base]{character} scalar}
 
-\item{\code{nescafeGold,nestle,nido}}{\link[base]{character} scalars}
+\item{\code{nescafeGold,nestle,nido,carnationbaking}}{\link[base]{character} scalars}
 
 \item{\code{nielsenmassey}}{\link[base]{character} scalar}
 

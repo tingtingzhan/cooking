@@ -44,9 +44,9 @@ Meyenberg_goatWhole_drymilk <- \() new(
 
 
 Carnation_drymilk <- \() new(
-  Class = 'nutrition',  #nestle = '12428935',
-  brand = c(style_hyperlink(text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', url = 'https://www.nestleprofessional.us/nestle-carnation-nonfat-dry-milk-4-x-2275-oz')),
-  name = 'Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
+  Class = 'nutrition', nestle = '12428935',
+  # also https://www.verybestbaking.com/carnation/products/instant-non-fat-dry-milk-9oz-can/
+  name = 'Carnation Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
   walmart = '978118310', usd = 4.48/272*23, # April 2024; $4.48 in store
   target = 'A-13898456', #usd = 4.89/272*23, # Feb 2024
   servingGram = 23, 
@@ -62,12 +62,11 @@ Carnation_drymilk <- \() new(
 
 
 
-Carnation_whole_drymilk <- \() new(
-  Class = 'nutrition',  nestle = '12550835',
-  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
-  name = 'Whole Milk Powder', alias = '\u5168\u8102\u5976\u7c89',
-  servingGram = 30, servingCup = 1/4, # website does not have servingGram!!
-  fat = 8, sodium = .105, sugar = 10, protein = 7)
+#Carnation_whole_drymilk <- \() new(
+#  Class = 'nutrition', # nestle = '12428935', # no longer available
+#  name = 'Carnation Whole Milk Powder', alias = '\u5168\u8102\u5976\u7c89',
+#  servingGram = 30, servingCup = 1/4, # website does not have servingGram!!
+#  fat = 8, sodium = .105, sugar = 10, protein = 7)
 
 
 

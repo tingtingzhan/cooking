@@ -139,9 +139,9 @@ OakFarms_buttermilk <- \() new(
 
 
 Carnation_evapMilk <- \() new(
-  Class = 'nutrition',  nestle = '11002753',
-  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
-  name = 'Evaporated Milk', alias = '\u6de1\u5976',
+  Class = 'nutrition', nestle = '11002753',
+  # also 'https://www.verybestbaking.com/carnation/products/nestle-carnation-evaporated-milk/'
+  name = 'Carnation Evaporated Milk', alias = '\u6de1\u5976',
   walmart = '10291864', usd = 1.72/12,
   # 12floz, full can 422g, empty can 46g,
   servingGram = (422 - 46)/12, serving_floz = 1, #servingTbsp = 2, # 12floz in total
@@ -153,10 +153,9 @@ Carnation_evapMilk <- \() new(
 
 
 CarnationFatFree_evapMilk <- \() new(
-  Class = 'nutrition',  
-  walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
-  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', 
+  Class = 'nutrition', carnationbaking = 'fat-free-evapored-milk',
   name = 'Fat Free Evaporated Milk', alias = '\u8131\u8102\u6de1\u5976',
+  walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
   # fullweight = 431, emptyweight = 46,
   servingGram = (431-46)/12, serving_floz = 1, #servingTbsp = 2,
   calorie = 25,
@@ -167,8 +166,8 @@ CarnationFatFree_evapMilk <- \() new(
 
 
 Carnation_condensMilk <- \() new(
-  Class = 'nutrition',  url = 'https://www.verybestbaking.com/carnation/products/nestle-carnation-sweetened-condensed-milk-14-oz/',
-  brand = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8', name = 'Sweetened Condensed Milk',
+  Class = 'nutrition', carnationbaking = 'sweetened-condensed-milk',
+  name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
   usd = 2.99/10,
   fdc = 365332L,

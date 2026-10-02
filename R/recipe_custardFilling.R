@@ -68,7 +68,7 @@ setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
 xiaogaojie_custardFilling <- \() new(
   Class = 'recipe', flavor = '\u5976\u9ec4\u9985',
   dairy = c(
-    Carnation_whole_drymilk = 60,
+    Nido_drymilk = 60,
     Wegmans_whole_milk = 120,
     Kerrygold_butter = 50
   ),
