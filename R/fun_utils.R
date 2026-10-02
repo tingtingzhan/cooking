@@ -280,6 +280,19 @@ add_store_url_ <- \(x, store, fmt, store_brand, store_name = store_brand) {
 
 
 
+add_brand_url <- \(x, name, fmt, text) {
+  v <- slot(x, name = name)
+  if (!length(v)) return(x)
+  if (length(x@brand)) stop('`@brand` already exists!')
+  x@brand <- v |> 
+    sprintf(fmt = fmt) |>
+    style_hyperlink(text = text) |> 
+    c()
+  slot(x, name = name) <- character()
+  return(x)
+}
+
+
 get_flavor_ <- \(x) {
   # `x` is base::character base::vector
   x |>
