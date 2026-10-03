@@ -394,6 +394,9 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
           return(sum(v))
         }, FUN.VALUE = NA_real_, USE.NAMES = TRUE) |>
         na.omit(),
+      
+      # addedSugar = x@sugar |> sum(), # wrong!! `@sugar` is **not** 100% sugar
+      
       ssmOil = x['_sesame_oil$'] |> sum(),
       rattanPpOil = x['_rattanPepper_oil$'] |> sum(),
       drymilk = x['_drymilk$'] |> sum(),
@@ -420,7 +423,7 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
       pastryFlr = x['_pastryFlr$'] |> sum(),
       cornmeal = x['_cornmeal$'] |> sum(),
       glutRice = x['_glutinousRiceFlr$'] |> sum(),
-      eggYolk = x['^eggYolk$'] |> sum()#,
+      eggYolk = x['^eggYolk$'] |> sum()
       # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterLost after cooking!!
     )
   }

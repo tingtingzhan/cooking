@@ -6,7 +6,6 @@
 \alias{Bourbon_froyo}
 \alias{pumpkin_froyo}
 \alias{matcha_froyo}
-\alias{emma_froyo}
 \title{\linkS4class{froyo} Recipes}
 \usage{
 Bourbon_froyo()
@@ -14,8 +13,6 @@ Bourbon_froyo()
 pumpkin_froyo()
 
 matcha_froyo()
-
-emma_froyo()
 }
 \description{
 frozen yogurt.
@@ -24,7 +21,7 @@ frozen yogurt.
 Non-fat Greek yogurt have a very strong flavor; do not use.
 }
 \examples{
-subtract(emma_froyo, sugar = 90)
+subtract(cooking:::emma_froyo, sugar = 90)
 
 
 }
