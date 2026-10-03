@@ -47,7 +47,7 @@ setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   flour = c(KingArthur_breadFlr = 500), 
   #egg_pc = c(eggYolk = 1), # was. too difficult to store the egg white
   egg_pc = c(eggYolk = 1, eggWhite = 1),
-  yeast_Tbsp = 1,
+  yeast_Tbsp = c(Fleischmanns_instant = 1),
   salt_tsp = 1/4,
   dairy = c(Kerrygold_butter = 40),
   
@@ -114,14 +114,15 @@ bread <- \() new(
 beet_bread <- \() new(
   Class = 'bread', bread(), 
   misc_Tbsp = c(Wegmans_beet_pulv = 4), 
-  dairy = c(Carnation_drymilk = 31), sugar = 35, 
+  dairy = c(Carnation_drymilk = 31), 
+  sugar = 35, 
   review = 'retry with extra water for beet!!')
 
 #' @rdname bread-class
 #' @export
 matcha_bread <- \() new(
   Class = 'bread', bread(), 
-  matcha_tsp = 14, 
+  matcha_tsp = c(Sencha_everyday_matcha = 14), 
   dairy = c(Carnation_drymilk = 35), sugar = 73, 
   # 47g extra water, according to bao() model, why it's too wet??
   # --- King Arthur bread flour has less water absorbancy than Wegmans' bread flour!!!!!
@@ -146,7 +147,7 @@ pumpkin_bread <- \() new(
 #' @export
 cocoa_bread <- \() new(
   Class = 'bread', bread(),
-  #cocoa_tsp = 16, # 4%
+  #cocoa_tsp = c(KingArthur_Bensdorp = 16), # 4%
   cocoa_tsp = c(KingArthur_Bensdorp = 20), # 5%, as in bao(), tastes nice!
   dairy = c(Carnation_drymilk = 33), sugar = 40, 
   review = 're-try with dutch cocoa') # more water, less dry milk
@@ -169,7 +170,7 @@ tomato_bread <- \() new(
 #' @export
 coffee_bread <- \() new(
   Class = 'bread', bread(), 
-  coffee_tsp = 11, 
+  coffee_tsp = c(NescafeGold_blonde = 11), 
   dairy = c(Carnation_drymilk = 30), sugar = 40, 
   water80 = 100, water = 200,
   pros = 'Ethanol from fermentation, tastes like tiramisu!')

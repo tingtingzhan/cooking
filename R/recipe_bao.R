@@ -69,7 +69,7 @@ sweetBao_portion <- \() c(
 setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   class2 = '\u5305\u5b50\u9992\u5934',
   flour = c(Wegmans_pastryFlr = 500), 
-  yeast_tsp = 1.5,
+  yeast_tsp = c(Fleischmanns_instant = 1.5),
   bakingPowder_tsp = 1,
   fat = c(Epic_lard = 15),
   

@@ -95,7 +95,7 @@ setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
     #Philadelphia_creamCheese = 4 # fat 22.7%, sodium 2.8-per-mille
   ),
   starch_cup = c(Wegmans_corn_starch = 1/4),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   water = 100, 
   portion = c(
     'cupcake' = 70, # can be filled higher than \linkS4class{muffin}
@@ -251,7 +251,7 @@ pineapple_cheesecake <- \() new(
 
 coffee_cheesecake <- \() new(
   Class = 'cheesecake',
-  coffee_Tbsp = c(7), sugar = 100,
+  coffee_Tbsp = c(NescafeGold_blonde = 7), sugar = 100,
   cons = 'dont try yet, I will prefer mocaccino_cheesecake()')
 
 
@@ -270,7 +270,7 @@ matcha_cheesecake <- \() new(
 #' @export
 mocaccino_cheesecake <- \() new(
   Class = 'cheesecake',
-  coffee_Tbsp = c(4),
+  coffee_Tbsp = c(NescafeGold_blonde = 4),
   cocoa_tsp = c(KingArthur_Bensdorp = 6*3+1),
   sugar = 100,
   review = 'try')
@@ -288,7 +288,7 @@ ginger_cheesecake <- \() new(
 #' @export
 CaffeBorghetti_cheesecake <- \() new(
   Class = 'cheesecake',
-  coffee_Tbsp = c(3.25),
+  coffee_Tbsp = c(NescafeGold_blonde = 3.25),
   liqueur = c(CaffeBorghetti = 65),
   sugar = 100,
   review = 'try'
@@ -298,7 +298,7 @@ CaffeBorghetti_cheesecake <- \() new(
 #' @export
 Kahlua_cheesecake <- \() new(
   Class = 'cheesecake',
-  coffee_Tbsp = c(3.25),
+  coffee_Tbsp = c(NescafeGold_blonde = 3.25),
   liqueur = c(Kahlua_coffee = 50),
   sugar = 80,
   review = 'try')

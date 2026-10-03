@@ -8,7 +8,7 @@
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   class2 = '\u751f\u6930\u62ff\u94c1',
   dairy = c(Carnation_drymilk = 10),
-  coffee_Tbsp = .5,
+  coffee_Tbsp = c(NescafeGold_blonde = .5),
   cocoa_tsp = c(KingArthur_Bensdorp = .25)#,
   #tool = list(Stanley14(treatment = c(
   #  'add hot water',

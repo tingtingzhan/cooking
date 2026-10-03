@@ -180,7 +180,10 @@ tomato_noodlelinda <- \() new(
 
 #' @rdname noodlelinda-class
 #' @export
-matcha_noodlelinda <- \() new(Class = 'noodlelinda', noodlelinda(), matcha_tsp = 7, review = 'retry!!')
+matcha_noodlelinda <- \() new(
+  Class = 'noodlelinda', 
+  noodlelinda(), 
+  matcha_tsp = c(Sencha_everyday_matcha = 7), review = 'retry!!')
 
 
 

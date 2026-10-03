@@ -18,7 +18,7 @@ Bundt_OLD2 <- \() new(
   ),
   bakingPowder_tsp = .75,
   water = 100, 
-  egg_pc = 2#,
+  egg_pc = c(eggYolk = 2, eggWhite = 2)
   #instruction (legacy) = c(
   #  'Grease a Bundt pan with vegetable oil', # Dust with flavored powder (if applicable) or flour
   #  'KitchenAid stand mixer: whisk together all liquid',
@@ -44,7 +44,7 @@ Bundt_OLD1 <- \() new(
   dairy = c(Carnation_drymilk = 80), # tried 50g
   oil = c(Wegmans_vegetable_oil = 100), # a little wet inside
   dairy = c(Daisy_sourCream = 110),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   #instruction (legacy) = c(
   #  'Grease a Bundt pan with vegetable oil', # Dust with flavored powder (if applicable) or flour
   #  'KitchenAid stand mixer: whisk together all liquid',
@@ -78,8 +78,8 @@ PreppyKitchen_chocolate_Bundt <- \() new(
   dairy = c(Kerrygold_butter = 213),
   dairy_cup = c(Daisy_sourCream = 1),
   oil_tsp = c(Wegmans_vegetable_oil = 24),
-  egg_pc = 4,
-  vanilla_tsp = 1,
+  egg_pc = c(eggYolk = 4, eggWhite = 4),
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   preppykitchen = c('_MqLza3bgbw' = 'chocolate-bundt-cake'))
 
 
@@ -96,7 +96,7 @@ PreppyKitchen_Bundt <- \() new(
     Kerrygold_butter = 1
   ),
   sugar_cup = c(Domino_granulated = 2),
-  egg_pc = 6,
+  egg_pc = c(eggYolk = 6, eggWhite = 6),
   vanilla_Tbsp = c(NielsenMassey_vanilla = 1),
   dairy_cup = c(Wegmans_whole_milk = 1),
   preppykitchen = c('x2W3j23xSKs' = 'vanilla-bundt-cake'))

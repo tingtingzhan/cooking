@@ -9,7 +9,7 @@ AmishHeritage_carrotcake <- \() new(
     Domino_darkBrown = 1
   ),
   oil_cup = c(Wegmans_vegetable_oil = 1.5),
-  egg_pc = 4,
+  egg_pc = c(eggYolk = 4, eggWhite = 4),
   fruit = c(carrot = 300, 
             pecan = 50, walnut = 50,
             Dole_pineapple = 100), 

@@ -66,8 +66,8 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
 #' @export
 matcha_snowSkin <- \() new(
   Class = 'snowSkin', 
-  matcha_Tbsp = 1, 
-  #matcha_tsp = 5, # high sugar filling
+  matcha_Tbsp = c(Sencha_everyday_matcha = 1), 
+  #matcha_tsp = c(Sencha_everyday_matcha = 5), # high sugar filling
   pros = c(
     'Use matcha_tsp=5 (but no more!) for high-sugar filling, e.g., canned adzuki bean paste',
     'Goes best with pumpkin_custardFilling()'
@@ -101,7 +101,7 @@ cocoa_snowSkin <- \() new(
 #' @export
 coffee_snowSkin <- \() new(
   Class = 'snowSkin',
-  coffee_Tbsp = c(1.75),
+  coffee_Tbsp = c(NescafeGold_blonde = 1.75),
   review = 'try')
 
 #' @rdname snowSkin-class

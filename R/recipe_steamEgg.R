@@ -16,7 +16,7 @@
 #' @export
 setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
   class2 = '\u725b\u5976\u84b8\u86cb',
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   dairy = c(Carnation_drymilk = 12),
   water = 100,
   dairy = c(Wegmans_heavyCream = 20),
@@ -32,7 +32,7 @@ pudding <- \() new(Class = 'pudding')
 
 steamEgg_OLD <- \() new(
   Class = 'pudding',
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   water = 120,
   dairy = c(Carnation_drymilk = 30), #tiny little too strong, and too dry
   review = 'Nice!  A good base')
@@ -47,7 +47,7 @@ shangshi_pudding <- \() new(
   dairy_cup = c(Wegmans_heavyCream = 1,
                 WegmansOrganic_whole_milk = 3),
   sugar = 75, # 1/3 cup
-  egg_pc = 5#, 
+  egg_pc = c(eggYolk = 5, eggWhite = 5)#, 
   #200g walnuts 核桃仁
   #120g raisins 葡萄干
 )

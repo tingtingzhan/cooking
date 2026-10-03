@@ -40,7 +40,8 @@
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
 #'  dairy_cup = c(BelGioioso_mascarpone = 1),
 #'  water = 70, 
-#'  sugar_tsp = 10.5, matcha_tsp = 4, 
+#'  sugar_tsp = 10.5, 
+#'  matcha_tsp = c(Sencha_everyday_matcha = 4), 
 #'  pros = 'Effie\'s Signature!'),
 #'  
 #'  matcha_whippedCream(),
@@ -48,7 +49,8 @@
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
 #'  dairy_cup = c(BelGioioso_mascarpone = 1),
 #'  water = 110, 
-#'  sugar_tsp = 11.5, matcha_tsp = 4.5, 
+#'  sugar_tsp = 11.5, 
+#'  matcha_tsp = c(Sencha_everyday_matcha = 4.5), 
 #'  pros = 'Xu Chang, Gloria', 
 #'  cons = 'Scott Keith says this is bitter'),
 #'  
@@ -85,7 +87,10 @@ setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
 
 #' @rdname whippedCream-class
 #' @export
-matcha_whippedCream <- \() new(Class = 'whippedCream', matcha_tsp = 1.5, sugar_tsp = 3.5)
+matcha_whippedCream <- \() new(
+  Class = 'whippedCream', 
+  matcha_tsp = c(Sencha_everyday_matcha = 1.5), 
+  sugar_tsp = 3.5)
 
 #' @rdname whippedCream-class
 #' @export
@@ -173,15 +178,16 @@ setClass(Class = 'ganache', contains = 'recipe', prototype = prototype(
 #' @export
 matcha_frosting <- \() new(
   Class = 'frosting', 
-  sugar_tsp = 8, matcha_tsp = 3.5, 
+  sugar_tsp = 8, 
+  matcha_tsp = c(Sencha_everyday_matcha = 3.5), 
   review = 'try')
 
 #' @rdname whippedCream-class
 #' @export
 matcha_ganache <- \() new(
   Class = 'ganache', 
-  # sugar = 30, matcha_tsp = 4, # too hard after chilled
-  water = 15, sugar = 32, matcha_tsp = 4, # try
+  # sugar = 30, matcha_tsp = c(Sencha_everyday_matcha = 4), # too hard after chilled
+  water = 15, sugar = 32, matcha_tsp = c(Sencha_everyday_matcha = 4), # try
   review = 'try')
 
 
@@ -240,13 +246,15 @@ setClass(Class = 'mascarponeSpread', contains = 'mascarponeGanache', prototype =
 #' @export
 cocoa_ganache <- \() new(
   Class = 'ganache',  
-  sugar_tsp = 13, cocoa_tsp = c(KingArthur_Bensdorp = 7),
+  sugar_tsp = 13, 
+  cocoa_tsp = c(KingArthur_Bensdorp = 7),
   review = 'try')
 
 
 coffee_ganache <- \() new(
   Class = 'ganache',
-  sugar_tsp = 7, coffee_Tbsp = 1,
+  sugar_tsp = 7, 
+  coffee_Tbsp = c(NescafeGold_blonde = 1),
   review = 'try')
 
 
@@ -362,7 +370,7 @@ lifeloveandsugar_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', flavor = 'Life Love & Sugar',
   dairy_cup = c(Wegmans_heavyCream = 1.25),
   sugar_cup = c(Domino_10x = 3/4),
-  vanilla_tsp = 1,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
 #' @rdname whippedCream-class
@@ -371,8 +379,8 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- \() new(
   Class = 'mascarponeFrosting', flavor = 'Life Love & Sugar, Cocoa',
   dairy_cup = c(Wegmans_heavyCream = 1.25),
   sugar_cup = c(Domino_10x = 1/2),
-  cocoa_cup = 1/4,
-  vanilla_tsp = 1,
+  cocoa_cup = c(KingArthur_Bensdorp = 1/4),
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
 #' @rdname whippedCream-class
@@ -382,7 +390,7 @@ Marcellina_mascarponeFrosting <- \() new(
   flavor = 'Marcellina in Cucina',
   dairy_cup = c(Wegmans_heavyCream = 1),
   sugar_cup = c(Domino_10x = 1/4),
-  vanilla_tsp = 2,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 2),
   url = 'https://www.marcellinaincucina.com/mascarpone-cream/')
 
 

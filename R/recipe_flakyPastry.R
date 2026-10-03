@@ -220,12 +220,16 @@ Dad_yolkPastry_shortDough <- \() new(
 # @rdname flakyPastry
 # @export
 cocoa_Dad_yolkPastry_largeYouSu <- \() new(
-  Class = 'recipe', Dad_yolkPastry_shortDough(), cocoa = 12)
+  Class = 'recipe', 
+  Dad_yolkPastry_shortDough(), 
+  cocoa = c(KingArthur_Bensdorp = 12))
 
 # @rdname flakyPastry
 # @export
 matcha_Dad_yolkPastry_largeYouSu <- \() new(
-  Class = 'recipe', Dad_yolkPastry_shortDough(), matcha = 12)
+  Class = 'recipe', 
+  Dad_yolkPastry_shortDough(), 
+  matcha = c(Sencha_everyday_matcha = 12))
 
 
 #' @rdname flakyPastry
@@ -233,7 +237,8 @@ matcha_Dad_yolkPastry_largeYouSu <- \() new(
 PinNuo_oxTongue_waterDough <- \() new(
   Class = 'recipe', flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 500),
-  yeast = 4, Na2CO3 = 1, water = 320, 
+  yeast = c(Fleischmanns_instant = 4), 
+  Na2CO3 = 1, water = 320, 
   pino = 'fC2zXSK9PxM') # this video has no largeYouSu recipe!
 
 #' @rdname flakyPastry
@@ -288,7 +293,7 @@ laofangu_durianSu_waterDough <- \() new(
   flour = c(Wegmans_pastryFlr = 250), 
   sugar = 25, 
   fat = c(Epic_lard = 25),
-  egg_pc = 1, water = 100)
+  egg_pc = c(eggYolk = 1, eggWhite = 1), water = 100)
 
 
 #' @rdname flakyPastry
@@ -305,7 +310,7 @@ Dad_sweetPastry_waterDough <- \() new(
   Class = 'recipe', flavor = '\u7cd6\u9165\u997c(\u6c34)', 
   dad1966 = 'CEHbZrNHNG4',
   flour = c(KingArthur_allPurposeFlr = 500), 
-  yeast = 4, water = 320)
+  yeast = c(Fleischmanns_instant = 4), water = 320)
 
 #' @rdname flakyPastry
 #' @export

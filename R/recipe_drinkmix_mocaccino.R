@@ -17,14 +17,18 @@
 #' @export
 setClass(Class = 'mocaccino', contains = 'drinkmix', prototype = prototype(
   dairy = c(Carnation_drymilk = 40),
-  coffee_tsp = c(4),
+  coffee_tsp = c(NescafeGold_blonde = 4),
   cocoa_tsp = c(KingArthur_Bensdorp = 8),
   sugar_tsp = 2.5 # well tested!!
 ))
 
 #' @rdname mocaccino-class
 #' @export
-mocaccino <- \() new(Class = 'mocaccino', date = as.Date('2024-11-02'), pros = 'perfected!!!')
+mocaccino <- \() new(
+  Class = 'mocaccino', 
+  flavor = 'Mocaccino',
+  date = as.Date('2024-11-02'), 
+  pros = 'perfected!!!')
 
 
 

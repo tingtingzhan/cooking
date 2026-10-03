@@ -5,7 +5,7 @@
   Class = 'recipe', 
   flour = c(Wegmans_pastryFlr = 90),
   sugar = 20, # originally 90g
-  egg_pc = 3,
+  egg_pc = c(eggYolk = 3, eggWhite = 3),
   dairy = c(Carnation_drymilk = 5),
   water = 20,
   oil = c(Wegmans_vegetable_oil = 25),

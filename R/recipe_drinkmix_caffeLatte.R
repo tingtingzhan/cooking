@@ -17,7 +17,7 @@
 #' @export
 setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
   dairy = c(Carnation_drymilk = 40),
-  coffee_tsp = c(4*2), # perfect, do not add more!
+  coffee_tsp = c(NescafeGold_blonde = 4*2), # perfect, do not add more!
   cocoa_tsp = c(KingArthur_Bensdorp = 1*2),
   sugar_tsp = 1
 ))
@@ -27,6 +27,7 @@ setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
 #' @export
 caffeLatte <- \() new(
   Class = 'caffeLatte', 
+  flavor = 'Caff\u00e8 Latte',
   date = as.Date('2024-10-27'),
   pros = 'my favorite so far')
 
@@ -35,7 +36,7 @@ caffeGoatLatte_blonde <- \() new(
   Class = 'recipe', 
   flavor = 'Caff\u00e8 Goat Latte',
   drymilk = c(Meyenberg_goatWhole_drymilk = 25*2),
-  coffee_tsp = c(4.5*2), 
+  coffee_tsp = c(NescafeGold_blonde = 4.5*2), 
   pros = 'I love')
 
 

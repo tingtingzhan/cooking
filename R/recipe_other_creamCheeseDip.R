@@ -17,7 +17,7 @@ pumpkin_creamCheeseDip_bakethat <- \() new(
   dairy_brick = c(Philadelphia_creamCheese = 1),
   sugar_cup = c(Domino_10x = 1.5),
   puree = c(Libbys_pumpkin = 425), # 15 oz
-  vanilla_tsp = 1,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   spice_Tbsp = c(SimplyOrganic_pumpkinSpice = 1/2),
   spice_tsp = c(SimplyOrganic_cinnamonCeylon = 1/2),
   youtube = 'G87HfZjdDwI'

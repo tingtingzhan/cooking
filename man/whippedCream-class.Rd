@@ -110,7 +110,8 @@ nutritionlist(
  new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
  dairy_cup = c(BelGioioso_mascarpone = 1),
  water = 70, 
- sugar_tsp = 10.5, matcha_tsp = 4, 
+ sugar_tsp = 10.5, 
+ matcha_tsp = c(Sencha_everyday_matcha = 4), 
  pros = 'Effie\'s Signature!'),
  
  matcha_whippedCream(),
@@ -118,7 +119,8 @@ nutritionlist(
  new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
  dairy_cup = c(BelGioioso_mascarpone = 1),
  water = 110, 
- sugar_tsp = 11.5, matcha_tsp = 4.5, 
+ sugar_tsp = 11.5, 
+ matcha_tsp = c(Sencha_everyday_matcha = 4.5), 
  pros = 'Xu Chang, Gloria', 
  cons = 'Scott Keith says this is bitter'),
  

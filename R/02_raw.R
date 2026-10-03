@@ -340,15 +340,9 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     combnVol(which = 'sugar', nm = 'US_10x') |>
     combnVol(which = 'syrup') |>
     combnVol(which = 'salt', nm = 'Morton_salt') |>
-    combnVol(which = 'msg', nm = 'Ajinomoto_msg') |>
     combnVol(which = 'NaHCO3', nm = 'ArmHammer_NaHCO3') |>
     combnVol(which = 'Na2CO3', nm = 'Na2CO3') |>
     combnVol(which = 'bakingPowder', nm = 'TraderJoes_bakingPowder') |>
-    combnVol(which = 'yeast', nm = 'Fleischmanns_instant') |>
-    combnVol(which = 'matcha', nm = 'Ippodo_ikuyo') |>
-    combnVol(which = 'cocoa', nm = 'KingArthur_Bensdorp') |>
-    combnVol(which = 'coffee', nm = 'NescafeGold_blonde') |> 
-    combnVol(which = 'vanilla', nm = 'NielsenMassey_Madagascar') |>
     combnVol(which = 'starch') |>
     combnVol(which = 'oil') |>
     combnVol(which = 'sauce') |>
@@ -359,11 +353,11 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     combnVol(which = 'seed')
   
   for (i in names(getSlots(x = 'raw.'))) {
-    ival <- slot(object = x, name = i)
-    # generic method '+' will create 0's
-    if (anyNA(ival)) stop(i)
-    if (length(ival) && all(ival == 0)) slot(object = x, name = i) <- numeric()
+    x <- x |>
+      .slot_rm_zero(name = i)
   }
+  
+
   
   return(x)
   

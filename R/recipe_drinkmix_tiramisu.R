@@ -6,7 +6,7 @@
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
   #class2 = '\u901f\u6eb6\u7c89',
   dairy = c(Carnation_drymilk = 40),
-  coffee_tsp = c(2.5*2),
+  coffee_tsp = c(NescafeGold_blonde = 2.5*2),
   cocoa_tsp = c(KingArthur_Bensdorp = .375*2)
 ))
 
@@ -90,6 +90,8 @@ tiramisuMix_Kikisi <- \() new(
 )
 
 ryeWhisky_latte_FAIL <- \() new(
-  Class = 'tiramisuMix', syrup_tsp = c(Runamok_ryeWhisky = 1.5), coffee_tsp = 1.5, 
+  Class = 'tiramisuMix', 
+  syrup_tsp = c(Runamok_ryeWhisky = 1.5), 
+  coffee_tsp = c(NescafeGold_blonde = 1.5), 
   cons = c('too sweet', 'not enough alcohol'))
 

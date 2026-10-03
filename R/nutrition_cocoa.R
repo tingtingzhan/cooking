@@ -5,6 +5,7 @@
 #' 
 #' @examples
 #' nutritionlist(
+#'  cooking:::OrganicTraditions_cacao(),
 #'  cooking:::KingArthur_blackCocoa(),
 #'  cooking:::KingArthur_Burgundy(),
 #'  cooking:::KingArthur_Bensdorp(), 
@@ -26,8 +27,19 @@ Navitas_cacao <- \() new(
   #servingTbsp = 1, # on package 
   servingTbsp = 6/7*1, # actual measure: 1tbsp=7g
   calorie = 25,
-  fat = .5, carbohydrate = 3, protein = 2)
+  fat = .5, carbohydrate = 3, fiber = 2, protein = 2)
 
+
+OrganicTraditions_cacao <- \() new(
+  Class = 'nutrition',
+  brand = 'https://organictraditions.com/products/cacao-powder' |> 
+    style_hyperlink(text = 'Organic Traditions\U1f1fa\U1f1f8') |>
+    c(),
+  name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
+  usd = 38.99/2/454*20, costco = '100511406',
+  servingGram = 20, servingTbsp = 3,
+  fat = 2, carbohydrate = 11, fiber = 7, protein = 5, sodium = .03
+)
 
 
 
@@ -39,7 +51,7 @@ KingArthur_blackCocoa <- \() new(
   # servingTbsp = 1, # on package
   servingTbsp = 5/7, # actual experiment: 1tbsp = 7g
   calorie = 15,
-  fat = .5, carbohydrate = 2, protein = 1,
+  fat = .5, carbohydrate = 2, fiber = 2, protein = 1,
   review = c(
     'I don\'t like it for hot chocolate'
   ))
@@ -54,7 +66,7 @@ KingArthur_Bensdorp <- \() new(
   #servingTbsp = 1, # on package
   servingTbsp = 6/9, # actual experiment, 1tbsp = 9g
   calorie = 20,
-  fat = 1.5, carbohydrate = 3, protein = 1)
+  fat = 1.5, carbohydrate = 3, fiber = 2, protein = 1)
 
 
 
@@ -67,7 +79,7 @@ KingArthur_Burgundy <- \() new(
   servingTbsp = 5/(24/8*3), # actual experiment 24g = 8tsp
   calorie = 20,
   # no Carbohydrate!!
-  fat = 1, protein = 1,
+  fat = 1, carbohydrate = 1, fiber = 1, protein = 1,
   superior = 'KingArthur_Bensdorp')
 
 
@@ -79,7 +91,7 @@ Ghirardelli_cocoa <- \() new(
   usd = 39.95/(6*227)*6, 
   servingGram = 6, servingTbsp = 1,
   calorie = 15,
-  fat = 1, protein = 1)
+  fat = 1, carbohydrate = 3, fiber = 2, protein = 1)
 
 
 

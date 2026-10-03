@@ -62,7 +62,7 @@ GaaDai_beefball <- \() new(
   NaHCO3_tsp = 4, # 1 Chinese soup spoon 
   iceWater = 400, # looks like
   salt = 120,
-  msg = 50,
+  msg = c(Ajinomoto_msg = 50),
   spice = c(McCormick_garlic = 130),
   starch = c(Wegmans_corn_starch = 100),
   fat = c(Epic_tallow = 3*500))
@@ -78,7 +78,7 @@ Daat_cuttlefishball <- \() new(
   seafood = c(Kirkland_shrimp_c31 = 250),
   meat = c(pork_fat = 100),
   salt = 8,
-  msg = 9,
+  msg = c(Ajinomoto_msg = 9),
   sugar = 13,
   starch = c(Wegmans_corn_starch = 20),
   oil = c(Kadoya_sesame_oil = 5),

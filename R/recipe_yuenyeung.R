@@ -19,7 +19,7 @@ yuenyeungCoconut <- \() new(
   beverage = c(Freenow_coconutBar = 180),
   boilingWater = 255,
   dairy = c(Carnation_drymilk = 10),
-  coffee_tsp = c(1),
+  coffee_tsp = c(NescafeGold_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   tea_pc = c(Twinings_EnglishBreakfast = 2),
   tool = list(Stanley14(treatment = c(
@@ -41,7 +41,7 @@ yuenyeungCoconut_summer <- \() new(
   boilingWater = 310,
   ice = 330,
   dairy = c(Carnation_drymilk = 25),
-  coffee_tsp = 2.5,
+  coffee_tsp = c(NescafeGold_blonde = 2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
   tea_pc = c(Twinings_EnglishBreakfast = 4), # only x2, not x2.5 !!!
   tool = list(Stanley40(treatment = c(
@@ -75,7 +75,7 @@ yuenyeungCoconut_jelly <- \() new(
   water95 = 530,
   gelatin_pc = c(Champion_gold_gelatin = 8),
   dairy = c(Carnation_drymilk = 25),
-  coffee_tsp = c(2.5),
+  coffee_tsp = c(NescafeGold_blonde = 2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
   tea_pc = c(Twinings_EnglishBreakfast = 4),
   tool = list(StanleyJar36(treatment = c(
@@ -98,7 +98,7 @@ yuenyeungLatte_try2 <- \() new(
   dairy = c(Wegmans_heavyCream = 10,
             Carnation_drymilk = 30),
   sugar = c(Domino_darkBrown = 5),
-  coffee_tsp = c(1.5),
+  coffee_tsp = c(NescafeGold_blonde = 1.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .5),
   tea_pc = c(Twinings_EnglishBreakfast = 3),
   boilingWater = 400
@@ -109,7 +109,7 @@ yuenyeungLatte_try1 <- \() new(
   dairy = c(Wegmans_heavyCream = 10,
             Carnation_drymilk = 30),
   sugar = c(Domino_darkBrown = 5),
-  coffee_tsp = c(1),
+  coffee_tsp = c(NescafeGold_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   tea_pc = c(Twinings_EnglishBreakfast = 2),
   boilingWater = 400,

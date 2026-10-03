@@ -42,25 +42,27 @@ nutritionlist <- \(...) {
 #' @export
 print.nutritionlist <- \(x, ...) {
   
-  cat('\n')
-  'Nutrition\n' |> bg_br_yellow() |> cat()
+  'Nutrition' |> 
+    bg_br_yellow() |> 
+    cat('\n', . = _, '\n', sep = '')
+  
   x |>
     as.matrix.nutritionlist(...) |>
     print.nutritionMatrix()
+
+  sumx <- x |>
+    attr(which = 'sumx')
   
-  for (which in c(
-    'perAllPurposeFlr', 'perPastryFlr', 'perBreadFlr', 
-    'perCornmeal', 'perRiceFlr', 
-    'perCocoa', 'perTea', 'perCreamCheese', 'perRaw'
-  )) {
-    x |>
-      attr(which = 'sumx') |>
+  pers <- sumx |>
+    lapply(FUN = names) |>
+    unlist(use.names = FALSE) |>
+    unique.default()
+    
+  for (which in pers) {
+    sumx |>
       lapply(FUN = '[[', which = which, exact = TRUE) |>
       print.perlist()
   }
-  
-  # new per-raw!!!
-  
   
   return(invisible())
   

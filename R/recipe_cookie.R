@@ -129,7 +129,8 @@ mungBean_cookie <- \() new(Class = 'cookie', adzukiBean_cookie(),
 #' @rdname cookie-class
 #' @export
 coffee_cookie <- \() new(
-  Class = 'cookie', coffee = 40, 
+  Class = 'cookie', 
+  coffee = c(NescafeGold_blonde = 40), 
   flour = c(Wegmans_pastryFlr = 384), sugar = 100, 
   dairy = c(Carnation_drymilk = 160),
   review = 'try')
@@ -265,7 +266,7 @@ PreppyKitchen_thumbprintCookie <- \() new(
   dairy_brick = c(Kerrygold_butter = 1),
   sugar = 150,
   egg_pc = c(eggYolk = 2),
-  vanilla_tsp = 1,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   flour = c(KingArthur_allPurposeFlr = 360),
   preppykitchen = c('vdR7Wx9PptY' = 'thumbprint-cookies'))
 

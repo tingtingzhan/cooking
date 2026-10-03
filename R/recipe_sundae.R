@@ -47,7 +47,7 @@
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
 #'  dairy_cup = c(BelGioioso_mascarpone = 1),
 #'  water = 320, 
-#'  dairy = c(Carnation_drymilk = 40), matcha_tsp = 10, sugar_Tbsp = 4, 
+#'  dairy = c(Carnation_drymilk = 40), matcha_tsp = c(Sencha_everyday_matcha = 10), sugar_Tbsp = 4, 
 #'  pros = c('Nice! Tiny little oily'))
 #' )
 #' 
@@ -85,7 +85,8 @@ setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
 #' @export
 matcha_sundae <- \() new(
   Class = 'sundae',
-  dairy = c(Carnation_drymilk = 40), matcha_tsp = 8, sugar_Tbsp = 3,
+  dairy = c(Carnation_drymilk = 40),
+  matcha_tsp = c(Sencha_everyday_matcha = 8), sugar_Tbsp = 3,
   pros = 'I love')
 
 
@@ -111,7 +112,9 @@ pumpkin_sundae <- \() new(
 #' @export
 coffee_sundae <- \() new(
   Class = 'sundae',
-  dairy = c(Carnation_drymilk = 37), coffee_Tbsp = 2, sugar_tsp = 5, # based on my coffee_gelatoOLD()
+  dairy = c(Carnation_drymilk = 37),
+  coffee_Tbsp = c(NescafeGold_blonde = 2), 
+  sugar_tsp = 5, # based on my coffee_gelatoOLD()
   review = 'try')
 
 
@@ -228,7 +231,7 @@ xiaogaojie_cocoa_icecream <- \() new(
             WegmansOrganic_whole_milk = 250), 
   sugar = 60,
   flavor = c(Guittard_lustrous55 = 200), # semi-sweet chocolate：200g
-  coffee_tsp = 1) # 5g 1 tablespoon
+  coffee_tsp = c(NescafeGold_blonde = 1)) # 5g 1 tablespoon
   
 
 
@@ -242,7 +245,7 @@ SweetDumpling_matcha_icecream <- \() new(
     WegmansOrganic_whole_milk = 50,
     Carnation_condensMilk = 170
   ),
-  matcha = 15)
+  matcha = c(Sencha_everyday_matcha = 15))
 
 #' @rdname icecream
 #' @export
@@ -253,7 +256,7 @@ cuisinart_icecream <- \() new(
     Wegmans_heavyCream = 2,
     Wegmans_whole_milk = 1),
   sugar = 150, # ¾ cup granulated sugar 
-  vanilla_tsp = 1)
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
 #' @rdname icecream

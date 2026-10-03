@@ -35,7 +35,7 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
   ), 
   starch = c(sweetPotato_starch = 40),
   sauce_tsp = c(LeaPerrins_Worcestershire = 3),
-  egg_pc = 4, 
+  egg_pc = c(eggYolk = 4, eggWhite = 4), 
   water = 100, 
   # machine (legacy) = list(
   #  'Nutribullet Food Processor' = c(

@@ -9,16 +9,19 @@
 
 Fleischmanns_instant <- \() new(
   Class = 'nutrition',  
-  fleischmannsyeast = 4L,
-  name = 'Instant Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
-  servingGram = 7.09, servingTsp = 2.25#,
+  fleischmannsyeast = 'bread-machine', # or 'rapidrise' ?
+  name = 'Instant Dry Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
+  bjs = 'fleischmanns-instant-dry-yeast-2-pk1-lb/3000000000000222175/',
+  usd = 6.59 / 528,
+  servingGram = .9, servingTsp = 1/4#,
   #machine = \(x) 'Protect Fleischmanns RapidRise instant yeast with flour'
   )
 
 
 
 Fleischmanns_active <- \() new(
-  Class = 'nutrition',  fleischmannsyeast = 2L,
+  Class = 'nutrition', 
+  fleischmannsyeast = 'active-dry',
   name = 'Active Dry Yeast',
   servingGram = 7.09, servingTsp = 2.25)
 

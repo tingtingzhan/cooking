@@ -39,5 +39,5 @@ mianjin <- \() new(
   class2 = '\u591a\u6751\u9ec4\u6559\u716e', flavor = '\u9762\u7b4b', youtube = 'rgmp-ulEeMk',
   misc = c(BobsRedMill_wheatGluten = 100),
   water = 150,
-  yeast = 2
+  yeast = c(Fleischmanns_instant = 2)
 )

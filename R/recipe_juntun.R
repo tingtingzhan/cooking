@@ -21,7 +21,8 @@
 setClass(Class = 'juntun', contains = 'recipe', prototype = prototype(
   class2 = '\u519b\u5c6f\u9505\u76d4\u76ae',
   flour = c(Wegmans_pastryFlr = 500),
-  sugar_tsp = 4, yeast_tsp = 2, # maybe not too much fermentation..
+  sugar_tsp = 4, 
+  yeast_tsp = c(Fleischmanns_instant = 2), # maybe not too much fermentation..
 
   # do NOT use butter in dough next time!
   # pan sear in oil is a must!!!

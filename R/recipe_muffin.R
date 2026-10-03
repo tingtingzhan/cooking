@@ -103,7 +103,7 @@ cornbread <- \() new(
   sugar = 45,
   bakingPowder_tsp = 1, # best, so far
   
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy = c(Lucerne_heavyCream = 175), 
   water95 = 320, # good for muffin; yet to experiment for skillet
   

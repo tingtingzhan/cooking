@@ -24,12 +24,12 @@ muffin_tmp <- \() new(
   flour = c(Wegmans_pastryFlr = 270),
   sugar = 62,
   dairy_cup = c(MembersMark_yogurtGreek = 1),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 90),
   water = 100, # 140g, from Brody's milk
   bakingPowder_tsp = 2.25, # try next
   # note (legacy) = 'Steam Bake, 300F/25min', # next time
-  vanilla_tsp = 1)
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
 #' @rdname muffin_other
@@ -37,13 +37,13 @@ muffin_tmp <- \() new(
 Brody_muffin <- \() new(
   Class = 'recipe', author = 'Brody', flavor = 'Muffin', 
   sugar = 300,
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 224), # 1 cup, original
   dairy_cup = c(
     SimpleTruth_yogurt = 1,
     Wegmans_whole_milk = 2/3
   ), 
-  vanilla_tsp = 2, # original
+  vanilla_tsp = c(NielsenMassey_Madagascar = 2), # original
   flour_cup = c(KingArthur_allPurposeFlr = 2.25),
   bakingPowder_tsp = 2.5, # original
   salt_tsp = .5)
@@ -60,7 +60,7 @@ Introvert_muffin <- \() new(
   salt_tsp = .5,
   dairy_cup = c(Kerrygold_butter = 1/2,
                 Wegmans_whole_milk = .75),
-  egg_pc = 2)
+  egg_pc = c(eggYolk = 2, eggWhite = 2))
 
 
 #' @rdname muffin_other
@@ -72,10 +72,10 @@ CulinaryHill_muffin <- \() new(
   sugar = 200,
   bakingPowder_tsp = 2,
   salt_tsp = 1/2,
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Kerrygold_butter = 1/2,
                 Wegmans_whole_milk = .5),
-  vanilla_tsp = 1)
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
 #' @rdname muffin_other
@@ -86,7 +86,7 @@ Lori_muffin <- \() new(
   bakingPowder_Tbsp = 1,
   salt_tsp = 1/2,
   sugar = 150, 
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   dairy_cup = c(Wegmans_whole_milk = 1),
   oil = c(Wegmans_vegetable_oil = 224/4))
 
@@ -106,7 +106,7 @@ Sallys_pumpkin_muffin <- \() new(
   oil_cup = c(Wegmans_vegetable_oil = 1/2),
   sugar_cup = c(Domino_granulated = 1/2, Domino_darkBrown = 1/2),
   puree = c(Libbys_pumpkin = 340),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Wegmans_whole_milk = 1/4)
 )
 

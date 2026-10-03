@@ -37,7 +37,7 @@ setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
   class2 = 'Ga\u0302teau', # 'G\u00e2teau' # ??
   flour = c(Wegmans_pastryFlr = 120), #flour = c(KingArthur_allPurposeFlr = 120),
   dairy = c(Wegmans_heavyCream = 150),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   bakingPowder_tsp = .5,
   water = 110#, # try
   #waterLost = 50#, # re-confirm!!
@@ -51,8 +51,8 @@ setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
 #' @export
 cocoa_gateau <- \() new(
   Class = 'gateau',
-  cocoa_tsp = c(Navitas_cacao = 14), # 6%, next try
-  coffee_tsp = 1,
+  cocoa_tsp = c(KingArthur_Bensdorp = 14), # 6%, next try
+  coffee_tsp = c(NescafeGold_blonde = 1),
   sugar = 55,
   review = 'try')
 
@@ -64,7 +64,7 @@ cocoa_gateau_FAIL <- \() new(
   # cannot use bread flour!  Contains too much water haha
   
   dairy = c(Wegmans_heavyCream = 180),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   bakingPowder_tsp = .5,
   water = 165, # still very dry # boilingWater?
   # waterLost = 35, # 50 min
@@ -75,7 +75,7 @@ cocoa_gateau_FAIL <- \() new(
   
   cocoa = c(Navitas_cacao = 30), # 5% cocoa overall, already quite good
   #cocoa_tsp = c(Navitas_cacao = 24), # 8.3%, next try
-  coffee_tsp = 1, # 2/1000 overall
+  coffee_tsp = c(NescafeGold_blonde = 1), # 2/1000 overall
   sugar = 62,
 
   review = 'try')
@@ -86,7 +86,7 @@ cocoa_gateau_FAIL <- \() new(
 #' @export
 matcha_gateau <- \() new(
   Class = 'gateau',
-  matcha_Tbsp = 3,
+  matcha_Tbsp = c(Sencha_everyday_matcha = 3),
   dairy = c(Carnation_drymilk = 30),
   sugar = 47,
   review = 'try')
@@ -111,12 +111,13 @@ AddaPinch_chocolate_cake <- \() new(
   Class = 'recipe', author = 'Add-A-Pinch', flavor = 'Chocolate Cake',
   url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 396,
-  cocoa = 63, coffee = 2.3,
+  cocoa = c(KingArthur_Bensdorp = 63), 
+  coffee = c(NescafeGold_blonde = 2.3),
   bakingPowder_tsp = 2, NaHCO3_tsp = 1.5, salt = 2.8,
   dairy_cup = c(Wegmans_whole_milk = 1),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 99),
-  vanilla_tsp = 2,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 2),
   boilingWater = 227)
 
 
@@ -125,12 +126,12 @@ AddaPinch_chocolate_cake <- \() new(
 PreppyKitchen_chocolate_cake <- \() new(
   Class = 'recipe', flavor = 'Chocolate Cake',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 400,
-  cocoa = 50,
+  cocoa = c(KingArthur_Bensdorp = 50),
   bakingPowder_tsp = 1.5, NaHCO3_tsp = 1.5, salt_tsp = 1/4, # ½ teaspoon kosher salt
   dairy_cup = c(Wegmans_whole_milk = 1), 
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 14*8), # ½ cup vegetable oil (180mL)
-  vanilla_Tbsp = 1,
+  vanilla_Tbsp = c(NielsenMassey_Madagascar = 1),
   boilingWater = 240,
   preppykitchen = c('vI5w-fK25w4' = 'ultimate-chocolate-cake'))
 
@@ -140,9 +141,9 @@ DessertFor2_matcha_cake <- \() new(
   Class = 'recipe', author = 'DessertFor2', flavor = 'Matcha Cake',
   dairy = c(Kerrygold_butter = 99),
   sugar = 200,
-  egg_pc = 2,
-  vanilla_tsp = 1,
-  matcha_tsp = 1.5*3,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
+  matcha_tsp = c(Sencha_everyday_matcha = 1.5*3),
   flour = c(KingArthur_allPurposeFlr = 120),
   bakingPowder_tsp = 1,
   dairy_cup = c(OakFarms_buttermilk = 1/3),
@@ -160,13 +161,13 @@ Sallys_pumpkin_cake <- \() new(
     SimplyOrganic_pumpkinSpice = 2
   ),
   oil = c(Wegmans_vegetable_oil = 240), # 1 cup (240ml) canola or vegetable oil*
-  egg_pc = 4,
+  egg_pc = c(eggYolk = 4, eggWhite = 4),
   sugar = c(
     Domino_darkBrown = 200,
     US_10x = 100
   ),
   puree = c(Libbys_pumpkin = 425), #1 (15 ounce) can pumpkin puree*
-  vanilla_tsp = 1.5,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1.5),
   url = 'https://sallysbakingaddiction.com/best-pumpkin-cake/#tasty-recipes-67484')
 
 

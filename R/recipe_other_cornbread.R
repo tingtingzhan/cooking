@@ -12,7 +12,7 @@ Wegmans_cornbread_recipe <- \() new(
   sugar_cup = c(Domino_granulated = 2/3),
   misc = c(Wegmans_creamCorn = 418*2), #2 cans (14.75 oz each)
   dairy = c(Daisy_sourCream = 453.6),
-  egg_pc = 6,
+  egg_pc = c(eggYolk = 6, eggWhite = 6),
   oil_cup = c(Wegmans_avocado_oil = 1/2)
 )
 
@@ -22,7 +22,7 @@ Wegmans_cornbread_recipe <- \() new(
 BethanyWeathersby_cornbread <- \() new(
   Class = 'recipe', flavor = 'Cornbread', author = 'Bethany Weathersby',
   sugar_cup = c(Domino_granulated = 2/3),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Kerrygold_butter = 1/2,
                 OakFarms_buttermilk = 1), 
   NaHCO3_tsp = 1/2, 
@@ -42,7 +42,7 @@ bluegirl_cornbread <- \() new(
   salt_tsp = 1,
   dairy_cup = c(Wegmans_whole_milk = 1),
   oil_cup = c(Wegmans_vegetable_oil = 1/3),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   allrecipes = '17891/golden-sweet-cornbread/')
 
 
@@ -57,7 +57,7 @@ PreppyKitchen_cornbread <- \() new(
     LandOLakes_butter = 1/4,
     Horizon_wholeDHA_milk = 1.5
   ),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   oil_Tbsp = c(Wesson_soy_oil = 1),
   preppykitchen = c(
     'vQM-SFKSqcg' = 'cornbread-recipe' # youtube = '16YfyByvLZg' same recipe!
@@ -72,7 +72,7 @@ Quaker_cornbread <- \() new(
   salt_tsp = 1,
   NaHCO3_tsp = 1,
   dairy_cup = c(OakFarms_buttermilk = 2),
-  egg_pc = 1)
+  egg_pc = c(eggYolk = 1, eggWhite = 1))
 
 
 JoshuaWeissman_cornbread <- \() new(
@@ -85,7 +85,7 @@ JoshuaWeissman_cornbread <- \() new(
   salt = 6,
   bakingPowder_Tbsp = 1,
   grain_cup = c(Albertsons_yellow_cornmeal = 1.25), # this is not 175g
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Kerrygold_butter = 1/2,
                 OakFarms_buttermilk = 1.5),
   joshuaweissman = c('et5OlhhD2Bo' = 'homemade-cornbread')
@@ -99,7 +99,7 @@ Jiffy_cornMuffin <- \() new(
   author = 'Jiffy', 
   url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
   misc = c(Jiffy_cornMuffinMix = 240),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   dairy_cup = c(Wegmans_whole_milk = 1/3))
 
 
@@ -109,7 +109,7 @@ WholeFoods365_cornbread <- \() new(
   flavor = 'Cornbread',
   author = WholeFoods365_cornbreadMix()@brand,
   misc = c(WholeFoods365_cornbreadMix = 425),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Wegmans_whole_milk = 1),
   oil_cup = c(Wegmans_vegetable_oil = .5))
 
@@ -121,7 +121,7 @@ Stonewall_cornbread <- \() new(
   flavor = 'Cornbread',
   author = Stonewall_cornbreadMix()@brand, 
   misc = c(Stonewall_cornbreadMix = 453.6),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   dairy_cup = c(Wegmans_whole_milk = 1),
   oil_cup = c(Wegmans_vegetable_oil = 1/3))
 
@@ -133,7 +133,7 @@ TraderJoes_cornbread <- \() new(
   #author = 'Trader Joes', # recipe on packaging
   author = TraderJoes_cornbreadMix()@brand, 
   misc = c(TraderJoes_cornbreadMix = 425),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   dairy_cup = c(Wegmans_whole_milk = 3/4),
   oil_cup = c(Wegmans_vegetable_oil = 1/2))
 
@@ -146,7 +146,7 @@ Krusteaz_southern_cornbread <- \() new(
   misc = c(Krusteaz_southern_cornbreadMix = 326), # 11.5 oz
   dairy_cup = c(Kerrygold_butter = 1/3,
                 OakFarms_buttermilk = 1),
-  egg_pc = 2)
+  egg_pc = c(eggYolk = 2, eggWhite = 2))
 
 # check out those fancier recipes https://www.krusteaz.com/recipes/cornbread/
 
@@ -159,7 +159,7 @@ BobsRedMill_cornbread <- \() new(
   author = BobsRedMill_cornbreadMix()@brand,
   misc = c(BobsRedMill_cornbreadMix = 680),
   water_cup = 2.5,
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil_cup = c(Wegmans_vegetable_oil = 1/2))
 
 
@@ -170,7 +170,7 @@ Fleischmanns_cornbread <- \() new(
   misc = c(Fleischmanns_cornbreadMix = 425),
   dairy_cup = c(Kerrygold_butter = 1/3,
                 Wegmans_whole_milk = 2/3),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   portion = c('standard muffin' = 60))
 
 

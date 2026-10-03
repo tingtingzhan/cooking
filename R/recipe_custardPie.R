@@ -13,16 +13,16 @@ if (FALSE) {
         SimplyOrganic_clove = 1/4
       ),
       salt_tsp = .125, # .5 # original
-      egg_pc = 2,
+      egg_pc = c(eggYolk = 2, eggWhite = 2),
       allrecipes = '22755/libbys-famous-pumpkin-pie/'
   )
 
 
   new(Class = 'recipe', 
-      egg_pc = 4,
+      egg_pc = c(eggYolk = 4, eggWhite = 4),
       sugar = 60, # original 150, # 3/4 cup sugar
       # salt_tsp = 1/4, # I remove
-      # vanilla_tsp = 1,
+      # vanilla_tsp = c(NielsenMassey_Madagascar = 1),
       dairy_cup = c(Wegmans_heavyCream = 1,
                     Wegmans_whole_milk = 1.5), 
       # 1/4 teaspoon nutmeg # I remove

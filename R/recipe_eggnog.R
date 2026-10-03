@@ -30,12 +30,12 @@ eggnog <- \() new(
     Wegmans_heavyCream = 80,
     Carnation_drymilk = 15 # milk = 160,
   ),
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   sugar = 25,
   # cinnamon_tsp = 1/4/3,
   # nutmeg_tsp = 1/4/3, # not written yet
   # salt_tsp = 1/8/3,
-  vanilla_tsp = 1,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   liqueur_tsp = c(Kahlua_coffee = 8),
   # 2 ounces Bourbon
   # 2 ounces Rum
@@ -51,14 +51,14 @@ JeanPierre_eggnog <- \() new(
   author = 'Chef Jean-Pierre', flavor = 'Eggnog',
   dairy_cup = c(Wegmans_heavyCream = 1,
                 Wegmans_whole_milk = 2),
-  egg_pc = 6,
+  egg_pc = c(eggYolk = 6, eggWhite = 6),
   sugar_cup = c(Domino_granulated = 2/3),
   spice_tsp = c(
     SimplyOrganic_cinnamonCeylon = 1/4
   ),
   # nutmeg_tsp = 1/4, # not written yet
   salt_tsp = 1/8, # 1 pinch of Salt
-  vanilla_Tbsp = 1, # Tahitian Vanilla
+  vanilla_Tbsp = c(NielsenMassey_Tahitian = 1),
   liqueur_Tbsp = c(Kahlua_coffee = 8),
   # 2 ounces Bourbon
   # 2 ounces Rum
@@ -70,12 +70,12 @@ JeanPierre_eggnog <- \() new(
 #' @export
 PreppyKitchen_eggnog <- \() new(
   Class = 'recipe', flavor = 'Eggnog',
-  egg_pc = 6,
+  egg_pc = c(eggYolk = 6, eggWhite = 6),
   sugar = 200, # 1 cup granulated sugar (200g)
   dairy_cup = c(Wegmans_heavyCream = 1,
                 Wegmans_whole_milk = 1.5), # 1 to 2 cups whole milk (240-480ml)
   # nutmeg_tsp = 1/4, # not written yet
-  vanilla_Tbsp = 1, 
+  vanilla_Tbsp = c(NielsenMassey_Madagascar = 1), 
   liqueur_cup = c(Kahlua_coffee = 1), # 1 cup bourbon (brandy and rum work as well) (240ml)
   #▢ Cinnamon for serving
   preppykitchen = c('dUZ7tX8WIL8' = 'eggnog-cocktail')

@@ -110,7 +110,7 @@ if (FALSE) {
   duckPaste <- \() new(
     Class = 'recipe',
     alias = 'Duck Paste',
-    msg = 6*50,
+    msg = c(Ajinomoto_msg = 6*50),
     sugar = c(Domino_granulated = 500+2*50),
     spice = c(McCormick_garlic = 2.5*500),
     sauce = c(
@@ -130,7 +130,7 @@ if (FALSE) {
     alias = 'Duck Salt',
     sugar = c(Domino_granulated = 10*500),
     salt = 5*500,
-    msg = 1*500,
+    msg = c(Ajinomoto_msg = 1*500),
     oil = c(YaoMaZi_rattanPepper_oil = 3*50), # cannot find szechuan peppercorn powder
     spice = c(
       SimplyOrganic_5spice = 3*50,

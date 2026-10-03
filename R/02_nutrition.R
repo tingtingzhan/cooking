@@ -50,7 +50,7 @@
 #' @slot domino \link[base]{character} scalar
 #' @slot edwardandsons \link[base]{character} scalar
 #' @slot epicprovisions \link[base]{character} scalar
-#' @slot fleischmannsyeast \link[base]{integer} scalar
+#' @slot fleischmannsyeast \link[base]{character} scalar
 #' @slot fourC \link[base]{character} scalar
 #' @slot frontiercoop \link[base]{character} scalar
 #' @slot ghirardelli \link[base]{character} scalar
@@ -202,7 +202,7 @@ setClass(Class = 'nutrition', slots = c(
   domino = 'character',
   edwardandsons = 'character',
   epicprovisions = 'character',
-  fleischmannsyeast = 'integer',
+  fleischmannsyeast = 'character',
   fourC = 'character',
   frontiercoop = 'character',
   ghirardelli = 'character',
@@ -374,7 +374,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_brand_url(name = 'domino', fmt = 'https://www.dominosugar.com/products/%s', text = 'Domino\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'edwardandsons', fmt = 'https://store.edwardandsons.com/collections/%s', text = 'Edward & Sons\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'epicprovisions', fmt = 'https://epicprovisions.com/products/%s', text = 'Epic\U1f1fa\U1f1f8') |> 
-    add_brand_url(name = 'fleischmannsyeast', fmt = 'https://www.fleischmannsyeast.com/product-page/#%d', text = 'Fleischmann\'s\U1f1fa\U1f1f8') |>
+    add_brand_url(name = 'fleischmannsyeast', fmt = 'https://www.fleischmannsyeast.com/product-page/#%s', text = 'Fleischmann\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'fourC', fmt = 'https://www.4c.com/4c-product/%s', text = '4C\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'frontiercoop', fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s', text = 'Frontier Co-op\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'ghirardelli', fmt = 'https://www.ghirardelli.com/%s', text = 'Ghirardelli\U1f1fa\U1f1f8') |> 
@@ -523,10 +523,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   }
   
   for (i in names(which(getSlots('nutrition') == 'numeric'))) {
-    iv <- slot(x, name = i)
-    if (length(iv) && all(abs(iv) < .Machine$double.eps)) {
-      slot(x, name = i) <- numeric() 
-    } # else do nothing
+    x <- x |>
+      .slot_rm_zero(name = i)
   }
   
   if (!length(x@sugar) && length(x@addedSugar)) {

@@ -131,8 +131,8 @@ Pillsbury_mocha <- \() new(
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   misc_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5, # didnt say confectioners or granulated
-  coffee_cup = c(3/4),
-  cocoa_cup = 3/4)
+  coffee_cup = c(NescafeGold_blonde = 3/4),
+  cocoa_cup = c(KingArthur_Bensdorp = 3/4))
 
 
 
@@ -145,7 +145,7 @@ Rebecca_mocha <- \() new(
   dairy_cup = c(Carnation_drymilk = 1),
   misc_cup = c(Nestle_coffeeMate = 1),
   cocoa_cup = c(KingArthur_Bensdorp = 1/2),
-  coffee_cup = 1/4)
+  coffee_cup = c(NescafeGold_blonde = 1/4))
 
 
 
@@ -153,10 +153,11 @@ Rebecca_mocha <- \() new(
 
 bargainmums_mocha <- \() new(
   Class = 'recipe', author = 'Bargain Mums', flavor = 'Mocha Mix',
-  coffee = 30, 
+  coffee = c(NescafeGold_blonde = 30), 
   cocoa = c(KingArthur_Bensdorp = 50), 
   sugar = 100, 
-  dairy = c(Carnation_drymilk = 110), vanilla_tsp = 1,
+  dairy = c(Carnation_drymilk = 110), 
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   url = 'https://bargainmums.com.au/homemade-mocha-mix')
 
 

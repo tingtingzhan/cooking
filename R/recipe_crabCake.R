@@ -17,7 +17,7 @@ setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
 #' @export
 crabCake <- \() new(
   Class = 'crabCake',
-  egg_pc = 2,
+  egg_pc = c(eggYolk = 2, eggWhite = 2),
   sauce_tsp = c(
     Hellmanns_mayonnaise = 2.5,
     GreyPoupon_Dijon = 1.5,

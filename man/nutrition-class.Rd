@@ -121,7 +121,7 @@ Nutrition information.
 
 \item{\code{epicprovisions}}{\link[base]{character} scalar}
 
-\item{\code{fleischmannsyeast}}{\link[base]{integer} scalar}
+\item{\code{fleischmannsyeast}}{\link[base]{character} scalar}
 
 \item{\code{fourC}}{\link[base]{character} scalar}
 
@@ -323,6 +323,7 @@ nutritionlist(
 )
 
 nutritionlist(
+ cooking:::OrganicTraditions_cacao(),
  cooking:::KingArthur_blackCocoa(),
  cooking:::KingArthur_Burgundy(),
  cooking:::KingArthur_Bensdorp(), 

@@ -79,7 +79,7 @@ Jenny_chickenfill <- \() new(
   salt_tsp = 1/2,
   #Chicken broth 3Tbsp / Bouillon de poulet 3Tbsp
   starch_Tbsp = c(Wegmans_corn_starch = 1),
-  egg_pc = 1,
+  egg_pc = c(eggYolk = 1, eggWhite = 1),
   oil_tsp = c(Kadoya_sesame_oil = 2*3)
 )
 

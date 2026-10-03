@@ -35,7 +35,7 @@ Leites_pasteisdenata <- \() new(
   sugar_cup = c(Domino_granulated = 4/3),
   # 1 cinnamon stick
   water_cup = 2/3,
-  vanilla_tsp = 1/2,
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1/2),
   egg_pc = c(eggYolk = 6),
   url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
 

@@ -62,7 +62,7 @@ nutritionlist(
  new(Class = 'recipe', class2 = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
  dairy_cup = c(BelGioioso_mascarpone = 1),
  water = 320, 
- dairy = c(Carnation_drymilk = 40), matcha_tsp = 10, sugar_Tbsp = 4, 
+ dairy = c(Carnation_drymilk = 40), matcha_tsp = c(Sencha_everyday_matcha = 10), sugar_Tbsp = 4, 
  pros = c('Nice! Tiny little oily'))
 )
 

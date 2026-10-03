@@ -128,6 +128,17 @@ addname1 <- \(x, which, ...) {
 }
 
 
+.slot_rm_zero <- \(x, name) {
+  v <- slot(x, name = name)
+  # generic method '+' will create 0's
+  if (anyNA(v)) stop(name)
+  slot(x, name = name) <- v[abs(v) > .Machine$double.eps] # len0 compatible
+  return(x)
+}
+
+
+
+
 combnPc <- \(x, which, ...) {
   pc <- paste0(which, '_pc')
   v_pc <- slot(x, name = pc)

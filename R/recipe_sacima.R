@@ -69,7 +69,7 @@ sacima <- \() new(
 shangshi_sacima <- \() new(
   Class = 'recipe', flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
   flour = c(KingArthur_allPurposeFlr = 240),
-  egg_pc = 3)
+  egg_pc = c(eggYolk = 3, eggWhite = 3))
 
 #' @rdname sacima-class
 #' @export
@@ -79,7 +79,7 @@ xiaogaojie_sacima <- \() new(
   flour = c(KingArthur_allPurposeFlr = 200),
   NaHCO3_tsp = 1/8,
   water = 15,
-  egg_pc = 2)
+  egg_pc = c(eggYolk = 2, eggWhite = 2))
 
 #' @rdname sacima-class
 #' @export
@@ -87,6 +87,6 @@ Dad_sacima <- \() new(
   Class = 'recipe', flavor = 'sacima', 
   dad1966 = 'ZK4ZoCewr0E',
   flour = c(KingArthur_allPurposeFlr = 270),
-  egg_pc = 3,
+  egg_pc = c(eggYolk = 3, eggWhite = 3),
   NaHCO3 = 1)
 
