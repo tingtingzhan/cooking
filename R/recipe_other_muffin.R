@@ -1,21 +1,16 @@
 
 
-#' @title Other People's Muffin Recipes
-#' 
-#' @description
-#' ..
+#' @rdname subtract
 #' 
 #' @examples
 #' #muffin()
 #' nutritionlist(
-#'  subtract(Brody_muffin, sugar = 237),
-#'  subtract(Introvert_muffin, sugar = 50),
-#'  subtract(CulinaryHill_muffin, sugar = 155),
-#'  subtract(Lori_muffin, sugar = 110))
+#'  subtract(cooking:::Brody_muffin, sugar = 237),
+#'  subtract(cooking:::Introvert_muffin, sugar = 50),
+#'  subtract(cooking:::CulinaryHill_muffin, sugar = 155),
+#'  subtract(cooking:::Lori_muffin, sugar = 110))
 #' 
 #' 
-#' @name muffin_other
-NULL
 
 muffin_tmp <- \() new(
   Class = 'recipe', 
@@ -32,8 +27,7 @@ muffin_tmp <- \() new(
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
-#' @rdname muffin_other
-#' @export
+
 Brody_muffin <- \() new(
   Class = 'recipe', author = 'Brody', flavor = 'Muffin', 
   sugar = 300,
@@ -49,8 +43,6 @@ Brody_muffin <- \() new(
   salt_tsp = .5)
 
 
-#' @rdname muffin_other
-#' @export
 Introvert_muffin <- \() new(
   Class = 'recipe', author = 'Introvert', flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
@@ -63,8 +55,6 @@ Introvert_muffin <- \() new(
   egg_pc = c(eggYolk = 2, eggWhite = 2))
 
 
-#' @rdname muffin_other
-#' @export
 CulinaryHill_muffin <- \() new(
   Class = 'recipe', author = 'Culinary Hill', flavor = 'Muffin', 
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
@@ -78,8 +68,6 @@ CulinaryHill_muffin <- \() new(
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
-#' @rdname muffin_other
-#' @export
 Lori_muffin <- \() new(
   Class = 'recipe', author = 'Lori', flavor = 'Muffin', allrecipes = '6874/best-ever-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240), 

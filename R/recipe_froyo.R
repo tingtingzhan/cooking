@@ -9,7 +9,7 @@
 #' Non-fat Greek yogurt have a very strong flavor; do not use.
 #' 
 #' @examples 
-#' subtract(emma_froyo, sugar = 90)
+#' subtract(cooking:::emma_froyo, sugar = 90)
 #' 
 #' 
 #' @export
@@ -77,8 +77,6 @@ matcha_froyo <- \() new(
 
 
 
-#' @rdname froyo-class
-#' @export
 emma_froyo <- \() new(
   Class = 'recipe', author = 'Emma\'s Goodies', flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',

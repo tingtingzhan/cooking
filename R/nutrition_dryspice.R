@@ -170,10 +170,7 @@ Kirkland_noSaltSeasoning <- \() new(
 
 # @examples
 # fourC_panko() + fourC_panko_seasoned() / 3
-#' @title 4C Panko
-#' 
-#' @name fourC
-#' @export
+
 fourC_panko_seasoned <- \() new(
   Class = 'nutrition',  
   fourC = 'seasoned-panko-bread-crumbs',
@@ -181,8 +178,6 @@ fourC_panko_seasoned <- \() new(
   servingCup = 1/2, servingGram = 28, fat = 1, sodium = .47, sugar = 1, protein = 3,
   superior = 'fourC_panko')
 
-#' @rdname fourC
-#' @export
 fourC_panko <- \() new(
   Class = 'nutrition',  
   fourC = 'plain-panko-bread-crumbs',

@@ -14,14 +14,12 @@
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Pumpkin_Spice_Latte}
 #' 
-#' @name pumpkinSpiceLatte
-#' @aliases pumpkinSpiceLatteMix-class
 #' @export
 setClass(Class = 'pumpkinSpiceLatteMix', contains = 'drinkmix', prototype = prototype(
   flavor = 'Pumpkin\U1f383 Spice Latte'
 ))
 
-#' @rdname pumpkinSpiceLatte
+#' @rdname pumpkinSpiceLatteMix-class
 #' @export
 pumpkinSpiceLatte <- \() new(
   Class = 'pumpkinSpiceLatteMix',
