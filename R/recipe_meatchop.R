@@ -49,7 +49,7 @@ setClass(Class = 'porkchop', contains = 'meatchop', prototype = prototype(
 #' @export
 porkchop <- \() new(
   Class = 'porkchop',
-  pork = c(tenderloin = 400, fat = 100),
+  meat = c(pork_tenderloin = 400, pork_fat = 100),
   review = 'retry to confirm, should be perfect!'
 )
 
@@ -66,7 +66,7 @@ setClass(Class = 'beefchop', contains = 'meatchop', prototype = prototype(
 #' @export
 beefchop_stew <- \() new(
   Class = 'beefchop',
-  beef = c(stew = 1190),
+  meat = c(beef_stew = 1190),
   tool = list(KSEG950ESS(
     waterLost = 270
   )),

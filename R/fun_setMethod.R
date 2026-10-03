@@ -146,6 +146,7 @@ setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x,
   if (any(id <- grepl(pattern = i, x = names(x@flour)))) return(sum(x@flour[id]))
   if (any(id <- grepl(pattern = i, x = names(x@egg)))) return(sum(x@egg[id]))
   if (any(id <- grepl(pattern = i, x = names(x@fat)))) return(sum(x@fat[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@meat)))) return(sum(x@meat[id]))
   if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(sum(x@misc[id]))
   
   # look in more places

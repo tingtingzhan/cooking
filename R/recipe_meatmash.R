@@ -40,7 +40,7 @@ setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
 #' @export
 porkmash <- \() new(
   Class = 'meatmash',
-  pork = c(tenderloin = 700, belly = 300), # all-pork meatmash needs higher fat
+  meat = c(pork_tenderloin = 700, pork_belly = 300), # all-pork meatmash needs higher fat
   
   # without starch
   # egg_pc = c(eggWhite = 8), # water 8*34.7*.876 = 240
@@ -73,7 +73,7 @@ porkmash <- \() new(
 
 tilapiamash <- \() new(
   Class = 'meatmash',
-  seafood = c(tilapia = 780), pork = c(fat = 220),
+  seafood = c(tilapia = 780), meat = c(pork_fat = 220),
   sugar_tsp = 4,
   spice_tsp = c(
     McCormick_whitePepper = 1/2,
@@ -92,8 +92,8 @@ tilapiamash <- \() new(
 #' @export
 shrimpmash <- \() new( # Super nice!!
   Class = 'meatmash', 
-  # shrimp = 730, pork = c(belly = 270), # lean pork meat does not taste well
-  shrimp = 780, pork = c(fat = 220), # should be really perfect!!
+  # seafood = c(Kirkland_shrimp_c31 = 730), meat = c(pork_belly = 270), # lean pork meat does not taste well
+  seafood = c(Kirkland_shrimp_c31 = 780), meat = c(pork_fat = 220), # should be really perfect!!
   sugar_tsp = 4,
   spice_tsp = c(
     McCormick_whitePepper = 1/2, # maybe too strong..
@@ -111,7 +111,7 @@ shrimpmash_Argentine <- \() new(
   Class = 'meatmash', 
   shrimpmash(),
   salt_tsp = 1/2 + 1/4,
-  shrimp = c(Kirkland_shrimpArgentine = 780),
+  seafood = c(Kirkland_shrimpArgentine = 780),
   review = 'try')
 
 

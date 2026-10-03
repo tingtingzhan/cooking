@@ -22,8 +22,8 @@ setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
 #' @export
 shrimpball <- \() new(
   Class = 'meatball', 
-  shrimp = 500, pork = c(fat = 100),
-  #shrimp = 540, fat = c(Epic_lard = 60),
+  seafood = c(Kirkland_shrimp_c31 = 500), meat = c(pork_fat = 100),
+  # seafood = c(Kirkland_shrimp_c31 = 540), fat = c(Epic_lard = 60),
   salt_tsp = 1/8,
   sugar_tsp = 2,
   starch = c(Wegmans_corn_starch = 12),
@@ -37,14 +37,14 @@ shrimpball <- \() new(
 
 shrimpball_Argentine <- \() new(
   Class = 'meatball', shrimpball(),
-  shrimp = c(Kirkland_shrimpArgentine = 540),
+  seafood = c(Kirkland_shrimpArgentine = 540),
   review = 'try'
 )
 
 
 beefball <- \() new(
   Class = 'meatball',
-  beef = c(eyeRound = 500),
+  meat = c(beef_eyeRound = 500),
   NaHCO3_tsp = 4/16, # 1 Chinese soup spoon 
   iceWater = 400/16, # looks like
   salt_tsp = .5,
@@ -58,7 +58,7 @@ beefball <- \() new(
 GaaDai_beefball <- \() new(
   Class = 'meatball',
   youtube = '5nJKNVBRztM',
-  beef = c(eyeRound = 16*500),
+  meat = c(beef_eyeRound = 16*500),
   NaHCO3_tsp = 4, # 1 Chinese soup spoon 
   iceWater = 400, # looks like
   salt = 120,
@@ -75,8 +75,8 @@ Daat_cuttlefishball <- \() new(
   flavor = '\u8fbe\u54e5\u53a8\u623f \u58a8\u9c7c',
   youtube = 'fLL-DPhSc_E',
   seafood = c(cuttlefish = 250),
-  shrimp = 250,
-  pork = c(fat = 100),
+  seafood = c(Kirkland_shrimp_c31 = 250),
+  meat = c(pork_fat = 100),
   salt = 8,
   msg = 9,
   sugar = 13,

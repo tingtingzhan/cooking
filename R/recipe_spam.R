@@ -63,13 +63,13 @@ setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
 #' @export
 tilapiaSpam <- \() new(
   Class = 'spam', flavor = '\u7f57\u975e\u9c7c',
-  pork = c(fatbelly = 180), seafood = c(tilapia = 220), pros = 'Effie\'s Signature')
+  meat = c(pork_fatbelly = 180), seafood = c(tilapia = 220), pros = 'Effie\'s Signature')
 
 #' @rdname spam-class
 #' @export
 porkSpam <- \() new(
   Class = 'spam',
-  pork = c(belly = 400), pros = 'Effie\'s Signature!')
+  meat = c(pork_belly = 400), pros = 'Effie\'s Signature!')
 
 
 
@@ -77,14 +77,16 @@ porkSpam <- \() new(
 #' @export
 shrimpSpam <- \() new(
   Class = 'spam', flavor = '\u867e',
-  pork = c(fatbelly = 180), shrimp = 220, pros = 'Effie\'s Signature')
+  meat = c(pork_fatbelly = 180), 
+  seafood = c(Kirkland_shrimp_c31 = 220), pros = 'Effie\'s Signature')
 
 #' @rdname spam-class
 #' @export
 shrimpLambSpam <- \() new(
   Class = 'spam', flavor = '\u867e\u7f8a',
   spice_tsp = c(SimplyOrganic_cumin = .25),
-  pork = c(fatbelly = 100), lamb = c(leg = 100), shrimp = 200,
+  meat = c(pork_fatbelly = 100, lamb_leg = 100), 
+  seafood = c(Kirkland_shrimp_c31 = 200),
   review = c('Taste nice! try again with regular water'))
 
 
@@ -92,7 +94,8 @@ shrimpLambSpam <- \() new(
 #' @export
 chickenBreastSpam <- \() new(
   Class = 'spam', flavor = '\u9e21',
-  pork = c(fatbelly = 100), chicken = c(breast = 300), pros = 'Effie\'s Signature')
+  meat = c(pork_fatbelly = 100), 
+  poultry = c(chicken_breast = 300), pros = 'Effie\'s Signature')
 
 
 
@@ -102,7 +105,7 @@ chickenBreastSpam <- \() new(
 beefSpam <- \() new(
   Class = 'spam', flavor = '\u725b',
   spice_tsp = c(SimplyOrganic_cumin = .25),
-  pork = c(belly = 320), beef = c(chuck = 80), 
+  meat = c(pork_belly = 320, beef_chuck = 80), 
   review = c('Nice with beef chuck or chuck short ribs at Costco',
              'But this is expensive!!'))
 
@@ -111,8 +114,9 @@ beefSpam <- \() new(
 shrimpBeefSpam <- \() new(
   Class = 'spam', flavor = '\u867e\u725b',
   spice_tsp = c(SimplyOrganic_cumin = .25),
-  # pork = c(fatbelly = 100), beef = c(leanchuck = 200), shrimp = 200, # texture not good
-  pork = c(fatbelly = 100), beef = c(chuck = 100), shrimp = 200,
+  # meat = c(pork_fatbelly = 100, beef_leanchuck = 200), seafood = c(Kirkland_shrimp_c31 = 200), # texture not good
+  meat = c(pork_fatbelly = 100, beef_chuck = 100),
+  seafood = c(Kirkland_shrimp_c31 = 200),
   review = c('retry beef_chuck at Costco',
              'Too expensive!!'))
 

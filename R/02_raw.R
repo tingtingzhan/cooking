@@ -66,12 +66,10 @@
 #' 
 #' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of `superior = 'NescafeGold_blonde'`
 #' 
-#' @slot pork \link[base]{numeric} vector, weight of one or more cuts of pork (in grams)
-#' @slot beef \link[base]{numeric} vector, weight of one or more cuts of beef (in grams)
-#' @slot lamb \link[base]{numeric} vector, weight of one or more cuts of lamb (in grams)
-#' @slot chicken \link[base]{numeric} vector, weight of one or more cuts of chicken (in grams)
-#' @slot shrimp \link[base]{numeric} vector, weight of shrimp (in grams)
+#' @slot poultry \link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)
 #' @slot seafood \link[base]{numeric} vector, weight of one or more other sea food (in grams)
+#' 
+#' @slot meat \link[base]{numeric} vector, weight of one or more cuts of meat (in grams)
 #' 
 #' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
 #' 
@@ -145,11 +143,8 @@ setClass(Class = 'raw.', slots = c(
   #blackSesame = 'numeric',
   spice = 'numeric', spice_tsp = 'numeric', spice_Tbsp = 'numeric', spice_cup = 'numeric',
   
-  pork = 'numeric',
-  beef = 'numeric',
-  lamb = 'numeric',
-  chicken = 'numeric',
-  shrimp = 'numeric',
+  meat = 'numeric',
+  poultry = 'numeric',
   seafood = 'numeric',
   
   vegetable = 'numeric',
@@ -198,12 +193,9 @@ print.raw. <- \(x, ...) {
 
   prt_vol(x@homemade)
   
-  prt_vol(x@shrimp)
+  prt_vol(x@meat)
+  prt_vol(x@poultry)
   prt_vol(x@seafood)
-  prt_vol(x@pork)
-  prt_vol(x@beef)
-  prt_vol(x@lamb)
-  prt_vol(x@chicken)
   
   prt_vol(x@flour)
   prt_vol(x@starch)
@@ -342,11 +334,9 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     addname1(which = 'water95', nm = 'Wegmans_water') |> 
     addname1(which = 'water_ext', nm = 'Wegmans_water') |>
     addname1(which = 'boilingWater', nm = 'Wegmans_water') |>
-    #addname1(which = 'blackSesame', nm = 'Greenmax_blackSesame') |>
     combnVol(which = 'misc') |>
     combnVol(which = 'fat') |>
     combnVol(which = 'spice') |>
-    # with density info
     combnVol(which = 'sugar', nm = 'US_10x') |>
     combnVol(which = 'syrup') |>
     combnVol(which = 'salt', nm = 'Morton_salt') |>
@@ -365,11 +355,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     combnVol(which = 'liqueur') |>
     combnVol(which = 'dairy') |> 
     combnVol(which = 'grain') |> 
-    meatName(animal = 'pork') |>
-    meatName(animal = 'beef') |>
-    meatName(animal = 'lamb') |>
-    meatName(animal = 'chicken') |>
-    addname1(which = 'shrimp', nm = 'Kirkland_shrimp_c31') |>
     combnVol(which = 'nut') |>
     combnVol(which = 'seed')
   

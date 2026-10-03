@@ -65,8 +65,8 @@ juntun <- \() new(
 juntun_filling <- \() new(
   Class = 'recipe',
   alias = '\u519b\u5c6f\u9505\u76d4\u9985',
-  #pork = c(belly = 550), # too fat!!
-  pork = c(belly = 250, tenderloin = 300),
+  #meat = c(pork_belly = 550), # too fat!!
+  meat = c(pork_belly = 250, pork_tenderloin = 300),
   spice_tsp = c(
     McCormick_whitePepper = .5,
     SimplyOrganic_ginger = .5,

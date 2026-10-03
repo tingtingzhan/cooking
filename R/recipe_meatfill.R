@@ -40,7 +40,7 @@ setClass(Class = 'porkfill', contains = 'recipe', prototype = prototype(
 
 porkfill <- \() new(
   Class = 'porkfill',
-  pork = c(tenderloin = 500, belly = 500), # tiny too fat
+  meat = c(pork_tenderloin = 500, pork_belly = 500), # tiny too fat
   oil_tsp = c(YaoMaZi_rattanPepper_oil = 1), 
   oil_Tbsp = c(Kadoya_sesame_oil = 1),
   spice_tsp = c(
@@ -66,8 +66,8 @@ porkfill <- \() new(
 
 Jenny_chickenfill <- \() new(
   Class = 'recipe', author = 'Jenny', flavor = '\u9e21\u817f\u8089\u9985',
-  chicken = c(thigh = 500),
-  shrimp = 300,
+  poultry = c(chicken_thigh = 500),
+  seafood = c(Kirkland_shrimp_c31 = 300),
   #Rice wine 2Tbsp  / Vin de riz 2Tbsp
   sauce_Tbsp = c(
     Kikkoman_soy = 2,
@@ -102,8 +102,8 @@ xiaogaojie_lambfill <- \() new(
   Class = 'recipe', flavor = '\u867e\u7f8a\u8089\u9985', 
   xiaogaojie = 'M6DD504lDac',
   portion = c(Baozi = 30),
-  lamb = c(leg = 250),
-  shrimp = 400,
+  meat = c(lamb_leg = 250),
+  seafood = c(Kirkland_shrimp_c31 = 400),
   sauce_Tbsp = c(Kikkoman_soy = 1),
   #葱白 50克
   spice = c(SimplyOrganic_ginger = 2), 

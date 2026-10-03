@@ -19,7 +19,7 @@
 setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
   class2 = '\u725b\U1f402\u8089\u9985',
   # 1kg beef, with only a little fat
-  beef = c(brisket_flat = 350, brisket_flat_lean = 650), # fat tastes enough
+  meat = c(beef_brisket_flat = 350, beef_brisket_flat_lean = 650), # fat tastes enough
   
   water = 200, 
   #starch_Tbsp = c(Wegmans_corn_starch = 5), # for 2.5% sodium
@@ -57,7 +57,7 @@ setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
 setClass(Class = 'beeffillLeeKumKee', contains = 'beeffill', prototype = prototype(
   flavor = '\u674e\u9526\u8bb0\u4e94\u9999\u9ed1\u6912',
   
-  #beef = c(brisket_flat = 850), pork = c(fat = 150), 
+  # meat = c(beef_brisket_flat = 850, pork_fat = 150), 
   # dog no diarrhea, but a little too fat for me
   # also, 100g water a little too dry!!!
   

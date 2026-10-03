@@ -198,16 +198,6 @@ combnVol <- \(x, which, ...) {
 
 
 
-meatName <- \(x, animal = stop('')) {
-  if (!length(slot(x, name = animal))) return(x)
-  nm <- names(slot(x, name = animal))
-  if (!length(nm) || anyNA(nm) || !all(nzchar(nm))) stop('incomplete meat name')
-  idx <- !startsWith(nm, prefix = paste0(animal, '_'))
-  names(slot(x, name = animal))[idx] <- paste0(animal, '_', nm[idx])
-  return(x)
-}
-
-
 
 #' @importFrom stats median
 #' @importFrom equiv4 binlabel

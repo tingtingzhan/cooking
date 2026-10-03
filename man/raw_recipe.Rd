@@ -93,17 +93,11 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{coffee,coffee_tsp,coffee_Tbsp,coffee_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of \code{superior = 'NescafeGold_blonde'}}
 
-\item{\code{pork}}{\link[base]{numeric} vector, weight of one or more cuts of pork (in grams)}
-
-\item{\code{beef}}{\link[base]{numeric} vector, weight of one or more cuts of beef (in grams)}
-
-\item{\code{lamb}}{\link[base]{numeric} vector, weight of one or more cuts of lamb (in grams)}
-
-\item{\code{chicken}}{\link[base]{numeric} vector, weight of one or more cuts of chicken (in grams)}
-
-\item{\code{shrimp}}{\link[base]{numeric} vector, weight of shrimp (in grams)}
+\item{\code{poultry}}{\link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)}
 
 \item{\code{seafood}}{\link[base]{numeric} vector, weight of one or more other sea food (in grams)}
+
+\item{\code{meat}}{\link[base]{numeric} vector, weight of one or more cuts of meat (in grams)}
 
 \item{\code{vegetable}}{\link[base]{numeric} vector, weight of one or more vegetables (in grams)}
 

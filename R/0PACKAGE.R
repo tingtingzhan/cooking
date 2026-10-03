@@ -492,7 +492,7 @@ if (FALSE) {
     beanPaste = if (length(x['_redkidneybean$'])) .66 else .6,
     shrimpfillCantonese =, shrimpfill_garlicHerb = .6, 
     beeffillLeeKumKee = .6,
-    meatmash = if (length(x@shrimp)) .7 else NA_real_,
+    meatmash = if (length(x['shrimp'])) .7 else NA_real_,
     NA_real_)
   
   alcohol <- \(x) switch(

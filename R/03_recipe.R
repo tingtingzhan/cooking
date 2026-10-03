@@ -332,11 +332,11 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u897f\u7ea2\u67ff\U1f345'
     } else if (length(x['_yellowCorn$'])) {
       '\u7389\u7c73\U1f33d'
-    } else if (length(x@shrimp)) {
+    } else if (length(x['shrimp'])) {
       '\u867e\U1f990'
-    } else if (length(x@beef)) {
+    } else if (length(x['^beef_'])) {
       '\u725b\u8089'
-    } else if (length(x@pork)) {
+    } else if (length(x['^pork_'])) {
       '\u732a\u8089'
     } else if (ginger() %in% x) {
       '\u59dc\u9999\U1fada'

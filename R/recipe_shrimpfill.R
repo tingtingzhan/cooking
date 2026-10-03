@@ -3,7 +3,7 @@
 
 setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
   class2 = '\u867e\U1f990\u8089\u9985',
-  shrimp = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
+  seafood = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
   tool = list(KSM8990(
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
@@ -36,7 +36,7 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = prototype(
   flavor = '\u5e7f\u5e9c\u65e9\u8336\u98ce\u5473',
   
-  pork = c(fat = 200),
+  meat = c(pork_fat = 200),
   
   starch_tsp = c(Wegmans_corn_starch = 7),
   spice = c(LeeKumKee_chickenBouillon = 5), # adding
@@ -62,9 +62,9 @@ shrimpfillCantonese <- \() new(Class = 'shrimpfillCantonese', pros = 'I love!')
 #' @export
 shrimpfillCantonese_Argentine <- \() new(
   Class = 'shrimpfillCantonese', 
-  shrimp = c(Kirkland_shrimpArgentine = 850), 
+  seafood = c(Kirkland_shrimpArgentine = 850), 
   salt_tsp = 1/4, 
-  pork = c(fat = 200),
+  meat = c(pork_fat = 200),
   starch_tsp = c(Wegmans_corn_starch = 7),
   oil_tsp = c(Kadoya_sesame_oil = 3),
   sugar_tsp = 3,
@@ -76,8 +76,8 @@ shrimpfillCantonese_Argentine <- \() new(
 
 shrimpfillCantonese_OLD <- \() new(
   Class = 'recipe', 
-  shrimp = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
-  pork = c(fat = 200),
+  seafood = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
+  meat = c(pork_fat = 200),
   starch_tsp = c(Wegmans_corn_starch = 7),
   oil_tsp = c(Kadoya_sesame_oil = 3),
   sugar_tsp = 3,
@@ -178,7 +178,7 @@ setClass(Class = 'shrimpfill_oldBay', contains = 'shrimpfill', prototype = proto
 #' @export
 shrimpfill_oldBay <- \() new(
   Class = 'shrimpfill_oldBay', 
-  shrimp = c(Kirkland_shrimpArgentine = 800), 
+  seafood = c(Kirkland_shrimpArgentine = 800), 
   review = 'try')
 
 
@@ -195,8 +195,8 @@ shrimpfill_oldBay <- \() new(
 Daat_shrimpfill <- \() new(
   Class = 'recipe', flavor = '\u867e\U1f990\u997a\u9985', 
   daatgo = 'SYLIYqVV2N4',
-  shrimp = 600, 
-  fat = c(Epic_lard = 30), pork = c(fat = 120),
+  seafood = c(Kirkland_shrimp_c31 = 600), 
+  fat = c(Epic_lard = 30), meat = c(pork_fat = 120),
   vegetable = c(bambooShoot = 90),
   starch = c(Wegmans_corn_starch = 13),
   salt = 12, msg = 22,
@@ -208,8 +208,8 @@ Daat_shrimpfill <- \() new(
 #' @export
 whiteSwan_shrimpfill <- \() new(
   Class = 'recipe', author = '\u5929\u9e45\u7f8e\u98df', flavor = '\u867e\U1f990\u997a\u9985', youtube = 'z4b1a9FTc6U',
-  shrimp = 250, 
-  pork = c(fat = 50), fat = c(Epic_lard = 35),
+  seafood = c(Kirkland_shrimp_c31 = 250), 
+  meat = c(pork_fat = 50), fat = c(Epic_lard = 35),
   salt = 3, msg = 2,
   sugar = 3, 
   oil = c(Kadoya_sesame_oil = 3.5), 
