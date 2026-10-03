@@ -101,8 +101,10 @@ print.nutritionMatrix <- \(x, ...) {
   #  'calorie', 'usd'
   #)]
   
-  ret <- ret0[, colMeans(ret0 == 0) != 1] |> 
-    col_binlabel(FUN = max)
+  ret <- ret0[, colMeans(ret0 == 0) != 1] |>
+    apply(MARGIN = 2L, FUN = max_binlabel, accuracy = .1, simplify = FALSE) |>
+    do.call(what = cbind) # to make sure not getting a 'vector'
+  
   colnames(ret) <- colnames(ret) |>
     nutri_short()
   

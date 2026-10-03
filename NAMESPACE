@@ -471,6 +471,7 @@ importFrom(cli,
 importFrom(consec,cmod)
 importFrom(equiv4,binlabel)
 importFrom(stats,
+  median,
   median.default,
   na.omit,
   setNames

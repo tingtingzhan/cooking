@@ -209,17 +209,18 @@ meatName <- \(x, animal = stop('')) {
 
 
 
-
-# @param x \link[base]{numeric} \link[base]{matrix}
+#' @importFrom stats median
 #' @importFrom equiv4 binlabel
-col_binlabel <- \(x, FUN, ...) {
-  x |> 
-    apply(MARGIN = 2L, FUN = \(i) {
-      i |> 
-        binlabel(FUN(i, ...), accuracy = .1)() # cannot return a function, without `i`
-    }, simplify = FALSE) |>
-    do.call(what = cbind) # to make sure not getting a 'vector' :)
-}  
+median_binlabel <- \(x, ...) {
+  x |>
+    binlabel(median(x, na.rm = TRUE), ...)()
+}
+
+#' @importFrom equiv4 binlabel
+max_binlabel <- \(x, ...) {
+  x |>
+    binlabel(max(x, na.rm = TRUE), ...)()
+}
 
 
 #' @importFrom consec cmod
