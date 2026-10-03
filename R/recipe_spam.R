@@ -24,7 +24,6 @@
 #' chickenBreastSpam()
 #' beefSpam()
 #' 
-#' @name spam-class
 #' @export
 setClass(Class = 'spam', contains = 'recipe', prototype = prototype(
   class2 = '\u8089\u7cd5',

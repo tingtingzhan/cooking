@@ -15,7 +15,6 @@
 #' pumpkin_TangYuan()
 #' mango_TangYuan()
 #' 
-#' @name TangYuan-class
 #' @export
 setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
   class2 = '\u6c64\u5706\u76ae',

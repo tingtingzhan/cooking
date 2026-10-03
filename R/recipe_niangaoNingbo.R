@@ -13,7 +13,6 @@
 #'  LuLu_niangaoNingbo()
 #' )
 #' 
-#' @name niangaoNingbo-class
 #' @export
 setClass(Class = 'niangaoNingbo', contains = 'recipe', prototype = prototype(
   class2 = '\u5b81\u6ce2\u5e74\u7cd5',

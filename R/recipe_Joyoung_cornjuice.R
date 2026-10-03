@@ -8,8 +8,6 @@
 #' cornjuice()
 #' cornVeggiePaste()
 #' 
-#' 
-#' @name cornjuice-class
 #' @export
 setClass(Class = 'cornjuice', contains = 'recipe', prototype = prototype(
   class2 = '\u7389\u7c73\U1f33d\u6c41'

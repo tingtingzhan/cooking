@@ -10,7 +10,6 @@
 #' oldBay_butter()
 #' oldBay_butter_lowSodium()
 #' 
-#' @name flavoredButter-class
 #' @export
 setClass(Class = 'flavoredButter', contains = 'recipe', prototype = prototype(
   class2 = '\u98ce\u5473\u9ec4\u6cb9',

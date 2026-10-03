@@ -70,7 +70,6 @@
 #'  Marcellina_mascarponeFrosting()
 #' )
 #' 
-#' @name whippedCream-class
 #' @export
 setClass(Class = 'whippedCream', contains = 'recipe', prototype = prototype(
   class2 = '\u6253\u53d1\u91cd\u5976\u6cb9',

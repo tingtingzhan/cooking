@@ -12,7 +12,6 @@
 #'  shangshi_pudding()
 #' )
 #' 
-#' @name pudding-class
 #' @export
 setClass(Class = 'pudding', contains = 'recipe', prototype = prototype(
   class2 = '\u725b\u5976\u84b8\u86cb',
@@ -63,7 +62,6 @@ shangshi_pudding <- \() new(
 #' @examples
 #' chicken_steamEggWhite()
 #' 
-#' @name steamEggWhite-class
 #' @export
 setClass(Class = 'steamEggWhite', contains = 'recipe', prototype = prototype(
   egg_pc = c(eggWhite = 6),

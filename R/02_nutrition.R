@@ -152,7 +152,6 @@
 #' 
 #' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 
-#' @name nutrition-class  
 #' @export
 setClass(Class = 'nutrition', slots = c(
   

@@ -31,7 +31,6 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 #'  subtract(Daat_shrimpfill, vegetable = c(bambooShoot = 90))
 #' )
 #' 
-#' @name shrimpfillCantonese-class
 #' @export
 setClass(Class = 'shrimpfillCantonese', contains = 'shrimpfill', prototype = prototype(
   flavor = '\u5e7f\u5e9c\u65e9\u8336\u98ce\u5473',

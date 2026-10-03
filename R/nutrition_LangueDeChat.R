@@ -15,7 +15,6 @@
 #' )
 #' 
 #' 
-#' @name LangueDeChat-class
 #' @export
 setClass(Class = 'LangueDeChat', contains = 'recipe', prototype = prototype(
   class2 = 'Langue de Chat'

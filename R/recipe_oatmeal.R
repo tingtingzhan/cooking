@@ -12,7 +12,6 @@
 #' coconut_oatmeal()
 #' soymilk_oatmeal()
 #' 
-#' @name oatmeal-class
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
   class2 = 'Oatmeal',

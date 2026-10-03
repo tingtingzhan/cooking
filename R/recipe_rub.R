@@ -16,7 +16,6 @@
 #' @examples
 #' cuminMontreal_rub()
 #' 
-#' @name rub-class
 #' @export
 setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
   class2 = '\u814c\u6599', # \u7a7a\u6c14\u70b8\u9505

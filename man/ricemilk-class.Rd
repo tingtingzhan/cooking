@@ -21,5 +21,4 @@ Brown rice, I have tried Japanese (Nishiki) and Thai (\url{shop.wegmans.com/prod
 black_ricemilk()
 # blackRice_paste() # not exported yet
 
-
 }

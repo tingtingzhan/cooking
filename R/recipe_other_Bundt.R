@@ -1,11 +1,5 @@
 
 
-#' @title Other People's Bundt Recipes
-#' 
-#' @description ..
-#' 
-#' @name Bundt_other
-NULL
 
 Bundt_OLD2 <- \() new(
   Class = 'recipe',
@@ -65,8 +59,6 @@ Bundt_OLD1 <- \() new(
 
 
 
-#' @rdname Bundt_other
-#' @export
 PreppyKitchen_chocolate_Bundt <- \() new(
   Class = 'recipe', flavor = 'Chocolate Bundt',
   water40 = 360,
@@ -83,8 +75,7 @@ PreppyKitchen_chocolate_Bundt <- \() new(
   preppykitchen = c('_MqLza3bgbw' = 'chocolate-bundt-cake'))
 
 
-#' @rdname Bundt_other
-#' @export
+
 PreppyKitchen_Bundt <- \() new(
   Class = 'recipe', flavor = 'Bundt',
   flour = c(KingArthur_allPurposeFlr = 360),

@@ -14,7 +14,6 @@
 #' porkmash()
 #' 
 #' 
-#' @name meatmash-class
 #' @export
 setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
   class2 = '\u6ed1',

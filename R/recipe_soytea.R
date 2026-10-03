@@ -12,7 +12,6 @@
 #' chai_soytea()
 #' Ceylon_soytea()
 #' 
-#' @name soytea-class
 #' @export
 setClass(Class = 'soytea', contains = 'recipe', prototype = prototype(
   class2 = '\u8c46\u6d46\u8336',

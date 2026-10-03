@@ -13,7 +13,6 @@
 #' @examples
 #' # pumpkin_tortillaOlive()
 #' 
-#' @name tortilla-class
 #' @export
 setClass(Class = 'tortilla', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_breadFlr = 625), # 5 cup

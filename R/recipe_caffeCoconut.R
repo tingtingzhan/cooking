@@ -3,7 +3,6 @@
 #' 
 #' @examples
 #' caffeCoconut()
-#' @name caffeCoconut-class
 #' @export
 setClass(Class = 'caffeCoconut', contains = 'recipe', prototype = prototype(
   class2 = '\u751f\u6930\u62ff\u94c1',

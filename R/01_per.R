@@ -8,7 +8,6 @@
 #' 
 #' @slot equiv \link[equiv4]{equiv-class} object
 #' 
-# @name per-class
 #' @importClassesFrom equiv4 equiv
 #' @export
 setClass(Class = 'per', slots = c(

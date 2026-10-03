@@ -39,7 +39,6 @@
 #' new('cookie', misc = c(Kirkland_plum = 270), flour = c(Wegmans_pastryFlr = 360), 
 #'   dairy = c(Carnation_drymilk = 54))
 #'
-#' @name cookie-class
 #' @export
 setClass(Class = 'cookie', contains = 'recipe', prototype = prototype(
   class2 = '\u997c\u5e72',

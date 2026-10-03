@@ -15,7 +15,6 @@
 #'  subtract(PreppyKitchen_eggnog, sugar = 130)
 #' )
 #' 
-#' @name eggnog-class
 #' @export
 setClass(Class = 'eggnog', contains = 'recipe', prototype = prototype(
   class2 = '\u86cb\u5976\u9152'

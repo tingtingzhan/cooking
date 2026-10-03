@@ -40,7 +40,6 @@
 #' 
 #' \url{https://youtu.be/N5x_Z8bRMaE}, colors as flower
 #' 
-#' @name bread-class
 #' @export
 setClass(Class = 'bread', contains = 'recipe', prototype = prototype(
   class2 = 'Bread\U1f35e', # '\u9762\u5305',

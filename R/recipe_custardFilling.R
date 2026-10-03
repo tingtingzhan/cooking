@@ -46,7 +46,6 @@
 #' # alternative oil
 #' blackSesame_custardFilling()
 #' 
-#' @name custardFilling-class
 #' @export
 setClass(Class = 'custardFilling', contains = 'recipe', prototype = prototype(
   class2 = '\u5976\u9ec4\u9985',
@@ -114,7 +113,7 @@ pumpkin_custardFilling <- \() new(
     KSM8990(
       program = 'Level 4',
       attachment = 'Paddle',
-      operation = 'Mix well the rest of ingredients (except sugar and butter)',
+      operation = 'Mix well the ingredients except for sugar and butter',
       capacity = 2
     ),
     JoyoungCJA9U_filling(

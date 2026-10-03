@@ -9,7 +9,6 @@
 #' 
 #' 
 #' 
-#' @name kefir-class
 #' @export
 setClass(Class = 'kefir', contains = 'recipe', prototype = prototype(
   class2 = 'Kefir',
@@ -83,7 +82,6 @@ figWalnut_goatKefir <- \() new(Class = 'goatKefir', syrup = c(Stonewall_figWalnu
 
 # @title Sweetened \linkS4class{filmjolk} Recipes
 # 
-# @name filmjolk-class
 # @export
 #setClass(Class = 'filmjolk', contains = 'recipe', prototype = prototype(
 #  class2 = 'Filmj\u00f6lk',

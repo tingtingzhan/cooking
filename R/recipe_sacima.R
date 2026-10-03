@@ -13,7 +13,6 @@
 #'  Dad_sacima(),
 #'  shangshi_sacima())
 #' 
-#' @name sacima-class
 #' @export
 setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
   class2 = '\u8428\u5176\u9a6c'

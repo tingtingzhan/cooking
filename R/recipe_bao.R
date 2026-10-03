@@ -63,8 +63,6 @@ sweetBao_portion <- \() c(
 #'  acai_bao()
 #' )
 #' 
-#' 
-#' @name bao-class
 #' @export
 setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   class2 = '\u5305\u5b50\u9992\u5934',
@@ -297,7 +295,6 @@ tomato_bao <- \() new(
 #' 
 #' @examples 
 #' wheatBao()
-#' @name wheatBao-class
 #' @export
 setClass(Class = 'wheatBao', contains = 'bao', prototype = prototype(
   flavor = '\u5168\u9ea6',

@@ -82,7 +82,6 @@
 #'  subtract(cooking:::PreppyKitchen_pumpkin_cheesecake, sugar = c(140, 0)),
 #'  subtract(cooking:::CheesecakeFactory_pumpkin, sugar = 12)
 #' )
-#' @name cheesecake-class
 #' @export
 setClass(Class = 'cheesecake', contains = 'recipe', prototype = prototype(
   #class2 = '\u91cd\u4e73\u916a\u86cb\u7cd5',

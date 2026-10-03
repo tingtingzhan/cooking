@@ -1,7 +1,6 @@
 
 #' @title \linkS4class{tiramisuMix} Recipes
 #' 
-#' @name tiramisuMix-class
 #' @export
 setClass(Class = 'tiramisuMix', contains = 'drinkmix', prototype = prototype(
   #class2 = '\u901f\u6eb6\u7c89',

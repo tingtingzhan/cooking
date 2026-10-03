@@ -14,7 +14,6 @@
 #' )
 #' 
 #' 
-#' @name meatDip-class
 #' @export
 setClass(Class = 'meatDip', contains = 'recipe', prototype = prototype(
   class2 = '\U0001f356\U0001f963'

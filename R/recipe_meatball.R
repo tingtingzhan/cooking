@@ -5,7 +5,6 @@
 #' @description
 #' Cantonese style of meatball, squished from the purlicue of chef's hand
 #' 
-#' @name meatball-class
 #' @export
 setClass(Class = 'meatball', contains = 'recipe', prototype = prototype(
   class2 = '\u4e38'#,
@@ -95,7 +94,6 @@ Daat_cuttlefishball <- \() new(
 #' @examples 
 #' 1+1
 #' 
-#' @name fishball-class
 #' @export
 setClass(Class = 'fishball', contains = 'recipe', prototype = prototype(
   class2 = '\u9c7c\u4e38'

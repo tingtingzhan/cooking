@@ -11,8 +11,6 @@
 #' black_ricemilk()
 #' # blackRice_paste() # not exported yet
 #' 
-#' 
-#' @name ricemilk-class
 #' @export
 setClass(Class = 'ricemilk', contains = 'recipe', prototype = prototype(
   class2 = '\u7c73\u7cca',

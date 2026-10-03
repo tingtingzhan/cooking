@@ -5,5 +5,5 @@
 \alias{crepeTientsin-class}
 \title{\linkS4class{crepeTientsin} Recipes}
 \description{
-..
+\linkS4class{crepeTientsin} Recipes
 }

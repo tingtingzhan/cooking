@@ -7,7 +7,6 @@
 #' @examples 
 #' crabCake()
 #' 
-#' @name crabCake-class
 #' @export
 setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
   class2 = 'Crab Cake'

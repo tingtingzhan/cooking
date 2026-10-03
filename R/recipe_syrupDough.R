@@ -11,9 +11,6 @@
 #' @examples 
 #' CantoneseMooncakeShell()
 #' 
-#' 
-#' 
-#' @name syrupDough-class
 #' @export
 setClass(Class = 'syrupDough', contains = 'recipe')
 

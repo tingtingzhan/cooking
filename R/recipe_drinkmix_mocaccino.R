@@ -13,7 +13,6 @@
 #' 
 #' @examples
 #' mocaccino()
-#' @name mocaccino-class
 #' @export
 setClass(Class = 'mocaccino', contains = 'drinkmix', prototype = prototype(
   dairy = c(Carnation_drymilk = 40),

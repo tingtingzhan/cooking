@@ -27,7 +27,6 @@
 #'   subtract(xiaomin_sesamelava, sugar = 20)
 #' )
 #' 
-#' @name lava-class
 #' @export
 setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   class2 = '\u6d41\u5fc3\u9985',

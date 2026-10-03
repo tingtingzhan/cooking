@@ -20,7 +20,6 @@
 #' )
 #' 
 #' 
-#' @name crepe-class
 #' @export
 setClass(Class = 'crepe', contains = 'recipe', prototype = prototype(
   class2 = 'Cre\u0302pe',

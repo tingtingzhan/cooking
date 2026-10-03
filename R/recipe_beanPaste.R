@@ -12,7 +12,6 @@
 #' xiaogaojie_adzukiBeanPaste1()
 #' xiaogaojie_adzukiBeanPaste2()
 #' 
-#' @name beanPaste-class
 #' @export
 setClass(Class = 'beanPaste', contains = 'recipe', prototype = prototype(
   class2 = '\u8c46\u6c99(66%)',

@@ -4,7 +4,6 @@
 #' @examples
 #' yuenyeungCoconut()
 #' 
-#' @name yuenyeungCoconut-class
 #' @export
 setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
   #class2 = '\u751f\u6930\u9e33\u9e2f'

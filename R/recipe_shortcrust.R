@@ -8,7 +8,6 @@
 #' new(Class = 'shortcrust')
 #' 
 #' 
-#' @name shortcrust-class
 #' @export
 setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
   class2 = 'Shortcrust',

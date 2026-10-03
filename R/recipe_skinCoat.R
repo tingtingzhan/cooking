@@ -2,7 +2,6 @@
 
 #' @title Poultry \linkS4class{skinCoat}
 #' 
-#' @name skinCoat-class
 #' @export
 setClass(Class = 'skinCoat', contains = 'recipe', prototype = prototype(
   portion = c('whole duck\U1f986, 3-3.5lb' = 15)

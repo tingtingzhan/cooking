@@ -1,7 +1,6 @@
 
 #' @title \linkS4class{marinade} Recipes
 #' 
-#' @name marinade-class
 #' @export 
 setClass(Class = 'marinade', contains = 'recipe', prototype = prototype(
   class2 = '\u5364\u6c41',

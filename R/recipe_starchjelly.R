@@ -9,7 +9,6 @@
 #' @examples 
 #' xiaogaojie_mungjelly()
 #' 
-#' @name starchjelly-class
 #' @export
 setClass(Class = 'starchjelly', contains = 'recipe', prototype = prototype(
   class2 = '\u51c9\u7c89'

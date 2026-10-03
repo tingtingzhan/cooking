@@ -10,7 +10,6 @@
 #' porkchop()
 #' 
 #' 
-#' @name meatchop-class
 #' @export
 setClass(Class = 'meatchop', contains = 'recipe', prototype = prototype(
   class2 = '\u7092\u81ca\u5b50',

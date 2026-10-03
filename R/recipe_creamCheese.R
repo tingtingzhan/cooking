@@ -16,7 +16,6 @@
 #'  pumpkin_cheesecake(),
 #'  pumpkin_creamCheeseDip()
 #' ) # from dry to wet!
-#' @name creamCheeseSpread-class
 #' @export
 setClass(Class = 'creamCheeseSpread', contains = 'recipe', prototype = prototype(
   #class2 = '\u5976\u6cb9\u5976\u916a\u62b9\u6599',

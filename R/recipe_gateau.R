@@ -31,7 +31,6 @@
 #' )
 #' 
 #' 
-#' @name gateau-class
 #' @export
 setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
   class2 = 'Ga\u0302teau', # 'G\u00e2teau' # ??

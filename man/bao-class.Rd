@@ -70,5 +70,4 @@ nutritionlist(
  acai_bao()
 )
 
-
 }

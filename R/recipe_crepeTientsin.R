@@ -2,9 +2,6 @@
 
 #' @title \linkS4class{crepeTientsin} Recipes
 #' 
-#' @description ..
-#' 
-#' @name crepeTientsin-class
 #' @export
 setClass(Class = 'crepeTientsin', contains = 'recipe', prototype = prototype(
   class2 = '\u714e\u997c\u9983\u5b50',

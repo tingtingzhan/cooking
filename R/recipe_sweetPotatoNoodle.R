@@ -2,7 +2,6 @@
 
 #' @title \linkS4class{soaked} Recipes
 #' 
-#' @name soaked-class
 #' @export
 setClass(Class = 'soaked', contains = 'recipe', prototype = prototype(
   class2 = '\u6ce1\u53d1'

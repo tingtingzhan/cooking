@@ -88,7 +88,6 @@ Jenny_chickenfill <- \() new(
 
 #' @title \linkS4class{lambfill}
 #' 
-#' @name lambfill-class
 #' @export
 setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
   

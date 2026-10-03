@@ -17,19 +17,19 @@
 #' 
 #' nutritionlist(
 #'  blackSesame_crumbcrust(),
-#'  PreppyKitchen_grahamCrust2() |>
+#'  cooking:::PreppyKitchen_grahamCrust2() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 35),
-#'  PreppyKitchen_grahamCrust1() |>
+#'  cooking:::PreppyKitchen_grahamCrust1() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 23),
-#'  PreppyKitchen_grahamCrust4() |>
+#'  cooking:::PreppyKitchen_grahamCrust4() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 32),
-#'  PreppyKitchen_grahamCrust3() |>
+#'  cooking:::PreppyKitchen_grahamCrust3() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 21),
-#'  PreppyKitchen_grahamCrust5() |>
+#'  cooking:::PreppyKitchen_grahamCrust5() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 28),
 #'  subtract(cooking:::MiDel_grahamCrust, sugar = 5.8),
@@ -37,8 +37,6 @@
 #'  subtract(cooking:::WholeFoods365_grahamCrust, sugar = 4)
 #' )
 #' 
-#' 
-#' @name crumbcrust-class
 #' @export
 setClass(Class = 'crumbcrust', contains = 'recipe', prototype = prototype(
   class2 = 'Crumb Crust',
@@ -82,45 +80,34 @@ crumbcrust <- \() new(Class = 'crumbcrust')
 # sugar = 50, # original
 #url = 'https://preppykitchen.com/graham-cracker-crust' # cannot find youtube link
 
-#' @title Other People's Graham Crust
-#' 
-#' @description
-#' ..
-#' 
-#' @name grahamCrust
-#' @export
+
 PreppyKitchen_grahamCrust1 <- \() new(
   Class = 'recipe', flavor = 'Graham Crust',
   misc = c(HoneyMaid_graham = 180), # 1.5 cups
   dairy_cup = c(Kerrygold_butter = 1/4),
   preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
 
-#' @rdname grahamCrust
-#' @export
 PreppyKitchen_grahamCrust2 <- \() new(
   Class = 'recipe', flavor = 'Graham Crust',
   misc = c(Nabisco_graham = 270), # 2.25 cups
   dairy_Tbsp = c(Kerrygold_butter = 5),
   preppykitchen = c('BSsv6sBD6ow' = 'strawberry-cheesecake'))
 
-#' @rdname grahamCrust
-#' @export
+
 PreppyKitchen_grahamCrust3 <- \() new(
   Class = 'recipe', flavor = 'Graham Crust',
   misc = c(HoneyMaid_graham = 180), # 1.5 cups
   dairy_Tbsp = c(Kerrygold_butter = 5),
   preppykitchen = c('beDAwNsKZUA' = 'blueberry-cheesecake'))
 
-#' @rdname grahamCrust
-#' @export
+
 PreppyKitchen_grahamCrust4 <- \() new(
   Class = 'recipe', flavor = 'Graham Crust',
   misc = c(Nabisco_graham = 270), # 2.25 cups
   dairy_Tbsp = c(Kerrygold_butter = 6),
   preppykitchen = c('x8ezFPOBtfo' = 'lemon-cheesecake'))
 
-#' @rdname grahamCrust
-#' @export
+
 PreppyKitchen_grahamCrust5 <- \() new(
   Class = 'recipe', flavor = 'Graham Crust',
   misc = c(Nabisco_graham = 260), # 2 cups (should be 240g based on his other recipes)

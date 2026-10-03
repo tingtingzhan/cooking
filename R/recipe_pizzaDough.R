@@ -2,7 +2,6 @@
 
 #' @title \linkS4class{pizzaDough} Recipes
 #' 
-#' @name pizzaDough-class
 #' @export
 setClass(Class = 'pizzaDough', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_breadFlr = 250),

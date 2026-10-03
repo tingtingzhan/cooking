@@ -26,7 +26,6 @@
 #' 
 #' Maximum wheat:bread flour 2:3.
 #' 
-#' @name pastalinda-class
 #' @export
 setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_breadFlr = 500), 
@@ -121,7 +120,6 @@ pumpkin_wrapperlinda <- \() new(
 #' # noodle recipes and analysis
 #' noodlelinda()
 #' 
-#' @name noodlelinda-class
 #' @export
 setClass(Class = 'noodlelinda', contains = 'pastalinda', prototype = prototype(
   class2 = '\u5e7c\u9762\U1f35d',

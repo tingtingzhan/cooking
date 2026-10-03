@@ -33,7 +33,6 @@
 #'  sweetTaste_matcha_millecrepe(),
 #'  lisa_matcha_millecrepe())
 #'  
-#' @name millecrepe-class
 #' @export
 setClass(Class = 'millecrepe', contains = 'recipe', prototype = prototype(
   class2 = 'Mille Cre\u0302pe',

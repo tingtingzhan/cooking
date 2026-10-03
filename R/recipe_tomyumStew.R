@@ -4,7 +4,6 @@
 #' @description
 #' ..
 #' 
-#' @name tomyumStew-class
 #' @export
 setClass(Class = 'tomyumStew', contains = 'recipe', prototype = prototype(
   class2 = '\u94f8\u94c1\u9505\u7116\u6d77\u9c9c',

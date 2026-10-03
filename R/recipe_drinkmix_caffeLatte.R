@@ -13,7 +13,6 @@
 #'  cooking:::Starbucks_coffeeFrappuccino_bottle()
 #' ) # compare hot/frappe drink
 #' 
-#' @name caffeLatte-class
 #' @export
 setClass(Class = 'caffeLatte', contains = 'drinkmix', prototype = prototype(
   dairy = c(Carnation_drymilk = 40),

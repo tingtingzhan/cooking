@@ -13,7 +13,6 @@
 #' \url{https://youtu.be/If0frZqg8e8}
 #' \url{https://youtu.be/jkIxmCordqQ}
 #' 
-#' @name cornGeng-class
 #' @export
 setClass(Class = 'cornGeng', contains = 'recipe', prototype = prototype(
   class2 = '(\u6d77\u9c9c\U1f990\U1f991)\u7389\u7c73\U1f33d\u7fb9\U1f963',
@@ -40,7 +39,6 @@ cornGeng <- \() new(Class = 'cornGeng', pros = 'I love!')
 #' @description
 #' ..
 #' 
-#' @name geng-class
 #' @export
 setClass(Class = 'geng', contains = 'recipe', prototype = prototype(
   class2 = '(\u6d77\u9c9c\U1f99e\U1f990\U1f991\U1f980)\u7fb9\U1f963',

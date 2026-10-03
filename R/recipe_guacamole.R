@@ -7,7 +7,6 @@
 #' 
 #' ginger_guacamole()
 #' 
-#' @name guacamole-class
 #' @export
 setClass(Class = 'guacamole', contains = 'recipe', prototype = prototype(
   class2 = 'Guacamole\U0001f951\U0001f963',

@@ -8,7 +8,6 @@
 #' sweetPotato_Noodle_step1()
 #' sweetPotato_Noodle_step2()
 #' 
-#' @name starchDough-class
 #' @export
 setClass(Class = 'starchDough', contains = 'recipe', prototype = prototype(
   class2 = 'Starch Dough'

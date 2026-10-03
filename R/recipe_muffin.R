@@ -53,7 +53,6 @@
 #'   subtract(sugar = 100),
 #'  cooking:::Quaker_cornbread()
 #' )
-#' @name muffin-class
 #' @export
 setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
   class2 = 'Muffin\U1f9c1',

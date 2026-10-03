@@ -14,6 +14,4 @@ CantoneseMooncakeShell()
 \examples{
 CantoneseMooncakeShell()
 
-
-
 }

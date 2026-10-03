@@ -6,7 +6,6 @@
 #' @examples
 #' pineapple_evap()
 #' 
-#' @name evap-class
 #' @export
 setClass(Class = 'evap', contains = 'recipe', prototype = prototype(
   #class2 = '\u679c\u6ce5'

@@ -14,7 +14,6 @@
 #' 
 #' \url{https://youtu.be/5nJKNVBRztM}
 #' 
-#' @name beeffill-class
 #' @export
 setClass(Class = 'beeffill', contains = 'recipe', prototype = prototype(
   class2 = '\u725b\U1f402\u8089\u9985',

@@ -11,7 +11,6 @@
 #' Ceylon_milktea()
 #' chai_milktea()
 #' 
-#' @name milktea-class
 #' @export
 setClass(Class = 'milktea', contains = 'drinkmix', prototype = prototype(
   class2 = '\u5976\u8336',

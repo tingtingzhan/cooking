@@ -12,7 +12,6 @@
 #' subtract(emma_froyo, sugar = 90)
 #' 
 #' 
-#' @name froyo-class
 #' @export
 setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
   class2 = 'Froyo',

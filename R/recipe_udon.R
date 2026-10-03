@@ -11,7 +11,6 @@
 #'  Leo_udon(),
 #'  JustOne_udon(),
 #'  amanda_udon())
-#' @name udon-class
 #' @export
 setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
   class2 = '\u9942\u98e9\u3046\u3069\u3093'#,

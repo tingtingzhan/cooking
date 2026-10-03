@@ -2,7 +2,6 @@
 
 #' @title \linkS4class{SodaStream} Recipes
 #' 
-#' @name SodaStream-class
 #' @export
 setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
   class2 = 'SodaStream\u6c7d\u6c34',

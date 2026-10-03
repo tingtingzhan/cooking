@@ -21,7 +21,6 @@
 #' acai_snowSkin()
 #' cocoa_snowSkin()
 #' 
-#' @name snowSkin-class
 #' @export
 setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   class2 = '\u51b0\u76ae', 

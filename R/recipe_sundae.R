@@ -63,7 +63,6 @@
 #' )
 #' 
 #' 
-#' @name sundae-class
 #' @export
 setClass(Class = 'sundae', contains = 'recipe', prototype = prototype(
   class2 = 'Sundae\U1f366',
@@ -187,18 +186,16 @@ if (FALSE) {
 
 
 
-#' @title icecream
-#' 
-#' @description
-#' ..
+#' @rdname nutrition-class
 #' 
 #' @examples
 #' nutritionlist(
-#'  subtract(xiaogaojie_icecream, sugar = 57),
-#'  subtract(happytears_icecream, sugar = 80)
+#'  subtract(cooking:::xiaogaojie_icecream, sugar = 57),
+#'  subtract(cooking:::happytears_icecream, sugar = 80)
 #' )
-#' @name icecream
-#' @export
+
+
+
 xiaogaojie_icecream <- \() new(
   Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'IQ-t8eSSD3Y',
@@ -209,8 +206,6 @@ xiaogaojie_icecream <- \() new(
   # Vanilla paste：8g, 1/2 teaspoons
 )
 
-#' @rdname icecream
-#' @export
 happytears_icecream <- \() new(
   Class = 'recipe', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   egg_pc = c(eggYolk = 5),
@@ -221,8 +216,6 @@ happytears_icecream <- \() new(
 
 
 
-#' @rdname icecream
-#' @export
 xiaogaojie_cocoa_icecream <- \() new(
   Class = 'recipe', flavor = 'Cocoa\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'YNzGZMLWY_Q',
@@ -234,10 +227,6 @@ xiaogaojie_cocoa_icecream <- \() new(
   coffee_tsp = c(NescafeGold_blonde = 1)) # 5g 1 tablespoon
   
 
-
-
-#' @rdname icecream
-#' @export
 SweetDumpling_matcha_icecream <- \() new(
   Class = 'recipe', author = '\u7cd6\u997a\u5b50', flavor = '\u62b9\u8336\U1f375\u51b0\u6dc7\uf9f5\U1f368',
   dairy = c(
@@ -247,8 +236,7 @@ SweetDumpling_matcha_icecream <- \() new(
   ),
   matcha = c(Sencha_everyday_matcha = 15))
 
-#' @rdname icecream
-#' @export
+
 cuisinart_icecream <- \() new(
   Class = 'recipe', author = 'Cuisinart', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
@@ -259,8 +247,6 @@ cuisinart_icecream <- \() new(
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
-#' @rdname icecream
-#' @export
 cooking23s_icecream <- \() new(
   Class = 'recipe', author = 'cooking23s', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://cooking23s.blogspot.com/2021/05/ice-cream.html',
@@ -271,8 +257,6 @@ cooking23s_icecream <- \() new(
   ))
 
 
-#' @rdname icecream
-#' @export
 Yumna_icecream <- \() new(
   Class = 'recipe', author = 'Yumna', flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
