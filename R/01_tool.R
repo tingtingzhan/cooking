@@ -11,7 +11,7 @@
 #' 
 #' @slot name,name2 \link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool
 #' 
-#' @slot recipe_pc \link[base]{numeric} scalar, how many times of recipe
+#' @slot capacity \link[base]{numeric} scalar, maximum capacity, in times of recipe
 #' 
 #' @slot treatment \link[base]{character} scalar, pre-treatment
 #' 
@@ -40,7 +40,7 @@
 setClass(Class = 'tool', slots = c(
   name = 'character', alias = 'character',
   name2 = 'character',
-  recipe_pc = 'numeric',
+  capacity = 'numeric',
   treatment = 'character',
   program = 'character',
   operation = 'character',
@@ -105,9 +105,11 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     make_ansi_style('royalblue')() |> 
     cat()
   
-  if (length(x@recipe_pc)) {
-    x@recipe_pc |> 
-      sprintf(fmt = ' \u2726 Makes \u00d7%.1f recipes at a time\n') |> 
+  if (length(x@capacity)) {
+    x@capacity |> 
+      sprintf(fmt = '\u00d7%.1f recipes') |>
+      bg_br_yellow() |>
+      sprintf(fmt = ' \u2726 Max. Capacity: %s\n') |> 
       cat()
   }
   

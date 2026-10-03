@@ -50,7 +50,6 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
     cooling = c(
       'Stand, with plastic wrap cover, in cold water for 1min'
     ),
-    recipe_pc = 1,
     program = 'Steam',
     fahrenheit = 210, 
     minute = 14 # tested!

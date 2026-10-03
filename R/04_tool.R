@@ -126,13 +126,12 @@ JoyoungCJA9U <- \(
 
 JoyoungCJA9U_filling <- \(
   treatment = c(
-    'Cut (chilled) butter in mini chunks. Sprinkle on bottom of stir-frying pan; otherwise batter sticks and burns!',
-    'Mix well the rest of ingredients (except sugar). Pour into stir-frying pan, on top of sprinkled butter'
+    'Sprinkle (chilled) butter chunks on bottom of stir-frying pan; otherwise batter sticks and burns!',
+    'Pour mixture into stir-frying pan, on top of sprinkled butter'
   ),
   operation = '(optional) manually stir frequently for high sugar-content ingredient!',
   cooling = c(
     'fold added sugar into hot, cooked paste',
-    '(re-)covered, until bubbling quiets down',
     'disassemble machine as early as possible; sugar syrup may stick'
   ),
   ...

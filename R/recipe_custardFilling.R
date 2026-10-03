@@ -110,12 +110,22 @@ pumpkin_custardFilling <- \() new(
   dairy = c(Carnation_drymilk = 40),
   dairy_brick = c(Kerrygold_butter = 1/4), # do not change
   sugar = c(Domino_darkBrown = 55),
-  tool = list(JoyoungCJA9U_filling(
-    minute = 20,
-    waterLost = 340
-  )),
+  tool = list(
+    KSM8990(
+      program = 'Level 4',
+      attachment = 'Paddle',
+      operation = 'Mix well the rest of ingredients (except sugar and butter)',
+      capacity = 2
+    ),
+    JoyoungCJA9U_filling(
+      minute = c('1x' = 20, '2x, too much' = 30+5+3),
+      waterLost = 340, # 2x reduces to 1840g. super accurate!!!
+      capacity = 1.5
+    )
+  ),
   date = as.Date('2026-10-01'),
   pros = 'perfect!')
+
 
 
 

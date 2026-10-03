@@ -19,7 +19,7 @@
 \describe{
 \item{\code{name,name2}}{\link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool}
 
-\item{\code{recipe_pc}}{\link[base]{numeric} scalar, how many times of recipe}
+\item{\code{capacity}}{\link[base]{numeric} scalar, maximum capacity, in times of recipe}
 
 \item{\code{treatment}}{\link[base]{character} scalar, pre-treatment}
 
